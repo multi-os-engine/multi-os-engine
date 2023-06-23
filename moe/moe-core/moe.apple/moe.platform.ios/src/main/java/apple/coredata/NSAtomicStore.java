@@ -43,7 +43,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -74,22 +79,25 @@ public class NSAtomicStore extends NSPersistentStore {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,15 +132,18 @@ public class NSAtomicStore extends NSPersistentStore {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("metadataForPersistentStoreWithURL:error:")
-    public static native NSDictionary<String, ?> metadataForPersistentStoreWithURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSDictionary<String, ?> metadataForPersistentStoreWithURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    @NotNull
     @Generated
     @Selector("migrationManagerClass")
     public static native Class migrationManagerClass();
@@ -152,8 +163,8 @@ public class NSAtomicStore extends NSPersistentStore {
 
     @Generated
     @Selector("setMetadata:forPersistentStoreWithURL:error:")
-    public static native boolean setMetadataForPersistentStoreWithURLError(NSDictionary<String, ?> metadata, NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native boolean setMetadataForPersistentStoreWithURLError(@Nullable NSDictionary<String, ?> metadata,
+            @NotNull NSURL url, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("setVersion:")
@@ -173,18 +184,20 @@ public class NSAtomicStore extends NSPersistentStore {
      */
     @Generated
     @Selector("addCacheNodes:")
-    public native void addCacheNodes(NSSet<? extends NSAtomicStoreCacheNode> cacheNodes);
+    public native void addCacheNodes(@NotNull NSSet<? extends NSAtomicStoreCacheNode> cacheNodes);
 
     /**
      * Utility method with implementation provided by NSAtomicStore
      */
+    @Nullable
     @Generated
     @Selector("cacheNodeForObjectID:")
-    public native NSAtomicStoreCacheNode cacheNodeForObjectID(NSManagedObjectID objectID);
+    public native NSAtomicStoreCacheNode cacheNodeForObjectID(@NotNull NSManagedObjectID objectID);
 
     /**
      * Utility method with implementation provided by NSAtomicStore
      */
+    @NotNull
     @Generated
     @Selector("cacheNodes")
     public native NSSet<? extends NSAtomicStoreCacheNode> cacheNodes();
@@ -199,64 +212,70 @@ public class NSAtomicStore extends NSPersistentStore {
     @Generated
     @Selector("initWithPersistentStoreCoordinator:configurationName:URL:options:")
     public native NSAtomicStore initWithPersistentStoreCoordinatorConfigurationNameURLOptions(
-            NSPersistentStoreCoordinator coordinator, String configurationName, NSURL url, NSDictionary<?, ?> options);
+            @Nullable NSPersistentStoreCoordinator coordinator, @Nullable String configurationName, @NotNull NSURL url,
+            @Nullable NSDictionary<?, ?> options);
 
     /**
      * API method that must be overriden by subclasses
      */
     @Generated
     @Selector("load:")
-    public native boolean load_objc(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean load_objc(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API method that must be overriden by subclasses
      */
+    @NotNull
     @Generated
     @Selector("newCacheNodeForManagedObject:")
-    public native NSAtomicStoreCacheNode newCacheNodeForManagedObject(NSManagedObject managedObject);
+    public native NSAtomicStoreCacheNode newCacheNodeForManagedObject(@NotNull NSManagedObject managedObject);
 
     /**
      * API method that must be overriden by subclasses
      */
+    @NotNull
     @Generated
     @Selector("newReferenceObjectForManagedObject:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object newReferenceObjectForManagedObject(NSManagedObject managedObject);
+    public native Object newReferenceObjectForManagedObject(@NotNull NSManagedObject managedObject);
 
     /**
      * Utility method with implementation provided by NSAtomicStore
      */
+    @NotNull
     @Generated
     @Selector("objectIDForEntity:referenceObject:")
-    public native NSManagedObjectID objectIDForEntityReferenceObject(NSEntityDescription entity,
-            @Mapped(ObjCObjectMapper.class) Object data);
+    public native NSManagedObjectID objectIDForEntityReferenceObject(@NotNull NSEntityDescription entity,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object data);
 
     /**
      * Utility method with implementation provided by NSAtomicStore
      */
+    @NotNull
     @Generated
     @Selector("referenceObjectForObjectID:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object referenceObjectForObjectID(NSManagedObjectID objectID);
+    public native Object referenceObjectForObjectID(@NotNull NSManagedObjectID objectID);
 
     /**
      * API method that must be overriden by subclasses
      */
     @Generated
     @Selector("save:")
-    public native boolean save(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean save(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API method that must be overriden by subclasses
      */
     @Generated
     @Selector("updateCacheNode:fromManagedObject:")
-    public native void updateCacheNodeFromManagedObject(NSAtomicStoreCacheNode node, NSManagedObject managedObject);
+    public native void updateCacheNodeFromManagedObject(@NotNull NSAtomicStoreCacheNode node,
+            @NotNull NSManagedObject managedObject);
 
     /**
      * Called before cache nodes are removed
      */
     @Generated
     @Selector("willRemoveCacheNodes:")
-    public native void willRemoveCacheNodes(NSSet<? extends NSAtomicStoreCacheNode> cacheNodes);
+    public native void willRemoveCacheNodes(@NotNull NSSet<? extends NSAtomicStoreCacheNode> cacheNodes);
 }

@@ -40,10 +40,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImageTent
- * <p>
+ * 
  * The box filter, while fast, may yield square-ish looking blur effects. However, multiple
  * passes of the box filter tend to smooth out with each additional pass. For example, two 3-wide
  * box blurs produces the same effective convolution as a 5-wide tent blur:
@@ -55,22 +57,24 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * 1 2 3 2 1
  * [@endcode]
  * Addition passes tend to approximate a gaussian line shape.
- * <p>
+ * 
  * The MPSImageTent convolves an image with a tent filter. These form a tent shape with incrementally
  * increasing sides, for example:
- * <p>
+ * 
  * 1 2 3 2 1
- * <p>
- * <p>
+ * 
+ * 
  * 1 2 1
  * 2 4 2
  * 1 2 1
- * <p>
+ * 
  * Like the box filter, this arrangement allows for much faster algorithms, espcially for for larger blur
  * radii but with a more pleasing appearance.
- * <p>
+ * 
  * The tent blur is a separable filter. The implementation is aware of this and will act accordingly
  * to give best performance for multi-dimensional blurs.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -102,22 +106,25 @@ public class MPSImageTent extends MPSImageBox {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -152,9 +159,10 @@ public class MPSImageTent extends MPSImageBox {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -188,20 +196,22 @@ public class MPSImageTent extends MPSImageBox {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImageTent initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageTent initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:")
-    public native MPSImageTent initWithDeviceKernelWidthKernelHeight(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @NUInt long kernelWidth, @NUInt long kernelHeight);
+    public native MPSImageTent initWithDeviceKernelWidthKernelHeight(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth,
+            @NUInt long kernelHeight);
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSImageTent initWithCoder(NSCoder aDecoder);
+    public native MPSImageTent initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSImageTent initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageTent initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("supportsSecureCoding")

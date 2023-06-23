@@ -21,13 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueSecuritySystemAlarmType
- * <p>
+ * 
  * [@constant] HMCharacteristicValueSecuritySystemAlarmTypeNoAlarm No alarm.
  * [@constant] HMCharacteristicValueSecuritySystemAlarmTypeUnknown Unknown alarm type.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class HMCharacteristicValueSecuritySystemAlarmType {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long NoAlarm = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Unknown = 0x0000000000000001L;
 
     @Generated

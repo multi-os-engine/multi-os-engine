@@ -17,9 +17,6 @@ limitations under the License.
 package apple.spritekit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGSize;
-import apple.coregraphics.struct.CGVector;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
@@ -50,6 +47,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGSize;
+import apple.corefoundation.struct.CGVector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An emitter of particle sprites.
@@ -84,29 +86,32 @@ public class SKEmitterNode extends SKNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -138,9 +143,10 @@ public class SKEmitterNode extends SKNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -153,21 +159,25 @@ public class SKEmitterNode extends SKNode {
 
     @Generated
     @Selector("nodeWithFileNamed:")
-    public static native SKEmitterNode nodeWithFileNamed(String filename);
+    public static native SKEmitterNode nodeWithFileNamed(@NotNull String filename);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodeBounds:")
-    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
+    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodePhysicsBodies:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodePhysicsBodies(
-            NSArray<? extends SKNode> nodes);
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromSpriteTextures:accuracy:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromSpriteTexturesAccuracy(
-            NSArray<? extends SKNode> sprites, float accuracy);
+            @NotNull NSArray<? extends SKNode> sprites, float accuracy);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -202,7 +212,10 @@ public class SKEmitterNode extends SKNode {
     /**
      * Optional dictionary of SKAttributeValues
      * Attributes can be used with custom SKShaders.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("attributeValues")
     public native NSDictionary<String, ? extends SKAttributeValue> attributeValues();
@@ -238,7 +251,7 @@ public class SKEmitterNode extends SKNode {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKEmitterNode initWithCoder(NSCoder aDecoder);
+    public native SKEmitterNode initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * The number of particles that will be emitted. If set to 0, there is no limit. Defaults to 0.
@@ -251,6 +264,7 @@ public class SKEmitterNode extends SKNode {
     /**
      * Specifies an action executed by new particles.
      */
+    @Nullable
     @Generated
     @Selector("particleAction")
     public native SKAction particleAction();
@@ -271,6 +285,7 @@ public class SKEmitterNode extends SKNode {
     @NFloat
     public native double particleAlphaRange();
 
+    @Nullable
     @Generated
     @Selector("particleAlphaSequence")
     public native SKKeyframeSequence particleAlphaSequence();
@@ -302,6 +317,7 @@ public class SKEmitterNode extends SKNode {
     /**
      * The starting color for each particle. Defaults to clear.
      */
+    @NotNull
     @Generated
     @Selector("particleColor")
     public native UIColor particleColor();
@@ -332,6 +348,7 @@ public class SKEmitterNode extends SKNode {
     @NFloat
     public native double particleColorBlendFactorRange();
 
+    @Nullable
     @Generated
     @Selector("particleColorBlendFactorSequence")
     public native SKKeyframeSequence particleColorBlendFactorSequence();
@@ -380,6 +397,7 @@ public class SKEmitterNode extends SKNode {
     @NFloat
     public native double particleColorRedSpeed();
 
+    @Nullable
     @Generated
     @Selector("particleColorSequence")
     public native SKKeyframeSequence particleColorSequence();
@@ -419,6 +437,8 @@ public class SKEmitterNode extends SKNode {
 
     /**
      * The order in which particles will be rendered. Defaults to SKParticleRenderOrderOldestLast.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("particleRenderOrder")
@@ -465,6 +485,7 @@ public class SKEmitterNode extends SKNode {
     @NFloat
     public native double particleScaleRange();
 
+    @Nullable
     @Generated
     @Selector("particleScaleSequence")
     public native SKKeyframeSequence particleScaleSequence();
@@ -506,6 +527,7 @@ public class SKEmitterNode extends SKNode {
     /**
      * The texture to be used for the particles.
      */
+    @Nullable
     @Generated
     @Selector("particleTexture")
     public native SKTexture particleTexture();
@@ -520,6 +542,9 @@ public class SKEmitterNode extends SKNode {
 
     /**
      * The random variance about the starting z-position for each particle. Defaults to 0.0.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @Deprecated
@@ -529,6 +554,9 @@ public class SKEmitterNode extends SKNode {
 
     /**
      * The rate at which to modify the z-position for each particle. Defaults to 0.0.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @Deprecated
@@ -546,10 +574,12 @@ public class SKEmitterNode extends SKNode {
     /**
      * Optional dictionary of SKAttributeValues
      * Attributes can be used with custom SKShaders.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setAttributeValues:")
-    public native void setAttributeValues(NSDictionary<String, ? extends SKAttributeValue> value);
+    public native void setAttributeValues(@NotNull NSDictionary<String, ? extends SKAttributeValue> value);
 
     /**
      * The angle at which to emit each new particle, in radians. Defaults to 0.0.
@@ -586,7 +616,7 @@ public class SKEmitterNode extends SKNode {
      */
     @Generated
     @Selector("setParticleAction:")
-    public native void setParticleAction(SKAction value);
+    public native void setParticleAction(@Nullable SKAction value);
 
     /**
      * The starting alpha for each particle. Defaults to 1.0.
@@ -604,7 +634,7 @@ public class SKEmitterNode extends SKNode {
 
     @Generated
     @Selector("setParticleAlphaSequence:")
-    public native void setParticleAlphaSequence(SKKeyframeSequence value);
+    public native void setParticleAlphaSequence(@Nullable SKKeyframeSequence value);
 
     /**
      * The rate at which to modify the alpha for each particle. Defaults to 1.0.
@@ -632,7 +662,7 @@ public class SKEmitterNode extends SKNode {
      */
     @Generated
     @Selector("setParticleColor:")
-    public native void setParticleColor(UIColor value);
+    public native void setParticleColor(@NotNull UIColor value);
 
     @Generated
     @Selector("setParticleColorAlphaRange:")
@@ -658,7 +688,7 @@ public class SKEmitterNode extends SKNode {
 
     @Generated
     @Selector("setParticleColorBlendFactorSequence:")
-    public native void setParticleColorBlendFactorSequence(SKKeyframeSequence value);
+    public native void setParticleColorBlendFactorSequence(@Nullable SKKeyframeSequence value);
 
     /**
      * The rate at which to modify the color blend for each particle. Defaults to 0.0.
@@ -699,7 +729,7 @@ public class SKEmitterNode extends SKNode {
 
     @Generated
     @Selector("setParticleColorSequence:")
-    public native void setParticleColorSequence(SKKeyframeSequence value);
+    public native void setParticleColorSequence(@Nullable SKKeyframeSequence value);
 
     /**
      * The lifetime of each particle, in seconds. Defaults to 0.0.
@@ -732,6 +762,8 @@ public class SKEmitterNode extends SKNode {
 
     /**
      * The order in which particles will be rendered. Defaults to SKParticleRenderOrderOldestLast.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setParticleRenderOrder:")
@@ -774,7 +806,7 @@ public class SKEmitterNode extends SKNode {
 
     @Generated
     @Selector("setParticleScaleSequence:")
-    public native void setParticleScaleSequence(SKKeyframeSequence value);
+    public native void setParticleScaleSequence(@Nullable SKKeyframeSequence value);
 
     /**
      * The rate at which to modify the scale for each particle. Defaults to 0.0.
@@ -811,7 +843,7 @@ public class SKEmitterNode extends SKNode {
      */
     @Generated
     @Selector("setParticleTexture:")
-    public native void setParticleTexture(SKTexture value);
+    public native void setParticleTexture(@Nullable SKTexture value);
 
     /**
      * The starting z-position for each particle. Defaults to 0.0.
@@ -822,6 +854,9 @@ public class SKEmitterNode extends SKNode {
 
     /**
      * The random variance about the starting z-position for each particle. Defaults to 0.0.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @Deprecated
@@ -830,6 +865,9 @@ public class SKEmitterNode extends SKNode {
 
     /**
      * The rate at which to modify the z-position for each particle. Defaults to 0.0.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @Deprecated
@@ -838,7 +876,7 @@ public class SKEmitterNode extends SKNode {
 
     @Generated
     @Selector("setShader:")
-    public native void setShader(SKShader value);
+    public native void setShader(@Nullable SKShader value);
 
     /**
      * Normally the particles are rendered as if they were a child of the SKEmitterNode, they can also be rendered as if
@@ -847,7 +885,7 @@ public class SKEmitterNode extends SKNode {
      */
     @Generated
     @Selector("setTargetNode:")
-    public native void setTargetNode_unsafe(SKNode value);
+    public native void setTargetNode_unsafe(@Nullable SKNode value);
 
     /**
      * Normally the particles are rendered as if they were a child of the SKEmitterNode, they can also be rendered as if
@@ -855,7 +893,7 @@ public class SKEmitterNode extends SKNode {
      * behavior).
      */
     @Generated
-    public void setTargetNode(SKNode value) {
+    public void setTargetNode(@Nullable SKNode value) {
         Object __old = targetNode();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -866,9 +904,12 @@ public class SKEmitterNode extends SKNode {
         }
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setValue:forAttributeNamed:")
-    public native void setValueForAttributeNamed(SKAttributeValue value, String key);
+    public native void setValueForAttributeNamed(@NotNull SKAttributeValue value, @NotNull String key);
 
     /**
      * The acceleration to apply to each particles velocity. Useful for simulating effects such as wind or gravity.
@@ -882,6 +923,7 @@ public class SKEmitterNode extends SKNode {
     @Selector("setYAcceleration:")
     public native void setYAcceleration(@NFloat double value);
 
+    @Nullable
     @Generated
     @Selector("shader")
     public native SKShader shader();
@@ -891,13 +933,18 @@ public class SKEmitterNode extends SKNode {
      * they were a child of any other node in the scene by setting the targetNode property. Defaults to nil (standard
      * behavior).
      */
+    @Nullable
     @Generated
     @Selector("targetNode")
     public native SKNode targetNode();
 
+    /**
+     * API-Since: 10.0
+     */
+    @Nullable
     @Generated
     @Selector("valueForAttributeNamed:")
-    public native SKAttributeValue valueForAttributeNamed(String key);
+    public native SKAttributeValue valueForAttributeNamed(@NotNull String key);
 
     /**
      * The acceleration to apply to each particles velocity. Useful for simulating effects such as wind or gravity.
@@ -915,8 +962,8 @@ public class SKEmitterNode extends SKNode {
 
     @Generated
     @Selector("nodeWithFileNamed:securelyWithClasses:andError:")
-    public static native SKEmitterNode nodeWithFileNamedSecurelyWithClassesAndError(String filename,
-            NSSet<? extends Class> classes, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native SKEmitterNode nodeWithFileNamedSecurelyWithClassesAndError(@NotNull String filename,
+            @NotNull NSSet<? extends Class> classes, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("supportsSecureCoding")

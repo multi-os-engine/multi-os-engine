@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPPlayableContentDataSource is a protocol that application objects conform to
@@ -35,7 +37,12 @@ import org.moe.natj.objc.ann.Selector;
  * Data sources are responsible for providing metadata about your media to these
  * systems in a meaningful way, so that features like user interfaces and play
  * queues can be setup automatically.
+ * 
+ * API-Since: 7.1
+ * Deprecated-Since: 14.0
+ * Deprecated-Message: Use CarPlay framework
  */
+@Deprecated
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -52,8 +59,8 @@ public interface MPPlayableContentDataSource {
     @Generated
     @IsOptional
     @Selector("beginLoadingChildItemsAtIndexPath:completionHandler:")
-    default void beginLoadingChildItemsAtIndexPathCompletionHandler(NSIndexPath indexPath,
-            @ObjCBlock(name = "call_beginLoadingChildItemsAtIndexPathCompletionHandler") Block_beginLoadingChildItemsAtIndexPathCompletionHandler completionHandler) {
+    default void beginLoadingChildItemsAtIndexPathCompletionHandler(@NotNull NSIndexPath indexPath,
+            @NotNull @ObjCBlock(name = "call_beginLoadingChildItemsAtIndexPathCompletionHandler") Block_beginLoadingChildItemsAtIndexPathCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -66,7 +73,7 @@ public interface MPPlayableContentDataSource {
     @Generated
     @IsOptional
     @Selector("childItemsDisplayPlaybackProgressAtIndexPath:")
-    default boolean childItemsDisplayPlaybackProgressAtIndexPath(NSIndexPath indexPath) {
+    default boolean childItemsDisplayPlaybackProgressAtIndexPath(@NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -74,9 +81,10 @@ public interface MPPlayableContentDataSource {
      * Returns the content item at the specified index path. If the content item is
      * mutated after returning, its updated contents will be sent to MediaPlayer.
      */
+    @Nullable
     @Generated
     @Selector("contentItemAtIndexPath:")
-    MPContentItem contentItemAtIndexPath(NSIndexPath indexPath);
+    MPContentItem contentItemAtIndexPath(@NotNull NSIndexPath indexPath);
 
     /**
      * Provides a content item for the provided identifier.
@@ -85,12 +93,17 @@ public interface MPPlayableContentDataSource {
      * to be retrieved.
      * Client applications should always call the completion handler after loading
      * has finished, if this method is implemented.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("contentItemForIdentifier:completionHandler:")
-    default void contentItemForIdentifierCompletionHandler(String identifier,
-            @ObjCBlock(name = "call_contentItemForIdentifierCompletionHandler") Block_contentItemForIdentifierCompletionHandler completionHandler) {
+    default void contentItemForIdentifierCompletionHandler(@NotNull String identifier,
+            @NotNull @ObjCBlock(name = "call_contentItemForIdentifierCompletionHandler") Block_contentItemForIdentifierCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -102,19 +115,19 @@ public interface MPPlayableContentDataSource {
     @Generated
     @Selector("numberOfChildItemsAtIndexPath:")
     @NInt
-    long numberOfChildItemsAtIndexPath(NSIndexPath indexPath);
+    long numberOfChildItemsAtIndexPath(@NotNull NSIndexPath indexPath);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_beginLoadingChildItemsAtIndexPathCompletionHandler {
         @Generated
-        void call_beginLoadingChildItemsAtIndexPathCompletionHandler(NSError arg0);
+        void call_beginLoadingChildItemsAtIndexPathCompletionHandler(@Nullable NSError arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_contentItemForIdentifierCompletionHandler {
         @Generated
-        void call_contentItemForIdentifierCompletionHandler(MPContentItem arg0, NSError arg1);
+        void call_contentItemForIdentifierCompletionHandler(@Nullable MPContentItem arg0, @Nullable NSError arg1);
     }
 }

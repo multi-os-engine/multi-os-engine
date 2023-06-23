@@ -2,8 +2,6 @@ package apple.pdfkit;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGContextRef;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -36,7 +34,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("PDFKit")
 @Runtime(ObjCRuntime.class)
@@ -56,6 +61,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * The preferred way though is to call -[PDFAnnotation action] and -[PDFAnnotation setAction:].
      * Used by annotations type(s): /Link.
      */
+    @Nullable
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -67,7 +73,10 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     /**
      * Optional action performed when a user clicks / taps an annotation. PDF readers ignore actions except
      * for those associated with Link or button Widget annotations.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("action")
     public native PDFAction action();
@@ -79,7 +88,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      */
     @Generated
     @Selector("addBezierPath:")
-    public native void addBezierPath(UIBezierPath path);
+    public native void addBezierPath(@NotNull UIBezierPath path);
 
     /**
      * Alignment of text within annotation bounds. Supported: NSLeftTextAlignment, NSRightTextAlignment and
@@ -115,19 +124,23 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * introduing a memory cycle. If you would like to get the /Parent propery, use -[PDFAnnotation
      * valueForAnnotationKey:]
      * with key PDFAnnotationKeyParent.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("annotationKeyValues")
     public native NSDictionary<?, ?> annotationKeyValues();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Background color characteristics.
      * Used by annotations type(s): /Widget (field type(s): /Btn, /Ch, /Tx).
      */
+    @Nullable
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
@@ -137,7 +150,10 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * annotations (Circle, Ink, Line, Square), the border indicates the line width and whether to draw with a dash
      * pattern
      * or solid pattern. PDFAnnotation markup types (Highlight, Strikethrough, Underline) ignores the border.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("border")
     public native PDFBorder border();
@@ -165,24 +181,27 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * When buttons share the same field name, their individual state strings set them apart from one another.
      * Used by annotations type(s): /Widget (field type(s): /Btn).
      */
+    @NotNull
     @Generated
     @Selector("buttonWidgetStateString")
     public native String buttonWidgetStateString();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Label for the button. Applies to kPDFWidgetPushButtonControl only.
      * Used by annotations type(s): /Widget (field type(s): /Btn).
      */
+    @Nullable
     @Generated
     @Selector("caption")
     public native String caption();
@@ -191,21 +210,27 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * The choices are an array of strings indicating the options (items) in either a list or pop-up menu.
      * Used by annotations type(s): /Widget (field type(s): /Ch).
      */
+    @Nullable
     @Generated
     @Selector("choices")
     public native NSArray<String> choices();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * For many annotations ("Circle", "Square") the stroke color. Used for other annotations as well.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("color")
     public native UIColor color();
@@ -213,16 +238,20 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     /**
      * A string of text associated with an annotation. Often displayed in a window when the annotation is clicked on
      * ("FreeText" and "Text" especially).
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("contents")
     public native String contents();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -238,20 +267,23 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * The preferred way though is to call -[PDFAnnotation action] and -[PDFAnnotation setAction:].
      * Used by annotations type(s): /Link.
      */
+    @Nullable
     @Generated
     @Selector("destination")
     public native PDFDestination destination();
 
     /**
      * Draw method. Draws in page-space relative to origin of "box" passed in and to the given context
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("drawWithBox:inContext:")
-    public native void drawWithBoxInContext(@NInt long box, CGContextRef context);
+    public native void drawWithBoxInContext(@NInt long box, @NotNull CGContextRef context);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("endLineStyle")
@@ -268,6 +300,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * Can also be used for ResetForm actions.
      * Used by annotations type(s): /Widget (field type(s): /Btn, /Ch, /Tx).
      */
+    @Nullable
     @Generated
     @Selector("fieldName")
     public native String fieldName();
@@ -276,6 +309,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * Font and font color associated with the text field.
      * Used by annotations type(s): /FreeText, /Popup, /Widget (field type(s): /Btn, /Ch, and /Tx).
      */
+    @Nullable
     @Generated
     @Selector("font")
     public native UIFont font();
@@ -284,6 +318,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * Width of line used to stroke border.
      * Used by annotations type(s): /FreeText, /Widget (field type(s): /Btn, /Ch, and /Tx).
      */
+    @Nullable
     @Generated
     @Selector("fontColor")
     public native UIColor fontColor();
@@ -328,15 +363,17 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     /**
      * Create a custom annotation with bounds, a type (PDFAnnotationSubtype), and an (optional) dictionary of annotation
      * properties.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithBounds:forType:withProperties:")
-    public native PDFAnnotation initWithBoundsForTypeWithProperties(@ByValue CGRect bounds, String annotationType,
-            NSDictionary<?, ?> properties);
+    public native PDFAnnotation initWithBoundsForTypeWithProperties(@ByValue CGRect bounds,
+            @NotNull String annotationType, @Nullable NSDictionary<?, ?> properties);
 
     @Generated
     @Selector("initWithCoder:")
-    public native PDFAnnotation initWithCoder(NSCoder coder);
+    public native PDFAnnotation initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -355,6 +392,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * Interior color of the annotation.
      * Used by annotations type(s): /Circle, /Line, /Square.
      */
+    @Nullable
     @Generated
     @Selector("interiorColor")
     public native UIColor interiorColor();
@@ -363,6 +401,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * The highlight state dictates how the annotation is drawn. For example, if a user has clicked on a
      * "Link" annotation, you should set highlighted to YES and redraw it. When the user lets up, set highlighted to
      * NO and redraw again.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isHighlighted")
@@ -413,9 +453,10 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Class methods to help with mapping PDFLineStyle to the associated name based on PDF specification
@@ -424,7 +465,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("lineStyleFromName:")
     @NInt
-    public static native long lineStyleFromName(String name);
+    public static native long lineStyleFromName(@NotNull String name);
 
     /**
      * Type of mark-up (highlight, strike-out or underline). Changing the markup type also changes the annotations type.
@@ -446,11 +487,15 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
 
     /**
      * Optional (-[modificationDate] may return nil). Modification date of the annotation.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("modificationDate")
     public native NSDate modificationDate();
 
+    @NotNull
     @Generated
     @Selector("nameForLineStyle:")
     public static native String nameForLineStyle(@NInt long style);
@@ -463,6 +508,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     /**
      * Returns the page the annotation is associated with (may return nil if annotation not associated with a page).
      */
+    @Nullable
     @Generated
     @Selector("page")
     public native PDFPage page();
@@ -472,10 +518,15 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * Paths are specified in annotation space.
      * Used by annotations type(s): /Ink.
      */
+    @Nullable
     @Generated
     @Selector("paths")
     public native NSArray<? extends UIBezierPath> paths();
 
+    /**
+     * API-Since: 11.0
+     */
+    @Nullable
     @Generated
     @Selector("popup")
     public native PDFAnnotation popup();
@@ -488,6 +539,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * represent the lower left of the text and the last point the lower right.
      * Points are specified relative to the annotation's bound's origin.
      */
+    @Nullable
     @Generated
     @Selector("quadrilateralPoints")
     public native NSArray<? extends NSValue> quadrilateralPoints();
@@ -503,14 +555,16 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("removeBezierPath:")
-    public native void removeBezierPath(UIBezierPath path);
+    public native void removeBezierPath(@NotNull UIBezierPath path);
 
     /**
      * Remove the key-value pair from the annotation dictionary. Returns true on successful removal.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("removeValueForAnnotationKey:")
-    public native void removeValueForAnnotationKey(String key);
+    public native void removeValueForAnnotationKey(@NotNull String key);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -523,10 +577,12 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     /**
      * Optional action performed when a user clicks / taps an annotation. PDF readers ignore actions except
      * for those associated with Link or button Widget annotations.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAction:")
-    public native void setAction(PDFAction value);
+    public native void setAction(@Nullable PDFAction value);
 
     /**
      * Alignment of text within annotation bounds. Supported: NSLeftTextAlignment, NSRightTextAlignment and
@@ -551,21 +607,26 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      */
     @Generated
     @Selector("setBackgroundColor:")
-    public native void setBackgroundColor(UIColor value);
+    public native void setBackgroundColor(@Nullable UIColor value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setBoolean:forAnnotationKey:")
-    public native boolean setBooleanForAnnotationKey(boolean value, String key);
+    public native boolean setBooleanForAnnotationKey(boolean value, @NotNull String key);
 
     /**
      * Optional border or border style that describes how to draw the annotation border (if any). For the "geometry"
      * annotations (Circle, Ink, Line, Square), the border indicates the line width and whether to draw with a dash
      * pattern
      * or solid pattern. PDFAnnotation markup types (Highlight, Strikethrough, Underline) ignores the border.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setBorder:")
-    public native void setBorder(PDFBorder value);
+    public native void setBorder(@Nullable PDFBorder value);
 
     /**
      * Required for all annotations. The bounding box in page-space of the annotation.
@@ -590,7 +651,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      */
     @Generated
     @Selector("setButtonWidgetStateString:")
-    public native void setButtonWidgetStateString(String value);
+    public native void setButtonWidgetStateString(@NotNull String value);
 
     /**
      * Label for the button. Applies to kPDFWidgetPushButtonControl only.
@@ -598,7 +659,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      */
     @Generated
     @Selector("setCaption:")
-    public native void setCaption(String value);
+    public native void setCaption(@Nullable String value);
 
     /**
      * The choices are an array of strings indicating the options (items) in either a list or pop-up menu.
@@ -606,14 +667,16 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      */
     @Generated
     @Selector("setChoices:")
-    public native void setChoices(NSArray<String> value);
+    public native void setChoices(@Nullable NSArray<String> value);
 
     /**
      * For many annotations ("Circle", "Square") the stroke color. Used for other annotations as well.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setColor:")
-    public native void setColor(UIColor value);
+    public native void setColor(@NotNull UIColor value);
 
     /**
      * Used to configure combing for PDF text fields.
@@ -628,10 +691,12 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     /**
      * A string of text associated with an annotation. Often displayed in a window when the annotation is clicked on
      * ("FreeText" and "Text" especially).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setContents:")
-    public native void setContents(String value);
+    public native void setContents(@Nullable String value);
 
     /**
      * Destination for the link. May be nil if no destination associated with link; in this case the -[URL] may be
@@ -641,7 +706,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      */
     @Generated
     @Selector("setDestination:")
-    public native void setDestination(PDFDestination value);
+    public native void setDestination(@Nullable PDFDestination value);
 
     @Generated
     @Selector("setEndLineStyle:")
@@ -658,7 +723,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      */
     @Generated
     @Selector("setFieldName:")
-    public native void setFieldName(String value);
+    public native void setFieldName(@Nullable String value);
 
     /**
      * Font and font color associated with the text field.
@@ -666,7 +731,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      */
     @Generated
     @Selector("setFont:")
-    public native void setFont(UIFont value);
+    public native void setFont(@Nullable UIFont value);
 
     /**
      * Width of line used to stroke border.
@@ -674,12 +739,14 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      */
     @Generated
     @Selector("setFontColor:")
-    public native void setFontColor(UIColor value);
+    public native void setFontColor(@Nullable UIColor value);
 
     /**
      * The highlight state dictates how the annotation is drawn. For example, if a user has clicked on a
      * "Link" annotation, you should set highlighted to YES and redraw it. When the user lets up, set highlighted to
      * NO and redraw again.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setHighlighted:")
@@ -700,7 +767,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      */
     @Generated
     @Selector("setInteriorColor:")
-    public native void setInteriorColor(UIColor value);
+    public native void setInteriorColor(@Nullable UIColor value);
 
     /**
      * There are two flavors of Choice widget annotations, lists and pop-up menus. This method allow you to
@@ -729,10 +796,12 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
 
     /**
      * Optional (-[modificationDate] may return nil). Modification date of the annotation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setModificationDate:")
-    public native void setModificationDate(NSDate value);
+    public native void setModificationDate(@Nullable NSDate value);
 
     /**
      * Used to configure multiline PDF text fields.
@@ -755,13 +824,13 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      */
     @Generated
     @Selector("setPage:")
-    public native void setPage_unsafe(PDFPage value);
+    public native void setPage_unsafe(@Nullable PDFPage value);
 
     /**
      * Returns the page the annotation is associated with (may return nil if annotation not associated with a page).
      */
     @Generated
-    public void setPage(PDFPage value) {
+    public void setPage(@Nullable PDFPage value) {
         Object __old = page();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -772,9 +841,12 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
         }
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setPopup:")
-    public native void setPopup(PDFAnnotation value);
+    public native void setPopup(@Nullable PDFAnnotation value);
 
     /**
      * Array of n * 4 points, packed as NSValue pointValue / CGPointValue, defining n quadrilaterals in page space where
@@ -786,7 +858,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      */
     @Generated
     @Selector("setQuadrilateralPoints:")
-    public native void setQuadrilateralPoints(NSArray<? extends NSValue> value);
+    public native void setQuadrilateralPoints(@Nullable NSArray<? extends NSValue> value);
 
     /**
      * For radio buttons, indicates whether a group of radio buttons will turn on and off in
@@ -805,9 +877,12 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     @Selector("setReadOnly:")
     public native void setReadOnly(boolean value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setRect:forAnnotationKey:")
-    public native boolean setRectForAnnotationKey(@ByValue CGRect value, String key);
+    public native boolean setRectForAnnotationKey(@ByValue CGRect value, @NotNull String key);
 
     /**
      * Indicates whether the annotation should be displayed on screen (depending upon -[shouldPrint] it may still
@@ -831,7 +906,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      */
     @Generated
     @Selector("setStampName:")
-    public native void setStampName(String value);
+    public native void setStampName(@Nullable String value);
 
     /**
      * Style used for ornaments at the lines start and end (optional, PDF 1.4).
@@ -857,7 +932,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      */
     @Generated
     @Selector("setType:")
-    public native void setType(String value);
+    public native void setType(@Nullable String value);
 
     /**
      * URL for the link. May be nil if no URL action associated with link; in this case the -[destination] may be valid.
@@ -866,14 +941,16 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      */
     @Generated
     @Selector("setURL:")
-    public native void setURL(NSURL value);
+    public native void setURL(@Nullable NSURL value);
 
     /**
      * Optional (-[userName] may return nil). Name of the user who created the annotation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setUserName:")
-    public native void setUserName(String value);
+    public native void setUserName(@Nullable String value);
 
     /**
      * Allows you to set a key-value pair in this annotation's dictionary. Returns true on successful
@@ -885,10 +962,13 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * a convenience, these kind of keys will directly accept NSColor / UIColor values. Other convenience
      * functions provide similar support can be found in PDFAnnotationUtilities header file. Note that you
      * can set the environment variable "PDFKIT_LOG_ANNOTATIONS" to log any key-value assignment failures.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setValue:forAnnotationKey:")
-    public native boolean setValueForAnnotationKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
+    public native boolean setValueForAnnotationKey(@NotNull @Mapped(ObjCObjectMapper.class) Object value,
+            @NotNull String key);
 
     /**
      * The choices are an array of strings indicating the option’s export values in either a list or pop-up menu.
@@ -896,7 +976,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      */
     @Generated
     @Selector("setValues:")
-    public native void setValues(NSArray<String> value);
+    public native void setValues(@Nullable NSArray<String> value);
 
     @Generated
     @Selector("setVersion:")
@@ -916,7 +996,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      */
     @Generated
     @Selector("setWidgetDefaultStringValue:")
-    public native void setWidgetDefaultStringValue(String value);
+    public native void setWidgetDefaultStringValue(@Nullable String value);
 
     /**
      * The specific field type of a widget annotation (button, choice, or text).
@@ -924,7 +1004,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      */
     @Generated
     @Selector("setWidgetFieldType:")
-    public native void setWidgetFieldType(String value);
+    public native void setWidgetFieldType(@NotNull String value);
 
     /**
      * The string value for a widget annotation.
@@ -932,7 +1012,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      */
     @Generated
     @Selector("setWidgetStringValue:")
-    public native void setWidgetStringValue(String value);
+    public native void setWidgetStringValue(@Nullable String value);
 
     /**
      * Indicates whether the annotation should be displayed on screen (depending upon -[shouldPrint] it may still
@@ -954,6 +1034,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * The name must be representable as ASCII. Very little is rendered if the annotation has no appearance stream.
      * Used by annotations type(s): /Stamp
      */
+    @Nullable
     @Generated
     @Selector("stampName")
     public native String stampName();
@@ -986,13 +1067,17 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * include:
      * "Text", "Link", "Line", etc. Required. Note that you are only allowed to set the type of an annotation once.
      */
+    @Nullable
     @Generated
     @Selector("type")
     public native String type();
 
     /**
      * Optional (-[userName] may return nil). Name of the user who created the annotation.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("userName")
     public native String userName();
@@ -1000,16 +1085,20 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     /**
      * Retrieves a deep copy of the key-value pair based on the given key; key can either be
      * from the keys PDFAnnotationKey, or an appropriate string from the PDF specification.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("valueForAnnotationKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object valueForAnnotationKey(String key);
+    public native Object valueForAnnotationKey(@NotNull String key);
 
     /**
      * The choices are an array of strings indicating the option’s export values in either a list or pop-up menu.
      * Used by annotations type(s): /Widget (field type(s): /Ch).
      */
+    @Nullable
     @Generated
     @Selector("values")
     public native NSArray<String> values();
@@ -1032,6 +1121,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * The string value for a widget annotation.
      * Used by annotations type(s): /Widget (field type(s): /Btn, /Ch, /Tx).
      */
+    @Nullable
     @Generated
     @Selector("widgetDefaultStringValue")
     public native String widgetDefaultStringValue();
@@ -1040,6 +1130,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * The specific field type of a widget annotation (button, choice, or text).
      * Used by annotations type(s): /Widget (field type(s): /Btn, /Ch, /Tx).
      */
+    @NotNull
     @Generated
     @Selector("widgetFieldType")
     public native String widgetFieldType();
@@ -1048,6 +1139,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * The string value for a widget annotation.
      * Used by annotations type(s): /Widget (field type(s): /Btn, /Ch, /Tx).
      */
+    @Nullable
     @Generated
     @Selector("widgetStringValue")
     public native String widgetStringValue();

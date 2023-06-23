@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] SecTrustResultType
- * <p>
+ * 
  * Specifies the trust result type.
- * <p>
+ * 
  * SecTrustResultType results have two dimensions. They specify
  * both whether evaluation succeeded and whether this is because of a user
  * decision. The commonly expected result is kSecTrustResultUnspecified,
@@ -63,13 +63,38 @@ import org.moe.natj.general.ann.Generated;
  */
 @Generated
 public final class SecTrustResultType {
+    /**
+     * API-Since: 2.0
+     */
     @Generated public static final int Invalid = 0x00000000;
+    /**
+     * API-Since: 2.0
+     */
     @Generated public static final int Proceed = 0x00000001;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
+     */
     @Deprecated @Generated public static final int Confirm = 0x00000002;
+    /**
+     * API-Since: 2.0
+     */
     @Generated public static final int Deny = 0x00000003;
+    /**
+     * API-Since: 2.0
+     */
     @Generated public static final int Unspecified = 0x00000004;
+    /**
+     * API-Since: 2.0
+     */
     @Generated public static final int RecoverableTrustFailure = 0x00000005;
+    /**
+     * API-Since: 2.0
+     */
     @Generated public static final int FatalTrustFailure = 0x00000006;
+    /**
+     * API-Since: 2.0
+     */
     @Generated public static final int OtherError = 0x00000007;
 
     @Generated

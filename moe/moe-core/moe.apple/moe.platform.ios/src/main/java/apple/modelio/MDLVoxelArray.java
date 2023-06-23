@@ -40,12 +40,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MDLVoxelArray
  * [@summary] Voxel data represented on a three dimensional grid. Voxel data can
  * include voxels considered to be on the surface of an object, and a
  * series of shells on the outside and inside of the surface.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("ModelIO")
@@ -77,22 +81,25 @@ public class MDLVoxelArray extends MDLObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +134,10 @@ public class MDLVoxelArray extends MDLObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -138,12 +146,12 @@ public class MDLVoxelArray extends MDLObject {
 
     @Generated
     @Selector("objectWithSCNNode:")
-    public static native MDLVoxelArray objectWithSCNNode(SCNNode scnNode);
+    public static native MDLVoxelArray objectWithSCNNode(@NotNull SCNNode scnNode);
 
     @Generated
     @Selector("objectWithSCNNode:bufferAllocator:")
-    public static native MDLVoxelArray objectWithSCNNodeBufferAllocator(SCNNode scnNode,
-            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+    public static native MDLVoxelArray objectWithSCNNodeBufferAllocator(@NotNull SCNNode scnNode,
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -169,19 +177,22 @@ public class MDLVoxelArray extends MDLObject {
     /**
      * Creates a coarse mesh from the voxel grid
      */
+    @Nullable
     @Generated
     @Selector("coarseMesh")
     public native MDLMesh coarseMesh();
 
+    @Nullable
     @Generated
     @Selector("coarseMeshUsingAllocator:")
-    public native MDLMesh coarseMeshUsingAllocator(@Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator allocator);
+    public native MDLMesh coarseMeshUsingAllocator(
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator allocator);
 
     /**
      * Converts volume grid into a signed shell field by surrounding the surface voxels, which have shell
      * level values of zero, by an inner layer of voxels with shell level values of negative one and an
      * outer layer of voxels with shell level values of positive one.
-     * <p>
+     * 
      * The volume model must be closed in order to generate a signed shell field.
      */
     @Generated
@@ -204,7 +215,7 @@ public class MDLVoxelArray extends MDLObject {
      */
     @Generated
     @Selector("differenceWithVoxels:")
-    public native void differenceWithVoxels(MDLVoxelArray voxels);
+    public native void differenceWithVoxels(@NotNull MDLVoxelArray voxels);
 
     @Generated
     @Selector("init")
@@ -218,7 +229,8 @@ public class MDLVoxelArray extends MDLObject {
      */
     @Generated
     @Selector("initWithAsset:divisions:patchRadius:")
-    public native MDLVoxelArray initWithAssetDivisionsPatchRadius(MDLAsset asset, int divisions, float patchRadius);
+    public native MDLVoxelArray initWithAssetDivisionsPatchRadius(@NotNull MDLAsset asset, int divisions,
+            float patchRadius);
 
     /**
      * Intersection modifies the voxel grid so that only voxels that are also in the supplied voxel grid are retained.
@@ -228,11 +240,11 @@ public class MDLVoxelArray extends MDLObject {
      */
     @Generated
     @Selector("intersectWithVoxels:")
-    public native void intersectWithVoxels(MDLVoxelArray voxels);
+    public native void intersectWithVoxels(@NotNull MDLVoxelArray voxels);
 
     /**
      * Returns whether or not the volume grid is in a valid signed shell field form.
-     * <p>
+     * 
      * This property will be set to YES after calling generateSignedShellField. All other
      * methods that modify the voxel grid will cause this property to be set to NO. Setting
      * shellFieldInteriorThickness and shellFieldExteriorThickness will not affect the value
@@ -245,9 +257,11 @@ public class MDLVoxelArray extends MDLObject {
     /**
      * Creates a smooth mesh from the voxel grid
      */
+    @Nullable
     @Generated
     @Selector("meshUsingAllocator:")
-    public native MDLMesh meshUsingAllocator(@Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator allocator);
+    public native MDLMesh meshUsingAllocator(
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator allocator);
 
     /**
      * If voxel grid is in a valid signed shell field form, sets the exterior thickness to the desired width,
@@ -274,7 +288,7 @@ public class MDLVoxelArray extends MDLObject {
      */
     @Generated
     @Selector("setVoxelsForMesh:divisions:patchRadius:")
-    public native void setVoxelsForMeshDivisionsPatchRadius(MDLMesh mesh, int divisions, float patchRadius);
+    public native void setVoxelsForMeshDivisionsPatchRadius(@NotNull MDLMesh mesh, int divisions, float patchRadius);
 
     /**
      * If voxel grid is in a valid signed shell field form, sets the exterior thickness to the desired width,
@@ -302,11 +316,12 @@ public class MDLVoxelArray extends MDLObject {
      */
     @Generated
     @Selector("unionWithVoxels:")
-    public native void unionWithVoxels(MDLVoxelArray voxels);
+    public native void unionWithVoxels(@NotNull MDLVoxelArray voxels);
 
     /**
      * Returns an NSData containing the indices of all voxels in the voxel grid
      */
+    @Nullable
     @Generated
     @Selector("voxelIndices")
     public native NSData voxelIndices();

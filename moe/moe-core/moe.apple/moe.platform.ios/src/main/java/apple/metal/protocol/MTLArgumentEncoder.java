@@ -17,11 +17,15 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLArgumentEncoder
- * <p>
+ * 
  * MTLArgumentEncoder encodes buffer, texture, sampler, and constant data into a buffer.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Metal")
@@ -30,7 +34,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLArgumentEncoder {
     /**
      * [@property] alignment
-     * <p>
+     * 
      * The alignment in bytes required to store the encoded resource bindings.
      */
     @Generated
@@ -40,18 +44,20 @@ public interface MTLArgumentEncoder {
 
     /**
      * constantDataAtIndex:
-     * <p>
+     * 
      * Returns a pointer to the constant data at the given bind point index.
      */
+    @NotNull
     @Generated
     @Selector("constantDataAtIndex:")
     VoidPtr constantDataAtIndex(@NUInt long index);
 
     /**
      * [@property] device
-     * <p>
+     * 
      * The device this argument encoder was created against.
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -59,7 +65,7 @@ public interface MTLArgumentEncoder {
 
     /**
      * [@property] encodedLength
-     * <p>
+     * 
      * The number of bytes required to store the encoded resource bindings.
      */
     @Generated
@@ -69,21 +75,23 @@ public interface MTLArgumentEncoder {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();
 
     /**
      * setArgumentBuffer:offset:
-     * <p>
+     * 
      * Sets the destination buffer and offset at which the arguments will be encoded.
      */
     @Generated
     @Selector("setArgumentBuffer:offset:")
-    void setArgumentBufferOffset(@Mapped(ObjCObjectMapper.class) MTLBuffer argumentBuffer, @NUInt long offset);
+    void setArgumentBufferOffset(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer argumentBuffer,
+            @NUInt long offset);
 
     /**
      * * @method setArgumentBuffer:offset:arrayElement:
@@ -93,82 +101,86 @@ public interface MTLArgumentEncoder {
      */
     @Generated
     @Selector("setArgumentBuffer:startOffset:arrayElement:")
-    void setArgumentBufferStartOffsetArrayElement(@Mapped(ObjCObjectMapper.class) MTLBuffer argumentBuffer,
+    void setArgumentBufferStartOffsetArrayElement(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer argumentBuffer,
             @NUInt long startOffset, @NUInt long arrayElement);
 
     /**
      * setBuffer:offset:atIndex:
-     * <p>
+     * 
      * Set a buffer at the given bind point index.
      */
     @Generated
     @Selector("setBuffer:offset:atIndex:")
-    void setBufferOffsetAtIndex(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
+    void setBufferOffsetAtIndex(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
             @NUInt long index);
 
     /**
      * setBuffers:offsets:withRange:
-     * <p>
+     * 
      * Set an array of buffers at the given bind point index range.
      */
     @Generated
     @Selector("setBuffers:offsets:withRange:")
-    void setBuffersOffsetsWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffers,
-            ConstNUIntPtr offsets, @ByValue NSRange range);
+    void setBuffersOffsetsWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffers,
+            @NotNull ConstNUIntPtr offsets, @ByValue NSRange range);
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
     @Generated
     @Selector("setLabel:")
-    void setLabel(String value);
+    void setLabel(@Nullable String value);
 
     /**
      * setSamplerState:atIndex:
-     * <p>
+     * 
      * Set a sampler at the given bind point index.
      */
     @Generated
     @Selector("setSamplerState:atIndex:")
-    void setSamplerStateAtIndex(@Mapped(ObjCObjectMapper.class) MTLSamplerState sampler, @NUInt long index);
+    void setSamplerStateAtIndex(@Nullable @Mapped(ObjCObjectMapper.class) MTLSamplerState sampler, @NUInt long index);
 
     /**
      * setSamplerStates:withRange:
-     * <p>
+     * 
      * Set an array of samplers at the given bind point index range.
      */
     @Generated
     @Selector("setSamplerStates:withRange:")
-    void setSamplerStatesWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers,
+    void setSamplerStatesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers,
             @ByValue NSRange range);
 
     /**
      * setTexture:atIndex:
-     * <p>
+     * 
      * Set a texture at the given bind point index.
      */
     @Generated
     @Selector("setTexture:atIndex:")
-    void setTextureAtIndex(@Mapped(ObjCObjectMapper.class) MTLTexture texture, @NUInt long index);
+    void setTextureAtIndex(@Nullable @Mapped(ObjCObjectMapper.class) MTLTexture texture, @NUInt long index);
 
     /**
      * setTextures:withRange:
-     * <p>
+     * 
      * Set an array of textures at the given bind point index range.
      */
     @Generated
     @Selector("setTextures:withRange:")
-    void setTexturesWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> textures, @ByValue NSRange range);
+    void setTexturesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> textures,
+            @ByValue NSRange range);
 
     /**
      * newArgumentEncoderForBufferAtIndex:
-     * <p>
+     * 
      * Returns a pointer to a new MTLArgumentEncoder that can be used to encode the an argument buffer
      * in the buffer associated with a given index.
      * Returns nil if the resource at the given index is not an argument buffer.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("newArgumentEncoderForBufferAtIndex:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -176,106 +188,134 @@ public interface MTLArgumentEncoder {
 
     /**
      * setComputePipelineState:atIndex
-     * <p>
+     * 
      * Sets a compute pipeline state at a given bind point index
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setComputePipelineState:atIndex:")
-    void setComputePipelineStateAtIndex(@Mapped(ObjCObjectMapper.class) MTLComputePipelineState pipeline,
+    void setComputePipelineStateAtIndex(@Nullable @Mapped(ObjCObjectMapper.class) MTLComputePipelineState pipeline,
             @NUInt long index);
 
     /**
      * setComputePipelineStates:withRange
-     * <p>
+     * 
      * Set an array of compute pipeline states at a given bind point index range
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setComputePipelineStates:withRange:")
-    void setComputePipelineStatesWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> pipelines,
+    void setComputePipelineStatesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> pipelines,
             @ByValue NSRange range);
 
     /**
      * setIndirectCommandBuffer:atIndex
-     * <p>
+     * 
      * Sets an indirect command buffer at a given bind point index
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setIndirectCommandBuffer:atIndex:")
-    void setIndirectCommandBufferAtIndex(@Mapped(ObjCObjectMapper.class) MTLIndirectCommandBuffer indirectCommandBuffer,
+    void setIndirectCommandBufferAtIndex(
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLIndirectCommandBuffer indirectCommandBuffer,
             @NUInt long index);
 
     /**
      * setIndirectCommandBuffers:withRange:
-     * <p>
+     * 
      * Set an array of indirect command buffers at the given bind point index range.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setIndirectCommandBuffers:withRange:")
-    void setIndirectCommandBuffersWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffers,
+    void setIndirectCommandBuffersWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffers,
             @ByValue NSRange range);
 
     /**
      * setRenderPipelineState:atIndex
-     * <p>
+     * 
      * Sets a render pipeline state at a given bind point index
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setRenderPipelineState:atIndex:")
-    void setRenderPipelineStateAtIndex(@Mapped(ObjCObjectMapper.class) MTLRenderPipelineState pipeline,
+    void setRenderPipelineStateAtIndex(@Nullable @Mapped(ObjCObjectMapper.class) MTLRenderPipelineState pipeline,
             @NUInt long index);
 
     /**
      * setRenderPipelineStates:withRange
-     * <p>
+     * 
      * Set an array of render pipeline states at a given bind point index range
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setRenderPipelineStates:withRange:")
-    void setRenderPipelineStatesWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> pipelines,
+    void setRenderPipelineStatesWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> pipelines,
             @ByValue NSRange range);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setAccelerationStructure:atIndex:")
-    void setAccelerationStructureAtIndex(@Mapped(ObjCObjectMapper.class) MTLAccelerationStructure accelerationStructure,
+    void setAccelerationStructureAtIndex(
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure accelerationStructure,
             @NUInt long index);
 
     /**
      * setIntersectionFunctionTable:atIndex:
-     * <p>
+     * 
      * Set an intersection function table at the given buffer index
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setIntersectionFunctionTable:atIndex:")
     void setIntersectionFunctionTableAtIndex(
-            @Mapped(ObjCObjectMapper.class) MTLIntersectionFunctionTable intersectionFunctionTable, @NUInt long index);
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLIntersectionFunctionTable intersectionFunctionTable,
+            @NUInt long index);
 
     /**
      * setIntersectionFunctionTables:withRange:
-     * <p>
+     * 
      * Set intersection function tables at the given buffer index range
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setIntersectionFunctionTables:withRange:")
     void setIntersectionFunctionTablesWithRange(
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> intersectionFunctionTables, @ByValue NSRange range);
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> intersectionFunctionTables,
+            @ByValue NSRange range);
 
     /**
      * setVisibleFunctionTable:atIndex:
-     * <p>
+     * 
      * Set a visible function table at the given buffer index
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setVisibleFunctionTable:atIndex:")
-    void setVisibleFunctionTableAtIndex(@Mapped(ObjCObjectMapper.class) MTLVisibleFunctionTable visibleFunctionTable,
-            @NUInt long index);
+    void setVisibleFunctionTableAtIndex(
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLVisibleFunctionTable visibleFunctionTable, @NUInt long index);
 
     /**
      * setVisibleFunctionTables:withRange:
-     * <p>
+     * 
      * Set visible function tables at the given buffer index range
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setVisibleFunctionTables:withRange:")
     void setVisibleFunctionTablesWithRange(
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> visibleFunctionTables, @ByValue NSRange range);
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> visibleFunctionTables,
+            @ByValue NSRange range);
 }

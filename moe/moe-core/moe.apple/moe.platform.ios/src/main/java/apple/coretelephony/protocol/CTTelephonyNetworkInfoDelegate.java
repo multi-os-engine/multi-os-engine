@@ -7,13 +7,16 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * CTTelephonyNetworkInfoDelegate
- * <p>
+ * 
  * Discussion:
  * Delegate interface for CTTelephonyNetworkInfo.
  * All delegate callbacks are dispatched asynchronously to a global queue with QoS QOS_CLASS_DEFAULT.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreTelephony")
@@ -22,7 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface CTTelephonyNetworkInfoDelegate {
     /**
      * dataServiceIdentifierDidChange:
-     * <p>
+     * 
      * Discussion:
      * Selector to be invoked whenever the data service identifier changes.
      * This identifier is meant to be used as a key in associated dictionaries,
@@ -31,7 +34,7 @@ public interface CTTelephonyNetworkInfoDelegate {
     @Generated
     @IsOptional
     @Selector("dataServiceIdentifierDidChange:")
-    default void dataServiceIdentifierDidChange(String identifier) {
+    default void dataServiceIdentifierDidChange(@NotNull String identifier) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

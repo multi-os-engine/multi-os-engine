@@ -1,8 +1,6 @@
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -27,7 +25,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -65,22 +70,25 @@ public class NSTextSelectionNavigation extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,10 +104,12 @@ public class NSTextSelectionNavigation extends NSObject {
      * NSTextSelectionNavigationDirectionBackward and NSTextSelectionNavigationDestinationCharacter with 0-length
      * selection.
      */
+    @NotNull
     @Generated
     @Selector("deletionRangesForTextSelection:direction:destination:allowsDecomposition:")
     public native NSArray<? extends NSTextRange> deletionRangesForTextSelectionDirectionDestinationAllowsDecomposition(
-            NSTextSelection textSelection, @NInt long direction, @NInt long destination, boolean allowsDecomposition);
+            @NotNull NSTextSelection textSelection, @NInt long direction, @NInt long destination,
+            boolean allowsDecomposition);
 
     @Generated
     @Selector("description")
@@ -110,10 +120,11 @@ public class NSTextSelectionNavigation extends NSObject {
      * destination, and extending. Returns nil when the requested operation does not produce any logically valid result.
      * If 'confined' is YES, confine any movement to the text element that the selection already lies within.
      */
+    @Nullable
     @Generated
     @Selector("destinationSelectionForTextSelection:direction:destination:extending:confined:")
     public native NSTextSelection destinationSelectionForTextSelectionDirectionDestinationExtendingConfined(
-            NSTextSelection textSelection, @NInt long direction, @NInt long destination, boolean extending,
+            @NotNull NSTextSelection textSelection, @NInt long direction, @NInt long destination, boolean extending,
             boolean confined);
 
     /**
@@ -135,7 +146,7 @@ public class NSTextSelectionNavigation extends NSObject {
     @Generated
     @Selector("initWithDataSource:")
     public native NSTextSelectionNavigation initWithDataSource(
-            @Mapped(ObjCObjectMapper.class) NSTextSelectionDataSource dataSource);
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextSelectionDataSource dataSource);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -154,9 +165,10 @@ public class NSTextSelectionNavigation extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -175,11 +187,12 @@ public class NSTextSelectionNavigation extends NSObject {
      * Returns the resolved location for inserting the next input if textSelection is isLogical=NO &&
      * secondarySelectionLocation!=nil. If not, returns nil.
      */
+    @Nullable
     @Generated
     @Selector("resolvedInsertionLocationForTextSelection:writingDirection:")
     @MappedReturn(ObjCObjectMapper.class)
     public native NSTextLocation resolvedInsertionLocationForTextSelectionWritingDirection(
-            NSTextSelection textSelection, @NInt long writingDirection);
+            @NotNull NSTextSelection textSelection, @NInt long writingDirection);
 
     /**
      * If YES, rotates the coordinate system for arguments passed to the navigation methods such as
@@ -217,6 +230,7 @@ public class NSTextSelectionNavigation extends NSObject {
     /**
      * The data source object providing the layout and document content information.
      */
+    @Nullable
     @Generated
     @Selector("textSelectionDataSource")
     @MappedReturn(ObjCObjectMapper.class)
@@ -227,20 +241,22 @@ public class NSTextSelectionNavigation extends NSObject {
      * coordinate system of the text container at containerLocation. The returned selection will have
      * granularity=selectionGranularity.
      */
+    @Nullable
     @Generated
     @Selector("textSelectionForSelectionGranularity:enclosingPoint:inContainerAtLocation:")
     public native NSTextSelection textSelectionForSelectionGranularityEnclosingPointInContainerAtLocation(
             @NInt long selectionGranularity, @ByValue CGPoint point,
-            @Mapped(ObjCObjectMapper.class) NSTextLocation location);
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location);
 
     /**
      * Returns a text selection expanded to the nearest boundaries for selectionGranularity enclosing
      * textSelection.textRanges. The returned selection will have granularity=selectionGranularity.
      */
+    @NotNull
     @Generated
     @Selector("textSelectionForSelectionGranularity:enclosingTextSelection:")
     public native NSTextSelection textSelectionForSelectionGranularityEnclosingTextSelection(
-            @NInt long selectionGranularity, NSTextSelection textSelection);
+            @NInt long selectionGranularity, @NotNull NSTextSelection textSelection);
 
     /**
      * Returns an array of text selections produced with tap/mouse down at point. anchors defines the last text
@@ -248,11 +264,12 @@ public class NSTextSelectionNavigation extends NSObject {
      * text selection dragging session. bounds defines the view area in the container coordinate system that can
      * interact with events. It is typically the view's visible area.
      */
+    @NotNull
     @Generated
     @Selector("textSelectionsInteractingAtPoint:inContainerAtLocation:anchors:modifiers:selecting:bounds:")
     public native NSArray<? extends NSTextSelection> textSelectionsInteractingAtPointInContainerAtLocationAnchorsModifiersSelectingBounds(
-            @ByValue CGPoint point, @Mapped(ObjCObjectMapper.class) NSTextLocation containerLocation,
-            NSArray<? extends NSTextSelection> anchors, @NUInt long modifiers, boolean selecting,
+            @ByValue CGPoint point, @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation containerLocation,
+            @NotNull NSArray<? extends NSTextSelection> anchors, @NUInt long modifiers, boolean selecting,
             @ByValue CGRect bounds);
 
     @Generated

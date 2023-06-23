@@ -21,50 +21,72 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEAppProxyFlowError
- * <p>
+ * 
  * Flow error codes
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class NEAppProxyFlowError {
     /**
      * [@const] NEAppProxyFlowErrorNotOpen The flow is not fully open.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long NotConnected = 0x0000000000000001L;
     /**
      * [@const] NEAppProxyFlowErrorPeerReset The remote peer reset the flow.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long PeerReset = 0x0000000000000002L;
     /**
      * [@const] NEAppProxyFlowErrorHostUnreachable The remote peer is unreachable.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long HostUnreachable = 0x0000000000000003L;
     /**
      * [@const] NEAppProxyFlowErrorInvalidArgument An invalid argument was passed to one of the NEAppProxyFlow methods.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long InvalidArgument = 0x0000000000000004L;
     /**
      * [@const] NEAppProxyFlowErrorAborted The flow was aborted.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Aborted = 0x0000000000000005L;
     /**
      * [@const] NEAppProxyFlowErrorRefused The flow was disallowed.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Refused = 0x0000000000000006L;
     /**
      * [@const] NEAppProxyFlowErrorTimedOut The flow timed out.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long TimedOut = 0x0000000000000007L;
     /**
      * [@const] NEAppProxyFlowErrorInternal An internal error occurred.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Internal = 0x0000000000000008L;
     /**
      * [@const] NEAppProxyFlowErrorDatagramTooLarge An attempt was made to write a datagram that is larger than the
      * socket's receive window
+     * 
+     * API-Since: 9.3
      */
     @Generated @NInt public static final long DatagramTooLarge = 0x0000000000000009L;
     /**
      * [@const] NEAppProxyFlowErrorReadAlreadyPending A read operation on the flow is already pending
+     * 
+     * API-Since: 9.3
      */
     @Generated @NInt public static final long ReadAlreadyPending = 0x000000000000000AL;
 

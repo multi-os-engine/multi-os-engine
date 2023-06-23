@@ -26,6 +26,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -54,13 +56,14 @@ public final class AudioQueueBuffer extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setMAudioDataBytesCapacity(int value);
 
+    @NotNull
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native VoidPtr mAudioData();
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setMAudioData(VoidPtr value);
+    public native void setMAudioData(@NotNull VoidPtr value);
 
     @Generated
     @StructureField(order = 2, isGetter = true)
@@ -70,13 +73,14 @@ public final class AudioQueueBuffer extends StructObject {
     @StructureField(order = 2, isGetter = false)
     public native void setMAudioDataByteSize(int value);
 
+    @Nullable
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native VoidPtr mUserData();
 
     @Generated
     @StructureField(order = 3, isGetter = false)
-    public native void setMUserData(VoidPtr value);
+    public native void setMUserData(@Nullable VoidPtr value);
 
     @Generated
     @StructureField(order = 4, isGetter = true)
@@ -86,6 +90,7 @@ public final class AudioQueueBuffer extends StructObject {
     @StructureField(order = 4, isGetter = false)
     public native void setMPacketDescriptionCapacity(int value);
 
+    @Nullable
     @Generated
     @StructureField(order = 5, isGetter = true)
     @ReferenceInfo(type = AudioStreamPacketDescription.class)
@@ -93,7 +98,7 @@ public final class AudioQueueBuffer extends StructObject {
 
     @Generated
     @StructureField(order = 5, isGetter = false)
-    public native void setMPacketDescriptions(Ptr<AudioStreamPacketDescription> value);
+    public native void setMPacketDescriptions(@Nullable Ptr<AudioStreamPacketDescription> value);
 
     @Generated
     @StructureField(order = 6, isGetter = true)

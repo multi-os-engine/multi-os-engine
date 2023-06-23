@@ -40,11 +40,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MDLSkyCubeTexture
  * [@summary] A physically realistic sky as a cube texture
- * <p>
+ * 
  * [@property] sunElevation A value of zero is at the zenith, 0.5 is at the horizon,
  * 1.0 is at the nadir. Use in conjunction with turbidity to give a dawn,
  * dusk, or noon look.
@@ -57,11 +59,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * [@property] groundAlbedo controls the amount of light that bounces back up into
  * the sky from the ground. A value of zero will yield a clear sky, a
  * value of one will reduce the contrast of the sky, making it a bit foggy.
- * <p>
+ * 
  * [@property] horizonElevation If the lower half of the environment is being replaced
  * by a color, horizonElevation is angle, in radians, below which the
  * replacement should occur. Negative values are below the horizon.
- * <p>
+ * 
  * [@property] groundColor If this value is set, the environment will be replaced with
  * the color below the horizonElevation value blended with the w factor up to
  * Pi/2.0 past the horizon.
@@ -74,7 +76,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * 3 component treats the first 3 components as color and 0 as blend factor
  * 2 component treats the first component as greyscale color and y as blend factor
  * 1 component treats the scalar component as greyscale color and 0 as blend factor
- * <p>
+ * 
  * [@property] gamma Modifies the amount of gamma correction applied during
  * tone mapping.
  * [@property] exposure Modifies the exposure applied during tone mapping.
@@ -85,9 +87,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * are not compressed during tone mapping. Values between the x component
  * and y component are compressed to the maximum brightness value during
  * tone mapping. Values above the limit are clamped.
- * <p>
+ * 
  * the texture will be created if data is referenced, otherwise, this
  * object is merely a description. All parameters have legal values between zero and one.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("ModelIO")
@@ -119,22 +123,25 @@ public class MDLSkyCubeTexture extends MDLTexture {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -169,9 +176,10 @@ public class MDLSkyCubeTexture extends MDLTexture {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -196,20 +204,20 @@ public class MDLSkyCubeTexture extends MDLTexture {
 
     @Generated
     @Selector("textureCubeWithImagesNamed:")
-    public static native MDLSkyCubeTexture textureCubeWithImagesNamed(NSArray<String> names);
+    public static native MDLSkyCubeTexture textureCubeWithImagesNamed(@NotNull NSArray<String> names);
 
     @Generated
     @Selector("textureCubeWithImagesNamed:bundle:")
-    public static native MDLSkyCubeTexture textureCubeWithImagesNamedBundle(NSArray<String> names,
-            NSBundle bundleOrNil);
+    public static native MDLSkyCubeTexture textureCubeWithImagesNamedBundle(@NotNull NSArray<String> names,
+            @Nullable NSBundle bundleOrNil);
 
     @Generated
     @Selector("textureNamed:")
-    public static native MDLSkyCubeTexture textureNamed(String name);
+    public static native MDLSkyCubeTexture textureNamed(@NotNull String name);
 
     @Generated
     @Selector("textureNamed:bundle:")
-    public static native MDLSkyCubeTexture textureNamedBundle(String name, NSBundle bundleOrNil);
+    public static native MDLSkyCubeTexture textureNamedBundle(@NotNull String name, @Nullable NSBundle bundleOrNil);
 
     @Generated
     @Selector("version")
@@ -236,6 +244,7 @@ public class MDLSkyCubeTexture extends MDLTexture {
     @Selector("groundAlbedo")
     public native float groundAlbedo();
 
+    @Nullable
     @Generated
     @Selector("groundColor")
     public native CGColorRef groundColor();
@@ -274,7 +283,7 @@ public class MDLSkyCubeTexture extends MDLTexture {
 
     @Generated
     @Selector("setGroundColor:")
-    public native void setGroundColor(CGColorRef value);
+    public native void setGroundColor(@Nullable CGColorRef value);
 
     @Generated
     @Selector("setHorizonElevation:")
@@ -315,16 +324,22 @@ public class MDLSkyCubeTexture extends MDLTexture {
     @Selector("upperAtmosphereScattering")
     public native float upperAtmosphereScattering();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setSunAzimuth:")
     public native void setSunAzimuth(float value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("sunAzimuth")
     public native float sunAzimuth();
 
     @Generated
     @Selector("textureNamed:assetResolver:")
-    public static native MDLSkyCubeTexture textureNamedAssetResolver(String name,
-            @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
+    public static native MDLSkyCubeTexture textureNamedAssetResolver(@NotNull String name,
+            @NotNull @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
 }

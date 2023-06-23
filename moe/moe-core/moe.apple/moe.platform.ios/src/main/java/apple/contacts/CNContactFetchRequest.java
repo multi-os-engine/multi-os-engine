@@ -41,12 +41,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Specifies the search criteria to fetch contacts.
- * <p>
+ * 
  * Used with [CNContactStore enumerateContactsWithFetchRequest:error:usingBlock:]. Can combine any of these options to
  * create a contact fetch request.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -78,22 +82,25 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,9 +135,10 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,7 +172,7 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -172,30 +180,34 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNContactFetchRequest initWithCoder(NSCoder coder);
+    public native CNContactFetchRequest initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Only fetch the properties that will be used.
-     *
-     * @param keysToFetch The properties to fetch for the returned contacts.
+     * 
+     * @param keysToFetch
+     *                    The properties to fetch for the returned contacts.
      */
     @Generated
     @Selector("initWithKeysToFetch:")
-    public native CNContactFetchRequest initWithKeysToFetch(NSArray<?> keysToFetch);
+    public native CNContactFetchRequest initWithKeysToFetch(@NotNull NSArray<?> keysToFetch);
 
     /**
      * The properties to fetch in the returned contacts.
-     * <p>
+     * 
      * Should only fetch the properties that will be used. Can combine contact keys and contact key descriptors.
      */
+    @NotNull
     @Generated
     @Selector("keysToFetch")
     public native NSArray<?> keysToFetch();
 
     /**
      * To return mutable contacts.
-     * <p>
+     * 
      * If YES returns CNMutableContact objects, otherwise returns CNContact objects. Default is NO.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("mutableObjects")
@@ -203,27 +215,30 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
 
     /**
      * The predicate to match contacts against.
-     * <p>
+     * 
      * Use only predicates from CNContact+Predicates.h. Compound predicates are not supported. Set to nil to match all
      * contacts.
      */
+    @Nullable
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();
 
     /**
      * The properties to fetch in the returned contacts.
-     * <p>
+     * 
      * Should only fetch the properties that will be used. Can combine contact keys and contact key descriptors.
      */
     @Generated
     @Selector("setKeysToFetch:")
-    public native void setKeysToFetch(NSArray<?> value);
+    public native void setKeysToFetch(@NotNull NSArray<?> value);
 
     /**
      * To return mutable contacts.
-     * <p>
+     * 
      * If YES returns CNMutableContact objects, otherwise returns CNContact objects. Default is NO.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setMutableObjects:")
@@ -231,17 +246,17 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
 
     /**
      * The predicate to match contacts against.
-     * <p>
+     * 
      * Use only predicates from CNContact+Predicates.h. Compound predicates are not supported. Set to nil to match all
      * contacts.
      */
     @Generated
     @Selector("setPredicate:")
-    public native void setPredicate(NSPredicate value);
+    public native void setPredicate(@Nullable NSPredicate value);
 
     /**
      * To return contacts in a specific sort order.
-     * <p>
+     * 
      * Default is CNContactSortOrderNone.
      */
     @Generated
@@ -250,9 +265,9 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
 
     /**
      * To return linked contacts as unified contacts.
-     * <p>
+     * 
      * If YES returns unified contacts, otherwise returns individual contacts. Default is YES.
-     * <p>
+     * 
      * [@note] A unified contact is the aggregation of properties from a set of linked individual contacts. If an
      * individual contact is not linked then the unified contact is simply that individual contact.
      */
@@ -262,7 +277,7 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
 
     /**
      * To return contacts in a specific sort order.
-     * <p>
+     * 
      * Default is CNContactSortOrderNone.
      */
     @Generated
@@ -278,9 +293,9 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
 
     /**
      * To return linked contacts as unified contacts.
-     * <p>
+     * 
      * If YES returns unified contacts, otherwise returns individual contacts. Default is YES.
-     * <p>
+     * 
      * [@note] A unified contact is the aggregation of properties from a set of linked individual contacts. If an
      * individual contact is not linked then the unified contact is simply that individual contact.
      */

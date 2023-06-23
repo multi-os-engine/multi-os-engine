@@ -38,9 +38,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This layout anchor subclass is used for sizes (width & height).
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("UIKit")
@@ -72,22 +76,25 @@ public class NSLayoutDimension extends NSLayoutAnchor<NSLayoutDimension> {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,9 +129,10 @@ public class NSLayoutDimension extends NSLayoutAnchor<NSLayoutDimension> {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,49 +163,59 @@ public class NSLayoutDimension extends NSLayoutAnchor<NSLayoutDimension> {
     /**
      * These methods return an inactive constraint of the form thisAnchor = otherAnchor * multiplier.
      */
+    @NotNull
     @Generated
     @Selector("constraintEqualToAnchor:multiplier:")
-    public native NSLayoutConstraint constraintEqualToAnchorMultiplier(NSLayoutDimension anchor, @NFloat double m);
+    public native NSLayoutConstraint constraintEqualToAnchorMultiplier(@NotNull NSLayoutDimension anchor,
+            @NFloat double m);
 
     /**
      * These methods return an inactive constraint of the form thisAnchor = otherAnchor * multiplier + constant.
      */
+    @NotNull
     @Generated
     @Selector("constraintEqualToAnchor:multiplier:constant:")
-    public native NSLayoutConstraint constraintEqualToAnchorMultiplierConstant(NSLayoutDimension anchor,
+    public native NSLayoutConstraint constraintEqualToAnchorMultiplierConstant(@NotNull NSLayoutDimension anchor,
             @NFloat double m, @NFloat double c);
 
     /**
      * These methods return an inactive constraint of the form thisVariable = constant.
      */
+    @NotNull
     @Generated
     @Selector("constraintEqualToConstant:")
     public native NSLayoutConstraint constraintEqualToConstant(@NFloat double c);
 
+    @NotNull
     @Generated
     @Selector("constraintGreaterThanOrEqualToAnchor:multiplier:")
-    public native NSLayoutConstraint constraintGreaterThanOrEqualToAnchorMultiplier(NSLayoutDimension anchor,
+    public native NSLayoutConstraint constraintGreaterThanOrEqualToAnchorMultiplier(@NotNull NSLayoutDimension anchor,
             @NFloat double m);
 
+    @NotNull
     @Generated
     @Selector("constraintGreaterThanOrEqualToAnchor:multiplier:constant:")
-    public native NSLayoutConstraint constraintGreaterThanOrEqualToAnchorMultiplierConstant(NSLayoutDimension anchor,
-            @NFloat double m, @NFloat double c);
+    public native NSLayoutConstraint constraintGreaterThanOrEqualToAnchorMultiplierConstant(
+            @NotNull NSLayoutDimension anchor, @NFloat double m, @NFloat double c);
 
+    @NotNull
     @Generated
     @Selector("constraintGreaterThanOrEqualToConstant:")
     public native NSLayoutConstraint constraintGreaterThanOrEqualToConstant(@NFloat double c);
 
+    @NotNull
     @Generated
     @Selector("constraintLessThanOrEqualToAnchor:multiplier:")
-    public native NSLayoutConstraint constraintLessThanOrEqualToAnchorMultiplier(NSLayoutDimension anchor,
+    public native NSLayoutConstraint constraintLessThanOrEqualToAnchorMultiplier(@NotNull NSLayoutDimension anchor,
             @NFloat double m);
 
+    @NotNull
     @Generated
     @Selector("constraintLessThanOrEqualToAnchor:multiplier:constant:")
-    public native NSLayoutConstraint constraintLessThanOrEqualToAnchorMultiplierConstant(NSLayoutDimension anchor,
-            @NFloat double m, @NFloat double c);
+    public native NSLayoutConstraint constraintLessThanOrEqualToAnchorMultiplierConstant(
+            @NotNull NSLayoutDimension anchor, @NFloat double m, @NFloat double c);
 
+    @NotNull
     @Generated
     @Selector("constraintLessThanOrEqualToConstant:")
     public native NSLayoutConstraint constraintLessThanOrEqualToConstant(@NFloat double c);

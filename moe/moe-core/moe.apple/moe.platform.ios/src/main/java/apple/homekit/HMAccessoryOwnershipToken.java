@@ -22,7 +22,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -53,22 +58,25 @@ public class HMAccessoryOwnershipToken extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -92,16 +100,17 @@ public class HMAccessoryOwnershipToken extends NSObject {
 
     /**
      * Creates a new accessory ownership token to add an accessory to the home.
-     * <p>
+     * 
      * This initializer may return nil if the data provided is not a valid ownership token
      * (e.g. if it's too short or determined to be insufficient for some other reason).
-     *
+     * 
      * @param data Data to be sent to prove ownership of this accessory.
+     * 
      * @return Returns an ownership token object.
      */
     @Generated
     @Selector("initWithData:")
-    public native HMAccessoryOwnershipToken initWithData(NSData data);
+    public native HMAccessoryOwnershipToken initWithData(@NotNull NSData data);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -120,9 +129,10 @@ public class HMAccessoryOwnershipToken extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

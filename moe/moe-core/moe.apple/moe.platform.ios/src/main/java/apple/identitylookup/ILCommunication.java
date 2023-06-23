@@ -25,9 +25,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An incident of communication via some medium.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("IdentityLookup")
@@ -59,26 +63,30 @@ public class ILCommunication extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("dateReceived")
     public native NSDate dateReceived();
@@ -93,7 +101,7 @@ public class ILCommunication extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -106,7 +114,7 @@ public class ILCommunication extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native ILCommunication initWithCoder(NSCoder coder);
+    public native ILCommunication initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -123,15 +131,16 @@ public class ILCommunication extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("isEqualToCommunication:")
-    public native boolean isEqualToCommunication(ILCommunication communication);
+    public native boolean isEqualToCommunication(@NotNull ILCommunication communication);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -149,6 +158,7 @@ public class ILCommunication extends NSObject implements NSSecureCoding {
     /**
      * The phone number or e-mail address of the sender. The value will be nil if the sender is unknown.
      */
+    @Nullable
     @Generated
     @Selector("sender")
     public native String sender();

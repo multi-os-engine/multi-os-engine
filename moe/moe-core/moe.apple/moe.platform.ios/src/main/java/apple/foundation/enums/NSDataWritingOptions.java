@@ -27,17 +27,37 @@ public final class NSDataWritingOptions {
     @Generated @NUInt public static final long DataWritingAtomic = 0x0000000000000001L;
     /**
      * Hint to prevent overwriting an existing file. Cannot be combined with NSDataWritingAtomic.
+     * 
+     * API-Since: 6.0
      */
     @Generated @NUInt public static final long DataWritingWithoutOverwriting = 0x0000000000000002L;
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NUInt public static final long DataWritingFileProtectionNone = 0x0000000010000000L;
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NUInt public static final long DataWritingFileProtectionComplete = 0x0000000020000000L;
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NUInt public static final long DataWritingFileProtectionCompleteUnlessOpen = 0x0000000030000000L;
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NUInt public static final long DataWritingFileProtectionCompleteUntilFirstUserAuthentication = 0x0000000040000000L;
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NUInt public static final long DataWritingFileProtectionMask = 0x00000000F0000000L;
     /**
      * Deprecated name for NSDataWritingAtomic
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
-    @Generated @NUInt public static final long AtomicWrite = 0x0000000000000001L;
+    @Deprecated @Generated @NUInt public static final long AtomicWrite = 0x0000000000000001L;
 
     @Generated
     private NSDataWritingOptions() {

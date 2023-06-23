@@ -19,18 +19,27 @@ package apple.mapkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 public final class MKDistanceFormatterUnitStyle {
     /**
      * Whether to abbreviate depends on units, locale, and user interface language
+     * 
+     * API-Since: 7.0
      */
     @Generated @NUInt public static final long Default = 0x0000000000000000L;
     /**
      * Ex. km
+     * 
+     * API-Since: 7.0
      */
     @Generated @NUInt public static final long Abbreviated = 0x0000000000000001L;
     /**
      * Ex. kilometers
+     * 
+     * API-Since: 7.0
      */
     @Generated @NUInt public static final long Full = 0x0000000000000002L;
 

@@ -37,9 +37,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This class can be used to control the settings on a camera.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("HomeKit")
@@ -71,22 +75,25 @@ public class HMCameraSettingsControl extends HMCameraControl {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,9 +128,10 @@ public class HMCameraSettingsControl extends HMCameraControl {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,6 +162,7 @@ public class HMCameraSettingsControl extends HMCameraControl {
     /**
      * Characteristic corresponding to current horizontal tilt setting on the camera.
      */
+    @Nullable
     @Generated
     @Selector("currentHorizontalTilt")
     public native HMCharacteristic currentHorizontalTilt();
@@ -161,6 +170,7 @@ public class HMCameraSettingsControl extends HMCameraControl {
     /**
      * Characteristic corresponding to current vertical tilt setting on the camera.
      */
+    @Nullable
     @Generated
     @Selector("currentVerticalTilt")
     public native HMCharacteristic currentVerticalTilt();
@@ -168,6 +178,7 @@ public class HMCameraSettingsControl extends HMCameraControl {
     /**
      * Characteristic corresponding to digital zoom setting on the camera.
      */
+    @Nullable
     @Generated
     @Selector("digitalZoom")
     public native HMCharacteristic digitalZoom();
@@ -175,6 +186,7 @@ public class HMCameraSettingsControl extends HMCameraControl {
     /**
      * Characteristic corresponding to image mirroring setting on the camera.
      */
+    @Nullable
     @Generated
     @Selector("imageMirroring")
     public native HMCharacteristic imageMirroring();
@@ -182,6 +194,7 @@ public class HMCameraSettingsControl extends HMCameraControl {
     /**
      * Characteristic corresponding to image rotation setting on the camera.
      */
+    @Nullable
     @Generated
     @Selector("imageRotation")
     public native HMCharacteristic imageRotation();
@@ -193,6 +206,7 @@ public class HMCameraSettingsControl extends HMCameraControl {
     /**
      * Characteristic corresponding to night vision setting on the camera.
      */
+    @Nullable
     @Generated
     @Selector("nightVision")
     public native HMCharacteristic nightVision();
@@ -200,6 +214,7 @@ public class HMCameraSettingsControl extends HMCameraControl {
     /**
      * Characteristic corresponding to optical zoom setting on the camera.
      */
+    @Nullable
     @Generated
     @Selector("opticalZoom")
     public native HMCharacteristic opticalZoom();
@@ -207,6 +222,7 @@ public class HMCameraSettingsControl extends HMCameraControl {
     /**
      * Characteristic corresponding to target horizontal tilt setting on the camera.
      */
+    @Nullable
     @Generated
     @Selector("targetHorizontalTilt")
     public native HMCharacteristic targetHorizontalTilt();
@@ -214,6 +230,7 @@ public class HMCameraSettingsControl extends HMCameraControl {
     /**
      * Characteristic corresponding to target vertical tilt setting on the camera.
      */
+    @Nullable
     @Generated
     @Selector("targetVerticalTilt")
     public native HMCharacteristic targetVerticalTilt();

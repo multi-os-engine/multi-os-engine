@@ -24,16 +24,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNLocalCorrelation
- * <p>
+ * 
  * The MPSNNLocalCorrelation filter computes the correlation between two images locally with a
  * varying offset on x-y plane between the two source images (controlled by the window and
  * stride properties) and the end result is summed over the feature channels. The results are
  * stored in the different feature channels of the destination image, ordered such that the offset
  * in the x direction is the faster running index.
- * <p>
+ * 
  * Given two images A and B, the output image has (2*windowInX + 1)*(2*windowInY + 1)
  * feature channels, with each feature channel computed as:
  * O(x, y, f(m, n)) = sum_z{A(x, y, z) * B(x + M[m], y + N[n], z)}
@@ -41,6 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * f(m, n) = n * (2*windowInY + 1) + m,
  * M = {-windowInX*strideInX, (-windowInX + 1)*strideInX, ... 0 ... , (windowInX - 1)*strideInX, windowInX*strideInX},
  * N = {-windowInY*strideInY, (-windowInY + 1)*strideInY, ... 0 ... , (windowInY - 1)*strideInY, windowInX*strideInY}
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -72,22 +76,25 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -111,35 +118,35 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNLocalCorrelation initWithCoder(NSCoder aDecoder);
+    public native MPSNNLocalCorrelation initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPooling
      * @param device   The MTLDevice on which to make the MPSCNNPooling
      * @return A new MPSCNNPooling object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNNLocalCorrelation initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNLocalCorrelation initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize the MPSNNLocalCorrelation filter with default property values.
-     *
+     * 
      * @param device The device the filter will run on
      * @return A valid MPSNNReduceLocalCorrelation object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNNLocalCorrelation initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNLocalCorrelation initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Specifies information to apply the local correlation operation on an image.
-     *
+     * 
      * @param device    The device the filter will run on
      * @param windowInX Specifies a symmetric window around 0 for offsetting
      *                  the secondary source in the x dimension.
@@ -152,7 +159,7 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
     @Generated
     @Selector("initWithDevice:windowInX:windowInY:strideInX:strideInY:")
     public native MPSNNLocalCorrelation initWithDeviceWindowInXWindowInYStrideInXStrideInY(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long windowInX, @NUInt long windowInY,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long windowInX, @NUInt long windowInY,
             @NUInt long strideInX, @NUInt long strideInY);
 
     @Generated
@@ -172,9 +179,10 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -191,7 +199,7 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
 
     /**
      * Specifies the stride for the offset in the x dimension.
-     * <p>
+     * 
      * strideInX must be > 0. The default value for strideInX is 1.
      */
     @Generated
@@ -200,7 +208,7 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
 
     /**
      * Specifies the stride for the offset in the y dimension.
-     * <p>
+     * 
      * strideInY must be > 0. The default value for strideInY is 1.
      */
     @Generated
@@ -213,7 +221,7 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
 
     /**
      * Specifies a symmetric window around 0 for offsetting the secondary source in the x dimension.
-     * <p>
+     * 
      * The default value for windowInX is 0.
      */
     @Generated
@@ -222,7 +230,7 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
 
     /**
      * Specifies a symmetric window around 0 for offsetting the secondary source in the y dimension.
-     * <p>
+     * 
      * The default value for windowInY is 0.
      */
     @Generated
@@ -231,7 +239,7 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
 
     /**
      * Specifies the stride for the offset in the x dimension.
-     * <p>
+     * 
      * strideInX must be > 0. The default value for strideInX is 1.
      */
     @Generated
@@ -241,7 +249,7 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
 
     /**
      * Specifies the stride for the offset in the y dimension.
-     * <p>
+     * 
      * strideInY must be > 0. The default value for strideInY is 1.
      */
     @Generated
@@ -270,7 +278,7 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
 
     /**
      * Specifies a symmetric window around 0 for offsetting the secondary source in the x dimension.
-     * <p>
+     * 
      * The default value for windowInX is 0.
      */
     @Generated
@@ -280,7 +288,7 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
 
     /**
      * Specifies a symmetric window around 0 for offsetting the secondary source in the y dimension.
-     * <p>
+     * 
      * The default value for windowInY is 0.
      */
     @Generated

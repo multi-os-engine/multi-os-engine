@@ -27,9 +27,19 @@ public final class UIStatusBarStyle {
     @Generated @NInt public static final long Default = 0x0000000000000000L;
     /**
      * Light content, for use on dark backgrounds
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long LightContent = 0x0000000000000001L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
+     */
     @Deprecated @Generated @NInt public static final long BlackTranslucent = 0x0000000000000001L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
+     */
     @Deprecated @Generated @NInt public static final long BlackOpaque = 0x0000000000000002L;
 
     @Generated
@@ -38,6 +48,8 @@ public final class UIStatusBarStyle {
 
     /**
      * Dark content, for use on light backgrounds
+     * 
+     * API-Since: 13.0
      */
     @Generated @NInt public static final long DarkContent = 0x0000000000000003L;
 }

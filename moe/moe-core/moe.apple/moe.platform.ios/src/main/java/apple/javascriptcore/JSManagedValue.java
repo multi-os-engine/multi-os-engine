@@ -37,10 +37,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface]
- * <p>
+ * 
  * JSManagedValue represents a "conditionally retained" JSValue.
  * "Conditionally retained" means that as long as the JSManagedValue's
  * JSValue is reachable through the JavaScript object graph,
@@ -48,10 +50,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * addManagedReference:withOwner:, the corresponding JSValue will
  * be retained. However, if neither graph reaches the JSManagedValue, the
  * corresponding JSValue will be released and set to nil.
- * <p>
+ * 
  * The primary use for a JSManagedValue is to store a JSValue in an Objective-C
  * or Swift object that is exported to JavaScript. It is incorrect to store a JSValue
  * in an object that is exported to JavaScript, since doing so creates a retain cycle.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("JavaScriptCore")
@@ -83,22 +87,25 @@ public class JSManagedValue extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,19 +140,23 @@ public class JSManagedValue extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Create a JSManagedValue from a JSValue.
-     *
+     * 
      * @return The new JSManagedValue.
      */
     @Generated
     @Selector("managedValueWithValue:")
     public static native JSManagedValue managedValueWithValue(JSValue value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("managedValueWithValue:andOwner:")
     public static native JSManagedValue managedValueWithValueAndOwner(JSValue value,
@@ -183,7 +194,7 @@ public class JSManagedValue extends NSObject {
 
     /**
      * Create a JSManagedValue.
-     *
+     * 
      * @return The new JSManagedValue.
      */
     @Generated
@@ -192,9 +203,9 @@ public class JSManagedValue extends NSObject {
 
     /**
      * [@property]
-     * <p>
+     * 
      * Get the JSValue from the JSManagedValue.
-     *
+     * 
      * @return The corresponding JSValue for this JSManagedValue or
      *         nil if the JSValue has been collected.
      */

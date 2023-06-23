@@ -27,10 +27,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] AVAssetResourceLoaderDelegate
- * <p>
+ * 
  * The AVAssetResourceLoaderDelegate protocol defines methods that allow your code to handle resource loading requests
  * coming from an AVURLAsset.
  */
@@ -41,44 +42,50 @@ import org.moe.natj.objc.ann.Selector;
 public interface AVAssetResourceLoaderDelegate {
     /**
      * resourceLoader:didCancelAuthenticationChallenge:
-     * <p>
+     * 
      * Informs the delegate that a prior authentication challenge has been cancelled.
-     *
-     * @param authenticationChallenge The authentication challenge that has been cancelled.
+     * 
+     * @param authenticationChallenge
+     *                                The authentication challenge that has been cancelled.
+     * 
+     *                                API-Since: 8.0
      */
     @Generated
     @IsOptional
     @Selector("resourceLoader:didCancelAuthenticationChallenge:")
-    default void resourceLoaderDidCancelAuthenticationChallenge(AVAssetResourceLoader resourceLoader,
-            NSURLAuthenticationChallenge authenticationChallenge) {
+    default void resourceLoaderDidCancelAuthenticationChallenge(@NotNull AVAssetResourceLoader resourceLoader,
+            @NotNull NSURLAuthenticationChallenge authenticationChallenge) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * resourceLoader:didCancelLoadingRequest:
-     * <p>
+     * 
      * Informs the delegate that a prior loading request has been cancelled.
-     * <p>
+     * 
      * Previously issued loading requests can be cancelled when data from the resource is no longer required or when a
      * loading request is superseded by new requests for data from the same resource. For example, if to complete a seek
      * operation it becomes necessary to load a range of bytes that's different from a range previously requested, the
      * prior request may be cancelled while the delegate is still handling it.
-     *
-     * @param loadingRequest The loading request that has been cancelled.
+     * 
+     * API-Since: 7.0
+     * 
+     * @param loadingRequest
+     *                       The loading request that has been cancelled.
      */
     @Generated
     @IsOptional
     @Selector("resourceLoader:didCancelLoadingRequest:")
-    default void resourceLoaderDidCancelLoadingRequest(AVAssetResourceLoader resourceLoader,
-            AVAssetResourceLoadingRequest loadingRequest) {
+    default void resourceLoaderDidCancelLoadingRequest(@NotNull AVAssetResourceLoader resourceLoader,
+            @NotNull AVAssetResourceLoadingRequest loadingRequest) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * resourceLoader:shouldWaitForLoadingOfRequestedResource:
-     * <p>
+     * 
      * Invoked when assistance is required of the application to load a resource.
-     * <p>
+     * 
      * Delegates receive this message when assistance is required of the application to load a resource. For example,
      * this method is invoked to load decryption keys that have been specified using custom URL schemes.
      * If the result is YES, the resource loader expects invocation, either subsequently or immediately, of either
@@ -90,32 +97,37 @@ public interface AVAssetResourceLoaderDelegate {
      * YES without finishing the loading request immediately, it may be invoked again with another loading request
      * before the prior request is finished; therefore in such cases the delegate should be prepared to manage multiple
      * loading requests.
-     * <p>
+     * 
      * If an AVURLAsset is added to an AVContentKeySession object and a delegate is set on its AVAssetResourceLoader,
      * that delegate's resourceLoader:shouldWaitForLoadingOfRequestedResource: method must specify which custom URL
      * requests should be handled as content keys. This is done by returning YES and passing either
      * AVStreamingKeyDeliveryPersistentContentKeyType or AVStreamingKeyDeliveryContentKeyType into
      * -[AVAssetResourceLoadingContentInformationRequest setContentType:] and then calling
      * -[AVAssetResourceLoadingRequest finishLoading].
-     *
-     * @param resourceLoader The instance of AVAssetResourceLoader for which the loading request is being made.
-     * @param loadingRequest An instance of AVAssetResourceLoadingRequest that provides information about the requested
+     * 
+     * 
+     * API-Since: 6.0
+     * 
+     * @param resourceLoader
+     *                       The instance of AVAssetResourceLoader for which the loading request is being made.
+     * @param loadingRequest
+     *                       An instance of AVAssetResourceLoadingRequest that provides information about the requested
      *                       resource.
      * @return YES if the delegate can load the resource indicated by the AVAssetResourceLoadingRequest; otherwise NO.
      */
     @Generated
     @IsOptional
     @Selector("resourceLoader:shouldWaitForLoadingOfRequestedResource:")
-    default boolean resourceLoaderShouldWaitForLoadingOfRequestedResource(AVAssetResourceLoader resourceLoader,
-            AVAssetResourceLoadingRequest loadingRequest) {
+    default boolean resourceLoaderShouldWaitForLoadingOfRequestedResource(@NotNull AVAssetResourceLoader resourceLoader,
+            @NotNull AVAssetResourceLoadingRequest loadingRequest) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * resourceLoader:shouldWaitForRenewalOfRequestedResource:
-     * <p>
+     * 
      * Invoked when assistance is required of the application to renew a resource.
-     * <p>
+     * 
      * Delegates receive this message when assistance is required of the application to renew a resource previously
      * loaded by resourceLoader:shouldWaitForLoadingOfRequestedResource:. For example, this method is invoked to renew
      * decryption keys that require renewal, as indicated in a response to a prior invocation of
@@ -129,32 +141,36 @@ public interface AVAssetResourceLoaderDelegate {
      * YES without finishing the loading request immediately, it may be invoked again with another loading request
      * before the prior request is finished; therefore in such cases the delegate should be prepared to manage multiple
      * loading requests.
-     * <p>
+     * 
      * If an AVURLAsset is added to an AVContentKeySession object and a delegate is set on its AVAssetResourceLoader,
      * that delegate's resourceLoader:shouldWaitForRenewalOfRequestedResource:renewalRequest method must specify which
      * custom URL requests should be handled as content keys. This is done by returning YES and passing either
      * AVStreamingKeyDeliveryPersistentContentKeyType or AVStreamingKeyDeliveryContentKeyType into
      * -[AVAssetResourceLoadingContentInformationRequest setContentType:] and then calling
      * -[AVAssetResourceLoadingRequest finishLoading].
-     *
-     * @param resourceLoader The instance of AVAssetResourceLoader for which the loading request is being made.
-     * @param renewalRequest An instance of AVAssetResourceRenewalRequest that provides information about the requested
+     * 
+     * API-Since: 8.0
+     * 
+     * @param resourceLoader
+     *                       The instance of AVAssetResourceLoader for which the loading request is being made.
+     * @param renewalRequest
+     *                       An instance of AVAssetResourceRenewalRequest that provides information about the requested
      *                       resource.
      * @return YES if the delegate can renew the resource indicated by the AVAssetResourceLoadingRequest; otherwise NO.
      */
     @Generated
     @IsOptional
     @Selector("resourceLoader:shouldWaitForRenewalOfRequestedResource:")
-    default boolean resourceLoaderShouldWaitForRenewalOfRequestedResource(AVAssetResourceLoader resourceLoader,
-            AVAssetResourceRenewalRequest renewalRequest) {
+    default boolean resourceLoaderShouldWaitForRenewalOfRequestedResource(@NotNull AVAssetResourceLoader resourceLoader,
+            @NotNull AVAssetResourceRenewalRequest renewalRequest) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * resourceLoader:shouldWaitForResponseToAuthenticationChallenge:
-     * <p>
+     * 
      * Invoked when assistance is required of the application to respond to an authentication challenge.
-     * <p>
+     * 
      * Delegates receive this message when assistance is required of the application to respond to an authentication
      * challenge.
      * If the result is YES, the resource loader expects you to send an appropriate response, either subsequently or
@@ -163,16 +179,21 @@ public interface AVAssetResourceLoaderDelegate {
      * you intend to respond to the authentication challenge after your handling of
      * -resourceLoader:shouldWaitForResponseToAuthenticationChallenge: returns, you must retain the instance of
      * NSURLAuthenticationChallenge until after your response has been made.
-     *
-     * @param resourceLoader          The instance of AVAssetResourceLoader asking for help with an authentication
+     * 
+     * API-Since: 8.0
+     * 
+     * @param resourceLoader
+     *                                The instance of AVAssetResourceLoader asking for help with an authentication
      *                                challenge.
-     * @param authenticationChallenge An instance of NSURLAuthenticationChallenge.
+     * @param authenticationChallenge
+     *                                An instance of NSURLAuthenticationChallenge.
      */
     @Generated
     @IsOptional
     @Selector("resourceLoader:shouldWaitForResponseToAuthenticationChallenge:")
-    default boolean resourceLoaderShouldWaitForResponseToAuthenticationChallenge(AVAssetResourceLoader resourceLoader,
-            NSURLAuthenticationChallenge authenticationChallenge) {
+    default boolean resourceLoaderShouldWaitForResponseToAuthenticationChallenge(
+            @NotNull AVAssetResourceLoader resourceLoader,
+            @NotNull NSURLAuthenticationChallenge authenticationChallenge) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

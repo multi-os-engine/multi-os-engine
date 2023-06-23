@@ -25,15 +25,19 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MXHangDiagnostic
- * <p>
+ * 
  * An MXDiagnostic subclass that encapsulates hang diagnostic reports.
- * <p>
+ * 
  * Applications are considered to be "hanging" when they are unable to handle user input responsively.
- * <p>
+ * 
  * This generally occurs when your applications main thread is blocked.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MetricKit")
@@ -65,31 +69,35 @@ public class MXHangDiagnostic extends MXDiagnostic {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] callStackTree
-     * <p>
+     * 
      * The application call stack tree associated with the hang.
      */
+    @NotNull
     @Generated
     @Selector("callStackTree")
     public native MXCallStackTree callStackTree();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -104,11 +112,12 @@ public class MXHangDiagnostic extends MXDiagnostic {
 
     /**
      * [@property] hangDuration
-     * <p>
+     * 
      * Total hang duration for this diagnostic.
-     * <p>
+     * 
      * Dimensioned as NSUnitDuration.
      */
+    @NotNull
     @Generated
     @Selector("hangDuration")
     public native NSMeasurement<NSUnitDuration> hangDuration();
@@ -124,7 +133,7 @@ public class MXHangDiagnostic extends MXDiagnostic {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MXHangDiagnostic initWithCoder(NSCoder coder);
+    public native MXHangDiagnostic initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -143,9 +152,10 @@ public class MXHangDiagnostic extends MXDiagnostic {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * CLLocationButtonIcon
- * <p>
+ * 
  * Discussion:
  * Specifies the type of arrow icon on the button. Button must not be CLLocationButtonIconNone if CLLocationButtonLabel
  * is CLLocationButtonLabelNone.

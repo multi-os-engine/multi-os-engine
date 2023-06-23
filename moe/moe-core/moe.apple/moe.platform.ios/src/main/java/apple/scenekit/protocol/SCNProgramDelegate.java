@@ -25,10 +25,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] SCNProgramDelegate
- * <p>
+ * 
  * The SCNProgramDelegate protocol declares the methods that an instance of SCNProgram invokes to delegate the binding
  * of parameters.
  */
@@ -39,18 +40,18 @@ import org.moe.natj.objc.ann.Selector;
 public interface SCNProgramDelegate {
     /**
      * handleError
-     * <p>
+     * 
      * Invoked on the delegate whenever a compilation error occurs.
-     * <p>
+     * 
      * Error domain is SCNErrorDomain.
-     *
+     * 
      * @param program The program that generated a compilation error.
      * @param error   The compilation error.
      */
     @Generated
     @IsOptional
     @Selector("program:handleError:")
-    default void programHandleError(SCNProgram program, NSError error) {
+    default void programHandleError(@NotNull SCNProgram program, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -14,6 +14,8 @@ import org.moe.natj.general.ann.NInt;
  * [@constant] CLSProgressReportingCapabilityKindQuantity Reports a discrete value. See CLSQuantityItem for more
  * information.
  * [@constant] CLSProgressReportingCapabilityKindScore Reports a score. See CLSScoreItem for more information.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 public final class CLSProgressReportingCapabilityKind {
@@ -21,9 +23,24 @@ public final class CLSProgressReportingCapabilityKind {
     private CLSProgressReportingCapabilityKind() {
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long Duration = 0x0000000000000000L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long Percent = 0x0000000000000001L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long Binary = 0x0000000000000002L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long Quantity = 0x0000000000000003L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long Score = 0x0000000000000004L;
 }

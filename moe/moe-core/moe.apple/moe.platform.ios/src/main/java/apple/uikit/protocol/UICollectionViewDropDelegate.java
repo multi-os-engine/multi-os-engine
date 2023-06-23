@@ -13,7 +13,12 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -26,24 +31,25 @@ public interface UICollectionViewDropDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:canHandleDropSession:")
-    default boolean collectionViewCanHandleDropSession(UICollectionView collectionView,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default boolean collectionViewCanHandleDropSession(@NotNull UICollectionView collectionView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Allows customization of the preview used for the item being dropped.
      * If not implemented or if nil is returned, the entire cell will be used for the preview.
-     * <p>
+     * 
      * This will be called as needed when animating drops via -[UICollectionViewDropCoordinator
      * dropItem:toItemAtIndexPath:]
      * (to customize placeholder drops, please see UICollectionViewDropPlaceholder.previewParametersProvider)
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("collectionView:dropPreviewParametersForItemAtIndexPath:")
     default UIDragPreviewParameters collectionViewDropPreviewParametersForItemAtIndexPath(
-            UICollectionView collectionView, NSIndexPath indexPath) {
+            @NotNull UICollectionView collectionView, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -53,8 +59,8 @@ public interface UICollectionViewDropDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:dropSessionDidEnd:")
-    default void collectionViewDropSessionDidEnd(UICollectionView collectionView,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default void collectionViewDropSessionDidEnd(@NotNull UICollectionView collectionView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -64,8 +70,8 @@ public interface UICollectionViewDropDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:dropSessionDidEnter:")
-    default void collectionViewDropSessionDidEnter(UICollectionView collectionView,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default void collectionViewDropSessionDidEnter(@NotNull UICollectionView collectionView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -75,8 +81,8 @@ public interface UICollectionViewDropDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:dropSessionDidExit:")
-    default void collectionViewDropSessionDidExit(UICollectionView collectionView,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default void collectionViewDropSessionDidExit(@NotNull UICollectionView collectionView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -90,12 +96,13 @@ public interface UICollectionViewDropDelegate {
      * Note that in some cases your proposal may not be allowed and the system will enforce a different proposal.
      * You may perform your own hit testing via -[UIDropSession locationInView]
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("collectionView:dropSessionDidUpdate:withDestinationIndexPath:")
     default UICollectionViewDropProposal collectionViewDropSessionDidUpdateWithDestinationIndexPath(
-            UICollectionView collectionView, @Mapped(ObjCObjectMapper.class) UIDropSession session,
-            NSIndexPath destinationIndexPath) {
+            @NotNull UICollectionView collectionView, @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session,
+            @Nullable NSIndexPath destinationIndexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -108,6 +115,6 @@ public interface UICollectionViewDropDelegate {
      */
     @Generated
     @Selector("collectionView:performDropWithCoordinator:")
-    void collectionViewPerformDropWithCoordinator(UICollectionView collectionView,
-            @Mapped(ObjCObjectMapper.class) UICollectionViewDropCoordinator coordinator);
+    void collectionViewPerformDropWithCoordinator(@NotNull UICollectionView collectionView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UICollectionViewDropCoordinator coordinator);
 }

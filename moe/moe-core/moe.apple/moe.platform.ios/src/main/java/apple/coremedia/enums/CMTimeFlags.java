@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] CMTimeFlags
- * <p>
+ * 
  * Flag bits for a CMTime.
  * [@constant] kCMTimeFlags_Valid Must be set, or the CMTime is considered invalid.
  * Allows simple clearing (eg. with calloc or memset) for initialization
@@ -35,14 +35,34 @@ import org.moe.natj.general.ann.Generated;
  * [@constant] kCMTimeFlags_Indefinite Set if the CMTime is indefinite/unknown. Example of usage: duration of a live
  * broadcast.
  * "Implied value" flag (other struct fields are ignored).
+ * 
+ * API-Since: 4.0
  */
 @Generated
 public final class CMTimeFlags {
+    /**
+     * API-Since: 4.0
+     */
     @Generated public static final int Valid = 0x00000001;
+    /**
+     * API-Since: 4.0
+     */
     @Generated public static final int HasBeenRounded = 0x00000002;
+    /**
+     * API-Since: 4.0
+     */
     @Generated public static final int PositiveInfinity = 0x00000004;
+    /**
+     * API-Since: 4.0
+     */
     @Generated public static final int NegativeInfinity = 0x00000008;
+    /**
+     * API-Since: 4.0
+     */
     @Generated public static final int Indefinite = 0x00000010;
+    /**
+     * API-Since: 4.0
+     */
     @Generated public static final int ImpliedValueFlagsMask = 0x0000001C;
 
     @Generated

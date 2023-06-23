@@ -41,11 +41,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CBPeripheral
- * <p>
+ * 
  * Represents a peripheral.
+ * 
+ * API-Since: 5.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -77,22 +81,25 @@ public class CBPeripheral extends CBPeer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +134,10 @@ public class CBPeripheral extends CBPeer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,11 +167,15 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * [@property] RSSI
-     * <p>
+     * 
      * The most recently read RSSI, in decibels.
-     *
+     * 
      * @deprecated Use {@link peripheral:didReadRSSI:error:} instead.
+     * 
+     *             API-Since: 5.0
+     *             Deprecated-Since: 8.0
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("RSSI")
@@ -171,9 +183,10 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The delegate object that will receive peripheral events.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -181,62 +194,66 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * discoverCharacteristics:forService:
-     * <p>
+     * 
      * Discovers the specified characteristic(s) of <i>service</i>.
-     *
+     * 
      * @param characteristicUUIDs A list of <code>CBUUID</code> objects representing the characteristic types to be
      *                            discovered. If <i>nil</i>,
      *                            all characteristics of <i>service</i> will be discovered.
      * @param service             A GATT service.
+     * 
      * @see peripheral:didDiscoverCharacteristicsForService:error:
      */
     @Generated
     @Selector("discoverCharacteristics:forService:")
-    public native void discoverCharacteristicsForService(NSArray<? extends CBUUID> characteristicUUIDs,
-            CBService service);
+    public native void discoverCharacteristicsForService(@Nullable NSArray<? extends CBUUID> characteristicUUIDs,
+            @NotNull CBService service);
 
     /**
      * discoverDescriptorsForCharacteristic:
-     * <p>
+     * 
      * Discovers the characteristic descriptor(s) of <i>characteristic</i>.
-     *
+     * 
      * @param characteristic A GATT characteristic.
+     * 
      * @see peripheral:didDiscoverDescriptorsForCharacteristic:error:
      */
     @Generated
     @Selector("discoverDescriptorsForCharacteristic:")
-    public native void discoverDescriptorsForCharacteristic(CBCharacteristic characteristic);
+    public native void discoverDescriptorsForCharacteristic(@NotNull CBCharacteristic characteristic);
 
     /**
      * discoverIncludedServices:forService:
-     * <p>
+     * 
      * Discovers the specified included service(s) of <i>service</i>.
-     *
+     * 
      * @param includedServiceUUIDs A list of <code>CBUUID</code> objects representing the included service types to be
      *                             discovered. If <i>nil</i>,
      *                             all of <i>service</i>s included services will be discovered, which is considerably
      *                             slower and not recommended.
      * @param service              A GATT service.
+     * 
      * @see peripheral:didDiscoverIncludedServicesForService:error:
      */
     @Generated
     @Selector("discoverIncludedServices:forService:")
-    public native void discoverIncludedServicesForService(NSArray<? extends CBUUID> includedServiceUUIDs,
-            CBService service);
+    public native void discoverIncludedServicesForService(@Nullable NSArray<? extends CBUUID> includedServiceUUIDs,
+            @NotNull CBService service);
 
     /**
      * discoverServices:
-     * <p>
+     * 
      * Discovers available service(s) on the peripheral.
-     *
+     * 
      * @param serviceUUIDs A list of <code>CBUUID</code> objects representing the service types to be discovered. If
      *                     <i>nil</i>,
      *                     all services will be discovered.
+     * 
      * @see peripheral:didDiscoverServices:
      */
     @Generated
     @Selector("discoverServices:")
-    public native void discoverServices(NSArray<? extends CBUUID> serviceUUIDs);
+    public native void discoverServices(@Nullable NSArray<? extends CBUUID> serviceUUIDs);
 
     @Generated
     @Selector("init")
@@ -244,10 +261,12 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * maximumWriteValueLengthForType:
-     * <p>
+     * 
      * The maximum amount of data, in bytes, that can be sent to a characteristic in a single write type.
-     *
+     * 
      * @see writeValue:forCharacteristic:type:
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("maximumWriteValueLengthForType:")
@@ -256,18 +275,19 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * [@property] name
-     * <p>
+     * 
      * The name of the peripheral.
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
 
     /**
      * readRSSI
-     * <p>
+     * 
      * While connected, retrieves the current RSSI of the link.
-     *
+     * 
      * @see peripheral:didReadRSSI:error:
      */
     @Generated
@@ -276,53 +296,56 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * readValueForCharacteristic:
-     * <p>
+     * 
      * Reads the characteristic value for <i>characteristic</i>.
-     *
+     * 
      * @param characteristic A GATT characteristic.
+     * 
      * @see peripheral:didUpdateValueForCharacteristic:error:
      */
     @Generated
     @Selector("readValueForCharacteristic:")
-    public native void readValueForCharacteristic(CBCharacteristic characteristic);
+    public native void readValueForCharacteristic(@NotNull CBCharacteristic characteristic);
 
     /**
      * readValueForDescriptor:
-     * <p>
+     * 
      * Reads the value of <i>descriptor</i>.
-     *
+     * 
      * @param descriptor A GATT characteristic descriptor.
+     * 
      * @see peripheral:didUpdateValueForDescriptor:error:
      */
     @Generated
     @Selector("readValueForDescriptor:")
-    public native void readValueForDescriptor(CBDescriptor descriptor);
+    public native void readValueForDescriptor(@NotNull CBDescriptor descriptor);
 
     /**
      * [@property] services
-     * <p>
+     * 
      * A list of <code>CBService</code> objects that have been discovered on the peripheral.
      */
+    @Nullable
     @Generated
     @Selector("services")
     public native NSArray<? extends CBService> services();
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The delegate object that will receive peripheral events.
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CBPeripheralDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) CBPeripheralDelegate value);
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The delegate object that will receive peripheral events.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) CBPeripheralDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CBPeripheralDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -335,7 +358,7 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * setNotifyValue:forCharacteristic:
-     * <p>
+     * 
      * Enables or disables notifications/indications for the characteristic value of <i>characteristic</i>. If
      * <i>characteristic</i>
      * allows both, notifications will be used.
@@ -344,19 +367,20 @@ public class CBPeripheral extends CBPeer {
      * [@link] peripheral:didUpdateValueForCharacteristic:error: @/link. Since it is the peripheral that chooses when to
      * send an update,
      * the application should be prepared to handle them as long as notifications/indications remain enabled.
-     *
+     * 
      * @param enabled        Whether or not notifications/indications should be enabled.
      * @param characteristic The characteristic containing the client characteristic configuration descriptor.
+     * 
      * @see peripheral:didUpdateNotificationStateForCharacteristic:error:
      * @see CBConnectPeripheralOptionNotifyOnNotificationKey
      */
     @Generated
     @Selector("setNotifyValue:forCharacteristic:")
-    public native void setNotifyValueForCharacteristic(boolean enabled, CBCharacteristic characteristic);
+    public native void setNotifyValueForCharacteristic(boolean enabled, @NotNull CBCharacteristic characteristic);
 
     /**
      * [@property] state
-     * <p>
+     * 
      * The current connection state of the peripheral.
      */
     @Generated
@@ -366,7 +390,7 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * writeValue:forCharacteristic:type:
-     * <p>
+     * 
      * Writes <i>value</i> to <i>characteristic</i>'s characteristic value.
      * If the <code>CBCharacteristicWriteWithResponse</code> type is specified,
      * {@link peripheral:didWriteValueForCharacteristic:error:}
@@ -374,10 +398,11 @@ public class CBPeripheral extends CBPeer {
      * If the <code>CBCharacteristicWriteWithoutResponse</code> type is specified, and canSendWriteWithoutResponse is
      * false, the delivery
      * of the data is best-effort and may not be guaranteed.
-     *
+     * 
      * @param data           The value to write.
      * @param characteristic The characteristic whose characteristic value will be written.
      * @param type           The type of write to be executed.
+     * 
      * @see peripheral:didWriteValueForCharacteristic:error:
      * @see peripheralIsReadyToSendWriteWithoutResponse:
      * @see canSendWriteWithoutResponse
@@ -385,29 +410,33 @@ public class CBPeripheral extends CBPeer {
      */
     @Generated
     @Selector("writeValue:forCharacteristic:type:")
-    public native void writeValueForCharacteristicType(NSData data, CBCharacteristic characteristic, @NInt long type);
+    public native void writeValueForCharacteristicType(@NotNull NSData data, @NotNull CBCharacteristic characteristic,
+            @NInt long type);
 
     /**
      * writeValue:forDescriptor:
-     * <p>
+     * 
      * Writes <i>data</i> to <i>descriptor</i>'s value. Client characteristic configuration descriptors cannot be
      * written using
      * this method, and should instead use @link setNotifyValue:forCharacteristic: @/link.
-     *
+     * 
      * @param data       The value to write.
      * @param descriptor A GATT characteristic descriptor.
+     * 
      * @see peripheral:didWriteValueForCharacteristic:error:
      */
     @Generated
     @Selector("writeValue:forDescriptor:")
-    public native void writeValueForDescriptor(NSData data, CBDescriptor descriptor);
+    public native void writeValueForDescriptor(@NotNull NSData data, @NotNull CBDescriptor descriptor);
 
     /**
      * [@property] canSendWriteWithoutResponse
-     * <p>
+     * 
      * YES if the remote device has space to send a write without response. If this value is NO,
      * the value will be set to YES after the current writes have been flushed, and
      * <link>peripheralIsReadyToSendWriteWithoutResponse:</link> will be called.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("canSendWriteWithoutResponse")
@@ -415,11 +444,14 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * openL2CAPChannel:
-     * <p>
+     * 
      * Attempt to open an L2CAP channel to the peripheral using the supplied PSM.
-     *
+     * 
      * @param PSM The PSM of the channel to open
+     * 
      * @see peripheral:didWriteValueForCharacteristic:error:
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @Selector("openL2CAPChannel:")
@@ -427,11 +459,13 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * [@property] ancsAuthorized
-     * <p>
+     * 
      * YES if the remote device has been authorized to receive data over ANCS (Apple Notification Service Center)
      * protocol. If this value is NO,
      * the value will be set to YES after a user authorization occurs and
      * <link>didUpdateANCSAuthorizationForPeripheral:</link> will be called.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("ancsAuthorized")

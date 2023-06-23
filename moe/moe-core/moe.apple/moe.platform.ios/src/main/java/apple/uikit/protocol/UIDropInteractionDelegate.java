@@ -13,7 +13,12 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -25,12 +30,12 @@ public interface UIDropInteractionDelegate {
      * other delegate methods will be called, starting with `-dropInteraction:sessionDidEnter:`.
      * If it returns false, this interaction will ignore this session. (We may ask again
      * if something significant about the session changes, like the items in it.)
-     * <p>
+     * 
      * Note that returning true does not mean that the delegate definitely *will* accept this drop,
      * just that it *might* want to accept the drop.
      * To accept it, you must also implement `-dropInteraction:sessionDidUpdate:` and return a
      * UIDropProposal with an appropriate operation.
-     * <p>
+     * 
      * This method is commonly used to check whether the session contains any
      * items that this delegate can consume. Use `UIDropSession`'s convenience methods
      * `-hasItemsConformingToTypeIdentifiers:`, `-canLoadObjectsOfClass:`, etc.
@@ -38,8 +43,8 @@ public interface UIDropInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("dropInteraction:canHandleSession:")
-    default boolean dropInteractionCanHandleSession(UIDropInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default boolean dropInteractionCanHandleSession(@NotNull UIDropInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -47,14 +52,14 @@ public interface UIDropInteractionDelegate {
      * Called when the user has dropped onto this interaction's view,
      * after `-dropInteraction:performDrop:` has been called,
      * and all resulting drop animations have completed.
-     * <p>
+     * 
      * The delegate should cause the interaction's view to draw in its final post-drop state.
      */
     @Generated
     @IsOptional
     @Selector("dropInteraction:concludeDrop:")
-    default void dropInteractionConcludeDrop(UIDropInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default void dropInteractionConcludeDrop(@NotNull UIDropInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -66,8 +71,8 @@ public interface UIDropInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("dropInteraction:item:willAnimateDropWithAnimator:")
-    default void dropInteractionItemWillAnimateDropWithAnimator(UIDropInteraction interaction, UIDragItem item,
-            @Mapped(ObjCObjectMapper.class) UIDragAnimating animator) {
+    default void dropInteractionItemWillAnimateDropWithAnimator(@NotNull UIDropInteraction interaction,
+            @NotNull UIDragItem item, @NotNull @Mapped(ObjCObjectMapper.class) UIDragAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -80,8 +85,8 @@ public interface UIDropInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("dropInteraction:performDrop:")
-    default void dropInteractionPerformDrop(UIDropInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default void dropInteractionPerformDrop(@NotNull UIDropInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -95,11 +100,13 @@ public interface UIDropInteractionDelegate {
      * - [defaultPreview retargetedPreviewWithTarget:] to move the preview to a different target
      * - a UITargetedDragPreview that you create however you like
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("dropInteraction:previewForDroppingItem:withDefault:")
-    default UITargetedDragPreview dropInteractionPreviewForDroppingItemWithDefault(UIDropInteraction interaction,
-            UIDragItem item, UITargetedDragPreview defaultPreview) {
+    default UITargetedDragPreview dropInteractionPreviewForDroppingItemWithDefault(
+            @NotNull UIDropInteraction interaction, @NotNull UIDragItem item,
+            @NotNull UITargetedDragPreview defaultPreview) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -107,14 +114,14 @@ public interface UIDropInteractionDelegate {
      * When the drag session ends, for any reason, this method will be called
      * for *every* interaction that ever received `-dropInteraction:sessionDidEnter:`,
      * `-dropInteraction:sessionDidUpdate:`, or `-dropInteraction:sessionDidExit:`.
-     * <p>
+     * 
      * If you were keeping track of the session for any reason, you may now forget it.
      */
     @Generated
     @IsOptional
     @Selector("dropInteraction:sessionDidEnd:")
-    default void dropInteractionSessionDidEnd(UIDropInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default void dropInteractionSessionDidEnd(@NotNull UIDropInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -124,8 +131,8 @@ public interface UIDropInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("dropInteraction:sessionDidEnter:")
-    default void dropInteractionSessionDidEnter(UIDropInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default void dropInteractionSessionDidEnter(@NotNull UIDropInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -135,30 +142,31 @@ public interface UIDropInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("dropInteraction:sessionDidExit:")
-    default void dropInteractionSessionDidExit(UIDropInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default void dropInteractionSessionDidExit(@NotNull UIDropInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Called when the drag enters the interaction's view, or when when the drag
      * moves while inside the view, or if items are added to the drag while inside the view.
-     * <p>
+     * 
      * You *must* implement this method to accept a drop.
      * Return a `UIDropProposal` that contains the operation that the delegate
      * would like to perform. (Note that you may use `UIDropOperationMove` only if
      * session.allowsMoveOperation is true.)
-     * <p>
+     * 
      * You may also set other properties on the `UIDropProposal` to change the appearance
      * of the drag over this view.
-     * <p>
+     * 
      * Use the session's `-locationInView:` to get a point to use for hit testing.
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("dropInteraction:sessionDidUpdate:")
-    default UIDropProposal dropInteractionSessionDidUpdate(UIDropInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default UIDropProposal dropInteractionSessionDidUpdate(@NotNull UIDropInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

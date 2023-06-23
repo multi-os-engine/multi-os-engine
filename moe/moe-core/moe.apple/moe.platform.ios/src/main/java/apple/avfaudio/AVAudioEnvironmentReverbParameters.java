@@ -21,23 +21,27 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioEnvironmentReverbParameters
- * <p>
+ * 
  * Parameters used to control the reverb in AVAudioEnvironmentNode
- * <p>
+ * 
  * Reverberation can be used to simulate the acoustic characteristics of an environment.
  * AVAudioEnvironmentNode has a built in reverb that describes the space that the listener
  * is in.
- * <p>
+ * 
  * The reverb also has a single filter that sits at the end of the chain. This filter is useful
  * to shape the overall sound of the reverb. For instance, one of the reverb presets can be
  * selected to simulate the general space and then the filter can be used to brighten or darken
  * the overall sound.
- * <p>
+ * 
  * A standalone instance of AVAudioEnvironmentReverbParameters cannot be created.
  * Only an instance vended out by a source object (e.g. AVAudioEnvironmentNode) can be used.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -69,22 +73,25 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,9 +106,9 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
 
     /**
      * [@property] enable
-     * <p>
+     * 
      * Turns on/off the reverb
-     * <p>
+     * 
      * Default: NO
      */
     @Generated
@@ -110,9 +117,10 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
 
     /**
      * [@property] filterParameters
-     * <p>
+     * 
      * filter that applies to the output of the reverb
      */
+    @NotNull
     @Generated
     @Selector("filterParameters")
     public native AVAudioUnitEQFilterParameters filterParameters();
@@ -143,15 +151,16 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] level
-     * <p>
+     * 
      * Controls the master level of the reverb
-     * <p>
+     * 
      * Range: -40 to 40 dB
      * Default: 0.0
      */
@@ -161,13 +170,14 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
 
     /**
      * loadFactoryReverbPreset:
-     * <p>
+     * 
      * Load one of the reverb's factory presets
-     * <p>
+     * 
      * Loading a factory reverb preset changes the sound of the reverb. This works independently
      * of the filter which follows the reverb in the signal chain.
-     *
-     * @param preset Reverb preset to be set.
+     * 
+     * @param preset
+     *               Reverb preset to be set.
      */
     @Generated
     @Selector("loadFactoryReverbPreset:")
@@ -188,9 +198,9 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
 
     /**
      * [@property] enable
-     * <p>
+     * 
      * Turns on/off the reverb
-     * <p>
+     * 
      * Default: NO
      */
     @Generated
@@ -199,9 +209,9 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
 
     /**
      * [@property] level
-     * <p>
+     * 
      * Controls the master level of the reverb
-     * <p>
+     * 
      * Range: -40 to 40 dB
      * Default: 0.0
      */

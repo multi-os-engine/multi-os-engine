@@ -21,12 +21,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCMultiheadAttentionLayer
- * <p>
+ * 
  * A multi-head attention layer
- * <p>
+ * 
  * A multi-head "Scaled Dot-Product Attention" layer which attends to one or more entries in the input key-value pairs
  * N=Batch, S=source length, L=target length, E = model(embedding) dimension, K = Key dimension, V = value
  * dimension H = headCount. The sources to this layer are of shapes: Query:(N,L,E), Key:(N,S,K), Value:(N,S,V),
@@ -34,6 +36,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * or none of them can be passed. KeyMask is of Boolean type and AttentionMask can be of Float or Boolean type.
  * Output is of shape:(N,L,E).
  * For details refer to: https://pytorch.org/docs/stable/nn.html#multiheadattention
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -65,49 +69,55 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
 
     /**
      * [@property] attentionBiases
-     * <p>
+     * 
      * The biases added to key and value
      */
+    @Nullable
     @Generated
     @Selector("attentionBiases")
     public native NSArray<? extends MLCTensor> attentionBiases();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] biases
-     * <p>
+     * 
      * The biases of query, key, value and output projections
      */
+    @Nullable
     @Generated
     @Selector("biases")
     public native NSArray<? extends MLCTensor> biases();
 
     /**
      * [@property] biasesParameters
-     * <p>
+     * 
      * The biases tensor parameters used for optimizer update
      */
+    @Nullable
     @Generated
     @Selector("biasesParameters")
     public native NSArray<? extends MLCTensorParameter> biasesParameters();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,9 +132,10 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
 
     /**
      * [@property] descriptor
-     * <p>
+     * 
      * The multi-head attention descriptor
      */
+    @NotNull
     @Generated
     @Selector("descriptor")
     public native MLCMultiheadAttentionDescriptor descriptor();
@@ -155,13 +166,14 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Create a multi-head attention layer
-     *
+     * 
      * @param weights         weights corresponding to query, key, value and output projections for all heads
      * @param biases          Optional, biases corresponding to query, key, value and output projections for all heads
      * @param attentionBiases Optional, An array of biases added to the key and value respectively
@@ -170,8 +182,8 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
     @Generated
     @Selector("layerWithDescriptor:weights:biases:attentionBiases:")
     public static native MLCMultiheadAttentionLayer layerWithDescriptorWeightsBiasesAttentionBiases(
-            MLCMultiheadAttentionDescriptor descriptor, NSArray<? extends MLCTensor> weights,
-            NSArray<? extends MLCTensor> biases, NSArray<? extends MLCTensor> attentionBiases);
+            @NotNull MLCMultiheadAttentionDescriptor descriptor, @NotNull NSArray<? extends MLCTensor> weights,
+            @Nullable NSArray<? extends MLCTensor> biases, @Nullable NSArray<? extends MLCTensor> attentionBiases);
 
     @Generated
     @Owned
@@ -196,7 +208,7 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
 
     @Generated
     @Selector("supportsDataType:onDevice:")
-    public static native boolean supportsDataTypeOnDevice(int dataType, MLCDevice device);
+    public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
 
     @Generated
     @Selector("version")
@@ -205,18 +217,20 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
 
     /**
      * [@property] weights
-     * <p>
+     * 
      * The weights of query, key, value and output projections
      */
+    @NotNull
     @Generated
     @Selector("weights")
     public native NSArray<? extends MLCTensor> weights();
 
     /**
      * [@property] weightsParameters
-     * <p>
+     * 
      * The weights tensor parameters used for optimizer update
      */
+    @NotNull
     @Generated
     @Selector("weightsParameters")
     public native NSArray<? extends MLCTensorParameter> weightsParameters();

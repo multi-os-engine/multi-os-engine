@@ -44,7 +44,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -75,22 +80,25 @@ public class INRidePartySizeOption extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +133,10 @@ public class INRidePartySizeOption extends NSObject implements NSCopying, NSSecu
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,15 +168,16 @@ public class INRidePartySizeOption extends NSObject implements NSCopying, NSSecu
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -175,7 +185,7 @@ public class INRidePartySizeOption extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRidePartySizeOption initWithCoder(NSCoder coder);
+    public native INRidePartySizeOption initWithCoder(@NotNull NSCoder coder);
 
     /**
      * A single party size in a set of party size selections. Each size may have a different price range.
@@ -183,7 +193,7 @@ public class INRidePartySizeOption extends NSObject implements NSCopying, NSSecu
     @Generated
     @Selector("initWithPartySizeRange:sizeDescription:priceRange:")
     public native INRidePartySizeOption initWithPartySizeRangeSizeDescriptionPriceRange(@ByValue NSRange partySizeRange,
-            String sizeDescription, INPriceRange priceRange);
+            @NotNull String sizeDescription, @Nullable INPriceRange priceRange);
 
     /**
      * The number of people allowed, e.g. NSMakeRange(1, 0) for one person, or NSMakeRange(1, 2) for 1 to 3 people.
@@ -197,6 +207,7 @@ public class INRidePartySizeOption extends NSObject implements NSCopying, NSSecu
      * the price range for this party size, which may be different from the indicative price range for the ride. If nil,
      * the price range for the associated ride is valid instead.
      */
+    @Nullable
     @Generated
     @Selector("priceRange")
     public native INPriceRange priceRange();
@@ -204,6 +215,7 @@ public class INRidePartySizeOption extends NSObject implements NSCopying, NSSecu
     /**
      * e.g. "1 passenger" or "1-3 passengers".
      */
+    @NotNull
     @Generated
     @Selector("sizeDescription")
     public native String sizeDescription();

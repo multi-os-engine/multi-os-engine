@@ -38,10 +38,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A random distribution is a random source itself with a specific mapping from the input source to the output values.
  * The distribution is uniform, meaning there is no bias towards any of the possible outcomes.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -73,22 +77,25 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -97,6 +104,7 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
      * Convenience creation for the very common d20 range [1, 20] with an isolated random source
      * shielded from outside sources.
      */
+    @NotNull
     @Generated
     @Selector("d20")
     public static native GKRandomDistribution d20();
@@ -105,6 +113,7 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
      * Convenience creation for the very common d6 range [1, 6] with an isolated random source
      * shielded from outside sources.
      */
+    @NotNull
     @Generated
     @Selector("d6")
     public static native GKRandomDistribution d6();
@@ -122,7 +131,7 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
      * grab input values from.
      * This is equivalent to calling alloc followed by initWithSource:lowest:highest:, where source is [[GKRandomSource
      * alloc] init].
-     *
+     * 
      * @see initWithRandomSource:lowestValue:highestValue:
      */
     @Generated
@@ -134,7 +143,7 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
      * input values from.
      * This is equivalent to calling alloc followed by initWithSource:lowest:highest:, where source is [[GKRandomSource
      * alloc] init].
-     *
+     * 
      * @see initWithRandomSource:lowestValue:highestValue:
      */
     @Generated
@@ -164,9 +173,10 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -212,7 +222,8 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
     @Generated
     @Selector("initWithRandomSource:lowestValue:highestValue:")
     public native GKRandomDistribution initWithRandomSourceLowestValueHighestValue(
-            @Mapped(ObjCObjectMapper.class) GKRandom source, @NInt long lowestInclusive, @NInt long highestInclusive);
+            @NotNull @Mapped(ObjCObjectMapper.class) GKRandom source, @NInt long lowestInclusive,
+            @NInt long highestInclusive);
 
     /**
      * The lowest value the distribution will output.

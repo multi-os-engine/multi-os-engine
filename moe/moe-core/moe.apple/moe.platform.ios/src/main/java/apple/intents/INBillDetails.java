@@ -27,7 +27,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.3
+ * Deprecated-Since: 15.0
+ * Deprecated-Message: INBillDetails is deprecated. There is no replacement.
+ */
+@Deprecated
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -56,14 +64,16 @@ public class INBillDetails extends NSObject implements NSCopying, NSSecureCoding
     @Selector("allocWithZone:")
     public static native INBillDetails allocWithZone(VoidPtr zone);
 
+    @Nullable
     @Generated
     @Selector("amountDue")
     public native INCurrencyAmount amountDue();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("billPayee")
     public native INBillPayee billPayee();
@@ -75,27 +85,31 @@ public class INBillDetails extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -105,13 +119,14 @@ public class INBillDetails extends NSObject implements NSCopying, NSSecureCoding
     @Selector("description")
     public static native String description_static();
 
+    @Nullable
     @Generated
     @Selector("dueDate")
     public native NSDateComponents dueDate();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -125,13 +140,14 @@ public class INBillDetails extends NSObject implements NSCopying, NSSecureCoding
     @Generated
     @Selector("initWithBillType:paymentStatus:billPayee:amountDue:minimumDue:lateFee:dueDate:paymentDate:")
     public native INBillDetails initWithBillTypePaymentStatusBillPayeeAmountDueMinimumDueLateFeeDueDatePaymentDate(
-            @NInt long billType, @NInt long paymentStatus, INBillPayee billPayee, INCurrencyAmount amountDue,
-            INCurrencyAmount minimumDue, INCurrencyAmount lateFee, NSDateComponents dueDate,
-            NSDateComponents paymentDate);
+            @NInt long billType, @NInt long paymentStatus, @Nullable INBillPayee billPayee,
+            @Nullable INCurrencyAmount amountDue, @Nullable INCurrencyAmount minimumDue,
+            @Nullable INCurrencyAmount lateFee, @Nullable NSDateComponents dueDate,
+            @Nullable NSDateComponents paymentDate);
 
     @Generated
     @Selector("initWithCoder:")
-    public native INBillDetails initWithCoder(NSCoder coder);
+    public native INBillDetails initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -150,14 +166,17 @@ public class INBillDetails extends NSObject implements NSCopying, NSSecureCoding
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("lateFee")
     public native INCurrencyAmount lateFee();
 
+    @Nullable
     @Generated
     @Selector("minimumDue")
     public native INCurrencyAmount minimumDue();
@@ -167,6 +186,7 @@ public class INBillDetails extends NSObject implements NSCopying, NSSecureCoding
     @Selector("new")
     public static native INBillDetails new_objc();
 
+    @Nullable
     @Generated
     @Selector("paymentDate")
     public native NSDateComponents paymentDate();
@@ -186,11 +206,11 @@ public class INBillDetails extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("setAmountDue:")
-    public native void setAmountDue(INCurrencyAmount value);
+    public native void setAmountDue(@Nullable INCurrencyAmount value);
 
     @Generated
     @Selector("setBillPayee:")
-    public native void setBillPayee(INBillPayee value);
+    public native void setBillPayee(@Nullable INBillPayee value);
 
     @Generated
     @Selector("setBillType:")
@@ -198,19 +218,19 @@ public class INBillDetails extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("setDueDate:")
-    public native void setDueDate(NSDateComponents value);
+    public native void setDueDate(@Nullable NSDateComponents value);
 
     @Generated
     @Selector("setLateFee:")
-    public native void setLateFee(INCurrencyAmount value);
+    public native void setLateFee(@Nullable INCurrencyAmount value);
 
     @Generated
     @Selector("setMinimumDue:")
-    public native void setMinimumDue(INCurrencyAmount value);
+    public native void setMinimumDue(@Nullable INCurrencyAmount value);
 
     @Generated
     @Selector("setPaymentDate:")
-    public native void setPaymentDate(NSDateComponents value);
+    public native void setPaymentDate(@Nullable NSDateComponents value);
 
     @Generated
     @Selector("setPaymentStatus:")

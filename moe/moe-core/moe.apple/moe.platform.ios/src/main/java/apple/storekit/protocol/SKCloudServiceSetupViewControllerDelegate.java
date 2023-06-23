@@ -24,6 +24,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("StoreKit")
@@ -32,12 +33,14 @@ import org.moe.natj.objc.ann.Selector;
 public interface SKCloudServiceSetupViewControllerDelegate {
     /**
      * Sent when the view controller was dismissed.
+     * 
+     * API-Since: 10.1
      */
     @Generated
     @IsOptional
     @Selector("cloudServiceSetupViewControllerDidDismiss:")
     default void cloudServiceSetupViewControllerDidDismiss(
-            SKCloudServiceSetupViewController cloudServiceSetupViewController) {
+            @NotNull SKCloudServiceSetupViewController cloudServiceSetupViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

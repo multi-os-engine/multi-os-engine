@@ -7,7 +7,11 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 12.1
+ */
 @Generated
 @Library("CoreTelephony")
 @Runtime(ObjCRuntime.class)
@@ -15,5 +19,5 @@ import org.moe.natj.objc.ann.Selector;
 public interface CTSubscriberDelegate {
     @Generated
     @Selector("subscriberTokenRefreshed:")
-    void subscriberTokenRefreshed(CTSubscriber subscriber);
+    void subscriberTokenRefreshed(@NotNull CTSubscriber subscriber);
 }

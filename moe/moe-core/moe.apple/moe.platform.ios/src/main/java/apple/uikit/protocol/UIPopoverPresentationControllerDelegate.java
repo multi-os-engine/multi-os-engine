@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGRect;
 import apple.uikit.UIPopoverPresentationController;
 import apple.uikit.UIView;
 import org.moe.natj.general.ann.Generated;
@@ -28,6 +27,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -42,39 +43,47 @@ public interface UIPopoverPresentationControllerDelegate extends UIAdaptivePrese
     @IsOptional
     @Selector("popoverPresentationController:willRepositionPopoverToRect:inView:")
     default void popoverPresentationControllerWillRepositionPopoverToRectInView(
-            UIPopoverPresentationController popoverPresentationController, CGRect rect,
-            @ReferenceInfo(type = UIView.class) Ptr<UIView> view) {
+            @NotNull UIPopoverPresentationController popoverPresentationController, @NotNull CGRect rect,
+            @NotNull @ReferenceInfo(type = UIView.class) Ptr<UIView> view) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Called on the delegate when the user has taken action to dismiss the popover. This is not called when the popover
      * is dismissed programatically.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("popoverPresentationControllerDidDismissPopover:")
     default void popoverPresentationControllerDidDismissPopover(
-            UIPopoverPresentationController popoverPresentationController) {
+            @NotNull UIPopoverPresentationController popoverPresentationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Called on the delegate when the popover controller will dismiss the popover. Return NO to prevent the
      * dismissal of the view.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("popoverPresentationControllerShouldDismissPopover:")
     default boolean popoverPresentationControllerShouldDismissPopover(
-            UIPopoverPresentationController popoverPresentationController) {
+            @NotNull UIPopoverPresentationController popoverPresentationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("prepareForPopoverPresentation:")
-    default void prepareForPopoverPresentation(UIPopoverPresentationController popoverPresentationController) {
+    default void prepareForPopoverPresentation(@NotNull UIPopoverPresentationController popoverPresentationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

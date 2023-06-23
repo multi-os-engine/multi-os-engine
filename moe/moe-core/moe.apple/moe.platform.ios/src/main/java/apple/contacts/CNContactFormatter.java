@@ -45,12 +45,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Formats a contact name.
- * <p>
+ * 
  * This formatter handles international ordering and delimiting of the contact name components. This includes applying
  * the user defaults when appropriate.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -82,38 +86,42 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
 
     /**
      * Formats the contact name returning an attributed string.
-     * <p>
+     * 
      * This behaves like +stringFromContact:style: except it returns an attributed string. Includes the attribute key
      * CNContactPropertyAttribute.
-     *
+     * 
      * @param contact    The contact whose name is to be formatted.
      * @param style      The formatting style to be used for the contact name.
      * @param attributes The default attributes to use. See NSFormatter for details.
      * @return The formatted contact name as an attributed string.
      */
+    @Nullable
     @Generated
     @Selector("attributedStringFromContact:style:defaultAttributes:")
-    public static native NSAttributedString attributedStringFromContactStyleDefaultAttributes(CNContact contact,
-            @NInt long style, NSDictionary<?, ?> attributes);
+    public static native NSAttributedString attributedStringFromContactStyleDefaultAttributes(
+            @NotNull CNContact contact, @NInt long style, @Nullable NSDictionary<?, ?> attributes);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +133,10 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
     /**
      * The recommended delimiter to use between name components for a given contact.
      */
+    @NotNull
     @Generated
     @Selector("delimiterForContact:")
-    public static native String delimiterForContact(CNContact contact);
+    public static native String delimiterForContact(@NotNull CNContact contact);
 
     @Generated
     @Selector("description")
@@ -135,13 +144,14 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
 
     /**
      * The contact key descriptor required for the formatter.
-     * <p>
+     * 
      * Use to fetch all contact keys required for the formatter style. Can combine key descriptors for different
      * formatter styles in the fetch.
-     *
+     * 
      * @param style The formatting style to be used for the contact name.
      * @return The contact key descriptor for the formatting style.
      */
+    @NotNull
     @Generated
     @Selector("descriptorForRequiredKeysForStyle:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -169,9 +179,10 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The recommended name order for a given contact.
@@ -179,7 +190,7 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
     @Generated
     @Selector("nameOrderForContact:")
     @NInt
-    public static native long nameOrderForContact(CNContact contact);
+    public static native long nameOrderForContact(@NotNull CNContact contact);
 
     @Generated
     @Owned
@@ -200,14 +211,15 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
 
     /**
      * Formats the contact name.
-     *
+     * 
      * @param contact The contact whose name is to be formatted.
      * @param style   The formatting style to be used for the contact name.
      * @return The formatted contact name.
      */
+    @Nullable
     @Generated
     @Selector("stringFromContact:style:")
-    public static native String stringFromContactStyle(CNContact contact, @NInt long style);
+    public static native String stringFromContactStyle(@NotNull CNContact contact, @NInt long style);
 
     @Generated
     @Selector("superclass")
@@ -220,18 +232,19 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
 
     /**
      * Formats the contact name returning an attributed string.
-     * <p>
+     * 
      * This behaves like -stringFromContact:style: except it returns an attributed string. CNContactPropertyAttribute
      * key has the value of a CNContact name property key.
-     *
+     * 
      * @param contact    The contact whose name is to be formatted.
      * @param attributes The default attributes to use. See NSFormatter for details.
      * @return The formatted contact name as an attributed string.
      */
+    @Nullable
     @Generated
     @Selector("attributedStringFromContact:defaultAttributes:")
-    public native NSAttributedString attributedStringFromContactDefaultAttributes(CNContact contact,
-            NSDictionary<?, ?> attributes);
+    public native NSAttributedString attributedStringFromContactDefaultAttributes(@NotNull CNContact contact,
+            @Nullable NSDictionary<?, ?> attributes);
 
     @Generated
     @Selector("init")
@@ -239,11 +252,11 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNContactFormatter initWithCoder(NSCoder coder);
+    public native CNContactFormatter initWithCoder(@NotNull NSCoder coder);
 
     /**
      * The style for a contact formatter instance.
-     * <p>
+     * 
      * The default value is CNContactFormatterStyleFullName.
      */
     @Generated
@@ -252,17 +265,18 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
 
     /**
      * Formats the contact name.
-     *
+     * 
      * @param contact The contact whose name is to be formatted.
      * @return The formatted contact name.
      */
+    @Nullable
     @Generated
     @Selector("stringFromContact:")
-    public native String stringFromContact(CNContact contact);
+    public native String stringFromContact(@NotNull CNContact contact);
 
     /**
      * The style for a contact formatter instance.
-     * <p>
+     * 
      * The default value is CNContactFormatterStyleFullName.
      */
     @Generated
@@ -272,7 +286,7 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("supportsSecureCoding")
@@ -286,12 +300,13 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
 
     /**
      * The contact key descriptor required for the name delimiter.
-     * <p>
+     * 
      * Use to fetch all contact keys required for +delimiterForContact:. Can combine key descriptors for different
      * formatter styles in the fetch.
-     *
+     * 
      * @return The contact key descriptor for the name delimiter.
      */
+    @NotNull
     @Generated
     @Selector("descriptorForRequiredKeysForDelimiter")
     @MappedReturn(ObjCObjectMapper.class)
@@ -299,12 +314,13 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
 
     /**
      * The contact key descriptor required for the name order.
-     * <p>
+     * 
      * Use to fetch all contact keys required for +nameOrderForContact:. Can combine key descriptors for different
      * formatter styles in the fetch.
-     *
+     * 
      * @return The contact key descriptor for the name order.
      */
+    @NotNull
     @Generated
     @Selector("descriptorForRequiredKeysForNameOrder")
     @MappedReturn(ObjCObjectMapper.class)

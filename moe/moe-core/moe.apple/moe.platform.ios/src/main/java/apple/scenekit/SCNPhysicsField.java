@@ -46,10 +46,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNPhysicsField
- * <p>
+ * 
  * SCNPhysicsField is an abstract class that describes a force field that applies in the physics world.
  */
 @Generated
@@ -82,22 +84,25 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -105,10 +110,11 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     /**
      * A field force with a custom force evaluator.
      */
+    @NotNull
     @Generated
     @Selector("customFieldWithEvaluationBlock:")
     public static native SCNPhysicsField customFieldWithEvaluationBlock(
-            @ObjCBlock(name = "call_customFieldWithEvaluationBlock") Block_customFieldWithEvaluationBlock block);
+            @NotNull @ObjCBlock(name = "call_customFieldWithEvaluationBlock") Block_customFieldWithEvaluationBlock block);
 
     @Generated
     @Selector("debugDescription")
@@ -122,6 +128,7 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
      * Slows an object proportionally to the object’s velocity.
      * Use this to simulate effects such as friction from motion through the air.
      */
+    @NotNull
     @Generated
     @Selector("dragField")
     public static native SCNPhysicsField dragField();
@@ -132,6 +139,7 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
      * from one another when they enter a region, or to make an object's behavior different than its mass based behavior
      * This field models the first part of the Lorentz equation, F = qE
      */
+    @NotNull
     @Generated
     @Selector("electricField")
     public static native SCNPhysicsField electricField();
@@ -158,9 +166,10 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Applies a force in the direction of the "direction" vector in the local space. To repel objects, use a negative
@@ -168,6 +177,7 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
      * The force is the same everywhere in the field. Varies with the mass of the object according to F = ma
      * The field node's rotation property can be used to orient the gravity in a particular direction.
      */
+    @NotNull
     @Generated
     @Selector("linearGravityField")
     public static native SCNPhysicsField linearGravityField();
@@ -178,6 +188,7 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
      * or to make an object's behavior different than its mass based behavior
      * This field models the second part of the Lorentz equation, F = qvB
      */
+    @NotNull
     @Generated
     @Selector("magneticField")
     public static native SCNPhysicsField magneticField();
@@ -193,6 +204,7 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
      * To freeze the noise in place, set animationSpeed to 0.0. Mass is ignored.
      * You can change the "smoothness" and "animationSpeed" using KVC.
      */
+    @NotNull
     @Generated
     @Selector("noiseFieldWithSmoothness:animationSpeed:")
     public static native SCNPhysicsField noiseFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
@@ -205,6 +217,7 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
      * F = ma
      * The field node's rotation property can be used to orient the gravity in a particular direction.
      */
+    @NotNull
     @Generated
     @Selector("radialGravityField")
     public static native SCNPhysicsField radialGravityField();
@@ -226,6 +239,7 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
      * field will oscillate with a period proportional to the inverse of the mass.
      * An example use is to keep objects confined to a particular region.
      */
+    @NotNull
     @Generated
     @Selector("springField")
     public static native SCNPhysicsField springField();
@@ -241,6 +255,7 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     /**
      * Just like Noise, except the strength of the noise is proportional to the velocity of the object in the field.
      */
+    @NotNull
     @Generated
     @Selector("turbulenceFieldWithSmoothness:animationSpeed:")
     public static native SCNPhysicsField turbulenceFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
@@ -257,13 +272,14 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
      * Amount is proportional to distance from center and the object's mass.
      * Use this to create effects such as tornadoes.
      */
+    @NotNull
     @Generated
     @Selector("vortexField")
     public static native SCNPhysicsField vortexField();
 
     /**
      * [@property] categoryBitMask
-     * <p>
+     * 
      * Determines the node physicsBody's categories that will be influenced by the receiver. Defaults to all bit set.
      */
     @Generated
@@ -271,11 +287,12 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     @NUInt
     public native long categoryBitMask();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Direction of the field. Only applies to linear gravity and vortex fields. Defaults to (0,-1,0).
@@ -287,7 +304,7 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Changes the power of the force based on the distance from the center of the field (1 / distance ^
@@ -312,7 +329,7 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsField initWithCoder(NSCoder coder);
+    public native SCNPhysicsField initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Specifies whether force field is active or not. Defaults to YES.
@@ -368,7 +385,7 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * [@property] categoryBitMask
-     * <p>
+     * 
      * Determines the node physicsBody's categories that will be influenced by the receiver. Defaults to all bit set.
      */
     @Generated

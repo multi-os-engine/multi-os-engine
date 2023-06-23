@@ -9,7 +9,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -18,16 +22,16 @@ public interface SCNAvoidOccluderConstraintDelegate {
     @Generated
     @IsOptional
     @Selector("avoidOccluderConstraint:didAvoidOccluder:forNode:")
-    default void avoidOccluderConstraintDidAvoidOccluderForNode(SCNAvoidOccluderConstraint constraint, SCNNode occluder,
-            SCNNode node) {
+    default void avoidOccluderConstraintDidAvoidOccluderForNode(@NotNull SCNAvoidOccluderConstraint constraint,
+            @NotNull SCNNode occluder, @NotNull SCNNode node) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("avoidOccluderConstraint:shouldAvoidOccluder:forNode:")
-    default boolean avoidOccluderConstraintShouldAvoidOccluderForNode(SCNAvoidOccluderConstraint constraint,
-            SCNNode occluder, SCNNode node) {
+    default boolean avoidOccluderConstraintShouldAvoidOccluderForNode(@NotNull SCNAvoidOccluderConstraint constraint,
+            @NotNull SCNNode occluder, @NotNull SCNNode node) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

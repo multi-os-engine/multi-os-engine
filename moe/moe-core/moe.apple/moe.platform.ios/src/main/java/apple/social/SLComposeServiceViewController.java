@@ -17,7 +17,6 @@ limitations under the License.
 package apple.social;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSCoder;
@@ -52,7 +51,16 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.uikit.UIMenu;
+import apple.uikit.UIMenuElement;
+import apple.uikit.protocol.UIEditMenuInteractionAnimating;
+import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Social")
 @Runtime(ObjCRuntime.class)
@@ -81,35 +89,39 @@ public class SLComposeServiceViewController extends UIViewController implements 
     @Selector("allocWithZone:")
     public static native SLComposeServiceViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -141,9 +153,10 @@ public class SLComposeServiceViewController extends UIViewController implements 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -246,11 +259,12 @@ public class SLComposeServiceViewController extends UIViewController implements 
 
     @Generated
     @Selector("initWithCoder:")
-    public native SLComposeServiceViewController initWithCoder(NSCoder coder);
+    public native SLComposeServiceViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native SLComposeServiceViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native SLComposeServiceViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * Called automatically after each text change to help determine the enable state of the Post button, and to give
@@ -321,64 +335,64 @@ public class SLComposeServiceViewController extends UIViewController implements 
     @Generated
     @IsOptional
     @Selector("scrollViewDidEndDecelerating:")
-    public native void scrollViewDidEndDecelerating(UIScrollView scrollView);
+    public native void scrollViewDidEndDecelerating(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewDidEndDragging:willDecelerate:")
-    public native void scrollViewDidEndDraggingWillDecelerate(UIScrollView scrollView, boolean decelerate);
+    public native void scrollViewDidEndDraggingWillDecelerate(@NotNull UIScrollView scrollView, boolean decelerate);
 
     @Generated
     @IsOptional
     @Selector("scrollViewDidEndScrollingAnimation:")
-    public native void scrollViewDidEndScrollingAnimation(UIScrollView scrollView);
+    public native void scrollViewDidEndScrollingAnimation(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewDidEndZooming:withView:atScale:")
-    public native void scrollViewDidEndZoomingWithViewAtScale(UIScrollView scrollView, UIView view,
+    public native void scrollViewDidEndZoomingWithViewAtScale(@NotNull UIScrollView scrollView, @Nullable UIView view,
             @NFloat double scale);
 
     @Generated
     @IsOptional
     @Selector("scrollViewDidScroll:")
-    public native void scrollViewDidScroll(UIScrollView scrollView);
+    public native void scrollViewDidScroll(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewDidScrollToTop:")
-    public native void scrollViewDidScrollToTop(UIScrollView scrollView);
+    public native void scrollViewDidScrollToTop(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewDidZoom:")
-    public native void scrollViewDidZoom(UIScrollView scrollView);
+    public native void scrollViewDidZoom(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewShouldScrollToTop:")
-    public native boolean scrollViewShouldScrollToTop(UIScrollView scrollView);
+    public native boolean scrollViewShouldScrollToTop(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewWillBeginDecelerating:")
-    public native void scrollViewWillBeginDecelerating(UIScrollView scrollView);
+    public native void scrollViewWillBeginDecelerating(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewWillBeginDragging:")
-    public native void scrollViewWillBeginDragging(UIScrollView scrollView);
+    public native void scrollViewWillBeginDragging(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewWillBeginZooming:withView:")
-    public native void scrollViewWillBeginZoomingWithView(UIScrollView scrollView, UIView view);
+    public native void scrollViewWillBeginZoomingWithView(@NotNull UIScrollView scrollView, @Nullable UIView view);
 
     @Generated
     @IsOptional
     @Selector("scrollViewWillEndDragging:withVelocity:targetContentOffset:")
-    public native void scrollViewWillEndDraggingWithVelocityTargetContentOffset(UIScrollView scrollView,
-            @ByValue CGPoint velocity, CGPoint targetContentOffset);
+    public native void scrollViewWillEndDraggingWithVelocityTargetContentOffset(@NotNull UIScrollView scrollView,
+            @ByValue CGPoint velocity, @NotNull CGPoint targetContentOffset);
 
     /**
      * A view controller whose view replaces the configuration item table, sitting just below the text view. Defaults to
@@ -416,62 +430,64 @@ public class SLComposeServiceViewController extends UIViewController implements 
     @Generated
     @IsOptional
     @Selector("textView:shouldChangeTextInRange:replacementText:")
-    public native boolean textViewShouldChangeTextInRangeReplacementText(UITextView textView, @ByValue NSRange range,
-            String text);
+    public native boolean textViewShouldChangeTextInRangeReplacementText(@NotNull UITextView textView,
+            @ByValue NSRange range, @NotNull String text);
 
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithTextAttachment:inRange:")
-    public native boolean textViewShouldInteractWithTextAttachmentInRange(UITextView textView,
-            NSTextAttachment textAttachment, @ByValue NSRange characterRange);
+    public native boolean textViewShouldInteractWithTextAttachmentInRange(@NotNull UITextView textView,
+            @NotNull NSTextAttachment textAttachment, @ByValue NSRange characterRange);
 
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithTextAttachment:inRange:interaction:")
-    public native boolean textViewShouldInteractWithTextAttachmentInRangeInteraction(UITextView textView,
-            NSTextAttachment textAttachment, @ByValue NSRange characterRange, @NInt long interaction);
+    public native boolean textViewShouldInteractWithTextAttachmentInRangeInteraction(@NotNull UITextView textView,
+            @NotNull NSTextAttachment textAttachment, @ByValue NSRange characterRange, @NInt long interaction);
 
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithURL:inRange:")
-    public native boolean textViewShouldInteractWithURLInRange(UITextView textView, NSURL URL,
+    public native boolean textViewShouldInteractWithURLInRange(@NotNull UITextView textView, @NotNull NSURL URL,
             @ByValue NSRange characterRange);
 
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithURL:inRange:interaction:")
-    public native boolean textViewShouldInteractWithURLInRangeInteraction(UITextView textView, NSURL URL,
-            @ByValue NSRange characterRange, @NInt long interaction);
+    public native boolean textViewShouldInteractWithURLInRangeInteraction(@NotNull UITextView textView,
+            @NotNull NSURL URL, @ByValue NSRange characterRange, @NInt long interaction);
 
     @Generated
     @IsOptional
     @Selector("textViewDidBeginEditing:")
-    public native void textViewDidBeginEditing(UITextView textView);
+    public native void textViewDidBeginEditing(@NotNull UITextView textView);
 
     @Generated
     @IsOptional
     @Selector("textViewDidChange:")
-    public native void textViewDidChange(UITextView textView);
+    public native void textViewDidChange(@NotNull UITextView textView);
 
     @Generated
     @IsOptional
     @Selector("textViewDidChangeSelection:")
-    public native void textViewDidChangeSelection(UITextView textView);
+    public native void textViewDidChangeSelection(@NotNull UITextView textView);
 
     @Generated
     @IsOptional
     @Selector("textViewDidEndEditing:")
-    public native void textViewDidEndEditing(UITextView textView);
+    public native void textViewDidEndEditing(@NotNull UITextView textView);
 
     @Generated
     @IsOptional
     @Selector("textViewShouldBeginEditing:")
-    public native boolean textViewShouldBeginEditing(UITextView textView);
+    public native boolean textViewShouldBeginEditing(@NotNull UITextView textView);
 
     @Generated
     @IsOptional
     @Selector("textViewShouldEndEditing:")
-    public native boolean textViewShouldEndEditing(UITextView textView);
+    public native boolean textViewShouldEndEditing(@NotNull UITextView textView);
 
     /**
      * Calls -isContentValid immediately, performs other internal validation, then updates the enable state of the Post
@@ -483,13 +499,33 @@ public class SLComposeServiceViewController extends UIViewController implements 
     @Selector("validateContent")
     public native void validateContent();
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("viewForZoomingInScrollView:")
-    public native UIView viewForZoomingInScrollView(UIScrollView scrollView);
+    public native UIView viewForZoomingInScrollView(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewDidChangeAdjustedContentInset:")
-    public native void scrollViewDidChangeAdjustedContentInset(UIScrollView scrollView);
+    public native void scrollViewDidChangeAdjustedContentInset(@NotNull UIScrollView scrollView);
+
+    @Nullable
+    @Generated
+    @IsOptional
+    @Selector("textView:editMenuForTextInRange:suggestedActions:")
+    public native UIMenu textViewEditMenuForTextInRangeSuggestedActions(@NotNull UITextView textView,
+            @ByValue NSRange range, @NotNull NSArray<? extends UIMenuElement> suggestedActions);
+
+    @Generated
+    @IsOptional
+    @Selector("textView:willDismissEditMenuWithAnimator:")
+    public native void textViewWillDismissEditMenuWithAnimator(@NotNull UITextView textView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator);
+
+    @Generated
+    @IsOptional
+    @Selector("textView:willPresentEditMenuWithAnimator:")
+    public native void textViewWillPresentEditMenuWithAnimator(@NotNull UITextView textView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator);
 }

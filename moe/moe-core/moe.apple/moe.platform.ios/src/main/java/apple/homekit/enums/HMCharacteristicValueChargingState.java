@@ -21,15 +21,26 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueChargingState
- * <p>
+ * 
  * [@constant] HMCharacteristicValueChargingStateNone Not Charging.
  * [@constant] HMCharacteristicValueChargingStateInProgress Charging.
  * [@constant] HMCharacteristicValueChargingStateNotChargeable Not Chargeable.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class HMCharacteristicValueChargingState {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long InProgress = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long NotChargeable = 0x0000000000000002L;
 
     @Generated

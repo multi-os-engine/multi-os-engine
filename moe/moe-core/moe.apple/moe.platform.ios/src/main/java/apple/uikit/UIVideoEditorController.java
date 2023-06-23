@@ -40,7 +40,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 3.1
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -69,39 +74,46 @@ public class UIVideoEditorController extends UINavigationController {
     @Selector("allocWithZone:")
     public static native UIVideoEditorController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 3.1
+     */
     @Generated
     @Selector("canEditVideoAtPath:")
-    public static native boolean canEditVideoAtPath(String videoPath);
+    public static native boolean canEditVideoAtPath(@NotNull String videoPath);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -133,9 +145,10 @@ public class UIVideoEditorController extends UINavigationController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,6 +176,7 @@ public class UIVideoEditorController extends UINavigationController {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -174,27 +188,28 @@ public class UIVideoEditorController extends UINavigationController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIVideoEditorController initWithCoder(NSCoder coder);
+    public native UIVideoEditorController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")
-    public native UIVideoEditorController initWithNavigationBarClassToolbarClass(Class navigationBarClass,
-            Class toolbarClass);
+    public native UIVideoEditorController initWithNavigationBarClassToolbarClass(@Nullable Class navigationBarClass,
+            @Nullable Class toolbarClass);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native UIVideoEditorController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native UIVideoEditorController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     @Generated
     @Selector("initWithRootViewController:")
-    public native UIVideoEditorController initWithRootViewController(UIViewController rootViewController);
+    public native UIVideoEditorController initWithRootViewController(@NotNull UIViewController rootViewController);
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -214,7 +229,7 @@ public class UIVideoEditorController extends UINavigationController {
 
     @Generated
     @Selector("setVideoPath:")
-    public native void setVideoPath(String value);
+    public native void setVideoPath(@NotNull String value);
 
     /**
      * default value is UIImagePickerControllerQualityTypeMedium
@@ -230,6 +245,7 @@ public class UIVideoEditorController extends UINavigationController {
     @Selector("videoMaximumDuration")
     public native double videoMaximumDuration();
 
+    @NotNull
     @Generated
     @Selector("videoPath")
     public native String videoPath();

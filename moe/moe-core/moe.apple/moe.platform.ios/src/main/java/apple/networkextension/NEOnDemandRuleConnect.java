@@ -39,17 +39,21 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEOnDemandRuleConnect
- * <p>
+ * 
  * The NEOnDemandRuleConnect class declares the programmatic interface for an object that defines an On Demand rule with
  * the "Connect" action.
- * <p>
+ * 
  * When rules of this class match, the VPN connection is started whenever an application running on the system opens a
  * network connection.
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -81,22 +85,25 @@ public class NEOnDemandRuleConnect extends NEOnDemandRule {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +138,10 @@ public class NEOnDemandRuleConnect extends NEOnDemandRule {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -171,7 +179,7 @@ public class NEOnDemandRuleConnect extends NEOnDemandRule {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEOnDemandRuleConnect initWithCoder(NSCoder coder);
+    public native NEOnDemandRuleConnect initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

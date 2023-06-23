@@ -43,16 +43,20 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEVPNProtocol
- * <p>
+ * 
  * The NEVPNProtocol class declares the programmatic interface of an object that manages the protocol-specific portion
  * of a VPN configuration.
- * <p>
+ * 
  * NEVPNProtocol is an abstract base class from which other protocol-specific classes are derived.
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -84,22 +88,25 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,9 +141,10 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,16 +176,19 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] disconnectOnSleep
-     * <p>
+     * 
      * If YES, the VPN connection will be disconnected when the device goes to sleep. The default is NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("disconnectOnSleep")
@@ -185,32 +196,41 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] identityData
-     * <p>
+     * 
      * The PKCS12 data for the VPN authentication identity. The value is a NSData in PKCS12 format.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("identityData")
     public native NSData identityData();
 
     /**
      * [@property] identityDataPassword
-     * <p>
+     * 
      * The password to be used to decrypt the PKCS12 identity data.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("identityDataPassword")
     public native String identityDataPassword();
 
     /**
      * [@property] identityReference
-     * <p>
+     * 
      * The certificate and private key component of the VPN authentication credential. The value is a persistent
      * reference to a keychain item with the kSecClassIdentity class.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("identityReference")
     public native NSData identityReference();
@@ -221,40 +241,51 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEVPNProtocol initWithCoder(NSCoder coder);
+    public native NEVPNProtocol initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] passwordReference
-     * <p>
+     * 
      * The password component of the VPN authentication credential. The value is a persistent reference to a keychain
      * item with the kSecClassGenericPassword class.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("passwordReference")
     public native NSData passwordReference();
 
     /**
      * [@property] proxySettings
-     * <p>
+     * 
      * An NEProxySettings object containing the proxy settings to use for connections routed through the tunnel.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("proxySettings")
     public native NEProxySettings proxySettings();
 
     /**
      * [@property] serverAddress
-     * <p>
+     * 
      * The VPN server. Depending on the protocol, may be an IP address, host name, or URL.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("serverAddress")
     public native String serverAddress();
 
     /**
      * [@property] disconnectOnSleep
-     * <p>
+     * 
      * If YES, the VPN connection will be disconnected when the device goes to sleep. The default is NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDisconnectOnSleep:")
@@ -262,68 +293,82 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * [@property] identityData
-     * <p>
+     * 
      * The PKCS12 data for the VPN authentication identity. The value is a NSData in PKCS12 format.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setIdentityData:")
-    public native void setIdentityData(NSData value);
+    public native void setIdentityData(@Nullable NSData value);
 
     /**
      * [@property] identityDataPassword
-     * <p>
+     * 
      * The password to be used to decrypt the PKCS12 identity data.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setIdentityDataPassword:")
-    public native void setIdentityDataPassword(String value);
+    public native void setIdentityDataPassword(@Nullable String value);
 
     /**
      * [@property] identityReference
-     * <p>
+     * 
      * The certificate and private key component of the VPN authentication credential. The value is a persistent
      * reference to a keychain item with the kSecClassIdentity class.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setIdentityReference:")
-    public native void setIdentityReference(NSData value);
+    public native void setIdentityReference(@Nullable NSData value);
 
     /**
      * [@property] passwordReference
-     * <p>
+     * 
      * The password component of the VPN authentication credential. The value is a persistent reference to a keychain
      * item with the kSecClassGenericPassword class.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPasswordReference:")
-    public native void setPasswordReference(NSData value);
+    public native void setPasswordReference(@Nullable NSData value);
 
     /**
      * [@property] proxySettings
-     * <p>
+     * 
      * An NEProxySettings object containing the proxy settings to use for connections routed through the tunnel.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setProxySettings:")
-    public native void setProxySettings(NEProxySettings value);
+    public native void setProxySettings(@Nullable NEProxySettings value);
 
     /**
      * [@property] serverAddress
-     * <p>
+     * 
      * The VPN server. Depending on the protocol, may be an IP address, host name, or URL.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setServerAddress:")
-    public native void setServerAddress(String value);
+    public native void setServerAddress(@Nullable String value);
 
     /**
      * [@property] username
-     * <p>
+     * 
      * The username component of the VPN authentication credential.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setUsername:")
-    public native void setUsername(String value);
+    public native void setUsername(@Nullable String value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -333,18 +378,23 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * [@property] username
-     * <p>
+     * 
      * The username component of the VPN authentication credential.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("username")
     public native String username();
 
     /**
      * [@property] includeAllNetworks
-     * <p>
+     * 
      * If YES, all traffic will be sent over the tunnel, and all traffic will be dropped if the tunnel is down. The
      * default is NO.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("includeAllNetworks")
@@ -352,9 +402,11 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * [@property] includeAllNetworks
-     * <p>
+     * 
      * If YES, all traffic will be sent over the tunnel, and all traffic will be dropped if the tunnel is down. The
      * default is NO.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setIncludeAllNetworks:")
@@ -362,8 +414,10 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * [@property] enforceRoutes
-     * <p>
+     * 
      * If YES, route rules for this tunnel will take precendence over any locally-defined routes. The default is NO.
+     * 
+     * API-Since: 14.2
      */
     @Generated
     @Selector("enforceRoutes")
@@ -371,9 +425,11 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * [@property] excludeLocalNetworks
-     * <p>
+     * 
      * If YES, all traffic destined for local networks will be excluded from the tunnel. The default is NO on macOS and
      * YES on iOS.
+     * 
+     * API-Since: 14.2
      */
     @Generated
     @Selector("excludeLocalNetworks")
@@ -381,8 +437,10 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * [@property] enforceRoutes
-     * <p>
+     * 
      * If YES, route rules for this tunnel will take precendence over any locally-defined routes. The default is NO.
+     * 
+     * API-Since: 14.2
      */
     @Generated
     @Selector("setEnforceRoutes:")
@@ -390,9 +448,11 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * [@property] excludeLocalNetworks
-     * <p>
+     * 
      * If YES, all traffic destined for local networks will be excluded from the tunnel. The default is NO on macOS and
      * YES on iOS.
+     * 
+     * API-Since: 14.2
      */
     @Generated
     @Selector("setExcludeLocalNetworks:")

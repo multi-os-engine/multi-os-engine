@@ -41,17 +41,21 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAssetDownloadTask
- * <p>
+ * 
  * A NSURLSessionTask that accepts remote AVURLAssets to download locally.
- * <p>
+ * 
  * Should be created with -[AVAssetDownloadURLSession
  * assetDownloadTaskWithURLAsset:assetTitle:assetArtworkData:options:]. To utilize local data for playback for downloads
  * that are in-progress, re-use the URLAsset supplied in initialization. An AVAssetDownloadTask may be instantiated with
  * a destinationURL pointing to an existing asset on disk, for the purpose of completing or augmenting a downloaded
  * asset.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("AVFoundation")
@@ -83,22 +87,25 @@ public class AVAssetDownloadTask extends NSURLSessionTask {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +140,10 @@ public class AVAssetDownloadTask extends NSURLSessionTask {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,20 +173,27 @@ public class AVAssetDownloadTask extends NSURLSessionTask {
 
     /**
      * [@property] URLAsset
-     * <p>
+     * 
      * The asset supplied to the download task upon initialization.
      */
+    @NotNull
     @Generated
     @Selector("URLAsset")
     public native AVURLAsset URLAsset();
 
     /**
      * [@property] destinationURL
-     * <p>
+     * 
      * The file URL supplied to the download task upon initialization.
-     * <p>
+     * 
      * This URL may have been appended with the appropriate extension for the asset.
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use the URL property of URLAsset instead
      */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("destinationURL")
     public native NSURL destinationURL();
@@ -189,21 +204,23 @@ public class AVAssetDownloadTask extends NSURLSessionTask {
 
     /**
      * [@property] loadedTimeRanges
-     * <p>
+     * 
      * This property provides a collection of time ranges for which the download task has media data already downloaded
      * and playable. The ranges provided might be discontinuous.
-     * <p>
+     * 
      * Returns an NSArray of NSValues containing CMTimeRanges.
      */
+    @NotNull
     @Generated
     @Selector("loadedTimeRanges")
     public native NSArray<? extends NSValue> loadedTimeRanges();
 
     /**
      * [@property] options
-     * <p>
+     * 
      * The options supplied to the download task upon initialization.
      */
+    @Nullable
     @Generated
     @Selector("options")
     public native NSDictionary<String, ?> options();

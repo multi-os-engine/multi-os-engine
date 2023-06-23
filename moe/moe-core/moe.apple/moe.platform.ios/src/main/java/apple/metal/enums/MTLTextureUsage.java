@@ -21,17 +21,34 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLTextureUsage
- * <p>
+ * 
  * MTLTextureUsage declares how the texture will be used over its lifetime (bitwise OR for multiple uses).
- * <p>
+ * 
  * This information may be used by the driver to make optimization decisions.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class MTLTextureUsage {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long ShaderRead = 0x0000000000000001L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long ShaderWrite = 0x0000000000000002L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long RenderTarget = 0x0000000000000004L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long PixelFormatView = 0x0000000000000010L;
 
     @Generated

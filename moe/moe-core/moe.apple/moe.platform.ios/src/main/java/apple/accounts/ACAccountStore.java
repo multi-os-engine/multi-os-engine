@@ -40,21 +40,28 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The ACAccountStore class provides an interface for accessing and manipulating
  * accounts. You must create an ACAccountStore object to retrieve, add and delete
  * accounts from the Accounts database.
- * <p>
+ * 
  * IMPORTANT NOTE: You MUST keep the account store around for as long as you have
  * any objects fetched from that store if you expect other 'sub-fetches' to work,
  * most notably being fetching credentials. If you really just want to open the
  * store to grab credentials, just be sure to grab the credential object and then
  * you can release the owning account and store, e.g.
- * <p>
+ * 
  * WARNING: All synchronous methods on ACAccountStore invoke xpc methods
  * on accountsd. They are not appropriate to call on a UI Application's main thread.
+ * 
+ * API-Since: 6.0
+ * Deprecated-Since: 15.0
+ * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference instead
  */
+@Deprecated
 @Generated
 @Library("Accounts")
 @Runtime(ObjCRuntime.class)
@@ -85,22 +92,25 @@ public class ACAccountStore extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,9 +145,10 @@ public class ACAccountStore extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -243,6 +254,9 @@ public class ACAccountStore extends NSObject {
 
     /**
      * DEPRECATED: Please use requestAccessToAccountsWithType:options:completion: instead.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
      */
     @Generated
     @Deprecated

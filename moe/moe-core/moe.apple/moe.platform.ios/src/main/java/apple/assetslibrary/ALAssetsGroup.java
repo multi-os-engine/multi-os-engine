@@ -42,7 +42,14 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.0
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Use PHAssetCollection from the Photos framework instead
+ */
 @Deprecated
 @Generated
 @Library("AssetsLibrary")
@@ -74,22 +81,25 @@ public class ALAssetsGroup extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +134,10 @@ public class ALAssetsGroup extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,12 +170,23 @@ public class ALAssetsGroup extends NSObject {
      * The caller should check the editable property of the group to see if it is possible to add an asset to the group.
      * Returns YES if the asset was added successfully. Returns NO if the group is not editable, or if the asset was not
      * able to be added to the group.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use addAssets: on a PHAssetCollectionChangeRequest: created from a PHAssetCollection in the
+     * Photos framework instead
      */
     @Generated
     @Deprecated
     @Selector("addAsset:")
     public native boolean addAsset(ALAsset asset);
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use the PHFetchResult returned by fetchAssetsInAssetCollection:options: on PHAsset to
+     * enumerate the assets in an asset collection from the Photos framework instead
+     */
     @Generated
     @Deprecated
     @Selector("enumerateAssetsAtIndexes:options:usingBlock:")
@@ -180,6 +202,11 @@ public class ALAssetsGroup extends NSObject {
      * NSNotFound.
      * If the application has not been granted access to the data, 'enumerationBlock' will be called with result set to
      * nil, index set to NSNotFound, and stop set to YES.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use the PHFetchResult returned by fetchAssetsInAssetCollection:options: on PHAsset to
+     * enumerate the assets in an asset collection from the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -187,6 +214,12 @@ public class ALAssetsGroup extends NSObject {
     public native void enumerateAssetsUsingBlock(
             @ObjCBlock(name = "call_enumerateAssetsUsingBlock") Block_enumerateAssetsUsingBlock enumerationBlock);
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use the PHFetchResult returned by fetchAssetsInAssetCollection:options: on PHAsset to
+     * enumerate the assets in an asset collection from the Photos framework instead
+     */
     @Generated
     @Deprecated
     @Selector("enumerateAssetsWithOptions:usingBlock:")
@@ -200,6 +233,10 @@ public class ALAssetsGroup extends NSObject {
     /**
      * Returns YES if the application is able to edit the group. Returns NO if the application is not able to edit the
      * group.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use canPerformEditOperation: on a PHAssetCollection from the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -209,6 +246,11 @@ public class ALAssetsGroup extends NSObject {
     /**
      * Get the number of assets in the group that match the filter.
      * If no filter is set, it returns the count of all assets in the group.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use the estimatedAssetCount on PHAssetCollection for a quick estimate of the total assets in
+     * a collection (or fetch the assets to get an exact value) from the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -218,6 +260,11 @@ public class ALAssetsGroup extends NSObject {
 
     /**
      * Returns a CGImage of the poster photo for the group. The thumbnail will be in the correct orientation.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use fetchKeyAssetsInAssetCollection:options: on PHAsset, then use the PHImageManager to
+     * request image data for key assets in the asset collection from the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -230,6 +277,11 @@ public class ALAssetsGroup extends NSObject {
      * If no filter is set, the enumeration will return all the assets in the group.
      * Only one filter is active at a time. Calling this method again resets the filter and does not affect any
      * enumeration that may be in flight.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use fetchAssetsInAssetCollection:options: on PHAsset with a predicate in the PHFetchOptions
+     * from the Photos framework to filter the assets in an asset collection instead
      */
     @Generated
     @Deprecated
@@ -238,6 +290,10 @@ public class ALAssetsGroup extends NSObject {
 
     /**
      * Use this method to get information about the group.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use the class properties on a PHAssetCollection in the Photos framework instead
      */
     @Generated
     @Deprecated

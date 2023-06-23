@@ -2,8 +2,6 @@ package apple.accessibility;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGImageRef;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -30,12 +28,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
- * A BrailleMap object represents a connected two-dimensional braille display.
+ * An AXBrailleMap object represents a connected two-dimensional braille display.
  * A display is comprised of a grid of pins that can be raised and lowered.
  * This is useful for representing graphics, images, and other visual data to VoiceOver users.
- * - Post an accessibility announcement notification with a braille map as an argument to update.-
+ * 
+ * API-Since: 15.2
  */
 @Generated
 @Library("Accessibility")
@@ -67,31 +70,35 @@ public class AXBrailleMap extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -111,7 +118,7 @@ public class AXBrailleMap extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -128,7 +135,7 @@ public class AXBrailleMap extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("initWithCoder:")
-    public native AXBrailleMap initWithCoder(NSCoder coder);
+    public native AXBrailleMap initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -147,9 +154,10 @@ public class AXBrailleMap extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,7 +166,7 @@ public class AXBrailleMap extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("presentImage:")
-    public native void presentImage(CGImageRef image);
+    public native void presentImage(@NotNull CGImageRef image);
 
     @Generated
     @Selector("resolveClassMethod:")

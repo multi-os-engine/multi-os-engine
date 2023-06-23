@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("CoreMotion")
@@ -39,10 +40,13 @@ public final class CoreMotion {
 
     /**
      * kCMErrorDomain
-     * <p>
+     * 
      * Discussion:
      * Error returned as the domain to NSError from CoreMotion.
+     * 
+     * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

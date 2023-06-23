@@ -23,11 +23,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Class representing single token. When implementing SmartCard based token, it is recommended to inherit the
  * implementation from TKSmartCardToken. Token object serves as synchronization point, all operations invoked upon token
  * and all its sessions are serialized.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CryptoTokenKit")
@@ -59,29 +63,35 @@ public class TKToken extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * Token configuration associated with this token instance.
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("configuration")
     public native TKTokenConfiguration configuration();
@@ -90,6 +100,7 @@ public class TKToken extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -110,13 +121,13 @@ public class TKToken extends NSObject {
 
     /**
      * Initializes token instance
-     *
+     * 
      * @param tokenDriver Creating token driver.
      * @param instanceID  Unique, persistent identifier of this token.
      */
     @Generated
     @Selector("initWithTokenDriver:instanceID:")
-    public native TKToken initWithTokenDriverInstanceID(TKTokenDriver tokenDriver, String instanceID);
+    public native TKToken initWithTokenDriverInstanceID(@NotNull TKTokenDriver tokenDriver, @NotNull String instanceID);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -135,13 +146,15 @@ public class TKToken extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Keychain contents (certificate and key items) representing this token.
      */
+    @Nullable
     @Generated
     @Selector("keychainContents")
     public native TKTokenKeychainContents keychainContents();
@@ -161,10 +174,10 @@ public class TKToken extends NSObject {
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) TKTokenDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) TKTokenDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) TKTokenDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) TKTokenDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -183,6 +196,7 @@ public class TKToken extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("tokenDriver")
     public native TKTokenDriver tokenDriver();

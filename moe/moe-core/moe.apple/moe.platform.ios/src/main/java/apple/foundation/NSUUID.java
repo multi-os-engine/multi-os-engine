@@ -38,10 +38,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
- * Note: NSUUID is not toll-free bridged with CFUUID. Use UUID strings to convert between CFUUID and NSUUID, if needed.
- * NSUUIDs are not guaranteed to be comparable by pointer value (as CFUUIDRef is); use isEqual: to compare two NSUUIDs.
+ * API-Since: 6.0
  */
 @Generated
 @Library("Foundation")
@@ -80,22 +81,25 @@ public class NSUUID extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +134,10 @@ public class NSUUID extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,19 +172,21 @@ public class NSUUID extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Return a string description of the UUID, such as "E621E1F8-C36C-495A-93FC-0C247A3E6E5F"
      */
+    @NotNull
     @Generated
     @Selector("UUIDString")
     public native String UUIDString();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Create a new NSUUID with RFC 4122 version 4 random bytes
@@ -190,14 +197,14 @@ public class NSUUID extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUUID initWithCoder(NSCoder coder);
+    public native NSUUID initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Create an NSUUID from a string such as "E621E1F8-C36C-495A-93FC-0C247A3E6E5F". Returns nil for invalid strings.
      */
     @Generated
     @Selector("initWithUUIDString:")
-    public native NSUUID initWithUUIDString(String string);
+    public native NSUUID initWithUUIDString(@NotNull String string);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -207,9 +214,11 @@ public class NSUUID extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Compare the receiver to another NSUUID in constant time
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("compare:")
     @NInt
-    public native long compare(NSUUID otherUUID);
+    public native long compare(@NotNull NSUUID otherUUID);
 }

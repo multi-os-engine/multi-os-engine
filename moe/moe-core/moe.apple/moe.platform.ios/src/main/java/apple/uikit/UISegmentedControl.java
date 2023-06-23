@@ -17,8 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -51,7 +49,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -74,7 +79,7 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Selector("addKeyframeWithRelativeStartTime:relativeDuration:animations:")
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
-            @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
 
     @Generated
     @Owned
@@ -90,64 +95,72 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
     public static native void animateKeyframesWithDurationDelayOptionsAnimationsCompletion(double duration,
             double delay, @NUInt long options,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:animations:")
     public static native void animateWithDurationAnimations(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
 
     @Generated
     @Selector("animateWithDuration:animations:completion:")
     public static native void animateWithDurationAnimationsCompletion(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:options:animations:completion:")
     public static native void animateWithDurationDelayOptionsAnimationsCompletion(double duration, double delay,
             @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:")
     public static native void animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion(
             double duration, double delay, @NFloat double dampingRatio, @NFloat double velocity, @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
 
+    @NotNull
     @Generated
     @Selector("appearance")
     public static native UISegmentedControl appearance();
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:")
-    public static native UISegmentedControl appearanceForTraitCollection(UITraitCollection trait);
+    public static native UISegmentedControl appearanceForTraitCollection(@NotNull UITraitCollection trait);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    public static native UISegmentedControl appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native UISegmentedControl appearanceForTraitCollectionWhenContainedIn(
+            @NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     public static native UISegmentedControl appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            UITraitCollection trait, NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     public static native UISegmentedControl appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    public static native UISegmentedControl appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native UISegmentedControl appearanceWhenContainedInInstancesOfClasses(
+            @NotNull NSArray<?> containerTypes);
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -155,34 +168,39 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
-    public static native void beginAnimationsContext(String animationID, VoidPtr context);
+    public static native void beginAnimationsContext(@Nullable String animationID, @Nullable VoidPtr context);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -221,10 +239,12 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("layerClass")
     public static native Class layerClass();
@@ -237,14 +257,14 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")
     public static native void performSystemAnimationOnViewsOptionsAnimationsCompletion(@NUInt long animation,
-            NSArray<? extends UIView> views, @NUInt long options,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
+            @NotNull NSArray<? extends UIView> views, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("performWithoutAnimation:")
     public static native void performWithoutAnimation(
-            @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
+            @NotNull @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
 
     @Generated
     @Selector("requiresConstraintBasedLayout")
@@ -258,49 +278,61 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
-    public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
+    public static native void setAnimationDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
-    public static native void setAnimationDidStopSelector(SEL selector);
+    public static native void setAnimationDidStopSelector(@Nullable SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
-    public static native void setAnimationStartDate(NSDate startDate);
+    public static native void setAnimationStartDate(@NotNull NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
-    public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
+    public static native void setAnimationTransitionForViewCache(@NInt long transition, @NotNull UIView view,
+            boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
-    public static native void setAnimationWillStartSelector(SEL selector);
+    public static native void setAnimationWillStartSelector(@Nullable SEL selector);
 
     @Generated
     @Selector("setAnimationsEnabled:")
@@ -316,16 +348,16 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
 
     @Generated
     @Selector("transitionFromView:toView:duration:options:completion:")
-    public static native void transitionFromViewToViewDurationOptionsCompletion(UIView fromView, UIView toView,
-            double duration, @NUInt long options,
-            @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
+    public static native void transitionFromViewToViewDurationOptionsCompletion(@NotNull UIView fromView,
+            @NotNull UIView toView, double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
 
     @Generated
     @Selector("transitionWithView:duration:options:animations:completion:")
-    public static native void transitionWithViewDurationOptionsAnimationsCompletion(UIView view, double duration,
-            @NUInt long options,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
+    public static native void transitionWithViewDurationOptionsAnimationsCompletion(@NotNull UIView view,
+            double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:")
@@ -343,55 +375,67 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearance")
     public UISegmentedControl _appearance() {
         return appearance();
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    public UISegmentedControl _appearanceForTraitCollection(UITraitCollection trait) {
+    public UISegmentedControl _appearanceForTraitCollection(@NotNull UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    public UISegmentedControl _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public UISegmentedControl _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    public UISegmentedControl _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
+    public UISegmentedControl _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     public UISegmentedControl _appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public UISegmentedControl _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public UISegmentedControl _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
     /**
      * For segments whose width value is 0, setting this property to YES attempts to adjust segment widths based on
      * their content widths. Default is NO.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("apportionsSegmentWidthsByContent")
     public native boolean apportionsSegmentWidthsByContent();
 
+    /**
+     * API-Since: 5.0
+     */
+    @Nullable
     @Generated
     @Selector("backgroundImageForState:barMetrics:")
     public native UIImage backgroundImageForStateBarMetrics(@NUInt long state, @NInt long barMetrics);
@@ -401,12 +445,19 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @ByValue
     public native CGSize contentOffsetForSegmentAtIndex(@NUInt long segment);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("contentPositionAdjustmentForSegmentType:barMetrics:")
     @ByValue
     public native UIOffset contentPositionAdjustmentForSegmentTypeBarMetrics(@NInt long leftCenterRightOrAlone,
             @NInt long barMetrics);
 
+    /**
+     * API-Since: 5.0
+     */
+    @Nullable
     @Generated
     @Selector("dividerImageForLeftSegmentState:rightSegmentState:barMetrics:")
     public native UIImage dividerImageForLeftSegmentStateRightSegmentStateBarMetrics(@NUInt long leftState,
@@ -414,8 +465,9 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    @Nullable
     @Generated
     @Selector("imageForSegmentAtIndex:")
     public native UIImage imageForSegmentAtIndex(@NUInt long segment);
@@ -426,7 +478,7 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
 
     @Generated
     @Selector("initWithCoder:")
-    public native UISegmentedControl initWithCoder(NSCoder coder);
+    public native UISegmentedControl initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -439,18 +491,20 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
      */
     @Generated
     @Selector("initWithItems:")
-    public native UISegmentedControl initWithItems(NSArray<?> items);
+    public native UISegmentedControl initWithItems(@Nullable NSArray<?> items);
 
     @Generated
     @Selector("insertSegmentWithImage:atIndex:animated:")
-    public native void insertSegmentWithImageAtIndexAnimated(UIImage image, @NUInt long segment, boolean animated);
+    public native void insertSegmentWithImageAtIndexAnimated(@Nullable UIImage image, @NUInt long segment,
+            boolean animated);
 
     /**
      * insert before segment number. 0..#segments. value pinned
      */
     @Generated
     @Selector("insertSegmentWithTitle:atIndex:animated:")
-    public native void insertSegmentWithTitleAtIndexAnimated(String title, @NUInt long segment, boolean animated);
+    public native void insertSegmentWithTitleAtIndexAnimated(@Nullable String title, @NUInt long segment,
+            boolean animated);
 
     @Generated
     @Selector("isEnabledForSegmentAtIndex:")
@@ -483,6 +537,11 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Selector("removeSegmentAtIndex:animated:")
     public native void removeSegmentAtIndexAnimated(@NUInt long segment, boolean animated);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: The segmentedControlStyle property no longer has any effect
+     */
     @Generated
     @Deprecated
     @Selector("segmentedControlStyle")
@@ -503,6 +562,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     /**
      * For segments whose width value is 0, setting this property to YES attempts to adjust segment widths based on
      * their content widths. Default is NO.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setApportionsSegmentWidthsByContent:")
@@ -513,17 +574,19 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
      * calculated from that information, otherwise, the cap width will be calculated by subtracting one from the image's
      * width then dividing by 2. The cap widths will also be used as the margins for text placement. To adjust the
      * margin use the margin adjustment methods.
-     * <p>
+     * 
      * In general, you should specify a value for the normal state to be used by other states which don't have a custom
      * value set.
-     * <p>
+     * 
      * Similarly, when a property is dependent on the bar metrics, be sure to specify a value for UIBarMetricsDefault.
      * In the case of the segmented control, appearance properties for UIBarMetricsCompact are only respected for
      * segmented controls in the smaller navigation and toolbars.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setBackgroundImage:forState:barMetrics:")
-    public native void setBackgroundImageForStateBarMetrics(UIImage backgroundImage, @NUInt long state,
+    public native void setBackgroundImageForStateBarMetrics(@Nullable UIImage backgroundImage, @NUInt long state,
             @NInt long barMetrics);
 
     /**
@@ -535,6 +598,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
 
     /**
      * For adjusting the position of a title or image within the given segment of a segmented control.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setContentPositionAdjustment:forSegmentType:barMetrics:")
@@ -547,10 +612,12 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
      * the left and unselected on the right (leftSegmentState:UIControlStateSelected
      * rightSegmentState:UIControlStateNormal), and unselected on the left and selected on the right
      * (leftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateSelected).
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setDividerImage:forLeftSegmentState:rightSegmentState:barMetrics:")
-    public native void setDividerImageForLeftSegmentStateRightSegmentStateBarMetrics(UIImage dividerImage,
+    public native void setDividerImageForLeftSegmentStateRightSegmentStateBarMetrics(@Nullable UIImage dividerImage,
             @NUInt long leftState, @NUInt long rightState, @NInt long barMetrics);
 
     /**
@@ -565,8 +632,13 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
      */
     @Generated
     @Selector("setImage:forSegmentAtIndex:")
-    public native void setImageForSegmentAtIndex(UIImage image, @NUInt long segment);
+    public native void setImageForSegmentAtIndex(@Nullable UIImage image, @NUInt long segment);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: The segmentedControlStyle property no longer has any effect
+     */
     @Generated
     @Deprecated
     @Selector("setSegmentedControlStyle:")
@@ -587,15 +659,17 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
      */
     @Generated
     @Selector("setTitle:forSegmentAtIndex:")
-    public native void setTitleForSegmentAtIndex(String title, @NUInt long segment);
+    public native void setTitleForSegmentAtIndex(@Nullable String title, @NUInt long segment);
 
     /**
      * You may specify the font, text color, and shadow properties for the title in the text attributes dictionary,
      * using the keys found in NSAttributedString.h.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setTitleTextAttributes:forState:")
-    public native void setTitleTextAttributesForState(NSDictionary<String, ?> attributes, @NUInt long state);
+    public native void setTitleTextAttributesForState(@Nullable NSDictionary<String, ?> attributes, @NUInt long state);
 
     /**
      * set to 0.0 width to autosize. default is 0.0
@@ -604,10 +678,15 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Selector("setWidth:forSegmentAtIndex:")
     public native void setWidthForSegmentAtIndex(@NFloat double width, @NUInt long segment);
 
+    @Nullable
     @Generated
     @Selector("titleForSegmentAtIndex:")
     public native String titleForSegmentAtIndex(@NUInt long segment);
 
+    /**
+     * API-Since: 5.0
+     */
+    @Nullable
     @Generated
     @Selector("titleTextAttributesForState:")
     public native NSDictionary<String, ?> titleTextAttributesForState(@NUInt long state);
@@ -629,25 +708,33 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
-            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+            @NotNull @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
     /**
      * The color to use for highlighting the currently selected segment.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("selectedSegmentTintColor")
     public native UIColor selectedSegmentTintColor();
 
     /**
      * The color to use for highlighting the currently selected segment.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setSelectedSegmentTintColor:")
-    public native void setSelectedSegmentTintColor(UIColor value);
+    public native void setSelectedSegmentTintColor(@Nullable UIColor value);
 
     /**
      * Fetch the action for the given segment, if one has been assigned to that segment
+     * 
+     * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("actionForSegmentAtIndex:")
     public native UIAction actionForSegmentAtIndex(@NUInt long segment);
@@ -656,41 +743,52 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
      * Initializes the segmented control with the given frame and segments constructed from the given UIActions.
      * Segments will prefer images over titles when both are provided. Selecting a segment calls UIAction.actionHandler
      * as well as handlers for the ValueChanged and PrimaryActionTriggered control events.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithFrame:actions:")
-    public native UISegmentedControl initWithFrameActions(@ByValue CGRect frame, NSArray<? extends UIAction> actions);
+    public native UISegmentedControl initWithFrameActions(@ByValue CGRect frame,
+            @NotNull NSArray<? extends UIAction> actions);
 
     @Generated
     @Selector("initWithFrame:primaryAction:")
-    public native UISegmentedControl initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
+    public native UISegmentedControl initWithFramePrimaryAction(@ByValue CGRect frame,
+            @Nullable UIAction primaryAction);
 
     /**
      * Insert a segment with the given action at the given index. Segments will prefer images over titles when both are
      * provided. When the segment is selected UIAction.actionHandler is called. If a segment already exists with the
      * action's identifier that segment will either be updated (if the index is the same) or it will be removed (if
      * different).
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("insertSegmentWithAction:atIndex:animated:")
-    public native void insertSegmentWithActionAtIndexAnimated(UIAction action, @NUInt long segment, boolean animated);
+    public native void insertSegmentWithActionAtIndexAnimated(@NotNull UIAction action, @NUInt long segment,
+            boolean animated);
 
     /**
      * Returns the index of the segment associated with the given actionIdentifier, or NSNotFound if the identifier
      * could not be found.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("segmentIndexForActionIdentifier:")
     @NInt
-    public native long segmentIndexForActionIdentifier(String actionIdentifier);
+    public native long segmentIndexForActionIdentifier(@NotNull String actionIdentifier);
 
     /**
      * Reconfigures the given segment with this action. Segments will prefer images over titles when both are provided.
      * When the segment is selected UIAction.actionHandler is called. UIAction.identifier must either match the action
      * of the existing segment at this index, or be unique within all actions associated with the segmented control, or
      * this method will assert.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAction:forSegmentAtIndex:")
-    public native void setActionForSegmentAtIndex(UIAction action, @NUInt long segment);
+    public native void setActionForSegmentAtIndex(@NotNull UIAction action, @NUInt long segment);
 }

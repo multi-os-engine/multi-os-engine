@@ -41,7 +41,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -72,22 +77,25 @@ public class INRequestRideIntent extends INIntent {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,9 +130,10 @@ public class INRequestRideIntent extends INIntent {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,6 +168,7 @@ public class INRequestRideIntent extends INIntent {
     /**
      * Specifies where the ride should end.
      */
+    @Nullable
     @Generated
     @Selector("dropOffLocation")
     public native CLPlacemark dropOffLocation();
@@ -169,21 +179,30 @@ public class INRequestRideIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRequestRideIntent initWithCoder(NSCoder coder);
+    public native INRequestRideIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 10.3
+     * Deprecated-Message: Use the designated initializer instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithPickupLocation:dropOffLocation:rideOptionName:partySize:paymentMethod:")
     public native INRequestRideIntent initWithPickupLocationDropOffLocationRideOptionNamePartySizePaymentMethod(
-            CLPlacemark pickupLocation, CLPlacemark dropOffLocation, INSpeakableString rideOptionName,
-            NSNumber partySize, INPaymentMethod paymentMethod);
+            @Nullable CLPlacemark pickupLocation, @Nullable CLPlacemark dropOffLocation,
+            @Nullable INSpeakableString rideOptionName, @Nullable NSNumber partySize,
+            @Nullable INPaymentMethod paymentMethod);
 
     /**
      * Defines the number of people in the party requesting the ride.
      */
+    @Nullable
     @Generated
     @Selector("partySize")
     public native NSNumber partySize();
 
+    @Nullable
     @Generated
     @Selector("paymentMethod")
     public native INPaymentMethod paymentMethod();
@@ -191,10 +210,12 @@ public class INRequestRideIntent extends INIntent {
     /**
      * Specifies the location to to begin the ride.
      */
+    @Nullable
     @Generated
     @Selector("pickupLocation")
     public native CLPlacemark pickupLocation();
 
+    @Nullable
     @Generated
     @Selector("rideOptionName")
     public native INSpeakableString rideOptionName();
@@ -205,12 +226,20 @@ public class INRequestRideIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("initWithPickupLocation:dropOffLocation:rideOptionName:partySize:paymentMethod:scheduledPickupTime:")
     public native INRequestRideIntent initWithPickupLocationDropOffLocationRideOptionNamePartySizePaymentMethodScheduledPickupTime(
-            CLPlacemark pickupLocation, CLPlacemark dropOffLocation, INSpeakableString rideOptionName,
-            NSNumber partySize, INPaymentMethod paymentMethod, INDateComponentsRange scheduledPickupTime);
+            @Nullable CLPlacemark pickupLocation, @Nullable CLPlacemark dropOffLocation,
+            @Nullable INSpeakableString rideOptionName, @Nullable NSNumber partySize,
+            @Nullable INPaymentMethod paymentMethod, @Nullable INDateComponentsRange scheduledPickupTime);
 
+    /**
+     * API-Since: 10.3
+     */
+    @Nullable
     @Generated
     @Selector("scheduledPickupTime")
     public native INDateComponentsRange scheduledPickupTime();

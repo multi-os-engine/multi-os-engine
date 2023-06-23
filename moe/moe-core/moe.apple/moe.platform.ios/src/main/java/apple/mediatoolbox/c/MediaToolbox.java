@@ -35,6 +35,8 @@ import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.NIntPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("MediaToolbox")
@@ -48,6 +50,9 @@ public final class MediaToolbox {
     private MediaToolbox() {
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @CFunction
     @NUInt
@@ -55,79 +60,103 @@ public final class MediaToolbox {
 
     /**
      * [@function] MTAudioProcessingTapCreate
-     * <p>
+     * 
      * Create a new processing tap.
-     * <p>
+     * 
      * This function creates a processing tap.
      * The processing tap will then be used to process decoded data.
      * The processing is performed on audio either before or after any effects or other
      * processing (varispeed, etc) is applied by the audio queue.
-     *
-     * @return An OSStatus result code.
-     * @param allocator The allocator to use to allocate memory for the new tap. Pass NULL or kCFAllocatorDefault to use
+     * 
+     * @param allocator
+     *                  The allocator to use to allocate memory for the new tap. Pass NULL or kCFAllocatorDefault to use
      *                  the current default allocator.
-     * @param callbacks Callbacks struct. MTAudioProcessingTap will make a copy of this struct.
-     * @param flags     Flags that are used to control aspects of the processing tap.
+     * @param callbacks
+     *                  Callbacks struct. MTAudioProcessingTap will make a copy of this struct.
+     * @param flags
+     *                  Flags that are used to control aspects of the processing tap.
      *                  Valid flags are:
      *                  - kMTAudioProcessingTapCreationFlag_PreEffects:
      *                  processing is done before any further effects are applied by the audio queue to the audio.
      *                  - kMTAudioProcessingTapCreationFlag_PostEffects:
      *                  processing is done after all processing is done, including that of other taps.
-     * @param tapOut    The processing tap object.
+     * @param tapOut
+     *                  The processing tap object.
+     * 
+     * @return An OSStatus result code.
+     * 
+     *         API-Since: 6.0
      */
     @Generated
     @CFunction
-    public static native int MTAudioProcessingTapCreate(CFAllocatorRef allocator,
-            @UncertainArgument("Options: reference, array Fallback: reference") MTAudioProcessingTapCallbacks callbacks,
-            int flags, Ptr<MTAudioProcessingTapRef> tapOut);
+    public static native int MTAudioProcessingTapCreate(@Nullable CFAllocatorRef allocator,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MTAudioProcessingTapCallbacks callbacks,
+            int flags, @NotNull Ptr<MTAudioProcessingTapRef> tapOut);
 
     /**
      * [@function] MTAudioProcessingTapGetStorage
-     * <p>
+     * 
      * Used by a processing tap to retrieve a custom storage pointer.
-     *
-     * @param tap The processing tap.
+     * 
+     * @param tap
+     *            The processing tap.
+     * 
      * @return The tapStorage returned by the init callback.
+     * 
+     *         API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native VoidPtr MTAudioProcessingTapGetStorage(MTAudioProcessingTapRef tap);
+    public static native VoidPtr MTAudioProcessingTapGetStorage(@NotNull MTAudioProcessingTapRef tap);
 
     /**
      * [@function] MTAudioProcessingTapGetSourceAudio
-     * <p>
+     * 
      * Used by a processing tap to retrieve source audio.
-     * <p>
+     * 
      * This function may only be called from the processing tap's callback.
-     *
-     * @param tap             The processing tap.
-     * @param numberFrames    The number of frames the processing tap requires for its processing.
-     * @param bufferListInOut The audio buffer list which will contain the source data.
+     * 
+     * @param tap
+     *                        The processing tap.
+     * @param numberFrames
+     *                        The number of frames the processing tap requires for its processing.
+     * @param bufferListInOut
+     *                        The audio buffer list which will contain the source data.
      *                        On input, all fields except for the buffer pointers must be filled in.
      *                        If the buffer pointers are NULL (recommended), non-NULL pointers will be
      *                        returned and system owns the source buffers; these buffers are only applicable
      *                        for the duration of the processing tap callback.
      *                        If the buffer pointers are non-NULL, then they must be big enough to hold
      *                        numberFrames, and the source data will be copied into these buffers.
-     * @param flagsOut        Flags to describe state about the input requested, e.g., discontinuity/complete. Can be
+     * @param flagsOut
+     *                        Flags to describe state about the input requested, e.g., discontinuity/complete. Can be
      *                        NULL.
-     * @param timeRangeOut    The asset time range corresponding to the provided source audio frames. Can be NULL.
-     * @param numberFramesOut The number of source frames that have been provided. Can be NULL.
+     * @param timeRangeOut
+     *                        The asset time range corresponding to the provided source audio frames. Can be NULL.
+     * @param numberFramesOut
+     *                        The number of source frames that have been provided. Can be NULL.
      *                        This can be less than the number of requested frames specified in numberFrames.
+     * 
      * @return An OSStatus result code.
+     * 
+     *         API-Since: 6.0
      */
     @Generated
     @CFunction
-    public static native int MTAudioProcessingTapGetSourceAudio(MTAudioProcessingTapRef tap, @NInt long numberFrames,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList bufferListInOut,
-            IntPtr flagsOut,
-            @UncertainArgument("Options: reference, array Fallback: reference") CMTimeRange timeRangeOut,
-            NIntPtr numberFramesOut);
+    public static native int MTAudioProcessingTapGetSourceAudio(@NotNull MTAudioProcessingTapRef tap,
+            @NInt long numberFrames,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList bufferListInOut,
+            @Nullable IntPtr flagsOut,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CMTimeRange timeRangeOut,
+            @Nullable NIntPtr numberFramesOut);
 
+    @Nullable
     @Generated
     @CFunction
     public static native CFStringRef MTCopyLocalizedNameForMediaType(int mediaType);
 
+    @Nullable
     @Generated
     @CFunction
     public static native CFStringRef MTCopyLocalizedNameForMediaSubType(int mediaType, int mediaSubType);

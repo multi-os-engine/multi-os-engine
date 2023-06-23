@@ -16,7 +16,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -25,10 +30,11 @@ public interface UIWindowSceneDelegate extends UISceneDelegate {
     @Generated
     @IsOptional
     @Selector("setWindow:")
-    default void setWindow(UIWindow value) {
+    default void setWindow(@Nullable UIWindow value) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("window")
@@ -36,12 +42,17 @@ public interface UIWindowSceneDelegate extends UISceneDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the coordinate space, interface orientation, or trait collection of a UIWindowScene changes
+     * Always called when a UIWindowScene moves between screens
+     */
     @Generated
     @IsOptional
     @Selector("windowScene:didUpdateCoordinateSpace:interfaceOrientation:traitCollection:")
-    default void windowSceneDidUpdateCoordinateSpaceInterfaceOrientationTraitCollection(UIWindowScene windowScene,
-            @Mapped(ObjCObjectMapper.class) UICoordinateSpace previousCoordinateSpace,
-            @NInt long previousInterfaceOrientation, UITraitCollection previousTraitCollection) {
+    default void windowSceneDidUpdateCoordinateSpaceInterfaceOrientationTraitCollection(
+            @NotNull UIWindowScene windowScene,
+            @NotNull @Mapped(ObjCObjectMapper.class) UICoordinateSpace previousCoordinateSpace,
+            @NInt long previousInterfaceOrientation, @NotNull UITraitCollection previousTraitCollection) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -52,9 +63,9 @@ public interface UIWindowSceneDelegate extends UISceneDelegate {
     @Generated
     @IsOptional
     @Selector("windowScene:performActionForShortcutItem:completionHandler:")
-    default void windowScenePerformActionForShortcutItemCompletionHandler(UIWindowScene windowScene,
-            UIApplicationShortcutItem shortcutItem,
-            @ObjCBlock(name = "call_windowScenePerformActionForShortcutItemCompletionHandler") Block_windowScenePerformActionForShortcutItemCompletionHandler completionHandler) {
+    default void windowScenePerformActionForShortcutItemCompletionHandler(@NotNull UIWindowScene windowScene,
+            @NotNull UIApplicationShortcutItem shortcutItem,
+            @NotNull @ObjCBlock(name = "call_windowScenePerformActionForShortcutItemCompletionHandler") Block_windowScenePerformActionForShortcutItemCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -76,8 +87,8 @@ public interface UIWindowSceneDelegate extends UISceneDelegate {
     @Generated
     @IsOptional
     @Selector("windowScene:userDidAcceptCloudKitShareWithMetadata:")
-    default void windowSceneUserDidAcceptCloudKitShareWithMetadata(UIWindowScene windowScene,
-            CKShareMetadata cloudKitShareMetadata) {
+    default void windowSceneUserDidAcceptCloudKitShareWithMetadata(@NotNull UIWindowScene windowScene,
+            @NotNull CKShareMetadata cloudKitShareMetadata) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

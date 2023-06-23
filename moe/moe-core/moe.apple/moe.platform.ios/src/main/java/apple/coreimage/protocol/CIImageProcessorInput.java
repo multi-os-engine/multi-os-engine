@@ -17,7 +17,6 @@ limitations under the License.
 package apple.coreimage.protocol;
 
 import apple.coregraphics.opaque.IOSurfaceRef;
-import apple.coregraphics.struct.CGRect;
 import apple.corevideo.opaque.CVBufferRef;
 import apple.metal.protocol.MTLTexture;
 import org.moe.natj.general.ann.ByValue;
@@ -31,7 +30,13 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -41,6 +46,7 @@ public interface CIImageProcessorInput {
      * The base address of the input buffer that the processor block can read from.
      * This memory must not be modified by the block.
      */
+    @NotNull
     @Generated
     @Selector("baseAddress")
     ConstVoidPtr baseAddress();
@@ -64,6 +70,7 @@ public interface CIImageProcessorInput {
      * A MTLTexture object that can be bound as input (if processing using Metal).
      * This texture must not be modified by the block.
      */
+    @Nullable
     @Generated
     @Selector("metalTexture")
     @MappedReturn(ObjCObjectMapper.class)
@@ -73,6 +80,7 @@ public interface CIImageProcessorInput {
      * An input CVPixelBuffer that the processor block can read from.
      * This buffer must not be modified by the block.
      */
+    @Nullable
     @Generated
     @Selector("pixelBuffer")
     CVBufferRef pixelBuffer();
@@ -90,7 +98,18 @@ public interface CIImageProcessorInput {
      * An input IOSurface that the processor block can read from.
      * This surface must not be modified by the block.
      */
+    @NotNull
     @Generated
     @Selector("surface")
     IOSurfaceRef surface();
+
+    /**
+     * A 64-bit digest that uniquely descibes the contents of the input to a processor.
+     * This digest will change if the graph of the input changes in any way.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("digest")
+    long digest();
 }

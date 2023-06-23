@@ -21,14 +21,28 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * Sort order for contacts.
- * <p>
+ * 
  * CNContactSortOrderUserDefault is the user's preferred sort order.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class CNContactSortOrder {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long UserDefault = 0x0000000000000001L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long GivenName = 0x0000000000000002L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long FamilyName = 0x0000000000000003L;
 
     @Generated

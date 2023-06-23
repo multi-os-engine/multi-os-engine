@@ -39,16 +39,20 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEAppProxyFlow
- * <p>
+ * 
  * The NEAppProxyFlow class is an abstract base class that declares the programmatic interface for a flow of network
  * data.
- * <p>
+ * 
  * NEAppProxyFlow is part of NetworkExtension.framework.
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -80,22 +84,25 @@ public class NEAppProxyFlow extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +137,10 @@ public class NEAppProxyFlow extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,27 +170,31 @@ public class NEAppProxyFlow extends NSObject {
 
     /**
      * closeReadWithError:
-     * <p>
+     * 
      * This function is used by an NEProvider implementation to indicate that it does not want to receive any more data
      * from the flow.
-     *
+     * 
      * @param error An error in NEAppProxyErrorDomain that should be passed to the flow's source application.
+     * 
+     *              API-Since: 9.0
      */
     @Generated
     @Selector("closeReadWithError:")
-    public native void closeReadWithError(NSError error);
+    public native void closeReadWithError(@Nullable NSError error);
 
     /**
      * closeWriteWithError:
-     * <p>
+     * 
      * This functions is used by an NEProvider implementation to indicate that it does not have any more data to write
      * to the flow.
-     *
+     * 
      * @param error An error in NEAppProxyErrorDomain that should be passed to the flow's source application.
+     * 
+     *              API-Since: 9.0
      */
     @Generated
     @Selector("closeWriteWithError:")
-    public native void closeWriteWithError(NSError error);
+    public native void closeWriteWithError(@Nullable NSError error);
 
     @Generated
     @Selector("init")
@@ -190,75 +202,90 @@ public class NEAppProxyFlow extends NSObject {
 
     /**
      * [@property] metaData
-     * <p>
+     * 
      * An NEFlowMetaData object containing meta data for the flow.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("metaData")
     public native NEFlowMetaData metaData();
 
     /**
      * openWithLocalEndpoint:completionHandler:
-     * <p>
+     * 
      * This function is used by an NEProvider implementation to indicate that it is ready to handle flow data.
-     *
+     * 
      * @param localEndpoint     The address and port that should be used as the local endpoint of the socket associated
      *                          with this flow. If the source application already specifed a local endpoint by binding
      *                          the socket then this parameter is ignored.
      * @param completionHandler A block that is called when the process of opening flow is complete. A nil value passed
      *                          to this block indicates that the flow was opened successfully. A non-nil NSError value
      *                          indicates that the flow failed to open successfully.
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("openWithLocalEndpoint:completionHandler:")
-    public native void openWithLocalEndpointCompletionHandler(NWHostEndpoint localEndpoint,
-            @ObjCBlock(name = "call_openWithLocalEndpointCompletionHandler") Block_openWithLocalEndpointCompletionHandler completionHandler);
+    public native void openWithLocalEndpointCompletionHandler(@Nullable NWHostEndpoint localEndpoint,
+            @NotNull @ObjCBlock(name = "call_openWithLocalEndpointCompletionHandler") Block_openWithLocalEndpointCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_openWithLocalEndpointCompletionHandler {
         @Generated
-        void call_openWithLocalEndpointCompletionHandler(NSError error);
+        void call_openWithLocalEndpointCompletionHandler(@Nullable NSError error);
     }
 
     /**
      * [@property] networkInterface
-     * <p>
+     * 
      * An nw_interface_t containing information about the network interface used by the flow. If the flow's data is
      * transported using a different interface, this property
      * should be set to that interface.
+     * 
+     * API-Since: 13.4
      */
+    @Nullable
     @Generated
     @Selector("networkInterface")
     public native NSObject networkInterface();
 
     /**
      * [@property] networkInterface
-     * <p>
+     * 
      * An nw_interface_t containing information about the network interface used by the flow. If the flow's data is
      * transported using a different interface, this property
      * should be set to that interface.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("setNetworkInterface:")
-    public native void setNetworkInterface(NSObject value);
+    public native void setNetworkInterface(@Nullable NSObject value);
 
     /**
      * [@property] remoteHostname
-     * <p>
+     * 
      * If the flow was created by passing a hostname to a "connect by name" API such as NSURLSession or
      * Network.framework, this property is set to the
      * remote hostname.
+     * 
+     * API-Since: 14.2
      */
+    @Nullable
     @Generated
     @Selector("remoteHostname")
     public native String remoteHostname();
 
     /**
      * [@property] isBound
-     * <p>
+     * 
      * YES if the flow was bound by the application to a specific interface (contained in the networkInterface
      * property), NO otherwise.
+     * 
+     * API-Since: 14.3
      */
     @Generated
     @Selector("isBound")

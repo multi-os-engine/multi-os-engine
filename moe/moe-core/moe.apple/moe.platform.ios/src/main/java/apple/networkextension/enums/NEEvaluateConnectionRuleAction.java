@@ -21,18 +21,24 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEEvaluateConnectionRuleAction
- * <p>
+ * 
  * Evaluate Connection rule actions
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class NEEvaluateConnectionRuleAction {
     /**
      * [@const] NEEvaluateConnectionRuleActionConnectIfNeeded Start the VPN connection if the destination host is not
      * accessible directly
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long ConnectIfNeeded = 0x0000000000000001L;
     /**
      * [@const] NEEvaluateConnectionRuleActionNeverConnect Do not start the VPN connection
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long NeverConnect = 0x0000000000000002L;
 

@@ -30,13 +30,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * APActivationPayload
- * An APActivationPayload object is an object passed to application within NSUserActity when it is launched by a
+ * An APActivationPayload object is an object passed to application within NSUserActivity when it is launched by a
  * physical code scan. Upon receiving
  * the payload, application can inspect its content. Application can also check whether the payload was acquired at an
  * expected location.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("AppClip")
@@ -52,6 +56,7 @@ public class APActivationPayload extends NSObject implements NSSecureCoding, NSC
         super(peer);
     }
 
+    @Nullable
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -72,53 +77,57 @@ public class APActivationPayload extends NSObject implements NSSecureCoding, NSC
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * checks if the payload was acquired at an expected region.
-     * <p>
+     * 
      * For the system to accept this request, application needs to specify sub-key NSAppClipRequestLocationConfirmation
      * to true in NSAppClip section in Info.plist.
-     *
+     * 
      * @param region            the region this paylaod is expected to be acquired.
-     * @param completionHandler the completion handler which is called when the system confirms weather the payload was
+     * @param completionHandler the completion handler which is called when the system confirms whether the payload was
      *                          acquired in expected region.
      */
     @Generated
     @Selector("confirmAcquiredInRegion:completionHandler:")
-    public native void confirmAcquiredInRegionCompletionHandler(CLRegion region,
-            @ObjCBlock(name = "call_confirmAcquiredInRegionCompletionHandler") Block_confirmAcquiredInRegionCompletionHandler completionHandler);
+    public native void confirmAcquiredInRegionCompletionHandler(@NotNull CLRegion region,
+            @NotNull @ObjCBlock(name = "call_confirmAcquiredInRegionCompletionHandler") Block_confirmAcquiredInRegionCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_confirmAcquiredInRegionCompletionHandler {
         @Generated
-        void call_confirmAcquiredInRegionCompletionHandler(boolean inRegion, NSError error);
+        void call_confirmAcquiredInRegionCompletionHandler(boolean inRegion, @Nullable NSError error);
     }
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -130,7 +139,7 @@ public class APActivationPayload extends NSObject implements NSSecureCoding, NSC
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -143,7 +152,7 @@ public class APActivationPayload extends NSObject implements NSSecureCoding, NSC
 
     @Generated
     @Selector("initWithCoder:")
-    public native APActivationPayload initWithCoder(NSCoder coder);
+    public native APActivationPayload initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -162,9 +171,10 @@ public class APActivationPayload extends NSObject implements NSSecureCoding, NSC
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

@@ -21,13 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueTamperStatus
- * <p>
+ * 
  * [@constant] HMCharacteristicValueTamperStatusNone Accessory is not tampered with.
  * [@constant] HMCharacteristicValueTamperStatusTampered Accessory is tampered with.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class HMCharacteristicValueTamperedStatus {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Tampered = 0x0000000000000001L;
 
     @Generated

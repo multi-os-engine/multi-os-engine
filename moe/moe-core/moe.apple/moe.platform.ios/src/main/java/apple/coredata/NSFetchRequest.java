@@ -46,7 +46,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -77,22 +82,25 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -105,9 +113,12 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("fetchRequestWithEntityName:")
-    public static native <_ResultType> NSFetchRequest<?> fetchRequestWithEntityName(String entityName);
+    public static native <_ResultType> NSFetchRequest<?> fetchRequestWithEntityName(@NotNull String entityName);
 
     @Generated
     @Selector("hash")
@@ -131,9 +142,10 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,18 +173,24 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("affectedStores")
     public native NSArray<? extends NSPersistentStore> affectedStores();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    @Nullable
     @Generated
     @Selector("entity")
     public native NSEntityDescription entity();
 
+    /**
+     * API-Since: 4.0
+     */
+    @Nullable
     @Generated
     @Selector("entityName")
     public native String entityName();
@@ -180,10 +198,13 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
     /**
      * Executes the fetch request using the current managed object context. This method must be called from within a
      * block submitted to a managed object context.
+     * 
+     * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("execute:")
-    public native NSArray<?> execute(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSArray<?> execute(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * This breaks the result set into batches. The entire request will be evaluated, and the identities of all matching
@@ -192,6 +213,8 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * demand. For purposes of thread safety, the returned array proxy is owned by the NSManagedObjectContext the
      * request is executed against, and should be treated as if it were a managed object registered with that context. A
      * batch size of 0 is treated as infinite, which disables the batch faulting behavior. The default is 0.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("fetchBatchSize")
@@ -208,6 +231,8 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * 'offset' number of matching entries. For example, given a fetch which would normally return a, b, c, and d,
      * specifying an offset of 1 will return b, c, and d and an offset of 4 will return an empty array. Offsets are
      * ignored in nested requests such as subqueries. Default value is 0.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("fetchOffset")
@@ -219,7 +244,10 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * having predicate is
      * supplied, it will be run after the GROUP BY. Specifying a HAVING predicate requires that a GROUP BY also be
      * specified.
+     * 
+     * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("havingPredicate")
     public native NSPredicate havingPredicate();
@@ -228,6 +256,8 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * Results accommodate the currently unsaved changes in the NSManagedObjectContext. When disabled, the fetch request
      * skips checking unsaved changes and only returns objects that matched the predicate in the persistent store.
      * Defaults to YES.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("includesPendingChanges")
@@ -239,6 +269,8 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * to create NSManagedObjectIDs.) If managed objects for these IDs are later faulted (as a result attempting to
      * access property values), they will incur subsequent access to the persistent store to obtain their property
      * values. Defaults to YES.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("includesPropertyValues")
@@ -248,6 +280,8 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * Returns/sets if the fetch request includes subentities. If set to NO, the request will fetch objects of exactly
      * the entity type of the request; if set to YES, the request will include all subentities of the entity for the
      * request. Defaults to YES.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("includesSubentities")
@@ -259,12 +293,16 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSFetchRequest<?> initWithCoder(NSCoder coder);
+    public native NSFetchRequest<?> initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("initWithEntityName:")
-    public native NSFetchRequest<?> initWithEntityName(String entityName);
+    public native NSFetchRequest<?> initWithEntityName(@NotNull String entityName);
 
+    @Nullable
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();
@@ -275,7 +313,10 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * is set, the results of the fetch will be dictionaries containing key/value pairs where the key is the name of the
      * specified property description. If NSManagedObjectResultType is set, then NSExpressionDescription cannot be used,
      * and the results are managed object faults partially pre-populated with the named properties
+     * 
+     * API-Since: 3.0
      */
+    @Nullable
     @Generated
     @Selector("propertiesToFetch")
     public native NSArray<?> propertiesToFetch();
@@ -289,7 +330,10 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * literals, aggregates,
      * or columns specified in the GROUP BY. Aggregates will operate on the groups specified in the GROUP BY rather than
      * the whole table.
+     * 
+     * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("propertiesToGroupBy")
     public native NSArray<?> propertiesToGroupBy();
@@ -300,7 +344,10 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * (Prefetching allows Core Data to obtain developer-specified related objects in a single fetch (per entity),
      * rather than incurring subsequent access to the store for each individual record as their faults are tripped.)
      * Defaults to an empty array (no prefetching.)
+     * 
+     * API-Since: 3.0
      */
+    @Nullable
     @Generated
     @Selector("relationshipKeyPathsForPrefetching")
     public native NSArray<String> relationshipKeyPathsForPrefetching();
@@ -309,6 +356,8 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * Returns/sets the result type of the fetch request (the instance type of objects returned from executing the
      * request.) Setting the value to NSManagedObjectIDResultType will demote any sort orderings to "best effort" hints
      * if property values are not included in the request. Defaults to NSManagedObjectResultType.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("resultType")
@@ -318,6 +367,8 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
     /**
      * Returns/sets if the fetch request returns only distinct values for the fields specified by propertiesToFetch.
      * This value is only used for NSDictionaryResultType. Defaults to NO.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("returnsDistinctResults")
@@ -330,6 +381,8 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * (and will receive a -didFireFault message when the properties are accessed the first time.) This setting is not
      * utilized if the result type of the request is NSManagedObjectIDResultType, as object IDs do not have property
      * values. Defaults to YES.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("returnsObjectsAsFaults")
@@ -337,11 +390,11 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
 
     @Generated
     @Selector("setAffectedStores:")
-    public native void setAffectedStores(NSArray<? extends NSPersistentStore> value);
+    public native void setAffectedStores(@Nullable NSArray<? extends NSPersistentStore> value);
 
     @Generated
     @Selector("setEntity:")
-    public native void setEntity(NSEntityDescription value);
+    public native void setEntity(@Nullable NSEntityDescription value);
 
     /**
      * This breaks the result set into batches. The entire request will be evaluated, and the identities of all matching
@@ -350,6 +403,8 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * demand. For purposes of thread safety, the returned array proxy is owned by the NSManagedObjectContext the
      * request is executed against, and should be treated as if it were a managed object registered with that context. A
      * batch size of 0 is treated as infinite, which disables the batch faulting behavior. The default is 0.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setFetchBatchSize:")
@@ -364,6 +419,8 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * 'offset' number of matching entries. For example, given a fetch which would normally return a, b, c, and d,
      * specifying an offset of 1 will return b, c, and d and an offset of 4 will return an empty array. Offsets are
      * ignored in nested requests such as subqueries. Default value is 0.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setFetchOffset:")
@@ -374,15 +431,19 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * having predicate is
      * supplied, it will be run after the GROUP BY. Specifying a HAVING predicate requires that a GROUP BY also be
      * specified.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setHavingPredicate:")
-    public native void setHavingPredicate(NSPredicate value);
+    public native void setHavingPredicate(@Nullable NSPredicate value);
 
     /**
      * Results accommodate the currently unsaved changes in the NSManagedObjectContext. When disabled, the fetch request
      * skips checking unsaved changes and only returns objects that matched the predicate in the persistent store.
      * Defaults to YES.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setIncludesPendingChanges:")
@@ -394,6 +455,8 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * to create NSManagedObjectIDs.) If managed objects for these IDs are later faulted (as a result attempting to
      * access property values), they will incur subsequent access to the persistent store to obtain their property
      * values. Defaults to YES.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setIncludesPropertyValues:")
@@ -403,6 +466,8 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * Returns/sets if the fetch request includes subentities. If set to NO, the request will fetch objects of exactly
      * the entity type of the request; if set to YES, the request will include all subentities of the entity for the
      * request. Defaults to YES.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setIncludesSubentities:")
@@ -410,7 +475,7 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
 
     @Generated
     @Selector("setPredicate:")
-    public native void setPredicate(NSPredicate value);
+    public native void setPredicate(@Nullable NSPredicate value);
 
     /**
      * Specifies a collection of either NSPropertyDescriptions or NSString property names that should be fetched. The
@@ -418,10 +483,12 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * is set, the results of the fetch will be dictionaries containing key/value pairs where the key is the name of the
      * specified property description. If NSManagedObjectResultType is set, then NSExpressionDescription cannot be used,
      * and the results are managed object faults partially pre-populated with the named properties
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setPropertiesToFetch:")
-    public native void setPropertiesToFetch(NSArray<?> value);
+    public native void setPropertiesToFetch(@Nullable NSArray<?> value);
 
     /**
      * Specifies the way in which data should be grouped before a select statement is run in an SQL database.
@@ -432,10 +499,12 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * literals, aggregates,
      * or columns specified in the GROUP BY. Aggregates will operate on the groups specified in the GROUP BY rather than
      * the whole table.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setPropertiesToGroupBy:")
-    public native void setPropertiesToGroupBy(NSArray<?> value);
+    public native void setPropertiesToGroupBy(@Nullable NSArray<?> value);
 
     /**
      * Returns/sets an array of relationship keypaths to prefetch along with the entity for the request. The array
@@ -443,15 +512,19 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * (Prefetching allows Core Data to obtain developer-specified related objects in a single fetch (per entity),
      * rather than incurring subsequent access to the store for each individual record as their faults are tripped.)
      * Defaults to an empty array (no prefetching.)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setRelationshipKeyPathsForPrefetching:")
-    public native void setRelationshipKeyPathsForPrefetching(NSArray<String> value);
+    public native void setRelationshipKeyPathsForPrefetching(@Nullable NSArray<String> value);
 
     /**
      * Returns/sets the result type of the fetch request (the instance type of objects returned from executing the
      * request.) Setting the value to NSManagedObjectIDResultType will demote any sort orderings to "best effort" hints
      * if property values are not included in the request. Defaults to NSManagedObjectResultType.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setResultType:")
@@ -460,6 +533,8 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
     /**
      * Returns/sets if the fetch request returns only distinct values for the fields specified by propertiesToFetch.
      * This value is only used for NSDictionaryResultType. Defaults to NO.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setReturnsDistinctResults:")
@@ -472,30 +547,40 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
      * (and will receive a -didFireFault message when the properties are accessed the first time.) This setting is not
      * utilized if the result type of the request is NSManagedObjectIDResultType, as object IDs do not have property
      * values. Defaults to YES.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setReturnsObjectsAsFaults:")
     public native void setReturnsObjectsAsFaults(boolean value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setShouldRefreshRefetchedObjects:")
     public native void setShouldRefreshRefetchedObjects(boolean value);
 
     @Generated
     @Selector("setSortDescriptors:")
-    public native void setSortDescriptors(NSArray<? extends NSSortDescriptor> value);
+    public native void setSortDescriptors(@Nullable NSArray<? extends NSSortDescriptor> value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("shouldRefreshRefetchedObjects")
     public native boolean shouldRefreshRefetchedObjects();
 
+    @Nullable
     @Generated
     @Selector("sortDescriptors")
     public native NSArray<? extends NSSortDescriptor> sortDescriptors();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 }

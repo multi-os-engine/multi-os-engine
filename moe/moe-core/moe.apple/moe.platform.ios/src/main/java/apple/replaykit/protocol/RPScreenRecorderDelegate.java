@@ -26,7 +26,12 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("ReplayKit")
 @Runtime(ObjCRuntime.class)
@@ -34,17 +39,22 @@ import org.moe.natj.objc.ann.Selector;
 public interface RPScreenRecorderDelegate {
     /**
      * Called when recording has stopped due to an error.
-     *
+     * 
      * @param screenRecorder        The instance of the screen recorder.
      * @param error                 An NSError describing why recording has stopped in the RPRecordingErrorDomain.
      * @param previewViewController If a partial movie is available before it was stopped, an instance of
      *                              RPPreviewViewController will be returned.
+     * 
+     *                              API-Since: 9.0
+     *                              Deprecated-Since: 10.0
+     *                              Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("screenRecorder:didStopRecordingWithError:previewViewController:")
-    default void screenRecorderDidStopRecordingWithErrorPreviewViewController(RPScreenRecorder screenRecorder,
-            NSError error, RPPreviewViewController previewViewController) {
+    default void screenRecorderDidStopRecordingWithErrorPreviewViewController(@NotNull RPScreenRecorder screenRecorder,
+            @NotNull NSError error, @Nullable RPPreviewViewController previewViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -52,21 +62,24 @@ public interface RPScreenRecorderDelegate {
      * Called when the recorder becomes available or stops being available. Check the screen recorder's availability
      * property to check the current availability state. Possible reasons for the recorder to be unavailable include an
      * in-progress Airplay/TVOut session or unsupported hardware.
-     *
+     * 
      * @param screenRecorder The instance of the screen recorder.
      */
     @Generated
     @IsOptional
     @Selector("screenRecorderDidChangeAvailability:")
-    default void screenRecorderDidChangeAvailability(RPScreenRecorder screenRecorder) {
+    default void screenRecorderDidChangeAvailability(@NotNull RPScreenRecorder screenRecorder) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("screenRecorder:didStopRecordingWithPreviewViewController:error:")
-    default void screenRecorderDidStopRecordingWithPreviewViewControllerError(RPScreenRecorder screenRecorder,
-            RPPreviewViewController previewViewController, NSError error) {
+    default void screenRecorderDidStopRecordingWithPreviewViewControllerError(@NotNull RPScreenRecorder screenRecorder,
+            @Nullable RPPreviewViewController previewViewController, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -40,12 +40,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImageGaussianBlur
- * <p>
+ * 
  * The MPSImageGaussianBlur convolves an image with gaussian of given sigma in both x and y direction.
- * <p>
+ * 
  * The MPSImageGaussianBlur utilizes a very fast algorith that typically runs at approximately
  * 1/2 of copy speeds. Notably, it is faster than either the tent or box blur except perhaps
  * for very large filter windows. Mathematically, it is an approximate gaussian. Some
@@ -54,6 +56,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * filter instead with an appropriate set of weights. The MPSImageGaussianBlur is intended
  * to be suitable for all common image processing needs demanding ~10 bits of precision or
  * less.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -85,22 +89,25 @@ public class MPSImageGaussianBlur extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,9 +142,10 @@ public class MPSImageGaussianBlur extends MPSUnaryImageKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -171,11 +179,11 @@ public class MPSImageGaussianBlur extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImageGaussianBlur initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageGaussianBlur initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize a gaussian blur filter for a particular sigma and device
-     *
+     * 
      * @param device The device the filter will run on
      * @param sigma  The standard deviation of gaussian blur filter.
      *               Gaussian weight, centered at 0, at integer grid i is given as
@@ -188,12 +196,12 @@ public class MPSImageGaussianBlur extends MPSUnaryImageKernel {
      */
     @Generated
     @Selector("initWithDevice:sigma:")
-    public native MPSImageGaussianBlur initWithDeviceSigma(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+    public native MPSImageGaussianBlur initWithDeviceSigma(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
             float sigma);
 
     /**
      * [@property] sigma
-     * <p>
+     * 
      * Read-only sigma value with which filter was created
      */
     @Generated
@@ -202,25 +210,27 @@ public class MPSImageGaussianBlur extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSImageGaussianBlur initWithCoder(NSCoder aDecoder);
+    public native MPSImageGaussianBlur initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSImageGaussianBlur initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageGaussianBlur initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("supportsSecureCoding")

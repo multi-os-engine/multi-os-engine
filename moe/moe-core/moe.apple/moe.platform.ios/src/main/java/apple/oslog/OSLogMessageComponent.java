@@ -26,13 +26,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * OSLogMessageComponent
- * <p>
+ * 
  * The message arguments for a particular entry. There is one
  * component for each placeholder in the formatString plus one
  * component for any text after the last placeholder.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("OSLog")
@@ -64,9 +68,11 @@ public class OSLogMessageComponent extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] argumentCategory
-     * <p>
+     * 
      * The type of argument corresponding to the placeholder; see
      * OSLogMessageComponentArgumentCategory.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("argumentCategory")
@@ -75,21 +81,26 @@ public class OSLogMessageComponent extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] argumentDataValue
-     * <p>
+     * 
      * The argument as a sequence of bytes. Can be nil if the
      * argument cannot be decoded (for example, it could be
      * redacted), or if this is the last component.
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("argumentDataValue")
     public native NSData argumentDataValue();
 
     /**
      * [@property] argumentDoubleValue
-     * <p>
+     * 
      * The argument as a double-precision floating point number; the
      * value is undefined if the argument cannot be decoded or if this
      * is the last component.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("argumentDoubleValue")
@@ -97,9 +108,11 @@ public class OSLogMessageComponent extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] argumentInt64Value
-     * <p>
+     * 
      * The argument as a 64-bit signed integer; the value is undefined
      * if it cannot be decoded or if this is the last component.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("argumentInt64Value")
@@ -107,32 +120,40 @@ public class OSLogMessageComponent extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] argumentNumberValue
-     * <p>
+     * 
      * The argument as a number. Can be nil if the argument cannot
      * be decoded (for example, it could be redacted), or if this is
      * the last component.
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("argumentNumberValue")
     public native NSNumber argumentNumberValue();
 
     /**
      * [@property] argumentStringValue
-     * <p>
+     * 
      * The argument as a string. Can be nil if the argument cannot
      * be decoded (for example, it could be redacted), or if this is
      * the last component.
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("argumentStringValue")
     public native String argumentStringValue();
 
     /**
      * [@property] argumentUInt64Value
-     * <p>
+     * 
      * The argument as a 64-bit unsigned integer; the value is
      * undefined if the argument cannot be decoded or if this is the
      * last component.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("argumentUInt64Value")
@@ -140,22 +161,25 @@ public class OSLogMessageComponent extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -170,15 +194,18 @@ public class OSLogMessageComponent extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] formatSubstring
-     * <p>
+     * 
      * The text immediately preceding a placeholder. This can be an
      * empty string if there is nothing between two placeholders, or
      * between the placeholder and the bounds of the string.
+     * 
+     * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("formatSubstring")
     public native String formatSubstring();
@@ -194,7 +221,7 @@ public class OSLogMessageComponent extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native OSLogMessageComponent initWithCoder(NSCoder coder);
+    public native OSLogMessageComponent initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -213,9 +240,10 @@ public class OSLogMessageComponent extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -224,9 +252,12 @@ public class OSLogMessageComponent extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] placeholder
-     * <p>
+     * 
      * The placeholder text. Is empty for is the last component.
+     * 
+     * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("placeholder")
     public native String placeholder();

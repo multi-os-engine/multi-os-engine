@@ -21,7 +21,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.3
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -52,9 +57,9 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * The value of alpha. Default is 0.0
-     * <p>
+     * 
      * The default value 0.0 is not recommended and is
      * preserved for backwards compatibility. With alpha 0,
      * it performs a local mean subtraction. The
@@ -67,11 +72,11 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] beta
-     * <p>
+     * 
      * The value of beta. Default is 0.5
      */
     @Generated
@@ -80,18 +85,21 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,7 +110,7 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     /**
      * [@property] delta
-     * <p>
+     * 
      * The value of delta. Default is 1/1024
      */
     @Generated
@@ -125,8 +133,8 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:kernelWidth:kernelHeight:")
     public native MPSCNNLocalContrastNormalizationGradientNode initWithSourceGradientSourceImageGradientStateKernelWidthKernelHeight(
-            MPSNNImageNode sourceGradient, MPSNNImageNode sourceImage, MPSNNGradientStateNode gradientState,
-            @NUInt long kernelWidth, @NUInt long kernelHeight);
+            @NotNull MPSNNImageNode sourceGradient, @NotNull MPSNNImageNode sourceImage,
+            @NotNull MPSNNGradientStateNode gradientState, @NUInt long kernelWidth, @NUInt long kernelHeight);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -155,9 +163,10 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
     @NUInt
     public native long kernelWidth();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,12 +176,12 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:kernelWidth:kernelHeight:")
     public static native MPSCNNLocalContrastNormalizationGradientNode nodeWithSourceGradientSourceImageGradientStateKernelWidthKernelHeight(
-            MPSNNImageNode sourceGradient, MPSNNImageNode sourceImage, MPSNNGradientStateNode gradientState,
-            @NUInt long kernelWidth, @NUInt long kernelHeight);
+            @NotNull MPSNNImageNode sourceGradient, @NotNull MPSNNImageNode sourceImage,
+            @NotNull MPSNNGradientStateNode gradientState, @NUInt long kernelWidth, @NUInt long kernelHeight);
 
     /**
      * [@property] p0
-     * <p>
+     * 
      * The value of p0. Default is 1.0
      */
     @Generated
@@ -181,7 +190,7 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     /**
      * [@property] pm
-     * <p>
+     * 
      * The value of pm. Default is 0.0
      */
     @Generated
@@ -190,7 +199,7 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     /**
      * [@property] ps
-     * <p>
+     * 
      * The value of ps. Default is 1.0
      */
     @Generated
@@ -207,9 +216,9 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * The value of alpha. Default is 0.0
-     * <p>
+     * 
      * The default value 0.0 is not recommended and is
      * preserved for backwards compatibility. With alpha 0,
      * it performs a local mean subtraction. The
@@ -222,7 +231,7 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     /**
      * [@property] beta
-     * <p>
+     * 
      * The value of beta. Default is 0.5
      */
     @Generated
@@ -231,7 +240,7 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     /**
      * [@property] delta
-     * <p>
+     * 
      * The value of delta. Default is 1/1024
      */
     @Generated
@@ -240,7 +249,7 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     /**
      * [@property] p0
-     * <p>
+     * 
      * The value of p0. Default is 1.0
      */
     @Generated
@@ -249,7 +258,7 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     /**
      * [@property] pm
-     * <p>
+     * 
      * The value of pm. Default is 0.0
      */
     @Generated
@@ -258,7 +267,7 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     /**
      * [@property] ps
-     * <p>
+     * 
      * The value of ps. Default is 1.0
      */
     @Generated

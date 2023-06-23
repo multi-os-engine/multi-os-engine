@@ -27,9 +27,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The VNCoreMLModel uses an CoreML based model and prepares it for use with VNCoreMLRequests.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -61,22 +65,25 @@ public class VNCoreMLModel extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -115,22 +122,24 @@ public class VNCoreMLModel extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Create a model container to be used with VNCoreMLRequest based on a Core ML model. This can fail if the model is
      * not supported. Examples for a model that is not supported is a model that does not take an image as any of its
      * inputs.
-     *
+     * 
      * @param model The MLModel from CoreML to be used.
+     * 
      * @param error Returns the error code and description, if the model is not supported.
      */
     @Generated
     @Selector("modelForMLModel:error:")
-    public static native VNCoreMLModel modelForMLModelError(MLModel model,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native VNCoreMLModel modelForMLModelError(@NotNull MLModel model,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Owned
@@ -164,7 +173,10 @@ public class VNCoreMLModel extends NSObject {
      * from the the VNRequestHandler. A feature provider is necessary for models that have more than one input and
      * require those parameters to be set. Models that only have one image input will not use the feature provider as
      * that input will be set by Vision.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("featureProvider")
     @MappedReturn(ObjCObjectMapper.class)
@@ -173,7 +185,10 @@ public class VNCoreMLModel extends NSObject {
     /**
      * The name of the MLFeatureValue that Vision will set from the VNRequestHandler. Vision will use the first input it
      * finds by default but it can be set to another featureName instead.
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("inputImageFeatureName")
     public native String inputImageFeatureName();
@@ -184,16 +199,20 @@ public class VNCoreMLModel extends NSObject {
      * from the the VNRequestHandler. A feature provider is necessary for models that have more than one input and
      * require those parameters to be set. Models that only have one image input will not use the feature provider as
      * that input will be set by Vision.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setFeatureProvider:")
-    public native void setFeatureProvider(@Mapped(ObjCObjectMapper.class) MLFeatureProvider value);
+    public native void setFeatureProvider(@Nullable @Mapped(ObjCObjectMapper.class) MLFeatureProvider value);
 
     /**
      * The name of the MLFeatureValue that Vision will set from the VNRequestHandler. Vision will use the first input it
      * finds by default but it can be set to another featureName instead.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setInputImageFeatureName:")
-    public native void setInputImageFeatureName(String value);
+    public native void setInputImageFeatureName(@NotNull String value);
 }

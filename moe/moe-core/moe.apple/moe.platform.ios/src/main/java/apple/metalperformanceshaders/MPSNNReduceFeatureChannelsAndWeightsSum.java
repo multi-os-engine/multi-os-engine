@@ -24,7 +24,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.3
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -55,22 +60,25 @@ public class MPSNNReduceFeatureChannelsAndWeightsSum extends MPSNNReduceBinary {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -86,7 +94,7 @@ public class MPSNNReduceFeatureChannelsAndWeightsSum extends MPSNNReduceBinary {
     /**
      * A boolean to indicate whether the reduction should perform a weighted sum of feature channels with non-zero
      * weights
-     * <p>
+     * 
      * If false, computes a dot product of the feature channels and weights.
      * If true, computes a dot product of the feature channels and weights divided by the number of non-zero weights
      */
@@ -105,35 +113,36 @@ public class MPSNNReduceFeatureChannelsAndWeightsSum extends MPSNNReduceBinary {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNReduceFeatureChannelsAndWeightsSum initWithCoder(NSCoder aDecoder);
+    public native MPSNNReduceFeatureChannelsAndWeightsSum initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPooling
      * @param device   The MTLDevice on which to make the MPSCNNPooling
      * @return A new MPSCNNPooling object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNNReduceFeatureChannelsAndWeightsSum initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNReduceFeatureChannelsAndWeightsSum initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Specifies information to apply the reduction operation on an image.
-     *
+     * 
      * @param device The device the filter will run on
      * @return A valid MPSNNReduceFeatureChannelsAndWeightsMean object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNNReduceFeatureChannelsAndWeightsSum initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNReduceFeatureChannelsAndWeightsSum initWithDevice(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Specifies information to apply the reduction operation on an image.
-     *
+     * 
      * @param device                        The device the filter will run on
      * @param doWeightedSumByNonZeroWeights A boolean to indicate whether to compute a weighted sum or
      *                                      weighted sum divided by the number of non-zero weights
@@ -142,7 +151,7 @@ public class MPSNNReduceFeatureChannelsAndWeightsSum extends MPSNNReduceBinary {
     @Generated
     @Selector("initWithDevice:doWeightedSumByNonZeroWeights:")
     public native MPSNNReduceFeatureChannelsAndWeightsSum initWithDeviceDoWeightedSumByNonZeroWeights(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, boolean doWeightedSumByNonZeroWeights);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, boolean doWeightedSumByNonZeroWeights);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -161,9 +170,10 @@ public class MPSNNReduceFeatureChannelsAndWeightsSum extends MPSNNReduceBinary {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

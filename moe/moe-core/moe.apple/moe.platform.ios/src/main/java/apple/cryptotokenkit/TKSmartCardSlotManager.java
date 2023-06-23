@@ -22,6 +22,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents pool of SmartCard reader slots.
@@ -56,22 +58,25 @@ public class TKSmartCardSlotManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -82,10 +87,12 @@ public class TKSmartCardSlotManager extends NSObject {
 
     /**
      * Global pool of SmartCard reader slots.
-     * Note that defaultManager instance is accessible only if the calling application has
+     * macOS: Note that defaultManager instance is accessible only if the calling application has
      * 'com.apple.security.smartcard' entitlement set to Boolean:YES. If the calling application does not have this
      * entitlement, defaultManager is always set to nil.
+     * iOS: The defaultManager instance is always accessible.
      */
+    @Nullable
     @Generated
     @Selector("defaultManager")
     public static native TKSmartCardSlotManager defaultManager();
@@ -99,14 +106,14 @@ public class TKSmartCardSlotManager extends NSObject {
      */
     @Generated
     @Selector("getSlotWithName:reply:")
-    public native void getSlotWithNameReply(String name,
-            @ObjCBlock(name = "call_getSlotWithNameReply") Block_getSlotWithNameReply reply);
+    public native void getSlotWithNameReply(@NotNull String name,
+            @NotNull @ObjCBlock(name = "call_getSlotWithNameReply") Block_getSlotWithNameReply reply);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getSlotWithNameReply {
         @Generated
-        void call_getSlotWithNameReply(TKSmartCardSlot slot);
+        void call_getSlotWithNameReply(@Nullable TKSmartCardSlot slot);
     }
 
     @Generated
@@ -135,9 +142,10 @@ public class TKSmartCardSlotManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,14 +167,16 @@ public class TKSmartCardSlotManager extends NSObject {
     /**
      * Gets SmartCard reader slot with specified name. If reader slot with this name does not exist, returns nil.
      */
+    @Nullable
     @Generated
     @Selector("slotNamed:")
-    public native TKSmartCardSlot slotNamed(String name);
+    public native TKSmartCardSlot slotNamed(@NotNull String name);
 
     /**
      * Array of currently known slots in the system. Slots are identified by NSString name instances. Use KVO to be
      * notified about slots arrivals and removals.
      */
+    @NotNull
     @Generated
     @Selector("slotNames")
     public native NSArray<String> slotNames();

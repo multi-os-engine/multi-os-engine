@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVPlayerTimeControlStatus
- * <p>
+ * 
  * These constants are the allowable values of AVPlayer's timeControlStatus property. This discussion pertains when
  * automaticallyWaitsToMinimizeStalling is YES, the default setting, and exceptions are discussed in connection with
  * automaticallyWaitsToMinimizeStalling.
- * <p>
+ * 
  * [@constant] AVPlayerTimeControlStatusPaused
  * This state is entered upon receipt of a -pause message, an invocation of -setRate: with a value of 0.0, when a change
  * in overall state requires playback to be halted, such as when an interruption occurs on iOS, as announced by
@@ -47,11 +47,22 @@ import org.moe.natj.general.ann.NInt;
  * In this state, playback is currently progressing and rate changes will take effect immediately. Should playback stall
  * because of insufficient media data, timeControlStatus will change to
  * AVPlayerTimeControlStatusWaitingToPlayAtSpecifiedRate.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class AVPlayerTimeControlStatus {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Paused = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long WaitingToPlayAtSpecifiedRate = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Playing = 0x0000000000000002L;
 
     @Generated

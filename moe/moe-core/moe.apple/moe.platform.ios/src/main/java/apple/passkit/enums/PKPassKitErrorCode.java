@@ -19,12 +19,30 @@ package apple.passkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 public final class PKPassKitErrorCode {
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long UnknownError = 0xFFFFFFFFFFFFFFFFL;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long InvalidDataError = 0x0000000000000001L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long UnsupportedVersionError = 0x0000000000000002L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long InvalidSignature = 0x0000000000000003L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long NotEntitledError = 0x0000000000000004L;
 
     @Generated

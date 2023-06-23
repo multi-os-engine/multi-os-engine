@@ -15,14 +15,16 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * -------------------------------------------------------------------------------------------------------
  * ICCameraDeviceDelegate
  * [@protocol] ICCameraDeviceDelegate <ICDeviceDelegate>
- * <p>
+ * 
  * A delegate of ICCameraDevice must conform to ICCameraDeviceDelegate protocol.
- * <p>
+ * 
  * The ICCameraDeviceDelegate protocol inherits from the ICDeviceDelegate protocol.
  */
 @Generated
@@ -36,45 +38,51 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
     @Generated
     @IsOptional
     @Selector("cameraDevice:didAddItem:")
-    default void cameraDeviceDidAddItem(ICCameraDevice camera, ICCameraItem item) {
+    default void cameraDeviceDidAddItem(@NotNull ICCameraDevice camera, @NotNull ICCameraItem item) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * cameraDevice:didAddItems:
-     * <p>
+     * 
      * This message is sent when objects are added to the device.
-     * <p>
+     * 
      * The objects in items are instances ICCameraFile class.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cameraDevice:didAddItems:")
-    void cameraDeviceDidAddItems(ICCameraDevice camera, NSArray<? extends ICCameraItem> items);
+    void cameraDeviceDidAddItems(@NotNull ICCameraDevice camera, @NotNull NSArray<? extends ICCameraItem> items);
 
     /**
      * cameraDevice:didCompleteDeleteFilesWithError:
-     * <p>
+     * 
      * This message is sent after the camera device completes a delete operation initiated by sending a
      * 'requestDeleteFiles:' message to that device.
      * [@discusson] This message is sent after the camera device completes a delete operation initiated by sending a
      * 'requestDeleteFiles:' message to that device.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
     @Selector("cameraDevice:didCompleteDeleteFilesWithError:")
-    default void cameraDeviceDidCompleteDeleteFilesWithError(ICCameraDevice camera, NSError error) {
+    default void cameraDeviceDidCompleteDeleteFilesWithError(@NotNull ICCameraDevice camera, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * cameraDevice:didReceiveMetadata:forItem:error:
-     * <p>
+     * 
      * This message is sent when the metadata requested for an item on a device is available.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cameraDevice:didReceiveMetadata:forItem:error:")
-    void cameraDeviceDidReceiveMetadataForItemError(ICCameraDevice camera, NSDictionary<?, ?> metadata,
-            ICCameraItem item, NSError error);
+    void cameraDeviceDidReceiveMetadataForItemError(@NotNull ICCameraDevice camera,
+            @Nullable NSDictionary<?, ?> metadata, @NotNull ICCameraItem item, @Nullable NSError error);
 
     /**
      * cameraDevice:didReceiveMetadataForItem:
@@ -82,28 +90,32 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
     @Generated
     @IsOptional
     @Selector("cameraDevice:didReceiveMetadataForItem:")
-    default void cameraDeviceDidReceiveMetadataForItem(ICCameraDevice camera, ICCameraItem item) {
+    default void cameraDeviceDidReceiveMetadataForItem(@NotNull ICCameraDevice camera, @NotNull ICCameraItem item) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * cameraDevice:didReceivePTPEvent:
-     * <p>
+     * 
      * This message is sent to the delegate to convey a PTP event.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cameraDevice:didReceivePTPEvent:")
-    void cameraDeviceDidReceivePTPEvent(ICCameraDevice camera, NSData eventData);
+    void cameraDeviceDidReceivePTPEvent(@NotNull ICCameraDevice camera, @NotNull NSData eventData);
 
     /**
      * cameraDevice:didReceiveThumbnail:forItem:error:
-     * <p>
+     * 
      * This message is sent when the thumbnail requested for an item on a device is available.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cameraDevice:didReceiveThumbnail:forItem:error:")
-    void cameraDeviceDidReceiveThumbnailForItemError(ICCameraDevice camera, CGImageRef thumbnail, ICCameraItem item,
-            NSError error);
+    void cameraDeviceDidReceiveThumbnailForItemError(@NotNull ICCameraDevice camera, @Nullable CGImageRef thumbnail,
+            @NotNull ICCameraItem item, @Nullable NSError error);
 
     /**
      * cameraDevice:didReceiveThumbnailForItem:
@@ -111,7 +123,7 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
     @Generated
     @IsOptional
     @Selector("cameraDevice:didReceiveThumbnailForItem:")
-    default void cameraDeviceDidReceiveThumbnailForItem(ICCameraDevice camera, ICCameraItem item) {
+    default void cameraDeviceDidReceiveThumbnailForItem(@NotNull ICCameraDevice camera, @NotNull ICCameraItem item) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -121,31 +133,35 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
     @Generated
     @IsOptional
     @Selector("cameraDevice:didRemoveItem:")
-    default void cameraDeviceDidRemoveItem(ICCameraDevice camera, ICCameraItem item) {
+    default void cameraDeviceDidRemoveItem(@NotNull ICCameraDevice camera, @NotNull ICCameraItem item) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * cameraDevice:didRemoveItems:
-     * <p>
+     * 
      * This message is sent when objects are removed from the device.
-     * <p>
+     * 
      * The objects in items are instances ICCameraFile class.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cameraDevice:didRemoveItems:")
-    void cameraDeviceDidRemoveItems(ICCameraDevice camera, NSArray<? extends ICCameraItem> items);
+    void cameraDeviceDidRemoveItems(@NotNull ICCameraDevice camera, @NotNull NSArray<? extends ICCameraItem> items);
 
     /**
      * cameraDevice:didRenameItems:
-     * <p>
+     * 
      * This message is sent when an object or objects are renamed on the device.
-     * <p>
+     * 
      * The objects may be instances of ICCameraFolder or ICCameraFile class.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cameraDevice:didRenameItems:")
-    void cameraDeviceDidRenameItems(ICCameraDevice camera, NSArray<? extends ICCameraItem> items);
+    void cameraDeviceDidRenameItems(@NotNull ICCameraDevice camera, @NotNull NSArray<? extends ICCameraItem> items);
 
     /**
      * This message is sent when the camera device is about to execute queued requests for the metadata of a specific
@@ -153,68 +169,78 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
      * If the request is no longer wanted, eg: the item is no longer displayed on the screen, the client can return NO
      * and abort sending
      * a request down to the camera device, speeding up the execution queue.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
     @Selector("cameraDevice:shouldGetMetadataOfItem:")
-    default boolean cameraDeviceShouldGetMetadataOfItem(ICCameraDevice cameraDevice, ICCameraItem item) {
+    default boolean cameraDeviceShouldGetMetadataOfItem(@NotNull ICCameraDevice cameraDevice,
+            @NotNull ICCameraItem item) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * cameraDevice:shouldGetThumbnailOfItem:
-     * <p>
+     * 
      * This message is sent when the camera device is about to execute queued requests for the thumbnail of a specific
      * item.
      * If the request is no longer wanted, eg: the item is no longer displayed on the screen, the client can return NO
      * and abort sending
      * a request down to the camera device, speeding up the exection queue.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
     @Selector("cameraDevice:shouldGetThumbnailOfItem:")
-    default boolean cameraDeviceShouldGetThumbnailOfItem(ICCameraDevice cameraDevice, ICCameraItem item) {
+    default boolean cameraDeviceShouldGetThumbnailOfItem(@NotNull ICCameraDevice cameraDevice,
+            @NotNull ICCameraItem item) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * cameraDeviceDidChangeCapability:
-     * <p>
+     * 
      * This message is sent when a capability of a device changes.
-     * <p>
+     * 
      * Detailed capabilitiy descriptions are provided at the top of this header file.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cameraDeviceDidChangeCapability:")
-    void cameraDeviceDidChangeCapability(ICCameraDevice camera);
+    void cameraDeviceDidChangeCapability(@NotNull ICCameraDevice camera);
 
     /**
      * deviceDidEnableAccessRestriction:
-     * <p>
+     * 
      * This message is sent when an Apple device has been locked, and media is unavailable until the restriction
      * has been removed.
      */
     @Generated
     @Selector("cameraDeviceDidEnableAccessRestriction:")
-    void cameraDeviceDidEnableAccessRestriction(ICDevice device);
+    void cameraDeviceDidEnableAccessRestriction(@NotNull ICDevice device);
 
     /**
      * deviceDidRemoveAccessRestriction:
-     * <p>
+     * 
      * This message is sent when an Apple device has been unlocked, paired to the host, and media is available.
      */
     @Generated
     @Selector("cameraDeviceDidRemoveAccessRestriction:")
-    void cameraDeviceDidRemoveAccessRestriction(ICDevice device);
+    void cameraDeviceDidRemoveAccessRestriction(@NotNull ICDevice device);
 
     /**
      * deviceDidBecomeReadyWithCompleteContentCatalog:
-     * <p>
+     * 
      * This message is sent when the camera device is done enumerating its content and is ready to receive requests.
-     * <p>
+     * 
      * A session must be opened on the device in order to enumerate its content and make it ready to receive requests.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("deviceDidBecomeReadyWithCompleteContentCatalog:")
-    void deviceDidBecomeReadyWithCompleteContentCatalog(ICCameraDevice device);
+    void deviceDidBecomeReadyWithCompleteContentCatalog(@NotNull ICCameraDevice device);
 }

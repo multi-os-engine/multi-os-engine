@@ -16,8 +16,6 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGRect;
 import apple.uikit.UIView;
 import apple.uikit.UIViewController;
 import org.moe.natj.general.ann.ByValue;
@@ -29,6 +27,10 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A transition context object is constructed by the system and passed to the
@@ -39,14 +41,14 @@ import org.moe.natj.objc.ann.Selector;
  * animateTransition: method if needed. If there is no interaction controller,
  * then the system automatically invokes the animator's animateTransition:
  * method.
- * <p>
+ * 
  * The system queries the view controller's transitioningDelegate or the
  * navigation controller's delegate to determine if an animator or interaction
  * controller should be used in a transition. The transitioningDelegate is a new
  * property on UIViewController and conforms to the
  * UIViewControllerTransitioningDelegate protocol defined below. The navigation
  * controller likewise has been augmented with a couple of new delegate methods.
- * <p>
+ * 
  * The UIViewControllerContextTransitioning protocol can be adopted by custom
  * container controllers. It is purposely general to cover more complex
  * transitions than the system currently supports. For now, navigation push/pops
@@ -56,7 +58,7 @@ import org.moe.natj.objc.ann.Selector;
  * finalFrameForViewController: methods. The system provides two keys for
  * identifying the from view controller and the to view controller for
  * navigation push/pop and view controller present/dismiss transitions.
- * <p>
+ * 
  * All custom animations must invoke the context's completeTransition: method
  * when the transition completes. Furthermore the animation should take place
  * within the containerView specified by the context. For interactive
@@ -91,6 +93,7 @@ public interface UIViewControllerContextTransitioning {
     /**
      * The view in which the animated transition should take place.
      */
+    @NotNull
     @Generated
     @Selector("containerView")
     UIView containerView();
@@ -98,7 +101,7 @@ public interface UIViewControllerContextTransitioning {
     @Generated
     @Selector("finalFrameForViewController:")
     @ByValue
-    CGRect finalFrameForViewController(UIViewController vc);
+    CGRect finalFrameForViewController(@NotNull UIViewController vc);
 
     @Generated
     @Selector("finishInteractiveTransition")
@@ -115,7 +118,7 @@ public interface UIViewControllerContextTransitioning {
     @Generated
     @Selector("initialFrameForViewController:")
     @ByValue
-    CGRect initialFrameForViewController(UIViewController vc);
+    CGRect initialFrameForViewController(@NotNull UIViewController vc);
 
     /**
      * Most of the time this is YES. For custom transitions that use the new UIModalPresentationCustom
@@ -136,6 +139,8 @@ public interface UIViewControllerContextTransitioning {
     /**
      * This should be called if the transition animation is interruptible and it
      * is being paused.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("pauseInteractiveTransition")
@@ -146,6 +151,9 @@ public interface UIViewControllerContextTransitioning {
     @NInt
     long presentationStyle();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("targetTransform")
     @ByValue
@@ -176,17 +184,21 @@ public interface UIViewControllerContextTransitioning {
      * Animators should not directly manipulate a view controller's views and should
      * use viewForKey: to get views instead.
      */
+    @Nullable
     @Generated
     @Selector("viewControllerForKey:")
-    UIViewController viewControllerForKey(String key);
+    UIViewController viewControllerForKey(@NotNull String key);
 
     /**
      * Currently only two keys are defined by the system -
      * UITransitionContextFromViewKey, and UITransitionContextToViewKey
      * viewForKey: may return nil which would indicate that the animator should not
      * manipulate the associated view controller's view.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("viewForKey:")
-    UIView viewForKey(String key);
+    UIView viewForKey(@NotNull String key);
 }

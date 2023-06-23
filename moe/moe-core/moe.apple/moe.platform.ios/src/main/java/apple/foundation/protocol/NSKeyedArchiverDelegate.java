@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -47,18 +49,21 @@ public interface NSKeyedArchiverDelegate {
     @Generated
     @IsOptional
     @Selector("archiver:didEncodeObject:")
-    default void archiverDidEncodeObject(NSKeyedArchiver archiver, @Mapped(ObjCObjectMapper.class) Object object) {
+    default void archiverDidEncodeObject(@NotNull NSKeyedArchiver archiver,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object object) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * substitution
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("archiver:willEncodeObject:")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object archiverWillEncodeObject(NSKeyedArchiver archiver, @Mapped(ObjCObjectMapper.class) Object object) {
+    default Object archiverWillEncodeObject(@NotNull NSKeyedArchiver archiver,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object object) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,8 +73,9 @@ public interface NSKeyedArchiverDelegate {
     @Generated
     @IsOptional
     @Selector("archiver:willReplaceObject:withObject:")
-    default void archiverWillReplaceObjectWithObject(NSKeyedArchiver archiver,
-            @Mapped(ObjCObjectMapper.class) Object object, @Mapped(ObjCObjectMapper.class) Object newObject) {
+    default void archiverWillReplaceObjectWithObject(@NotNull NSKeyedArchiver archiver,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object object,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object newObject) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,7 +85,7 @@ public interface NSKeyedArchiverDelegate {
     @Generated
     @IsOptional
     @Selector("archiverDidFinish:")
-    default void archiverDidFinish(NSKeyedArchiver archiver) {
+    default void archiverDidFinish(@NotNull NSKeyedArchiver archiver) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -92,7 +98,7 @@ public interface NSKeyedArchiverDelegate {
     @Generated
     @IsOptional
     @Selector("archiverWillFinish:")
-    default void archiverWillFinish(NSKeyedArchiver archiver) {
+    default void archiverWillFinish(@NotNull NSKeyedArchiver archiver) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

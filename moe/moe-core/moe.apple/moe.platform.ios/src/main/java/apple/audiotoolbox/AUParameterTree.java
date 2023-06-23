@@ -41,23 +41,27 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AUParameterTree
- * <p>
+ * 
  * The top level group node, representing all of an audio unit's parameters.
- * <p>
+ * 
  * An audio unit's parameters are organized into a tree containing groups and parameters.
  * Groups may be nested.
- * <p>
+ * 
  * The tree is KVO-compliant. For example, if the tree contains a group named "LFO" ,
  * containing a parameter named rate, then "LFO.rate" refers to that parameter object, and
  * "LFO.rate.value" refers to that parameter's value.
- * <p>
+ * 
  * An audio unit may choose to dynamically rearrange the tree. When doing so, it must
  * issue a KVO notification on the audio unit's parameterTree property. The tree's elements are
  * mostly immutable (except for values and implementor hooks); the only way to modify them
  * is to publish a new tree.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("AudioToolbox")
@@ -89,82 +93,92 @@ public class AUParameterTree extends AUParameterGroup implements NSSecureCoding 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * Initialize a group as a copied instance of a template group.
-     *
+     * 
      * @param templateGroup A group to be used as a template and largely copied.
      * @param identifier    An identifier for the new group (non-localized, persistent).
      * @param name          The new group's human-readable name (localized).
      * @param addressOffset The new group's parameters' addresses will be offset from those in
      *                      the template by this value.
      */
+    @NotNull
     @Generated
     @Selector("createGroupFromTemplate:identifier:name:addressOffset:")
     public static native AUParameterGroup createGroupFromTemplateIdentifierNameAddressOffset(
-            AUParameterGroup templateGroup, String identifier, String name, long addressOffset);
+            @NotNull AUParameterGroup templateGroup, @NotNull String identifier, @NotNull String name,
+            long addressOffset);
 
     /**
      * Create a template group which may be used as a prototype for further group instances.
-     * <p>
+     * 
      * Template groups provide a way to construct multiple instances of identical parameter
      * groups, sharing certain immutable state between the instances.
-     * <p>
+     * 
      * Template groups may not appear in trees except at the root.
      */
+    @NotNull
     @Generated
     @Selector("createGroupTemplate:")
-    public static native AUParameterGroup createGroupTemplate(NSArray<? extends AUParameterNode> children);
+    public static native AUParameterGroup createGroupTemplate(@NotNull NSArray<? extends AUParameterNode> children);
 
     /**
      * Create an AUParameterGroup.
-     *
+     * 
      * @param identifier An identifier for the group (non-localized, persistent).
      * @param name       The group's human-readable name (localized).
      * @param children   The group's child nodes.
      */
+    @NotNull
     @Generated
     @Selector("createGroupWithIdentifier:name:children:")
-    public static native AUParameterGroup createGroupWithIdentifierNameChildren(String identifier, String name,
-            NSArray<? extends AUParameterNode> children);
+    public static native AUParameterGroup createGroupWithIdentifierNameChildren(@NotNull String identifier,
+            @NotNull String name, @NotNull NSArray<? extends AUParameterNode> children);
 
     /**
      * Create an AUParameter.
      * See AUParameter's properties for descriptions of the arguments.
      */
+    @NotNull
     @Generated
     @Selector("createParameterWithIdentifier:name:address:min:max:unit:unitName:flags:valueStrings:dependentParameters:")
     public static native AUParameter createParameterWithIdentifierNameAddressMinMaxUnitUnitNameFlagsValueStringsDependentParameters(
-            String identifier, String name, long address, float min, float max, int unit, String unitName, int flags,
-            NSArray<String> valueStrings, NSArray<? extends NSNumber> dependentParameters);
+            @NotNull String identifier, @NotNull String name, long address, float min, float max, int unit,
+            @Nullable String unitName, int flags, @Nullable NSArray<String> valueStrings,
+            @Nullable NSArray<? extends NSNumber> dependentParameters);
 
     /**
      * Create an AUParameterTree.
-     *
+     * 
      * @param children The tree's top-level child nodes.
      */
+    @NotNull
     @Generated
     @Selector("createTreeWithChildren:")
-    public static native AUParameterTree createTreeWithChildren(NSArray<? extends AUParameterNode> children);
+    public static native AUParameterTree createTreeWithChildren(@NotNull NSArray<? extends AUParameterNode> children);
 
     @Generated
     @Selector("debugDescription")
@@ -196,9 +210,10 @@ public class AUParameterTree extends AUParameterGroup implements NSSecureCoding 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -232,7 +247,7 @@ public class AUParameterTree extends AUParameterGroup implements NSSecureCoding 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -240,31 +255,35 @@ public class AUParameterTree extends AUParameterGroup implements NSSecureCoding 
 
     @Generated
     @Selector("initWithCoder:")
-    public native AUParameterTree initWithCoder(NSCoder coder);
+    public native AUParameterTree initWithCoder(@NotNull NSCoder coder);
 
     /**
      * parameterWithAddress:
-     * <p>
+     * 
      * Search a tree for a parameter with a specific address.
-     *
-     * @return The parameter corresponding to the supplied address, or nil if no such parameter exists.
+     * 
+     * @return
+     *         The parameter corresponding to the supplied address, or nil if no such parameter exists.
      */
+    @Nullable
     @Generated
     @Selector("parameterWithAddress:")
     public native AUParameter parameterWithAddress(long address);
 
     /**
      * parameterWithID:scope:element:
-     * <p>
+     * 
      * Search a tree for a specific v2 audio unit parameter.
-     * <p>
+     * 
      * V2 audio units publish parameters identified by a parameter ID, scope, and element.
      * A host that knows that it is dealing with a v2 unit can locate parameters using this method,
      * for example, for the Apple-supplied system audio units.
-     *
-     * @return The parameter corresponding to the supplied ID/scope/element, or nil if no such parameter
+     * 
+     * @return
+     *         The parameter corresponding to the supplied ID/scope/element, or nil if no such parameter
      *         exists, or if the audio unit is not a v2 unit.
      */
+    @Nullable
     @Generated
     @Selector("parameterWithID:scope:element:")
     public native AUParameter parameterWithIDScopeElement(int paramID, int scope, int element);

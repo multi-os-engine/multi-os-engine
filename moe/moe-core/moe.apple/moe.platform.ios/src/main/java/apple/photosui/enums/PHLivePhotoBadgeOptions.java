@@ -19,14 +19,21 @@ package apple.photosui.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 9.1
+ */
 @Generated
 public final class PHLivePhotoBadgeOptions {
     /**
      * < Include treatments so this image can be shown directly over the content of the Live Photo
+     * 
+     * API-Since: 9.1
      */
     @Generated @NUInt public static final long OverContent = 0x0000000000000001L;
     /**
      * < To indicate that the Live Photo aspect is turned off and it will be treated as a still (e.g. for sharing)
+     * 
+     * API-Since: 9.1
      */
     @Generated @NUInt public static final long LiveOff = 0x0000000000000002L;
 

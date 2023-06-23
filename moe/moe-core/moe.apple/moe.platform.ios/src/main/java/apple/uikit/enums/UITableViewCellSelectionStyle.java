@@ -24,6 +24,9 @@ public final class UITableViewCellSelectionStyle {
     @Generated @NInt public static final long None = 0x0000000000000000L;
     @Generated @NInt public static final long Blue = 0x0000000000000001L;
     @Generated @NInt public static final long Gray = 0x0000000000000002L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Default = 0x0000000000000003L;
 
     @Generated

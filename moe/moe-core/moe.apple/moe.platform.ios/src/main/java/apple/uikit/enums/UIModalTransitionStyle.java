@@ -24,6 +24,9 @@ public final class UIModalTransitionStyle {
     @Generated @NInt public static final long CoverVertical = 0x0000000000000000L;
     @Generated @NInt public static final long FlipHorizontal = 0x0000000000000001L;
     @Generated @NInt public static final long CrossDissolve = 0x0000000000000002L;
+    /**
+     * API-Since: 3.2
+     */
     @Generated @NInt public static final long PartialCurl = 0x0000000000000003L;
 
     @Generated

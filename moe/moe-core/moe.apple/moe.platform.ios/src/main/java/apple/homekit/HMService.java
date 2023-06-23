@@ -40,13 +40,17 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a service provided by an accessory.
- * <p>
+ * 
  * This class represents a service provided by an accessory in the home.
  * A service is composed of one or more characteristics that can be
  * modified.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HomeKit")
@@ -78,22 +82,25 @@ public class HMService extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,9 +135,10 @@ public class HMService extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,16 +169,18 @@ public class HMService extends NSObject {
     /**
      * Accessory that provides this service.
      */
+    @Nullable
     @Generated
     @Selector("accessory")
     public native HMAccessory accessory();
 
     /**
      * For HMServiceTypeOutlet and HMServiceTypeSwitch, this is the type of the associated service.
-     * <p>
+     * 
      * This could be any of the HomeKit Accessory Profile defined services (except HMServiceTypeOutlet
      * or HMServiceTypeSwitch) that supports HMCharacteristicTypePowerState characteristic.
      */
+    @Nullable
     @Generated
     @Selector("associatedServiceType")
     public native String associatedServiceType();
@@ -179,6 +189,7 @@ public class HMService extends NSObject {
      * Array of HMCharacteristic objects that represents all the characteristics
      * provided by the service.
      */
+    @NotNull
     @Generated
     @Selector("characteristics")
     public native NSArray<? extends HMCharacteristic> characteristics();
@@ -189,8 +200,10 @@ public class HMService extends NSObject {
 
     /**
      * Indicates if this services is the primary service.
-     * <p>
+     * 
      * Applications should use this property to show the primary service on the accessory.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isPrimaryService")
@@ -198,9 +211,11 @@ public class HMService extends NSObject {
 
     /**
      * Indicates if this service supports user interaction or not.
-     * <p>
+     * 
      * Applications should use this property to filter out services that the users
      * should not directly interact with, e.g. HMServiceTypeAccessoryInformation.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isUserInteractive")
@@ -208,27 +223,34 @@ public class HMService extends NSObject {
 
     /**
      * Array of HMService objects that represents all the services that the service links to.
-     * <p>
+     * 
      * Applications should use this property to show logical grouping of services on the accessory.
      * linkedServices will be nil when the service does not link to any other services.
+     * 
+     * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("linkedServices")
     public native NSArray<? extends HMService> linkedServices();
 
     /**
      * The localized description of the service.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
 
     /**
      * Name for the service.
-     * <p>
+     * 
      * Returns the service's name that is associated with HomeKit. The initial value is the value of
      * the name characteristic of the service, if it has one.
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -236,66 +258,72 @@ public class HMService extends NSObject {
     /**
      * The type of the service, e.g. HMServiceTypeLightbulb.
      */
+    @NotNull
     @Generated
     @Selector("serviceType")
     public native String serviceType();
 
     /**
      * A unique identifier for the service.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
 
     /**
      * This method is used to set up the service type of the device connected to a contact sensor, switch or an outlet.
-     * <p>
+     * 
      * This method is only valid for the services of the following types:
      * HMServiceTypeOutlet, HMServiceTypeContactSensor and HMServiceTypeSwitch
-     * <p>
+     * 
      * For services of type HMServiceTypeOutlet and HMServiceTypeSwitch, serviceType can be one of the
      * HomeKit Accessory Profile defined services (except HMServiceTypeOutlet or HMServiceTypeSwitch)
      * that supports HMCharacteristicTypePowerState characteristic.
-     * <p>
+     * 
      * For services of type HMServiceTypeContactSensor, serviceType can be one of the following services:
      * HMServiceTypeDoor, HMServiceTypeGarageDoorOpener, HMServiceTypeWindow and HMServiceTypeWindowCovering
-     *
+     * 
      * @param serviceType Service type of the device connected to a contact sensor/switch/outlet service.
+     * 
      * @param completion  Block that is invoked once the request is processed.
      *                    The NSError provides more information on the status of the request, error
      *                    will be nil on success.
      */
     @Generated
     @Selector("updateAssociatedServiceType:completionHandler:")
-    public native void updateAssociatedServiceTypeCompletionHandler(String serviceType,
-            @ObjCBlock(name = "call_updateAssociatedServiceTypeCompletionHandler") Block_updateAssociatedServiceTypeCompletionHandler completion);
+    public native void updateAssociatedServiceTypeCompletionHandler(@Nullable String serviceType,
+            @NotNull @ObjCBlock(name = "call_updateAssociatedServiceTypeCompletionHandler") Block_updateAssociatedServiceTypeCompletionHandler completion);
 
     /**
      * This method is used to change the name of the service.
-     * <p>
+     * 
      * The new name is stored in HomeKit and not on the accessory.
-     *
+     * 
      * @param name       New name for the service.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
      */
     @Generated
     @Selector("updateName:completionHandler:")
-    public native void updateNameCompletionHandler(String name,
-            @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
+    public native void updateNameCompletionHandler(@NotNull String name,
+            @NotNull @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateAssociatedServiceTypeCompletionHandler {
         @Generated
-        void call_updateAssociatedServiceTypeCompletionHandler(NSError error);
+        void call_updateAssociatedServiceTypeCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateNameCompletionHandler {
         @Generated
-        void call_updateNameCompletionHandler(NSError error);
+        void call_updateNameCompletionHandler(@Nullable NSError error);
     }
 }

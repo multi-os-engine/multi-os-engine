@@ -11,12 +11,16 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] CHHapticDeviceCapability
- * <p>
+ * 
  * A protocol which defines properties describing haptics and audio capabilities for a particular device.
  * These properties include limitations and ranges of parameters.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreHaptics")
@@ -25,40 +29,47 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface CHHapticDeviceCapability {
     /**
      * attributesForEventParameter:
-     * <p>
+     * 
      * Return information about the given CHHapticDynamicParameter.
-     * <p>
+     * 
      * These values may vary across different device types.
-     *
-     * @param inParameter A CHHapticDynamicParameter to be queried.
-     * @param outError    If the operation fails, this will be set to a valid NSError describing the error.
+     * 
+     * @param inParameter
+     *                    A CHHapticDynamicParameter to be queried.
+     * @param outError
+     *                    If the operation fails, this will be set to a valid NSError describing the error.
      */
+    @Nullable
     @Generated
     @Selector("attributesForDynamicParameter:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    CHHapticParameterAttributes attributesForDynamicParameterError(String inParameter,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    CHHapticParameterAttributes attributesForDynamicParameterError(@NotNull String inParameter,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * attributesForEventParameter:
-     * <p>
+     * 
      * Return information about the given CHHapticEventParameter as it applies to the specified event type.
-     * <p>
+     * 
      * These values may vary across different device types.
-     *
-     * @param inParameter A CHHapticEventParameter to be queried.
-     * @param type        A CHHapticEventType to be queried.
-     * @param outError    If the operation fails, this will be set to a valid NSError describing the error.
+     * 
+     * @param inParameter
+     *                    A CHHapticEventParameter to be queried.
+     * @param type
+     *                    A CHHapticEventType to be queried.
+     * @param outError
+     *                    If the operation fails, this will be set to a valid NSError describing the error.
      */
+    @Nullable
     @Generated
     @Selector("attributesForEventParameter:eventType:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    CHHapticParameterAttributes attributesForEventParameterEventTypeError(String inParameter, String type,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    CHHapticParameterAttributes attributesForEventParameterEventTypeError(@NotNull String inParameter,
+            @NotNull String type, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] supportsAudio
-     * <p>
+     * 
      * Returns YES if the hardware supports audio event playback.
      */
     @Generated
@@ -67,7 +78,7 @@ public interface CHHapticDeviceCapability {
 
     /**
      * [@property] supportsHaptics
-     * <p>
+     * 
      * Returns YES if the hardware supports haptic event playback.
      */
     @Generated

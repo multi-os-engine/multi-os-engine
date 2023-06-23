@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Class that describes an attribute whose value should be derived from one or more
@@ -32,12 +34,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * case and diacritics stripped for more efficient comparisons during fetching
  * * creating a 'relationshipCount' attribute reflecting the number of objects in
  * a relationship and so avoid having to do a join during fetching
- * <p>
+ * 
  * IMPORTANT: Derived attributes will be recomputed during save, recomputed values will not be reflected in a managed
  * object's property until after a save.
- * <p>
+ * 
  * NOTE: Prior to macOS 10.16, iOS 14.0, tvOS 14.0, and watchOS 7.0 a refresh of the object is required after a save to
  * reflect recomputed values
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreData")
@@ -69,22 +73,25 @@ public class NSDerivedAttributeDescription extends NSAttributeDescription {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -104,6 +111,7 @@ public class NSDerivedAttributeDescription extends NSAttributeDescription {
      * If a store is added to a coordinator whose model contains derived attributes of
      * a type not supported by the store, the add will fail and an NSError will be returned.
      */
+    @Nullable
     @Generated
     @Selector("derivationExpression")
     public native NSExpression derivationExpression();
@@ -123,7 +131,7 @@ public class NSDerivedAttributeDescription extends NSAttributeDescription {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSDerivedAttributeDescription initWithCoder(NSCoder coder);
+    public native NSDerivedAttributeDescription initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -142,9 +150,10 @@ public class NSDerivedAttributeDescription extends NSAttributeDescription {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -172,7 +181,7 @@ public class NSDerivedAttributeDescription extends NSAttributeDescription {
      */
     @Generated
     @Selector("setDerivationExpression:")
-    public native void setDerivationExpression(NSExpression value);
+    public native void setDerivationExpression(@Nullable NSExpression value);
 
     @Generated
     @Selector("setVersion:")

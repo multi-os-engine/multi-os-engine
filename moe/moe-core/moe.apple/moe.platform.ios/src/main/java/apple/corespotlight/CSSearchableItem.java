@@ -43,7 +43,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("CoreSpotlight")
 @Runtime(ObjCRuntime.class)
@@ -74,22 +79,25 @@ public class CSSearchableItem extends NSObject implements NSSecureCoding, NSCopy
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +132,10 @@ public class CSSearchableItem extends NSObject implements NSSecureCoding, NSCopy
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,15 +170,17 @@ public class CSSearchableItem extends NSObject implements NSSecureCoding, NSCopy
     /**
      * Set of attributes containing meta data for the item
      */
+    @NotNull
     @Generated
     @Selector("attributeSet")
     public native CSSearchableItemAttributeSet attributeSet();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * An optional identifier that represents the "domain" or owner of this item.
@@ -182,13 +193,14 @@ public class CSSearchableItem extends NSObject implements NSSecureCoding, NSCopy
      * Calling deleteSearchableItemsWithDomainIdentifiers with <account-id> will delete all items with <account-id> and
      * any <mailbox-id>.
      */
+    @Nullable
     @Generated
     @Selector("domainIdentifier")
     public native String domainIdentifier();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Searchable items have an expiration date or time to live. By default it's set to 1 month.
@@ -203,22 +215,23 @@ public class CSSearchableItem extends NSObject implements NSSecureCoding, NSCopy
 
     @Generated
     @Selector("initWithCoder:")
-    public native CSSearchableItem initWithCoder(NSCoder coder);
+    public native CSSearchableItem initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Can be null, one will be generated
      */
     @Generated
     @Selector("initWithUniqueIdentifier:domainIdentifier:attributeSet:")
-    public native CSSearchableItem initWithUniqueIdentifierDomainIdentifierAttributeSet(String uniqueIdentifier,
-            String domainIdentifier, CSSearchableItemAttributeSet attributeSet);
+    public native CSSearchableItem initWithUniqueIdentifierDomainIdentifierAttributeSet(
+            @Nullable String uniqueIdentifier, @Nullable String domainIdentifier,
+            @NotNull CSSearchableItemAttributeSet attributeSet);
 
     /**
      * Set of attributes containing meta data for the item
      */
     @Generated
     @Selector("setAttributeSet:")
-    public native void setAttributeSet(CSSearchableItemAttributeSet value);
+    public native void setAttributeSet(@NotNull CSSearchableItemAttributeSet value);
 
     /**
      * An optional identifier that represents the "domain" or owner of this item.
@@ -233,7 +246,7 @@ public class CSSearchableItem extends NSObject implements NSSecureCoding, NSCopy
      */
     @Generated
     @Selector("setDomainIdentifier:")
-    public native void setDomainIdentifier(String value);
+    public native void setDomainIdentifier(@Nullable String value);
 
     /**
      * Searchable items have an expiration date or time to live. By default it's set to 1 month.
@@ -250,7 +263,7 @@ public class CSSearchableItem extends NSObject implements NSSecureCoding, NSCopy
      */
     @Generated
     @Selector("setUniqueIdentifier:")
-    public native void setUniqueIdentifier(String value);
+    public native void setUniqueIdentifier(@NotNull String value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -264,7 +277,18 @@ public class CSSearchableItem extends NSObject implements NSSecureCoding, NSCopy
      * Starts with an UUID for ease of use, but you can replace it with an UID of your own before the item is first
      * indexed if you wish.
      */
+    @NotNull
     @Generated
     @Selector("uniqueIdentifier")
     public native String uniqueIdentifier();
+
+    /**
+     * For comparison of items ranked by the query
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("compareByRank:")
+    @NInt
+    public native long compareByRank(@NotNull CSSearchableItem other);
 }

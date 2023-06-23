@@ -40,7 +40,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 5.0
+ * Deprecated-Since: 12.0
+ * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+ */
+@Deprecated
 @Generated
 @Library("GLKit")
 @Runtime(ObjCRuntime.class)
@@ -71,22 +79,25 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,9 +132,10 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -169,6 +181,7 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
     /**
      * Disabled
      */
+    @NotNull
     @Generated
     @Selector("fog")
     public native GLKEffectPropertyFog fog();
@@ -180,6 +193,7 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
     /**
      * @"GLKBaseEffect"
      */
+    @Nullable
     @Generated
     @Selector("label")
     public native String label();
@@ -187,6 +201,7 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
     /**
      * Disabled
      */
+    @NotNull
     @Generated
     @Selector("light0")
     public native GLKEffectPropertyLight light0();
@@ -194,6 +209,7 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
     /**
      * Disabled
      */
+    @NotNull
     @Generated
     @Selector("light1")
     public native GLKEffectPropertyLight light1();
@@ -201,6 +217,7 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
     /**
      * Disabled
      */
+    @NotNull
     @Generated
     @Selector("light2")
     public native GLKEffectPropertyLight light2();
@@ -230,6 +247,7 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
     /**
      * Default material state
      */
+    @NotNull
     @Generated
     @Selector("material")
     public native GLKEffectPropertyMaterial material();
@@ -257,7 +275,7 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
      */
     @Generated
     @Selector("setLabel:")
-    public native void setLabel(String value);
+    public native void setLabel(@Nullable String value);
 
     /**
      * { 0.2, 0.2, 0.2, 1.0 }
@@ -285,7 +303,7 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
      */
     @Generated
     @Selector("setTextureOrder:")
-    public native void setTextureOrder(NSArray<? extends GLKEffectPropertyTexture> value);
+    public native void setTextureOrder(@Nullable NSArray<? extends GLKEffectPropertyTexture> value);
 
     /**
      * GL_TRUE
@@ -297,6 +315,7 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
     /**
      * Disabled
      */
+    @NotNull
     @Generated
     @Selector("texture2d0")
     public native GLKEffectPropertyTexture texture2d0();
@@ -304,6 +323,7 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
     /**
      * Disabled
      */
+    @NotNull
     @Generated
     @Selector("texture2d1")
     public native GLKEffectPropertyTexture texture2d1();
@@ -311,6 +331,7 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
     /**
      * texture2d0, texture2d1
      */
+    @Nullable
     @Generated
     @Selector("textureOrder")
     public native NSArray<? extends GLKEffectPropertyTexture> textureOrder();
@@ -318,6 +339,7 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
     /**
      * Identity Matrices
      */
+    @NotNull
     @Generated
     @Selector("transform")
     public native GLKEffectPropertyTransform transform();

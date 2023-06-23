@@ -19,11 +19,32 @@ package apple.intents.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 10.0
+ * Deprecated-Since: 15.0
+ * Deprecated-Message: INCarAirCirculationMode is deprecated. There is no replacement.
+ */
+@Deprecated
 @Generated
 public final class INCarAirCirculationMode {
-    @Generated @NInt public static final long Unknown = 0x0000000000000000L;
-    @Generated @NInt public static final long FreshAir = 0x0000000000000001L;
-    @Generated @NInt public static final long RecirculateAir = 0x0000000000000002L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarAirCirculationMode is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarAirCirculationMode is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long FreshAir = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarAirCirculationMode is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long RecirculateAir = 0x0000000000000002L;
 
     @Generated
     private INCarAirCirculationMode() {

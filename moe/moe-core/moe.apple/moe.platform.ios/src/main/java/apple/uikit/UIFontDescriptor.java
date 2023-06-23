@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGAffineTransform;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
@@ -46,7 +45,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGAffineTransform;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -77,22 +82,25 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -108,18 +116,21 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     /**
      * Instantiation
      */
+    @NotNull
     @Generated
     @Selector("fontDescriptorWithFontAttributes:")
-    public static native UIFontDescriptor fontDescriptorWithFontAttributes(NSDictionary<String, ?> attributes);
+    public static native UIFontDescriptor fontDescriptorWithFontAttributes(@NotNull NSDictionary<String, ?> attributes);
 
+    @NotNull
     @Generated
     @Selector("fontDescriptorWithName:matrix:")
-    public static native UIFontDescriptor fontDescriptorWithNameMatrix(String fontName,
+    public static native UIFontDescriptor fontDescriptorWithNameMatrix(@NotNull String fontName,
             @ByValue CGAffineTransform matrix);
 
+    @NotNull
     @Generated
     @Selector("fontDescriptorWithName:size:")
-    public static native UIFontDescriptor fontDescriptorWithNameSize(String fontName, @NFloat double size);
+    public static native UIFontDescriptor fontDescriptorWithNameSize(@NotNull String fontName, @NFloat double size);
 
     @Generated
     @Selector("hash")
@@ -143,9 +154,10 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,18 +167,22 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     /**
      * Returns a font descriptor containing the text style and containing the user's selected content size category.
      */
+    @NotNull
     @Generated
     @Selector("preferredFontDescriptorWithTextStyle:")
-    public static native UIFontDescriptor preferredFontDescriptorWithTextStyle(String style);
+    public static native UIFontDescriptor preferredFontDescriptorWithTextStyle(@NotNull String style);
 
     /**
      * Returns a font descriptor containing the text style and containing the content size category defined in the trait
      * collection.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("preferredFontDescriptorWithTextStyle:compatibleWithTraitCollection:")
     public static native UIFontDescriptor preferredFontDescriptorWithTextStyleCompatibleWithTraitCollection(
-            String style, UITraitCollection traitCollection);
+            @NotNull String style, @Nullable UITraitCollection traitCollection);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -193,16 +209,18 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    @NotNull
     @Generated
     @Selector("fontAttributes")
     public native NSDictionary<String, ?> fontAttributes();
@@ -210,22 +228,27 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     /**
      * the new attributes take precedence over the existing ones in the receiver
      */
+    @NotNull
     @Generated
     @Selector("fontDescriptorByAddingAttributes:")
-    public native UIFontDescriptor fontDescriptorByAddingAttributes(NSDictionary<String, ?> attributes);
+    public native UIFontDescriptor fontDescriptorByAddingAttributes(@NotNull NSDictionary<String, ?> attributes);
 
+    @NotNull
     @Generated
     @Selector("fontDescriptorWithFace:")
-    public native UIFontDescriptor fontDescriptorWithFace(String newFace);
+    public native UIFontDescriptor fontDescriptorWithFace(@NotNull String newFace);
 
+    @NotNull
     @Generated
     @Selector("fontDescriptorWithFamily:")
-    public native UIFontDescriptor fontDescriptorWithFamily(String newFamily);
+    public native UIFontDescriptor fontDescriptorWithFamily(@NotNull String newFamily);
 
+    @NotNull
     @Generated
     @Selector("fontDescriptorWithMatrix:")
     public native UIFontDescriptor fontDescriptorWithMatrix(@ByValue CGAffineTransform matrix);
 
+    @NotNull
     @Generated
     @Selector("fontDescriptorWithSize:")
     public native UIFontDescriptor fontDescriptorWithSize(@NFloat double newPointSize);
@@ -234,6 +257,7 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
      * Returns a new font descriptor reference in the same family with the given symbolic traits, or nil if none found
      * in the system.
      */
+    @Nullable
     @Generated
     @Selector("fontDescriptorWithSymbolicTraits:")
     public native UIFontDescriptor fontDescriptorWithSymbolicTraits(int symbolicTraits);
@@ -244,31 +268,33 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIFontDescriptor initWithCoder(NSCoder coder);
+    public native UIFontDescriptor initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithFontAttributes:")
-    public native UIFontDescriptor initWithFontAttributes(NSDictionary<String, ?> attributes);
+    public native UIFontDescriptor initWithFontAttributes(@NotNull NSDictionary<String, ?> attributes);
 
     /**
      * Instance conversion
      * Returns "normalized" font descriptors matching the receiver. mandatoryKeys is an NSSet instance containing keys
      * that are required to be identical in order to be matched. mandatoryKeys can be nil.
      */
+    @NotNull
     @Generated
     @Selector("matchingFontDescriptorsWithMandatoryKeys:")
     public native NSArray<? extends UIFontDescriptor> matchingFontDescriptorsWithMandatoryKeys(
-            NSSet<String> mandatoryKeys);
+            @Nullable NSSet<String> mandatoryKeys);
 
     @Generated
     @Selector("matrix")
     @ByValue
     public native CGAffineTransform matrix();
 
+    @Nullable
     @Generated
     @Selector("objectForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object objectForKey(String anAttribute);
+    public native Object objectForKey(@NotNull String anAttribute);
 
     @Generated
     @Selector("pointSize")
@@ -278,6 +304,7 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     /**
      * Core attribute access
      */
+    @NotNull
     @Generated
     @Selector("postscriptName")
     public native String postscriptName();
@@ -294,8 +321,11 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Returns a new font descriptor reference with the given design, or nil if no match is found in the system.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("fontDescriptorWithDesign:")
-    public native UIFontDescriptor fontDescriptorWithDesign(String design);
+    public native UIFontDescriptor fontDescriptorWithDesign(@NotNull String design);
 }

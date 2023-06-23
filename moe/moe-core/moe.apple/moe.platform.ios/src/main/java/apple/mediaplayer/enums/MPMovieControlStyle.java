@@ -19,21 +19,43 @@ package apple.mediaplayer.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 3.2
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Use AVPlayerViewController in AVKit
+ */
 @Deprecated
 @Generated
 public final class MPMovieControlStyle {
     /**
      * No controls
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated @Generated @NInt public static final long None = 0x0000000000000000L;
     /**
      * Controls for an embedded view
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated @Generated @NInt public static final long Embedded = 0x0000000000000001L;
     /**
      * Controls for fullscreen playback
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated @Generated @NInt public static final long Fullscreen = 0x0000000000000002L;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
+     */
     @Deprecated @Generated @NInt public static final long Default = 0x0000000000000001L;
 
     @Generated

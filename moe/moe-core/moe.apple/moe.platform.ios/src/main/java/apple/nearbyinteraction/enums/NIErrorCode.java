@@ -36,4 +36,17 @@ public final class NIErrorCode {
      * The user did not authorize the session
      */
     @Generated @NInt public static final long UserDidNotAllow = 0xFFFFFFFFFFFFE904L;
+    /**
+     * ARSession Configuration provided is not compatible or the platform does not support camera assistance.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated @NInt public static final long InvalidARConfiguration = 0xFFFFFFFFFFFFE905L;
+    /**
+     * A Nearby Accessory session has been associated with a peer device (such as a Bluetooth peer) that is not
+     * available
+     * 
+     * API-Since: 16.0
+     */
+    @Generated @NInt public static final long AccessoryPeerDeviceUnavailable = 0xFFFFFFFFFFFFE906L;
 }

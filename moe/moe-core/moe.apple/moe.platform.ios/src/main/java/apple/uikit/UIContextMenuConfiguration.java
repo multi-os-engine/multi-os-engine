@@ -23,7 +23,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -54,29 +59,32 @@ public class UIContextMenuConfiguration extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * Returns a UIContextMenuConfiguration.
-     *
+     * 
      * @param identifier      Optional unique identifier. If omitted, an NSUUID will be generated. May be used to
      *                        identify this configuration throughout the interaction's lifecycle.
      * @param previewProvider Optional preview view controller provider block, called when the menu is about to be
@@ -86,13 +94,14 @@ public class UIContextMenuConfiguration extends NSObject {
     @Generated
     @Selector("configurationWithIdentifier:previewProvider:actionProvider:")
     public static native UIContextMenuConfiguration configurationWithIdentifierPreviewProviderActionProvider(
-            @Mapped(ObjCObjectMapper.class) Object identifier,
-            @ObjCBlock(name = "call_configurationWithIdentifierPreviewProviderActionProvider_1") Block_configurationWithIdentifierPreviewProviderActionProvider_1 previewProvider,
-            @ObjCBlock(name = "call_configurationWithIdentifierPreviewProviderActionProvider_2") Block_configurationWithIdentifierPreviewProviderActionProvider_2 actionProvider);
+            @Nullable @Mapped(ObjCObjectMapper.class) Object identifier,
+            @Nullable @ObjCBlock(name = "call_configurationWithIdentifierPreviewProviderActionProvider_1") Block_configurationWithIdentifierPreviewProviderActionProvider_1 previewProvider,
+            @Nullable @ObjCBlock(name = "call_configurationWithIdentifierPreviewProviderActionProvider_2") Block_configurationWithIdentifierPreviewProviderActionProvider_2 actionProvider);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_configurationWithIdentifierPreviewProviderActionProvider_1 {
+        @Nullable
         @Generated
         UIViewController call_configurationWithIdentifierPreviewProviderActionProvider_1();
     }
@@ -100,9 +109,10 @@ public class UIContextMenuConfiguration extends NSObject {
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_configurationWithIdentifierPreviewProviderActionProvider_2 {
+        @Nullable
         @Generated
         UIMenu call_configurationWithIdentifierPreviewProviderActionProvider_2(
-                NSArray<? extends UIMenuElement> suggestedActions);
+                @NotNull NSArray<? extends UIMenuElement> suggestedActions);
     }
 
     @Generated
@@ -118,6 +128,11 @@ public class UIContextMenuConfiguration extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * This configuration's identifier. When representing multiple items in your app, this identifier
+     * corresponds to the primary item (i.e. the one with which the user interacted when invoking the menu).
+     */
+    @NotNull
     @Generated
     @Selector("identifier")
     @MappedReturn(ObjCObjectMapper.class)
@@ -144,9 +159,10 @@ public class UIContextMenuConfiguration extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -173,4 +189,65 @@ public class UIContextMenuConfiguration extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Number of items on which this menu acts. Used to badge a multi-item menu's preview stack.
+     * When unset, this value is determined automatically by the system. Values lower than 2 hide the badge.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("badgeCount")
+    @NInt
+    public native long badgeCount();
+
+    /**
+     * Preferred menu element ordering strategy for this menu.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("preferredMenuElementOrder")
+    @NInt
+    public native long preferredMenuElementOrder();
+
+    /**
+     * When this menu acts on multiple items, you may include the identifiers of secondary items to display a multi-item
+     * menu.
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @Selector("secondaryItemIdentifiers")
+    public native NSSet<?> secondaryItemIdentifiers();
+
+    /**
+     * Number of items on which this menu acts. Used to badge a multi-item menu's preview stack.
+     * When unset, this value is determined automatically by the system. Values lower than 2 hide the badge.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setBadgeCount:")
+    public native void setBadgeCount(@NInt long value);
+
+    /**
+     * Preferred menu element ordering strategy for this menu.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setPreferredMenuElementOrder:")
+    public native void setPreferredMenuElementOrder(@NInt long value);
+
+    /**
+     * When this menu acts on multiple items, you may include the identifiers of secondary items to display a multi-item
+     * menu.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setSecondaryItemIdentifiers:")
+    public native void setSecondaryItemIdentifiers(@NotNull NSSet<?> value);
 }

@@ -39,10 +39,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Defines a spatial directive.
  * The various goals cause force to be applied to agents to try to achieve said goal.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -74,22 +78,25 @@ public class GKGoal extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -104,82 +111,83 @@ public class GKGoal extends NSObject implements NSCopying {
 
     /**
      * Creates a goal to align this agent's orientation with the average orientation of the group of agents.
-     *
+     * 
      * @param maxDistance the distance between agents before alignment happens
      * @param maxAngle    the angle, in radians, between this agent's foward and the vector toward the other agent
      *                    before alignment happens
      */
     @Generated
     @Selector("goalToAlignWithAgents:maxDistance:maxAngle:")
-    public static native GKGoal goalToAlignWithAgentsMaxDistanceMaxAngle(NSArray<? extends GKAgent> agents,
+    public static native GKGoal goalToAlignWithAgentsMaxDistanceMaxAngle(@NotNull NSArray<? extends GKAgent> agents,
             float maxDistance, float maxAngle);
 
     /**
      * Creates a goal to avoid colliding with a group of agents taking into account those agent's momentum
-     *
+     * 
      * @param maxPredictionTime how far ahead in the future, in seconds, should we look for potential collisions
      */
     @Generated
     @Selector("goalToAvoidAgents:maxPredictionTime:")
-    public static native GKGoal goalToAvoidAgentsMaxPredictionTime(NSArray<? extends GKAgent> agents,
+    public static native GKGoal goalToAvoidAgentsMaxPredictionTime(@NotNull NSArray<? extends GKAgent> agents,
             double maxPredictionTime);
 
     /**
      * Creates a goal to avoid colliding with a group of agents without taking into account those agents' momentum
-     *
+     * 
      * @param maxPredictionTime how far ahead in the future, in seconds, should we look for potential collisions
      */
     @Generated
     @Selector("goalToAvoidObstacles:maxPredictionTime:")
-    public static native GKGoal goalToAvoidObstaclesMaxPredictionTime(NSArray<? extends GKObstacle> obstacles,
+    public static native GKGoal goalToAvoidObstaclesMaxPredictionTime(@NotNull NSArray<? extends GKObstacle> obstacles,
             double maxPredictionTime);
 
     /**
      * Creates a goal to seek the average position of the group of agents.
-     *
+     * 
      * @param maxDistance the distance between agents before cohesion happens
      * @param maxAngle    the angle between this agent's foward and the vector toward the other agent before cohesion
      *                    happens
      */
     @Generated
     @Selector("goalToCohereWithAgents:maxDistance:maxAngle:")
-    public static native GKGoal goalToCohereWithAgentsMaxDistanceMaxAngle(NSArray<? extends GKAgent> agents,
+    public static native GKGoal goalToCohereWithAgentsMaxDistanceMaxAngle(@NotNull NSArray<? extends GKAgent> agents,
             float maxDistance, float maxAngle);
 
     /**
      * Creates a goal to move away from the agent
-     *
+     * 
      * @param agent the agent to flee from
      */
     @Generated
     @Selector("goalToFleeAgent:")
-    public static native GKGoal goalToFleeAgent(GKAgent agent);
+    public static native GKGoal goalToFleeAgent(@NotNull GKAgent agent);
 
     /**
      * Creates a goal that will attempt to follow the given path
-     *
+     * 
      * @param path              the path to follow
      * @param maxPredictionTime how far ahead in the future, in seconds, should we look for potential intercepts
      * @param forward           direction to follow the path. forward = NO is reverse
      */
     @Generated
     @Selector("goalToFollowPath:maxPredictionTime:forward:")
-    public static native GKGoal goalToFollowPathMaxPredictionTimeForward(GKPath path, double maxPredictionTime,
+    public static native GKGoal goalToFollowPathMaxPredictionTimeForward(@NotNull GKPath path, double maxPredictionTime,
             boolean forward);
 
     /**
      * Creates a goal that will attempt to intercept another target agent taking into account that agent's momentum
-     *
+     * 
      * @param target            agent to intercept
      * @param maxPredictionTime how far ahead in the future, in seconds, should we look for potential intercepts
      */
     @Generated
     @Selector("goalToInterceptAgent:maxPredictionTime:")
-    public static native GKGoal goalToInterceptAgentMaxPredictionTime(GKAgent target, double maxPredictionTime);
+    public static native GKGoal goalToInterceptAgentMaxPredictionTime(@NotNull GKAgent target,
+            double maxPredictionTime);
 
     /**
      * Creates a goal that attempts to change our momentum to reach the target speed
-     *
+     * 
      * @param targetSpeed the target speed
      */
     @Generated
@@ -188,38 +196,38 @@ public class GKGoal extends NSObject implements NSCopying {
 
     /**
      * Creates a goal to move toward the agent
-     *
+     * 
      * @param agent the agent to seek
      */
     @Generated
     @Selector("goalToSeekAgent:")
-    public static native GKGoal goalToSeekAgent(GKAgent agent);
+    public static native GKGoal goalToSeekAgent(@NotNull GKAgent agent);
 
     /**
      * Creates a goal that tries to repel this agent away from the other agents and attempts to prevent overlap
-     *
+     * 
      * @param maxDistance the distance between agents before repelling happens
      * @param maxAngle    the angle, in radians, between this agent's foward and the vector toward the other agent
      *                    before the repelling happens
      */
     @Generated
     @Selector("goalToSeparateFromAgents:maxDistance:maxAngle:")
-    public static native GKGoal goalToSeparateFromAgentsMaxDistanceMaxAngle(NSArray<? extends GKAgent> agents,
+    public static native GKGoal goalToSeparateFromAgentsMaxDistanceMaxAngle(@NotNull NSArray<? extends GKAgent> agents,
             float maxDistance, float maxAngle);
 
     /**
      * Creates a goal that will attempt to stay on the given path
-     *
+     * 
      * @param path              the path to follow
      * @param maxPredictionTime how far ahead in the future, in seconds, should we look for potential intercepts
      */
     @Generated
     @Selector("goalToStayOnPath:maxPredictionTime:")
-    public static native GKGoal goalToStayOnPathMaxPredictionTime(GKPath path, double maxPredictionTime);
+    public static native GKGoal goalToStayOnPathMaxPredictionTime(@NotNull GKPath path, double maxPredictionTime);
 
     /**
      * Creates a goal that will make the agent appear to wander, aimlessly moving forward and turning randomly
-     *
+     * 
      * @param speed the speed at which to wander
      */
     @Generated
@@ -248,9 +256,10 @@ public class GKGoal extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -278,11 +287,12 @@ public class GKGoal extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("init")

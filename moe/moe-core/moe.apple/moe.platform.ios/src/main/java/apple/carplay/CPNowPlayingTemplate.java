@@ -24,7 +24,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -48,7 +53,7 @@ public class CPNowPlayingTemplate extends CPTemplate {
      */
     @Generated
     @Selector("addObserver:")
-    public native void addObserver(@Mapped(ObjCObjectMapper.class) CPNowPlayingTemplateObserver observer);
+    public native void addObserver(@NotNull @Mapped(ObjCObjectMapper.class) CPNowPlayingTemplateObserver observer);
 
     @Generated
     @Owned
@@ -62,22 +67,25 @@ public class CPNowPlayingTemplate extends CPTemplate {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,7 +109,7 @@ public class CPNowPlayingTemplate extends CPTemplate {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CPNowPlayingTemplate initWithCoder(NSCoder coder);
+    public native CPNowPlayingTemplate initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -119,9 +127,9 @@ public class CPNowPlayingTemplate extends CPTemplate {
     /**
      * A Boolean value indicating whether the string that displays the album and artist above the playback controls
      * should be a tappable button
-     * <p>
+     * 
      * Set the value of this property to @c YES to enable the button.
-     * <p>
+     * 
      * Defaults to NO.
      */
     @Generated
@@ -134,18 +142,19 @@ public class CPNowPlayingTemplate extends CPTemplate {
 
     /**
      * A Boolean value indicating whether the "Up Next" button on the upper right of a Now Playing view is enabled.
-     * <p>
+     * 
      * Set the value of this property to @c YES to enable the button.
-     * <p>
+     * 
      * Defaults to NO.
      */
     @Generated
     @Selector("isUpNextButtonEnabled")
     public native boolean isUpNextButtonEnabled();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,11 +163,12 @@ public class CPNowPlayingTemplate extends CPTemplate {
 
     /**
      * Playback control buttons on the Now Playing screen, like repeat, shuffle, and more.
-     * <p>
+     * 
      * Your application may specify a maximum of 5 now playing buttons.
-     * <p>
+     * 
      * Buttons are filled in array order, from the leading side to the trailing side of the screen.
      */
+    @NotNull
     @Generated
     @Selector("nowPlayingButtons")
     public native NSArray<? extends CPNowPlayingButton> nowPlayingButtons();
@@ -168,7 +178,7 @@ public class CPNowPlayingTemplate extends CPTemplate {
      */
     @Generated
     @Selector("removeObserver:")
-    public native void removeObserver(@Mapped(ObjCObjectMapper.class) CPNowPlayingTemplateObserver observer);
+    public native void removeObserver(@NotNull @Mapped(ObjCObjectMapper.class) CPNowPlayingTemplateObserver observer);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -181,9 +191,9 @@ public class CPNowPlayingTemplate extends CPTemplate {
     /**
      * A Boolean value indicating whether the string that displays the album and artist above the playback controls
      * should be a tappable button
-     * <p>
+     * 
      * Set the value of this property to @c YES to enable the button.
-     * <p>
+     * 
      * Defaults to NO.
      */
     @Generated
@@ -192,9 +202,9 @@ public class CPNowPlayingTemplate extends CPTemplate {
 
     /**
      * A Boolean value indicating whether the "Up Next" button on the upper right of a Now Playing view is enabled.
-     * <p>
+     * 
      * Set the value of this property to @c YES to enable the button.
-     * <p>
+     * 
      * Defaults to NO.
      */
     @Generated
@@ -205,12 +215,12 @@ public class CPNowPlayingTemplate extends CPTemplate {
      * If your template elects to display the "Up Next" button, you may optionally specify a string
      * indicating the title for the up next button. If no title is specified, a default system title
      * will be used.
-     *
+     * 
      * @see -[CPNowPlayingTemplate upNextButtonEnabled].
      */
     @Generated
     @Selector("setUpNextTitle:")
-    public native void setUpNextTitle(String value);
+    public native void setUpNextTitle(@NotNull String value);
 
     @Generated
     @Selector("setVersion:")
@@ -219,13 +229,14 @@ public class CPNowPlayingTemplate extends CPTemplate {
     /**
      * Access the shared now playing template for your app. Instead of creating your own
      * now playing template, you should configure the properties of this shared instance.
-     * <p>
+     * 
      * You should present this shared instance when your app needs to present now playing,
      * for example in response to the user selecting a playable item.
-     * <p>
+     * 
      * When the system needs to present now playing on behalf of your app, it will present
      * this shared instance.
      */
+    @NotNull
     @Generated
     @Selector("sharedTemplate")
     public static native CPNowPlayingTemplate sharedTemplate();
@@ -248,9 +259,10 @@ public class CPNowPlayingTemplate extends CPTemplate {
      * If your template elects to display the "Up Next" button, you may optionally specify a string
      * indicating the title for the up next button. If no title is specified, a default system title
      * will be used.
-     *
+     * 
      * @see -[CPNowPlayingTemplate upNextButtonEnabled].
      */
+    @NotNull
     @Generated
     @Selector("upNextTitle")
     public native String upNextTitle();
@@ -260,7 +272,7 @@ public class CPNowPlayingTemplate extends CPTemplate {
      */
     @Generated
     @Selector("updateNowPlayingButtons:")
-    public native void updateNowPlayingButtons(NSArray<? extends CPNowPlayingButton> nowPlayingButtons);
+    public native void updateNowPlayingButtons(@NotNull NSArray<? extends CPNowPlayingButton> nowPlayingButtons);
 
     @Generated
     @Selector("version")

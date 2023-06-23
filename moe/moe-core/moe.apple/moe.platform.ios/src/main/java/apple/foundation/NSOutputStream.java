@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSOutputStream is an abstract class representing the base functionality of a write stream.
@@ -73,22 +75,25 @@ public class NSOutputStream extends NSStream {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -104,14 +109,15 @@ public class NSOutputStream extends NSStream {
     @Generated
     @Selector("getBoundStreamsWithBufferSize:inputStream:outputStream:")
     public static native void getBoundStreamsWithBufferSizeInputStreamOutputStream(@NUInt long bufferSize,
-            @ReferenceInfo(type = NSInputStream.class) Ptr<NSInputStream> inputStream,
-            @ReferenceInfo(type = NSOutputStream.class) Ptr<NSOutputStream> outputStream);
+            @Nullable @ReferenceInfo(type = NSInputStream.class) Ptr<NSInputStream> inputStream,
+            @Nullable @ReferenceInfo(type = NSOutputStream.class) Ptr<NSOutputStream> outputStream);
 
+    @Deprecated
     @Generated
     @Selector("getStreamsToHostWithName:port:inputStream:outputStream:")
-    public static native void getStreamsToHostWithNamePortInputStreamOutputStream(String hostname, @NInt long port,
-            @ReferenceInfo(type = NSInputStream.class) Ptr<NSInputStream> inputStream,
-            @ReferenceInfo(type = NSOutputStream.class) Ptr<NSOutputStream> outputStream);
+    public static native void getStreamsToHostWithNamePortInputStreamOutputStream(@NotNull String hostname,
+            @NInt long port, @Nullable @ReferenceInfo(type = NSInputStream.class) Ptr<NSInputStream> inputStream,
+            @Nullable @ReferenceInfo(type = NSOutputStream.class) Ptr<NSOutputStream> outputStream);
 
     @Generated
     @Selector("hash")
@@ -135,9 +141,10 @@ public class NSOutputStream extends NSStream {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -146,19 +153,22 @@ public class NSOutputStream extends NSStream {
 
     @Generated
     @Selector("outputStreamToBuffer:capacity:")
-    public static native NSOutputStream outputStreamToBufferCapacity(BytePtr buffer, @NUInt long capacity);
+    public static native NSOutputStream outputStreamToBufferCapacity(@NotNull BytePtr buffer, @NUInt long capacity);
 
     @Generated
     @Selector("outputStreamToFileAtPath:append:")
-    public static native NSOutputStream outputStreamToFileAtPathAppend(String path, boolean shouldAppend);
+    public static native NSOutputStream outputStreamToFileAtPathAppend(@NotNull String path, boolean shouldAppend);
 
     @Generated
     @Selector("outputStreamToMemory")
     public static native NSOutputStream outputStreamToMemory();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("outputStreamWithURL:append:")
-    public static native NSOutputStream outputStreamWithURLAppend(NSURL url, boolean shouldAppend);
+    public static native NSOutputStream outputStreamWithURLAppend(@NotNull NSURL url, boolean shouldAppend);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -195,11 +205,11 @@ public class NSOutputStream extends NSStream {
 
     @Generated
     @Selector("initToBuffer:capacity:")
-    public native NSOutputStream initToBufferCapacity(BytePtr buffer, @NUInt long capacity);
+    public native NSOutputStream initToBufferCapacity(@NotNull BytePtr buffer, @NUInt long capacity);
 
     @Generated
     @Selector("initToFileAtPath:append:")
-    public native NSOutputStream initToFileAtPathAppend(String path, boolean shouldAppend);
+    public native NSOutputStream initToFileAtPathAppend(@NotNull String path, boolean shouldAppend);
 
     /**
      * returns YES if the stream can be written to or if it is impossible to tell without actually doing the write.
@@ -208,12 +218,15 @@ public class NSOutputStream extends NSStream {
     @Selector("initToMemory")
     public native NSOutputStream initToMemory();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("initWithURL:append:")
-    public native NSOutputStream initWithURLAppend(NSURL url, boolean shouldAppend);
+    public native NSOutputStream initWithURLAppend(@NotNull NSURL url, boolean shouldAppend);
 
     @Generated
     @Selector("write:maxLength:")
     @NInt
-    public native long writeMaxLength(ConstBytePtr buffer, @NUInt long len);
+    public native long writeMaxLength(@NotNull ConstBytePtr buffer, @NUInt long len);
 }

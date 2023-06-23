@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_ethernet_channel_state_t
- * <p>
+ * 
  * Channel states sent by nw_ethernet_channel_set_state_changed_handler.
  * States generally progress forward and do not move backwards, with the
  * exception of preparing and waiting, which may alternate before the channel

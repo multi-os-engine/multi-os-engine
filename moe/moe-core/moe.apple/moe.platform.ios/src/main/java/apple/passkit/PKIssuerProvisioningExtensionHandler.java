@@ -23,7 +23,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -54,22 +59,25 @@ public class PKIssuerProvisioningExtensionHandler extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -90,16 +98,16 @@ public class PKIssuerProvisioningExtensionHandler extends NSObject {
     @Generated
     @Selector("generateAddPaymentPassRequestForPassEntryWithIdentifier:configuration:certificateChain:nonce:nonceSignature:completionHandler:")
     public native void generateAddPaymentPassRequestForPassEntryWithIdentifierConfigurationCertificateChainNonceNonceSignatureCompletionHandler(
-            String identifier, PKAddPaymentPassRequestConfiguration configuration,
-            NSArray<? extends NSData> certificates, NSData nonce, NSData nonceSignature,
-            @ObjCBlock(name = "call_generateAddPaymentPassRequestForPassEntryWithIdentifierConfigurationCertificateChainNonceNonceSignatureCompletionHandler") Block_generateAddPaymentPassRequestForPassEntryWithIdentifierConfigurationCertificateChainNonceNonceSignatureCompletionHandler completion);
+            @NotNull String identifier, @NotNull PKAddPaymentPassRequestConfiguration configuration,
+            @NotNull NSArray<? extends NSData> certificates, @NotNull NSData nonce, @NotNull NSData nonceSignature,
+            @NotNull @ObjCBlock(name = "call_generateAddPaymentPassRequestForPassEntryWithIdentifierConfigurationCertificateChainNonceNonceSignatureCompletionHandler") Block_generateAddPaymentPassRequestForPassEntryWithIdentifierConfigurationCertificateChainNonceNonceSignatureCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_generateAddPaymentPassRequestForPassEntryWithIdentifierConfigurationCertificateChainNonceNonceSignatureCompletionHandler {
         @Generated
         void call_generateAddPaymentPassRequestForPassEntryWithIdentifierConfigurationCertificateChainNonceNonceSignatureCompletionHandler(
-                PKAddPaymentPassRequest request);
+                @Nullable PKAddPaymentPassRequest request);
     }
 
     @Generated
@@ -128,9 +136,10 @@ public class PKIssuerProvisioningExtensionHandler extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -140,25 +149,26 @@ public class PKIssuerProvisioningExtensionHandler extends NSObject {
     @Generated
     @Selector("passEntriesWithCompletion:")
     public native void passEntriesWithCompletion(
-            @ObjCBlock(name = "call_passEntriesWithCompletion") Block_passEntriesWithCompletion completion);
+            @NotNull @ObjCBlock(name = "call_passEntriesWithCompletion") Block_passEntriesWithCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_passEntriesWithCompletion {
         @Generated
-        void call_passEntriesWithCompletion(NSArray<? extends PKIssuerProvisioningExtensionPassEntry> entries);
+        void call_passEntriesWithCompletion(@NotNull NSArray<? extends PKIssuerProvisioningExtensionPassEntry> entries);
     }
 
     @Generated
     @Selector("remotePassEntriesWithCompletion:")
     public native void remotePassEntriesWithCompletion(
-            @ObjCBlock(name = "call_remotePassEntriesWithCompletion") Block_remotePassEntriesWithCompletion completion);
+            @NotNull @ObjCBlock(name = "call_remotePassEntriesWithCompletion") Block_remotePassEntriesWithCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_remotePassEntriesWithCompletion {
         @Generated
-        void call_remotePassEntriesWithCompletion(NSArray<? extends PKIssuerProvisioningExtensionPassEntry> entries);
+        void call_remotePassEntriesWithCompletion(
+                @NotNull NSArray<? extends PKIssuerProvisioningExtensionPassEntry> entries);
     }
 
     @Generated
@@ -176,13 +186,13 @@ public class PKIssuerProvisioningExtensionHandler extends NSObject {
     @Generated
     @Selector("statusWithCompletion:")
     public native void statusWithCompletion(
-            @ObjCBlock(name = "call_statusWithCompletion") Block_statusWithCompletion completion);
+            @NotNull @ObjCBlock(name = "call_statusWithCompletion") Block_statusWithCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_statusWithCompletion {
         @Generated
-        void call_statusWithCompletion(PKIssuerProvisioningExtensionStatus status);
+        void call_statusWithCompletion(@NotNull PKIssuerProvisioningExtensionStatus status);
     }
 
     @Generated

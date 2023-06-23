@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_interface_type_t
- * <p>
+ * 
  * Interface types represent the underlying media for a network link, such as Wi-Fi or
  * Cellular.
  */

@@ -19,11 +19,31 @@ package apple.mapkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 3.0
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Use MKPinAnnotationView's pinTintColor instead
+ */
 @Deprecated
 @Generated
 public final class MKPinAnnotationColor {
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use MKPinAnnotationView's pinTintColor instead
+     */
     @Deprecated @Generated @NUInt public static final long Red = 0x0000000000000000L;
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use MKPinAnnotationView's pinTintColor instead
+     */
     @Deprecated @Generated @NUInt public static final long Green = 0x0000000000000001L;
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use MKPinAnnotationView's pinTintColor instead
+     */
     @Deprecated @Generated @NUInt public static final long Purple = 0x0000000000000002L;
 
     @Generated

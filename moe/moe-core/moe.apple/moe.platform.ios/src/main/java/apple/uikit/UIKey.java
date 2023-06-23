@@ -25,7 +25,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.4
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -56,25 +61,27 @@ public class UIKey extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * [@returns] a string representing what would be inserted into a text field when this key is pressed.
-     * <p>
+     * 
      * if a modifier key is held, this property will contain the modified characters according
      * the rules for that particular modifier key (i.e., if shift is held on a Latin keyboard, this will
      * contain capital letters).
      */
+    @NotNull
     @Generated
     @Selector("characters")
     public native String characters();
@@ -82,27 +89,31 @@ public class UIKey extends NSObject implements NSCopying, NSCoding {
     /**
      * [@returns] a string representing which characters would be inserted into a text field when this key is
      * pressed, not taking any held modifiers into account.
-     * <p>
+     * 
      * for Latin based languages, expect this to be always in lowercase (unmodified meaning not
      * taking shift key into account). If only a modifier key was pressed, this property will contain an empty string.
      */
+    @NotNull
     @Generated
     @Selector("charactersIgnoringModifiers")
     public native String charactersIgnoringModifiers();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -114,7 +125,7 @@ public class UIKey extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -127,7 +138,7 @@ public class UIKey extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIKey initWithCoder(NSCoder coder);
+    public native UIKey initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -154,9 +165,10 @@ public class UIKey extends NSObject implements NSCopying, NSCoding {
     @NInt
     public native long keyCode();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@returns] a bitfield representing which modifier keys are currently being held in addition to this key.

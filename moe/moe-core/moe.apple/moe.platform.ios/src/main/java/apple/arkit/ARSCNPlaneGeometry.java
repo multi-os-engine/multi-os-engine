@@ -28,9 +28,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A SceneKit geometry representing a plane.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("ARKit")
@@ -62,22 +66,25 @@ public class ARSCNPlaneGeometry extends SCNGeometry {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,12 +103,13 @@ public class ARSCNPlaneGeometry extends SCNGeometry {
 
     @Generated
     @Selector("geometryWithMDLMesh:")
-    public static native ARSCNPlaneGeometry geometryWithMDLMesh(MDLMesh mdlMesh);
+    public static native ARSCNPlaneGeometry geometryWithMDLMesh(@NotNull MDLMesh mdlMesh);
 
     @Generated
     @Selector("geometryWithSources:elements:")
-    public static native ARSCNPlaneGeometry geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
-            NSArray<? extends SCNGeometryElement> elements);
+    public static native ARSCNPlaneGeometry geometryWithSourcesElements(
+            @NotNull NSArray<? extends SCNGeometrySource> sources,
+            @Nullable NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
     @Selector("hash")
@@ -114,7 +122,7 @@ public class ARSCNPlaneGeometry extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native ARSCNPlaneGeometry initWithCoder(NSCoder coder);
+    public native ARSCNPlaneGeometry initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -133,9 +141,10 @@ public class ARSCNPlaneGeometry extends SCNGeometry {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -144,13 +153,14 @@ public class ARSCNPlaneGeometry extends SCNGeometry {
 
     /**
      * Creates a new plane geometry using a Metal device.
-     *
+     * 
      * @param device A Metal device.
      * @return A new plane geometry.
      */
     @Generated
     @Selector("planeGeometryWithDevice:")
-    public static native ARSCNPlaneGeometry planeGeometryWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public static native ARSCNPlaneGeometry planeGeometryWithDevice(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -180,12 +190,12 @@ public class ARSCNPlaneGeometry extends SCNGeometry {
 
     /**
      * Updates the geometry with the vertices of a plane geometry.
-     *
+     * 
      * @param planeGeometry A plane geometry.
      */
     @Generated
     @Selector("updateFromPlaneGeometry:")
-    public native void updateFromPlaneGeometry(ARPlaneGeometry planeGeometry);
+    public native void updateFromPlaneGeometry(@NotNull ARPlaneGeometry planeGeometry);
 
     @Generated
     @Selector("version")

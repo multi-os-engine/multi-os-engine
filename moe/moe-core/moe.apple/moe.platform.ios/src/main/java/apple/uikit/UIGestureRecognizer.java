@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -43,7 +42,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 3.2
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -74,22 +79,25 @@ public class UIGestureRecognizer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +132,10 @@ public class UIGestureRecognizer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,18 +168,24 @@ public class UIGestureRecognizer extends NSObject {
      */
     @Generated
     @Selector("addTarget:action:")
-    public native void addTargetAction(@Mapped(ObjCObjectMapper.class) Object target, SEL action);
+    public native void addTargetAction(@NotNull @Mapped(ObjCObjectMapper.class) Object target, @NotNull SEL action);
 
     /**
      * Array of UIPressTypes as NSNumbers.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("allowedPressTypes")
     public native NSArray<? extends NSNumber> allowedPressTypes();
 
     /**
      * Array of UITouchTypes as NSNumbers.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("allowedTouchTypes")
     public native NSArray<? extends NSNumber> allowedTouchTypes();
@@ -204,6 +219,7 @@ public class UIGestureRecognizer extends NSObject {
     /**
      * the gesture recognizer's delegate
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -218,7 +234,8 @@ public class UIGestureRecognizer extends NSObject {
      */
     @Generated
     @Selector("initWithTarget:action:")
-    public native UIGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target, SEL action);
+    public native UIGestureRecognizer initWithTargetAction(@Nullable @Mapped(ObjCObjectMapper.class) Object target,
+            @Nullable SEL action);
 
     /**
      * default is YES. disabled gesture recognizers will not receive touches. when changed to NO the gesture recognizer
@@ -242,7 +259,7 @@ public class UIGestureRecognizer extends NSObject {
     @Generated
     @Selector("locationInView:")
     @ByValue
-    public native CGPoint locationInView(UIView view);
+    public native CGPoint locationInView(@Nullable UIView view);
 
     /**
      * the location of a particular touch
@@ -250,7 +267,7 @@ public class UIGestureRecognizer extends NSObject {
     @Generated
     @Selector("locationOfTouch:inView:")
     @ByValue
-    public native CGPoint locationOfTouchInView(@NUInt long touchIndex, UIView view);
+    public native CGPoint locationOfTouchInView(@NUInt long touchIndex, @Nullable UIView view);
 
     /**
      * number of touches involved for which locations can be queried
@@ -265,7 +282,8 @@ public class UIGestureRecognizer extends NSObject {
      */
     @Generated
     @Selector("removeTarget:action:")
-    public native void removeTargetAction(@Mapped(ObjCObjectMapper.class) Object target, SEL action);
+    public native void removeTargetAction(@Nullable @Mapped(ObjCObjectMapper.class) Object target,
+            @Nullable SEL action);
 
     /**
      * create a relationship with another gesture recognizer that will prevent this gesture's actions from being called
@@ -276,10 +294,12 @@ public class UIGestureRecognizer extends NSObject {
      */
     @Generated
     @Selector("requireGestureRecognizerToFail:")
-    public native void requireGestureRecognizerToFail(UIGestureRecognizer otherGestureRecognizer);
+    public native void requireGestureRecognizerToFail(@NotNull UIGestureRecognizer otherGestureRecognizer);
 
     /**
      * defaults to YES
+     * 
+     * API-Since: 9.2
      */
     @Generated
     @Selector("requiresExclusiveTouchType")
@@ -287,17 +307,21 @@ public class UIGestureRecognizer extends NSObject {
 
     /**
      * Array of UIPressTypes as NSNumbers.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAllowedPressTypes:")
-    public native void setAllowedPressTypes(NSArray<? extends NSNumber> value);
+    public native void setAllowedPressTypes(@NotNull NSArray<? extends NSNumber> value);
 
     /**
      * Array of UITouchTypes as NSNumbers.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAllowedTouchTypes:")
-    public native void setAllowedTouchTypes(NSArray<? extends NSNumber> value);
+    public native void setAllowedTouchTypes(@NotNull NSArray<? extends NSNumber> value);
 
     /**
      * default is YES. causes touchesCancelled:withEvent: or pressesCancelled:withEvent: to be sent to the view for all
@@ -330,13 +354,13 @@ public class UIGestureRecognizer extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIGestureRecognizerDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UIGestureRecognizerDelegate value);
 
     /**
      * the gesture recognizer's delegate
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIGestureRecognizerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIGestureRecognizerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -349,6 +373,8 @@ public class UIGestureRecognizer extends NSObject {
 
     /**
      * defaults to YES
+     * 
+     * API-Since: 9.2
      */
     @Generated
     @Selector("setRequiresExclusiveTouchType:")
@@ -366,27 +392,33 @@ public class UIGestureRecognizer extends NSObject {
      * the view the gesture is attached to. set by adding the recognizer to a UIView using the addGestureRecognizer:
      * method
      */
+    @Nullable
     @Generated
     @Selector("view")
     public native UIView view();
 
     /**
      * name for debugging to appear in logging
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
 
     /**
      * name for debugging to appear in logging
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     @Generated
     @Selector("canBePreventedByGestureRecognizer:")
-    public native boolean canBePreventedByGestureRecognizer(UIGestureRecognizer preventingGestureRecognizer);
+    public native boolean canBePreventedByGestureRecognizer(@NotNull UIGestureRecognizer preventingGestureRecognizer);
 
     /**
      * same behavior as the equivalent delegate methods, but can be used by subclasses to define class-wide prevention
@@ -395,11 +427,14 @@ public class UIGestureRecognizer extends NSObject {
      */
     @Generated
     @Selector("canPreventGestureRecognizer:")
-    public native boolean canPreventGestureRecognizer(UIGestureRecognizer preventedGestureRecognizer);
+    public native boolean canPreventGestureRecognizer(@NotNull UIGestureRecognizer preventedGestureRecognizer);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("ignorePress:forEvent:")
-    public native void ignorePressForEvent(UIPress button, UIPressesEvent event);
+    public native void ignorePressForEvent(@NotNull UIPress button, @NotNull UIPressesEvent event);
 
     /**
      * if a touch isn't part of this gesture it can be passed to this method to be ignored. ignored touches won't be
@@ -407,27 +442,41 @@ public class UIGestureRecognizer extends NSObject {
      */
     @Generated
     @Selector("ignoreTouch:forEvent:")
-    public native void ignoreTouchForEvent(UITouch touch, UIEvent event);
+    public native void ignoreTouchForEvent(@NotNull UITouch touch, @NotNull UIEvent event);
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIGestureRecognizer initWithCoder(NSCoder coder);
+    public native UIGestureRecognizer initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("pressesBegan:withEvent:")
-    public native void pressesBeganWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
+    public native void pressesBeganWithEvent(@NotNull NSSet<? extends UIPress> presses, @NotNull UIPressesEvent event);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("pressesCancelled:withEvent:")
-    public native void pressesCancelledWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
+    public native void pressesCancelledWithEvent(@NotNull NSSet<? extends UIPress> presses,
+            @NotNull UIPressesEvent event);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("pressesChanged:withEvent:")
-    public native void pressesChangedWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
+    public native void pressesChangedWithEvent(@NotNull NSSet<? extends UIPress> presses,
+            @NotNull UIPressesEvent event);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("pressesEnded:withEvent:")
-    public native void pressesEndedWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
+    public native void pressesEndedWithEvent(@NotNull NSSet<? extends UIPress> presses, @NotNull UIPressesEvent event);
 
     /**
      * called automatically by the runtime after the gesture state has been set to UIGestureRecognizerStateEnded
@@ -447,17 +496,23 @@ public class UIGestureRecognizer extends NSObject {
     @Selector("setState:")
     public native void setState(@NInt long value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("shouldBeRequiredToFailByGestureRecognizer:")
-    public native boolean shouldBeRequiredToFailByGestureRecognizer(UIGestureRecognizer otherGestureRecognizer);
+    public native boolean shouldBeRequiredToFailByGestureRecognizer(
+            @NotNull UIGestureRecognizer otherGestureRecognizer);
 
     /**
      * same behavior as the equivalent delegate methods, but can be used by subclasses to define class-wide failure
      * requirements
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("shouldRequireFailureOfGestureRecognizer:")
-    public native boolean shouldRequireFailureOfGestureRecognizer(UIGestureRecognizer otherGestureRecognizer);
+    public native boolean shouldRequireFailureOfGestureRecognizer(@NotNull UIGestureRecognizer otherGestureRecognizer);
 
     /**
      * mirror of the touch-delivery methods on UIResponder
@@ -467,24 +522,30 @@ public class UIGestureRecognizer extends NSObject {
      */
     @Generated
     @Selector("touchesBegan:withEvent:")
-    public native void touchesBeganWithEvent(NSSet<? extends UITouch> touches, UIEvent event);
+    public native void touchesBeganWithEvent(@NotNull NSSet<? extends UITouch> touches, @NotNull UIEvent event);
 
     @Generated
     @Selector("touchesCancelled:withEvent:")
-    public native void touchesCancelledWithEvent(NSSet<? extends UITouch> touches, UIEvent event);
+    public native void touchesCancelledWithEvent(@NotNull NSSet<? extends UITouch> touches, @NotNull UIEvent event);
 
     @Generated
     @Selector("touchesEnded:withEvent:")
-    public native void touchesEndedWithEvent(NSSet<? extends UITouch> touches, UIEvent event);
+    public native void touchesEndedWithEvent(@NotNull NSSet<? extends UITouch> touches, @NotNull UIEvent event);
 
+    /**
+     * API-Since: 9.1
+     */
     @Generated
     @Selector("touchesEstimatedPropertiesUpdated:")
-    public native void touchesEstimatedPropertiesUpdated(NSSet<? extends UITouch> touches);
+    public native void touchesEstimatedPropertiesUpdated(@NotNull NSSet<? extends UITouch> touches);
 
     @Generated
     @Selector("touchesMoved:withEvent:")
-    public native void touchesMovedWithEvent(NSSet<? extends UITouch> touches, UIEvent event);
+    public native void touchesMovedWithEvent(@NotNull NSSet<? extends UITouch> touches, @NotNull UIEvent event);
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("buttonMask")
     @NInt
@@ -493,6 +554,8 @@ public class UIGestureRecognizer extends NSObject {
     /**
      * Values from the last event processed.
      * These values are not considered as requirements for the gesture.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("modifierFlags")
@@ -501,8 +564,10 @@ public class UIGestureRecognizer extends NSObject {
 
     /**
      * same behavior as the equivalent delegate method
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("shouldReceiveEvent:")
-    public native boolean shouldReceiveEvent(UIEvent event);
+    public native boolean shouldReceiveEvent(@NotNull UIEvent event);
 }

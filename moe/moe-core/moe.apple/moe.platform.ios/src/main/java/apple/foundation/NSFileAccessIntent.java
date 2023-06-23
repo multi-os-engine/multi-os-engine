@@ -34,7 +34,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -65,22 +70,25 @@ public class NSFileAccessIntent extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -115,18 +123,20 @@ public class NSFileAccessIntent extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native NSFileAccessIntent new_objc();
 
+    @NotNull
     @Generated
     @Selector("readingIntentWithURL:options:")
-    public static native NSFileAccessIntent readingIntentWithURLOptions(NSURL url, @NUInt long options);
+    public static native NSFileAccessIntent readingIntentWithURLOptions(@NotNull NSURL url, @NUInt long options);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -149,14 +159,16 @@ public class NSFileAccessIntent extends NSObject {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("writingIntentWithURL:options:")
-    public static native NSFileAccessIntent writingIntentWithURLOptions(NSURL url, @NUInt long options);
+    public static native NSFileAccessIntent writingIntentWithURLOptions(@NotNull NSURL url, @NUInt long options);
 
     /**
      * Use this URL within the accessor block. This property may change from its original value in response to actions
      * from other writers.
      */
+    @NotNull
     @Generated
     @Selector("URL")
     public native NSURL URL();

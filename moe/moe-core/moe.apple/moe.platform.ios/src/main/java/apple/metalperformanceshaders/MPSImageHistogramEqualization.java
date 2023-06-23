@@ -43,16 +43,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImageHistogramEqualization
- * <p>
+ * 
  * The MPSImageHistogramEqualization performs equalizes the histogram of an image.
  * The process is divided into three steps.
- * <p>
+ * 
  * -# Call -initWithDevice:histogramInfo: This creates a MPSImageHistogramEqualization
  * object. It is done when the method returns.
- * <p>
+ * 
  * -# Call -encodeTransform:sourceTexture:histogram:histogramOffset: This creates a privately held
  * image transform (i.e. a cumulative distribution function of the histogram) which will be used to
  * equalize the distribution of the histogram of the source image. This process runs on a MTLCommandBuffer
@@ -62,15 +64,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * encodeTransform to determine the number of channels and therefore which histogram data in histogram
  * buffer to use. The histogram for sourceTexture must have been computed either on the CPU or using
  * the MPSImageHistogram kernel
- * <p>
+ * 
  * -# Call -encodeToCommandBuffer:sourceTexture:destinationTexture: to read data from
  * sourceTexture, apply the equalization transform to it and write to destination texture.
  * This step is also done on the GPU on a MTLCommandQueue.
- * <p>
+ * 
  * You can reuse the same equalization transform on other images to perform the
  * same transform on those images. (Since their distribution is probably different,
  * they will probably not be equalized by it.) This filter usually will not be able
  * to work in place.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -102,22 +106,25 @@ public class MPSImageHistogramEqualization extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -152,9 +159,10 @@ public class MPSImageHistogramEqualization extends MPSUnaryImageKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -185,14 +193,14 @@ public class MPSImageHistogramEqualization extends MPSUnaryImageKernel {
     /**
      * Encode the transform function to a command buffer using a MTLComputeCommandEncoder.
      * The transform function computes the equalization lookup table.
-     * <p>
+     * 
      * The transform function will not begin to execute until after the command
      * buffer has been enqueued and committed. This step will need to be repeated
      * with the new MPSKernel if -copyWithZone:device or -copyWithZone: is called.
      * The transform is stored as internal state to the object. You still need to
      * call -encodeToCommandBuffer:sourceTexture:destinationTexture: afterward
      * to apply the transform to produce a result texture.
-     *
+     * 
      * @param commandBuffer   A valid MTLCommandBuffer.
      * @param source          A valid MTLTexture containing the source image for the filter.
      * @param histogram       A valid MTLBuffer containing the histogram results for an image. This filter
@@ -210,9 +218,9 @@ public class MPSImageHistogramEqualization extends MPSUnaryImageKernel {
     @Generated
     @Selector("encodeTransformToCommandBuffer:sourceTexture:histogram:histogramOffset:")
     public native void encodeTransformToCommandBufferSourceTextureHistogramHistogramOffset(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture source, @Mapped(ObjCObjectMapper.class) MTLBuffer histogram,
-            @NUInt long histogramOffset);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture source,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer histogram, @NUInt long histogramOffset);
 
     @Generated
     @Selector("init")
@@ -220,11 +228,11 @@ public class MPSImageHistogramEqualization extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImageHistogramEqualization initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageHistogramEqualization initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Specifies information about the histogram for the channels of an image.
-     *
+     * 
      * @param device        The device the filter will run on
      * @param histogramInfo Pointer to the MPSHistogramInfo struct
      * @return A valid MPSImageHistogramEqualization object or nil, if failure.
@@ -232,29 +240,31 @@ public class MPSImageHistogramEqualization extends MPSUnaryImageKernel {
     @Generated
     @Selector("initWithDevice:histogramInfo:")
     public native MPSImageHistogramEqualization initWithDeviceHistogramInfo(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, VoidPtr histogramInfo);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull VoidPtr histogramInfo);
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSImageHistogramEqualization initWithCoder(NSCoder aDecoder);
+    public native MPSImageHistogramEqualization initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSImageHistogramEqualization initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageHistogramEqualization initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("supportsSecureCoding")

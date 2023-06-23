@@ -42,29 +42,33 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * EKRecurrenceDayOfWeek
- * <p>
+ * 
  * Class which represents a day of the week this recurrence will occur.
- * <p>
+ * 
  * EKRecurrenceDayOfWeek specifies either a simple day of the week, or the nth instance
  * of a particular day of the week, such as the third Tuesday of every month. The week
  * number is only valid when used with monthly or yearly recurrences, since it would
  * be otherwise meaningless.
- * <p>
+ * 
  * Valid values for dayOfTheWeek are integers 1-7, which correspond to days of the week
  * with Sunday = 1. Valid values for weekNumber portion are (+/-)1-53, where a negative
  * value indicates a value from the end of the range. For example, in a yearly event -1
  * means last week of the year. -1 in a Monthly recurrence indicates the last week of
  * the month.
- * <p>
+ * 
  * The value 0 also indicates the weekNumber is irrelevant (every Sunday, etc.).
- * <p>
+ * 
  * Day-of-week weekNumber values that are out of bounds for the recurrence type will
  * result in an exception when trying to initialize the recurrence. In particular,
  * weekNumber must be zero when passing EKRecurrenceDayOfWeek objects to initialize a weekly
  * recurrence.
+ * 
+ * API-Since: 4.0
  */
 @Generated
 @Library("EventKit")
@@ -96,29 +100,32 @@ public class EKRecurrenceDayOfWeek extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * dayOfWeek:
-     * <p>
+     * 
      * Creates an autoreleased object with a day of the week and week number of zero.
      */
     @Generated
@@ -127,7 +134,7 @@ public class EKRecurrenceDayOfWeek extends NSObject implements NSCopying, NSSecu
 
     /**
      * dayOfWeek:weekNumber:
-     * <p>
+     * 
      * Creates an autoreleased object with a specific day of week and week number.
      */
     @Generated
@@ -164,9 +171,10 @@ public class EKRecurrenceDayOfWeek extends NSObject implements NSCopying, NSSecu
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -194,15 +202,16 @@ public class EKRecurrenceDayOfWeek extends NSObject implements NSCopying, NSSecu
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] dayOfTheWeek
-     * <p>
+     * 
      * The day of the week.
      */
     @Generated
@@ -216,7 +225,7 @@ public class EKRecurrenceDayOfWeek extends NSObject implements NSCopying, NSSecu
 
     /**
      * initWithDayOfTheWeek:weekNumber:
-     * <p>
+     * 
      * Creates an day-of-week object with a specific day of week and week number.
      */
     @Generated
@@ -225,7 +234,7 @@ public class EKRecurrenceDayOfWeek extends NSObject implements NSCopying, NSSecu
 
     /**
      * [@property] weekNumber
-     * <p>
+     * 
      * The week number.
      */
     @Generated
@@ -235,11 +244,11 @@ public class EKRecurrenceDayOfWeek extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithCoder:")
-    public native EKRecurrenceDayOfWeek initWithCoder(NSCoder coder);
+    public native EKRecurrenceDayOfWeek initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("supportsSecureCoding")

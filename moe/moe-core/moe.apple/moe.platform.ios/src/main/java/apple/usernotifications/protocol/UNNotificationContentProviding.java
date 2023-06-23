@@ -11,6 +11,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
  * notification. Only objects that conform to UNNotificationContentProviding in the Apple SDK are allowed. The
  * conformance will be ignored by other objects conforming to UNNotificationContentProviding. Do not conform objects to
  * UNNotificationContentProviding.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("UserNotifications")

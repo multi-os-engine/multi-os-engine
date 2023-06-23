@@ -1,8 +1,5 @@
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSIndexPath;
 import apple.quartzcore.struct.CATransform3D;
 import org.moe.natj.general.ann.ByValue;
@@ -15,7 +12,15 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -41,6 +46,7 @@ public interface NSCollectionLayoutVisibleItem extends UIDynamicItem {
     @ByValue
     CGRect frame();
 
+    @NotNull
     @Generated
     @Selector("indexPath")
     NSIndexPath indexPath();
@@ -49,6 +55,7 @@ public interface NSCollectionLayoutVisibleItem extends UIDynamicItem {
     @Selector("isHidden")
     boolean isHidden();
 
+    @NotNull
     @Generated
     @Selector("name")
     String name();
@@ -58,6 +65,7 @@ public interface NSCollectionLayoutVisibleItem extends UIDynamicItem {
     @NUInt
     long representedElementCategory();
 
+    @Nullable
     @Generated
     @Selector("representedElementKind")
     String representedElementKind();

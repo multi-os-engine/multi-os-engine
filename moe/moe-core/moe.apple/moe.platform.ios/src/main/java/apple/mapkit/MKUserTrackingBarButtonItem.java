@@ -48,7 +48,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -77,57 +82,66 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     @Selector("allocWithZone:")
     public static native MKUserTrackingBarButtonItem allocWithZone(VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("appearance")
     public static native MKUserTrackingBarButtonItem appearance();
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:")
-    public static native MKUserTrackingBarButtonItem appearanceForTraitCollection(UITraitCollection trait);
+    public static native MKUserTrackingBarButtonItem appearanceForTraitCollection(@NotNull UITraitCollection trait);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     public static native MKUserTrackingBarButtonItem appearanceForTraitCollectionWhenContainedIn(
-            UITraitCollection trait, @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
-            Object... varargs);
+            @NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     public static native MKUserTrackingBarButtonItem appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            UITraitCollection trait, NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     public static native MKUserTrackingBarButtonItem appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     public static native MKUserTrackingBarButtonItem appearanceWhenContainedInInstancesOfClasses(
-            NSArray<?> containerTypes);
+            @NotNull NSArray<?> containerTypes);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -162,9 +176,10 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -192,44 +207,51 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearance")
     public MKUserTrackingBarButtonItem _appearance() {
         return appearance();
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    public MKUserTrackingBarButtonItem _appearanceForTraitCollection(UITraitCollection trait) {
+    public MKUserTrackingBarButtonItem _appearanceForTraitCollection(@NotNull UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    public MKUserTrackingBarButtonItem _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public MKUserTrackingBarButtonItem _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
     public MKUserTrackingBarButtonItem _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            UITraitCollection trait, NSArray<?> containerTypes) {
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     public MKUserTrackingBarButtonItem _appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public MKUserTrackingBarButtonItem _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public MKUserTrackingBarButtonItem _appearanceWhenContainedInInstancesOfClasses(
+            @NotNull NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -240,69 +262,90 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     @Generated
     @Selector("initWithBarButtonSystemItem:target:action:")
     public native MKUserTrackingBarButtonItem initWithBarButtonSystemItemTargetAction(@NInt long systemItem,
-            @Mapped(ObjCObjectMapper.class) Object target, SEL action);
+            @Nullable @Mapped(ObjCObjectMapper.class) Object target, @Nullable SEL action);
 
     @Generated
     @Selector("initWithCoder:")
-    public native MKUserTrackingBarButtonItem initWithCoder(NSCoder coder);
+    public native MKUserTrackingBarButtonItem initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithCustomView:")
-    public native MKUserTrackingBarButtonItem initWithCustomView(UIView customView);
+    public native MKUserTrackingBarButtonItem initWithCustomView(@NotNull UIView customView);
 
     @Generated
     @Selector("initWithImage:landscapeImagePhone:style:target:action:")
-    public native MKUserTrackingBarButtonItem initWithImageLandscapeImagePhoneStyleTargetAction(UIImage image,
-            UIImage landscapeImagePhone, @NInt long style, @Mapped(ObjCObjectMapper.class) Object target, SEL action);
+    public native MKUserTrackingBarButtonItem initWithImageLandscapeImagePhoneStyleTargetAction(@Nullable UIImage image,
+            @Nullable UIImage landscapeImagePhone, @NInt long style,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object target, @Nullable SEL action);
 
     @Generated
     @Selector("initWithImage:style:target:action:")
-    public native MKUserTrackingBarButtonItem initWithImageStyleTargetAction(UIImage image, @NInt long style,
-            @Mapped(ObjCObjectMapper.class) Object target, SEL action);
+    public native MKUserTrackingBarButtonItem initWithImageStyleTargetAction(@Nullable UIImage image, @NInt long style,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object target, @Nullable SEL action);
 
     @Generated
     @Selector("initWithMapView:")
-    public native MKUserTrackingBarButtonItem initWithMapView(MKMapView mapView);
+    public native MKUserTrackingBarButtonItem initWithMapView(@Nullable MKMapView mapView);
 
     @Generated
     @Selector("initWithTitle:style:target:action:")
-    public native MKUserTrackingBarButtonItem initWithTitleStyleTargetAction(String title, @NInt long style,
-            @Mapped(ObjCObjectMapper.class) Object target, SEL action);
+    public native MKUserTrackingBarButtonItem initWithTitleStyleTargetAction(@Nullable String title, @NInt long style,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object target, @Nullable SEL action);
 
+    @Nullable
     @Generated
     @Selector("mapView")
     public native MKMapView mapView();
 
     @Generated
     @Selector("setMapView:")
-    public native void setMapView(MKMapView value);
+    public native void setMapView(@Nullable MKMapView value);
 
+    @NotNull
     @Generated
     @Selector("fixedSpaceItemOfWidth:")
     public static native MKUserTrackingBarButtonItem fixedSpaceItemOfWidth(@NFloat double width);
 
+    @NotNull
     @Generated
     @Selector("flexibleSpaceItem")
     public static native MKUserTrackingBarButtonItem flexibleSpaceItem();
 
     @Generated
     @Selector("initWithBarButtonSystemItem:menu:")
-    public native MKUserTrackingBarButtonItem initWithBarButtonSystemItemMenu(@NInt long systemItem, UIMenu menu);
+    public native MKUserTrackingBarButtonItem initWithBarButtonSystemItemMenu(@NInt long systemItem,
+            @Nullable UIMenu menu);
 
     @Generated
     @Selector("initWithBarButtonSystemItem:primaryAction:")
     public native MKUserTrackingBarButtonItem initWithBarButtonSystemItemPrimaryAction(@NInt long systemItem,
-            UIAction primaryAction);
+            @Nullable UIAction primaryAction);
 
     @Generated
     @Selector("initWithImage:menu:")
-    public native MKUserTrackingBarButtonItem initWithImageMenu(UIImage image, UIMenu menu);
+    public native MKUserTrackingBarButtonItem initWithImageMenu(@Nullable UIImage image, @Nullable UIMenu menu);
 
     @Generated
     @Selector("initWithPrimaryAction:")
-    public native MKUserTrackingBarButtonItem initWithPrimaryAction(UIAction primaryAction);
+    public native MKUserTrackingBarButtonItem initWithPrimaryAction(@Nullable UIAction primaryAction);
 
     @Generated
     @Selector("initWithTitle:menu:")
-    public native MKUserTrackingBarButtonItem initWithTitleMenu(String title, UIMenu menu);
+    public native MKUserTrackingBarButtonItem initWithTitleMenu(@Nullable String title, @Nullable UIMenu menu);
+
+    @Generated
+    @Selector("initWithBarButtonSystemItem:primaryAction:menu:")
+    public native MKUserTrackingBarButtonItem initWithBarButtonSystemItemPrimaryActionMenu(@NInt long systemItem,
+            @Nullable UIAction primaryAction, @Nullable UIMenu menu);
+
+    @Generated
+    @Selector("initWithPrimaryAction:menu:")
+    public native MKUserTrackingBarButtonItem initWithPrimaryActionMenu(@Nullable UIAction primaryAction,
+            @Nullable UIMenu menu);
+
+    @Generated
+    @Selector("initWithTitle:image:target:action:menu:")
+    public native MKUserTrackingBarButtonItem initWithTitleImageTargetActionMenu(@Nullable String title,
+            @Nullable UIImage image, @Nullable @Mapped(ObjCObjectMapper.class) Object target, @Nullable SEL action,
+            @Nullable UIMenu menu);
 }

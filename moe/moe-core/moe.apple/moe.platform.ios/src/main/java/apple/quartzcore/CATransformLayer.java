@@ -42,29 +42,33 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * "Transform" layers are used to create true 3D layer hierarchies.
- * <p>
+ * 
  * Unlike normal layers, transform layers do not project (i.e. flatten)
  * their sublayers into the plane at Z=0. However due to this neither
  * do they support many features of the 2D compositing model:
- * <p>
+ * 
  * - only their sublayers are rendered (i.e. no background, contents,
  * border)
- * <p>
+ * 
  * - filters, backgroundFilters, compositingFilter, mask, masksToBounds
  * and shadow related properties are ignored (they all assume 2D
  * image processing of the projected layer)
- * <p>
+ * 
  * - opacity is applied to each sublayer individually, i.e. the transform
  * layer does not form a compositing group.
- * <p>
+ * 
  * Also, the -hitTest: method should never be called on transform
  * layers (they do not have a 2D coordinate space into which to map the
  * supplied point.) CALayer will pass over transform layers directly to
  * their sublayers, applying the effects of the transform layer's
  * geometry when hit-testing each sublayer.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("QuartzCore")
@@ -96,22 +100,25 @@ public class CATransformLayer extends CALayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,15 +127,17 @@ public class CATransformLayer extends CALayer {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("defaultActionForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native CAAction defaultActionForKey(String event);
+    public static native CAAction defaultActionForKey(@NotNull String event);
 
+    @Nullable
     @Generated
     @Selector("defaultValueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultValueForKey(String key);
+    public static native Object defaultValueForKey(@NotNull String key);
 
     @Generated
     @Selector("description")
@@ -156,9 +165,10 @@ public class CATransformLayer extends CALayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Selector("layer")
@@ -166,7 +176,7 @@ public class CATransformLayer extends CALayer {
 
     @Generated
     @Selector("needsDisplayForKey:")
-    public static native boolean needsDisplayForKey(String key);
+    public static native boolean needsDisplayForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -200,11 +210,11 @@ public class CATransformLayer extends CALayer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CATransformLayer initWithCoder(NSCoder coder);
+    public native CATransformLayer initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
-    public native CATransformLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
+    public native CATransformLayer initWithLayer(@NotNull @Mapped(ObjCObjectMapper.class) Object layer);
 
     @Generated
     @Selector("supportsSecureCoding")
@@ -219,5 +229,5 @@ public class CATransformLayer extends CALayer {
     @Generated
     @Selector("cornerCurveExpansionFactor:")
     @NFloat
-    public static native double cornerCurveExpansionFactor(String curve);
+    public static native double cornerCurveExpansionFactor(@NotNull String curve);
 }

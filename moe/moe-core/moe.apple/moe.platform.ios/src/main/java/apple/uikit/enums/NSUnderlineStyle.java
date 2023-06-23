@@ -25,22 +25,54 @@ import org.moe.natj.general.ann.NInt;
  * These values are or'ed together to produce an underline style.
  * Underlines will be drawn with a solid pattern by default, so NSUnderlineStylePatternSolid does not need to be
  * specified.
+ * 
+ * API-Since: 6.0
  */
 @Generated
 public final class NSUnderlineStyle {
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long PatternSolid = 0x0000000000000000L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long PatternDot = 0x0000000000000100L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long PatternDash = 0x0000000000000200L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long PatternDashDot = 0x0000000000000300L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long PatternDashDotDot = 0x0000000000000400L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long ByWord = 0x0000000000008000L;
 
     @Generated
     private NSUnderlineStyle() {
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long Single = 0x0000000000000001L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Thick = 0x0000000000000002L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Double = 0x0000000000000009L;
 }

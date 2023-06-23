@@ -21,13 +21,18 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.avfoundation.AVCaptureDevice;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A configuration for running world tracking.
- * <p>
+ * 
  * World tracking provides 6 degrees of freedom tracking of the device.
  * By finding feature points in the scene, world tracking enables performing hit-tests against the frame.
  * Tracking can no longer be resumed once the session is paused.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("ARKit")
@@ -59,22 +64,25 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -117,9 +125,10 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
     @Selector("isSupported")
     public static native boolean isSupported();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -128,7 +137,7 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
 
     /**
      * Type of planes to detect in the scene.
-     * <p>
+     * 
      * If set, new planes will continue to be detected and updated over time. Detected planes will be added to the
      * session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
@@ -149,7 +158,7 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
 
     /**
      * Type of planes to detect in the scene.
-     * <p>
+     * 
      * If set, new planes will continue to be detected and updated over time. Detected planes will be added to the
      * session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
@@ -174,13 +183,15 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enables the estimation of a scale factor which may be used to correct the physical size of an image.
-     * <p>
+     * 
      * If set to true ARKit will attempt to use the computed camera positions in order to compute the scale by which the
      * given physical size
      * differs from the estimated one. The information about the estimated scale can be found as the property
      * estimatedScaleFactor on the ARImageAnchor.
      * [@note] When set to true the transform of a returned ARImageAnchor will use the estimated scale factor to correct
      * the translation. Default value is NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("automaticImageScaleEstimationEnabled")
@@ -188,9 +199,11 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
 
     /**
      * Images to detect in the scene.
-     * <p>
+     * 
      * If set the session will attempt to detect the specified images. When an image is detected an ARImageAnchor will
      * be added to the session.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("detectionImages")
@@ -198,20 +211,25 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
 
     /**
      * Objects to detect in the scene.
-     * <p>
+     * 
      * If set the session will attempt to detect the specified objects. When an object is detected an ARObjectAnchor
      * will be added to the session.
+     * 
+     * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Selector("detectionObjects")
     public native NSSet<? extends ARReferenceObject> detectionObjects();
 
     /**
      * The mode of environment texturing to run.
-     * <p>
+     * 
      * If set, texture information will be accumulated and updated. Adding an AREnvironmentProbeAnchor to the session
      * will get the current environment texture available from that probe's perspective which can be used for lighting
      * virtual objects in the scene. Defaults to AREnvironmentTexturingNone.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("environmentTexturing")
@@ -220,20 +238,25 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
 
     /**
      * The initial map of the physical space that world tracking will localize to and track.
-     * <p>
+     * 
      * If set, the session will attempt to localize to the provided map with
      * a limited tracking state until localization is successful or run is called again
      * with a different (or no) initial map specified. Once localized, the map will be extended
      * and can again be saved using the `getCurrentWorldMap` method on the session.
+     * 
+     * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("initialWorldMap")
     public native ARWorldMap initialWorldMap();
 
     /**
      * Enable or disable continuous auto focus.
-     * <p>
+     * 
      * Enabled by default.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("isAutoFocusEnabled")
@@ -241,12 +264,14 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enable/disable a collaborative session. Disabled by default.
-     * <p>
+     * 
      * When enabled, ARSession will output collaboration data for other participants using its delegate
      * didOutputCollaborationData.
      * It is the responsibility of the caller to send the data to each participant. When data is received by a
      * participant, it
      * should be passed to the ARSession by calling updateWithCollaborationData.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isCollaborationEnabled")
@@ -254,12 +279,14 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
 
     /**
      * Maximum number of images to track simultaneously.
-     * <p>
+     * 
      * Setting the maximum number of tracked images will limit the number of images that can be tracked in a given
      * frame.
      * If more than the maximum is visible, only the images already being tracked will continue to track until tracking
      * is lost or another image is removed.
      * Images will continue to be detected regardless of images tracked. Default value is zero.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("maximumNumberOfTrackedImages")
@@ -268,8 +295,10 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enable or disable continuous auto focus.
-     * <p>
+     * 
      * Enabled by default.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setAutoFocusEnabled:")
@@ -277,13 +306,15 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enables the estimation of a scale factor which may be used to correct the physical size of an image.
-     * <p>
+     * 
      * If set to true ARKit will attempt to use the computed camera positions in order to compute the scale by which the
      * given physical size
      * differs from the estimated one. The information about the estimated scale can be found as the property
      * estimatedScaleFactor on the ARImageAnchor.
      * [@note] When set to true the transform of a returned ARImageAnchor will use the estimated scale factor to correct
      * the translation. Default value is NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAutomaticImageScaleEstimationEnabled:")
@@ -291,12 +322,14 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enable/disable a collaborative session. Disabled by default.
-     * <p>
+     * 
      * When enabled, ARSession will output collaboration data for other participants using its delegate
      * didOutputCollaborationData.
      * It is the responsibility of the caller to send the data to each participant. When data is received by a
      * participant, it
      * should be passed to the ARSession by calling updateWithCollaborationData.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setCollaborationEnabled:")
@@ -304,9 +337,11 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
 
     /**
      * Images to detect in the scene.
-     * <p>
+     * 
      * If set the session will attempt to detect the specified images. When an image is detected an ARImageAnchor will
      * be added to the session.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setDetectionImages:")
@@ -314,20 +349,24 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
 
     /**
      * Objects to detect in the scene.
-     * <p>
+     * 
      * If set the session will attempt to detect the specified objects. When an object is detected an ARObjectAnchor
      * will be added to the session.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setDetectionObjects:")
-    public native void setDetectionObjects(NSSet<? extends ARReferenceObject> value);
+    public native void setDetectionObjects(@NotNull NSSet<? extends ARReferenceObject> value);
 
     /**
      * The mode of environment texturing to run.
-     * <p>
+     * 
      * If set, texture information will be accumulated and updated. Adding an AREnvironmentProbeAnchor to the session
      * will get the current environment texture available from that probe's perspective which can be used for lighting
      * virtual objects in the scene. Defaults to AREnvironmentTexturingNone.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setEnvironmentTexturing:")
@@ -335,24 +374,28 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
 
     /**
      * The initial map of the physical space that world tracking will localize to and track.
-     * <p>
+     * 
      * If set, the session will attempt to localize to the provided map with
      * a limited tracking state until localization is successful or run is called again
      * with a different (or no) initial map specified. Once localized, the map will be extended
      * and can again be saved using the `getCurrentWorldMap` method on the session.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setInitialWorldMap:")
-    public native void setInitialWorldMap(ARWorldMap value);
+    public native void setInitialWorldMap(@Nullable ARWorldMap value);
 
     /**
      * Maximum number of images to track simultaneously.
-     * <p>
+     * 
      * Setting the maximum number of tracked images will limit the number of images that can be tracked in a given
      * frame.
      * If more than the maximum is visible, only the images already being tracked will continue to track until tracking
      * is lost or another image is removed.
      * Images will continue to be detected regardless of images tracked. Default value is zero.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setMaximumNumberOfTrackedImages:")
@@ -363,10 +406,12 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
      * When enabled, ARSession detects faces (if visible in the front-facing camera image) and adds to its list of
      * anchors,
      * an ARFaceAnchor object representing each face.
-     * <p>
+     * 
      * The transform of the ARFaceAnchor objects will be in the world coordinate space.
-     *
+     * 
      * @see ARFaceAnchor
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("setUserFaceTrackingEnabled:")
@@ -374,11 +419,14 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
 
     /**
      * Determines whether environment textures will be provided with high dynamic range. Enabled by default.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setWantsHDREnvironmentTextures:")
     public native void setWantsHDREnvironmentTextures(boolean value);
 
+    @NotNull
     @Generated
     @Selector("supportedVideoFormats")
     public static native NSArray<? extends ARVideoFormat> supportedVideoFormats();
@@ -389,6 +437,8 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
 
     /**
      * Indicates whether user face tracking using the front facing camera can be enabled on this device.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("supportsUserFaceTracking")
@@ -399,10 +449,12 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
      * When enabled, ARSession detects faces (if visible in the front-facing camera image) and adds to its list of
      * anchors,
      * an ARFaceAnchor object representing each face.
-     * <p>
+     * 
      * The transform of the ARFaceAnchor objects will be in the world coordinate space.
-     *
+     * 
      * @see ARFaceAnchor
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("userFaceTrackingEnabled")
@@ -410,6 +462,8 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
 
     /**
      * Determines whether environment textures will be provided with high dynamic range. Enabled by default.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("wantsHDREnvironmentTextures")
@@ -417,11 +471,13 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
 
     /**
      * Type of scene reconstruction to run. Defaults to ARSceneReconstructionNone.
-     * <p>
+     * 
      * If set to a value other than ARSceneReconstructionNone, output of scene reconstruction will be added to the
      * session as
      * ARMeshAnchor objects.
-     *
+     * 
+     * API-Since: 13.4
+     * 
      * @see ARMeshAnchor
      */
     @Generated
@@ -431,11 +487,13 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
 
     /**
      * Type of scene reconstruction to run. Defaults to ARSceneReconstructionNone.
-     * <p>
+     * 
      * If set to a value other than ARSceneReconstructionNone, output of scene reconstruction will be added to the
      * session as
      * ARMeshAnchor objects.
-     *
+     * 
+     * API-Since: 13.4
+     * 
      * @see ARMeshAnchor
      */
     @Generated
@@ -444,6 +502,8 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
 
     /**
      * Indicates whether the scene reconstruction type is supported for the configuration on this device.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("supportsSceneReconstruction:")
@@ -452,6 +512,8 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
     /**
      * Enable or disable app clip code tracking. Disabled by default. When enabled, detected app clip codes will be
      * surfaced as an ARAppClipCodeAnchor.
+     * 
+     * API-Since: 14.3
      */
     @Generated
     @Selector("appClipCodeTrackingEnabled")
@@ -460,6 +522,8 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
     /**
      * Enable or disable app clip code tracking. Disabled by default. When enabled, detected app clip codes will be
      * surfaced as an ARAppClipCodeAnchor.
+     * 
+     * API-Since: 14.3
      */
     @Generated
     @Selector("setAppClipCodeTrackingEnabled:")
@@ -467,8 +531,25 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
 
     /**
      * Indicates whether app clip code tracking can be enabled on this device.
+     * 
+     * API-Since: 14.3
      */
     @Generated
     @Selector("supportsAppClipCodeTracking")
     public static native boolean supportsAppClipCodeTracking();
+
+    @Nullable
+    @Generated
+    @Selector("configurableCaptureDeviceForPrimaryCamera")
+    public static native AVCaptureDevice configurableCaptureDeviceForPrimaryCamera();
+
+    @Nullable
+    @Generated
+    @Selector("recommendedVideoFormatFor4KResolution")
+    public static native ARVideoFormat recommendedVideoFormatFor4KResolution();
+
+    @Nullable
+    @Generated
+    @Selector("recommendedVideoFormatForHighResolutionFrameCapturing")
+    public static native ARVideoFormat recommendedVideoFormatForHighResolutionFrameCapturing();
 }

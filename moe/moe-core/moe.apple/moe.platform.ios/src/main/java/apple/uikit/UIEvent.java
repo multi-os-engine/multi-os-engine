@@ -37,7 +37,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -68,22 +73,25 @@ public class UIEvent extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -118,9 +126,10 @@ public class UIEvent extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -148,6 +157,7 @@ public class UIEvent extends NSObject {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("allTouches")
     public native NSSet<? extends UITouch> allTouches();
@@ -155,10 +165,13 @@ public class UIEvent extends NSObject {
     /**
      * An array of auxiliary UITouch’s for the touch events that did not get delivered for a given main touch. This also
      * includes an auxiliary version of the main touch itself.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("coalescedTouchesForTouch:")
-    public native NSArray<? extends UITouch> coalescedTouchesForTouch(UITouch touch);
+    public native NSArray<? extends UITouch> coalescedTouchesForTouch(@NotNull UITouch touch);
 
     @Generated
     @Selector("init")
@@ -168,11 +181,17 @@ public class UIEvent extends NSObject {
      * An array of auxiliary UITouch’s for touch events that are predicted to occur for a given main touch. These
      * predictions may not exactly match the real behavior of the touch as it moves, so they should be interpreted as an
      * estimate.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("predictedTouchesForTouch:")
-    public native NSArray<? extends UITouch> predictedTouchesForTouch(UITouch touch);
+    public native NSArray<? extends UITouch> predictedTouchesForTouch(@NotNull UITouch touch);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("subtype")
     @NInt
@@ -182,28 +201,43 @@ public class UIEvent extends NSObject {
     @Selector("timestamp")
     public native double timestamp();
 
+    /**
+     * API-Since: 3.2
+     */
+    @Nullable
     @Generated
     @Selector("touchesForGestureRecognizer:")
-    public native NSSet<? extends UITouch> touchesForGestureRecognizer(UIGestureRecognizer gesture);
+    public native NSSet<? extends UITouch> touchesForGestureRecognizer(@NotNull UIGestureRecognizer gesture);
 
+    @Nullable
     @Generated
     @Selector("touchesForView:")
-    public native NSSet<? extends UITouch> touchesForView(UIView view);
+    public native NSSet<? extends UITouch> touchesForView(@NotNull UIView view);
 
+    @Nullable
     @Generated
     @Selector("touchesForWindow:")
-    public native NSSet<? extends UITouch> touchesForWindow(UIWindow window);
+    public native NSSet<? extends UITouch> touchesForWindow(@NotNull UIWindow window);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("type")
     @NInt
     public native long type();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("buttonMask")
     @NInt
     public native long buttonMask();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("modifierFlags")
     @NInt

@@ -8,6 +8,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("MLCompute")
@@ -24,6 +25,7 @@ public final class MLCompute {
     /**
      * Returns a textual description of the activation type, suitable for debugging.
      */
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
@@ -32,6 +34,7 @@ public final class MLCompute {
     /**
      * Returns a textual description of the arithmetic operation, suitable for debugging.
      */
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
@@ -40,6 +43,7 @@ public final class MLCompute {
     /**
      * Returns a textual description of the padding policy, suitable for debugging.
      */
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
@@ -48,6 +52,7 @@ public final class MLCompute {
     /**
      * Returns a textual description of the loss type, suitable for debugging.
      */
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
@@ -56,6 +61,7 @@ public final class MLCompute {
     /**
      * Returns a textual description of the reduction type, suitable for debugging.
      */
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
@@ -64,6 +70,7 @@ public final class MLCompute {
     /**
      * Returns a textual description of the padding type, suitable for debugging.
      */
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
@@ -72,6 +79,7 @@ public final class MLCompute {
     /**
      * Returns a textual description of the convolution type, suitable for debugging.
      */
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
@@ -80,6 +88,7 @@ public final class MLCompute {
     /**
      * Returns a textual description of the pooling type, suitable for debugging.
      */
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
@@ -88,6 +97,7 @@ public final class MLCompute {
     /**
      * Returns a textual description of the softmax operation, suitable for debugging.
      */
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
@@ -96,6 +106,7 @@ public final class MLCompute {
     /**
      * Returns a textual description of the sample mode, suitable for debugging.
      */
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
@@ -104,6 +115,7 @@ public final class MLCompute {
     /**
      * Returns a textual description of the LSTM result mode, suitable for debugging.
      */
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
@@ -111,7 +123,10 @@ public final class MLCompute {
 
     /**
      * Returns a textual description of the comparison operation, suitable for debugging.
+     * 
+     * API-Since: 14.5
      */
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
@@ -119,7 +134,10 @@ public final class MLCompute {
 
     /**
      * Returns a textual description of the gradient clipping type, suitable for debugging.
+     * 
+     * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)

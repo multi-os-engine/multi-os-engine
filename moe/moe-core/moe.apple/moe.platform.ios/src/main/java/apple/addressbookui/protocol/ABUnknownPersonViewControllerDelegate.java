@@ -25,6 +25,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("AddressBookUI")
@@ -39,20 +41,23 @@ public interface ABUnknownPersonViewControllerDelegate {
      */
     @Generated
     @Selector("unknownPersonViewController:didResolveToPerson:")
-    void unknownPersonViewControllerDidResolveToPerson(ABUnknownPersonViewController unknownCardViewController,
-            ConstVoidPtr person);
+    void unknownPersonViewControllerDidResolveToPerson(@NotNull ABUnknownPersonViewController unknownCardViewController,
+            @Nullable ConstVoidPtr person);
 
     /**
      * Called when the user selects an individual value in the unknown person view, identifier will be
      * kABMultiValueInvalidIdentifier if a single value property was selected.
      * Return NO if you do not want anything to be done or if you are handling the actions yourself.
      * Return YES if you want the ABUnknownPersonViewController to perform its default action.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @IsOptional
     @Selector("unknownPersonViewController:shouldPerformDefaultActionForPerson:property:identifier:")
     default boolean unknownPersonViewControllerShouldPerformDefaultActionForPersonPropertyIdentifier(
-            ABUnknownPersonViewController personViewController, ConstVoidPtr person, int property, int identifier) {
+            @NotNull ABUnknownPersonViewController personViewController, @NotNull ConstVoidPtr person, int property,
+            int identifier) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

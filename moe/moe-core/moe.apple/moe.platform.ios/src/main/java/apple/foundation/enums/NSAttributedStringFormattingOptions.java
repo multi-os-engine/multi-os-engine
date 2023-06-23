@@ -12,6 +12,12 @@ public final class NSAttributedStringFormattingOptions {
     private NSAttributedStringFormattingOptions() {
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated @NUInt public static final long InsertArgumentAttributesWithoutMerging = 0x0000000000000001L;
+    /**
+     * API-Since: 15.0
+     */
     @Generated @NUInt public static final long ApplyReplacementIndexAttribute = 0x0000000000000002L;
 }

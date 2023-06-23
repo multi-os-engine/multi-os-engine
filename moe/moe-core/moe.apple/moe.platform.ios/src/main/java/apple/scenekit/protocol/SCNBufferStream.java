@@ -24,6 +24,7 @@ import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("SceneKit")
@@ -32,5 +33,5 @@ import org.moe.natj.objc.ann.Selector;
 public interface SCNBufferStream {
     @Generated
     @Selector("writeBytes:length:")
-    void writeBytesLength(ConstVoidPtr bytes, @NUInt long length);
+    void writeBytesLength(@NotNull ConstVoidPtr bytes, @NUInt long length);
 }

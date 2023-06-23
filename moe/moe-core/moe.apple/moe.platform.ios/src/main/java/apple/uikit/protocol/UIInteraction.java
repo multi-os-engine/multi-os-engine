@@ -7,7 +7,11 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -15,13 +19,14 @@ import org.moe.natj.objc.ann.Selector;
 public interface UIInteraction {
     @Generated
     @Selector("didMoveToView:")
-    void didMoveToView(UIView view);
+    void didMoveToView(@Nullable UIView view);
 
+    @Nullable
     @Generated
     @Selector("view")
     UIView view();
 
     @Generated
     @Selector("willMoveToView:")
-    void willMoveToView(UIView view);
+    void willMoveToView(@Nullable UIView view);
 }

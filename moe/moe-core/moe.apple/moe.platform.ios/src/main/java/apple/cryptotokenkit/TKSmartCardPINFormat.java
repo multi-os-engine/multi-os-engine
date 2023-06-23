@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Specifies PIN formatting properties.
@@ -43,7 +45,7 @@ public class TKSmartCardPINFormat extends NSObject {
      * Offset in bits within the PIN block to mark a location for filling in the formatted PIN (justified with respect
      * to PINJustification).
      * [@note] Default value: 0
-     * <p>
+     * 
      * Note that the value of PINBitOffset indirectly controls the internal system units indicator. If PINBitOffset is
      * byte aligned (PINBitOffset mod 8 is equal to 0), the internal representation of PINBitOffset gets converted from
      * bits to bytes.
@@ -74,7 +76,7 @@ public class TKSmartCardPINFormat extends NSObject {
     /**
      * Offset in bits within the PIN block to mark a location for filling in the PIN length (always left justified).
      * [@note] Default value: 0
-     * <p>
+     * 
      * Note that the value of PINLengthBitOffset indirectly controls the internal system units indicator. If
      * PINLengthBitOffset is byte aligned (PINLengthBitOffset mod 8 is equal to 0), the internal representation of
      * PINLengthBitOffset gets converted from bits to bytes.
@@ -109,17 +111,18 @@ public class TKSmartCardPINFormat extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Format of PIN characters.
@@ -130,10 +133,12 @@ public class TKSmartCardPINFormat extends NSObject {
     @NInt
     public native long charset();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -181,9 +186,10 @@ public class TKSmartCardPINFormat extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Maximum number of characters to form a valid PIN.
@@ -252,7 +258,7 @@ public class TKSmartCardPINFormat extends NSObject {
      * Offset in bits within the PIN block to mark a location for filling in the formatted PIN (justified with respect
      * to PINJustification).
      * [@note] Default value: 0
-     * <p>
+     * 
      * Note that the value of PINBitOffset indirectly controls the internal system units indicator. If PINBitOffset is
      * byte aligned (PINBitOffset mod 8 is equal to 0), the internal representation of PINBitOffset gets converted from
      * bits to bytes.
@@ -280,7 +286,7 @@ public class TKSmartCardPINFormat extends NSObject {
     /**
      * Offset in bits within the PIN block to mark a location for filling in the PIN length (always left justified).
      * [@note] Default value: 0
-     * <p>
+     * 
      * Note that the value of PINLengthBitOffset indirectly controls the internal system units indicator. If
      * PINLengthBitOffset is byte aligned (PINLengthBitOffset mod 8 is equal to 0), the internal representation of
      * PINLengthBitOffset gets converted from bits to bytes.

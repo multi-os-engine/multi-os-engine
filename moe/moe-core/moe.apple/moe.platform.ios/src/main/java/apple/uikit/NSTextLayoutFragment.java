@@ -2,8 +2,6 @@ package apple.uikit;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGContextRef;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -31,7 +29,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -62,7 +67,7 @@ public class NSTextLayoutFragment extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * The amount of space reserved during paragraph layout between the bottom of the last line in the paragraph and the
@@ -75,18 +80,21 @@ public class NSTextLayoutFragment extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -104,11 +112,11 @@ public class NSTextLayoutFragment extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("drawAtPoint:inContext:")
-    public native void drawAtPointInContext(@ByValue CGPoint point, CGContextRef context);
+    public native void drawAtPointInContext(@ByValue CGPoint point, @NotNull CGContextRef context);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Returns the frame in the text layout fragment coordinate system for the attachment at location. It returns
@@ -117,7 +125,8 @@ public class NSTextLayoutFragment extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("frameForTextAttachmentAtLocation:")
     @ByValue
-    public native CGRect frameForTextAttachmentAtLocation(@Mapped(ObjCObjectMapper.class) NSTextLocation location);
+    public native CGRect frameForTextAttachmentAtLocation(
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location);
 
     @Generated
     @Selector("hash")
@@ -130,11 +139,12 @@ public class NSTextLayoutFragment extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSTextLayoutFragment initWithCoder(NSCoder coder);
+    public native NSTextLayoutFragment initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithTextElement:range:")
-    public native NSTextLayoutFragment initWithTextElementRange(NSTextElement textElement, NSTextRange rangeInElement);
+    public native NSTextLayoutFragment initWithTextElementRange(@NotNull NSTextElement textElement,
+            @Nullable NSTextRange rangeInElement);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -160,9 +170,10 @@ public class NSTextLayoutFragment extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The rect for tiling the layout fragment inside the target layout coordinate system typically in an
@@ -176,6 +187,7 @@ public class NSTextLayoutFragment extends NSObject implements NSSecureCoding {
     /**
      * When non-nil, the layout operation is dispatched to the queue asynchronously.
      */
+    @Nullable
     @Generated
     @Selector("layoutQueue")
     public native NSOperationQueue layoutQueue();
@@ -197,6 +209,7 @@ public class NSTextLayoutFragment extends NSObject implements NSSecureCoding {
     /**
      * range inside textElement relative to the document origin
      */
+    @NotNull
     @Generated
     @Selector("rangeInElement")
     public native NSTextRange rangeInElement();
@@ -225,7 +238,7 @@ public class NSTextLayoutFragment extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setLayoutQueue:")
-    public native void setLayoutQueue(NSOperationQueue value);
+    public native void setLayoutQueue(@Nullable NSOperationQueue value);
 
     @Generated
     @Selector("setVersion:")
@@ -257,6 +270,7 @@ public class NSTextLayoutFragment extends NSObject implements NSSecureCoding {
      * Returns NSTextAttachmentViewProvider associated with the receiver. The property contents are only valid with
      * NSTextLayoutFragmentStateLayoutAvailable.
      */
+    @NotNull
     @Generated
     @Selector("textAttachmentViewProviders")
     public native NSArray<? extends NSTextAttachmentViewProvider> textAttachmentViewProviders();
@@ -264,10 +278,12 @@ public class NSTextLayoutFragment extends NSObject implements NSSecureCoding {
     /**
      * The parent text element
      */
+    @Nullable
     @Generated
     @Selector("textElement")
     public native NSTextElement textElement();
 
+    @Nullable
     @Generated
     @Selector("textLayoutManager")
     public native NSTextLayoutManager textLayoutManager();
@@ -275,6 +291,7 @@ public class NSTextLayoutFragment extends NSObject implements NSSecureCoding {
     /**
      * An array of NSTextLineFragments. Valid when NSTextLayoutFragmentStateLayoutAvailable. KVO-compliant
      */
+    @NotNull
     @Generated
     @Selector("textLineFragments")
     public native NSArray<? extends NSTextLineFragment> textLineFragments();

@@ -45,7 +45,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -76,12 +82,15 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("camera")
     public static native MKMapCamera camera();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("cameraLookingAtCenterCoordinate:fromDistance:pitch:heading:")
     public static native MKMapCamera cameraLookingAtCenterCoordinateFromDistancePitchHeading(
@@ -95,18 +104,21 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -141,9 +153,10 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -175,6 +188,12 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use centerCoordinateDistance
+     */
+    @Deprecated
     @Generated
     @Selector("altitude")
     public native double altitude();
@@ -184,15 +203,16 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     @ByValue
     public native CLLocationCoordinate2D centerCoordinate();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("heading")
@@ -204,7 +224,7 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MKMapCamera initWithCoder(NSCoder coder);
+    public native MKMapCamera initWithCoder(@NotNull NSCoder coder);
 
     /**
      * In degrees where 0 is looking straight down. Pitch may be clamped to an appropriate value.
@@ -214,6 +234,12 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     @NFloat
     public native double pitch();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use centerCoordinateDistance
+     */
+    @Deprecated
     @Generated
     @Selector("setAltitude:")
     public native void setAltitude(double value);
@@ -239,11 +265,25 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("centerCoordinateDistance")
     public native double centerCoordinateDistance();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setCenterCoordinateDistance:")
     public native void setCenterCoordinateDistance(double value);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("cameraLookingAtMapItem:forViewSize:allowPitch:")
+    public static native MKMapCamera cameraLookingAtMapItemForViewSizeAllowPitch(@NotNull MKMapItem mapItem,
+            @ByValue CGSize viewSize, boolean allowPitch);
 }

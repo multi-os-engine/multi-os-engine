@@ -40,16 +40,20 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVMetadataFaceObject
- * <p>
+ * 
  * AVMetadataFaceObject is a concrete subclass of AVMetadataObject defining the features of a detected face.
- * <p>
+ * 
  * AVMetadataFaceObject represents a single detected face in a picture. It is an immutable object describing the various
  * features found in the face.
- * <p>
+ * 
  * On supported platforms, AVCaptureMetadataOutput outputs arrays of detected face objects. See AVCaptureOutput.h.
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("AVFoundation")
@@ -81,22 +85,25 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +138,10 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,17 +169,18 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] faceID
-     * <p>
+     * 
      * A unique number associated with the receiver.
-     * <p>
+     * 
      * The value of this property is an NSInteger indicating the unique identifier of this face in the picture. When a
      * new face enters the picture, it is assigned a new unique identifier. faceIDs are not re-used as faces leave the
      * picture and new ones enter. Faces that leave the picture then re-enter are assigned a new faceID.
@@ -183,7 +192,7 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
 
     /**
      * [@property] hasRollAngle
-     * <p>
+     * 
      * A BOOL indicating whether the rollAngle property is valid for this receiver.
      */
     @Generated
@@ -192,7 +201,7 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
 
     /**
      * [@property] hasYawAngle
-     * <p>
+     * 
      * A BOOL indicating whether the yawAngle property is valid for this receiver.
      */
     @Generated
@@ -205,9 +214,9 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
 
     /**
      * [@property] rollAngle
-     * <p>
+     * 
      * The roll angle of the face in degrees.
-     * <p>
+     * 
      * The value of this property is a CGFloat indicating the face's angle of roll (or tilt) in degrees. A value of 0.0
      * indicates that the face is level in the picture. If -hasRollAngle returns NO, then reading this property throws
      * an NSGenericException.
@@ -219,9 +228,9 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
 
     /**
      * [@property] yawAngle
-     * <p>
+     * 
      * The yaw angle of the face in degrees.
-     * <p>
+     * 
      * The value of this property is a CGFloat indicating the face's angle of yaw (or turn) in degrees. A value of 0.0
      * indicates that the face is straight on in the picture. If -hasYawAngle returns NO, then reading this property
      * throws an NSGenericException.

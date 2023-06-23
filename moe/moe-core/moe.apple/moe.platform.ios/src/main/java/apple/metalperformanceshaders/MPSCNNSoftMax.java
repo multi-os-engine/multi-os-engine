@@ -39,11 +39,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNSoftMax
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * The softMax filter is a neural transfer function and is useful for classification tasks.
  * The softMax filter is applied across feature channels and in a convolutional manner at all
  * spatial locations. The softMax filter can be seen as the combination of an
@@ -51,6 +53,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * For each feature channel per pixel in an image in a feature map, the softMax filter computes the following:
  * result channel in pixel = exp(pixel(x,y,k))/sum(exp(pixel(x,y,0)) ... exp(pixel(x,y,N-1))
  * where N is the number of feature channels
+ * 
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -82,22 +87,25 @@ public class MPSCNNSoftMax extends MPSCNNKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -132,9 +140,10 @@ public class MPSCNNSoftMax extends MPSCNNKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,15 +177,16 @@ public class MPSCNNSoftMax extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNSoftMax initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNSoftMax initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNSoftMax initWithCoder(NSCoder aDecoder);
+    public native MPSCNNSoftMax initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNSoftMax initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNSoftMax initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("supportsSecureCoding")

@@ -40,11 +40,15 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NWUDPSession
- * <p>
+ * 
  * Open UDP datagram sessions to an endpoint, and send and receive datagrams.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -76,22 +80,25 @@ public class NWUDPSession extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +133,10 @@ public class NWUDPSession extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,9 +166,11 @@ public class NWUDPSession extends NSObject {
 
     /**
      * cancel
-     * <p>
+     * 
      * Move into the NWUDPSessionStateCancelled state. The connection will be terminated,
      * and all handlers will be cancelled.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("cancel")
@@ -168,27 +178,35 @@ public class NWUDPSession extends NSObject {
 
     /**
      * [@property] currentPath
-     * <p>
+     * 
      * The current evaluated path for the resolvedEndpoint. Use KVO to watch for changes.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("currentPath")
     public native NWPath currentPath();
 
     /**
      * [@property] endpoint
-     * <p>
+     * 
      * The provided endpoint.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("endpoint")
     public native NWEndpoint endpoint();
 
     /**
      * [@property] hasBetterPath
-     * <p>
+     * 
      * YES if there is another path available that is preferred over the currentPath.
      * To take advantage of this path, create a new UDPSession. Use KVO to watch for changes.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("hasBetterPath")
@@ -200,10 +218,10 @@ public class NWUDPSession extends NSObject {
 
     /**
      * initWithUpgradeForSession:
-     * <p>
+     * 
      * This convenience initializer can be used to create a new session based on the
      * original session's endpoint and parameters.
-     * <p>
+     * 
      * The application should create an NWUDPSession and watch the "hasBetterPath" property.
      * When this property is YES, it should call initWithUpgradeForSession: to create a new
      * session, with the goal to start transferring data on the new better path as soon as
@@ -211,19 +229,23 @@ public class NWUDPSession extends NSObject {
      * becomes ready and when the application wraps up the previous application session on
      * the original session, the application can start using the new "upgrade" session and
      * tear down the original one.
-     *
+     * 
      * @param session The original session from which the application will upgrade
      * @return An initialized NWUDPSession object.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("initWithUpgradeForSession:")
-    public native NWUDPSession initWithUpgradeForSession(NWUDPSession session);
+    public native NWUDPSession initWithUpgradeForSession(@NotNull NWUDPSession session);
 
     /**
      * [@property] viable
-     * <p>
+     * 
      * YES if the connection can read and write data, NO otherwise.
      * Use KVO to watch this property.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isViable")
@@ -231,11 +253,13 @@ public class NWUDPSession extends NSObject {
 
     /**
      * [@property] maximumDatagramLength
-     * <p>
+     * 
      * The maximum size of a datagram to be written currently. If a datagram is written
      * with a longer length, the datagram may be fragmented or encounter an error. Note that this
      * value is not guaranteed to be the maximum datagram length for end-to-end communication
      * across the network. Use KVO to watch for changes.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("maximumDatagramLength")
@@ -244,35 +268,42 @@ public class NWUDPSession extends NSObject {
 
     /**
      * [@property] resolvedEndpoint
-     * <p>
+     * 
      * The currently targeted remote endpoint. Use KVO to watch for changes.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("resolvedEndpoint")
     public native NWEndpoint resolvedEndpoint();
 
     /**
      * setReadHandler:maxDatagrams
-     * <p>
+     * 
      * Set a read handler for datagrams. Reads will be scheduled by the system, so this
      * method only needs to be called once for a session.
-     *
+     * 
      * @param handler      A handler called when datagrams have been read, or when an error has occurred.
      * @param maxDatagrams The maximum number of datagrams to send to the handler.
+     * 
+     *                     API-Since: 9.0
      */
     @Generated
     @Selector("setReadHandler:maxDatagrams:")
     public native void setReadHandlerMaxDatagrams(
-            @ObjCBlock(name = "call_setReadHandlerMaxDatagrams") Block_setReadHandlerMaxDatagrams handler,
+            @NotNull @ObjCBlock(name = "call_setReadHandlerMaxDatagrams") Block_setReadHandlerMaxDatagrams handler,
             @NUInt long maxDatagrams);
 
     /**
      * [@property] state
-     * <p>
+     * 
      * The current state of the UDP session. If the state is NWUDPSessionStateReady,
      * then the connection is eligible for reading and writing. The state will be
      * NWUDPSessionStateFailed if the endpoint could not be resolved, or all endpoints have been
      * rejected. Use KVO to watch for changes.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("state")
@@ -281,11 +312,13 @@ public class NWUDPSession extends NSObject {
 
     /**
      * tryNextResolvedEndpoint
-     * <p>
+     * 
      * Mark the current value of resolvedEndpoint as unusable, and try to switch to the
      * next available endpoint. This should be used when the caller has attempted to communicate
      * with the current resolvedEndpoint, and the caller has determined that it is unusable. If
      * there are no other resolved endpoints, the session will move to the failed state.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("tryNextResolvedEndpoint")
@@ -293,50 +326,54 @@ public class NWUDPSession extends NSObject {
 
     /**
      * writeDatagram:completionHandler
-     * <p>
+     * 
      * Write a single datagram. Callers should wait until the completionHandler is executed
      * before issuing another write.
-     *
+     * 
      * @param datagram          An NSData containing the datagram to write.
      * @param completionHandler A handler called when the write request has either succeeded or failed.
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("writeDatagram:completionHandler:")
-    public native void writeDatagramCompletionHandler(NSData datagram,
-            @ObjCBlock(name = "call_writeDatagramCompletionHandler") Block_writeDatagramCompletionHandler completionHandler);
+    public native void writeDatagramCompletionHandler(@NotNull NSData datagram,
+            @NotNull @ObjCBlock(name = "call_writeDatagramCompletionHandler") Block_writeDatagramCompletionHandler completionHandler);
 
     /**
      * writeMultipleDatagrams:completionHandler
-     * <p>
+     * 
      * Write multiple datagrams. Callers should wait until the completionHandler is executed
      * before issuing another write.
-     *
+     * 
      * @param datagramArray     An NSArray of NSData objects, containing the ordered list datagrams to write.
      * @param completionHandler A handler called when the write request has either succeeded or failed.
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("writeMultipleDatagrams:completionHandler:")
-    public native void writeMultipleDatagramsCompletionHandler(NSArray<? extends NSData> datagramArray,
-            @ObjCBlock(name = "call_writeMultipleDatagramsCompletionHandler") Block_writeMultipleDatagramsCompletionHandler completionHandler);
+    public native void writeMultipleDatagramsCompletionHandler(@NotNull NSArray<? extends NSData> datagramArray,
+            @NotNull @ObjCBlock(name = "call_writeMultipleDatagramsCompletionHandler") Block_writeMultipleDatagramsCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setReadHandlerMaxDatagrams {
         @Generated
-        void call_setReadHandlerMaxDatagrams(NSArray<? extends NSData> datagrams, NSError error);
+        void call_setReadHandlerMaxDatagrams(@Nullable NSArray<? extends NSData> datagrams, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeDatagramCompletionHandler {
         @Generated
-        void call_writeDatagramCompletionHandler(NSError error);
+        void call_writeDatagramCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeMultipleDatagramsCompletionHandler {
         @Generated
-        void call_writeMultipleDatagramsCompletionHandler(NSError error);
+        void call_writeMultipleDatagramsCompletionHandler(@Nullable NSError error);
     }
 }

@@ -29,15 +29,21 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INSetDefrosterSettingsInCarIntent. By implementing this protocol, a class
  * can provide logic for resolving, confirming and handling the intent.
- * <p>
+ * 
  * The minimum requirement for an implementing class is that it should be able to handle the intent. The resolution and
  * confirmation methods are optional. The handling method is always called last, after resolving and confirming the
  * intent.
+ * 
+ * API-Since: 10.0
+ * Deprecated-Since: 15.0
+ * Deprecated-Message: INSetDefrosterSettingsInCarIntentHandling is deprecated. There is no replacement.
  */
+@Deprecated
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -45,64 +51,69 @@ import org.moe.natj.objc.ann.Selector;
 public interface INSetDefrosterSettingsInCarIntentHandling {
     /**
      * Confirmation method - Validate that this intent is ready for the next step (i.e. handling)
-     * <p>
+     * 
      * Called prior to asking the app to handle the intent. The app should return a response object that contains
      * additional information about the intent, which may be relevant for the system to show the user prior to handling.
      * If unimplemented, the system will assume the intent is valid following resolution, and will assume there is no
      * additional information relevant to this intent.
-     *
+     * 
      * @param intent     The input intent
      * @param completion The response block contains an INSetDefrosterSettingsInCarIntentResponse containing additional
      *                   details about the intent that may be relevant for the system to show the user prior to
      *                   handling.
+     * 
      * @see INSetDefrosterSettingsInCarIntentResponse
      */
     @Generated
     @IsOptional
     @Selector("confirmSetDefrosterSettingsInCar:completion:")
-    default void confirmSetDefrosterSettingsInCarCompletion(INSetDefrosterSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_confirmSetDefrosterSettingsInCarCompletion") Block_confirmSetDefrosterSettingsInCarCompletion completion) {
+    default void confirmSetDefrosterSettingsInCarCompletion(@NotNull INSetDefrosterSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmSetDefrosterSettingsInCarCompletion") Block_confirmSetDefrosterSettingsInCarCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Handling method - Execute the task represented by the INSetDefrosterSettingsInCarIntent that's passed in
-     * <p>
+     * 
      * Called to actually execute the intent. The app must return a response for this intent.
-     *
+     * 
      * @param intent     The input intent
      * @param completion The response handling block takes a INSetDefrosterSettingsInCarIntentResponse containing the
      *                   details of the result of having executed the intent
+     * 
      * @see INSetDefrosterSettingsInCarIntentResponse
      */
     @Generated
     @Selector("handleSetDefrosterSettingsInCar:completion:")
-    void handleSetDefrosterSettingsInCarCompletion(INSetDefrosterSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_handleSetDefrosterSettingsInCarCompletion") Block_handleSetDefrosterSettingsInCarCompletion completion);
+    void handleSetDefrosterSettingsInCarCompletion(@NotNull INSetDefrosterSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleSetDefrosterSettingsInCarCompletion") Block_handleSetDefrosterSettingsInCarCompletion completion);
 
     @Generated
     @IsOptional
     @Selector("resolveDefrosterForSetDefrosterSettingsInCar:withCompletion:")
-    default void resolveDefrosterForSetDefrosterSettingsInCarWithCompletion(INSetDefrosterSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_resolveDefrosterForSetDefrosterSettingsInCarWithCompletion") Block_resolveDefrosterForSetDefrosterSettingsInCarWithCompletion completion) {
+    default void resolveDefrosterForSetDefrosterSettingsInCarWithCompletion(
+            @NotNull INSetDefrosterSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveDefrosterForSetDefrosterSettingsInCarWithCompletion") Block_resolveDefrosterForSetDefrosterSettingsInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Resolution methods - Determine if this intent is ready for the next step (confirmation)
-     * <p>
+     * 
      * Called to make sure the app extension is capable of handling this intent in its current form. This method is for
      * validating if the intent needs any further fleshing out.
-     *
+     * 
      * @param intent     The input intent
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
+     * 
      * @see INIntentResolutionResult
      */
     @Generated
     @IsOptional
     @Selector("resolveEnableForSetDefrosterSettingsInCar:withCompletion:")
-    default void resolveEnableForSetDefrosterSettingsInCarWithCompletion(INSetDefrosterSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_resolveEnableForSetDefrosterSettingsInCarWithCompletion") Block_resolveEnableForSetDefrosterSettingsInCarWithCompletion completion) {
+    default void resolveEnableForSetDefrosterSettingsInCarWithCompletion(
+            @NotNull INSetDefrosterSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveEnableForSetDefrosterSettingsInCarWithCompletion") Block_resolveEnableForSetDefrosterSettingsInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -110,14 +121,16 @@ public interface INSetDefrosterSettingsInCarIntentHandling {
     @Generated
     public interface Block_confirmSetDefrosterSettingsInCarCompletion {
         @Generated
-        void call_confirmSetDefrosterSettingsInCarCompletion(INSetDefrosterSettingsInCarIntentResponse response);
+        void call_confirmSetDefrosterSettingsInCarCompletion(
+                @NotNull INSetDefrosterSettingsInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSetDefrosterSettingsInCarCompletion {
         @Generated
-        void call_handleSetDefrosterSettingsInCarCompletion(INSetDefrosterSettingsInCarIntentResponse response);
+        void call_handleSetDefrosterSettingsInCarCompletion(
+                @NotNull INSetDefrosterSettingsInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -125,21 +138,26 @@ public interface INSetDefrosterSettingsInCarIntentHandling {
     public interface Block_resolveDefrosterForSetDefrosterSettingsInCarWithCompletion {
         @Generated
         void call_resolveDefrosterForSetDefrosterSettingsInCarWithCompletion(
-                INCarDefrosterResolutionResult resolutionResult);
+                @NotNull INCarDefrosterResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveEnableForSetDefrosterSettingsInCarWithCompletion {
         @Generated
-        void call_resolveEnableForSetDefrosterSettingsInCarWithCompletion(INBooleanResolutionResult resolutionResult);
+        void call_resolveEnableForSetDefrosterSettingsInCarWithCompletion(
+                @NotNull INBooleanResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveCarNameForSetDefrosterSettingsInCar:withCompletion:")
-    default void resolveCarNameForSetDefrosterSettingsInCarWithCompletion(INSetDefrosterSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_resolveCarNameForSetDefrosterSettingsInCarWithCompletion") Block_resolveCarNameForSetDefrosterSettingsInCarWithCompletion completion) {
+    default void resolveCarNameForSetDefrosterSettingsInCarWithCompletion(
+            @NotNull INSetDefrosterSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveCarNameForSetDefrosterSettingsInCarWithCompletion") Block_resolveCarNameForSetDefrosterSettingsInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -148,6 +166,6 @@ public interface INSetDefrosterSettingsInCarIntentHandling {
     public interface Block_resolveCarNameForSetDefrosterSettingsInCarWithCompletion {
         @Generated
         void call_resolveCarNameForSetDefrosterSettingsInCarWithCompletion(
-                INSpeakableStringResolutionResult resolutionResult);
+                @NotNull INSpeakableStringResolutionResult resolutionResult);
     }
 }

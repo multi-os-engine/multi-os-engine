@@ -31,9 +31,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A concrete convenience class conforming to MLFeatureProvider.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreML")
@@ -66,22 +70,25 @@ public class MLDictionaryFeatureProvider extends NSObject implements MLFeaturePr
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -89,8 +96,8 @@ public class MLDictionaryFeatureProvider extends NSObject implements MLFeaturePr
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
+    public native long countByEnumeratingWithStateObjectsCount(@NotNull VoidPtr state,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
     @Generated
     @Selector("debugDescription")
@@ -103,17 +110,20 @@ public class MLDictionaryFeatureProvider extends NSObject implements MLFeaturePr
     /**
      * Dictionary holding the feature values
      */
+    @NotNull
     @Generated
     @Selector("dictionary")
     public native NSDictionary<String, ? extends MLFeatureValue> dictionary();
 
+    @NotNull
     @Generated
     @Selector("featureNames")
     public native NSSet<String> featureNames();
 
+    @Nullable
     @Generated
     @Selector("featureValueForName:")
-    public native MLFeatureValue featureValueForName(String featureName);
+    public native MLFeatureValue featureValueForName(@NotNull String featureName);
 
     @Generated
     @Selector("hash")
@@ -127,13 +137,13 @@ public class MLDictionaryFeatureProvider extends NSObject implements MLFeaturePr
     /**
      * Create from a generic dictionary by converting all values to MLFeatureValues
      * or from a dictionary with values already stored as MLFeatureValues.
-     * <p>
+     * 
      * An error results if the values are not or cannot be represented as MLFeatureValues.
      */
     @Generated
     @Selector("initWithDictionary:error:")
-    public native MLDictionaryFeatureProvider initWithDictionaryError(NSDictionary<String, ?> dictionary,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native MLDictionaryFeatureProvider initWithDictionaryError(@NotNull NSDictionary<String, ?> dictionary,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -152,9 +162,10 @@ public class MLDictionaryFeatureProvider extends NSObject implements MLFeaturePr
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,9 +175,10 @@ public class MLDictionaryFeatureProvider extends NSObject implements MLFeaturePr
     /**
      * Get the value for specified feature
      */
+    @Nullable
     @Generated
     @Selector("objectForKeyedSubscript:")
-    public native MLFeatureValue objectForKeyedSubscript(String featureName);
+    public native MLFeatureValue objectForKeyedSubscript(@NotNull String featureName);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -191,11 +203,11 @@ public class MLDictionaryFeatureProvider extends NSObject implements MLFeaturePr
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithCoder:")
-    public native MLDictionaryFeatureProvider initWithCoder(NSCoder coder);
+    public native MLDictionaryFeatureProvider initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("supportsSecureCoding")

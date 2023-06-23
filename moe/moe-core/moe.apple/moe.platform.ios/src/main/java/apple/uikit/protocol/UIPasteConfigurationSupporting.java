@@ -10,7 +10,12 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -19,10 +24,11 @@ public interface UIPasteConfigurationSupporting {
     @Generated
     @IsOptional
     @Selector("canPasteItemProviders:")
-    default boolean canPasteItemProviders(NSArray<? extends NSItemProvider> itemProviders) {
+    default boolean canPasteItemProviders(@NotNull NSArray<? extends NSItemProvider> itemProviders) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Nullable
     @Generated
     @Selector("pasteConfiguration")
     UIPasteConfiguration pasteConfiguration();
@@ -30,11 +36,11 @@ public interface UIPasteConfigurationSupporting {
     @Generated
     @IsOptional
     @Selector("pasteItemProviders:")
-    default void pasteItemProviders(NSArray<? extends NSItemProvider> itemProviders) {
+    default void pasteItemProviders(@NotNull NSArray<? extends NSItemProvider> itemProviders) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @Selector("setPasteConfiguration:")
-    void setPasteConfiguration(UIPasteConfiguration value);
+    void setPasteConfiguration(@Nullable UIPasteConfiguration value);
 }

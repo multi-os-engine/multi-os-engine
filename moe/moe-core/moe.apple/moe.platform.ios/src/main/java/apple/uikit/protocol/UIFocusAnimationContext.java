@@ -10,6 +10,8 @@ import org.moe.natj.objc.ann.Selector;
 /**
  * UIFocusAnimationContext is used to provide UIKit-determined context about animations that are related to a focus
  * update.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("UIKit")

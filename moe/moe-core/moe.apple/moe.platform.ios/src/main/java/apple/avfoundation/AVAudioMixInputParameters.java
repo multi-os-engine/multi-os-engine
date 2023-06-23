@@ -45,7 +45,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -76,22 +81,25 @@ public class AVAudioMixInputParameters extends NSObject implements NSCopying, NS
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +134,10 @@ public class AVAudioMixInputParameters extends NSObject implements NSCopying, NS
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,65 +167,78 @@ public class AVAudioMixInputParameters extends NSObject implements NSCopying, NS
 
     /**
      * [@property] audioTapProcessor
-     * <p>
+     * 
      * Indicates the audio processing tap that will be used for the audio track.
+     * 
+     * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("audioTapProcessor")
     public native MTAudioProcessingTapRef audioTapProcessor();
 
     /**
      * [@property] audioTimePitchAlgorithm
-     * <p>
+     * 
      * Indicates the processing algorithm used to manage audio pitch at varying rates and for scaled audio edits.
-     * <p>
+     * 
      * Constants for various time pitch algorithms, e.g. AVAudioTimePitchSpectral, are defined in
      * AVAudioProcessingSettings.h.
      * Can be nil, in which case the audioTimePitchAlgorithm set on the AVPlayerItem, AVAssetExportSession, or
      * AVAssetReaderAudioMixOutput on which the AVAudioMix is set will be used for the associated track.
+     * 
+     * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("audioTimePitchAlgorithm")
     public native String audioTimePitchAlgorithm();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * getVolumeRampForTime:startVolume:endVolume:timeRange:
-     * <p>
+     * 
      * Obtains the volume ramp that includes the specified time.
-     *
-     * @return An indication of success. NO will be returned if the specified time is beyond the duration of the last
-     *         volume ramp that has been set.
-     * @param time        If a ramp with a timeRange that contains the specified time has been set, information about
+     * 
+     * @param time
+     *                    If a ramp with a timeRange that contains the specified time has been set, information about
      *                    the effective ramp for that time is supplied.
      *                    Otherwise, information about the first ramp that starts after the specified time is supplied.
-     * @param startVolume A pointer to a float to receive the starting volume value for the volume ramp. May be NULL.
-     * @param endVolume   A pointer to a float to receive the ending volume value for the volume ramp. May be NULL.
-     * @param timeRange   A pointer to a CMTimeRange to receive the timeRange of the volume ramp. May be NULL.
+     * @param startVolume
+     *                    A pointer to a float to receive the starting volume value for the volume ramp. May be NULL.
+     * @param endVolume
+     *                    A pointer to a float to receive the ending volume value for the volume ramp. May be NULL.
+     * @param timeRange
+     *                    A pointer to a CMTimeRange to receive the timeRange of the volume ramp. May be NULL.
+     * @return
+     *         An indication of success. NO will be returned if the specified time is beyond the duration of the last
+     *         volume ramp that has been set.
      */
     @Generated
     @Selector("getVolumeRampForTime:startVolume:endVolume:timeRange:")
-    public native boolean getVolumeRampForTimeStartVolumeEndVolumeTimeRange(@ByValue CMTime time, FloatPtr startVolume,
-            FloatPtr endVolume, CMTimeRange timeRange);
+    public native boolean getVolumeRampForTimeStartVolumeEndVolumeTimeRange(@ByValue CMTime time,
+            @Nullable FloatPtr startVolume, @Nullable FloatPtr endVolume, @Nullable CMTimeRange timeRange);
 
     @Generated
     @Selector("init")
     public native AVAudioMixInputParameters init();
 
+    @NotNull
     @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] trackID
-     * <p>
+     * 
      * Indicates the trackID of the audio track to which the parameters should be applied.
      */
     @Generated

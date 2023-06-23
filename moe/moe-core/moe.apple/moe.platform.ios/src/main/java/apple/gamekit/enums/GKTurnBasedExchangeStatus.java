@@ -20,13 +20,30 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * Constants that describe the status of exchanges and their replies
+ * 
+ * API-Since: 7.0
  */
 @Generated
 public final class GKTurnBasedExchangeStatus {
+    /**
+     * API-Since: 7.0
+     */
     @Generated public static final byte Unknown = 0;
+    /**
+     * API-Since: 7.0
+     */
     @Generated public static final byte Active = 1;
+    /**
+     * API-Since: 7.0
+     */
     @Generated public static final byte Complete = 2;
+    /**
+     * API-Since: 7.0
+     */
     @Generated public static final byte Resolved = 3;
+    /**
+     * API-Since: 7.0
+     */
     @Generated public static final byte Canceled = 4;
 
     @Generated

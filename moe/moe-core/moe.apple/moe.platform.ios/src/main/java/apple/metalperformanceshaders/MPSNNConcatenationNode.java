@@ -21,9 +21,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Node representing a the concatenation (in the feature channel dimension) of the results from one or more kernels
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -55,22 +59,25 @@ public class MPSNNConcatenationNode extends MPSNNFilterNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -94,20 +101,20 @@ public class MPSNNConcatenationNode extends MPSNNFilterNode {
 
     /**
      * Init a node that concatenates feature channels from multiple images
-     * <p>
+     * 
      * In some neural network designs, it is necessary to append feature channels
      * from one neural network filter to the results of another. If we have three
      * image nodes with M, N and O feature channels in them, passed to -initWithSources:
      * as @[imageM, imageN, imageO], then feature channels [0,M-1] will be drawn from
      * image M, feature channels [M, M+N-1] will be drawn from image N and feature channels
      * [M+N, M+N+O-1] will be drawn from image O.
-     * <p>
+     * 
      * As all images are padded out to a multiple of four feature channels,
      * M, N and O here are also multiples of four, even when the MPSImages
      * are not. That is, if the image is 23 feature channels and one channel
      * of padding, it takes up 24 feature channels worth of space in the
      * concatenated result.
-     * <p>
+     * 
      * Performance Note: Generally, concatenation is free as long as all
      * of the sourceNodes are produced by filters in the same MPSNNGraph.
      * Most MPSCNNKernels have the ability to write their results at a
@@ -119,13 +126,13 @@ public class MPSNNConcatenationNode extends MPSNNFilterNode {
      * appear at the ends of subgraphs when possible rather than at the start,
      * to the extent that all the images used in the concatenation are
      * produced by that subgraph.
-     *
+     * 
      * @param sourceNodes The MPSNNImageNode representing the source MPSImages for the filter
      * @return A new MPSNNFilter node that concatenates its inputs.
      */
     @Generated
     @Selector("initWithSources:")
-    public native MPSNNConcatenationNode initWithSources(NSArray<? extends MPSNNImageNode> sourceNodes);
+    public native MPSNNConcatenationNode initWithSources(@NotNull NSArray<? extends MPSNNImageNode> sourceNodes);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -144,9 +151,10 @@ public class MPSNNConcatenationNode extends MPSNNFilterNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,20 +163,20 @@ public class MPSNNConcatenationNode extends MPSNNFilterNode {
 
     /**
      * Init a autoreleased node that concatenates feature channels from multiple images
-     * <p>
+     * 
      * In some neural network designs, it is necessary to append feature channels
      * from one neural network filter to the results of another. If we have three
      * image nodes with M, N and O feature channels in them, passed to -initWithSources:
      * as @[imageM, imageN, imageO], then feature channels [0,M-1] will be drawn from
      * image M, feature channels [M, M+N-1] will be drawn from image N and feature channels
      * [M+N, M+N+O-1] will be drawn from image O.
-     * <p>
+     * 
      * As all images are padded out to a multiple of four feature channels,
      * M, N and O here are also multiples of four, even when the MPSImages
      * are not. That is, if the image is 23 feature channels and one channel
      * of padding, it takes up 24 feature channels worth of space in the
      * concatenated result.
-     * <p>
+     * 
      * Performance Note: Generally, concatenation is free as long as all
      * of the sourceNodes are produced by filters in the same MPSNNGraph.
      * Most MPSCNNKernels have the ability to write their results at a
@@ -180,13 +188,13 @@ public class MPSNNConcatenationNode extends MPSNNFilterNode {
      * appear at the ends of subgraphs when possible rather than at the start,
      * to the extent that all the images used in the concatenation are
      * produced by that subgraph.
-     *
+     * 
      * @param sourceNodes The MPSNNImageNode representing the source MPSImages for the filter
      * @return A new MPSNNFilter node that concatenates its inputs.
      */
     @Generated
     @Selector("nodeWithSources:")
-    public static native MPSNNConcatenationNode nodeWithSources(NSArray<? extends MPSNNImageNode> sourceNodes);
+    public static native MPSNNConcatenationNode nodeWithSources(@NotNull NSArray<? extends MPSNNImageNode> sourceNodes);
 
     @Generated
     @Selector("resolveClassMethod:")

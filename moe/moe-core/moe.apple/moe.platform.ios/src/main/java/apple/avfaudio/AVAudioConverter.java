@@ -30,11 +30,15 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioConverter
- * <p>
+ * 
  * Converts streams of audio between various formats.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("AVFAudio")
@@ -66,60 +70,65 @@ public class AVAudioConverter extends NSObject {
 
     /**
      * [@property] applicableEncodeBitRates
-     * <p>
+     * 
      * When encoding, an NSArray of NSNumber of bit rates that can be applied based on the current formats and settings.
      * Returns nil if not encoding.
      */
+    @Nullable
     @Generated
     @Selector("applicableEncodeBitRates")
     public native NSArray<? extends NSNumber> applicableEncodeBitRates();
 
     /**
      * [@property] applicableEncodeSampleRates
-     * <p>
+     * 
      * When encoding, an NSArray of NSNumber of output sample rates that can be applied based on the current formats and
      * settings. Returns nil if not encoding.
      */
+    @Nullable
     @Generated
     @Selector("applicableEncodeSampleRates")
     public native NSArray<? extends NSNumber> applicableEncodeSampleRates();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] availableEncodeBitRates
-     * <p>
+     * 
      * When encoding, an NSArray of NSNumber of all bit rates provided by the codec. Returns nil if not encoding.
      */
+    @Nullable
     @Generated
     @Selector("availableEncodeBitRates")
     public native NSArray<? extends NSNumber> availableEncodeBitRates();
 
     /**
      * [@property] availableEncodeChannelLayoutTags
-     * <p>
+     * 
      * When encoding, an NSArray of NSNumber of all output channel layout tags provided by the codec. Returns nil if not
      * encoding.
      */
+    @Nullable
     @Generated
     @Selector("availableEncodeChannelLayoutTags")
     public native NSArray<? extends NSNumber> availableEncodeChannelLayoutTags();
 
     /**
      * [@property] availableEncodeSampleRates
-     * <p>
+     * 
      * When encoding, an NSArray of NSNumber of all output sample rates provided by the codec. Returns nil if not
      * encoding.
      */
+    @Nullable
     @Generated
     @Selector("availableEncodeSampleRates")
     public native NSArray<? extends NSNumber> availableEncodeSampleRates();
 
     /**
      * [@property] bitRate
-     * <p>
+     * 
      * bitRate in bits per second. Only applies when encoding.
      */
     @Generated
@@ -129,93 +138,108 @@ public class AVAudioConverter extends NSObject {
 
     /**
      * [@property] bitRateStrategy
-     * <p>
+     * 
      * When encoding, an AVEncoderBitRateStrategyKey value constant as defined in AVAudioSettings.h. Returns nil if not
      * encoding.
      */
+    @Nullable
     @Generated
     @Selector("bitRateStrategy")
     public native String bitRateStrategy();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * [@property] channelMap
-     * <p>
+     * 
      * An array of integers indicating from which input to derive each output.
-     * <p>
+     * 
      * The array has size equal to the number of output channels. Each element's value is the input
      * channel number, starting with zero, that is to be copied to that output. A negative value
      * means that the output channel will have no source and will be silent. Setting a channel map
      * overrides channel mapping due to any channel layouts in the input and output formats that
      * may have been supplied.
      */
+    @NotNull
     @Generated
     @Selector("channelMap")
     public native NSArray<? extends NSNumber> channelMap();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * convertToBuffer:error:withInputFromBlock:
-     * <p>
+     * 
      * Perform any supported conversion.
-     * <p>
+     * 
      * It attempts to fill the buffer to its capacity. On return, the buffer's length indicates the number of
      * sample frames successfully converted.
-     *
-     * @param inputBlock   A block which will be called to get input data as needed. See description for
+     * 
+     * @param inputBlock
+     *                     A block which will be called to get input data as needed. See description for
      *                     AVAudioConverterInputBlock.
-     * @param outputBuffer The output buffer.
-     * @param outError     An error if the conversion fails.
-     * @return An AVAudioConverterOutputStatus is returned.
+     * @param outputBuffer
+     *                     The output buffer.
+     * @param outError
+     *                     An error if the conversion fails.
+     * @return
+     *         An AVAudioConverterOutputStatus is returned.
      */
     @Generated
     @Selector("convertToBuffer:error:withInputFromBlock:")
     @NInt
-    public native long convertToBufferErrorWithInputFromBlock(AVAudioBuffer outputBuffer,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError,
-            @ObjCBlock(name = "call_convertToBufferErrorWithInputFromBlock") Block_convertToBufferErrorWithInputFromBlock inputBlock);
+    public native long convertToBufferErrorWithInputFromBlock(@NotNull AVAudioBuffer outputBuffer,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError,
+            @NotNull @ObjCBlock(name = "call_convertToBufferErrorWithInputFromBlock") Block_convertToBufferErrorWithInputFromBlock inputBlock);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_convertToBufferErrorWithInputFromBlock {
+        @Nullable
         @Generated
-        AVAudioBuffer call_convertToBufferErrorWithInputFromBlock(int inNumberOfPackets, NIntPtr outStatus);
+        AVAudioBuffer call_convertToBufferErrorWithInputFromBlock(int inNumberOfPackets, @NotNull NIntPtr outStatus);
     }
 
     /**
      * convertToBuffer:fromBuffer:error:
-     * <p>
+     * 
      * Perform a simple conversion. That is, a conversion which does not involve codecs or sample rate conversion.
-     * <p>
+     * 
      * The output buffer's frameCapacity should be at least at large as the inputBuffer's frameLength.
      * If the conversion involves a codec or sample rate conversion, you instead must use
      * convertToBuffer:error:withInputFromBlock:.
-     *
-     * @param inputBuffer  The input buffer.
-     * @param outputBuffer The output buffer.
-     * @param outError     An error if the conversion fails.
-     * @return YES is returned on success, NO when an error has occurred.
+     * 
+     * @param inputBuffer
+     *                     The input buffer.
+     * @param outputBuffer
+     *                     The output buffer.
+     * @param outError
+     *                     An error if the conversion fails.
+     * @return
+     *         YES is returned on success, NO when an error has occurred.
      */
     @Generated
     @Selector("convertToBuffer:fromBuffer:error:")
-    public native boolean convertToBufferFromBufferError(AVAudioPCMBuffer outputBuffer, AVAudioPCMBuffer inputBuffer,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean convertToBufferFromBufferError(@NotNull AVAudioPCMBuffer outputBuffer,
+            @NotNull AVAudioPCMBuffer inputBuffer,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("debugDescription")
@@ -227,7 +251,7 @@ public class AVAudioConverter extends NSObject {
 
     /**
      * [@property] dither
-     * <p>
+     * 
      * Setting YES will turn on dither, if dither makes sense in given the current formats
      * and settings. Default value is NO.
      */
@@ -237,7 +261,7 @@ public class AVAudioConverter extends NSObject {
 
     /**
      * [@property] downmix
-     * <p>
+     * 
      * If YES and channel remapping is necessary, then channels will be mixed as
      * appropriate instead of remapped. Default value is NO.
      */
@@ -256,23 +280,27 @@ public class AVAudioConverter extends NSObject {
 
     /**
      * initFromFormat:toFormat:
-     * <p>
+     * 
      * Initialize from input and output formats.
-     * <p>
+     * 
      * Returns nil if the format conversion is not possible.
-     *
-     * @param fromFormat The input format.
-     * @param toFormat   The output format.
+     * 
+     * @param fromFormat
+     *                   The input format.
+     * @param toFormat
+     *                   The output format.
      */
     @Generated
     @Selector("initFromFormat:toFormat:")
-    public native AVAudioConverter initFromFormatToFormat(AVAudioFormat fromFormat, AVAudioFormat toFormat);
+    public native AVAudioConverter initFromFormatToFormat(@NotNull AVAudioFormat fromFormat,
+            @NotNull AVAudioFormat toFormat);
 
     /**
      * [@property] inputFormat
-     * <p>
+     * 
      * The format of the input audio stream. (NB. AVAudioFormat includes the channel layout)
      */
+    @NotNull
     @Generated
     @Selector("inputFormat")
     public native AVAudioFormat inputFormat();
@@ -294,25 +322,27 @@ public class AVAudioConverter extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] magicCookie
-     * <p>
+     * 
      * Decoders require some data in the form of a magicCookie in order to decode properly.
      * Encoders will produce a magicCookie.
      */
+    @Nullable
     @Generated
     @Selector("magicCookie")
     public native NSData magicCookie();
 
     /**
      * [@property] maximumOutputPacketSize
-     * <p>
+     * 
      * The maximum size of an output packet, in bytes.
-     * <p>
+     * 
      * When encoding it is useful to know how large a packet can be in order to allocate a buffer to receive the output.
      */
     @Generated
@@ -327,16 +357,17 @@ public class AVAudioConverter extends NSObject {
 
     /**
      * [@property] outputFormat
-     * <p>
+     * 
      * The format of the output audio stream. (NB. AVAudioFormat includes the channel layout)
      */
+    @NotNull
     @Generated
     @Selector("outputFormat")
     public native AVAudioFormat outputFormat();
 
     /**
      * [@property] primeInfo
-     * <p>
+     * 
      * Indicates the the number of priming frames.
      */
     @Generated
@@ -346,7 +377,7 @@ public class AVAudioConverter extends NSObject {
 
     /**
      * [@property] primeMethod
-     * <p>
+     * 
      * Indicates the priming method to be used by the sample rate converter or decoder.
      */
     @Generated
@@ -356,7 +387,7 @@ public class AVAudioConverter extends NSObject {
 
     /**
      * reset
-     * <p>
+     * 
      * Resets the converter so that a new stream may be converted.
      */
     @Generated
@@ -373,16 +404,17 @@ public class AVAudioConverter extends NSObject {
 
     /**
      * [@property] sampleRateConverterAlgorithm
-     * <p>
+     * 
      * An AVSampleRateConverterAlgorithmKey value as defined in AVAudioSettings.h.
      */
+    @Nullable
     @Generated
     @Selector("sampleRateConverterAlgorithm")
     public native String sampleRateConverterAlgorithm();
 
     /**
      * [@property] sampleRateConverterQuality
-     * <p>
+     * 
      * An AVAudioQuality value as defined in AVAudioSettings.h.
      */
     @Generated
@@ -392,7 +424,7 @@ public class AVAudioConverter extends NSObject {
 
     /**
      * [@property] bitRate
-     * <p>
+     * 
      * bitRate in bits per second. Only applies when encoding.
      */
     @Generated
@@ -401,19 +433,19 @@ public class AVAudioConverter extends NSObject {
 
     /**
      * [@property] bitRateStrategy
-     * <p>
+     * 
      * When encoding, an AVEncoderBitRateStrategyKey value constant as defined in AVAudioSettings.h. Returns nil if not
      * encoding.
      */
     @Generated
     @Selector("setBitRateStrategy:")
-    public native void setBitRateStrategy(String value);
+    public native void setBitRateStrategy(@Nullable String value);
 
     /**
      * [@property] channelMap
-     * <p>
+     * 
      * An array of integers indicating from which input to derive each output.
-     * <p>
+     * 
      * The array has size equal to the number of output channels. Each element's value is the input
      * channel number, starting with zero, that is to be copied to that output. A negative value
      * means that the output channel will have no source and will be silent. Setting a channel map
@@ -422,11 +454,11 @@ public class AVAudioConverter extends NSObject {
      */
     @Generated
     @Selector("setChannelMap:")
-    public native void setChannelMap(NSArray<? extends NSNumber> value);
+    public native void setChannelMap(@NotNull NSArray<? extends NSNumber> value);
 
     /**
      * [@property] dither
-     * <p>
+     * 
      * Setting YES will turn on dither, if dither makes sense in given the current formats
      * and settings. Default value is NO.
      */
@@ -436,7 +468,7 @@ public class AVAudioConverter extends NSObject {
 
     /**
      * [@property] downmix
-     * <p>
+     * 
      * If YES and channel remapping is necessary, then channels will be mixed as
      * appropriate instead of remapped. Default value is NO.
      */
@@ -446,17 +478,17 @@ public class AVAudioConverter extends NSObject {
 
     /**
      * [@property] magicCookie
-     * <p>
+     * 
      * Decoders require some data in the form of a magicCookie in order to decode properly.
      * Encoders will produce a magicCookie.
      */
     @Generated
     @Selector("setMagicCookie:")
-    public native void setMagicCookie(NSData value);
+    public native void setMagicCookie(@Nullable NSData value);
 
     /**
      * [@property] primeInfo
-     * <p>
+     * 
      * Indicates the the number of priming frames.
      */
     @Generated
@@ -465,7 +497,7 @@ public class AVAudioConverter extends NSObject {
 
     /**
      * [@property] primeMethod
-     * <p>
+     * 
      * Indicates the priming method to be used by the sample rate converter or decoder.
      */
     @Generated
@@ -474,16 +506,16 @@ public class AVAudioConverter extends NSObject {
 
     /**
      * [@property] sampleRateConverterAlgorithm
-     * <p>
+     * 
      * An AVSampleRateConverterAlgorithmKey value as defined in AVAudioSettings.h.
      */
     @Generated
     @Selector("setSampleRateConverterAlgorithm:")
-    public native void setSampleRateConverterAlgorithm(String value);
+    public native void setSampleRateConverterAlgorithm(@Nullable String value);
 
     /**
      * [@property] sampleRateConverterQuality
-     * <p>
+     * 
      * An AVAudioQuality value as defined in AVAudioSettings.h.
      */
     @Generated

@@ -21,15 +21,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCaptureSystemPressureState
- * <p>
+ * 
  * A model object describing a system pressure level and contributing factors to the pressured state.
- * <p>
+ * 
  * Beginning in iOS 11.1, AVCaptureDevice can report its current system pressure state. System pressure refers to a
  * state in which capture quality is degraded or capture hardware availability is limited due to factors such as overall
  * system temperature, insufficient battery charge for current peak power requirements, or camera module temperature.
+ * 
+ * API-Since: 11.1
  */
 @Generated
 @Library("AVFoundation")
@@ -61,22 +65,25 @@ public class AVCaptureSystemPressureState extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -91,7 +98,7 @@ public class AVCaptureSystemPressureState extends NSObject {
 
     /**
      * [@property] factors
-     * <p>
+     * 
      * A bitmask of values indicating the factors contributing to the current system pressure level.
      */
     @Generated
@@ -125,15 +132,17 @@ public class AVCaptureSystemPressureState extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] level
-     * <p>
+     * 
      * An enumerated string value characterizing the pressure level to which the system is currently elevated.
      */
+    @NotNull
     @Generated
     @Selector("level")
     public native String level();

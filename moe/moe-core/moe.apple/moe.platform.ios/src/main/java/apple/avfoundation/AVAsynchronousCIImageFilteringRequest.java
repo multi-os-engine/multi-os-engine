@@ -17,7 +17,6 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.coreimage.CIContext;
 import apple.coreimage.CIImage;
 import apple.coremedia.struct.CMTime;
@@ -45,7 +44,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -76,22 +81,25 @@ public class AVAsynchronousCIImageFilteringRequest extends NSObject implements N
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +134,10 @@ public class AVAsynchronousCIImageFilteringRequest extends NSObject implements N
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,29 +173,30 @@ public class AVAsynchronousCIImageFilteringRequest extends NSObject implements N
     @ByValue
     public native CMTime compositionTime();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Callback the filter should call when filtering failed. The error parameter should describe the actual error.
      */
     @Generated
     @Selector("finishWithError:")
-    public native void finishWithError(NSError error);
+    public native void finishWithError(@NotNull NSError error);
 
     /**
      * Callback the filter should call when filtering succeeded. If context is nil then a default context will be used,
      * GPU-accelerated if possible.
-     * <p>
+     * 
      * It is safe to pass in the sourceImage in which case the filter will appear to have no effect, essentially
      * functioning as a pass-through.
      */
     @Generated
     @Selector("finishWithImage:context:")
-    public native void finishWithImageContext(CIImage filteredImage, CIContext context);
+    public native void finishWithImageContext(@NotNull CIImage filteredImage, @Nullable CIContext context);
 
     @Generated
     @Selector("init")
@@ -204,6 +214,7 @@ public class AVAsynchronousCIImageFilteringRequest extends NSObject implements N
      * CIImage for the first enabled source video track. Unlike AVAsynchronousVideoCompositionRequest,
      * renderContext.renderTransform is already applied to the source image.
      */
+    @NotNull
     @Generated
     @Selector("sourceImage")
     public native CIImage sourceImage();

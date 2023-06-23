@@ -19,18 +19,27 @@ package apple.cloudkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class CKRecordZoneCapabilities {
     /**
      * This zone supports CKFetchRecordChangesOperation
+     * 
+     * API-Since: 8.0
      */
     @Generated @NUInt public static final long FetchChanges = 0x0000000000000001L;
     /**
      * Batched changes to this zone happen atomically
+     * 
+     * API-Since: 8.0
      */
     @Generated @NUInt public static final long Atomic = 0x0000000000000002L;
     /**
      * Records in this zone can be shared
+     * 
+     * API-Since: 10.0
      */
     @Generated @NUInt public static final long Sharing = 0x0000000000000004L;
 
@@ -40,6 +49,8 @@ public final class CKRecordZoneCapabilities {
 
     /**
      * This zone supports a single CKShare record that shares all records in the zone
+     * 
+     * API-Since: 15.0
      */
     @Generated @NUInt public static final long ZoneWideSharing = 0x0000000000000008L;
 }

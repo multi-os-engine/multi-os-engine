@@ -23,11 +23,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAssetSegmentReportSampleInformation
- * <p>
+ * 
  * This class is vended by AVAssetSegmentTrackReport. It will provide information on a sample in a track.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("AVFoundation")
@@ -59,22 +63,25 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -115,20 +122,21 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
 
     /**
      * [@property] isSyncSample
-     * <p>
+     * 
      * Indicates whether the sample is a sync sample.
      */
     @Generated
     @Selector("isSyncSample")
     public native boolean isSyncSample();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] length
-     * <p>
+     * 
      * The length of the sample.
      */
     @Generated
@@ -143,7 +151,7 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
 
     /**
      * [@property] offset
-     * <p>
+     * 
      * The offset of the sample in the segment.
      */
     @Generated
@@ -153,9 +161,9 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
 
     /**
      * [@property] presentationTimeStamp
-     * <p>
+     * 
      * The presentation timestamp (PTS) of the sample.
-     * <p>
+     * 
      * This timestamp may be different from the earliestPresentationTimeStamp if the video is encoded using frame
      * reordering.
      */

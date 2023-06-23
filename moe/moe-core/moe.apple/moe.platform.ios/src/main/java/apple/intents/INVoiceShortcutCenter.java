@@ -24,11 +24,15 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Lets you access shortcuts that have been added to Siri
- *
+ * 
  * @see INVoiceShortcut
+ * 
+ *      API-Since: 12.0
  */
 @Generated
 @Library("Intents")
@@ -60,22 +64,25 @@ public class INVoiceShortcutCenter extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,13 +103,14 @@ public class INVoiceShortcutCenter extends NSObject {
     @Generated
     @Selector("getAllVoiceShortcutsWithCompletion:")
     public native void getAllVoiceShortcutsWithCompletion(
-            @ObjCBlock(name = "call_getAllVoiceShortcutsWithCompletion") Block_getAllVoiceShortcutsWithCompletion completionHandler);
+            @NotNull @ObjCBlock(name = "call_getAllVoiceShortcutsWithCompletion") Block_getAllVoiceShortcutsWithCompletion completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getAllVoiceShortcutsWithCompletion {
         @Generated
-        void call_getAllVoiceShortcutsWithCompletion(NSArray<? extends INVoiceShortcut> voiceShortcuts, NSError error);
+        void call_getAllVoiceShortcutsWithCompletion(@Nullable NSArray<? extends INVoiceShortcut> voiceShortcuts,
+                @Nullable NSError error);
     }
 
     /**
@@ -110,14 +118,15 @@ public class INVoiceShortcutCenter extends NSObject {
      */
     @Generated
     @Selector("getVoiceShortcutWithIdentifier:completion:")
-    public native void getVoiceShortcutWithIdentifierCompletion(NSUUID identifier,
-            @ObjCBlock(name = "call_getVoiceShortcutWithIdentifierCompletion") Block_getVoiceShortcutWithIdentifierCompletion completionHandler);
+    public native void getVoiceShortcutWithIdentifierCompletion(@NotNull NSUUID identifier,
+            @NotNull @ObjCBlock(name = "call_getVoiceShortcutWithIdentifierCompletion") Block_getVoiceShortcutWithIdentifierCompletion completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getVoiceShortcutWithIdentifierCompletion {
         @Generated
-        void call_getVoiceShortcutWithIdentifierCompletion(INVoiceShortcut voiceShortcut, NSError error);
+        void call_getVoiceShortcutWithIdentifierCompletion(@Nullable INVoiceShortcut voiceShortcut,
+                @Nullable NSError error);
     }
 
     @Generated
@@ -146,9 +155,10 @@ public class INVoiceShortcutCenter extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,17 +175,18 @@ public class INVoiceShortcutCenter extends NSObject {
 
     /**
      * Set some shortcuts that should be suggested to the user to add to Siri.
-     * <p>
+     * 
      * These suggestions are shown to the user in the Shortcuts app.
      */
     @Generated
     @Selector("setShortcutSuggestions:")
-    public native void setShortcutSuggestions(NSArray<? extends INShortcut> suggestions);
+    public native void setShortcutSuggestions(@NotNull NSArray<? extends INShortcut> suggestions);
 
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("sharedCenter")
     public static native INVoiceShortcutCenter sharedCenter();

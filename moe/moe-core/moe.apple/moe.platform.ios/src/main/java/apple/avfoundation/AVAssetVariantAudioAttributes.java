@@ -22,7 +22,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -53,22 +58,25 @@ public class AVAssetVariantAudioAttributes extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -83,10 +91,11 @@ public class AVAssetVariantAudioAttributes extends NSObject {
 
     /**
      * [@property] formatIDs
-     * <p>
+     * 
      * Provides an array of audio formats present in the variant's renditions if any are declared. Each value in the
      * array is a NSNumber representation of AudioFormatID.
      */
+    @NotNull
     @Generated
     @Selector("formatIDs")
     public native NSArray<? extends NSNumber> formatIDs();
@@ -117,9 +126,10 @@ public class AVAssetVariantAudioAttributes extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -128,16 +138,18 @@ public class AVAssetVariantAudioAttributes extends NSObject {
 
     /**
      * renditionSpecificAttributesForMediaOption:
-     * <p>
+     * 
      * Provides attributes for a specific audio media selection option. If no rendition specific attributes are
      * declared, it will be nil.
-     *
-     * @param mediaSelectionOption The option to return rendition specific information for.
+     * 
+     * @param mediaSelectionOption
+     *                             The option to return rendition specific information for.
      */
+    @Nullable
     @Generated
     @Selector("renditionSpecificAttributesForMediaOption:")
     public native AVAssetVariantAudioRenditionSpecificAttributes renditionSpecificAttributesForMediaOption(
-            AVMediaSelectionOption mediaSelectionOption);
+            @NotNull AVMediaSelectionOption mediaSelectionOption);
 
     @Generated
     @Selector("resolveClassMethod:")

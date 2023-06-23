@@ -24,26 +24,30 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNDArrayMatrixMultiplication
- * <p>
+ * 
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * A matrix multiplication kernel operating on MPSNDArray objects.
- * <p>
+ * 
  * A MPSNDArrayMatrixMultiplication object computes, for each 2-D matrix within
  * a 4-D MPSNDArray object:
- * <p>
+ * 
  * D = alpha * A * B + beta * C
- * <p>
+ * 
  * A, B, C, and D are matrices which are represented by objects stored
  * in the two most major dimensions of the MPSNDArray. alpha and beta
  * are scalar values (of the same data type as values of D and C) which
  * are applied as shown above.
- * <p>
+ * 
  * If an input's 3rd or 4th dimension is 1 its data will be broadcast as
  * appropriate to the remaining input's 3rd or 4th dimension respectively.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -75,7 +79,7 @@ public class MPSNDArrayMatrixMultiplication extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * The scale factor to apply to the product. Specified in double
      * precision. Will be converted to the appropriate precision in the
      * implementation subject to rounding and/or clamping as necessary.
@@ -87,11 +91,11 @@ public class MPSNDArrayMatrixMultiplication extends MPSNDArrayMultiaryKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] beta
-     * <p>
+     * 
      * The scale factor to apply to the addend if available. Specified in double
      * precision. Will be converted to the appropriate precision in the
      * implementation subject to rounding and/or clamping as necessary.
@@ -103,18 +107,21 @@ public class MPSNDArrayMatrixMultiplication extends MPSNDArrayMultiaryKernel {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -138,21 +145,21 @@ public class MPSNDArrayMatrixMultiplication extends MPSNDArrayMultiaryKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNDArrayMatrixMultiplication initWithCoder(NSCoder aDecoder);
+    public native MPSNDArrayMatrixMultiplication initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNDArrayMatrixMultiplication initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNDArrayMatrixMultiplication initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNDArrayMatrixMultiplication initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNDArrayMatrixMultiplication initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:sourceCount:")
     public native MPSNDArrayMatrixMultiplication initWithDeviceSourceCount(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long count);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long count);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -171,9 +178,10 @@ public class MPSNDArrayMatrixMultiplication extends MPSNDArrayMultiaryKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -190,7 +198,7 @@ public class MPSNDArrayMatrixMultiplication extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * The scale factor to apply to the product. Specified in double
      * precision. Will be converted to the appropriate precision in the
      * implementation subject to rounding and/or clamping as necessary.
@@ -202,7 +210,7 @@ public class MPSNDArrayMatrixMultiplication extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property] beta
-     * <p>
+     * 
      * The scale factor to apply to the addend if available. Specified in double
      * precision. Will be converted to the appropriate precision in the
      * implementation subject to rounding and/or clamping as necessary.

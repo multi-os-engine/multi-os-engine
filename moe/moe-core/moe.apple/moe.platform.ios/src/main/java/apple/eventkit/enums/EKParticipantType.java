@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] EKParticipantType
- * <p>
+ * 
  * Value representing the type of attendee.
  */
 @Generated

@@ -43,7 +43,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -74,22 +79,25 @@ public class CKLocationSortDescriptor extends NSSortDescriptor implements NSSecu
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +132,10 @@ public class CKLocationSortDescriptor extends NSSortDescriptor implements NSSecu
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -147,18 +156,19 @@ public class CKLocationSortDescriptor extends NSSortDescriptor implements NSSecu
 
     @Generated
     @Selector("sortDescriptorWithKey:ascending:")
-    public static native CKLocationSortDescriptor sortDescriptorWithKeyAscending(String key, boolean ascending);
+    public static native CKLocationSortDescriptor sortDescriptorWithKeyAscending(@Nullable String key,
+            boolean ascending);
 
     @Generated
     @Selector("sortDescriptorWithKey:ascending:comparator:")
-    public static native CKLocationSortDescriptor sortDescriptorWithKeyAscendingComparator(String key,
+    public static native CKLocationSortDescriptor sortDescriptorWithKeyAscendingComparator(@Nullable String key,
             boolean ascending,
-            @ObjCBlock(name = "call_sortDescriptorWithKeyAscendingComparator") NSSortDescriptor.Block_sortDescriptorWithKeyAscendingComparator cmptr);
+            @NotNull @ObjCBlock(name = "call_sortDescriptorWithKeyAscendingComparator") NSSortDescriptor.Block_sortDescriptorWithKeyAscendingComparator cmptr);
 
     @Generated
     @Selector("sortDescriptorWithKey:ascending:selector:")
-    public static native CKLocationSortDescriptor sortDescriptorWithKeyAscendingSelector(String key, boolean ascending,
-            SEL selector);
+    public static native CKLocationSortDescriptor sortDescriptorWithKeyAscendingSelector(@Nullable String key,
+            boolean ascending, @Nullable SEL selector);
 
     @Generated
     @Selector("superclass")
@@ -175,7 +185,7 @@ public class CKLocationSortDescriptor extends NSSortDescriptor implements NSSecu
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -183,25 +193,28 @@ public class CKLocationSortDescriptor extends NSSortDescriptor implements NSSecu
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKLocationSortDescriptor initWithCoder(NSCoder aDecoder);
+    public native CKLocationSortDescriptor initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithKey:ascending:")
-    public native CKLocationSortDescriptor initWithKeyAscending(String key, boolean ascending);
+    public native CKLocationSortDescriptor initWithKeyAscending(@Nullable String key, boolean ascending);
 
     @Generated
     @Selector("initWithKey:ascending:comparator:")
-    public native CKLocationSortDescriptor initWithKeyAscendingComparator(String key, boolean ascending,
-            @ObjCBlock(name = "call_initWithKeyAscendingComparator") NSSortDescriptor.Block_initWithKeyAscendingComparator cmptr);
+    public native CKLocationSortDescriptor initWithKeyAscendingComparator(@Nullable String key, boolean ascending,
+            @NotNull @ObjCBlock(name = "call_initWithKeyAscendingComparator") NSSortDescriptor.Block_initWithKeyAscendingComparator cmptr);
 
     @Generated
     @Selector("initWithKey:ascending:selector:")
-    public native CKLocationSortDescriptor initWithKeyAscendingSelector(String key, boolean ascending, SEL selector);
+    public native CKLocationSortDescriptor initWithKeyAscendingSelector(@Nullable String key, boolean ascending,
+            @Nullable SEL selector);
 
     @Generated
     @Selector("initWithKey:relativeLocation:")
-    public native CKLocationSortDescriptor initWithKeyRelativeLocation(String key, CLLocation relativeLocation);
+    public native CKLocationSortDescriptor initWithKeyRelativeLocation(@NotNull String key,
+            @NotNull CLLocation relativeLocation);
 
+    @NotNull
     @Generated
     @Selector("relativeLocation")
     public native CLLocation relativeLocation();

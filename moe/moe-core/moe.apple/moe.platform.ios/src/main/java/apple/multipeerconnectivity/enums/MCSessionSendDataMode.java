@@ -21,15 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * MCSession send modes
+ * 
+ * API-Since: 7.0
  */
 @Generated
 public final class MCSessionSendDataMode {
     /**
      * Guaranteed reliable and in-order delivery.
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long Reliable = 0x0000000000000000L;
     /**
      * Sent immediately without queuing, no guaranteed delivery.
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long Unreliable = 0x0000000000000001L;
 

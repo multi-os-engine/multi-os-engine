@@ -21,13 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueStatusFault
- * <p>
+ * 
  * [@constant] HMCharacteristicValueStatusFaultNoFault No Fault.
  * [@constant] HMCharacteristicValueStatusFaultGeneralFault General Fault.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class HMCharacteristicValueStatusFault {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long NoFault = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long GeneralFault = 0x0000000000000001L;
 
     @Generated

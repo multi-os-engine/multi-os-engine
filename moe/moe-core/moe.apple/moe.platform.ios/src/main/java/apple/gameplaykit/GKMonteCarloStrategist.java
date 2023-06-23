@@ -42,6 +42,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The Monte Carlo Strategist is a generic AI that selects a game model update for a given player that results
@@ -52,6 +54,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * upwards.
  * It will do this until the budget has been reached, then returning the choice it has deemed best suited for the player
  * in question.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -83,22 +87,25 @@ public class GKMonteCarloStrategist extends NSObject implements GKStrategist {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +140,10 @@ public class GKMonteCarloStrategist extends NSObject implements GKStrategist {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,6 +171,7 @@ public class GKMonteCarloStrategist extends NSObject implements GKStrategist {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("bestMoveForActivePlayer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -185,6 +194,7 @@ public class GKMonteCarloStrategist extends NSObject implements GKStrategist {
     @NUInt
     public native long explorationParameter();
 
+    @Nullable
     @Generated
     @Selector("gameModel")
     @MappedReturn(ObjCObjectMapper.class)
@@ -194,6 +204,7 @@ public class GKMonteCarloStrategist extends NSObject implements GKStrategist {
     @Selector("init")
     public native GKMonteCarloStrategist init();
 
+    @Nullable
     @Generated
     @Selector("randomSource")
     @MappedReturn(ObjCObjectMapper.class)
@@ -216,9 +227,9 @@ public class GKMonteCarloStrategist extends NSObject implements GKStrategist {
 
     @Generated
     @Selector("setGameModel:")
-    public native void setGameModel(@Mapped(ObjCObjectMapper.class) GKGameModel value);
+    public native void setGameModel(@Nullable @Mapped(ObjCObjectMapper.class) GKGameModel value);
 
     @Generated
     @Selector("setRandomSource:")
-    public native void setRandomSource(@Mapped(ObjCObjectMapper.class) GKRandom value);
+    public native void setRandomSource(@Nullable @Mapped(ObjCObjectMapper.class) GKRandom value);
 }

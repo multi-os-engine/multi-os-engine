@@ -24,7 +24,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("QuickLook")
 @Runtime(ObjCRuntime.class)
@@ -55,22 +60,25 @@ public class QLPreviewSceneActivationConfiguration extends UIWindowSceneActivati
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -94,18 +102,18 @@ public class QLPreviewSceneActivationConfiguration extends UIWindowSceneActivati
 
     /**
      * Create a new scene configuration to preview items at `urls`.
-     *
+     * 
      * @param urls    The urls of the items to preview.
      * @param options Additional information to preview the items.
      */
     @Generated
     @Selector("initWithItemsAtURLs:options:")
-    public native QLPreviewSceneActivationConfiguration initWithItemsAtURLsOptions(NSArray<? extends NSURL> urls,
-            QLPreviewSceneOptions options);
+    public native QLPreviewSceneActivationConfiguration initWithItemsAtURLsOptions(
+            @NotNull NSArray<? extends NSURL> urls, @Nullable QLPreviewSceneOptions options);
 
     @Generated
     @Selector("initWithUserActivity:")
-    public native QLPreviewSceneActivationConfiguration initWithUserActivity(NSUserActivity userActivity);
+    public native QLPreviewSceneActivationConfiguration initWithUserActivity(@NotNull NSUserActivity userActivity);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -124,9 +132,10 @@ public class QLPreviewSceneActivationConfiguration extends UIWindowSceneActivati
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

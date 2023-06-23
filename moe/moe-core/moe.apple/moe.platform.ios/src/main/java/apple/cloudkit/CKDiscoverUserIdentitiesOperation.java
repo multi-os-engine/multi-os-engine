@@ -39,7 +39,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -70,22 +75,25 @@ public class CKDiscoverUserIdentitiesOperation extends CKOperation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,9 +128,10 @@ public class CKDiscoverUserIdentitiesOperation extends CKOperation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -152,10 +161,11 @@ public class CKDiscoverUserIdentitiesOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
+    @Nullable
     @Generated
     @Selector("discoverUserIdentitiesCompletionBlock")
     @ObjCBlock(name = "call_discoverUserIdentitiesCompletionBlock_ret")
@@ -168,43 +178,45 @@ public class CKDiscoverUserIdentitiesOperation extends CKOperation {
     @Generated
     @Selector("initWithUserIdentityLookupInfos:")
     public native CKDiscoverUserIdentitiesOperation initWithUserIdentityLookupInfos(
-            NSArray<? extends CKUserIdentityLookupInfo> userIdentityLookupInfos);
+            @NotNull NSArray<? extends CKUserIdentityLookupInfo> userIdentityLookupInfos);
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
     @Selector("setDiscoverUserIdentitiesCompletionBlock:")
     public native void setDiscoverUserIdentitiesCompletionBlock(
-            @ObjCBlock(name = "call_setDiscoverUserIdentitiesCompletionBlock") Block_setDiscoverUserIdentitiesCompletionBlock value);
+            @Nullable @ObjCBlock(name = "call_setDiscoverUserIdentitiesCompletionBlock") Block_setDiscoverUserIdentitiesCompletionBlock value);
 
     /**
      * Called once for each user identity lookup info that was successfully discovered on the server
-     * <p>
+     * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
     @Selector("setUserIdentityDiscoveredBlock:")
     public native void setUserIdentityDiscoveredBlock(
-            @ObjCBlock(name = "call_setUserIdentityDiscoveredBlock") Block_setUserIdentityDiscoveredBlock value);
+            @Nullable @ObjCBlock(name = "call_setUserIdentityDiscoveredBlock") Block_setUserIdentityDiscoveredBlock value);
 
     @Generated
     @Selector("setUserIdentityLookupInfos:")
-    public native void setUserIdentityLookupInfos(NSArray<? extends CKUserIdentityLookupInfo> value);
+    public native void setUserIdentityLookupInfos(@NotNull NSArray<? extends CKUserIdentityLookupInfo> value);
 
     /**
      * Called once for each user identity lookup info that was successfully discovered on the server
-     * <p>
+     * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
+    @Nullable
     @Generated
     @Selector("userIdentityDiscoveredBlock")
     @ObjCBlock(name = "call_userIdentityDiscoveredBlock_ret")
     public native Block_userIdentityDiscoveredBlock_ret userIdentityDiscoveredBlock();
 
+    @NotNull
     @Generated
     @Selector("userIdentityLookupInfos")
     public native NSArray<? extends CKUserIdentityLookupInfo> userIdentityLookupInfos();
@@ -213,27 +225,27 @@ public class CKDiscoverUserIdentitiesOperation extends CKOperation {
     @Generated
     public interface Block_discoverUserIdentitiesCompletionBlock_ret {
         @Generated
-        void call_discoverUserIdentitiesCompletionBlock_ret(NSError arg0);
+        void call_discoverUserIdentitiesCompletionBlock_ret(@Nullable NSError arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setDiscoverUserIdentitiesCompletionBlock {
         @Generated
-        void call_setDiscoverUserIdentitiesCompletionBlock(NSError arg0);
+        void call_setDiscoverUserIdentitiesCompletionBlock(@Nullable NSError arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setUserIdentityDiscoveredBlock {
         @Generated
-        void call_setUserIdentityDiscoveredBlock(CKUserIdentity arg0, CKUserIdentityLookupInfo arg1);
+        void call_setUserIdentityDiscoveredBlock(@NotNull CKUserIdentity arg0, @NotNull CKUserIdentityLookupInfo arg1);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_userIdentityDiscoveredBlock_ret {
         @Generated
-        void call_userIdentityDiscoveredBlock_ret(CKUserIdentity arg0, CKUserIdentityLookupInfo arg1);
+        void call_userIdentityDiscoveredBlock_ret(@NotNull CKUserIdentity arg0, @NotNull CKUserIdentityLookupInfo arg1);
     }
 }

@@ -38,11 +38,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * EKCalendar
- * <p>
+ * 
  * The EKCalendar class represents a calendar for events.
+ * 
+ * API-Since: 4.0
  */
 @Generated
 @Library("EventKit")
@@ -74,45 +78,56 @@ public class EKCalendar extends EKObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * calendarForEntityType:
-     * <p>
+     * 
      * Creates a new autoreleased calendar that may contain the given entity type.
-     * <p>
+     * 
      * You can only create calendars that accept either reminders or events via our API.
      * However, other servers might allow mixing the two (though it is not common).
-     *
+     * 
      * @param entityType The entity type that this calendar may support.
      * @param eventStore The event store in which to create this calendar.
+     * 
+     *                   API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("calendarForEntityType:eventStore:")
-    public static native EKCalendar calendarForEntityTypeEventStore(@NUInt long entityType, EKEventStore eventStore);
+    public static native EKCalendar calendarForEntityTypeEventStore(@NUInt long entityType,
+            @NotNull EKEventStore eventStore);
 
     /**
      * Create a new calendar in the specified event store. You should use calendarForEntityType in iOS 6 or later.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 6.0
      */
+    @NotNull
     @Generated
     @Deprecated
     @Selector("calendarWithEventStore:")
-    public static native EKCalendar calendarWithEventStore(EKEventStore eventStore);
+    public static native EKCalendar calendarWithEventStore(@NotNull EKEventStore eventStore);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -147,9 +162,10 @@ public class EKCalendar extends EKObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -179,10 +195,12 @@ public class EKCalendar extends EKObject {
 
     /**
      * [@property] color
-     * <p>
+     * 
      * Returns the calendar color as a CGColorRef.
-     * <p>
+     * 
      * This will be nil for new calendars until you set it.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("CGColor")
@@ -190,9 +208,11 @@ public class EKCalendar extends EKObject {
 
     /**
      * [@property] allowedEntityTypes
-     * <p>
+     * 
      * Returns the entity types this calendar can contain. While our API only allows creation
      * of single-entity calendars, other servers might allow mixed-entity calendars.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("allowedEntityTypes")
@@ -201,7 +221,7 @@ public class EKCalendar extends EKObject {
 
     /**
      * [@property] allowsContentModifications
-     * <p>
+     * 
      * Represents whether you can this add, remove, or modify items in this calendar.
      */
     @Generated
@@ -210,12 +230,15 @@ public class EKCalendar extends EKObject {
 
     /**
      * [@property] calendarIdentifier
-     * <p>
+     * 
      * A unique identifier for the calendar. It is not sync-proof in that a full
      * sync will lose this identifier, so you should always have a back up plan for dealing
      * with a calendar that is no longer fetchable by this property, e.g. by title, type, color, etc.
      * Use [EKEventStore calendarWithIdentifier:] to look up the calendar by this value.
+     * 
+     * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @Selector("calendarIdentifier")
     public native String calendarIdentifier();
@@ -226,10 +249,12 @@ public class EKCalendar extends EKObject {
 
     /**
      * [@property] immutable
-     * <p>
+     * 
      * If this is set to YES, it means you cannot modify any attributes of
      * the calendar or delete it. It does NOT imply that you cannot add events
      * or reminders to the calendar.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("isImmutable")
@@ -237,8 +262,10 @@ public class EKCalendar extends EKObject {
 
     /**
      * [@property] subscribed
-     * <p>
+     * 
      * YES if this calendar is a subscribed calendar.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("isSubscribed")
@@ -246,10 +273,12 @@ public class EKCalendar extends EKObject {
 
     /**
      * [@property] color
-     * <p>
+     * 
      * Returns the calendar color as a CGColorRef.
-     * <p>
+     * 
      * This will be nil for new calendars until you set it.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setCGColor:")
@@ -257,12 +286,12 @@ public class EKCalendar extends EKObject {
 
     /**
      * [@property] source
-     * <p>
+     * 
      * The source representing the 'account' this calendar belongs to.
      * This is only settable when initially creating a calendar and then
      * effectively read-only after that. That is, you can create a calendar,
      * but you cannot move it to another source.
-     * <p>
+     * 
      * This will be nil for new calendars until you set it.
      */
     @Generated
@@ -271,21 +300,21 @@ public class EKCalendar extends EKObject {
 
     /**
      * [@property] title
-     * <p>
+     * 
      * The title of the calendar.
      */
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@NotNull String value);
 
     /**
      * [@property] source
-     * <p>
+     * 
      * The source representing the 'account' this calendar belongs to.
      * This is only settable when initially creating a calendar and then
      * effectively read-only after that. That is, you can create a calendar,
      * but you cannot move it to another source.
-     * <p>
+     * 
      * This will be nil for new calendars until you set it.
      */
     @Generated
@@ -294,7 +323,7 @@ public class EKCalendar extends EKObject {
 
     /**
      * [@property] supportedEventAvailabilities
-     * <p>
+     * 
      * Returns a bitfield of supported event availabilities, or EKCalendarEventAvailabilityNone
      * if this calendar does not support setting availability on an event.
      */
@@ -305,19 +334,20 @@ public class EKCalendar extends EKObject {
 
     /**
      * [@property] title
-     * <p>
+     * 
      * The title of the calendar.
      */
+    @NotNull
     @Generated
     @Selector("title")
     public native String title();
 
     /**
      * [@property] type
-     * <p>
+     * 
      * The type of the calendar as a EKCalendarType. This is actually based on
      * what source the calendar is in, as well as whether it is a subscribed calendar.
-     * <p>
+     * 
      * CalDAV subscribed calendars have type EKCalendarTypeCalDAV with isSubscribed = YES.
      */
     @Generated

@@ -19,11 +19,26 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 public final class MTLTessellationFactorStepFunction {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Constant = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long PerPatch = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long PerInstance = 0x0000000000000002L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long PerPatchAndPerInstance = 0x0000000000000003L;
 
     @Generated

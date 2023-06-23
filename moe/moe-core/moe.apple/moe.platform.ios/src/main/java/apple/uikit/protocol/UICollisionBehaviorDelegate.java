@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGPoint;
 import apple.uikit.UICollisionBehavior;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
@@ -28,6 +27,9 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -41,34 +43,36 @@ public interface UICollisionBehaviorDelegate {
     @Generated
     @IsOptional
     @Selector("collisionBehavior:beganContactForItem:withBoundaryIdentifier:atPoint:")
-    default void collisionBehaviorBeganContactForItemWithBoundaryIdentifierAtPoint(UICollisionBehavior behavior,
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item, @Mapped(ObjCObjectMapper.class) Object identifier,
-            @ByValue CGPoint p) {
+    default void collisionBehaviorBeganContactForItemWithBoundaryIdentifierAtPoint(
+            @NotNull UICollisionBehavior behavior, @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object identifier, @ByValue CGPoint p) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("collisionBehavior:beganContactForItem:withItem:atPoint:")
-    default void collisionBehaviorBeganContactForItemWithItemAtPoint(UICollisionBehavior behavior,
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @Mapped(ObjCObjectMapper.class) UIDynamicItem item2,
-            @ByValue CGPoint p) {
+    default void collisionBehaviorBeganContactForItemWithItemAtPoint(@NotNull UICollisionBehavior behavior,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item1,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item2, @ByValue CGPoint p) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("collisionBehavior:endedContactForItem:withBoundaryIdentifier:")
-    default void collisionBehaviorEndedContactForItemWithBoundaryIdentifier(UICollisionBehavior behavior,
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item, @Mapped(ObjCObjectMapper.class) Object identifier) {
+    default void collisionBehaviorEndedContactForItemWithBoundaryIdentifier(@NotNull UICollisionBehavior behavior,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object identifier) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("collisionBehavior:endedContactForItem:withItem:")
-    default void collisionBehaviorEndedContactForItemWithItem(UICollisionBehavior behavior,
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @Mapped(ObjCObjectMapper.class) UIDynamicItem item2) {
+    default void collisionBehaviorEndedContactForItemWithItem(@NotNull UICollisionBehavior behavior,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item1,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item2) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

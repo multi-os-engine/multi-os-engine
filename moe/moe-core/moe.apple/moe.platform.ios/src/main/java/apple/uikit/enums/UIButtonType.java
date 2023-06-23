@@ -27,6 +27,8 @@ public final class UIButtonType {
     @Generated @NInt public static final long Custom = 0x0000000000000000L;
     /**
      * standard system button
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long System = 0x0000000000000001L;
     @Generated @NInt public static final long DetailDisclosure = 0x0000000000000002L;
@@ -42,5 +44,8 @@ public final class UIButtonType {
     private UIButtonType() {
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long Close = 0x0000000000000007L;
 }

@@ -28,12 +28,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A controller object that is used to perform one or more requests on a video stream.
- * <p>
+ * 
  * VNVideoProcessor handles the video decoding and buffer management, feeding the buffers to the associated requests at
  * the best desired frame rate.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Vision")
@@ -55,12 +59,12 @@ public class VNVideoProcessor extends NSObject {
 
     /**
      * Add a VNRequest with the specified processing options to be performed on the video.
-     * <p>
+     * 
      * This method can be called either before calling -analyzeTimeRange:error: or from within one of the already
      * associated request's completion handlers.
-     * <p>
+     * 
      * [@note] The VNRequest must have completion handler set otherwise no results can be returned.
-     *
+     * 
      * @param request           The VNRequest to be added to the processing pipeline. If added from within a
      *                          completionHandler, it will be processed on the same frame that is currently being
      *                          processed.
@@ -72,14 +76,20 @@ public class VNVideoProcessor extends NSObject {
      */
     @Generated
     @Selector("addRequest:processingOptions:error:")
-    public native boolean addRequestProcessingOptionsError(VNRequest request,
-            VNVideoProcessorRequestProcessingOptions processingOptions,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean addRequestProcessingOptionsError(@NotNull VNRequest request,
+            @NotNull VNVideoProcessorRequestProcessingOptions processingOptions,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 14.0
+     */
+    @Deprecated
     @Generated
     @Selector("addRequest:withProcessingOptions:error:")
-    public native boolean addRequestWithProcessingOptionsError(VNRequest request,
-            NSDictionary<String, ?> processingOptions, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean addRequestWithProcessingOptionsError(@NotNull VNRequest request,
+            @NotNull NSDictionary<String, ?> processingOptions,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Owned
@@ -93,13 +103,13 @@ public class VNVideoProcessor extends NSObject {
 
     /**
      * Processes the video over the specified time range.
-     * <p>
+     * 
      * This call is synchronous and only returns after the video is processed through its duration or an error prevented
      * the processing.
-     * <p>
+     * 
      * [@note] The intersection of the CMTimeRangeMake(start, duration) and CMTimeRangeMake(kCMTimeZero, asset.duration)
      * will determine the timerange of the video to process
-     *
+     * 
      * @param timeRange Start and duration of the timerange within video to process. If the duration is longer than the
      *                  video (e.g., kCMTimeIndefinite) the processing stops at the end of the video.
      * @param error     Returns an error that happened during the starting of the processing queue (for instance if the
@@ -110,16 +120,21 @@ public class VNVideoProcessor extends NSObject {
     @Generated
     @Selector("analyzeTimeRange:error:")
     public native boolean analyzeTimeRangeError(@ByValue CMTimeRange timeRange,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 14.0
+     */
+    @Deprecated
     @Generated
     @Selector("analyzeWithTimeRange:error:")
     public native boolean analyzeWithTimeRangeError(@ByValue CMTimeRange timeRange,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Cancel the processing of the video. This can return before the last request has completed.
@@ -130,18 +145,21 @@ public class VNVideoProcessor extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -165,13 +183,13 @@ public class VNVideoProcessor extends NSObject {
 
     /**
      * Creates a VNVideoProcessor to be used for performing requests against a video asset specified by it's URL.
-     *
+     * 
      * @param videoURL A URL pointing at a video asset on which the requests will be performed. The video format has to
      *                 be supported by AVFoundation.
      */
     @Generated
     @Selector("initWithURL:")
-    public native VNVideoProcessor initWithURL(NSURL videoURL);
+    public native VNVideoProcessor initWithURL(@NotNull NSURL videoURL);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -190,9 +208,10 @@ public class VNVideoProcessor extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -201,10 +220,10 @@ public class VNVideoProcessor extends NSObject {
 
     /**
      * Remove a VNRequest from the video processor, which means it won't be performed anymore.
-     * <p>
+     * 
      * This method can be called either before calling -analyzeTimeRange:error: or from within one of the already
      * associated request's completion handlers.
-     *
+     * 
      * @param request The VNRequest to be removed from the processing pipeline.
      * @param error   Returns an error that happened during processing of the request, such as if the request was not
      *                found in the processing queue. This parameter is optional.
@@ -212,8 +231,8 @@ public class VNVideoProcessor extends NSObject {
      */
     @Generated
     @Selector("removeRequest:error:")
-    public native boolean removeRequestError(VNRequest request,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean removeRequestError(@NotNull VNRequest request,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("resolveClassMethod:")

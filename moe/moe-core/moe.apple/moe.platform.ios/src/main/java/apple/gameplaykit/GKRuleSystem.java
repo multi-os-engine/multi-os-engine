@@ -38,26 +38,30 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A rule system consists of 3 things:
  * - The current state, which upon creation is considered the inital state.
  * - The current set of rules.
  * - The current set of facts.
- * <p>
+ * 
  * Each time a fact is added to the system, the set of rules are evaluated in order and their actions executed in the
  * system if their predicates are true.
  * Rules can be fuzzy, allowing predicates and facts to be asserted to a degree of confidence instead of just boolean
  * on/off.
- * <p>
+ * 
  * The facts can be any kind of objects as long as they correctly determine equality using isEqual:
  * The simplest approach is to use strings or dictionaries as they provide the most flexibility in defining
  * facts, but user defined classes work just as well and may describe the problem space better.
- * <p>
+ * 
  * The fact set is at all times a fuzzy set, as defined by fact membership in the set being modulated by their
  * grade of membership. The rules may use the grade of membership to predicate their actions and in such a
  * manner create fuzzy logic. The fuzzy logic Zadeh operators are available on the system itself in order
  * to query multiple facts for combined membership grade.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -89,22 +93,25 @@ public class GKRuleSystem extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -139,9 +146,10 @@ public class GKRuleSystem extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -174,62 +182,64 @@ public class GKRuleSystem extends NSObject {
      */
     @Generated
     @Selector("addRule:")
-    public native void addRule(GKRule rule);
+    public native void addRule(@NotNull GKRule rule);
 
     /**
      * Adds rules to the system. Also adds them to the agenda in salience order.
      */
     @Generated
     @Selector("addRulesFromArray:")
-    public native void addRulesFromArray(NSArray<? extends GKRule> rules);
+    public native void addRulesFromArray(@NotNull NSArray<? extends GKRule> rules);
 
     /**
      * The current set of rules to be evaluated, in salience order, where if the salience is equivalent
      * the order of insertion into the agenda is used to decide which is first.
      * Adjust salience of your rules to adjust the order the next time the agenda is reset. Changing salience
      * on a rule currently in the agenda does not change its order in the agenda.
-     * <p>
+     * 
      * This is at all times the difference between the rules and executed sets.
-     *
+     * 
      * @see rules
      * @see executed
      * @see reset
      */
+    @NotNull
     @Generated
     @Selector("agenda")
     public native NSArray<? extends GKRule> agenda();
 
     /**
      * Asserts a fact with membership grade of 1.0.
-     * <p>
+     * 
      * This will cause the current rules to be evaluated, which may in turn assert or retract more facts
      * or change the state of the system.
-     * <p>
+     * 
      * This is shorthand for calling assertFact:grade: with a grade of 1.0
-     *
+     * 
      * @see assertFact:grade:
      * @see evaluate
      * @see NSObject.isEqual:
      */
     @Generated
     @Selector("assertFact:")
-    public native void assertFact(@Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact);
+    public native void assertFact(@NotNull @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact);
 
     /**
      * Asserts a fact with the supplied membership grade.
-     * <p>
+     * 
      * This will cause the current rules to be evaluated, which may in turn assert or retract more facts
      * or change the state of the system.
-     *
+     * 
      * @see evaluate
      */
     @Generated
     @Selector("assertFact:grade:")
-    public native void assertFactGrade(@Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact, float grade);
+    public native void assertFactGrade(@NotNull @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact,
+            float grade);
 
     /**
      * Explicitly evaluate the agenda of the rule system based on the current state and the current set of facts.
-     * <p>
+     * 
      * This may in turn assert or retract more facts or change the state of the system, including activating more
      * rules in the agenda.
      */
@@ -240,13 +250,14 @@ public class GKRuleSystem extends NSObject {
     /**
      * The current set of rules that have already executed. Rules in this set will not be executed again until
      * the system is reset.
-     * <p>
+     * 
      * This is at all times the difference between the rules and agenda sets.
-     *
+     * 
      * @see rules
      * @see agenda
      * @see reset
      */
+    @NotNull
     @Generated
     @Selector("executed")
     public native NSArray<? extends GKRule> executed();
@@ -254,9 +265,10 @@ public class GKRuleSystem extends NSObject {
     /**
      * The current set of facts. Facts have a grade of membership that is >= 0.0. Query the system for the
      * individual grades of membership with gradeForFact:
-     *
+     * 
      * @see gradeForFact:
      */
+    @NotNull
     @Generated
     @Selector("facts")
     public native NSArray<?> facts();
@@ -264,12 +276,12 @@ public class GKRuleSystem extends NSObject {
     /**
      * Returns the current membership grade for the given fact, which is 0.0 if the fact
      * is not a member of the current set of facts.
-     *
+     * 
      * @return The membership grade of the given fact, in the range [0.0, 1.0].
      */
     @Generated
     @Selector("gradeForFact:")
-    public native float gradeForFact(@Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact);
+    public native float gradeForFact(@NotNull @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact);
 
     /**
      * Initializes a clean rule system with no state, rules or facts.
@@ -280,25 +292,25 @@ public class GKRuleSystem extends NSObject {
 
     /**
      * Returns the maximum membership grade for the any one of the given facts.
-     * <p>
+     * 
      * This performs the logical OR operation between the given facts.
-     *
+     * 
      * @return The membership grade by applying the OR operator on the given facts, in the range [0.0, 1.0].
      */
     @Generated
     @Selector("maximumGradeForFacts:")
-    public native float maximumGradeForFacts(NSArray<?> facts);
+    public native float maximumGradeForFacts(@NotNull NSArray<?> facts);
 
     /**
      * Returns the combined membership grade for the all the given facts.
-     * <p>
+     * 
      * This performs the logical AND operation between the given facts.
-     *
+     * 
      * @return The membership grade by applying the AND operator on the given facts, in the range [0.0, 1.0].
      */
     @Generated
     @Selector("minimumGradeForFacts:")
-    public native float minimumGradeForFacts(NSArray<?> facts);
+    public native float minimumGradeForFacts(@NotNull NSArray<?> facts);
 
     /**
      * Removes all rules from the system. This also removes them from the agenda and executed sets.
@@ -310,7 +322,7 @@ public class GKRuleSystem extends NSObject {
     /**
      * Clears the agenda and executed sets and removes all facts currently in the system.
      * It then fills the agenda with rules from the rule set, in salience order.
-     *
+     * 
      * @see rules
      * @see facts
      */
@@ -320,41 +332,43 @@ public class GKRuleSystem extends NSObject {
 
     /**
      * Retracts a fact, setting its membership grade to 0, which also removes it from the fact set.
-     * <p>
+     * 
      * This will cause the current rules to be evaluated, which may in turn assert or retract more facts
      * or change the state of the system.
-     * <p>
+     * 
      * This is short hand for calling retractFact:grade: with a grade of 1.0
-     *
+     * 
      * @see retractFact:grade:
      * @see evaluate
      */
     @Generated
     @Selector("retractFact:")
-    public native void retractFact(@Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact);
+    public native void retractFact(@NotNull @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact);
 
     /**
      * Retracts a fact, reducing its membership grade by the supplied grade. If this brings the grade to 0
      * it is also removed from the fact set.
-     * <p>
+     * 
      * This will cause the current rules to be evaluated, which may in turn assert or retract more facts
      * or change the state of the system.
-     *
+     * 
      * @see evaluate
      */
     @Generated
     @Selector("retractFact:grade:")
-    public native void retractFactGrade(@Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact, float grade);
+    public native void retractFactGrade(@NotNull @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact,
+            float grade);
 
     /**
      * The current set of rules that will be used to set the agenda when rules are first added to the system.
      * They will also be used to refill the agenda whenever it is set.
-     * <p>
+     * 
      * This is at all times the union of the agenda and executed sets.
-     *
+     * 
      * @see agenda
      * @see executed
      */
+    @NotNull
     @Generated
     @Selector("rules")
     public native NSArray<? extends GKRule> rules();
@@ -362,9 +376,10 @@ public class GKRuleSystem extends NSObject {
     /**
      * The implementation-defined state. If any changes are made on this outside the system you must
      * call evaluate to have the system take account of the changes.
-     *
+     * 
      * @see evaluate
      */
+    @NotNull
     @Generated
     @Selector("state")
     public native NSMutableDictionary<?, ?> state();

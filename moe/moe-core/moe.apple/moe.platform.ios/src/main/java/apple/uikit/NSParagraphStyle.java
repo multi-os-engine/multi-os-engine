@@ -44,9 +44,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSParagraphStyle
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("UIKit")
@@ -78,22 +82,25 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,6 +113,7 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
      * This class property returns a shared and cached NSParagraphStyle instance with the default style settings, with
      * same value as the result of [[NSParagraphStyle alloc] init].
      */
+    @NotNull
     @Generated
     @Selector("defaultParagraphStyle")
     public static native NSParagraphStyle defaultParagraphStyle();
@@ -116,7 +124,7 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @Generated
     @Selector("defaultWritingDirectionForLanguage:")
     @NInt
-    public static native long defaultWritingDirectionForLanguage(String languageName);
+    public static native long defaultWritingDirectionForLanguage(@Nullable String languageName);
 
     @Generated
     @Selector("description")
@@ -144,9 +152,10 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -187,6 +196,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
      * Tightens inter-character spacing in attempt to fit lines wider than the available space if the line break mode is
      * one of the truncation modes before starting to truncate. NO by default. The maximum amount of tightening
      * performed is determined by the system based on contexts such as font, line width, etc.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("allowsDefaultTighteningForTruncation")
@@ -197,14 +208,17 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @NInt
     public native long baseWritingDirection();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * The default tab interval used for locations beyond the last element in tabStops
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("defaultTabInterval")
@@ -213,7 +227,7 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Distance from margin to edge appropriate for text direction
@@ -247,7 +261,7 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSParagraphStyle initWithCoder(NSCoder coder);
+    public native NSParagraphStyle initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("lineBreakMode")
@@ -289,11 +303,12 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @NFloat
     public native double minimumLineHeight();
 
+    @NotNull
     @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Distance between the bottom of this paragraph and top of next (or the beginning of its paragraphSpacingBefore, if
@@ -322,7 +337,10 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     /**
      * An array of NSTextTabs. Contents should be ordered by location. The default value is an array of 12 left-aligned
      * tabs at 28pt interval
+     * 
+     * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("tabStops")
     public native NSArray<? extends NSTextTab> tabStops();
@@ -338,6 +356,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     /**
      * Specifies the line break strategies that may be used for laying out the paragraph. The default value is
      * NSLineBreakStrategyNone.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("lineBreakStrategy")
@@ -348,8 +368,20 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
      * A property controlling the hyphenation behavior for the paragraph associated with the paragraph style. The exact
      * hyphenation logic is dynamically determined by the layout context such as language, platform, etc. When YES, it
      * affects the return value from -hyphenationFactor when the property is set to 0.0.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("usesDefaultHyphenation")
     public native boolean usesDefaultHyphenation();
+
+    /**
+     * Array to specify the text lists containing the paragraph, nested from outermost to innermost.
+     * 
+     * API-Since: 7.0
+     */
+    @NotNull
+    @Generated
+    @Selector("textLists")
+    public native NSArray<? extends NSTextList> textLists();
 }

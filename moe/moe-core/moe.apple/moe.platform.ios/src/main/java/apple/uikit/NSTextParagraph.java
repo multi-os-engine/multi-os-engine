@@ -22,9 +22,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSTextParagraph represents a single paragraph backed by NSAttributedString as the contents.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("UIKit")
@@ -54,28 +58,32 @@ public class NSTextParagraph extends NSTextElement {
     @Selector("allocWithZone:")
     public static native NSTextParagraph allocWithZone(VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("attributedString")
     public native NSAttributedString attributedString();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,11 +107,11 @@ public class NSTextParagraph extends NSTextElement {
 
     @Generated
     @Selector("initWithAttributedString:")
-    public native NSTextParagraph initWithAttributedString(NSAttributedString attributedString);
+    public native NSTextParagraph initWithAttributedString(@Nullable NSAttributedString attributedString);
 
     @Generated
     @Selector("initWithTextContentManager:")
-    public native NSTextParagraph initWithTextContentManager(NSTextContentManager textContentManager);
+    public native NSTextParagraph initWithTextContentManager(@Nullable NSTextContentManager textContentManager);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -122,9 +130,10 @@ public class NSTextParagraph extends NSTextElement {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -134,10 +143,12 @@ public class NSTextParagraph extends NSTextElement {
     /**
      * The paragraph ranges are derived from elementRange and attributedString.
      */
+    @Nullable
     @Generated
     @Selector("paragraphContentRange")
     public native NSTextRange paragraphContentRange();
 
+    @Nullable
     @Generated
     @Selector("paragraphSeparatorRange")
     public native NSTextRange paragraphSeparatorRange();

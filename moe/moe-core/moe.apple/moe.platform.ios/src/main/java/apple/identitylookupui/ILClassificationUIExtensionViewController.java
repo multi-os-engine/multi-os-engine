@@ -26,9 +26,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a view controller to subclass for displaying classification UI
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("IdentityLookupUI")
@@ -58,28 +62,32 @@ public class ILClassificationUIExtensionViewController extends UIViewController 
     @Selector("allocWithZone:")
     public static native ILClassificationUIExtensionViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -87,13 +95,14 @@ public class ILClassificationUIExtensionViewController extends UIViewController 
     /**
      * Override to provide a classification response for the classification request
      */
+    @NotNull
     @Generated
     @Selector("classificationResponseForRequest:")
-    public native ILClassificationResponse classificationResponseForRequest(ILClassificationRequest request);
+    public native ILClassificationResponse classificationResponseForRequest(@NotNull ILClassificationRequest request);
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -106,6 +115,7 @@ public class ILClassificationUIExtensionViewController extends UIViewController 
     /**
      * The extension context to use for completing the classification request
      */
+    @NotNull
     @Generated
     @Selector("extensionContext")
     public native ILClassificationUIExtensionContext extensionContext();
@@ -121,12 +131,12 @@ public class ILClassificationUIExtensionViewController extends UIViewController 
 
     @Generated
     @Selector("initWithCoder:")
-    public native ILClassificationUIExtensionViewController initWithCoder(NSCoder coder);
+    public native ILClassificationUIExtensionViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native ILClassificationUIExtensionViewController initWithNibNameBundle(String nibNameOrNil,
-            NSBundle nibBundleOrNil);
+    public native ILClassificationUIExtensionViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -145,9 +155,10 @@ public class ILClassificationUIExtensionViewController extends UIViewController 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,7 +170,7 @@ public class ILClassificationUIExtensionViewController extends UIViewController 
      */
     @Generated
     @Selector("prepareForClassificationRequest:")
-    public native void prepareForClassificationRequest(ILClassificationRequest request);
+    public native void prepareForClassificationRequest(@NotNull ILClassificationRequest request);
 
     @Generated
     @Selector("resolveClassMethod:")

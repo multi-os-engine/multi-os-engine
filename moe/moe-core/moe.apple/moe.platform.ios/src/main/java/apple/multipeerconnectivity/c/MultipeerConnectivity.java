@@ -45,6 +45,8 @@ public final class MultipeerConnectivity {
 
     /**
      * Minimum number of peers in a session.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -53,6 +55,8 @@ public final class MultipeerConnectivity {
 
     /**
      * Maximum number of peers in a session.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()

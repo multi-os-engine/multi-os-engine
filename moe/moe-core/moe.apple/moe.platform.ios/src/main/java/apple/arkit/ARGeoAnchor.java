@@ -26,12 +26,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An anchor representing a geographical location in the world.
- * <p>
+ * 
  * The anchor's transform will be automatically updated by the session based on location and heading.
  * The session needs to be configured with ARGeoTrackingConfiguration.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("ARKit")
@@ -63,7 +67,7 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
 
     /**
      * The distance to mean sea level, in meters (negative values indicate it's below sea level).
-     * <p>
+     * 
      * Only valid when altitudeSource is not ARAltitudeSourceUnknown.
      */
     @Generated
@@ -81,29 +85,32 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * The coordinate where this anchor will be placed.
-     * <p>
+     * 
      * The anchor's transform will be automatically updated by the session when ARGeoTrackingConfiguration is set.
      */
     @Generated
@@ -130,18 +137,18 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
 
     @Generated
     @Selector("initWithAnchor:")
-    public native ARGeoAnchor initWithAnchor(ARAnchor anchor);
+    public native ARGeoAnchor initWithAnchor(@NotNull ARAnchor anchor);
 
     @Generated
     @Selector("initWithCoder:")
-    public native ARGeoAnchor initWithCoder(NSCoder coder);
+    public native ARGeoAnchor initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initializes a new ARGeoAnchor with the given coordinates.
-     * <p>
+     * 
      * ARKit will query the ground level altitude during runtime, and populate the altitude as soon as that information
      * becomes available.
-     *
+     * 
      * @param coordinate Coordinates.
      */
     @Generated
@@ -150,7 +157,7 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
 
     /**
      * Initializes a new ARGeoAnchor with the given coordinates and altitude.
-     *
+     * 
      * @param coordinate Coordinates.
      * @param altitude   Altitude in meters.
      */
@@ -160,28 +167,28 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
 
     /**
      * Initializes a new named ARGeoAnchor with the given coordinates.
-     * <p>
+     * 
      * ARKit will query the ground level altitude during runtime, and populate the altitude as soon as that information
      * becomes available.
-     *
+     * 
      * @param name       Name of the anchor.
      * @param coordinate Coordinates.
      */
     @Generated
     @Selector("initWithName:coordinate:")
-    public native ARGeoAnchor initWithNameCoordinate(String name, @ByValue CLLocationCoordinate2D coordinate);
+    public native ARGeoAnchor initWithNameCoordinate(@NotNull String name, @ByValue CLLocationCoordinate2D coordinate);
 
     /**
      * Initializes a new named ARGeoAnchor with the given coordinates and altitude.
-     *
+     * 
      * @param name       Name of the anchor.
      * @param coordinate Coordinates.
      * @param altitude   Altitude in meters.
      */
     @Generated
     @Selector("initWithName:coordinate:altitude:")
-    public native ARGeoAnchor initWithNameCoordinateAltitude(String name, @ByValue CLLocationCoordinate2D coordinate,
-            double altitude);
+    public native ARGeoAnchor initWithNameCoordinateAltitude(@NotNull String name,
+            @ByValue CLLocationCoordinate2D coordinate, double altitude);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -204,9 +211,10 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
     @Selector("isTracked")
     public native boolean isTracked();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

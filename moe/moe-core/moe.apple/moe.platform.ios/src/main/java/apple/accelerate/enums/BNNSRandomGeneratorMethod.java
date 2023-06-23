@@ -8,5 +8,8 @@ public final class BNNSRandomGeneratorMethod {
     private BNNSRandomGeneratorMethod() {
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated public static final int BNNSRandomGeneratorMethodAES_CTR = 0x00000000;
 }

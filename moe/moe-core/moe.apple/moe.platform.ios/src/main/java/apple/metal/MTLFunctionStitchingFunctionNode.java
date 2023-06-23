@@ -23,12 +23,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] MTLFunctionStitchingFunctionNode
- * <p>
+ * 
  * A function node that calls the specified function with arguments and ordering determined by data and control
  * dependencies.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("Metal")
@@ -58,41 +62,47 @@ public class MTLFunctionStitchingFunctionNode extends NSObject implements MTLFun
     @Selector("allocWithZone:")
     public static native MTLFunctionStitchingFunctionNode allocWithZone(VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("arguments")
     public native NSArray<?> arguments();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("controlDependencies")
     public native NSArray<? extends MTLFunctionStitchingFunctionNode> controlDependencies();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -113,8 +123,9 @@ public class MTLFunctionStitchingFunctionNode extends NSObject implements MTLFun
 
     @Generated
     @Selector("initWithName:arguments:controlDependencies:")
-    public native MTLFunctionStitchingFunctionNode initWithNameArgumentsControlDependencies(String name,
-            NSArray<?> arguments, NSArray<? extends MTLFunctionStitchingFunctionNode> controlDependencies);
+    public native MTLFunctionStitchingFunctionNode initWithNameArgumentsControlDependencies(@NotNull String name,
+            @NotNull NSArray<?> arguments,
+            @NotNull NSArray<? extends MTLFunctionStitchingFunctionNode> controlDependencies);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -133,10 +144,12 @@ public class MTLFunctionStitchingFunctionNode extends NSObject implements MTLFun
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -156,15 +169,15 @@ public class MTLFunctionStitchingFunctionNode extends NSObject implements MTLFun
 
     @Generated
     @Selector("setArguments:")
-    public native void setArguments(NSArray<?> value);
+    public native void setArguments(@NotNull NSArray<?> value);
 
     @Generated
     @Selector("setControlDependencies:")
-    public native void setControlDependencies(NSArray<? extends MTLFunctionStitchingFunctionNode> value);
+    public native void setControlDependencies(@NotNull NSArray<? extends MTLFunctionStitchingFunctionNode> value);
 
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@NotNull String value);
 
     @Generated
     @Selector("setVersion:")

@@ -24,7 +24,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -55,22 +60,25 @@ public class INSendRideFeedbackIntent extends INIntent {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -94,11 +102,11 @@ public class INSendRideFeedbackIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSendRideFeedbackIntent initWithCoder(NSCoder coder);
+    public native INSendRideFeedbackIntent initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithRideIdentifier:")
-    public native INSendRideFeedbackIntent initWithRideIdentifier(String rideIdentifier);
+    public native INSendRideFeedbackIntent initWithRideIdentifier(@NotNull String rideIdentifier);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -117,9 +125,10 @@ public class INSendRideFeedbackIntent extends INIntent {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -129,6 +138,7 @@ public class INSendRideFeedbackIntent extends INIntent {
     /**
      * Will be between 0 and 10 inclusive.
      */
+    @Nullable
     @Generated
     @Selector("rating")
     public native NSNumber rating();
@@ -144,6 +154,7 @@ public class INSendRideFeedbackIntent extends INIntent {
     /**
      * Specifies the identifier of the ride to send feedback for.
      */
+    @NotNull
     @Generated
     @Selector("rideIdentifier")
     public native String rideIdentifier();
@@ -153,11 +164,11 @@ public class INSendRideFeedbackIntent extends INIntent {
      */
     @Generated
     @Selector("setRating:")
-    public native void setRating(NSNumber value);
+    public native void setRating(@Nullable NSNumber value);
 
     @Generated
     @Selector("setTip:")
-    public native void setTip(INCurrencyAmount value);
+    public native void setTip(@Nullable INCurrencyAmount value);
 
     @Generated
     @Selector("setVersion:")
@@ -177,6 +188,7 @@ public class INSendRideFeedbackIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    @Nullable
     @Generated
     @Selector("tip")
     public native INCurrencyAmount tip();

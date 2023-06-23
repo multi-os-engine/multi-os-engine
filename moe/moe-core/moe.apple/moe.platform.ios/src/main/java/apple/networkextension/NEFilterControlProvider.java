@@ -39,12 +39,16 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEFilterControlProvider
- * <p>
+ * 
  * The NEFilterControlProvider class declares the programmatic interface for an object that is responsible for
  * installing filtering rules on the device.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -76,22 +80,25 @@ public class NEFilterControlProvider extends NEFilterProvider {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +133,10 @@ public class NEFilterControlProvider extends NEFilterProvider {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,51 +166,58 @@ public class NEFilterControlProvider extends NEFilterProvider {
 
     /**
      * [@property] URLAppendStringMap
-     * <p>
+     * 
      * A dictionary containing strings to be appended to URLs.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("URLAppendStringMap")
     public native NSDictionary<String, String> URLAppendStringMap();
 
     /**
      * handleNewFlow:completionHandler:
-     * <p>
+     * 
      * This function is called by the framework when the NEFilterDataProvider indicates that the filtering verdict for
      * the given flow is NEFilterNewFlowVerdictNeedRules. Subclass implementations must override this method and
      * implement whatever steps are necessary to fetch new rules pertaining to the given flow and place them on disk in
      * a location accessible by the NEFilterDataProvider.
-     *
+     * 
      * @param flow              An NEFilterFlow object containing details about the flow that requires a rules update.
      * @param completionHandler A block that must be called when the NEFilterControlProvider is ready for the
      *                          NEFilterDataProvider to re-process the new flow. NEFilterControlVerdict stores the
      *                          verdict through which the control provider determines if a flow needs to be dropped or
      *                          allowed. The verdict also indicates if the control plugin wants the data plugin to
      *                          update its rules and handle the verdict.
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("handleNewFlow:completionHandler:")
-    public native void handleNewFlowCompletionHandler(NEFilterFlow flow,
-            @ObjCBlock(name = "call_handleNewFlowCompletionHandler") Block_handleNewFlowCompletionHandler completionHandler);
+    public native void handleNewFlowCompletionHandler(@NotNull NEFilterFlow flow,
+            @NotNull @ObjCBlock(name = "call_handleNewFlowCompletionHandler") Block_handleNewFlowCompletionHandler completionHandler);
 
     /**
      * handleRemediationForFlow:completionHandler:
-     * <p>
+     * 
      * This function is called by the framework when the NEFilterDataProvider indicates that the filtering verdict for
      * the given flow is NEFilterRemediateVerdictNeedRules. Subclass implementations must override this method and
      * implement whatever steps are necessary to remediate the given flow.
-     *
+     * 
      * @param flow              An NEFilterFlow object containing details about the flow that requires remediation.
      * @param completionHandler A block that must be called when the NEFilterControlProvider is ready for the
      *                          NEFilterDataProvider to re-process the new flow. NEFilterControlVerdict stores the
      *                          verdict through which the control provider determines if a flow needs to be dropped or
      *                          allowed. The verdict also indicates if the control plugin wants the data plugin to
      *                          update its rules and handle the verdict.
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("handleRemediationForFlow:completionHandler:")
-    public native void handleRemediationForFlowCompletionHandler(NEFilterFlow flow,
-            @ObjCBlock(name = "call_handleRemediationForFlowCompletionHandler") Block_handleRemediationForFlowCompletionHandler completionHandler);
+    public native void handleRemediationForFlowCompletionHandler(@NotNull NEFilterFlow flow,
+            @NotNull @ObjCBlock(name = "call_handleRemediationForFlowCompletionHandler") Block_handleRemediationForFlowCompletionHandler completionHandler);
 
     @Generated
     @Selector("init")
@@ -210,9 +225,11 @@ public class NEFilterControlProvider extends NEFilterProvider {
 
     /**
      * notifyRulesChanged
-     * <p>
+     * 
      * This function is called by filter control implementations to notify the data provider "out of band" that the
      * rules changed.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("notifyRulesChanged")
@@ -226,11 +243,10 @@ public class NEFilterControlProvider extends NEFilterProvider {
      * the sub-dictionaries are defined by the control provider. When the data provider creates a "remediate" verdict
      * using [NEFilterDataVerdict remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:], it passes the
      * key corresponding to the custom string to be inserted into the "content blocked" page.
-     * <p>
+     * 
      * Here is a sample remediationMap dictionary:
-     * <p>
+     * 
      * remediationMap = @{ NEFilterProviderRemediationMapRemediationURLs :
-     *
      * @{
      * @"RemediateKey1" : @"http://www.remediation_url_1.com",
      * @"RemediateKey2" : @"http://www.remediation_url_2.com"
@@ -240,7 +256,11 @@ public class NEFilterControlProvider extends NEFilterProvider {
      * @"RemediationButtonText1" : @"Remediate URL"
      * }
      * };
+     * 
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("remediationMap")
     public native NSDictionary<String, ? extends NSDictionary<String, ? extends NSObject>> remediationMap();
@@ -253,11 +273,10 @@ public class NEFilterControlProvider extends NEFilterProvider {
      * the sub-dictionaries are defined by the control provider. When the data provider creates a "remediate" verdict
      * using [NEFilterDataVerdict remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:], it passes the
      * key corresponding to the custom string to be inserted into the "content blocked" page.
-     * <p>
+     * 
      * Here is a sample remediationMap dictionary:
-     * <p>
+     * 
      * remediationMap = @{ NEFilterProviderRemediationMapRemediationURLs :
-     *
      * @{
      * @"RemediateKey1" : @"http://www.remediation_url_1.com",
      * @"RemediateKey2" : @"http://www.remediation_url_2.com"
@@ -267,32 +286,37 @@ public class NEFilterControlProvider extends NEFilterProvider {
      * @"RemediationButtonText1" : @"Remediate URL"
      * }
      * };
+     * 
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setRemediationMap:")
     public native void setRemediationMap(
-            NSDictionary<String, ? extends NSDictionary<String, ? extends NSObject>> value);
+            @Nullable NSDictionary<String, ? extends NSDictionary<String, ? extends NSObject>> value);
 
     /**
      * [@property] URLAppendStringMap
-     * <p>
+     * 
      * A dictionary containing strings to be appended to URLs.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setURLAppendStringMap:")
-    public native void setURLAppendStringMap(NSDictionary<String, String> value);
+    public native void setURLAppendStringMap(@Nullable NSDictionary<String, String> value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleNewFlowCompletionHandler {
         @Generated
-        void call_handleNewFlowCompletionHandler(NEFilterControlVerdict arg0);
+        void call_handleNewFlowCompletionHandler(@NotNull NEFilterControlVerdict arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleRemediationForFlowCompletionHandler {
         @Generated
-        void call_handleRemediationForFlowCompletionHandler(NEFilterControlVerdict arg0);
+        void call_handleRemediationForFlowCompletionHandler(@NotNull NEFilterControlVerdict arg0);
     }
 }

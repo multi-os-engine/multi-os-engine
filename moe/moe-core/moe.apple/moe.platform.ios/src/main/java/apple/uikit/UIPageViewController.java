@@ -44,7 +44,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -73,35 +78,39 @@ public class UIPageViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native UIPageViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -133,9 +142,10 @@ public class UIPageViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,11 +176,13 @@ public class UIPageViewController extends UIViewController {
     /**
      * If nil, user gesture-driven navigation will be disabled.
      */
+    @Nullable
     @Generated
     @Selector("dataSource")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIPageViewControllerDataSource dataSource();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -182,6 +194,7 @@ public class UIPageViewController extends UIViewController {
      * view controller will respond to user gestures.
      * Only populated if transition style is 'UIPageViewControllerTransitionStylePageCurl'.
      */
+    @NotNull
     @Generated
     @Selector("gestureRecognizers")
     public native NSArray<? extends UIGestureRecognizer> gestureRecognizers();
@@ -192,16 +205,17 @@ public class UIPageViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIPageViewController initWithCoder(NSCoder coder);
+    public native UIPageViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native UIPageViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native UIPageViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     @Generated
     @Selector("initWithTransitionStyle:navigationOrientation:options:")
     public native UIPageViewController initWithTransitionStyleNavigationOrientationOptions(@NInt long style,
-            @NInt long navigationOrientation, NSDictionary<String, ?> options);
+            @NInt long navigationOrientation, @Nullable NSDictionary<String, ?> options);
 
     /**
      * Default is 'NO'.
@@ -227,13 +241,14 @@ public class UIPageViewController extends UIViewController {
      */
     @Generated
     @Selector("setDataSource:")
-    public native void setDataSource_unsafe(@Mapped(ObjCObjectMapper.class) UIPageViewControllerDataSource value);
+    public native void setDataSource_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) UIPageViewControllerDataSource value);
 
     /**
      * If nil, user gesture-driven navigation will be disabled.
      */
     @Generated
-    public void setDataSource(@Mapped(ObjCObjectMapper.class) UIPageViewControllerDataSource value) {
+    public void setDataSource(@Nullable @Mapped(ObjCObjectMapper.class) UIPageViewControllerDataSource value) {
         Object __old = dataSource();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -246,10 +261,10 @@ public class UIPageViewController extends UIViewController {
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIPageViewControllerDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UIPageViewControllerDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIPageViewControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIPageViewControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -270,8 +285,8 @@ public class UIPageViewController extends UIViewController {
     @Generated
     @Selector("setViewControllers:direction:animated:completion:")
     public native void setViewControllersDirectionAnimatedCompletion(
-            NSArray<? extends UIViewController> viewControllers, @NInt long direction, boolean animated,
-            @ObjCBlock(name = "call_setViewControllersDirectionAnimatedCompletion") Block_setViewControllersDirectionAnimatedCompletion completion);
+            @Nullable NSArray<? extends UIViewController> viewControllers, @NInt long direction, boolean animated,
+            @Nullable @ObjCBlock(name = "call_setViewControllersDirectionAnimatedCompletion") Block_setViewControllersDirectionAnimatedCompletion completion);
 
     /**
      * If transition style is 'UIPageViewControllerTransitionStylePageCurl', default is
@@ -287,6 +302,7 @@ public class UIPageViewController extends UIViewController {
     @NInt
     public native long transitionStyle();
 
+    @Nullable
     @Generated
     @Selector("viewControllers")
     public native NSArray<? extends UIViewController> viewControllers();

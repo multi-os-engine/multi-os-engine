@@ -22,11 +22,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * ===========================================================================================================================
- * <p>
+ * 
  * Summary of exposure info for a single day.
+ * 
+ * API-Since: 12.5
  */
 @Generated
 @Library("ExposureNotification")
@@ -58,26 +62,30 @@ public class ENExposureDaySummary extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @Nullable
     @Generated
     @Selector("confirmedClinicalDiagnosisSummary")
     public native ENExposureSummaryItem confirmedClinicalDiagnosisSummary();
@@ -85,6 +93,7 @@ public class ENExposureDaySummary extends NSObject {
     /**
      * Summary of all exposures on this day of a specific diagnosis report type.
      */
+    @Nullable
     @Generated
     @Selector("confirmedTestSummary")
     public native ENExposureSummaryItem confirmedTestSummary();
@@ -92,6 +101,7 @@ public class ENExposureDaySummary extends NSObject {
     /**
      * Day the exposure occurred.
      */
+    @NotNull
     @Generated
     @Selector("date")
     public native NSDate date();
@@ -99,6 +109,7 @@ public class ENExposureDaySummary extends NSObject {
     /**
      * Summary of all exposures on this day.
      */
+    @NotNull
     @Generated
     @Selector("daySummary")
     public native ENExposureSummaryItem daySummary();
@@ -137,15 +148,17 @@ public class ENExposureDaySummary extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native ENExposureDaySummary new_objc();
 
+    @Nullable
     @Generated
     @Selector("recursiveSummary")
     public native ENExposureSummaryItem recursiveSummary();
@@ -158,6 +171,7 @@ public class ENExposureDaySummary extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Nullable
     @Generated
     @Selector("selfReportedSummary")
     public native ENExposureSummaryItem selfReportedSummary();

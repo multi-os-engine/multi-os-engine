@@ -19,19 +19,28 @@ package apple.photos.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class PHImageRequestOptionsDeliveryMode {
     /**
      * client may get several image results when the call is asynchronous or will get one result when the call is
      * synchronous
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Opportunistic = 0x0000000000000000L;
     /**
      * client will get one result only and it will be as asked or better than asked
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long HighQualityFormat = 0x0000000000000001L;
     /**
      * client will get one result only and it may be degraded
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long FastFormat = 0x0000000000000002L;
 

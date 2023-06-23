@@ -25,12 +25,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A @c SHSession matches instances of @c SHSignature against a @c SHCatalog
- * <p>
+ * 
  * A @c SHSession can be used in two distinct ways to match against a @c SHCatalog
- * <p>
+ * 
  * 1. Pass a @c SHSignature to the -[SHSession matchSignature:] method and respond to matches sent to the delegate
  * There is a 1 to 1 relationship between calls to this method and calls to the delegate
  * 2. Pass a continuous stream of @c AVAudioPCMBuffer to the -[SHSession matchStreamingBuffer:atTime:] method, matches
@@ -40,6 +42,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * is performed is an implementation detail and is subject to change. As such there will be many callbacks to the
  * delegate per stream of audio, and the same match
  * may be reported multiple times in succession.
+ * 
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("ShazamKit")
@@ -71,29 +76,33 @@ public class SHSession extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * The @c SHCatalog used to initialize this session and which all matches will be made against
      */
+    @NotNull
     @Generated
     @Selector("catalog")
     public native SHCatalog catalog();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -105,6 +114,7 @@ public class SHSession extends NSObject {
     /**
      * A delegate for communicating the results of matching
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -128,12 +138,12 @@ public class SHSession extends NSObject {
 
     /**
      * Create A new @c SHSession based upon the supplied @c SHCatalog
-     *
+     * 
      * @param catalog The store of signatures to match against
      */
     @Generated
     @Selector("initWithCatalog:")
-    public native SHSession initWithCatalog(SHCatalog catalog);
+    public native SHSession initWithCatalog(@NotNull SHCatalog catalog);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -152,41 +162,42 @@ public class SHSession extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Match the @c SHSignature against the provided @c SHCatalog
-     *
+     * 
      * @param signature a @c SHSignature to be matched
      */
     @Generated
     @Selector("matchSignature:")
-    public native void matchSignature(SHSignature signature);
+    public native void matchSignature(@NotNull SHSignature signature);
 
     /**
      * Flow audio buffers for matching into the session
-     * <p>
-     * Audio will be converted into signatures and matched against the store. Results are communicated through the
-     * delegate.
+     * 
+     * Audio will be converted into signatures and matched against the @c SHCatalog. Results are communicated through
+     * the delegate.
      * The initial buffer specifies the @c AVAudioFormat and all subsequent buffers must contain the same format
      * otherwise an error will be communicated through
      * the delegate.
-     * <p>
+     * 
      * It is advisable but not required to pass an @c AVAudioTime along with the audio buffer. The audio provided must
      * be contiguous, gaps in the audio will have adverse
      * effects on the ability to match the audio. The time variable is validated by the session to ensure that the audio
      * is contiguous and mitigate the effect of discontiguous audio.
      * [@note] This method will throw an exception if the audio format is not PCM in one of the following sample rates:
      * 48000, 44100, 32000, 16000.
-     *
+     * 
      * @param buffer A buffer of audio to be used for recognition
      * @param time   Where in the stream the audio occurs
      */
     @Generated
     @Selector("matchStreamingBuffer:atTime:")
-    public native void matchStreamingBufferAtTime(AVAudioPCMBuffer buffer, AVAudioTime time);
+    public native void matchStreamingBufferAtTime(@NotNull AVAudioPCMBuffer buffer, @Nullable AVAudioTime time);
 
     @Generated
     @Owned
@@ -206,13 +217,13 @@ public class SHSession extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SHSessionDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) SHSessionDelegate value);
 
     /**
      * A delegate for communicating the results of matching
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) SHSessionDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SHSessionDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

@@ -39,19 +39,23 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCaptureManualExposureBracketedStillImageSettings
- * <p>
+ * 
  * AVCaptureManualExposureBracketedStillImageSettings is a concrete subclass of AVCaptureBracketedStillImageSettings to
  * be used when bracketing exposure duration and ISO.
- * <p>
+ * 
  * An AVCaptureManualExposureBracketedStillImageSettings instance defines the exposure duration and ISO settings that
  * should be applied to one image in a bracket. An array of settings objects is passed to -[AVCaptureStillImageOutput
  * captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:]. Min and max duration and
  * ISO values are queryable properties of the AVCaptureDevice supplying data to an AVCaptureStillImageOutput instance.
  * If you wish to leave exposureDuration unchanged for this bracketed still image, you may pass the special value
  * AVCaptureExposureDurationCurrent. To keep ISO unchanged, you may pass AVCaptureISOCurrent (see AVCaptureDevice.h).
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFoundation")
@@ -83,22 +87,25 @@ public class AVCaptureManualExposureBracketedStillImageSettings extends AVCaptur
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,20 +140,25 @@ public class AVCaptureManualExposureBracketedStillImageSettings extends AVCaptur
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * manualExposureSettingsWithExposureDuration:ISO:
-     * <p>
+     * 
      * Creates an AVCaptureManualExposureBracketedStillImageSettings using the specified exposure duration and ISO.
-     *
-     * @param duration The exposure duration in seconds. Pass AVCaptureExposureDurationCurrent to leave the duration
+     * 
+     * @param duration
+     *                 The exposure duration in seconds. Pass AVCaptureExposureDurationCurrent to leave the duration
      *                 unchanged for this bracketed image.
-     * @param ISO      The ISO. Pass AVCaptureISOCurrent to leave the ISO unchanged for this bracketed image.
-     * @return An initialized AVCaptureManualExposureBracketedStillImageSettings instance.
+     * @param ISO
+     *                 The ISO. Pass AVCaptureISOCurrent to leave the ISO unchanged for this bracketed image.
+     * @return
+     *         An initialized AVCaptureManualExposureBracketedStillImageSettings instance.
      */
+    @NotNull
     @Generated
     @Selector("manualExposureSettingsWithExposureDuration:ISO:")
     public static native AVCaptureManualExposureBracketedStillImageSettings manualExposureSettingsWithExposureDurationISO(
@@ -180,7 +192,7 @@ public class AVCaptureManualExposureBracketedStillImageSettings extends AVCaptur
 
     /**
      * [@property] ISO
-     * <p>
+     * 
      * The ISO for the still image.
      */
     @Generated
@@ -189,7 +201,7 @@ public class AVCaptureManualExposureBracketedStillImageSettings extends AVCaptur
 
     /**
      * [@property] exposureDuration
-     * <p>
+     * 
      * The exposure duration for the still image.
      */
     @Generated

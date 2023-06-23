@@ -27,10 +27,13 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * This defines the protocol for a delegate to receive updates about
  * different aspects of an accessory
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HomeKit")
@@ -39,118 +42,130 @@ import org.moe.natj.objc.ann.Selector;
 public interface HMAccessoryDelegate {
     /**
      * Informs the delegate when the associated service type of a service is modified.
-     *
+     * 
      * @param accessory Sender of the message.
+     * 
      * @param service   Service whose associated service type was modified.
      */
     @Generated
     @IsOptional
     @Selector("accessory:didUpdateAssociatedServiceTypeForService:")
-    default void accessoryDidUpdateAssociatedServiceTypeForService(HMAccessory accessory, HMService service) {
+    default void accessoryDidUpdateAssociatedServiceTypeForService(@NotNull HMAccessory accessory,
+            @NotNull HMService service) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Informs the delegate when the name of a service is modfied.
-     *
+     * 
      * @param accessory Sender of the message.
+     * 
      * @param service   Service whose name was modified.
      */
     @Generated
     @IsOptional
     @Selector("accessory:didUpdateNameForService:")
-    default void accessoryDidUpdateNameForService(HMAccessory accessory, HMService service) {
+    default void accessoryDidUpdateNameForService(@NotNull HMAccessory accessory, @NotNull HMService service) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Informs the delegate of a change in value of a characteristic.
-     *
+     * 
      * @param accessory      Sender of this message
+     * 
      * @param service        HMService that contains the characteristic whose value was modified.
+     * 
      * @param characteristic The characteristic whose value was changed.
      */
     @Generated
     @IsOptional
     @Selector("accessory:service:didUpdateValueForCharacteristic:")
-    default void accessoryServiceDidUpdateValueForCharacteristic(HMAccessory accessory, HMService service,
-            HMCharacteristic characteristic) {
+    default void accessoryServiceDidUpdateValueForCharacteristic(@NotNull HMAccessory accessory,
+            @NotNull HMService service, @NotNull HMCharacteristic characteristic) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Informs the delegate when the name of the accessory is modified.
-     *
+     * 
      * @param accessory Sender of the message.
      */
     @Generated
     @IsOptional
     @Selector("accessoryDidUpdateName:")
-    default void accessoryDidUpdateName(HMAccessory accessory) {
+    default void accessoryDidUpdateName(@NotNull HMAccessory accessory) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Informs the delegate when the reachability of the accessory changes.
-     *
+     * 
      * @param accessory Sender of the message.
      */
     @Generated
     @IsOptional
     @Selector("accessoryDidUpdateReachability:")
-    default void accessoryDidUpdateReachability(HMAccessory accessory) {
+    default void accessoryDidUpdateReachability(@NotNull HMAccessory accessory) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Informs the delegate when the services on the accessory have been dynamically updated.
      * The services discovered are accessible via the 'services' property of the accessory.
-     *
+     * 
      * @param accessory Sender of the message.
      */
     @Generated
     @IsOptional
     @Selector("accessoryDidUpdateServices:")
-    default void accessoryDidUpdateServices(HMAccessory accessory) {
+    default void accessoryDidUpdateServices(@NotNull HMAccessory accessory) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Informs the delegate when a profile is added to an accessory.
-     *
+     * 
      * @param accessory Sender of the message.
      * @param profile   The added profile.
+     * 
+     *                  API-Since: 11.0
      */
     @Generated
     @IsOptional
     @Selector("accessory:didAddProfile:")
-    default void accessoryDidAddProfile(HMAccessory accessory, HMAccessoryProfile profile) {
+    default void accessoryDidAddProfile(@NotNull HMAccessory accessory, @NotNull HMAccessoryProfile profile) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Informs the delegate when a profile is removed from an accessory.
-     *
+     * 
      * @param accessory Sender of the message.
      * @param profile   The removed profile.
+     * 
+     *                  API-Since: 11.0
      */
     @Generated
     @IsOptional
     @Selector("accessory:didRemoveProfile:")
-    default void accessoryDidRemoveProfile(HMAccessory accessory, HMAccessoryProfile profile) {
+    default void accessoryDidRemoveProfile(@NotNull HMAccessory accessory, @NotNull HMAccessoryProfile profile) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Informs the delegate when firmwareVersion has been changed for an accessory.
-     *
+     * 
      * @param accessory       Sender of the message.
+     * 
      * @param firmwareVersion The newly updated firmwareVersion.
+     * 
+     *                        API-Since: 11.0
      */
     @Generated
     @IsOptional
     @Selector("accessory:didUpdateFirmwareVersion:")
-    default void accessoryDidUpdateFirmwareVersion(HMAccessory accessory, String firmwareVersion) {
+    default void accessoryDidUpdateFirmwareVersion(@NotNull HMAccessory accessory, @NotNull String firmwareVersion) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

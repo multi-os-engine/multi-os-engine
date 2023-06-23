@@ -41,9 +41,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Transition animation subclass. *
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("QuartzCore")
@@ -79,22 +83,25 @@ public class CATransition extends CAAnimation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -103,10 +110,11 @@ public class CATransition extends CAAnimation {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("defaultValueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultValueForKey(String key);
+    public static native Object defaultValueForKey(@NotNull String key);
 
     @Generated
     @Selector("description")
@@ -134,9 +142,10 @@ public class CATransition extends CAAnimation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -174,7 +183,7 @@ public class CATransition extends CAAnimation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CATransition initWithCoder(NSCoder coder);
+    public native CATransition initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("setEndProgress:")
@@ -198,7 +207,7 @@ public class CATransition extends CAAnimation {
      */
     @Generated
     @Selector("setSubtype:")
-    public native void setSubtype(String value);
+    public native void setSubtype(@Nullable String value);
 
     /**
      * The name of the transition. Current legal transition types include
@@ -206,7 +215,7 @@ public class CATransition extends CAAnimation {
      */
     @Generated
     @Selector("setType:")
-    public native void setType(String value);
+    public native void setType(@NotNull String value);
 
     /**
      * The amount of progress through to the transition at which to begin
@@ -224,6 +233,7 @@ public class CATransition extends CAAnimation {
      * the legal values are `fromLeft', `fromRight', `fromTop' and
      * `fromBottom'.
      */
+    @Nullable
     @Generated
     @Selector("subtype")
     public native String subtype();
@@ -232,13 +242,15 @@ public class CATransition extends CAAnimation {
      * The name of the transition. Current legal transition types include
      * `fade', `moveIn', `push' and `reveal'. Defaults to `fade'.
      */
+    @NotNull
     @Generated
     @Selector("type")
     public native String type();
 
+    @NotNull
     @Generated
     @Selector("animationWithSCNAnimation:")
-    public static native CAAnimation animationWithSCNAnimation(SCNAnimation animation);
+    public static native CAAnimation animationWithSCNAnimation(@NotNull SCNAnimation animation);
 
     @Generated
     @Selector("supportsSecureCoding")

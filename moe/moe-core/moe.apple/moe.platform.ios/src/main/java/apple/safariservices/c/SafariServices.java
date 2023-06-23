@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("SafariServices")
@@ -37,11 +38,20 @@ public final class SafariServices {
     private SafariServices() {
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SFErrorDomain();
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 10.0
+     */
+    @NotNull
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -49,17 +59,30 @@ public final class SafariServices {
 
     /**
      * domain for NSError
+     * 
+     * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SSReadingListErrorDomain();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 12.0
+     */
+    @NotNull
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SFAuthenticationErrorDomain();
 
+    /**
+     * API-Since: 15.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

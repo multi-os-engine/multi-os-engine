@@ -27,6 +27,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure(alignment = 4)
@@ -49,8 +51,8 @@ public final class CMBlockBufferCustomBlockSource extends StructObject {
 
     @Generated
     public CMBlockBufferCustomBlockSource(int version,
-            @FunctionPtr(name = "call_AllocateBlock") Function_AllocateBlock AllocateBlock,
-            @FunctionPtr(name = "call_FreeBlock") Function_FreeBlock FreeBlock, VoidPtr refCon) {
+            @FunctionPtr(name = "call_AllocateBlock") @Nullable Function_AllocateBlock AllocateBlock,
+            @FunctionPtr(name = "call_FreeBlock") @Nullable Function_FreeBlock FreeBlock, @Nullable VoidPtr refCon) {
         super(CMBlockBufferCustomBlockSource.class);
         setVersion(version);
         setAllocateBlock(AllocateBlock);
@@ -66,6 +68,7 @@ public final class CMBlockBufferCustomBlockSource extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setVersion(int value);
 
+    @Nullable
     @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_AllocateBlock")
@@ -73,8 +76,10 @@ public final class CMBlockBufferCustomBlockSource extends StructObject {
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setAllocateBlock(@FunctionPtr(name = "call_AllocateBlock") Function_AllocateBlock value);
+    public native void setAllocateBlock(
+            @Nullable @FunctionPtr(name = "call_AllocateBlock") Function_AllocateBlock value);
 
+    @Nullable
     @Generated
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_FreeBlock")
@@ -82,27 +87,29 @@ public final class CMBlockBufferCustomBlockSource extends StructObject {
 
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void setFreeBlock(@FunctionPtr(name = "call_FreeBlock") Function_FreeBlock value);
+    public native void setFreeBlock(@Nullable @FunctionPtr(name = "call_FreeBlock") Function_FreeBlock value);
 
+    @Nullable
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native VoidPtr refCon();
 
     @Generated
     @StructureField(order = 3, isGetter = false)
-    public native void setRefCon(VoidPtr value);
+    public native void setRefCon(@Nullable VoidPtr value);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AllocateBlock {
+        @Nullable
         @Generated
-        VoidPtr call_AllocateBlock(VoidPtr arg0, @NUInt long arg1);
+        VoidPtr call_AllocateBlock(@Nullable VoidPtr arg0, @NUInt long arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_FreeBlock {
         @Generated
-        void call_FreeBlock(VoidPtr arg0, VoidPtr arg1, @NUInt long arg2);
+        void call_FreeBlock(@Nullable VoidPtr arg0, @NotNull VoidPtr arg1, @NUInt long arg2);
     }
 }

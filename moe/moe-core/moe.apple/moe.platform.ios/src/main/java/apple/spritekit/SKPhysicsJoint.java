@@ -17,7 +17,6 @@ limitations under the License.
 package apple.spritekit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGVector;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -43,6 +42,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGVector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("SpriteKit")
@@ -74,22 +76,25 @@ public class SKPhysicsJoint extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +129,10 @@ public class SKPhysicsJoint extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,17 +160,19 @@ public class SKPhysicsJoint extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("bodyA")
     public native SKPhysicsBody bodyA();
 
+    @NotNull
     @Generated
     @Selector("bodyB")
     public native SKPhysicsBody bodyB();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -172,7 +180,7 @@ public class SKPhysicsJoint extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKPhysicsJoint initWithCoder(NSCoder coder);
+    public native SKPhysicsJoint initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Instantaneous directed reaction force, in Newtons at anchor point
@@ -192,11 +200,11 @@ public class SKPhysicsJoint extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("setBodyA:")
-    public native void setBodyA(SKPhysicsBody value);
+    public native void setBodyA(@NotNull SKPhysicsBody value);
 
     @Generated
     @Selector("setBodyB:")
-    public native void setBodyB(SKPhysicsBody value);
+    public native void setBodyB(@NotNull SKPhysicsBody value);
 
     @Generated
     @Selector("supportsSecureCoding")

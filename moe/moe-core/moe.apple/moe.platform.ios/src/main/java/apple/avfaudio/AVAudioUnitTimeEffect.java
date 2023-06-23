@@ -24,15 +24,20 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioUnitTimeEffect
- * <p>
+ * 
  * an AVAudioUnit that processes audio in non real-time
- * <p>
+ * 
  * An AVAudioUnitTimeEffect represents an audio unit of type aufc.
  * These effects do not process audio in real-time. The varispeed
  * unit is an example of a time effect unit.
+ * 
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -64,11 +69,11 @@ public class AVAudioUnitTimeEffect extends AVAudioUnit {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] bypass
-     * <p>
+     * 
      * bypass state of the audio unit
      */
     @Generated
@@ -77,18 +82,21 @@ public class AVAudioUnitTimeEffect extends AVAudioUnit {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -112,12 +120,13 @@ public class AVAudioUnitTimeEffect extends AVAudioUnit {
 
     /**
      * initWithAudioComponentDescription:
-     * <p>
+     * 
      * create an AVAudioUnitTimeEffect object
-     * <p>
+     * 
      * The componentType must be kAudioUnitType_FormatConverter
-     *
-     * @param audioComponentDescription AudioComponentDescription of the audio unit to be initialized
+     * 
+     * @param audioComponentDescription
+     *                                  AudioComponentDescription of the audio unit to be initialized
      */
     @Generated
     @Selector("initWithAudioComponentDescription:")
@@ -141,15 +150,16 @@ public class AVAudioUnitTimeEffect extends AVAudioUnit {
     @Selector("instantiateWithComponentDescription:options:completionHandler:")
     public static native void instantiateWithComponentDescriptionOptionsCompletionHandler(
             @ByValue AudioComponentDescription audioComponentDescription, int options,
-            @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") AVAudioUnit.Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") AVAudioUnit.Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,7 +176,7 @@ public class AVAudioUnitTimeEffect extends AVAudioUnit {
 
     /**
      * [@property] bypass
-     * <p>
+     * 
      * bypass state of the audio unit
      */
     @Generated

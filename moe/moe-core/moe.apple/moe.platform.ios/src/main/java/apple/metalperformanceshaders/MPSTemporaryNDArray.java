@@ -25,17 +25,21 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSTemporaryNDArray
- * <p>
+ * 
  * A MPSNDArray that uses command buffer specific memory to store the array data
- * <p>
+ * 
  * Temporary memory is command buffer specific memory, and is useful for MPSNDArray allocations
  * with limited lifetime within a single command buffer. Typically, most MPSNDArrays that
  * are not read or written to by the CPU or needed in other command buffers should be
  * MPSTemporaryNDArray. This will greatly reduce time spent allocating new memory, reduce memory usage
  * and help improve memory locality.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -67,22 +71,25 @@ public class MPSTemporaryNDArray extends MPSNDArray {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -94,6 +101,7 @@ public class MPSTemporaryNDArray extends MPSNDArray {
     /**
      * Get a well known <MPSNDArrayAllocator> that makes temporary MTLBuffers
      */
+    @NotNull
     @Generated
     @Selector("defaultAllocator")
     @MappedReturn(ObjCObjectMapper.class)
@@ -114,12 +122,12 @@ public class MPSTemporaryNDArray extends MPSNDArray {
 
     @Generated
     @Selector("initWithDevice:descriptor:")
-    public native MPSTemporaryNDArray initWithDeviceDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MPSNDArrayDescriptor descriptor);
+    public native MPSTemporaryNDArray initWithDeviceDescriptor(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSNDArrayDescriptor descriptor);
 
     @Generated
     @Selector("initWithDevice:scalar:")
-    public native MPSTemporaryNDArray initWithDeviceScalar(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+    public native MPSTemporaryNDArray initWithDeviceScalar(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
             double value);
 
     @Generated
@@ -139,9 +147,10 @@ public class MPSTemporaryNDArray extends MPSNDArray {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -151,7 +160,7 @@ public class MPSTemporaryNDArray extends MPSNDArray {
     /**
      * The number of times a temporary MPSNDArray may be read by a MPSNDArray... kernel
      * before its contents become undefined.
-     * <p>
+     * 
      * MPSTemporaryNDArrays must release their underlying buffers for reuse
      * immediately after last use. So as to facilitate *prompt* convenient
      * memory recycling, each time a MPSTemporaryNDArray is read by a
@@ -160,17 +169,17 @@ public class MPSTemporaryNDArray extends MPSNDArray {
      * automatically made available for reuse to MPS for its own needs and for
      * other MPSTemporaryNDArrays prior to return from the -encode.. function.
      * The contents of the buffer become undefined at this time.
-     * <p>
+     * 
      * By default, the readCount is initialized to 1, indicating a MPSNDArray that
      * may be overwritten any number of times, but read only once.
-     * <p>
+     * 
      * You may change the readCount as desired to allow MPSNDArrayKernels to read
      * the MPSTemporaryNDArray additional times. However, it is an error to change
      * the readCount once it is zero. It is an error to read or write to a
      * MPSTemporaryNDArray with a zero readCount. You may set the readCount to 0
      * yourself to cause the underlying buffer to be returned to MPS. Writing
      * to a MPSTemporaryNDArray does not adjust the readCount.
-     * <p>
+     * 
      * The Metal API Validation layer will assert if a MPSTemporaryNDArray is
      * deallocated with non-zero readCount to help identify cases when resources
      * are not returned promptly.
@@ -191,7 +200,7 @@ public class MPSTemporaryNDArray extends MPSNDArray {
     /**
      * The number of times a temporary MPSNDArray may be read by a MPSNDArray... kernel
      * before its contents become undefined.
-     * <p>
+     * 
      * MPSTemporaryNDArrays must release their underlying buffers for reuse
      * immediately after last use. So as to facilitate *prompt* convenient
      * memory recycling, each time a MPSTemporaryNDArray is read by a
@@ -200,17 +209,17 @@ public class MPSTemporaryNDArray extends MPSNDArray {
      * automatically made available for reuse to MPS for its own needs and for
      * other MPSTemporaryNDArrays prior to return from the -encode.. function.
      * The contents of the buffer become undefined at this time.
-     * <p>
+     * 
      * By default, the readCount is initialized to 1, indicating a MPSNDArray that
      * may be overwritten any number of times, but read only once.
-     * <p>
+     * 
      * You may change the readCount as desired to allow MPSNDArrayKernels to read
      * the MPSTemporaryNDArray additional times. However, it is an error to change
      * the readCount once it is zero. It is an error to read or write to a
      * MPSTemporaryNDArray with a zero readCount. You may set the readCount to 0
      * yourself to cause the underlying buffer to be returned to MPS. Writing
      * to a MPSTemporaryNDArray does not adjust the readCount.
-     * <p>
+     * 
      * The Metal API Validation layer will assert if a MPSTemporaryNDArray is
      * deallocated with non-zero readCount to help identify cases when resources
      * are not returned promptly.
@@ -229,7 +238,7 @@ public class MPSTemporaryNDArray extends MPSNDArray {
 
     /**
      * Initialize a MPSTemporaryNDArray for use on a MTLCommandBuffer
-     *
+     * 
      * @param commandBuffer The MTLCommandBuffer on which the MPSTemporaryNDArray will be exclusively used
      * @param descriptor    A valid MPSNDArrayDescriptor describing the MPSNDArray format to create
      * @return A valid MPSTemporaryNDArray. The object is not managed by a NSAutoreleasePool. The object will be
@@ -240,7 +249,8 @@ public class MPSTemporaryNDArray extends MPSNDArray {
     @Generated
     @Selector("temporaryNDArrayWithCommandBuffer:descriptor:")
     public static native MPSTemporaryNDArray temporaryNDArrayWithCommandBufferDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSNDArrayDescriptor descriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSNDArrayDescriptor descriptor);
 
     @Generated
     @Selector("version")

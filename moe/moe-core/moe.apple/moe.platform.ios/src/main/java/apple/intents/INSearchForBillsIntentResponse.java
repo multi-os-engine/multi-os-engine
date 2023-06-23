@@ -24,7 +24,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.3
+ * Deprecated-Since: 15.0
+ * Deprecated-Message: INSearchForBillsIntentResponse is deprecated. There is no replacement.
+ */
+@Deprecated
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -55,26 +63,30 @@ public class INSearchForBillsIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("bills")
     public native NSArray<? extends INBillDetails> bills();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -112,11 +124,12 @@ public class INSearchForBillsIntentResponse extends INIntentResponse {
      */
     @Generated
     @Selector("initWithCode:userActivity:")
-    public native INSearchForBillsIntentResponse initWithCodeUserActivity(@NInt long code, NSUserActivity userActivity);
+    public native INSearchForBillsIntentResponse initWithCodeUserActivity(@NInt long code,
+            @Nullable NSUserActivity userActivity);
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSearchForBillsIntentResponse initWithCoder(NSCoder coder);
+    public native INSearchForBillsIntentResponse initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -135,9 +148,10 @@ public class INSearchForBillsIntentResponse extends INIntentResponse {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,7 +168,7 @@ public class INSearchForBillsIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("setBills:")
-    public native void setBills(NSArray<? extends INBillDetails> value);
+    public native void setBills(@Nullable NSArray<? extends INBillDetails> value);
 
     @Generated
     @Selector("setVersion:")

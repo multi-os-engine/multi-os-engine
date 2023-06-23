@@ -21,11 +21,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCSoftmaxLayer
- * <p>
+ * 
  * A softmax layer
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -57,22 +61,25 @@ public class MLCSoftmaxLayer extends MLCLayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -87,7 +94,7 @@ public class MLCSoftmaxLayer extends MLCLayer {
 
     /**
      * [@property] dimension
-     * <p>
+     * 
      * The dimension over which softmax operation should be performed
      */
     @Generated
@@ -121,13 +128,14 @@ public class MLCSoftmaxLayer extends MLCLayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Create a softmax layer
-     *
+     * 
      * @param operation The softmax operation
      * @return A new softmax layer
      */
@@ -137,7 +145,7 @@ public class MLCSoftmaxLayer extends MLCLayer {
 
     /**
      * Create a softmax layer
-     *
+     * 
      * @param operation The softmax operation
      * @param dimension The dimension over which softmax operation should be performed
      * @return A new softmax layer
@@ -153,7 +161,7 @@ public class MLCSoftmaxLayer extends MLCLayer {
 
     /**
      * [@property] operation
-     * <p>
+     * 
      * The softmax operation. Supported values are softmax and log softmax.
      */
     @Generated
@@ -178,7 +186,7 @@ public class MLCSoftmaxLayer extends MLCLayer {
 
     @Generated
     @Selector("supportsDataType:onDevice:")
-    public static native boolean supportsDataTypeOnDevice(int dataType, MLCDevice device);
+    public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
 
     @Generated
     @Selector("version")

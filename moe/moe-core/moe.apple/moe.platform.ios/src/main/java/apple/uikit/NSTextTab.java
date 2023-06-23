@@ -47,7 +47,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -78,22 +83,25 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,10 +110,13 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
      * Returns the column terminators for locale. Passing nil returns an instance corresponding to +[NSLocale
      * systemLocale]. For matching user's formatting preferences, pass +[NSLocale currentLocale]. Can be used as the
      * value for NSTabColumnTerminatorsAttributeName to make a decimal tab stop.
+     * 
+     * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("columnTerminatorsForLocale:")
-    public static native NSCharacterSet columnTerminatorsForLocale(NSLocale aLocale);
+    public static native NSCharacterSet columnTerminatorsForLocale(@Nullable NSLocale aLocale);
 
     @Generated
     @Selector("debugDescription")
@@ -137,9 +148,10 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -180,15 +192,16 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
     @NInt
     public native long alignment();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -196,7 +209,7 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSTextTab initWithCoder(NSCoder coder);
+    public native NSTextTab initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initializes a text tab with the text alignment, location, and options. The text alignment is used to determine
@@ -205,7 +218,7 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
     @Generated
     @Selector("initWithTextAlignment:location:options:")
     public native NSTextTab initWithTextAlignmentLocationOptions(@NInt long alignment, @NFloat double loc,
-            NSDictionary<String, ?> options);
+            @NotNull NSDictionary<String, ?> options);
 
     /**
      * Location of the tab stop inside the line fragment rect coordinate system
@@ -218,6 +231,7 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
     /**
      * Optional configuration attributes
      */
+    @NotNull
     @Generated
     @Selector("options")
     public native NSDictionary<String, ?> options();

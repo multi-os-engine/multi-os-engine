@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * CLActivityType
- * <p>
+ * 
  * Discussion:
  * Expected user activity for the lifetime of the corresponding CLLocationManager instance.
  * Used to optimize the positioning experience delivered to this CLLocationManager instance
@@ -55,6 +55,8 @@ public final class CLActivityType {
      * and off-road vehicles; also for positioning indoors and
      * outdoors that isn’t tied to a dedicated fitness session,
      * e.g. walking
+     * 
+     * API-Since: 12.0
      */
     @Generated @NInt public static final long Airborne = 0x0000000000000005L;
 }

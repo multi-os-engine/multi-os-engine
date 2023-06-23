@@ -26,22 +26,26 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSMatrixDecompositionLU
- * <p>
+ * 
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * A kernel for computing the LU factorization of a matrix using
  * partial pivoting with row interchanges.
- * <p>
+ * 
  * A MPSMatrixDecompositionLU object computes an LU factorization:
- * <p>
+ * 
  * P * A = L * U
- * <p>
+ * 
  * A is a matrix for which the LU factorization is to be computed.
  * L is a unit lower triangular matrix and U is an upper triangular
  * matrix. P is a permutation matrix.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -73,22 +77,25 @@ public class MPSMatrixDecompositionLU extends MPSMatrixUnaryKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -103,45 +110,50 @@ public class MPSMatrixDecompositionLU extends MPSMatrixUnaryKernel {
 
     /**
      * Encode a MPSMatrixDecompositionLU kernel into a command Buffer.
-     * <p>
+     * 
      * This function encodes the MPSMatrixDecompositionLU object to a valid
      * command buffer.
-     * <p>
+     * 
      * Upon completion the array pivotIndices contains, for each index i,
      * the row interchanged with row i.
-     * <p>
+     * 
      * If during the computation U[k, k], for some k, is determined to be
      * exactly zero MPSMatrixDecompositionStatusSingular will be returned in the
      * provided status buffer. The data referenced by the MTLBuffer is not valid
      * until the command buffer has completed execution. If the matrix
      * return status is not desired NULL may be provided.
-     * <p>
+     * 
      * Upon successful factorization, resultMatrix contains the resulting
      * lower triangular factor (without the unit diagonal elements) in its
      * strictly lower triangular region and the upper triangular factor in
      * its upper triangular region.
-     * <p>
+     * 
      * This kernel functions either in-place, if the result matrix
      * completely aliases the source matrix, or out-of-place. If there
      * is any partial overlap between input and output data the results
      * are undefined.
-     *
+     * 
      * @param commandBuffer A valid MTLCommandBuffer to receive the encoded filter
+     * 
      * @param sourceMatrix  A valid MPSMatrix containing the source data. Must have
      *                      enough space to hold a rows x columns matrix.
+     * 
      * @param resultMatrix  A valid MPSMatrix to contain the result. Must have enough
      *                      space to hold a rows x columns matrix.
+     * 
      * @param pivotIndices  A valid MPSMatrix to contain the pivot indices. Must have enough space
      *                      to hold an array of size 1xmin(rows, columns) values.
      *                      Element type must be MPSDataTypeUInt32.
+     * 
      * @param status        A MTLBuffer which indicates the resulting MPSMatrixDecompositionStatus
      *                      value.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceMatrix:resultMatrix:pivotIndices:status:")
     public native void encodeToCommandBufferSourceMatrixResultMatrixPivotIndicesStatus(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSMatrix sourceMatrix,
-            MPSMatrix resultMatrix, MPSMatrix pivotIndices, @Mapped(ObjCObjectMapper.class) MTLBuffer status);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSMatrix sourceMatrix,
+            @NotNull MPSMatrix resultMatrix, @NotNull MPSMatrix pivotIndices,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer status);
 
     @Generated
     @Selector("hash")
@@ -154,29 +166,32 @@ public class MPSMatrixDecompositionLU extends MPSMatrixUnaryKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSMatrixDecompositionLU initWithCoder(NSCoder aDecoder);
+    public native MPSMatrixDecompositionLU initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSMatrixDecompositionLU initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixDecompositionLU initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSMatrixDecompositionLU initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixDecompositionLU initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize an MPSMatrixDecompositionLU object on a device
-     *
+     * 
      * @param device  The device on which the kernel will execute.
+     * 
      * @param rows    The number of rows in the source matrix.
+     * 
      * @param columns The number of columns in the source matrix.
+     * 
      * @return A valid MPSMatrixDecompositionLU object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:rows:columns:")
-    public native MPSMatrixDecompositionLU initWithDeviceRowsColumns(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @NUInt long rows, @NUInt long columns);
+    public native MPSMatrixDecompositionLU initWithDeviceRowsColumns(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long rows, @NUInt long columns);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -195,9 +210,10 @@ public class MPSMatrixDecompositionLU extends MPSMatrixUnaryKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

@@ -25,7 +25,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -56,36 +61,41 @@ public class UIViewConfigurationState extends NSObject implements UIConfiguratio
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    @Nullable
     @Generated
     @Selector("customStateForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object customStateForKey(String key);
+    public native Object customStateForKey(@NotNull String key);
 
     @Generated
     @Selector("debugDescription")
@@ -97,7 +107,7 @@ public class UIViewConfigurationState extends NSObject implements UIConfiguratio
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -110,11 +120,11 @@ public class UIViewConfigurationState extends NSObject implements UIConfiguratio
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIViewConfigurationState initWithCoder(NSCoder coder);
+    public native UIViewConfigurationState initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithTraitCollection:")
-    public native UIViewConfigurationState initWithTraitCollection(UITraitCollection traitCollection);
+    public native UIViewConfigurationState initWithTraitCollection(@NotNull UITraitCollection traitCollection);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -149,19 +159,21 @@ public class UIViewConfigurationState extends NSObject implements UIConfiguratio
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native UIViewConfigurationState new_objc();
 
+    @Nullable
     @Generated
     @Selector("objectForKeyedSubscript:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object objectForKeyedSubscript(String key);
+    public native Object objectForKeyedSubscript(@NotNull String key);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -173,7 +185,8 @@ public class UIViewConfigurationState extends NSObject implements UIConfiguratio
 
     @Generated
     @Selector("setCustomState:forKey:")
-    public native void setCustomStateForKey(@Mapped(ObjCObjectMapper.class) Object customState, String key);
+    public native void setCustomStateForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object customState,
+            @NotNull String key);
 
     @Generated
     @Selector("setDisabled:")
@@ -189,7 +202,8 @@ public class UIViewConfigurationState extends NSObject implements UIConfiguratio
 
     @Generated
     @Selector("setObject:forKeyedSubscript:")
-    public native void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object obj, String key);
+    public native void setObjectForKeyedSubscript(@Nullable @Mapped(ObjCObjectMapper.class) Object obj,
+            @NotNull String key);
 
     @Generated
     @Selector("setSelected:")
@@ -197,7 +211,7 @@ public class UIViewConfigurationState extends NSObject implements UIConfiguratio
 
     @Generated
     @Selector("setTraitCollection:")
-    public native void setTraitCollection(UITraitCollection value);
+    public native void setTraitCollection(@NotNull UITraitCollection value);
 
     @Generated
     @Selector("setVersion:")
@@ -217,6 +231,7 @@ public class UIViewConfigurationState extends NSObject implements UIConfiguratio
         return supportsSecureCoding();
     }
 
+    @NotNull
     @Generated
     @Selector("traitCollection")
     public native UITraitCollection traitCollection();
@@ -226,10 +241,16 @@ public class UIViewConfigurationState extends NSObject implements UIConfiguratio
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("isPinned")
     public native boolean isPinned();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setPinned:")
     public native void setPinned(boolean value);

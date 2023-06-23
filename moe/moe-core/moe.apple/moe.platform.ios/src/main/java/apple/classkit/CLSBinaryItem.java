@@ -23,9 +23,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CLSBinaryItem represents user generated information that is true or false, pass or fail, yes or no.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("ClassKit")
@@ -57,22 +61,25 @@ public class CLSBinaryItem extends CLSActivityItem {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,18 +103,19 @@ public class CLSBinaryItem extends CLSActivityItem {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CLSBinaryItem initWithCoder(NSCoder coder);
+    public native CLSBinaryItem initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Create an item that represents a binary value
-     *
+     * 
      * @param title      Title of the CLSBinaryItem.
      * @param identifier An identifier that is unique within its owning activity.
      * @param valueType  The type of binary value. Ex. pass or fail.
      */
     @Generated
     @Selector("initWithIdentifier:title:type:")
-    public native CLSBinaryItem initWithIdentifierTitleType(String identifier, String title, @NInt long valueType);
+    public native CLSBinaryItem initWithIdentifierTitleType(@NotNull String identifier, @NotNull String title,
+            @NInt long valueType);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -126,9 +134,10 @@ public class CLSBinaryItem extends CLSActivityItem {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -177,7 +186,7 @@ public class CLSBinaryItem extends CLSActivityItem {
 
     /**
      * Value type of this CLSBinaryItem.
-     * <p>
+     * 
      * The type that best describes this CLSBinaryItem value.
      */
     @Generated

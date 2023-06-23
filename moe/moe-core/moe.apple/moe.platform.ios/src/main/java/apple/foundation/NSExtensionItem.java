@@ -38,10 +38,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A NSExtensionItem is an immutable collection of values representing different aspects of an item for the extension to
  * act upon.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Foundation")
@@ -73,22 +77,25 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +130,10 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,6 +169,7 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
      * (optional) Contains images, videos, URLs, etc. This is not meant to be an array of alternate data formats/types,
      * but instead a collection to include in a social media post for example.
      */
+    @Nullable
     @Generated
     @Selector("attachments")
     public native NSArray<? extends NSItemProvider> attachments();
@@ -168,6 +177,7 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
     /**
      * (optional) content text
      */
+    @Nullable
     @Generated
     @Selector("attributedContentText")
     public native NSAttributedString attributedContentText();
@@ -175,19 +185,21 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
     /**
      * (optional) title for the item
      */
+    @Nullable
     @Generated
     @Selector("attributedTitle")
     public native NSAttributedString attributedTitle();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -195,7 +207,7 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSExtensionItem initWithCoder(NSCoder coder);
+    public native NSExtensionItem initWithCoder(@NotNull NSCoder coder);
 
     /**
      * (optional) Contains images, videos, URLs, etc. This is not meant to be an array of alternate data formats/types,
@@ -203,21 +215,21 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
      */
     @Generated
     @Selector("setAttachments:")
-    public native void setAttachments(NSArray<? extends NSItemProvider> value);
+    public native void setAttachments(@Nullable NSArray<? extends NSItemProvider> value);
 
     /**
      * (optional) content text
      */
     @Generated
     @Selector("setAttributedContentText:")
-    public native void setAttributedContentText(NSAttributedString value);
+    public native void setAttributedContentText(@Nullable NSAttributedString value);
 
     /**
      * (optional) title for the item
      */
     @Generated
     @Selector("setAttributedTitle:")
-    public native void setAttributedTitle(NSAttributedString value);
+    public native void setAttributedTitle(@Nullable NSAttributedString value);
 
     /**
      * (optional) dictionary of key-value data. The key/value pairs accepted by the service are expected to be specified
@@ -225,7 +237,7 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
      */
     @Generated
     @Selector("setUserInfo:")
-    public native void setUserInfo(NSDictionary<?, ?> value);
+    public native void setUserInfo(@Nullable NSDictionary<?, ?> value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -237,6 +249,7 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
      * (optional) dictionary of key-value data. The key/value pairs accepted by the service are expected to be specified
      * in the extension's Info.plist. The values of NSExtensionItem's properties will be reflected into the dictionary.
      */
+    @Nullable
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();

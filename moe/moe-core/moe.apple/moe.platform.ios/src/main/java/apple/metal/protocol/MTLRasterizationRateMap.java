@@ -14,12 +14,14 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLRasterizationRateMap
- * <p>
+ * 
  * Compiled read-only object that determines how variable rasterization rate is applied when rendering.
- * <p>
+ * 
  * A variable rasterization rate map is compiled by MTLDevice from a MTLRasterizationRateMapDescriptor containing one or
  * more MTLRasterizationRateLayerDescriptor.
  * During compilation, the quality samples provided in the MTLRasterizationRateLayerDescriptor may be rounded up to the
@@ -33,6 +35,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * content, and less bandwidth is consumed to store the shaded values.
  * Use a rasterization rate map to reduce rendering quality in less-important or less-sampled regions of the
  * framebuffer, such as the periphery of a VR/AR display or a far-away cascade of a shadow map.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Metal")
@@ -41,9 +45,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLRasterizationRateMap {
     /**
      * copyParameterDataToBuffer:offset:
-     * <p>
+     * 
      * Copy the parameter data into the provided buffer at the provided offset.
-     * <p>
+     * 
      * The buffer must have storageMode MTLStorageModeShared, and a size of at least parameterBufferSizeAndAlign.size +
      * offset.
      * The specified offset must be a multiple of parameterBufferSize.align.
@@ -51,13 +55,14 @@ public interface MTLRasterizationRateMap {
      */
     @Generated
     @Selector("copyParameterDataToBuffer:offset:")
-    void copyParameterDataToBufferOffset(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset);
+    void copyParameterDataToBufferOffset(@NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset);
 
     /**
      * [@property] device
-     *
+     * 
      * @return The device on which the rasterization rate map was created
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -65,19 +70,20 @@ public interface MTLRasterizationRateMap {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();
 
     /**
      * [@property] layerCount
-     * <p>
+     * 
      * Different render-target layers may target different variable rasterization configurations.
      * The rasterization rate layer for a primitive is selected on the [[render_target_layer_index]].
-     *
+     * 
      * @return The number of different configured layers in the rasterization map.
      */
     @Generated
@@ -87,7 +93,7 @@ public interface MTLRasterizationRateMap {
 
     /**
      * mapPhysicalToScreenCoordinates:forLayer:
-     * <p>
+     * 
      * Computes where an offset relative to the top-left of the framebuffer, in physical pixels, would end up in screen
      * space, in screen space pixels.
      * The returned value is greater-or-equal the input value because the rasterization quality never exceeds 1:1 in any
@@ -101,7 +107,7 @@ public interface MTLRasterizationRateMap {
 
     /**
      * mapScreenToPhysicalCoordinates:forLayer:
-     * <p>
+     * 
      * Computes where an offset relative to the top-left of screen space, in screen space pixels, would end up in the
      * framebuffer, in physical fragments.
      * The returned value is less-or-equal the input value because the rasterization quality never exceeds 1:1 in any
@@ -115,9 +121,9 @@ public interface MTLRasterizationRateMap {
 
     /**
      * [@property] parameterBufferSizeAndAlign
-     * <p>
+     * 
      * Returns the size and alignment requirements of the parameter buffer for this rate map.
-     * <p>
+     * 
      * The parameter data can be copied into a buffer with this size and alignment using
      * copyParameterDataToBuffer:offset:
      */
@@ -128,11 +134,11 @@ public interface MTLRasterizationRateMap {
 
     /**
      * [@property] physicalGranularity
-     * <p>
+     * 
      * Rendering algorithms that use binning or tiling in screen space may want to determine the screen space bin size
      * using this value.
      * The depth component of the returned MTLSize is always 0.
-     *
+     * 
      * @return The granularity, in physical pixels, at which variable rasterization rate varies.
      */
     @Generated
@@ -142,9 +148,9 @@ public interface MTLRasterizationRateMap {
 
     /**
      * getPhysicalSizeForLayer:
-     * <p>
+     * 
      * The dimensions, in physical fragments, of the area in the render target where variable rasterization is applied
-     * <p>
+     * 
      * Different configured layers may have a different rasterization rate and may have different size after rendering.
      * The rasterization rate layer for a primitive is selected on the [[render_target_layer_index]].
      */
@@ -155,10 +161,10 @@ public interface MTLRasterizationRateMap {
 
     /**
      * [@property] screenSize
-     * <p>
+     * 
      * The region always has its origin at [0, 0].
      * The depth component of the returned MTLSize is always 0.
-     *
+     * 
      * @return The dimensions, in screen space pixels, of the region where variable rasterization is applied.
      */
     @Generated

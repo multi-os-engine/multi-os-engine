@@ -20,23 +20,29 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] vImageARGBType
- * <p>
+ * 
  * An encoding of an image format type to be used with RGB <-> Y'CbCr conversions in vImage/Conversions.h
- * <p>
+ * 
  * These formats enumerate different vImage ARGB pixel formats.
  */
 @Generated
 public final class vImageARGBType {
     /**
      * Any 8-bit four channel interleaved buffer [0,255]=[0,1.0]. Does not specify channel order.
+     * 
+     * API-Since: 8.0
      */
     @Generated public static final int kvImageARGB8888 = 0x00000000;
     /**
      * Any 16-bit unsigned four channel interleaved buffer [0,65535]=[0,1.0]. Does not specify channel order.
+     * 
+     * API-Since: 8.0
      */
     @Generated public static final int kvImageARGB16U = 0x00000001;
     /**
      * Any 16-bit signed fixedpoint four channel interleaved buffer [0,4096]=[0,1.0]. Does not specify channel order.
+     * 
+     * API-Since: 8.0
      */
     @Generated public static final int kvImageARGB16Q12 = 0x00000002;
 

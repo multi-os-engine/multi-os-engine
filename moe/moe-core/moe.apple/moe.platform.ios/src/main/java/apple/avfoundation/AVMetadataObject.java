@@ -17,7 +17,6 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.coremedia.struct.CMTime;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
@@ -40,16 +39,21 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVMetadataObject
- * <p>
+ * 
  * AVMetadataObject is an abstract class that defines an interface for a metadata object used by AVFoundation.
- * <p>
+ * 
  * AVMetadataObject provides an abstract interface for metadata associated with a piece of media. One example is face
  * metadata that might be detected in a picture. All metadata objects have a time, duration, bounds, and type.
- * <p>
+ * 
  * The concrete AVMetadataFaceObject is used by AVCaptureMetadataOutput for face detection.
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("AVFoundation")
@@ -81,22 +85,25 @@ public class AVMetadataObject extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +138,10 @@ public class AVMetadataObject extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,9 +171,9 @@ public class AVMetadataObject extends NSObject {
 
     /**
      * [@property] bounds
-     * <p>
+     * 
      * The bounding rectangle of the receiver.
-     * <p>
+     * 
      * The value of this property is a CGRect representing the bounding rectangle of the object with respect to the
      * picture in which it resides. The rectangle's origin is top left. If the metadata originates from video, bounds
      * may be expressed as scalar values from 0. - 1. If the original video has been scaled down, the bounds of the
@@ -178,9 +186,9 @@ public class AVMetadataObject extends NSObject {
 
     /**
      * [@property] duration
-     * <p>
+     * 
      * The media duration associated with this metadata object.
-     * <p>
+     * 
      * The value of this property is a CMTime representing the duration of the metadata object. If this metadata object
      * originates from a CMSampleBuffer, its duration matches the sample buffer's duration. This property may return
      * kCMTimeInvalid.
@@ -196,9 +204,9 @@ public class AVMetadataObject extends NSObject {
 
     /**
      * [@property] time
-     * <p>
+     * 
      * The media time associated with this metadata object.
-     * <p>
+     * 
      * The value of this property is a CMTime associated with the metadata object. For capture, it is the time at which
      * this object was captured. If this metadata object originates from a CMSampleBuffer, its time matches the sample
      * buffer's presentation time. This property may return kCMTimeInvalid.
@@ -210,12 +218,13 @@ public class AVMetadataObject extends NSObject {
 
     /**
      * [@property] type
-     * <p>
+     * 
      * An identifier for the metadata object.
-     * <p>
+     * 
      * The value of this property is an AVMetadataObjectType representing the type of the metadata object. Clients
      * inspecting a collection of metadata objects can use this property to filter objects with a matching type.
      */
+    @NotNull
     @Generated
     @Selector("type")
     public native String type();

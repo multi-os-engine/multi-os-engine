@@ -40,7 +40,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -62,10 +67,12 @@ public class NSLayoutConstraint extends NSObject {
     /**
      * Convenience method that activates each constraint in the contained array, in the same manner as setting
      * active=YES. This is often more efficient than activating each constraint individually.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("activateConstraints:")
-    public static native void activateConstraints(NSArray<? extends NSLayoutConstraint> constraints);
+    public static native void activateConstraints(@NotNull NSArray<? extends NSLayoutConstraint> constraints);
 
     @Generated
     @Owned
@@ -79,22 +86,25 @@ public class NSLayoutConstraint extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -104,30 +114,38 @@ public class NSLayoutConstraint extends NSObject {
      * If your equation does not have a second view and attribute, use nil and NSLayoutAttributeNotAnAttribute.
      * Use of this method is not recommended. Constraints should be created using anchor objects on views and layout
      * guides.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("constraintWithItem:attribute:relatedBy:toItem:attribute:multiplier:constant:")
     public static native NSLayoutConstraint constraintWithItemAttributeRelatedByToItemAttributeMultiplierConstant(
-            @Mapped(ObjCObjectMapper.class) Object view1, @NInt long attr1, @NInt long relation,
-            @Mapped(ObjCObjectMapper.class) Object view2, @NInt long attr2, @NFloat double multiplier,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object view1, @NInt long attr1, @NInt long relation,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object view2, @NInt long attr2, @NFloat double multiplier,
             @NFloat double c);
 
     /**
      * Create an array of constraints using an ASCII-art-like visual format string. The values of the `metrics`
      * dictionary should be NSNumber (or some other type that responds to -doubleValue and returns a double).
+     * 
+     * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("constraintsWithVisualFormat:options:metrics:views:")
     public static native NSArray<? extends NSLayoutConstraint> constraintsWithVisualFormatOptionsMetricsViews(
-            String format, @NUInt long opts, NSDictionary<String, ?> metrics, NSDictionary<String, ?> views);
+            @NotNull String format, @NUInt long opts, @Nullable NSDictionary<String, ?> metrics,
+            @NotNull NSDictionary<String, ?> views);
 
     /**
      * Convenience method that deactivates each constraint in the contained array, in the same manner as setting
      * active=NO. This is often more efficient than deactivating each constraint individually.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("deactivateConstraints:")
-    public static native void deactivateConstraints(NSArray<? extends NSLayoutConstraint> constraints);
+    public static native void deactivateConstraints(@NotNull NSArray<? extends NSLayoutConstraint> constraints);
 
     @Generated
     @Selector("debugDescription")
@@ -159,9 +177,10 @@ public class NSLayoutConstraint extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -202,7 +221,10 @@ public class NSLayoutConstraint extends NSObject {
     /**
      * accessors
      * firstAnchor{==,<=,>=} secondAnchor * multiplier + constant
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("firstAnchor")
     public native NSLayoutAnchor<?> firstAnchor();
@@ -217,6 +239,7 @@ public class NSLayoutConstraint extends NSObject {
      * firstItem.firstAttribute {==,<=,>=} secondItem.secondAttribute * multiplier + constant
      * Access to these properties is not recommended. Use the `firstAnchor` and `secondAnchor` properties instead.
      */
+    @Nullable
     @Generated
     @Selector("firstItem")
     @MappedReturn(ObjCObjectMapper.class)
@@ -226,7 +249,10 @@ public class NSLayoutConstraint extends NSObject {
      * For ease in debugging, name a constraint by setting its identifier, which will be printed in the constraint's
      * description.
      * Identifiers starting with NS or UI are reserved by the system.
+     * 
+     * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -239,6 +265,8 @@ public class NSLayoutConstraint extends NSObject {
      * The receiver may be activated or deactivated by manipulating this property.  Only active constraints affect the
      * calculated layout.  Attempting to activate a constraint whose items have no common ancestor will cause an
      * exception to be thrown. Defaults to NO for newly created constraints.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isActive")
@@ -248,6 +276,8 @@ public class NSLayoutConstraint extends NSObject {
      * The receiver may be activated or deactivated by manipulating this property.  Only active constraints affect the
      * calculated layout.  Attempting to activate a constraint whose items have no common ancestor will cause an
      * exception to be thrown. Defaults to NO for newly created constraints.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setActive:")
@@ -267,6 +297,10 @@ public class NSLayoutConstraint extends NSObject {
     @NInt
     public native long relation();
 
+    /**
+     * API-Since: 10.0
+     */
+    @Nullable
     @Generated
     @Selector("secondAnchor")
     public native NSLayoutAnchor<?> secondAnchor();
@@ -276,6 +310,7 @@ public class NSLayoutConstraint extends NSObject {
     @NInt
     public native long secondAttribute();
 
+    @Nullable
     @Generated
     @Selector("secondItem")
     @MappedReturn(ObjCObjectMapper.class)
@@ -294,10 +329,12 @@ public class NSLayoutConstraint extends NSObject {
      * For ease in debugging, name a constraint by setting its identifier, which will be printed in the constraint's
      * description.
      * Identifiers starting with NS or UI are reserved by the system.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setIdentifier:")
-    public native void setIdentifier(String value);
+    public native void setIdentifier(@Nullable String value);
 
     @Generated
     @Selector("setPriority:")

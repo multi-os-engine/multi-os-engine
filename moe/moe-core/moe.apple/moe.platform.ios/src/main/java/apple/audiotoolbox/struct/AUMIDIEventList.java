@@ -9,6 +9,7 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure(alignment = 4)
@@ -32,6 +33,7 @@ public final class AUMIDIEventList extends StructObject {
     /**
      * !< The next event in a linked list of events.
      */
+    @Nullable
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native VoidPtr next();
@@ -41,7 +43,7 @@ public final class AUMIDIEventList extends StructObject {
      */
     @Generated
     @StructureField(order = 0, isGetter = false)
-    public native void setNext(VoidPtr value);
+    public native void setNext(@Nullable VoidPtr value);
 
     /**
      * !< The sample time at which the event is scheduled to occur.

@@ -21,11 +21,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCGroupNormalizationLayer
- * <p>
+ * 
  * A group normalizaion layer. For more information, refer to https://pytorch.org/docs/stable/nn.html#groupnorm
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -57,40 +61,45 @@ public class MLCGroupNormalizationLayer extends MLCLayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] beta
-     * <p>
+     * 
      * The beta tensor
      */
+    @Nullable
     @Generated
     @Selector("beta")
     public native MLCTensor beta();
 
     /**
      * [@property] betaParameter
-     * <p>
+     * 
      * The beta tensor parameter used for optimizer update
      */
+    @Nullable
     @Generated
     @Selector("betaParameter")
     public native MLCTensorParameter betaParameter();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -105,7 +114,7 @@ public class MLCGroupNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] featureChannelCount
-     * <p>
+     * 
      * The number of feature channels
      */
     @Generated
@@ -115,25 +124,27 @@ public class MLCGroupNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] gamma
-     * <p>
+     * 
      * The gamma tensor
      */
+    @Nullable
     @Generated
     @Selector("gamma")
     public native MLCTensor gamma();
 
     /**
      * [@property] gammaParameter
-     * <p>
+     * 
      * The gamma tensor parameter used for optimizer update
      */
+    @Nullable
     @Generated
     @Selector("gammaParameter")
     public native MLCTensorParameter gammaParameter();
 
     /**
      * [@property] groupCount
-     * <p>
+     * 
      * The number of groups to separate the channels into
      */
     @Generated
@@ -167,13 +178,14 @@ public class MLCGroupNormalizationLayer extends MLCLayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Create a group normalization layer
-     *
+     * 
      * @param featureChannelCount The number of feature channels
      * @param beta                Training parameter
      * @param gamma               Training parameter
@@ -184,8 +196,8 @@ public class MLCGroupNormalizationLayer extends MLCLayer {
     @Generated
     @Selector("layerWithFeatureChannelCount:groupCount:beta:gamma:varianceEpsilon:")
     public static native MLCGroupNormalizationLayer layerWithFeatureChannelCountGroupCountBetaGammaVarianceEpsilon(
-            @NUInt long featureChannelCount, @NUInt long groupCount, MLCTensor beta, MLCTensor gamma,
-            float varianceEpsilon);
+            @NUInt long featureChannelCount, @NUInt long groupCount, @Nullable MLCTensor beta,
+            @Nullable MLCTensor gamma, float varianceEpsilon);
 
     @Generated
     @Owned
@@ -210,11 +222,11 @@ public class MLCGroupNormalizationLayer extends MLCLayer {
 
     @Generated
     @Selector("supportsDataType:onDevice:")
-    public static native boolean supportsDataTypeOnDevice(int dataType, MLCDevice device);
+    public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
 
     /**
      * [@property] varianceEpsilon
-     * <p>
+     * 
      * A value used for numerical stability
      */
     @Generated

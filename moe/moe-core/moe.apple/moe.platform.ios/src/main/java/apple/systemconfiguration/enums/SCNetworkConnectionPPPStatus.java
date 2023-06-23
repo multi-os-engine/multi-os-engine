@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] SCNetworkConnectionPPPStatus
- * <p>
+ * 
  * PPP-specific status of the network connection.
  * This status is returned as part of the extended information
  * for a PPP service.

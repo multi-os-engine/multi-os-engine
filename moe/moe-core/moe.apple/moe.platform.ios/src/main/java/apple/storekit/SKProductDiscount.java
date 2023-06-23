@@ -23,7 +23,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.2
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -54,22 +59,25 @@ public class SKProductDiscount extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -87,6 +95,10 @@ public class SKProductDiscount extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 12.2
+     */
+    @Nullable
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -112,29 +124,44 @@ public class SKProductDiscount extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native SKProductDiscount new_objc();
 
+    /**
+     * API-Since: 11.2
+     */
     @Generated
     @Selector("numberOfPeriods")
     @NUInt
     public native long numberOfPeriods();
 
+    /**
+     * API-Since: 11.2
+     */
     @Generated
     @Selector("paymentMode")
     @NUInt
     public native long paymentMode();
 
+    /**
+     * API-Since: 11.2
+     */
+    @NotNull
     @Generated
     @Selector("price")
     public native NSDecimalNumber price();
 
+    /**
+     * API-Since: 11.2
+     */
+    @NotNull
     @Generated
     @Selector("priceLocale")
     public native NSLocale priceLocale();
@@ -151,6 +178,10 @@ public class SKProductDiscount extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 11.2
+     */
+    @NotNull
     @Generated
     @Selector("subscriptionPeriod")
     public native SKProductSubscriptionPeriod subscriptionPeriod();
@@ -159,6 +190,9 @@ public class SKProductDiscount extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 12.2
+     */
     @Generated
     @Selector("type")
     @NUInt

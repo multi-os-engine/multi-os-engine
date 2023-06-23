@@ -21,31 +21,90 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * These are the possible error codes that can be returned from the WatchConnectivity APIs.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class WCErrorCode {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long GenericError = 0x0000000000001B59L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long SessionNotSupported = 0x0000000000001B5AL;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long SessionMissingDelegate = 0x0000000000001B5BL;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long SessionNotActivated = 0x0000000000001B5CL;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long DeviceNotPaired = 0x0000000000001B5DL;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long WatchAppNotInstalled = 0x0000000000001B5EL;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long NotReachable = 0x0000000000001B5FL;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long InvalidParameter = 0x0000000000001B60L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long PayloadTooLarge = 0x0000000000001B61L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long PayloadUnsupportedTypes = 0x0000000000001B62L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long MessageReplyFailed = 0x0000000000001B63L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long MessageReplyTimedOut = 0x0000000000001B64L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long FileAccessDenied = 0x0000000000001B65L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long DeliveryFailed = 0x0000000000001B66L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long InsufficientSpace = 0x0000000000001B67L;
+    /**
+     * API-Since: 9.3
+     */
     @Generated @NInt public static final long SessionInactive = 0x0000000000001B68L;
+    /**
+     * API-Since: 9.3
+     */
     @Generated @NInt public static final long TransferTimedOut = 0x0000000000001B69L;
 
     @Generated
     private WCErrorCode() {
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long CompanionAppNotInstalled = 0x0000000000001B6AL;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long WatchOnlyApp = 0x0000000000001B6BL;
 }

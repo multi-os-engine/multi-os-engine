@@ -28,7 +28,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -59,35 +64,40 @@ public class INBusReservation extends INReservation implements NSCopying, NSSecu
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("busTrip")
     public native INBusTrip busTrip();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -99,7 +109,7 @@ public class INBusReservation extends INReservation implements NSCopying, NSSecu
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -112,14 +122,15 @@ public class INBusReservation extends INReservation implements NSCopying, NSSecu
 
     @Generated
     @Selector("initWithCoder:")
-    public native INBusReservation initWithCoder(NSCoder coder);
+    public native INBusReservation initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithItemReference:reservationNumber:bookingTime:reservationStatus:reservationHolderName:actions:URL:reservedSeat:busTrip:")
     public native INBusReservation initWithItemReferenceReservationNumberBookingTimeReservationStatusReservationHolderNameActionsURLReservedSeatBusTrip(
-            INSpeakableString itemReference, String reservationNumber, NSDate bookingTime, @NInt long reservationStatus,
-            String reservationHolderName, NSArray<? extends INReservationAction> actions, NSURL URL,
-            INSeat reservedSeat, INBusTrip busTrip);
+            @NotNull INSpeakableString itemReference, @Nullable String reservationNumber, @Nullable NSDate bookingTime,
+            @NInt long reservationStatus, @Nullable String reservationHolderName,
+            @Nullable NSArray<? extends INReservationAction> actions, @Nullable NSURL URL,
+            @Nullable INSeat reservedSeat, @Nullable INBusTrip busTrip);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -138,15 +149,17 @@ public class INBusReservation extends INReservation implements NSCopying, NSSecu
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native INBusReservation new_objc();
 
+    @Nullable
     @Generated
     @Selector("reservedSeat")
     public native INSeat reservedSeat();

@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -38,23 +40,25 @@ public interface NSKeyedUnarchiverDelegate {
     /**
      * error handling
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("unarchiver:cannotDecodeObjectOfClassName:originalClasses:")
-    default Class unarchiverCannotDecodeObjectOfClassNameOriginalClasses(NSKeyedUnarchiver unarchiver, String name,
-            NSArray<String> classNames) {
+    default Class unarchiverCannotDecodeObjectOfClassNameOriginalClasses(@NotNull NSKeyedUnarchiver unarchiver,
+            @NotNull String name, @NotNull NSArray<String> classNames) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * substitution
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("unarchiver:didDecodeObject:")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object unarchiverDidDecodeObject(NSKeyedUnarchiver unarchiver,
-            @Mapped(ObjCObjectMapper.class) Object object) {
+    default Object unarchiverDidDecodeObject(@NotNull NSKeyedUnarchiver unarchiver,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object object) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -64,8 +68,9 @@ public interface NSKeyedUnarchiverDelegate {
     @Generated
     @IsOptional
     @Selector("unarchiver:willReplaceObject:withObject:")
-    default void unarchiverWillReplaceObjectWithObject(NSKeyedUnarchiver unarchiver,
-            @Mapped(ObjCObjectMapper.class) Object object, @Mapped(ObjCObjectMapper.class) Object newObject) {
+    default void unarchiverWillReplaceObjectWithObject(@NotNull NSKeyedUnarchiver unarchiver,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object object,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object newObject) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -75,7 +80,7 @@ public interface NSKeyedUnarchiverDelegate {
     @Generated
     @IsOptional
     @Selector("unarchiverDidFinish:")
-    default void unarchiverDidFinish(NSKeyedUnarchiver unarchiver) {
+    default void unarchiverDidFinish(@NotNull NSKeyedUnarchiver unarchiver) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -88,7 +93,7 @@ public interface NSKeyedUnarchiverDelegate {
     @Generated
     @IsOptional
     @Selector("unarchiverWillFinish:")
-    default void unarchiverWillFinish(NSKeyedUnarchiver unarchiver) {
+    default void unarchiverWillFinish(@NotNull NSKeyedUnarchiver unarchiver) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

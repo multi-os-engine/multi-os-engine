@@ -26,7 +26,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -57,22 +62,25 @@ public class UITabBarItemAppearance extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -84,16 +92,18 @@ public class UITabBarItemAppearance extends NSObject implements NSCopying, NSSec
     @Selector("configureWithDefaultForStyle:")
     public native void configureWithDefaultForStyle(@NInt long style);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copy")
     public native UITabBarItemAppearance copy();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -106,17 +116,19 @@ public class UITabBarItemAppearance extends NSObject implements NSCopying, NSSec
     /**
      * The appearance when the tab bar item is in the disabled state
      */
+    @NotNull
     @Generated
     @Selector("disabled")
     public native UITabBarItemStateAppearance disabled();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * The appearance when the tab bar item is in the focused state
      */
+    @NotNull
     @Generated
     @Selector("focused")
     public native UITabBarItemStateAppearance focused();
@@ -135,7 +147,7 @@ public class UITabBarItemAppearance extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native UITabBarItemAppearance initWithCoder(NSCoder coder);
+    public native UITabBarItemAppearance initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Construct an appearance with default values for the given layout.
@@ -161,9 +173,10 @@ public class UITabBarItemAppearance extends NSObject implements NSCopying, NSSec
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -173,6 +186,7 @@ public class UITabBarItemAppearance extends NSObject implements NSCopying, NSSec
     /**
      * The appearance when the tab bar item is in the normal state
      */
+    @NotNull
     @Generated
     @Selector("normal")
     public native UITabBarItemStateAppearance normal();
@@ -188,6 +202,7 @@ public class UITabBarItemAppearance extends NSObject implements NSCopying, NSSec
     /**
      * The appearance when the tab bar item is in the selected state
      */
+    @NotNull
     @Generated
     @Selector("selected")
     public native UITabBarItemStateAppearance selected();

@@ -19,9 +19,6 @@ package apple.foundation;
 import apple.NSObject;
 import apple.cloudkit.protocol.CKRecordValue;
 import apple.contacts.protocol.CNKeyDescriptor;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSItemProviderReading;
 import apple.foundation.protocol.NSItemProviderWriting;
@@ -67,6 +64,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -99,26 +101,30 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("availableStringEncodings")
     public static native ConstNUIntPtr availableStringEncodings();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -152,35 +158,43 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("localizedNameOfStringEncoding:")
     public static native String localizedNameOfStringEncoding(@NUInt long encoding);
 
+    @NotNull
     @Generated
     @Variadic()
     @Selector("localizedStringWithFormat:")
-    public static native NSString localizedStringWithFormat(String format, Object... varargs);
+    public static native NSString localizedStringWithFormat(@NotNull String format, Object... varargs);
 
     /**
      * Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a string that will be localized at
      * the time that the notification is presented.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("localizedUserNotificationStringForKey:arguments:")
-    public static native String localizedUserNotificationStringForKeyArguments(String key, NSArray<?> arguments);
+    public static native String localizedUserNotificationStringForKeyArguments(@NotNull String key,
+            @Nullable NSArray<?> arguments);
 
     @Generated
     @Owned
     @Selector("new")
     public static native NSString new_objc();
 
+    @NotNull
     @Generated
     @Selector("pathWithComponents:")
-    public static native String pathWithComponents(NSArray<String> components);
+    public static native String pathWithComponents(@NotNull NSArray<String> components);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -206,7 +220,7 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      * substitution string is emitted in the output string for characters that could not be converted when lossy
      * conversion is enabled. The usedLossyConversion indicates if there is any lossy conversion in the resulted string.
      * If no encoding can be detected, 0 is returned.
-     * <p>
+     * 
      * The possible items for the dictionary are:
      * 1) an array of suggested string encodings (without specifying the 3rd option in this list, all string encodings
      * are considered but the ones in the array will have a higher preference; moreover, the order of the encodings in
@@ -217,79 +231,102 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      * 5) an option that gives a specific string to substitude for mystery bytes
      * 6) the current user's language
      * 7) a boolean option indicating whether the data is generated by Windows
-     * <p>
+     * 
      * If the values in the dictionary have wrong types (for example, the value of
      * NSStringEncodingDetectionSuggestedEncodingsKey is not an array), an exception is thrown.
      * If the values in the dictionary are unknown (for example, the value in the array of suggested string encodings is
      * not a valid encoding), the values will be ignored.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("stringEncodingForData:encodingOptions:convertedString:usedLossyConversion:")
     @NUInt
-    public static native long stringEncodingForDataEncodingOptionsConvertedStringUsedLossyConversion(NSData data,
-            NSDictionary<String, ?> opts, @ReferenceInfo(type = NSString.class) Ptr<NSString> string,
-            BoolPtr usedLossyConversion);
+    public static native long stringEncodingForDataEncodingOptionsConvertedStringUsedLossyConversion(
+            @NotNull NSData data, @Nullable NSDictionary<String, ?> opts,
+            @Nullable @ReferenceInfo(type = NSString.class) Ptr<NSString> string,
+            @Nullable BoolPtr usedLossyConversion);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use +stringWithCString:encoding: instead
+     */
     @Generated
     @Deprecated
     @Selector("stringWithCString:")
-    public static native NSString stringWithCString(ConstBytePtr bytes);
+    public static native NSString stringWithCString(@NotNull ConstBytePtr bytes);
 
     @Generated
     @Selector("stringWithCString:encoding:")
-    public static native NSString stringWithCStringEncoding(ConstBytePtr cString, @NUInt long enc);
+    public static native NSString stringWithCStringEncoding(@NotNull ConstBytePtr cString, @NUInt long enc);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use +stringWithCString:encoding:
+     */
     @Generated
     @Deprecated
     @Selector("stringWithCString:length:")
-    public static native NSString stringWithCStringLength(ConstBytePtr bytes, @NUInt long length);
+    public static native NSString stringWithCStringLength(@NotNull ConstBytePtr bytes, @NUInt long length);
 
     @Generated
     @Selector("stringWithCharacters:length:")
-    public static native NSString stringWithCharactersLength(ConstCharPtr characters, @NUInt long length);
+    public static native NSString stringWithCharactersLength(@NotNull ConstCharPtr characters, @NUInt long length);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use +stringWithContentsOfFile:encoding:error: instead
+     */
     @Generated
     @Deprecated
     @Selector("stringWithContentsOfFile:")
-    public static native NSString stringWithContentsOfFile(String path);
+    public static native NSString stringWithContentsOfFile(@NotNull String path);
 
     @Generated
     @Selector("stringWithContentsOfFile:encoding:error:")
-    public static native NSString stringWithContentsOfFileEncodingError(String path, @NUInt long enc,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSString stringWithContentsOfFileEncodingError(@NotNull String path, @NUInt long enc,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("stringWithContentsOfFile:usedEncoding:error:")
-    public static native NSString stringWithContentsOfFileUsedEncodingError(String path, NUIntPtr enc,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSString stringWithContentsOfFileUsedEncodingError(@NotNull String path,
+            @Nullable NUIntPtr enc, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use +stringWithContentsOfURL:encoding:error: instead
+     */
     @Generated
     @Deprecated
     @Selector("stringWithContentsOfURL:")
-    public static native NSString stringWithContentsOfURL(NSURL url);
+    public static native NSString stringWithContentsOfURL(@NotNull NSURL url);
 
     @Generated
     @Selector("stringWithContentsOfURL:encoding:error:")
-    public static native NSString stringWithContentsOfURLEncodingError(NSURL url, @NUInt long enc,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSString stringWithContentsOfURLEncodingError(@NotNull NSURL url, @NUInt long enc,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("stringWithContentsOfURL:usedEncoding:error:")
-    public static native NSString stringWithContentsOfURLUsedEncodingError(NSURL url, NUIntPtr enc,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSString stringWithContentsOfURLUsedEncodingError(@NotNull NSURL url, @Nullable NUIntPtr enc,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Variadic()
     @Selector("stringWithFormat:")
-    public static native NSString stringWithFormat(String format, Object... varargs);
+    public static native NSString stringWithFormat(@NotNull String format, Object... varargs);
 
     @Generated
     @Selector("stringWithString:")
-    public static native NSString stringWithString(String string);
+    public static native NSString stringWithString(@NotNull String string);
 
     @Generated
     @Selector("stringWithUTF8String:")
-    public static native NSString stringWithUTF8String(ConstBytePtr nullTerminatedCString);
+    public static native NSString stringWithUTF8String(@NotNull ConstBytePtr nullTerminatedCString);
 
     @Generated
     @Selector("superclass")
@@ -307,6 +344,7 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     /**
      * Convenience to return null-terminated UTF8 representation
      */
+    @Nullable
     @Generated
     @Selector("UTF8String")
     public native ConstBytePtr UTF8String();
@@ -314,16 +352,21 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     /**
      * Skips initial space characters (whitespaceSet), or optional -/+ sign followed by zeroes. Returns YES on
      * encountering one of "Y", "y", "T", "t", or a digit 1-9. It ignores any trailing characters.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("boolValue")
     public native boolean boolValue();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("boundingRectWithSize:options:attributes:context:")
     @ByValue
     public native CGRect boundingRectWithSizeOptionsAttributesContext(@ByValue CGSize size, @NInt long options,
-            NSDictionary<String, ?> attributes, NSStringDrawingContext context);
+            @Nullable NSDictionary<String, ?> attributes, @Nullable NSStringDrawingContext context);
 
     /**
      * The following methods are deprecated and will be removed from this header file in the near future. These methods
@@ -332,12 +375,22 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      * misused, resulting in issues when running in languages other then English. UTF8String in general is a much better
      * choice when converting arbitrary NSStrings into 8-bit representations. Additional potential replacement methods
      * are being introduced in NSString as appropriate.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use -cStringUsingEncoding: instead
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("cString")
     public native ConstBytePtr cString();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use -lengthOfBytesUsingEncoding: instead
+     */
     @Generated
     @Deprecated
     @Selector("cStringLength")
@@ -350,6 +403,7 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      * go invalid then, before the end of the autorelease scope). Use only with 8-bit encodings, and not encodings such
      * as UTF-16 or UTF-32.
      */
+    @Nullable
     @Generated
     @Selector("cStringUsingEncoding:")
     public native ConstBytePtr cStringUsingEncoding(@NUInt long encoding);
@@ -358,26 +412,32 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     @Selector("canBeConvertedToEncoding:")
     public native boolean canBeConvertedToEncoding(@NUInt long encoding);
 
+    @NotNull
     @Generated
     @Selector("capitalizedString")
     public native String capitalizedString();
 
+    /**
+     * API-Since: 6.0
+     */
+    @NotNull
     @Generated
     @Selector("capitalizedStringWithLocale:")
-    public native String capitalizedStringWithLocale(NSLocale locale);
+    public native String capitalizedStringWithLocale(@Nullable NSLocale locale);
 
     @Generated
     @Selector("caseInsensitiveCompare:")
     @NInt
-    public native long caseInsensitiveCompare(String string);
+    public native long caseInsensitiveCompare(@NotNull String string);
 
     @Generated
     @Selector("characterAtIndex:")
     public native char characterAtIndex(@NUInt long index);
 
+    @NotNull
     @Generated
     @Selector("commonPrefixWithString:options:")
-    public native String commonPrefixWithStringOptions(String str, @NUInt long mask);
+    public native String commonPrefixWithStringOptions(@NotNull String str, @NUInt long mask);
 
     /**
      * In the compare: methods, the range argument specifies the subrange, rather than the whole, of the receiver to use
@@ -388,17 +448,18 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     @Generated
     @Selector("compare:")
     @NInt
-    public native long compare(String string);
+    public native long compare(@NotNull String string);
 
     @Generated
     @Selector("compare:options:")
     @NInt
-    public native long compareOptions(String string, @NUInt long mask);
+    public native long compareOptions(@NotNull String string, @NUInt long mask);
 
     @Generated
     @Selector("compare:options:range:")
     @NInt
-    public native long compareOptionsRange(String string, @NUInt long mask, @ByValue NSRange rangeOfReceiverToCompare);
+    public native long compareOptionsRange(@NotNull String string, @NUInt long mask,
+            @ByValue NSRange rangeOfReceiverToCompare);
 
     /**
      * locale arg used to be a dictionary pre-Leopard. We now accept NSLocale. Assumes the current locale if non-nil and
@@ -407,23 +468,29 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     @Generated
     @Selector("compare:options:range:locale:")
     @NInt
-    public native long compareOptionsRangeLocale(String string, @NUInt long mask,
-            @ByValue NSRange rangeOfReceiverToCompare, @Mapped(ObjCObjectMapper.class) Object locale);
+    public native long compareOptionsRangeLocale(@NotNull String string, @NUInt long mask,
+            @ByValue NSRange rangeOfReceiverToCompare, @Nullable @Mapped(ObjCObjectMapper.class) Object locale);
 
     @Generated
     @Selector("completePathIntoString:caseSensitive:matchesIntoArray:filterTypes:")
     @NUInt
     public native long completePathIntoStringCaseSensitiveMatchesIntoArrayFilterTypes(
-            @ReferenceInfo(type = NSString.class) Ptr<NSString> outputName, boolean flag,
-            @ReferenceInfo(type = NSArray.class) Ptr<NSArray<String>> outputArray, NSArray<String> filterTypes);
+            @Nullable @ReferenceInfo(type = NSString.class) Ptr<NSString> outputName, boolean flag,
+            @Nullable @ReferenceInfo(type = NSArray.class) Ptr<NSArray<String>> outputArray,
+            @Nullable NSArray<String> filterTypes);
 
+    /**
+     * API-Since: 2.0
+     */
+    @NotNull
     @Generated
     @Selector("componentsSeparatedByCharactersInSet:")
-    public native NSArray<String> componentsSeparatedByCharactersInSet(NSCharacterSet separator);
+    public native NSArray<String> componentsSeparatedByCharactersInSet(@NotNull NSCharacterSet separator);
 
+    @NotNull
     @Generated
     @Selector("componentsSeparatedByString:")
-    public native NSArray<String> componentsSeparatedByString(String separator);
+    public native NSArray<String> componentsSeparatedByString(@NotNull String separator);
 
     /**
      * Simple convenience methods for string searching. containsString: returns YES if the target string is contained
@@ -432,20 +499,24 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      * the current locale into effect. Starting in 10.11 and iOS9, the new localizedStandardRangeOfString: or
      * localizedStandardContainsString: APIs are even better convenience methods for user level searching. More
      * sophisticated needs can be achieved by calling rangeOfString:options:range:locale: directly.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("containsString:")
-    public native boolean containsString(String str);
+    public native boolean containsString(@NotNull String str);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * External representation
      */
+    @Nullable
     @Generated
     @Selector("dataUsingEncoding:")
     public native NSData dataUsingEncoding(@NUInt long encoding);
@@ -453,18 +524,22 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     /**
      * External representation
      */
+    @Nullable
     @Generated
     @Selector("dataUsingEncoding:allowLossyConversion:")
     public native NSData dataUsingEncodingAllowLossyConversion(@NUInt long encoding, boolean lossy);
 
+    @NotNull
     @Generated
     @Selector("decomposedStringWithCanonicalMapping")
     public native String decomposedStringWithCanonicalMapping();
 
+    @NotNull
     @Generated
     @Selector("decomposedStringWithCompatibilityMapping")
     public native String decomposedStringWithCompatibilityMapping();
 
+    @NotNull
     @Generated
     @Selector("description")
     public native String description();
@@ -478,6 +553,10 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     @Selector("doubleValue")
     public native double doubleValue();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("drawAtPoint:forWidth:withFont:fontSize:lineBreakMode:baselineAdjustment:")
@@ -486,6 +565,10 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
             @NFloat double width, UIFont font, @NFloat double fontSize, @NInt long lineBreakMode,
             @NInt long baselineAdjustment);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("drawAtPoint:forWidth:withFont:lineBreakMode:")
@@ -493,6 +576,10 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     public native CGSize drawAtPointForWidthWithFontLineBreakMode(@ByValue CGPoint point, @NFloat double width,
             UIFont font, @NInt long lineBreakMode);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("drawAtPoint:forWidth:withFont:minFontSize:actualFontSize:lineBreakMode:baselineAdjustment:")
@@ -501,12 +588,18 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
             @ByValue CGPoint point, @NFloat double width, UIFont font, @NFloat double minFontSize,
             NFloatPtr actualFontSize, @NInt long lineBreakMode, @NInt long baselineAdjustment);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("drawAtPoint:withAttributes:")
-    public native void drawAtPointWithAttributes(@ByValue CGPoint point, NSDictionary<String, ?> attrs);
+    public native void drawAtPointWithAttributes(@ByValue CGPoint point, @Nullable NSDictionary<String, ?> attrs);
 
     /**
      * Single line, no wrapping. Truncation based on the NSLineBreakMode.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -514,12 +607,18 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     @ByValue
     public native CGSize drawAtPointWithFont(@ByValue CGPoint point, UIFont font);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("drawInRect:withAttributes:")
-    public native void drawInRectWithAttributes(@ByValue CGRect rect, NSDictionary<String, ?> attrs);
+    public native void drawInRectWithAttributes(@ByValue CGRect rect, @Nullable NSDictionary<String, ?> attrs);
 
     /**
      * Wrapping to fit horizontal and vertical size.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -527,12 +626,20 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     @ByValue
     public native CGSize drawInRectWithFont(@ByValue CGRect rect, UIFont font);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("drawInRect:withFont:lineBreakMode:")
     @ByValue
     public native CGSize drawInRectWithFontLineBreakMode(@ByValue CGRect rect, UIFont font, @NInt long lineBreakMode);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("drawInRect:withFont:lineBreakMode:alignment:")
@@ -540,34 +647,48 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     public native CGSize drawInRectWithFontLineBreakModeAlignment(@ByValue CGRect rect, UIFont font,
             @NInt long lineBreakMode, @NInt long alignment);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("drawWithRect:options:attributes:context:")
     public native void drawWithRectOptionsAttributesContext(@ByValue CGRect rect, @NInt long options,
-            NSDictionary<String, ?> attributes, NSStringDrawingContext context);
+            @Nullable NSDictionary<String, ?> attributes, @Nullable NSStringDrawingContext context);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("enumerateLinesUsingBlock:")
     public native void enumerateLinesUsingBlock(
-            @ObjCBlock(name = "call_enumerateLinesUsingBlock") Block_enumerateLinesUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateLinesUsingBlock") Block_enumerateLinesUsingBlock block);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @Selector("enumerateLinguisticTagsInRange:scheme:options:orthography:usingBlock:")
     public native void enumerateLinguisticTagsInRangeSchemeOptionsOrthographyUsingBlock(@ByValue NSRange range,
-            String scheme, @NUInt long options, NSOrthography orthography,
-            @ObjCBlock(name = "call_enumerateLinguisticTagsInRangeSchemeOptionsOrthographyUsingBlock") Block_enumerateLinguisticTagsInRangeSchemeOptionsOrthographyUsingBlock block);
+            @NotNull String scheme, @NUInt long options, @Nullable NSOrthography orthography,
+            @NotNull @ObjCBlock(name = "call_enumerateLinguisticTagsInRangeSchemeOptionsOrthographyUsingBlock") Block_enumerateLinguisticTagsInRangeSchemeOptionsOrthographyUsingBlock block);
 
     /**
      * In the enumerate methods, the blocks will be invoked inside an autorelease pool, so any values assigned inside
      * the block should be retained.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("enumerateSubstringsInRange:options:usingBlock:")
     public native void enumerateSubstringsInRangeOptionsUsingBlock(@ByValue NSRange range, @NUInt long opts,
-            @ObjCBlock(name = "call_enumerateSubstringsInRangeOptionsUsingBlock") Block_enumerateSubstringsInRangeOptionsUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateSubstringsInRangeOptionsUsingBlock") Block_enumerateSubstringsInRangeOptionsUsingBlock block);
 
     /**
      * Result in O(1) time; a rough estimate
@@ -577,6 +698,7 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     @NUInt
     public native long fastestEncoding();
 
+    @NotNull
     @Generated
     @Selector("fileSystemRepresentation")
     @MappedReturn(CStringMapper.class)
@@ -602,19 +724,29 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      */
     @Generated
     @Selector("getBytes:maxLength:usedLength:encoding:options:range:remainingRange:")
-    public native boolean getBytesMaxLengthUsedLengthEncodingOptionsRangeRemainingRange(VoidPtr buffer,
-            @NUInt long maxBufferCount, NUIntPtr usedBufferCount, @NUInt long encoding, @NUInt long options,
-            @ByValue NSRange range, NSRange leftover);
+    public native boolean getBytesMaxLengthUsedLengthEncodingOptionsRangeRemainingRange(@Nullable VoidPtr buffer,
+            @NUInt long maxBufferCount, @Nullable NUIntPtr usedBufferCount, @NUInt long encoding, @NUInt long options,
+            @ByValue NSRange range, @Nullable NSRange leftover);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use -getCString:maxLength:encoding: instead
+     */
     @Generated
     @Deprecated
     @Selector("getCString:")
-    public native void getCString(BytePtr bytes);
+    public native void getCString(@NotNull BytePtr bytes);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use -getCString:maxLength:encoding: instead
+     */
     @Generated
     @Deprecated
     @Selector("getCString:maxLength:")
-    public native void getCStringMaxLength(BytePtr bytes, @NUInt long maxLength);
+    public native void getCStringMaxLength(@NotNull BytePtr bytes, @NUInt long maxLength);
 
     /**
      * NO return if conversion not possible due to encoding errors or too small of a buffer. The buffer should include
@@ -625,13 +757,19 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      */
     @Generated
     @Selector("getCString:maxLength:encoding:")
-    public native boolean getCStringMaxLengthEncoding(BytePtr buffer, @NUInt long maxBufferCount, @NUInt long encoding);
+    public native boolean getCStringMaxLengthEncoding(@NotNull BytePtr buffer, @NUInt long maxBufferCount,
+            @NUInt long encoding);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use -getCString:maxLength:encoding: instead
+     */
     @Generated
     @Deprecated
     @Selector("getCString:maxLength:range:remainingRange:")
-    public native void getCStringMaxLengthRangeRemainingRange(BytePtr bytes, @NUInt long maxLength,
-            @ByValue NSRange aRange, NSRange leftoverRange);
+    public native void getCStringMaxLengthRangeRemainingRange(@NotNull BytePtr bytes, @NUInt long maxLength,
+            @ByValue NSRange aRange, @Nullable NSRange leftoverRange);
 
     /**
      * This method is unsafe because it could potentially cause buffer overruns. You should use -getCharacters:range:
@@ -639,28 +777,28 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      */
     @Generated
     @Selector("getCharacters:")
-    public native void getCharacters(CharPtr buffer);
+    public native void getCharacters(@NotNull CharPtr buffer);
 
     /**
      * Use with rangeOfComposedCharacterSequencesForRange: to avoid breaking up character sequences
      */
     @Generated
     @Selector("getCharacters:range:")
-    public native void getCharactersRange(CharPtr buffer, @ByValue NSRange range);
+    public native void getCharactersRange(@NotNull CharPtr buffer, @ByValue NSRange range);
 
     @Generated
     @Selector("getFileSystemRepresentation:maxLength:")
-    public native boolean getFileSystemRepresentationMaxLength(BytePtr cname, @NUInt long max);
+    public native boolean getFileSystemRepresentationMaxLength(@NotNull BytePtr cname, @NUInt long max);
 
     @Generated
     @Selector("getLineStart:end:contentsEnd:forRange:")
-    public native void getLineStartEndContentsEndForRange(NUIntPtr startPtr, NUIntPtr lineEndPtr,
-            NUIntPtr contentsEndPtr, @ByValue NSRange range);
+    public native void getLineStartEndContentsEndForRange(@Nullable NUIntPtr startPtr, @Nullable NUIntPtr lineEndPtr,
+            @Nullable NUIntPtr contentsEndPtr, @ByValue NSRange range);
 
     @Generated
     @Selector("getParagraphStart:end:contentsEnd:forRange:")
-    public native void getParagraphStartEndContentsEndForRange(NUIntPtr startPtr, NUIntPtr parEndPtr,
-            NUIntPtr contentsEndPtr, @ByValue NSRange range);
+    public native void getParagraphStartEndContentsEndForRange(@Nullable NUIntPtr startPtr,
+            @Nullable NUIntPtr parEndPtr, @Nullable NUIntPtr contentsEndPtr, @ByValue NSRange range);
 
     /**
      * These perform locale unaware prefix or suffix match. If you need locale awareness, use
@@ -670,11 +808,11 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      */
     @Generated
     @Selector("hasPrefix:")
-    public native boolean hasPrefix(String str);
+    public native boolean hasPrefix(@NotNull String str);
 
     @Generated
     @Selector("hasSuffix:")
-    public native boolean hasSuffix(String str);
+    public native boolean hasSuffix(@NotNull String str);
 
     @Generated
     @Selector("hash")
@@ -690,71 +828,97 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
 
     @Generated
     @Selector("initWithBytes:length:encoding:")
-    public native NSString initWithBytesLengthEncoding(ConstVoidPtr bytes, @NUInt long len, @NUInt long encoding);
+    public native NSString initWithBytesLengthEncoding(@NotNull ConstVoidPtr bytes, @NUInt long len,
+            @NUInt long encoding);
 
     /**
      * "NoCopy" is a hint
      */
     @Generated
     @Selector("initWithBytesNoCopy:length:encoding:freeWhenDone:")
-    public native NSString initWithBytesNoCopyLengthEncodingFreeWhenDone(VoidPtr bytes, @NUInt long len,
+    public native NSString initWithBytesNoCopyLengthEncodingFreeWhenDone(@NotNull VoidPtr bytes, @NUInt long len,
             @NUInt long encoding, boolean freeBuffer);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use -initWithCString:encoding: instead
+     */
     @Generated
     @Deprecated
     @Selector("initWithCString:")
-    public native NSString initWithCString(ConstBytePtr bytes);
+    public native NSString initWithCString(@NotNull ConstBytePtr bytes);
 
     @Generated
     @Selector("initWithCString:encoding:")
-    public native NSString initWithCStringEncoding(ConstBytePtr nullTerminatedCString, @NUInt long encoding);
+    public native NSString initWithCStringEncoding(@NotNull ConstBytePtr nullTerminatedCString, @NUInt long encoding);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use -initWithCString:encoding: instead
+     */
     @Generated
     @Deprecated
     @Selector("initWithCString:length:")
-    public native NSString initWithCStringLength(ConstBytePtr bytes, @NUInt long length);
+    public native NSString initWithCStringLength(@NotNull ConstBytePtr bytes, @NUInt long length);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use -initWithCString:encoding: instead
+     */
     @Generated
     @Deprecated
     @Selector("initWithCStringNoCopy:length:freeWhenDone:")
-    public native NSString initWithCStringNoCopyLengthFreeWhenDone(BytePtr bytes, @NUInt long length,
+    public native NSString initWithCStringNoCopyLengthFreeWhenDone(@NotNull BytePtr bytes, @NUInt long length,
             boolean freeBuffer);
 
     @Generated
     @Selector("initWithCharacters:length:")
-    public native NSString initWithCharactersLength(ConstCharPtr characters, @NUInt long length);
+    public native NSString initWithCharactersLength(@NotNull ConstCharPtr characters, @NUInt long length);
 
     /**
      * "NoCopy" is a hint
      */
     @Generated
     @Selector("initWithCharactersNoCopy:length:freeWhenDone:")
-    public native NSString initWithCharactersNoCopyLengthFreeWhenDone(CharPtr characters, @NUInt long length,
+    public native NSString initWithCharactersNoCopyLengthFreeWhenDone(@NotNull CharPtr characters, @NUInt long length,
             boolean freeBuffer);
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSString initWithCoder(NSCoder coder);
+    public native NSString initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use -initWithContentsOfFile:encoding:error: instead
+     */
     @Generated
     @Deprecated
     @Selector("initWithContentsOfFile:")
-    public native NSString initWithContentsOfFile(String path);
+    public native NSString initWithContentsOfFile(@NotNull String path);
 
     @Generated
     @Selector("initWithContentsOfFile:encoding:error:")
-    public native NSString initWithContentsOfFileEncodingError(String path, @NUInt long enc,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSString initWithContentsOfFileEncodingError(@NotNull String path, @NUInt long enc,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("initWithContentsOfFile:usedEncoding:error:")
-    public native NSString initWithContentsOfFileUsedEncodingError(String path, NUIntPtr enc,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSString initWithContentsOfFileUsedEncodingError(@NotNull String path, @Nullable NUIntPtr enc,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use -initWithContentsOfURL:encoding:error: instead
+     */
     @Generated
     @Deprecated
     @Selector("initWithContentsOfURL:")
-    public native NSString initWithContentsOfURL(NSURL url);
+    public native NSString initWithContentsOfURL(@NotNull NSURL url);
 
     /**
      * These use the specified encoding. If nil is returned, the optional error return indicates problem that was
@@ -762,8 +926,8 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      */
     @Generated
     @Selector("initWithContentsOfURL:encoding:error:")
-    public native NSString initWithContentsOfURLEncodingError(NSURL url, @NUInt long enc,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSString initWithContentsOfURLEncodingError(@NotNull NSURL url, @NUInt long enc,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * These try to determine the encoding, and return the encoding which was used. Note that these methods might get
@@ -773,45 +937,48 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      */
     @Generated
     @Selector("initWithContentsOfURL:usedEncoding:error:")
-    public native NSString initWithContentsOfURLUsedEncodingError(NSURL url, NUIntPtr enc,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSString initWithContentsOfURLUsedEncodingError(@NotNull NSURL url, @Nullable NUIntPtr enc,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("initWithData:encoding:")
-    public native NSString initWithDataEncoding(NSData data, @NUInt long encoding);
+    public native NSString initWithDataEncoding(@NotNull NSData data, @NUInt long encoding);
 
     @Generated
     @Variadic()
     @Selector("initWithFormat:")
-    public native NSString initWithFormat(String format, Object... varargs);
+    public native NSString initWithFormat(@NotNull String format, Object... varargs);
 
     @Generated
     @Selector("initWithFormat:arguments:")
-    public native NSString initWithFormatArguments(String format, BytePtr argList);
+    public native NSString initWithFormatArguments(@NotNull String format, BytePtr argList);
 
     @Generated
     @Variadic()
     @Selector("initWithFormat:locale:")
-    public native NSString initWithFormatLocale(String format, @Mapped(ObjCObjectMapper.class) Object locale,
-            Object... varargs);
+    public native NSString initWithFormatLocale(@NotNull String format,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object locale, Object... varargs);
 
     @Generated
     @Selector("initWithFormat:locale:arguments:")
-    public native NSString initWithFormatLocaleArguments(String format, @Mapped(ObjCObjectMapper.class) Object locale,
-            BytePtr argList);
+    public native NSString initWithFormatLocaleArguments(@NotNull String format,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object locale, BytePtr argList);
 
     @Generated
     @Selector("initWithString:")
-    public native NSString initWithString(String aString);
+    public native NSString initWithString(@NotNull String aString);
 
     @Generated
     @Selector("initWithUTF8String:")
-    public native NSString initWithUTF8String(ConstBytePtr nullTerminatedCString);
+    public native NSString initWithUTF8String(@NotNull ConstBytePtr nullTerminatedCString);
 
     @Generated
     @Selector("intValue")
     public native int intValue();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("integerValue")
     @NInt
@@ -823,8 +990,9 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
 
     @Generated
     @Selector("isEqualToString:")
-    public native boolean isEqualToString(String aString);
+    public native boolean isEqualToString(@NotNull String aString);
 
+    @NotNull
     @Generated
     @Selector("lastPathComponent")
     public native String lastPathComponent();
@@ -855,13 +1023,23 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      * Clients wishing to analyze a given string once may use these NSString APIs without having to create an instance
      * of NSLinguisticTagger. If more than one tagging operation is needed on a given string, it is more efficient to
      * use an explicit NSLinguisticTagger instance.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("linguisticTagsInRange:scheme:options:orthography:tokenRanges:")
     public native NSArray<String> linguisticTagsInRangeSchemeOptionsOrthographyTokenRanges(@ByValue NSRange range,
-            String scheme, @NUInt long options, NSOrthography orthography,
-            @ReferenceInfo(type = NSArray.class) Ptr<NSArray<? extends NSValue>> tokenRanges);
+            @NotNull String scheme, @NUInt long options, @Nullable NSOrthography orthography,
+            @Nullable @ReferenceInfo(type = NSArray.class) Ptr<NSArray<? extends NSValue>> tokenRanges);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("localizedCapitalizedString")
     public native String localizedCapitalizedString();
@@ -869,17 +1047,24 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     @Generated
     @Selector("localizedCaseInsensitiveCompare:")
     @NInt
-    public native long localizedCaseInsensitiveCompare(String string);
+    public native long localizedCaseInsensitiveCompare(@NotNull String string);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("localizedCaseInsensitiveContainsString:")
-    public native boolean localizedCaseInsensitiveContainsString(String str);
+    public native boolean localizedCaseInsensitiveContainsString(@NotNull String str);
 
     @Generated
     @Selector("localizedCompare:")
     @NInt
-    public native long localizedCompare(String string);
+    public native long localizedCompare(@NotNull String string);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("localizedLowercaseString")
     public native String localizedLowercaseString();
@@ -889,11 +1074,13 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      * lists and tables where Finder-like sorting is appropriate. The exact behavior of this method may be tweaked in
      * future releases, and will be different under different localizations, so clients should not depend on the exact
      * sorting order of the strings.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("localizedStandardCompare:")
     @NInt
-    public native long localizedStandardCompare(String string);
+    public native long localizedStandardCompare(@NotNull String string);
 
     /**
      * The following two are the most appropriate methods for doing user-level string searches, similar to how searches
@@ -901,39 +1088,61 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      * "standard" in the name implies "system default behavior," so the exact list of search options applied may change
      * over time. If you need more control over the search options, please use the rangeOfString:options:range:locale:
      * method. You can pass [NSLocale currentLocale] for searches in user's locale.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("localizedStandardContainsString:")
-    public native boolean localizedStandardContainsString(String str);
+    public native boolean localizedStandardContainsString(@NotNull String str);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("localizedStandardRangeOfString:")
     @ByValue
-    public native NSRange localizedStandardRangeOfString(String str);
+    public native NSRange localizedStandardRangeOfString(@NotNull String str);
 
     /**
      * The following three return the locale-aware case mappings. They are suitable for strings presented to the user.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("localizedUppercaseString")
     public native String localizedUppercaseString();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("longLongValue")
     public native long longLongValue();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use -cStringUsingEncoding: instead
+     */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("lossyCString")
     public native ConstBytePtr lossyCString();
 
+    @NotNull
     @Generated
     @Selector("lowercaseString")
     public native String lowercaseString();
 
+    /**
+     * API-Since: 6.0
+     */
+    @NotNull
     @Generated
     @Selector("lowercaseStringWithLocale:")
-    public native String lowercaseStringWithLocale(NSLocale locale);
+    public native String lowercaseStringWithLocale(@Nullable NSLocale locale);
 
     /**
      * Result in O(1) time; the estimate may be way over what's needed. Returns 0 on error (overflow)
@@ -943,29 +1152,34 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     @NUInt
     public native long maximumLengthOfBytesUsingEncoding(@NUInt long enc);
 
+    @NotNull
     @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("paragraphRangeForRange:")
     @ByValue
     public native NSRange paragraphRangeForRange(@ByValue NSRange range);
 
+    @NotNull
     @Generated
     @Selector("pathComponents")
     public native NSArray<String> pathComponents();
 
+    @NotNull
     @Generated
     @Selector("pathExtension")
     public native String pathExtension();
 
+    @NotNull
     @Generated
     @Selector("precomposedStringWithCanonicalMapping")
     public native String precomposedStringWithCanonicalMapping();
 
+    @NotNull
     @Generated
     @Selector("precomposedStringWithCompatibilityMapping")
     public native String precomposedStringWithCompatibilityMapping();
@@ -974,11 +1188,13 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      * These methods are no longer recommended since they do not work with property lists and strings files in binary
      * plist format. Please use the APIs in NSPropertyList.h instead.
      */
+    @NotNull
     @Generated
     @Selector("propertyList")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object propertyList();
 
+    @Nullable
     @Generated
     @Selector("propertyListFromStringsFileFormat")
     public native NSDictionary<?, ?> propertyListFromStringsFileFormat();
@@ -986,24 +1202,24 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     /**
      * These return the range of the first character from the set in the string, not the range of a sequence of
      * characters.
-     * <p>
+     * 
      * The range argument specifies the subrange, rather than the whole, of the receiver to use in the search. It is an
      * error to specify a range that is outside of the receiver's bounds, and an exception may be raised.
      */
     @Generated
     @Selector("rangeOfCharacterFromSet:")
     @ByValue
-    public native NSRange rangeOfCharacterFromSet(NSCharacterSet searchSet);
+    public native NSRange rangeOfCharacterFromSet(@NotNull NSCharacterSet searchSet);
 
     @Generated
     @Selector("rangeOfCharacterFromSet:options:")
     @ByValue
-    public native NSRange rangeOfCharacterFromSetOptions(NSCharacterSet searchSet, @NUInt long mask);
+    public native NSRange rangeOfCharacterFromSetOptions(@NotNull NSCharacterSet searchSet, @NUInt long mask);
 
     @Generated
     @Selector("rangeOfCharacterFromSet:options:range:")
     @ByValue
-    public native NSRange rangeOfCharacterFromSetOptionsRange(NSCharacterSet searchSet, @NUInt long mask,
+    public native NSRange rangeOfCharacterFromSetOptionsRange(@NotNull NSCharacterSet searchSet, @NUInt long mask,
             @ByValue NSRange rangeOfReceiverToSearch);
 
     @Generated
@@ -1011,6 +1227,9 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     @ByValue
     public native NSRange rangeOfComposedCharacterSequenceAtIndex(@NUInt long index);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("rangeOfComposedCharacterSequencesForRange:")
     @ByValue
@@ -1021,44 +1240,53 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      * length==0 if the target string is not found. So, to check for containment: ([str rangeOfString:@"target"].length
      * > 0). Note that the length of the range returned by these methods might be different than the length of the
      * target string, due composed characters and such.
-     * <p>
+     * 
      * Note that the first three methods do not take locale arguments, and perform the search in a non-locale aware
      * fashion, which is not appropriate for user-level searching. To do user-level string searching, use the last
      * method, specifying locale:[NSLocale currentLocale], or better yet, use localizedStandardRangeOfString: or
      * localizedStandardContainsString:.
-     * <p>
+     * 
      * The range argument specifies the subrange, rather than the whole, of the receiver to use in the search. It is an
      * error to specify a range that is outside of the receiver's bounds, and an exception may be raised.
      */
     @Generated
     @Selector("rangeOfString:")
     @ByValue
-    public native NSRange rangeOfString(String searchString);
+    public native NSRange rangeOfString(@NotNull String searchString);
 
     @Generated
     @Selector("rangeOfString:options:")
     @ByValue
-    public native NSRange rangeOfStringOptions(String searchString, @NUInt long mask);
+    public native NSRange rangeOfStringOptions(@NotNull String searchString, @NUInt long mask);
 
     @Generated
     @Selector("rangeOfString:options:range:")
     @ByValue
-    public native NSRange rangeOfStringOptionsRange(String searchString, @NUInt long mask,
+    public native NSRange rangeOfStringOptionsRange(@NotNull String searchString, @NUInt long mask,
             @ByValue NSRange rangeOfReceiverToSearch);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("rangeOfString:options:range:locale:")
     @ByValue
-    public native NSRange rangeOfStringOptionsRangeLocale(String searchString, @NUInt long mask,
-            @ByValue NSRange rangeOfReceiverToSearch, NSLocale locale);
+    public native NSRange rangeOfStringOptionsRangeLocale(@NotNull String searchString, @NUInt long mask,
+            @ByValue NSRange rangeOfReceiverToSearch, @Nullable NSLocale locale);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("sizeWithAttributes:")
     @ByValue
-    public native CGSize sizeWithAttributes(NSDictionary<String, ?> attrs);
+    public native CGSize sizeWithAttributes(@Nullable NSDictionary<String, ?> attrs);
 
     /**
      * Single line, no wrapping. Truncation based on the NSLineBreakMode.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -1068,6 +1296,9 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
 
     /**
      * Uses NSLineBreakModeWordWrap
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -1077,6 +1308,9 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
 
     /**
      * NSTextAlignment is not needed to determine size
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -1085,6 +1319,10 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     public native CGSize sizeWithFontConstrainedToSizeLineBreakMode(UIFont font, @ByValue CGSize size,
             @NInt long lineBreakMode);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("sizeWithFont:forWidth:lineBreakMode:")
@@ -1100,6 +1338,9 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      * The first two methods are used together, and the actualFontSize returned in the sizeWithFont method should be
      * passed to the drawAtPoint method.
      * The last method will do the sizing calculation and drawing in one operation.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -1116,6 +1357,7 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     @NUInt
     public native long smallestEncoding();
 
+    @NotNull
     @Generated
     @Selector("stringByAbbreviatingWithTildeInPath")
     public native String stringByAbbreviatingWithTildeInPath();
@@ -1126,48 +1368,69 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      * URL strings cannot be percent-encoded. This method is intended to percent-encode a URL component or subcomponent
      * string, NOT the entire URL string. Any characters in allowedCharacters outside of the 7-bit ASCII range are
      * ignored.
+     * 
+     * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("stringByAddingPercentEncodingWithAllowedCharacters:")
-    public native String stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet allowedCharacters);
+    public native String stringByAddingPercentEncodingWithAllowedCharacters(@NotNull NSCharacterSet allowedCharacters);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use -stringByAddingPercentEncodingWithAllowedCharacters: instead, which always uses the
+     * recommended UTF-8 encoding, and which encodes for a specific URL component or subcomponent since each URL
+     * component or subcomponent has different rules for what characters are valid.
+     */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("stringByAddingPercentEscapesUsingEncoding:")
     public native String stringByAddingPercentEscapesUsingEncoding(@NUInt long enc);
 
+    @NotNull
     @Generated
     @Variadic()
     @Selector("stringByAppendingFormat:")
-    public native String stringByAppendingFormat(String format, Object... varargs);
+    public native String stringByAppendingFormat(@NotNull String format, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("stringByAppendingPathComponent:")
-    public native String stringByAppendingPathComponent(String str);
+    public native String stringByAppendingPathComponent(@NotNull String str);
 
+    @Nullable
     @Generated
     @Selector("stringByAppendingPathExtension:")
-    public native String stringByAppendingPathExtension(String str);
+    public native String stringByAppendingPathExtension(@NotNull String str);
 
+    @NotNull
     @Generated
     @Selector("stringByAppendingString:")
-    public native String stringByAppendingString(String aString);
+    public native String stringByAppendingString(@NotNull String aString);
 
     /**
      * Returns nil if reverse not applicable or transform is invalid
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("stringByApplyingTransform:reverse:")
-    public native String stringByApplyingTransformReverse(String transform, boolean reverse);
+    public native String stringByApplyingTransformReverse(@NotNull String transform, boolean reverse);
 
+    @NotNull
     @Generated
     @Selector("stringByDeletingLastPathComponent")
     public native String stringByDeletingLastPathComponent();
 
+    @NotNull
     @Generated
     @Selector("stringByDeletingPathExtension")
     public native String stringByDeletingPathExtension();
 
+    @NotNull
     @Generated
     @Selector("stringByExpandingTildeInPath")
     public native String stringByExpandingTildeInPath();
@@ -1175,70 +1438,99 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     /**
      * Returns a string with the character folding options applied. theOptions is a mask of compare flags with
      * *InsensitiveSearch suffix.
+     * 
+     * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @Selector("stringByFoldingWithOptions:locale:")
-    public native String stringByFoldingWithOptionsLocale(@NUInt long options, NSLocale locale);
+    public native String stringByFoldingWithOptionsLocale(@NUInt long options, @Nullable NSLocale locale);
 
+    @NotNull
     @Generated
     @Selector("stringByPaddingToLength:withString:startingAtIndex:")
-    public native String stringByPaddingToLengthWithStringStartingAtIndex(@NUInt long newLength, String padString,
-            @NUInt long padIndex);
+    public native String stringByPaddingToLengthWithStringStartingAtIndex(@NUInt long newLength,
+            @NotNull String padString, @NUInt long padIndex);
 
     /**
      * Returns a new string made from the receiver by replacing all percent encoded sequences with the matching UTF-8
      * characters.
+     * 
+     * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("stringByRemovingPercentEncoding")
     public native String stringByRemovingPercentEncoding();
 
     /**
      * Replace characters in range with the specified string, returning new string.
+     * 
+     * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @Selector("stringByReplacingCharactersInRange:withString:")
-    public native String stringByReplacingCharactersInRangeWithString(@ByValue NSRange range, String replacement);
+    public native String stringByReplacingCharactersInRangeWithString(@ByValue NSRange range,
+            @NotNull String replacement);
 
     /**
      * Replace all occurrences of the target string with replacement. Invokes the above method with 0 options and range
      * of the whole string.
+     * 
+     * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @Selector("stringByReplacingOccurrencesOfString:withString:")
-    public native String stringByReplacingOccurrencesOfStringWithString(String target, String replacement);
+    public native String stringByReplacingOccurrencesOfStringWithString(@NotNull String target,
+            @NotNull String replacement);
 
     /**
      * Replace all occurrences of the target string in the specified range with replacement. Specified compare options
      * are used for matching target. If NSRegularExpressionSearch is specified, the replacement is treated as a
      * template, as in the corresponding NSRegularExpression methods, and no other options can apply except
      * NSCaseInsensitiveSearch and NSAnchoredSearch.
+     * 
+     * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @Selector("stringByReplacingOccurrencesOfString:withString:options:range:")
-    public native String stringByReplacingOccurrencesOfStringWithStringOptionsRange(String target, String replacement,
-            @NUInt long options, @ByValue NSRange searchRange);
+    public native String stringByReplacingOccurrencesOfStringWithStringOptionsRange(@NotNull String target,
+            @NotNull String replacement, @NUInt long options, @ByValue NSRange searchRange);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use -stringByRemovingPercentEncoding instead, which always uses the recommended UTF-8
+     * encoding.
+     */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("stringByReplacingPercentEscapesUsingEncoding:")
     public native String stringByReplacingPercentEscapesUsingEncoding(@NUInt long enc);
 
+    @NotNull
     @Generated
     @Selector("stringByResolvingSymlinksInPath")
     public native String stringByResolvingSymlinksInPath();
 
+    @NotNull
     @Generated
     @Selector("stringByStandardizingPath")
     public native String stringByStandardizingPath();
 
+    @NotNull
     @Generated
     @Selector("stringByTrimmingCharactersInSet:")
-    public native String stringByTrimmingCharactersInSet(NSCharacterSet set);
+    public native String stringByTrimmingCharactersInSet(@NotNull NSCharacterSet set);
 
+    @NotNull
     @Generated
     @Selector("stringsByAppendingPaths:")
-    public native NSArray<String> stringsByAppendingPaths(NSArray<String> paths);
+    public native NSArray<String> stringsByAppendingPaths(@NotNull NSArray<String> paths);
 
     /**
      * To avoid breaking up character sequences such as Emoji, you can do:
@@ -1246,10 +1538,12 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      * [str substringToIndex:NSMaxRange([str rangeOfComposedCharacterSequenceAtIndex:index])]
      * [str substringWithRange:[str rangeOfComposedCharacterSequencesForRange:range]
      */
+    @NotNull
     @Generated
     @Selector("substringFromIndex:")
     public native String substringFromIndex(@NUInt long from);
 
+    @NotNull
     @Generated
     @Selector("substringToIndex:")
     public native String substringToIndex(@NUInt long to);
@@ -1257,6 +1551,7 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     /**
      * Use with rangeOfComposedCharacterSequencesForRange: to avoid breaking up character sequences
      */
+    @NotNull
     @Generated
     @Selector("substringWithRange:")
     public native String substringWithRange(@ByValue NSRange range);
@@ -1272,6 +1567,7 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      * that require stable results not depending on the user's locale preference. For locale-aware case mapping for
      * strings presented to users, use the "localized" methods below.
      */
+    @NotNull
     @Generated
     @Selector("uppercaseString")
     public native String uppercaseString();
@@ -1279,10 +1575,13 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     /**
      * The following methods perform localized case mappings based on the locale specified. Passing nil indicates the
      * canonical mapping. For the user preference locale setting, specify +[NSLocale currentLocale].
+     * 
+     * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("uppercaseStringWithLocale:")
-    public native String uppercaseStringWithLocale(NSLocale locale);
+    public native String uppercaseStringWithLocale(@Nullable NSLocale locale);
 
     /**
      * For strings with length variations, such as from a stringsdict file, this method returns the variant at the given
@@ -1290,25 +1589,38 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      * are none smaller, the smallest available is returned. For strings without variations, this method returns self.
      * The unit that width is expressed in is decided by the application or framework. But it is intended to be some
      * measurement indicative of the context a string would fit best to avoid truncation and wasted space.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("variantFittingPresentationWidth:")
     public native String variantFittingPresentationWidth(@NInt long width);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use -writeToFile:atomically:error: instead
+     */
     @Generated
     @Deprecated
     @Selector("writeToFile:atomically:")
-    public native boolean writeToFileAtomically(String path, boolean useAuxiliaryFile);
+    public native boolean writeToFileAtomically(@NotNull String path, boolean useAuxiliaryFile);
 
     @Generated
     @Selector("writeToFile:atomically:encoding:error:")
-    public native boolean writeToFileAtomicallyEncodingError(String path, boolean useAuxiliaryFile, @NUInt long enc,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean writeToFileAtomicallyEncodingError(@NotNull String path, boolean useAuxiliaryFile,
+            @NUInt long enc, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use -writeToURL:atomically:error: instead
+     */
     @Generated
     @Deprecated
     @Selector("writeToURL:atomically:")
-    public native boolean writeToURLAtomically(NSURL url, boolean atomically);
+    public native boolean writeToURLAtomically(@NotNull NSURL url, boolean atomically);
 
     /**
      * Write to specified url or path using the specified encoding. The optional error return is to indicate file system
@@ -1316,43 +1628,44 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      */
     @Generated
     @Selector("writeToURL:atomically:encoding:error:")
-    public native boolean writeToURLAtomicallyEncodingError(NSURL url, boolean useAuxiliaryFile, @NUInt long enc,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean writeToURLAtomicallyEncodingError(@NotNull NSURL url, boolean useAuxiliaryFile,
+            @NUInt long enc, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateLinesUsingBlock {
         @Generated
-        void call_enumerateLinesUsingBlock(String line, BoolPtr stop);
+        void call_enumerateLinesUsingBlock(@NotNull String line, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateLinguisticTagsInRangeSchemeOptionsOrthographyUsingBlock {
         @Generated
-        void call_enumerateLinguisticTagsInRangeSchemeOptionsOrthographyUsingBlock(String tag,
-                @ByValue NSRange tokenRange, @ByValue NSRange sentenceRange, BoolPtr stop);
+        void call_enumerateLinguisticTagsInRangeSchemeOptionsOrthographyUsingBlock(@Nullable String tag,
+                @ByValue NSRange tokenRange, @ByValue NSRange sentenceRange, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateSubstringsInRangeOptionsUsingBlock {
         @Generated
-        void call_enumerateSubstringsInRangeOptionsUsingBlock(String substring, @ByValue NSRange substringRange,
-                @ByValue NSRange enclosingRange, BoolPtr stop);
+        void call_enumerateSubstringsInRangeOptionsUsingBlock(@Nullable String substring,
+                @ByValue NSRange substringRange, @ByValue NSRange enclosingRange, @NotNull BoolPtr stop);
     }
 
     @Generated
     @IsOptional
     @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
     @NInt
-    public static native long itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier);
+    public static native long itemProviderVisibilityForRepresentationWithTypeIdentifier_static(
+            @NotNull String typeIdentifier);
 
     @Generated
     @IsOptional
     @ProtocolClassMethod("itemProviderVisibilityForRepresentationWithTypeIdentifier_static")
     @NInt
-    public long _itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier) {
+    public long _itemProviderVisibilityForRepresentationWithTypeIdentifier_static(@NotNull String typeIdentifier) {
         return itemProviderVisibilityForRepresentationWithTypeIdentifier_static(typeIdentifier);
     }
 
@@ -1360,45 +1673,53 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     @IsOptional
     @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
     @NInt
-    public native long itemProviderVisibilityForRepresentationWithTypeIdentifier(String typeIdentifier);
+    public native long itemProviderVisibilityForRepresentationWithTypeIdentifier(@NotNull String typeIdentifier);
 
+    @Nullable
     @Generated
     @Selector("loadDataWithTypeIdentifier:forItemProviderCompletionHandler:")
-    public native NSProgress loadDataWithTypeIdentifierForItemProviderCompletionHandler(String typeIdentifier,
-            @ObjCBlock(name = "call_loadDataWithTypeIdentifierForItemProviderCompletionHandler") NSItemProviderWriting.Block_loadDataWithTypeIdentifierForItemProviderCompletionHandler completionHandler);
+    public native NSProgress loadDataWithTypeIdentifierForItemProviderCompletionHandler(@NotNull String typeIdentifier,
+            @NotNull @ObjCBlock(name = "call_loadDataWithTypeIdentifierForItemProviderCompletionHandler") NSItemProviderWriting.Block_loadDataWithTypeIdentifierForItemProviderCompletionHandler completionHandler);
 
+    @Nullable
     @Generated
     @Selector("objectWithItemProviderData:typeIdentifier:error:")
-    public static native NSString objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public static native NSString objectWithItemProviderDataTypeIdentifierError(@NotNull NSData data,
+            @NotNull String typeIdentifier, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    @Nullable
     @Generated
     @ProtocolClassMethod("objectWithItemProviderDataTypeIdentifierError")
-    public NSString _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
+    public NSString _objectWithItemProviderDataTypeIdentifierError(@NotNull NSData data, @NotNull String typeIdentifier,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
         return objectWithItemProviderDataTypeIdentifierError(data, typeIdentifier, outError);
     }
 
+    @NotNull
     @Generated
     @Selector("readableTypeIdentifiersForItemProvider")
     public static native NSArray<String> readableTypeIdentifiersForItemProvider();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("readableTypeIdentifiersForItemProvider")
     public NSArray<String> _readableTypeIdentifiersForItemProvider() {
         return readableTypeIdentifiersForItemProvider();
     }
 
+    @NotNull
     @Generated
     @Selector("writableTypeIdentifiersForItemProvider")
     public static native NSArray<String> writableTypeIdentifiersForItemProvider_static();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("writableTypeIdentifiersForItemProvider_static")
     public NSArray<String> _writableTypeIdentifiersForItemProvider_static() {
         return writableTypeIdentifiersForItemProvider_static();
     }
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("writableTypeIdentifiersForItemProvider")
@@ -1407,71 +1728,74 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     /**
      * Reads the string from the Localizable.strings file in the main app's bundle
      */
+    @NotNull
     @Generated
     @Variadic()
     @Selector("deferredLocalizedIntentsStringWithFormat:")
-    public static native String deferredLocalizedIntentsStringWithFormat(String format, Object... varargs);
+    public static native String deferredLocalizedIntentsStringWithFormat(@NotNull String format, Object... varargs);
 
     /**
      * Reads the string from the provided table file in the main app's bundle
      */
+    @NotNull
     @Generated
     @Variadic()
     @Selector("deferredLocalizedIntentsStringWithFormat:fromTable:")
-    public static native String deferredLocalizedIntentsStringWithFormatFromTable(String format, String table,
-            Object... varargs);
+    public static native String deferredLocalizedIntentsStringWithFormatFromTable(@NotNull String format,
+            @Nullable String table, Object... varargs);
 
     /**
      * Reads the string from the provided table file in the main app's bundle
      */
+    @NotNull
     @Generated
     @Selector("deferredLocalizedIntentsStringWithFormat:fromTable:arguments:")
-    public static native String deferredLocalizedIntentsStringWithFormatFromTableArguments(String format, String table,
-            BytePtr arguments);
+    public static native String deferredLocalizedIntentsStringWithFormatFromTableArguments(@NotNull String format,
+            @Nullable String table, BytePtr arguments);
 
     @Generated
     @Selector("initWithBytesNoCopy:length:encoding:deallocator:")
-    public native NSString initWithBytesNoCopyLengthEncodingDeallocator(VoidPtr bytes, @NUInt long len,
+    public native NSString initWithBytesNoCopyLengthEncodingDeallocator(@NotNull VoidPtr bytes, @NUInt long len,
             @NUInt long encoding,
-            @ObjCBlock(name = "call_initWithBytesNoCopyLengthEncodingDeallocator") Block_initWithBytesNoCopyLengthEncodingDeallocator deallocator);
+            @Nullable @ObjCBlock(name = "call_initWithBytesNoCopyLengthEncodingDeallocator") Block_initWithBytesNoCopyLengthEncodingDeallocator deallocator);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithBytesNoCopyLengthEncodingDeallocator {
         @Generated
-        void call_initWithBytesNoCopyLengthEncodingDeallocator(VoidPtr arg0, @NUInt long arg1);
+        void call_initWithBytesNoCopyLengthEncodingDeallocator(@NotNull VoidPtr arg0, @NUInt long arg1);
     }
 
     @Generated
     @Selector("initWithCharactersNoCopy:length:deallocator:")
-    public native NSString initWithCharactersNoCopyLengthDeallocator(CharPtr chars, @NUInt long len,
-            @ObjCBlock(name = "call_initWithCharactersNoCopyLengthDeallocator") Block_initWithCharactersNoCopyLengthDeallocator deallocator);
+    public native NSString initWithCharactersNoCopyLengthDeallocator(@NotNull CharPtr chars, @NUInt long len,
+            @Nullable @ObjCBlock(name = "call_initWithCharactersNoCopyLengthDeallocator") Block_initWithCharactersNoCopyLengthDeallocator deallocator);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithCharactersNoCopyLengthDeallocator {
         @Generated
-        void call_initWithCharactersNoCopyLengthDeallocator(CharPtr arg0, @NUInt long arg1);
+        void call_initWithCharactersNoCopyLengthDeallocator(@NotNull CharPtr arg0, @NUInt long arg1);
     }
 
     /**
      * \brief Generate a path component based on a partial filename and a file
      * type, then append it to a copy of the receiver.
-     * <p>
+     * 
      * \param partialName The partial filename that should be expanded upon,
      * e.g. \c "readme".
      * \param contentType The type the resulting file should conform to, e.g.
      * \c UTTypePlainText.
-     * <p>
+     * 
      * \result A complete file path. Using the argument examples above, this method
      * would return a string with a last path component of \c "readme.txt".
-     * <p>
+     * 
      * Use this method when you have partial input from a user or other source and
      * need to produce a complete filename suitable for that input. For example, if
      * you are downloading a file from the Internet and know its MIME type, you can
      * use this method to ensure the correct filename extension is applied to the
      * URL where you save the file.
-     * <p>
+     * 
      * If \a partialName already has a path extension, and that path extension is
      * valid for file system objects of type \a contentType, no additional
      * extension is appended to the path component before constructing the string.
@@ -1482,31 +1806,35 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      * component of \c "puppy.jpg.txt" . If you want to ensure any existing path
      * extension is replaced, you can use the \c stringByDeletingPathExtension
      * property first.
-     * <p>
+     * 
      * If the path component could not be appended, this method returns a copy of
      * \c self .
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("stringByAppendingPathComponent:conformingToType:")
-    public native String stringByAppendingPathComponentConformingToType(String partialName, UTType contentType);
+    public native String stringByAppendingPathComponentConformingToType(@NotNull String partialName,
+            @NotNull UTType contentType);
 
     /**
      * \brief Generate a string based on a partial filename or path and a
      * file type.
-     * <p>
+     * 
      * \param contentType The type the resulting file should conform to, e.g.
      * \c UTTypePlainText.
-     * <p>
+     * 
      * \result A complete file path. Using the argument example above and assuming
      * the receiver equals \c "readme" , this method would return
      * \c "readme.txt".
-     * <p>
+     * 
      * Use this method when you have partial input from a user or other source and
      * need to produce a complete filename suitable for that input. For example, if
      * you are downloading a file from the Internet and know its MIME type, you can
      * use this method to ensure the correct filename extension is applied to the
      * URL where you save the file.
-     * <p>
+     * 
      * If the receiver already has a path extension, and that path extension is
      * valid for file system objects of type \a contentType, no additional
      * extension is appended to the receiver before constructing the result.
@@ -1516,24 +1844,87 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
      * respectively, the resulting string will equal \c "puppy.jpg.txt" . If you
      * want to ensure any existing path extension is replaced, you can use the
      * \c stringByDeletingPathExtension property first.
-     * <p>
+     * 
      * If the extension could not be appended, this method returns a copy of
      * \c self .
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("stringByAppendingPathExtensionForType:")
-    public native String stringByAppendingPathExtensionForType(UTType contentType);
+    public native String stringByAppendingPathExtensionForType(@NotNull UTType contentType);
 
     /**
      * Returns a sensor stream that contains deletion records of the sensor
-     * <p>
+     * 
      * This sensor stream should only be used for fetching. All other
      * operations will be ignored. Deletion records share the recording and authorization
      * state with their parent sensor.
-     *
+     * 
      * @return May return nil if there is no deletion record available for this sensor
      */
+    @Nullable
     @Generated
     @Selector("sr_sensorForDeletionRecordsFromSensor")
     public native String sr_sensorForDeletionRecordsFromSensor();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("initWithValidatedFormat:validFormatSpecifiers:arguments:error:")
+    public native NSString initWithValidatedFormatValidFormatSpecifiersArgumentsError(@NotNull String format,
+            @NotNull String validFormatSpecifiers, BytePtr argList,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Variadic()
+    @Selector("initWithValidatedFormat:validFormatSpecifiers:error:")
+    public native NSString initWithValidatedFormatValidFormatSpecifiersError(@NotNull String format,
+            @NotNull String validFormatSpecifiers, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error,
+            Object... varargs);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @Selector("initWithValidatedFormat:validFormatSpecifiers:locale:arguments:error:")
+    public native NSString initWithValidatedFormatValidFormatSpecifiersLocaleArgumentsError(@NotNull String format,
+            @NotNull String validFormatSpecifiers, @Nullable @Mapped(ObjCObjectMapper.class) Object locale,
+            BytePtr argList, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Variadic()
+    @Selector("initWithValidatedFormat:validFormatSpecifiers:locale:error:")
+    public native NSString initWithValidatedFormatValidFormatSpecifiersLocaleError(@NotNull String format,
+            @NotNull String validFormatSpecifiers, @Nullable @Mapped(ObjCObjectMapper.class) Object locale,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error, Object... varargs);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Nullable
+    @Generated
+    @Variadic()
+    @Selector("localizedStringWithValidatedFormat:validFormatSpecifiers:error:")
+    public static native NSString localizedStringWithValidatedFormatValidFormatSpecifiersError(@NotNull String format,
+            @NotNull String validFormatSpecifiers, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error,
+            Object... varargs);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @Variadic()
+    @Selector("stringWithValidatedFormat:validFormatSpecifiers:error:")
+    public static native NSString stringWithValidatedFormatValidFormatSpecifiersError(@NotNull String format,
+            @NotNull String validFormatSpecifiers, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error,
+            Object... varargs);
 }

@@ -25,10 +25,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNConvolutionTransposeGradientState
- * <p>
+ * 
  * The MPSCNNConvolutionTransposeGradientState is returned by resultStateForSourceImage:sourceStates method on
  * MPSCNNConvolutionTranspose object.
  * Note that resultStateForSourceImage:sourceStates:destinationImage creates the object on autoreleasepool.
@@ -45,12 +47,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * object and the MPSCNNConvolutionTransposeGradientState produced by MPSCNNConvolutionTranspose's
  * resultStateForSourceImage:sourceStates:destinationImage will be consumed by
  * MPSCNNConvolutionTransposeGradient object
- * <p>
+ * 
  * Note that state objects are not usable across batches i.e. when batch is done you should nuke the state object and
  * create
  * new one for next batch.
  * Weights update process for MPSCNNConvolutionTranspose is same as explained above for MPSCNNConvolution. See comments
  * for MPSCNNConvolutionGradientState.
+ * 
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -82,31 +87,35 @@ public class MPSCNNConvolutionTransposeGradientState extends MPSCNNConvolutionGr
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] convolutionTranspose
-     * <p>
+     * 
      * The convolutionTranspose filter that produced the state.
      */
+    @NotNull
     @Generated
     @Selector("convolutionTranspose")
     public native MPSCNNConvolutionTranspose convolutionTranspose();
@@ -131,26 +140,26 @@ public class MPSCNNConvolutionTransposeGradientState extends MPSCNNConvolutionGr
     @Generated
     @Selector("initWithDevice:bufferSize:")
     public native MPSCNNConvolutionTransposeGradientState initWithDeviceBufferSize(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long bufferSize);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long bufferSize);
 
     @Generated
     @Selector("initWithDevice:resourceList:")
     public native MPSCNNConvolutionTransposeGradientState initWithDeviceResourceList(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, MPSStateResourceList resourceList);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSStateResourceList resourceList);
 
     @Generated
     @Selector("initWithDevice:textureDescriptor:")
     public native MPSCNNConvolutionTransposeGradientState initWithDeviceTextureDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, MTLTextureDescriptor descriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MTLTextureDescriptor descriptor);
 
     @Generated
     @Selector("initWithResource:")
     public native MPSCNNConvolutionTransposeGradientState initWithResource(
-            @Mapped(ObjCObjectMapper.class) MTLResource resource);
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLResource resource);
 
     @Generated
     @Selector("initWithResources:")
-    public native MPSCNNConvolutionTransposeGradientState initWithResources(NSArray<?> resources);
+    public native MPSCNNConvolutionTransposeGradientState initWithResources(@Nullable NSArray<?> resources);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -169,9 +178,10 @@ public class MPSCNNConvolutionTransposeGradientState extends MPSCNNConvolutionGr
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -194,25 +204,30 @@ public class MPSCNNConvolutionTransposeGradientState extends MPSCNNConvolutionGr
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:")
     public static native MPSCNNConvolutionTransposeGradientState temporaryStateWithCommandBuffer(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:bufferSize:")
     public static native MPSCNNConvolutionTransposeGradientState temporaryStateWithCommandBufferBufferSize(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:resourceList:")
     public static native MPSCNNConvolutionTransposeGradientState temporaryStateWithCommandBufferResourceList(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSStateResourceList resourceList);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSStateResourceList resourceList);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:textureDescriptor:")
     public static native MPSCNNConvolutionTransposeGradientState temporaryStateWithCommandBufferTextureDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MTLTextureDescriptor descriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NotNull MTLTextureDescriptor descriptor);
 
     @Generated
     @Selector("version")

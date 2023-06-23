@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_parameters_attribution_t
- * <p>
+ * 
  * Attribution values can be used to indicate who determined the network content being accessed.
  */
 @Generated

@@ -41,10 +41,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNFloor
- * <p>
+ * 
  * SCNFloor represents an infinite plane geometry.
  */
 @Generated
@@ -77,22 +79,25 @@ public class SCNFloor extends SCNGeometry {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -107,9 +112,9 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * floor
-     * <p>
+     * 
      * Creates and returns a floor.
-     * <p>
+     * 
      * A floor is an infinite plane.
      */
     @Generated
@@ -122,12 +127,12 @@ public class SCNFloor extends SCNGeometry {
 
     @Generated
     @Selector("geometryWithMDLMesh:")
-    public static native SCNFloor geometryWithMDLMesh(MDLMesh mdlMesh);
+    public static native SCNFloor geometryWithMDLMesh(@NotNull MDLMesh mdlMesh);
 
     @Generated
     @Selector("geometryWithSources:elements:")
-    public static native SCNFloor geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
-            NSArray<? extends SCNGeometryElement> elements);
+    public static native SCNFloor geometryWithSourcesElements(@NotNull NSArray<? extends SCNGeometrySource> sources,
+            @Nullable NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
     @Selector("hash")
@@ -151,9 +156,10 @@ public class SCNFloor extends SCNGeometry {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -191,14 +197,16 @@ public class SCNFloor extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNFloor initWithCoder(NSCoder coder);
+    public native SCNFloor initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] length
-     * <p>
+     * 
      * The floor extent along the Z axis. Animatable.
-     * <p>
+     * 
      * If the value is equal to 0, the floor is infinite on the Z axis. The default value is 0.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("length")
@@ -207,8 +215,10 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] reflectionCategoryBitMask
-     * <p>
+     * 
      * Determines the node categories to reflect. Defaults to all bits set.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("reflectionCategoryBitMask")
@@ -217,9 +227,9 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] reflectionFalloffEnd
-     * <p>
+     * 
      * Specifies the distance from the floor where the falloff finishes. Animatable.
-     * <p>
+     * 
      * If the value is 0 then there is no falloff. The default value is 0.
      */
     @Generated
@@ -229,9 +239,9 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] reflectionFalloffStart
-     * <p>
+     * 
      * Specifies the distance from the floor where the falloff begins. Animatable.
-     * <p>
+     * 
      * The default value is 0.
      */
     @Generated
@@ -241,9 +251,9 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] reflectionResolutionScaleFactor
-     * <p>
+     * 
      * Specifies the resolution scale factor of the buffer used to render the reflection.
-     * <p>
+     * 
      * Defaults to 0.5.
      * #endif
      */
@@ -254,9 +264,9 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] reflectivity
-     * <p>
+     * 
      * Specifies the reflectivity of the floor. Animatable.
-     * <p>
+     * 
      * If the value is greater than zero then the surface will reflect other objects in the scene. The default value is
      * 0.25.
      */
@@ -267,10 +277,12 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] length
-     * <p>
+     * 
      * The floor extent along the Z axis. Animatable.
-     * <p>
+     * 
      * If the value is equal to 0, the floor is infinite on the Z axis. The default value is 0.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setLength:")
@@ -278,8 +290,10 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] reflectionCategoryBitMask
-     * <p>
+     * 
      * Determines the node categories to reflect. Defaults to all bits set.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setReflectionCategoryBitMask:")
@@ -287,9 +301,9 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] reflectionFalloffEnd
-     * <p>
+     * 
      * Specifies the distance from the floor where the falloff finishes. Animatable.
-     * <p>
+     * 
      * If the value is 0 then there is no falloff. The default value is 0.
      */
     @Generated
@@ -298,9 +312,9 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] reflectionFalloffStart
-     * <p>
+     * 
      * Specifies the distance from the floor where the falloff begins. Animatable.
-     * <p>
+     * 
      * The default value is 0.
      */
     @Generated
@@ -309,9 +323,9 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] reflectionResolutionScaleFactor
-     * <p>
+     * 
      * Specifies the resolution scale factor of the buffer used to render the reflection.
-     * <p>
+     * 
      * Defaults to 0.5.
      * #endif
      */
@@ -321,9 +335,9 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] reflectivity
-     * <p>
+     * 
      * Specifies the reflectivity of the floor. Animatable.
-     * <p>
+     * 
      * If the value is greater than zero then the surface will reflect other objects in the scene. The default value is
      * 0.25.
      */
@@ -333,10 +347,12 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] width
-     * <p>
+     * 
      * The floor extent along the X axis. Animatable.
-     * <p>
+     * 
      * If the value is equal to 0, the floor is infinite on the X axis. The default value is 0.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setWidth:")
@@ -350,10 +366,12 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] width
-     * <p>
+     * 
      * The floor extent along the X axis. Animatable.
-     * <p>
+     * 
      * If the value is equal to 0, the floor is infinite on the X axis. The default value is 0.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("width")

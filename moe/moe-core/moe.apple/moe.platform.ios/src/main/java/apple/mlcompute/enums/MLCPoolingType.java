@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] MLCPoolingType
- * <p>
+ * 
  * A pooling function type for a pooling layer.
  */
 @Generated

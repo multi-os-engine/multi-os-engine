@@ -24,9 +24,13 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Device-specific compiled depth/stencil state object
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Metal")
@@ -35,9 +39,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLDepthStencilState {
     /**
      * [@property] device
-     * <p>
+     * 
      * The device this resource was created against. This resource can only be used with this device.
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -45,9 +50,10 @@ public interface MTLDepthStencilState {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();

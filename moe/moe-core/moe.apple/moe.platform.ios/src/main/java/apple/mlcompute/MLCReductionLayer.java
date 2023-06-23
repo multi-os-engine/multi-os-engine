@@ -22,15 +22,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCReductionLayer
- * <p>
+ * 
  * Reduce tensor values across a given dimension to a scalar value.
- * <p>
+ * 
  * The layer is used to perform reductionType operation on a given dimension.
  * Result of this layer is a tensor of the same shape as source tensor,
  * except for the given dimension which is set to 1.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -62,22 +66,25 @@ public class MLCReductionLayer extends MLCLayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -92,7 +99,7 @@ public class MLCReductionLayer extends MLCLayer {
 
     /**
      * [@property] dimension
-     * <p>
+     * 
      * The dimension over which to perform the reduction operation
      */
     @Generated
@@ -102,9 +109,12 @@ public class MLCReductionLayer extends MLCLayer {
 
     /**
      * [@property] dimensions
-     * <p>
+     * 
      * The dimensions over which to perform the reduction operation
+     * 
+     * API-Since: 14.5
      */
+    @NotNull
     @Generated
     @Selector("dimensions")
     public native NSArray<? extends NSNumber> dimensions();
@@ -135,13 +145,14 @@ public class MLCReductionLayer extends MLCLayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Create a reduction layer.
-     *
+     * 
      * @param reductionType The reduction type.
      * @param dimension     The reduction dimension.
      * @return A new reduction layer.
@@ -152,15 +163,17 @@ public class MLCReductionLayer extends MLCLayer {
 
     /**
      * Create a reduction layer.
-     *
+     * 
      * @param reductionType The reduction type.
      * @param dimensions    The list of dimensions to reduce over
      * @return A new reduction layer.
+     * 
+     *         API-Since: 14.5
      */
     @Generated
     @Selector("layerWithReductionType:dimensions:")
     public static native MLCReductionLayer layerWithReductionTypeDimensions(int reductionType,
-            NSArray<? extends NSNumber> dimensions);
+            @NotNull NSArray<? extends NSNumber> dimensions);
 
     @Generated
     @Owned
@@ -169,7 +182,7 @@ public class MLCReductionLayer extends MLCLayer {
 
     /**
      * [@property] reductionType
-     * <p>
+     * 
      * The reduction type
      */
     @Generated
@@ -194,7 +207,7 @@ public class MLCReductionLayer extends MLCLayer {
 
     @Generated
     @Selector("supportsDataType:onDevice:")
-    public static native boolean supportsDataTypeOnDevice(int dataType, MLCDevice device);
+    public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
 
     @Generated
     @Selector("version")

@@ -18,7 +18,6 @@ package apple.avfoundation;
 
 import apple.NSObject;
 import apple.avfoundation.protocol.AVCaptureMetadataOutputObjectsDelegate;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -41,16 +40,21 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCaptureMetadataOutput
- * <p>
+ * 
  * AVCaptureMetadataOutput is a concrete subclass of AVCaptureOutput that can be used to process metadata objects from
  * an attached connection.
- * <p>
+ * 
  * Instances of AVCaptureMetadataOutput emit arrays of AVMetadataObject instances (see AVMetadataObject.h), such as
  * detected faces. Applications can access the metadata objects with the
  * captureOutput:didOutputMetadataObjects:fromConnection: delegate method.
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("AVFoundation")
@@ -82,22 +86,25 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -132,9 +139,10 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,15 +172,16 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
 
     /**
      * [@property] availableMetadataObjectTypes
-     * <p>
+     * 
      * Indicates the receiver's supported metadata object types.
-     * <p>
+     * 
      * The value of this property is an NSArray of NSStrings corresponding to AVMetadataObjectType strings defined in
      * AVMetadataObject.h -- one for each metadata object type supported by the receiver. Available metadata object
      * types are dependent on the capabilities of the AVCaptureInputPort to which this receiver's AVCaptureConnection is
      * connected. Clients may specify the types of objects they would like to process by calling
      * setMetadataObjectTypes:. This property is key-value observable.
      */
+    @NotNull
     @Generated
     @Selector("availableMetadataObjectTypes")
     public native NSArray<String> availableMetadataObjectTypes();
@@ -183,9 +192,9 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
 
     /**
      * [@property] metadataObjectTypes
-     * <p>
+     * 
      * Specifies the types of metadata objects that the receiver should present to the client.
-     * <p>
+     * 
      * AVCaptureMetadataOutput may detect and emit multiple metadata object types. For apps linked before iOS 7.0, the
      * receiver defaults to capturing face metadata objects if supported (see -availableMetadataObjectTypes). For apps
      * linked on or after iOS 7.0, the receiver captures no metadata objects by default. -setMetadataObjectTypes: throws
@@ -198,25 +207,27 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
 
     /**
      * [@property] metadataObjectsCallbackQueue
-     * <p>
+     * 
      * The dispatch queue on which all metadata object delegate methods will be called.
-     * <p>
+     * 
      * The value of this property is a dispatch_queue_t. The queue is set using the setMetadataObjectsDelegate:queue:
      * method.
      */
+    @Nullable
     @Generated
     @Selector("metadataObjectsCallbackQueue")
     public native NSObject metadataObjectsCallbackQueue();
 
     /**
      * [@property] metadataObjectsDelegate
-     * <p>
+     * 
      * The receiver's delegate.
-     * <p>
+     * 
      * The value of this property is an object conforming to the AVCaptureMetadataOutputObjectsDelegate protocol that
      * will receive metadata objects after they are captured. The delegate is set using the
      * setMetadataObjectsDelegate:queue: method.
      */
+    @Nullable
     @Generated
     @Selector("metadataObjectsDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -224,17 +235,19 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
 
     /**
      * [@property] rectOfInterest
-     * <p>
+     * 
      * Specifies a rectangle of interest for limiting the search area for visual metadata.
-     * <p>
+     * 
      * The value of this property is a CGRect that determines the receiver's rectangle of interest for each frame of
      * video. The rectangle's origin is top left and is relative to the coordinate space of the device providing the
      * metadata. Specifying a rectOfInterest may improve detection performance for certain types of metadata. The
      * default value of this property is the value CGRectMake(0, 0, 1, 1). Metadata objects whose bounds do not
      * intersect with the rectOfInterest will not be returned.
-     * <p>
+     * 
      * As of iOS 13, this property can be set without requiring a lengthy rebuild of the session in which video preview
      * is disrupted.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("rectOfInterest")
@@ -243,9 +256,9 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
 
     /**
      * [@property] metadataObjectTypes
-     * <p>
+     * 
      * Specifies the types of metadata objects that the receiver should present to the client.
-     * <p>
+     * 
      * AVCaptureMetadataOutput may detect and emit multiple metadata object types. For apps linked before iOS 7.0, the
      * receiver defaults to capturing face metadata objects if supported (see -availableMetadataObjectTypes). For apps
      * linked on or after iOS 7.0, the receiver captures no metadata objects by default. -setMetadataObjectTypes: throws
@@ -258,43 +271,47 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
 
     /**
      * setMetadataObjectsDelegate:queue:
-     * <p>
+     * 
      * Sets the receiver's delegate that will accept metadata objects and dispatch queue on which the delegate will be
      * called.
-     * <p>
+     * 
      * When new metadata objects are captured in the receiver's connection, they will be vended to the delegate using
      * the captureOutput:didOutputMetadataObjects:fromConnection: delegate method. All delegate methods will be called
      * on the specified dispatch queue.
-     * <p>
+     * 
      * Clients that need to minimize the chances of metadata being dropped should specify a queue on which a
      * sufficiently small amount of processing is performed along with receiving metadata objects.
-     * <p>
+     * 
      * A serial dispatch queue must be used to guarantee that metadata objects will be delivered in order. The
      * objectsCallbackQueue parameter may not be NULL, except when setting the objectsDelegate to nil.
-     *
-     * @param objectsDelegate      An object conforming to the AVCaptureMetadataOutputObjectsDelegate protocol that will
+     * 
+     * @param objectsDelegate
+     *                             An object conforming to the AVCaptureMetadataOutputObjectsDelegate protocol that will
      *                             receive metadata objects after they are captured.
-     * @param objectsCallbackQueue A dispatch queue on which all delegate methods will be called.
+     * @param objectsCallbackQueue
+     *                             A dispatch queue on which all delegate methods will be called.
      */
     @Generated
     @Selector("setMetadataObjectsDelegate:queue:")
     public native void setMetadataObjectsDelegateQueue(
-            @Mapped(ObjCObjectMapper.class) AVCaptureMetadataOutputObjectsDelegate objectsDelegate,
-            NSObject objectsCallbackQueue);
+            @Nullable @Mapped(ObjCObjectMapper.class) AVCaptureMetadataOutputObjectsDelegate objectsDelegate,
+            @Nullable NSObject objectsCallbackQueue);
 
     /**
      * [@property] rectOfInterest
-     * <p>
+     * 
      * Specifies a rectangle of interest for limiting the search area for visual metadata.
-     * <p>
+     * 
      * The value of this property is a CGRect that determines the receiver's rectangle of interest for each frame of
      * video. The rectangle's origin is top left and is relative to the coordinate space of the device providing the
      * metadata. Specifying a rectOfInterest may improve detection performance for certain types of metadata. The
      * default value of this property is the value CGRectMake(0, 0, 1, 1). Metadata objects whose bounds do not
      * intersect with the rectOfInterest will not be returned.
-     * <p>
+     * 
      * As of iOS 13, this property can be set without requiring a lengthy rebuild of the session in which video preview
      * is disrupted.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setRectOfInterest:")

@@ -1,7 +1,5 @@
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGSize;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -9,10 +7,14 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGSize;
 
 /**
  * Objects conforming to UIFocusItemScrollableContainer are updated accordingly to ensure the
  * focused item remains visible on the screen.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("UIKit")

@@ -21,33 +21,47 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEVPNStatus
- * <p>
+ * 
  * VPN status codes
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class NEVPNStatus {
     /**
      * [@const] NEVPNStatusInvalid The VPN is not configured.
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Invalid = 0x0000000000000000L;
     /**
      * [@const] NEVPNStatusDisconnected The VPN is disconnected.
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Disconnected = 0x0000000000000001L;
     /**
      * [@const] NEVPNStatusConnecting The VPN is connecting.
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Connecting = 0x0000000000000002L;
     /**
      * [@const] NEVPNStatusConnected The VPN is connected.
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Connected = 0x0000000000000003L;
     /**
      * [@const] NEVPNStatusReasserting The VPN is reconnecting following loss of underlying network connectivity.
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Reasserting = 0x0000000000000004L;
     /**
      * [@const] NEVPNStatusDisconnecting The VPN is disconnecting.
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Disconnecting = 0x0000000000000005L;
 

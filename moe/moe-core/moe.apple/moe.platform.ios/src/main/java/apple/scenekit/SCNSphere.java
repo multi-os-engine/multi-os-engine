@@ -41,10 +41,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNSphere
- * <p>
+ * 
  * SCNSphere represents a sphere with controllable radius
  */
 @Generated
@@ -77,22 +79,25 @@ public class SCNSphere extends SCNGeometry {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -111,12 +116,12 @@ public class SCNSphere extends SCNGeometry {
 
     @Generated
     @Selector("geometryWithMDLMesh:")
-    public static native SCNSphere geometryWithMDLMesh(MDLMesh mdlMesh);
+    public static native SCNSphere geometryWithMDLMesh(@NotNull MDLMesh mdlMesh);
 
     @Generated
     @Selector("geometryWithSources:elements:")
-    public static native SCNSphere geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
-            NSArray<? extends SCNGeometryElement> elements);
+    public static native SCNSphere geometryWithSourcesElements(@NotNull NSArray<? extends SCNGeometrySource> sources,
+            @Nullable NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
     @Selector("hash")
@@ -140,9 +145,10 @@ public class SCNSphere extends SCNGeometry {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,9 +169,9 @@ public class SCNSphere extends SCNGeometry {
 
     /**
      * sphereWithRadius:
-     * <p>
+     * 
      * Creates and returns a sphere with given radius.
-     *
+     * 
      * @param radius The radius of the sphere.
      */
     @Generated
@@ -191,13 +197,13 @@ public class SCNSphere extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNSphere initWithCoder(NSCoder coder);
+    public native SCNSphere initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] geodesic
-     * <p>
+     * 
      * Indicate if the geometry is a geosphere.
-     * <p>
+     * 
      * The default value is NO.
      */
     @Generated
@@ -206,9 +212,9 @@ public class SCNSphere extends SCNGeometry {
 
     /**
      * [@property] geodesic
-     * <p>
+     * 
      * Indicate if the geometry is a geosphere.
-     * <p>
+     * 
      * The default value is NO.
      */
     @Generated
@@ -217,9 +223,9 @@ public class SCNSphere extends SCNGeometry {
 
     /**
      * [@property] radius
-     * <p>
+     * 
      * The sphere radius. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
      */
     @Generated
@@ -229,9 +235,9 @@ public class SCNSphere extends SCNGeometry {
 
     /**
      * [@property] segmentCount
-     * <p>
+     * 
      * The number of segments along both spherical coordinates. Animatable.
-     * <p>
+     * 
      * If the value is less than 3, the behavior is undefined. The default value is 24.
      */
     @Generated
@@ -241,9 +247,9 @@ public class SCNSphere extends SCNGeometry {
 
     /**
      * [@property] radius
-     * <p>
+     * 
      * The sphere radius. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
      */
     @Generated
@@ -252,9 +258,9 @@ public class SCNSphere extends SCNGeometry {
 
     /**
      * [@property] segmentCount
-     * <p>
+     * 
      * The number of segments along both spherical coordinates. Animatable.
-     * <p>
+     * 
      * If the value is less than 3, the behavior is undefined. The default value is 24.
      */
     @Generated

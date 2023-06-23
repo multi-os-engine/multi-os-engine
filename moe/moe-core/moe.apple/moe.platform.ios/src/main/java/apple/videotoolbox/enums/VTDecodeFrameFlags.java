@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] VTDecodeFrameFlags
- * <p>
+ * 
  * Directives for the decompression session and the video decoder, passed into
  * decodeFlags parameter of VTDecompressionSessionDecodeFrame.
- * <p>
+ * 
  * [@constant] kVTDecodeFrame_EnableAsynchronousDecompression
  * With the kVTDecodeFrame_EnableAsynchronousDecompression bit clear, the video decoder
  * is compelled to emit every frame before it returns. With the bit set, the decoder may

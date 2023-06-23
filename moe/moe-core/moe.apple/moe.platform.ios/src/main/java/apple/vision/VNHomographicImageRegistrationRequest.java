@@ -30,15 +30,19 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An image registration request that will calculate a homographic transformation for morphing a "floating" image onto
  * an unchanging "reference" image.
- * <p>
+ * 
  * The request is created with the targeted image acting as the floating image. Processing the request will calculate
  * the matrix warp transform that morph the floating image onto the reference image.
  * Note that the request will fail unless the pixel dimensions of the reference image do not exactly match the resolved
  * region of interest of the floating image.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -70,22 +74,25 @@ public class VNHomographicImageRegistrationRequest extends VNImageRegistrationRe
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -110,117 +117,117 @@ public class VNHomographicImageRegistrationRequest extends VNImageRegistrationRe
     @Generated
     @Selector("initWithCompletionHandler:")
     public native VNHomographicImageRegistrationRequest initWithCompletionHandler(
-            @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithTargetedCGImage:options:")
-    public native VNHomographicImageRegistrationRequest initWithTargetedCGImageOptions(CGImageRef cgImage,
-            NSDictionary<String, ?> options);
+    public native VNHomographicImageRegistrationRequest initWithTargetedCGImageOptions(@NotNull CGImageRef cgImage,
+            @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedCGImage:options:completionHandler:")
     public native VNHomographicImageRegistrationRequest initWithTargetedCGImageOptionsCompletionHandler(
-            CGImageRef cgImage, NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedCGImageOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCGImageOptionsCompletionHandler completionHandler);
+            @NotNull CGImageRef cgImage, @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedCGImageOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCGImageOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithTargetedCGImage:orientation:options:")
-    public native VNHomographicImageRegistrationRequest initWithTargetedCGImageOrientationOptions(CGImageRef cgImage,
-            int orientation, NSDictionary<String, ?> options);
+    public native VNHomographicImageRegistrationRequest initWithTargetedCGImageOrientationOptions(
+            @NotNull CGImageRef cgImage, int orientation, @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedCGImage:orientation:options:completionHandler:")
     public native VNHomographicImageRegistrationRequest initWithTargetedCGImageOrientationOptionsCompletionHandler(
-            CGImageRef cgImage, int orientation, NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedCGImageOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCGImageOrientationOptionsCompletionHandler completionHandler);
+            @NotNull CGImageRef cgImage, int orientation, @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedCGImageOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCGImageOrientationOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithTargetedCIImage:options:")
-    public native VNHomographicImageRegistrationRequest initWithTargetedCIImageOptions(CIImage ciImage,
-            NSDictionary<String, ?> options);
+    public native VNHomographicImageRegistrationRequest initWithTargetedCIImageOptions(@NotNull CIImage ciImage,
+            @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedCIImage:options:completionHandler:")
-    public native VNHomographicImageRegistrationRequest initWithTargetedCIImageOptionsCompletionHandler(CIImage ciImage,
-            NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedCIImageOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCIImageOptionsCompletionHandler completionHandler);
+    public native VNHomographicImageRegistrationRequest initWithTargetedCIImageOptionsCompletionHandler(
+            @NotNull CIImage ciImage, @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedCIImageOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCIImageOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithTargetedCIImage:orientation:options:")
-    public native VNHomographicImageRegistrationRequest initWithTargetedCIImageOrientationOptions(CIImage ciImage,
-            int orientation, NSDictionary<String, ?> options);
+    public native VNHomographicImageRegistrationRequest initWithTargetedCIImageOrientationOptions(
+            @NotNull CIImage ciImage, int orientation, @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedCIImage:orientation:options:completionHandler:")
     public native VNHomographicImageRegistrationRequest initWithTargetedCIImageOrientationOptionsCompletionHandler(
-            CIImage ciImage, int orientation, NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedCIImageOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCIImageOrientationOptionsCompletionHandler completionHandler);
+            @NotNull CIImage ciImage, int orientation, @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedCIImageOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCIImageOrientationOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithTargetedCVPixelBuffer:options:")
-    public native VNHomographicImageRegistrationRequest initWithTargetedCVPixelBufferOptions(CVBufferRef pixelBuffer,
-            NSDictionary<String, ?> options);
+    public native VNHomographicImageRegistrationRequest initWithTargetedCVPixelBufferOptions(
+            @NotNull CVBufferRef pixelBuffer, @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedCVPixelBuffer:options:completionHandler:")
     public native VNHomographicImageRegistrationRequest initWithTargetedCVPixelBufferOptionsCompletionHandler(
-            CVBufferRef pixelBuffer, NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedCVPixelBufferOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCVPixelBufferOptionsCompletionHandler completionHandler);
+            @NotNull CVBufferRef pixelBuffer, @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedCVPixelBufferOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCVPixelBufferOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithTargetedCVPixelBuffer:orientation:options:")
     public native VNHomographicImageRegistrationRequest initWithTargetedCVPixelBufferOrientationOptions(
-            CVBufferRef pixelBuffer, int orientation, NSDictionary<String, ?> options);
+            @NotNull CVBufferRef pixelBuffer, int orientation, @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedCVPixelBuffer:orientation:options:completionHandler:")
     public native VNHomographicImageRegistrationRequest initWithTargetedCVPixelBufferOrientationOptionsCompletionHandler(
-            CVBufferRef pixelBuffer, int orientation, NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedCVPixelBufferOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCVPixelBufferOrientationOptionsCompletionHandler completionHandler);
+            @NotNull CVBufferRef pixelBuffer, int orientation, @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedCVPixelBufferOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCVPixelBufferOrientationOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithTargetedImageData:options:")
-    public native VNHomographicImageRegistrationRequest initWithTargetedImageDataOptions(NSData imageData,
-            NSDictionary<String, ?> options);
+    public native VNHomographicImageRegistrationRequest initWithTargetedImageDataOptions(@NotNull NSData imageData,
+            @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedImageData:options:completionHandler:")
     public native VNHomographicImageRegistrationRequest initWithTargetedImageDataOptionsCompletionHandler(
-            NSData imageData, NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedImageDataOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedImageDataOptionsCompletionHandler completionHandler);
+            @NotNull NSData imageData, @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedImageDataOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedImageDataOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithTargetedImageData:orientation:options:")
-    public native VNHomographicImageRegistrationRequest initWithTargetedImageDataOrientationOptions(NSData imageData,
-            int orientation, NSDictionary<String, ?> options);
+    public native VNHomographicImageRegistrationRequest initWithTargetedImageDataOrientationOptions(
+            @NotNull NSData imageData, int orientation, @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedImageData:orientation:options:completionHandler:")
     public native VNHomographicImageRegistrationRequest initWithTargetedImageDataOrientationOptionsCompletionHandler(
-            NSData imageData, int orientation, NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedImageDataOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedImageDataOrientationOptionsCompletionHandler completionHandler);
+            @NotNull NSData imageData, int orientation, @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedImageDataOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedImageDataOrientationOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithTargetedImageURL:options:")
-    public native VNHomographicImageRegistrationRequest initWithTargetedImageURLOptions(NSURL imageURL,
-            NSDictionary<String, ?> options);
+    public native VNHomographicImageRegistrationRequest initWithTargetedImageURLOptions(@NotNull NSURL imageURL,
+            @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedImageURL:options:completionHandler:")
-    public native VNHomographicImageRegistrationRequest initWithTargetedImageURLOptionsCompletionHandler(NSURL imageURL,
-            NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedImageURLOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedImageURLOptionsCompletionHandler completionHandler);
+    public native VNHomographicImageRegistrationRequest initWithTargetedImageURLOptionsCompletionHandler(
+            @NotNull NSURL imageURL, @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedImageURLOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedImageURLOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithTargetedImageURL:orientation:options:")
-    public native VNHomographicImageRegistrationRequest initWithTargetedImageURLOrientationOptions(NSURL imageURL,
-            int orientation, NSDictionary<String, ?> options);
+    public native VNHomographicImageRegistrationRequest initWithTargetedImageURLOrientationOptions(
+            @NotNull NSURL imageURL, int orientation, @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedImageURL:orientation:options:completionHandler:")
     public native VNHomographicImageRegistrationRequest initWithTargetedImageURLOrientationOptionsCompletionHandler(
-            NSURL imageURL, int orientation, NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedImageURLOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedImageURLOrientationOptionsCompletionHandler completionHandler);
+            @NotNull NSURL imageURL, int orientation, @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedImageURLOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedImageURLOrientationOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -239,9 +246,10 @@ public class VNHomographicImageRegistrationRequest extends VNImageRegistrationRe
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -279,6 +287,7 @@ public class VNHomographicImageRegistrationRequest extends VNImageRegistrationRe
     @NUInt
     public static native long defaultRevision();
 
+    @NotNull
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();
@@ -286,28 +295,29 @@ public class VNHomographicImageRegistrationRequest extends VNImageRegistrationRe
     @Generated
     @Selector("initWithTargetedCMSampleBuffer:options:")
     public native VNHomographicImageRegistrationRequest initWithTargetedCMSampleBufferOptions(
-            CMSampleBufferRef sampleBuffer, NSDictionary<String, ?> options);
+            @NotNull CMSampleBufferRef sampleBuffer, @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedCMSampleBuffer:options:completionHandler:")
     public native VNHomographicImageRegistrationRequest initWithTargetedCMSampleBufferOptionsCompletionHandler(
-            CMSampleBufferRef sampleBuffer, NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedCMSampleBufferOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCMSampleBufferOptionsCompletionHandler completionHandler);
+            @NotNull CMSampleBufferRef sampleBuffer, @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedCMSampleBufferOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCMSampleBufferOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithTargetedCMSampleBuffer:orientation:options:")
     public native VNHomographicImageRegistrationRequest initWithTargetedCMSampleBufferOrientationOptions(
-            CMSampleBufferRef sampleBuffer, int orientation, NSDictionary<String, ?> options);
+            @NotNull CMSampleBufferRef sampleBuffer, int orientation, @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedCMSampleBuffer:orientation:options:completionHandler:")
     public native VNHomographicImageRegistrationRequest initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler(
-            CMSampleBufferRef sampleBuffer, int orientation, NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler completionHandler);
+            @NotNull CMSampleBufferRef sampleBuffer, int orientation, @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler completionHandler);
 
     /**
      * VNImageHomographicAlignmentObservation results.
      */
+    @Nullable
     @Generated
     @Selector("results")
     public native NSArray<? extends VNImageHomographicAlignmentObservation> results();

@@ -19,6 +19,9 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 public final class NSFileWrapperReadingOptions {
     /**
@@ -35,6 +38,8 @@ public final class NSFileWrapperReadingOptions {
      * document file package because that would cause unnecessarily bad perfomance. For example, an application wouldn't
      * use this option when creating file wrappers to represent attachments as it's opening a document stored in a file
      * package.
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long Immediate = 0x0000000000000001L;
     /**
@@ -44,6 +49,8 @@ public final class NSFileWrapperReadingOptions {
      * all, even ones on internal drives. This is useful if you want to make sure your application doesn't hold files
      * open (mapped files are open files) and therefore prevent the user from ejecting DVDs, unmounting disk partitions,
      * or unmounting disk images.
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long WithoutMapping = 0x0000000000000002L;
 

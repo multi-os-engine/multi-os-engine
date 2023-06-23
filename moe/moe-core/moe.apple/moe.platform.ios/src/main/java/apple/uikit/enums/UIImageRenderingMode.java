@@ -26,19 +26,27 @@ import org.moe.natj.general.ann.NInt;
  * and web views treat their images as originals. You can use UIImageRenderingModeAlwaysTemplate to force your image to
  * always be rendered as a template or UIImageRenderingModeAlwaysOriginal to force your image to always be rendered as
  * an original.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 public final class UIImageRenderingMode {
     /**
      * Use the default rendering mode for the context where the image is used
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long Automatic = 0x0000000000000000L;
     /**
      * Always draw the original image, without treating it as a template
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long AlwaysOriginal = 0x0000000000000001L;
     /**
      * Always draw the image as a template image, ignoring its color information
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long AlwaysTemplate = 0x0000000000000002L;
 

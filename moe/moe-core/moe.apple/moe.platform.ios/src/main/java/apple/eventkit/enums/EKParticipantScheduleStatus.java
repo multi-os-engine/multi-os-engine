@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] EKParticipantScheduleStatus
- * <p>
+ * 
  * Value representing the status of a meeting invite.
- * <p>
+ * 
  * [@constant] EKParticipantScheduleStatusNone Default value. Indicates that no
  * invitation has been sent yet.
  * [@constant] EKParticipantScheduleStatusPending The invitation is in the process of being

@@ -25,9 +25,20 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
- * This class is used to represent a calendar event.
+ * A calendar event which fires at an absolute time. It can also be used to set up a recurring events which will fire at
+ * a scheduled time.
+ * 
+ * [@note] Not all the fields in NSDateComponents are used to calculate the next fire date. Only Month, Day & Minutes
+ * are used. Other NSDateComponents such as
+ * year, weekday, quarter, week of the year / month are not used in calculation for next fire date.
+ * If its expected to fire on the same day, it should be at least 1 minute ahead or it could get scheduled for the next
+ * recurrent day.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("HomeKit")
@@ -59,31 +70,35 @@ public class HMCalendarEvent extends HMTimeEvent implements NSCopying, NSMutable
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -95,7 +110,14 @@ public class HMCalendarEvent extends HMTimeEvent implements NSCopying, NSMutable
 
     /**
      * The date component that specifies the time when the event is fired
+     * 
+     * [@note] Not all the fields in NSDateComponents are used to calculate the next fire date. Only Month, Day &
+     * Minutes are used. Other NSDateComponents such as
+     * year, weekday, quarter, week of the year / month are not used in calculation for next fire date.
+     * If its expected to fire on the same day, it should be at least 1 minute ahead or it could get scheduled for the
+     * next recurrent day.
      */
+    @NotNull
     @Generated
     @Selector("fireDateComponents")
     public native NSDateComponents fireDateComponents();
@@ -111,13 +133,20 @@ public class HMCalendarEvent extends HMTimeEvent implements NSCopying, NSMutable
 
     /**
      * Creates a calendar event
-     *
+     * 
+     * [@note] Not all the fields in NSDateComponents are used to calculate the next fire date. Only Month, Day &
+     * Minutes are used. Other NSDateComponents such as
+     * year, weekday, quarter, week of the year / month are not used in calculation for next fire date.
+     * If its expected to fire on the same day, it should be at least 1 minute ahead or it could get scheduled for the
+     * next recurrent day.
+     * 
      * @param fireDateComponents The date component that specifies the time when the event is fired
+     * 
      * @return Instance object representing the event trigger.
      */
     @Generated
     @Selector("initWithFireDateComponents:")
-    public native HMCalendarEvent initWithFireDateComponents(NSDateComponents fireDateComponents);
+    public native HMCalendarEvent initWithFireDateComponents(@NotNull NSDateComponents fireDateComponents);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -138,17 +167,19 @@ public class HMCalendarEvent extends HMTimeEvent implements NSCopying, NSMutable
 
     @Generated
     @Selector("isSupportedForHome:")
-    public static native boolean isSupportedForHome(HMHome home);
+    public static native boolean isSupportedForHome(@NotNull HMHome home);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Owned

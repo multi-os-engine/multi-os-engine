@@ -28,7 +28,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("ScreenTime")
 @Runtime(ObjCRuntime.class)
@@ -43,13 +48,14 @@ public class STWebpageController extends UIViewController {
         super(peer);
     }
 
+    @Nullable
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
     /**
      * If @c URL is blocked or not.
-     * <p>
+     * 
      * This property can be used for pausing media and ending any Picture in Picture video. It will change at a random
      * delay (for user privacy reasons)
      * after the URL should be blocked, and is KVO-compliant.
@@ -86,35 +92,39 @@ public class STWebpageController extends UIViewController {
     @Selector("allocWithZone:")
     public static native STWebpageController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -135,11 +145,12 @@ public class STWebpageController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native STWebpageController initWithCoder(NSCoder coder);
+    public native STWebpageController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native STWebpageController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native STWebpageController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -158,9 +169,10 @@ public class STWebpageController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -177,9 +189,9 @@ public class STWebpageController extends UIViewController {
 
     /**
      * Changes the bundle identifier used to report web usage.
-     * <p>
+     * 
      * This is only supported for web browsers that have been properly registered with Screen Time.
-     *
+     * 
      * @param bundleIdentifier Defaults to @c NSBundle.mainBundle.bundleIdentifier but can be changed to facilitate
      *                         reporting web usage
      *                         for a parent web browser from one of its helper processes or extensions.
@@ -187,12 +199,12 @@ public class STWebpageController extends UIViewController {
      */
     @Generated
     @Selector("setBundleIdentifier:error:")
-    public native boolean setBundleIdentifierError(String bundleIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean setBundleIdentifierError(@NotNull String bundleIdentifier,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Suppresses the recording of web usage.
-     * <p>
+     * 
      * When this property is set to @c YES, the current usage recording is stopped, and no further usage is recorded in
      * Screen Time.
      */
@@ -202,7 +214,7 @@ public class STWebpageController extends UIViewController {
 
     @Generated
     @Selector("setURL:")
-    public native void setURL(NSURL value);
+    public native void setURL(@Nullable NSURL value);
 
     /**
      * Whether or not the webpage has a video displayed in a floating Picture in Picture window.
@@ -228,7 +240,7 @@ public class STWebpageController extends UIViewController {
 
     /**
      * Suppresses the recording of web usage.
-     * <p>
+     * 
      * When this property is set to @c YES, the current usage recording is stopped, and no further usage is recorded in
      * Screen Time.
      */

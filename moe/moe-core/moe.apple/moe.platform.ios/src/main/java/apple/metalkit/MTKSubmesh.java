@@ -37,15 +37,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MTKSubmesh
- * <p>
+ * 
  * A segment of a mesh and properties to render the segement.
- * <p>
+ * 
  * Container for data that can be rendered in a single draw call. 1:1 mapping to MDLSubmesh. Each submesh contains an
  * index Buffer with which the parents mesh data can be rendered. Actual vertex data resides in the submesh's parent
  * MTKMesh object.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MetalKit")
@@ -77,22 +81,25 @@ public class MTKSubmesh extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +134,10 @@ public class MTKSubmesh extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,20 +167,21 @@ public class MTKSubmesh extends NSObject {
 
     /**
      * [@property] indexBuffer
-     * <p>
+     * 
      * IndexBuffer (including indexCount) to render the object.
-     * <p>
+     * 
      * The MTLBuffer to use for indexBuffer parameter in a [MTLRenderCommandEncoder drawIndexedPrimitives] call.
      */
+    @NotNull
     @Generated
     @Selector("indexBuffer")
     public native MTKMeshBuffer indexBuffer();
 
     /**
      * [@property] indexCount
-     * <p>
+     * 
      * Number of indicies in indexBuffer.
-     * <p>
+     * 
      * Value to use for indexCount parameter in a [MTLRenderCommandEncoder drawIndexedPrimitives] call.
      */
     @Generated
@@ -182,9 +191,9 @@ public class MTKSubmesh extends NSObject {
 
     /**
      * [@property] indexType
-     * <p>
+     * 
      * Metal index type of data in indexBuffer.
-     * <p>
+     * 
      * Value to use for indexType parameter in a [MTLRenderCommandEncoder drawIndexedPrimitives] call.
      */
     @Generated
@@ -198,32 +207,34 @@ public class MTKSubmesh extends NSObject {
 
     /**
      * [@property] mesh
-     * <p>
+     * 
      * Parent MTKMesh object containing vertex data of this object.
-     * <p>
+     * 
      * The buffer of this parent mesh should be set in the encoder before a drawIndexedPrimitives call is made.
      */
+    @Nullable
     @Generated
     @Selector("mesh")
     public native MTKMesh mesh();
 
     /**
      * [@property] name
-     * <p>
+     * 
      * Name from the original MDLSubmesh object.
-     * <p>
+     * 
      * Although not directly used by this object, the application may use this to identify the submesh in the
      * renderer/scene/world.
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
 
     /**
      * [@property] primitiveType
-     * <p>
+     * 
      * Metal primitive type with which to draw this object.
-     * <p>
+     * 
      * Value to use for primitiveType parameter in a [MTLRenderCommandEncoder drawIndexedPrimitives] call.
      */
     @Generated
@@ -233,13 +244,13 @@ public class MTKSubmesh extends NSObject {
 
     /**
      * [@property] name
-     * <p>
+     * 
      * Name from the original MDLSubmesh object.
-     * <p>
+     * 
      * Although not directly used by this object, the application may use this to identify the submesh in the
      * renderer/scene/world.
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@NotNull String value);
 }

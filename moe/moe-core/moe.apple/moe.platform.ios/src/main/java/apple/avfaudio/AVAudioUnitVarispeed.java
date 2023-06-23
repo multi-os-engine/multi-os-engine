@@ -24,11 +24,15 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioUnitVarispeed
- * <p>
+ * 
  * an AVAudioUnitTimeEffect that can be used to control the playback rate
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -60,22 +64,25 @@ public class AVAudioUnitVarispeed extends AVAudioUnitTimeEffect {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -119,15 +126,16 @@ public class AVAudioUnitVarispeed extends AVAudioUnitTimeEffect {
     @Selector("instantiateWithComponentDescription:options:completionHandler:")
     public static native void instantiateWithComponentDescriptionOptionsCompletionHandler(
             @ByValue AudioComponentDescription audioComponentDescription, int options,
-            @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") AVAudioUnit.Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") AVAudioUnit.Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -136,21 +144,21 @@ public class AVAudioUnitVarispeed extends AVAudioUnitTimeEffect {
 
     /**
      * [@property] rate
-     * <p>
+     * 
      * controls the playback rate of the audio signal
-     * <p>
+     * 
      * Since this unit resamples the input signal, changing the playback rate also changes the pitch.
-     * <p>
+     * 
      * i.e. changing the rate to 2.0 results in the output audio playing one octave higher.
      * Similarly changing the rate to 0.5, results in the output audio playing one octave lower.
-     * <p>
+     * 
      * The playback rate and pitch can be calculated as
      * rate = pow(2, cents/1200.0)
      * pitch in cents = 1200.0 * log2(rate)
-     * <p>
+     * 
      * Where, 1 octave = 1200 cents
      * 1 musical semitone = 100 cents
-     * <p>
+     * 
      * Range: 0.25 -> 4.0
      * Default: 1.0
      * Unit: Generic
@@ -169,21 +177,21 @@ public class AVAudioUnitVarispeed extends AVAudioUnitTimeEffect {
 
     /**
      * [@property] rate
-     * <p>
+     * 
      * controls the playback rate of the audio signal
-     * <p>
+     * 
      * Since this unit resamples the input signal, changing the playback rate also changes the pitch.
-     * <p>
+     * 
      * i.e. changing the rate to 2.0 results in the output audio playing one octave higher.
      * Similarly changing the rate to 0.5, results in the output audio playing one octave lower.
-     * <p>
+     * 
      * The playback rate and pitch can be calculated as
      * rate = pow(2, cents/1200.0)
      * pitch in cents = 1200.0 * log2(rate)
-     * <p>
+     * 
      * Where, 1 octave = 1200 cents
      * 1 musical semitone = 100 cents
-     * <p>
+     * 
      * Range: 0.25 -> 4.0
      * Default: 1.0
      * Unit: Generic

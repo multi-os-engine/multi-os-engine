@@ -39,7 +39,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -70,22 +75,25 @@ public class UIPrinter extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,9 +128,10 @@ public class UIPrinter extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -131,16 +140,17 @@ public class UIPrinter extends NSObject {
 
     /**
      * printerWithURL:
-     * <p>
+     * 
      * Create a printer from its URL
-     * <p>
+     * 
      * This method creates a new printer object from the printer's URL.
      * A UIPrinter object is returned even if the printer is not available
      * on the network.
      */
+    @NotNull
     @Generated
     @Selector("printerWithURL:")
-    public static native UIPrinter printerWithURL(NSURL url);
+    public static native UIPrinter printerWithURL(@NotNull NSURL url);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -165,20 +175,21 @@ public class UIPrinter extends NSObject {
 
     /**
      * Return the URL of the printer.
-     * <p>
+     * 
      * This method returns the full URL of the printer which can be
      * used in future calls to printerWithURL to access the same
      * printer.
      */
+    @NotNull
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
     /**
      * contactPrinter:
-     * <p>
+     * 
      * Check if printer is reachable, and update printer information.
-     * <p>
+     * 
      * This method checks to see if this printer is available on the network,
      * and sets the displayName, displayLocation, supportedJobTypes, makeAndModel,
      * supportsColor, and supportsDuplex for the printer.
@@ -186,26 +197,29 @@ public class UIPrinter extends NSObject {
      */
     @Generated
     @Selector("contactPrinter:")
-    public native void contactPrinter(@ObjCBlock(name = "call_contactPrinter") Block_contactPrinter completionHandler);
+    public native void contactPrinter(
+            @Nullable @ObjCBlock(name = "call_contactPrinter") Block_contactPrinter completionHandler);
 
     /**
      * Return a human-readable location.
-     * <p>
+     * 
      * This method returns the printer's location. This is human-readable text that
      * usually appears in the UI below the printer's name (such as "Front Office").
      * Returns nil if the printer doesn't have a location string.
      * This property's value is undefined until contactPrinter: has been called and
      * completed successfully.
      */
+    @Nullable
     @Generated
     @Selector("displayLocation")
     public native String displayLocation();
 
     /**
      * Return a human-readable printer name.
-     * <p>
+     * 
      * This method returns the printer name suitable for displaying in the UI.
      */
+    @NotNull
     @Generated
     @Selector("displayName")
     public native String displayName();
@@ -216,19 +230,20 @@ public class UIPrinter extends NSObject {
 
     /**
      * Return make (manufacturer) and model of the printer.
-     * <p>
+     * 
      * This method returns the make and model of the printer, which
      * is usually the manufacturer, model, and model number.
      * This property's value is undefined until contactPrinter: has been called and
      * completed successfully.
      */
+    @Nullable
     @Generated
     @Selector("makeAndModel")
     public native String makeAndModel();
 
     /**
      * Returns the supported job types of this printer.
-     * <p>
+     * 
      * This method returns a mask with all the UIPrinterJobTypes values that
      * the printer supports.
      * This property's value is undefined until contactPrinter: has been called and
@@ -241,7 +256,7 @@ public class UIPrinter extends NSObject {
 
     /**
      * Return whether this printer supports color printing.
-     * <p>
+     * 
      * This method returns YES if the printer supports full color printing, NO
      * otherwise.
      * This property's value is undefined until contactPrinter: has been called and
@@ -253,7 +268,7 @@ public class UIPrinter extends NSObject {
 
     /**
      * Return whether this printer supports duplex (double-sided) printing.
-     * <p>
+     * 
      * This method returns YES if the printer supports duplex (double-sided)
      * printing, NO otherwise.
      * This property's value is undefined until contactPrinter: has been called and

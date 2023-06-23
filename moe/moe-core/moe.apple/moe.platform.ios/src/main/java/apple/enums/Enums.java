@@ -53,12 +53,15 @@ public final class Enums {
     @Generated public static final int shadow = 0x00000010;
     @Generated public static final int condense = 0x00000020;
     @Generated public static final int extend = 0x00000040;
-    @Deprecated @Generated public static final int kVariableLengthArray = 0x00000001;
+    @Generated public static final int kVariableLengthArray = 0x00000001;
 
     @Generated
     private Enums() {
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated public static final long DISPATCH_WALLTIME_NOW = 0xFFFFFFFFFFFFFFFEL;
     /**
      * Internet
@@ -82,18 +85,13 @@ public final class Enums {
     @Generated public static final int kDNSServiceProtocol_TCP = 0x00000020;
     @Generated public static final int kDNSServiceFlagsMoreComing = 0x00000001;
     /**
-     * MoreComing indicates to a callback that at least one more result is
-     * queued and will be delivered following immediately after this one.
-     * When the MoreComing flag is set, applications should not immediately
-     * update their UI, because this can result in a great deal of ugly flickering
-     * on the screen, and can waste a great deal of CPU time repeatedly updating
-     * the screen with content that is then immediately erased, over and over.
-     * Applications should wait until MoreComing is not set, and then
-     * update their UI when no more changes are imminent.
-     * When MoreComing is not set, that doesn't mean there will be no more
-     * answers EVER, just that there are no more answers immediately
-     * available right now at this instant. If more answers become available
-     * in the future they will be delivered as usual.
+     * kDNSServiceFlagsQueueRequest indicates that the request will be queued;
+     * otherwise the request is sent immediately.
+     * All the queued requests will be sent to server in scatter/gather IO when function
+     * DNSServiceSendQueuedRequests is called.
+     * This flag is an input value to functions generate requests to server such as
+     * DNSServiceRegisterRecord(), which is why we can use the same value as
+     * kDNSServiceFlagsMoreComing, which is an output flag for various client callbacks.
      */
     @Generated public static final int kDNSServiceFlagsAutoTrigger = 0x00000001;
     /**
@@ -202,9 +200,9 @@ public final class Enums {
      * the SharedRef, and then passes the address of that copy, setting the ShareConnection flag
      * to tell the library that this DNSServiceRef is not a typical uninitialized DNSServiceRef;
      * it's a copy of an existing DNSServiceRef whose connection information should be reused.
-     * <p>
+     * 
      * For example:
-     * <p>
+     * 
      * DNSServiceErrorType error;
      * DNSServiceRef SharedRef;
      * error = DNSServiceCreateConnection(&SharedRef);
@@ -215,9 +213,9 @@ public final class Enums {
      * ...
      * DNSServiceRefDeallocate(BrowseRef); // Terminate the browse operation
      * DNSServiceRefDeallocate(SharedRef); // Terminate the shared connection
-     * <p>
+     * 
      * Notes:
-     * <p>
+     * 
      * 1. Collective kDNSServiceFlagsMoreComing flag
      * When callbacks are invoked using a shared DNSServiceRef, the
      * kDNSServiceFlagsMoreComing flag applies collectively to *all* active
@@ -232,7 +230,7 @@ public final class Enums {
      * stale UI elements related to that shared parent DNSServiceRef that need
      * updating, not just the UI elements related to the particular callback
      * that happened to be the last one to be invoked.
-     * <p>
+     * 
      * 2. Canceling operations and kDNSServiceFlagsMoreComing
      * Whenever you cancel any operation for which you had deferred UI updates
      * waiting because of a kDNSServiceFlagsMoreComing flag, you should perform
@@ -246,12 +244,12 @@ public final class Enums {
      * operations sharing that connection. This is because the MoreComing flag
      * might have been referring to events coming for the operation you canceled,
      * which will now not be coming because the operation has been canceled.
-     * <p>
+     * 
      * 3. Only share DNSServiceRef's created with DNSServiceCreateConnection
      * Calling DNSServiceCreateConnection(&ref) creates a special shareable DNSServiceRef.
      * DNSServiceRef's created by other calls like DNSServiceBrowse() or DNSServiceResolve()
      * cannot be shared by copying them and using kDNSServiceFlagsShareConnection.
-     * <p>
+     * 
      * 4. Don't Double-Deallocate
      * Calling DNSServiceRefDeallocate(OpRef) for a particular operation's DNSServiceRef terminates
      * just that operation. Calling DNSServiceRefDeallocate(SharedRef) for the main shared DNSServiceRef
@@ -264,22 +262,22 @@ public final class Enums {
      * You can deallocate individual operations first and then deallocate the parent DNSServiceRef last,
      * but if you deallocate the parent DNSServiceRef first, then all of the subordinate DNSServiceRef's
      * are implicitly deallocated, and explicitly deallocating them a second time will lead to crashes.
-     * <p>
+     * 
      * 5. Thread Safety
      * The dns_sd.h API does not presuppose any particular threading model, and consequently
      * does no locking internally (which would require linking with a specific threading library).
      * If the client concurrently, from multiple threads (or contexts), calls API routines using
      * the same DNSServiceRef, it is the client's responsibility to provide mutual exclusion for
      * that DNSServiceRef.
-     * <p>
+     * 
      * For example, use of DNSServiceRefDeallocate requires caution. A common mistake is as follows:
      * Thread B calls DNSServiceRefDeallocate to deallocate sdRef while Thread A is processing events
      * using sdRef. Doing this will lead to intermittent crashes on thread A if the sdRef is used after
      * it was deallocated.
-     * <p>
+     * 
      * A telltale sign of this crash type is to see DNSServiceProcessResult on the stack preceding the
      * actual crash location.
-     * <p>
+     * 
      * To state this more explicitly, mDNSResponder does not queue DNSServiceRefDeallocate so
      * that it occurs discretely before or after an event is handled.
      */
@@ -325,14 +323,14 @@ public final class Enums {
     /**
      * This flag is meaningful in DNSServiceGetAddrInfo and DNSServiceQueryRecord. This is the ONLY flag to be valid
      * as an input to the APIs and also an output through the callbacks in the APIs.
-     * <p>
+     * 
      * When this flag is passed to DNSServiceQueryRecord and DNSServiceGetAddrInfo to resolve unicast names,
      * the response will be validated using DNSSEC. The validation results are delivered using the flags field in
      * the callback and kDNSServiceFlagsValidate is marked in the flags to indicate that DNSSEC status is also
      * available.
      * When the callback is called to deliver the query results, the validation results may or may not be available.
      * If it is not delivered along with the results, the validation status is delivered when the validation completes.
-     * <p>
+     * 
      * When the validation results are delivered in the callback, it is indicated by marking the flags with
      * kDNSServiceFlagsValidate and kDNSServiceFlagsAdd along with the DNSSEC status flags (described below) and a NULL
      * sockaddr will be returned for DNSServiceGetAddrInfo and zero length rdata will be returned for
@@ -341,7 +339,7 @@ public final class Enums {
      * kDNSServiceFlagsAdd is not set in the flags, applications should implicitly assume that the DNSSEC status of the
      * RRSet that has been delivered up until that point is not valid anymore, till another callback is called with
      * kDNSServiceFlagsAdd and kDNSServiceFlagsValidate.
-     * <p>
+     * 
      * The following four flags indicate the status of the DNSSEC validation and marked in the flags field of the
      * callback.
      * When any of the four flags is set, kDNSServiceFlagsValidate will also be set. To check the validation status, the
@@ -377,7 +375,7 @@ public final class Enums {
      * during the validation (e.g., zone is not signed, zone is signed but cannot be traced back to
      * root, recursive server does not understand DNSSEC etc.), then this will fallback to the default
      * behavior where the validation will not be performed and no DNSSEC results will be provided.
-     * <p>
+     * 
      * If the zone is signed and there is a valid path to a known trust anchor configured in the system
      * and the application requires DNSSEC validation irrespective of the DNSSEC awareness in the current
      * network, then this option MUST not be used. This is only intended to be used during the transition
@@ -411,7 +409,7 @@ public final class Enums {
      * on the network until at least one valid answer is present. Because this flag only controls
      * retransmission, when more than one service of the type being browsed is present on the
      * network, it is quite likely that more than one answer will be delivered to the callback.
-     * <p>
+     * 
      * kDNSServiceFlagsThresholdFinder is used only in DNSServiceBrowse, and is not meaningful
      * in other API calls. When set, this flag limits the number of retries that are performed
      * when doing mDNS service discovery, similar to kDNSServiceFlagsThresholdOne. The difference
@@ -421,7 +419,7 @@ public final class Enums {
      * depend on there being some specific threshold; rather, this flag can be used in cases
      * where it is preferred to give the user a choice, but where once a small number of
      * such services are discovered, retransmission is discontinued.
-     * <p>
+     * 
      * When kDNSServiceFlagsThresholdReached is set in the client callback add or remove event,
      * it indicates that the browse answer threshold has been reached and no
      * browse requests will be generated on the network until the number of answers falls
@@ -429,7 +427,7 @@ public final class Enums {
      * on incoming Bonjour traffic observed by the system.
      * The set of services return to the client is not guaranteed to represent the
      * entire set of services present on the network once the threshold has been reached.
-     * <p>
+     * 
      * Note, while kDNSServiceFlagsThresholdReached and kDNSServiceFlagsThresholdOne
      * have the same value, there isn't a conflict because kDNSServiceFlagsThresholdReached
      * is only set in the callbacks and kDNSServiceFlagsThresholdOne is only set on
@@ -796,4 +794,19 @@ public final class Enums {
      */
     @Generated public static final int kDNSServiceType_HTTPS = 0x00000041;
     @Generated public static final int kDNSServiceErr_NotPermitted = 0xFFFEFFDD;
+    /**
+     * MoreComing indicates to a callback that at least one more result is
+     * queued and will be delivered following immediately after this one.
+     * When the MoreComing flag is set, applications should not immediately
+     * update their UI, because this can result in a great deal of ugly flickering
+     * on the screen, and can waste a great deal of CPU time repeatedly updating
+     * the screen with content that is then immediately erased, over and over.
+     * Applications should wait until MoreComing is not set, and then
+     * update their UI when no more changes are imminent.
+     * When MoreComing is not set, that doesn't mean there will be no more
+     * answers EVER, just that there are no more answers immediately
+     * available right now at this instant. If more answers become available
+     * in the future they will be delivered as usual.
+     */
+    @Generated public static final int kDNSServiceFlagsQueueRequest = 0x00000001;
 }

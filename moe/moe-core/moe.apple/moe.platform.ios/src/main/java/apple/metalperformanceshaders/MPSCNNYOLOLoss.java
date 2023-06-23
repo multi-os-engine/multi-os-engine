@@ -26,7 +26,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -55,28 +60,32 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
     @Selector("allocWithZone:")
     public static native MPSCNNYOLOLoss allocWithZone(VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("anchorBoxes")
     public native NSData anchorBoxes();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -91,30 +100,31 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
 
     /**
      * Encode a MPSCNNLoss filter and return a gradient.
-     * <p>
+     * 
      * This -encode call is similar to the encodeToCommandBuffer:sourceImage:labels:destinationImage: above,
      * except that it creates and returns the MPSImage with the loss gradient result.
-     *
+     * 
      * @param commandBuffer The MTLCommandBuffer on which to encode.
      * @param sourceImage   The source image from the previous filter in the graph (in the inference direction).
      * @param labels        The object containing the target data (labels) and optionally, weights for the labels.
      * @return The MPSImage containing the gradient result.
      */
+    @NotNull
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:labels:")
     public native MPSImage encodeToCommandBufferSourceImageLabels(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
-            MPSCNNLossLabels labels);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceImage,
+            @NotNull MPSCNNLossLabels labels);
 
     /**
      * Encode a MPSCNNYOLOLoss filter and return a gradient in the destinationImage.
-     * <p>
+     * 
      * This filter consumes the output of a previous layer and the MPSCNNLossLabels object containing
      * the target data (labels) and optionally, weights for the labels.
      * The destinationImage contains the computed gradient for the loss layer.
      * It serves as a source gradient input image to the first gradient layer (in the backward direction).
      * For information on the data-layout see @ref MPSCNNYOLOLossDescriptor.
-     *
+     * 
      * @param commandBuffer    The MTLCommandBuffer on which to encode.
      * @param sourceImage      The source image from the previous filter in the graph (in the inference direction).
      * @param labels           The object containing the target data (labels) and optionally, weights for the labels.
@@ -123,8 +133,8 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:labels:destinationImage:")
     public native void encodeToCommandBufferSourceImageLabelsDestinationImage(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
-            MPSCNNLossLabels labels, MPSImage destinationImage);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceImage,
+            @NotNull MPSCNNLossLabels labels, @NotNull MPSImage destinationImage);
 
     @Generated
     @Selector("hash")
@@ -137,30 +147,31 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNYOLOLoss initWithCoder(NSCoder aDecoder);
+    public native MPSCNNYOLOLoss initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * <NSSecureCoding> support
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNYOLOLoss initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNYOLOLoss initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNYOLOLoss initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNYOLOLoss initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize the loss filter with a loss descriptor.
-     *
+     * 
      * @param device         The device the filter will run on.
      * @param lossDescriptor The loss descriptor.
      * @return A valid MPSCNNLoss object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:lossDescriptor:")
-    public native MPSCNNYOLOLoss initWithDeviceLossDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MPSCNNYOLOLossDescriptor lossDescriptor);
+    public native MPSCNNYOLOLoss initWithDeviceLossDescriptor(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull MPSCNNYOLOLossDescriptor lossDescriptor);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -179,42 +190,47 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] lossClasses
-     * <p>
+     * 
      * loss filter for prediction of bounding box predicted class of the detected object
      */
+    @NotNull
     @Generated
     @Selector("lossClasses")
     public native MPSCNNLoss lossClasses();
 
     /**
      * [@property] lossConfidence
-     * <p>
+     * 
      * loss filter for prediction of bounding box probability of presence of object
      */
+    @NotNull
     @Generated
     @Selector("lossConfidence")
     public native MPSCNNLoss lossConfidence();
 
     /**
      * [@property] lossWH
-     * <p>
+     * 
      * loss filter for prediction of bounding box size
      */
+    @NotNull
     @Generated
     @Selector("lossWH")
     public native MPSCNNLoss lossWH();
 
     /**
      * [@property] lossXY
-     * <p>
+     * 
      * loss filter for prediction of bounding box position
      */
+    @NotNull
     @Generated
     @Selector("lossXY")
     public native MPSCNNLoss lossXY();
@@ -295,6 +311,9 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("reduceAcrossBatch")
     public native boolean reduceAcrossBatch();

@@ -26,18 +26,22 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNBinaryFullyConnected
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * The MPSCNNBinaryFullyConnected specifies a fully connected convolution layer with binary weights
  * and optionally binarized input image.
  * See @ref MPSCNNFullyConnected for details on the fully connected layer and
  * MPSCNNBinaryConvolution for binary convolutions.
- * <p>
+ * 
  * The default padding policy for MPSCNNBinaryConvolution is different from most
  * filters. It uses MPSNNPaddingMethodSizeValidOnly instead of MPSNNPaddingMethodSizeSame.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -69,22 +73,25 @@ public class MPSCNNBinaryFullyConnected extends MPSCNNBinaryConvolution {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -108,33 +115,33 @@ public class MPSCNNBinaryFullyConnected extends MPSCNNBinaryConvolution {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNBinaryFullyConnected initWithCoder(NSCoder aDecoder);
+    public native MPSCNNBinaryFullyConnected initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNBinaryFullyConnected initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNBinaryFullyConnected initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNBinaryFullyConnected initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNBinaryFullyConnected initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initializes a binary fully connected kernel with binary weights as well as both pre and post scaling terms.
-     *
+     * 
      * @param device           The MTLDevice on which this MPSCNNBinaryFullyConnected filter will be used
      * @param convolutionData  A pointer to a object that conforms to the MPSCNNConvolutionDataSource protocol.
      *                         The MPSCNNConvolutionDataSource protocol declares the methods that an
@@ -151,6 +158,7 @@ public class MPSCNNBinaryFullyConnected extends MPSCNNBinaryConvolution {
      *                         on
      *                         inputchannels varies most rapidly, followed by kernelWidth, then kernelHeight and finally
      *                         outputChannels varies least rapidly.)
+     * 
      * @param outputBiasTerms  A pointer to bias terms to be applied to the convolution output. Each entry is a float
      *                         value.
      *                         The number of entries is = numberOfOutputFeatureMaps. If nil then 0.0 is used for bias.
@@ -176,19 +184,21 @@ public class MPSCNNBinaryFullyConnected extends MPSCNNBinaryConvolution {
      *                         function returns.
      * @param type             What kind of binarization strategy is to be used.
      * @param flags            See documentation above and documentation of MPSCNNBinaryConvolutionFlags.
+     * 
      * @return A valid MPSCNNBinaryFullyConnected object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:convolutionData:outputBiasTerms:outputScaleTerms:inputBiasTerms:inputScaleTerms:type:flags:")
     public native MPSCNNBinaryFullyConnected initWithDeviceConvolutionDataOutputBiasTermsOutputScaleTermsInputBiasTermsInputScaleTermsTypeFlags(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource convolutionData, ConstFloatPtr outputBiasTerms,
-            ConstFloatPtr outputScaleTerms, ConstFloatPtr inputBiasTerms, ConstFloatPtr inputScaleTerms,
-            @NUInt long type, @NUInt long flags);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource convolutionData,
+            @Nullable ConstFloatPtr outputBiasTerms, @Nullable ConstFloatPtr outputScaleTerms,
+            @Nullable ConstFloatPtr inputBiasTerms, @Nullable ConstFloatPtr inputScaleTerms, @NUInt long type,
+            @NUInt long flags);
 
     /**
      * Initializes a binary fully connected kernel with binary weights and a single scaling term.
-     *
+     * 
      * @param device          The MTLDevice on which this MPSCNNBinaryFullyConnected filter will be used
      * @param convolutionData A pointer to a object that conforms to the MPSCNNConvolutionDataSource protocol.
      *                        The MPSCNNConvolutionDataSource protocol declares the methods that an
@@ -210,13 +220,14 @@ public class MPSCNNBinaryFullyConnected extends MPSCNNBinaryConvolution {
      *                        1.0 is used.
      * @param type            What kind of binarization strategy is to be used.
      * @param flags           See documentation above and documentation of MPSCNNBinaryConvolutionFlags.
+     * 
      * @return A valid MPSCNNBinaryFullyConnected object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:convolutionData:scaleValue:type:flags:")
     public native MPSCNNBinaryFullyConnected initWithDeviceConvolutionDataScaleValueTypeFlags(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource convolutionData, float scaleValue,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource convolutionData, float scaleValue,
             @NUInt long type, @NUInt long flags);
 
     @Generated
@@ -236,9 +247,10 @@ public class MPSCNNBinaryFullyConnected extends MPSCNNBinaryConvolution {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

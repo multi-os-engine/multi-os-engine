@@ -38,9 +38,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * ______________________________
+ * 
+ * API-Since: 4.2
  */
 @Generated
 @Library("UIKit")
@@ -72,22 +76,25 @@ public class UISimpleTextPrintFormatter extends UIPrintFormatter {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,9 +129,10 @@ public class UISimpleTextPrintFormatter extends UIPrintFormatter {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -152,14 +160,20 @@ public class UISimpleTextPrintFormatter extends UIPrintFormatter {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 7.0
+     */
+    @Nullable
     @Generated
     @Selector("attributedText")
     public native NSAttributedString attributedText();
 
+    @Nullable
     @Generated
     @Selector("color")
     public native UIColor color();
 
+    @Nullable
     @Generated
     @Selector("font")
     public native UIFont font();
@@ -168,32 +182,38 @@ public class UISimpleTextPrintFormatter extends UIPrintFormatter {
     @Selector("init")
     public native UISimpleTextPrintFormatter init();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithAttributedText:")
-    public native UISimpleTextPrintFormatter initWithAttributedText(NSAttributedString attributedText);
+    public native UISimpleTextPrintFormatter initWithAttributedText(@NotNull NSAttributedString attributedText);
 
     @Generated
     @Selector("initWithText:")
-    public native UISimpleTextPrintFormatter initWithText(String text);
+    public native UISimpleTextPrintFormatter initWithText(@NotNull String text);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setAttributedText:")
-    public native void setAttributedText(NSAttributedString value);
+    public native void setAttributedText(@Nullable NSAttributedString value);
 
     @Generated
     @Selector("setColor:")
-    public native void setColor(UIColor value);
+    public native void setColor(@Nullable UIColor value);
 
     @Generated
     @Selector("setFont:")
-    public native void setFont(UIFont value);
+    public native void setFont(@Nullable UIFont value);
 
     /**
      * cannot change once drawing started
      */
     @Generated
     @Selector("setText:")
-    public native void setText(String value);
+    public native void setText(@Nullable String value);
 
     @Generated
     @Selector("setTextAlignment:")
@@ -202,6 +222,7 @@ public class UISimpleTextPrintFormatter extends UIPrintFormatter {
     /**
      * cannot change once drawing started
      */
+    @Nullable
     @Generated
     @Selector("text")
     public native String text();

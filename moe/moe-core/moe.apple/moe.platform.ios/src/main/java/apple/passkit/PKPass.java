@@ -46,6 +46,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("PassKit")
@@ -77,22 +79,25 @@ public class PKPass extends PKObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class PKPass extends PKObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,14 +163,20 @@ public class PKPass extends PKObject {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("authenticationToken")
     public native String authenticationToken();
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("deviceName")
     public native String deviceName();
 
+    @NotNull
     @Generated
     @Selector("icon")
     public native UIImage icon();
@@ -175,8 +187,12 @@ public class PKPass extends PKObject {
 
     @Generated
     @Selector("initWithData:error:")
-    public native PKPass initWithDataError(NSData data, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native PKPass initWithDataError(@NotNull NSData data,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("isRemotePass")
     public native boolean isRemotePass();
@@ -184,6 +200,7 @@ public class PKPass extends PKObject {
     /**
      * e.g. "SFO -> LHR"
      */
+    @NotNull
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
@@ -191,6 +208,7 @@ public class PKPass extends PKObject {
     /**
      * e.g. "Boarding Pass"
      */
+    @NotNull
     @Generated
     @Selector("localizedName")
     public native String localizedName();
@@ -198,23 +216,29 @@ public class PKPass extends PKObject {
     /**
      * IBOutlet-like; allows access to field data from pass file format
      */
+    @Nullable
     @Generated
     @Selector("localizedValueForFieldKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object localizedValueForFieldKey(String key);
+    public native Object localizedValueForFieldKey(@NotNull String key);
 
     /**
      * e.g. "Great Airways"
      */
+    @NotNull
     @Generated
     @Selector("organizationName")
     public native String organizationName();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("passType")
     @NUInt
     public native long passType();
 
+    @NotNull
     @Generated
     @Selector("passTypeIdentifier")
     public native String passTypeIdentifier();
@@ -222,10 +246,18 @@ public class PKPass extends PKObject {
     /**
      * open to view pass in Wallet app
      */
+    @Nullable
     @Generated
     @Selector("passURL")
     public native NSURL passURL();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use -[PKPass secureElementPass] instead
+     */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("paymentPass")
     public native PKPaymentPass paymentPass();
@@ -233,22 +265,33 @@ public class PKPass extends PKObject {
     /**
      * may be useful for sorting
      */
+    @Nullable
     @Generated
     @Selector("relevantDate")
     public native NSDate relevantDate();
 
+    @NotNull
     @Generated
     @Selector("serialNumber")
     public native String serialNumber();
 
+    /**
+     * API-Since: 7.0
+     */
+    @Nullable
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();
 
+    @Nullable
     @Generated
     @Selector("webServiceURL")
     public native NSURL webServiceURL();
 
+    /**
+     * API-Since: 13.4
+     */
+    @Nullable
     @Generated
     @Selector("secureElementPass")
     public native PKSecureElementPass secureElementPass();

@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An object conforming to this protocol is returned by -[UIViewController
@@ -55,8 +57,8 @@ public interface UIViewControllerTransitionCoordinator extends UIViewControllerT
     @Generated
     @Selector("animateAlongsideTransition:completion:")
     boolean animateAlongsideTransitionCompletion(
-            @ObjCBlock(name = "call_animateAlongsideTransitionCompletion_0") Block_animateAlongsideTransitionCompletion_0 animation,
-            @ObjCBlock(name = "call_animateAlongsideTransitionCompletion_1") Block_animateAlongsideTransitionCompletion_1 completion);
+            @Nullable @ObjCBlock(name = "call_animateAlongsideTransitionCompletion_0") Block_animateAlongsideTransitionCompletion_0 animation,
+            @Nullable @ObjCBlock(name = "call_animateAlongsideTransitionCompletion_1") Block_animateAlongsideTransitionCompletion_1 completion);
 
     /**
      * This alternative API is needed if the view is not a descendent of the container view AND you require this
@@ -65,20 +67,22 @@ public interface UIViewControllerTransitionCoordinator extends UIViewControllerT
      */
     @Generated
     @Selector("animateAlongsideTransitionInView:animation:completion:")
-    boolean animateAlongsideTransitionInViewAnimationCompletion(UIView view,
-            @ObjCBlock(name = "call_animateAlongsideTransitionInViewAnimationCompletion_1") Block_animateAlongsideTransitionInViewAnimationCompletion_1 animation,
-            @ObjCBlock(name = "call_animateAlongsideTransitionInViewAnimationCompletion_2") Block_animateAlongsideTransitionInViewAnimationCompletion_2 completion);
+    boolean animateAlongsideTransitionInViewAnimationCompletion(@Nullable UIView view,
+            @Nullable @ObjCBlock(name = "call_animateAlongsideTransitionInViewAnimationCompletion_1") Block_animateAlongsideTransitionInViewAnimationCompletion_1 animation,
+            @Nullable @ObjCBlock(name = "call_animateAlongsideTransitionInViewAnimationCompletion_2") Block_animateAlongsideTransitionInViewAnimationCompletion_2 completion);
 
     /**
      * This method behavior is identical to the method above. On 10.0, however, the behavior has
      * changed slightly to account for the fact that transitions can be interruptible. For interruptible transitions
      * The block may be called multiple times. It is called each time the transition moves from an interactive to a
      * non-interactive state and vice-versa. The block is now also retained until the transition has completed.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("notifyWhenInteractionChangesUsingBlock:")
     void notifyWhenInteractionChangesUsingBlock(
-            @ObjCBlock(name = "call_notifyWhenInteractionChangesUsingBlock") Block_notifyWhenInteractionChangesUsingBlock handler);
+            @NotNull @ObjCBlock(name = "call_notifyWhenInteractionChangesUsingBlock") Block_notifyWhenInteractionChangesUsingBlock handler);
 
     /**
      * When a transition changes from interactive to non-interactive then handler is
@@ -89,51 +93,57 @@ public interface UIViewControllerTransitionCoordinator extends UIViewControllerT
      * appearing will receive a viewWillDisappear: call, and the view controller
      * that was disappearing will receive a viewWillAppear: call. This handler is
      * invoked BEFORE the "will" method calls are made.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @Generated
     @Selector("notifyWhenInteractionEndsUsingBlock:")
     void notifyWhenInteractionEndsUsingBlock(
-            @ObjCBlock(name = "call_notifyWhenInteractionEndsUsingBlock") Block_notifyWhenInteractionEndsUsingBlock handler);
+            @NotNull @ObjCBlock(name = "call_notifyWhenInteractionEndsUsingBlock") Block_notifyWhenInteractionEndsUsingBlock handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_animateAlongsideTransitionCompletion_0 {
         @Generated
-        void call_animateAlongsideTransitionCompletion_0(@Mapped(ObjCObjectMapper.class) Object context);
+        void call_animateAlongsideTransitionCompletion_0(@NotNull @Mapped(ObjCObjectMapper.class) Object context);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_animateAlongsideTransitionCompletion_1 {
         @Generated
-        void call_animateAlongsideTransitionCompletion_1(@Mapped(ObjCObjectMapper.class) Object context);
+        void call_animateAlongsideTransitionCompletion_1(@NotNull @Mapped(ObjCObjectMapper.class) Object context);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_animateAlongsideTransitionInViewAnimationCompletion_1 {
         @Generated
-        void call_animateAlongsideTransitionInViewAnimationCompletion_1(@Mapped(ObjCObjectMapper.class) Object context);
+        void call_animateAlongsideTransitionInViewAnimationCompletion_1(
+                @NotNull @Mapped(ObjCObjectMapper.class) Object context);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_animateAlongsideTransitionInViewAnimationCompletion_2 {
         @Generated
-        void call_animateAlongsideTransitionInViewAnimationCompletion_2(@Mapped(ObjCObjectMapper.class) Object context);
+        void call_animateAlongsideTransitionInViewAnimationCompletion_2(
+                @NotNull @Mapped(ObjCObjectMapper.class) Object context);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_notifyWhenInteractionChangesUsingBlock {
         @Generated
-        void call_notifyWhenInteractionChangesUsingBlock(@Mapped(ObjCObjectMapper.class) Object context);
+        void call_notifyWhenInteractionChangesUsingBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object context);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_notifyWhenInteractionEndsUsingBlock {
         @Generated
-        void call_notifyWhenInteractionEndsUsingBlock(@Mapped(ObjCObjectMapper.class) Object context);
+        void call_notifyWhenInteractionEndsUsingBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object context);
     }
 }

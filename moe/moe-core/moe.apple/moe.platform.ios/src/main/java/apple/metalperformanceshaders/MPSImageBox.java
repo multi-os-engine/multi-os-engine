@@ -40,15 +40,19 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImageBox
- * <p>
+ * 
  * The MPSImageBox convolves an image with given filter of odd width and height. The kernel elements
  * all have equal weight, achieving a blur effect. (Each result is the unweighted average of the
  * surrounding pixels.) This allows for much faster algorithms, espcially for larger blur radii.
  * The box height and width must be odd numbers. The box blur is a separable filter. The implementation
  * is aware of this and will act accordingly to give best performance for multi-dimensional blurs.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -80,22 +84,25 @@ public class MPSImageBox extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +137,10 @@ public class MPSImageBox extends MPSUnaryImageKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,11 +174,11 @@ public class MPSImageBox extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImageBox initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageBox initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize a filter for a particular kernel size and device
-     *
+     * 
      * @param device       The device the filter will run on
      * @param kernelWidth  the width of the kernel. Must be an odd number.
      * @param kernelHeight the height of the kernel. Must be an odd number.
@@ -178,12 +186,13 @@ public class MPSImageBox extends MPSUnaryImageKernel {
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:")
-    public native MPSImageBox initWithDeviceKernelWidthKernelHeight(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @NUInt long kernelWidth, @NUInt long kernelHeight);
+    public native MPSImageBox initWithDeviceKernelWidthKernelHeight(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth,
+            @NUInt long kernelHeight);
 
     /**
      * [@property] kernelHeight
-     * <p>
+     * 
      * The height of the filter window.
      */
     @Generated
@@ -193,7 +202,7 @@ public class MPSImageBox extends MPSUnaryImageKernel {
 
     /**
      * [@property] kernelWidth
-     * <p>
+     * 
      * The width of the filter window.
      */
     @Generated
@@ -203,24 +212,27 @@ public class MPSImageBox extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSImageBox initWithCoder(NSCoder aDecoder);
+    public native MPSImageBox initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSImageBox initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageBox initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("supportsSecureCoding")

@@ -26,10 +26,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@enum] EKEventEditViewDelegate
- * <p>
+ * 
  * Delegate protocol for event edit view controller.
  */
 @Generated
@@ -39,36 +40,38 @@ import org.moe.natj.objc.ann.Selector;
 public interface EKEventEditViewDelegate {
     /**
      * eventEditViewController:didCompleteWithAction:
-     * <p>
+     * 
      * Called to let delegate know the controller is done editing.
-     * <p>
+     * 
      * When the user presses Cancel, presses Done, or deletes the event, this method
      * is called. Your delegate is responsible for dismissing the controller. If the editing
      * session is terminated programmatically using cancelEditing,
      * this method will not be called.
-     *
+     * 
      * @param controller the controller in question
      * @param action     the action that is causing the dismissal
      */
     @Generated
     @Selector("eventEditViewController:didCompleteWithAction:")
-    void eventEditViewControllerDidCompleteWithAction(EKEventEditViewController controller, @NInt long action);
+    void eventEditViewControllerDidCompleteWithAction(@NotNull EKEventEditViewController controller, @NInt long action);
 
     /**
      * eventEditViewControllerDefaultCalendarForNewEvents:
-     * <p>
+     * 
      * Allows you to supply your own default calendar for new events.
-     * <p>
+     * 
      * This delegate method allows you to control what the editor chooses for the default calendar
      * if it needs to fill in a calendar. This might be necessary if you either don't pass an initial
      * event to the view controller, or you do, but you did not supply a calendar. In these cases, we
      * we set the calendar to a default. If this is not implemented by the delegate, the controller
      * will use the store's defaultCalendarForNewEvents.
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("eventEditViewControllerDefaultCalendarForNewEvents:")
-    default EKCalendar eventEditViewControllerDefaultCalendarForNewEvents(EKEventEditViewController controller) {
+    default EKCalendar eventEditViewControllerDefaultCalendarForNewEvents(
+            @NotNull EKEventEditViewController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

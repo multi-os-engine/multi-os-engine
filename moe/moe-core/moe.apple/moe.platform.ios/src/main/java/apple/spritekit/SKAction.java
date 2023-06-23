@@ -18,9 +18,6 @@ package apple.spritekit;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGPathRef;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGSize;
-import apple.coregraphics.struct.CGVector;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -52,6 +49,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGSize;
+import apple.corefoundation.struct.CGVector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An SKAction object is an action that is executed by a node in the scene.
@@ -79,43 +81,55 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Creates an action of the given name from an action file.
-     *
+     * 
      * @param name The name of the action
+     * 
+     *             API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("actionNamed:")
-    public static native SKAction actionNamed(String name);
+    public static native SKAction actionNamed(@NotNull String name);
 
     /**
      * Creates an action of the given name from an action file with a new duration.
-     *
+     * 
      * @param name     The name of the action
      * @param duration The duration of the action
+     * 
+     *                 API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("actionNamed:duration:")
-    public static native SKAction actionNamedDuration(String name, double duration);
+    public static native SKAction actionNamedDuration(@NotNull String name, double duration);
 
     /**
      * Creates an action of the given name from an action file.
-     *
+     * 
      * @param name The name of the action
      * @param url  The url of the file containing the action
+     * 
+     *             API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("actionNamed:fromURL:")
-    public static native SKAction actionNamedFromURL(String name, NSURL url);
+    public static native SKAction actionNamedFromURL(@NotNull String name, @NotNull NSURL url);
 
     /**
      * Creates an action of the given name from an action file with a new duration.
-     *
+     * 
      * @param name     The name of the action
      * @param url      The url of the file containing the action
      * @param duration The duration of the action
+     * 
+     *                 API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("actionNamed:fromURL:duration:")
-    public static native SKAction actionNamedFromURLDuration(String name, NSURL url, double duration);
+    public static native SKAction actionNamedFromURLDuration(@NotNull String name, @NotNull NSURL url, double duration);
 
     @Generated
     @Owned
@@ -127,29 +141,39 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("allocWithZone:")
     public static native SKAction allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("animateWithNormalTextures:timePerFrame:")
-    public static native SKAction animateWithNormalTexturesTimePerFrame(NSArray<? extends SKTexture> textures,
+    public static native SKAction animateWithNormalTexturesTimePerFrame(@NotNull NSArray<? extends SKTexture> textures,
             double sec);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("animateWithNormalTextures:timePerFrame:resize:restore:")
     public static native SKAction animateWithNormalTexturesTimePerFrameResizeRestore(
-            NSArray<? extends SKTexture> textures, double sec, boolean resize, boolean restore);
+            @NotNull NSArray<? extends SKTexture> textures, double sec, boolean resize, boolean restore);
 
     /**
      * Creates an action that animates changes to a sprite’s texture
-     *
+     * 
      * @param textures An array of textures to use when animating a sprite
      * @param sec      The amount of time that each texture is displayed
      */
+    @NotNull
     @Generated
     @Selector("animateWithTextures:timePerFrame:")
-    public static native SKAction animateWithTexturesTimePerFrame(NSArray<? extends SKTexture> textures, double sec);
+    public static native SKAction animateWithTexturesTimePerFrame(@NotNull NSArray<? extends SKTexture> textures,
+            double sec);
 
     /**
      * Creates an action that animates changes to a sprite’s texture
-     *
+     * 
      * @param textures An array of textures to use when animating a sprite
      * @param sec      The amount of time that each texture is displayed
      * @param resize   If YES, the sprite is resized to match each new texture.
@@ -161,166 +185,259 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
      *                 If NO, when the action completes the sprite’s texture remains
      *                 set to the final texture in the array.
      */
+    @NotNull
     @Generated
     @Selector("animateWithTextures:timePerFrame:resize:restore:")
-    public static native SKAction animateWithTexturesTimePerFrameResizeRestore(NSArray<? extends SKTexture> textures,
-            double sec, boolean resize, boolean restore);
+    public static native SKAction animateWithTexturesTimePerFrameResizeRestore(
+            @NotNull NSArray<? extends SKTexture> textures, double sec, boolean resize, boolean restore);
 
     /**
      * Animate through an array of warps
-     * <p>
+     * 
      * The numberOfColumns and numberOfRows must match for all warps.
      * Times are specified in seconds and must be increasing values.
+     * 
+     * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("animateWithWarps:times:")
-    public static native SKAction animateWithWarpsTimes(NSArray<? extends SKWarpGeometry> warps,
-            NSArray<? extends NSNumber> times);
+    public static native SKAction animateWithWarpsTimes(@NotNull NSArray<? extends SKWarpGeometry> warps,
+            @NotNull NSArray<? extends NSNumber> times);
 
     /**
      * Animate through an array of warps
-     * <p>
+     * 
      * The numberOfColumns and numberOfRows must match for all warps.
      * Times are specified in seconds and must be increasing values.
      * Optionally restore the original node's warpGeometry from before the action.
+     * 
+     * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("animateWithWarps:times:restore:")
-    public static native SKAction animateWithWarpsTimesRestore(NSArray<? extends SKWarpGeometry> warps,
-            NSArray<? extends NSNumber> times, boolean restore);
+    public static native SKAction animateWithWarpsTimesRestore(@NotNull NSArray<? extends SKWarpGeometry> warps,
+            @NotNull NSArray<? extends NSNumber> times, boolean restore);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("applyAngularImpulse:duration:")
     public static native SKAction applyAngularImpulseDuration(@NFloat double impulse, double duration);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("applyForce:atPoint:duration:")
     public static native SKAction applyForceAtPointDuration(@ByValue CGVector force, @ByValue CGPoint point,
             double duration);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("applyForce:duration:")
     public static native SKAction applyForceDuration(@ByValue CGVector force, double duration);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("applyImpulse:atPoint:duration:")
     public static native SKAction applyImpulseAtPointDuration(@ByValue CGVector impulse, @ByValue CGPoint point,
             double duration);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("applyImpulse:duration:")
     public static native SKAction applyImpulseDuration(@ByValue CGVector impulse, double duration);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("applyTorque:duration:")
     public static native SKAction applyTorqueDuration(@NFloat double torque, double duration);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("changeChargeBy:duration:")
     public static native SKAction changeChargeByDuration(float v, double duration);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("changeChargeTo:duration:")
     public static native SKAction changeChargeToDuration(float v, double duration);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("changeMassBy:duration:")
     public static native SKAction changeMassByDuration(float v, double duration);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("changeMassTo:duration:")
     public static native SKAction changeMassToDuration(float v, double duration);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("changeObstructionBy:duration:")
     public static native SKAction changeObstructionByDuration(float v, double duration);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("changeObstructionTo:duration:")
     public static native SKAction changeObstructionToDuration(float v, double duration);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("changeOcclusionBy:duration:")
     public static native SKAction changeOcclusionByDuration(float v, double duration);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("changeOcclusionTo:duration:")
     public static native SKAction changeOcclusionToDuration(float v, double duration);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("changePlaybackRateBy:duration:")
     public static native SKAction changePlaybackRateByDuration(float v, double duration);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("changePlaybackRateTo:duration:")
     public static native SKAction changePlaybackRateToDuration(float v, double duration);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("changeReverbBy:duration:")
     public static native SKAction changeReverbByDuration(float v, double duration);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("changeReverbTo:duration:")
     public static native SKAction changeReverbToDuration(float v, double duration);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("changeVolumeBy:duration:")
     public static native SKAction changeVolumeByDuration(float v, double duration);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("changeVolumeTo:duration:")
     public static native SKAction changeVolumeToDuration(float v, double duration);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * Creates an animation that animates a sprite’s color and blend factor
-     *
+     * 
      * @param color            The new color for the sprite
      * @param colorBlendFactor The new blend factor for the sprite
      * @param duration         The duration of the animation, in seconds
      */
+    @NotNull
     @Generated
     @Selector("colorizeWithColor:colorBlendFactor:duration:")
-    public static native SKAction colorizeWithColorColorBlendFactorDuration(UIColor color,
+    public static native SKAction colorizeWithColorColorBlendFactorDuration(@NotNull UIColor color,
             @NFloat double colorBlendFactor, double duration);
 
+    @NotNull
     @Generated
     @Selector("colorizeWithColorBlendFactor:duration:")
     public static native SKAction colorizeWithColorBlendFactorDuration(@NFloat double colorBlendFactor, double sec);
 
     /**
      * Creates an action that executes a block over a duration
-     *
+     * 
      * @param duration The duration of the animation, in seconds
      * @param block    The block to run. The block takes the following parameters:
      *                 node The node on which the action is running.
      *                 elapsedTime The amount of time that has passed in the animation.
      */
+    @NotNull
     @Generated
     @Selector("customActionWithDuration:actionBlock:")
     public static native SKAction customActionWithDurationActionBlock(double duration,
-            @ObjCBlock(name = "call_customActionWithDurationActionBlock") Block_customActionWithDurationActionBlock block);
+            @NotNull @ObjCBlock(name = "call_customActionWithDurationActionBlock") Block_customActionWithDurationActionBlock block);
 
     @Generated
     @Selector("debugDescription")
@@ -332,67 +449,77 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Creates an action that adjusts the alpha value of a node by a relative value
-     *
+     * 
      * @param factor   The amount to modify the node’s alpha value
      * @param duration The duration of the animation, in seconds
      */
+    @NotNull
     @Generated
     @Selector("fadeAlphaBy:duration:")
     public static native SKAction fadeAlphaByDuration(@NFloat double factor, double duration);
 
     /**
      * Creates an action that adjusts the alpha value of a node to a new value
-     *
+     * 
      * @param alpha    The new value of the node’s alpha
      * @param duration The duration of the animation, in seconds
      */
+    @NotNull
     @Generated
     @Selector("fadeAlphaTo:duration:")
     public static native SKAction fadeAlphaToDuration(@NFloat double alpha, double duration);
 
     /**
      * Creates an action that changes the alpha value of the node to 1.0
-     *
+     * 
      * @param duration The duration of the animation, in seconds
      */
+    @NotNull
     @Generated
     @Selector("fadeInWithDuration:")
     public static native SKAction fadeInWithDuration(double duration);
 
     /**
      * Creates an action that changes the alpha value of the node to 0.0
-     *
+     * 
      * @param duration The duration of the animation, in seconds
      */
+    @NotNull
     @Generated
     @Selector("fadeOutWithDuration:")
     public static native SKAction fadeOutWithDuration(double duration);
 
     /**
      * Creates an action that sets the falloff of a field
-     *
+     * 
      * @param falloff  The value to modify falloff by
      * @param duration The duration of the animation, in seconds
      * @see SKFieldNode
+     * 
+     *      API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("falloffBy:duration:")
     public static native SKAction falloffByDuration(float falloff, double duration);
 
     /**
      * Creates an action that sets the falloff of a field
-     *
+     * 
      * @param falloff  The new value for falloff
      * @param duration The duration of the animation, in seconds
      * @see SKFieldNode
+     * 
+     *      API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("falloffTo:duration:")
     public static native SKAction falloffToDuration(float falloff, double duration);
 
     /**
      * Creates an action that moves the node along a path
-     *
+     * 
      * @param path     A Core Graphics path whose coordinates are relative to the node’s
      *                 current position
      * @param offset   If YES, the points in the path are relative offsets to the
@@ -403,43 +530,47 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
      *                 the node is unchanged.
      * @param duration The duration of the animation
      */
+    @NotNull
     @Generated
     @Selector("followPath:asOffset:orientToPath:duration:")
-    public static native SKAction followPathAsOffsetOrientToPathDuration(CGPathRef path, boolean offset, boolean orient,
-            double duration);
+    public static native SKAction followPathAsOffsetOrientToPathDuration(@NotNull CGPathRef path, boolean offset,
+            boolean orient, double duration);
 
+    @NotNull
     @Generated
     @Selector("followPath:asOffset:orientToPath:speed:")
-    public static native SKAction followPathAsOffsetOrientToPathSpeed(CGPathRef path, boolean offset, boolean orient,
-            @NFloat double speed);
+    public static native SKAction followPathAsOffsetOrientToPathSpeed(@NotNull CGPathRef path, boolean offset,
+            boolean orient, @NFloat double speed);
 
     /**
      * Creates an action that moves the node along a relative path, orienting the
      * node to the path
-     *
+     * 
      * @param path     A Core Graphics path whose coordinates are relative to the node’s
      *                 current position
      * @param duration The duration of the animation, in seconds
      */
+    @NotNull
     @Generated
     @Selector("followPath:duration:")
-    public static native SKAction followPathDuration(CGPathRef path, double duration);
+    public static native SKAction followPathDuration(@NotNull CGPathRef path, double duration);
 
     /**
      * Creates an action that moves the node along a relative path, orienting the
      * node to the path
-     *
+     * 
      * @param path  A Core Graphics path whose coordinates are relative to the node’s
      *              current position
      * @param speed The speed in pixels per second to move along the path
      */
+    @NotNull
     @Generated
     @Selector("followPath:speed:")
-    public static native SKAction followPathSpeed(CGPathRef path, @NFloat double speed);
+    public static native SKAction followPathSpeed(@NotNull CGPathRef path, @NFloat double speed);
 
     /**
      * Creates an action that runs a collection of actions concurrently
-     * <p>
+     * 
      * When the action executes, the actions that comprise the group
      * all start immediately and run in parallel. The duration of the group
      * action is the longest duration among the collection of actions. If an
@@ -447,12 +578,13 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
      * action completes, then idles until the group completes the remaining
      * actions. This matters most when creating a repeating action that repeats
      * a group.
-     *
+     * 
      * @param actions An array of SKAction objects
      */
+    @NotNull
     @Generated
     @Selector("group:")
-    public static native SKAction group(NSArray<? extends SKAction> actions);
+    public static native SKAction group(@NotNull NSArray<? extends SKAction> actions);
 
     @Generated
     @Selector("hash")
@@ -461,7 +593,10 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Creates an action that hides a node
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("hide")
     public static native SKAction hide();
@@ -483,38 +618,44 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Creates an action that moves a node relative to its current position
-     *
+     * 
      * @param delta    A vector that describes the change to apply to the node’s position
      * @param duration The duration of the animation, in seconds
      */
+    @NotNull
     @Generated
     @Selector("moveBy:duration:")
     public static native SKAction moveByDuration(@ByValue CGVector delta, double duration);
 
+    @NotNull
     @Generated
     @Selector("moveByX:y:duration:")
     public static native SKAction moveByXYDuration(@NFloat double deltaX, @NFloat double deltaY, double duration);
 
     /**
      * Creates an action that moves a node to a new position
-     *
+     * 
      * @param location The coordinates for the node’s new position
      * @param duration The duration of the animation, in seconds
      */
+    @NotNull
     @Generated
     @Selector("moveTo:duration:")
     public static native SKAction moveToDuration(@ByValue CGPoint location, double duration);
 
+    @NotNull
     @Generated
     @Selector("moveToX:duration:")
     public static native SKAction moveToXDuration(@NFloat double x, double duration);
 
+    @NotNull
     @Generated
     @Selector("moveToY:duration:")
     public static native SKAction moveToYDuration(@NFloat double y, double duration);
@@ -524,146 +665,178 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("new")
     public static native SKAction new_objc();
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("pause")
     public static native SKAction pause();
 
     /**
      * Creates an action that calls a method on an object
-     *
+     * 
      * @param selector The selector of the method to call
      * @param target   The target object
      */
+    @NotNull
     @Generated
     @Selector("performSelector:onTarget:")
-    public static native SKAction performSelectorOnTarget(SEL selector, @Mapped(ObjCObjectMapper.class) Object target);
+    public static native SKAction performSelectorOnTarget(@NotNull SEL selector,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object target);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("play")
     public static native SKAction play();
 
     /**
      * Creates an action that plays a sound
-     * <p>
+     * 
      * The file name must be the name or path of a file of a platform
      * supported audio file format. Use a LinearPCM format audio file with 8 or 16 bits
      * per channel for best performance
-     *
+     * 
      * @param soundFile The name of a sound file in the app’s bundle
      * @param wait      If YES, then the duration of this action is the same
      *                  as the length of the audio playback. If NO, the action is considered
      *                  to have completed immediately.
      */
+    @NotNull
     @Generated
     @Selector("playSoundFileNamed:waitForCompletion:")
-    public static native SKAction playSoundFileNamedWaitForCompletion(String soundFile, boolean wait_);
+    public static native SKAction playSoundFileNamedWaitForCompletion(@NotNull String soundFile, boolean wait_);
 
     /**
      * Creates an action that performs an inverse kinematic reach.
      * This action must be run on a descendent of the rootNode for animation to occur.
      * Running this action on the rootNode itself will not cause any animation to occur.
-     *
+     * 
      * @param position The position (in screen space) to reach for
      * @param root     Where to start the inverse kinematic operation from
      * @param duration The duration of the animation, in seconds
+     * 
+     *                 API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("reachTo:rootNode:duration:")
-    public static native SKAction reachToRootNodeDuration(@ByValue CGPoint position, SKNode root, double duration);
+    public static native SKAction reachToRootNodeDuration(@ByValue CGPoint position, @NotNull SKNode root,
+            double duration);
 
     /**
      * Creates an action that performs an inverse kinematic reach.
      * This action must be run on a descendent of the rootNode for animation to occur.
      * Running this action on the rootNode itself will not cause any animation to occur.
-     *
+     * 
      * @param position The position (in screen space) to reach for
      * @param root     Where to start the inverse kinematic operation from
      * @param velocity The speed in points per second of the end node in the chain
+     * 
+     *                 API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("reachTo:rootNode:velocity:")
-    public static native SKAction reachToRootNodeVelocity(@ByValue CGPoint position, SKNode root,
+    public static native SKAction reachToRootNodeVelocity(@ByValue CGPoint position, @NotNull SKNode root,
             @NFloat double velocity);
 
     /**
      * Creates an action that performs an inverse kinematic reach.
      * This action must be run on a descendent of the rootNode for animation to occur.
      * Running this action on the rootNode itself will not cause any animation to occur.
-     *
+     * 
      * @param node The node to reach for
      * @param root Where to start the inverse kinematic operation from
      * @param sec  The duration of the animation, in seconds
+     * 
+     *             API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("reachToNode:rootNode:duration:")
-    public static native SKAction reachToNodeRootNodeDuration(SKNode node, SKNode root, double sec);
+    public static native SKAction reachToNodeRootNodeDuration(@NotNull SKNode node, @NotNull SKNode root, double sec);
 
     /**
      * Creates an action that performs an inverse kinematic reach.
      * This action must be run on a descendent of the rootNode for animation to occur.
      * Running this action on the rootNode itself will not cause any animation to occur.
-     *
+     * 
      * @param node     The node to reach for
      * @param root     Where to start the inverse kinematic operation from
      * @param velocity The speed in points per second of the end node in the chain
+     * 
+     *                 API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("reachToNode:rootNode:velocity:")
-    public static native SKAction reachToNodeRootNodeVelocity(SKNode node, SKNode root, @NFloat double velocity);
+    public static native SKAction reachToNodeRootNodeVelocity(@NotNull SKNode node, @NotNull SKNode root,
+            @NFloat double velocity);
 
     /**
      * Creates an action that removes the node from its parent
      */
+    @NotNull
     @Generated
     @Selector("removeFromParent")
     public static native SKAction removeFromParent();
 
     /**
      * Creates an action that repeats another action a specified number of times
-     *
+     * 
      * @param action The action to execute
      * @param count  The number of times to execute the action
      */
+    @NotNull
     @Generated
     @Selector("repeatAction:count:")
-    public static native SKAction repeatActionCount(SKAction action, @NUInt long count);
+    public static native SKAction repeatActionCount(@NotNull SKAction action, @NUInt long count);
 
     /**
      * Creates an action that repeats forever
-     *
+     * 
      * @param action The action to execute
      */
+    @NotNull
     @Generated
     @Selector("repeatActionForever:")
-    public static native SKAction repeatActionForever(SKAction action);
+    public static native SKAction repeatActionForever(@NotNull SKAction action);
 
     /**
      * Creates an action that adjusts the size of a sprite
-     *
+     * 
      * @param width    The amount to add to the sprite’s width
      * @param height   The amount to add to the sprite’s height
      * @param duration The duration of the animation, in seconds
      */
+    @NotNull
     @Generated
     @Selector("resizeByWidth:height:duration:")
     public static native SKAction resizeByWidthHeightDuration(@NFloat double width, @NFloat double height,
             double duration);
 
+    @NotNull
     @Generated
     @Selector("resizeToHeight:duration:")
     public static native SKAction resizeToHeightDuration(@NFloat double height, double duration);
 
+    @NotNull
     @Generated
     @Selector("resizeToWidth:duration:")
     public static native SKAction resizeToWidthDuration(@NFloat double width, double duration);
 
     /**
      * Creates an action that changes the width and height of a sprite to a new absolute value
-     *
+     * 
      * @param width    The new width of the sprite
      * @param height   The new height of the sprite
      * @param duration The duration of the animation, in seconds
      */
+    @NotNull
     @Generated
     @Selector("resizeToWidth:height:duration:")
     public static native SKAction resizeToWidthHeightDuration(@NFloat double width, @NFloat double height,
@@ -679,33 +852,36 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Creates an action that rotates the node by a relative value
-     *
+     * 
      * @param radians  The amount to rotate the node, in radians
      * @param duration The duration of the animation, in seconds
      */
+    @NotNull
     @Generated
     @Selector("rotateByAngle:duration:")
     public static native SKAction rotateByAngleDuration(@NFloat double radians, double duration);
 
     /**
      * Creates an action that rotates the node counterclockwise to an absolute angle
-     *
+     * 
      * @param radians  The angle to rotate the node to, in radians
      * @param duration The duration of the animation
      */
+    @NotNull
     @Generated
     @Selector("rotateToAngle:duration:")
     public static native SKAction rotateToAngleDuration(@NFloat double radians, double duration);
 
     /**
      * Creates an action that rotates the node to an absolute value
-     *
+     * 
      * @param radians         The angle to rotate the node to, in radians
      * @param duration        The duration of the animation, in seconds
      * @param shortestUnitArc If YES, then the rotation is performed in whichever
      *                        direction results in the smallest rotation. If NO, then the rotation
      *                        is interpolated
      */
+    @NotNull
     @Generated
     @Selector("rotateToAngle:duration:shortestUnitArc:")
     public static native SKAction rotateToAngleDurationShortestUnitArc(@NFloat double radians, double duration,
@@ -713,127 +889,154 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Creates an action that runs an action on a named child object
-     *
+     * 
      * @param action the action to run
      * @param name   the name of a child object
      * @see SKNode.name
      */
+    @NotNull
     @Generated
     @Selector("runAction:onChildWithName:")
-    public static native SKAction runActionOnChildWithName(SKAction action, String name);
+    public static native SKAction runActionOnChildWithName(@NotNull SKAction action, @NotNull String name);
 
     /**
      * Creates an action that executes a block
-     *
+     * 
      * @param block The block to run
      */
+    @NotNull
     @Generated
     @Selector("runBlock:")
-    public static native SKAction runBlock(@ObjCBlock(name = "call_runBlock") Block_runBlock block);
+    public static native SKAction runBlock(@NotNull @ObjCBlock(name = "call_runBlock") Block_runBlock block);
 
     /**
      * Creates an action that executes a block
-     *
+     * 
      * @param block The block to run
      * @param queue The queue to perform the action on
      */
+    @NotNull
     @Generated
     @Selector("runBlock:queue:")
-    public static native SKAction runBlockQueue(@ObjCBlock(name = "call_runBlockQueue") Block_runBlockQueue block,
-            NSObject queue);
+    public static native SKAction runBlockQueue(
+            @NotNull @ObjCBlock(name = "call_runBlockQueue") Block_runBlockQueue block, @NotNull NSObject queue);
 
     /**
      * Creates an action that changes the x and y scale values of a node by a relative value
-     *
+     * 
      * @param scale    The amount to modify to the node’s x and y scale values
      * @param duration The duration of the animation, in seconds
      */
+    @NotNull
     @Generated
     @Selector("scaleBy:duration:")
     public static native SKAction scaleByDuration(@NFloat double scale, double duration);
 
     /**
      * Creates an action that changes the x and y scale values of a node by a relative value
-     *
+     * 
      * @param scale    The new value for the node’s x and y scale values
      * @param duration The duration of the animation, in seconds
      */
+    @NotNull
     @Generated
     @Selector("scaleTo:duration:")
     public static native SKAction scaleToDuration(@NFloat double scale, double duration);
 
     /**
      * Adjust the sprite's xScale & yScale to achieve the desired size (in parent's coordinate space)
-     *
+     * 
      * @param duration The duration of the animation, in seconds
+     * 
+     *                 API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("scaleToSize:duration:")
     public static native SKAction scaleToSizeDuration(@ByValue CGSize size, double duration);
 
+    @NotNull
     @Generated
     @Selector("scaleXBy:y:duration:")
     public static native SKAction scaleXByYDuration(@NFloat double xScale, @NFloat double yScale, double duration);
 
+    @NotNull
     @Generated
     @Selector("scaleXTo:duration:")
     public static native SKAction scaleXToDuration(@NFloat double scale, double duration);
 
+    @NotNull
     @Generated
     @Selector("scaleXTo:y:duration:")
     public static native SKAction scaleXToYDuration(@NFloat double xScale, @NFloat double yScale, double duration);
 
+    @NotNull
     @Generated
     @Selector("scaleYTo:duration:")
     public static native SKAction scaleYToDuration(@NFloat double scale, double duration);
 
     /**
      * Creates an action that runs a collection of actions sequentially
-     * <p>
+     * 
      * When the action executes, the first action in the sequence starts
      * and runs to completion. Subsequent actions in the sequence run in a
      * similar fashion until all of the actions in the sequence have executed.
      * The duration of the sequence action is the sum of the durations of the
      * actions in the sequence.
-     * <p>
+     * 
      * This action is reversible; it creates a new sequence action that reverses
      * the order of the actions. Each action in the reversed sequence is itself
      * reversed. For example, if an action sequence is {1,2,3}, the reversed
      * sequence would be {3R,2R,1R}.
-     *
+     * 
      * @param actions An array of SKAction objects
      */
+    @NotNull
     @Generated
     @Selector("sequence:")
-    public static native SKAction sequence(NSArray<? extends SKAction> actions);
+    public static native SKAction sequence(@NotNull NSArray<? extends SKAction> actions);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("setNormalTexture:")
-    public static native SKAction setNormalTexture(SKTexture texture);
+    public static native SKAction setNormalTexture(@NotNull SKTexture texture);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("setNormalTexture:resize:")
-    public static native SKAction setNormalTextureResize(SKTexture texture, boolean resize);
+    public static native SKAction setNormalTextureResize(@NotNull SKTexture texture, boolean resize);
 
     /**
      * Creates an action that changes a sprite’s texture
-     *
+     * 
      * @param texture The new texture to use on the sprite
+     * 
+     *                API-Since: 7.1
      */
+    @NotNull
     @Generated
     @Selector("setTexture:")
-    public static native SKAction setTexture(SKTexture texture);
+    public static native SKAction setTexture(@NotNull SKTexture texture);
 
     /**
      * Creates an action that changes a sprite’s texture, possibly resizing the sprite
-     *
+     * 
      * @param texture The new texture to use on the sprite
      * @param resize  If YES, the sprite is resized to match the new texture.
      *                If NO, the size of the sprite is unchanged.
+     * 
+     *                API-Since: 7.1
      */
+    @NotNull
     @Generated
     @Selector("setTexture:resize:")
-    public static native SKAction setTextureResize(SKTexture texture, boolean resize);
+    public static native SKAction setTextureResize(@NotNull SKTexture texture, boolean resize);
 
     @Generated
     @Selector("setVersion:")
@@ -842,54 +1045,74 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Creates an action that changes how fast the node executes actions by a
      * relative value
-     *
+     * 
      * @param speed    amount to modify the speed by
      * @param duration The duration of the animation, in seconds
      */
+    @NotNull
     @Generated
     @Selector("speedBy:duration:")
     public static native SKAction speedByDuration(@NFloat double speed, double duration);
 
     /**
      * Creates an action that changes how fast the node executes actions
-     *
+     * 
      * @param speed    The new value for the node’s speed
      * @param duration The duration of the animation, in seconds
      */
+    @NotNull
     @Generated
     @Selector("speedTo:duration:")
     public static native SKAction speedToDuration(@NFloat double speed, double duration);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("stereoPanBy:duration:")
     public static native SKAction stereoPanByDuration(float v, double duration);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("stereoPanTo:duration:")
     public static native SKAction stereoPanToDuration(float v, double duration);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("stop")
     public static native SKAction stop();
 
     /**
      * Creates an action that sets the strength of a field
-     *
+     * 
      * @param strength The value to modify strength by
      * @param duration The duration of the animation, in seconds
      * @see SKFieldNode
+     * 
+     *      API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("strengthBy:duration:")
     public static native SKAction strengthByDuration(float strength, double duration);
 
     /**
      * Creates an action that sets the strength of a field
-     *
+     * 
      * @param strength The new value for strength
      * @param duration The duration of the animation, in seconds
      * @see SKFieldNode
+     * 
+     *      API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("strengthTo:duration:")
     public static native SKAction strengthToDuration(float strength, double duration);
@@ -900,7 +1123,10 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Creates an action that unhides a node
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("unhide")
     public static native SKAction unhide();
@@ -912,38 +1138,44 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Creates an action that idles for a specified period of time
-     *
+     * 
      * @param duration The duration of the idle, in seconds
      */
+    @NotNull
     @Generated
     @Selector("waitForDuration:")
     public static native SKAction waitForDuration(double duration);
 
     /**
      * Creates an action that idles for a randomized period of time
-     *
+     * 
      * @param duration      The duration of the idle, in seconds
      * @param durationRange The range of possible values for the duration
      */
+    @NotNull
     @Generated
     @Selector("waitForDuration:withRange:")
     public static native SKAction waitForDurationWithRange(double duration, double durationRange);
 
     /**
      * Animate from the node's current warpGeometry to a new one over the specified duration.
-     * <p>
+     * 
      * If the numberOfColumns and numberOfRows match, a smooth interpolation will be performed
      * from the node current warp.
+     * 
+     * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("warpTo:duration:")
-    public static native SKAction warpToDuration(SKWarpGeometry warp, double duration);
+    public static native SKAction warpToDuration(@NotNull SKWarpGeometry warp, double duration);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * The duration required to complete an action, in seconds.
@@ -954,7 +1186,7 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -962,14 +1194,15 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKAction initWithCoder(NSCoder coder);
+    public native SKAction initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Creates an action that reverses the behavior of another action
-     *
+     * 
      * @return This method always returns an action object; however, not all actions
      *         are reversible
      */
+    @NotNull
     @Generated
     @Selector("reversedAction")
     public native SKAction reversedAction();
@@ -991,16 +1224,19 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * When set, prodives a custom timing via a block. Applies after
      * the 'timingMode' property is taken into account, defaults to nil
-     *
+     * 
      * @see SKActionTimingFunction
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("setTimingFunction:")
-    public native void setTimingFunction(@ObjCBlock(name = "call_setTimingFunction") Block_setTimingFunction value);
+    public native void setTimingFunction(
+            @NotNull @ObjCBlock(name = "call_setTimingFunction") Block_setTimingFunction value);
 
     /**
      * The timing mode used to execute an action
-     *
+     * 
      * @see SKActionTimingMode
      */
     @Generated
@@ -1018,9 +1254,12 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * When set, prodives a custom timing via a block. Applies after
      * the 'timingMode' property is taken into account, defaults to nil
-     *
+     * 
      * @see SKActionTimingFunction
+     * 
+     *      API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("timingFunction")
     @ObjCBlock(name = "call_timingFunction_ret")
@@ -1028,7 +1267,7 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * The timing mode used to execute an action
-     *
+     * 
      * @see SKActionTimingMode
      */
     @Generated
@@ -1040,7 +1279,7 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     public interface Block_customActionWithDurationActionBlock {
         @Generated
-        void call_customActionWithDurationActionBlock(SKNode node, @NFloat double elapsedTime);
+        void call_customActionWithDurationActionBlock(@NotNull SKNode node, @NFloat double elapsedTime);
     }
 
     @Runtime(ObjCRuntime.class)

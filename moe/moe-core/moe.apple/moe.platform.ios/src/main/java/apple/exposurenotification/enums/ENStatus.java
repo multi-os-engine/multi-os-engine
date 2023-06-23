@@ -5,8 +5,10 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * ===========================================================================================================================
- * <p>
+ * 
  * Overall status of Exposure Notification on the system.
+ * 
+ * API-Since: 12.5
  */
 @Generated
 public final class ENStatus {
@@ -16,14 +18,20 @@ public final class ENStatus {
 
     /**
      * Status of Exposure Notification is unknown. This is the status before ENManager has activated successfully.
+     * 
+     * API-Since: 12.5
      */
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     /**
      * Exposure Notification is active on the system.
+     * 
+     * API-Since: 12.5
      */
     @Generated @NInt public static final long Active = 0x0000000000000001L;
     /**
      * Exposure Notification is disabled. setExposureNotificationEnabled:completionHandler can be used to enable it.
+     * 
+     * API-Since: 12.5
      */
     @Generated @NInt public static final long Disabled = 0x0000000000000002L;
     /**
@@ -31,19 +39,27 @@ public final class ENStatus {
      * Note: this may not match the state of Bluetooth as reported by CoreBluetooth.
      * Exposure Notification is a system service and can use Bluetooth in situations when apps cannot.
      * So for the purposes of Exposure Notification, it's better to use this API instead of CoreBluetooth.
+     * 
+     * API-Since: 12.5
      */
     @Generated @NInt public static final long BluetoothOff = 0x0000000000000003L;
     /**
      * Exposure Notification is not active due to system restrictions, such as parental controls.
      * When in this state, the app cannot enable Exposure Notification.
+     * 
+     * API-Since: 12.5
      */
     @Generated @NInt public static final long Restricted = 0x0000000000000004L;
     /**
      * For future use. Not returned by any APIs yet.
+     * 
+     * API-Since: 12.5
      */
     @Generated @NInt public static final long Paused = 0x0000000000000005L;
     /**
      * Exposure Notification is not available due to insufficient authorization.
+     * 
+     * API-Since: 12.5
      */
     @Generated @NInt public static final long Unauthorized = 0x0000000000000006L;
 }

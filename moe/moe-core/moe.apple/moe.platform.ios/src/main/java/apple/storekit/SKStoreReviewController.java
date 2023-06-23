@@ -22,9 +22,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Controller class to request a review from the current user
+ * 
+ * API-Since: 10.3
  */
 @Generated
 @Library("StoreKit")
@@ -56,22 +60,25 @@ public class SKStoreReviewController extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -110,9 +117,10 @@ public class SKStoreReviewController extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -122,13 +130,17 @@ public class SKStoreReviewController extends NSObject {
     /**
      * Request StoreKit to ask the user for an app review. Uses the keyWindow's UIWindowScene which may or may not be
      * the scene a user is interacting with.
-     * <p>
+     * 
      * This may or may not show any UI.
-     * <p>
+     * 
      * Given this may not successfully present an alert to the user, it is not appropriate for use
      * from a button or any other user action. For presenting a write review form, a deep link is
      * available to the App Store by appending the query params "action=write-review" to a product URL.
+     * 
+     * API-Since: 10.3
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("requestReview")
     public static native void requestReview();
@@ -156,14 +168,16 @@ public class SKStoreReviewController extends NSObject {
 
     /**
      * Request StoreKit to ask the user for an app review in a given UIWindowScene.
-     * <p>
+     * 
      * This may or may not show any UI.
-     * <p>
+     * 
      * Given this may not successfully present an alert to the user, it is not appropriate for use
      * from a button or any other user action. For presenting a write review form, a deep link is
      * available to the App Store by appending the query params "action=write-review" to a product URL.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("requestReviewInScene:")
-    public static native void requestReviewInScene(UIWindowScene windowScene);
+    public static native void requestReviewInScene(@NotNull UIWindowScene windowScene);
 }

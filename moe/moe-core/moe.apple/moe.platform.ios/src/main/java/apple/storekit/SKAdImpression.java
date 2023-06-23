@@ -21,7 +21,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.5
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -43,6 +48,7 @@ public class SKAdImpression extends NSObject {
     /**
      * The ad campaign identifier.
      */
+    @NotNull
     @Generated
     @Selector("adCampaignIdentifier")
     public native NSNumber adCampaignIdentifier();
@@ -50,6 +56,7 @@ public class SKAdImpression extends NSObject {
     /**
      * The description of the ad.
      */
+    @Nullable
     @Generated
     @Selector("adDescription")
     public native String adDescription();
@@ -57,6 +64,7 @@ public class SKAdImpression extends NSObject {
     /**
      * The nonce used to generate the signature.
      */
+    @NotNull
     @Generated
     @Selector("adImpressionIdentifier")
     public native String adImpressionIdentifier();
@@ -64,6 +72,7 @@ public class SKAdImpression extends NSObject {
     /**
      * The identifier for the ad network.
      */
+    @NotNull
     @Generated
     @Selector("adNetworkIdentifier")
     public native String adNetworkIdentifier();
@@ -71,6 +80,7 @@ public class SKAdImpression extends NSObject {
     /**
      * Name of entity that purchased the ad being presented.
      */
+    @Nullable
     @Generated
     @Selector("adPurchaserName")
     public native String adPurchaserName();
@@ -78,6 +88,7 @@ public class SKAdImpression extends NSObject {
     /**
      * The type of ad being presented.
      */
+    @Nullable
     @Generated
     @Selector("adType")
     public native String adType();
@@ -85,6 +96,7 @@ public class SKAdImpression extends NSObject {
     /**
      * The App Store item identifier for the app being advertised.
      */
+    @NotNull
     @Generated
     @Selector("advertisedAppStoreItemIdentifier")
     public native NSNumber advertisedAppStoreItemIdentifier();
@@ -101,22 +113,25 @@ public class SKAdImpression extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -155,9 +170,10 @@ public class SKAdImpression extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -177,81 +193,82 @@ public class SKAdImpression extends NSObject {
      */
     @Generated
     @Selector("setAdCampaignIdentifier:")
-    public native void setAdCampaignIdentifier(NSNumber value);
+    public native void setAdCampaignIdentifier(@NotNull NSNumber value);
 
     /**
      * The description of the ad.
      */
     @Generated
     @Selector("setAdDescription:")
-    public native void setAdDescription(String value);
+    public native void setAdDescription(@Nullable String value);
 
     /**
      * The nonce used to generate the signature.
      */
     @Generated
     @Selector("setAdImpressionIdentifier:")
-    public native void setAdImpressionIdentifier(String value);
+    public native void setAdImpressionIdentifier(@NotNull String value);
 
     /**
      * The identifier for the ad network.
      */
     @Generated
     @Selector("setAdNetworkIdentifier:")
-    public native void setAdNetworkIdentifier(String value);
+    public native void setAdNetworkIdentifier(@NotNull String value);
 
     /**
      * Name of entity that purchased the ad being presented.
      */
     @Generated
     @Selector("setAdPurchaserName:")
-    public native void setAdPurchaserName(String value);
+    public native void setAdPurchaserName(@Nullable String value);
 
     /**
      * The type of ad being presented.
      */
     @Generated
     @Selector("setAdType:")
-    public native void setAdType(String value);
+    public native void setAdType(@Nullable String value);
 
     /**
      * The App Store item identifier for the app being advertised.
      */
     @Generated
     @Selector("setAdvertisedAppStoreItemIdentifier:")
-    public native void setAdvertisedAppStoreItemIdentifier(NSNumber value);
+    public native void setAdvertisedAppStoreItemIdentifier(@NotNull NSNumber value);
 
     /**
      * The signature of the impression.
      */
     @Generated
     @Selector("setSignature:")
-    public native void setSignature(String value);
+    public native void setSignature(@NotNull String value);
 
     /**
      * The App Store item identifier for the source app.
      */
     @Generated
     @Selector("setSourceAppStoreItemIdentifier:")
-    public native void setSourceAppStoreItemIdentifier(NSNumber value);
+    public native void setSourceAppStoreItemIdentifier(@NotNull NSNumber value);
 
     /**
      * The timestamp of the start and end call.
      */
     @Generated
     @Selector("setTimestamp:")
-    public native void setTimestamp(NSNumber value);
+    public native void setTimestamp(@NotNull NSNumber value);
 
     /**
      * The version of SKAdNetwork being used.
      */
     @Generated
     @Selector("setVersion:")
-    public native void setVersion(String value);
+    public native void setVersion(@NotNull String value);
 
     /**
      * The signature of the impression.
      */
+    @NotNull
     @Generated
     @Selector("signature")
     public native String signature();
@@ -259,6 +276,7 @@ public class SKAdImpression extends NSObject {
     /**
      * The App Store item identifier for the source app.
      */
+    @NotNull
     @Generated
     @Selector("sourceAppStoreItemIdentifier")
     public native NSNumber sourceAppStoreItemIdentifier();
@@ -270,6 +288,7 @@ public class SKAdImpression extends NSObject {
     /**
      * The timestamp of the start and end call.
      */
+    @NotNull
     @Generated
     @Selector("timestamp")
     public native NSNumber timestamp();
@@ -277,7 +296,38 @@ public class SKAdImpression extends NSObject {
     /**
      * The version of SKAdNetwork being used.
      */
+    @NotNull
     @Generated
     @Selector("version")
     public native String version();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("initWithSourceAppStoreItemIdentifier:advertisedAppStoreItemIdentifier:adNetworkIdentifier:adCampaignIdentifier:adImpressionIdentifier:timestamp:signature:version:")
+    public native SKAdImpression initWithSourceAppStoreItemIdentifierAdvertisedAppStoreItemIdentifierAdNetworkIdentifierAdCampaignIdentifierAdImpressionIdentifierTimestampSignatureVersion(
+            @NotNull NSNumber sourceAppStoreItemIdentifier, @NotNull NSNumber advertisedAppStoreItemIdentifier,
+            @NotNull String adNetworkIdentifier, @NotNull NSNumber adCampaignIdentifier,
+            @NotNull String adImpressionIdentifier, @NotNull NSNumber timestamp, @NotNull String signature,
+            @NotNull String version);
+
+    /**
+     * The source identifier
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setSourceIdentifier:")
+    public native void setSourceIdentifier(@NotNull NSNumber value);
+
+    /**
+     * The source identifier
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @Selector("sourceIdentifier")
+    public native NSNumber sourceIdentifier();
 }

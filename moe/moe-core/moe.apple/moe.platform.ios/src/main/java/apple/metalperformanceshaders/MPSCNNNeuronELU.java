@@ -24,14 +24,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNNeuronELU
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * Specifies the parametric ELU neuron filter.
  * For each pixel, applies the following function: f(x) = [ a * (exp(x) - 1), x < 0
  * [ x , x >= 0
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -63,22 +67,25 @@ public class MPSCNNNeuronELU extends MPSCNNNeuron {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,26 +109,31 @@ public class MPSCNNNeuronELU extends MPSCNNNeuron {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNNeuronELU initWithCoder(NSCoder aDecoder);
+    public native MPSCNNNeuronELU initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNNeuronELU initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNNeuronELU initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNNeuronELU initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNNeuronELU initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize a parametric ELU neuron filter
-     *
+     * 
      * @param device The device the filter will run on
      * @param a      Filter property "a". See class discussion.
      * @return A valid MPSCNNNeuronELU object or nil, if failure.
+     * 
+     *         API-Since: 10.0
+     *         Deprecated-Since: 12.0
      */
+    @Deprecated
     @Generated
     @Selector("initWithDevice:a:")
-    public native MPSCNNNeuronELU initWithDeviceA(@Mapped(ObjCObjectMapper.class) MTLDevice device, float a);
+    public native MPSCNNNeuronELU initWithDeviceA(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, float a);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -140,9 +152,10 @@ public class MPSCNNNeuronELU extends MPSCNNNeuron {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -182,6 +195,6 @@ public class MPSCNNNeuronELU extends MPSCNNNeuron {
 
     @Generated
     @Selector("initWithDevice:neuronDescriptor:")
-    public native MPSCNNNeuronELU initWithDeviceNeuronDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MPSNNNeuronDescriptor neuronDescriptor);
+    public native MPSCNNNeuronELU initWithDeviceNeuronDescriptor(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSNNNeuronDescriptor neuronDescriptor);
 }

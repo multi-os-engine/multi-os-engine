@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] AUHostTransportStateFlags
- * <p>
+ * 
  * Flags describing the host's transport state.
  * [@constant] AUHostTransportStateChanged
  * True if, since the callback was last called, there was a change to the state of, or

@@ -27,16 +27,20 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MIDICISession
- * <p>
+ * 
  * Object representating a MIDI Capability Inquiry session.
- * <p>
+ * 
  * A MIDI Capability Inquiry session is a bidirectional communication path between a MIDI process
  * and a MIDI-CI node (i.e., paired MIDI source and destination) identified using MIDI-CI discovery.
  * A MIDICISession can be used to manipulate MIDI-CI profiles and to discover the MIDI-CI property
  * capability.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CoreMIDI")
@@ -68,22 +72,25 @@ public class MIDICISession extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -103,8 +110,8 @@ public class MIDICISession extends NSObject {
      */
     @Generated
     @Selector("disableProfile:onChannel:error:")
-    public native boolean disableProfileOnChannelError(MIDICIProfile profile, byte channel,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean disableProfileOnChannelError(@NotNull MIDICIProfile profile, byte channel,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * Given a MIDI channel number, asynchronously request that the supplied profile be enabled.
@@ -113,8 +120,8 @@ public class MIDICISession extends NSObject {
      */
     @Generated
     @Selector("enableProfile:onChannel:error:")
-    public native boolean enableProfileOnChannelError(MIDICIProfile profile, byte channel,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean enableProfileOnChannelError(@NotNull MIDICIProfile profile, byte channel,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("hash")
@@ -142,9 +149,10 @@ public class MIDICISession extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,6 +162,7 @@ public class MIDICISession extends NSObject {
     /**
      * An optional block called when a device signals that a profile has been enabled or disabled.
      */
+    @Nullable
     @Generated
     @Selector("profileChangedCallback")
     @ObjCBlock(name = "call_profileChangedCallback_ret")
@@ -163,14 +172,15 @@ public class MIDICISession extends NSObject {
     @Generated
     public interface Block_profileChangedCallback_ret {
         @Generated
-        void call_profileChangedCallback_ret(MIDICISession session, byte channel, MIDICIProfile profile,
-                boolean enabled);
+        void call_profileChangedCallback_ret(@NotNull MIDICISession session, byte channel,
+                @NotNull MIDICIProfile profile, boolean enabled);
     }
 
     /**
      * Given a MIDI channel number, return the supported profiles. Note that the
      * arrays will be empty if this property is queried before data is ready.
      */
+    @NotNull
     @Generated
     @Selector("profileStateForChannel:")
     public native MIDICIProfileState profileStateForChannel(byte channel);
@@ -189,14 +199,14 @@ public class MIDICISession extends NSObject {
     @Generated
     @Selector("setProfileChangedCallback:")
     public native void setProfileChangedCallback(
-            @ObjCBlock(name = "call_setProfileChangedCallback") Block_setProfileChangedCallback value);
+            @Nullable @ObjCBlock(name = "call_setProfileChangedCallback") Block_setProfileChangedCallback value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setProfileChangedCallback {
         @Generated
-        void call_setProfileChangedCallback(MIDICISession session, byte channel, MIDICIProfile profile,
-                boolean enabled);
+        void call_setProfileChangedCallback(@NotNull MIDICISession session, byte channel,
+                @NotNull MIDICIProfile profile, boolean enabled);
     }
 
     @Generated
@@ -230,6 +240,7 @@ public class MIDICISession extends NSObject {
      * Obtain the device's basic identification. Nil before data is ready or if the device does not
      * support MIDI-CI.
      */
+    @NotNull
     @Generated
     @Selector("deviceInfo")
     public native MIDICIDeviceInfo deviceInfo();
@@ -237,9 +248,9 @@ public class MIDICISession extends NSObject {
     @Generated
     @Selector("initWithDiscoveredNode:dataReadyHandler:disconnectHandler:")
     public native MIDICISession initWithDiscoveredNodeDataReadyHandlerDisconnectHandler(
-            MIDICIDiscoveredNode discoveredNode,
-            @ObjCBlock(name = "call_initWithDiscoveredNodeDataReadyHandlerDisconnectHandler_1") Block_initWithDiscoveredNodeDataReadyHandlerDisconnectHandler_1 handler,
-            @ObjCBlock(name = "call_initWithDiscoveredNodeDataReadyHandlerDisconnectHandler_2") Block_initWithDiscoveredNodeDataReadyHandlerDisconnectHandler_2 disconnectHandler);
+            @NotNull MIDICIDiscoveredNode discoveredNode,
+            @NotNull @ObjCBlock(name = "call_initWithDiscoveredNodeDataReadyHandlerDisconnectHandler_1") Block_initWithDiscoveredNodeDataReadyHandlerDisconnectHandler_1 handler,
+            @NotNull @ObjCBlock(name = "call_initWithDiscoveredNodeDataReadyHandlerDisconnectHandler_2") Block_initWithDiscoveredNodeDataReadyHandlerDisconnectHandler_2 disconnectHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -252,12 +263,14 @@ public class MIDICISession extends NSObject {
     @Generated
     public interface Block_initWithDiscoveredNodeDataReadyHandlerDisconnectHandler_2 {
         @Generated
-        void call_initWithDiscoveredNodeDataReadyHandlerDisconnectHandler_2(MIDICISession session, NSError error);
+        void call_initWithDiscoveredNodeDataReadyHandlerDisconnectHandler_2(@NotNull MIDICISession session,
+                @NotNull NSError error);
     }
 
     /**
      * int
      */
+    @NotNull
     @Generated
     @Selector("maxPropertyRequests")
     public native NSNumber maxPropertyRequests();
@@ -265,6 +278,7 @@ public class MIDICISession extends NSObject {
     /**
      * unsigned long
      */
+    @NotNull
     @Generated
     @Selector("maxSysExSize")
     public native NSNumber maxSysExSize();
@@ -279,6 +293,7 @@ public class MIDICISession extends NSObject {
     /**
      * An optional block called when a device sends profile-specific data to the session.
      */
+    @Nullable
     @Generated
     @Selector("profileSpecificDataHandler")
     @ObjCBlock(name = "call_profileSpecificDataHandler_ret")
@@ -288,18 +303,20 @@ public class MIDICISession extends NSObject {
     @Generated
     public interface Block_profileSpecificDataHandler_ret {
         @Generated
-        void call_profileSpecificDataHandler_ret(MIDICISession session, byte channel, MIDICIProfile profile,
-                NSData profileSpecificData);
+        void call_profileSpecificDataHandler_ret(@NotNull MIDICISession session, byte channel,
+                @NotNull MIDICIProfile profile, @NotNull NSData profileSpecificData);
     }
 
     /**
      * Given a MIDI channel number, send profile specific data to the MIDICISession.
      * Returns YES if the data was successfully sent.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("sendProfile:onChannel:profileData:")
-    public native boolean sendProfileOnChannelProfileData(MIDICIProfile profile, byte channel,
-            NSData profileSpecificData);
+    public native boolean sendProfileOnChannelProfileData(@NotNull MIDICIProfile profile, byte channel,
+            @NotNull NSData profileSpecificData);
 
     /**
      * An optional block called when a device sends profile-specific data to the session.
@@ -307,13 +324,13 @@ public class MIDICISession extends NSObject {
     @Generated
     @Selector("setProfileSpecificDataHandler:")
     public native void setProfileSpecificDataHandler(
-            @ObjCBlock(name = "call_setProfileSpecificDataHandler") Block_setProfileSpecificDataHandler value);
+            @Nullable @ObjCBlock(name = "call_setProfileSpecificDataHandler") Block_setProfileSpecificDataHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setProfileSpecificDataHandler {
         @Generated
-        void call_setProfileSpecificDataHandler(MIDICISession session, byte channel, MIDICIProfile profile,
-                NSData profileSpecificData);
+        void call_setProfileSpecificDataHandler(@NotNull MIDICISession session, byte channel,
+                @NotNull MIDICIProfile profile, @NotNull NSData profileSpecificData);
     }
 }

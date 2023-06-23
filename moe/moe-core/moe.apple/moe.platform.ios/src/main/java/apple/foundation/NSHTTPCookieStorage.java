@@ -35,15 +35,19 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSHTTPCookieStorage
- * <p>
+ * 
  * NSHTTPCookieStorage implements a singleton object (shared
  * instance) which manages the shared cookie store. It has methods
  * to allow clients to set and remove cookies, and get the current
  * set of cookies. It also has convenience methods to parse and
  * generate cookie-related HTTP header fields.
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("Foundation")
@@ -75,22 +79,25 @@ public class NSHTTPCookieStorage extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +132,10 @@ public class NSHTTPCookieStorage extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -148,32 +156,36 @@ public class NSHTTPCookieStorage extends NSObject {
 
     /**
      * sharedCookieStorageForGroupContainerIdentifier:
-     * <p>
+     * 
      * Get the cookie storage for the container associated with the specified application group identifier
-     * <p>
+     * 
      * By default, applications and associated app extensions have different data containers, which means
      * that the sharedHTTPCookieStorage singleton will refer to different persistent cookie stores in an application and
      * any app extensions that it contains. This method allows clients to create a persistent cookie storage that can be
      * shared among all applications and extensions with access to the same application group. Subsequent calls to this
      * method with the same identifier will return the same cookie storage instance.
-     *
+     * 
+     * API-Since: 9.0
+     * 
      * @param identifier The application group identifier
      * @return A cookie storage with a persistent store in the application group container
      */
+    @NotNull
     @Generated
     @Selector("sharedCookieStorageForGroupContainerIdentifier:")
-    public static native NSHTTPCookieStorage sharedCookieStorageForGroupContainerIdentifier(String identifier);
+    public static native NSHTTPCookieStorage sharedCookieStorageForGroupContainerIdentifier(@NotNull String identifier);
 
     /**
      * [@property] sharedHTTPCookieStorage
-     * <p>
+     * 
      * Get the shared cookie storage in the default location.
-     * <p>
+     * 
      * Starting in OS X 10.11, each app has its own sharedHTTPCookieStorage singleton,
      * which will not be shared with other applications.
-     *
+     * 
      * @return The shared cookie storage
      */
+    @NotNull
     @Generated
     @Selector("sharedHTTPCookieStorage")
     public static native NSHTTPCookieStorage sharedHTTPCookieStorage();
@@ -198,43 +210,48 @@ public class NSHTTPCookieStorage extends NSObject {
 
     /**
      * Get all the cookies
-     *
+     * 
      * @return An NSArray of NSHTTPCookies
      */
+    @Nullable
     @Generated
     @Selector("cookies")
     public native NSArray<? extends NSHTTPCookie> cookies();
 
     /**
      * cookiesForURL:
-     * <p>
+     * 
      * Returns an array of cookies to send to the given URL.
-     * <p>
+     * 
      * The cookie manager examines the cookies it stores and
      * includes those which should be sent to the given URL. You can use
      * <tt>+[NSCookie requestHeaderFieldsWithCookies:]</tt> to turn this array
      * into a set of header fields to add to a request.
-     *
+     * 
      * @param URL The URL for which to get cookies.
      * @return an NSArray of NSHTTPCookie objects.
      */
+    @Nullable
     @Generated
     @Selector("cookiesForURL:")
-    public native NSArray<? extends NSHTTPCookie> cookiesForURL(NSURL URL);
+    public native NSArray<? extends NSHTTPCookie> cookiesForURL(@NotNull NSURL URL);
 
     /**
      * deleteCookie:
-     * <p>
+     * 
      * Delete the specified cookie
      */
     @Generated
     @Selector("deleteCookie:")
-    public native void deleteCookie(NSHTTPCookie cookie);
+    public native void deleteCookie(@NotNull NSHTTPCookie cookie);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("getCookiesForTask:completionHandler:")
-    public native void getCookiesForTaskCompletionHandler(NSURLSessionTask task,
-            @ObjCBlock(name = "call_getCookiesForTaskCompletionHandler") Block_getCookiesForTaskCompletionHandler completionHandler);
+    public native void getCookiesForTaskCompletionHandler(@NotNull NSURLSessionTask task,
+            @NotNull @ObjCBlock(name = "call_getCookiesForTaskCompletionHandler") Block_getCookiesForTaskCompletionHandler completionHandler);
 
     @Generated
     @Selector("init")
@@ -242,24 +259,26 @@ public class NSHTTPCookieStorage extends NSObject {
 
     /**
      * removeCookiesSince:
-     * <p>
+     * 
      * Delete all cookies from the cookie storage since the provided date.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("removeCookiesSinceDate:")
-    public native void removeCookiesSinceDate(NSDate date);
+    public native void removeCookiesSinceDate(@NotNull NSDate date);
 
     /**
      * setCookie:
-     * <p>
+     * 
      * Set a cookie
-     * <p>
+     * 
      * The cookie will override an existing cookie with the
      * same name, domain and path, if any.
      */
     @Generated
     @Selector("setCookie:")
-    public native void setCookie(NSHTTPCookie cookie);
+    public native void setCookie(@NotNull NSHTTPCookie cookie);
 
     /**
      * The cookie accept policy preference of the
@@ -271,10 +290,10 @@ public class NSHTTPCookieStorage extends NSObject {
 
     /**
      * setCookies:forURL:mainDocumentURL:
-     * <p>
+     * 
      * Adds an array cookies to the cookie store, following the
      * cookie accept policy.
-     * <p>
+     * 
      * For mainDocumentURL, the caller should pass the URL for
      * an appropriate main document, if known. For example, when loading
      * a web page, the URL of the main html document for the top-level
@@ -283,7 +302,7 @@ public class NSHTTPCookieStorage extends NSObject {
      * cookiesWithResponseHeaderFields:forURL:]</tt> on a header field
      * dictionary and then use this method to store the resulting cookies
      * in accordance with policy settings.
-     *
+     * 
      * @param cookies         The cookies to set.
      * @param URL             The URL from which the cookies were sent.
      * @param mainDocumentURL The main document URL to be used as a base for the "same
@@ -291,34 +310,41 @@ public class NSHTTPCookieStorage extends NSObject {
      */
     @Generated
     @Selector("setCookies:forURL:mainDocumentURL:")
-    public native void setCookiesForURLMainDocumentURL(NSArray<? extends NSHTTPCookie> cookies, NSURL URL,
-            NSURL mainDocumentURL);
+    public native void setCookiesForURLMainDocumentURL(@NotNull NSArray<? extends NSHTTPCookie> cookies,
+            @Nullable NSURL URL, @Nullable NSURL mainDocumentURL);
 
     /**
      * sortedCookiesUsingDescriptors:
-     * <p>
+     * 
      * Returns an array of all cookies in the store, sorted according to the key value and sorting direction of the
      * NSSortDescriptors specified in the parameter.
-     * <p>
+     * 
      * proper sorting of cookies may require extensive string conversion, which can be avoided by allowing the system to
      * perform the sorting. This API is to be preferred over the more generic -[NSHTTPCookieStorage cookies] API, if
      * sorting is going to be performed.
-     *
+     * 
+     * API-Since: 5.0
+     * 
      * @param sortOrder an array of NSSortDescriptors which represent the preferred sort order of the resulting array.
      */
+    @NotNull
     @Generated
     @Selector("sortedCookiesUsingDescriptors:")
     public native NSArray<? extends NSHTTPCookie> sortedCookiesUsingDescriptors(
-            NSArray<? extends NSSortDescriptor> sortOrder);
+            @NotNull NSArray<? extends NSSortDescriptor> sortOrder);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("storeCookies:forTask:")
-    public native void storeCookiesForTask(NSArray<? extends NSHTTPCookie> cookies, NSURLSessionTask task);
+    public native void storeCookiesForTask(@NotNull NSArray<? extends NSHTTPCookie> cookies,
+            @NotNull NSURLSessionTask task);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getCookiesForTaskCompletionHandler {
         @Generated
-        void call_getCookiesForTaskCompletionHandler(NSArray<? extends NSHTTPCookie> cookies);
+        void call_getCookiesForTaskCompletionHandler(@Nullable NSArray<? extends NSHTTPCookie> cookies);
     }
 }

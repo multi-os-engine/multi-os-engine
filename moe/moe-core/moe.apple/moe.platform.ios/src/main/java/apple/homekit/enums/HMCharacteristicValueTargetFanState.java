@@ -21,13 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueTargetFanState
- * <p>
+ * 
  * [@constant] HMCharacteristicValueTargetFanStateManual Manual.
  * [@constant] HMCharacteristicValueTargetFanStateAutomatic Automatic.
+ * 
+ * API-Since: 10.2
  */
 @Generated
 public final class HMCharacteristicValueTargetFanState {
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Manual = 0x0000000000000000L;
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Automatic = 0x0000000000000001L;
 
     @Generated

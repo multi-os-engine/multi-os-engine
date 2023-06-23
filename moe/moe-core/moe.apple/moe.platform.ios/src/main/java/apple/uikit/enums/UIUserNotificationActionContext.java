@@ -19,16 +19,33 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 8.0
+ * Deprecated-Since: 10.0
+ * Deprecated-Message: Use UserNotifications Framework's -[UNNotificationCategory actions] or -[UNNotificationCategory
+ * minimalActions]
+ */
+@Deprecated
 @Generated
 public final class UIUserNotificationActionContext {
     /**
      * the default context of a notification action
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's -[UNNotificationCategory actions] or
+     * -[UNNotificationCategory minimalActions]
      */
-    @Generated @NUInt public static final long Default = 0x0000000000000000L;
+    @Deprecated @Generated @NUInt public static final long Default = 0x0000000000000000L;
     /**
      * the context of a notification action when space is limited
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's -[UNNotificationCategory actions] or
+     * -[UNNotificationCategory minimalActions]
      */
-    @Generated @NUInt public static final long Minimal = 0x0000000000000001L;
+    @Deprecated @Generated @NUInt public static final long Minimal = 0x0000000000000001L;
 
     @Generated
     private UIUserNotificationActionContext() {

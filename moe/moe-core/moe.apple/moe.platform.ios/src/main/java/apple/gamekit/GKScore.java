@@ -45,10 +45,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * GKScore represents a score in the leaderboards.
+ * 
+ * API-Since: 4.1
+ * Deprecated-Since: 14.0
+ * Deprecated-Message: Replaced by GKLeaderboardScore
  */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -79,22 +86,25 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +139,10 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -144,21 +155,29 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
      * 1. Value not set
      * 2. Local player not authenticated
      * 3. Communications problem
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("reportScores:withCompletionHandler:")
-    public static native void reportScoresWithCompletionHandler(NSArray<? extends GKScore> scores,
-            @ObjCBlock(name = "call_reportScoresWithCompletionHandler") Block_reportScoresWithCompletionHandler completionHandler);
+    public static native void reportScoresWithCompletionHandler(@NotNull NSArray<? extends GKScore> scores,
+            @Nullable @ObjCBlock(name = "call_reportScoresWithCompletionHandler") Block_reportScoresWithCompletionHandler completionHandler);
 
     /**
      * Use this alternative to reportScores:withCompletionHandler: to allow only certain specific challenges to be
      * completed. Pass nil to avoid completing any challenges.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: pass GKLeaderboardScore to
+     * reportLeaderboardScores:withEligibleChallenges:withCompletionHandler instead
      */
+    @Deprecated
     @Generated
     @Selector("reportScores:withEligibleChallenges:withCompletionHandler:")
-    public static native void reportScoresWithEligibleChallengesWithCompletionHandler(NSArray<? extends GKScore> scores,
-            NSArray<? extends GKChallenge> challenges,
-            @ObjCBlock(name = "call_reportScoresWithEligibleChallengesWithCompletionHandler") Block_reportScoresWithEligibleChallengesWithCompletionHandler completionHandler);
+    public static native void reportScoresWithEligibleChallengesWithCompletionHandler(
+            @NotNull NSArray<? extends GKScore> scores, @NotNull NSArray<? extends GKChallenge> challenges,
+            @Nullable @ObjCBlock(name = "call_reportScoresWithEligibleChallengesWithCompletionHandler") Block_reportScoresWithEligibleChallengesWithCompletionHandler completionHandler);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -185,30 +204,48 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use leaderboardIdentifier instead
+     */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("category")
     public native String category();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @Selector("challengeComposeControllerWithMessage:players:completionHandler:")
-    public native UIViewController challengeComposeControllerWithMessagePlayersCompletionHandler(String message,
-            NSArray<? extends GKPlayer> players,
-            @ObjCBlock(name = "call_challengeComposeControllerWithMessagePlayersCompletionHandler") Block_challengeComposeControllerWithMessagePlayersCompletionHandler completionHandler);
+    public native UIViewController challengeComposeControllerWithMessagePlayersCompletionHandler(
+            @Nullable String message, @Nullable NSArray<? extends GKPlayer> players,
+            @Nullable @ObjCBlock(name = "call_challengeComposeControllerWithMessagePlayersCompletionHandler") Block_challengeComposeControllerWithMessagePlayersCompletionHandler completionHandler);
 
     /**
      * rb= GameKit.unavailableForTVOS
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, pass GKPlayers to
+     * challengeComposeControllerWithMessage:players: instead
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("challengeComposeControllerWithPlayers:message:completionHandler:")
     public native UIViewController challengeComposeControllerWithPlayersMessageCompletionHandler(
-            NSArray<String> playerIDs, String message,
-            @ObjCBlock(name = "call_challengeComposeControllerWithPlayersMessageCompletionHandler") Block_challengeComposeControllerWithPlayersMessageCompletionHandler completionHandler);
+            @Nullable NSArray<String> playerIDs, @Nullable String message,
+            @Nullable @ObjCBlock(name = "call_challengeComposeControllerWithPlayersMessageCompletionHandler") Block_challengeComposeControllerWithPlayersMessageCompletionHandler completionHandler);
 
     /**
      * optional additional context that allows a game to store and retrieve additional data associated with the store.
      * Default value of zero is returned if no value is set.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("context")
@@ -217,17 +254,19 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     /**
      * The date this score was recorded. A newly initialized, unsubmitted GKScore records the current date at init time.
      */
+    @NotNull
     @Generated
     @Selector("date")
     public native NSDate date();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * The score formatted as a string, localized with a label
      */
+    @Nullable
     @Generated
     @Selector("formattedValue")
     public native String formattedValue();
@@ -236,63 +275,91 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     @Selector("init")
     public native GKScore init();
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use initWithLeaderboardIdentifier: instead
+     */
     @Generated
     @Deprecated
     @Selector("initWithCategory:")
-    public native GKScore initWithCategory(String category);
+    public native GKScore initWithCategory(@Nullable String category);
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKScore initWithCoder(NSCoder coder);
+    public native GKScore initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initialize the score with the local player and current date.
      */
     @Generated
     @Selector("initWithLeaderboardIdentifier:")
-    public native GKScore initWithLeaderboardIdentifier(String identifier);
+    public native GKScore initWithLeaderboardIdentifier(@NotNull String identifier);
 
     /**
      * This method is obsolete. Calling this initialiser does nothing and will return nil **
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, use
+     * initWithLeaderboardIdentifier:player:
      */
     @Generated
     @Deprecated
     @Selector("initWithLeaderboardIdentifier:forPlayer:")
-    public native GKScore initWithLeaderboardIdentifierForPlayer(String identifier, String playerID);
+    public native GKScore initWithLeaderboardIdentifierForPlayer(@NotNull String identifier, @NotNull String playerID);
 
     /**
      * Initialize the achievement for a specific player. Use to submit participant scores when ending a turn-based
      * match.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithLeaderboardIdentifier:player:")
-    public native GKScore initWithLeaderboardIdentifierPlayer(String identifier, GKPlayer player);
+    public native GKScore initWithLeaderboardIdentifierPlayer(@NotNull String identifier, @NotNull GKPlayer player);
 
     /**
      * This method is obsolete. It will never be invoked and its implementation does nothing**
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, pass GKPlayers to
+     * challengeComposeControllerWithMessage:players:completionHandler: and present the view controller instead
      */
     @Generated
     @Deprecated
     @Selector("issueChallengeToPlayers:message:")
-    public native void issueChallengeToPlayersMessage(NSArray<String> playerIDs, String message);
+    public native void issueChallengeToPlayersMessage(@Nullable NSArray<String> playerIDs, @Nullable String message);
 
     /**
      * leaderboard identifier (required)
+     * 
+     * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("leaderboardIdentifier")
     public native String leaderboardIdentifier();
 
     /**
      * The player that recorded the score.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("player")
     public native GKPlayer player();
 
     /**
      * The identifier of the player that recorded the score.
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: use player instead
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("playerID")
@@ -306,20 +373,32 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     @NInt
     public native long rank();
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use +reportScores:withCompletionhandler: instead
+     */
     @Generated
     @Deprecated
     @Selector("reportScoreWithCompletionHandler:")
     public native void reportScoreWithCompletionHandler(
-            @ObjCBlock(name = "call_reportScoreWithCompletionHandler") Block_reportScoreWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_reportScoreWithCompletionHandler") Block_reportScoreWithCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use leaderboardIdentifier instead
+     */
     @Generated
     @Deprecated
     @Selector("setCategory:")
-    public native void setCategory(String value);
+    public native void setCategory(@Nullable String value);
 
     /**
      * optional additional context that allows a game to store and retrieve additional data associated with the store.
      * Default value of zero is returned if no value is set.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setContext:")
@@ -327,15 +406,19 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
 
     /**
      * leaderboard identifier (required)
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setLeaderboardIdentifier:")
-    public native void setLeaderboardIdentifier(String value);
+    public native void setLeaderboardIdentifier(@NotNull String value);
 
     /**
      * Convenience property to make the leaderboard associated with this GKScore, the default leaderboard for this
      * player. Default value is false.
      * If true, reporting that score will make the category this score belongs to, the default leaderboard for this user
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setShouldSetDefaultLeaderboard:")
@@ -352,6 +435,8 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
      * Convenience property to make the leaderboard associated with this GKScore, the default leaderboard for this
      * player. Default value is false.
      * If true, reporting that score will make the category this score belongs to, the default leaderboard for this user
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("shouldSetDefaultLeaderboard")
@@ -374,49 +459,54 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     @Generated
     public interface Block_challengeComposeControllerWithMessagePlayersCompletionHandler {
         @Generated
-        void call_challengeComposeControllerWithMessagePlayersCompletionHandler(UIViewController composeController,
-                boolean didIssueChallenge, NSArray<String> sentPlayerIDs);
+        void call_challengeComposeControllerWithMessagePlayersCompletionHandler(
+                @NotNull UIViewController composeController, boolean didIssueChallenge,
+                @Nullable NSArray<String> sentPlayerIDs);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_challengeComposeControllerWithPlayersMessageCompletionHandler {
         @Generated
-        void call_challengeComposeControllerWithPlayersMessageCompletionHandler(UIViewController composeController,
-                boolean didIssueChallenge, NSArray<String> sentPlayerIDs);
+        void call_challengeComposeControllerWithPlayersMessageCompletionHandler(
+                @NotNull UIViewController composeController, boolean didIssueChallenge,
+                @Nullable NSArray<String> sentPlayerIDs);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_reportScoreWithCompletionHandler {
         @Generated
-        void call_reportScoreWithCompletionHandler(NSError error);
+        void call_reportScoreWithCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_reportScoresWithCompletionHandler {
         @Generated
-        void call_reportScoresWithCompletionHandler(NSError error);
+        void call_reportScoresWithCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_reportScoresWithEligibleChallengesWithCompletionHandler {
         @Generated
-        void call_reportScoresWithEligibleChallengesWithCompletionHandler(NSError error);
+        void call_reportScoresWithEligibleChallengesWithCompletionHandler(@Nullable NSError error);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("reportLeaderboardScores:withEligibleChallenges:withCompletionHandler:")
     public static native void reportLeaderboardScoresWithEligibleChallengesWithCompletionHandler(
-            NSArray<? extends GKLeaderboardScore> scores, NSArray<? extends GKChallenge> challenges,
-            @ObjCBlock(name = "call_reportLeaderboardScoresWithEligibleChallengesWithCompletionHandler") Block_reportLeaderboardScoresWithEligibleChallengesWithCompletionHandler completionHandler);
+            @NotNull NSArray<? extends GKLeaderboardScore> scores, @NotNull NSArray<? extends GKChallenge> challenges,
+            @Nullable @ObjCBlock(name = "call_reportLeaderboardScoresWithEligibleChallengesWithCompletionHandler") Block_reportLeaderboardScoresWithEligibleChallengesWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_reportLeaderboardScoresWithEligibleChallengesWithCompletionHandler {
         @Generated
-        void call_reportLeaderboardScoresWithEligibleChallengesWithCompletionHandler(NSError error);
+        void call_reportLeaderboardScoresWithEligibleChallengesWithCompletionHandler(@Nullable NSError error);
     }
 }

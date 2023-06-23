@@ -71,14 +71,14 @@ public final class sockaddr extends StructObject {
     public native void setSa_family(byte value);
 
     /**
-     * [XSI] addr value (actually larger)
+     * [XSI] addr value (actually smaller or larger)
      */
     @Generated
     @StructureField(order = 2, isGetter = true, count = 14)
     public native byte sa_data(int field_idx);
 
     /**
-     * [XSI] addr value (actually larger)
+     * [XSI] addr value (actually smaller or larger)
      */
     @Generated
     @StructureField(order = 2, isGetter = false, count = 14)

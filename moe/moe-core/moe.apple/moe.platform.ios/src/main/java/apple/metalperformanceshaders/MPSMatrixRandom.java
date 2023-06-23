@@ -24,11 +24,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSMatrixRandom
- * <p>
+ * 
  * Kernels that implement random number generation.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -60,11 +64,11 @@ public class MPSMatrixRandom extends MPSKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] batchSize
-     * <p>
+     * 
      * The size of the batch to process.
      */
     @Generated
@@ -74,7 +78,7 @@ public class MPSMatrixRandom extends MPSKernel {
 
     /**
      * [@property] batchStart
-     * <p>
+     * 
      * The starting index in the destination batch.
      */
     @Generated
@@ -84,18 +88,21 @@ public class MPSMatrixRandom extends MPSKernel {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -110,12 +117,12 @@ public class MPSMatrixRandom extends MPSKernel {
 
     /**
      * [@property] destinationDataType
-     * <p>
+     * 
      * The type of the data which makes up the values of the result.
      * Supported values are:
      * MPSDataTypeUInt32
      * MPSDataTypeFloat32
-     * <p>
+     * 
      * Default is MPSDataTypeUInt32
      */
     @Generated
@@ -124,9 +131,9 @@ public class MPSMatrixRandom extends MPSKernel {
 
     /**
      * [@property] distributionType
-     * <p>
+     * 
      * The distribution from which to generate random values.
-     * <p>
+     * 
      * Default is MPSMatrixRandomDistributionDefault
      */
     @Generated
@@ -136,25 +143,27 @@ public class MPSMatrixRandom extends MPSKernel {
 
     /**
      * Encode a MPSMatrixRandom kernel into a command Buffer.
-     *
+     * 
      * @param commandBuffer     A valid MTLCommandBuffer to receive the encoded filter
      * @param destinationMatrix A valid MPSMatrix to contain the result.
      */
     @Generated
     @Selector("encodeToCommandBuffer:destinationMatrix:")
     public native void encodeToCommandBufferDestinationMatrix(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSMatrix destinationMatrix);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSMatrix destinationMatrix);
 
     /**
      * Encode a MPSMatrixRandom kernel into a command Buffer.
-     *
+     * 
      * @param commandBuffer     A valid MTLCommandBuffer to receive the encoded filter
      * @param destinationVector A valid MPSVector to contain the result.
      */
     @Generated
     @Selector("encodeToCommandBuffer:destinationVector:")
     public native void encodeToCommandBufferDestinationVector(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSVector destinationVector);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSVector destinationVector);
 
     @Generated
     @Selector("hash")
@@ -167,15 +176,16 @@ public class MPSMatrixRandom extends MPSKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSMatrixRandom initWithCoder(NSCoder aDecoder);
+    public native MPSMatrixRandom initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSMatrixRandom initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixRandom initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSMatrixRandom initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixRandom initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -194,9 +204,10 @@ public class MPSMatrixRandom extends MPSKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -213,7 +224,7 @@ public class MPSMatrixRandom extends MPSKernel {
 
     /**
      * [@property] batchSize
-     * <p>
+     * 
      * The size of the batch to process.
      */
     @Generated
@@ -222,7 +233,7 @@ public class MPSMatrixRandom extends MPSKernel {
 
     /**
      * [@property] batchStart
-     * <p>
+     * 
      * The starting index in the destination batch.
      */
     @Generated

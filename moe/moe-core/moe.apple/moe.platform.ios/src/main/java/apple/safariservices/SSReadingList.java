@@ -41,10 +41,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SSReadingList
  * Provides an interface for adding to a user's Reading List.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("SafariServices")
@@ -76,22 +80,25 @@ public class SSReadingList extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,12 +109,13 @@ public class SSReadingList extends NSObject {
 
     /**
      * defaultReadingList
-     * <p>
+     * 
      * This class method to obtain the instance of SSReadingList should used instead of direct alloc and init.
-     *
+     * 
      * @return Returns a pointer to a shared instance of SSReadingList, or nil if access to Reading List is not
      *         permitted.
      */
+    @Nullable
     @Generated
     @Selector("defaultReadingList")
     public static native SSReadingList defaultReadingList();
@@ -138,9 +146,10 @@ public class SSReadingList extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,15 +174,15 @@ public class SSReadingList extends NSObject {
 
     /**
      * supportsURL:
-     * <p>
+     * 
      * Determines if the provided URL can be added to Reading List.
-     *
+     * 
      * @param URL The URL to be tested for Reading List support.
      * @return Returns YES if the URL is supported by Reading List, NO if not.
      */
     @Generated
     @Selector("supportsURL:")
-    public static native boolean supportsURL(NSURL URL);
+    public static native boolean supportsURL(@NotNull NSURL URL);
 
     @Generated
     @Selector("version")
@@ -182,11 +191,11 @@ public class SSReadingList extends NSObject {
 
     /**
      * addReadingListItemWithURL:title:previewText:error:
-     * <p>
+     * 
      * Adds an item to the Reading List.
-     * <p>
+     * 
      * Only URLs with http:// or https:// schemes are supported by Reading List.
-     *
+     * 
      * @param URL         The URL of the item.
      * @param title       The title string of the item, or nil.
      * @param previewText A string shown as detail text for the item, or nil.
@@ -195,8 +204,8 @@ public class SSReadingList extends NSObject {
      */
     @Generated
     @Selector("addReadingListItemWithURL:title:previewText:error:")
-    public native boolean addReadingListItemWithURLTitlePreviewTextError(NSURL URL, String title, String previewText,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean addReadingListItemWithURLTitlePreviewTextError(@NotNull NSURL URL, @Nullable String title,
+            @Nullable String previewText, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("init")

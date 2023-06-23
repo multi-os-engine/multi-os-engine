@@ -25,11 +25,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NFCNDEFMessage
- * <p>
+ * 
  * A NDEF message consists of payload records. The maximum size of the NDEF message is limited to 128KB.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreNFC")
@@ -61,22 +65,25 @@ public class NFCNDEFMessage extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -91,7 +98,7 @@ public class NFCNDEFMessage extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -104,16 +111,18 @@ public class NFCNDEFMessage extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NFCNDEFMessage initWithCoder(NSCoder coder);
+    public native NFCNDEFMessage initWithCoder(@NotNull NSCoder coder);
 
     /**
      * initWithNDEFRecords:
-     *
+     * 
      * @param records NSArray of NFCNDEFPayload object. An empty array will create an empty NDEF message.
+     * 
+     *                API-Since: 13.0
      */
     @Generated
     @Selector("initWithNDEFRecords:")
-    public native NFCNDEFMessage initWithNDEFRecords(NSArray<? extends NFCNDEFPayload> records);
+    public native NFCNDEFMessage initWithNDEFRecords(@NotNull NSArray<? extends NFCNDEFPayload> records);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -132,14 +141,17 @@ public class NFCNDEFMessage extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] length
-     * <p>
+     * 
      * Length of the resulting NDEF message in bytes as it would be stored on a NFC tag.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("length")
@@ -148,15 +160,19 @@ public class NFCNDEFMessage extends NSObject implements NSSecureCoding {
 
     /**
      * ndefMessageWithData:
-     *
+     * 
      * @param data NSData storing raw bytes of a complete NDEF message. The data content will be validated; all NDEF
      *             payloads must
      *             be valid according to the NFC Forum NDEF RTD specification and it shall only contain a single NDEF
      *             message.
+     * 
+     * 
+     *             API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("ndefMessageWithData:")
-    public static native NFCNDEFMessage ndefMessageWithData(NSData data);
+    public static native NFCNDEFMessage ndefMessageWithData(@NotNull NSData data);
 
     @Generated
     @Owned
@@ -165,9 +181,12 @@ public class NFCNDEFMessage extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] records
-     * <p>
+     * 
      * Array of NFCNDEFPayload records contained in this message.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("records")
     public native NSArray<? extends NFCNDEFPayload> records();
@@ -182,12 +201,14 @@ public class NFCNDEFMessage extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] records
-     * <p>
+     * 
      * Array of NFCNDEFPayload records contained in this message.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRecords:")
-    public native void setRecords(NSArray<? extends NFCNDEFPayload> value);
+    public native void setRecords(@NotNull NSArray<? extends NFCNDEFPayload> value);
 
     @Generated
     @Selector("setVersion:")

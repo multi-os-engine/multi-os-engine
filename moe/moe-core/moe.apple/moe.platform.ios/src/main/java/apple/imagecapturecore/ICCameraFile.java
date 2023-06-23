@@ -27,14 +27,18 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * -----------------------------------------------------------------------------------------------------------------
  * ICCameraFile
- * <p>
+ * 
  * ICCameraFile
- * <p>
+ * 
  * This class represents a file on an ICCameraDevice object.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("ImageCaptureCore")
@@ -66,12 +70,14 @@ public class ICCameraFile extends ICCameraItem {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] burstFavorite
-     * <p>
+     * 
      * True if burst favorite, ignored if not in a burst or not a burst favorite.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("burstFavorite")
@@ -79,8 +85,10 @@ public class ICCameraFile extends ICCameraItem {
 
     /**
      * [@property] burstPicked
-     * <p>
+     * 
      * True if burst user picked, ignored if not in a burst or not a burst user picked.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("burstPicked")
@@ -88,36 +96,45 @@ public class ICCameraFile extends ICCameraItem {
 
     /**
      * [@property] burstUUID
-     * <p>
+     * 
      * burstUUID of file if present, nil if not in a burst.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("burstUUID")
     public native String burstUUID();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] createdFilename
-     * <p>
+     * 
      * Created filename
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("createdFilename")
     public native String createdFilename();
@@ -132,8 +149,10 @@ public class ICCameraFile extends ICCameraItem {
 
     /**
      * [@property] duration
-     * <p>
+     * 
      * ￼Duration of audio/video file in seconds.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("duration")
@@ -141,48 +160,62 @@ public class ICCameraFile extends ICCameraItem {
 
     /**
      * [@property] exifCreationDate
-     * <p>
+     * 
      * Properties will either represent the exif creation
      * date, or nil.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("exifCreationDate")
     public native NSDate exifCreationDate();
 
     /**
      * [@property] exifModificationDate
-     * <p>
+     * 
      * Properties will either represent the exif modification
      * date, or nil.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("exifModificationDate")
     public native NSDate exifModificationDate();
 
     /**
      * [@property] fileCreationDate
-     * <p>
+     * 
      * Properties will either represent the actual file creation
      * date, or nil.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("fileCreationDate")
     public native NSDate fileCreationDate();
 
     /**
      * [@property] fileModificationDate
-     * <p>
+     * 
      * Properties will either represent the actual file modification
      * date, or nil.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("fileModificationDate")
     public native NSDate fileModificationDate();
 
     /**
      * [@property] fileSize
-     * <p>
+     * 
      * ￼Size of file in bytes.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("fileSize")
@@ -190,8 +223,10 @@ public class ICCameraFile extends ICCameraItem {
 
     /**
      * [@property] firstPicked
-     * <p>
+     * 
      * True if file is a firstPicked nil otherwise.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("firstPicked")
@@ -199,18 +234,24 @@ public class ICCameraFile extends ICCameraItem {
 
     /**
      * [@property] gpsString
-     * <p>
+     * 
      * GPS String in standard format.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("gpsString")
     public native String gpsString();
 
     /**
      * [@property] groupUUID
-     * <p>
+     * 
      * groupUUID of file if present, nil if file has no groupUUID.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("groupUUID")
     public native String groupUUID();
@@ -222,8 +263,10 @@ public class ICCameraFile extends ICCameraItem {
 
     /**
      * [@property] height
-     * <p>
+     * 
      * Height of an image or movie frame.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("height")
@@ -232,8 +275,10 @@ public class ICCameraFile extends ICCameraItem {
 
     /**
      * [@property] highFramerate
-     * <p>
+     * 
      * True if file is a slo-mo or high framerate video file, nil otherwise.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("highFramerate")
@@ -260,9 +305,10 @@ public class ICCameraFile extends ICCameraItem {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -271,12 +317,14 @@ public class ICCameraFile extends ICCameraItem {
 
     /**
      * [@property] orientation
-     * <p>
+     * 
      * ￼Desired orientation of image to use when it is downloaded.
-     * <p>
+     * 
      * This property is set to ICEXIFOrientation1 initially. If the format of this file supports EXIF orientation tag,
      * then this property will be updated to match the value of that tag, when the thumbnail or metadata for this file
      * is received.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("orientation")
@@ -285,96 +333,117 @@ public class ICCameraFile extends ICCameraItem {
 
     /**
      * [@property] originalFilename
-     * <p>
+     * 
      * Original filename on disk
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("originalFilename")
     public native String originalFilename();
 
     /**
      * [@property] originatingAssetID
-     * <p>
+     * 
      * originatingAssetID of file if present, nil if not a HEIF or HVEC.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("originatingAssetID")
     public native String originatingAssetID();
 
     /**
      * [@property] pairedRawImage
-     * <p>
+     * 
      * A single item subset of the sidecarFiles array, which contains the logical RAW compliment of a JPG or other
      * format image.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("pairedRawImage")
     public native ICCameraFile pairedRawImage();
 
     /**
      * [@property] relatedUUID
-     * <p>
+     * 
      * Internal related UUID for dbg/aae/etc.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("relatedUUID")
     public native String relatedUUID();
 
     /**
      * requestDownloadWithOptions:progressDelegate:completion
-     * <p>
+     * 
      * ￼Perform a download request and execute the block callback in place of the delegate.
      * [@note] The completion block will execute on an any available queue, often this will not be the main queue.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param options    Dictionary Keys:
-     *                   <p>
+     * 
      *                   - `ICDownloadsDirectoryURL`
      *                   - `ICSaveAsFilename`
      *                   - `ICOverwriteExistingFile`
      *                   - `ICDeleteAfterDownload`
      *                   - `ICAdjustCreationDate`
+     * 
      * @param completion Completion block to executed after request has returned,
      */
+    @Nullable
     @Generated
     @Selector("requestDownloadWithOptions:completion:")
-    public native NSProgress requestDownloadWithOptionsCompletion(NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_requestDownloadWithOptionsCompletion") Block_requestDownloadWithOptionsCompletion completion);
+    public native NSProgress requestDownloadWithOptionsCompletion(@Nullable NSDictionary<String, ?> options,
+            @NotNull @ObjCBlock(name = "call_requestDownloadWithOptionsCompletion") Block_requestDownloadWithOptionsCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestDownloadWithOptionsCompletion {
         @Generated
-        void call_requestDownloadWithOptionsCompletion(String filename, NSError error);
+        void call_requestDownloadWithOptionsCompletion(@Nullable String filename, @Nullable NSError error);
     }
 
     /**
      * requestMetadataDictionaryWithOptions:completion
-     * <p>
+     * 
      * ￼Perform a metadata request and execute the block callback in place of the delegate.
      * [@note] The completion block will execute on an any available queue, often this will not be the main queue.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param options    Options dictionary
      * @param completion Completion block called with an NSDictionary* object containing the metadata, and an NSError*
      *                   for status.
      */
     @Generated
     @Selector("requestMetadataDictionaryWithOptions:completion:")
-    public native void requestMetadataDictionaryWithOptionsCompletion(NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_requestMetadataDictionaryWithOptionsCompletion") Block_requestMetadataDictionaryWithOptionsCompletion completion);
+    public native void requestMetadataDictionaryWithOptionsCompletion(@Nullable NSDictionary<String, ?> options,
+            @NotNull @ObjCBlock(name = "call_requestMetadataDictionaryWithOptionsCompletion") Block_requestMetadataDictionaryWithOptionsCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestMetadataDictionaryWithOptionsCompletion {
         @Generated
-        void call_requestMetadataDictionaryWithOptionsCompletion(NSDictionary<?, ?> arg0, NSError arg1);
+        void call_requestMetadataDictionaryWithOptionsCompletion(@Nullable NSDictionary<?, ?> arg0,
+                @Nullable NSError arg1);
     }
 
     /**
      * requestReadDataAtOffset:length:completion
-     * <p>
+     * 
      * This method asynchronously reads data of a specified length from a specified offset.
      * [@note] The completion block will execute on an any available queue, often this will not be the main queue.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param offset     The offset into the file to start reading from
      * @param length     The length of data to be read.
      * @param completion Completion block called with an NSData* object representing the data, and an NSError* for
@@ -383,38 +452,41 @@ public class ICCameraFile extends ICCameraItem {
     @Generated
     @Selector("requestReadDataAtOffset:length:completion:")
     public native void requestReadDataAtOffsetLengthCompletion(long offset, long length,
-            @ObjCBlock(name = "call_requestReadDataAtOffsetLengthCompletion") Block_requestReadDataAtOffsetLengthCompletion completion);
+            @NotNull @ObjCBlock(name = "call_requestReadDataAtOffsetLengthCompletion") Block_requestReadDataAtOffsetLengthCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestReadDataAtOffsetLengthCompletion {
         @Generated
-        void call_requestReadDataAtOffsetLengthCompletion(NSData arg0, NSError arg1);
+        void call_requestReadDataAtOffsetLengthCompletion(@Nullable NSData arg0, @Nullable NSError arg1);
     }
 
     /**
      * requestThumbnailDataWithOptions:completion
-     * <p>
+     * 
      * ￼Perform a thumbnail request and execute the block callback in place of the delegate.
      * [@note] The completion block will execute on an any available queue, often this will not be the main queue.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param options    Options dictionary
-     *                   <p>
+     * 
      *                   - 'kCGImageSourceThumbnailMaxPixelSize' - Request a width different from the embedded EXIF
      *                   thumbnail
+     * 
      * @param completion Completion block called with an NSData* object representing the JPG, and an NSError* for
      *                   status.
      */
     @Generated
     @Selector("requestThumbnailDataWithOptions:completion:")
-    public native void requestThumbnailDataWithOptionsCompletion(NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_requestThumbnailDataWithOptionsCompletion") Block_requestThumbnailDataWithOptionsCompletion completion);
+    public native void requestThumbnailDataWithOptionsCompletion(@Nullable NSDictionary<String, ?> options,
+            @NotNull @ObjCBlock(name = "call_requestThumbnailDataWithOptionsCompletion") Block_requestThumbnailDataWithOptionsCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestThumbnailDataWithOptionsCompletion {
         @Generated
-        void call_requestThumbnailDataWithOptionsCompletion(NSData arg0, NSError arg1);
+        void call_requestThumbnailDataWithOptionsCompletion(@Nullable NSData arg0, @Nullable NSError arg1);
     }
 
     @Generated
@@ -427,12 +499,14 @@ public class ICCameraFile extends ICCameraItem {
 
     /**
      * [@property] orientation
-     * <p>
+     * 
      * ￼Desired orientation of image to use when it is downloaded.
-     * <p>
+     * 
      * This property is set to ICEXIFOrientation1 initially. If the format of this file supports EXIF orientation tag,
      * then this property will be updated to match the value of that tag, when the thumbnail or metadata for this file
      * is received.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setOrientation:")
@@ -444,12 +518,15 @@ public class ICCameraFile extends ICCameraItem {
 
     /**
      * [@property] sidecarFiles
-     * <p>
+     * 
      * This property is NULL if there are no sidecar files associated with this file. Otherwise it is an array of
      * ICCameraFile instances of sidecar files associated with this file. An example of a sidecar file is a file with
      * the same base
      * name as this file and having an extension XMP.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("sidecarFiles")
     public native NSArray<? extends ICCameraItem> sidecarFiles();
@@ -460,8 +537,10 @@ public class ICCameraFile extends ICCameraItem {
 
     /**
      * [@property] timeLapse
-     * <p>
+     * 
      * True if file is a time-lapse video file, nil otherwise.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("timeLapse")
@@ -474,8 +553,10 @@ public class ICCameraFile extends ICCameraItem {
 
     /**
      * [@property] width
-     * <p>
+     * 
      * Width of an image or movie frame.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("width")

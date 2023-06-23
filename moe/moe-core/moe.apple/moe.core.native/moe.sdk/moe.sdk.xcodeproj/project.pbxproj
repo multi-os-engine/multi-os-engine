@@ -344,6 +344,7 @@
 				"ARCHS[sdk=iphoneos*]" = arm64;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				ENABLE_BITCODE = NO;
+                IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_LIBTOOLFLAGS = (
@@ -361,7 +362,8 @@
 			buildSettings = {
 				"ARCHS[sdk=iphoneos*]" = arm64;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				ENABLE_BITCODE = NO;
+                ENABLE_BITCODE = NO;
+                IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_LIBTOOLFLAGS = (

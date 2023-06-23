@@ -25,18 +25,22 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AUAudioUnitViewConfiguration
- * <p>
+ * 
  * Properties of the configuration that a host uses to embed the view of an audio unit.
- * <p>
+ * 
  * Hosts may support embedding the view of an audio unit in different configurations. These
  * configurations may vary in the size reserved for the audio unit's view and the additional
  * control surfaces that are displayed along with it. The host can propose several view
  * configurations and the audio unit should report the ones which it supports.
- * <p>
+ * 
  * See the documentation for supportedViewConfigurations.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreAudioKit")
@@ -68,22 +72,25 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -98,7 +105,7 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -107,9 +114,9 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
 
     /**
      * [@property] height
-     * <p>
+     * 
      * The height of the view, measured in points.
-     * <p>
+     * 
      * Setting the height to 0 will match any height.
      */
     @Generated
@@ -119,7 +126,7 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
 
     /**
      * [@property] hostHasController
-     * <p>
+     * 
      * Boolean property specifying whether the host displays its own control surface
      * when showing the view of the audio unit.
      */
@@ -133,16 +140,19 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
 
     @Generated
     @Selector("initWithCoder:")
-    public native AUAudioUnitViewConfiguration initWithCoder(NSCoder coder);
+    public native AUAudioUnitViewConfiguration initWithCoder(@NotNull NSCoder coder);
 
     /**
      * initWithWidth
-     * <p>
+     * 
      * Designated initializer.
-     *
-     * @param width             The width associated with this view configuration.
-     * @param height            The height associated with this view configuration.
-     * @param hostHasController This property controls whether the host shows its own control surface in this view
+     * 
+     * @param width
+     *                          The width associated with this view configuration.
+     * @param height
+     *                          The height associated with this view configuration.
+     * @param hostHasController
+     *                          This property controls whether the host shows its own control surface in this view
      *                          configuration.
      * @return Returns the newly created view configuration object.
      */
@@ -168,9 +178,10 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -210,9 +221,9 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
 
     /**
      * [@property] width
-     * <p>
+     * 
      * The width of the view, measured in points.
-     * <p>
+     * 
      * Setting the width to 0 will match any width.
      */
     @Generated

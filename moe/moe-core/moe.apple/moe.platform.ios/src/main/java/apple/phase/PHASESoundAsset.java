@@ -23,11 +23,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] PHASESoundAsset
- * <p>
+ * 
  * An object that represents a registered sound asset in the asset registry.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -59,31 +63,35 @@ public class PHASESoundAsset extends PHASEAsset {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] data
-     * <p>
+     * 
      * The buffer for the sound asset, if applicable.
      */
+    @Nullable
     @Generated
     @Selector("data")
     public native NSData data();
@@ -122,9 +130,10 @@ public class PHASESoundAsset extends PHASEAsset {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -149,7 +158,7 @@ public class PHASESoundAsset extends PHASEAsset {
 
     /**
      * [@property] type
-     * <p>
+     * 
      * The sound asset type.
      */
     @Generated
@@ -159,9 +168,10 @@ public class PHASESoundAsset extends PHASEAsset {
 
     /**
      * [@property] url
-     * <p>
+     * 
      * The URL of the sound asset, if applicable.
      */
+    @Nullable
     @Generated
     @Selector("url")
     public native NSURL url();

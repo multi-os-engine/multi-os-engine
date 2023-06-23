@@ -21,29 +21,40 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * INSiriAuthorizationStatus
- * <p>
+ * 
  * Discussion:
  * Represents the current authorization state of the application.
+ * 
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class INSiriAuthorizationStatus {
     /**
      * User has not yet made a choice with regards to this application.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long NotDetermined = 0x0000000000000000L;
     /**
      * This application is not authorized to use Siri services. Due
      * to active restrictions on Siri services, the user cannot change
      * this status, and may not have personally denied authorization.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Restricted = 0x0000000000000001L;
     /**
      * User has explicitly denied authorization for this application, or
      * Siri services are disabled in Settings.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Denied = 0x0000000000000002L;
     /**
      * User has authorized this application to use Siri services.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Authorized = 0x0000000000000003L;
 

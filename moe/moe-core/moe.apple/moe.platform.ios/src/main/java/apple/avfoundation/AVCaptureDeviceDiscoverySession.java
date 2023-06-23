@@ -37,15 +37,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCaptureDeviceDiscoverySession
- * <p>
+ * 
  * The AVCaptureDeviceDiscoverySession allows clients to search for devices by certain criteria.
- * <p>
+ * 
  * This class allows clients to discover devices by providing certain search criteria. The objective of this class is to
  * help find devices by device type and optionally by media type or position and allow you to key-value observe changes
  * to the returned devices list.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("AVFoundation")
@@ -77,22 +81,25 @@ public class AVCaptureDeviceDiscoverySession extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -107,23 +114,27 @@ public class AVCaptureDeviceDiscoverySession extends NSObject {
 
     /**
      * discoverySessionWithDeviceTypes:
-     * <p>
+     * 
      * Returns an AVCaptureDeviceDiscoverySession instance for the given device types, media type, and position.
-     * <p>
+     * 
      * The list of device types is mandatory. This is used to make sure that clients only get access to devices of types
      * they expect. This prevents new device types from automatically being included in the list of devices.
-     *
-     * @param deviceTypes An array specifying the device types to include in the list of discovered devices.
-     * @param mediaType   The media type, such as AVMediaTypeVideo, AVMediaTypeAudio, or AVMediaTypeMuxed, to include in
+     * 
+     * @param deviceTypes
+     *                    An array specifying the device types to include in the list of discovered devices.
+     * @param mediaType
+     *                    The media type, such as AVMediaTypeVideo, AVMediaTypeAudio, or AVMediaTypeMuxed, to include in
      *                    the list of discovered devices. Pass nil to search for devices with any media type.
-     * @param position    The position to include in the list of discovered devices. Pass
+     * @param position
+     *                    The position to include in the list of discovered devices. Pass
      *                    AVCaptureDevicePositionUnspecified to search for devices with any position.
-     * @return The AVCaptureDeviceDiscoverySession from which the list of devices can be obtained.
+     * @return
+     *         The AVCaptureDeviceDiscoverySession from which the list of devices can be obtained.
      */
     @Generated
     @Selector("discoverySessionWithDeviceTypes:mediaType:position:")
     public static native AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypesMediaTypePosition(
-            NSArray<String> deviceTypes, String mediaType, @NInt long position);
+            @NotNull NSArray<String> deviceTypes, @Nullable String mediaType, @NInt long position);
 
     @Generated
     @Selector("hash")
@@ -147,9 +158,10 @@ public class AVCaptureDeviceDiscoverySession extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -179,9 +191,9 @@ public class AVCaptureDeviceDiscoverySession extends NSObject {
 
     /**
      * [@property] devices
-     * <p>
+     * 
      * The list of devices that comply to the search criteria specified on the discovery session.
-     * <p>
+     * 
      * The returned array contains only devices that are available at the time the method is called. Applications can
      * key-value observe this property to be notified when the list of available devices has changed. For apps linked
      * against iOS 10, the devices returned are unsorted. For apps linked against iOS 11 or later, the devices are
@@ -191,6 +203,7 @@ public class AVCaptureDeviceDiscoverySession extends NSObject {
      * AVCaptureDevicePosition enum. Starting in Mac Catalyst 14.0, clients can key value observe the value of this
      * property to be notified when the devices change.
      */
+    @NotNull
     @Generated
     @Selector("devices")
     public native NSArray<? extends AVCaptureDevice> devices();
@@ -201,13 +214,16 @@ public class AVCaptureDeviceDiscoverySession extends NSObject {
 
     /**
      * [@property] supportedMultiCamDeviceSets
-     * <p>
+     * 
      * An array of sets of AVCaptureDevices that are allowed to be used simultaneously in an AVCaptureMultiCamSession.
-     * <p>
+     * 
      * When using an AVCaptureMultiCamSession, multiple cameras may be used as device inputs to the session, so long as
      * they are included in one of the supportedMultiCamDeviceSets. Starting in Mac Catalyst 14.0, clients can key value
      * observe the value of this property to be notified when the device sets change.
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("supportedMultiCamDeviceSets")
     public native NSArray<? extends NSSet<? extends AVCaptureDevice>> supportedMultiCamDeviceSets();

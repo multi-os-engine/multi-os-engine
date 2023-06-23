@@ -19,10 +19,25 @@ package apple.mediaplayer.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 3.2
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Use AVPlayerViewController in AVKit
+ */
 @Deprecated
 @Generated
 public final class MPMovieRepeatMode {
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
+     */
     @Deprecated @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
+     */
     @Deprecated @Generated @NInt public static final long One = 0x0000000000000001L;
 
     @Generated

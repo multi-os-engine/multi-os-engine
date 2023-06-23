@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HKErrorCode
- * <p>
+ * 
  * [@constant] HKNoError No error.
  * [@constant] HKErrorHealthDataUnavailable HealthKit is not available on this device.
  * [@constant] HKErrorHealthDataRestricted HealthKit is restricted on this device.
@@ -37,24 +37,62 @@ import org.moe.natj.general.ann.NInt;
  * required data types.
  * [@constant] HKErrorNoData No data is available for the requested query and predicate, and so the
  * query's result could not be meaningfully computed.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class HKErrorCode {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long NoError = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long ErrorHealthDataUnavailable = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long ErrorHealthDataRestricted = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long ErrorInvalidArgument = 0x0000000000000003L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long ErrorAuthorizationDenied = 0x0000000000000004L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long ErrorAuthorizationNotDetermined = 0x0000000000000005L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long ErrorDatabaseInaccessible = 0x0000000000000006L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long ErrorUserCanceled = 0x0000000000000007L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long ErrorAnotherWorkoutSessionStarted = 0x0000000000000008L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long ErrorUserExitedWorkoutSession = 0x0000000000000009L;
 
     @Generated
     private HKErrorCode() {
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated @NInt public static final long ErrorRequiredAuthorizationDenied = 0x000000000000000AL;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long ErrorNoData = 0x000000000000000BL;
 }

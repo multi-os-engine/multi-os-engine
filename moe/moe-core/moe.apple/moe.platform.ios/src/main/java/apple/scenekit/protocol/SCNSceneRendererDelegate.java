@@ -26,10 +26,11 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] SCNSceneRendererDelegate
- * <p>
+ * 
  * Implement this protocol to perform operations at various times during the rendering
  */
 @Generated
@@ -39,31 +40,31 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface SCNSceneRendererDelegate {
     /**
      * renderer:didApplyAnimationsAtTime:
-     * <p>
+     * 
      * Invoked on the delegate once the scene renderer did apply the animations.
-     * <p>
+     * 
      * All modifications done within this method don't go through the transaction model, they are directly applied on
      * the presentation tree.
-     *
+     * 
      * @param renderer The renderer that did render the scene.
      * @param time     The time at which the animations were applied.
      */
     @Generated
     @IsOptional
     @Selector("renderer:didApplyAnimationsAtTime:")
-    default void rendererDidApplyAnimationsAtTime(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
+    default void rendererDidApplyAnimationsAtTime(@NotNull @Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
             double time) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * renderer:didRenderScene:atTime:
-     * <p>
+     * 
      * Invoked on the delegate once the scene renderer did render the scene.
-     * <p>
+     * 
      * Starting in 10.10 all modifications done within this method don't go through the transaction model, they are
      * directly applied on the presentation tree.
-     *
+     * 
      * @param renderer The renderer that did render the scene.
      * @param scene    The rendered scene.
      * @param time     The time at which the scene was rendered.
@@ -71,58 +72,58 @@ public interface SCNSceneRendererDelegate {
     @Generated
     @IsOptional
     @Selector("renderer:didRenderScene:atTime:")
-    default void rendererDidRenderSceneAtTime(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer, SCNScene scene,
-            double time) {
+    default void rendererDidRenderSceneAtTime(@NotNull @Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
+            @NotNull SCNScene scene, double time) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * renderer:didSimulatePhysicsAtTime:
-     * <p>
+     * 
      * Invoked on the delegate once the scene renderer did simulate the physics.
-     * <p>
+     * 
      * All modifications done within this method don't go through the transaction model, they are directly applied on
      * the presentation tree.
-     *
+     * 
      * @param renderer The renderer that did render the scene.
      * @param time     The time at which the physics were simulated.
      */
     @Generated
     @IsOptional
     @Selector("renderer:didSimulatePhysicsAtTime:")
-    default void rendererDidSimulatePhysicsAtTime(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
+    default void rendererDidSimulatePhysicsAtTime(@NotNull @Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
             double time) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * renderer:updateAtTime:
-     * <p>
+     * 
      * Implement this to perform per-frame game logic. Called exactly once per frame before any animation and actions
      * are evaluated and any physics are simulated.
-     * <p>
+     * 
      * All modifications done within this method don't go through the transaction model, they are directly applied on
      * the presentation tree.
-     *
+     * 
      * @param renderer The renderer that will render the scene.
      * @param time     The time at which to update the scene.
      */
     @Generated
     @IsOptional
     @Selector("renderer:updateAtTime:")
-    default void rendererUpdateAtTime(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer, double time) {
+    default void rendererUpdateAtTime(@NotNull @Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer, double time) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * renderer:willRenderScene:atTime:
-     * <p>
+     * 
      * Invoked on the delegate before the scene renderer renders the scene. At this point the openGL context and the
      * destination framebuffer are bound.
-     * <p>
+     * 
      * Starting in 10.10 all modifications done within this method don't go through the transaction model, they are
      * directly applied on the presentation tree.
-     *
+     * 
      * @param renderer The renderer that will render the scene.
      * @param scene    The scene to be rendered.
      * @param time     The time at which the scene is to be rendered.
@@ -130,26 +131,28 @@ public interface SCNSceneRendererDelegate {
     @Generated
     @IsOptional
     @Selector("renderer:willRenderScene:atTime:")
-    default void rendererWillRenderSceneAtTime(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
-            SCNScene scene, double time) {
+    default void rendererWillRenderSceneAtTime(@NotNull @Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
+            @NotNull SCNScene scene, double time) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * renderer:didApplyConstraintsAtTime:
-     * <p>
+     * 
      * Invoked on the delegate once the scene renderer did apply the constraints.
-     * <p>
+     * 
      * All modifications done within this method don't go through the transaction model, they are directly applied on
      * the presentation tree.
-     *
+     * 
+     * API-Since: 11.0
+     * 
      * @param renderer The renderer that did render the scene.
      * @param time     The time at which the constraints were simulated.
      */
     @Generated
     @IsOptional
     @Selector("renderer:didApplyConstraintsAtTime:")
-    default void rendererDidApplyConstraintsAtTime(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
+    default void rendererDidApplyConstraintsAtTime(@NotNull @Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
             double time) {
         throw new java.lang.UnsupportedOperationException();
     }

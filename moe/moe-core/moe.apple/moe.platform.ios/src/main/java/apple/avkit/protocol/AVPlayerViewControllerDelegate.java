@@ -29,10 +29,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.avkit.AVInterstitialTimeRange;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] AVPlayerViewControllerDelegate
- * <p>
+ * 
  * A protocol for delegates of AVPlayerViewController.
  */
 @Generated
@@ -42,106 +44,115 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface AVPlayerViewControllerDelegate {
     /**
      * playerViewController:failedToStartPictureInPictureWithError:
-     * <p>
+     * 
      * Delegate can implement this method to be notified when Picture in Picture failed to start.
-     *
-     * @param playerViewController The player view controller.
-     * @param error                An error describing why it failed.
+     * 
+     * @param playerViewController
+     *                             The player view controller.
+     * @param error
+     *                             An error describing why it failed.
      */
     @Generated
     @IsOptional
     @Selector("playerViewController:failedToStartPictureInPictureWithError:")
-    default void playerViewControllerFailedToStartPictureInPictureWithError(AVPlayerViewController playerViewController,
-            NSError error) {
+    default void playerViewControllerFailedToStartPictureInPictureWithError(
+            @NotNull AVPlayerViewController playerViewController, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * playerViewController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:
-     * <p>
+     * 
      * Delegate can implement this method to restore the user interface before Picture in Picture stops.
-     *
-     * @param playerViewController The player view controller.
-     * @param completionHandler    The completion handler the delegate needs to call after restore.
+     * 
+     * @param playerViewController
+     *                             The player view controller.
+     * @param completionHandler
+     *                             The completion handler the delegate needs to call after restore.
      */
     @Generated
     @IsOptional
     @Selector("playerViewController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:")
     default void playerViewControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler(
-            AVPlayerViewController playerViewController,
-            @ObjCBlock(name = "call_playerViewControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler") Block_playerViewControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler completionHandler) {
+            @NotNull AVPlayerViewController playerViewController,
+            @NotNull @ObjCBlock(name = "call_playerViewControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler") Block_playerViewControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * playerViewControllerDidStartPictureInPicture:
-     * <p>
+     * 
      * Delegate can implement this method to be notified when Picture in Picture did start.
-     *
-     * @param playerViewController The player view controller.
+     * 
+     * @param playerViewController
+     *                             The player view controller.
      */
     @Generated
     @IsOptional
     @Selector("playerViewControllerDidStartPictureInPicture:")
-    default void playerViewControllerDidStartPictureInPicture(AVPlayerViewController playerViewController) {
+    default void playerViewControllerDidStartPictureInPicture(@NotNull AVPlayerViewController playerViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * playerViewControllerDidStopPictureInPicture:
-     * <p>
+     * 
      * Delegate can implement this method to be notified when Picture in Picture did stop.
-     *
-     * @param playerViewController The player view controller.
+     * 
+     * @param playerViewController
+     *                             The player view controller.
      */
     @Generated
     @IsOptional
     @Selector("playerViewControllerDidStopPictureInPicture:")
-    default void playerViewControllerDidStopPictureInPicture(AVPlayerViewController playerViewController) {
+    default void playerViewControllerDidStopPictureInPicture(@NotNull AVPlayerViewController playerViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * playerViewControllerShouldAutomaticallyDismissAtPictureInPictureStart:
-     * <p>
+     * 
      * Delegate can implement this method and return NO to prevent player view controller from automatically being
      * dismissed when Picture in Picture starts.
-     *
-     * @param playerViewController The player view controller.
+     * 
+     * @param playerViewController
+     *                             The player view controller.
      */
     @Generated
     @IsOptional
     @Selector("playerViewControllerShouldAutomaticallyDismissAtPictureInPictureStart:")
     default boolean playerViewControllerShouldAutomaticallyDismissAtPictureInPictureStart(
-            AVPlayerViewController playerViewController) {
+            @NotNull AVPlayerViewController playerViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * playerViewControllerWillStartPictureInPicture:
-     * <p>
+     * 
      * Delegate can implement this method to be notified when Picture in Picture will start.
-     *
-     * @param playerViewController The player view controller.
+     * 
+     * @param playerViewController
+     *                             The player view controller.
      */
     @Generated
     @IsOptional
     @Selector("playerViewControllerWillStartPictureInPicture:")
-    default void playerViewControllerWillStartPictureInPicture(AVPlayerViewController playerViewController) {
+    default void playerViewControllerWillStartPictureInPicture(@NotNull AVPlayerViewController playerViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * playerViewControllerWillStopPictureInPicture:
-     * <p>
+     * 
      * Delegate can implement this method to be notified when Picture in Picture will stop.
-     *
-     * @param playerViewController The player view controller.
+     * 
+     * @param playerViewController
+     *                             The player view controller.
      */
     @Generated
     @IsOptional
     @Selector("playerViewControllerWillStopPictureInPicture:")
-    default void playerViewControllerWillStopPictureInPicture(AVPlayerViewController playerViewController) {
+    default void playerViewControllerWillStopPictureInPicture(@NotNull AVPlayerViewController playerViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -155,62 +166,74 @@ public interface AVPlayerViewControllerDelegate {
 
     /**
      * playerViewController:willBeginFullScreenPresentationWithAnimationCoordinator:
-     * <p>
+     * 
      * Informs the delegate that AVPlayerViewController is about to start displaying its contents full screen.
-     * <p>
+     * 
      * This method will not be called if a playerViewController is embedded inside a view controller that is being
      * presented. If the receiver is embedded in a parent view controller, its content will be presented in a new full
      * screen view controller and perhaps in a new window. Use the coordinator to determine whether the
      * playerViewController or its full screen counterpart is being transitioned. Transitions can be interrupted -- use
      * a completion block of one of the coordinator's animation methods to determine whether it has completed.
-     *
-     * @param playerViewController The player view controller.
-     * @param coordinator          An object conforming to UIViewControllerTransitionCoordinator.
+     * 
+     * API-Since: 12.0
+     * 
+     * @param playerViewController
+     *                             The player view controller.
+     * @param coordinator
+     *                             An object conforming to UIViewControllerTransitionCoordinator.
      */
     @Generated
     @IsOptional
     @Selector("playerViewController:willBeginFullScreenPresentationWithAnimationCoordinator:")
     default void playerViewControllerWillBeginFullScreenPresentationWithAnimationCoordinator(
-            AVPlayerViewController playerViewController,
-            @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator) {
+            @NotNull AVPlayerViewController playerViewController,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * playerViewController:willEndFullScreenPresentationWithAnimationCoordinator:
-     * <p>
+     * 
      * Informs the delegate that AVPlayerViewController is about to stop displaying its contents full screen.
-     * <p>
+     * 
      * See the discussion of -[AVPlayerViewControllerDelegatePrivate
      * playerViewController:willBeginFullScreenPresentationWithAnimationCoordinator:].
-     *
-     * @param playerViewController The player view controller.
-     * @param coordinator          An object conforming to UIViewControllerTransitionCoordinator.
+     * 
+     * API-Since: 12.0
+     * 
+     * @param playerViewController
+     *                             The player view controller.
+     * @param coordinator
+     *                             An object conforming to UIViewControllerTransitionCoordinator.
      */
     @Generated
     @IsOptional
     @Selector("playerViewController:willEndFullScreenPresentationWithAnimationCoordinator:")
     default void playerViewControllerWillEndFullScreenPresentationWithAnimationCoordinator(
-            AVPlayerViewController playerViewController,
-            @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator) {
+            @NotNull AVPlayerViewController playerViewController,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * playerViewController:restoreUserInterfaceForFullScreenExitWithCompletionHandler:
-     * <p>
+     * 
      * The delegate can implement this method to restore the user interface before exiting fullscreen.
-     *
-     * @param playerViewController The player view controller.
-     * @param completionHandler    The completion handler the delegate must call after restoring the interface for an
+     * 
+     * API-Since: 15.0
+     * 
+     * @param playerViewController
+     *                             The player view controller.
+     * @param completionHandler
+     *                             The completion handler the delegate must call after restoring the interface for an
      *                             exit full screen transition.
      */
     @Generated
     @IsOptional
     @Selector("playerViewController:restoreUserInterfaceForFullScreenExitWithCompletionHandler:")
     default void playerViewControllerRestoreUserInterfaceForFullScreenExitWithCompletionHandler(
-            AVPlayerViewController playerViewController,
-            @ObjCBlock(name = "call_playerViewControllerRestoreUserInterfaceForFullScreenExitWithCompletionHandler") Block_playerViewControllerRestoreUserInterfaceForFullScreenExitWithCompletionHandler completionHandler) {
+            @NotNull AVPlayerViewController playerViewController,
+            @NotNull @ObjCBlock(name = "call_playerViewControllerRestoreUserInterfaceForFullScreenExitWithCompletionHandler") Block_playerViewControllerRestoreUserInterfaceForFullScreenExitWithCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -219,5 +242,47 @@ public interface AVPlayerViewControllerDelegate {
     public interface Block_playerViewControllerRestoreUserInterfaceForFullScreenExitWithCompletionHandler {
         @Generated
         void call_playerViewControllerRestoreUserInterfaceForFullScreenExitWithCompletionHandler(boolean restored);
+    }
+
+    /**
+     * playerViewController:didPresentInterstitialTimeRange:
+     * 
+     * The delegate can implement this method to be notified when the player view controller has finished presenting
+     * interstitial content.
+     * 
+     * API-Since: 16.0
+     * 
+     * @param playerViewController
+     *                             The player view controller.
+     * @param interstitial
+     *                             The interstitial time range.
+     */
+    @Generated
+    @IsOptional
+    @Selector("playerViewController:didPresentInterstitialTimeRange:")
+    default void playerViewControllerDidPresentInterstitialTimeRange(
+            @NotNull AVPlayerViewController playerViewController, @NotNull AVInterstitialTimeRange interstitial) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * playerViewController:willPresentInterstitialTimeRange:
+     * 
+     * The delegate can implement this method to be notified when the player view controller is about to present
+     * interstitial content to the user.
+     * 
+     * API-Since: 16.0
+     * 
+     * @param playerViewController
+     *                             The player view controller.
+     * @param interstitial
+     *                             The interstitial time range.
+     */
+    @Generated
+    @IsOptional
+    @Selector("playerViewController:willPresentInterstitialTimeRange:")
+    default void playerViewControllerWillPresentInterstitialTimeRange(
+            @NotNull AVPlayerViewController playerViewController, @NotNull AVInterstitialTimeRange interstitial) {
+        throw new java.lang.UnsupportedOperationException();
     }
 }

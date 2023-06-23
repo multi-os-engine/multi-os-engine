@@ -24,14 +24,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * VNTrajectoryObservation
  * [@superclass] VNObservation
- * <p>
+ * 
  * The VNTrajectoryObservation describes a detected trajectory with the points on the trajectory and the equation
  * describing the trajectory. The observation also reprorts the duration describing when the trajectory was first
  * detected (which will be in the past).
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Vision")
@@ -63,22 +67,25 @@ public class VNTrajectoryObservation extends VNObservation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -93,11 +100,12 @@ public class VNTrajectoryObservation extends VNObservation {
 
     /**
      * The centroids of the contour being detected along the trajectory.
-     * <p>
+     * 
      * These are the unprocessed centroid points of the detected contour that is tracked on the trajectory. The points
      * may be slightly off the ideal trajectory as these are the measured points that fall within the allowed tolerance.
      * The maximum number or past points is limited by the maximum trajectory length set in the request.
      */
+    @NotNull
     @Generated
     @Selector("detectedPoints")
     public native NSArray<? extends VNPoint> detectedPoints();
@@ -113,7 +121,7 @@ public class VNTrajectoryObservation extends VNObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNTrajectoryObservation initWithCoder(NSCoder coder);
+    public native VNTrajectoryObservation initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -132,9 +140,10 @@ public class VNTrajectoryObservation extends VNObservation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -143,11 +152,12 @@ public class VNTrajectoryObservation extends VNObservation {
 
     /**
      * The centroids of the calculated trajectory from the detected points.
-     * <p>
+     * 
      * These are the calculated centroid points along the ideal trajectory described by the parabolic equation. The
      * equation and the projected points of the detected trajectory get refined over time. The maximum number of cached
      * points is limited by the maximum points needed to describe the trajectory together with the parabolic equation.
      */
+    @NotNull
     @Generated
     @Selector("projectedPoints")
     public native NSArray<? extends VNPoint> projectedPoints();
@@ -185,8 +195,10 @@ public class VNTrajectoryObservation extends VNObservation {
 
     /**
      * The moving average radius of the object being tracked.
-     * <p>
+     * 
      * This is the radius of the object at each detected point (used to determine the trajectory) averaged.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("movingAverageRadius")

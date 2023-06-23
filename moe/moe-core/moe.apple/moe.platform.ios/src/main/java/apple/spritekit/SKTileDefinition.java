@@ -17,7 +17,6 @@ limitations under the License.
 package apple.spritekit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -46,9 +45,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A tile definition contains the information needed to represent a single type of tile within a tile map.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("SpriteKit")
@@ -80,22 +84,25 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +137,10 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,39 +165,40 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Create a tile definition with an SKTexture, and set its size to the SKTexture's width/height.
-     *
+     * 
      * @param texture the texture to reference for size and content
      */
     @Generated
     @Selector("tileDefinitionWithTexture:")
-    public static native SKTileDefinition tileDefinitionWithTexture(SKTexture texture);
+    public static native SKTileDefinition tileDefinitionWithTexture(@NotNull SKTexture texture);
 
     /**
      * Create a tile definition with an SKTexture and the specified size.
-     *
+     * 
      * @param texture       the texture to reference for content
      * @param normalTexture the normal texture to use for generating normals for lighting
      * @param size          the size of the tile in points
      */
     @Generated
     @Selector("tileDefinitionWithTexture:normalTexture:size:")
-    public static native SKTileDefinition tileDefinitionWithTextureNormalTextureSize(SKTexture texture,
-            SKTexture normalTexture, @ByValue CGSize size);
+    public static native SKTileDefinition tileDefinitionWithTextureNormalTextureSize(@NotNull SKTexture texture,
+            @NotNull SKTexture normalTexture, @ByValue CGSize size);
 
     /**
      * Create a tile definition with an SKTexture and the specified size.
-     *
+     * 
      * @param texture the texture to reference for content
      * @param size    the size of the tile in points
      */
     @Generated
     @Selector("tileDefinitionWithTexture:size:")
-    public static native SKTileDefinition tileDefinitionWithTextureSize(SKTexture texture, @ByValue CGSize size);
+    public static native SKTileDefinition tileDefinitionWithTextureSize(@NotNull SKTexture texture,
+            @ByValue CGSize size);
 
     /**
      * Create an animated tile definition with an array of SKTextures, the specified size, and the length of time each
      * texture should be displayed for in the animation.
-     *
+     * 
      * @param textures       the textures to reference for animated content
      * @param normalTextures the normal textures to use for generating normals for lighting
      * @param size           the size of the tile in points
@@ -199,13 +208,13 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     @Generated
     @Selector("tileDefinitionWithTextures:normalTextures:size:timePerFrame:")
     public static native SKTileDefinition tileDefinitionWithTexturesNormalTexturesSizeTimePerFrame(
-            NSArray<? extends SKTexture> textures, NSArray<? extends SKTexture> normalTextures, @ByValue CGSize size,
-            @NFloat double timePerFrame);
+            @NotNull NSArray<? extends SKTexture> textures, @NotNull NSArray<? extends SKTexture> normalTextures,
+            @ByValue CGSize size, @NFloat double timePerFrame);
 
     /**
      * Create an animated tile definition with an array of SKTextures, the specified size, and the length of time each
      * texture should be displayed for in the animation.
-     *
+     * 
      * @param textures     the textures to reference for animated content
      * @param size         the size of the tile in points
      * @param timePerFrame the duration, in seconds, that each texture in the textures array is displayed before
@@ -214,22 +223,23 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     @Generated
     @Selector("tileDefinitionWithTextures:size:timePerFrame:")
     public static native SKTileDefinition tileDefinitionWithTexturesSizeTimePerFrame(
-            NSArray<? extends SKTexture> textures, @ByValue CGSize size, @NFloat double timePerFrame);
+            @NotNull NSArray<? extends SKTexture> textures, @ByValue CGSize size, @NFloat double timePerFrame);
 
     @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * When set to YES, the tile definition's images will be flipped horizontally (i.e., the left of the image becomes
@@ -253,43 +263,43 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKTileDefinition initWithCoder(NSCoder coder);
+    public native SKTileDefinition initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initilize a tile definition with an SKTexture, and set its size to the SKTexture's width/height.
-     *
+     * 
      * @param texture the texture to reference for size and content
      */
     @Generated
     @Selector("initWithTexture:")
-    public native SKTileDefinition initWithTexture(SKTexture texture);
+    public native SKTileDefinition initWithTexture(@NotNull SKTexture texture);
 
     /**
      * Initilize a tile definition with an SKTexture and the specified size.
-     *
+     * 
      * @param texture       the texture to reference for content
      * @param normalTexture the normal texture to use for generating normals for lighting
      * @param size          the size of the tile in points
      */
     @Generated
     @Selector("initWithTexture:normalTexture:size:")
-    public native SKTileDefinition initWithTextureNormalTextureSize(SKTexture texture, SKTexture normalTexture,
-            @ByValue CGSize size);
+    public native SKTileDefinition initWithTextureNormalTextureSize(@NotNull SKTexture texture,
+            @NotNull SKTexture normalTexture, @ByValue CGSize size);
 
     /**
      * Initilize a tile definition with an SKTexture and the specified size.
-     *
+     * 
      * @param texture the texture to reference for content
      * @param size    the size of the tile in points
      */
     @Generated
     @Selector("initWithTexture:size:")
-    public native SKTileDefinition initWithTextureSize(SKTexture texture, @ByValue CGSize size);
+    public native SKTileDefinition initWithTextureSize(@NotNull SKTexture texture, @ByValue CGSize size);
 
     /**
      * Initilize an animated tile definition with an array of SKTextures, the specified size, and the length of time
      * each texture should be displayed for in the animation.
-     *
+     * 
      * @param textures       the textures to reference for animated content
      * @param normalTextures the normal textures to use for generating normals for lighting
      * @param size           the size of the tile in points
@@ -298,13 +308,14 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
      */
     @Generated
     @Selector("initWithTextures:normalTextures:size:timePerFrame:")
-    public native SKTileDefinition initWithTexturesNormalTexturesSizeTimePerFrame(NSArray<? extends SKTexture> textures,
-            NSArray<? extends SKTexture> normalTextures, @ByValue CGSize size, @NFloat double timePerFrame);
+    public native SKTileDefinition initWithTexturesNormalTexturesSizeTimePerFrame(
+            @NotNull NSArray<? extends SKTexture> textures, @NotNull NSArray<? extends SKTexture> normalTextures,
+            @ByValue CGSize size, @NFloat double timePerFrame);
 
     /**
      * Initilize an animated tile definition with an array of SKTextures, the specified size, and the length of time
      * each texture should be displayed for in the animation.
-     *
+     * 
      * @param textures     the textures to reference for animated content
      * @param size         the size of the tile in points
      * @param timePerFrame the duration, in seconds, that each texture in the textures array is displayed before
@@ -312,12 +323,13 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
      */
     @Generated
     @Selector("initWithTextures:size:timePerFrame:")
-    public native SKTileDefinition initWithTexturesSizeTimePerFrame(NSArray<? extends SKTexture> textures,
+    public native SKTileDefinition initWithTexturesSizeTimePerFrame(@NotNull NSArray<? extends SKTexture> textures,
             @ByValue CGSize size, @NFloat double timePerFrame);
 
     /**
      * Client-assignable name for the tile definition. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -326,6 +338,7 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
      * The textures to use for generating normals that lights use to light this tile. These will only be used if the
      * tile is lit by at least one light. Each normal texture corresponds to a texture in the textures property.
      */
+    @NotNull
     @Generated
     @Selector("normalTextures")
     public native NSArray<? extends SKTexture> normalTextures();
@@ -372,7 +385,7 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     /**
      * The textures to use for generating normals that lights use to light this tile. These will only be used if the
@@ -380,7 +393,7 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
      */
     @Generated
     @Selector("setNormalTextures:")
-    public native void setNormalTextures(NSArray<? extends SKTexture> value);
+    public native void setNormalTextures(@NotNull NSArray<? extends SKTexture> value);
 
     /**
      * This value is used to determine how likely this tile definition is to be chosen for placement when a
@@ -415,7 +428,7 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
      */
     @Generated
     @Selector("setTextures:")
-    public native void setTextures(NSArray<? extends SKTexture> value);
+    public native void setTextures(@NotNull NSArray<? extends SKTexture> value);
 
     /**
      * The duration, in seconds, that each texture in the textures array is displayed before switching to the next
@@ -430,7 +443,7 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
      */
     @Generated
     @Selector("setUserData:")
-    public native void setUserData(NSMutableDictionary<?, ?> value);
+    public native void setUserData(@Nullable NSMutableDictionary<?, ?> value);
 
     /**
      * The size of the tile in points.
@@ -445,6 +458,7 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
      * present, the tile will swap through them in sequence, showing each for the duration specified in the timePerFrame
      * property. After displaying the last texture in the array, the sequence is repeated from the first texture.
      */
+    @NotNull
     @Generated
     @Selector("textures")
     public native NSArray<? extends SKTexture> textures();
@@ -461,6 +475,7 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     /**
      * An optional dictionary that can be used to store your own data for each tile definition. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("userData")
     public native NSMutableDictionary<?, ?> userData();

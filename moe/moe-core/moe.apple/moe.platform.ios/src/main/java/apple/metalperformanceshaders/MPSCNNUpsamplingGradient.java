@@ -23,47 +23,52 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNUpsamplingGradient
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * The MPSCNNUpsamplingGradient filter is used for training. It is the backward
  * filter for the MPSCNNUpsampling filter. It operates on the gradient input,
  * specifically, it reduces the size of the gradient input in the x and y dimensions.
- * <p>
+ * 
  * The number of output feature channels remains the same as the number of input feature
  * channels.
- * <p>
+ * 
  * The scaleFactor must be an integer value >= 1. The default value is 1.
  * If scaleFactor == 1, the filter acts as a copy kernel.
- * <p>
+ * 
  * Nearest and bilinear variants are supported.
- * <p>
+ * 
  * For example, for the nearest variant with scaleFactorX = scaleFactorY = 2, the
  * forward pass produced the following output:
- * <p>
+ * 
  * Input: Output:
  * a a b b
  * a b a a b b
  * c d c c d d
  * c c d d
- * <p>
+ * 
  * To upsample the image, the input data is replicated.
- * <p>
+ * 
  * And, the backward pass for the above froward pass is computed in the following
  * way:
- * <p>
+ * 
  * Input: Output:
  * a1 a2 b1 b2
  * a2 a3 b3 b4 x y
  * c1 c2 d1 d2 z w
  * c3 c4 d3 d4
- * <p>
+ * 
  * where x = a1 + a2 + a3 + a4
  * y = b1 + b2 + b3 + b4
  * z = c1 + c2 + c3 + c4
  * w = d1 + d2 + d3 + d4
+ * 
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -95,22 +100,25 @@ public class MPSCNNUpsamplingGradient extends MPSCNNGradientKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,16 +142,16 @@ public class MPSCNNUpsamplingGradient extends MPSCNNGradientKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNUpsamplingGradient initWithCoder(NSCoder aDecoder);
+    public native MPSCNNUpsamplingGradient initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNUpsamplingGradient initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNUpsamplingGradient initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNUpsamplingGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNUpsamplingGradient initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -162,9 +170,10 @@ public class MPSCNNUpsamplingGradient extends MPSCNNGradientKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -181,7 +190,7 @@ public class MPSCNNUpsamplingGradient extends MPSCNNGradientKernel {
 
     /**
      * [@property] scaleFactorX
-     * <p>
+     * 
      * The downsampling scale factor for the x dimension. The default value is 1.
      */
     @Generated
@@ -190,7 +199,7 @@ public class MPSCNNUpsamplingGradient extends MPSCNNGradientKernel {
 
     /**
      * [@property] scaleFactorY
-     * <p>
+     * 
      * The downsampling scale factor for the y dimension. The default value is 1.
      */
     @Generated

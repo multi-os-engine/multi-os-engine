@@ -21,17 +21,31 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueLockMechanismState
- * <p>
+ * 
  * [@constant] HMCharacteristicValueLockMechanismStateUnsecured Unsecured.
  * [@constant] HMCharacteristicValueLockMechanismStateSecured Secured.
  * [@constant] HMCharacteristicValueLockMechanismStateJammed Jammed.
  * [@constant] HMCharacteristicValueLockMechanismStateUnknown Unknown.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class HMCharacteristicValueLockMechanismState {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Unsecured = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Secured = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Jammed = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Unknown = 0x0000000000000003L;
 
     @Generated

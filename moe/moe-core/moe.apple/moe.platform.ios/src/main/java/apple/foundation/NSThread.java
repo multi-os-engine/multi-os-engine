@@ -35,6 +35,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -66,34 +68,46 @@ public class NSThread extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 2.0
+     */
+    @NotNull
     @Generated
     @Selector("callStackReturnAddresses")
     public static native NSArray<? extends NSNumber> callStackReturnAddresses();
 
+    /**
+     * API-Since: 4.0
+     */
+    @NotNull
     @Generated
     @Selector("callStackSymbols")
     public static native NSArray<String> callStackSymbols();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("currentThread")
     public static native NSThread currentThread();
@@ -108,13 +122,17 @@ public class NSThread extends NSObject {
 
     @Generated
     @Selector("detachNewThreadSelector:toTarget:withObject:")
-    public static native void detachNewThreadSelectorToTargetWithObject(SEL selector,
-            @Mapped(ObjCObjectMapper.class) Object target, @Mapped(ObjCObjectMapper.class) Object argument);
+    public static native void detachNewThreadSelectorToTargetWithObject(@NotNull SEL selector,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object target,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object argument);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("detachNewThreadWithBlock:")
     public static native void detachNewThreadWithBlock(
-            @ObjCBlock(name = "call_detachNewThreadWithBlock") Block_detachNewThreadWithBlock block);
+            @NotNull @ObjCBlock(name = "call_detachNewThreadWithBlock") Block_detachNewThreadWithBlock block);
 
     @Generated
     @Selector("exit")
@@ -140,6 +158,8 @@ public class NSThread extends NSObject {
 
     /**
      * reports whether current thread is main
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isMainThread")
@@ -153,10 +173,15 @@ public class NSThread extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 2.0
+     */
+    @NotNull
     @Generated
     @Selector("mainThread")
     public static native NSThread mainThread();
@@ -188,7 +213,7 @@ public class NSThread extends NSObject {
 
     @Generated
     @Selector("sleepUntilDate:")
-    public static native void sleepUntilDate(NSDate date);
+    public static native void sleepUntilDate(@NotNull NSDate date);
 
     @Generated
     @Selector("superclass")
@@ -203,95 +228,146 @@ public class NSThread extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("cancel")
     public native void cancel();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("init")
     public native NSThread init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithBlock:")
-    public native NSThread initWithBlock(@ObjCBlock(name = "call_initWithBlock") Block_initWithBlock block);
+    public native NSThread initWithBlock(@NotNull @ObjCBlock(name = "call_initWithBlock") Block_initWithBlock block);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithTarget:selector:object:")
-    public native NSThread initWithTargetSelectorObject(@Mapped(ObjCObjectMapper.class) Object target, SEL selector,
-            @Mapped(ObjCObjectMapper.class) Object argument);
+    public native NSThread initWithTargetSelectorObject(@NotNull @Mapped(ObjCObjectMapper.class) Object target,
+            @NotNull SEL selector, @Nullable @Mapped(ObjCObjectMapper.class) Object argument);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isCancelled")
     public native boolean isCancelled();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isExecuting")
     public native boolean isExecuting();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isFinished")
     public native boolean isFinished();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isMainThread")
     public native boolean isMainThread();
 
     /**
      * thread body method
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("main")
     public native void main();
 
+    /**
+     * API-Since: 2.0
+     */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
 
     /**
      * read-only after the thread is started
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("qualityOfService")
     @NInt
     public native long qualityOfService();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     /**
      * read-only after the thread is started
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setQualityOfService:")
     public native void setQualityOfService(@NInt long value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setStackSize:")
     public native void setStackSize(@NUInt long value);
 
     /**
      * To be deprecated; use qualityOfService below
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setThreadPriority:")
     public native void setThreadPriority(double value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("stackSize")
     @NUInt
     public native long stackSize();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("start")
     public native void start();
 
+    @NotNull
     @Generated
     @Selector("threadDictionary")
     public native NSMutableDictionary<?, ?> threadDictionary();
 
     /**
      * To be deprecated; use qualityOfService below
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("threadPriority")

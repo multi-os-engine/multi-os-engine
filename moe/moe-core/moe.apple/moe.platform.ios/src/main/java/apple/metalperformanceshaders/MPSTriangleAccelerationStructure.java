@@ -23,11 +23,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An acceleration structure built over triangles
- * <p>
+ * 
  * See MPSPolygonAccelerationStructure for more information
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -59,22 +63,25 @@ public class MPSTriangleAccelerationStructure extends MPSPolygonAccelerationStru
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -98,25 +105,26 @@ public class MPSTriangleAccelerationStructure extends MPSPolygonAccelerationStru
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSTriangleAccelerationStructure initWithCoder(NSCoder aDecoder);
+    public native MPSTriangleAccelerationStructure initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSTriangleAccelerationStructure initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSTriangleAccelerationStructure initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithCoder:group:")
-    public native MPSTriangleAccelerationStructure initWithCoderGroup(NSCoder aDecoder,
-            MPSAccelerationStructureGroup group);
+    public native MPSTriangleAccelerationStructure initWithCoderGroup(@NotNull NSCoder aDecoder,
+            @NotNull MPSAccelerationStructureGroup group);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSTriangleAccelerationStructure initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSTriangleAccelerationStructure initWithDevice(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithGroup:")
-    public native MPSTriangleAccelerationStructure initWithGroup(MPSAccelerationStructureGroup group);
+    public native MPSTriangleAccelerationStructure initWithGroup(@NotNull MPSAccelerationStructureGroup group);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -135,9 +143,10 @@ public class MPSTriangleAccelerationStructure extends MPSPolygonAccelerationStru
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,7 +164,7 @@ public class MPSTriangleAccelerationStructure extends MPSPolygonAccelerationStru
     /**
      * Number of triangles. Changes to this property require rebuilding the acceleration
      * structure.
-     * <p>
+     * 
      * Note that this property is an alias for the polygonCount property.
      */
     @Generated
@@ -183,7 +192,7 @@ public class MPSTriangleAccelerationStructure extends MPSPolygonAccelerationStru
     /**
      * Number of triangles. Changes to this property require rebuilding the acceleration
      * structure.
-     * <p>
+     * 
      * Note that this property is an alias for the polygonCount property.
      */
     @Generated

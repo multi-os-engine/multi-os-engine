@@ -25,19 +25,23 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImageLaplacianPyramidSubtract
- * <p>
+ * 
  * For each mip-level of the destination, MPSImageLaplacianPyramidSubtract constructs Laplacian pyramid
  * according to the procedure specified in the discussion section for MPSImageLaplacianPyramid
- * <p>
+ * 
  * There needs to be at least as many mip-levels in the destination texture
  * as in the source texture less one, which is the exact number of destination mip-levels
  * that will be overwritten by MPSImageLaplacianPyramidSubtract, starting from the bottom level.
  * Note that the top mip-level of the source texture still contains data required
  * for reconstruction of the original Gaussian pyramid data, and it is user's responsibility
  * to propagate it around, i.e. via the use of MTLBlitCommandEncoder.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -69,22 +73,25 @@ public class MPSImageLaplacianPyramidSubtract extends MPSImageLaplacianPyramid {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -108,27 +115,28 @@ public class MPSImageLaplacianPyramidSubtract extends MPSImageLaplacianPyramid {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSImageLaplacianPyramidSubtract initWithCoder(NSCoder aDecoder);
+    public native MPSImageLaplacianPyramidSubtract initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSImageLaplacianPyramidSubtract initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageLaplacianPyramidSubtract initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImageLaplacianPyramidSubtract initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageLaplacianPyramidSubtract initWithDevice(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:centerWeight:")
     public native MPSImageLaplacianPyramidSubtract initWithDeviceCenterWeight(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, float centerWeight);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, float centerWeight);
 
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:weights:")
     public native MPSImageLaplacianPyramidSubtract initWithDeviceKernelWidthKernelHeightWeights(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight,
-            ConstFloatPtr kernelWeights);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth,
+            @NUInt long kernelHeight, @NotNull ConstFloatPtr kernelWeights);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -147,9 +155,10 @@ public class MPSImageLaplacianPyramidSubtract extends MPSImageLaplacianPyramid {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

@@ -1,7 +1,6 @@
 package apple.vision;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -26,13 +25,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * VNFaceObservation
  * [@superclass] VNDetectedObjectObservation
- * <p>
+ * 
  * VNFaceObservation is the result of a face detection request or derivatives like a face landmark request.
- * <p>
+ * 
  * The properties filled in this obervation depend on the request being performed. For instance, if just a
  * VNDetectFaceRectanglesRequest was performed the landmarks will not be populated. VNFaceObservation are also used as
  * inputs to other request as defined by the VNFaceObservationAccepting protocol. An example would be the
@@ -40,6 +42,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * from a VNDetectFaceRectanglesRequest but instead come from other sources like EXIF or other face detectors. In that
  * case the client of the API creates a VNFaceObservation with the boundingBox (in normalized coordinates) that were
  * based on those detected faces.
+ * 
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -71,22 +76,25 @@ public class VNFaceObservation extends VNDetectedObjectObservation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -110,7 +118,7 @@ public class VNFaceObservation extends VNDetectedObjectObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNFaceObservation initWithCoder(NSCoder coder);
+    public native VNFaceObservation initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -129,14 +137,16 @@ public class VNFaceObservation extends VNDetectedObjectObservation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The face landmarks populated by the VNDetectFaceLandmarksRequest. This is set to nil if only a
      * VNDetectFaceRectanglesRequest was performed.
      */
+    @Nullable
     @Generated
     @Selector("landmarks")
     public native VNFaceLandmarks2D landmarks();
@@ -185,14 +195,17 @@ public class VNFaceObservation extends VNDetectedObjectObservation {
      * The capture quality of the face as a normalized value between 0.0 and 1.0 that can be used to compare the quality
      * of the face in terms of it capture attributes (lighting, blur, position). This score can be used to compare the
      * capture quality of a face against other captures of the same face in a given set.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("faceCaptureQuality")
     public native NSNumber faceCaptureQuality();
 
     /**
      * Create a new VNFaceObservation with a normalized bounding box, roll and yaw.
-     *
+     * 
      * @param requestRevision The revision of the VNDetectFaceRectanglesRequest that provided the bounding box. If this
      *                        observation is being created with data that did not originate from a Vision request, this
      *                        parameter should be VNRequestRevisionUnspecified.
@@ -205,11 +218,15 @@ public class VNFaceObservation extends VNDetectedObjectObservation {
      * @param pitch           The pitch angle of the face, reported in radians. A positive angle corresponds to nodding
      *                        head down direction, range [-Pi/2, Pi/2]. If no pitch information is available, this
      *                        parameter should be nil.
+     * 
+     *                        API-Since: 12.0
+     *                        Deprecated-Since: 15.0
      */
+    @Deprecated
     @Generated
     @Selector("faceObservationWithRequestRevision:boundingBox:roll:yaw:")
     public static native VNFaceObservation faceObservationWithRequestRevisionBoundingBoxRollYaw(
-            @NUInt long requestRevision, @ByValue CGRect boundingBox, NSNumber roll, NSNumber yaw);
+            @NUInt long requestRevision, @ByValue CGRect boundingBox, @Nullable NSNumber roll, @Nullable NSNumber yaw);
 
     @Generated
     @Selector("observationWithRequestRevision:boundingBox:")
@@ -220,7 +237,10 @@ public class VNFaceObservation extends VNDetectedObjectObservation {
      * Face roll angle populated by VNDetectFaceRectanglesRequest. The roll is reported in radians, positive angle
      * corresponds to counterclockwise direction, range [-Pi, Pi). nil value indicates that the roll angle hasn't been
      * computed
+     * 
+     * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("roll")
     public native NSNumber roll();
@@ -229,21 +249,31 @@ public class VNFaceObservation extends VNDetectedObjectObservation {
      * Face yaw angle populated by VNDetectFaceRectanglesRequest. The yaw is reported in radians, positive angle
      * corresponds to counterclockwise direction, range [-Pi/2, Pi/2]. nil value indicates that the yaw angle hasn't
      * been computed
+     * 
+     * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("yaw")
     public native NSNumber yaw();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("faceObservationWithRequestRevision:boundingBox:roll:yaw:pitch:")
     public static native VNFaceObservation faceObservationWithRequestRevisionBoundingBoxRollYawPitch(
-            @NUInt long requestRevision, @ByValue CGRect boundingBox, NSNumber roll, NSNumber yaw, NSNumber pitch);
+            @NUInt long requestRevision, @ByValue CGRect boundingBox, @Nullable NSNumber roll, @Nullable NSNumber yaw,
+            @Nullable NSNumber pitch);
 
     /**
      * Face pitch angle populated by VNDetectFaceRectanglesRequest. The pitch is reported in radians, positive angle
      * corresponds to nodding head down direction, range [-Pi/2, Pi/2]. nil value indicates that the pitch angle hasn't
      * been computed
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("pitch")
     public native NSNumber pitch();

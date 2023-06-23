@@ -42,14 +42,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CKRecordZoneSubscription
- * <p>
+ * 
  * A subscription that fires whenever any change happens in the indicated Record Zone.
- * <p>
+ * 
  * The RecordZone must have the capability @c CKRecordZoneCapabilityFetchChanges
  * [@c] CKRecordZoneSubscriptions are not supported in a @c sharedCloudDatabase
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CloudKit")
@@ -81,22 +85,25 @@ public class CKRecordZoneSubscription extends CKSubscription implements NSSecure
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +138,10 @@ public class CKRecordZoneSubscription extends CKSubscription implements NSSecure
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,15 +173,16 @@ public class CKRecordZoneSubscription extends CKSubscription implements NSSecure
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -181,19 +190,21 @@ public class CKRecordZoneSubscription extends CKSubscription implements NSSecure
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKRecordZoneSubscription initWithCoder(NSCoder aDecoder);
+    public native CKRecordZoneSubscription initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithZoneID:")
-    public native CKRecordZoneSubscription initWithZoneID(CKRecordZoneID zoneID);
+    public native CKRecordZoneSubscription initWithZoneID(@NotNull CKRecordZoneID zoneID);
 
     @Generated
     @Selector("initWithZoneID:subscriptionID:")
-    public native CKRecordZoneSubscription initWithZoneIDSubscriptionID(CKRecordZoneID zoneID, String subscriptionID);
+    public native CKRecordZoneSubscription initWithZoneIDSubscriptionID(@NotNull CKRecordZoneID zoneID,
+            @NotNull String subscriptionID);
 
     /**
      * Optional property. If set, a zone subscription is scoped to record changes for this record type
      */
+    @Nullable
     @Generated
     @Selector("recordType")
     public native String recordType();
@@ -203,7 +214,7 @@ public class CKRecordZoneSubscription extends CKSubscription implements NSSecure
      */
     @Generated
     @Selector("setRecordType:")
-    public native void setRecordType(String value);
+    public native void setRecordType(@Nullable String value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -211,6 +222,7 @@ public class CKRecordZoneSubscription extends CKSubscription implements NSSecure
         return supportsSecureCoding();
     }
 
+    @NotNull
     @Generated
     @Selector("zoneID")
     public native CKRecordZoneID zoneID();

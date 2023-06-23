@@ -41,7 +41,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -72,22 +77,25 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,23 +130,31 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native SKPayment new_objc();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("paymentWithProduct:")
-    public static native SKPayment paymentWithProduct(SKProduct product);
+    public static native SKPayment paymentWithProduct(@NotNull SKProduct product);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 5.0
+     */
     @Generated
     @Deprecated
     @Selector("paymentWithProductIdentifier:")
-    public static native SKPayment paymentWithProductIdentifier(String identifier);
+    public static native SKPayment paymentWithProductIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -163,36 +179,46 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
 
     /**
      * Application-specific user identifier. Optional.
+     * 
+     * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("applicationUsername")
     public native String applicationUsername();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("init")
     public native SKPayment init();
 
+    @NotNull
     @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Identifier agreed upon with the store. Required.
+     * 
+     * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("productIdentifier")
     public native String productIdentifier();
 
     /**
      * default: 1. Must be at least 1.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("quantity")
@@ -201,13 +227,18 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
 
     /**
      * Payment request data agreed upon with the store. Optional.
+     * 
+     * API-Since: 3.0
      */
+    @Nullable
     @Generated
     @Selector("requestData")
     public native NSData requestData();
 
     /**
      * Force an "ask to buy" flow for this payment, in the sandbox
+     * 
+     * API-Since: 8.3
      */
     @Generated
     @Selector("simulatesAskToBuyInSandbox")
@@ -215,7 +246,10 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
 
     /**
      * The relevant data for specifying a discount to be applied to this payment. Optional.
+     * 
+     * API-Since: 12.2
      */
+    @Nullable
     @Generated
     @Selector("paymentDiscount")
     public native SKPaymentDiscount paymentDiscount();

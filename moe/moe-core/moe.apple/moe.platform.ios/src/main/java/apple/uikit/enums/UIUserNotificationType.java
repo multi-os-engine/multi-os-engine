@@ -19,24 +19,46 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 8.0
+ * Deprecated-Since: 10.0
+ * Deprecated-Message: Use UserNotifications Framework's UNAuthorizationOptions
+ */
+@Deprecated
 @Generated
 public final class UIUserNotificationType {
     /**
      * the application may not present any UI upon a notification being received
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNAuthorizationOptions
      */
-    @Generated @NUInt public static final long None = 0x0000000000000000L;
+    @Deprecated @Generated @NUInt public static final long None = 0x0000000000000000L;
     /**
      * the application may badge its icon upon a notification being received
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNAuthorizationOptions
      */
-    @Generated @NUInt public static final long Badge = 0x0000000000000001L;
+    @Deprecated @Generated @NUInt public static final long Badge = 0x0000000000000001L;
     /**
      * the application may play a sound upon a notification being received
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNAuthorizationOptions
      */
-    @Generated @NUInt public static final long Sound = 0x0000000000000002L;
+    @Deprecated @Generated @NUInt public static final long Sound = 0x0000000000000002L;
     /**
      * the application may display an alert upon a notification being received
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNAuthorizationOptions
      */
-    @Generated @NUInt public static final long Alert = 0x0000000000000004L;
+    @Deprecated @Generated @NUInt public static final long Alert = 0x0000000000000004L;
 
     @Generated
     private UIUserNotificationType() {

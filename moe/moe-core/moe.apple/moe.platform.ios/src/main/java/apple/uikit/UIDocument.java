@@ -54,7 +54,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -85,22 +90,25 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,9 +143,10 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -169,13 +178,13 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @IsOptional
     @Selector("accommodatePresentedItemDeletionWithCompletionHandler:")
     public native void accommodatePresentedItemDeletionWithCompletionHandler(
-            @ObjCBlock(name = "call_accommodatePresentedItemDeletionWithCompletionHandler") NSFilePresenter.Block_accommodatePresentedItemDeletionWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_accommodatePresentedItemDeletionWithCompletionHandler") NSFilePresenter.Block_accommodatePresentedItemDeletionWithCompletionHandler completionHandler);
 
     @Generated
     @IsOptional
     @Selector("accommodatePresentedSubitemDeletionAtURL:completionHandler:")
-    public native void accommodatePresentedSubitemDeletionAtURLCompletionHandler(NSURL url,
-            @ObjCBlock(name = "call_accommodatePresentedSubitemDeletionAtURLCompletionHandler") NSFilePresenter.Block_accommodatePresentedSubitemDeletionAtURLCompletionHandler completionHandler);
+    public native void accommodatePresentedSubitemDeletionAtURLCompletionHandler(@NotNull NSURL url,
+            @NotNull @ObjCBlock(name = "call_accommodatePresentedSubitemDeletionAtURLCompletionHandler") NSFilePresenter.Block_accommodatePresentedSubitemDeletionAtURLCompletionHandler completionHandler);
 
     /**
      * Clients should not need to call this method directly. It exists as an override point for subclasses that want to
@@ -187,7 +196,7 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Generated
     @Selector("autosaveWithCompletionHandler:")
     public native void autosaveWithCompletionHandler(
-            @ObjCBlock(name = "call_autosaveWithCompletionHandler") Block_autosaveWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_autosaveWithCompletionHandler") Block_autosaveWithCompletionHandler completionHandler);
 
     /**
      * Change count tokens can be used to encapsulate the record of document changes being made in a particular save.
@@ -198,6 +207,7 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
      * The default implementation of updateChangeCountWithToken:forSaveOperation: calls [self
      * updateChangeCount:UIDocumentChangeCleared] if no changes are made during the save.
      */
+    @NotNull
     @Generated
     @Selector("changeCountTokenForSaveOperation:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -210,7 +220,7 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Generated
     @Selector("closeWithCompletionHandler:")
     public native void closeWithCompletionHandler(
-            @ObjCBlock(name = "call_closeWithCompletionHandler") Block_closeWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_closeWithCompletionHandler") Block_closeWithCompletionHandler completionHandler);
 
     /**
      * Typical subclasses will implement this method and return an NSFileWrapper or NSData encapsulating a snapshot of
@@ -218,11 +228,12 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
      * Subclasses that return something other than a valid NSFileWrapper or NSData instance, or don't override this
      * method must override one of the writing methods in the Advanced Saving section to write data to disk.
      */
+    @Nullable
     @Generated
     @Selector("contentsForType:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object contentsForTypeError(String typeName,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native Object contentsForTypeError(@NotNull String typeName,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * Subclasses should override these methods so that they do not allow the user to edit the document between calls to
@@ -250,16 +261,18 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
      * The attributes are passed to -writeContents:andAttributes:safelyToURL:forSaveOperation:error: for writing to the
      * file
      */
+    @Nullable
     @Generated
     @Selector("fileAttributesToWriteToURL:forSaveOperation:error:")
-    public native NSDictionary<?, ?> fileAttributesToWriteToURLForSaveOperationError(NSURL url,
-            @NInt long saveOperation, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native NSDictionary<?, ?> fileAttributesToWriteToURLForSaveOperationError(@NotNull NSURL url,
+            @NInt long saveOperation, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * The last known modification date of the document's on-disk representation. Updated by openWithCompletionHandler:,
      * revertToContentsOfURL:, and saveToURL: and will return nil if none of these has completed successfully at least
      * once.
      */
+    @Nullable
     @Generated
     @Selector("fileModificationDate")
     public native NSDate fileModificationDate();
@@ -268,13 +281,15 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
      * For a specified type, and a particular kind of save operation, return a file name extension that can be appended
      * to a base file name.
      */
+    @NotNull
     @Generated
     @Selector("fileNameExtensionForType:saveOperation:")
-    public native String fileNameExtensionForTypeSaveOperation(String typeName, @NInt long saveOperation);
+    public native String fileNameExtensionForTypeSaveOperation(@Nullable String typeName, @NInt long saveOperation);
 
     /**
      * The file's UTI. Derived from the fileURL by default.
      */
+    @Nullable
     @Generated
     @Selector("fileType")
     public native String fileType();
@@ -287,6 +302,7 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
      * Clients that wish to access these properties outside of an open, save, or revert completion handler and wait for
      * any pending file operations should wrap the accesses in -performAsynchronousFileAccessUsingBlock:
      */
+    @NotNull
     @Generated
     @Selector("fileURL")
     public native NSURL fileURL();
@@ -299,7 +315,7 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
      */
     @Generated
     @Selector("finishedHandlingError:recovered:")
-    public native void finishedHandlingErrorRecovered(NSError error, boolean recovered);
+    public native void finishedHandlingErrorRecovered(@NotNull NSError error, boolean recovered);
 
     /**
      * Called by the default implementations of -openWithCompletionHandler: and
@@ -316,7 +332,7 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
      */
     @Generated
     @Selector("handleError:userInteractionPermitted:")
-    public native void handleErrorUserInteractionPermitted(NSError error, boolean userInteractionPermitted);
+    public native void handleErrorUserInteractionPermitted(@NotNull NSError error, boolean userInteractionPermitted);
 
     /**
      * Subclasses should generally not need to override this. Instead they should use the undoManager or call
@@ -337,7 +353,7 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
      */
     @Generated
     @Selector("initWithFileURL:")
-    public native UIDocument initWithFileURL(NSURL url);
+    public native UIDocument initWithFileURL(@NotNull NSURL url);
 
     /**
      * Typical subclasses will implement this method to do reading. UIKit will pass NSData typed contents for flat files
@@ -346,13 +362,14 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
      */
     @Generated
     @Selector("loadFromContents:ofType:error:")
-    public native boolean loadFromContentsOfTypeError(@Mapped(ObjCObjectMapper.class) Object contents, String typeName,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean loadFromContentsOfTypeError(@NotNull @Mapped(ObjCObjectMapper.class) Object contents,
+            @Nullable String typeName, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * The default implementation derives the name from the URL. Subclasses may override to provide a custom name for
      * presentation to the user, such as in error strings.
      */
+    @NotNull
     @Generated
     @Selector("localizedName")
     public native String localizedName();
@@ -366,7 +383,7 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Generated
     @Selector("openWithCompletionHandler:")
     public native void openWithCompletionHandler(
-            @ObjCBlock(name = "call_openWithCompletionHandler") Block_openWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_openWithCompletionHandler") Block_openWithCompletionHandler completionHandler);
 
     /**
      * The default implementations of saveToURL: and openWithCompletionHandler: both use this to serialize file access.
@@ -376,7 +393,7 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Generated
     @Selector("performAsynchronousFileAccessUsingBlock:")
     public native void performAsynchronousFileAccessUsingBlock(
-            @ObjCBlock(name = "call_performAsynchronousFileAccessUsingBlock") Block_performAsynchronousFileAccessUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_performAsynchronousFileAccessUsingBlock") Block_performAsynchronousFileAccessUsingBlock block);
 
     @Generated
     @IsOptional
@@ -386,27 +403,29 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Generated
     @IsOptional
     @Selector("presentedItemDidGainVersion:")
-    public native void presentedItemDidGainVersion(NSFileVersion version);
+    public native void presentedItemDidGainVersion(@NotNull NSFileVersion version);
 
     @Generated
     @IsOptional
     @Selector("presentedItemDidLoseVersion:")
-    public native void presentedItemDidLoseVersion(NSFileVersion version);
+    public native void presentedItemDidLoseVersion(@NotNull NSFileVersion version);
 
     @Generated
     @IsOptional
     @Selector("presentedItemDidMoveToURL:")
-    public native void presentedItemDidMoveToURL(NSURL newURL);
+    public native void presentedItemDidMoveToURL(@NotNull NSURL newURL);
 
     @Generated
     @IsOptional
     @Selector("presentedItemDidResolveConflictVersion:")
-    public native void presentedItemDidResolveConflictVersion(NSFileVersion version);
+    public native void presentedItemDidResolveConflictVersion(@NotNull NSFileVersion version);
 
+    @NotNull
     @Generated
     @Selector("presentedItemOperationQueue")
     public native NSOperationQueue presentedItemOperationQueue();
 
+    @Nullable
     @Generated
     @Selector("presentedItemURL")
     public native NSURL presentedItemURL();
@@ -414,33 +433,35 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Generated
     @IsOptional
     @Selector("presentedSubitemAtURL:didGainVersion:")
-    public native void presentedSubitemAtURLDidGainVersion(NSURL url, NSFileVersion version);
+    public native void presentedSubitemAtURLDidGainVersion(@NotNull NSURL url, @NotNull NSFileVersion version);
 
     @Generated
     @IsOptional
     @Selector("presentedSubitemAtURL:didLoseVersion:")
-    public native void presentedSubitemAtURLDidLoseVersion(NSURL url, NSFileVersion version);
+    public native void presentedSubitemAtURLDidLoseVersion(@NotNull NSURL url, @NotNull NSFileVersion version);
 
     @Generated
     @IsOptional
     @Selector("presentedSubitemAtURL:didMoveToURL:")
-    public native void presentedSubitemAtURLDidMoveToURL(NSURL oldURL, NSURL newURL);
+    public native void presentedSubitemAtURLDidMoveToURL(@NotNull NSURL oldURL, @NotNull NSURL newURL);
 
     @Generated
     @IsOptional
     @Selector("presentedSubitemAtURL:didResolveConflictVersion:")
-    public native void presentedSubitemAtURLDidResolveConflictVersion(NSURL url, NSFileVersion version);
+    public native void presentedSubitemAtURLDidResolveConflictVersion(@NotNull NSURL url,
+            @NotNull NSFileVersion version);
 
     @Generated
     @IsOptional
     @Selector("presentedSubitemDidAppearAtURL:")
-    public native void presentedSubitemDidAppearAtURL(NSURL url);
+    public native void presentedSubitemDidAppearAtURL(@NotNull NSURL url);
 
     @Generated
     @IsOptional
     @Selector("presentedSubitemDidChangeAtURL:")
-    public native void presentedSubitemDidChangeAtURL(NSURL url);
+    public native void presentedSubitemDidChangeAtURL(@NotNull NSURL url);
 
+    @Nullable
     @Generated
     @Selector("progress")
     public native NSProgress progress();
@@ -455,11 +476,12 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
      */
     @Generated
     @Selector("readFromURL:error:")
-    public native boolean readFromURLError(NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean readFromURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("restoreUserActivityState:")
-    public native void restoreUserActivityState(NSUserActivity userActivity);
+    public native void restoreUserActivityState(@NotNull NSUserActivity userActivity);
 
     /**
      * Discard all unsaved document modifications and replace the document's contents by reading a file or file package
@@ -472,14 +494,14 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
      */
     @Generated
     @Selector("revertToContentsOfURL:completionHandler:")
-    public native void revertToContentsOfURLCompletionHandler(NSURL url,
-            @ObjCBlock(name = "call_revertToContentsOfURLCompletionHandler") Block_revertToContentsOfURLCompletionHandler completionHandler);
+    public native void revertToContentsOfURLCompletionHandler(@NotNull NSURL url,
+            @Nullable @ObjCBlock(name = "call_revertToContentsOfURLCompletionHandler") Block_revertToContentsOfURLCompletionHandler completionHandler);
 
     @Generated
     @IsOptional
     @Selector("savePresentedItemChangesWithCompletionHandler:")
     public native void savePresentedItemChangesWithCompletionHandler(
-            @ObjCBlock(name = "call_savePresentedItemChangesWithCompletionHandler") NSFilePresenter.Block_savePresentedItemChangesWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_savePresentedItemChangesWithCompletionHandler") NSFilePresenter.Block_savePresentedItemChangesWithCompletionHandler completionHandler);
 
     /**
      * Subclassing this method without calling super should be avoided. Subclassers who don't call super must use
@@ -491,13 +513,14 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
      */
     @Generated
     @Selector("saveToURL:forSaveOperation:completionHandler:")
-    public native void saveToURLForSaveOperationCompletionHandler(NSURL url, @NInt long saveOperation,
-            @ObjCBlock(name = "call_saveToURLForSaveOperationCompletionHandler") Block_saveToURLForSaveOperationCompletionHandler completionHandler);
+    public native void saveToURLForSaveOperationCompletionHandler(@NotNull NSURL url, @NInt long saveOperation,
+            @Nullable @ObjCBlock(name = "call_saveToURLForSaveOperationCompletionHandler") Block_saveToURLForSaveOperationCompletionHandler completionHandler);
 
     /**
      * The default implementation returns the current file type. saveToURL: will save to an extension based on this type
      * so subclasses can override this to allow moving the document to a new type.
      */
+    @Nullable
     @Generated
     @Selector("savingFileType")
     public native String savingFileType();
@@ -509,7 +532,7 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
      */
     @Generated
     @Selector("setFileModificationDate:")
-    public native void setFileModificationDate(NSDate value);
+    public native void setFileModificationDate(@Nullable NSDate value);
 
     /**
      * The document's undo manager. Setting the undo manager also registers the document as an observer of various
@@ -522,9 +545,12 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Selector("setUndoManager:")
     public native void setUndoManager(NSUndoManager value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setUserActivity:")
-    public native void setUserActivity(NSUserActivity value);
+    public native void setUserActivity(@Nullable NSUserActivity value);
 
     /**
      * The document's undo manager. Setting the undo manager also registers the document as an observer of various
@@ -548,12 +574,19 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Generated
     @Selector("updateChangeCountWithToken:forSaveOperation:")
     public native void updateChangeCountWithTokenForSaveOperation(
-            @Mapped(ObjCObjectMapper.class) Object changeCountToken, @NInt long saveOperation);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object changeCountToken, @NInt long saveOperation);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("updateUserActivityState:")
-    public native void updateUserActivityState(NSUserActivity userActivity);
+    public native void updateUserActivityState(@NotNull NSUserActivity userActivity);
 
+    /**
+     * API-Since: 8.0
+     */
+    @Nullable
     @Generated
     @Selector("userActivity")
     public native NSUserActivity userActivity();
@@ -568,7 +601,7 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
      */
     @Generated
     @Selector("userInteractionNoLongerPermittedForError:")
-    public native void userInteractionNoLongerPermittedForError(NSError error);
+    public native void userInteractionNoLongerPermittedForError(@NotNull NSError error);
 
     /**
      * This method is responsible for doing document writing in a way that minimizes the danger of leaving the disk to
@@ -580,8 +613,9 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Generated
     @Selector("writeContents:andAttributes:safelyToURL:forSaveOperation:error:")
     public native boolean writeContentsAndAttributesSafelyToURLForSaveOperationError(
-            @Mapped(ObjCObjectMapper.class) Object contents, NSDictionary<?, ?> additionalFileAttributes, NSURL url,
-            @NInt long saveOperation, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object contents,
+            @Nullable NSDictionary<?, ?> additionalFileAttributes, @NotNull NSURL url, @NInt long saveOperation,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * Called by -writeContents:andAttributes:safelyToURL:forSaveOperation:error: to write the data to disk. Override
@@ -590,8 +624,8 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Generated
     @Selector("writeContents:toURL:forSaveOperation:originalContentsURL:error:")
     public native boolean writeContentsToURLForSaveOperationOriginalContentsURLError(
-            @Mapped(ObjCObjectMapper.class) Object contents, NSURL url, @NInt long saveOperation,
-            NSURL originalContentsURL, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object contents, @NotNull NSURL url, @NInt long saveOperation,
+            @Nullable NSURL originalContentsURL, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -635,6 +669,7 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
         void call_saveToURLForSaveOperationCompletionHandler(boolean success);
     }
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("observedPresentedItemUbiquityAttributes")
@@ -643,17 +678,17 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Generated
     @IsOptional
     @Selector("presentedItemDidChangeUbiquityAttributes:")
-    public native void presentedItemDidChangeUbiquityAttributes(NSSet<String> attributes);
+    public native void presentedItemDidChangeUbiquityAttributes(@NotNull NSSet<String> attributes);
 
     @Generated
     @IsOptional
     @Selector("relinquishPresentedItemToReader:")
     public native void relinquishPresentedItemToReader(
-            @ObjCBlock(name = "call_relinquishPresentedItemToReader") NSFilePresenter.Block_relinquishPresentedItemToReader reader);
+            @NotNull @ObjCBlock(name = "call_relinquishPresentedItemToReader") NSFilePresenter.Block_relinquishPresentedItemToReader reader);
 
     @Generated
     @IsOptional
     @Selector("relinquishPresentedItemToWriter:")
     public native void relinquishPresentedItemToWriter(
-            @ObjCBlock(name = "call_relinquishPresentedItemToWriter") NSFilePresenter.Block_relinquishPresentedItemToWriter writer);
+            @NotNull @ObjCBlock(name = "call_relinquishPresentedItemToWriter") NSFilePresenter.Block_relinquishPresentedItemToWriter writer);
 }

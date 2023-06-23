@@ -28,7 +28,12 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("ReplayKit")
 @Runtime(ObjCRuntime.class)
@@ -36,43 +41,46 @@ import org.moe.natj.objc.ann.Selector;
 public interface RPBroadcastControllerDelegate {
     /**
      * Called when broadcasting finishes due to an error.
-     *
+     * 
      * @param broadcastController The controller instance.
      * @param error               Required error in the RPRecordingErrorCode domain.
      */
     @Generated
     @IsOptional
     @Selector("broadcastController:didFinishWithError:")
-    default void broadcastControllerDidFinishWithError(RPBroadcastController broadcastController, NSError error) {
+    default void broadcastControllerDidFinishWithError(@NotNull RPBroadcastController broadcastController,
+            @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Called when the broadcast service has data to pass back to broadcasting app.
-     *
+     * 
      * @param broadcastController The controller instance.
      * @param serviceInfo         NSDictionary instance with keys and values defined by the broadcasting service.
      */
     @Generated
     @IsOptional
     @Selector("broadcastController:didUpdateServiceInfo:")
-    default void broadcastControllerDidUpdateServiceInfo(RPBroadcastController broadcastController,
-            NSDictionary<String, ? extends NSObject> serviceInfo) {
+    default void broadcastControllerDidUpdateServiceInfo(@NotNull RPBroadcastController broadcastController,
+            @NotNull NSDictionary<String, ? extends NSObject> serviceInfo) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Called when the broadcast service has updated broadcastURL.
-     *
+     * 
      * @param broadcastController The controller instance.
      * @param broadcastURL        NSURL instance with URL of the resource where broacast can be viewed. Defined by
      *                            broadcast service.
+     * 
+     *                            API-Since: 11.0
      */
     @Generated
     @IsOptional
     @Selector("broadcastController:didUpdateBroadcastURL:")
-    default void broadcastControllerDidUpdateBroadcastURL(RPBroadcastController broadcastController,
-            NSURL broadcastURL) {
+    default void broadcastControllerDidUpdateBroadcastURL(@NotNull RPBroadcastController broadcastController,
+            @NotNull NSURL broadcastURL) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

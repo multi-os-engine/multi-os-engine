@@ -43,7 +43,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("EventKitUI")
 @Runtime(ObjCRuntime.class)
@@ -72,35 +77,39 @@ public class EKEventViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native EKEventViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -132,9 +141,10 @@ public class EKEventViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,9 +174,9 @@ public class EKEventViewController extends UIViewController {
 
     /**
      * [@property] allowsCalendarPreview
-     * <p>
+     * 
      * Determines whether event can be shown in calendar day view preview.
-     * <p>
+     * 
      * This option only affects calendar invites at present. If the event is an invite,
      * and this option is set, a table cell will appear that allows the user to preview
      * the event along with their other events for the day.
@@ -177,9 +187,9 @@ public class EKEventViewController extends UIViewController {
 
     /**
      * [@property] allowsEditing
-     * <p>
+     * 
      * Determines whether Edit button can be shown.
-     * <p>
+     * 
      * Note that even if this is enabled, the edit button may not appear if this event
      * is in a read-only calendar, such as a subscribed calendar. It may also not appear
      * if the event was not created by the current user (i.e. it's an event they were
@@ -190,6 +200,10 @@ public class EKEventViewController extends UIViewController {
     @Selector("allowsEditing")
     public native boolean allowsEditing();
 
+    /**
+     * API-Since: 4.2
+     */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -197,9 +211,9 @@ public class EKEventViewController extends UIViewController {
 
     /**
      * [@property] event
-     * <p>
+     * 
      * Specifies the event to view.
-     * <p>
+     * 
      * You must set this prior to displaying the view controller.
      */
     @Generated
@@ -212,17 +226,18 @@ public class EKEventViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native EKEventViewController initWithCoder(NSCoder coder);
+    public native EKEventViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native EKEventViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native EKEventViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * [@property] allowsCalendarPreview
-     * <p>
+     * 
      * Determines whether event can be shown in calendar day view preview.
-     * <p>
+     * 
      * This option only affects calendar invites at present. If the event is an invite,
      * and this option is set, a table cell will appear that allows the user to preview
      * the event along with their other events for the day.
@@ -233,9 +248,9 @@ public class EKEventViewController extends UIViewController {
 
     /**
      * [@property] allowsEditing
-     * <p>
+     * 
      * Determines whether Edit button can be shown.
-     * <p>
+     * 
      * Note that even if this is enabled, the edit button may not appear if this event
      * is in a read-only calendar, such as a subscribed calendar. It may also not appear
      * if the event was not created by the current user (i.e. it's an event they were
@@ -246,12 +261,18 @@ public class EKEventViewController extends UIViewController {
     @Selector("setAllowsEditing:")
     public native void setAllowsEditing(boolean value);
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) EKEventViewDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) EKEventViewDelegate value);
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) EKEventViewDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) EKEventViewDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -264,9 +285,9 @@ public class EKEventViewController extends UIViewController {
 
     /**
      * [@property] event
-     * <p>
+     * 
      * Specifies the event to view.
-     * <p>
+     * 
      * You must set this prior to displaying the view controller.
      */
     @Generated

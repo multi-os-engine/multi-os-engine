@@ -22,7 +22,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("SensorKit")
 @Runtime(ObjCRuntime.class)
@@ -53,31 +58,35 @@ public class SRDeviceUsageReport extends NSObject {
 
     /**
      * Usage time of applications per category
-     * <p>
+     * 
      * category is the primary genre from the app's iTunesMetadata.plist.
      */
+    @NotNull
     @Generated
     @Selector("applicationUsageByCategory")
     public native NSDictionary<String, ? extends NSArray<? extends SRApplicationUsage>> applicationUsageByCategory();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +132,10 @@ public class SRDeviceUsageReport extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -134,9 +144,10 @@ public class SRDeviceUsageReport extends NSObject {
 
     /**
      * Usage time of notifications per category
-     * <p>
+     * 
      * category is the primary genre from the notifying app's iTunesMetadata.plist.
      */
+    @NotNull
     @Generated
     @Selector("notificationUsageByCategory")
     public native NSDictionary<String, ? extends NSArray<? extends SRNotificationUsage>> notificationUsageByCategory();
@@ -187,9 +198,10 @@ public class SRDeviceUsageReport extends NSObject {
 
     /**
      * Usage time of web domains per category
-     * <p>
+     * 
      * category based on the primary Screen Time category of the web domain
      */
+    @NotNull
     @Generated
     @Selector("webUsageByCategory")
     public native NSDictionary<String, ? extends NSArray<? extends SRWebUsage>> webUsageByCategory();

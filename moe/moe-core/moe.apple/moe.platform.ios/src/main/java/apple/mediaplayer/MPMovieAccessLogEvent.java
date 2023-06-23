@@ -40,10 +40,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * -----------------------------------------------------------------------------
  * An MPMovieAccessLogEvent repesents a single access log entry.
+ * 
+ * API-Since: 4.3
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Use AVFoundation.
  */
 @Deprecated
 @Generated
@@ -76,22 +82,25 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +135,10 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,20 +168,29 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
 
     /**
      * The URI of the playback item.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
     @Selector("URI")
     public native String URI();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * The accumulated duration of the media played, in seconds.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -180,6 +199,10 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
 
     /**
      * The throughput required to play the stream, as advertised by the server, in bits per second.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -192,6 +215,10 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
 
     /**
      * The accumulated number of bytes transferred. The value is negative if unknown.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -200,6 +227,10 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
 
     /**
      * The total number of dropped video frames.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -209,6 +240,10 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
 
     /**
      * A count of media segments downloaded from the server to this client.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -218,6 +253,10 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
 
     /**
      * A count of changes to the serverAddress property over the last uninterrupted period of playback.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -227,6 +266,10 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
 
     /**
      * The total number of playback stalls encountered. The value is negative if unknown.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -236,6 +279,10 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
 
     /**
      * The empirical throughput across all media downloaded, in bits per second.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -244,6 +291,10 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
 
     /**
      * A GUID that identifies the playback session. This value is used in HTTP requests.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -252,6 +303,10 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
 
     /**
      * The date/time at which playback began for this event.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -261,6 +316,10 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     /**
      * An offset into the playlist where the last uninterrupted period of playback began, in seconds. The value is
      * negative if unknown.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -269,6 +328,10 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
 
     /**
      * The accumulated duration of the media downloaded, in seconds. The value is negative if unknown.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -278,6 +341,10 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     /**
      * The IP address of the server that was the source of the last delivered media segment. Can be either an IPv4 or
      * IPv6 address.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated

@@ -23,11 +23,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCSGDOptimizer
- * <p>
+ * 
  * The MLCSGDOptimizer specifies a stochastic gradient descent optimizer.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -59,31 +63,35 @@ public class MLCSGDOptimizer extends MLCOptimizer implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -119,15 +127,16 @@ public class MLCSGDOptimizer extends MLCOptimizer implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] momentumScale
-     * <p>
+     * 
      * The momentum factor. A hyper-parameter.
-     * <p>
+     * 
      * The default is 0.0.
      */
     @Generated
@@ -141,16 +150,16 @@ public class MLCSGDOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * Create an MLCSGDOptimizer object with defaults
-     *
+     * 
      * @return A new MLCSGDOptimizer object.
      */
     @Generated
     @Selector("optimizerWithDescriptor:")
-    public static native MLCSGDOptimizer optimizerWithDescriptor(MLCOptimizerDescriptor optimizerDescriptor);
+    public static native MLCSGDOptimizer optimizerWithDescriptor(@NotNull MLCOptimizerDescriptor optimizerDescriptor);
 
     /**
      * Create an MLCSGDOptimizer object
-     *
+     * 
      * @param optimizerDescriptor  The optimizer descriptor object
      * @param momentumScale        The momentum scale
      * @param usesNesterovMomentum A boolean to enable / disable nesterov momentum
@@ -159,7 +168,7 @@ public class MLCSGDOptimizer extends MLCOptimizer implements NSCopying {
     @Generated
     @Selector("optimizerWithDescriptor:momentumScale:usesNesterovMomentum:")
     public static native MLCSGDOptimizer optimizerWithDescriptorMomentumScaleUsesNesterovMomentum(
-            MLCOptimizerDescriptor optimizerDescriptor, float momentumScale, boolean usesNesterovMomentum);
+            @NotNull MLCOptimizerDescriptor optimizerDescriptor, float momentumScale, boolean usesNesterovMomentum);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -179,9 +188,9 @@ public class MLCSGDOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * [@property] usesNesterovMomentum
-     * <p>
+     * 
      * A boolean that specifies whether to apply nesterov momentum or not.
-     * <p>
+     * 
      * The default is false.
      */
     @Generated

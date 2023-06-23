@@ -23,7 +23,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -54,26 +59,30 @@ public class UICollectionViewSupplementaryRegistration extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("configurationHandler")
     @ObjCBlock(name = "call_configurationHandler_ret")
@@ -83,8 +92,8 @@ public class UICollectionViewSupplementaryRegistration extends NSObject {
     @Generated
     public interface Block_configurationHandler_ret {
         @Generated
-        void call_configurationHandler_ret(UICollectionReusableView supplementaryView, String elementKind,
-                NSIndexPath indexPath);
+        void call_configurationHandler_ret(@NotNull UICollectionReusableView supplementaryView,
+                @NotNull String elementKind, @NotNull NSIndexPath indexPath);
     }
 
     @Generated
@@ -95,6 +104,7 @@ public class UICollectionViewSupplementaryRegistration extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("elementKind")
     public native String elementKind();
@@ -125,9 +135,10 @@ public class UICollectionViewSupplementaryRegistration extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -137,29 +148,31 @@ public class UICollectionViewSupplementaryRegistration extends NSObject {
     @Generated
     @Selector("registrationWithSupplementaryClass:elementKind:configurationHandler:")
     public static native UICollectionViewSupplementaryRegistration registrationWithSupplementaryClassElementKindConfigurationHandler(
-            Class supplementaryClass, String elementKind,
-            @ObjCBlock(name = "call_registrationWithSupplementaryClassElementKindConfigurationHandler") Block_registrationWithSupplementaryClassElementKindConfigurationHandler configurationHandler);
+            @NotNull Class supplementaryClass, @NotNull String elementKind,
+            @NotNull @ObjCBlock(name = "call_registrationWithSupplementaryClassElementKindConfigurationHandler") Block_registrationWithSupplementaryClassElementKindConfigurationHandler configurationHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_registrationWithSupplementaryClassElementKindConfigurationHandler {
         @Generated
         void call_registrationWithSupplementaryClassElementKindConfigurationHandler(
-                UICollectionReusableView supplementaryView, String elementKind, NSIndexPath indexPath);
+                @NotNull UICollectionReusableView supplementaryView, @NotNull String elementKind,
+                @NotNull NSIndexPath indexPath);
     }
 
     @Generated
     @Selector("registrationWithSupplementaryNib:elementKind:configurationHandler:")
     public static native UICollectionViewSupplementaryRegistration registrationWithSupplementaryNibElementKindConfigurationHandler(
-            UINib supplementaryNib, String elementKind,
-            @ObjCBlock(name = "call_registrationWithSupplementaryNibElementKindConfigurationHandler") Block_registrationWithSupplementaryNibElementKindConfigurationHandler configurationHandler);
+            @NotNull UINib supplementaryNib, @NotNull String elementKind,
+            @NotNull @ObjCBlock(name = "call_registrationWithSupplementaryNibElementKindConfigurationHandler") Block_registrationWithSupplementaryNibElementKindConfigurationHandler configurationHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_registrationWithSupplementaryNibElementKindConfigurationHandler {
         @Generated
         void call_registrationWithSupplementaryNibElementKindConfigurationHandler(
-                UICollectionReusableView supplementaryView, String elementKind, NSIndexPath indexPath);
+                @NotNull UICollectionReusableView supplementaryView, @NotNull String elementKind,
+                @NotNull NSIndexPath indexPath);
     }
 
     @Generated
@@ -178,10 +191,12 @@ public class UICollectionViewSupplementaryRegistration extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Nullable
     @Generated
     @Selector("supplementaryClass")
     public native Class supplementaryClass();
 
+    @Nullable
     @Generated
     @Selector("supplementaryNib")
     public native UINib supplementaryNib();

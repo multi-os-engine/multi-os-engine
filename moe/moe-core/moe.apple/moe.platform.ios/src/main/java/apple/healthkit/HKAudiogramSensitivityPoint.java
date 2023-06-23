@@ -24,7 +24,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -55,22 +60,25 @@ public class HKAudiogramSensitivityPoint extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -87,6 +95,7 @@ public class HKAudiogramSensitivityPoint extends NSObject {
      * [@property] frequency Frequency where sensitivity was measured. The unit of measurement
      * is [HKUnit hertzUnit] or "Hz".
      */
+    @NotNull
     @Generated
     @Selector("frequency")
     public native HKQuantity frequency();
@@ -117,14 +126,16 @@ public class HKAudiogramSensitivityPoint extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] sensitivity Left ear sensitivity measured in attenuated dB from a baseline of 0 dB.
      * The unit of measurement is [HKUnit decibelHearingLevelUnit] or "dBHL".
      */
+    @Nullable
     @Generated
     @Selector("leftEarSensitivity")
     public native HKQuantity leftEarSensitivity();
@@ -146,15 +157,16 @@ public class HKAudiogramSensitivityPoint extends NSObject {
      * [@property] sensitivity Right ear sensitivity measured in attenuated dB from a baseline of 0 dB.
      * The unit of measurement is [HKUnit decibelHearingLevelUnit] or "dBHL".
      */
+    @Nullable
     @Generated
     @Selector("rightEarSensitivity")
     public native HKQuantity rightEarSensitivity();
 
     /**
      * sensitivityPointWithFrequency:leftEarSensitivity:rightEarSensitivity:error:
-     * <p>
+     * 
      * Creates a point that can be included in a audiogram.
-     *
+     * 
      * @param frequency           Frequency where sensitivity was measured.
      * @param leftEarSensitivity  Left ear sensitivity measured in attenuated dB from a baseline of 0 dB.
      * @param rightEarSensitivity Right ear sensitivity measured in attenuated dB from a baseline of 0 dB.
@@ -166,8 +178,9 @@ public class HKAudiogramSensitivityPoint extends NSObject {
     @Generated
     @Selector("sensitivityPointWithFrequency:leftEarSensitivity:rightEarSensitivity:error:")
     public static native HKAudiogramSensitivityPoint sensitivityPointWithFrequencyLeftEarSensitivityRightEarSensitivityError(
-            HKQuantity frequency, HKQuantity leftEarSensitivity, HKQuantity rightEarSensitivity,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull HKQuantity frequency, @Nullable HKQuantity leftEarSensitivity,
+            @Nullable HKQuantity rightEarSensitivity,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("setVersion:")

@@ -21,11 +21,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] PHASEStringMetaParameterDefinition
- * <p>
+ * 
  * A Metaparameter that has a string value
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -57,22 +61,25 @@ public class PHASEStringMetaParameterDefinition extends PHASEMetaParameterDefini
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,28 +103,34 @@ public class PHASEStringMetaParameterDefinition extends PHASEMetaParameterDefini
 
     /**
      * initWithValue
-     * <p>
+     * 
      * Create a new string metaparameter definition
-     *
-     * @param value The initial value of the metaparameter
-     * @return The new PHASEStringMetaParameterDefinition object
+     * 
+     * @param value
+     *              The initial value of the metaparameter
+     * @return
+     *         The new PHASEStringMetaParameterDefinition object
      */
     @Generated
     @Selector("initWithValue:")
-    public native PHASEStringMetaParameterDefinition initWithValue(String value);
+    public native PHASEStringMetaParameterDefinition initWithValue(@NotNull String value);
 
     /**
      * initWithValue:identifier
-     * <p>
+     * 
      * Create a new string metaparameter definition
-     *
-     * @param value      The initial value of the metaparameter
-     * @param identifier An optional custom identifier to give to this object
-     * @return The new PHASEStringMetaParameterDefinition object
+     * 
+     * @param value
+     *                   The initial value of the metaparameter
+     * @param identifier
+     *                   An optional custom identifier to give to this object
+     * @return
+     *         The new PHASEStringMetaParameterDefinition object
      */
     @Generated
     @Selector("initWithValue:identifier:")
-    public native PHASEStringMetaParameterDefinition initWithValueIdentifier(String value, String identifier);
+    public native PHASEStringMetaParameterDefinition initWithValueIdentifier(@NotNull String value,
+            @NotNull String identifier);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -136,9 +149,10 @@ public class PHASEStringMetaParameterDefinition extends PHASEMetaParameterDefini
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

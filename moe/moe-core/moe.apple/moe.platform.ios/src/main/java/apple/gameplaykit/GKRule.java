@@ -39,13 +39,17 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The concrete class that the GKRuleSystem uses to evaluate the current state and facts with predicated rules.
  * These are sharable between systems, so don't retain any state in the rules themselves. Use the system-provided
  * state storage.
- *
+ * 
  * @see GKRuleSystem.state
+ * 
+ *      API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -77,22 +81,25 @@ public class GKRule extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +134,10 @@ public class GKRule extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -151,24 +159,24 @@ public class GKRule extends NSObject {
     @Generated
     @Selector("ruleWithBlockPredicate:action:")
     public static native GKRule ruleWithBlockPredicateAction(
-            @ObjCBlock(name = "call_ruleWithBlockPredicateAction_0") Block_ruleWithBlockPredicateAction_0 predicate,
-            @ObjCBlock(name = "call_ruleWithBlockPredicateAction_1") Block_ruleWithBlockPredicateAction_1 action);
+            @NotNull @ObjCBlock(name = "call_ruleWithBlockPredicateAction_0") Block_ruleWithBlockPredicateAction_0 predicate,
+            @NotNull @ObjCBlock(name = "call_ruleWithBlockPredicateAction_1") Block_ruleWithBlockPredicateAction_1 action);
 
     /**
      * Create a data-driven rule that uses NSPredicate and a single assert as the action.
      */
     @Generated
     @Selector("ruleWithPredicate:assertingFact:grade:")
-    public static native GKRule ruleWithPredicateAssertingFactGrade(NSPredicate predicate,
-            @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact, float grade);
+    public static native GKRule ruleWithPredicateAssertingFactGrade(@NotNull NSPredicate predicate,
+            @NotNull @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact, float grade);
 
     /**
      * Short hand for data-driven rule that uses NSPredicate and a single retract as the action.
      */
     @Generated
     @Selector("ruleWithPredicate:retractingFact:grade:")
-    public static native GKRule ruleWithPredicateRetractingFactGrade(NSPredicate predicate,
-            @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact, float grade);
+    public static native GKRule ruleWithPredicateRetractingFactGrade(@NotNull NSPredicate predicate,
+            @NotNull @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact, float grade);
 
     @Generated
     @Selector("setVersion:")
@@ -187,16 +195,16 @@ public class GKRule extends NSObject {
      * Called by the rule system when it is this rule's turn to be evaluated. If the predicate returns YES then
      * the action for the rule will be performed. Once the action is performed the rule will move to the system's
      * executed list until the agenda is reset.
-     *
-     * @return YES is the predicate passes and the action needs to be performed, NO otherwise.
+     * 
      * @see performAction
      * @see GKRuleSystem.agenda
      * @see GKRuleSystem.executed
      * @see GKRuleSystem.reset
+     * @return YES is the predicate passes and the action needs to be performed, NO otherwise.
      */
     @Generated
     @Selector("evaluatePredicateWithSystem:")
-    public native boolean evaluatePredicateWithSystem(GKRuleSystem system);
+    public native boolean evaluatePredicateWithSystem(@NotNull GKRuleSystem system);
 
     @Generated
     @Selector("init")
@@ -209,14 +217,14 @@ public class GKRule extends NSObject {
      */
     @Generated
     @Selector("performActionWithSystem:")
-    public native void performActionWithSystem(GKRuleSystem system);
+    public native void performActionWithSystem(@NotNull GKRuleSystem system);
 
     /**
      * Salience defines the order in the rule agenda that the system will evaluate. A rule with higher salience will
      * be evaluated before another rule in the agenda that has a lower salience.
-     * <p>
+     * 
      * Defaults to 0.
-     *
+     * 
      * @see GKRuleSystem.agenda
      */
     @Generated
@@ -227,9 +235,9 @@ public class GKRule extends NSObject {
     /**
      * Salience defines the order in the rule agenda that the system will evaluate. A rule with higher salience will
      * be evaluated before another rule in the agenda that has a lower salience.
-     * <p>
+     * 
      * Defaults to 0.
-     *
+     * 
      * @see GKRuleSystem.agenda
      */
     @Generated
@@ -240,13 +248,13 @@ public class GKRule extends NSObject {
     @Generated
     public interface Block_ruleWithBlockPredicateAction_0 {
         @Generated
-        boolean call_ruleWithBlockPredicateAction_0(GKRuleSystem arg0);
+        boolean call_ruleWithBlockPredicateAction_0(@NotNull GKRuleSystem arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_ruleWithBlockPredicateAction_1 {
         @Generated
-        void call_ruleWithBlockPredicateAction_1(GKRuleSystem arg0);
+        void call_ruleWithBlockPredicateAction_1(@NotNull GKRuleSystem arg0);
     }
 }

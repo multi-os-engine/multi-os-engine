@@ -26,6 +26,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("AddressBookUI")
@@ -47,16 +48,25 @@ public final class AddressBookUI {
      * in the dictionary. If not specified by the user a localized country name will be added.
      * returns a formatted multi line string that contains the full address. The string is likely to contain line
      * endings.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use CNPostalAddressFormatter from Contacts.framework instead
      */
+    @NotNull
     @Generated
     @Deprecated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
-    public static native String ABCreateStringWithAddressDictionary(NSDictionary<?, ?> address, boolean addCountryName);
+    public static native String ABCreateStringWithAddressDictionary(@NotNull NSDictionary<?, ?> address,
+            boolean addCountryName);
 
     /**
      * "namePrefix" NSString
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -64,7 +74,10 @@ public final class AddressBookUI {
 
     /**
      * "givenName" NSString
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -72,7 +85,10 @@ public final class AddressBookUI {
 
     /**
      * "middleName" NSString
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -80,7 +96,10 @@ public final class AddressBookUI {
 
     /**
      * "familyName" NSString
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -88,7 +107,10 @@ public final class AddressBookUI {
 
     /**
      * "nameSuffix" NSString
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -96,7 +118,10 @@ public final class AddressBookUI {
 
     /**
      * "previousFamilyName" NSString
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -104,7 +129,10 @@ public final class AddressBookUI {
 
     /**
      * "nickname" NSString
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -112,7 +140,10 @@ public final class AddressBookUI {
 
     /**
      * "phoneticGivenName" NSString
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -120,7 +151,10 @@ public final class AddressBookUI {
 
     /**
      * "phoneticMiddleName" NSString
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -128,7 +162,10 @@ public final class AddressBookUI {
 
     /**
      * "phoneticFamilyName" NSString
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -136,7 +173,10 @@ public final class AddressBookUI {
 
     /**
      * "organizationName" NSString
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -144,7 +184,10 @@ public final class AddressBookUI {
 
     /**
      * "departmentName" NSString
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -152,7 +195,10 @@ public final class AddressBookUI {
 
     /**
      * "jobTitle" NSString
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -160,7 +206,10 @@ public final class AddressBookUI {
 
     /**
      * "birthday" NSDateComponents
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -168,7 +217,10 @@ public final class AddressBookUI {
 
     /**
      * "note" NSString
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -176,7 +228,10 @@ public final class AddressBookUI {
 
     /**
      * "phoneNumbers" array of LabeledValue with PhoneNumber values
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -184,7 +239,10 @@ public final class AddressBookUI {
 
     /**
      * "emailAddresses" array of LabeledValue with NSString values
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -192,7 +250,10 @@ public final class AddressBookUI {
 
     /**
      * "urlAddresses" array of LabeledValue with NSString values
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -200,7 +261,10 @@ public final class AddressBookUI {
 
     /**
      * "dates" array of LabeledValue with NSDateComponents values
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -208,7 +272,10 @@ public final class AddressBookUI {
 
     /**
      * "instantMessageAddresses" array of LabeledValue with InstantMessageAddress values
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -216,7 +283,10 @@ public final class AddressBookUI {
 
     /**
      * "relatedNames" array of LabeledValue with NSString values
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -224,7 +294,10 @@ public final class AddressBookUI {
 
     /**
      * "socialProfiles" array of LabeledValue with SocialProfile values
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -232,7 +305,10 @@ public final class AddressBookUI {
 
     /**
      * "postalAddresses" array of LabeledValue with PostalAddress values
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

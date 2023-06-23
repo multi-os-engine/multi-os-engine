@@ -23,7 +23,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
@@ -54,22 +59,25 @@ public class ASCredentialIdentityStore extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -84,24 +92,24 @@ public class ASCredentialIdentityStore extends NSObject {
 
     /**
      * Get the state of the credential identity store.
-     * <p>
+     * 
      * Call this method to find out the current state of the store before attempting to call other store methods.
      * Use the provided ASCredentialIdentityStoreState to find out if the store is enabled and whether it supports
      * incremental
      * updates.
-     *
+     * 
      * @param completion completion handler to be called with the current state of the store.
      */
     @Generated
     @Selector("getCredentialIdentityStoreStateWithCompletion:")
     public native void getCredentialIdentityStoreStateWithCompletion(
-            @ObjCBlock(name = "call_getCredentialIdentityStoreStateWithCompletion") Block_getCredentialIdentityStoreStateWithCompletion completion);
+            @NotNull @ObjCBlock(name = "call_getCredentialIdentityStoreStateWithCompletion") Block_getCredentialIdentityStoreStateWithCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getCredentialIdentityStoreStateWithCompletion {
         @Generated
-        void call_getCredentialIdentityStoreStateWithCompletion(ASCredentialIdentityStoreState state);
+        void call_getCredentialIdentityStoreStateWithCompletion(@NotNull ASCredentialIdentityStoreState state);
     }
 
     @Generated
@@ -130,9 +138,10 @@ public class ASCredentialIdentityStore extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -141,7 +150,7 @@ public class ASCredentialIdentityStore extends NSObject {
 
     /**
      * Remove all existing credential identities from the store.
-     *
+     * 
      * @param completion optional completion handler to be called after removing all existing credential identities.
      *                   If the operation fails, an error with domain ASCredentialIdentityStoreErrorDomain will be
      *                   provided and none of
@@ -150,21 +159,21 @@ public class ASCredentialIdentityStore extends NSObject {
     @Generated
     @Selector("removeAllCredentialIdentitiesWithCompletion:")
     public native void removeAllCredentialIdentitiesWithCompletion(
-            @ObjCBlock(name = "call_removeAllCredentialIdentitiesWithCompletion") Block_removeAllCredentialIdentitiesWithCompletion completion);
+            @Nullable @ObjCBlock(name = "call_removeAllCredentialIdentitiesWithCompletion") Block_removeAllCredentialIdentitiesWithCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeAllCredentialIdentitiesWithCompletion {
         @Generated
-        void call_removeAllCredentialIdentitiesWithCompletion(boolean success, NSError error);
+        void call_removeAllCredentialIdentitiesWithCompletion(boolean success, @Nullable NSError error);
     }
 
     /**
      * Remove the given credential identities from the store.
-     * <p>
+     * 
      * Use this method only if the store supports incremental updates to remove previously added
      * credentials to the store.
-     *
+     * 
      * @param credentialIdentities array of ASPasswordCredentialIdentity objects to remove from the store.
      * @param completion           optional completion handler to be called after removing the credential identities.
      *                             If the operation fails, an error with domain ASCredentialIdentityStoreErrorDomain
@@ -174,38 +183,38 @@ public class ASCredentialIdentityStore extends NSObject {
     @Generated
     @Selector("removeCredentialIdentities:completion:")
     public native void removeCredentialIdentitiesCompletion(
-            NSArray<? extends ASPasswordCredentialIdentity> credentialIdentities,
-            @ObjCBlock(name = "call_removeCredentialIdentitiesCompletion") Block_removeCredentialIdentitiesCompletion completion);
+            @NotNull NSArray<? extends ASPasswordCredentialIdentity> credentialIdentities,
+            @Nullable @ObjCBlock(name = "call_removeCredentialIdentitiesCompletion") Block_removeCredentialIdentitiesCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeCredentialIdentitiesCompletion {
         @Generated
-        void call_removeCredentialIdentitiesCompletion(boolean success, NSError error);
+        void call_removeCredentialIdentitiesCompletion(boolean success, @Nullable NSError error);
     }
 
     /**
      * Replace existing credential identities with new credential identities.
-     * <p>
+     * 
      * This method will delete all existing credential identities that are persisted in the
      * store and replace them with the provided array of credential identities. If the operation fails, an
      * error with domain ASCredentialIdentityStoreErrorDomain will be provided and none of the new credential
      * identities will be saved.
-     *
+     * 
      * @param newCredentialIdentities array of new credential identity objects to replace the old ones.
      * @param completion              an optional completion block to be called after the operation is finished.
      */
     @Generated
     @Selector("replaceCredentialIdentitiesWithIdentities:completion:")
     public native void replaceCredentialIdentitiesWithIdentitiesCompletion(
-            NSArray<? extends ASPasswordCredentialIdentity> newCredentialIdentities,
-            @ObjCBlock(name = "call_replaceCredentialIdentitiesWithIdentitiesCompletion") Block_replaceCredentialIdentitiesWithIdentitiesCompletion completion);
+            @NotNull NSArray<? extends ASPasswordCredentialIdentity> newCredentialIdentities,
+            @Nullable @ObjCBlock(name = "call_replaceCredentialIdentitiesWithIdentitiesCompletion") Block_replaceCredentialIdentitiesWithIdentitiesCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_replaceCredentialIdentitiesWithIdentitiesCompletion {
         @Generated
-        void call_replaceCredentialIdentitiesWithIdentitiesCompletion(boolean success, NSError error);
+        void call_replaceCredentialIdentitiesWithIdentitiesCompletion(boolean success, @Nullable NSError error);
     }
 
     @Generated
@@ -218,13 +227,13 @@ public class ASCredentialIdentityStore extends NSObject {
 
     /**
      * Save the given credential identities to the store.
-     * <p>
+     * 
      * If the store supports incremental updates, call this method to add new credential
      * identities since the last time the store was updated. Otherwise, call this method to pass all credential
      * identities.
      * If some credential identities in credentialIdentities already exist in the store, they will be replaced by
      * those from credentialIdentities.
-     *
+     * 
      * @param credentialIdentities array of ASPasswordCredentialIdentity objects to save to the store.
      * @param completion           optional completion handler to be called after adding the credential identities.
      *                             If the operation fails, an error with domain ASCredentialIdentityStoreErrorDomain
@@ -234,20 +243,21 @@ public class ASCredentialIdentityStore extends NSObject {
     @Generated
     @Selector("saveCredentialIdentities:completion:")
     public native void saveCredentialIdentitiesCompletion(
-            NSArray<? extends ASPasswordCredentialIdentity> credentialIdentities,
-            @ObjCBlock(name = "call_saveCredentialIdentitiesCompletion") Block_saveCredentialIdentitiesCompletion completion);
+            @NotNull NSArray<? extends ASPasswordCredentialIdentity> credentialIdentities,
+            @Nullable @ObjCBlock(name = "call_saveCredentialIdentitiesCompletion") Block_saveCredentialIdentitiesCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveCredentialIdentitiesCompletion {
         @Generated
-        void call_saveCredentialIdentitiesCompletion(boolean success, NSError error);
+        void call_saveCredentialIdentitiesCompletion(boolean success, @Nullable NSError error);
     }
 
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("sharedStore")
     public static native ASCredentialIdentityStore sharedStore();

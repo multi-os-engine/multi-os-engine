@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An interaction that allows using Scribble to enter text by handwriting on a view that is not formally a text input.
@@ -35,6 +37,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * when tapped
  * - A view that contains multiple virtual text fields which the user can normally tap and type into, but are not full
  * blown text fields all the time
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("UIKit")
@@ -66,22 +70,25 @@ public class UIIndirectScribbleInteraction extends NSObject implements UIInterac
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -93,6 +100,7 @@ public class UIIndirectScribbleInteraction extends NSObject implements UIInterac
     /**
      * The delegate for the interaction, to supply and customize writable elements in the interaction's view.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -104,7 +112,7 @@ public class UIIndirectScribbleInteraction extends NSObject implements UIInterac
 
     @Generated
     @Selector("didMoveToView:")
-    public native void didMoveToView(UIView view);
+    public native void didMoveToView(@Nullable UIView view);
 
     @Generated
     @Selector("hash")
@@ -118,7 +126,7 @@ public class UIIndirectScribbleInteraction extends NSObject implements UIInterac
     @Generated
     @Selector("initWithDelegate:")
     public native UIIndirectScribbleInteraction initWithDelegate(
-            @Mapped(ObjCObjectMapper.class) UIIndirectScribbleInteractionDelegate delegate);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIIndirectScribbleInteractionDelegate delegate);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -146,9 +154,10 @@ public class UIIndirectScribbleInteraction extends NSObject implements UIInterac
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -176,11 +185,12 @@ public class UIIndirectScribbleInteraction extends NSObject implements UIInterac
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("view")
     public native UIView view();
 
     @Generated
     @Selector("willMoveToView:")
-    public native void willMoveToView(UIView view);
+    public native void willMoveToView(@Nullable UIView view);
 }

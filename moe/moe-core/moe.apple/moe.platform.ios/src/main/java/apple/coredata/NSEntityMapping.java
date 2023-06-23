@@ -40,7 +40,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -71,22 +76,25 @@ public class NSEntityMapping extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,9 +129,10 @@ public class NSEntityMapping extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,6 +164,7 @@ public class NSEntityMapping extends NSObject {
      * Returns/sets the array of attribute mappings for the entity mapping. The order of mappings in this collection
      * dictates the order in which the mappings will be processed during a migration.
      */
+    @Nullable
     @Generated
     @Selector("attributeMappings")
     public native NSArray<? extends NSPropertyMapping> attributeMappings();
@@ -164,6 +174,7 @@ public class NSEntityMapping extends NSObject {
      * NSEntityDescriptions; developers can use the destinationEntityForEntityMapping: API on the NSMigrationManager to
      * retrieve the entity description for this name.)
      */
+    @Nullable
     @Generated
     @Selector("destinationEntityName")
     public native String destinationEntityName();
@@ -173,6 +184,7 @@ public class NSEntityMapping extends NSObject {
      * Core Data framework (see NSEntityDescrition's versionHash method). The destinationEntityVersionHash must equal
      * the version hash of the destination entity represented by the mapping.
      */
+    @Nullable
     @Generated
     @Selector("destinationEntityVersionHash")
     public native NSData destinationEntityVersionHash();
@@ -181,6 +193,7 @@ public class NSEntityMapping extends NSObject {
      * Returns/sets the class name of the migration policy for the class. If not specified, the default migration class
      * name is NSEntityMigrationPolicy, though developers can specify a subclass for specific behavior.
      */
+    @Nullable
     @Generated
     @Selector("entityMigrationPolicyClassName")
     public native String entityMigrationPolicyClassName();
@@ -211,6 +224,7 @@ public class NSEntityMapping extends NSObject {
      * Returns/sets the array of relationship mappings for the entity mapping. The order of mappings in this collection
      * dictates the order in which the mappings will be processed during a migration.
      */
+    @Nullable
     @Generated
     @Selector("relationshipMappings")
     public native NSArray<? extends NSPropertyMapping> relationshipMappings();
@@ -221,7 +235,7 @@ public class NSEntityMapping extends NSObject {
      */
     @Generated
     @Selector("setAttributeMappings:")
-    public native void setAttributeMappings(NSArray<? extends NSPropertyMapping> value);
+    public native void setAttributeMappings(@Nullable NSArray<? extends NSPropertyMapping> value);
 
     /**
      * Returns/sets the destination entity name for the mapping. (Mappings are not directly bound to
@@ -230,7 +244,7 @@ public class NSEntityMapping extends NSObject {
      */
     @Generated
     @Selector("setDestinationEntityName:")
-    public native void setDestinationEntityName(String value);
+    public native void setDestinationEntityName(@Nullable String value);
 
     /**
      * Returns/sets the version hash for the destination entity for the mapping. VersionHashes are calculated by the
@@ -239,7 +253,7 @@ public class NSEntityMapping extends NSObject {
      */
     @Generated
     @Selector("setDestinationEntityVersionHash:")
-    public native void setDestinationEntityVersionHash(NSData value);
+    public native void setDestinationEntityVersionHash(@Nullable NSData value);
 
     /**
      * Returns/sets the class name of the migration policy for the class. If not specified, the default migration class
@@ -247,7 +261,7 @@ public class NSEntityMapping extends NSObject {
      */
     @Generated
     @Selector("setEntityMigrationPolicyClassName:")
-    public native void setEntityMigrationPolicyClassName(String value);
+    public native void setEntityMigrationPolicyClassName(@Nullable String value);
 
     /**
      * Returns/sets the mapping type. (If a custom entity mapping type is utilized, the developer must specify a
@@ -272,7 +286,7 @@ public class NSEntityMapping extends NSObject {
      */
     @Generated
     @Selector("setRelationshipMappings:")
-    public native void setRelationshipMappings(NSArray<? extends NSPropertyMapping> value);
+    public native void setRelationshipMappings(@Nullable NSArray<? extends NSPropertyMapping> value);
 
     /**
      * Returns/sets the source entity name for the mapping. (Mappings are not directly bound to NSEntityDescriptions;
@@ -281,7 +295,7 @@ public class NSEntityMapping extends NSObject {
      */
     @Generated
     @Selector("setSourceEntityName:")
-    public native void setSourceEntityName(String value);
+    public native void setSourceEntityName(@Nullable String value);
 
     /**
      * Returns/sets the version hash for the source entity for the mapping. VersionHashes are calculated by the Core
@@ -290,7 +304,7 @@ public class NSEntityMapping extends NSObject {
      */
     @Generated
     @Selector("setSourceEntityVersionHash:")
-    public native void setSourceEntityVersionHash(NSData value);
+    public native void setSourceEntityVersionHash(@Nullable NSData value);
 
     /**
      * Returns/sets the source expression for the mapping. The source expression is used to obtain the collection of
@@ -299,20 +313,21 @@ public class NSEntityMapping extends NSObject {
      */
     @Generated
     @Selector("setSourceExpression:")
-    public native void setSourceExpression(NSExpression value);
+    public native void setSourceExpression(@Nullable NSExpression value);
 
     /**
      * Returns/sets the user info dictionary for the mapping
      */
     @Generated
     @Selector("setUserInfo:")
-    public native void setUserInfo(NSDictionary<?, ?> value);
+    public native void setUserInfo(@Nullable NSDictionary<?, ?> value);
 
     /**
      * Returns/sets the source entity name for the mapping. (Mappings are not directly bound to NSEntityDescriptions;
      * developers can use the sourceEntityForEntityMapping: API on the NSMigrationManager to retrieve the entity
      * description for this name.)
      */
+    @Nullable
     @Generated
     @Selector("sourceEntityName")
     public native String sourceEntityName();
@@ -322,6 +337,7 @@ public class NSEntityMapping extends NSObject {
      * Data framework (see NSEntityDescrition's versionHash method). The sourceEntityVersionHash must equal the version
      * hash of the source entity represented by the mapping.
      */
+    @Nullable
     @Generated
     @Selector("sourceEntityVersionHash")
     public native NSData sourceEntityVersionHash();
@@ -331,6 +347,7 @@ public class NSEntityMapping extends NSObject {
      * managed object instances to process through the mapping. The expression can be a fetch request expression, or any
      * other expression which evaluates to a collection.
      */
+    @Nullable
     @Generated
     @Selector("sourceExpression")
     public native NSExpression sourceExpression();
@@ -338,6 +355,7 @@ public class NSEntityMapping extends NSObject {
     /**
      * Returns/sets the user info dictionary for the mapping
      */
+    @Nullable
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();

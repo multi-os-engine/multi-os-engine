@@ -26,7 +26,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("ThreadNetwork")
 @Runtime(ObjCRuntime.class)
@@ -44,6 +49,7 @@ public class THCredentials extends NSObject implements NSSecureCoding {
     /**
      * PSKc : A 16 byte value. e.g. 0eec92e950c4cbc6966d32613f08efe0
      */
+    @Nullable
     @Generated
     @Selector("PSKC")
     public native NSData PSKC();
@@ -55,6 +61,7 @@ public class THCredentials extends NSObject implements NSSecureCoding {
     /**
      * Active Operational Data Set in Bytes.
      */
+    @Nullable
     @Generated
     @Selector("activeOperationalDataSet")
     public native NSData activeOperationalDataSet();
@@ -71,24 +78,26 @@ public class THCredentials extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * extendedPANID : Active Thread Network Border Agent Identifier
      */
+    @Nullable
     @Generated
     @Selector("borderAgentID")
     public native NSData borderAgentID();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * channel : Thread network channel
@@ -97,10 +106,12 @@ public class THCredentials extends NSObject implements NSSecureCoding {
     @Selector("channel")
     public native byte channel();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -108,6 +119,7 @@ public class THCredentials extends NSObject implements NSSecureCoding {
     /**
      * Metadata
      */
+    @Nullable
     @Generated
     @Selector("creationDate")
     public native NSDate creationDate();
@@ -122,11 +134,12 @@ public class THCredentials extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * extendedPANID : Thread Network extended PAN ID
      */
+    @Nullable
     @Generated
     @Selector("extendedPANID")
     public native NSData extendedPANID();
@@ -142,7 +155,7 @@ public class THCredentials extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native THCredentials initWithCoder(NSCoder coder);
+    public native THCredentials initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -161,10 +174,12 @@ public class THCredentials extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("lastModificationDate")
     public native NSDate lastModificationDate();
@@ -172,6 +187,7 @@ public class THCredentials extends NSObject implements NSSecureCoding {
     /**
      * networkKey : A 16 byte value. e.g. 7dd5b9bffe1285f27e78898658aa88f4
      */
+    @Nullable
     @Generated
     @Selector("networkKey")
     public native NSData networkKey();
@@ -179,6 +195,7 @@ public class THCredentials extends NSObject implements NSSecureCoding {
     /**
      * networkName : Thread Network name
      */
+    @Nullable
     @Generated
     @Selector("networkName")
     public native String networkName();
@@ -191,6 +208,7 @@ public class THCredentials extends NSObject implements NSSecureCoding {
     /**
      * PANID : A 2 byte value. e.g. 308f
      */
+    @Nullable
     @Generated
     @Selector("panID")
     public native NSData panID();

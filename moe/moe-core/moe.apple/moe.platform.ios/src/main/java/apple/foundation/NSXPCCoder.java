@@ -19,11 +19,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An NSXPCCoder is used to encode or decode objects sent over an NSXPCConnection. If you want to encode or decode
  * objects differently when sent over an NSXPCConnection, you may use isKindOfClass: to check that the coder is a kind
  * of NSXPCCoder.
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("Foundation")
@@ -55,29 +59,35 @@ public class NSXPCCoder extends NSCoder {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * The current NSXPCConnection that is encoding or decoding.
+     * 
+     * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("connection")
     public native NSXPCConnection connection();
@@ -116,9 +126,10 @@ public class NSXPCCoder extends NSCoder {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -135,7 +146,7 @@ public class NSXPCCoder extends NSCoder {
 
     @Generated
     @Selector("setUserInfo:")
-    public native void setUserInfo(@Mapped(ObjCObjectMapper.class) apple.protocol.NSObject value);
+    public native void setUserInfo(@Nullable @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject value);
 
     @Generated
     @Selector("setVersion:")
@@ -145,6 +156,7 @@ public class NSXPCCoder extends NSCoder {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Nullable
     @Generated
     @Selector("userInfo")
     @MappedReturn(ObjCObjectMapper.class)

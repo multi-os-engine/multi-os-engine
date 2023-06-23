@@ -21,7 +21,13 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIAccessibilityCustomRotorDirection {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Previous = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Next = 0x0000000000000001L;
 
     @Generated

@@ -20,23 +20,23 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] AudioComponentInstantiationOptions
- * <p>
+ * 
  * Options controlling component instantiation.
- * <p>
+ * 
  * Most component instances are loaded into the calling process.
- * <p>
+ * 
  * A version 3 audio unit, however, can be loaded into a separate extension service process,
  * and this is the default behavior for these components. To be able to load one in-process
  * requires that the developer package the audio unit in a bundle separate from the application
  * extension, since an extension's main binary cannot be dynamically loaded into another
  * process.
- * <p>
+ * 
  * A macOS host may request in-process loading of such audio units using
  * kAudioComponentInstantiation_LoadInProcess.
- * <p>
+ * 
  * kAudioComponentFlag_IsV3AudioUnit specifies whether an audio unit is implemented using API
  * version 3.
- * <p>
+ * 
  * These options are just requests to the implementation. It may fail and fall back to the
  * default.
  * [@constant] kAudioComponentInstantiation_LoadOutOfProcess
@@ -50,6 +50,9 @@ public final class AudioComponentInstantiationOptions {
     private AudioComponentInstantiationOptions() {
     }
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated public static final int LoadOutOfProcess = 0x00000001;
     @Generated public static final int LoadedRemotely = 0x80000000;
 }

@@ -28,11 +28,15 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Main class for setting up and controlling a model update. It provides some utility class methods for performing an
  * update synchronously as well as class constructors for configuring an update and give developers control for the
  * execution of that update.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreML")
@@ -64,22 +68,25 @@ public class MLUpdateTask extends MLTask {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -118,9 +125,10 @@ public class MLUpdateTask extends MLTask {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -140,7 +148,7 @@ public class MLUpdateTask extends MLTask {
      */
     @Generated
     @Selector("resumeWithParameters:")
-    public native void resumeWithParameters(NSDictionary<? extends MLParameterKey, ?> updateParameters);
+    public native void resumeWithParameters(@NotNull NSDictionary<? extends MLParameterKey, ?> updateParameters);
 
     @Generated
     @Selector("setVersion:")
@@ -156,16 +164,17 @@ public class MLUpdateTask extends MLTask {
     @Generated
     @Selector("updateTaskForModelAtURL:trainingData:configuration:completionHandler:error:")
     public static native MLUpdateTask updateTaskForModelAtURLTrainingDataConfigurationCompletionHandlerError(
-            NSURL modelURL, @Mapped(ObjCObjectMapper.class) MLBatchProvider trainingData,
-            MLModelConfiguration configuration,
-            @ObjCBlock(name = "call_updateTaskForModelAtURLTrainingDataConfigurationCompletionHandlerError") Block_updateTaskForModelAtURLTrainingDataConfigurationCompletionHandlerError completionHandler,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull NSURL modelURL, @NotNull @Mapped(ObjCObjectMapper.class) MLBatchProvider trainingData,
+            @Nullable MLModelConfiguration configuration,
+            @NotNull @ObjCBlock(name = "call_updateTaskForModelAtURLTrainingDataConfigurationCompletionHandlerError") Block_updateTaskForModelAtURLTrainingDataConfigurationCompletionHandlerError completionHandler,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateTaskForModelAtURLTrainingDataConfigurationCompletionHandlerError {
         @Generated
-        void call_updateTaskForModelAtURLTrainingDataConfigurationCompletionHandlerError(MLUpdateContext context);
+        void call_updateTaskForModelAtURLTrainingDataConfigurationCompletionHandlerError(
+                @NotNull MLUpdateContext context);
     }
 
     /**
@@ -174,9 +183,9 @@ public class MLUpdateTask extends MLTask {
     @Generated
     @Selector("updateTaskForModelAtURL:trainingData:configuration:progressHandlers:error:")
     public static native MLUpdateTask updateTaskForModelAtURLTrainingDataConfigurationProgressHandlersError(
-            NSURL modelURL, @Mapped(ObjCObjectMapper.class) MLBatchProvider trainingData,
-            MLModelConfiguration configuration, MLUpdateProgressHandlers progressHandlers,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull NSURL modelURL, @NotNull @Mapped(ObjCObjectMapper.class) MLBatchProvider trainingData,
+            @Nullable MLModelConfiguration configuration, @NotNull MLUpdateProgressHandlers progressHandlers,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("version")
@@ -185,27 +194,32 @@ public class MLUpdateTask extends MLTask {
 
     /**
      * Update via task control with completion handler supplying default configuration
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("updateTaskForModelAtURL:trainingData:completionHandler:error:")
-    public static native MLUpdateTask updateTaskForModelAtURLTrainingDataCompletionHandlerError(NSURL modelURL,
-            @Mapped(ObjCObjectMapper.class) MLBatchProvider trainingData,
-            @ObjCBlock(name = "call_updateTaskForModelAtURLTrainingDataCompletionHandlerError") Block_updateTaskForModelAtURLTrainingDataCompletionHandlerError completionHandler,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native MLUpdateTask updateTaskForModelAtURLTrainingDataCompletionHandlerError(@NotNull NSURL modelURL,
+            @NotNull @Mapped(ObjCObjectMapper.class) MLBatchProvider trainingData,
+            @NotNull @ObjCBlock(name = "call_updateTaskForModelAtURLTrainingDataCompletionHandlerError") Block_updateTaskForModelAtURLTrainingDataCompletionHandlerError completionHandler,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateTaskForModelAtURLTrainingDataCompletionHandlerError {
         @Generated
-        void call_updateTaskForModelAtURLTrainingDataCompletionHandlerError(MLUpdateContext arg0);
+        void call_updateTaskForModelAtURLTrainingDataCompletionHandlerError(@NotNull MLUpdateContext arg0);
     }
 
     /**
      * Update via task control and custom progress callbacks supplying default configuration
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("updateTaskForModelAtURL:trainingData:progressHandlers:error:")
-    public static native MLUpdateTask updateTaskForModelAtURLTrainingDataProgressHandlersError(NSURL modelURL,
-            @Mapped(ObjCObjectMapper.class) MLBatchProvider trainingData, MLUpdateProgressHandlers progressHandlers,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native MLUpdateTask updateTaskForModelAtURLTrainingDataProgressHandlersError(@NotNull NSURL modelURL,
+            @NotNull @Mapped(ObjCObjectMapper.class) MLBatchProvider trainingData,
+            @NotNull MLUpdateProgressHandlers progressHandlers,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

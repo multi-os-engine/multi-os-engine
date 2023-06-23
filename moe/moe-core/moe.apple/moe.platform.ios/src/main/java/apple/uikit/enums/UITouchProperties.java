@@ -19,13 +19,27 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 9.1
+ */
 @Generated
 public final class UITouchProperties {
+    /**
+     * API-Since: 9.1
+     */
     @Generated @NInt public static final long Force = 0x0000000000000001L;
+    /**
+     * API-Since: 9.1
+     */
     @Generated @NInt public static final long Azimuth = 0x0000000000000002L;
+    /**
+     * API-Since: 9.1
+     */
     @Generated @NInt public static final long Altitude = 0x0000000000000004L;
     /**
      * For predicted Touches
+     * 
+     * API-Since: 9.1
      */
     @Generated @NInt public static final long Location = 0x0000000000000008L;
 

@@ -24,15 +24,19 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MXForegroundExitData
- * <p>
+ * 
  * A class that encapsulates cumulative application exit metrics when the application is on screen.
- * <p>
+ * 
  * Foreground exits are user visible terminations that, when unexpected, interrupt usage.
- * <p>
+ * 
  * Not all foreground exits are unexpected. See the documentation for each exit reason for more information.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MetricKit")
@@ -64,31 +68,34 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] cumulativeAbnormalExitCount
-     * <p>
+     * 
      * Cumulative number of times the application exited abnormally.
-     * <p>
+     * 
      * The most common causes of crashes with this exception type are uncaught Objective-C/C++ exceptions and calls to
      * abort().
      */
@@ -99,9 +106,9 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] cumulativeAppWatchdogExitCount
-     * <p>
+     * 
      * Cumulative number of times the application was terminated because a watchdog timeout occured.
-     * <p>
+     * 
      * These can occur when the application took too long to launch, terminate, or respond to system events.
      */
     @Generated
@@ -111,7 +118,7 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] cumulativeBadAccessExitCount
-     * <p>
+     * 
      * Cumulative number of times the application was terminated for attempting to access invalid memory, or attempting
      * to access memory in a manner not allowed by the memory's protection level (e.g. writing to read-only memory).
      */
@@ -122,10 +129,10 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] cumulativeIllegalInstructionExitCount
-     * <p>
+     * 
      * Cumulative number of times the application terminated for attempting to execute an illegal or undefined
      * instruction.
-     * <p>
+     * 
      * The process may have attempted to jump to an invalid address via a misconfigured function pointer.
      */
     @Generated
@@ -135,7 +142,7 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] cumulativeMemoryResourceLimitExitCount
-     * <p>
+     * 
      * Cumulative number of times the application was terminated for exceeding a memory consumption limit.
      */
     @Generated
@@ -145,7 +152,7 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] cumulativeNormalAppExitCount
-     * <p>
+     * 
      * Cumulative number of times the application exited normally, or was gracefully terminated by the system.
      */
     @Generated
@@ -163,7 +170,7 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -176,7 +183,7 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MXForegroundExitData initWithCoder(NSCoder coder);
+    public native MXForegroundExitData initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -195,9 +202,10 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

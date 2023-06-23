@@ -30,5 +30,8 @@ public final class SCNGeometryPrimitiveType {
     private SCNGeometryPrimitiveType() {
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Polygon = 0x0000000000000004L;
 }

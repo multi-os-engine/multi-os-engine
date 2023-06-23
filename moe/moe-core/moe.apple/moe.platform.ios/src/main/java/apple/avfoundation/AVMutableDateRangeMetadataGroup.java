@@ -38,12 +38,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVMutableDateRangeMetadataGroup
- * <p>
+ * 
  * AVMutableDateRangeMetadataGroup is used to represent a mutable collection of metadata items that are valid for use
  * within a specific range of dates.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("AVFoundation")
@@ -75,22 +79,25 @@ public class AVMutableDateRangeMetadataGroup extends AVDateRangeMetadataGroup {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +132,10 @@ public class AVMutableDateRangeMetadataGroup extends AVDateRangeMetadataGroup {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,6 +166,7 @@ public class AVMutableDateRangeMetadataGroup extends AVDateRangeMetadataGroup {
     /**
      * indicates the end date of the metadata
      */
+    @Nullable
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
@@ -168,12 +177,13 @@ public class AVMutableDateRangeMetadataGroup extends AVDateRangeMetadataGroup {
 
     @Generated
     @Selector("initWithItems:startDate:endDate:")
-    public native AVMutableDateRangeMetadataGroup initWithItemsStartDateEndDate(NSArray<? extends AVMetadataItem> items,
-            NSDate startDate, NSDate endDate);
+    public native AVMutableDateRangeMetadataGroup initWithItemsStartDateEndDate(
+            @NotNull NSArray<? extends AVMetadataItem> items, @NotNull NSDate startDate, @Nullable NSDate endDate);
 
     /**
      * an array of AVMetadataItems
      */
+    @NotNull
     @Generated
     @Selector("items")
     public native NSArray<? extends AVMetadataItem> items();
@@ -183,25 +193,26 @@ public class AVMutableDateRangeMetadataGroup extends AVDateRangeMetadataGroup {
      */
     @Generated
     @Selector("setEndDate:")
-    public native void setEndDate(NSDate value);
+    public native void setEndDate(@Nullable NSDate value);
 
     /**
      * an array of AVMetadataItems
      */
     @Generated
     @Selector("setItems:")
-    public native void setItems(NSArray<? extends AVMetadataItem> value);
+    public native void setItems(@NotNull NSArray<? extends AVMetadataItem> value);
 
     /**
      * indicates the start date of the metadata
      */
     @Generated
     @Selector("setStartDate:")
-    public native void setStartDate(NSDate value);
+    public native void setStartDate(@NotNull NSDate value);
 
     /**
      * indicates the start date of the metadata
      */
+    @NotNull
     @Generated
     @Selector("startDate")
     public native NSDate startDate();

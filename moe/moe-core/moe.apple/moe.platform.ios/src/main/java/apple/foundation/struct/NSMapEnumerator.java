@@ -8,6 +8,7 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -29,7 +30,7 @@ public final class NSMapEnumerator extends StructObject {
     }
 
     @Generated
-    public NSMapEnumerator(@NUInt long _pi, @NUInt long _si, VoidPtr _bs) {
+    public NSMapEnumerator(@NUInt long _pi, @NUInt long _si, @Nullable VoidPtr _bs) {
         super(NSMapEnumerator.class);
         set_pi(_pi);
         set_si(_si);
@@ -54,11 +55,12 @@ public final class NSMapEnumerator extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void set_si(@NUInt long value);
 
+    @Nullable
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native VoidPtr _bs();
 
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void set_bs(VoidPtr value);
+    public native void set_bs(@Nullable VoidPtr value);
 }

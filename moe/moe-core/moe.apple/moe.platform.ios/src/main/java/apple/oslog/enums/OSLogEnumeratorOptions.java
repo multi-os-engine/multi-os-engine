@@ -5,12 +5,14 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] OSLogEnumeratorOptions
- * <p>
+ * 
  * Control the direction of the iteration.
- * <p>
+ * 
  * [@constant] OSLogEnumeratorReverse
  * Iterate backward in time. If no starting position is specified,
  * start at the latest entry.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 public final class OSLogEnumeratorOptions {
@@ -18,5 +20,8 @@ public final class OSLogEnumeratorOptions {
     private OSLogEnumeratorOptions() {
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated @NUInt public static final long OSLogEnumeratorReverse = 0x0000000000000001L;
 }

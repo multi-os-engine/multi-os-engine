@@ -25,12 +25,15 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] MDLMeshBufferZone
- * <p>
+ * 
  * A reference to a logical pool of memory from which mesh buffers would
  * be allocated
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("ModelIO")
@@ -39,9 +42,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MDLMeshBufferZone {
     /**
      * [@property] allocator
-     * <p>
+     * 
      * Allocator used to create the zone
      */
+    @NotNull
     @Generated
     @Selector("allocator")
     @MappedReturn(ObjCObjectMapper.class)
@@ -49,7 +53,7 @@ public interface MDLMeshBufferZone {
 
     /**
      * [@property] capacity
-     * <p>
+     * 
      * Total size of memory in the zone
      */
     @Generated

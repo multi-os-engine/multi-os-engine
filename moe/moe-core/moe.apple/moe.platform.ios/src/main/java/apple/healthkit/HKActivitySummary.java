@@ -44,11 +44,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * HKActivitySummary
- * <p>
+ * 
  * An object that represents a summary of a user's activity for a given day.
+ * 
+ * API-Since: 9.3
  */
 @Generated
 @Library("HealthKit")
@@ -80,22 +84,25 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +137,10 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,92 +174,108 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     /**
      * [@property] activeEnergyBurned
-     * <p>
+     * 
      * The amount of active energy that the user burned.
-     * <p>
+     * 
      * This quantity is compatible with energy units.
      */
+    @NotNull
     @Generated
     @Selector("activeEnergyBurned")
     public native HKQuantity activeEnergyBurned();
 
     /**
      * [@property] activeEnergyBurnedGoal
-     * <p>
+     * 
      * The user's active energy goal for the day.
-     * <p>
+     * 
      * This quantity is compatible with energy units.
      */
+    @NotNull
     @Generated
     @Selector("activeEnergyBurnedGoal")
     public native HKQuantity activeEnergyBurnedGoal();
 
     /**
      * [@property] appleExerciseTime
-     * <p>
+     * 
      * The amount of exercise time that the user performed.
-     * <p>
+     * 
      * This quantity is compatible with time units. The measurement criteria of
      * exercise time is defined by Apple.
      */
+    @NotNull
     @Generated
     @Selector("appleExerciseTime")
     public native HKQuantity appleExerciseTime();
 
     /**
      * [@property] appleExerciseTimeGoal
-     * <p>
+     * 
      * The user's exercise time goal for the day.
-     * <p>
+     * 
      * This quantity is compatible with time units.
+     * 
+     * API-Since: 9.3
+     * Deprecated-Since: 100000.0
      */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("appleExerciseTimeGoal")
     public native HKQuantity appleExerciseTimeGoal();
 
     /**
      * [@property] appleStandHours
-     * <p>
+     * 
      * The number of stand hours that the user earned.
-     * <p>
+     * 
      * This quantity is compatible with the count unit. The measurement criteria of
      * stand hours is defined by Apple.
      */
+    @NotNull
     @Generated
     @Selector("appleStandHours")
     public native HKQuantity appleStandHours();
 
     /**
      * [@property] appleStandHoursGoal
-     * <p>
+     * 
      * The user's active stand hours goal for the day.
-     * <p>
+     * 
      * This quantity is compatible with the count unit.
+     * 
+     * API-Since: 9.3
+     * Deprecated-Since: 100000.0
      */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("appleStandHoursGoal")
     public native HKQuantity appleStandHoursGoal();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * dateComponentsForCalendar:
-     * <p>
+     * 
      * The date components representing the day for this particular HKActivitySummary.
-     * <p>
+     * 
      * These date components will contain era, year, month, and day components in the provided calendar.
      */
+    @NotNull
     @Generated
     @Selector("dateComponentsForCalendar:")
-    public native NSDateComponents dateComponentsForCalendar(NSCalendar calendar);
+    public native NSDateComponents dateComponentsForCalendar(@NotNull NSCalendar calendar);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -259,75 +283,83 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKActivitySummary initWithCoder(NSCoder coder);
+    public native HKActivitySummary initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] activeEnergyBurned
-     * <p>
+     * 
      * The amount of active energy that the user burned.
-     * <p>
+     * 
      * This quantity is compatible with energy units.
      */
     @Generated
     @Selector("setActiveEnergyBurned:")
-    public native void setActiveEnergyBurned(HKQuantity value);
+    public native void setActiveEnergyBurned(@NotNull HKQuantity value);
 
     /**
      * [@property] activeEnergyBurnedGoal
-     * <p>
+     * 
      * The user's active energy goal for the day.
-     * <p>
+     * 
      * This quantity is compatible with energy units.
      */
     @Generated
     @Selector("setActiveEnergyBurnedGoal:")
-    public native void setActiveEnergyBurnedGoal(HKQuantity value);
+    public native void setActiveEnergyBurnedGoal(@NotNull HKQuantity value);
 
     /**
      * [@property] appleExerciseTime
-     * <p>
+     * 
      * The amount of exercise time that the user performed.
-     * <p>
+     * 
      * This quantity is compatible with time units. The measurement criteria of
      * exercise time is defined by Apple.
      */
     @Generated
     @Selector("setAppleExerciseTime:")
-    public native void setAppleExerciseTime(HKQuantity value);
+    public native void setAppleExerciseTime(@NotNull HKQuantity value);
 
     /**
      * [@property] appleExerciseTimeGoal
-     * <p>
+     * 
      * The user's exercise time goal for the day.
-     * <p>
+     * 
      * This quantity is compatible with time units.
+     * 
+     * API-Since: 9.3
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("setAppleExerciseTimeGoal:")
-    public native void setAppleExerciseTimeGoal(HKQuantity value);
+    public native void setAppleExerciseTimeGoal(@NotNull HKQuantity value);
 
     /**
      * [@property] appleStandHours
-     * <p>
+     * 
      * The number of stand hours that the user earned.
-     * <p>
+     * 
      * This quantity is compatible with the count unit. The measurement criteria of
      * stand hours is defined by Apple.
      */
     @Generated
     @Selector("setAppleStandHours:")
-    public native void setAppleStandHours(HKQuantity value);
+    public native void setAppleStandHours(@NotNull HKQuantity value);
 
     /**
      * [@property] appleStandHoursGoal
-     * <p>
+     * 
      * The user's active stand hours goal for the day.
-     * <p>
+     * 
      * This quantity is compatible with the count unit.
+     * 
+     * API-Since: 9.3
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("setAppleStandHoursGoal:")
-    public native void setAppleStandHoursGoal(HKQuantity value);
+    public native void setAppleStandHoursGoal(@NotNull HKQuantity value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -337,11 +369,13 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     /**
      * [@property] activityMoveMode
-     * <p>
+     * 
      * The move mode of this activity summary
-     * <p>
+     * 
      * The move mode of an activity summary determines if activeEnergyBurned or appleMoveTime are used for the move
      * ring.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("activityMoveMode")
@@ -350,34 +384,42 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     /**
      * [@property] appleMoveTime
-     * <p>
+     * 
      * The amount of move time that the user performed.
-     * <p>
+     * 
      * This quantity is compatible with time units. The measurement criteria of
      * move time time is defined by Apple.
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("appleMoveTime")
     public native HKQuantity appleMoveTime();
 
     /**
      * [@property] appleMoveTimeGoal
-     * <p>
+     * 
      * The user's move time goal for the day.
-     * <p>
+     * 
      * This quantity is compatible with time units.
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("appleMoveTimeGoal")
     public native HKQuantity appleMoveTimeGoal();
 
     /**
      * [@property] activityMoveMode
-     * <p>
+     * 
      * The move mode of this activity summary
-     * <p>
+     * 
      * The move mode of an activity summary determines if activeEnergyBurned or appleMoveTime are used for the move
      * ring.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setActivityMoveMode:")
@@ -385,24 +427,82 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     /**
      * [@property] appleMoveTime
-     * <p>
+     * 
      * The amount of move time that the user performed.
-     * <p>
+     * 
      * This quantity is compatible with time units. The measurement criteria of
      * move time time is defined by Apple.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAppleMoveTime:")
-    public native void setAppleMoveTime(HKQuantity value);
+    public native void setAppleMoveTime(@NotNull HKQuantity value);
 
     /**
      * [@property] appleMoveTimeGoal
-     * <p>
+     * 
      * The user's move time goal for the day.
-     * <p>
+     * 
      * This quantity is compatible with time units.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAppleMoveTimeGoal:")
-    public native void setAppleMoveTimeGoal(HKQuantity value);
+    public native void setAppleMoveTimeGoal(@NotNull HKQuantity value);
+
+    /**
+     * [@property] exerciseTimeGoal
+     * 
+     * The user's exercise time goal for the day.
+     * 
+     * This quantity is compatible with time units.
+     * 
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("exerciseTimeGoal")
+    public native HKQuantity exerciseTimeGoal();
+
+    /**
+     * [@property] exerciseTimeGoal
+     * 
+     * The user's exercise time goal for the day.
+     * 
+     * This quantity is compatible with time units.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setExerciseTimeGoal:")
+    public native void setExerciseTimeGoal(@Nullable HKQuantity value);
+
+    /**
+     * [@property] standHoursGoal
+     * 
+     * The user's active stand hours goal for the day.
+     * 
+     * This quantity is compatible with the count unit.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setStandHoursGoal:")
+    public native void setStandHoursGoal(@Nullable HKQuantity value);
+
+    /**
+     * [@property] standHoursGoal
+     * 
+     * The user's active stand hours goal for the day.
+     * 
+     * This quantity is compatible with the count unit.
+     * 
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("standHoursGoal")
+    public native HKQuantity standHoursGoal();
 }

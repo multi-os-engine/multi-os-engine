@@ -24,6 +24,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("SpriteKit")
@@ -33,14 +34,14 @@ public interface SKPhysicsContactDelegate {
     @Generated
     @IsOptional
     @Selector("didBeginContact:")
-    default void didBeginContact(SKPhysicsContact contact) {
+    default void didBeginContact(@NotNull SKPhysicsContact contact) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("didEndContact:")
-    default void didEndContact(SKPhysicsContact contact) {
+    default void didEndContact(@NotNull SKPhysicsContact contact) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

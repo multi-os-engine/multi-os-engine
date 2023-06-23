@@ -25,6 +25,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("SceneKit")
@@ -33,25 +35,27 @@ import org.moe.natj.objc.ann.Selector;
 public interface SCNActionable {
     /**
      * actionForKey:
-     * <p>
+     * 
      * Returns an action associated with a specific key.
      */
+    @Nullable
     @Generated
     @Selector("actionForKey:")
-    SCNAction actionForKey(String key);
+    SCNAction actionForKey(@NotNull String key);
 
     /**
      * [@property] actionKeys
-     * <p>
+     * 
      * Returns an array containing the keys of all actions currently attached to the receiver.
      */
+    @NotNull
     @Generated
     @Selector("actionKeys")
     NSArray<String> actionKeys();
 
     /**
      * [@property] hasActions
-     * <p>
+     * 
      * Returns a Boolean value that indicates whether the node is executing actions.
      */
     @Generated
@@ -60,16 +64,16 @@ public interface SCNActionable {
 
     /**
      * removeActionForKey:
-     * <p>
+     * 
      * Removes an action associated with a specific key.
      */
     @Generated
     @Selector("removeActionForKey:")
-    void removeActionForKey(String key);
+    void removeActionForKey(@NotNull String key);
 
     /**
      * removeAllActions
-     * <p>
+     * 
      * Ends and removes all actions from the node.
      */
     @Generated
@@ -78,42 +82,42 @@ public interface SCNActionable {
 
     /**
      * runAction:
-     * <p>
+     * 
      * Adds an action to the list of actions executed by the node.
      */
     @Generated
     @Selector("runAction:")
-    void runAction(SCNAction action);
+    void runAction(@NotNull SCNAction action);
 
     /**
      * runAction:completionHandler:
-     * <p>
+     * 
      * Adds an action to the list of actions executed by the node. Your block is called when the action completes.
      */
     @Generated
     @Selector("runAction:completionHandler:")
-    void runActionCompletionHandler(SCNAction action,
-            @ObjCBlock(name = "call_runActionCompletionHandler") Block_runActionCompletionHandler block);
+    void runActionCompletionHandler(@NotNull SCNAction action,
+            @Nullable @ObjCBlock(name = "call_runActionCompletionHandler") Block_runActionCompletionHandler block);
 
     /**
      * runAction:forKey:
-     * <p>
+     * 
      * Adds an identifiable action to the list of actions executed by the node.
      */
     @Generated
     @Selector("runAction:forKey:")
-    void runActionForKey(SCNAction action, String key);
+    void runActionForKey(@NotNull SCNAction action, @Nullable String key);
 
     /**
      * runAction:forKey:completionHandler:
-     * <p>
+     * 
      * Adds an identifiable action to the list of actions executed by the node. Your block is called when the action
      * completes.
      */
     @Generated
     @Selector("runAction:forKey:completionHandler:")
-    void runActionForKeyCompletionHandler(SCNAction action, String key,
-            @ObjCBlock(name = "call_runActionForKeyCompletionHandler") Block_runActionForKeyCompletionHandler block);
+    void runActionForKeyCompletionHandler(@NotNull SCNAction action, @Nullable String key,
+            @Nullable @ObjCBlock(name = "call_runActionForKeyCompletionHandler") Block_runActionForKeyCompletionHandler block);
 
     @Runtime(ObjCRuntime.class)
     @Generated

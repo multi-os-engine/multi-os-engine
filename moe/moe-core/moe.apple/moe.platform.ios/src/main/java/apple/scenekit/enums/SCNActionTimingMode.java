@@ -21,14 +21,28 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] SCNActionTimingMode
- * <p>
+ * 
  * The modes that an action can use to adjust the apparent timing of the action.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class SCNActionTimingMode {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Linear = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long EaseIn = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long EaseOut = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long EaseInEaseOut = 0x0000000000000003L;
 
     @Generated

@@ -34,6 +34,8 @@ public interface NSTextLayoutOrientationProvider {
      * string laid out in the receiver in absence of explicit NSVerticalGlyphFormAttributeName attribute. For example,
      * when NSTextLayoutOrientationVertical, the default value for NSVerticalGlyphFormAttributeName is 1. When rendering
      * into the receiver, the Text System assumes the coordinate system is appropriately rotated.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("layoutOrientation")

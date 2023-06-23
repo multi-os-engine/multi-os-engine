@@ -21,19 +21,48 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HKBloodType
- * <p>
+ * 
  * This enumerated type is used to represent the blood type of an individual.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class HKBloodType {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long NotSet = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long APositive = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long ANegative = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long BPositive = 0x0000000000000003L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long BNegative = 0x0000000000000004L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long ABPositive = 0x0000000000000005L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long ABNegative = 0x0000000000000006L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long OPositive = 0x0000000000000007L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long ONegative = 0x0000000000000008L;
 
     @Generated

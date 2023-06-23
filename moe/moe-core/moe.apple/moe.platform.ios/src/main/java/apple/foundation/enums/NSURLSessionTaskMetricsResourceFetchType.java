@@ -21,20 +21,31 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * The resource fetch type.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class NSURLSessionTaskMetricsResourceFetchType {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     /**
      * The resource was loaded over the network.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long NetworkLoad = 0x0000000000000001L;
     /**
      * The resource was pushed by the server to the client.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long ServerPush = 0x0000000000000002L;
     /**
      * The resource was retrieved from the local storage.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long LocalCache = 0x0000000000000003L;
 

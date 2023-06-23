@@ -37,7 +37,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -68,22 +73,25 @@ public class GKPath extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -118,9 +126,10 @@ public class GKPath extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -131,14 +140,15 @@ public class GKPath extends NSObject {
      * Creates a path from an array of graph nodes (often a result of pathfinding)
      * Accepts GKGraphNode2D and GKGraphNode3D
      * Cyclical is set to NO
-     *
+     * 
      * @param graphNodes an array of graph nodes to make a path from
      * @param radius     radius of the path to create
      * @see GKGraphNode
      */
     @Generated
     @Selector("pathWithGraphNodes:radius:")
-    public static native GKPath pathWithGraphNodesRadius(NSArray<? extends GKGraphNode> graphNodes, float radius);
+    public static native GKPath pathWithGraphNodesRadius(@NotNull NSArray<? extends GKGraphNode> graphNodes,
+            float radius);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -167,7 +177,7 @@ public class GKPath extends NSObject {
 
     @Generated
     @Selector("initWithGraphNodes:radius:")
-    public native GKPath initWithGraphNodesRadius(NSArray<? extends GKGraphNode> graphNodes, float radius);
+    public native GKPath initWithGraphNodesRadius(@NotNull NSArray<? extends GKGraphNode> graphNodes, float radius);
 
     /**
      * Does this path loop back on itself, creating a cycle?

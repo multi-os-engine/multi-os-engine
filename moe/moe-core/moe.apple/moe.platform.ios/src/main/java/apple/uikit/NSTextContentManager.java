@@ -30,6 +30,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSTextContentManager is an abstract class defining the interface for managing the text document contents and the
@@ -37,6 +39,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * It is the root object strongly referencing the rest of objects in the TextKit network via an array of
  * NSTextLayoutManager. Also, it manages the editing transaction by tracking the active NSTextLayoutManager focused to
  * be editing.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("UIKit")
@@ -58,12 +62,13 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
 
     @Generated
     @Selector("addTextLayoutManager:")
-    public native void addTextLayoutManager(NSTextLayoutManager textLayoutManager);
+    public native void addTextLayoutManager(@NotNull NSTextLayoutManager textLayoutManager);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("adjustedRangeFromRange:forEditingTextSelection:")
-    public native NSTextRange adjustedRangeFromRangeForEditingTextSelection(NSTextRange textRange,
+    public native NSTextRange adjustedRangeFromRangeForEditingTextSelection(@NotNull NSTextRange textRange,
             boolean forEditingTextSelection);
 
     @Generated
@@ -78,7 +83,7 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Automatically synchronizes all text layout managers when hasEditingTransaction becoming NO. YES by default.
@@ -96,18 +101,21 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -116,6 +124,7 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -125,20 +134,22 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("documentRange")
     public native NSTextRange documentRange();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    @Nullable
     @Generated
     @Selector("enumerateTextElementsFromLocation:options:usingBlock:")
     @MappedReturn(ObjCObjectMapper.class)
     public native NSTextLocation enumerateTextElementsFromLocationOptionsUsingBlock(
-            @Mapped(ObjCObjectMapper.class) NSTextLocation textLocation, @NUInt long options,
-            @ObjCBlock(name = "call_enumerateTextElementsFromLocationOptionsUsingBlock") NSTextElementProvider.Block_enumerateTextElementsFromLocationOptionsUsingBlock block);
+            @Nullable @Mapped(ObjCObjectMapper.class) NSTextLocation textLocation, @NUInt long options,
+            @NotNull @ObjCBlock(name = "call_enumerateTextElementsFromLocationOptionsUsingBlock") NSTextElementProvider.Block_enumerateTextElementsFromLocationOptionsUsingBlock block);
 
     /**
      * When YES, there is an active editing transaction from primaryTextLayoutManager. the synchronization operations to
@@ -160,7 +171,7 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSTextContentManager initWithCoder(NSCoder coder);
+    public native NSTextContentManager initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -179,16 +190,18 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("locationFromLocation:withOffset:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native NSTextLocation locationFromLocationWithOffset(@Mapped(ObjCObjectMapper.class) NSTextLocation location,
-            @NInt long offset);
+    public native NSTextLocation locationFromLocationWithOffset(
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location, @NInt long offset);
 
     @Generated
     @Owned
@@ -199,8 +212,8 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
     @IsOptional
     @Selector("offsetFromLocation:toLocation:")
     @NInt
-    public native long offsetFromLocationToLocation(@Mapped(ObjCObjectMapper.class) NSTextLocation from,
-            @Mapped(ObjCObjectMapper.class) NSTextLocation to);
+    public native long offsetFromLocationToLocation(@NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation from,
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation to);
 
     /**
      * Invoked by primaryTextLayoutManager controlling the active editing transaction. Can be nested. The outer most
@@ -210,7 +223,7 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
     @Generated
     @Selector("performEditingTransactionUsingBlock:")
     public native void performEditingTransactionUsingBlock(
-            @ObjCBlock(name = "call_performEditingTransactionUsingBlock") Block_performEditingTransactionUsingBlock transaction);
+            @NotNull @ObjCBlock(name = "call_performEditingTransactionUsingBlock") Block_performEditingTransactionUsingBlock transaction);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -224,6 +237,7 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
      * textLayoutManagers will reset to nil. It automatically synchronizes pending edits before switching to a new
      * primary object. The operation is synchronous. KVO-compliant
      */
+    @Nullable
     @Generated
     @Selector("primaryTextLayoutManager")
     public native NSTextLayoutManager primaryTextLayoutManager();
@@ -235,16 +249,17 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
      */
     @Generated
     @Selector("recordEditActionInRange:newTextRange:")
-    public native void recordEditActionInRangeNewTextRange(NSTextRange originalTextRange, NSTextRange newTextRange);
+    public native void recordEditActionInRangeNewTextRange(@NotNull NSTextRange originalTextRange,
+            @NotNull NSTextRange newTextRange);
 
     @Generated
     @Selector("removeTextLayoutManager:")
-    public native void removeTextLayoutManager(NSTextLayoutManager textLayoutManager);
+    public native void removeTextLayoutManager(@NotNull NSTextLayoutManager textLayoutManager);
 
     @Generated
     @Selector("replaceContentsInRange:withTextElements:")
-    public native void replaceContentsInRangeWithTextElements(NSTextRange range,
-            NSArray<? extends NSTextElement> textElements);
+    public native void replaceContentsInRangeWithTextElements(@NotNull NSTextRange range,
+            @Nullable NSArray<? extends NSTextElement> textElements);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -270,10 +285,10 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -291,7 +306,7 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
      */
     @Generated
     @Selector("setPrimaryTextLayoutManager:")
-    public native void setPrimaryTextLayoutManager(NSTextLayoutManager value);
+    public native void setPrimaryTextLayoutManager(@Nullable NSTextLayoutManager value);
 
     @Generated
     @Selector("setVersion:")
@@ -319,32 +334,34 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
     @Generated
     @Selector("synchronizeTextLayoutManagers:")
     public native void synchronizeTextLayoutManagers(
-            @ObjCBlock(name = "call_synchronizeTextLayoutManagers") Block_synchronizeTextLayoutManagers completionHandler);
+            @Nullable @ObjCBlock(name = "call_synchronizeTextLayoutManagers") Block_synchronizeTextLayoutManagers completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_synchronizeTextLayoutManagers {
         @Generated
-        void call_synchronizeTextLayoutManagers(NSError error);
+        void call_synchronizeTextLayoutManagers(@Nullable NSError error);
     }
 
     @Generated
     @Selector("synchronizeToBackingStore:")
     public native void synchronizeToBackingStore(
-            @ObjCBlock(name = "call_synchronizeToBackingStore") NSTextElementProvider.Block_synchronizeToBackingStore completionHandler);
+            @Nullable @ObjCBlock(name = "call_synchronizeToBackingStore") NSTextElementProvider.Block_synchronizeToBackingStore completionHandler);
 
     /**
      * Returns an array of NSTextElement intersecting the specified range in sequence. It can return a set of elements
      * not filling the entire range specified if the entire range is not synchronously available. Uses
-     * -enumerateTextElementsFromLocation:options:usingBlocK: to fill the array.
+     * -enumerateTextElementsFromLocation:options:usingBlock: to fill the array.
      */
+    @NotNull
     @Generated
     @Selector("textElementsForRange:")
-    public native NSArray<? extends NSTextElement> textElementsForRange(NSTextRange range);
+    public native NSArray<? extends NSTextElement> textElementsForRange(@NotNull NSTextRange range);
 
     /**
      * An array of NSTextLayoutManager. KVO-compliant
      */
+    @NotNull
     @Generated
     @Selector("textLayoutManagers")
     public native NSArray<? extends NSTextLayoutManager> textLayoutManagers();

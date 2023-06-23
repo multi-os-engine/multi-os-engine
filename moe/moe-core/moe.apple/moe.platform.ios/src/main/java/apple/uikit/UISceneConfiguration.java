@@ -26,7 +26,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -57,22 +62,25 @@ public class UISceneConfiguration extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -87,18 +95,21 @@ public class UISceneConfiguration extends NSObject implements NSCopying, NSSecur
      */
     @Generated
     @Selector("configurationWithName:sessionRole:")
-    public static native UISceneConfiguration configurationWithNameSessionRole(String name, String sessionRole);
+    public static native UISceneConfiguration configurationWithNameSessionRole(@Nullable String name,
+            @NotNull String sessionRole);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("delegateClass")
     public native Class delegateClass();
@@ -109,7 +120,7 @@ public class UISceneConfiguration extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -122,11 +133,11 @@ public class UISceneConfiguration extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("initWithCoder:")
-    public native UISceneConfiguration initWithCoder(NSCoder coder);
+    public native UISceneConfiguration initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithName:sessionRole:")
-    public native UISceneConfiguration initWithNameSessionRole(String name, String sessionRole);
+    public native UISceneConfiguration initWithNameSessionRole(@Nullable String name, @NotNull String sessionRole);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -145,10 +156,12 @@ public class UISceneConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -166,30 +179,33 @@ public class UISceneConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @NotNull
     @Generated
     @Selector("role")
     public native String role();
 
+    @Nullable
     @Generated
     @Selector("sceneClass")
     public native Class sceneClass();
 
     @Generated
     @Selector("setDelegateClass:")
-    public native void setDelegateClass(Class value);
+    public native void setDelegateClass(@Nullable Class value);
 
     @Generated
     @Selector("setSceneClass:")
-    public native void setSceneClass(Class value);
+    public native void setSceneClass(@Nullable Class value);
 
     @Generated
     @Selector("setStoryboard:")
-    public native void setStoryboard(UIStoryboard value);
+    public native void setStoryboard(@Nullable UIStoryboard value);
 
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @Nullable
     @Generated
     @Selector("storyboard")
     public native UIStoryboard storyboard();

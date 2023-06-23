@@ -23,14 +23,18 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSGraphOperation
- * <p>
+ * 
  * Symbolic representation of a compute operation, all tensors are created, owned and destroyed by the MPSGraph
- * <p>
+ * 
  * NSCopy will cause a refrence to be taken, this is so NSDictionary can work with the tensor.
  * All operations are created, owned and destroyed by the MPSGraph
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MetalPerformanceShadersGraph")
@@ -62,40 +66,45 @@ public class MPSGraphOperation extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] controlDependencies
-     * <p>
+     * 
      * operations guaranteed to execute before this operation
      */
+    @NotNull
     @Generated
     @Selector("controlDependencies")
     public native NSArray<? extends MPSGraphOperation> controlDependencies();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -107,9 +116,10 @@ public class MPSGraphOperation extends NSObject implements NSCopying {
 
     /**
      * [@property] graph
-     * <p>
+     * 
      * graph on which the operation is defined
      */
+    @NotNull
     @Generated
     @Selector("graph")
     public native MPSGraph graph();
@@ -125,9 +135,10 @@ public class MPSGraphOperation extends NSObject implements NSCopying {
 
     /**
      * [@property] inputTensors
-     * <p>
+     * 
      * inputTensors of the operation
      */
+    @NotNull
     @Generated
     @Selector("inputTensors")
     public native NSArray<? extends MPSGraphTensor> inputTensors();
@@ -149,15 +160,17 @@ public class MPSGraphOperation extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] name
-     * <p>
+     * 
      * name of the operation
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -169,9 +182,10 @@ public class MPSGraphOperation extends NSObject implements NSCopying {
 
     /**
      * [@property] outputTensors
-     * <p>
+     * 
      * outputTensors of the operation
      */
+    @NotNull
     @Generated
     @Selector("outputTensors")
     public native NSArray<? extends MPSGraphTensor> outputTensors();

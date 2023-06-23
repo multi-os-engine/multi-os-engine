@@ -24,13 +24,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSPredicate
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * A MPSPredicate can be used to run MPS kernels subject to a predicate.
- * <p>
+ * 
  * The MPSPredicate defines a way to refrain running a kernel on the GPU
  * based on values computed on the GPU. That way one can build control flow operations
  * that do the decisions on the GPU side mitigating the need to synchronize CPU and GPU
@@ -40,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * the predicate is considered to be true.
  * NOTE: It is advisable to release MPSPredicate objects promptly as they take a reference
  * to a MTLBuffer object and therefore can keep the memory allocated for long periods of time.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -71,22 +75,25 @@ public class MPSPredicate extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -110,30 +117,30 @@ public class MPSPredicate extends NSObject {
 
     /**
      * Initializes a MPSPredicate object with a buffer and given offset.
-     *
+     * 
      * @param buffer The buffer to use as a predicate.
      * @param offset Byteoffset to the predicate buffer where the predicate is stored.
      * @return A pointer to the newly initialized MPSPredicate object.
      */
     @Generated
     @Selector("initWithBuffer:offset:")
-    public native MPSPredicate initWithBufferOffset(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
+    public native MPSPredicate initWithBufferOffset(@NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
             @NUInt long offset);
 
     /**
      * Initializes a MPSPredicate object for a given device.
-     * <p>
+     * 
      * NOTE: The metal buffer used by the resulting MPSPredicate object may be
      * shared among many MPSPredicate objects and therefore care must be used when
      * writing to this buffer: writing to any other location in this buffer than the
      * four bytes at the offset @ref predicateOffset results in undefined behavior.
-     *
+     * 
      * @param device The device the predicate is used with
      * @return A pointer to the newly initialized MPSPredicate object.
      */
     @Generated
     @Selector("initWithDevice:")
-    public native MPSPredicate initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSPredicate initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -152,9 +159,10 @@ public class MPSPredicate extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,9 +171,10 @@ public class MPSPredicate extends NSObject {
 
     /**
      * [@property] predicateBuffer
-     * <p>
+     * 
      * The buffer that is used as the predicate
      */
+    @NotNull
     @Generated
     @Selector("predicateBuffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -173,9 +182,9 @@ public class MPSPredicate extends NSObject {
 
     /**
      * [@property] predicateOffset
-     * <p>
+     * 
      * Location of the predicate in bytes, must be multiple of four.
-     * <p>
+     * 
      * If the uint32_t value stored at this location in @ref predicateBuffer is other than zero,
      * then the predicate is considered to be true and the code is executed on the GPU.
      * With this property a single MPSPredicate object can be used with multiple different predication
@@ -189,15 +198,15 @@ public class MPSPredicate extends NSObject {
 
     /**
      * Initializes a MPSPredicate object with a buffer and given offset.
-     *
+     * 
      * @param buffer The buffer to use as a predicate.
      * @param offset Byteoffset to the predicate buffer where the predicate is stored.
      * @return A pointer to the newly initialized MPSPredicate object.
      */
     @Generated
     @Selector("predicateWithBuffer:offset:")
-    public static native MPSPredicate predicateWithBufferOffset(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
-            @NUInt long offset);
+    public static native MPSPredicate predicateWithBufferOffset(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset);
 
     @Generated
     @Selector("resolveClassMethod:")

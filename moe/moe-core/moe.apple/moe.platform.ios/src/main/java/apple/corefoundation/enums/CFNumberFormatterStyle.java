@@ -27,9 +27,21 @@ public final class CFNumberFormatterStyle {
     @Generated @NInt public static final long PercentStyle = 0x0000000000000003L;
     @Generated @NInt public static final long ScientificStyle = 0x0000000000000004L;
     @Generated @NInt public static final long SpellOutStyle = 0x0000000000000005L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long OrdinalStyle = 0x0000000000000006L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long CurrencyISOCodeStyle = 0x0000000000000008L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long CurrencyPluralStyle = 0x0000000000000009L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long CurrencyAccountingStyle = 0x000000000000000AL;
 
     @Generated

@@ -36,7 +36,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -67,26 +72,30 @@ public class NSUnitFrequency extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("baseUnit")
     public static native NSUnitFrequency baseUnit();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,6 +108,7 @@ public class NSUnitFrequency extends NSDimension implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("gigahertz")
     public static native NSUnitFrequency gigahertz();
@@ -108,6 +118,7 @@ public class NSUnitFrequency extends NSDimension implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    @NotNull
     @Generated
     @Selector("hertz")
     public static native NSUnitFrequency hertz();
@@ -129,26 +140,32 @@ public class NSUnitFrequency extends NSDimension implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("kilohertz")
     public static native NSUnitFrequency kilohertz();
 
+    @NotNull
     @Generated
     @Selector("megahertz")
     public static native NSUnitFrequency megahertz();
 
+    @NotNull
     @Generated
     @Selector("microhertz")
     public static native NSUnitFrequency microhertz();
 
+    @NotNull
     @Generated
     @Selector("millihertz")
     public static native NSUnitFrequency millihertz();
 
+    @NotNull
     @Generated
     @Selector("nanohertz")
     public static native NSUnitFrequency nanohertz();
@@ -181,6 +198,7 @@ public class NSUnitFrequency extends NSDimension implements NSSecureCoding {
     /**
      * Base unit - hertz
      */
+    @NotNull
     @Generated
     @Selector("terahertz")
     public static native NSUnitFrequency terahertz();
@@ -192,7 +210,7 @@ public class NSUnitFrequency extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -200,15 +218,15 @@ public class NSUnitFrequency extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUnitFrequency initWithCoder(NSCoder coder);
+    public native NSUnitFrequency initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")
-    public native NSUnitFrequency initWithSymbol(String symbol);
+    public native NSUnitFrequency initWithSymbol(@NotNull String symbol);
 
     @Generated
     @Selector("initWithSymbol:converter:")
-    public native NSUnitFrequency initWithSymbolConverter(String symbol, NSUnitConverter converter);
+    public native NSUnitFrequency initWithSymbolConverter(@NotNull String symbol, @NotNull NSUnitConverter converter);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -218,7 +236,10 @@ public class NSUnitFrequency extends NSDimension implements NSSecureCoding {
 
     /**
      * 1 FPS ≡ 1 Hertz
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("framesPerSecond")
     public static native NSUnitFrequency framesPerSecond();

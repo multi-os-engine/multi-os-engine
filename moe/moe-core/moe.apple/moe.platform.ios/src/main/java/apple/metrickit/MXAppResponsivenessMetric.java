@@ -24,11 +24,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MXAppResponsivenessMetric
- * <p>
+ * 
  * An MXMetric subclass that encapsulates app responsiveness metrics.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetricKit")
@@ -60,22 +64,25 @@ public class MXAppResponsivenessMetric extends MXMetric {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -95,18 +102,19 @@ public class MXAppResponsivenessMetric extends MXMetric {
 
     /**
      * [@property] histogrammedApplicationHangTime
-     * <p>
+     * 
      * Histogrammed app hang time data.
-     * <p>
+     * 
      * Applications are considered to be "hanging" when they are unable to handle user input responsively.
-     * <p>
+     * 
      * The durations for periods of hangs will be reported in the histogram returned here.
-     * <p>
+     * 
      * Application hang times that exceeds 9 seconds of wall clock time are reported in the final bucket of the
      * histogram.
-     * <p>
+     * 
      * Dimensioned as NSUnitDuration.
      */
+    @NotNull
     @Generated
     @Selector("histogrammedApplicationHangTime")
     public native MXHistogram<NSUnitDuration> histogrammedApplicationHangTime();
@@ -117,7 +125,7 @@ public class MXAppResponsivenessMetric extends MXMetric {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MXAppResponsivenessMetric initWithCoder(NSCoder coder);
+    public native MXAppResponsivenessMetric initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -136,9 +144,10 @@ public class MXAppResponsivenessMetric extends MXMetric {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

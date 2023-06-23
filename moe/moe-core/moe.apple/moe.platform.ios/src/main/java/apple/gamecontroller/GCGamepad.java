@@ -38,7 +38,14 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.0
+ * Deprecated-Since: 10.0
+ */
+@Deprecated
 @Generated
 @Library("GameController")
 @Runtime(ObjCRuntime.class)
@@ -69,22 +76,25 @@ public class GCGamepad extends GCPhysicalInputProfile {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -119,9 +129,10 @@ public class GCGamepad extends GCPhysicalInputProfile {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -152,29 +163,34 @@ public class GCGamepad extends GCPhysicalInputProfile {
     /**
      * All face buttons are required to be analog in the Standard profile. These must be arranged
      * in the diamond pattern given below:
-     * <p>
+     * 
      * Y
      * / \
      * X B
      * \ /
      * A
      */
+    @NotNull
     @Generated
     @Selector("buttonA")
     public native GCControllerButtonInput buttonA();
 
+    @NotNull
     @Generated
     @Selector("buttonB")
     public native GCControllerButtonInput buttonB();
 
+    @NotNull
     @Generated
     @Selector("buttonX")
     public native GCControllerButtonInput buttonX();
 
+    @NotNull
     @Generated
     @Selector("buttonY")
     public native GCControllerButtonInput buttonY();
 
+    @Nullable
     @Generated
     @Selector("controller")
     public native GCController controller();
@@ -182,6 +198,7 @@ public class GCGamepad extends GCPhysicalInputProfile {
     /**
      * Required to be analog in the Standard profile. All the elements of this directional input are thus analog.
      */
+    @NotNull
     @Generated
     @Selector("dpad")
     public native GCControllerDirectionPad dpad();
@@ -193,6 +210,7 @@ public class GCGamepad extends GCPhysicalInputProfile {
     /**
      * Shoulder buttons are required to be analog inputs.
      */
+    @NotNull
     @Generated
     @Selector("leftShoulder")
     public native GCControllerButtonInput leftShoulder();
@@ -200,6 +218,7 @@ public class GCGamepad extends GCPhysicalInputProfile {
     /**
      * Shoulder buttons are required to be analog inputs.
      */
+    @NotNull
     @Generated
     @Selector("rightShoulder")
     public native GCControllerButtonInput rightShoulder();
@@ -209,10 +228,11 @@ public class GCGamepad extends GCPhysicalInputProfile {
      * independent
      * format that can be serialized and used at a later date. This is useful for features such as quality assurance,
      * save game or replay functionality among many.
-     * <p>
+     * 
      * If your application is heavily multithreaded this may also be useful to guarantee atomicity of input handling as
      * a snapshot will not change based on user input once it is taken.
      */
+    @NotNull
     @Generated
     @Selector("saveSnapshot")
     public native GCGamepadSnapshot saveSnapshot();
@@ -220,8 +240,9 @@ public class GCGamepad extends GCPhysicalInputProfile {
     @Generated
     @Selector("setValueChangedHandler:")
     public native void setValueChangedHandler(
-            @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
+            @Nullable @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
 
+    @Nullable
     @Generated
     @Selector("valueChangedHandler")
     @ObjCBlock(name = "call_valueChangedHandler_ret")
@@ -231,13 +252,13 @@ public class GCGamepad extends GCPhysicalInputProfile {
     @Generated
     public interface Block_setValueChangedHandler {
         @Generated
-        void call_setValueChangedHandler(GCGamepad arg0, GCControllerElement arg1);
+        void call_setValueChangedHandler(@NotNull GCGamepad arg0, @NotNull GCControllerElement arg1);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_valueChangedHandler_ret {
         @Generated
-        void call_valueChangedHandler_ret(GCGamepad arg0, GCControllerElement arg1);
+        void call_valueChangedHandler_ret(@NotNull GCGamepad arg0, @NotNull GCControllerElement arg1);
     }
 }

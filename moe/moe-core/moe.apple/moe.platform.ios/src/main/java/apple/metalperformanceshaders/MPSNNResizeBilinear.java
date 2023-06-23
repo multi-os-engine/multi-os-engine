@@ -24,16 +24,20 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNResizeBilinear
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * The MPSNNResizeBilinear filter resizes the source image using bilinear interpolation to
  * a destination whose dimensions are given by resizeWidth and resizeHeight
- * <p>
+ * 
  * The number of output feature channels remains the same as the number of input feature
  * channels.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -55,7 +59,7 @@ public class MPSNNResizeBilinear extends MPSCNNKernel {
 
     /**
      * [@property] alignCorners
-     * <p>
+     * 
      * If YES, the centers of the 4 corner pixels of the input and output regions are aligned,
      * preserving the values at the corner pixels.
      * The default is NO.
@@ -76,22 +80,25 @@ public class MPSNNResizeBilinear extends MPSCNNKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -115,29 +122,29 @@ public class MPSNNResizeBilinear extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNResizeBilinear initWithCoder(NSCoder aDecoder);
+    public native MPSNNResizeBilinear initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSNNResizeBilinear
      * @param device   The MTLDevice on which to make the MPSNNResizeBilinear
      * @return A new MPSNNResizeBilinear object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNNResizeBilinear initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNResizeBilinear initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNNResizeBilinear initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNResizeBilinear initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize the resize bilinear filter.
-     *
+     * 
      * @param device       The device the filter will run on.
      * @param resizeWidth  The destination resize width in pixels
      * @param resizeHeight The destination resize height in pixels
@@ -149,8 +156,8 @@ public class MPSNNResizeBilinear extends MPSCNNKernel {
     @Generated
     @Selector("initWithDevice:resizeWidth:resizeHeight:alignCorners:")
     public native MPSNNResizeBilinear initWithDeviceResizeWidthResizeHeightAlignCorners(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long resizeWidth, @NUInt long resizeHeight,
-            boolean alignCorners);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long resizeWidth,
+            @NUInt long resizeHeight, boolean alignCorners);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -169,9 +176,10 @@ public class MPSNNResizeBilinear extends MPSCNNKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -180,7 +188,7 @@ public class MPSNNResizeBilinear extends MPSCNNKernel {
 
     /**
      * [@property] resizeHeight
-     * <p>
+     * 
      * The resize height.
      */
     @Generated
@@ -190,7 +198,7 @@ public class MPSNNResizeBilinear extends MPSCNNKernel {
 
     /**
      * [@property] resizeWidth
-     * <p>
+     * 
      * The resize width.
      */
     @Generated

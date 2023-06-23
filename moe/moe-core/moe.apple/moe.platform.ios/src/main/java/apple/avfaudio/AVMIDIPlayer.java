@@ -27,11 +27,15 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVMIDIPlayer
- * <p>
+ * 
  * A player for music file formats (MIDI, iMelody).
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -63,31 +67,34 @@ public class AVMIDIPlayer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] currentPosition
-     * <p>
+     * 
      * The current playback position in seconds
-     * <p>
+     * 
      * Setting this positions the player to the specified time. No range checking on the time value is done.
      * This can be set while the player is playing, in which case playback will resume at the new time.
      */
@@ -105,7 +112,7 @@ public class AVMIDIPlayer extends NSObject {
 
     /**
      * [@property] duration
-     * <p>
+     * 
      * The length of the currently loaded file in seconds.
      */
     @Generated
@@ -123,31 +130,31 @@ public class AVMIDIPlayer extends NSObject {
 
     /**
      * initWithContentsOfURL:soundBankURL:error:
-     * <p>
+     * 
      * Create a player with the contents of the file specified by the URL.
-     * <p>
+     * 
      * 'bankURL' should contain the path to a SoundFont2 or DLS bank to be used
      * by the MIDI synthesizer. For OSX it can be set to nil for the default,
      * but for iOS it must always refer to a valid bank file.
      */
     @Generated
     @Selector("initWithContentsOfURL:soundBankURL:error:")
-    public native AVMIDIPlayer initWithContentsOfURLSoundBankURLError(NSURL inURL, NSURL bankURL,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native AVMIDIPlayer initWithContentsOfURLSoundBankURLError(@NotNull NSURL inURL, @Nullable NSURL bankURL,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * initWithData:soundBankURL:error:
-     * <p>
+     * 
      * Create a player with the contents of the data object
-     * <p>
+     * 
      * 'bankURL' should contain the path to a SoundFont2 or DLS bank to be used
      * by the MIDI synthesizer. For OSX it can be set to nil for the default,
      * but for iOS it must always refer to a valid bank file.
      */
     @Generated
     @Selector("initWithData:soundBankURL:error:")
-    public native AVMIDIPlayer initWithDataSoundBankURLError(NSData data, NSURL bankURL,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native AVMIDIPlayer initWithDataSoundBankURLError(@NotNull NSData data, @Nullable NSURL bankURL,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -164,7 +171,7 @@ public class AVMIDIPlayer extends NSObject {
 
     /**
      * [@property] playing
-     * <p>
+     * 
      * Indicates whether or not the player is playing
      */
     @Generated
@@ -175,9 +182,10 @@ public class AVMIDIPlayer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -186,12 +194,12 @@ public class AVMIDIPlayer extends NSObject {
 
     /**
      * play:
-     * <p>
+     * 
      * Play the sequence.
      */
     @Generated
     @Selector("play:")
-    public native void play(@ObjCBlock(name = "call_play") Block_play completionHandler);
+    public native void play(@Nullable @ObjCBlock(name = "call_play") Block_play completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -202,9 +210,9 @@ public class AVMIDIPlayer extends NSObject {
 
     /**
      * prepareToPlay
-     * <p>
+     * 
      * Get ready to play the sequence by prerolling all events
-     * <p>
+     * 
      * Happens automatically on play if it has not already been called, but may produce a delay in startup.
      */
     @Generated
@@ -213,9 +221,9 @@ public class AVMIDIPlayer extends NSObject {
 
     /**
      * [@property] rate
-     * <p>
+     * 
      * The playback rate of the player
-     * <p>
+     * 
      * 1.0 is normal playback rate. Rate must be > 0.0.
      */
     @Generated
@@ -232,9 +240,9 @@ public class AVMIDIPlayer extends NSObject {
 
     /**
      * [@property] currentPosition
-     * <p>
+     * 
      * The current playback position in seconds
-     * <p>
+     * 
      * Setting this positions the player to the specified time. No range checking on the time value is done.
      * This can be set while the player is playing, in which case playback will resume at the new time.
      */
@@ -244,9 +252,9 @@ public class AVMIDIPlayer extends NSObject {
 
     /**
      * [@property] rate
-     * <p>
+     * 
      * The playback rate of the player
-     * <p>
+     * 
      * 1.0 is normal playback rate. Rate must be > 0.0.
      */
     @Generated
@@ -259,7 +267,7 @@ public class AVMIDIPlayer extends NSObject {
 
     /**
      * stop
-     * <p>
+     * 
      * Stop playing the sequence.
      */
     @Generated

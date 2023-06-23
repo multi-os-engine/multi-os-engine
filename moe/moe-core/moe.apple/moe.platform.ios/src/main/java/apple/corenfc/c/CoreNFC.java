@@ -8,6 +8,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("CoreNFC")
@@ -21,6 +22,10 @@ public final class CoreNFC {
     private CoreNFC() {
     }
 
+    /**
+     * API-Since: 11.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -29,7 +34,10 @@ public final class CoreNFC {
     /**
      * Key in NSError userInfo dictionary. The corresponding value is the NSUInteger error code from tag's response.
      * Refer to ISO15693 specification for the error code values.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -38,7 +46,10 @@ public final class CoreNFC {
     /**
      * Key in NSError userInfo dictionary. Presence of this key indicates the received response packet length is
      * invalid.
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

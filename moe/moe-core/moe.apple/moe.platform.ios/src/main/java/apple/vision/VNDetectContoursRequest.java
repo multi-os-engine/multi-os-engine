@@ -24,11 +24,15 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
- * A request that will detect the countours for the edges in an image.
- * <p>
+ * A request that will detect the contours for the edges in an image.
+ * 
  * This request will produce a VNContoursObservation which describes the contours.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Vision")
@@ -60,22 +64,25 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -83,8 +90,8 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
     /**
      * The amount to adjust the image's contrast by.
      * A value of +1.0 means that the contrast is not adjusted. The default value is +2.0.
-     * <p>
-     * Countour detection works best with high contrast images. The default value of 2 doubles the image's contrast to
+     * 
+     * Contour detection works best with high contrast images. The default value of 2 doubles the image's contrast to
      * aid in detection. If the image already has a high contrast then this value should be set to 1.
      */
     @Generated
@@ -109,6 +116,11 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 14.0
+     */
+    @Deprecated
     @Generated
     @Selector("detectDarkOnLight")
     public native boolean detectDarkOnLight();
@@ -133,7 +145,7 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
     @Generated
     @Selector("initWithCompletionHandler:")
     public native VNDetectContoursRequest initWithCompletionHandler(
-            @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -152,14 +164,15 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The limit on the maximum dimension of the image to be used for contour detection. Valid range of values is [64
      * ... NSUIntegerMax]. The default value is 512.
-     * <p>
+     * 
      * As the contour request is compute intensive, the input image is scaled down maintaining aspect ratio (if needed),
      * such that its maximum dimension is the value of this property. The image never gets scaled up, so specifying the
      * maximum value ensures that the image gets processed in its original size and not downscaled.
@@ -185,14 +198,19 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
     /**
      * The amount to adjust the image's contrast by.
      * A value of +1.0 means that the contrast is not adjusted. The default value is +2.0.
-     * <p>
-     * Countour detection works best with high contrast images. The default value of 2 doubles the image's contrast to
+     * 
+     * Contour detection works best with high contrast images. The default value of 2 doubles the image's contrast to
      * aid in detection. If the image already has a high contrast then this value should be set to 1.
      */
     @Generated
     @Selector("setContrastAdjustment:")
     public native void setContrastAdjustment(float value);
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 14.0
+     */
+    @Deprecated
     @Generated
     @Selector("setDetectDarkOnLight:")
     public native void setDetectDarkOnLight(boolean value);
@@ -208,7 +226,7 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
     /**
      * The limit on the maximum dimension of the image to be used for contour detection. Valid range of values is [64
      * ... NSUIntegerMax]. The default value is 512.
-     * <p>
+     * 
      * As the contour request is compute intensive, the input image is scaled down maintaining aspect ratio (if needed),
      * such that its maximum dimension is the value of this property. The image never gets scaled up, so specifying the
      * maximum value ensures that the image gets processed in its original size and not downscaled.
@@ -225,6 +243,7 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();
@@ -238,7 +257,10 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
      * The pixel value to use as a pivot for the contrast. Valid values are from [0.0 ... +1.0], or nil to auto-detect
      * based on image intensity.
      * The default value is +0.5 (i.e. pixel center).
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("contrastPivot")
     public native NSNumber contrastPivot();
@@ -246,6 +268,7 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
     /**
      * VNContoursObservation results.
      */
+    @Nullable
     @Generated
     @Selector("results")
     public native NSArray<? extends VNContoursObservation> results();
@@ -254,8 +277,10 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
      * The pixel value to use as a pivot for the contrast. Valid values are from [0.0 ... +1.0], or nil to auto-detect
      * based on image intensity.
      * The default value is +0.5 (i.e. pixel center).
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setContrastPivot:")
-    public native void setContrastPivot(NSNumber value);
+    public native void setContrastPivot(@Nullable NSNumber value);
 }

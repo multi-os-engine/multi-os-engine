@@ -41,19 +41,23 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CMMotionActivityManager
- * <p>
+ * 
  * Discussion:
  * CMMotionActivityManager allows access to the activity of the device.
  * Activities can be retrieved in one of two ways:
- * <p>
+ * 
  * 1. Via a query specifying a time range from which an array of
  * activities will be returned.
- * <p>
+ * 
  * 2. By providing a queue and a block to startActivityUpdatesToQueue:withHandler:
  * which will provide live activity updates to a running application.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("CoreMotion")
@@ -85,22 +89,25 @@ public class CMMotionActivityManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,7 +140,7 @@ public class CMMotionActivityManager extends NSObject {
 
     /**
      * isActivityAvailable
-     * <p>
+     * 
      * Discussion:
      * Determines whether activity estimation is available.
      */
@@ -145,9 +152,10 @@ public class CMMotionActivityManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -181,35 +189,35 @@ public class CMMotionActivityManager extends NSObject {
 
     /**
      * queryActivityStartingFrom:to:toQueue:withHandler:
-     * <p>
+     * 
      * Discussion:
      * Queries for activity transitions that happened during the given time
      * range. The date range must be in the past. Data is only available
      * for the last seven days. The result is returned to the handler/queue
      * specified.
-     * <p>
+     * 
      * The first activity returned may have a startDate before start. This
      * activity represents what the state was at the start time.
      */
     @Generated
     @Selector("queryActivityStartingFromDate:toDate:toQueue:withHandler:")
-    public native void queryActivityStartingFromDateToDateToQueueWithHandler(NSDate start, NSDate end,
-            NSOperationQueue queue,
-            @ObjCBlock(name = "call_queryActivityStartingFromDateToDateToQueueWithHandler") Block_queryActivityStartingFromDateToDateToQueueWithHandler handler);
+    public native void queryActivityStartingFromDateToDateToQueueWithHandler(@NotNull NSDate start, @NotNull NSDate end,
+            @NotNull NSOperationQueue queue,
+            @NotNull @ObjCBlock(name = "call_queryActivityStartingFromDateToDateToQueueWithHandler") Block_queryActivityStartingFromDateToDateToQueueWithHandler handler);
 
     /**
      * startActivityUpdatesToQueue:withHandler
-     * <p>
+     * 
      * Discussion:
      * Start activity updates, providing data to the given handler through
      * the given queue. An update with the current activity will arrive
      * first. Then when the activity state changes the handler will be
      * called with the new activity.
-     * <p>
+     * 
      * You can only have one handler installed at a time, calling
      * startActivityUpdatesToQueue:withHandler: replaces the current
      * handler.
-     * <p>
+     * 
      * Updates are not delivered while the application is suspended, the
      * application may use
      * queryActivityStartingFromDate:toDate:toQueue:withHandler: to get
@@ -217,12 +225,12 @@ public class CMMotionActivityManager extends NSObject {
      */
     @Generated
     @Selector("startActivityUpdatesToQueue:withHandler:")
-    public native void startActivityUpdatesToQueueWithHandler(NSOperationQueue queue,
-            @ObjCBlock(name = "call_startActivityUpdatesToQueueWithHandler") Block_startActivityUpdatesToQueueWithHandler handler);
+    public native void startActivityUpdatesToQueueWithHandler(@NotNull NSOperationQueue queue,
+            @NotNull @ObjCBlock(name = "call_startActivityUpdatesToQueueWithHandler") Block_startActivityUpdatesToQueueWithHandler handler);
 
     /**
      * stopActivityUpdates
-     * <p>
+     * 
      * Discussion:
      * Stop delivering live updates.
      */
@@ -234,22 +242,24 @@ public class CMMotionActivityManager extends NSObject {
     @Generated
     public interface Block_queryActivityStartingFromDateToDateToQueueWithHandler {
         @Generated
-        void call_queryActivityStartingFromDateToDateToQueueWithHandler(NSArray<? extends CMMotionActivity> activities,
-                NSError error);
+        void call_queryActivityStartingFromDateToDateToQueueWithHandler(
+                @Nullable NSArray<? extends CMMotionActivity> activities, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startActivityUpdatesToQueueWithHandler {
         @Generated
-        void call_startActivityUpdatesToQueueWithHandler(CMMotionActivity activity);
+        void call_startActivityUpdatesToQueueWithHandler(@Nullable CMMotionActivity activity);
     }
 
     /**
      * authorizationStatus
-     * <p>
+     * 
      * Discussion:
      * Returns the current authorization status for activity.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("authorizationStatus")

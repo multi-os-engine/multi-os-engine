@@ -34,7 +34,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -65,22 +70,25 @@ public class NSURLSessionTaskMetrics extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -115,10 +123,17 @@ public class NSURLSessionTaskMetrics extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Not supported
+     */
+    @Deprecated
     @Generated
     @Owned
     @Selector("new")
@@ -145,6 +160,12 @@ public class NSURLSessionTaskMetrics extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Not supported
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native NSURLSessionTaskMetrics init();
@@ -162,6 +183,7 @@ public class NSURLSessionTaskMetrics extends NSObject {
      * Task creation time is the time when the task was instantiated.
      * Task completion time is the time when the task is about to change its internal state to completed.
      */
+    @NotNull
     @Generated
     @Selector("taskInterval")
     public native NSDateInterval taskInterval();
@@ -170,6 +192,7 @@ public class NSURLSessionTaskMetrics extends NSObject {
      * transactionMetrics array contains the metrics collected for every request/response transaction created during the
      * task execution.
      */
+    @NotNull
     @Generated
     @Selector("transactionMetrics")
     public native NSArray<? extends NSURLSessionTaskTransactionMetrics> transactionMetrics();

@@ -5,9 +5,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HKElectrocardiogramClassification
- * <p>
+ * 
  * The possible classifications determined for HKElectrocardiograms
- * <p>
+ * 
  * [@constant] HKElectrocardiogramClassificationNotSet No classification is set on this sample.
  * [@constant] HKElectrocardiogramClassificationSinusRhythm The sample exhibits no signs of atrial fibrillation.
  * [@constant] HKElectrocardiogramClassificationAtrialFibrillation The sample exhibits signs of atrial fibrillation.
@@ -21,6 +21,8 @@ import org.moe.natj.general.ann.NInt;
  * classification.
  * [@constant] HKElectrocardiogramClassificationUnrecognized The classification created for this sample is unrecognized
  * on this device.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 public final class HKElectrocardiogramClassification {
@@ -28,12 +30,36 @@ public final class HKElectrocardiogramClassification {
     private HKElectrocardiogramClassification() {
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long NotSet = 0x0000000000000000L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long SinusRhythm = 0x0000000000000001L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long AtrialFibrillation = 0x0000000000000002L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long InconclusiveLowHeartRate = 0x0000000000000003L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long InconclusiveHighHeartRate = 0x0000000000000004L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long InconclusivePoorReading = 0x0000000000000005L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long InconclusiveOther = 0x0000000000000006L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long Unrecognized = 0x0000000000000064L;
 }

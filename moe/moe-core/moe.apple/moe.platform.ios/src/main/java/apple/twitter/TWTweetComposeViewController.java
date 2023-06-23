@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Although you may perform requests on behalf of the user, you cannot append
@@ -52,6 +54,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * to set the content return a Boolean value. The methods return NO if the
  * content doesn't fit or if the view was already presented to the user and the
  * content can no longer be changed.
+ * 
+ * API-Since: 5.0
+ * Deprecated-Since: 6.0
  */
 @Deprecated
 @Generated
@@ -82,13 +87,14 @@ public class TWTweetComposeViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native TWTweetComposeViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Returns if Twitter is accessible and at least one account has been setup.
@@ -99,25 +105,28 @@ public class TWTweetComposeViewController extends UIViewController {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -149,9 +158,10 @@ public class TWTweetComposeViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -212,11 +222,12 @@ public class TWTweetComposeViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native TWTweetComposeViewController initWithCoder(NSCoder coder);
+    public native TWTweetComposeViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native TWTweetComposeViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native TWTweetComposeViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * Removes all images from the tweet. Returns NO and does not perform an operation

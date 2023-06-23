@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -34,7 +35,8 @@ public interface UIVideoEditorControllerDelegate {
     @Generated
     @IsOptional
     @Selector("videoEditorController:didFailWithError:")
-    default void videoEditorControllerDidFailWithError(UIVideoEditorController editor, NSError error) {
+    default void videoEditorControllerDidFailWithError(@NotNull UIVideoEditorController editor,
+            @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -44,14 +46,15 @@ public interface UIVideoEditorControllerDelegate {
     @Generated
     @IsOptional
     @Selector("videoEditorController:didSaveEditedVideoToPath:")
-    default void videoEditorControllerDidSaveEditedVideoToPath(UIVideoEditorController editor, String editedVideoPath) {
+    default void videoEditorControllerDidSaveEditedVideoToPath(@NotNull UIVideoEditorController editor,
+            @NotNull String editedVideoPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("videoEditorControllerDidCancel:")
-    default void videoEditorControllerDidCancel(UIVideoEditorController editor) {
+    default void videoEditorControllerDidCancel(@NotNull UIVideoEditorController editor) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -24,14 +24,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNBatchNormalizationStatisticsGradient
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * MPSCNNBatchNormalizationStatisticsGradient updates a MPSCNNBatchNormalizationState
  * with the gradient of the loss function with respect to the batch statistics and
  * batch normalization weights used to perform a batch normalization.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -63,22 +67,25 @@ public class MPSCNNBatchNormalizationStatisticsGradient extends MPSCNNGradientKe
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,11 +109,11 @@ public class MPSCNNBatchNormalizationStatisticsGradient extends MPSCNNGradientKe
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNBatchNormalizationStatisticsGradient initWithCoder(NSCoder aDecoder);
+    public native MPSCNNBatchNormalizationStatisticsGradient initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
@@ -114,35 +121,39 @@ public class MPSCNNBatchNormalizationStatisticsGradient extends MPSCNNGradientKe
      * that problem, use a subclass of NSCoder that
      * implements the <MPSDeviceProvider> protocol to
      * tell MPS the MTLDevice to use.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSCNNBatchNormalizationStatisticsGradient object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNBatchNormalizationStatisticsGradient initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNBatchNormalizationStatisticsGradient initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
     public native MPSCNNBatchNormalizationStatisticsGradient initWithDevice(
-            @Mapped(ObjCObjectMapper.class) Object device);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initializes a batch normalization statistics gradient kernel using a device and neuron descriptor.
-     *
+     * 
      * @param device                The MTLDevice on which this filter will be used
      * @param fusedNeuronDescriptor A MPSNNNeuronDescriptor object which specifies a neuron activation function whose
      *                              gradient should be applied prior to computing the statistics of the input gradient.
      *                              This neuron descriptor should match that used in the corresponding forward batch
      *                              normalization kernel.
+     * 
      * @return A valid MPSCNNBatchNormalizationStatisticsGradient object or nil, if failure.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("initWithDevice:fusedNeuronDescriptor:")
     public native MPSCNNBatchNormalizationStatisticsGradient initWithDeviceFusedNeuronDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, MPSNNNeuronDescriptor fusedNeuronDescriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @Nullable MPSNNNeuronDescriptor fusedNeuronDescriptor);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -161,9 +172,10 @@ public class MPSCNNBatchNormalizationStatisticsGradient extends MPSCNNGradientKe
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

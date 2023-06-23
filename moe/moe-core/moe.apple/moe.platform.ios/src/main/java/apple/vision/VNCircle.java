@@ -26,12 +26,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * VNCircle
- * <p>
+ * 
  * VNCircle is two-dimensional circle represented by the center point 'center' and its radius 'radius'. Once created,
  * VNCircle objects are immutable.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Vision")
@@ -63,29 +67,33 @@ public class VNCircle extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Returns circle center.
      */
+    @NotNull
     @Generated
     @Selector("center")
     public native VNPoint center();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -95,20 +103,21 @@ public class VNCircle extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("containsPoint:")
-    public native boolean containsPoint(VNPoint point);
+    public native boolean containsPoint(@NotNull VNPoint point);
 
     /**
      * Returns YES if the point is within the ring bound by two circles [radius - delta; radius + delta].
      */
     @Generated
     @Selector("containsPoint:inCircumferentialRingOfWidth:")
-    public native boolean containsPointInCircumferentialRingOfWidth(VNPoint point, double ringWidth);
+    public native boolean containsPointInCircumferentialRingOfWidth(@NotNull VNPoint point, double ringWidth);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -127,7 +136,7 @@ public class VNCircle extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -143,18 +152,18 @@ public class VNCircle extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("initWithCenter:diameter:")
-    public native VNCircle initWithCenterDiameter(VNPoint center, double diameter);
+    public native VNCircle initWithCenterDiameter(@NotNull VNPoint center, double diameter);
 
     /**
      * Initializes VNCircle object with given circle center and circle radius.
      */
     @Generated
     @Selector("initWithCenter:radius:")
-    public native VNCircle initWithCenterRadius(VNPoint center, double radius);
+    public native VNCircle initWithCenterRadius(@NotNull VNPoint center, double radius);
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNCircle initWithCoder(NSCoder coder);
+    public native VNCircle initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -173,9 +182,10 @@ public class VNCircle extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -223,6 +233,7 @@ public class VNCircle extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Returns a VNCircle object with center at the Origin [0.0; 0.0] and zero radius.
      */
+    @NotNull
     @Generated
     @Selector("zeroCircle")
     public static native VNCircle zeroCircle();

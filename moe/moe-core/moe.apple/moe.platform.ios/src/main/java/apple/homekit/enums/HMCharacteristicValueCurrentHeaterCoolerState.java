@@ -21,17 +21,31 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueCurrentHeaterCoolerState
- * <p>
+ * 
  * [@constant] HMCharacteristicValueCurrentHeaterCoolerStateInactive Inactive.
  * [@constant] HMCharacteristicValueCurrentHeaterCoolerStateIdle Idle.
  * [@constant] HMCharacteristicValueCurrentHeaterCoolerStateHeating Heating.
  * [@constant] HMCharacteristicValueCurrentHeaterCoolerStateCooling Cooling.
+ * 
+ * API-Since: 10.2
  */
 @Generated
 public final class HMCharacteristicValueCurrentHeaterCoolerState {
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Inactive = 0x0000000000000000L;
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Idle = 0x0000000000000001L;
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Heating = 0x0000000000000002L;
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Cooling = 0x0000000000000003L;
 
     @Generated

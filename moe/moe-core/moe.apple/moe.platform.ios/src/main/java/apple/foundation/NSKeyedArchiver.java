@@ -39,6 +39,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -68,33 +70,50 @@ public class NSKeyedArchiver extends NSCoder {
     @Selector("allocWithZone:")
     public static native NSKeyedArchiver allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Use +archivedDataWithRootObject:requiringSecureCoding:error: and -writeToURL:options:error:
+     * instead
+     */
+    @Deprecated
     @Generated
     @Selector("archiveRootObject:toFile:")
-    public static native boolean archiveRootObjectToFile(@Mapped(ObjCObjectMapper.class) Object rootObject,
-            String path);
+    public static native boolean archiveRootObjectToFile(@NotNull @Mapped(ObjCObjectMapper.class) Object rootObject,
+            @NotNull String path);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Use +archivedDataWithRootObject:requiringSecureCoding:error: instead
+     */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("archivedDataWithRootObject:")
-    public static native NSData archivedDataWithRootObject(@Mapped(ObjCObjectMapper.class) Object rootObject);
+    public static native NSData archivedDataWithRootObject(@NotNull @Mapped(ObjCObjectMapper.class) Object rootObject);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -103,9 +122,10 @@ public class NSKeyedArchiver extends NSCoder {
      * During encoding, the coder first checks with the coder's
      * own table, then if there was no mapping there, the class's.
      */
+    @Nullable
     @Generated
     @Selector("classNameForClass:")
-    public static native String classNameForClass_static(Class cls);
+    public static native String classNameForClass_static(@NotNull Class cls);
 
     @Generated
     @Selector("debugDescription")
@@ -137,9 +157,10 @@ public class NSKeyedArchiver extends NSCoder {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,7 +177,7 @@ public class NSKeyedArchiver extends NSCoder {
 
     @Generated
     @Selector("setClassName:forClass:")
-    public static native void setClassNameForClass_static(String codedName, Class cls);
+    public static native void setClassNameForClass_static(@Nullable String codedName, @NotNull Class cls);
 
     @Generated
     @Selector("setVersion:")
@@ -171,10 +192,12 @@ public class NSKeyedArchiver extends NSCoder {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("classNameForClass:")
-    public native String classNameForClass(Class cls);
+    public native String classNameForClass(@NotNull Class cls);
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -182,48 +205,52 @@ public class NSKeyedArchiver extends NSCoder {
 
     @Generated
     @Selector("encodeBool:forKey:")
-    public native void encodeBoolForKey(boolean value, String key);
+    public native void encodeBoolForKey(boolean value, @NotNull String key);
 
     @Generated
     @Selector("encodeBytes:length:forKey:")
-    public native void encodeBytesLengthForKey(ConstBytePtr bytes, @NUInt long length, String key);
+    public native void encodeBytesLengthForKey(@Nullable ConstBytePtr bytes, @NUInt long length, @NotNull String key);
 
     @Generated
     @Selector("encodeConditionalObject:forKey:")
-    public native void encodeConditionalObjectForKey(@Mapped(ObjCObjectMapper.class) Object object, String key);
+    public native void encodeConditionalObjectForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object object,
+            @NotNull String key);
 
     @Generated
     @Selector("encodeDouble:forKey:")
-    public native void encodeDoubleForKey(double value, String key);
+    public native void encodeDoubleForKey(double value, @NotNull String key);
 
     @Generated
     @Selector("encodeFloat:forKey:")
-    public native void encodeFloatForKey(float value, String key);
+    public native void encodeFloatForKey(float value, @NotNull String key);
 
     @Generated
     @Selector("encodeInt32:forKey:")
-    public native void encodeInt32ForKey(int value, String key);
+    public native void encodeInt32ForKey(int value, @NotNull String key);
 
     @Generated
     @Selector("encodeInt64:forKey:")
-    public native void encodeInt64ForKey(long value, String key);
+    public native void encodeInt64ForKey(long value, @NotNull String key);
 
     /**
      * native int
      */
     @Generated
     @Selector("encodeInt:forKey:")
-    public native void encodeIntForKey(int value, String key);
+    public native void encodeIntForKey(int value, @NotNull String key);
 
     @Generated
     @Selector("encodeObject:forKey:")
-    public native void encodeObjectForKey(@Mapped(ObjCObjectMapper.class) Object object, String key);
+    public native void encodeObjectForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object object, @NotNull String key);
 
     /**
      * If encoding has not yet finished, then invoking this property will call finishEncoding and return the data. If
      * you initialized the keyed archiver with a specific mutable data instance, then it will be returned from this
      * property after finishEncoding is called.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("encodedData")
     public native NSData encodedData();
@@ -234,14 +261,25 @@ public class NSKeyedArchiver extends NSCoder {
 
     /**
      * Initialize the archiver with empty data, ready for writing.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Use -initRequiringSecureCoding: instead
      */
+    @Deprecated
     @Generated
     @Selector("init")
     public native NSKeyedArchiver init();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Use -initRequiringSecureCoding: instead
+     */
+    @Deprecated
     @Generated
     @Selector("initForWritingWithMutableData:")
-    public native NSKeyedArchiver initForWritingWithMutableData(NSMutableData data);
+    public native NSKeyedArchiver initForWritingWithMutableData(@NotNull NSMutableData data);
 
     @Generated
     @Selector("outputFormat")
@@ -254,6 +292,8 @@ public class NSKeyedArchiver extends NSCoder {
      * all classes that are encoded conform with NSSecureCoding (it will throw an exception if a class which does not
      * NSSecureCoding is archived). Note that the getter is on the superclass, NSCoder. See NSCoder for more information
      * about secure coding.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("requiresSecureCoding")
@@ -261,14 +301,14 @@ public class NSKeyedArchiver extends NSCoder {
 
     @Generated
     @Selector("setClassName:forClass:")
-    public native void setClassNameForClass(String codedName, Class cls);
+    public native void setClassNameForClass(@Nullable String codedName, @NotNull Class cls);
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSKeyedArchiverDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) NSKeyedArchiverDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) NSKeyedArchiverDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSKeyedArchiverDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -289,6 +329,8 @@ public class NSKeyedArchiver extends NSCoder {
      * all classes that are encoded conform with NSSecureCoding (it will throw an exception if a class which does not
      * NSSecureCoding is archived). Note that the getter is on the superclass, NSCoder. See NSCoder for more information
      * about secure coding.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setRequiresSecureCoding:")
@@ -297,30 +339,35 @@ public class NSKeyedArchiver extends NSCoder {
     /**
      * Returns an \c NSData object containing the encoded form of the object graph whose root object is given,
      * optionally disabling secure coding.
-     * <p>
+     * 
      * If \c NSSecureCoding cannot be used, \c requiresSecureCoding may be turned off here; for improved security,
      * however, \c requiresSecureCoding should be left enabled whenever possible. \c requiresSecureCoding ensures that
      * all encoded objects conform to \c NSSecureCoding, preventing the possibility of encoding objects which cannot be
      * decoded later.
-     * <p>
+     * 
      * If the object graph cannot be encoded, returns \c nil and sets the \c error out parameter.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("archivedDataWithRootObject:requiringSecureCoding:error:")
     public static native NSData archivedDataWithRootObjectRequiringSecureCodingError(
-            @Mapped(ObjCObjectMapper.class) Object object, boolean requiresSecureCoding,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object object, boolean requiresSecureCoding,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Initializes the receiver for encoding an archive, optionally disabling secure coding.
-     * <p>
+     * 
      * If \c NSSecureCoding cannot be used, \c requiresSecureCoding may be turned off here; for improved security,
      * however, \c requiresSecureCoding should be left enabled whenever possible. \c requiresSecureCoding ensures that
      * all encoded objects conform to \c NSSecureCoding, preventing the possibility of encoding objects which cannot be
      * decoded later.
-     * <p>
+     * 
      * To produce archives whose structure matches those previously encoded using \c +archivedDataWithRootObject, encode
      * the top-level object in your archive for the \c NSKeyedArchiveRootObjectKey.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initRequiringSecureCoding:")

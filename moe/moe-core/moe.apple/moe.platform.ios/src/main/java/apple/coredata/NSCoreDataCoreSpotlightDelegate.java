@@ -25,10 +25,14 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSCoreDataSpotlightDelegate implements the CSSearchableIndexDelegate API, but can't
  * publicly declare it due to linkage requirements.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreData")
@@ -62,28 +66,32 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
      * Create the searchable attributes for the managed object. Override to return nil if you do not want the object
      * included in the index.
      */
+    @Nullable
     @Generated
     @Selector("attributeSetForObject:")
-    public native CSSearchableItemAttributeSet attributeSetForObject(NSManagedObject object);
+    public native CSSearchableItemAttributeSet attributeSetForObject(@NotNull NSManagedObject object);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,6 +107,7 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
     /**
      * CoreSpotlight domain identifer; default is the store's identifier
      */
+    @NotNull
     @Generated
     @Selector("domainIdentifier")
     public native String domainIdentifier();
@@ -111,6 +120,7 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
     /**
      * CoreSpotlight index name; default nil
      */
+    @Nullable
     @Generated
     @Selector("indexName")
     public native String indexName();
@@ -119,10 +129,15 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
     @Selector("init")
     public native NSCoreDataCoreSpotlightDelegate init();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     */
+    @Deprecated
     @Generated
     @Selector("initForStoreWithDescription:model:")
     public native NSCoreDataCoreSpotlightDelegate initForStoreWithDescriptionModel(
-            NSPersistentStoreDescription description, NSManagedObjectModel model);
+            @NotNull NSPersistentStoreDescription description, @NotNull NSManagedObjectModel model);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -141,9 +156,10 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,8 +180,8 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
     @Generated
     @Selector("searchableIndex:reindexAllSearchableItemsWithAcknowledgementHandler:")
     public native void searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler(
-            CSSearchableIndex searchableIndex,
-            @ObjCBlock(name = "call_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler") Block_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler acknowledgementHandler);
+            @NotNull CSSearchableIndex searchableIndex,
+            @NotNull @ObjCBlock(name = "call_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler") Block_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler acknowledgementHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -177,8 +193,8 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
     @Generated
     @Selector("searchableIndex:reindexSearchableItemsWithIdentifiers:acknowledgementHandler:")
     public native void searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler(
-            CSSearchableIndex searchableIndex, NSArray<String> identifiers,
-            @ObjCBlock(name = "call_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler") Block_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler acknowledgementHandler);
+            @NotNull CSSearchableIndex searchableIndex, @NotNull NSArray<String> identifiers,
+            @NotNull @ObjCBlock(name = "call_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler") Block_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler acknowledgementHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -203,34 +219,40 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
     /**
      * Deletes all searchable items for the configured Spotlight index. Calling this method may return
      * errors from lower layer dependencies, such as Core Data and Core Spotlight.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("deleteSpotlightIndexWithCompletionHandler:")
     public native void deleteSpotlightIndexWithCompletionHandler(
-            @ObjCBlock(name = "call_deleteSpotlightIndexWithCompletionHandler") Block_deleteSpotlightIndexWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_deleteSpotlightIndexWithCompletionHandler") Block_deleteSpotlightIndexWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteSpotlightIndexWithCompletionHandler {
         @Generated
-        void call_deleteSpotlightIndexWithCompletionHandler(NSError error);
+        void call_deleteSpotlightIndexWithCompletionHandler(@Nullable NSError error);
     }
 
     /**
      * Designated initializer for NSCoreDataCoreSpotlightDelegate. If this method is used to create the object,
      * -[NSCoreDataCoreSpotlightDelegate startSpotlightIndexing] must be called for the delegate to begin indexing.
-     * <p>
+     * 
      * NSCoreDataSpotlightDelegate requires that
      * - the store type is NSSQLiteStoreType.
      * - the store has persistent history tracking enabled.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initForStoreWithDescription:coordinator:")
     public native NSCoreDataCoreSpotlightDelegate initForStoreWithDescriptionCoordinator(
-            NSPersistentStoreDescription description, NSPersistentStoreCoordinator psc);
+            @NotNull NSPersistentStoreDescription description, @NotNull NSPersistentStoreCoordinator psc);
 
     /**
      * Returns if indexing is enabled or not.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isIndexingEnabled")
@@ -238,6 +260,8 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
 
     /**
      * Starts Spotlight indexing.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("startSpotlightIndexing")
@@ -245,6 +269,8 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
 
     /**
      * Stops Spotlight indexing.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("stopSpotlightIndexing")

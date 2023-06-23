@@ -20,15 +20,34 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class BNNSPoolingFunction {
+    /**
+     * API-Since: 10.0
+     */
     @Generated public static final int BNNSPoolingFunctionMax = 0x00000000;
-    @Generated public static final int BNNSPoolingFunctionAverage = 0x00000001;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 14.0
+     */
+    @Deprecated @Generated public static final int BNNSPoolingFunctionAverage = 0x00000001;
 
     @Generated
     private BNNSPoolingFunction() {
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated public static final int BNNSPoolingFunctionAverageCountIncludePadding = 0x00000001;
+    /**
+     * API-Since: 14.0
+     */
     @Generated public static final int BNNSPoolingFunctionAverageCountExcludePadding = 0x00000002;
+    /**
+     * API-Since: 14.0
+     */
     @Generated public static final int BNNSPoolingFunctionUnMax = 0x00000003;
+    /**
+     * API-Since: 14.0
+     */
     @Generated public static final int BNNSPoolingFunctionL2Norm = 0x00000004;
 }

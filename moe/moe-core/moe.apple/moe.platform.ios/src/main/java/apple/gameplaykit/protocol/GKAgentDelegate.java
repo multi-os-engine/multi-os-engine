@@ -24,6 +24,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Delegate that will receive messages regarding GKAgent updates.
@@ -39,7 +40,7 @@ public interface GKAgentDelegate {
     @Generated
     @IsOptional
     @Selector("agentDidUpdate:")
-    default void agentDidUpdate(GKAgent agent) {
+    default void agentDidUpdate(@NotNull GKAgent agent) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -49,7 +50,7 @@ public interface GKAgentDelegate {
     @Generated
     @IsOptional
     @Selector("agentWillUpdate:")
-    default void agentWillUpdate(GKAgent agent) {
+    default void agentWillUpdate(@NotNull GKAgent agent) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

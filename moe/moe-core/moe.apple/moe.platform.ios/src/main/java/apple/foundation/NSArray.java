@@ -57,6 +57,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -92,53 +94,68 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
 
     @Generated
     @Selector("arrayWithArray:")
-    public static native <_ObjectType> NSArray<?> arrayWithArray(NSArray<_ObjectType> array);
+    public static native <_ObjectType> NSArray<?> arrayWithArray(@NotNull NSArray<_ObjectType> array);
 
     /**
      * These methods are deprecated, and will be marked with API_DEPRECATED in a subsequent release. Use the variants
      * that use errors instead.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("arrayWithContentsOfFile:")
-    public static native <_ObjectType> NSArray<_ObjectType> arrayWithContentsOfFile(String path);
+    public static native <_ObjectType> NSArray<_ObjectType> arrayWithContentsOfFile(@NotNull String path);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("arrayWithContentsOfURL:")
-    public static native <_ObjectType> NSArray<_ObjectType> arrayWithContentsOfURL(NSURL url);
+    public static native <_ObjectType> NSArray<_ObjectType> arrayWithContentsOfURL(@NotNull NSURL url);
 
     @Generated
     @Selector("arrayWithObject:")
-    public static native <_ObjectType> NSArray<?> arrayWithObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
+    public static native <_ObjectType> NSArray<?> arrayWithObject(
+            @NotNull @Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
     @Generated
     @Variadic()
     @Selector("arrayWithObjects:")
-    public static native <_ObjectType> NSArray<?> arrayWithObjects(@Mapped(ObjCObjectMapper.class) _ObjectType firstObj,
-            Object... varargs);
+    public static native <_ObjectType> NSArray<?> arrayWithObjects(
+            @NotNull @Mapped(ObjCObjectMapper.class) _ObjectType firstObj, Object... varargs);
 
     @Generated
     @Selector("arrayWithObjects:count:")
     public static native <_ObjectType> NSArray<?> arrayWithObjectsCount(
-            @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -169,9 +186,10 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -209,8 +227,8 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
      */
     @Generated
     @Selector("addObserver:forKeyPath:options:context:")
-    public native void addObserverForKeyPathOptionsContext(NSObject observer, String keyPath, @NUInt long options,
-            VoidPtr context);
+    public native void addObserverForKeyPathOptionsContext(@NotNull NSObject observer, @NotNull String keyPath,
+            @NUInt long options, @Nullable VoidPtr context);
 
     /**
      * Register or deregister as an observer of the values at a key path relative to each indexed element of the array.
@@ -223,30 +241,35 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
      */
     @Generated
     @Selector("addObserver:toObjectsAtIndexes:forKeyPath:options:context:")
-    public native void addObserverToObjectsAtIndexesForKeyPathOptionsContext(NSObject observer, NSIndexSet indexes,
-            String keyPath, @NUInt long options, VoidPtr context);
+    public native void addObserverToObjectsAtIndexesForKeyPathOptionsContext(@NotNull NSObject observer,
+            @NotNull NSIndexSet indexes, @NotNull String keyPath, @NUInt long options, @Nullable VoidPtr context);
 
+    @NotNull
     @Generated
     @Selector("arrayByAddingObject:")
-    public native NSArray<_ObjectType> arrayByAddingObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
+    public native NSArray<_ObjectType> arrayByAddingObject(
+            @NotNull @Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
+    @NotNull
     @Generated
     @Selector("arrayByAddingObjectsFromArray:")
-    public native NSArray<_ObjectType> arrayByAddingObjectsFromArray(NSArray<_ObjectType> otherArray);
+    public native NSArray<_ObjectType> arrayByAddingObjectsFromArray(@NotNull NSArray<_ObjectType> otherArray);
 
+    @NotNull
     @Generated
     @Selector("componentsJoinedByString:")
-    public native String componentsJoinedByString(String separator);
+    public native String componentsJoinedByString(@NotNull String separator);
 
     @Generated
     @Selector("containsObject:")
-    public native boolean containsObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
+    public native boolean containsObject(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("count")
@@ -256,134 +279,181 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
+    public native long countByEnumeratingWithStateObjectsCount(@NotNull VoidPtr state,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
+    @NotNull
     @Generated
     @Selector("description")
     public native String description();
 
+    @NotNull
     @Generated
     @Selector("descriptionWithLocale:")
-    public native String descriptionWithLocale(@Mapped(ObjCObjectMapper.class) Object locale);
+    public native String descriptionWithLocale(@Nullable @Mapped(ObjCObjectMapper.class) Object locale);
 
+    @NotNull
     @Generated
     @Selector("descriptionWithLocale:indent:")
-    public native String descriptionWithLocaleIndent(@Mapped(ObjCObjectMapper.class) Object locale, @NUInt long level);
+    public native String descriptionWithLocaleIndent(@Nullable @Mapped(ObjCObjectMapper.class) Object locale,
+            @NUInt long level);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("enumerateObjectsAtIndexes:options:usingBlock:")
-    public native void enumerateObjectsAtIndexesOptionsUsingBlock(NSIndexSet s, @NUInt long opts,
-            @ObjCBlock(name = "call_enumerateObjectsAtIndexesOptionsUsingBlock") Block_enumerateObjectsAtIndexesOptionsUsingBlock block);
+    public native void enumerateObjectsAtIndexesOptionsUsingBlock(@NotNull NSIndexSet s, @NUInt long opts,
+            @NotNull @ObjCBlock(name = "call_enumerateObjectsAtIndexesOptionsUsingBlock") Block_enumerateObjectsAtIndexesOptionsUsingBlock block);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("enumerateObjectsUsingBlock:")
     public native void enumerateObjectsUsingBlock(
-            @ObjCBlock(name = "call_enumerateObjectsUsingBlock") Block_enumerateObjectsUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateObjectsUsingBlock") Block_enumerateObjectsUsingBlock block);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("enumerateObjectsWithOptions:usingBlock:")
     public native void enumerateObjectsWithOptionsUsingBlock(@NUInt long opts,
-            @ObjCBlock(name = "call_enumerateObjectsWithOptionsUsingBlock") Block_enumerateObjectsWithOptionsUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateObjectsWithOptionsUsingBlock") Block_enumerateObjectsWithOptionsUsingBlock block);
 
     /**
      * evaluate a predicate against an array of objects and return a filtered array
      */
+    @NotNull
     @Generated
     @Selector("filteredArrayUsingPredicate:")
-    public native NSArray<_ObjectType> filteredArrayUsingPredicate(NSPredicate predicate);
+    public native NSArray<_ObjectType> filteredArrayUsingPredicate(@NotNull NSPredicate predicate);
 
+    /**
+     * API-Since: 4.0
+     */
+    @Nullable
     @Generated
     @Selector("firstObject")
     @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType firstObject();
 
+    @Nullable
     @Generated
     @Selector("firstObjectCommonWithArray:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native _ObjectType firstObjectCommonWithArray(NSArray<_ObjectType> otherArray);
+    public native _ObjectType firstObjectCommonWithArray(@NotNull NSArray<_ObjectType> otherArray);
 
     /**
      * This method is unsafe because it could potentially cause buffer overruns. You should use -getObjects:range:
      * instead.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use -getObjects:range: instead
      */
+    @Deprecated
     @Generated
     @Selector("getObjects:")
-    public native void getObjects(@ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects);
+    public native void getObjects(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects);
 
     @Generated
     @Selector("getObjects:range:")
-    public native void getObjectsRange(@ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
+    public native void getObjectsRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
             @ByValue NSRange range);
 
     @Generated
     @Selector("indexOfObject:")
     @NUInt
-    public native long indexOfObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
+    public native long indexOfObject(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
     @Generated
     @Selector("indexOfObject:inRange:")
     @NUInt
-    public native long indexOfObjectInRange(@Mapped(ObjCObjectMapper.class) _ObjectType anObject,
+    public native long indexOfObjectInRange(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType anObject,
             @ByValue NSRange range);
 
     /**
      * binary search
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("indexOfObject:inSortedRange:options:usingComparator:")
     @NUInt
-    public native long indexOfObjectInSortedRangeOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) _ObjectType obj,
-            @ByValue NSRange r, @NUInt long opts,
-            @ObjCBlock(name = "call_indexOfObjectInSortedRangeOptionsUsingComparator") Block_indexOfObjectInSortedRangeOptionsUsingComparator cmp);
+    public native long indexOfObjectInSortedRangeOptionsUsingComparator(
+            @NotNull @Mapped(ObjCObjectMapper.class) _ObjectType obj, @ByValue NSRange r, @NUInt long opts,
+            @NotNull @ObjCBlock(name = "call_indexOfObjectInSortedRangeOptionsUsingComparator") Block_indexOfObjectInSortedRangeOptionsUsingComparator cmp);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("indexOfObjectAtIndexes:options:passingTest:")
     @NUInt
-    public native long indexOfObjectAtIndexesOptionsPassingTest(NSIndexSet s, @NUInt long opts,
-            @ObjCBlock(name = "call_indexOfObjectAtIndexesOptionsPassingTest") Block_indexOfObjectAtIndexesOptionsPassingTest predicate);
+    public native long indexOfObjectAtIndexesOptionsPassingTest(@NotNull NSIndexSet s, @NUInt long opts,
+            @NotNull @ObjCBlock(name = "call_indexOfObjectAtIndexesOptionsPassingTest") Block_indexOfObjectAtIndexesOptionsPassingTest predicate);
 
     @Generated
     @Selector("indexOfObjectIdenticalTo:")
     @NUInt
-    public native long indexOfObjectIdenticalTo(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
+    public native long indexOfObjectIdenticalTo(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
     @Generated
     @Selector("indexOfObjectIdenticalTo:inRange:")
     @NUInt
-    public native long indexOfObjectIdenticalToInRange(@Mapped(ObjCObjectMapper.class) _ObjectType anObject,
+    public native long indexOfObjectIdenticalToInRange(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType anObject,
             @ByValue NSRange range);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("indexOfObjectPassingTest:")
     @NUInt
     public native long indexOfObjectPassingTest(
-            @ObjCBlock(name = "call_indexOfObjectPassingTest") Block_indexOfObjectPassingTest predicate);
+            @NotNull @ObjCBlock(name = "call_indexOfObjectPassingTest") Block_indexOfObjectPassingTest predicate);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("indexOfObjectWithOptions:passingTest:")
     @NUInt
     public native long indexOfObjectWithOptionsPassingTest(@NUInt long opts,
-            @ObjCBlock(name = "call_indexOfObjectWithOptionsPassingTest") Block_indexOfObjectWithOptionsPassingTest predicate);
+            @NotNull @ObjCBlock(name = "call_indexOfObjectWithOptionsPassingTest") Block_indexOfObjectWithOptionsPassingTest predicate);
 
+    /**
+     * API-Since: 4.0
+     */
+    @NotNull
     @Generated
     @Selector("indexesOfObjectsAtIndexes:options:passingTest:")
-    public native NSIndexSet indexesOfObjectsAtIndexesOptionsPassingTest(NSIndexSet s, @NUInt long opts,
-            @ObjCBlock(name = "call_indexesOfObjectsAtIndexesOptionsPassingTest") Block_indexesOfObjectsAtIndexesOptionsPassingTest predicate);
+    public native NSIndexSet indexesOfObjectsAtIndexesOptionsPassingTest(@NotNull NSIndexSet s, @NUInt long opts,
+            @NotNull @ObjCBlock(name = "call_indexesOfObjectsAtIndexesOptionsPassingTest") Block_indexesOfObjectsAtIndexesOptionsPassingTest predicate);
 
+    /**
+     * API-Since: 4.0
+     */
+    @NotNull
     @Generated
     @Selector("indexesOfObjectsPassingTest:")
     public native NSIndexSet indexesOfObjectsPassingTest(
-            @ObjCBlock(name = "call_indexesOfObjectsPassingTest") Block_indexesOfObjectsPassingTest predicate);
+            @NotNull @ObjCBlock(name = "call_indexesOfObjectsPassingTest") Block_indexesOfObjectsPassingTest predicate);
 
+    /**
+     * API-Since: 4.0
+     */
+    @NotNull
     @Generated
     @Selector("indexesOfObjectsWithOptions:passingTest:")
     public native NSIndexSet indexesOfObjectsWithOptionsPassingTest(@NUInt long opts,
-            @ObjCBlock(name = "call_indexesOfObjectsWithOptionsPassingTest") Block_indexesOfObjectsWithOptionsPassingTest predicate);
+            @NotNull @ObjCBlock(name = "call_indexesOfObjectsWithOptionsPassingTest") Block_indexesOfObjectsWithOptionsPassingTest predicate);
 
     @Generated
     @Selector("init")
@@ -391,38 +461,52 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
 
     @Generated
     @Selector("initWithArray:")
-    public native NSArray<?> initWithArray(NSArray<_ObjectType> array);
+    public native NSArray<?> initWithArray(@NotNull NSArray<_ObjectType> array);
 
     @Generated
     @Selector("initWithArray:copyItems:")
-    public native NSArray<?> initWithArrayCopyItems(NSArray<_ObjectType> array, boolean flag);
+    public native NSArray<?> initWithArrayCopyItems(@NotNull NSArray<_ObjectType> array, boolean flag);
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSArray<?> initWithCoder(NSCoder coder);
+    public native NSArray<?> initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("initWithContentsOfFile:")
-    public native NSArray<_ObjectType> initWithContentsOfFile(String path);
+    public native NSArray<_ObjectType> initWithContentsOfFile(@NotNull String path);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("initWithContentsOfURL:")
-    public native NSArray<_ObjectType> initWithContentsOfURL(NSURL url);
+    public native NSArray<_ObjectType> initWithContentsOfURL(@NotNull NSURL url);
 
     @Generated
     @Variadic()
     @Selector("initWithObjects:")
-    public native NSArray<?> initWithObjects(@Mapped(ObjCObjectMapper.class) _ObjectType firstObj, Object... varargs);
+    public native NSArray<?> initWithObjects(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType firstObj,
+            Object... varargs);
 
     @Generated
     @Selector("initWithObjects:count:")
-    public native NSArray<?> initWithObjectsCount(@ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
-            @NUInt long cnt);
+    public native NSArray<?> initWithObjectsCount(
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("isEqualToArray:")
-    public native boolean isEqualToArray(NSArray<_ObjectType> otherArray);
+    public native boolean isEqualToArray(@NotNull NSArray<_ObjectType> otherArray);
 
+    @Nullable
     @Generated
     @Selector("lastObject")
     @MappedReturn(ObjCObjectMapper.class)
@@ -430,59 +514,76 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
 
     @Generated
     @Selector("makeObjectsPerformSelector:")
-    public native void makeObjectsPerformSelector(SEL aSelector);
+    public native void makeObjectsPerformSelector(@NotNull SEL aSelector);
 
     @Generated
     @Selector("makeObjectsPerformSelector:withObject:")
-    public native void makeObjectsPerformSelectorWithObject(SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object argument);
+    public native void makeObjectsPerformSelectorWithObject(@NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object argument);
 
+    @NotNull
     @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("objectAtIndex:")
     @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType objectAtIndex(@NUInt long index);
 
+    /**
+     * API-Since: 6.0
+     */
+    @NotNull
     @Generated
     @Selector("objectAtIndexedSubscript:")
     @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType objectAtIndexedSubscript(@NUInt long idx);
 
+    @NotNull
     @Generated
     @Selector("objectEnumerator")
     public native NSEnumerator<_ObjectType> objectEnumerator();
 
+    @NotNull
     @Generated
     @Selector("objectsAtIndexes:")
-    public native NSArray<_ObjectType> objectsAtIndexes(NSIndexSet indexes);
+    public native NSArray<_ObjectType> objectsAtIndexes(@NotNull NSIndexSet indexes);
 
+    @NotNull
     @Generated
     @Selector("pathsMatchingExtensions:")
-    public native NSArray<String> pathsMatchingExtensions(NSArray<String> filterTypes);
+    public native NSArray<String> pathsMatchingExtensions(@NotNull NSArray<String> filterTypes);
 
     @Generated
     @Selector("removeObserver:forKeyPath:")
-    public native void removeObserverForKeyPath(NSObject observer, String keyPath);
+    public native void removeObserverForKeyPath(@NotNull NSObject observer, @NotNull String keyPath);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("removeObserver:forKeyPath:context:")
-    public native void removeObserverForKeyPathContext(NSObject observer, String keyPath, VoidPtr context);
+    public native void removeObserverForKeyPathContext(@NotNull NSObject observer, @NotNull String keyPath,
+            @Nullable VoidPtr context);
 
     @Generated
     @Selector("removeObserver:fromObjectsAtIndexes:forKeyPath:")
-    public native void removeObserverFromObjectsAtIndexesForKeyPath(NSObject observer, NSIndexSet indexes,
-            String keyPath);
+    public native void removeObserverFromObjectsAtIndexesForKeyPath(@NotNull NSObject observer,
+            @NotNull NSIndexSet indexes, @NotNull String keyPath);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("removeObserver:fromObjectsAtIndexes:forKeyPath:context:")
-    public native void removeObserverFromObjectsAtIndexesForKeyPathContext(NSObject observer, NSIndexSet indexes,
-            String keyPath, VoidPtr context);
+    public native void removeObserverFromObjectsAtIndexesForKeyPathContext(@NotNull NSObject observer,
+            @NotNull NSIndexSet indexes, @NotNull String keyPath, @Nullable VoidPtr context);
 
+    @NotNull
     @Generated
     @Selector("reverseObjectEnumerator")
     public native NSEnumerator<_ObjectType> reverseObjectEnumerator();
@@ -492,12 +593,13 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
      */
     @Generated
     @Selector("setValue:forKey:")
-    public native void setValueForKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
+    public native void setValueForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object value, @NotNull String key);
 
     /**
      * Returns a shuffled instance of this array using the systems underlying random source, as with [GKRandomSource
      * sharedRandom]
      */
+    @NotNull
     @Generated
     @Selector("shuffledArray")
     public native NSArray<_ObjectType> shuffledArray();
@@ -505,47 +607,63 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     /**
      * Returns a shuffled instance of this array using the given random source.
      */
+    @NotNull
     @Generated
     @Selector("shuffledArrayWithRandomSource:")
-    public native NSArray<_ObjectType> shuffledArrayWithRandomSource(GKRandomSource randomSource);
+    public native NSArray<_ObjectType> shuffledArrayWithRandomSource(@NotNull GKRandomSource randomSource);
 
+    @NotNull
     @Generated
     @Selector("sortedArrayHint")
     public native NSData sortedArrayHint();
 
+    /**
+     * API-Since: 4.0
+     */
+    @NotNull
     @Generated
     @Selector("sortedArrayUsingComparator:")
     public native NSArray<_ObjectType> sortedArrayUsingComparator(
-            @ObjCBlock(name = "call_sortedArrayUsingComparator") Block_sortedArrayUsingComparator cmptr);
+            @NotNull @ObjCBlock(name = "call_sortedArrayUsingComparator") Block_sortedArrayUsingComparator cmptr);
 
     /**
      * returns a new array by sorting the objects of the receiver
      */
+    @NotNull
     @Generated
     @Selector("sortedArrayUsingDescriptors:")
-    public native NSArray<_ObjectType> sortedArrayUsingDescriptors(NSArray<? extends NSSortDescriptor> sortDescriptors);
+    public native NSArray<_ObjectType> sortedArrayUsingDescriptors(
+            @NotNull NSArray<? extends NSSortDescriptor> sortDescriptors);
 
+    @NotNull
     @Generated
     @Selector("sortedArrayUsingFunction:context:")
     public native NSArray<_ObjectType> sortedArrayUsingFunctionContext(
-            @FunctionPtr(name = "call_sortedArrayUsingFunctionContext") Function_sortedArrayUsingFunctionContext comparator,
-            VoidPtr context);
+            @NotNull @FunctionPtr(name = "call_sortedArrayUsingFunctionContext") Function_sortedArrayUsingFunctionContext comparator,
+            @Nullable VoidPtr context);
 
+    @NotNull
     @Generated
     @Selector("sortedArrayUsingFunction:context:hint:")
     public native NSArray<_ObjectType> sortedArrayUsingFunctionContextHint(
-            @FunctionPtr(name = "call_sortedArrayUsingFunctionContextHint") Function_sortedArrayUsingFunctionContextHint comparator,
-            VoidPtr context, NSData hint);
+            @NotNull @FunctionPtr(name = "call_sortedArrayUsingFunctionContextHint") Function_sortedArrayUsingFunctionContextHint comparator,
+            @Nullable VoidPtr context, @Nullable NSData hint);
 
+    @NotNull
     @Generated
     @Selector("sortedArrayUsingSelector:")
-    public native NSArray<_ObjectType> sortedArrayUsingSelector(SEL comparator);
+    public native NSArray<_ObjectType> sortedArrayUsingSelector(@NotNull SEL comparator);
 
+    /**
+     * API-Since: 4.0
+     */
+    @NotNull
     @Generated
     @Selector("sortedArrayWithOptions:usingComparator:")
     public native NSArray<_ObjectType> sortedArrayWithOptionsUsingComparator(@NUInt long opts,
-            @ObjCBlock(name = "call_sortedArrayWithOptionsUsingComparator") Block_sortedArrayWithOptionsUsingComparator cmptr);
+            @NotNull @ObjCBlock(name = "call_sortedArrayWithOptionsUsingComparator") Block_sortedArrayWithOptionsUsingComparator cmptr);
 
+    @NotNull
     @Generated
     @Selector("subarrayWithRange:")
     public native NSArray<_ObjectType> subarrayWithRange(@ByValue NSRange range);
@@ -560,18 +678,29 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
      * Return an array containing the results of invoking -valueForKey: on each of the receiver's elements. The returned
      * array will contain NSNull elements for each instance of -valueForKey: returning nil.
      */
+    @NotNull
     @Generated
     @Selector("valueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object valueForKey(String key);
+    public native Object valueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("writeToFile:atomically:")
-    public native boolean writeToFileAtomically(String path, boolean useAuxiliaryFile);
+    public native boolean writeToFileAtomically(@NotNull String path, boolean useAuxiliaryFile);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("writeToURL:atomically:")
-    public native boolean writeToURLAtomically(NSURL url, boolean atomically);
+    public native boolean writeToURLAtomically(@NotNull NSURL url, boolean atomically);
 
     @Override
     public boolean add(_ObjectType e) {
@@ -772,23 +901,24 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     @Generated
     public interface Block_enumerateObjectsAtIndexesOptionsUsingBlock {
         @Generated
-        void call_enumerateObjectsAtIndexesOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object obj,
-                @NUInt long idx, BoolPtr stop);
+        void call_enumerateObjectsAtIndexesOptionsUsingBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object obj,
+                @NUInt long idx, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateObjectsUsingBlock {
         @Generated
-        void call_enumerateObjectsUsingBlock(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx, BoolPtr stop);
+        void call_enumerateObjectsUsingBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
+                @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateObjectsWithOptionsUsingBlock {
         @Generated
-        void call_enumerateObjectsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
-                BoolPtr stop);
+        void call_enumerateObjectsWithOptionsUsingBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object obj,
+                @NUInt long idx, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -796,56 +926,56 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     public interface Block_indexOfObjectInSortedRangeOptionsUsingComparator {
         @Generated
         @NInt
-        long call_indexOfObjectInSortedRangeOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
-                @Mapped(ObjCObjectMapper.class) Object obj2);
+        long call_indexOfObjectInSortedRangeOptionsUsingComparator(@NotNull @Mapped(ObjCObjectMapper.class) Object obj1,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexOfObjectAtIndexesOptionsPassingTest {
         @Generated
-        boolean call_indexOfObjectAtIndexesOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object obj,
-                @NUInt long idx, BoolPtr stop);
+        boolean call_indexOfObjectAtIndexesOptionsPassingTest(@NotNull @Mapped(ObjCObjectMapper.class) Object obj,
+                @NUInt long idx, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexOfObjectPassingTest {
         @Generated
-        boolean call_indexOfObjectPassingTest(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
-                BoolPtr stop);
+        boolean call_indexOfObjectPassingTest(@NotNull @Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
+                @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexOfObjectWithOptionsPassingTest {
         @Generated
-        boolean call_indexOfObjectWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
-                BoolPtr stop);
+        boolean call_indexOfObjectWithOptionsPassingTest(@NotNull @Mapped(ObjCObjectMapper.class) Object obj,
+                @NUInt long idx, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexesOfObjectsAtIndexesOptionsPassingTest {
         @Generated
-        boolean call_indexesOfObjectsAtIndexesOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object obj,
-                @NUInt long idx, BoolPtr stop);
+        boolean call_indexesOfObjectsAtIndexesOptionsPassingTest(@NotNull @Mapped(ObjCObjectMapper.class) Object obj,
+                @NUInt long idx, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexesOfObjectsPassingTest {
         @Generated
-        boolean call_indexesOfObjectsPassingTest(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
-                BoolPtr stop);
+        boolean call_indexesOfObjectsPassingTest(@NotNull @Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
+                @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexesOfObjectsWithOptionsPassingTest {
         @Generated
-        boolean call_indexesOfObjectsWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
-                BoolPtr stop);
+        boolean call_indexesOfObjectsWithOptionsPassingTest(@NotNull @Mapped(ObjCObjectMapper.class) Object obj,
+                @NUInt long idx, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -853,8 +983,8 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     public interface Block_sortedArrayUsingComparator {
         @Generated
         @NInt
-        long call_sortedArrayUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
-                @Mapped(ObjCObjectMapper.class) Object obj2);
+        long call_sortedArrayUsingComparator(@NotNull @Mapped(ObjCObjectMapper.class) Object obj1,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -862,8 +992,8 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     public interface Function_sortedArrayUsingFunctionContext {
         @Generated
         @NInt
-        long call_sortedArrayUsingFunctionContext(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, VoidPtr arg2);
+        long call_sortedArrayUsingFunctionContext(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, @Nullable VoidPtr arg2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -871,8 +1001,8 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     public interface Function_sortedArrayUsingFunctionContextHint {
         @Generated
         @NInt
-        long call_sortedArrayUsingFunctionContextHint(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, VoidPtr arg2);
+        long call_sortedArrayUsingFunctionContextHint(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, @Nullable VoidPtr arg2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -880,8 +1010,8 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     public interface Block_sortedArrayWithOptionsUsingComparator {
         @Generated
         @NInt
-        long call_sortedArrayWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
-                @Mapped(ObjCObjectMapper.class) Object obj2);
+        long call_sortedArrayWithOptionsUsingComparator(@NotNull @Mapped(ObjCObjectMapper.class) Object obj1,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     private final static class NSArrayIterator<_ObjectType> implements Iterator<_ObjectType> {
@@ -982,55 +1112,70 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
 
     /**
      * Reads array stored in NSPropertyList format from the specified url.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("arrayWithContentsOfURL:error:")
-    public static native <_ObjectType> NSArray<_ObjectType> arrayWithContentsOfURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native <_ObjectType> NSArray<_ObjectType> arrayWithContentsOfURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Reads array stored in NSPropertyList format from the specified url.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("initWithContentsOfURL:error:")
-    public native NSArray<_ObjectType> initWithContentsOfURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSArray<_ObjectType> initWithContentsOfURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Serializes this instance to the specified URL in the NSPropertyList format (using NSPropertyListXMLFormat_v1_0).
      * For other formats use NSPropertyListSerialization directly.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("writeToURL:error:")
-    public native boolean writeToURLError(NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean writeToURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    @Nullable
     @Generated
     @Selector("arrayByApplyingDifference:")
-    public native NSArray<_ObjectType> arrayByApplyingDifference(NSOrderedCollectionDifference<_ObjectType> difference);
+    public native NSArray<_ObjectType> arrayByApplyingDifference(
+            @NotNull NSOrderedCollectionDifference<_ObjectType> difference);
 
     /**
      * Uses isEqual: to determine the difference between the parameter and the receiver
      */
+    @NotNull
     @Generated
     @Selector("differenceFromArray:")
-    public native NSOrderedCollectionDifference<_ObjectType> differenceFromArray(NSArray<_ObjectType> other);
+    public native NSOrderedCollectionDifference<_ObjectType> differenceFromArray(@NotNull NSArray<_ObjectType> other);
 
+    @NotNull
     @Generated
     @Selector("differenceFromArray:withOptions:")
-    public native NSOrderedCollectionDifference<_ObjectType> differenceFromArrayWithOptions(NSArray<_ObjectType> other,
-            @NUInt long options);
+    public native NSOrderedCollectionDifference<_ObjectType> differenceFromArrayWithOptions(
+            @NotNull NSArray<_ObjectType> other, @NUInt long options);
 
+    @NotNull
     @Generated
     @Selector("differenceFromArray:withOptions:usingEquivalenceTest:")
     public native NSOrderedCollectionDifference<_ObjectType> differenceFromArrayWithOptionsUsingEquivalenceTest(
-            NSArray<_ObjectType> other, @NUInt long options,
-            @ObjCBlock(name = "call_differenceFromArrayWithOptionsUsingEquivalenceTest") Block_differenceFromArrayWithOptionsUsingEquivalenceTest block);
+            @NotNull NSArray<_ObjectType> other, @NUInt long options,
+            @NotNull @ObjCBlock(name = "call_differenceFromArrayWithOptionsUsingEquivalenceTest") Block_differenceFromArrayWithOptionsUsingEquivalenceTest block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_differenceFromArrayWithOptionsUsingEquivalenceTest {
         @Generated
-        boolean call_differenceFromArrayWithOptionsUsingEquivalenceTest(@Mapped(ObjCObjectMapper.class) Object obj1,
-                @Mapped(ObjCObjectMapper.class) Object obj2);
+        boolean call_differenceFromArrayWithOptionsUsingEquivalenceTest(
+                @NotNull @Mapped(ObjCObjectMapper.class) Object obj1,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 }

@@ -45,9 +45,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * GKAchievement represents a game achievement that the player has started or completely achieved.
+ * 
+ * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -79,22 +83,25 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +136,10 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Asynchronously load all achievements for the local player
@@ -139,7 +147,7 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     @Generated
     @Selector("loadAchievementsWithCompletionHandler:")
     public static native void loadAchievementsWithCompletionHandler(
-            @ObjCBlock(name = "call_loadAchievementsWithCompletionHandler") Block_loadAchievementsWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_loadAchievementsWithCompletionHandler") Block_loadAchievementsWithCompletionHandler completionHandler);
 
     @Generated
     @Owned
@@ -154,21 +162,26 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
      * 1. Local player not authenticated
      * 2. Communications failure
      * 3. Reported Achievement does not exist
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("reportAchievements:withCompletionHandler:")
-    public static native void reportAchievementsWithCompletionHandler(NSArray<? extends GKAchievement> achievements,
-            @ObjCBlock(name = "call_reportAchievementsWithCompletionHandler") Block_reportAchievementsWithCompletionHandler completionHandler);
+    public static native void reportAchievementsWithCompletionHandler(
+            @NotNull NSArray<? extends GKAchievement> achievements,
+            @Nullable @ObjCBlock(name = "call_reportAchievementsWithCompletionHandler") Block_reportAchievementsWithCompletionHandler completionHandler);
 
     /**
      * Use this alternative to reportAchievements:withCompletionHandler: to allow only certain specific challenges to be
      * completed. Pass nil to avoid completing any challenges.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("reportAchievements:withEligibleChallenges:withCompletionHandler:")
     public static native void reportAchievementsWithEligibleChallengesWithCompletionHandler(
-            NSArray<? extends GKAchievement> achievements, NSArray<? extends GKChallenge> challenges,
-            @ObjCBlock(name = "call_reportAchievementsWithEligibleChallengesWithCompletionHandler") Block_reportAchievementsWithEligibleChallengesWithCompletionHandler completionHandler);
+            @NotNull NSArray<? extends GKAchievement> achievements, @NotNull NSArray<? extends GKChallenge> challenges,
+            @Nullable @ObjCBlock(name = "call_reportAchievementsWithEligibleChallengesWithCompletionHandler") Block_reportAchievementsWithEligibleChallengesWithCompletionHandler completionHandler);
 
     /**
      * Reset the achievements progress for the local player. All the entries for the local player are removed from the
@@ -180,7 +193,7 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     @Generated
     @Selector("resetAchievementsWithCompletionHandler:")
     public static native void resetAchievementsWithCompletionHandler(
-            @ObjCBlock(name = "call_resetAchievementsWithCompletionHandler") Block_resetAchievementsWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_resetAchievementsWithCompletionHandler") Block_resetAchievementsWithCompletionHandler completionHandler);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -207,29 +220,40 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @Selector("challengeComposeControllerWithMessage:players:completionHandler:")
-    public native UIViewController challengeComposeControllerWithMessagePlayersCompletionHandler(String message,
-            NSArray<? extends GKPlayer> players,
-            @ObjCBlock(name = "call_challengeComposeControllerWithMessagePlayersCompletionHandler") Block_challengeComposeControllerWithMessagePlayersCompletionHandler completionHandler);
+    public native UIViewController challengeComposeControllerWithMessagePlayersCompletionHandler(
+            @Nullable String message, @NotNull NSArray<? extends GKPlayer> players,
+            @Nullable @ObjCBlock(name = "call_challengeComposeControllerWithMessagePlayersCompletionHandler") Block_challengeComposeControllerWithMessagePlayersCompletionHandler completionHandler);
 
     /**
      * rb= GameKit.unavailableForTVOS
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, pass GKPlayers to
+     * challengeComposeControllerWithMessage:players: instead
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("challengeComposeControllerWithPlayers:message:completionHandler:")
     public native UIViewController challengeComposeControllerWithPlayersMessageCompletionHandler(
-            NSArray<String> playerIDs, String message,
-            @ObjCBlock(name = "call_challengeComposeControllerWithPlayersMessageCompletionHandler") Block_challengeComposeControllerWithPlayersMessageCompletionHandler completionHandler);
+            @Nullable NSArray<String> playerIDs, @Nullable String message,
+            @Nullable @ObjCBlock(name = "call_challengeComposeControllerWithPlayersMessageCompletionHandler") Block_challengeComposeControllerWithPlayersMessageCompletionHandler completionHandler);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Achievement identifier
      */
+    @Nullable
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -240,30 +264,36 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKAchievement initWithCoder(NSCoder coder);
+    public native GKAchievement initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Designated initializer
      */
     @Generated
     @Selector("initWithIdentifier:")
-    public native GKAchievement initWithIdentifier(String identifier);
+    public native GKAchievement initWithIdentifier(@Nullable String identifier);
 
     /**
      * This method is obsolete. Calling this initialiser does nothing and will return nil **
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, use initWithIdentifier:player:
      */
     @Generated
     @Deprecated
     @Selector("initWithIdentifier:forPlayer:")
-    public native GKAchievement initWithIdentifierForPlayer(String identifier, String playerID);
+    public native GKAchievement initWithIdentifierForPlayer(@Nullable String identifier, @NotNull String playerID);
 
     /**
      * Initialize the achievement for a specific player. Use to submit participant achievements when ending a turn-based
      * match.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithIdentifier:player:")
-    public native GKAchievement initWithIdentifierPlayer(String identifier, GKPlayer player);
+    public native GKAchievement initWithIdentifierPlayer(@Nullable String identifier, @NotNull GKPlayer player);
 
     /**
      * Set to NO until percentComplete = 100.
@@ -272,6 +302,11 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     @Selector("isCompleted")
     public native boolean isCompleted();
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 6.0
+     * Deprecated-Message: Use isHidden on the GKAchievementDescription class instead
+     */
     @Generated
     @Deprecated
     @Selector("isHidden")
@@ -279,15 +314,21 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     /**
      * This method is obsolete. It will never be invoked and its implementation does nothing**
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, pass GKPlayers to
+     * challengeComposeControllerWithMessage:players:completionHandler: and present the view controller instead
      */
     @Generated
     @Deprecated
     @Selector("issueChallengeToPlayers:message:")
-    public native void issueChallengeToPlayersMessage(NSArray<String> playerIDs, String message);
+    public native void issueChallengeToPlayersMessage(@Nullable NSArray<String> playerIDs, @Nullable String message);
 
     /**
      * Date the achievement was last reported. Read-only. Created at initialization
      */
+    @NotNull
     @Generated
     @Selector("lastReportedDate")
     public native NSDate lastReportedDate();
@@ -301,49 +342,69 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     /**
      * The identifier of the player that earned the achievement.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("player")
     public native GKPlayer player();
 
     /**
      * This property is obsolete. **
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This will return a null string, use player instead
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("playerID")
     public native String playerID();
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use +reportAchievements:withCompletionHandler:
+     */
     @Generated
     @Deprecated
     @Selector("reportAchievementWithCompletionHandler:")
     public native void reportAchievementWithCompletionHandler(
-            @ObjCBlock(name = "call_reportAchievementWithCompletionHandler") Block_reportAchievementWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_reportAchievementWithCompletionHandler") Block_reportAchievementWithCompletionHandler completionHandler);
 
     /**
      * This method is obsolete. It will never be invoked and its implementation does nothing**
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, pass GKPlayers to
+     * selectChallengeablePlayers:
      */
     @Generated
     @Deprecated
     @Selector("selectChallengeablePlayerIDs:withCompletionHandler:")
-    public native void selectChallengeablePlayerIDsWithCompletionHandler(NSArray<String> playerIDs,
-            @ObjCBlock(name = "call_selectChallengeablePlayerIDsWithCompletionHandler") Block_selectChallengeablePlayerIDsWithCompletionHandler completionHandler);
+    public native void selectChallengeablePlayerIDsWithCompletionHandler(@Nullable NSArray<String> playerIDs,
+            @Nullable @ObjCBlock(name = "call_selectChallengeablePlayerIDsWithCompletionHandler") Block_selectChallengeablePlayerIDsWithCompletionHandler completionHandler);
 
     /**
      * Given a list of players, return a subset of that list containing only players that are eligible to receive a
      * challenge for the achievement.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("selectChallengeablePlayers:withCompletionHandler:")
-    public native void selectChallengeablePlayersWithCompletionHandler(NSArray<? extends GKPlayer> players,
-            @ObjCBlock(name = "call_selectChallengeablePlayersWithCompletionHandler") Block_selectChallengeablePlayersWithCompletionHandler completionHandler);
+    public native void selectChallengeablePlayersWithCompletionHandler(@NotNull NSArray<? extends GKPlayer> players,
+            @Nullable @ObjCBlock(name = "call_selectChallengeablePlayersWithCompletionHandler") Block_selectChallengeablePlayersWithCompletionHandler completionHandler);
 
     /**
      * Achievement identifier
      */
     @Generated
     @Selector("setIdentifier:")
-    public native void setIdentifier(String value);
+    public native void setIdentifier(@Nullable String value);
 
     /**
      * Required, Percentage of achievement complete.
@@ -354,6 +415,8 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     /**
      * A banner will be momentarily displayed after reporting a completed achievement
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setShowsCompletionBanner:")
@@ -361,6 +424,8 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     /**
      * A banner will be momentarily displayed after reporting a completed achievement
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("showsCompletionBanner")
@@ -376,66 +441,69 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     @Generated
     public interface Block_challengeComposeControllerWithMessagePlayersCompletionHandler {
         @Generated
-        void call_challengeComposeControllerWithMessagePlayersCompletionHandler(UIViewController composeController,
-                boolean didIssueChallenge, NSArray<String> sentPlayerIDs);
+        void call_challengeComposeControllerWithMessagePlayersCompletionHandler(
+                @NotNull UIViewController composeController, boolean didIssueChallenge,
+                @Nullable NSArray<String> sentPlayerIDs);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_challengeComposeControllerWithPlayersMessageCompletionHandler {
         @Generated
-        void call_challengeComposeControllerWithPlayersMessageCompletionHandler(UIViewController composeController,
-                boolean didIssueChallenge, NSArray<String> sentPlayerIDs);
+        void call_challengeComposeControllerWithPlayersMessageCompletionHandler(
+                @NotNull UIViewController composeController, boolean didIssueChallenge,
+                @Nullable NSArray<String> sentPlayerIDs);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadAchievementsWithCompletionHandler {
         @Generated
-        void call_loadAchievementsWithCompletionHandler(NSArray<? extends GKAchievement> achievements, NSError error);
+        void call_loadAchievementsWithCompletionHandler(@Nullable NSArray<? extends GKAchievement> achievements,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_reportAchievementWithCompletionHandler {
         @Generated
-        void call_reportAchievementWithCompletionHandler(NSError error);
+        void call_reportAchievementWithCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_reportAchievementsWithCompletionHandler {
         @Generated
-        void call_reportAchievementsWithCompletionHandler(NSError error);
+        void call_reportAchievementsWithCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_reportAchievementsWithEligibleChallengesWithCompletionHandler {
         @Generated
-        void call_reportAchievementsWithEligibleChallengesWithCompletionHandler(NSError error);
+        void call_reportAchievementsWithEligibleChallengesWithCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resetAchievementsWithCompletionHandler {
         @Generated
-        void call_resetAchievementsWithCompletionHandler(NSError error);
+        void call_resetAchievementsWithCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_selectChallengeablePlayerIDsWithCompletionHandler {
         @Generated
-        void call_selectChallengeablePlayerIDsWithCompletionHandler(NSArray<String> challengeablePlayerIDs,
-                NSError error);
+        void call_selectChallengeablePlayerIDsWithCompletionHandler(@Nullable NSArray<String> challengeablePlayerIDs,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_selectChallengeablePlayersWithCompletionHandler {
         @Generated
-        void call_selectChallengeablePlayersWithCompletionHandler(NSArray<? extends GKPlayer> challengeablePlayers,
-                NSError error);
+        void call_selectChallengeablePlayersWithCompletionHandler(
+                @Nullable NSArray<? extends GKPlayer> challengeablePlayers, @Nullable NSError error);
     }
 }

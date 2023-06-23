@@ -38,13 +38,17 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Detects features in images.
- * <p>
+ * 
  * This class potentially holds onto a lot of state. Hence it may be beneficial from a performance perspective to re-use
  * the same CIDetector instance. Specifying a CIContext when creating a detector may have an impact on performance since
  * this context may be used when analyzing an image.
+ * 
+ * API-Since: 5.0
  */
 @Generated
 @Library("CoreImage")
@@ -76,22 +80,25 @@ public class CIDetector extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,26 +113,29 @@ public class CIDetector extends NSObject {
 
     /**
      * Returns a new detector instance of the given type.
-     * <p>
+     * 
      * The type is used to specify the detection intent.
      * This will return value if the detector type is not supported.
-     * <p>
+     * 
      * The context argument specifies the CIContext to be used to operate on the image. May be nil.
-     * <p>
+     * 
      * If the input image to -featuresInImage: is the output of a CoreImage operation, it may improve performance to
      * specify the same context that was used to operate on that image.
-     * <p>
+     * 
      * The detector may do image processing in this context and if the image is on the GPU and the specified context is
      * a GPU context this may avoid additional upload to / download from the GPU. If the input image is on the CPU (or
      * the output from a CPU based context) specifying a GPU based context (or vice versa) may reduce performance.
-     * <p>
+     * 
      * The options parameter lets you optinally specify a accuracy / performance tradeoff. Can be nil or an empty
      * dictionary.
+     * 
+     * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("detectorOfType:context:options:")
-    public static native CIDetector detectorOfTypeContextOptions(String type, CIContext context,
-            NSDictionary<String, ?> options);
+    public static native CIDetector detectorOfTypeContextOptions(@NotNull String type, @Nullable CIContext context,
+            @Nullable NSDictionary<String, ?> options);
 
     @Generated
     @Selector("hash")
@@ -149,9 +159,10 @@ public class CIDetector extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -182,19 +193,26 @@ public class CIDetector extends NSObject {
     /**
      * Returns an array of CIFeature instances in the given image.
      * The array is sorted by confidence, highest confidence first.
+     * 
+     * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @Selector("featuresInImage:")
-    public native NSArray<? extends CIFeature> featuresInImage(CIImage image);
+    public native NSArray<? extends CIFeature> featuresInImage(@NotNull CIImage image);
 
     /**
      * Returns an array of CIFeature instances in the given image.
      * The array is sorted by confidence, highest confidence first.
      * The options dictionary can contain a CIDetectorImageOrientation key value.
+     * 
+     * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @Selector("featuresInImage:options:")
-    public native NSArray<? extends CIFeature> featuresInImageOptions(CIImage image, NSDictionary<String, ?> options);
+    public native NSArray<? extends CIFeature> featuresInImageOptions(@NotNull CIImage image,
+            @Nullable NSDictionary<String, ?> options);
 
     @Generated
     @Selector("init")

@@ -17,9 +17,6 @@ limitations under the License.
 package apple.spritekit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGVector;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -49,6 +46,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGVector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("SpriteKit")
@@ -80,22 +82,25 @@ public class SKPhysicsWorld extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +135,10 @@ public class SKPhysicsWorld extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,20 +168,24 @@ public class SKPhysicsWorld extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("addJoint:")
-    public native void addJoint(SKPhysicsJoint joint);
+    public native void addJoint(@NotNull SKPhysicsJoint joint);
 
+    @Nullable
     @Generated
     @Selector("bodyAlongRayStart:end:")
     public native SKPhysicsBody bodyAlongRayStartEnd(@ByValue CGPoint start, @ByValue CGPoint end);
 
+    @Nullable
     @Generated
     @Selector("bodyAtPoint:")
     public native SKPhysicsBody bodyAtPoint(@ByValue CGPoint point);
 
+    @Nullable
     @Generated
     @Selector("bodyInRect:")
     public native SKPhysicsBody bodyInRect(@ByValue CGRect rect);
 
+    @Nullable
     @Generated
     @Selector("contactDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -183,22 +193,22 @@ public class SKPhysicsWorld extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("enumerateBodiesAlongRayStart:end:usingBlock:")
     public native void enumerateBodiesAlongRayStartEndUsingBlock(@ByValue CGPoint start, @ByValue CGPoint end,
-            @ObjCBlock(name = "call_enumerateBodiesAlongRayStartEndUsingBlock") Block_enumerateBodiesAlongRayStartEndUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateBodiesAlongRayStartEndUsingBlock") Block_enumerateBodiesAlongRayStartEndUsingBlock block);
 
     @Generated
     @Selector("enumerateBodiesAtPoint:usingBlock:")
     public native void enumerateBodiesAtPointUsingBlock(@ByValue CGPoint point,
-            @ObjCBlock(name = "call_enumerateBodiesAtPointUsingBlock") Block_enumerateBodiesAtPointUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateBodiesAtPointUsingBlock") Block_enumerateBodiesAtPointUsingBlock block);
 
     @Generated
     @Selector("enumerateBodiesInRect:usingBlock:")
     public native void enumerateBodiesInRectUsingBlock(@ByValue CGRect rect,
-            @ObjCBlock(name = "call_enumerateBodiesInRectUsingBlock") Block_enumerateBodiesInRectUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateBodiesInRectUsingBlock") Block_enumerateBodiesInRectUsingBlock block);
 
     /**
      * A global 2D vector specifying the field force acceleration due to gravity. The unit is meters per second so
@@ -215,7 +225,7 @@ public class SKPhysicsWorld extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKPhysicsWorld initWithCoder(NSCoder coder);
+    public native SKPhysicsWorld initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("removeAllJoints")
@@ -223,14 +233,15 @@ public class SKPhysicsWorld extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("removeJoint:")
-    public native void removeJoint(SKPhysicsJoint joint);
+    public native void removeJoint(@NotNull SKPhysicsJoint joint);
 
     @Generated
     @Selector("setContactDelegate:")
-    public native void setContactDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SKPhysicsContactDelegate value);
+    public native void setContactDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) SKPhysicsContactDelegate value);
 
     @Generated
-    public void setContactDelegate(@Mapped(ObjCObjectMapper.class) SKPhysicsContactDelegate value) {
+    public void setContactDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SKPhysicsContactDelegate value) {
         Object __old = contactDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -262,22 +273,22 @@ public class SKPhysicsWorld extends NSObject implements NSSecureCoding {
     @Generated
     public interface Block_enumerateBodiesAlongRayStartEndUsingBlock {
         @Generated
-        void call_enumerateBodiesAlongRayStartEndUsingBlock(SKPhysicsBody body, @ByValue CGPoint point,
-                @ByValue CGVector normal, BoolPtr stop);
+        void call_enumerateBodiesAlongRayStartEndUsingBlock(@NotNull SKPhysicsBody body, @ByValue CGPoint point,
+                @ByValue CGVector normal, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateBodiesAtPointUsingBlock {
         @Generated
-        void call_enumerateBodiesAtPointUsingBlock(SKPhysicsBody body, BoolPtr stop);
+        void call_enumerateBodiesAtPointUsingBlock(@NotNull SKPhysicsBody body, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateBodiesInRectUsingBlock {
         @Generated
-        void call_enumerateBodiesInRectUsingBlock(SKPhysicsBody body, BoolPtr stop);
+        void call_enumerateBodiesInRectUsingBlock(@NotNull SKPhysicsBody body, @NotNull BoolPtr stop);
     }
 
     @Generated

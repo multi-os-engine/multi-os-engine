@@ -24,14 +24,18 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A request that will produce or update a VNFaceObservation's property faceCaptureQuality with a float value.
  * faceCaptureQuality is a float (wrapped by a NSNumber) that represents the capture quality of a given face in a photo.
  * The float will be a value between 0 and 1, with 1 being the highest face capture quality and 0 being the lowest.
  * If the request fails or the face observation has never been processed, the property faceCaptureQuality will be nil.
- * <p>
+ * 
  * This request will generate VNFaceObservation objects with the face quality variable populated with information .
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Vision")
@@ -63,22 +67,25 @@ public class VNDetectFaceCaptureQualityRequest extends VNImageBasedRequest imple
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -113,8 +120,9 @@ public class VNDetectFaceCaptureQualityRequest extends VNImageBasedRequest imple
     @Generated
     @Selector("initWithCompletionHandler:")
     public native VNDetectFaceCaptureQualityRequest initWithCompletionHandler(
-            @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
 
+    @Nullable
     @Generated
     @Selector("inputFaceObservations")
     public native NSArray<? extends VNFaceObservation> inputFaceObservations();
@@ -136,9 +144,10 @@ public class VNDetectFaceCaptureQualityRequest extends VNImageBasedRequest imple
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,7 +164,7 @@ public class VNDetectFaceCaptureQualityRequest extends VNImageBasedRequest imple
 
     @Generated
     @Selector("setInputFaceObservations:")
-    public native void setInputFaceObservations(NSArray<? extends VNFaceObservation> value);
+    public native void setInputFaceObservations(@Nullable NSArray<? extends VNFaceObservation> value);
 
     @Generated
     @Selector("setVersion:")
@@ -165,6 +174,7 @@ public class VNDetectFaceCaptureQualityRequest extends VNImageBasedRequest imple
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();
@@ -177,6 +187,7 @@ public class VNDetectFaceCaptureQualityRequest extends VNImageBasedRequest imple
     /**
      * VNFaceObservation with populated faceCaptureQuality property results.
      */
+    @Nullable
     @Generated
     @Selector("results")
     public native NSArray<? extends VNFaceObservation> results();

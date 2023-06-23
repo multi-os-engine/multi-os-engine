@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] SCPreferencesNotification
- * <p>
+ * 
  * Used with the SCPreferencesCallBack callback
  * to describe the type of notification.
  * [@constant] kSCPreferencesNotificationCommit Indicates when new

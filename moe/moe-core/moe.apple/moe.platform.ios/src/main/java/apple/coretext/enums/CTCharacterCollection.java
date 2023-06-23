@@ -20,25 +20,25 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] CTCharacterCollection
- * <p>
+ * 
  * These constants specify character collections.
- * <p>
+ * 
  * [@constant] kCTCharacterCollectionIdentityMapping
  * Indicates that the character identifier is equal to the CGGlyph
  * glyph index.
- * <p>
+ * 
  * [@constant] kCTCharacterCollectionAdobeCNS1
  * Indicates the Adobe-CNS1 mapping.
- * <p>
+ * 
  * [@constant] kCTCharacterCollectionAdobeGB1
  * Indicates the Adobe-GB1 mapping.
- * <p>
+ * 
  * [@constant] kCTCharacterCollectionAdobeJapan1
  * Indicates the Adobe-Japan1 mapping.
- * <p>
+ * 
  * [@constant] kCTCharacterCollectionAdobeJapan2
  * Indicates the Adobe-Japan2 mapping.
- * <p>
+ * 
  * [@constant] kCTCharacterCollectionAdobeKorea1
  * Indicates the Adobe-Korea1 mapping.
  */
@@ -50,11 +50,41 @@ public final class CTCharacterCollection {
     @Generated public static final char CharacterCollectionAdobeJapan1 = 0x0003;
     @Generated public static final char CharacterCollectionAdobeJapan2 = 0x0004;
     @Generated public static final char CharacterCollectionAdobeKorea1 = 0x0005;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final char IdentityMappingCharacterCollection = 0x0000;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final char AdobeCNS1CharacterCollection = 0x0001;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final char AdobeGB1CharacterCollection = 0x0002;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final char AdobeJapan1CharacterCollection = 0x0003;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final char AdobeJapan2CharacterCollection = 0x0004;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final char AdobeKorea1CharacterCollection = 0x0005;
 
     @Generated

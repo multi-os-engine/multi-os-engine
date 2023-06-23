@@ -37,7 +37,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.1
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -68,22 +73,25 @@ public class MPFeedbackCommand extends MPRemoteCommand {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -118,9 +126,10 @@ public class MPFeedbackCommand extends MPRemoteCommand {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -174,7 +183,10 @@ public class MPFeedbackCommand extends MPRemoteCommand {
      * An optional shorter version of the localized title for this feedback
      * command. MediaPlayer uses this property to display this command's title on
      * remote control interfaces with little screen space.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("localizedShortTitle")
     public native String localizedShortTitle();
@@ -182,6 +194,7 @@ public class MPFeedbackCommand extends MPRemoteCommand {
     /**
      * A localized string briefly describing the context of the command.
      */
+    @NotNull
     @Generated
     @Selector("localizedTitle")
     public native String localizedTitle();
@@ -190,15 +203,17 @@ public class MPFeedbackCommand extends MPRemoteCommand {
      * An optional shorter version of the localized title for this feedback
      * command. MediaPlayer uses this property to display this command's title on
      * remote control interfaces with little screen space.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setLocalizedShortTitle:")
-    public native void setLocalizedShortTitle(String value);
+    public native void setLocalizedShortTitle(@NotNull String value);
 
     /**
      * A localized string briefly describing the context of the command.
      */
     @Generated
     @Selector("setLocalizedTitle:")
-    public native void setLocalizedTitle(String value);
+    public native void setLocalizedTitle(@NotNull String value);
 }

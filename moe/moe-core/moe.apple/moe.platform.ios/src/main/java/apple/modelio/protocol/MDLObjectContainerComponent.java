@@ -26,7 +26,11 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -34,24 +38,32 @@ import org.moe.natj.objc.ann.Selector;
 public interface MDLObjectContainerComponent extends MDLComponent, NSFastEnumeration {
     @Generated
     @Selector("addObject:")
-    void addObject(MDLObject object);
+    void addObject(@NotNull MDLObject object);
 
     /**
      * returns an array of this object's contained objects, aka children
      */
+    @NotNull
     @Generated
     @Selector("objects")
     NSArray<? extends MDLObject> objects();
 
     @Generated
     @Selector("removeObject:")
-    void removeObject(MDLObject object);
+    void removeObject(@NotNull MDLObject object);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("count")
     @NUInt
     long count();
 
+    /**
+     * API-Since: 11.0
+     */
+    @NotNull
     @Generated
     @Selector("objectAtIndexedSubscript:")
     MDLObject objectAtIndexedSubscript(@NUInt long index);

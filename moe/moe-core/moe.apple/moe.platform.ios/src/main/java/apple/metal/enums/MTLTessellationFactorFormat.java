@@ -19,8 +19,14 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 public final class MTLTessellationFactorFormat {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long MTLTessellationFactorFormatHalf = 0x0000000000000000L;
 
     @Generated

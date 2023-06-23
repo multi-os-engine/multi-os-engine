@@ -41,15 +41,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MDLObjectContainer
- * <p>
+ * 
  * Default container object
- * <p>
+ * 
  * Subclass the object container to support custom containers. Such
  * custom containers might reference in memory representations, offline
  * databases, and so on.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("ModelIO")
@@ -81,22 +85,25 @@ public class MDLObjectContainer extends NSObject implements MDLObjectContainerCo
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +138,10 @@ public class MDLObjectContainer extends NSObject implements MDLObjectContainerCo
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,31 +171,33 @@ public class MDLObjectContainer extends NSObject implements MDLObjectContainerCo
 
     @Generated
     @Selector("addObject:")
-    public native void addObject(MDLObject object);
+    public native void addObject(@NotNull MDLObject object);
 
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
+    public native long countByEnumeratingWithStateObjectsCount(@NotNull VoidPtr state,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
     @Generated
     @Selector("init")
     public native MDLObjectContainer init();
 
+    @NotNull
     @Generated
     @Selector("objects")
     public native NSArray<? extends MDLObject> objects();
 
     @Generated
     @Selector("removeObject:")
-    public native void removeObject(MDLObject object);
+    public native void removeObject(@NotNull MDLObject object);
 
     @Generated
     @Selector("count")
     @NUInt
     public native long count();
 
+    @NotNull
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native MDLObject objectAtIndexedSubscript(@NUInt long index);

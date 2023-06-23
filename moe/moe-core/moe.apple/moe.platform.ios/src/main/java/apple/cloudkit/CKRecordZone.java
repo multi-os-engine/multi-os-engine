@@ -42,7 +42,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -73,22 +78,25 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -97,6 +105,7 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @NotNull
     @Generated
     @Selector("defaultRecordZone")
     public static native CKRecordZone defaultRecordZone();
@@ -127,9 +136,10 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,15 +180,16 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
     @NUInt
     public native long capabilities();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -186,15 +197,15 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKRecordZone initWithCoder(NSCoder coder);
+    public native CKRecordZone initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithZoneID:")
-    public native CKRecordZone initWithZoneID(CKRecordZoneID zoneID);
+    public native CKRecordZone initWithZoneID(@NotNull CKRecordZoneID zoneID);
 
     @Generated
     @Selector("initWithZoneName:")
-    public native CKRecordZone initWithZoneName(String zoneName);
+    public native CKRecordZone initWithZoneName(@NotNull String zoneName);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -202,6 +213,7 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
         return supportsSecureCoding();
     }
 
+    @NotNull
     @Generated
     @Selector("zoneID")
     public native CKRecordZoneID zoneID();
@@ -209,13 +221,16 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * The share property on a record zone will only be set on zones fetched from the server and only if a
      * corresponding zone-wide share record for the zone exists on the server.
-     * <p>
+     * 
      * You can create a zone-wide share for a zone using @code -[CKShare initWithRecordZoneID:] @endcode.
-     * <p>
+     * 
      * Zone-wide sharing is only supported in zones with the @c CKRecordZoneCapabilityZoneWideSharing sharing
      * capability.
      * You cannot share a zone if it already contains shared records.
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("share")
     public native CKReference share();

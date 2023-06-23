@@ -46,10 +46,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNPhysicsBody
- * <p>
+ * 
  * The SCNPhysicsBody class describes the physics properties (such as mass, friction...) of a node.
  */
 @Generated
@@ -82,29 +84,32 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Creates an instance of a rigid body with a specific shape.
      */
     @Generated
     @Selector("bodyWithType:shape:")
-    public static native SCNPhysicsBody bodyWithTypeShape(@NInt long type, SCNPhysicsShape shape);
+    public static native SCNPhysicsBody bodyWithTypeShape(@NInt long type, @Nullable SCNPhysicsShape shape);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,6 +125,7 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     /**
      * Creates an instance of a dynamic body with default properties.
      */
+    @NotNull
     @Generated
     @Selector("dynamicBody")
     public static native SCNPhysicsBody dynamicBody();
@@ -146,13 +152,15 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Creates an instance of a kinematic body with default properties.
      */
+    @NotNull
     @Generated
     @Selector("kinematicBody")
     public static native SCNPhysicsBody kinematicBody();
@@ -177,6 +185,7 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     /**
      * Creates an instance of a static body with default properties.
      */
+    @NotNull
     @Generated
     @Selector("staticBody")
     public static native SCNPhysicsBody staticBody();
@@ -294,17 +303,20 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
      * A mask that defines which categories of bodies cause intersection notifications with this physics body. Defaults
      * to 0.
      * On iOS 8 and macOS 10.10 and lower the intersection notifications are always sent when a collision occurs.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("contactTestBitMask")
     @NUInt
     public native long contactTestBitMask();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Specifies the damping factor of the receiver. Optionally reduce the body's linear velocity each frame to simulate
@@ -317,7 +329,7 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Specifies the force resisting the relative motion of solid sliding against each other. Defaults to 0.5.
@@ -333,10 +345,12 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsBody initWithCoder(NSCoder coder);
+    public native SCNPhysicsBody initWithCoder(@NotNull NSCoder coder);
 
     /**
      * If set to YES this node will be affected by gravity. The default is YES.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isAffectedByGravity")
@@ -344,6 +358,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * If set to YES this node will be affected by gravity. The default is YES.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAffectedByGravity:")
@@ -369,6 +385,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     /**
      * Specifies the moment of inertia of the body as a vector in 3D. Disable usesDefaultMomentOfInertia for this value
      * to be used instead of the default moment of inertia that is calculated from the shape geometry.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("momentOfInertia")
@@ -379,6 +397,7 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
      * Specifies the physics shape of the receiver. Leaving this nil will let the system decide and use the most
      * efficients bounding representation of the actual geometry.
      */
+    @Nullable
     @Generated
     @Selector("physicsShape")
     public native SCNPhysicsShape physicsShape();
@@ -467,6 +486,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
      * A mask that defines which categories of bodies cause intersection notifications with this physics body. Defaults
      * to 0.
      * On iOS 8 and macOS 10.10 and lower the intersection notifications are always sent when a collision occurs.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setContactTestBitMask:")
@@ -497,6 +518,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     /**
      * Specifies the moment of inertia of the body as a vector in 3D. Disable usesDefaultMomentOfInertia for this value
      * to be used instead of the default moment of inertia that is calculated from the shape geometry.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMomentOfInertia:")
@@ -508,7 +531,7 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
      */
     @Generated
     @Selector("setPhysicsShape:")
-    public native void setPhysicsShape(SCNPhysicsShape value);
+    public native void setPhysicsShape(@Nullable SCNPhysicsShape value);
 
     /**
      * Specifies the restitution of collisions. Defaults to 0.5.
@@ -533,6 +556,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Permits to disable the use of the default moment of inertia in favor of the one stored in momentOfInertia.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setUsesDefaultMomentOfInertia:")
@@ -569,6 +594,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Permits to disable the use of the default moment of inertia in favor of the one stored in momentOfInertia.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("usesDefaultMomentOfInertia")
@@ -593,6 +620,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Angular velocity threshold under which the body may be considered resting. Defaults to 0.1.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("angularRestingThreshold")
@@ -601,6 +630,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Specifies an offset for the center of mass of the body. Defaults to (0,0,0).
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("centerOfMassOffset")
@@ -611,6 +642,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
      * Use discrete collision detection if the body’s distance traveled in one step is at or below this threshold, or
      * continuous collision detection otherwise. Defaults to zero, indicating that continuous collision detection is
      * always disabled.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("continuousCollisionDetectionThreshold")
@@ -619,6 +652,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Linear velocity threshold under which the body may be considered resting. Defaults to 0.1.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("linearRestingThreshold")
@@ -627,6 +662,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Angular velocity threshold under which the body may be considered resting. Defaults to 0.1.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setAngularRestingThreshold:")
@@ -634,6 +671,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Specifies an offset for the center of mass of the body. Defaults to (0,0,0).
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setCenterOfMassOffset:")
@@ -643,6 +682,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
      * Use discrete collision detection if the body’s distance traveled in one step is at or below this threshold, or
      * continuous collision detection otherwise. Defaults to zero, indicating that continuous collision detection is
      * always disabled.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setContinuousCollisionDetectionThreshold:")
@@ -650,6 +691,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Linear velocity threshold under which the body may be considered resting. Defaults to 0.1.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setLinearRestingThreshold:")
@@ -657,6 +700,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Sets a physics body at rest (or not)
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setResting:")

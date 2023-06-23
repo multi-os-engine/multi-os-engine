@@ -32,7 +32,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -51,6 +56,7 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    @Nullable
     @Generated
     @Selector("activityIndicatorColorTransformer")
     @ObjCBlock(name = "call_activityIndicatorColorTransformer_ret")
@@ -59,8 +65,9 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_activityIndicatorColorTransformer_ret {
+        @NotNull
         @Generated
-        UIColor call_activityIndicatorColorTransformer_ret(UIColor color);
+        UIColor call_activityIndicatorColorTransformer_ret(@NotNull UIColor color);
     }
 
     @Generated
@@ -73,17 +80,19 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @Selector("allocWithZone:")
     public static native UIButtonConfiguration allocWithZone(VoidPtr zone);
 
+    @Nullable
     @Generated
     @Selector("attributedSubtitle")
     public native NSAttributedString attributedSubtitle();
 
+    @Nullable
     @Generated
     @Selector("attributedTitle")
     public native NSAttributedString attributedTitle();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * If the style should automatically update when the button is selected. Default varies by style. Disable to
@@ -97,6 +106,7 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
      * A UIBackgroundConfiguration describing the button's background. UIKit provides a value by default with values
      * appropriate for a UIButton.
      */
+    @NotNull
     @Generated
     @Selector("background")
     public native UIBackgroundConfiguration background();
@@ -106,6 +116,7 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
      * and finally applied to specific elements. Setting nil will cede full control to the configuration to select a
      * color appropriate to the style.
      */
+    @Nullable
     @Generated
     @Selector("baseBackgroundColor")
     public native UIColor baseBackgroundColor();
@@ -115,22 +126,27 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
      * and finally applied to specific elements. Setting nil will cede full control to the configuration to select a
      * color appropriate to the style.
      */
+    @Nullable
     @Generated
     @Selector("baseForegroundColor")
     public native UIColor baseForegroundColor();
 
+    @NotNull
     @Generated
     @Selector("borderedButtonConfiguration")
     public static native UIButtonConfiguration borderedButtonConfiguration();
 
+    @NotNull
     @Generated
     @Selector("borderedProminentButtonConfiguration")
     public static native UIButtonConfiguration borderedProminentButtonConfiguration();
 
+    @NotNull
     @Generated
     @Selector("borderedTintedButtonConfiguration")
     public static native UIButtonConfiguration borderedTintedButtonConfiguration();
 
+    @NotNull
     @Generated
     @Selector("borderlessButtonConfiguration")
     public static native UIButtonConfiguration borderlessButtonConfiguration();
@@ -146,18 +162,21 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -171,11 +190,12 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @ByValue
     public native NSDirectionalEdgeInsets contentInsets();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * The corner style controls how background.cornerRadius is interpreted by the button. Defaults to `Dynamic`.
@@ -195,12 +215,14 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    @NotNull
     @Generated
     @Selector("filledButtonConfiguration")
     public static native UIButtonConfiguration filledButtonConfiguration();
 
+    @NotNull
     @Generated
     @Selector("grayButtonConfiguration")
     public static native UIButtonConfiguration grayButtonConfiguration();
@@ -210,10 +232,12 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @NUInt
     public static native long hash_static();
 
+    @Nullable
     @Generated
     @Selector("image")
     public native UIImage image();
 
+    @Nullable
     @Generated
     @Selector("imageColorTransformer")
     @ObjCBlock(name = "call_imageColorTransformer_ret")
@@ -222,8 +246,9 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_imageColorTransformer_ret {
+        @NotNull
         @Generated
-        UIColor call_imageColorTransformer_ret(UIColor color);
+        UIColor call_imageColorTransformer_ret(@NotNull UIColor color);
     }
 
     /**
@@ -248,7 +273,7 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIButtonConfiguration initWithCoder(NSCoder coder);
+    public native UIButtonConfiguration initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -267,9 +292,10 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Button style to use when running under the Mac idiom.
@@ -284,10 +310,12 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @Selector("new")
     public static native UIButtonConfiguration new_objc();
 
+    @NotNull
     @Generated
     @Selector("plainButtonConfiguration")
     public static native UIButtonConfiguration plainButtonConfiguration();
 
+    @Nullable
     @Generated
     @Selector("preferredSymbolConfigurationForImage")
     public native UIImageSymbolConfiguration preferredSymbolConfigurationForImage();
@@ -303,22 +331,23 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @Generated
     @Selector("setActivityIndicatorColorTransformer:")
     public native void setActivityIndicatorColorTransformer(
-            @ObjCBlock(name = "call_setActivityIndicatorColorTransformer") Block_setActivityIndicatorColorTransformer value);
+            @Nullable @ObjCBlock(name = "call_setActivityIndicatorColorTransformer") Block_setActivityIndicatorColorTransformer value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setActivityIndicatorColorTransformer {
+        @NotNull
         @Generated
-        UIColor call_setActivityIndicatorColorTransformer(UIColor color);
+        UIColor call_setActivityIndicatorColorTransformer(@NotNull UIColor color);
     }
 
     @Generated
     @Selector("setAttributedSubtitle:")
-    public native void setAttributedSubtitle(NSAttributedString value);
+    public native void setAttributedSubtitle(@Nullable NSAttributedString value);
 
     @Generated
     @Selector("setAttributedTitle:")
-    public native void setAttributedTitle(NSAttributedString value);
+    public native void setAttributedTitle(@Nullable NSAttributedString value);
 
     /**
      * If the style should automatically update when the button is selected. Default varies by style. Disable to
@@ -334,7 +363,7 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
      */
     @Generated
     @Selector("setBackground:")
-    public native void setBackground(UIBackgroundConfiguration value);
+    public native void setBackground(@NotNull UIBackgroundConfiguration value);
 
     /**
      * The base color to use for background elements. This color may be modified before being passed to a transformer,
@@ -343,7 +372,7 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
      */
     @Generated
     @Selector("setBaseBackgroundColor:")
-    public native void setBaseBackgroundColor(UIColor value);
+    public native void setBaseBackgroundColor(@Nullable UIColor value);
 
     /**
      * The base color to use for foreground elements. This color may be modified before being passed to a transformer,
@@ -352,7 +381,7 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
      */
     @Generated
     @Selector("setBaseForegroundColor:")
-    public native void setBaseForegroundColor(UIColor value);
+    public native void setBaseForegroundColor(@Nullable UIColor value);
 
     /**
      * Determines the metrics and ideal size of the button. Clients may resize the button arbitrarily regardless of this
@@ -386,18 +415,19 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("setImage:")
-    public native void setImage(UIImage value);
+    public native void setImage(@Nullable UIImage value);
 
     @Generated
     @Selector("setImageColorTransformer:")
     public native void setImageColorTransformer(
-            @ObjCBlock(name = "call_setImageColorTransformer") Block_setImageColorTransformer value);
+            @Nullable @ObjCBlock(name = "call_setImageColorTransformer") Block_setImageColorTransformer value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setImageColorTransformer {
+        @NotNull
         @Generated
-        UIColor call_setImageColorTransformer(UIColor color);
+        UIColor call_setImageColorTransformer(@NotNull UIColor color);
     }
 
     /**
@@ -423,7 +453,7 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("setPreferredSymbolConfigurationForImage:")
-    public native void setPreferredSymbolConfigurationForImage(UIImageSymbolConfiguration value);
+    public native void setPreferredSymbolConfigurationForImage(@Nullable UIImageSymbolConfiguration value);
 
     /**
      * Shows an activity indicator in place of an image. Its placement is controlled by the imagePlacement property.
@@ -434,23 +464,25 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("setSubtitle:")
-    public native void setSubtitle(String value);
+    public native void setSubtitle(@Nullable String value);
 
     @Generated
     @Selector("setSubtitleTextAttributesTransformer:")
     public native void setSubtitleTextAttributesTransformer(
-            @ObjCBlock(name = "call_setSubtitleTextAttributesTransformer") Block_setSubtitleTextAttributesTransformer value);
+            @Nullable @ObjCBlock(name = "call_setSubtitleTextAttributesTransformer") Block_setSubtitleTextAttributesTransformer value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setSubtitleTextAttributesTransformer {
+        @NotNull
         @Generated
-        NSDictionary<String, ?> call_setSubtitleTextAttributesTransformer(NSDictionary<String, ?> textAttributes);
+        NSDictionary<String, ?> call_setSubtitleTextAttributesTransformer(
+                @NotNull NSDictionary<String, ?> textAttributes);
     }
 
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@Nullable String value);
 
     /**
      * The alignment to use for relative layout between title & subtitle.
@@ -469,13 +501,14 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @Generated
     @Selector("setTitleTextAttributesTransformer:")
     public native void setTitleTextAttributesTransformer(
-            @ObjCBlock(name = "call_setTitleTextAttributesTransformer") Block_setTitleTextAttributesTransformer value);
+            @Nullable @ObjCBlock(name = "call_setTitleTextAttributesTransformer") Block_setTitleTextAttributesTransformer value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setTitleTextAttributesTransformer {
+        @NotNull
         @Generated
-        NSDictionary<String, ?> call_setTitleTextAttributesTransformer(NSDictionary<String, ?> textAttributes);
+        NSDictionary<String, ?> call_setTitleTextAttributesTransformer(@NotNull NSDictionary<String, ?> textAttributes);
     }
 
     @Generated
@@ -489,10 +522,12 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @Selector("showsActivityIndicator")
     public native boolean showsActivityIndicator();
 
+    @Nullable
     @Generated
     @Selector("subtitle")
     public native String subtitle();
 
+    @Nullable
     @Generated
     @Selector("subtitleTextAttributesTransformer")
     @ObjCBlock(name = "call_subtitleTextAttributesTransformer_ret")
@@ -501,8 +536,10 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_subtitleTextAttributesTransformer_ret {
+        @NotNull
         @Generated
-        NSDictionary<String, ?> call_subtitleTextAttributesTransformer_ret(NSDictionary<String, ?> textAttributes);
+        NSDictionary<String, ?> call_subtitleTextAttributesTransformer_ret(
+                @NotNull NSDictionary<String, ?> textAttributes);
     }
 
     @Generated
@@ -519,10 +556,12 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
         return supportsSecureCoding();
     }
 
+    @NotNull
     @Generated
     @Selector("tintedButtonConfiguration")
     public static native UIButtonConfiguration tintedButtonConfiguration();
 
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();
@@ -543,6 +582,7 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @NFloat
     public native double titlePadding();
 
+    @Nullable
     @Generated
     @Selector("titleTextAttributesTransformer")
     @ObjCBlock(name = "call_titleTextAttributesTransformer_ret")
@@ -551,20 +591,75 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_titleTextAttributesTransformer_ret {
+        @NotNull
         @Generated
-        NSDictionary<String, ?> call_titleTextAttributesTransformer_ret(NSDictionary<String, ?> textAttributes);
+        NSDictionary<String, ?> call_titleTextAttributesTransformer_ret(
+                @NotNull NSDictionary<String, ?> textAttributes);
     }
 
     /**
      * Returns a copy of the configuration updated based on the given button, by applying the configuration's default
      * values for that button's state to any properties that have not been customized.
      */
+    @NotNull
     @Generated
     @Selector("updatedConfigurationForButton:")
-    public native UIButtonConfiguration updatedConfigurationForButton(UIButton button);
+    public native UIButtonConfiguration updatedConfigurationForButton(@NotNull UIButton button);
 
     @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * What kind of indicator should the button show. Default value is .automatic.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("indicator")
+    @NInt
+    public native long indicator();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("indicatorColorTransformer")
+    @ObjCBlock(name = "call_indicatorColorTransformer_ret")
+    public native Block_indicatorColorTransformer_ret indicatorColorTransformer();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_indicatorColorTransformer_ret {
+        @NotNull
+        @Generated
+        UIColor call_indicatorColorTransformer_ret(@NotNull UIColor color);
+    }
+
+    /**
+     * What kind of indicator should the button show. Default value is .automatic.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setIndicator:")
+    public native void setIndicator(@NInt long value);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setIndicatorColorTransformer:")
+    public native void setIndicatorColorTransformer(
+            @Nullable @ObjCBlock(name = "call_setIndicatorColorTransformer") Block_setIndicatorColorTransformer value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setIndicatorColorTransformer {
+        @NotNull
+        @Generated
+        UIColor call_setIndicatorColorTransformer(@NotNull UIColor color);
+    }
 }

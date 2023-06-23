@@ -25,12 +25,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An object designed to generate either full resolution or half resolution matte given the ARFrame.
- * <p>
+ * 
  * The caller initializes the object once and calls the alpha matte generation API for every ARFrame with the captured
  * image and segmentation stencil.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("ARKit")
@@ -62,22 +66,25 @@ public class ARMatteGenerator extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -92,11 +99,11 @@ public class ARMatteGenerator extends NSObject {
 
     /**
      * Generates dilated depth at the resolution of the segmentation stencil.
-     * <p>
+     * 
      * The caller can use depth information when compositing a virtual object with the captured scene. This API returns
      * the dilated linear depth to the caller. The reprojection of this depth to the caller's scene space is carried out
      * externally.
-     *
+     * 
      * @param frame         Current ARFrame containing camera image and estimated depth buffer. The caller is to ensure
      *                      that a valid depth buffer is present.
      * @param commandBuffer Metal command buffer for encoding depth dilation operations. The command buffer is committed
@@ -104,15 +111,16 @@ public class ARMatteGenerator extends NSObject {
      * @return Dilated depth MTLTexture for the given ARFrame at the segmentation stencil resolution. The texture
      *         consists of a single channel and is of type float16.
      */
+    @NotNull
     @Generated
     @Selector("generateDilatedDepthFromFrame:commandBuffer:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native MTLTexture generateDilatedDepthFromFrameCommandBuffer(ARFrame frame,
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
+    public native MTLTexture generateDilatedDepthFromFrameCommandBuffer(@NotNull ARFrame frame,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
 
     /**
      * Generates alpha matte at either full resolution or half the resolution of the captured image.
-     *
+     * 
      * @param frame         Current ARFrame containing camera image and segmentation stencil. The caller is to ensure
      *                      that a valid segmentation buffer is present.
      * @param commandBuffer Metal command buffer for encoding matting related operations. The command buffer is
@@ -120,11 +128,12 @@ public class ARMatteGenerator extends NSObject {
      * @return Alpha matte MTLTexture for the given ARFrame at full resolution or half resolution as chosen by the
      *         caller during initialization.
      */
+    @NotNull
     @Generated
     @Selector("generateMatteFromFrame:commandBuffer:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native MTLTexture generateMatteFromFrameCommandBuffer(ARFrame frame,
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
+    public native MTLTexture generateMatteFromFrameCommandBuffer(@NotNull ARFrame frame,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
 
     @Generated
     @Selector("hash")
@@ -137,22 +146,22 @@ public class ARMatteGenerator extends NSObject {
 
     /**
      * Initializes an instance of ARMatteGenerator.
-     * <p>
+     * 
      * For efficient creation of alpha mattes in real time it is recommended to instantiate this object only once and to
      * generate an alpha matte for every incoming frame.
-     *
+     * 
+     * @see ARFrame
+     * @see -[ARMatteGenerator generateMatteFromFrame:commandBuffer:]
      * @param device          The device the filter will run on.
      * @param matteResolution The resolution at which the matte is to be generated. Set using one of the values from
      *                        'ARMatteResolution'.
-     * @return Instance of ARMatteGenerator.
-     * @see ARFrame
-     * @see -[ARMatteGenerator generateMatteFromFrame:commandBuffer:]
      * @see ARMatteResolution
+     * @return Instance of ARMatteGenerator.
      */
     @Generated
     @Selector("initWithDevice:matteResolution:")
-    public native ARMatteGenerator initWithDeviceMatteResolution(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @NInt long matteResolution);
+    public native ARMatteGenerator initWithDeviceMatteResolution(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NInt long matteResolution);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -171,9 +180,10 @@ public class ARMatteGenerator extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

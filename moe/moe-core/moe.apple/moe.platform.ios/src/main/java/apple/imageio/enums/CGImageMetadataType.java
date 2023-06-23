@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.Generated;
 /**
  * Metadata value type constants.
  * [@typedef] CGImageMetadataType
- * <p>
+ * 
  * The XMP type for a CGImageMetadataTag
- * <p>
+ * 
  * CGImageMetadataType defines a list of constants used to indicate
  * the type for a CGImageMetadataTag. If you are reading metadata, use the type
  * to determine how to interpret the CGImageMetadataTag's value. If you are

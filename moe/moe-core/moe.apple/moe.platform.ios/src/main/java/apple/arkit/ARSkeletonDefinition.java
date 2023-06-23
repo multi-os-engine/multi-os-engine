@@ -22,13 +22,17 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Definition of a skeleton.
- * <p>
+ * 
  * A skeleton consists of a set of labeled joints that are defined in a certain hierarchy, i.e. joints are parented to
  * other joints.
  * One may use the parentIndices property to identify the hierarchy for a given skeleton definition.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("ARKit")
@@ -60,22 +64,25 @@ public class ARSkeletonDefinition extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -86,9 +93,10 @@ public class ARSkeletonDefinition extends NSObject {
 
     /**
      * Default skeleton definition for bodies defined in 2D.
-     *
+     * 
      * @see ARBody2D
      */
+    @NotNull
     @Generated
     @Selector("defaultBody2DSkeletonDefinition")
     public static native ARSkeletonDefinition defaultBody2DSkeletonDefinition();
@@ -97,9 +105,10 @@ public class ARSkeletonDefinition extends NSObject {
      * Default skeleton definition for bodies defined in 3D.
      * [@note] The default height of this skeleton, measured from lowest to highest joint in standing position, is
      * defined to be 1.71 meters.
-     *
+     * 
      * @see ARSkeleton3D
      */
+    @NotNull
     @Generated
     @Selector("defaultBody3DSkeletonDefinition")
     public static native ARSkeletonDefinition defaultBody3DSkeletonDefinition();
@@ -115,16 +124,16 @@ public class ARSkeletonDefinition extends NSObject {
 
     /**
      * Returns the index for a given joint identifier.
-     * <p>
+     * 
      * This function returns NSNotFound if an invalid joint name is passed.
-     *
+     * 
      * @param jointName Name of a given joint.
      * @return Joint index.
      */
     @Generated
     @Selector("indexForJointName:")
     @NUInt
-    public native long indexForJointName(String jointName);
+    public native long indexForJointName(@NotNull String jointName);
 
     @Generated
     @Selector("init")
@@ -158,20 +167,23 @@ public class ARSkeletonDefinition extends NSObject {
     /**
      * The joint names.
      */
+    @NotNull
     @Generated
     @Selector("jointNames")
     public native NSArray<String> jointNames();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The 3D skeleton in neutral pose.
-     * <p>
+     * 
      * The neutral skeleton pose assumes a standardized size of the skeleton in meters. The neutral pose is defined as
      * the skeleton's T-pose.
      */
+    @Nullable
     @Generated
     @Selector("neutralBodySkeleton3D")
     public native ARSkeleton3D neutralBodySkeleton3D();
@@ -183,13 +195,14 @@ public class ARSkeletonDefinition extends NSObject {
 
     /**
      * The parent index for each joint.
-     * <p>
+     * 
      * This property may be used to identify the hierarchical dependency between joints. If a line is drawn for every
      * joint and its parent joint
      * the result is a visualization of the underlying skeleton. The joint with no parent is denoted as the root joint.
      * The root joint's parent index has
      * a value of -1.
      */
+    @NotNull
     @Generated
     @Selector("parentIndices")
     public native NSArray<? extends NSNumber> parentIndices();

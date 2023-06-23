@@ -44,10 +44,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNParticlePropertyController
- * <p>
+ * 
  * The SCNParticlePropertyController class controls the variation over time or over distance of a particle property.
  */
 @Generated
@@ -80,22 +82,25 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -105,7 +110,7 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
      */
     @Generated
     @Selector("controllerWithAnimation:")
-    public static native SCNParticlePropertyController controllerWithAnimation(CAAnimation animation);
+    public static native SCNParticlePropertyController controllerWithAnimation(@NotNull CAAnimation animation);
 
     @Generated
     @Selector("debugDescription")
@@ -137,9 +142,10 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -176,19 +182,21 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
      * the property controlled.
      * See the documentation along property name definition.
      */
+    @NotNull
     @Generated
     @Selector("animation")
     public native CAAnimation animation();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -196,7 +204,7 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNParticlePropertyController initWithCoder(NSCoder coder);
+    public native SCNParticlePropertyController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("inputBias")
@@ -216,6 +224,7 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
     /**
      * Specifies an origin for the variation mode "SCNParticleInputModeOverDistance".
      */
+    @Nullable
     @Generated
     @Selector("inputOrigin")
     public native SCNNode inputOrigin();
@@ -223,6 +232,7 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
     /**
      * Specifies which property to use as input for the input mode "SCNParticleInputModeOverOtherProperty".
      */
+    @Nullable
     @Generated
     @Selector("inputProperty")
     public native String inputProperty();
@@ -243,7 +253,7 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
      */
     @Generated
     @Selector("setAnimation:")
-    public native void setAnimation(CAAnimation value);
+    public native void setAnimation(@NotNull CAAnimation value);
 
     @Generated
     @Selector("setInputBias:")
@@ -263,13 +273,13 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
      */
     @Generated
     @Selector("setInputOrigin:")
-    public native void setInputOrigin_unsafe(SCNNode value);
+    public native void setInputOrigin_unsafe(@Nullable SCNNode value);
 
     /**
      * Specifies an origin for the variation mode "SCNParticleInputModeOverDistance".
      */
     @Generated
-    public void setInputOrigin(SCNNode value) {
+    public void setInputOrigin(@Nullable SCNNode value) {
         Object __old = inputOrigin();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -285,7 +295,7 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
      */
     @Generated
     @Selector("setInputProperty:")
-    public native void setInputProperty(String value);
+    public native void setInputProperty(@Nullable String value);
 
     /**
      * Specifies the input scale and bias.

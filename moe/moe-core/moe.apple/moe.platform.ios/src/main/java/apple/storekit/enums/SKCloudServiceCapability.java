@@ -19,11 +19,26 @@ package apple.storekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 9.3
+ */
 @Generated
 public final class SKCloudServiceCapability {
+    /**
+     * API-Since: 9.3
+     */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 9.3
+     */
     @Generated @NUInt public static final long MusicCatalogPlayback = 0x0000000000000001L;
+    /**
+     * API-Since: 10.1
+     */
     @Generated @NUInt public static final long MusicCatalogSubscriptionEligible = 0x0000000000000002L;
+    /**
+     * API-Since: 9.3
+     */
     @Generated @NUInt public static final long AddToCloudMusicLibrary = 0x0000000000000100L;
 
     @Generated

@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] CBPeripheralManagerState
- * <p>
+ * 
  * Represents the current state of a CBPeripheralManager.
- * <p>
+ * 
  * [@constant] CBPeripheralManagerStateUnknown State unknown, update imminent.
  * [@constant] CBPeripheralManagerStateResetting The connection with the system service was momentarily lost, update
  * imminent.
@@ -33,15 +33,51 @@ import org.moe.natj.general.ann.NInt;
  * Peripheral/Server role.
  * [@constant] CBPeripheralManagerStatePoweredOff Bluetooth is currently powered off.
  * [@constant] CBPeripheralManagerStatePoweredOn Bluetooth is currently powered on and available to use.
+ * 
+ * 
+ * API-Since: 6.0
+ * Deprecated-Since: 10.0
+ * Deprecated-Message: Use CBManagerState instead
  */
+@Deprecated
 @Generated
 public final class CBPeripheralManagerState {
-    @Generated @NInt public static final long Unknown = 0x0000000000000000L;
-    @Generated @NInt public static final long Resetting = 0x0000000000000001L;
-    @Generated @NInt public static final long Unsupported = 0x0000000000000002L;
-    @Generated @NInt public static final long Unauthorized = 0x0000000000000003L;
-    @Generated @NInt public static final long PoweredOff = 0x0000000000000004L;
-    @Generated @NInt public static final long PoweredOn = 0x0000000000000005L;
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use CBManagerState instead
+     */
+    @Deprecated @Generated @NInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use CBManagerState instead
+     */
+    @Deprecated @Generated @NInt public static final long Resetting = 0x0000000000000001L;
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use CBManagerState instead
+     */
+    @Deprecated @Generated @NInt public static final long Unsupported = 0x0000000000000002L;
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use CBManagerState instead
+     */
+    @Deprecated @Generated @NInt public static final long Unauthorized = 0x0000000000000003L;
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use CBManagerState instead
+     */
+    @Deprecated @Generated @NInt public static final long PoweredOff = 0x0000000000000004L;
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use CBManagerState instead
+     */
+    @Deprecated @Generated @NInt public static final long PoweredOn = 0x0000000000000005L;
 
     @Generated
     private CBPeripheralManagerState() {

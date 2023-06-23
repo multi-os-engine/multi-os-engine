@@ -40,14 +40,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NETunnelProviderProtocol
- * <p>
+ * 
  * The NETunnelProviderProtocol class declares the programmatic interface for an object that contains
  * NETunnelProvider-specific configuration settings.
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -79,22 +83,25 @@ public class NETunnelProviderProtocol extends NEVPNProtocol {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +136,10 @@ public class NETunnelProviderProtocol extends NEVPNProtocol {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -169,45 +177,55 @@ public class NETunnelProviderProtocol extends NEVPNProtocol {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NETunnelProviderProtocol initWithCoder(NSCoder coder);
+    public native NETunnelProviderProtocol initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] providerBundleIdentifier
-     * <p>
+     * 
      * A string containing the bundle identifier of the NETunnelProvider to be used by this configuration.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("providerBundleIdentifier")
     public native String providerBundleIdentifier();
 
     /**
      * [@property] providerConfiguration
-     * <p>
+     * 
      * A dictionary containing NETunnelProvider vendor-specific configuration parameters. This dictionary is passed
      * as-is to NETunnelProviders when a tunnel is started.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("providerConfiguration")
     public native NSDictionary<String, ?> providerConfiguration();
 
     /**
      * [@property] providerBundleIdentifier
-     * <p>
+     * 
      * A string containing the bundle identifier of the NETunnelProvider to be used by this configuration.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setProviderBundleIdentifier:")
-    public native void setProviderBundleIdentifier(String value);
+    public native void setProviderBundleIdentifier(@Nullable String value);
 
     /**
      * [@property] providerConfiguration
-     * <p>
+     * 
      * A dictionary containing NETunnelProvider vendor-specific configuration parameters. This dictionary is passed
      * as-is to NETunnelProviders when a tunnel is started.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setProviderConfiguration:")
-    public native void setProviderConfiguration(NSDictionary<String, ?> value);
+    public native void setProviderConfiguration(@Nullable NSDictionary<String, ?> value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

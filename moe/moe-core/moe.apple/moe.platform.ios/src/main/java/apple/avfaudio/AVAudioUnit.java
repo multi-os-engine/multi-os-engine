@@ -30,14 +30,18 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioUnit
- * <p>
+ * 
  * An AVAudioNode implemented by an audio unit.
- * <p>
+ * 
  * An AVAudioUnit is an AVAudioNode implemented by an audio unit. Depending on the type of
  * the audio unit, audio is processed either in real-time or non real-time.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -55,17 +59,20 @@ public class AVAudioUnit extends AVAudioNode {
 
     /**
      * [@property] AUAudioUnit
-     * <p>
+     * 
      * An AUAudioUnit wrapping or underlying the implementation's AudioUnit.
-     * <p>
+     * 
      * This provides an AUAudioUnit which either wraps or underlies the implementation's
      * AudioUnit, depending on how that audio unit is packaged. Applications can interact with this
      * AUAudioUnit to control custom properties, select presets, change parameters, etc.
-     * <p>
+     * 
      * As with the audioUnit property, no operations that may conflict with state maintained by the
      * engine should be performed directly on the audio unit. These include changing initialization
      * state, stream formats, channel layouts or connections to other audio units.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("AUAudioUnit")
     public native AUAudioUnit AUAudioUnit();
@@ -86,7 +93,7 @@ public class AVAudioUnit extends AVAudioNode {
 
     /**
      * [@property] audioComponentDescription
-     * <p>
+     * 
      * AudioComponentDescription of the underlying audio unit.
      */
     @Generated
@@ -96,38 +103,42 @@ public class AVAudioUnit extends AVAudioNode {
 
     /**
      * [@property] audioUnit
-     * <p>
+     * 
      * Reference to the underlying audio unit.
-     * <p>
+     * 
      * A reference to the underlying audio unit is provided so that parameters that are not
      * exposed by AVAudioUnit subclasses can be modified using the AudioUnit C API.
-     * <p>
+     * 
      * No operations that may conflict with state maintained by the engine should be performed
      * directly on the audio unit. These include changing initialization state, stream formats,
      * channel layouts or connections to other audio units.
      */
+    @NotNull
     @Generated
     @Selector("audioUnit")
     public native AudioComponentInstance audioUnit();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -164,20 +175,25 @@ public class AVAudioUnit extends AVAudioNode {
 
     /**
      * instantiateWithComponentDescription:options:completionHandler:
-     * <p>
+     * 
      * Asynchronously create an instance of an audio unit component, wrapped in an AVAudioUnit.
-     * <p>
+     * 
      * Components whose flags include kAudioComponentFlag_RequiresAsyncInstantiation must be
      * instantiated asynchronously, via this method if they are to be used with AVAudioEngine.
      * See the discussion of this flag in AudioToolbox/AudioComponent.h.
-     * <p>
+     * 
      * The returned AVAudioUnit instance normally will be of a subclass (AVAudioUnitEffect,
      * AVAudioUnitGenerator, AVAudioUnitMIDIInstrument, or AVAudioUnitTimeEffect), selected
      * according to the component's type.
-     *
-     * @param audioComponentDescription The component to instantiate.
-     * @param options                   Instantiation options.
-     * @param completionHandler         Called in an arbitrary thread/queue context when instantiation is complete. The
+     * 
+     * API-Since: 9.0
+     * 
+     * @param audioComponentDescription
+     *                                  The component to instantiate.
+     * @param options
+     *                                  Instantiation options.
+     * @param completionHandler
+     *                                  Called in an arbitrary thread/queue context when instantiation is complete. The
      *                                  client
      *                                  should retain the provided AVAudioUnit.
      */
@@ -185,52 +201,58 @@ public class AVAudioUnit extends AVAudioNode {
     @Selector("instantiateWithComponentDescription:options:completionHandler:")
     public static native void instantiateWithComponentDescriptionOptionsCompletionHandler(
             @ByValue AudioComponentDescription audioComponentDescription, int options,
-            @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_instantiateWithComponentDescriptionOptionsCompletionHandler {
         @Generated
-        void call_instantiateWithComponentDescriptionOptionsCompletionHandler(AVAudioUnit audioUnit, NSError error);
+        void call_instantiateWithComponentDescriptionOptionsCompletionHandler(@Nullable AVAudioUnit audioUnit,
+                @Nullable NSError error);
     }
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * loadAudioUnitPresetAtURL:error:
-     * <p>
+     * 
      * Load an audio unit preset.
-     * <p>
+     * 
      * If the .aupreset file cannot be successfully loaded, an error is returned.
-     *
-     * @param url      NSURL of the .aupreset file.
-     * @param outError A pointer to a NSError object
+     * 
+     * @param url
+     *                 NSURL of the .aupreset file.
+     * @param outError
+     *                 A pointer to a NSError object
      */
     @Generated
     @Selector("loadAudioUnitPresetAtURL:error:")
-    public native boolean loadAudioUnitPresetAtURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean loadAudioUnitPresetAtURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] manufacturerName
-     * <p>
+     * 
      * Manufacturer name of the audio unit.
      */
+    @NotNull
     @Generated
     @Selector("manufacturerName")
     public native String manufacturerName();
 
     /**
      * [@property] name
-     * <p>
+     * 
      * Name of the audio unit.
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -258,7 +280,7 @@ public class AVAudioUnit extends AVAudioNode {
 
     /**
      * [@property] version
-     * <p>
+     * 
      * Version number of the audio unit.
      */
     @Generated

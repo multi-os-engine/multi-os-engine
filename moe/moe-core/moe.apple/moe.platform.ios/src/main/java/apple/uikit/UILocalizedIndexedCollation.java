@@ -37,7 +37,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -68,26 +73,30 @@ public class UILocalizedIndexedCollation extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("currentCollation")
     public static native UILocalizedIndexedCollation currentCollation();
@@ -122,9 +131,10 @@ public class UILocalizedIndexedCollation extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,8 +173,8 @@ public class UILocalizedIndexedCollation extends NSObject {
     @Generated
     @Selector("sectionForObject:collationStringSelector:")
     @NInt
-    public native long sectionForObjectCollationStringSelector(@Mapped(ObjCObjectMapper.class) Object object,
-            SEL selector);
+    public native long sectionForObjectCollationStringSelector(@NotNull @Mapped(ObjCObjectMapper.class) Object object,
+            @NotNull SEL selector);
 
     /**
      * Specifies the section that should be scrolled to for the title at the given index.
@@ -179,6 +189,7 @@ public class UILocalizedIndexedCollation extends NSObject {
     /**
      * Provides the list of index titles used to quickly jump to particular sections
      */
+    @NotNull
     @Generated
     @Selector("sectionIndexTitles")
     public native NSArray<String> sectionIndexTitles();
@@ -186,6 +197,7 @@ public class UILocalizedIndexedCollation extends NSObject {
     /**
      * Provides the list of section titles used to group results (e.g. A-Z,# in US/English)
      */
+    @NotNull
     @Generated
     @Selector("sectionTitles")
     public native NSArray<String> sectionTitles();
@@ -196,7 +208,9 @@ public class UILocalizedIndexedCollation extends NSObject {
      * In the process of sorting the array, each object may receive
      * selector multiple times, so this method should be fast.
      */
+    @NotNull
     @Generated
     @Selector("sortedArrayFromArray:collationStringSelector:")
-    public native NSArray<?> sortedArrayFromArrayCollationStringSelector(NSArray<?> array, SEL selector);
+    public native NSArray<?> sortedArrayFromArrayCollationStringSelector(@NotNull NSArray<?> array,
+            @NotNull SEL selector);
 }

@@ -21,13 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueSwingMode
- * <p>
+ * 
  * [@constant] HMCharacteristicValueSwingModeDisabled Swing mode is disabled.
  * [@constant] HMCharacteristicValueSwingModeEnabled Swing mode is enabled.
+ * 
+ * API-Since: 10.2
  */
 @Generated
 public final class HMCharacteristicValueSwingMode {
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Disabled = 0x0000000000000000L;
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Enabled = 0x0000000000000001L;
 
     @Generated

@@ -30,12 +30,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSTextContentStorage is a concrete subclass of NSTextContentManager providing support for NSAttributedString
  * backing-store. It also implements NSTextStorageObserving participating as a client of NSTextStorage. The facility
  * only supports a single NSTextContentStorage associated with a text storage. When -textStorage!=nil, -attributedString
  * is ignored. By default, NSTextContentStorage is initialized with NSTextStorage as the backing-store.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("UIKit")
@@ -61,9 +65,10 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
      * the editing session. Returns nil, when no adjustment necessary. forEditingTextSelection indicates if textRange is
      * for the text selection associated with the edit session.
      */
+    @Nullable
     @Generated
     @Selector("adjustedRangeFromRange:forEditingTextSelection:")
-    public native NSTextRange adjustedRangeFromRangeForEditingTextSelection(NSTextRange textRange,
+    public native NSTextRange adjustedRangeFromRangeForEditingTextSelection(@NotNull NSTextRange textRange,
             boolean forEditingTextSelection);
 
     @Generated
@@ -79,6 +84,7 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
     /**
      * The document contents. KVO-compliant
      */
+    @Nullable
     @Generated
     @Selector("attributedString")
     public native NSAttributedString attributedString();
@@ -86,28 +92,32 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
     /**
      * Returns a new attributed string for textElement. Returns if textElement cannot be mapped to NSAttributedString.
      */
+    @Nullable
     @Generated
     @Selector("attributedStringForTextElement:")
-    public native NSAttributedString attributedStringForTextElement(NSTextElement textElement);
+    public native NSAttributedString attributedStringForTextElement(@NotNull NSTextElement textElement);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -116,6 +126,7 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -136,7 +147,7 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSTextContentStorage initWithCoder(NSCoder coder);
+    public native NSTextContentStorage initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -155,19 +166,21 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Returns a new location from location with offset. The offset value could be positive or negative indicating the
      * logical direction. Could return nil when the inputs don't produce any legal location (i.e. out of bounds index).
      */
+    @Nullable
     @Generated
     @Selector("locationFromLocation:withOffset:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native NSTextLocation locationFromLocationWithOffset(@Mapped(ObjCObjectMapper.class) NSTextLocation location,
-            @NInt long offset);
+    public native NSTextLocation locationFromLocationWithOffset(
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location, @NInt long offset);
 
     @Generated
     @Owned
@@ -181,18 +194,18 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
     @Generated
     @Selector("offsetFromLocation:toLocation:")
     @NInt
-    public native long offsetFromLocationToLocation(@Mapped(ObjCObjectMapper.class) NSTextLocation from,
-            @Mapped(ObjCObjectMapper.class) NSTextLocation to);
+    public native long offsetFromLocationToLocation(@NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation from,
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation to);
 
     @Generated
     @Selector("performEditingTransactionForTextStorage:usingBlock:")
-    public native void performEditingTransactionForTextStorageUsingBlock(NSTextStorage textStorage,
-            @ObjCBlock(name = "call_performEditingTransactionForTextStorageUsingBlock") NSTextStorageObserving.Block_performEditingTransactionForTextStorageUsingBlock transaction);
+    public native void performEditingTransactionForTextStorageUsingBlock(@NotNull NSTextStorage textStorage,
+            @NotNull @ObjCBlock(name = "call_performEditingTransactionForTextStorageUsingBlock") NSTextStorageObserving.Block_performEditingTransactionForTextStorageUsingBlock transaction);
 
     @Generated
     @Selector("processEditingForTextStorage:edited:range:changeInLength:invalidatedRange:")
-    public native void processEditingForTextStorageEditedRangeChangeInLengthInvalidatedRange(NSTextStorage textStorage,
-            @NUInt long editMask, @ByValue NSRange newCharRange, @NInt long delta,
+    public native void processEditingForTextStorageEditedRangeChangeInLengthInvalidatedRange(
+            @NotNull NSTextStorage textStorage, @NUInt long editMask, @ByValue NSRange newCharRange, @NInt long delta,
             @ByValue NSRange invalidatedCharRange);
 
     @Generated
@@ -208,14 +221,14 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
      */
     @Generated
     @Selector("setAttributedString:")
-    public native void setAttributedString(NSAttributedString value);
+    public native void setAttributedString(@Nullable NSAttributedString value);
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -228,7 +241,7 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
 
     @Generated
     @Selector("setTextStorage:")
-    public native void setTextStorage(NSTextStorage value);
+    public native void setTextStorage(@Nullable NSTextStorage value);
 
     @Generated
     @Selector("setVersion:")
@@ -252,10 +265,12 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
      * Returns NSTextElement corresponding to attributedString. Returns nil when attributedString contains attributes
      * not mappable to NSTextElement.
      */
+    @Nullable
     @Generated
     @Selector("textElementForAttributedString:")
-    public native NSTextElement textElementForAttributedString(NSAttributedString attributedString);
+    public native NSTextElement textElementForAttributedString(@NotNull NSAttributedString attributedString);
 
+    @Nullable
     @Generated
     @Selector("textStorage")
     public native NSTextStorage textStorage();

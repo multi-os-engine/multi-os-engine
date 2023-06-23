@@ -41,17 +41,21 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * HKCorrelation
- * <p>
+ * 
  * An HKCorrelation is a collection of correlated objects.
- * <p>
+ * 
  * When multiple readings are taken together, it may be beneficial to correlate them so that they can be
  * displayed together and share common metadata about how they were created.
- * <p>
+ * 
  * For example, systolic and diastolic blood pressure readings are typically presented together so these
  * readings should be saved with a correlation of type blood pressure.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HealthKit")
@@ -83,45 +87,51 @@ public class HKCorrelation extends HKSample {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * correlationWithType:startDate:endDate:objects:
-     * <p>
+     * 
      * Creates a new HKCorrelation with the given type, start date, end date, and objects.
-     * <p>
+     * 
      * objects must be a set of HKQuantitySamples and HKCategorySamples
      */
     @Generated
     @Selector("correlationWithType:startDate:endDate:objects:")
-    public static native HKCorrelation correlationWithTypeStartDateEndDateObjects(HKCorrelationType correlationType,
-            NSDate startDate, NSDate endDate, NSSet<? extends HKSample> objects);
+    public static native HKCorrelation correlationWithTypeStartDateEndDateObjects(
+            @NotNull HKCorrelationType correlationType, @NotNull NSDate startDate, @NotNull NSDate endDate,
+            @NotNull NSSet<? extends HKSample> objects);
 
     /**
      * correlationWithType:startDate:endDate:objects:device:metadata:
-     * <p>
+     * 
      * Creates a new HKCorrelation with the given type, start date, end date, objects, and metadata.
-     * <p>
+     * 
      * objects must be a set of HKQuantitySamples and HKCategorySamples
-     *
+     * 
+     * API-Since: 9.0
+     * 
      * @param correlationType The correlation type of the objects set.
      * @param startDate       The start date of the correlation.
      * @param endDate         The end date of the correlation.
@@ -131,21 +141,22 @@ public class HKCorrelation extends HKSample {
     @Generated
     @Selector("correlationWithType:startDate:endDate:objects:device:metadata:")
     public static native HKCorrelation correlationWithTypeStartDateEndDateObjectsDeviceMetadata(
-            HKCorrelationType correlationType, NSDate startDate, NSDate endDate, NSSet<? extends HKSample> objects,
-            HKDevice device, NSDictionary<String, ?> metadata);
+            @NotNull HKCorrelationType correlationType, @NotNull NSDate startDate, @NotNull NSDate endDate,
+            @NotNull NSSet<? extends HKSample> objects, @Nullable HKDevice device,
+            @Nullable NSDictionary<String, ?> metadata);
 
     /**
      * correlationWithType:startDate:endDate:objects:metadata:
-     * <p>
+     * 
      * Creates a new HKCorrelation with the given type, start date, end date, objects, and metadata.
-     * <p>
+     * 
      * objects must be a set of HKQuantitySamples and HKCategorySamples
      */
     @Generated
     @Selector("correlationWithType:startDate:endDate:objects:metadata:")
     public static native HKCorrelation correlationWithTypeStartDateEndDateObjectsMetadata(
-            HKCorrelationType correlationType, NSDate startDate, NSDate endDate, NSSet<? extends HKSample> objects,
-            NSDictionary<String, ?> metadata);
+            @NotNull HKCorrelationType correlationType, @NotNull NSDate startDate, @NotNull NSDate endDate,
+            @NotNull NSSet<? extends HKSample> objects, @Nullable NSDictionary<String, ?> metadata);
 
     @Generated
     @Selector("debugDescription")
@@ -177,9 +188,10 @@ public class HKCorrelation extends HKSample {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -211,6 +223,7 @@ public class HKCorrelation extends HKSample {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("correlationType")
     public native HKCorrelationType correlationType();
@@ -221,25 +234,27 @@ public class HKCorrelation extends HKSample {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKCorrelation initWithCoder(NSCoder coder);
+    public native HKCorrelation initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] objects
-     * <p>
+     * 
      * A set of HKSamples containing all of the objects that were saved with the receiver.
      */
+    @NotNull
     @Generated
     @Selector("objects")
     public native NSSet<? extends HKSample> objects();
 
     /**
      * objectsForType:
-     * <p>
+     * 
      * Returns the set of correlated objects with the specified type.
      */
+    @NotNull
     @Generated
     @Selector("objectsForType:")
-    public native NSSet<? extends HKSample> objectsForType(HKObjectType objectType);
+    public native NSSet<? extends HKSample> objectsForType(@NotNull HKObjectType objectType);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

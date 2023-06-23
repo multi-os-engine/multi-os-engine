@@ -12,10 +12,14 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSTextStorageObserving defines the protocol for NSTextStorage controller objects observing changes in the text
  * backing-store.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("UIKit")
@@ -27,8 +31,8 @@ public interface NSTextStorageObserving {
      */
     @Generated
     @Selector("performEditingTransactionForTextStorage:usingBlock:")
-    void performEditingTransactionForTextStorageUsingBlock(NSTextStorage textStorage,
-            @ObjCBlock(name = "call_performEditingTransactionForTextStorageUsingBlock") Block_performEditingTransactionForTextStorageUsingBlock transaction);
+    void performEditingTransactionForTextStorageUsingBlock(@NotNull NSTextStorage textStorage,
+            @NotNull @ObjCBlock(name = "call_performEditingTransactionForTextStorageUsingBlock") Block_performEditingTransactionForTextStorageUsingBlock transaction);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -44,7 +48,7 @@ public interface NSTextStorageObserving {
      */
     @Generated
     @Selector("processEditingForTextStorage:edited:range:changeInLength:invalidatedRange:")
-    void processEditingForTextStorageEditedRangeChangeInLengthInvalidatedRange(NSTextStorage textStorage,
+    void processEditingForTextStorageEditedRangeChangeInLengthInvalidatedRange(@NotNull NSTextStorage textStorage,
             @NUInt long editMask, @ByValue NSRange newCharRange, @NInt long delta,
             @ByValue NSRange invalidatedCharRange);
 
@@ -53,11 +57,12 @@ public interface NSTextStorageObserving {
      */
     @Generated
     @Selector("setTextStorage:")
-    void setTextStorage(NSTextStorage value);
+    void setTextStorage(@Nullable NSTextStorage value);
 
     /**
      * The document object
      */
+    @Nullable
     @Generated
     @Selector("textStorage")
     NSTextStorage textStorage();

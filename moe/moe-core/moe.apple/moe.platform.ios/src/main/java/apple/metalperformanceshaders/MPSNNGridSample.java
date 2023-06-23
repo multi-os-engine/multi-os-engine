@@ -23,14 +23,19 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNGridSample
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * Given an input and a flow-field grid, computes the output using input values and pixel locations from the grid.
- * <p>
+ * 
  * More details at https://pytorch.org/docs/stable/nn.html#grid-sample.
+ * 
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -62,22 +67,25 @@ public class MPSNNGridSample extends MPSCNNBinaryKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,34 +109,35 @@ public class MPSNNGridSample extends MPSCNNBinaryKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNGridSample initWithCoder(NSCoder aDecoder);
+    public native MPSNNGridSample initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNNGridSample initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNGridSample initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Create a grid sample kernel.
-     *
+     * 
      * @param device The device the filter will run on
      * @return A valid MPSNNGridSample object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNNGridSample initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNGridSample initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -147,9 +156,10 @@ public class MPSNNGridSample extends MPSCNNBinaryKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,7 +176,7 @@ public class MPSNNGridSample extends MPSCNNBinaryKernel {
 
     /**
      * [@property] useGridValueAsInputCoordinate
-     * <p>
+     * 
      * This determines whether the pixel locations from the grid are used as the input coordinate (if set to YES) or
      * is added to the input coordinate (if set to NO).
      * The default value is YES.
@@ -195,7 +205,7 @@ public class MPSNNGridSample extends MPSCNNBinaryKernel {
 
     /**
      * [@property] useGridValueAsInputCoordinate
-     * <p>
+     * 
      * This determines whether the pixel locations from the grid are used as the input coordinate (if set to YES) or
      * is added to the input coordinate (if set to NO).
      * The default value is YES.

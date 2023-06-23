@@ -21,32 +21,85 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] CBError
- * <p>
+ * 
  * The possible errors returned during LE transactions.
  */
 @Generated
 public final class CBError {
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long InvalidParameters = 0x0000000000000001L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long InvalidHandle = 0x0000000000000002L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long NotConnected = 0x0000000000000003L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long OutOfSpace = 0x0000000000000004L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long OperationCancelled = 0x0000000000000005L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long ConnectionTimeout = 0x0000000000000006L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long PeripheralDisconnected = 0x0000000000000007L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long UUIDNotAllowed = 0x0000000000000008L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long AlreadyAdvertising = 0x0000000000000009L;
+    /**
+     * API-Since: 7.1
+     */
     @Generated @NInt public static final long ConnectionFailed = 0x000000000000000AL;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long ConnectionLimitReached = 0x000000000000000BL;
 
     @Generated
     private CBError() {
     }
 
-    @Generated @NInt public static final long UnkownDevice = 0x000000000000000CL;
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use CBErrorUnknownDevice instead
+     */
+    @Deprecated @Generated @NInt public static final long UnkownDevice = 0x000000000000000CL;
+    /**
+     * API-Since: 12.0
+     */
     @Generated @NInt public static final long UnknownDevice = 0x000000000000000CL;
+    /**
+     * API-Since: 12.0
+     */
     @Generated @NInt public static final long OperationNotSupported = 0x000000000000000DL;
+    /**
+     * API-Since: 13.4
+     */
     @Generated @NInt public static final long PeerRemovedPairingInformation = 0x000000000000000EL;
+    /**
+     * API-Since: 13.4
+     */
     @Generated @NInt public static final long EncryptionTimedOut = 0x000000000000000FL;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long TooManyLEPairedDevices = 0x0000000000000010L;
 }

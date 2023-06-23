@@ -31,13 +31,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImageFindKeypoints
- * <p>
+ * 
  * The MPSImageFindKeypoints kernel is used to find a list of keypoints whose values are >= minimumPixelThresholdValue
  * in MPSImageKeypointRangeInfo. The keypoints are generated for a specified region in the image.
  * The pixel format of the source image must be MTLPixelFormatR8Unorm.
+ * 
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -69,22 +74,25 @@ public class MPSImageFindKeypoints extends MPSKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,10 +107,10 @@ public class MPSImageFindKeypoints extends MPSKernel {
 
     /**
      * Encode the filter to a command buffer using a MTLComputeCommandEncoder.
-     * <p>
+     * 
      * The filter will not begin to execute until after the command
      * buffer has been enqueued and committed.
-     *
+     * 
      * @param commandBuffer             A valid MTLCommandBuffer.
      * @param source                    A valid MTLTexture containing the source image for the filter.
      * @param regions                   An array of rectangles that describe regions in the image.
@@ -121,11 +129,12 @@ public class MPSImageFindKeypoints extends MPSKernel {
     @Generated
     @Selector("encodeToCommandBuffer:sourceTexture:regions:numberOfRegions:keypointCountBuffer:keypointCountBufferOffset:keypointDataBuffer:keypointDataBufferOffset:")
     public native void encodeToCommandBufferSourceTextureRegionsNumberOfRegionsKeypointCountBufferKeypointCountBufferOffsetKeypointDataBufferKeypointDataBufferOffset(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture source,
-            @UncertainArgument("Options: reference, array Fallback: reference") MTLRegion regions,
-            @NUInt long numberOfRegions, @Mapped(ObjCObjectMapper.class) MTLBuffer keypointCountBuffer,
-            @NUInt long keypointCountBufferOffset, @Mapped(ObjCObjectMapper.class) MTLBuffer keypointDataBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture source,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MTLRegion regions,
+            @NUInt long numberOfRegions, @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer keypointCountBuffer,
+            @NUInt long keypointCountBufferOffset,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer keypointDataBuffer,
             @NUInt long keypointDataBufferOffset);
 
     @Generated
@@ -139,41 +148,41 @@ public class MPSImageFindKeypoints extends MPSKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSImageFindKeypoints initWithCoder(NSCoder aDecoder);
+    public native MPSImageFindKeypoints initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSImageFindKeypoints initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageFindKeypoints initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImageFindKeypoints initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageFindKeypoints initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Specifies information to find keypoints in an image.
-     *
+     * 
      * @param device The device the filter will run on
      * @param info   Pointer to the MPSImageKeypointRangeInfo struct
      * @return A valid MPSImageFindKeypoints object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:info:")
-    public native MPSImageFindKeypoints initWithDeviceInfo(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @UncertainArgument("Options: reference, array Fallback: reference") MPSImageKeypointRangeInfo info);
+    public native MPSImageFindKeypoints initWithDeviceInfo(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MPSImageKeypointRangeInfo info);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -192,15 +201,16 @@ public class MPSImageFindKeypoints extends MPSKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] keypointRangeInfo
-     * <p>
+     * 
      * Return a structure describing the keypoint range info
-     * <p>
+     * 
      * Returns a MPSImageKeypointRangeInfo structure
      */
     @Generated

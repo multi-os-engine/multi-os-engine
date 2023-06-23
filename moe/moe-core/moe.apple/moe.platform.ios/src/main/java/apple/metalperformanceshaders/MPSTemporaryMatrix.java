@@ -24,12 +24,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A MPSMatrix allocated on GPU private memory.
- * <p>
+ * 
  * It may alias one or more other MPSTemporaryMatrices. Undesired data destruction
  * due to aliasing is avoided using the readCount property.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -61,22 +65,25 @@ public class MPSTemporaryMatrix extends MPSMatrix {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -100,8 +107,8 @@ public class MPSTemporaryMatrix extends MPSMatrix {
 
     @Generated
     @Selector("initWithBuffer:descriptor:")
-    public native MPSTemporaryMatrix initWithBufferDescriptor(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
-            MPSMatrixDescriptor descriptor);
+    public native MPSTemporaryMatrix initWithBufferDescriptor(@NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
+            @NotNull MPSMatrixDescriptor descriptor);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -120,9 +127,10 @@ public class MPSTemporaryMatrix extends MPSMatrix {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -131,27 +139,27 @@ public class MPSTemporaryMatrix extends MPSMatrix {
 
     /**
      * Help MPS decide which allocations to make ahead of time
-     * <p>
+     * 
      * The buffer cache that underlies the MPSTemporaryMatrix can automatically allocate new storage as
      * needed as you create new temporary matrices. However, sometimes a more global view of what you
      * plan to make is useful for maximizing memory reuse to get the most efficient operation.
      * This class method hints to the cache what the list of matrices will be.
-     * <p>
+     * 
      * It is never necessary to call this method. It is purely a performance and memory optimization.
-     *
+     * 
      * @param commandBuffer  The command buffer on which the MPSTemporaryMatrix will be used
      * @param descriptorList A NSArray of MPSMatrixDescriptor, indicating matrices that will be created
      */
     @Generated
     @Selector("prefetchStorageWithCommandBuffer:matrixDescriptorList:")
     public static native void prefetchStorageWithCommandBufferMatrixDescriptorList(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            NSArray<? extends MPSMatrixDescriptor> descriptorList);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull NSArray<? extends MPSMatrixDescriptor> descriptorList);
 
     /**
      * The number of times a temporary matrix may be read by a MPSMatrix... kernel
      * before its contents become undefined.
-     * <p>
+     * 
      * MPSTemporaryMatrices must release their underlying buffers for reuse
      * immediately after last use. So as to facilitate *prompt* convenient
      * memory recycling, each time a MPSTemporaryMatrix is read by a
@@ -160,17 +168,17 @@ public class MPSTemporaryMatrix extends MPSMatrix {
      * automatically made available for reuse to MPS for its own needs and for
      * other MPSTemporaryMatrices prior to return from the -encode.. function.
      * The contents of the buffer become undefined at this time.
-     * <p>
+     * 
      * By default, the readCount is initialized to 1, indicating a matrix that
      * may be overwritten any number of times, but read only once.
-     * <p>
+     * 
      * You may change the readCount as desired to allow MPSMatrixKernels to read
      * the MPSTemporaryMatrix additional times. However, it is an error to change
      * the readCount once it is zero. It is an error to read or write to a
      * MPSTemporaryMatrix with a zero readCount. You may set the readCount to 0
      * yourself to cause the underlying buffer to be returned to MPS. Writing
      * to a MPSTemporaryMatrix does not adjust the readCount.
-     * <p>
+     * 
      * The Metal API Validation layer will assert if a MPSTemporaryMatrix is
      * deallocated with non-zero readCount to help identify cases when resources
      * are not returned promptly.
@@ -191,7 +199,7 @@ public class MPSTemporaryMatrix extends MPSMatrix {
     /**
      * The number of times a temporary matrix may be read by a MPSMatrix... kernel
      * before its contents become undefined.
-     * <p>
+     * 
      * MPSTemporaryMatrices must release their underlying buffers for reuse
      * immediately after last use. So as to facilitate *prompt* convenient
      * memory recycling, each time a MPSTemporaryMatrix is read by a
@@ -200,17 +208,17 @@ public class MPSTemporaryMatrix extends MPSMatrix {
      * automatically made available for reuse to MPS for its own needs and for
      * other MPSTemporaryMatrices prior to return from the -encode.. function.
      * The contents of the buffer become undefined at this time.
-     * <p>
+     * 
      * By default, the readCount is initialized to 1, indicating a matrix that
      * may be overwritten any number of times, but read only once.
-     * <p>
+     * 
      * You may change the readCount as desired to allow MPSMatrixKernels to read
      * the MPSTemporaryMatrix additional times. However, it is an error to change
      * the readCount once it is zero. It is an error to read or write to a
      * MPSTemporaryMatrix with a zero readCount. You may set the readCount to 0
      * yourself to cause the underlying buffer to be returned to MPS. Writing
      * to a MPSTemporaryMatrix does not adjust the readCount.
-     * <p>
+     * 
      * The Metal API Validation layer will assert if a MPSTemporaryMatrix is
      * deallocated with non-zero readCount to help identify cases when resources
      * are not returned promptly.
@@ -229,7 +237,7 @@ public class MPSTemporaryMatrix extends MPSMatrix {
 
     /**
      * Initialize a MPSTemporaryMatrix for use on a MTLCommandBuffer
-     *
+     * 
      * @param commandBuffer    The MTLCommandBuffer on which the MPSTemporaryMatrix will be exclusively used
      * @param matrixDescriptor A valid MPSMatrixDescriptor describing the MPSMatrix format to create
      * @return A valid MPSTemporaryMatrix. The object is not managed by a NSAutoreleasePool. The object will be
@@ -240,7 +248,8 @@ public class MPSTemporaryMatrix extends MPSMatrix {
     @Generated
     @Selector("temporaryMatrixWithCommandBuffer:matrixDescriptor:")
     public static native MPSTemporaryMatrix temporaryMatrixWithCommandBufferMatrixDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSMatrixDescriptor matrixDescriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSMatrixDescriptor matrixDescriptor);
 
     @Generated
     @Selector("version")
@@ -249,11 +258,12 @@ public class MPSTemporaryMatrix extends MPSMatrix {
 
     @Generated
     @Selector("initWithBuffer:offset:descriptor:")
-    public native MPSTemporaryMatrix initWithBufferOffsetDescriptor(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
-            @NUInt long offset, MPSMatrixDescriptor descriptor);
+    public native MPSTemporaryMatrix initWithBufferOffsetDescriptor(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
+            @NotNull MPSMatrixDescriptor descriptor);
 
     @Generated
     @Selector("initWithDevice:descriptor:")
-    public native MPSTemporaryMatrix initWithDeviceDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MPSMatrixDescriptor descriptor);
+    public native MPSTemporaryMatrix initWithDeviceDescriptor(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull MPSMatrixDescriptor descriptor);
 }

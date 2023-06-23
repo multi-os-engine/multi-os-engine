@@ -39,7 +39,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ * Deprecated-Since: 13.0
+ * Deprecated-Message: INStartAudioCallIntent is deprecated. Please adopt INStartCallIntent instead
+ */
+@Deprecated
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -70,22 +78,25 @@ public class INStartAudioCallIntent extends INIntent {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,9 +131,10 @@ public class INStartAudioCallIntent extends INIntent {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,6 +169,7 @@ public class INStartAudioCallIntent extends INIntent {
     /**
      * Recipients of the audio call.
      */
+    @Nullable
     @Generated
     @Selector("contacts")
     public native NSArray<? extends INPerson> contacts();
@@ -167,11 +180,17 @@ public class INStartAudioCallIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INStartAudioCallIntent initWithCoder(NSCoder coder);
+    public native INStartAudioCallIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use the designated initializer instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithContacts:")
-    public native INStartAudioCallIntent initWithContacts(NSArray<? extends INPerson> contacts);
+    public native INStartAudioCallIntent initWithContacts(@Nullable NSArray<? extends INPerson> contacts);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -179,13 +198,19 @@ public class INStartAudioCallIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("destinationType")
     @NInt
     public native long destinationType();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithDestinationType:contacts:")
     public native INStartAudioCallIntent initWithDestinationTypeContacts(@NInt long destinationType,
-            NSArray<? extends INPerson> contacts);
+            @Nullable NSArray<? extends INPerson> contacts);
 }

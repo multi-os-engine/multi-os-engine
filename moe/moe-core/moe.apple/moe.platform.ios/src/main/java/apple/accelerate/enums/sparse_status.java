@@ -20,18 +20,18 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * The type reflecting the status of an operations.
- * <p>
+ * 
  * [@constant] SPARSE_SUCCESS
  * Operation was a success
- * <p>
+ * 
  * [@constant] SPARSE_ILLEGAL_PARAMETER
  * Operation was not completed because one or more of the arguments had an illegal
  * value.
- * <p>
+ * 
  * [@constant] SPARSE_CANNOT_SET_PROPERTY
  * Matrix properties can only be set before any values are inserted into the
  * matrix. This error occurs if that order is not repsected.
- * <p>
+ * 
  * [@constant] SPARSE_SYSTEM_ERROR
  * An internal error has occured, such as non enough memory.
  */

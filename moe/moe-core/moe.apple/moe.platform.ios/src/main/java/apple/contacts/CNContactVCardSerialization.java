@@ -43,11 +43,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Contact vCard support.
- * <p>
+ * 
  * This converts between a contact and its vCard representation.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -79,54 +83,65 @@ public class CNContactVCardSerialization extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * Parse data into contacts.
-     * <p>
+     * 
      * [@returns] The parsed contacts. If the parsing fails, this will be @c nil.
-     *
-     * @param data  The data to parse.
-     * @param error An optional outparameter. If the parsing fails, this will be set.
+     * 
+     * @param data
+     *              The data to parse.
+     * 
+     * @param error
+     *              An optional outparameter. If the parsing fails, this will be set.
      */
+    @Nullable
     @Generated
     @Selector("contactsWithData:error:")
-    public static native NSArray<? extends CNContact> contactsWithDataError(NSData data,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSArray<? extends CNContact> contactsWithDataError(@NotNull NSData data,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Serialize contacts to data.
-     * <p>
+     * 
      * The contacts to be serialized must have been fetched with
      * [@c] +descriptorForRequiredKeys.
-     * <p>
+     * 
      * [@returns] The encoded data. If the serialization fails, this will be @c nil.
-     *
-     * @param contacts The contacts to serialize.
-     * @param error    An optional outparameter. If the serialization fails, this will be set.
+     * 
+     * @param contacts
+     *                 The contacts to serialize.
+     * 
+     * @param error
+     *                 An optional outparameter. If the serialization fails, this will be set.
      */
+    @Nullable
     @Generated
     @Selector("dataWithContacts:error:")
-    public static native NSData dataWithContactsError(NSArray<? extends CNContact> contacts,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSData dataWithContactsError(@NotNull NSArray<? extends CNContact> contacts,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("debugDescription")
@@ -138,10 +153,11 @@ public class CNContactVCardSerialization extends NSObject {
 
     /**
      * Descriptor for all contact keys required by vCard serialization
-     * <p>
+     * 
      * This descriptor must be passed to the fetch request if the returned
      * contacts are to be serialized with dataWithContacts:error:.
      */
+    @NotNull
     @Generated
     @Selector("descriptorForRequiredKeys")
     @MappedReturn(ObjCObjectMapper.class)
@@ -169,9 +185,10 @@ public class CNContactVCardSerialization extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

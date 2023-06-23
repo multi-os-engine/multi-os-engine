@@ -24,14 +24,18 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A MPSNNScale object that uses bilinear interpolation for resampling
- * <p>
+ * 
  * Caution: bilinear downscaling by more than a factor of
  * two in any dimension causes loss of information if a
  * low pass filter is not run over the image first. Details
  * may be omitted.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -63,22 +67,25 @@ public class MPSNNBilinearScaleNode extends MPSNNScaleNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,12 +109,14 @@ public class MPSNNBilinearScaleNode extends MPSNNScaleNode {
 
     @Generated
     @Selector("initWithSource:outputSize:")
-    public native MPSNNBilinearScaleNode initWithSourceOutputSize(MPSNNImageNode sourceNode, @ByValue MTLSize size);
+    public native MPSNNBilinearScaleNode initWithSourceOutputSize(@NotNull MPSNNImageNode sourceNode,
+            @ByValue MTLSize size);
 
     @Generated
     @Selector("initWithSource:transformProvider:outputSize:")
-    public native MPSNNBilinearScaleNode initWithSourceTransformProviderOutputSize(MPSNNImageNode sourceNode,
-            @Mapped(ObjCObjectMapper.class) MPSImageTransformProvider transformProvider, @ByValue MTLSize size);
+    public native MPSNNBilinearScaleNode initWithSourceTransformProviderOutputSize(@NotNull MPSNNImageNode sourceNode,
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSImageTransformProvider transformProvider,
+            @ByValue MTLSize size);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -126,9 +135,10 @@ public class MPSNNBilinearScaleNode extends MPSNNScaleNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -137,13 +147,15 @@ public class MPSNNBilinearScaleNode extends MPSNNScaleNode {
 
     @Generated
     @Selector("nodeWithSource:outputSize:")
-    public static native MPSNNBilinearScaleNode nodeWithSourceOutputSize(MPSNNImageNode sourceNode,
+    public static native MPSNNBilinearScaleNode nodeWithSourceOutputSize(@NotNull MPSNNImageNode sourceNode,
             @ByValue MTLSize size);
 
     @Generated
     @Selector("nodeWithSource:transformProvider:outputSize:")
-    public static native MPSNNBilinearScaleNode nodeWithSourceTransformProviderOutputSize(MPSNNImageNode sourceNode,
-            @Mapped(ObjCObjectMapper.class) MPSImageTransformProvider transformProvider, @ByValue MTLSize size);
+    public static native MPSNNBilinearScaleNode nodeWithSourceTransformProviderOutputSize(
+            @NotNull MPSNNImageNode sourceNode,
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSImageTransformProvider transformProvider,
+            @ByValue MTLSize size);
 
     @Generated
     @Selector("resolveClassMethod:")

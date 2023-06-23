@@ -8,11 +8,14 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] NEAppPushDelegate
- * <p>
+ * 
  * Delegate for NEAppPushManager.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -21,14 +24,17 @@ import org.moe.natj.objc.ann.Selector;
 public interface NEAppPushDelegate {
     /**
      * appPushManager:didReceiveIncomingCallWithUserInfo:userInfo
-     * <p>
+     * 
      * This delegate method is called when the provider reports incoming call using
      * reportIncomingCommunicationWithUserInfo method.
-     *
+     * 
      * @param userInfo A dictionary of custom information that the provider passes to
      *                 reportIncomingCommunicationWithUserInfo method.
+     * 
+     *                 API-Since: 14.0
      */
     @Generated
     @Selector("appPushManager:didReceiveIncomingCallWithUserInfo:")
-    void appPushManagerDidReceiveIncomingCallWithUserInfo(NEAppPushManager manager, NSDictionary<?, ?> userInfo);
+    void appPushManagerDidReceiveIncomingCallWithUserInfo(@NotNull NEAppPushManager manager,
+            @NotNull NSDictionary<?, ?> userInfo);
 }

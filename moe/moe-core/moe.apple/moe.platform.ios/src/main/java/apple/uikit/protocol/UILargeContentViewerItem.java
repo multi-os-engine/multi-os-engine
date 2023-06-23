@@ -9,6 +9,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The large content viewer allow users with relevant settings to view content at a larger size.
@@ -17,6 +18,8 @@ import org.moe.natj.objc.ann.Selector;
  * The viewer should not be used as a replacement for proper Dynamic Type support in general.
  * It is intended only for use with items that must remain small due to unavoidable design constraints.
  * For example, buttons in a tab bar remain small to leave more room for the main content.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("UIKit")
@@ -26,6 +29,7 @@ public interface UILargeContentViewerItem {
     /**
      * Returns an image that should be shown in the large content viewer.
      */
+    @Nullable
     @Generated
     @Selector("largeContentImage")
     UIImage largeContentImage();
@@ -41,6 +45,7 @@ public interface UILargeContentViewerItem {
     /**
      * Returns a title that should be shown in the large content viewer.
      */
+    @Nullable
     @Generated
     @Selector("largeContentTitle")
     String largeContentTitle();

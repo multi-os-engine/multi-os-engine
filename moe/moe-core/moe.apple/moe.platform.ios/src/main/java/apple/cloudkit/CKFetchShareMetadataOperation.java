@@ -40,14 +40,18 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CKFetchShareMetadataOperation
- * <p>
+ * 
  * Fetch the @c CKShareMetadata for a share URL.
- * <p>
+ * 
  * Since you can't know what container this share is in before you fetch its metadata, you may run this operation in any
  * container you have access to
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CloudKit")
@@ -79,22 +83,25 @@ public class CKFetchShareMetadataOperation extends CKOperation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +136,10 @@ public class CKFetchShareMetadataOperation extends CKOperation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,13 +169,14 @@ public class CKFetchShareMetadataOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of shareURLs to
      * errors keyed off of @c CKPartialErrorsByItemIDKey. These errors are repeats of those sent back in previous @c
      * perShareMetadataBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
+    @Nullable
     @Generated
     @Selector("fetchShareMetadataCompletionBlock")
     @ObjCBlock(name = "call_fetchShareMetadataCompletionBlock_ret")
@@ -179,13 +188,14 @@ public class CKFetchShareMetadataOperation extends CKOperation {
 
     @Generated
     @Selector("initWithShareURLs:")
-    public native CKFetchShareMetadataOperation initWithShareURLs(NSArray<? extends NSURL> shareURLs);
+    public native CKFetchShareMetadataOperation initWithShareURLs(@NotNull NSArray<? extends NSURL> shareURLs);
 
     /**
      * Called once for each share URL that the server processed
-     * <p>
+     * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
+    @Nullable
     @Generated
     @Selector("perShareMetadataBlock")
     @ObjCBlock(name = "call_perShareMetadataBlock_ret")
@@ -193,19 +203,20 @@ public class CKFetchShareMetadataOperation extends CKOperation {
 
     /**
      * Declares which user-defined keys should be fetched and added to the resulting @c rootRecord.
-     * <p>
+     * 
      * Only consulted if @c shouldFetchRootRecord is @c YES.
      * If nil, declares the entire root record should be downloaded. If set to an empty array, declares that no user
      * fields should be downloaded.
      * Defaults to @c nil.
      */
+    @Nullable
     @Generated
     @Selector("rootRecordDesiredKeys")
     public native NSArray<String> rootRecordDesiredKeys();
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of shareURLs to
      * errors keyed off of @c CKPartialErrorsByItemIDKey. These errors are repeats of those sent back in previous @c
@@ -215,21 +226,21 @@ public class CKFetchShareMetadataOperation extends CKOperation {
     @Generated
     @Selector("setFetchShareMetadataCompletionBlock:")
     public native void setFetchShareMetadataCompletionBlock(
-            @ObjCBlock(name = "call_setFetchShareMetadataCompletionBlock") Block_setFetchShareMetadataCompletionBlock value);
+            @Nullable @ObjCBlock(name = "call_setFetchShareMetadataCompletionBlock") Block_setFetchShareMetadataCompletionBlock value);
 
     /**
      * Called once for each share URL that the server processed
-     * <p>
+     * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
     @Selector("setPerShareMetadataBlock:")
     public native void setPerShareMetadataBlock(
-            @ObjCBlock(name = "call_setPerShareMetadataBlock") Block_setPerShareMetadataBlock value);
+            @Nullable @ObjCBlock(name = "call_setPerShareMetadataBlock") Block_setPerShareMetadataBlock value);
 
     /**
      * Declares which user-defined keys should be fetched and added to the resulting @c rootRecord.
-     * <p>
+     * 
      * Only consulted if @c shouldFetchRootRecord is @c YES.
      * If nil, declares the entire root record should be downloaded. If set to an empty array, declares that no user
      * fields should be downloaded.
@@ -237,15 +248,15 @@ public class CKFetchShareMetadataOperation extends CKOperation {
      */
     @Generated
     @Selector("setRootRecordDesiredKeys:")
-    public native void setRootRecordDesiredKeys(NSArray<String> value);
+    public native void setRootRecordDesiredKeys(@Nullable NSArray<String> value);
 
     @Generated
     @Selector("setShareURLs:")
-    public native void setShareURLs(NSArray<? extends NSURL> value);
+    public native void setShareURLs(@Nullable NSArray<? extends NSURL> value);
 
     /**
      * If set to YES, the resulting @c CKShareMetadata will have a @c rootRecord object filled out.
-     * <p>
+     * 
      * Defaults to @c NO.
      * The resulting @c CKShareMetadata will have a @c rootRecordID property regardless of the value of this property.
      */
@@ -253,13 +264,14 @@ public class CKFetchShareMetadataOperation extends CKOperation {
     @Selector("setShouldFetchRootRecord:")
     public native void setShouldFetchRootRecord(boolean value);
 
+    @Nullable
     @Generated
     @Selector("shareURLs")
     public native NSArray<? extends NSURL> shareURLs();
 
     /**
      * If set to YES, the resulting @c CKShareMetadata will have a @c rootRecord object filled out.
-     * <p>
+     * 
      * Defaults to @c NO.
      * The resulting @c CKShareMetadata will have a @c rootRecordID property regardless of the value of this property.
      */
@@ -271,27 +283,28 @@ public class CKFetchShareMetadataOperation extends CKOperation {
     @Generated
     public interface Block_fetchShareMetadataCompletionBlock_ret {
         @Generated
-        void call_fetchShareMetadataCompletionBlock_ret(NSError arg0);
+        void call_fetchShareMetadataCompletionBlock_ret(@Nullable NSError arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_perShareMetadataBlock_ret {
         @Generated
-        void call_perShareMetadataBlock_ret(NSURL arg0, CKShareMetadata arg1, NSError arg2);
+        void call_perShareMetadataBlock_ret(@NotNull NSURL arg0, @Nullable CKShareMetadata arg1,
+                @Nullable NSError arg2);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setFetchShareMetadataCompletionBlock {
         @Generated
-        void call_setFetchShareMetadataCompletionBlock(NSError arg0);
+        void call_setFetchShareMetadataCompletionBlock(@Nullable NSError arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setPerShareMetadataBlock {
         @Generated
-        void call_setPerShareMetadataBlock(NSURL arg0, CKShareMetadata arg1, NSError arg2);
+        void call_setPerShareMetadataBlock(@NotNull NSURL arg0, @Nullable CKShareMetadata arg1, @Nullable NSError arg2);
     }
 }

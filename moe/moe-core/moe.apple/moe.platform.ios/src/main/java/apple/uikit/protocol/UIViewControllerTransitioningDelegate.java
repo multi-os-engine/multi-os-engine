@@ -28,53 +28,65 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIViewControllerTransitioningDelegate")
 public interface UIViewControllerTransitioningDelegate {
+    @Nullable
     @Generated
     @IsOptional
     @Selector("animationControllerForDismissedController:")
     @MappedReturn(ObjCObjectMapper.class)
     default UIViewControllerAnimatedTransitioning animationControllerForDismissedController(
-            UIViewController dismissed) {
+            @NotNull UIViewController dismissed) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("animationControllerForPresentedController:presentingController:sourceController:")
     @MappedReturn(ObjCObjectMapper.class)
     default UIViewControllerAnimatedTransitioning animationControllerForPresentedControllerPresentingControllerSourceController(
-            UIViewController presented, UIViewController presenting, UIViewController source) {
+            @NotNull UIViewController presented, @NotNull UIViewController presenting,
+            @NotNull UIViewController source) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("interactionControllerForDismissal:")
     @MappedReturn(ObjCObjectMapper.class)
     default UIViewControllerInteractiveTransitioning interactionControllerForDismissal(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerAnimatedTransitioning animator) {
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerAnimatedTransitioning animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("interactionControllerForPresentation:")
     @MappedReturn(ObjCObjectMapper.class)
     default UIViewControllerInteractiveTransitioning interactionControllerForPresentation(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerAnimatedTransitioning animator) {
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerAnimatedTransitioning animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 8.0
+     */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("presentationControllerForPresentedViewController:presentingViewController:sourceViewController:")
     default UIPresentationController presentationControllerForPresentedViewControllerPresentingViewControllerSourceViewController(
-            UIViewController presented, UIViewController presenting, UIViewController source) {
+            @NotNull UIViewController presented, @Nullable UIViewController presenting,
+            @NotNull UIViewController source) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

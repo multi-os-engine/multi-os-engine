@@ -45,7 +45,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("CoreMotion")
 @Runtime(ObjCRuntime.class)
@@ -76,22 +81,25 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +134,10 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -160,15 +169,16 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -176,22 +186,22 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CMAttitude initWithCoder(NSCoder coder);
+    public native CMAttitude initWithCoder(@NotNull NSCoder coder);
 
     /**
      * multiplyByInverseOfAttitude:
-     * <p>
+     * 
      * Discussion:
      * Multiplies attitude by the inverse of the specified attitude. This gives
      * the attitude change from the specified attitude.
      */
     @Generated
     @Selector("multiplyByInverseOfAttitude:")
-    public native void multiplyByInverseOfAttitude(CMAttitude attitude);
+    public native void multiplyByInverseOfAttitude(@NotNull CMAttitude attitude);
 
     /**
      * pitch
-     * <p>
+     * 
      * Discussion:
      * Returns the pitch of the device in radians.
      */
@@ -201,7 +211,7 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * quaternion
-     * <p>
+     * 
      * Discussion:
      * Returns a quaternion representing the device's attitude.
      */
@@ -212,7 +222,7 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * roll
-     * <p>
+     * 
      * Discussion:
      * Returns the roll of the device in radians.
      */
@@ -222,7 +232,7 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * rotationMatrix
-     * <p>
+     * 
      * Discussion:
      * Returns a rotation matrix representing the device's attitude.
      */
@@ -239,7 +249,7 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * yaw
-     * <p>
+     * 
      * Discussion:
      * Returns the yaw of the device in radians.
      */

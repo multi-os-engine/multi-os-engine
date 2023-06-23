@@ -33,6 +33,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Delegate methods for MCSession.
@@ -49,8 +51,8 @@ public interface MCSessionDelegate {
      */
     @Generated
     @Selector("session:didFinishReceivingResourceWithName:fromPeer:atURL:withError:")
-    void sessionDidFinishReceivingResourceWithNameFromPeerAtURLWithError(MCSession session, String resourceName,
-            MCPeerID peerID, NSURL localURL, NSError error);
+    void sessionDidFinishReceivingResourceWithNameFromPeerAtURLWithError(@NotNull MCSession session,
+            @NotNull String resourceName, @NotNull MCPeerID peerID, @Nullable NSURL localURL, @Nullable NSError error);
 
     /**
      * Made first contact with peer and have identity information about the
@@ -59,9 +61,9 @@ public interface MCSessionDelegate {
     @Generated
     @IsOptional
     @Selector("session:didReceiveCertificate:fromPeer:certificateHandler:")
-    default void sessionDidReceiveCertificateFromPeerCertificateHandler(MCSession session, NSArray<?> certificate,
-            MCPeerID peerID,
-            @ObjCBlock(name = "call_sessionDidReceiveCertificateFromPeerCertificateHandler") Block_sessionDidReceiveCertificateFromPeerCertificateHandler certificateHandler) {
+    default void sessionDidReceiveCertificateFromPeerCertificateHandler(@NotNull MCSession session,
+            @Nullable NSArray<?> certificate, @NotNull MCPeerID peerID,
+            @NotNull @ObjCBlock(name = "call_sessionDidReceiveCertificateFromPeerCertificateHandler") Block_sessionDidReceiveCertificateFromPeerCertificateHandler certificateHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -70,30 +72,30 @@ public interface MCSessionDelegate {
      */
     @Generated
     @Selector("session:didReceiveData:fromPeer:")
-    void sessionDidReceiveDataFromPeer(MCSession session, NSData data, MCPeerID peerID);
+    void sessionDidReceiveDataFromPeer(@NotNull MCSession session, @NotNull NSData data, @NotNull MCPeerID peerID);
 
     /**
      * Received a byte stream from remote peer.
      */
     @Generated
     @Selector("session:didReceiveStream:withName:fromPeer:")
-    void sessionDidReceiveStreamWithNameFromPeer(MCSession session, NSInputStream stream, String streamName,
-            MCPeerID peerID);
+    void sessionDidReceiveStreamWithNameFromPeer(@NotNull MCSession session, @NotNull NSInputStream stream,
+            @NotNull String streamName, @NotNull MCPeerID peerID);
 
     /**
      * Start receiving a resource from remote peer.
      */
     @Generated
     @Selector("session:didStartReceivingResourceWithName:fromPeer:withProgress:")
-    void sessionDidStartReceivingResourceWithNameFromPeerWithProgress(MCSession session, String resourceName,
-            MCPeerID peerID, NSProgress progress);
+    void sessionDidStartReceivingResourceWithNameFromPeerWithProgress(@NotNull MCSession session,
+            @NotNull String resourceName, @NotNull MCPeerID peerID, @NotNull NSProgress progress);
 
     /**
      * Remote peer changed state.
      */
     @Generated
     @Selector("session:peer:didChangeState:")
-    void sessionPeerDidChangeState(MCSession session, MCPeerID peerID, @NInt long state);
+    void sessionPeerDidChangeState(@NotNull MCSession session, @NotNull MCPeerID peerID, @NInt long state);
 
     @Runtime(ObjCRuntime.class)
     @Generated

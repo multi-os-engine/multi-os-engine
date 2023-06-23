@@ -44,14 +44,18 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MTKMeshBuffer
- * <p>
+ * 
  * Mesh buffer created by MTKMeshBufferAllocator when Model I/O needs to memory for vertex or index data backing.
- * <p>
+ * 
  * Memory backing these buffer are Metal buffers. Model I/O will load index and vertex data from from a model asset
  * directly in to the Metal buffer.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MetalKit")
@@ -83,22 +87,25 @@ public class MTKMeshBuffer extends NSObject implements MDLMeshBuffer, MDLNamed {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +140,10 @@ public class MTKMeshBuffer extends NSObject implements MDLMeshBuffer, MDLNamed {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,32 +171,35 @@ public class MTKMeshBuffer extends NSObject implements MDLMeshBuffer, MDLNamed {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("allocator")
     public native MTKMeshBufferAllocator allocator();
 
     /**
      * [@property] buffer
-     * <p>
+     * 
      * Metal Buffer backing vertex/index data.
-     * <p>
+     * 
      * Many MTKMeshBuffers may reference the same buffer, but each with it's own offset. (i.e. Many MTKMeshBuffers may
      * be suballocated from a single buffer)
      */
+    @NotNull
     @Generated
     @Selector("buffer")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLBuffer buffer();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("fillData:offset:")
-    public native void fillDataOffset(NSData data, @NUInt long offset);
+    public native void fillDataOffset(@NotNull NSData data, @NUInt long offset);
 
     @Generated
     @Selector("init")
@@ -199,17 +210,19 @@ public class MTKMeshBuffer extends NSObject implements MDLMeshBuffer, MDLNamed {
     @NUInt
     public native long length();
 
+    @NotNull
     @Generated
     @Selector("map")
     public native MDLMeshBufferMap map();
 
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
 
     /**
      * [@property] offset
-     * <p>
+     * 
      * Byte offset of the data within the metal buffer.
      */
     @Generated
@@ -219,13 +232,14 @@ public class MTKMeshBuffer extends NSObject implements MDLMeshBuffer, MDLNamed {
 
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@NotNull String value);
 
     @Generated
     @Selector("type")
     @NUInt
     public native long type();
 
+    @Nullable
     @Generated
     @Selector("zone")
     @MappedReturn(ObjCObjectMapper.class)

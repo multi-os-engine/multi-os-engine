@@ -4,23 +4,25 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] AVAudioEngineManualRenderingError
- * <p>
+ * 
  * Error codes that could be returned from AVAudioEngine manual rendering mode methods,
  * e.g. `enableManualRenderingMode:format:maximumFrameCount:error:` and
  * `renderOffline:toBuffer:error:`.
  * Note that this is not a comprehensive list, and the underlying audio units could
  * return other error codes (e.g. see kAudioUnitErr_* in AudioToolbox/AUComponent.h) from these
  * methods as applicable.
- * <p>
+ * 
  * AVAudioEngineManualRenderingErrorInvalidMode
  * The operation cannot be performed because the engine is either not in manual
  * rendering mode or the right variant of it.
- * <p>
+ * 
  * AVAudioEngineManualRenderingErrorInitialized
  * The operation cannot be performed because the engine is initialized (i.e. not stopped).
- * <p>
+ * 
  * AVAudioEngineManualRenderingErrorNotRunning
  * The operation cannot be performed because the engine is not running (i.e. not started).
+ * 
+ * API-Since: 11.0
  */
 @Generated
 public final class AVAudioEngineManualRenderingError {
@@ -28,7 +30,16 @@ public final class AVAudioEngineManualRenderingError {
     private AVAudioEngineManualRenderingError() {
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated public static final int InvalidMode = 0xFFFEC460;
+    /**
+     * API-Since: 11.0
+     */
     @Generated public static final int Initialized = 0xFFFEC45F;
+    /**
+     * API-Since: 11.0
+     */
     @Generated public static final int NotRunning = 0xFFFEC45E;
 }

@@ -20,8 +20,16 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class SSLProtocolSide {
-    @Generated public static final int ServerSide = 0x00000000;
-    @Generated public static final int ClientSide = 0x00000001;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated @Generated public static final int ServerSide = 0x00000000;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated @Generated public static final int ClientSide = 0x00000001;
 
     @Generated
     private SSLProtocolSide() {

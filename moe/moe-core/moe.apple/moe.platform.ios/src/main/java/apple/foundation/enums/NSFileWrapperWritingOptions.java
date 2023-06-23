@@ -19,6 +19,9 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 public final class NSFileWrapperWritingOptions {
     /**
@@ -27,6 +30,8 @@ public final class NSFileWrapperWritingOptions {
      * inconsistent state. Because this option causes additional I/O you shouldn't use it unnecessarily. For example, on
      * Mac OS X you wouldn't use this option in an override of -[NSDocument writeToURL:ofType:error:] because
      * NSDocument's implementation of safe saving already does atomic writing.
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long Atomic = 0x0000000000000001L;
     /**
@@ -35,6 +40,8 @@ public final class NSFileWrapperWritingOptions {
      * and reusing child file wrappers properly subsequent invocations of -writeToURL:options:originalContentsURL:error:
      * wouldn't be able to reliably create hard links in a new file package for performance because the record of names
      * in the old file package would be out of date.
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long WithNameUpdating = 0x0000000000000002L;
 

@@ -25,9 +25,15 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * see documentation for GKTurnBasedEventListener for the equivalent methods
+ * 
+ * API-Since: 5.0
+ * Deprecated-Since: 7.0
+ * Deprecated-Message: Use registerListener on GKLocalPlayer with an object that implements the GKTurnBasedEventListener
+ * protocol
  */
 @Deprecated
 @Generated
@@ -35,29 +41,45 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKTurnBasedEventHandlerDelegate")
 public interface GKTurnBasedEventHandlerDelegate {
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("handleInviteFromGameCenter:")
-    void handleInviteFromGameCenter(NSArray<String> playersToInvite);
+    void handleInviteFromGameCenter(@NotNull NSArray<String> playersToInvite);
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("handleMatchEnded:")
-    default void handleMatchEnded(GKTurnBasedMatch match) {
+    default void handleMatchEnded(@NotNull GKTurnBasedMatch match) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("handleTurnEventForMatch:")
-    default void handleTurnEventForMatch(GKTurnBasedMatch match) {
+    default void handleTurnEventForMatch(@NotNull GKTurnBasedMatch match) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("handleTurnEventForMatch:didBecomeActive:")
-    void handleTurnEventForMatchDidBecomeActive(GKTurnBasedMatch match, boolean didBecomeActive);
+    void handleTurnEventForMatchDidBecomeActive(@NotNull GKTurnBasedMatch match, boolean didBecomeActive);
 }

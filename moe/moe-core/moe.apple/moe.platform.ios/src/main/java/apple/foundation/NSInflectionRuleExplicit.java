@@ -19,7 +19,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -48,17 +53,18 @@ public class NSInflectionRuleExplicit extends NSInflectionRule {
     @Selector("allocWithZone:")
     public static native NSInflectionRuleExplicit allocWithZone(VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("automaticRule")
     public static native NSInflectionRule automaticRule();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("canInflectLanguage:")
-    public static native boolean canInflectLanguage(String language);
+    public static native boolean canInflectLanguage(@NotNull String language);
 
     @Generated
     @Selector("canInflectPreferredLocalization")
@@ -66,18 +72,21 @@ public class NSInflectionRuleExplicit extends NSInflectionRule {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,11 +110,11 @@ public class NSInflectionRuleExplicit extends NSInflectionRule {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSInflectionRuleExplicit initWithCoder(NSCoder coder);
+    public native NSInflectionRuleExplicit initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithMorphology:")
-    public native NSInflectionRuleExplicit initWithMorphology(NSMorphology morphology);
+    public native NSInflectionRuleExplicit initWithMorphology(@NotNull NSMorphology morphology);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -124,10 +133,12 @@ public class NSInflectionRuleExplicit extends NSInflectionRule {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("morphology")
     public native NSMorphology morphology();

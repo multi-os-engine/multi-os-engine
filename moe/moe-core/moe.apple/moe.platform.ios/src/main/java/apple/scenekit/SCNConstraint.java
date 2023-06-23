@@ -46,10 +46,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNConstraint
- * <p>
+ * 
  * A SCNConstraint is an abstract class that represents a single constraint that can be applied to a node.
  */
 @Generated
@@ -82,22 +84,25 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -132,9 +137,10 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,29 +174,34 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
+    public native void addAnimationForKey(@NotNull @Mapped(ObjCObjectMapper.class) SCNAnimation animation,
+            @Nullable String key);
 
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("animationForKey:")
-    public native CAAnimation animationForKey(String key);
+    public native CAAnimation animationForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("animationKeys")
     public native NSArray<String> animationKeys();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] influenceFactor
-     * <p>
+     * 
      * Specifies the inflence factor of the receiver. Defaults to 1. Animatable
      */
     @Generated
@@ -204,15 +215,17 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNConstraint initWithCoder(NSCoder coder);
+    public native SCNConstraint initWithCoder(@NotNull NSCoder coder);
 
+    @Deprecated
     @Generated
     @Selector("isAnimationForKeyPaused:")
-    public native boolean isAnimationForKeyPaused(String key);
+    public native boolean isAnimationForKeyPaused(@NotNull String key);
 
+    @Deprecated
     @Generated
     @Selector("pauseAnimationForKey:")
-    public native void pauseAnimationForKey(String key);
+    public native void pauseAnimationForKey(@NotNull String key);
 
     @Generated
     @Selector("removeAllAnimations")
@@ -220,28 +233,31 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("removeAnimationForKey:")
-    public native void removeAnimationForKey(String key);
+    public native void removeAnimationForKey(@NotNull String key);
 
+    @Deprecated
     @Generated
     @Selector("removeAnimationForKey:fadeOutDuration:")
-    public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
+    public native void removeAnimationForKeyFadeOutDuration(@NotNull String key, @NFloat double duration);
 
+    @Deprecated
     @Generated
     @Selector("resumeAnimationForKey:")
-    public native void resumeAnimationForKey(String key);
+    public native void resumeAnimationForKey(@NotNull String key);
 
     /**
      * [@property] influenceFactor
-     * <p>
+     * 
      * Specifies the inflence factor of the receiver. Defaults to 1. Animatable
      */
     @Generated
     @Selector("setInfluenceFactor:")
     public native void setInfluenceFactor(@NFloat double value);
 
+    @Deprecated
     @Generated
     @Selector("setSpeed:forAnimationKey:")
-    public native void setSpeedForAnimationKey(@NFloat double speed, String key);
+    public native void setSpeedForAnimationKey(@NFloat double speed, @NotNull String key);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -251,15 +267,16 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("addAnimationPlayer:forKey:")
-    public native void addAnimationPlayerForKey(SCNAnimationPlayer player, String key);
+    public native void addAnimationPlayerForKey(@NotNull SCNAnimationPlayer player, @Nullable String key);
 
+    @Nullable
     @Generated
     @Selector("animationPlayerForKey:")
-    public native SCNAnimationPlayer animationPlayerForKey(String key);
+    public native SCNAnimationPlayer animationPlayerForKey(@NotNull String key);
 
     /**
      * [@property] enable
-     * <p>
+     * 
      * Determines whether the constraint is enabled or not. Defaults to YES.
      */
     @Generated
@@ -268,10 +285,12 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * [@property] incremental
-     * <p>
+     * 
      * Specifies whether or not the contraint should applies incrementally and have it's effect being cumulated over the
      * rendered frames. Defaults to YES starting macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to NO in previous
      * versions.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isIncremental")
@@ -279,11 +298,11 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("removeAnimationForKey:blendOutDuration:")
-    public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
+    public native void removeAnimationForKeyBlendOutDuration(@NotNull String key, @NFloat double duration);
 
     /**
      * [@property] enable
-     * <p>
+     * 
      * Determines whether the constraint is enabled or not. Defaults to YES.
      */
     @Generated
@@ -292,10 +311,12 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * [@property] incremental
-     * <p>
+     * 
      * Specifies whether or not the contraint should applies incrementally and have it's effect being cumulated over the
      * rendered frames. Defaults to YES starting macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to NO in previous
      * versions.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setIncremental:")

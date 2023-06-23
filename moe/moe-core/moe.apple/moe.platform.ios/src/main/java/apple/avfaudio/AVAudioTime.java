@@ -23,27 +23,31 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioTime
- * <p>
+ * 
  * Represent a moment in time.
- * <p>
+ * 
  * AVAudioTime is used in AVAudioEngine to represent time. Instances are immutable.
- * <p>
+ * 
  * A single moment in time may be represented in two different ways:
  * 1. mach_absolute_time(), the system's basic clock. Commonly referred to as "host time."
  * 2. audio samples at a particular sample rate
- * <p>
+ * 
  * A single AVAudioTime instance may contain either or both representations; it might
  * represent only a sample time, only a host time, or both.
- * <p>
+ * 
  * Rationale for using host time:
  * [a] internally we are using AudioTimeStamp, which uses host time, and it seems silly to divide
  * [b] it is consistent with a standard system timing service
  * [c] we do provide conveniences to convert between host ticks and seconds (host time divided by
  * frequency) so client code wanting to do what should be straightforward time computations can at
  * least not be cluttered by ugly multiplications and divisions by the host clock frequency.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -75,9 +79,9 @@ public class AVAudioTime extends NSObject {
 
     /**
      * [@property] audioTimeStamp
-     * <p>
+     * 
      * The time expressed as an AudioTimeStamp structure.
-     * <p>
+     * 
      * This may be useful for compatibility with lower-level CoreAudio and AudioToolbox API's.
      */
     @Generated
@@ -87,22 +91,25 @@ public class AVAudioTime extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -117,17 +124,17 @@ public class AVAudioTime extends NSObject {
 
     /**
      * extrapolateTimeFromAnchor:
-     * <p>
+     * 
      * Converts between host and sample time.
-     * <p>
+     * 
      * If anchorTime is an AVAudioTime where both host time and sample time are valid,
      * and self is another timestamp where only one of the two is valid, this method
      * returns a new AVAudioTime copied from self and where any additional valid fields provided by
      * the anchor are also valid.
-     * <p>
+     * 
      * Note that the anchorTime must have both host and sample time valid, and self must have
      * sample rate and at least one of host or sample time valid. Otherwise this method returns nil.
-     *
+     * 
      * <pre>
      * // time0 has a valid audio sample representation, but no host time representation.
      * AVAudioTime *time0 = [AVAudioTime timeWithSampleTime: 0.0 atRate: 44100.0];
@@ -136,13 +143,16 @@ public class AVAudioTime extends NSObject {
      * // fill in valid host time representation
      * AVAudioTime *fullTime0 = [time0 extrapolateTimeFromAnchor: anchor];
      * </pre>
-     *
-     * @param anchorTime An AVAudioTime with a more complete AudioTimeStamp than that of the receiver (self).
-     * @return the extrapolated time
+     * 
+     * @param anchorTime
+     *                   An AVAudioTime with a more complete AudioTimeStamp than that of the receiver (self).
+     * @return
+     *         the extrapolated time
      */
+    @Nullable
     @Generated
     @Selector("extrapolateTimeFromAnchor:")
-    public native AVAudioTime extrapolateTimeFromAnchor(AVAudioTime anchorTime);
+    public native AVAudioTime extrapolateTimeFromAnchor(@NotNull AVAudioTime anchorTime);
 
     @Generated
     @Selector("hash")
@@ -151,7 +161,7 @@ public class AVAudioTime extends NSObject {
 
     /**
      * [@property] hostTime
-     * <p>
+     * 
      * The host time.
      */
     @Generated
@@ -160,7 +170,7 @@ public class AVAudioTime extends NSObject {
 
     /**
      * hostTimeForSeconds:
-     * <p>
+     * 
      * Convert seconds to host time.
      */
     @Generated
@@ -176,7 +186,7 @@ public class AVAudioTime extends NSObject {
      */
     @Generated
     @Selector("initWithAudioTimeStamp:sampleRate:")
-    public native AVAudioTime initWithAudioTimeStampSampleRate(AudioTimeStamp ts, double sampleRate);
+    public native AVAudioTime initWithAudioTimeStampSampleRate(@NotNull AudioTimeStamp ts, double sampleRate);
 
     /**
      * initWithHostTime:
@@ -214,7 +224,7 @@ public class AVAudioTime extends NSObject {
 
     /**
      * [@property] hostTimeValid
-     * <p>
+     * 
      * Whether the hostTime property is valid.
      */
     @Generated
@@ -223,7 +233,7 @@ public class AVAudioTime extends NSObject {
 
     /**
      * [@property] sampleTimeValid
-     * <p>
+     * 
      * Whether the sampleTime and sampleRate properties are valid.
      */
     @Generated
@@ -234,9 +244,10 @@ public class AVAudioTime extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -253,7 +264,7 @@ public class AVAudioTime extends NSObject {
 
     /**
      * [@property] sampleRate
-     * <p>
+     * 
      * The sample rate at which sampleTime is being expressed.
      */
     @Generated
@@ -262,7 +273,7 @@ public class AVAudioTime extends NSObject {
 
     /**
      * [@property] sampleTime
-     * <p>
+     * 
      * The time as a number of audio samples, as tracked by the current audio device.
      */
     @Generated
@@ -271,7 +282,7 @@ public class AVAudioTime extends NSObject {
 
     /**
      * secondsForHostTime:
-     * <p>
+     * 
      * Convert host time to seconds.
      */
     @Generated
@@ -291,7 +302,7 @@ public class AVAudioTime extends NSObject {
      */
     @Generated
     @Selector("timeWithAudioTimeStamp:sampleRate:")
-    public static native AVAudioTime timeWithAudioTimeStampSampleRate(AudioTimeStamp ts, double sampleRate);
+    public static native AVAudioTime timeWithAudioTimeStampSampleRate(@NotNull AudioTimeStamp ts, double sampleRate);
 
     /**
      * timeWithHostTime:

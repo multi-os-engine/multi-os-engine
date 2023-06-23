@@ -23,6 +23,7 @@ import org.moe.natj.c.ann.StructureField;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -44,7 +45,7 @@ public final class AUPreset extends StructObject {
     }
 
     @Generated
-    public AUPreset(int presetNumber, CFStringRef presetName) {
+    public AUPreset(int presetNumber, @Nullable CFStringRef presetName) {
         super(AUPreset.class);
         setPresetNumber(presetNumber);
         setPresetName(presetName);
@@ -58,11 +59,12 @@ public final class AUPreset extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setPresetNumber(int value);
 
+    @Nullable
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native CFStringRef presetName();
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setPresetName(CFStringRef value);
+    public native void setPresetName(@Nullable CFStringRef value);
 }

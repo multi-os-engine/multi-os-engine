@@ -50,7 +50,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSUUID;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -67,18 +73,21 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
 
     /**
      * URLAssetWithURL:options:
-     * <p>
+     * 
      * Returns an instance of AVURLAsset for inspection of a media resource.
-     *
-     * @param URL     An instance of NSURL that references a media resource.
-     * @param options An instance of NSDictionary that contains keys for specifying options for the initialization of
+     * 
+     * @param URL
+     *                An instance of NSURL that references a media resource.
+     * @param options
+     *                An instance of NSDictionary that contains keys for specifying options for the initialization of
      *                the AVURLAsset. See AVURLAssetPreferPreciseDurationAndTimingKey and
      *                AVURLAssetReferenceRestrictionsKey above.
      * @return An instance of AVURLAsset.
      */
     @Generated
     @Selector("URLAssetWithURL:options:")
-    public static native AVURLAsset URLAssetWithURLOptions(NSURL URL, NSDictionary<String, ?> options);
+    public static native AVURLAsset URLAssetWithURLOptions(@NotNull NSURL URL,
+            @Nullable NSDictionary<String, ?> options);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -96,48 +105,57 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
 
     @Generated
     @Selector("assetWithURL:")
-    public static native AVURLAsset assetWithURL(NSURL URL);
+    public static native AVURLAsset assetWithURL(@NotNull NSURL URL);
 
     /**
      * audiovisualMIMETypes
-     * <p>
+     * 
      * Provides the MIME types the AVURLAsset class understands.
-     *
+     * 
      * @return An NSArray of NSStrings containing MIME types the AVURLAsset class understands.
+     * 
+     *         API-Since: 5.0
      */
+    @NotNull
     @Generated
     @Selector("audiovisualMIMETypes")
     public static native NSArray<String> audiovisualMIMETypes();
 
     /**
      * audiovisualTypes
-     * <p>
+     * 
      * Provides the file types the AVURLAsset class understands.
-     *
+     * 
      * @return An NSArray of UTIs identifying the file types the AVURLAsset class understands.
+     * 
+     *         API-Since: 5.0
      */
+    @NotNull
     @Generated
     @Selector("audiovisualTypes")
     public static native NSArray<String> audiovisualTypes();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -170,24 +188,27 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
 
     /**
      * isPlayableExtendedMIMEType:
-     * <p>
+     * 
      * Returns YES if asset is playable with the codec(s) and container type specified in extendedMIMEType. Returns NO
      * otherwise.
-     *
+     * 
      * @param extendedMIMEType
      * @return YES or NO.
+     * 
+     *         API-Since: 5.0
      */
     @Generated
     @Selector("isPlayableExtendedMIMEType:")
-    public static native boolean isPlayableExtendedMIMEType(String extendedMIMEType);
+    public static native boolean isPlayableExtendedMIMEType(@NotNull String extendedMIMEType);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -216,38 +237,50 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
     public static native long version_static();
 
     /**
-     * indicates the URL with which the instance of AVURLAsset was initialized
+     * [@property] URL
+     * 
+     * Indicates the URL with which the instance of AVURLAsset was initialized.
      */
+    @NotNull
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
     /**
      * [@property] assetCache
-     * <p>
+     * 
      * Provides access to an instance of AVAssetCache to use for inspection of locally cached media data. Will be nil if
      * an asset has not been configured to store or access media data from disk.
+     * 
+     * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("assetCache")
     public native AVAssetCache assetCache();
 
     /**
      * compatibleTrackForCompositionTrack:
-     * <p>
+     * 
      * Provides a reference to an AVAssetTrack of the target from which any timeRange
      * can be inserted into a mutable composition track (via -[AVMutableCompositionTrack
      * insertTimeRange:ofTrack:atTime:error:]).
-     * <p>
+     * 
      * Finds a track of the target with content that can be accommodated by the specified composition track.
      * The logical complement of -[AVMutableComposition mutableTrackCompatibleWithTrack:].
-     *
-     * @param compositionTrack The composition track for which a compatible AVAssetTrack is requested.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 100000.0
+     * 
+     * @param compositionTrack
+     *                         The composition track for which a compatible AVAssetTrack is requested.
      * @return an instance of AVAssetTrack
      */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("compatibleTrackForCompositionTrack:")
-    public native AVAssetTrack compatibleTrackForCompositionTrack(AVCompositionTrack compositionTrack);
+    public native AVAssetTrack compatibleTrackForCompositionTrack(@NotNull AVCompositionTrack compositionTrack);
 
     @Generated
     @Selector("init")
@@ -255,27 +288,32 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
 
     /**
      * initWithURL:options:
-     * <p>
+     * 
      * Initializes an instance of AVURLAsset for inspection of a media resource.
-     *
-     * @param URL     An instance of NSURL that references a media resource.
-     * @param options An instance of NSDictionary that contains keys for specifying options for the initialization of
+     * 
+     * @param URL
+     *                An instance of NSURL that references a media resource.
+     * @param options
+     *                An instance of NSDictionary that contains keys for specifying options for the initialization of
      *                the AVURLAsset. See AVURLAssetPreferPreciseDurationAndTimingKey and
      *                AVURLAssetReferenceRestrictionsKey above.
      * @return An instance of AVURLAsset.
      */
     @Generated
     @Selector("initWithURL:options:")
-    public native AVURLAsset initWithURLOptions(NSURL URL, NSDictionary<String, ?> options);
+    public native AVURLAsset initWithURLOptions(@NotNull NSURL URL, @Nullable NSDictionary<String, ?> options);
 
     /**
      * [@property] resourceLoader
-     * <p>
+     * 
      * Provides access to an instance of AVAssetResourceLoader, which offers limited control over the handling of URLs
      * that may be loaded in the course of performing operations on the asset, such as playback.
      * The loading of file URLs cannot be mediated via use of AVAssetResourceLoader.
      * Note that copies of an AVAsset will vend the same instance of AVAssetResourceLoader.
+     * 
+     * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("resourceLoader")
     public native AVAssetResourceLoader resourceLoader();
@@ -288,13 +326,14 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
     @IsOptional
     @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
     @NInt
-    public static native long itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier);
+    public static native long itemProviderVisibilityForRepresentationWithTypeIdentifier_static(
+            @NotNull String typeIdentifier);
 
     @Generated
     @IsOptional
     @ProtocolClassMethod("itemProviderVisibilityForRepresentationWithTypeIdentifier_static")
     @NInt
-    public long _itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier) {
+    public long _itemProviderVisibilityForRepresentationWithTypeIdentifier_static(@NotNull String typeIdentifier) {
         return itemProviderVisibilityForRepresentationWithTypeIdentifier_static(typeIdentifier);
     }
 
@@ -302,45 +341,53 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
     @IsOptional
     @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
     @NInt
-    public native long itemProviderVisibilityForRepresentationWithTypeIdentifier(String typeIdentifier);
+    public native long itemProviderVisibilityForRepresentationWithTypeIdentifier(@NotNull String typeIdentifier);
 
+    @Nullable
     @Generated
     @Selector("loadDataWithTypeIdentifier:forItemProviderCompletionHandler:")
-    public native NSProgress loadDataWithTypeIdentifierForItemProviderCompletionHandler(String typeIdentifier,
-            @ObjCBlock(name = "call_loadDataWithTypeIdentifierForItemProviderCompletionHandler") NSItemProviderWriting.Block_loadDataWithTypeIdentifierForItemProviderCompletionHandler completionHandler);
+    public native NSProgress loadDataWithTypeIdentifierForItemProviderCompletionHandler(@NotNull String typeIdentifier,
+            @NotNull @ObjCBlock(name = "call_loadDataWithTypeIdentifierForItemProviderCompletionHandler") NSItemProviderWriting.Block_loadDataWithTypeIdentifierForItemProviderCompletionHandler completionHandler);
 
+    @Nullable
     @Generated
     @Selector("objectWithItemProviderData:typeIdentifier:error:")
-    public static native AVURLAsset objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public static native AVURLAsset objectWithItemProviderDataTypeIdentifierError(@NotNull NSData data,
+            @NotNull String typeIdentifier, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    @Nullable
     @Generated
     @ProtocolClassMethod("objectWithItemProviderDataTypeIdentifierError")
-    public AVURLAsset _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
+    public AVURLAsset _objectWithItemProviderDataTypeIdentifierError(@NotNull NSData data,
+            @NotNull String typeIdentifier, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
         return objectWithItemProviderDataTypeIdentifierError(data, typeIdentifier, outError);
     }
 
+    @NotNull
     @Generated
     @Selector("readableTypeIdentifiersForItemProvider")
     public static native NSArray<String> readableTypeIdentifiersForItemProvider();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("readableTypeIdentifiersForItemProvider")
     public NSArray<String> _readableTypeIdentifiersForItemProvider() {
         return readableTypeIdentifiersForItemProvider();
     }
 
+    @NotNull
     @Generated
     @Selector("writableTypeIdentifiersForItemProvider")
     public static native NSArray<String> writableTypeIdentifiersForItemProvider_static();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("writableTypeIdentifiersForItemProvider_static")
     public NSArray<String> _writableTypeIdentifiersForItemProvider_static() {
         return writableTypeIdentifiersForItemProvider_static();
     }
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("writableTypeIdentifiersForItemProvider")
@@ -349,43 +396,68 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
     @Generated
     @IsOptional
     @Selector("contentKeySession:didProvideContentKey:")
-    public native void contentKeySessionDidProvideContentKey(AVContentKeySession contentKeySession,
-            AVContentKey contentKey);
+    public native void contentKeySessionDidProvideContentKey(@NotNull AVContentKeySession contentKeySession,
+            @NotNull AVContentKey contentKey);
 
     /**
      * findCompatibleTrackForCompositionTrack:completionHandler:
-     * <p>
+     * 
      * Loads a reference to an AVAssetTrack of the target from which any timeRange
      * can be inserted into a mutable composition track (via -[AVMutableCompositionTrack
      * insertTimeRange:ofTrack:atTime:error:]).
-     * <p>
+     * 
      * Finds a track of the target with content that can be accommodated by the specified composition track.
      * The logical complement of -[AVMutableComposition mutableTrackCompatibleWithTrack:].
-     *
-     * @param compositionTrack  The composition track for which a compatible AVAssetTrack is requested.
-     * @param completionHandler A block that is invoked when loading is complete, vending an instance of AVAssetTrack or
+     * 
+     * API-Since: 15.0
+     * 
+     * @param compositionTrack
+     *                          The composition track for which a compatible AVAssetTrack is requested.
+     * @param completionHandler
+     *                          A block that is invoked when loading is complete, vending an instance of AVAssetTrack or
      *                          an error.
      */
     @Generated
     @Selector("findCompatibleTrackForCompositionTrack:completionHandler:")
-    public native void findCompatibleTrackForCompositionTrackCompletionHandler(AVCompositionTrack compositionTrack,
-            @ObjCBlock(name = "call_findCompatibleTrackForCompositionTrackCompletionHandler") Block_findCompatibleTrackForCompositionTrackCompletionHandler completionHandler);
+    public native void findCompatibleTrackForCompositionTrackCompletionHandler(
+            @NotNull AVCompositionTrack compositionTrack,
+            @NotNull @ObjCBlock(name = "call_findCompatibleTrackForCompositionTrackCompletionHandler") Block_findCompatibleTrackForCompositionTrackCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_findCompatibleTrackForCompositionTrackCompletionHandler {
         @Generated
-        void call_findCompatibleTrackForCompositionTrackCompletionHandler(AVAssetTrack arg0, NSError arg1);
+        void call_findCompatibleTrackForCompositionTrackCompletionHandler(@Nullable AVAssetTrack arg0,
+                @Nullable NSError arg1);
     }
 
     /**
      * [@property] variants
-     * <p>
+     * 
      * Provides an array of AVAssetVariants contained in the asset
-     * <p>
+     * 
      * Some variants may not be playable according to the current device configuration.
+     * 
+     * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("variants")
     public native NSArray<? extends AVAssetVariant> variants();
+
+    /**
+     * [@property] httpSessionIdentifier
+     * 
+     * Provides the identifier that's automatically included in any HTTP request issued on behalf of this asset in the
+     * HTTP header field "X-Playback-Session-Id".
+     * 
+     * The value is an NSUUID from which the UUID string can be obtained.
+     * Note that copies of an AVURLAsset vend an equivalent httpSessionIdentifier.
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @Selector("httpSessionIdentifier")
+    public native NSUUID httpSessionIdentifier();
 }

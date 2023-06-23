@@ -26,9 +26,13 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This delegate receives updates on the camera snapshot.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("HomeKit")
@@ -37,28 +41,31 @@ import org.moe.natj.objc.ann.Selector;
 public interface HMCameraSnapshotControlDelegate {
     /**
      * Informs the delegate that the snapshot was taken.
-     *
+     * 
      * @param cameraSnapshotControl Sender of this message.
+     * 
      * @param snapshot              Snapshot will be valid if snapshot was successfully taken.
+     * 
      * @param error                 Error will be populated if the snapshot could not be taken.
      */
     @Generated
     @IsOptional
     @Selector("cameraSnapshotControl:didTakeSnapshot:error:")
-    default void cameraSnapshotControlDidTakeSnapshotError(HMCameraSnapshotControl cameraSnapshotControl,
-            HMCameraSnapshot snapshot, NSError error) {
+    default void cameraSnapshotControlDidTakeSnapshotError(@NotNull HMCameraSnapshotControl cameraSnapshotControl,
+            @Nullable HMCameraSnapshot snapshot, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Informs the delegate that the mostRecentSnapshot was updated.
-     *
+     * 
      * @param cameraSnapshotControl Sender of this message.
      */
     @Generated
     @IsOptional
     @Selector("cameraSnapshotControlDidUpdateMostRecentSnapshot:")
-    default void cameraSnapshotControlDidUpdateMostRecentSnapshot(HMCameraSnapshotControl cameraSnapshotControl) {
+    default void cameraSnapshotControlDidUpdateMostRecentSnapshot(
+            @NotNull HMCameraSnapshotControl cameraSnapshotControl) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -46,7 +46,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -77,22 +82,25 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +135,10 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,11 +174,12 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
     @ByValue
     public native CMTime compositionTime();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * callback the custom compositor should call for a request that has been cancelled.
@@ -179,11 +189,16 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
     public native void finishCancelledRequest();
 
     /**
-     * callback the custom compositor should call when composition succeeded
+     * finishWithComposedVideoFrame:
+     * 
+     * The method that the custom compositor calls when composition succeeds.
+     * 
+     * @param composedVideoFrame
+     *                           The video frame to finish with.
      */
     @Generated
     @Selector("finishWithComposedVideoFrame:")
-    public native void finishWithComposedVideoFrame(CVBufferRef composedVideoFrame);
+    public native void finishWithComposedVideoFrame(@NotNull CVBufferRef composedVideoFrame);
 
     /**
      * callback the custom compositor should call when composition failed. The error parameter should describe the
@@ -191,7 +206,7 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
      */
     @Generated
     @Selector("finishWithError:")
-    public native void finishWithError(NSError error);
+    public native void finishWithError(@NotNull NSError error);
 
     @Generated
     @Selector("init")
@@ -200,17 +215,20 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
     /**
      * The AVVideoCompositionRenderContext making the request
      */
+    @NotNull
     @Generated
     @Selector("renderContext")
     public native AVVideoCompositionRenderContext renderContext();
 
     /**
      * sourceFrameByTrackID:
-     * <p>
+     * 
      * Returns the source CVPixelBufferRef for the given track ID
-     *
-     * @param trackID The track ID for the requested source frame
+     * 
+     * @param trackID
+     *                The track ID for the requested source frame
      */
+    @Nullable
     @Generated
     @Selector("sourceFrameByTrackID:")
     public native CVBufferRef sourceFrameByTrackID(int trackID);
@@ -218,6 +236,7 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
     /**
      * Track IDs of all the source video buffers that are available to compose the frame.
      */
+    @NotNull
     @Generated
     @Selector("sourceTrackIDs")
     public native NSArray<? extends NSNumber> sourceTrackIDs();
@@ -225,6 +244,7 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
     /**
      * The AVVideoCompositionInstruction to use to compose the frame.
      */
+    @NotNull
     @Generated
     @Selector("videoCompositionInstruction")
     @MappedReturn(ObjCObjectMapper.class)
@@ -232,29 +252,40 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
 
     /**
      * sourceSampleBufferByTrackID:
-     * <p>
+     * 
      * Returns the source CMSampleBufferRef for the given track ID
-     *
-     * @param trackID The track ID for the requested source sample buffer
+     * 
+     * @param trackID
+     *                The track ID for the requested source sample buffer
+     * 
+     *                API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("sourceSampleBufferByTrackID:")
     public native CMSampleBufferRef sourceSampleBufferByTrackID(int trackID);
 
     /**
      * Track IDs of all the source sample data buffers that are available to compose the frame.
+     * 
+     * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("sourceSampleDataTrackIDs")
     public native NSArray<? extends NSNumber> sourceSampleDataTrackIDs();
 
     /**
      * sourceTimedMetadataByTrackID:
-     * <p>
+     * 
      * Returns the source AVTimedMetadataGroup * for the given track ID
-     *
-     * @param trackID The track ID for the requested source timed metadata group.
+     * 
+     * @param trackID
+     *                The track ID for the requested source timed metadata group.
+     * 
+     *                API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("sourceTimedMetadataByTrackID:")
     public native AVTimedMetadataGroup sourceTimedMetadataByTrackID(int trackID);

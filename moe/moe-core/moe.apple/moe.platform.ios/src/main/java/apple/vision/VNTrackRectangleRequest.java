@@ -24,16 +24,20 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * VNTrackRectangleRequest tracks a rectangle in a sequence of images.
- * <p>
+ * 
  * The VNTrackRectangleRequest is a special tracker to track rectangular shape objects. The VNTrackRectangleRequest is
  * initialized with a VNRectangleObservation object that contains a rectangle bounding box and four corners locations.
  * VNRectangleObservation can be obtained by running rectangle detector (VNDetectRectanglesRequest). The
  * VNTrackRectangleRequest is processed using one of the [VNSequenceRequestHandler performRequests:...] methods.
  * [@note] The rectangular object doesn't have to look like a rectangle when projected into the plane of the image of
  * interest. For example, it may look like trapezoid.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -65,22 +69,25 @@ public class VNTrackRectangleRequest extends VNTrackingRequest {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -105,34 +112,34 @@ public class VNTrackRectangleRequest extends VNTrackingRequest {
     @Generated
     @Selector("initWithCompletionHandler:")
     public native VNTrackRectangleRequest initWithCompletionHandler(
-            @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
 
     /**
      * Create a new rectangle tracking request with rectangle observation.
-     *
+     * 
      * @param observation Rectangle observation with bounding box and rectangle corners location info.
      */
     @Generated
     @Selector("initWithRectangleObservation:")
-    public native VNTrackRectangleRequest initWithRectangleObservation(VNRectangleObservation observation);
+    public native VNTrackRectangleRequest initWithRectangleObservation(@NotNull VNRectangleObservation observation);
 
     /**
      * Create a new rectangle tracking request with rectangle observation.
-     *
+     * 
      * @param observation       Rectangle observation with bounding box and rectangle corners location info.
      * @param completionHandler The block that is invoked when the request has been performed.
      */
     @Generated
     @Selector("initWithRectangleObservation:completionHandler:")
     public native VNTrackRectangleRequest initWithRectangleObservationCompletionHandler(
-            VNRectangleObservation observation,
-            @ObjCBlock(name = "call_initWithRectangleObservationCompletionHandler") Block_initWithRectangleObservationCompletionHandler completionHandler);
+            @NotNull VNRectangleObservation observation,
+            @Nullable @ObjCBlock(name = "call_initWithRectangleObservationCompletionHandler") Block_initWithRectangleObservationCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithRectangleObservationCompletionHandler {
         @Generated
-        void call_initWithRectangleObservationCompletionHandler(VNRequest request, NSError error);
+        void call_initWithRectangleObservationCompletionHandler(@NotNull VNRequest request, @Nullable NSError error);
     }
 
     @Generated
@@ -152,9 +159,10 @@ public class VNTrackRectangleRequest extends VNTrackingRequest {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -192,6 +200,7 @@ public class VNTrackRectangleRequest extends VNTrackingRequest {
     @NUInt
     public static native long defaultRevision();
 
+    @NotNull
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();

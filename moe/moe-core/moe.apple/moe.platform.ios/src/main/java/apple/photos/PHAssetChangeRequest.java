@@ -42,10 +42,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * PHAssetChangeRequest can only be created or used within a -[PHPhotoLibrary performChanges:] or -[PHPhotoLibrary
  * performChangesAndWait:] block.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Photos")
@@ -77,56 +81,75 @@ public class PHAssetChangeRequest extends PHChangeRequest {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * if the asset does not allow the type of change requested, these methods will raise an exception, call
      * canPerformEditOperation: on the asset to determine if the type of edit operation is allowed.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("changeRequestForAsset:")
-    public static native PHAssetChangeRequest changeRequestForAsset(PHAsset asset);
+    public static native PHAssetChangeRequest changeRequestForAsset(@NotNull PHAsset asset);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * Basic asset creation. For finer-grained control, see PHAssetCreationRequest.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("creationRequestForAssetFromImage:")
-    public static native PHAssetChangeRequest creationRequestForAssetFromImage(UIImage image);
+    public static native PHAssetChangeRequest creationRequestForAssetFromImage(@NotNull UIImage image);
 
+    /**
+     * API-Since: 8.0
+     */
+    @Nullable
     @Generated
     @Selector("creationRequestForAssetFromImageAtFileURL:")
-    public static native PHAssetChangeRequest creationRequestForAssetFromImageAtFileURL(NSURL fileURL);
+    public static native PHAssetChangeRequest creationRequestForAssetFromImageAtFileURL(@NotNull NSURL fileURL);
 
+    /**
+     * API-Since: 8.0
+     */
+    @Nullable
     @Generated
     @Selector("creationRequestForAssetFromVideoAtFileURL:")
-    public static native PHAssetChangeRequest creationRequestForAssetFromVideoAtFileURL(NSURL fileURL);
+    public static native PHAssetChangeRequest creationRequestForAssetFromVideoAtFileURL(@NotNull NSURL fileURL);
 
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("deleteAssets:")
-    public static native void deleteAssets(@Mapped(ObjCObjectMapper.class) NSFastEnumeration assets);
+    public static native void deleteAssets(@NotNull @Mapped(ObjCObjectMapper.class) NSFastEnumeration assets);
 
     @Generated
     @Selector("description")
@@ -154,9 +177,10 @@ public class PHAssetChangeRequest extends PHChangeRequest {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -184,10 +208,18 @@ public class PHAssetChangeRequest extends PHChangeRequest {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
+    @Nullable
     @Generated
     @Selector("contentEditingOutput")
     public native PHContentEditingOutput contentEditingOutput();
 
+    /**
+     * API-Since: 8.0
+     */
+    @Nullable
     @Generated
     @Selector("creationDate")
     public native NSDate creationDate();
@@ -196,10 +228,16 @@ public class PHAssetChangeRequest extends PHChangeRequest {
     @Selector("init")
     public native PHAssetChangeRequest init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("isFavorite")
     public native boolean isFavorite();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setFavorite:")
     public native void setFavorite(boolean value);
@@ -207,6 +245,8 @@ public class PHAssetChangeRequest extends PHChangeRequest {
     /**
      * a hidden asset will be excluded from moment collections, but may still be included in other smart or regular
      * album collections
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isHidden")
@@ -215,11 +255,17 @@ public class PHAssetChangeRequest extends PHChangeRequest {
     /**
      * a hidden asset will be excluded from moment collections, but may still be included in other smart or regular
      * album collections
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setHidden:")
     public native void setHidden(boolean value);
 
+    /**
+     * API-Since: 8.0
+     */
+    @Nullable
     @Generated
     @Selector("location")
     public native CLLocation location();
@@ -227,7 +273,10 @@ public class PHAssetChangeRequest extends PHChangeRequest {
     /**
      * This can be used to fetch the newly created asset after the change block has completed by using -localIdentifier
      * It can also be added directly to collections within the current change block
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("placeholderForCreatedAsset")
     public native PHObjectPlaceholder placeholderForCreatedAsset();
@@ -237,20 +286,31 @@ public class PHAssetChangeRequest extends PHChangeRequest {
      * manually by the client if the original resources aren't already local.
      * Use PHAssetResourceManager to ensure that original asset content is downloaded to the current device before
      * making this request.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("revertAssetContentToOriginal")
     public native void revertAssetContentToOriginal();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setContentEditingOutput:")
-    public native void setContentEditingOutput(PHContentEditingOutput value);
+    public native void setContentEditingOutput(@Nullable PHContentEditingOutput value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setCreationDate:")
-    public native void setCreationDate(NSDate value);
+    public native void setCreationDate(@Nullable NSDate value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setLocation:")
-    public native void setLocation(CLLocation value);
+    public native void setLocation(@Nullable CLLocation value);
 }

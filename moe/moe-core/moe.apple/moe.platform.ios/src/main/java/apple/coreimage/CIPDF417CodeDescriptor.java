@@ -24,14 +24,19 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CIPDF417CodeDescriptor
- * <p>
+ * 
  * CIPDF417CodeDescriptor is a concrete subclass of CIBarcodeDescriptor that defines an abstract representation of a
  * PDF417 code symbol.
- * <p>
+ * 
  * Refer to the ISO/IEC 15438:2006(E) for the PDF417 symbol specification.
+ * 
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreImage")
@@ -63,32 +68,35 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] columnCount
-     * <p>
+     * 
      * Indicates the number of columns in the rectangular matrix, excluding the columns used to indicate the symbol
      * structure.
-     * <p>
+     * 
      * columnCount values range from 1 to 30.
      */
     @Generated
@@ -110,14 +118,14 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
     @Generated
     @Selector("descriptorWithPayload:isCompact:rowCount:columnCount:")
     public static native CIPDF417CodeDescriptor descriptorWithPayloadIsCompactRowCountColumnCount(
-            NSData errorCorrectedPayload, boolean isCompact, @NInt long rowCount, @NInt long columnCount);
+            @NotNull NSData errorCorrectedPayload, boolean isCompact, @NInt long rowCount, @NInt long columnCount);
 
     /**
      * [@property] errorCorrectedPayload
-     * <p>
+     * 
      * The error-corrected codewords which comprise the PDF417 symbol. The first codeword indicates the number of data
      * codewords in the errorCorrectedPayload.
-     * <p>
+     * 
      * PDF417 codes are comprised of a start character on the left and a stop character on the right. Each row begins
      * and ends with special characters indicating the current row as well as information about the dimensions of the
      * PDF417 symbol. The errorCorrectedPayload represents the sequence of PDF417 codewords that make up the body of the
@@ -126,6 +134,7 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
      * 16-bit value in the range of 0...928. The sequence is to be interpreted as described in the PDF417 bar code
      * symbology specification -- ISO/IEC 15438:2006(E).
      */
+    @NotNull
     @Generated
     @Selector("errorCorrectedPayload")
     public native NSData errorCorrectedPayload();
@@ -141,15 +150,15 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CIPDF417CodeDescriptor initWithCoder(NSCoder coder);
+    public native CIPDF417CodeDescriptor initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initializes a descriptor that can be used as input to CIBarcodeGenerator
      */
     @Generated
     @Selector("initWithPayload:isCompact:rowCount:columnCount:")
-    public native CIPDF417CodeDescriptor initWithPayloadIsCompactRowCountColumnCount(NSData errorCorrectedPayload,
-            boolean isCompact, @NInt long rowCount, @NInt long columnCount);
+    public native CIPDF417CodeDescriptor initWithPayloadIsCompactRowCountColumnCount(
+            @NotNull NSData errorCorrectedPayload, boolean isCompact, @NInt long rowCount, @NInt long columnCount);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -166,9 +175,9 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
 
     /**
      * [@property] isCompact
-     * <p>
+     * 
      * A BOOL indicating whether the symbol is compact.
-     * <p>
+     * 
      * Compact PDF417 symbols have abbreviated right-side guard bars.
      */
     @Generated
@@ -179,9 +188,10 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -198,9 +208,9 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
 
     /**
      * [@property] rowCount
-     * <p>
+     * 
      * Indicates the number of rows in the rectangular matrix.
-     * <p>
+     * 
      * rowCount values range from 3 to 90.
      */
     @Generated

@@ -37,14 +37,18 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVMetadataGroup
- * <p>
+ * 
  * AVMetadataGroup is the common superclass for AVTimedMetadataGroup and AVDateRangeMetadataGroup; each represents a
  * collection of metadata items associated with a segment of a timeline. AVTimedMetadataGroup is typically used with
  * content that defines an independent timeline, while AVDateRangeMetadataGroup is typically used with content that's
  * associated with a specific range of dates.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("AVFoundation")
@@ -76,22 +80,25 @@ public class AVMetadataGroup extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +133,10 @@ public class AVMetadataGroup extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,7 +166,10 @@ public class AVMetadataGroup extends NSObject {
 
     /**
      * indicates the classifyingLabel of the group; nil if no classifyingLabel is indicated
+     * 
+     * API-Since: 9.3
      */
+    @Nullable
     @Generated
     @Selector("classifyingLabel")
     public native String classifyingLabel();
@@ -167,13 +178,17 @@ public class AVMetadataGroup extends NSObject {
     @Selector("init")
     public native AVMetadataGroup init();
 
+    @NotNull
     @Generated
     @Selector("items")
     public native NSArray<? extends AVMetadataItem> items();
 
     /**
      * indicates the unique identifier of the group; nil if no unique identifier is indicated
+     * 
+     * API-Since: 9.3
      */
+    @Nullable
     @Generated
     @Selector("uniqueID")
     public native String uniqueID();

@@ -39,9 +39,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A singleton object responsible for dispatching challenge-related events to its delegate
+ * 
+ * API-Since: 6.0
+ * Deprecated-Since: 7.0
+ * Deprecated-Message: You should instead implement the GKChallengeListener protocol and register a listener with
+ * GKLocalPlayer.
  */
 @Deprecated
 @Generated
@@ -74,27 +81,34 @@ public class GKChallengeEventHandler extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("challengeEventHandler")
     public static native GKChallengeEventHandler challengeEventHandler();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +143,10 @@ public class GKChallengeEventHandler extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,6 +174,10 @@ public class GKChallengeEventHandler extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("delegate")
@@ -169,11 +188,19 @@ public class GKChallengeEventHandler extends NSObject {
     @Selector("init")
     public native GKChallengeEventHandler init();
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) GKChallengeEventHandlerDelegate value);
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) GKChallengeEventHandlerDelegate value) {

@@ -37,13 +37,17 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NWPath
- * <p>
+ * 
  * A network path, represented with NWPath, expresses the viability status and
  * properties of the path that a networking connection will take on the device. For example,
  * if the path status is NWPathStatusSatisfied, then a connection could use that path.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -75,22 +79,25 @@ public class NWPath extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +132,10 @@ public class NWPath extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,18 +169,22 @@ public class NWPath extends NSObject {
 
     /**
      * isEqualToPath:
-     *
+     * 
      * @param path An NWPath object to compare.
      * @return YES if the two path objects have the same content, NO otherwise.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("isEqualToPath:")
-    public native boolean isEqualToPath(NWPath path);
+    public native boolean isEqualToPath(@NotNull NWPath path);
 
     /**
      * [@property] expensive
-     * <p>
+     * 
      * Returns YES if the path is considered expensive, as when using a cellular data plan.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isExpensive")
@@ -180,8 +192,10 @@ public class NWPath extends NSObject {
 
     /**
      * [@property] status
-     * <p>
+     * 
      * The evaluated NWPathStatus of the NWPath.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("status")
@@ -190,8 +204,10 @@ public class NWPath extends NSObject {
 
     /**
      * [@property] constrained
-     * <p>
+     * 
      * Returns YES if the path is considered constrained, as when it is in save data mode.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isConstrained")

@@ -30,15 +30,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Performs requests on a sequence of images.
- * <p>
+ * 
  * The VNSequenceRequestHandler is created without any specific image source. The
  * -performRequests:on<ImageSource>:error: methods will retain the image source for no longer than the lifetime of the
  * call.
  * The VNSequenceRequestHandler can choose to also cache state information related to the previously-processed image
  * sources.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -70,22 +74,25 @@ public class VNSequenceRequestHandler extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +134,10 @@ public class VNSequenceRequestHandler extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -138,148 +146,177 @@ public class VNSequenceRequestHandler extends NSObject {
 
     /**
      * Perform requests on an image in a CGImageRef.
-     *
+     * 
      * @param requests The VNRequests to be performed on the image.
+     * 
      * @param image    The CGImageRef containing the image to be processed.
+     * 
      * @param error    On input, a pointer to an error object. If an error occurs, this pointer is set to an actual
      *                 error object containing the error information. You may specify NULL for this parameter if you do
      *                 not want the error information.
      */
     @Generated
     @Selector("performRequests:onCGImage:error:")
-    public native boolean performRequestsOnCGImageError(NSArray<? extends VNRequest> requests, CGImageRef image,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnCGImageError(@NotNull NSArray<? extends VNRequest> requests,
+            @NotNull CGImageRef image, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Perform requests on an image in a CGImageRef.
-     *
+     * 
      * @param requests    The VNRequests to be performed on the image.
+     * 
      * @param image       The CGImageRef containing the image to be processed.
+     * 
      * @param orientation The orientation of the image.
+     * 
      * @param error       On input, a pointer to an error object. If an error occurs, this pointer is set to an actual
      *                    error object containing the error information. You may specify NULL for this parameter if you
      *                    do not want the error information.
      */
     @Generated
     @Selector("performRequests:onCGImage:orientation:error:")
-    public native boolean performRequestsOnCGImageOrientationError(NSArray<? extends VNRequest> requests,
-            CGImageRef image, int orientation, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnCGImageOrientationError(@NotNull NSArray<? extends VNRequest> requests,
+            @NotNull CGImageRef image, int orientation,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Perform requests on an image in a CIImage.
-     *
+     * 
      * @param requests The VNRequests to be performed on the image.
+     * 
      * @param image    The CIImage containing the image to be processed.
+     * 
      * @param error    On input, a pointer to an error object. If an error occurs, this pointer is set to an actual
      *                 error object containing the error information. You may specify NULL for this parameter if you do
      *                 not want the error information.
      */
     @Generated
     @Selector("performRequests:onCIImage:error:")
-    public native boolean performRequestsOnCIImageError(NSArray<? extends VNRequest> requests, CIImage image,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnCIImageError(@NotNull NSArray<? extends VNRequest> requests,
+            @NotNull CIImage image, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Perform requests on an image in a CIImage.
-     *
+     * 
      * @param requests    The VNRequests to be performed on the image.
+     * 
      * @param image       The CIImage containing the image to be processed.
+     * 
      * @param orientation The orientation of the image.
+     * 
      * @param error       On input, a pointer to an error object. If an error occurs, this pointer is set to an actual
      *                    error object containing the error information. You may specify NULL for this parameter if you
      *                    do not want the error information.
      */
     @Generated
     @Selector("performRequests:onCIImage:orientation:error:")
-    public native boolean performRequestsOnCIImageOrientationError(NSArray<? extends VNRequest> requests, CIImage image,
-            int orientation, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnCIImageOrientationError(@NotNull NSArray<? extends VNRequest> requests,
+            @NotNull CIImage image, int orientation, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Perform requests on an image in a CVPixelBuffer.
-     *
+     * 
      * @param requests    The VNRequests to be performed on the image.
+     * 
      * @param pixelBuffer The CVPixelBuffer containing the image to be processed.
+     * 
      * @param error       On input, a pointer to an error object. If an error occurs, this pointer is set to an actual
      *                    error object containing the error information. You may specify NULL for this parameter if you
      *                    do not want the error information.
      */
     @Generated
     @Selector("performRequests:onCVPixelBuffer:error:")
-    public native boolean performRequestsOnCVPixelBufferError(NSArray<? extends VNRequest> requests,
-            CVBufferRef pixelBuffer, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnCVPixelBufferError(@NotNull NSArray<? extends VNRequest> requests,
+            @NotNull CVBufferRef pixelBuffer, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Perform requests on an image in a CVPixelBuffer.
-     *
+     * 
      * @param requests    The VNRequests to be performed on the image.
+     * 
      * @param pixelBuffer The CVPixelBuffer containing the image to be processed.
+     * 
      * @param orientation The orientation of the image as it is captured in the pixel buffer.
+     * 
      * @param error       On input, a pointer to an error object. If an error occurs, this pointer is set to an actual
      *                    error object containing the error information. You may specify NULL for this parameter if you
      *                    do not want the error information.
      */
     @Generated
     @Selector("performRequests:onCVPixelBuffer:orientation:error:")
-    public native boolean performRequestsOnCVPixelBufferOrientationError(NSArray<? extends VNRequest> requests,
-            CVBufferRef pixelBuffer, int orientation, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnCVPixelBufferOrientationError(@NotNull NSArray<? extends VNRequest> requests,
+            @NotNull CVBufferRef pixelBuffer, int orientation,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Perform requests on an image with its source format in memory.
-     *
+     * 
      * @param requests  The VNRequests to be performed on the image.
+     * 
      * @param imageData The data representing the source format of the image to be processed.
+     * 
      * @param error     On input, a pointer to an error object. If an error occurs, this pointer is set to an actual
      *                  error object containing the error information. You may specify NULL for this parameter if you do
      *                  not want the error information.
      */
     @Generated
     @Selector("performRequests:onImageData:error:")
-    public native boolean performRequestsOnImageDataError(NSArray<? extends VNRequest> requests, NSData imageData,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnImageDataError(@NotNull NSArray<? extends VNRequest> requests,
+            @NotNull NSData imageData, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Perform requests on an image with its source format in memory.
-     *
+     * 
      * @param requests    The VNRequests to be performed on the image.
+     * 
      * @param imageData   The data representing the source format of the image to be processed.
+     * 
      * @param orientation The orientation of the image.
+     * 
      * @param error       On input, a pointer to an error object. If an error occurs, this pointer is set to an actual
      *                    error object containing the error information. You may specify NULL for this parameter if you
      *                    do not want the error information.
      */
     @Generated
     @Selector("performRequests:onImageData:orientation:error:")
-    public native boolean performRequestsOnImageDataOrientationError(NSArray<? extends VNRequest> requests,
-            NSData imageData, int orientation, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnImageDataOrientationError(@NotNull NSArray<? extends VNRequest> requests,
+            @NotNull NSData imageData, int orientation,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Perform requests on an image referenced by an URL.
-     *
+     * 
      * @param requests The VNRequests to be performed on the image.
+     * 
      * @param imageURL The URL of the image to be processed. If this is not a file-based URL, the method will fail.
+     * 
      * @param error    On input, a pointer to an error object. If an error occurs, this pointer is set to an actual
      *                 error object containing the error information. You may specify NULL for this parameter if you do
      *                 not want the error information.
      */
     @Generated
     @Selector("performRequests:onImageURL:error:")
-    public native boolean performRequestsOnImageURLError(NSArray<? extends VNRequest> requests, NSURL imageURL,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnImageURLError(@NotNull NSArray<? extends VNRequest> requests,
+            @NotNull NSURL imageURL, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Perform requests on an image referenced by an URL.
-     *
+     * 
      * @param requests    The VNRequests to be performed on the image.
+     * 
      * @param imageURL    The URL of the image to be processed. If this is not a file-based URL, the method will fail.
+     * 
      * @param orientation The orientation of the image.
+     * 
      * @param error       On input, a pointer to an error object. If an error occurs, this pointer is set to an actual
      *                    error object containing the error information. You may specify NULL for this parameter if you
      *                    do not want the error information.
      */
     @Generated
     @Selector("performRequests:onImageURL:orientation:error:")
-    public native boolean performRequestsOnImageURLOrientationError(NSArray<? extends VNRequest> requests,
-            NSURL imageURL, int orientation, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnImageURLOrientationError(@NotNull NSArray<? extends VNRequest> requests,
+            @NotNull NSURL imageURL, int orientation,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -304,34 +341,44 @@ public class VNSequenceRequestHandler extends NSObject {
 
     /**
      * Perform requests on the image buffer contained in the CMSampleBufferRef.
-     *
+     * 
      * @param requests     The VNRequests to be performed on the image.
+     * 
      * @param sampleBuffer A CMSampleBuffer containing an image that will be used for performing the requests. Not all
      *                     types of sample buffers are supported. They need to contain a CVImageBuffer, be valid and
      *                     ready.
+     * 
      * @param error        On input, a pointer to an error object. If an error occurs, this pointer is set to an actual
      *                     error object containing the error information. You may specify NULL for this parameter if you
      *                     do not want the error information.
+     * 
+     *                     API-Since: 14.0
      */
     @Generated
     @Selector("performRequests:onCMSampleBuffer:error:")
-    public native boolean performRequestsOnCMSampleBufferError(NSArray<? extends VNRequest> requests,
-            CMSampleBufferRef sampleBuffer, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnCMSampleBufferError(@NotNull NSArray<? extends VNRequest> requests,
+            @NotNull CMSampleBufferRef sampleBuffer, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Perform requests on the image buffer contained in the CMSampleBufferRef.
-     *
+     * 
      * @param requests     The VNRequests to be performed on the image.
+     * 
      * @param sampleBuffer A CMSampleBuffer containing an image that will be used for performing the requests. Not all
      *                     types of sample buffers are supported. They need to contain a CVImageBuffer, be valid and
      *                     ready.
+     * 
      * @param orientation  The orientation of the image.
+     * 
      * @param error        On input, a pointer to an error object. If an error occurs, this pointer is set to an actual
      *                     error object containing the error information. You may specify NULL for this parameter if you
      *                     do not want the error information.
+     * 
+     *                     API-Since: 14.0
      */
     @Generated
     @Selector("performRequests:onCMSampleBuffer:orientation:error:")
-    public native boolean performRequestsOnCMSampleBufferOrientationError(NSArray<? extends VNRequest> requests,
-            CMSampleBufferRef sampleBuffer, int orientation, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performRequestsOnCMSampleBufferOrientationError(
+            @NotNull NSArray<? extends VNRequest> requests, @NotNull CMSampleBufferRef sampleBuffer, int orientation,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

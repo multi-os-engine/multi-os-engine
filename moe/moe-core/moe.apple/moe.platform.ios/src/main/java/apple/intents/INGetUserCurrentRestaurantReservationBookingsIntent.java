@@ -43,7 +43,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -74,22 +79,25 @@ public class INGetUserCurrentRestaurantReservationBookingsIntent extends INInten
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +132,10 @@ public class INGetUserCurrentRestaurantReservationBookingsIntent extends INInten
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,15 +167,17 @@ public class INGetUserCurrentRestaurantReservationBookingsIntent extends INInten
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * specifies the earliest booking date desired for results, including dates in the past
      */
+    @Nullable
     @Generated
     @Selector("earliestBookingDateForResults")
     public native NSDate earliestBookingDateForResults();
@@ -177,12 +188,13 @@ public class INGetUserCurrentRestaurantReservationBookingsIntent extends INInten
 
     @Generated
     @Selector("initWithCoder:")
-    public native INGetUserCurrentRestaurantReservationBookingsIntent initWithCoder(NSCoder coder);
+    public native INGetUserCurrentRestaurantReservationBookingsIntent initWithCoder(@NotNull NSCoder coder);
 
     /**
      * if the caller has a preferred maximum number of results, one can optionally be specified. a nil here leaves it up
      * to the extension
      */
+    @Nullable
     @Generated
     @Selector("maximumNumberOfResults")
     public native NSNumber maximumNumberOfResults();
@@ -190,6 +202,7 @@ public class INGetUserCurrentRestaurantReservationBookingsIntent extends INInten
     /**
      * optional filter to reservation with exact ID
      */
+    @Nullable
     @Generated
     @Selector("reservationIdentifier")
     public native String reservationIdentifier();
@@ -197,6 +210,7 @@ public class INGetUserCurrentRestaurantReservationBookingsIntent extends INInten
     /**
      * optional filter to just reservations at restaurant
      */
+    @Nullable
     @Generated
     @Selector("restaurant")
     public native INRestaurant restaurant();
@@ -206,7 +220,7 @@ public class INGetUserCurrentRestaurantReservationBookingsIntent extends INInten
      */
     @Generated
     @Selector("setEarliestBookingDateForResults:")
-    public native void setEarliestBookingDateForResults(NSDate value);
+    public native void setEarliestBookingDateForResults(@Nullable NSDate value);
 
     /**
      * if the caller has a preferred maximum number of results, one can optionally be specified. a nil here leaves it up
@@ -214,21 +228,21 @@ public class INGetUserCurrentRestaurantReservationBookingsIntent extends INInten
      */
     @Generated
     @Selector("setMaximumNumberOfResults:")
-    public native void setMaximumNumberOfResults(NSNumber value);
+    public native void setMaximumNumberOfResults(@Nullable NSNumber value);
 
     /**
      * optional filter to reservation with exact ID
      */
     @Generated
     @Selector("setReservationIdentifier:")
-    public native void setReservationIdentifier(String value);
+    public native void setReservationIdentifier(@Nullable String value);
 
     /**
      * optional filter to just reservations at restaurant
      */
     @Generated
     @Selector("setRestaurant:")
-    public native void setRestaurant(INRestaurant value);
+    public native void setRestaurant(@Nullable INRestaurant value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -236,9 +250,12 @@ public class INGetUserCurrentRestaurantReservationBookingsIntent extends INInten
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithRestaurant:reservationIdentifier:maximumNumberOfResults:earliestBookingDateForResults:")
     public native INGetUserCurrentRestaurantReservationBookingsIntent initWithRestaurantReservationIdentifierMaximumNumberOfResultsEarliestBookingDateForResults(
-            INRestaurant restaurant, String reservationIdentifier, NSNumber maximumNumberOfResults,
-            NSDate earliestBookingDateForResults);
+            @Nullable INRestaurant restaurant, @Nullable String reservationIdentifier,
+            @Nullable NSNumber maximumNumberOfResults, @Nullable NSDate earliestBookingDateForResults);
 }

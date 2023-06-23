@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSIndexPath;
 import apple.uikit.UICollectionReusableView;
 import apple.uikit.UICollectionView;
@@ -39,6 +38,10 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSArray;
+import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -47,34 +50,44 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     /**
      * Focus
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @IsOptional
     @Selector("collectionView:canFocusItemAtIndexPath:")
-    default boolean collectionViewCanFocusItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath) {
+    default boolean collectionViewCanFocusItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:canPerformAction:forItemAtIndexPath:withSender:")
-    default boolean collectionViewCanPerformActionForItemAtIndexPathWithSender(UICollectionView collectionView,
-            SEL action, NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) Object sender) {
+    default boolean collectionViewCanPerformActionForItemAtIndexPathWithSender(@NotNull UICollectionView collectionView,
+            @NotNull SEL action, @NotNull NSIndexPath indexPath,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object sender) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("collectionView:didDeselectItemAtIndexPath:")
-    default void collectionViewDidDeselectItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath) {
+    default void collectionViewDidDeselectItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("collectionView:didEndDisplayingCell:forItemAtIndexPath:")
-    default void collectionViewDidEndDisplayingCellForItemAtIndexPath(UICollectionView collectionView,
-            UICollectionViewCell cell, NSIndexPath indexPath) {
+    default void collectionViewDidEndDisplayingCellForItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull UICollectionViewCell cell, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -82,44 +95,57 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @IsOptional
     @Selector("collectionView:didEndDisplayingSupplementaryView:forElementOfKind:atIndexPath:")
     default void collectionViewDidEndDisplayingSupplementaryViewForElementOfKindAtIndexPath(
-            UICollectionView collectionView, UICollectionReusableView view, String elementKind, NSIndexPath indexPath) {
+            @NotNull UICollectionView collectionView, @NotNull UICollectionReusableView view,
+            @NotNull String elementKind, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("collectionView:didHighlightItemAtIndexPath:")
-    default void collectionViewDidHighlightItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath) {
+    default void collectionViewDidHighlightItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("collectionView:didSelectItemAtIndexPath:")
-    default void collectionViewDidSelectItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath) {
+    default void collectionViewDidSelectItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("collectionView:didUnhighlightItemAtIndexPath:")
-    default void collectionViewDidUnhighlightItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath) {
+    default void collectionViewDidUnhighlightItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @IsOptional
     @Selector("collectionView:didUpdateFocusInContext:withAnimationCoordinator:")
-    default void collectionViewDidUpdateFocusInContextWithAnimationCoordinator(UICollectionView collectionView,
-            UICollectionViewFocusUpdateContext context, UIFocusAnimationCoordinator coordinator) {
+    default void collectionViewDidUpdateFocusInContextWithAnimationCoordinator(@NotNull UICollectionView collectionView,
+            @NotNull UICollectionViewFocusUpdateContext context, @NotNull UIFocusAnimationCoordinator coordinator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:performAction:forItemAtIndexPath:withSender:")
-    default void collectionViewPerformActionForItemAtIndexPathWithSender(UICollectionView collectionView, SEL action,
-            NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) Object sender) {
+    default void collectionViewPerformActionForItemAtIndexPathWithSender(@NotNull UICollectionView collectionView,
+            @NotNull SEL action, @NotNull NSIndexPath indexPath,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object sender) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -129,19 +155,19 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:shouldDeselectItemAtIndexPath:")
-    default boolean collectionViewShouldDeselectItemAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath) {
+    default boolean collectionViewShouldDeselectItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Methods for notification of selection/deselection and highlight/unhighlight events.
      * The sequence of calls leading to selection from a user touch is:
-     * <p>
+     * 
      * (when the touch begins)
      * 1. -collectionView:shouldHighlightItemAtIndexPath:
      * 2. -collectionView:didHighlightItemAtIndexPath:
-     * <p>
+     * 
      * (when the touch lifts)
      * 3. -collectionView:shouldSelectItemAtIndexPath: or -collectionView:shouldDeselectItemAtIndexPath:
      * 4. -collectionView:didSelectItemAtIndexPath: or -collectionView:didDeselectItemAtIndexPath:
@@ -150,128 +176,168 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:shouldHighlightItemAtIndexPath:")
-    default boolean collectionViewShouldHighlightItemAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath) {
+    default boolean collectionViewShouldHighlightItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("collectionView:shouldSelectItemAtIndexPath:")
-    default boolean collectionViewShouldSelectItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath) {
+    default boolean collectionViewShouldSelectItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * These methods provide support for copy/paste actions on cells.
      * All three should be implemented if any are.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:shouldShowMenuForItemAtIndexPath:")
-    default boolean collectionViewShouldShowMenuForItemAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath) {
+    default boolean collectionViewShouldShowMenuForItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @IsOptional
     @Selector("collectionView:shouldUpdateFocusInContext:")
-    default boolean collectionViewShouldUpdateFocusInContext(UICollectionView collectionView,
-            UICollectionViewFocusUpdateContext context) {
+    default boolean collectionViewShouldUpdateFocusInContext(@NotNull UICollectionView collectionView,
+            @NotNull UICollectionViewFocusUpdateContext context) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * customize the content offset to be applied during transition or update animations
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @IsOptional
     @Selector("collectionView:targetContentOffsetForProposedContentOffset:")
     @ByValue
-    default CGPoint collectionViewTargetContentOffsetForProposedContentOffset(UICollectionView collectionView,
+    default CGPoint collectionViewTargetContentOffsetForProposedContentOffset(@NotNull UICollectionView collectionView,
             @ByValue CGPoint proposedContentOffset) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 15.0
+     */
+    @NotNull
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:targetIndexPathForMoveFromItemAtIndexPath:toProposedIndexPath:")
     default NSIndexPath collectionViewTargetIndexPathForMoveFromItemAtIndexPathToProposedIndexPath(
-            UICollectionView collectionView, NSIndexPath currentIndexPath, NSIndexPath proposedIndexPath) {
+            @NotNull UICollectionView collectionView, @NotNull NSIndexPath currentIndexPath,
+            @NotNull NSIndexPath proposedIndexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * support for custom transition layout
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("collectionView:transitionLayoutForOldLayout:newLayout:")
     default UICollectionViewTransitionLayout collectionViewTransitionLayoutForOldLayoutNewLayout(
-            UICollectionView collectionView, UICollectionViewLayout fromLayout, UICollectionViewLayout toLayout) {
+            @NotNull UICollectionView collectionView, @NotNull UICollectionViewLayout fromLayout,
+            @NotNull UICollectionViewLayout toLayout) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Selector("collectionView:willDisplayCell:forItemAtIndexPath:")
-    default void collectionViewWillDisplayCellForItemAtIndexPath(UICollectionView collectionView,
-            UICollectionViewCell cell, NSIndexPath indexPath) {
+    default void collectionViewWillDisplayCellForItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull UICollectionViewCell cell, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Selector("collectionView:willDisplaySupplementaryView:forElementKind:atIndexPath:")
-    default void collectionViewWillDisplaySupplementaryViewForElementKindAtIndexPath(UICollectionView collectionView,
-            UICollectionReusableView view, String elementKind, NSIndexPath indexPath) {
+    default void collectionViewWillDisplaySupplementaryViewForElementKindAtIndexPath(
+            @NotNull UICollectionView collectionView, @NotNull UICollectionReusableView view,
+            @NotNull String elementKind, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 9.0
+     */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("indexPathForPreferredFocusedViewInCollectionView:")
-    default NSIndexPath indexPathForPreferredFocusedViewInCollectionView(UICollectionView collectionView) {
+    default NSIndexPath indexPathForPreferredFocusedViewInCollectionView(@NotNull UICollectionView collectionView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Allows opting-out of spring loading for an particular item.
-     * <p>
+     * 
      * If you want the interaction effect on a different subview of the spring loaded cell, modify the
      * context.targetView property.
      * The default is the cell.
-     * <p>
+     * 
      * If this method is not implemented, the default is YES.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
     @Selector("collectionView:shouldSpringLoadItemAtIndexPath:withContext:")
-    default boolean collectionViewShouldSpringLoadItemAtIndexPathWithContext(UICollectionView collectionView,
-            NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionContext context) {
+    default boolean collectionViewShouldSpringLoadItemAtIndexPathWithContext(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath,
+            @NotNull @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionContext context) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Called when the interaction begins.
-     *
-     * @param collectionView This UICollectionView.
+     * 
+     * @param collectionView The @c UICollectionView.
      * @param indexPath      IndexPath of the item for which a configuration is being requested.
-     * @param point          Location in the collection view's coordinate space
+     * @param point          Touch location in the collection view's coordinate space
+     * 
      * @return A UIContextMenuConfiguration describing the menu to be presented. Return nil to prevent the interaction
      *         from beginning.
      *         Returning an empty configuration causes the interaction to begin then fail with a cancellation effect.
      *         You might use this
      *         to indicate to users that it's possible for a menu to be presented from this element, but that there are
      *         no actions to
-     *         present at this particular time.
+     *         present at this particular time. If the non-deprecated replacement for the configuration, highlight
+     *         preview, or dismissal preview methods is implemented this method is not called.
+     * 
+     *         API-Since: 13.0
+     *         Deprecated-Since: 16.0
      */
+    @Nullable
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:contextMenuConfigurationForItemAtIndexPath:point:")
     default UIContextMenuConfiguration collectionViewContextMenuConfigurationForItemAtIndexPathPoint(
-            UICollectionView collectionView, NSIndexPath indexPath, @ByValue CGPoint point) {
+            @NotNull UICollectionView collectionView, @NotNull NSIndexPath indexPath, @ByValue CGPoint point) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -279,16 +345,18 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
      * Called right after allowsMultipleSelection is set to YES if
      * -collectionView:shouldBeginMultipleSelectionInteractionAtIndexPath:
      * returned YES.
-     * <p>
+     * 
      * In your app, this would be a good opportunity to update the state of your UI to reflect the fact that the user is
      * now selecting
      * multiple items at once; such as updating buttons to say "Done" instead of "Select"/"Edit", for instance.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
     @Selector("collectionView:didBeginMultipleSelectionInteractionAtIndexPath:")
-    default void collectionViewDidBeginMultipleSelectionInteractionAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath) {
+    default void collectionViewDidBeginMultipleSelectionInteractionAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -296,146 +364,177 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
      * Called when the interaction is about to dismiss. Return a UITargetedPreview describing the desired dismissal
      * target.
      * The interaction will animate the presented menu to the target. Use this to customize the dismissal animation.
-     *
-     * @param collectionView This UICollectionView.
+     * If the non-deprecated replacement for the configuration, highlight preview, or dismissal preview methods is
+     * implemented this method is not called.
+     * 
+     * @param collectionView The @c UICollectionView.
      * @param configuration  The configuration of the menu displayed by this interaction.
+     * 
+     *                       API-Since: 13.0
+     *                       Deprecated-Since: 16.0
      */
+    @Nullable
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:previewForDismissingContextMenuWithConfiguration:")
     default UITargetedPreview collectionViewPreviewForDismissingContextMenuWithConfiguration(
-            UICollectionView collectionView, UIContextMenuConfiguration configuration) {
+            @NotNull UICollectionView collectionView, @NotNull UIContextMenuConfiguration configuration) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Called when the interaction begins. Return a UITargetedPreview describing the desired highlight preview.
-     *
-     * @param collectionView This UICollectionView.
+     * If the non-deprecated replacement for the configuration, highlight preview, or dismissal preview methods is
+     * implemented this method is not called.
+     * 
+     * @param collectionView The @c UICollectionView.
      * @param configuration  The configuration of the menu about to be displayed by this interaction.
+     * 
+     *                       API-Since: 13.0
+     *                       Deprecated-Since: 16.0
      */
+    @Nullable
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:previewForHighlightingContextMenuWithConfiguration:")
     default UITargetedPreview collectionViewPreviewForHighlightingContextMenuWithConfiguration(
-            UICollectionView collectionView, UIContextMenuConfiguration configuration) {
+            @NotNull UICollectionView collectionView, @NotNull UIContextMenuConfiguration configuration) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Allows a two-finger pan gesture to automatically enable allowsMultipleSelection and start selecting multiple
      * cells.
-     * <p>
+     * 
      * After a multi-select gesture is recognized, this method will be called before allowsMultipleSelection is
      * automatically
      * set to YES to allow the user to select multiple contiguous items using a two-finger pan gesture across the
      * constrained
      * scroll direction.
-     * <p>
+     * 
      * If the collection view has no constrained scroll direction (i.e., the collection view scrolls both horizontally
      * and vertically),
      * then this method will not be called and the multi-select gesture will be disabled.
-     * <p>
+     * 
      * If this method is not implemented, the default is NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
     @Selector("collectionView:shouldBeginMultipleSelectionInteractionAtIndexPath:")
-    default boolean collectionViewShouldBeginMultipleSelectionInteractionAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath) {
+    default boolean collectionViewShouldBeginMultipleSelectionInteractionAtIndexPath(
+            @NotNull UICollectionView collectionView, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Called when the interaction is about to "commit" in response to the user tapping the preview.
-     *
-     * @param collectionView This UICollectionView.
+     * 
+     * @param collectionView The @c UICollectionView.
      * @param configuration  Configuration of the currently displayed menu.
      * @param animator       Commit animator. Add animations to this object to run them alongside the commit transition.
+     * 
+     *                       API-Since: 13.0
      */
     @Generated
     @IsOptional
     @Selector("collectionView:willPerformPreviewActionForMenuWithConfiguration:animator:")
-    default void collectionViewWillPerformPreviewActionForMenuWithConfigurationAnimator(UICollectionView collectionView,
-            UIContextMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator) {
+    default void collectionViewWillPerformPreviewActionForMenuWithConfigurationAnimator(
+            @NotNull UICollectionView collectionView, @NotNull UIContextMenuConfiguration configuration,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Called when the multi-select interaction ends.
-     * <p>
+     * 
      * At this point, the collection view will remain in multi-select mode, but this delegate method is called to
      * indicate that the
      * multiple selection gesture or hardware keyboard interaction has ended.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
     @Selector("collectionViewDidEndMultipleSelectionInteraction:")
-    default void collectionViewDidEndMultipleSelectionInteraction(UICollectionView collectionView) {
+    default void collectionViewDidEndMultipleSelectionInteraction(@NotNull UICollectionView collectionView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Editing
      * Asks the delegate to verify that the given item is editable.
-     *
+     * 
      * @param collectionView The collection view object requesting this information.
      * @param indexPath      An index path locating an item in `collectionView`.
+     * 
      * @return `YES` if the item is editable; otherwise, `NO`. Defaults to `YES`.
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @IsOptional
     @Selector("collectionView:canEditItemAtIndexPath:")
-    default boolean collectionViewCanEditItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath) {
+    default boolean collectionViewCanEditItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Called when the collection view is about to display a menu.
-     *
-     * @param collectionView This UICollectionView.
+     * 
+     * @param collectionView The @c UICollectionView.
      * @param configuration  The configuration of the menu about to be displayed.
      * @param animator       Appearance animator. Add animations to run them alongside the appearance transition.
+     * 
+     *                       API-Since: 13.2
      */
     @Generated
     @IsOptional
     @Selector("collectionView:willDisplayContextMenuWithConfiguration:animator:")
-    default void collectionViewWillDisplayContextMenuWithConfigurationAnimator(UICollectionView collectionView,
-            UIContextMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
+    default void collectionViewWillDisplayContextMenuWithConfigurationAnimator(@NotNull UICollectionView collectionView,
+            @NotNull UIContextMenuConfiguration configuration,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Called when the collection view's context menu interaction is about to end.
-     *
-     * @param collectionView This UICollectionView.
+     * 
+     * @param collectionView The @c UICollectionView.
      * @param configuration  Ending configuration.
      * @param animator       Disappearance animator. Add animations to run them alongside the disappearance transition.
+     * 
+     *                       API-Since: 13.2
      */
     @Generated
     @IsOptional
     @Selector("collectionView:willEndContextMenuInteractionWithConfiguration:animator:")
-    default void collectionViewWillEndContextMenuInteractionWithConfigurationAnimator(UICollectionView collectionView,
-            UIContextMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
+    default void collectionViewWillEndContextMenuInteractionWithConfigurationAnimator(
+            @NotNull UICollectionView collectionView, @NotNull UIContextMenuConfiguration configuration,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Return a valid @c UIWindowSceneActivationConfiguration to allow for the cell to be expanded into a new scene.
      * Return nil to prevent the interaction from starting.
-     *
+     * 
      * @param collectionView The collection view
      * @param indexPath      The index path of the cell being interacted with
      * @param point          The centroid of the interaction in the collection view's coordinate space.
+     * 
+     *                       API-Since: 15.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("collectionView:sceneActivationConfigurationForItemAtIndexPath:point:")
     default UIWindowSceneActivationConfiguration collectionViewSceneActivationConfigurationForItemAtIndexPathPoint(
-            UICollectionView collectionView, NSIndexPath indexPath, @ByValue CGPoint point) {
+            @NotNull UICollectionView collectionView, @NotNull NSIndexPath indexPath, @ByValue CGPoint point) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -443,21 +542,148 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
      * Determines if the item at the specified index path should also become selected when focus moves to it.
      * If the collection view's global selectionFollowsFocus is enabled, this method will allow you to override that
      * behavior on a per-index path basis. This method is not called if selectionFollowsFocus is disabled.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @IsOptional
     @Selector("collectionView:selectionFollowsFocusForItemAtIndexPath:")
-    default boolean collectionViewSelectionFollowsFocusForItemAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath) {
+    default boolean collectionViewSelectionFollowsFocusForItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 15.0
+     */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("collectionView:targetIndexPathForMoveOfItemFromOriginalIndexPath:atCurrentIndexPath:toProposedIndexPath:")
     default NSIndexPath collectionViewTargetIndexPathForMoveOfItemFromOriginalIndexPathAtCurrentIndexPathToProposedIndexPath(
-            UICollectionView collectionView, NSIndexPath originalIndexPath, NSIndexPath currentIndexPath,
-            NSIndexPath proposedIndexPath) {
+            @NotNull UICollectionView collectionView, @NotNull NSIndexPath originalIndexPath,
+            @NotNull NSIndexPath currentIndexPath, @NotNull NSIndexPath proposedIndexPath) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called to determine if a primary action can be performed for the item at the given indexPath.
+     * See @c collectionView:performPrimaryActionForItemAtIndexPath: for more details about primary actions.
+     * 
+     * @param collectionView This UICollectionView
+     * @param indexPath      NSIndexPath of the item
+     * 
+     * @return `YES` if the primary action can be performed; otherwise `NO`. If not implemented, defaults to `YES` when
+     *         not editing
+     *         and `NO` when editing.
+     * 
+     *         API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("collectionView:canPerformPrimaryActionForItemAtIndexPath:")
+    default boolean collectionViewCanPerformPrimaryActionForItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called when a context menu presented from this collection view is dismissed. Return a @c UITargetedPreview
+     * corresponding to the item at the given indexPath.
+     * 
+     * @param collectionView The @c UICollectionView.
+     * @param configuration  Configuration of the menu being dismissed.
+     * @param indexPath      Index path of the item to which the menu is being dismissed.
+     * 
+     *                       API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @IsOptional
+    @Selector("collectionView:contextMenuConfiguration:dismissalPreviewForItemAtIndexPath:")
+    default UITargetedPreview collectionViewContextMenuConfigurationDismissalPreviewForItemAtIndexPath(
+            @NotNull UICollectionView collectionView, @NotNull UIContextMenuConfiguration configuration,
+            @NotNull NSIndexPath indexPath) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called when a context menu interaction begins in this collection view to request a preview for the interaction's
+     * initial highlight effect.
+     * Return a @c UITargetedPreview corresponding to the item at the given indexPath.
+     * 
+     * @param collectionView The @c UICollectionView.
+     * @param configuration  Configuration of the menu that will be presented if the interaction proceeds.
+     * @param indexPath      Index path of the item at which the interaction is occurring.
+     * 
+     *                       API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @IsOptional
+    @Selector("collectionView:contextMenuConfiguration:highlightPreviewForItemAtIndexPath:")
+    default UITargetedPreview collectionViewContextMenuConfigurationHighlightPreviewForItemAtIndexPath(
+            @NotNull UICollectionView collectionView, @NotNull UIContextMenuConfiguration configuration,
+            @NotNull NSIndexPath indexPath) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called when a context menu is invoked from this collection view.
+     * 
+     * The @c indexPaths array may contain 0-many items:
+     * - An empty array indicates that the menu was invoked in the space between cells (or any location that does not
+     * map to an item index path).
+     * - An array with multiple index paths indicates that the menu was invoked on an item within a multiple selection.
+     * 
+     * API-Since: 16.0
+     * 
+     * @param collectionView The @c UICollectionView.
+     * @param indexPaths     An array of index paths on which the menu acts.
+     * @param point          Touch location in the collection view's coordinate space.
+     * 
+     * @return A @c UIContextMenuConfiguration describing the menu to be presented. Return nil to prevent the
+     *         interaction from beginning.
+     *         Returning an empty configuration causes the interaction to begin then fail with a cancellation effect.
+     *         You might use this
+     *         to indicate to users that it's possible for a menu to be presented from this element, but that there are
+     *         no actions to
+     *         present at this particular time.
+     */
+    @Nullable
+    @Generated
+    @IsOptional
+    @Selector("collectionView:contextMenuConfigurationForItemsAtIndexPaths:point:")
+    default UIContextMenuConfiguration collectionViewContextMenuConfigurationForItemsAtIndexPathsPoint(
+            @NotNull UICollectionView collectionView, @NotNull NSArray<? extends NSIndexPath> indexPaths,
+            @ByValue CGPoint point) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called when the primary action should be performed for the item at the given indexPath.
+     * 
+     * Primary actions allow you to distinguish between a change of selection (which can be based on focus changes or
+     * other indirect selection changes) and distinct user actions. Primary actions are performed when the user selects
+     * a cell without extending
+     * an existing selection. This is called after @c shouldSelectItem and @c didSelectItem , regardless of whether the
+     * cell's selection
+     * state was allowed to change.
+     * 
+     * As an example, use @c didSelectItemAtIndexPath for updating state in the current view controller (i.e. buttons,
+     * title, etc) and
+     * use the primary action for navigation or showing another split view column.
+     * 
+     * @param collectionView This UICollectionView
+     * @param indexPath      NSIndexPath of the item to perform the action on
+     * 
+     *                       API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("collectionView:performPrimaryActionForItemAtIndexPath:")
+    default void collectionViewPerformPrimaryActionForItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

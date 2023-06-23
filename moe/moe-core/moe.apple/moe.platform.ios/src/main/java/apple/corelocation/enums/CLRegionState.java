@@ -21,14 +21,26 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * CLRegionState
- * <p>
+ * 
  * Discussion:
  * Represents the current state of the device with reference to a region.
+ * 
+ * 
+ * API-Since: 7.0
  */
 @Generated
 public final class CLRegionState {
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Inside = 0x0000000000000001L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Outside = 0x0000000000000002L;
 
     @Generated

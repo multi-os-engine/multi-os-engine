@@ -45,13 +45,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSTemporaryImage
  * [@dependency] MPSImage
- * <p>
+ * 
  * MPSTemporaryImages are for MPSImages with short lifetimes.
- * <p>
+ * 
  * What is temporary memory? It is memory, plain and simple. Analogy: If we
  * use an app as an analogy for a command buffer, then "Regular memory"
  * (such as what backs a MPSImage or the typical MTLTexture) would be memory
@@ -61,9 +63,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * everything you will ever need up front, but this is very inefficient and
  * quite frankly a pain to plan out in advance. You don't do it for your app,
  * so why would you do it for your command buffers?
- * <p>
+ * 
  * Welcome to the 1970's! We have added a heap.
- * <p>
+ * 
  * Unsurprisingly, MPSTemporaryImages can provide for profound reduction in
  * the the amount of memory used by your application. Like malloc, MPS
  * maintains a heap of memory usable in a command buffer. Over the lifetime
@@ -74,22 +76,22 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * memory only to discover it doesn't contain what you thought it did anymore,
  * so you should be able to keep out of trouble by following a few simple rules,
  * like with malloc.
- * <p>
+ * 
  * To this end, we added some restrictions to help you out and get a bit more
  * performance. Some comments are appended in parentheses below to extend the
  * analogy of command buffer = program:
- * <p>
+ * 
  * - The textures are MTLStorageModePrivate. You can not, for example, use
  * [MTLTexture getBytes...] or [MTLTexture replaceRegion...] with them.
  * MPSTemporaryImages are strictly read and written by the GPU. (There is
  * protected memory to prevent other processes from overwriting your heap.)
- * <p>
+ * 
  * - The temporary image may be used only on a single MTLCommandBuffer.
  * This limits the chronology to a single linear time stream. (The heap
  * is specific to just one command buffer. There are no mutexes to
  * coordinate timing of simultaneous access by multiple GPUs. Nor are we
  * likely to like them if there were. So, we disallow it.)
- * <p>
+ * 
  * - The readCount property must be managed correctly. Please see
  * the description of the readCount property for full details. (The readCount
  * is a reference count for the block of memory that holds your data. The
@@ -105,25 +107,25 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Alas, ARC destroys things at end of scope rather than promptly, sometimes resulting
  * in greatly increased memory usage. These allocations are large! So, we
  * use this method instead.)
- * <p>
+ * 
  * Since MPSTemporaryImages can only be used with a single MTLCommandBuffer,
  * and can not be used off the GPU, they generally should not be kept
  * around past the completion of the MTLCommandBuffer. The lifetime of
  * MPSTemporaryImages is expected to be typically extremely short, perhaps
  * only a few lines of code. Like malloc, it is intended to be fairly cheap
  * to make MPSTemporaryImages and throw them away. Please do so.
- * <p>
+ * 
  * To keep the lifetime of the underlying texture allocation as short as
  * possible, the underlying texture is not allocated until the first time
  * the MPSTemporaryImage is used by a MPSCNNKernel or the .texture property
  * is read. The readCount property serves to limit the lifetime on the
  * other end.
- * <p>
+ * 
  * You may use the MPSTemporaryImage.texture with MPSUnaryImageKernel -encode... methods,
  * iff featureChannels <= 4 and the MTLTexture conforms to requirements of that MPSKernel.
  * There is no locking mechanism provided to prevent a MTLTexture returned
  * from the .texture property from becoming invalid when the readCount reaches 0.
- * <p>
+ * 
  * Finally, MPSTemporaryImages are complicated to use with blit encoders.
  * Your application should assume that the MPSTemporaryImage is backed by a MTLHeap,
  * and consequently needs a MTLFence to ensure that compute command encoders and other
@@ -141,8 +143,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * clear / copy pass so we don't have to pay for it. Note: the most common use of a
  * blit encoder, -synchronizeResource: can not encounter this problem because
  * MPSTemporaryImages live in GPU private memory and can not be read by the CPU.
- * <p>
+ * 
  * MPSTemporaryImages can otherwise be used wherever MPSImages are used.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -174,22 +178,25 @@ public class MPSTemporaryImage extends MPSImage {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -224,9 +231,10 @@ public class MPSTemporaryImage extends MPSImage {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -235,28 +243,28 @@ public class MPSTemporaryImage extends MPSImage {
 
     /**
      * Help MPS decide which allocations to make ahead of time
-     * <p>
+     * 
      * The texture cache that underlies the MPSTemporaryImage can automatically allocate new storage as
      * needed as you create new temporary images. However, sometimes a more global view of what you
      * plan to make is useful for maximizing memory reuse to get the most efficient operation.
      * This class method hints to the cache what the list of images will be.
-     * <p>
+     * 
      * It is never necessary to call this method. It is purely a performance and memory optimization.
-     * <p>
+     * 
      * This method makes a conservative estimate of memory required and may not fully
      * cover temporary memory needs, resulting in additional allocations later that could
      * encounter pathological behavior, if they are too small. If the full extent and timing of the
      * workload is known in advance, it is recommended that MPSHintTemporaryMemoryHighWaterMark() be
      * used instead.
-     *
+     * 
      * @param commandBuffer  The command buffer on which the MPSTemporaryImages will be used
      * @param descriptorList A NSArray of MPSImageDescriptors, indicating images that will be created
      */
     @Generated
     @Selector("prefetchStorageWithCommandBuffer:imageDescriptorList:")
     public static native void prefetchStorageWithCommandBufferImageDescriptorList(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            NSArray<? extends MPSImageDescriptor> descriptorList);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull NSArray<? extends MPSImageDescriptor> descriptorList);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -276,9 +284,11 @@ public class MPSTemporaryImage extends MPSImage {
 
     /**
      * Initialize a MPSTemporaryImage for use on a MTLCommandBuffer
-     *
+     * 
      * @param commandBuffer   The MTLCommandBuffer on which the MPSTemporaryImage will be exclusively used
+     * 
      * @param imageDescriptor A valid imageDescriptor describing the MPSImage format to create.
+     * 
      * @return A valid MPSTemporaryImage. The object will be released when the command buffer
      *         is committed. The underlying texture will become invalid before this time
      *         due to the action of the readCount property.
@@ -286,22 +296,24 @@ public class MPSTemporaryImage extends MPSImage {
     @Generated
     @Selector("temporaryImageWithCommandBuffer:imageDescriptor:")
     public static native MPSTemporaryImage temporaryImageWithCommandBufferImageDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImageDescriptor imageDescriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSImageDescriptor imageDescriptor);
 
     /**
      * Low level interface for creating a MPSTemporaryImage using a MTLTextureDescriptor
-     * <p>
+     * 
      * This function provides access to MTLPixelFormats not typically covered by -initForCommandBuffer:imageDescriptor:
      * The feature channels will be inferred from the MTLPixelFormat without changing the width.
      * The following restrictions apply:
-     * <p>
+     * 
      * MTLTextureType must be MTLTextureType2D or MTLTextureType2DArray
      * MTLTextureUsage must contain at least one of MTLTextureUsageShaderRead, MTLTextureUsageShaderWrite
      * MTLStorageMode must be MTLStorageModePrivate
      * depth must be 1
-     *
+     * 
      * @param commandBuffer     The command buffer on which the MPSTemporaryImage may be used
      * @param textureDescriptor A texture descriptor describing the MPSTemporaryImage texture
+     * 
      * @return A valid MPSTemporaryImage. The object will be released when the command buffer
      *         is committed. The underlying texture will become invalid before this time
      *         due to the action of the readCount property.
@@ -309,7 +321,8 @@ public class MPSTemporaryImage extends MPSImage {
     @Generated
     @Selector("temporaryImageWithCommandBuffer:textureDescriptor:")
     public static native MPSTemporaryImage temporaryImageWithCommandBufferTextureDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MTLTextureDescriptor textureDescriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MTLTextureDescriptor textureDescriptor);
 
     @Generated
     @Selector("version")
@@ -322,18 +335,18 @@ public class MPSTemporaryImage extends MPSImage {
 
     @Generated
     @Selector("initWithDevice:imageDescriptor:")
-    public native MPSTemporaryImage initWithDeviceImageDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MPSImageDescriptor imageDescriptor);
+    public native MPSTemporaryImage initWithDeviceImageDescriptor(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSImageDescriptor imageDescriptor);
 
     @Generated
     @Selector("initWithTexture:featureChannels:")
-    public native MPSTemporaryImage initWithTextureFeatureChannels(@Mapped(ObjCObjectMapper.class) MTLTexture texture,
-            @NUInt long featureChannels);
+    public native MPSTemporaryImage initWithTextureFeatureChannels(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture texture, @NUInt long featureChannels);
 
     /**
      * The number of times a temporary image may be read by a MPSCNNKernel
      * before its contents become undefined.
-     * <p>
+     * 
      * MPSTemporaryImages must release their underlying textures for reuse
      * immediately after last use. So as to facilitate *prompt* convenient
      * memory recycling, each time a MPSTemporaryImage is read by a
@@ -342,17 +355,17 @@ public class MPSTemporaryImage extends MPSImage {
      * automatically made available for reuse to MPS for its own needs and for
      * other MPSTemporaryImages prior to return from the -encode.. function.
      * The contents of the texture become undefined at this time.
-     * <p>
+     * 
      * By default, the readCount is initialized to 1, indicating a image that
      * may be overwritten any number of times, but read only once.
-     * <p>
+     * 
      * You may change the readCount as desired to allow MPSCNNKernels to read
      * the MPSTemporaryImage additional times. However, it is an error to change
      * the readCount once it is zero. It is an error to read or write to a
      * MPSTemporaryImage with a zero readCount. You may set the readCount to 0
      * yourself to cause the underlying texture to be returned to MPS. Writing
      * to a MPSTemporaryImage does not adjust the readCount.
-     * <p>
+     * 
      * The Metal API Validation layer will assert if a MPSTemporaryImage is
      * deallocated with non-zero readCount to help identify cases when resources
      * are not returned promptly.
@@ -365,7 +378,7 @@ public class MPSTemporaryImage extends MPSImage {
     /**
      * The number of times a temporary image may be read by a MPSCNNKernel
      * before its contents become undefined.
-     * <p>
+     * 
      * MPSTemporaryImages must release their underlying textures for reuse
      * immediately after last use. So as to facilitate *prompt* convenient
      * memory recycling, each time a MPSTemporaryImage is read by a
@@ -374,17 +387,17 @@ public class MPSTemporaryImage extends MPSImage {
      * automatically made available for reuse to MPS for its own needs and for
      * other MPSTemporaryImages prior to return from the -encode.. function.
      * The contents of the texture become undefined at this time.
-     * <p>
+     * 
      * By default, the readCount is initialized to 1, indicating a image that
      * may be overwritten any number of times, but read only once.
-     * <p>
+     * 
      * You may change the readCount as desired to allow MPSCNNKernels to read
      * the MPSTemporaryImage additional times. However, it is an error to change
      * the readCount once it is zero. It is an error to read or write to a
      * MPSTemporaryImage with a zero readCount. You may set the readCount to 0
      * yourself to cause the underlying texture to be returned to MPS. Writing
      * to a MPSTemporaryImage does not adjust the readCount.
-     * <p>
+     * 
      * The Metal API Validation layer will assert if a MPSTemporaryImage is
      * deallocated with non-zero readCount to help identify cases when resources
      * are not returned promptly.
@@ -396,6 +409,7 @@ public class MPSTemporaryImage extends MPSImage {
     /**
      * Get a well known MPSImageAllocator that makes MPSTemporaryImages
      */
+    @NotNull
     @Generated
     @Selector("defaultAllocator")
     @MappedReturn(ObjCObjectMapper.class)
@@ -403,31 +417,34 @@ public class MPSTemporaryImage extends MPSImage {
 
     @Generated
     @Selector("initWithParentImage:sliceRange:featureChannels:")
-    public native MPSTemporaryImage initWithParentImageSliceRangeFeatureChannels(MPSImage parent,
+    public native MPSTemporaryImage initWithParentImageSliceRangeFeatureChannels(@NotNull MPSImage parent,
             @ByValue NSRange sliceRange, @NUInt long featureChannels);
 
     /**
      * Low level interface for creating a MPSTemporaryImage using a MTLTextureDescriptor
-     * <p>
+     * 
      * This function provides access to MTLPixelFormats not typically covered by -initForCommandBuffer:imageDescriptor:
      * The number of images will be inferred from number of slices in the descriptor.arrayLength and
      * the number of feature channels.
-     * <p>
+     * 
      * The following restrictions apply:
-     * <p>
+     * 
      * MTLTextureType must be MTLTextureType2D or MTLTextureType2DArray
      * MTLTextureUsage must contain at least one of MTLTextureUsageShaderRead, MTLTextureUsageShaderWrite
      * MTLStorageMode must be MTLStorageModePrivate
-     *
+     * 
      * @param commandBuffer     The command buffer on which the MPSTemporaryImage may be used
      * @param textureDescriptor A texture descriptor describing the MPSTemporaryImage texture
+     * 
      * @return A valid MPSTemporaryImage. The object will be released when the command buffer
      *         is committed. The underlying texture will become invalid before this time
      *         due to the action of the readCount property.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("temporaryImageWithCommandBuffer:textureDescriptor:featureChannels:")
     public static native MPSTemporaryImage temporaryImageWithCommandBufferTextureDescriptorFeatureChannels(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MTLTextureDescriptor textureDescriptor,
-            @NUInt long featureChannels);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MTLTextureDescriptor textureDescriptor, @NUInt long featureChannels);
 }

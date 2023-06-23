@@ -26,10 +26,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNReduceUnary
- * <p>
+ * 
  * The MPSNNReduce performs a reduction operation
  * The reduction operations supported are:
  * - Reduce row min
@@ -44,6 +46,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * - Reduce row sum
  * - Reduce column sum
  * - Reduce feature channels sum
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -75,31 +79,34 @@ public class MPSNNReduceUnary extends MPSCNNKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] clipRectSource
-     * <p>
+     * 
      * The source rectangle to use when reading data.
-     * <p>
+     * 
      * A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
      * completely within the source image, the intersection of the image bounds and clipRectSource will
      * be used. The clipRectSource replaces the MPSCNNKernel offset parameter for this filter.
@@ -129,15 +136,16 @@ public class MPSNNReduceUnary extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNReduceUnary initWithCoder(NSCoder aDecoder);
+    public native MPSNNReduceUnary initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNNReduceUnary initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNReduceUnary initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNNReduceUnary initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNReduceUnary initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -156,9 +164,10 @@ public class MPSNNReduceUnary extends MPSCNNKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -175,9 +184,9 @@ public class MPSNNReduceUnary extends MPSCNNKernel {
 
     /**
      * [@property] clipRectSource
-     * <p>
+     * 
      * The source rectangle to use when reading data.
-     * <p>
+     * 
      * A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
      * completely within the source image, the intersection of the image bounds and clipRectSource will
      * be used. The clipRectSource replaces the MPSCNNKernel offset parameter for this filter.
@@ -213,7 +222,11 @@ public class MPSNNReduceUnary extends MPSCNNKernel {
     /**
      * Since the clipRectSource replaces the MPSCNNKernel offset parameter for this filter,
      * this property is deprecated..
+     * 
+     * API-Since: 11.3
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("offset")
     @ByValue
@@ -222,7 +235,11 @@ public class MPSNNReduceUnary extends MPSCNNKernel {
     /**
      * Since the clipRectSource replaces the MPSCNNKernel offset parameter for this filter,
      * this property is deprecated..
+     * 
+     * API-Since: 11.3
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("setOffset:")
     public native void setOffset(@ByValue MPSOffset value);

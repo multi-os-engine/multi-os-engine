@@ -42,7 +42,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
@@ -73,22 +78,25 @@ public class SKShader extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +131,10 @@ public class SKShader extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -151,25 +160,26 @@ public class SKShader extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Loads a shader source file named 'name' from the main bundle. This is simpler yet functionally equivalent to the
      * following code
-     * <p>
+     * 
      * [SKShader shaderWithSource:[NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name
      * ofType:@"fsh"]
      * encoding:NSUTF8StringEncoding
      * error:NULL]];
-     * <p>
+     * 
      * The encoding is assumed to be NSUTF8StringEncoding.
      */
     @Generated
     @Selector("shaderWithFileNamed:")
-    public static native SKShader shaderWithFileNamed(String name);
+    public static native SKShader shaderWithFileNamed(@NotNull String name);
 
     @Generated
     @Selector("shaderWithSource:")
-    public static native SKShader shaderWithSource(String source);
+    public static native SKShader shaderWithSource(@NotNull String source);
 
     @Generated
     @Selector("shaderWithSource:uniforms:")
-    public static native SKShader shaderWithSourceUniforms(String source, NSArray<? extends SKUniform> uniforms);
+    public static native SKShader shaderWithSourceUniforms(@NotNull String source,
+            @NotNull NSArray<? extends SKUniform> uniforms);
 
     @Generated
     @Selector("superclass")
@@ -182,21 +192,26 @@ public class SKShader extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("addUniform:")
-    public native void addUniform(SKUniform uniform);
+    public native void addUniform(@NotNull SKUniform uniform);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("attributes")
     public native NSArray<? extends SKAttribute> attributes();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -204,113 +219,120 @@ public class SKShader extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKShader initWithCoder(NSCoder coder);
+    public native SKShader initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Create a custom shader with source code.
-     *
+     * 
      * @param source the source code for the custom fragment shader.
      */
     @Generated
     @Selector("initWithSource:")
-    public native SKShader initWithSource(String source);
+    public native SKShader initWithSource(@NotNull String source);
 
     /**
      * Create a custom shader with source code and uniforms.
-     *
+     * 
      * @param source   the source code for the custom fragment shader.
      * @param uniforms the array of uniforms supplied to this shader
      */
     @Generated
     @Selector("initWithSource:uniforms:")
-    public native SKShader initWithSourceUniforms(String source, NSArray<? extends SKUniform> uniforms);
+    public native SKShader initWithSourceUniforms(@NotNull String source,
+            @NotNull NSArray<? extends SKUniform> uniforms);
 
     @Generated
     @Selector("removeUniformNamed:")
-    public native void removeUniformNamed(String name);
+    public native void removeUniformNamed(@NotNull String name);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setAttributes:")
-    public native void setAttributes(NSArray<? extends SKAttribute> value);
+    public native void setAttributes(@NotNull NSArray<? extends SKAttribute> value);
 
     /**
      * Shader source must define the 'main' method of the fragment shader
-     * <p>
+     * 
      * Your shader must assign a premultipled fragment value to 'gl_FragColor'
-     * <p>
+     * 
      * The following implicit uniforms are available:
-     * <p>
+     * 
      * 1. sampler2D u_texture (the primary texuture attached the the sprite)
-     * <p>
+     * 
      * The following varyings are available:
-     * <p>
+     * 
      * 1. vec2 v_tex_coord (normalized texture coordiantes for the primary texture)
      * 2. vec4 v_color_mix (premultiplied color value based on color & alpha)
-     * <p>
-     * <p>
+     * 
+     * 
      * The following functions are available:
-     * <p>
+     * 
      * 1. vec4 SKDefaultShading() (returns the fragment value that would have been output if no shader was used)
-     * <p>
-     * <p>
-     * <p>
+     * 
+     * 
+     * 
      * Sample shader source that produces the same result are SpriteKit's normal rendering:
-     * <p>
+     * 
      * "void main() { gl_FragColor = SKDefaultShading(); }"
      */
     @Generated
     @Selector("setSource:")
-    public native void setSource(String value);
+    public native void setSource(@Nullable String value);
 
     /**
      * You may define additional uniforms to be used in your shader here.
      * There is no need to declare them in you source, just use them by name.
-     * <p>
+     * 
      * All uniforms declared must be used within the source.
      */
     @Generated
     @Selector("setUniforms:")
-    public native void setUniforms(NSArray<? extends SKUniform> value);
+    public native void setUniforms(@NotNull NSArray<? extends SKUniform> value);
 
     /**
      * Shader source must define the 'main' method of the fragment shader
-     * <p>
+     * 
      * Your shader must assign a premultipled fragment value to 'gl_FragColor'
-     * <p>
+     * 
      * The following implicit uniforms are available:
-     * <p>
+     * 
      * 1. sampler2D u_texture (the primary texuture attached the the sprite)
-     * <p>
+     * 
      * The following varyings are available:
-     * <p>
+     * 
      * 1. vec2 v_tex_coord (normalized texture coordiantes for the primary texture)
      * 2. vec4 v_color_mix (premultiplied color value based on color & alpha)
-     * <p>
-     * <p>
+     * 
+     * 
      * The following functions are available:
-     * <p>
+     * 
      * 1. vec4 SKDefaultShading() (returns the fragment value that would have been output if no shader was used)
-     * <p>
-     * <p>
-     * <p>
+     * 
+     * 
+     * 
      * Sample shader source that produces the same result are SpriteKit's normal rendering:
-     * <p>
+     * 
      * "void main() { gl_FragColor = SKDefaultShading(); }"
      */
+    @Nullable
     @Generated
     @Selector("source")
     public native String source();
 
+    @Nullable
     @Generated
     @Selector("uniformNamed:")
-    public native SKUniform uniformNamed(String name);
+    public native SKUniform uniformNamed(@NotNull String name);
 
     /**
      * You may define additional uniforms to be used in your shader here.
      * There is no need to declare them in you source, just use them by name.
-     * <p>
+     * 
      * All uniforms declared must be used within the source.
      */
+    @NotNull
     @Generated
     @Selector("uniforms")
     public native NSArray<? extends SKUniform> uniforms();

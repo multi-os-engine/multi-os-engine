@@ -19,11 +19,26 @@ package apple.corespotlight.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 public final class CSSearchQueryErrorCode {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Unknown = 0xFFFFFFFFFFFFF830L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long IndexUnreachable = 0xFFFFFFFFFFFFF82FL;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long InvalidQuery = 0xFFFFFFFFFFFFF82EL;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Cancelled = 0xFFFFFFFFFFFFF82DL;
 
     @Generated

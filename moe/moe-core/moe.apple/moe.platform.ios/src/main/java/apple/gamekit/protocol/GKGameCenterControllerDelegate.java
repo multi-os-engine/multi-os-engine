@@ -23,13 +23,17 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKGameCenterControllerDelegate")
 public interface GKGameCenterControllerDelegate {
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("gameCenterViewControllerDidFinish:")
-    void gameCenterViewControllerDidFinish(GKGameCenterViewController gameCenterViewController);
+    void gameCenterViewControllerDidFinish(@NotNull GKGameCenterViewController gameCenterViewController);
 }

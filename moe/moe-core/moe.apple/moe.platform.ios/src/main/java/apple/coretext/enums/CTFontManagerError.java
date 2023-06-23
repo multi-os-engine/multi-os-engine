@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]
- * <p>
+ * 
  * Font registration errors
- * <p>
+ * 
  * Errors that would prevent registration of fonts for a specified font file URL.
  * [@constant] kCTFontManagerErrorFileNotFound
  * The file does not exist at the specified URL.
@@ -35,7 +35,7 @@ import org.moe.natj.general.ann.NInt;
  * The file contains invalid font data that could cause system problems.
  * [@constant] kCTFontManagerErrorAlreadyRegistered
  * The file has already been registered in the specified scope.
- * <p>
+ * 
  * Errors that would prevent un-registration of fonts for a specified font file URL.
  * [@constant] kCTFontManagerErrorNotRegistered
  * The file is not registered in the specified scope.

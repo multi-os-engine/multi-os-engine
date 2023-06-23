@@ -21,10 +21,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSTextElement is an abstract base class for representing the smallest text layout unit typically paragraphs, tables,
  * or attachments. A text element is associated with an NSTextContentManager.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("UIKit")
@@ -56,22 +60,25 @@ public class NSTextElement extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -87,6 +94,7 @@ public class NSTextElement extends NSObject {
     /**
      * Represents the range of the element inside the document.
      */
+    @Nullable
     @Generated
     @Selector("elementRange")
     public native NSTextRange elementRange();
@@ -102,7 +110,7 @@ public class NSTextElement extends NSObject {
 
     @Generated
     @Selector("initWithTextContentManager:")
-    public native NSTextElement initWithTextContentManager(NSTextContentManager textContentManager);
+    public native NSTextElement initWithTextContentManager(@Nullable NSTextContentManager textContentManager);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -121,9 +129,10 @@ public class NSTextElement extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -143,20 +152,20 @@ public class NSTextElement extends NSObject {
      */
     @Generated
     @Selector("setElementRange:")
-    public native void setElementRange(NSTextRange value);
+    public native void setElementRange(@Nullable NSTextRange value);
 
     /**
      * Returns the owner NSTextContentManager. A text element can migrate between text content managers.
      */
     @Generated
     @Selector("setTextContentManager:")
-    public native void setTextContentManager_unsafe(NSTextContentManager value);
+    public native void setTextContentManager_unsafe(@Nullable NSTextContentManager value);
 
     /**
      * Returns the owner NSTextContentManager. A text element can migrate between text content managers.
      */
     @Generated
-    public void setTextContentManager(NSTextContentManager value) {
+    public void setTextContentManager(@Nullable NSTextContentManager value) {
         Object __old = textContentManager();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -178,6 +187,7 @@ public class NSTextElement extends NSObject {
     /**
      * Returns the owner NSTextContentManager. A text element can migrate between text content managers.
      */
+    @Nullable
     @Generated
     @Selector("textContentManager")
     public native NSTextContentManager textContentManager();
@@ -186,4 +196,35 @@ public class NSTextElement extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * A concrete NSTextElement subclass can be structured in a tree. An element can have zero or more child elements.
+     * This section provides interface for supporting such a configuration.
+     * Returns an array of children. The array can contain zero or more elements.
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @Selector("childElements")
+    public native NSArray<? extends NSTextElement> childElements();
+
+    /**
+     * Returns YES if it is an element represented in text layout. It is enumerated by NSTextContentManager.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("isRepresentedElement")
+    public native boolean isRepresentedElement();
+
+    /**
+     * Returns the parent element if the receiver is a child.
+     * 
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("parentElement")
+    public native NSTextElement parentElement();
 }

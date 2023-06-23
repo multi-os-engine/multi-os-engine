@@ -36,7 +36,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -67,22 +72,25 @@ public class NSUndoManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -117,9 +125,10 @@ public class NSUndoManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -226,10 +235,11 @@ public class NSUndoManager extends NSObject {
     /**
      * Invocation based undo
      */
+    @NotNull
     @Generated
     @Selector("prepareWithInvocationTarget:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object prepareWithInvocationTarget(@Mapped(ObjCObjectMapper.class) Object target);
+    public native Object prepareWithInvocationTarget(@NotNull @Mapped(ObjCObjectMapper.class) Object target);
 
     /**
      * Undo until a matching begin. It terminates a top level undo if
@@ -240,43 +250,51 @@ public class NSUndoManager extends NSObject {
     @Selector("redo")
     public native void redo();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("redoActionIsDiscardable")
     public native boolean redoActionIsDiscardable();
 
+    @NotNull
     @Generated
     @Selector("redoActionName")
     public native String redoActionName();
 
+    @NotNull
     @Generated
     @Selector("redoMenuItemTitle")
     public native String redoMenuItemTitle();
 
+    @NotNull
     @Generated
     @Selector("redoMenuTitleForUndoActionName:")
-    public native String redoMenuTitleForUndoActionName(String actionName);
+    public native String redoMenuTitleForUndoActionName(@NotNull String actionName);
 
     /**
      * records single undo operation for the specified target
-     * <p>
+     * 
      * As with other undo operations, this does not strongly retain target. Care should be taken to avoid introducing
      * retain cycles by other references captured by the block.
-     *
+     * 
+     * API-Since: 9.0
+     * 
      * @param target      non-nil target of the undo operation
      * @param undoHandler non-nil block to be executed for the undo operation
      */
     @Generated
     @Selector("registerUndoWithTarget:handler:")
-    public native void registerUndoWithTargetHandler(@Mapped(ObjCObjectMapper.class) Object target,
-            @ObjCBlock(name = "call_registerUndoWithTargetHandler") Block_registerUndoWithTargetHandler undoHandler);
+    public native void registerUndoWithTargetHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object target,
+            @NotNull @ObjCBlock(name = "call_registerUndoWithTargetHandler") Block_registerUndoWithTargetHandler undoHandler);
 
     /**
      * Object based Undo
      */
     @Generated
     @Selector("registerUndoWithTarget:selector:object:")
-    public native void registerUndoWithTargetSelectorObject(@Mapped(ObjCObjectMapper.class) Object target, SEL selector,
-            @Mapped(ObjCObjectMapper.class) Object anObject);
+    public native void registerUndoWithTargetSelectorObject(@NotNull @Mapped(ObjCObjectMapper.class) Object target,
+            @NotNull SEL selector, @Nullable @Mapped(ObjCObjectMapper.class) Object anObject);
 
     /**
      * remove
@@ -287,15 +305,19 @@ public class NSUndoManager extends NSObject {
 
     @Generated
     @Selector("removeAllActionsWithTarget:")
-    public native void removeAllActionsWithTarget(@Mapped(ObjCObjectMapper.class) Object target);
+    public native void removeAllActionsWithTarget(@NotNull @Mapped(ObjCObjectMapper.class) Object target);
 
     /**
      * Run Loop Modes
      */
+    @NotNull
     @Generated
     @Selector("runLoopModes")
     public native NSArray<String> runLoopModes();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setActionIsDiscardable:")
     public native void setActionIsDiscardable(boolean discardable);
@@ -306,7 +328,7 @@ public class NSUndoManager extends NSObject {
      */
     @Generated
     @Selector("setActionName:")
-    public native void setActionName(String actionName);
+    public native void setActionName(@NotNull String actionName);
 
     /**
      * Groups By Event
@@ -327,7 +349,7 @@ public class NSUndoManager extends NSObject {
      */
     @Generated
     @Selector("setRunLoopModes:")
-    public native void setRunLoopModes(NSArray<String> value);
+    public native void setRunLoopModes(@NotNull NSArray<String> value);
 
     /**
      * Undo/Redo
@@ -336,6 +358,9 @@ public class NSUndoManager extends NSObject {
     @Selector("undo")
     public native void undo();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("undoActionIsDiscardable")
     public native boolean undoActionIsDiscardable();
@@ -343,6 +368,7 @@ public class NSUndoManager extends NSObject {
     /**
      * Undo/Redo action name
      */
+    @NotNull
     @Generated
     @Selector("undoActionName")
     public native String undoActionName();
@@ -350,6 +376,7 @@ public class NSUndoManager extends NSObject {
     /**
      * Undo/Redo menu item title
      */
+    @NotNull
     @Generated
     @Selector("undoMenuItemTitle")
     public native String undoMenuItemTitle();
@@ -357,9 +384,10 @@ public class NSUndoManager extends NSObject {
     /**
      * localization hooks
      */
+    @NotNull
     @Generated
     @Selector("undoMenuTitleForUndoActionName:")
-    public native String undoMenuTitleForUndoActionName(String actionName);
+    public native String undoMenuTitleForUndoActionName(@NotNull String actionName);
 
     /**
      * Will redo last top-level undo.
@@ -372,6 +400,6 @@ public class NSUndoManager extends NSObject {
     @Generated
     public interface Block_registerUndoWithTargetHandler {
         @Generated
-        void call_registerUndoWithTargetHandler(@Mapped(ObjCObjectMapper.class) Object target);
+        void call_registerUndoWithTargetHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object target);
     }
 }

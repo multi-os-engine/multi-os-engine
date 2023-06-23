@@ -31,7 +31,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -62,12 +67,13 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Configures the color of the background. A nil value uses the view's tint color; use `clearColor` for no color
      * (transparent).
      */
+    @Nullable
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
@@ -76,6 +82,7 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
      * Optional color transformer that is used to resolve the background color. A nil value means the `backgroundColor`
      * is used as-is.
      */
+    @Nullable
     @Generated
     @Selector("backgroundColorTransformer")
     @ObjCBlock(name = "call_backgroundColorTransformer_ret")
@@ -84,8 +91,9 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_backgroundColorTransformer_ret {
+        @NotNull
         @Generated
-        UIColor call_backgroundColorTransformer_ret(UIColor color);
+        UIColor call_backgroundColorTransformer_ret(@NotNull UIColor color);
     }
 
     /**
@@ -99,18 +107,21 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -118,15 +129,17 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     /**
      * Returns a clear configuration, with no default styling.
      */
+    @NotNull
     @Generated
     @Selector("clearConfiguration")
     public static native UIBackgroundConfiguration clearConfiguration();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * The preferred corner radius (using a continuous corner curve) for the background and stroke. This is also applied
@@ -142,6 +155,7 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
      * A custom view for the background. The custom view must have translatesAutoresizingMaskIntoConstraints
      * enabled, but may use auto layout constraints internally for layout of subviews.
      */
+    @Nullable
     @Generated
     @Selector("customView")
     public native UIView customView();
@@ -166,7 +180,7 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -179,7 +193,7 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIBackgroundConfiguration initWithCoder(NSCoder coder);
+    public native UIBackgroundConfiguration initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -198,13 +212,15 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Returns the default configuration for an accompanied sidebar list cell.
      */
+    @NotNull
     @Generated
     @Selector("listAccompaniedSidebarCellConfiguration")
     public static native UIBackgroundConfiguration listAccompaniedSidebarCellConfiguration();
@@ -212,6 +228,7 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     /**
      * Returns the default configuration for a grouped list cell.
      */
+    @NotNull
     @Generated
     @Selector("listGroupedCellConfiguration")
     public static native UIBackgroundConfiguration listGroupedCellConfiguration();
@@ -219,6 +236,7 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     /**
      * Returns the default configuration for a grouped list header or footer.
      */
+    @NotNull
     @Generated
     @Selector("listGroupedHeaderFooterConfiguration")
     public static native UIBackgroundConfiguration listGroupedHeaderFooterConfiguration();
@@ -226,6 +244,7 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     /**
      * Returns the default configuration for a plain list cell.
      */
+    @NotNull
     @Generated
     @Selector("listPlainCellConfiguration")
     public static native UIBackgroundConfiguration listPlainCellConfiguration();
@@ -233,6 +252,7 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     /**
      * Returns the default configuration for a plain list header or footer.
      */
+    @NotNull
     @Generated
     @Selector("listPlainHeaderFooterConfiguration")
     public static native UIBackgroundConfiguration listPlainHeaderFooterConfiguration();
@@ -240,6 +260,7 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     /**
      * Returns the default configuration for a sidebar list cell.
      */
+    @NotNull
     @Generated
     @Selector("listSidebarCellConfiguration")
     public static native UIBackgroundConfiguration listSidebarCellConfiguration();
@@ -247,6 +268,7 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     /**
      * Returns the default configuration for a sidebar list header.
      */
+    @NotNull
     @Generated
     @Selector("listSidebarHeaderConfiguration")
     public static native UIBackgroundConfiguration listSidebarHeaderConfiguration();
@@ -268,17 +290,19 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
      * Returns the resolved background color for the specified tint color, based on the `backgroundColor` and
      * `backgroundColorTransformer`.
      */
+    @NotNull
     @Generated
     @Selector("resolvedBackgroundColorForTintColor:")
-    public native UIColor resolvedBackgroundColorForTintColor(UIColor tintColor);
+    public native UIColor resolvedBackgroundColorForTintColor(@NotNull UIColor tintColor);
 
     /**
      * Returns the resolved stroke color for the specified tint color, based on the `strokeColor` and
      * `strokeColorTransformer`.
      */
+    @NotNull
     @Generated
     @Selector("resolvedStrokeColorForTintColor:")
-    public native UIColor resolvedStrokeColorForTintColor(UIColor tintColor);
+    public native UIColor resolvedStrokeColorForTintColor(@NotNull UIColor tintColor);
 
     /**
      * Configures the color of the background. A nil value uses the view's tint color; use `clearColor` for no color
@@ -286,7 +310,7 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
      */
     @Generated
     @Selector("setBackgroundColor:")
-    public native void setBackgroundColor(UIColor value);
+    public native void setBackgroundColor(@Nullable UIColor value);
 
     /**
      * Optional color transformer that is used to resolve the background color. A nil value means the `backgroundColor`
@@ -295,13 +319,14 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     @Generated
     @Selector("setBackgroundColorTransformer:")
     public native void setBackgroundColorTransformer(
-            @ObjCBlock(name = "call_setBackgroundColorTransformer") Block_setBackgroundColorTransformer value);
+            @Nullable @ObjCBlock(name = "call_setBackgroundColorTransformer") Block_setBackgroundColorTransformer value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setBackgroundColorTransformer {
+        @NotNull
         @Generated
-        UIColor call_setBackgroundColorTransformer(UIColor color);
+        UIColor call_setBackgroundColorTransformer(@NotNull UIColor color);
     }
 
     /**
@@ -327,7 +352,7 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
      */
     @Generated
     @Selector("setCustomView:")
-    public native void setCustomView(UIView value);
+    public native void setCustomView(@Nullable UIView value);
 
     /**
      * The edges on which the containing view's layout margins are added to the `backgroundInsets`, effectively making
@@ -344,7 +369,7 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
      */
     @Generated
     @Selector("setStrokeColor:")
-    public native void setStrokeColor(UIColor value);
+    public native void setStrokeColor(@Nullable UIColor value);
 
     /**
      * Optional color transformer that is used to resolve the stroke color. A nil value means the `strokeColor` is used
@@ -353,13 +378,14 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     @Generated
     @Selector("setStrokeColorTransformer:")
     public native void setStrokeColorTransformer(
-            @ObjCBlock(name = "call_setStrokeColorTransformer") Block_setStrokeColorTransformer value);
+            @Nullable @ObjCBlock(name = "call_setStrokeColorTransformer") Block_setStrokeColorTransformer value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setStrokeColorTransformer {
+        @NotNull
         @Generated
-        UIColor call_setStrokeColorTransformer(UIColor color);
+        UIColor call_setStrokeColorTransformer(@NotNull UIColor color);
     }
 
     /**
@@ -387,12 +413,13 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
      */
     @Generated
     @Selector("setVisualEffect:")
-    public native void setVisualEffect(UIVisualEffect value);
+    public native void setVisualEffect(@Nullable UIVisualEffect value);
 
     /**
      * Configures the color of the stroke. A nil value uses the view's tint color; use `clearColor` for no color
      * (transparent).
      */
+    @Nullable
     @Generated
     @Selector("strokeColor")
     public native UIColor strokeColor();
@@ -401,6 +428,7 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
      * Optional color transformer that is used to resolve the stroke color. A nil value means the `strokeColor` is used
      * as-is.
      */
+    @Nullable
     @Generated
     @Selector("strokeColorTransformer")
     @ObjCBlock(name = "call_strokeColorTransformer_ret")
@@ -409,8 +437,9 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_strokeColorTransformer_ret {
+        @NotNull
         @Generated
-        UIColor call_strokeColorTransformer_ret(UIColor color);
+        UIColor call_strokeColorTransformer_ret(@NotNull UIColor color);
     }
 
     /**
@@ -449,10 +478,11 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
      * Returns a copy of the configuration updated for the specified state, by applying the configuration's default
      * values for that state to any properties that have not been customized.
      */
+    @NotNull
     @Generated
     @Selector("updatedConfigurationForState:")
     public native UIBackgroundConfiguration updatedConfigurationForState(
-            @Mapped(ObjCObjectMapper.class) UIConfigurationState state);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIConfigurationState state);
 
     @Generated
     @Selector("version")
@@ -462,19 +492,25 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     /**
      * The visual effect to apply to the background. Default is nil.
      */
+    @Nullable
     @Generated
     @Selector("visualEffect")
     public native UIVisualEffect visualEffect();
 
     /**
      * The image to use. Default is nil.
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("image")
     public native UIImage image();
 
     /**
      * The content mode to use when rendering the image. Default is UIViewContentModeScaleToFill.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("imageContentMode")
@@ -483,13 +519,17 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
 
     /**
      * The image to use. Default is nil.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setImage:")
-    public native void setImage(UIImage value);
+    public native void setImage(@Nullable UIImage value);
 
     /**
      * The content mode to use when rendering the image. Default is UIViewContentModeScaleToFill.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setImageContentMode:")

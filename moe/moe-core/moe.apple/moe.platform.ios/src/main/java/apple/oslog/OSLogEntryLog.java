@@ -25,11 +25,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * OSLogEntryLog
- * <p>
+ * 
  * Entries made by the os_log API.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("OSLog")
@@ -65,30 +69,35 @@ public class OSLogEntryLog extends OSLogEntry implements OSLogEntryFromProcess, 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("category")
     public native String category();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("components")
     public native NSArray<? extends OSLogMessageComponent> components();
@@ -101,6 +110,7 @@ public class OSLogEntryLog extends OSLogEntry implements OSLogEntryFromProcess, 
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("formatString")
     public native String formatString();
@@ -116,7 +126,7 @@ public class OSLogEntryLog extends OSLogEntry implements OSLogEntryFromProcess, 
 
     @Generated
     @Selector("initWithCoder:")
-    public native OSLogEntryLog initWithCoder(NSCoder coder);
+    public native OSLogEntryLog initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -135,14 +145,17 @@ public class OSLogEntryLog extends OSLogEntry implements OSLogEntryFromProcess, 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] level
-     * <p>
+     * 
      * The level of the entry, e.g., info, debug.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("level")
@@ -154,6 +167,7 @@ public class OSLogEntryLog extends OSLogEntry implements OSLogEntryFromProcess, 
     @Selector("new")
     public static native OSLogEntryLog new_objc();
 
+    @NotNull
     @Generated
     @Selector("process")
     public native String process();
@@ -170,6 +184,7 @@ public class OSLogEntryLog extends OSLogEntry implements OSLogEntryFromProcess, 
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @NotNull
     @Generated
     @Selector("sender")
     public native String sender();
@@ -178,6 +193,7 @@ public class OSLogEntryLog extends OSLogEntry implements OSLogEntryFromProcess, 
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("subsystem")
     public native String subsystem();

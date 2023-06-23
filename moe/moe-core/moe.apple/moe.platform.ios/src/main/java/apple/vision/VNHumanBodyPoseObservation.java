@@ -27,7 +27,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -58,11 +63,12 @@ public class VNHumanBodyPoseObservation extends VNRecognizedPointsObservation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * All of the joint names available in the observation.
      */
+    @NotNull
     @Generated
     @Selector("availableJointNames")
     public native NSArray<String> availableJointNames();
@@ -70,24 +76,28 @@ public class VNHumanBodyPoseObservation extends VNRecognizedPointsObservation {
     /**
      * All of the joints group names available in the observation.
      */
+    @NotNull
     @Generated
     @Selector("availableJointsGroupNames")
     public native NSArray<String> availableJointsGroupNames();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -111,7 +121,7 @@ public class VNHumanBodyPoseObservation extends VNRecognizedPointsObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNHumanBodyPoseObservation initWithCoder(NSCoder coder);
+    public native VNHumanBodyPoseObservation initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -130,9 +140,10 @@ public class VNHumanBodyPoseObservation extends VNRecognizedPointsObservation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -141,32 +152,34 @@ public class VNHumanBodyPoseObservation extends VNRecognizedPointsObservation {
 
     /**
      * Obtain a specific normalized point for a named human body joint.
-     *
+     * 
      * @param jointName The name of the human body joint.
      * @param error     The address of a variable that will be populated with the error that describes the failure. If
      *                  the caller does not require this information, NULL can be passed.
      * @return the recognized point, or nil if the point could not be obtained.
      */
+    @Nullable
     @Generated
     @Selector("recognizedPointForJointName:error:")
-    public native VNRecognizedPoint recognizedPointForJointNameError(String jointName,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native VNRecognizedPoint recognizedPointForJointNameError(@NotNull String jointName,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Obtains the collection of points associated with a named human body joints group.
-     * <p>
+     * 
      * The obtained collection is a dictionary that provides the mapping of human body join names to the recognized
      * point.
-     *
+     * 
      * @param jointsGroupName The name of the human body joints group.
      * @param error           The address of a variable that will be populated with the error that describes the
      *                        failure. If the caller does not require this information, NULL can be passed.
      * @return a dictionary of recognized points in the group, or nil if an error was encountered.
      */
+    @Nullable
     @Generated
     @Selector("recognizedPointsForJointsGroupName:error:")
     public native NSDictionary<String, ? extends VNRecognizedPoint> recognizedPointsForJointsGroupNameError(
-            String jointsGroupName, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull String jointsGroupName, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("resolveClassMethod:")

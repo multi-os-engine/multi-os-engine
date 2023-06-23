@@ -22,11 +22,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCTransposeLayer
- * <p>
+ * 
  * A transpose layer
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -58,22 +62,25 @@ public class MLCTransposeLayer extends MLCLayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -88,11 +95,12 @@ public class MLCTransposeLayer extends MLCLayer {
 
     /**
      * [@property] dimensions
-     * <p>
+     * 
      * Permutes the dimensions according to 'dimensions'.
-     * <p>
+     * 
      * The returned tensor's dimension i will correspond to dimensions[i].
      */
+    @NotNull
     @Generated
     @Selector("dimensions")
     public native NSArray<? extends NSNumber> dimensions();
@@ -123,13 +131,14 @@ public class MLCTransposeLayer extends MLCLayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Create a transpose layer
-     *
+     * 
      * @param dimensions NSArray<NSNumber *> representing the desired ordering of dimensions
      *                   The dimensions array specifies the input axis source for each output axis, such that the
      *                   K'th element in the dimensions array specifies the input axis source for the K'th axis in the
@@ -138,7 +147,7 @@ public class MLCTransposeLayer extends MLCLayer {
      */
     @Generated
     @Selector("layerWithDimensions:")
-    public static native MLCTransposeLayer layerWithDimensions(NSArray<? extends NSNumber> dimensions);
+    public static native MLCTransposeLayer layerWithDimensions(@NotNull NSArray<? extends NSNumber> dimensions);
 
     @Generated
     @Owned
@@ -163,7 +172,7 @@ public class MLCTransposeLayer extends MLCLayer {
 
     @Generated
     @Selector("supportsDataType:onDevice:")
-    public static native boolean supportsDataTypeOnDevice(int dataType, MLCDevice device);
+    public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
 
     @Generated
     @Selector("version")

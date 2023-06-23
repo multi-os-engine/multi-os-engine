@@ -21,12 +21,47 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class CFGregorianUnitFlags {
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use CFCalendar or NSCalendar API instead
+     */
     @Deprecated @Generated @NUInt public static final long UnitsYears = 0x0000000000000001L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use CFCalendar or NSCalendar API instead
+     */
     @Deprecated @Generated @NUInt public static final long UnitsMonths = 0x0000000000000002L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use CFCalendar or NSCalendar API instead
+     */
     @Deprecated @Generated @NUInt public static final long UnitsDays = 0x0000000000000004L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use CFCalendar or NSCalendar API instead
+     */
     @Deprecated @Generated @NUInt public static final long UnitsHours = 0x0000000000000008L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use CFCalendar or NSCalendar API instead
+     */
     @Deprecated @Generated @NUInt public static final long UnitsMinutes = 0x0000000000000010L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use CFCalendar or NSCalendar API instead
+     */
     @Deprecated @Generated @NUInt public static final long UnitsSeconds = 0x0000000000000020L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use CFCalendar or NSCalendar API instead
+     */
     @Deprecated @Generated @NUInt public static final long AllUnits = 0x0000000000FFFFFFL;
 
     @Generated

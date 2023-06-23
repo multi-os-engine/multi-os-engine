@@ -1,7 +1,6 @@
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -30,7 +29,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -68,31 +73,35 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * The preferred corner radius (using a continuous corner curve) for the image.
@@ -114,7 +123,7 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -127,7 +136,7 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIListContentImageProperties initWithCoder(NSCoder coder);
+    public native UIListContentImageProperties initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -146,9 +155,10 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Enforces a maximum size for the image. The default value is CGSizeZero. A zero width or
@@ -168,6 +178,7 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
     /**
      * The symbol configuration to use.
      */
+    @Nullable
     @Generated
     @Selector("preferredSymbolConfiguration")
     public native UIImageSymbolConfiguration preferredSymbolConfiguration();
@@ -208,9 +219,10 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
      * Returns the resolved image tint color for the specified tint color of the view, based on the `tintColor` and
      * `tintColorTransformer`.
      */
+    @NotNull
     @Generated
     @Selector("resolvedTintColorForTintColor:")
-    public native UIColor resolvedTintColorForTintColor(UIColor tintColor);
+    public native UIColor resolvedTintColorForTintColor(@NotNull UIColor tintColor);
 
     /**
      * Prevents the image from inverting its colors when the accessibility setting is enabled.
@@ -242,7 +254,7 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
      */
     @Generated
     @Selector("setPreferredSymbolConfiguration:")
-    public native void setPreferredSymbolConfiguration(UIImageSymbolConfiguration value);
+    public native void setPreferredSymbolConfiguration(@Nullable UIImageSymbolConfiguration value);
 
     /**
      * The layout size that is reserved for the image, inside which the image will be centered.
@@ -272,7 +284,7 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
      */
     @Generated
     @Selector("setTintColor:")
-    public native void setTintColor(UIColor value);
+    public native void setTintColor(@Nullable UIColor value);
 
     /**
      * Optional color transformer that is used to resolve the tint color. A nil value means the `tintColor` is used
@@ -281,13 +293,14 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
     @Generated
     @Selector("setTintColorTransformer:")
     public native void setTintColorTransformer(
-            @ObjCBlock(name = "call_setTintColorTransformer") Block_setTintColorTransformer value);
+            @Nullable @ObjCBlock(name = "call_setTintColorTransformer") Block_setTintColorTransformer value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setTintColorTransformer {
+        @NotNull
         @Generated
-        UIColor call_setTintColorTransformer(UIColor color);
+        UIColor call_setTintColorTransformer(@NotNull UIColor color);
     }
 
     @Generated
@@ -311,6 +324,7 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
     /**
      * The tintColor to apply to the image view. Nil will use the image view's normal inherited tintColor.
      */
+    @Nullable
     @Generated
     @Selector("tintColor")
     public native UIColor tintColor();
@@ -319,6 +333,7 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
      * Optional color transformer that is used to resolve the tint color. A nil value means the `tintColor` is used
      * as-is.
      */
+    @Nullable
     @Generated
     @Selector("tintColorTransformer")
     @ObjCBlock(name = "call_tintColorTransformer_ret")
@@ -327,8 +342,9 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_tintColorTransformer_ret {
+        @NotNull
         @Generated
-        UIColor call_tintColorTransformer_ret(UIColor color);
+        UIColor call_tintColorTransformer_ret(@NotNull UIColor color);
     }
 
     @Generated

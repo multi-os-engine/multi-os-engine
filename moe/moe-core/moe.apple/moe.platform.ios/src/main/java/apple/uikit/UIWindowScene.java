@@ -24,7 +24,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSError;
+import org.moe.natj.objc.ann.ObjCBlock;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -55,30 +62,34 @@ public class UIWindowScene extends UIScene {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
+    @NotNull
     @Generated
     @Selector("coordinateSpace")
     @MappedReturn(ObjCObjectMapper.class)
@@ -103,8 +114,8 @@ public class UIWindowScene extends UIScene {
 
     @Generated
     @Selector("initWithSession:connectionOptions:")
-    public native UIWindowScene initWithSessionConnectionOptions(UISceneSession session,
-            UISceneConnectionOptions connectionOptions);
+    public native UIWindowScene initWithSessionConnectionOptions(@NotNull UISceneSession session,
+            @NotNull UISceneConnectionOptions connectionOptions);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -128,9 +139,10 @@ public class UIWindowScene extends UIScene {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -145,15 +157,17 @@ public class UIWindowScene extends UIScene {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @NotNull
     @Generated
     @Selector("screen")
     public native UIScreen screen();
 
     /**
      * The screenshot object associated with the scene
-     * <p>
+     * 
      * This is non-null if the screenshot service is available for this window scene
      */
+    @Nullable
     @Generated
     @Selector("screenshotService")
     public native UIScreenshotService screenshotService();
@@ -165,11 +179,18 @@ public class UIWindowScene extends UIScene {
     /**
      * Restrictions which the system should use when resizing the scene. This property will be NULL on platforms which
      * don't support scene resize, else a mutable object is returned which the client may customize.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("sizeRestrictions")
     public native UISceneSizeRestrictions sizeRestrictions();
 
+    /**
+     * API-Since: 13.0
+     */
+    @Nullable
     @Generated
     @Selector("statusBarManager")
     public native UIStatusBarManager statusBarManager();
@@ -178,6 +199,7 @@ public class UIWindowScene extends UIScene {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("traitCollection")
     public native UITraitCollection traitCollection();
@@ -190,16 +212,20 @@ public class UIWindowScene extends UIScene {
     /**
      * The array of all windows associated with this UIWindowScene
      */
+    @NotNull
     @Generated
     @Selector("windows")
     public native NSArray<? extends UIWindow> windows();
 
     /**
      * An optional object used as a source of scene-level activity items configuration
-     * <p>
+     * 
      * If this property returns @c nil, the @c activityItemsConfiguration property of the most-presented view controller
      * of the scene's key window will be used for scene-level sharing and activities.
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("activityItemsConfigurationSource")
     @MappedReturn(ObjCObjectMapper.class)
@@ -207,38 +233,48 @@ public class UIWindowScene extends UIScene {
 
     /**
      * Returns the focus system that is responsible for this scene or nil if this scene does not support focus.
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("focusSystem")
     public native UIFocusSystem focusSystem();
 
     /**
      * The key window for this UIWindowScene
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("keyWindow")
     public native UIWindow keyWindow();
 
     /**
      * An optional object used as a source of scene-level activity items configuration
-     * <p>
+     * 
      * If this property returns @c nil, the @c activityItemsConfiguration property of the most-presented view controller
      * of the scene's key window will be used for scene-level sharing and activities.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setActivityItemsConfigurationSource:")
     public native void setActivityItemsConfigurationSource_unsafe(
-            @Mapped(ObjCObjectMapper.class) UIActivityItemsConfigurationProviding value);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIActivityItemsConfigurationProviding value);
 
     /**
      * An optional object used as a source of scene-level activity items configuration
-     * <p>
+     * 
      * If this property returns @c nil, the @c activityItemsConfiguration property of the most-presented view controller
      * of the scene's key window will be used for scene-level sharing and activities.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     public void setActivityItemsConfigurationSource(
-            @Mapped(ObjCObjectMapper.class) UIActivityItemsConfigurationProviding value) {
+            @Nullable @Mapped(ObjCObjectMapper.class) UIActivityItemsConfigurationProviding value) {
         Object __old = activityItemsConfigurationSource();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -248,4 +284,47 @@ public class UIWindowScene extends UIScene {
             org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
         }
     }
+
+    /**
+     * Provides the current resolved values for the window scene's geometry in system space.
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @Selector("effectiveGeometry")
+    public native UIWindowSceneGeometry effectiveGeometry();
+
+    @Generated
+    @Selector("isFullScreen")
+    public native boolean isFullScreen();
+
+    /**
+     * Request an update to the window scene's geometry in system space.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("requestGeometryUpdateWithPreferences:errorHandler:")
+    public native void requestGeometryUpdateWithPreferencesErrorHandler(
+            @NotNull UIWindowSceneGeometryPreferences geometryPreferences,
+            @Nullable @ObjCBlock(name = "call_requestGeometryUpdateWithPreferencesErrorHandler") Block_requestGeometryUpdateWithPreferencesErrorHandler errorHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestGeometryUpdateWithPreferencesErrorHandler {
+        @Generated
+        void call_requestGeometryUpdateWithPreferencesErrorHandler(@NotNull NSError error);
+    }
+
+    /**
+     * Additional window behaviors which may be platform specific. This property will be nil on unsupported platforms,
+     * otherwise will provide a mutable object for window behavior customization.
+     * 
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("windowingBehaviors")
+    public native UISceneWindowingBehaviors windowingBehaviors();
 }

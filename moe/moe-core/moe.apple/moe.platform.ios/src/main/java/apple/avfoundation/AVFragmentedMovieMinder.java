@@ -21,14 +21,18 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVFragmentedMovieMinder
- * <p>
+ * 
  * A class that periodically checks whether additional movie fragments have been appended to fragmented movie files.
- * <p>
+ * 
  * AVFragmentedMovieMinder is identical to AVFragmentedAssetMinder except that it's capable of minding only assets of
  * class AVFragmentedMovie.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("AVFoundation")
@@ -50,14 +54,15 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
 
     /**
      * addFragmentedMovie:
-     * <p>
+     * 
      * Adds a fragmented movie to the array of movies being minded.
-     *
-     * @param movie The fragmented movie to add to the minder.
+     * 
+     * @param movie
+     *              The fragmented movie to add to the minder.
      */
     @Generated
     @Selector("addFragmentedMovie:")
-    public native void addFragmentedMovie(AVFragmentedMovie movie);
+    public native void addFragmentedMovie(@NotNull AVFragmentedMovie movie);
 
     @Generated
     @Owned
@@ -71,22 +76,25 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,23 +109,25 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
 
     @Generated
     @Selector("fragmentedAssetMinderWithAsset:mindingInterval:")
-    public static native AVFragmentedMovieMinder fragmentedAssetMinderWithAssetMindingInterval(AVAsset asset,
+    public static native AVFragmentedMovieMinder fragmentedAssetMinderWithAssetMindingInterval(@NotNull AVAsset asset,
             double mindingInterval);
 
     /**
      * fragmentedMovieMinderWithMovie:mindingInterval:
-     * <p>
+     * 
      * Creates an AVFragmentedMovieMinder, adds the specified movie to it, and sets the mindingInterval to the specified
      * value.
-     *
-     * @param movie           An instance of AVFragmentedMovie to add to the AVFragmentedMovieMinder
-     * @param mindingInterval The initial minding interval of the AVFragmentedMovieMinder.
+     * 
+     * @param movie
+     *                        An instance of AVFragmentedMovie to add to the AVFragmentedMovieMinder
+     * @param mindingInterval
+     *                        The initial minding interval of the AVFragmentedMovieMinder.
      * @return A new instance of AVFragmentedMovieMinder.
      */
     @Generated
     @Selector("fragmentedMovieMinderWithMovie:mindingInterval:")
-    public static native AVFragmentedMovieMinder fragmentedMovieMinderWithMovieMindingInterval(AVFragmentedMovie movie,
-            double mindingInterval);
+    public static native AVFragmentedMovieMinder fragmentedMovieMinderWithMovieMindingInterval(
+            @NotNull AVFragmentedMovie movie, double mindingInterval);
 
     @Generated
     @Selector("hash")
@@ -130,21 +140,24 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
 
     @Generated
     @Selector("initWithAsset:mindingInterval:")
-    public native AVFragmentedMovieMinder initWithAssetMindingInterval(AVAsset asset, double mindingInterval);
+    public native AVFragmentedMovieMinder initWithAssetMindingInterval(@NotNull AVAsset asset, double mindingInterval);
 
     /**
      * initWithMovie:mindingInterval:
-     * <p>
+     * 
      * Creates an AVFragmentedMovieMinder, adds the specified movie to it, and sets the mindingInterval to the specified
      * value.
-     *
-     * @param movie           An instance of AVFragmentedMovie to add to the AVFragmentedMovieMinder
-     * @param mindingInterval The initial minding interval of the AVFragmentedMovieMinder.
+     * 
+     * @param movie
+     *                        An instance of AVFragmentedMovie to add to the AVFragmentedMovieMinder
+     * @param mindingInterval
+     *                        The initial minding interval of the AVFragmentedMovieMinder.
      * @return A new instance of AVFragmentedMovieMinder.
      */
     @Generated
     @Selector("initWithMovie:mindingInterval:")
-    public native AVFragmentedMovieMinder initWithMovieMindingInterval(AVFragmentedMovie movie, double mindingInterval);
+    public native AVFragmentedMovieMinder initWithMovieMindingInterval(@NotNull AVFragmentedMovie movie,
+            double mindingInterval);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -163,13 +176,14 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] mindingInterval
-     * <p>
+     * 
      * An NSTimeInterval indicating how often a check for additional movie fragments should be performed. The default
      * interval is 10.0.
      */
@@ -179,9 +193,10 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
 
     /**
      * [@property] movies
-     * <p>
+     * 
      * An NSArray of the AVFragmentedMovie objects being minded.
      */
+    @NotNull
     @Generated
     @Selector("movies")
     public native NSArray<? extends AVFragmentedMovie> movies();
@@ -193,14 +208,15 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
 
     /**
      * removeFragmentedMovie:
-     * <p>
+     * 
      * Removes a fragmented movie from the array of movies being minded.
-     *
-     * @param movie The fragmented movie to remove from the minder.
+     * 
+     * @param movie
+     *              The fragmented movie to remove from the minder.
      */
     @Generated
     @Selector("removeFragmentedMovie:")
-    public native void removeFragmentedMovie(AVFragmentedMovie movie);
+    public native void removeFragmentedMovie(@NotNull AVFragmentedMovie movie);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -212,7 +228,7 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
 
     /**
      * [@property] mindingInterval
-     * <p>
+     * 
      * An NSTimeInterval indicating how often a check for additional movie fragments should be performed. The default
      * interval is 10.0.
      */

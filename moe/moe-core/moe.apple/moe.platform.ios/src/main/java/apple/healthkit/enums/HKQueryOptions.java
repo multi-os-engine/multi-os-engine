@@ -21,18 +21,30 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] HKQueryOptions
- * <p>
+ * 
  * Time interval options are used to describe how an HKSample's time period overlaps with a given time period.
- * <p>
+ * 
  * [@constant] HKQueryOptionNone The sample's time period must overlap with the predicate's time period.
  * [@constant] HKQueryOptionStrictStartDate The sample's start date must fall in the time period (>= startDate, <
  * endDate)
  * [@constant] HKQueryOptionStrictEndDate The sample's end date must fall in the time period (>= startDate, < endDate)
+ * 
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class HKQueryOptions {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long StrictStartDate = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long StrictEndDate = 0x0000000000000002L;
 
     @Generated

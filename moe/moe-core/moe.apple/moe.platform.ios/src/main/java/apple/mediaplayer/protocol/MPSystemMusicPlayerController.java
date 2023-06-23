@@ -7,6 +7,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("MediaPlayer")
@@ -15,8 +16,10 @@ import org.moe.natj.objc.ann.Selector;
 public interface MPSystemMusicPlayerController {
     /**
      * Switches to Music to play the content provided by the queue descriptor.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("openToPlayQueueDescriptor:")
-    void openToPlayQueueDescriptor(MPMusicPlayerQueueDescriptor queueDescriptor);
+    void openToPlayQueueDescriptor(@NotNull MPMusicPlayerQueueDescriptor queueDescriptor);
 }

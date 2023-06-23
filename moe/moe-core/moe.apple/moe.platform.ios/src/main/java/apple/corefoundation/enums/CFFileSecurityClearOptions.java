@@ -21,14 +21,34 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * values to pass in the clearPropertyMask to CFFileSecurityClearProperties
+ * 
+ * API-Since: 6.0
  */
 @Generated
 public final class CFFileSecurityClearOptions {
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NUInt public static final long Owner = 0x0000000000000001L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NUInt public static final long Group = 0x0000000000000002L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NUInt public static final long Mode = 0x0000000000000004L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NUInt public static final long OwnerUUID = 0x0000000000000008L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NUInt public static final long GroupUUID = 0x0000000000000010L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NUInt public static final long AccessControlList = 0x0000000000000020L;
 
     @Generated

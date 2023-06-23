@@ -36,6 +36,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Notification Center ***************
@@ -70,22 +72,25 @@ public class NSNotificationCenter extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -94,6 +99,7 @@ public class NSNotificationCenter extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @NotNull
     @Generated
     @Selector("defaultCenter")
     public static native NSNotificationCenter defaultCenter();
@@ -124,9 +130,10 @@ public class NSNotificationCenter extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,15 +163,19 @@ public class NSNotificationCenter extends NSObject {
 
     @Generated
     @Selector("addObserver:selector:name:object:")
-    public native void addObserverSelectorNameObject(@Mapped(ObjCObjectMapper.class) Object observer, SEL aSelector,
-            String aName, @Mapped(ObjCObjectMapper.class) Object anObject);
+    public native void addObserverSelectorNameObject(@NotNull @Mapped(ObjCObjectMapper.class) Object observer,
+            @NotNull SEL aSelector, @Nullable String aName, @Nullable @Mapped(ObjCObjectMapper.class) Object anObject);
 
+    /**
+     * API-Since: 4.0
+     */
+    @NotNull
     @Generated
     @Selector("addObserverForName:object:queue:usingBlock:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native apple.protocol.NSObject addObserverForNameObjectQueueUsingBlock(String name,
-            @Mapped(ObjCObjectMapper.class) Object obj, NSOperationQueue queue,
-            @ObjCBlock(name = "call_addObserverForNameObjectQueueUsingBlock") Block_addObserverForNameObjectQueueUsingBlock block);
+    public native apple.protocol.NSObject addObserverForNameObjectQueueUsingBlock(@Nullable String name,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object obj, @Nullable NSOperationQueue queue,
+            @NotNull @ObjCBlock(name = "call_addObserverForNameObjectQueueUsingBlock") Block_addObserverForNameObjectQueueUsingBlock block);
 
     @Generated
     @Selector("init")
@@ -172,30 +183,31 @@ public class NSNotificationCenter extends NSObject {
 
     @Generated
     @Selector("postNotification:")
-    public native void postNotification(NSNotification notification);
+    public native void postNotification(@NotNull NSNotification notification);
 
     @Generated
     @Selector("postNotificationName:object:")
-    public native void postNotificationNameObject(String aName, @Mapped(ObjCObjectMapper.class) Object anObject);
+    public native void postNotificationNameObject(@NotNull String aName,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anObject);
 
     @Generated
     @Selector("postNotificationName:object:userInfo:")
-    public native void postNotificationNameObjectUserInfo(String aName, @Mapped(ObjCObjectMapper.class) Object anObject,
-            NSDictionary<?, ?> aUserInfo);
+    public native void postNotificationNameObjectUserInfo(@NotNull String aName,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anObject, @Nullable NSDictionary<?, ?> aUserInfo);
 
     @Generated
     @Selector("removeObserver:")
-    public native void removeObserver(@Mapped(ObjCObjectMapper.class) Object observer);
+    public native void removeObserver(@NotNull @Mapped(ObjCObjectMapper.class) Object observer);
 
     @Generated
     @Selector("removeObserver:name:object:")
-    public native void removeObserverNameObject(@Mapped(ObjCObjectMapper.class) Object observer, String aName,
-            @Mapped(ObjCObjectMapper.class) Object anObject);
+    public native void removeObserverNameObject(@NotNull @Mapped(ObjCObjectMapper.class) Object observer,
+            @Nullable String aName, @Nullable @Mapped(ObjCObjectMapper.class) Object anObject);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addObserverForNameObjectQueueUsingBlock {
         @Generated
-        void call_addObserverForNameObjectQueueUsingBlock(NSNotification note);
+        void call_addObserverForNameObjectQueueUsingBlock(@NotNull NSNotification note);
     }
 }

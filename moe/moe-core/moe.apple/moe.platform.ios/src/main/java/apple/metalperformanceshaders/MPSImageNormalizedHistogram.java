@@ -29,15 +29,19 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImageNormalizedHistogram
- * <p>
+ * 
  * The MPSImageNormalizedHistogram computes the normalized histogram of an image.
  * The minimum and maximum pixel values for a given region of an image are first computed.
  * The max(computed minimum pixel value, MPSImageHistogramInfo.minPixelValue) and the
  * min(computed maximum pixel value, MPSImageHistogramInfo.maxPixelValue) are used to
  * compute the normalized histogram.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -69,31 +73,34 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] clipRectSource
-     * <p>
+     * 
      * The source rectangle to use when reading data.
-     * <p>
+     * 
      * A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
      * completely within the source image, the intersection of the image bounds and clipRectSource will
      * be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
@@ -114,10 +121,10 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
 
     /**
      * Encode the filter to a command buffer using a MTLComputeCommandEncoder.
-     * <p>
+     * 
      * The filter will not begin to execute until after the command
      * buffer has been enqueued and committed.
-     *
+     * 
      * @param commandBuffer   A valid MTLCommandBuffer.
      * @param source          A valid MTLTexture containing the source image for the filter
      * @param minmaxTexture   A valid MTLTexture in which the min/max pixel values from source will be returned
@@ -129,7 +136,7 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
      *                        If histogramInfo.histogramForAlpha is false and the source image is RGBA then only
      *                        histogram
      *                        results for RGB channels are stored.
-     *                        <p>
+     * 
      *                        The histogram results are stored in the histogram buffer as follows:
      *                        - histogram results for the R channel for all bins followed by
      *                        - histogram results for the G channel for all bins followed by
@@ -139,9 +146,10 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
     @Generated
     @Selector("encodeToCommandBuffer:sourceTexture:minmaxTexture:histogram:histogramOffset:")
     public native void encodeToCommandBufferSourceTextureMinmaxTextureHistogramHistogramOffset(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture source, @Mapped(ObjCObjectMapper.class) MTLTexture minmaxTexture,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer histogram, @NUInt long histogramOffset);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture source,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture minmaxTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer histogram, @NUInt long histogramOffset);
 
     @Generated
     @Selector("hash")
@@ -150,11 +158,11 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
 
     /**
      * The amount of space in the output MTLBuffer the histogram will take up.
-     * <p>
+     * 
      * This convenience function calculates the minimum amount of space
      * needed in the output histogram for the results. The MTLBuffer should
      * be at least this length, longer if histogramOffset is non-zero.
-     *
+     * 
      * @param sourceFormat The MTLPixelFormat of the source image. This is
      *                     the source parameter of -encodeToCommandBuffer:
      *                     sourceTexture:histogram:histogramOffset
@@ -171,33 +179,35 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSImageNormalizedHistogram initWithCoder(NSCoder aDecoder);
+    public native MPSImageNormalizedHistogram initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSImageNormalizedHistogram initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageNormalizedHistogram initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImageNormalizedHistogram initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageNormalizedHistogram initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Specifies information to compute the histogram for channels of an image.
-     *
+     * 
      * @param device        The device the filter will run on
      * @param histogramInfo Pointer to the MPSImageHistogramInfo struct
      * @return A valid MPSImageNormalizedHistogram object or nil, if failure.
@@ -205,7 +215,7 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
     @Generated
     @Selector("initWithDevice:histogramInfo:")
     public native MPSImageNormalizedHistogram initWithDeviceHistogramInfo(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, VoidPtr histogramInfo);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull VoidPtr histogramInfo);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -224,9 +234,10 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -243,9 +254,9 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
 
     /**
      * [@property] clipRectSource
-     * <p>
+     * 
      * The source rectangle to use when reading data.
-     * <p>
+     * 
      * A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
      * completely within the source image, the intersection of the image bounds and clipRectSource will
      * be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
@@ -261,9 +272,9 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
 
     /**
      * [@property] zeroHistogram
-     * <p>
+     * 
      * Zero-initalize the histogram results
-     * <p>
+     * 
      * Indicates that the memory region in which the histogram results are to be written in the
      * histogram buffer are to be zero-initialized or not. Default: YES.
      */
@@ -292,9 +303,9 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
 
     /**
      * [@property] zeroHistogram
-     * <p>
+     * 
      * Zero-initalize the histogram results
-     * <p>
+     * 
      * Indicates that the memory region in which the histogram results are to be written in the
      * histogram buffer are to be zero-initialized or not. Default: YES.
      */

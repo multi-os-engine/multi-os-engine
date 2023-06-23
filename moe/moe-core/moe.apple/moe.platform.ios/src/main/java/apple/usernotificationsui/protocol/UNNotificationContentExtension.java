@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.usernotificationsui.protocol;
 
-import apple.coregraphics.struct.CGRect;
 import apple.uikit.UIColor;
 import apple.usernotifications.UNNotification;
 import apple.usernotifications.UNNotificationResponse;
@@ -30,7 +29,12 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("UserNotificationsUI")
 @Runtime(ObjCRuntime.class)
@@ -44,7 +48,7 @@ public interface UNNotificationContentExtension {
      */
     @Generated
     @Selector("didReceiveNotification:")
-    void didReceiveNotification(UNNotification notification);
+    void didReceiveNotification(@NotNull UNNotification notification);
 
     /**
      * If implemented, the method will be called when the user taps on one
@@ -55,8 +59,8 @@ public interface UNNotificationContentExtension {
     @Generated
     @IsOptional
     @Selector("didReceiveNotificationResponse:completionHandler:")
-    default void didReceiveNotificationResponseCompletionHandler(UNNotificationResponse response,
-            @ObjCBlock(name = "call_didReceiveNotificationResponseCompletionHandler") Block_didReceiveNotificationResponseCompletionHandler completion) {
+    default void didReceiveNotificationResponseCompletionHandler(@NotNull UNNotificationResponse response,
+            @NotNull @ObjCBlock(name = "call_didReceiveNotificationResponseCompletionHandler") Block_didReceiveNotificationResponseCompletionHandler completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -90,6 +94,7 @@ public interface UNNotificationContentExtension {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("mediaPlayPauseButtonTintColor")

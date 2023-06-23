@@ -23,18 +23,22 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MDLPathAssetResolver
- * <p>
+ * 
  * The path asset resolver searches for referenced files
  * by prepending path.
- * <p>
+ * 
  * Path should resolve to a well formed URI. A file system
  * path might take the form @"file:///path/to/all/assets/
- * <p>
+ * 
  * A trailing slash is automatically appended to path if
  * not provided.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("ModelIO")
@@ -66,26 +70,29 @@ public class MDLPathAssetResolver extends NSObject implements MDLAssetResolver {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("canResolveAssetNamed:")
-    public native boolean canResolveAssetNamed(String name);
+    public native boolean canResolveAssetNamed(@NotNull String name);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -109,7 +116,7 @@ public class MDLPathAssetResolver extends NSObject implements MDLAssetResolver {
 
     @Generated
     @Selector("initWithPath:")
-    public native MDLPathAssetResolver initWithPath(String path);
+    public native MDLPathAssetResolver initWithPath(@NotNull String path);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -128,22 +135,25 @@ public class MDLPathAssetResolver extends NSObject implements MDLAssetResolver {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native MDLPathAssetResolver new_objc();
 
+    @NotNull
     @Generated
     @Selector("path")
     public native String path();
 
+    @NotNull
     @Generated
     @Selector("resolveAssetNamed:")
-    public native NSURL resolveAssetNamed(String name);
+    public native NSURL resolveAssetNamed(@NotNull String name);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -155,7 +165,7 @@ public class MDLPathAssetResolver extends NSObject implements MDLAssetResolver {
 
     @Generated
     @Selector("setPath:")
-    public native void setPath(String value);
+    public native void setPath(@NotNull String value);
 
     @Generated
     @Selector("setVersion:")

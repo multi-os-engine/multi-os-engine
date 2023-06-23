@@ -8,6 +8,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("AdServices")
@@ -23,15 +24,18 @@ public final class AdServices {
 
     /**
      * [@enum] AAAttributionErrorCode
-     * <p>
+     * 
      * [@const] AAAttributionErrorCodeNetworkNotAvailable
      * A token could not be provided because a network error occured.
-     * <p>
+     * 
      * [@const] AAAttributionErrorCodeInternalError
      * A token could not be provided because an internal error occurred.
-     * <p>
+     * 
      * Error codes for NSErrors returned from the attributionTokenWithError: method.
+     * 
+     * API-Since: 14.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

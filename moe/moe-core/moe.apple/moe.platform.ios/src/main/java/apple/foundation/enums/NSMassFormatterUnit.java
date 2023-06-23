@@ -19,12 +19,30 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class NSMassFormatterUnit {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Gram = 0x000000000000000BL;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Kilogram = 0x000000000000000EL;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Ounce = 0x0000000000000601L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Pound = 0x0000000000000602L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Stone = 0x0000000000000603L;
 
     @Generated

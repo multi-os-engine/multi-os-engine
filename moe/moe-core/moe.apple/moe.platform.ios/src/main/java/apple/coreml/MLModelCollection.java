@@ -25,11 +25,15 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLModelCollection
- * <p>
+ * 
  * A collection of models managed as part of Core ML Model Deployment.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("CoreML")
@@ -61,47 +65,52 @@ public class MLModelCollection extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Request access to a model collection. If the collection is not downloaded on the device, it is requested
      * from Core ML Model Deployment.
-     * <p>
+     * 
      * When called, this method downloads the model collection if it is not already on the device. Once
      * all models are downloaded, an MLModelCollection instance is made available for use with the completion handler.
-     *
+     * 
      * @param identifier        The model collection identifier, as managed in Core ML Model Deployment.
      * @param completionHandler The completion handler, invoked with a valid MLModelCollection instance on success or
      *                          NSError on failure.
      * @return NSProgress for updates during setup and download of the model collection
      */
+    @NotNull
     @Generated
     @Selector("beginAccessingModelCollectionWithIdentifier:completionHandler:")
-    public static native NSProgress beginAccessingModelCollectionWithIdentifierCompletionHandler(String identifier,
-            @ObjCBlock(name = "call_beginAccessingModelCollectionWithIdentifierCompletionHandler") Block_beginAccessingModelCollectionWithIdentifierCompletionHandler completionHandler);
+    public static native NSProgress beginAccessingModelCollectionWithIdentifierCompletionHandler(
+            @NotNull String identifier,
+            @NotNull @ObjCBlock(name = "call_beginAccessingModelCollectionWithIdentifierCompletionHandler") Block_beginAccessingModelCollectionWithIdentifierCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_beginAccessingModelCollectionWithIdentifierCompletionHandler {
         @Generated
-        void call_beginAccessingModelCollectionWithIdentifierCompletionHandler(MLModelCollection modelCollection,
-                NSError error);
+        void call_beginAccessingModelCollectionWithIdentifierCompletionHandler(
+                @Nullable MLModelCollection modelCollection, @Nullable NSError error);
     }
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -114,6 +123,7 @@ public class MLModelCollection extends NSObject {
      * The identifier for the currently downloaded deployment, corresponding to a recent deployment on the Core ML Model
      * Deployment dashboard.
      */
+    @NotNull
     @Generated
     @Selector("deploymentID")
     public native String deploymentID();
@@ -125,28 +135,29 @@ public class MLModelCollection extends NSObject {
     /**
      * End access to a model collection. This informs the system you have finished accessing the models within the
      * collection.
-     * <p>
+     * 
      * Call this method as soon as you have finished using the models in this collection.
-     *
+     * 
      * @param identifier        The model collection identifier, as managed in Core ML Model Deployment.
      * @param completionHandler The completion handler, invoked with YES on success or NSError on failure.
      */
     @Generated
     @Selector("endAccessingModelCollectionWithIdentifier:completionHandler:")
-    public static native void endAccessingModelCollectionWithIdentifierCompletionHandler(String identifier,
-            @ObjCBlock(name = "call_endAccessingModelCollectionWithIdentifierCompletionHandler") Block_endAccessingModelCollectionWithIdentifierCompletionHandler completionHandler);
+    public static native void endAccessingModelCollectionWithIdentifierCompletionHandler(@NotNull String identifier,
+            @NotNull @ObjCBlock(name = "call_endAccessingModelCollectionWithIdentifierCompletionHandler") Block_endAccessingModelCollectionWithIdentifierCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_endAccessingModelCollectionWithIdentifierCompletionHandler {
         @Generated
-        void call_endAccessingModelCollectionWithIdentifierCompletionHandler(boolean success, NSError error);
+        void call_endAccessingModelCollectionWithIdentifierCompletionHandler(boolean success, @Nullable NSError error);
     }
 
     /**
      * Information about the models downloaded in the collection, or an empty dictionary if the collection has not been
      * downloaded.
      */
+    @NotNull
     @Generated
     @Selector("entries")
     public native NSDictionary<String, ? extends MLModelCollectionEntry> entries();
@@ -160,6 +171,7 @@ public class MLModelCollection extends NSObject {
      * The identifier of the model collection you want to access, as configured in the Core ML Model Deployment
      * dashboard.
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -185,9 +197,10 @@ public class MLModelCollection extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

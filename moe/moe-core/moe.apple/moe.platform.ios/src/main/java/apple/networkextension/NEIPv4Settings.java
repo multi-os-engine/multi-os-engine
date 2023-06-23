@@ -42,13 +42,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEIPv4Settings
- * <p>
+ * 
  * The NEIPv4Settings class declares the programmatic interface for an object that contains IPv4 settings.
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -80,22 +84,25 @@ public class NEIPv4Settings extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +137,10 @@ public class NEIPv4Settings extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,40 +174,50 @@ public class NEIPv4Settings extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * [@property] addresses
-     * <p>
+     * 
      * An array of IPv4 addresses represented as dotted decimal strings. These addresses will be set on the virtual
      * interface used by the VPN tunnel.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("addresses")
     public native NSArray<String> addresses();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] excludedRoutes
-     * <p>
+     * 
      * An array of NEIPv4Route objects. Traffic matching these routes will be routed through the current primary
      * physical interface of the device.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("excludedRoutes")
     public native NSArray<? extends NEIPv4Route> excludedRoutes();
 
     /**
      * [@property] includedRoutes
-     * <p>
+     * 
      * An array of NEIPv4Route objects. Traffic matching these routes will be routed through the virtual interface used
      * by the VPN tunnel.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("includedRoutes")
     public native NSArray<? extends NEIPv4Route> includedRoutes();
@@ -210,47 +228,57 @@ public class NEIPv4Settings extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * initWithAddresses:subnetMasks:
-     * <p>
+     * 
      * Initialize a newly-allocated NEIPv4Settings object.
-     *
+     * 
      * @param addresses   An array of IPv4 addresses represented as dotted decimal strings.
      * @param subnetMasks An array of IPv4 subnet masks represented as dotted decimal strings.
      * @return The initialized object.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("initWithAddresses:subnetMasks:")
-    public native NEIPv4Settings initWithAddressesSubnetMasks(NSArray<String> addresses, NSArray<String> subnetMasks);
+    public native NEIPv4Settings initWithAddressesSubnetMasks(@NotNull NSArray<String> addresses,
+            @NotNull NSArray<String> subnetMasks);
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEIPv4Settings initWithCoder(NSCoder coder);
+    public native NEIPv4Settings initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] excludedRoutes
-     * <p>
+     * 
      * An array of NEIPv4Route objects. Traffic matching these routes will be routed through the current primary
      * physical interface of the device.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setExcludedRoutes:")
-    public native void setExcludedRoutes(NSArray<? extends NEIPv4Route> value);
+    public native void setExcludedRoutes(@Nullable NSArray<? extends NEIPv4Route> value);
 
     /**
      * [@property] includedRoutes
-     * <p>
+     * 
      * An array of NEIPv4Route objects. Traffic matching these routes will be routed through the virtual interface used
      * by the VPN tunnel.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setIncludedRoutes:")
-    public native void setIncludedRoutes(NSArray<? extends NEIPv4Route> value);
+    public native void setIncludedRoutes(@Nullable NSArray<? extends NEIPv4Route> value);
 
     /**
      * [@property] subnetMasks
-     * <p>
+     * 
      * An array of IPv4 subnet masks represented as dotted decimal strings. These subnet masks will be set along with
      * their corresponding addresses from the addresses array on the virtual interface used by the VPN tunnel.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("subnetMasks")
     public native NSArray<String> subnetMasks();

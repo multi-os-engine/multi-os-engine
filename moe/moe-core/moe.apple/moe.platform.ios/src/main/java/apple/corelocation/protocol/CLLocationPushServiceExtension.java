@@ -9,7 +9,11 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("CoreLocation")
 @Runtime(ObjCRuntime.class)
@@ -20,8 +24,8 @@ public interface CLLocationPushServiceExtension {
      */
     @Generated
     @Selector("didReceiveLocationPushPayload:completion:")
-    void didReceiveLocationPushPayloadCompletion(NSDictionary<String, ?> payload,
-            @ObjCBlock(name = "call_didReceiveLocationPushPayloadCompletion") Block_didReceiveLocationPushPayloadCompletion completion);
+    void didReceiveLocationPushPayloadCompletion(@NotNull NSDictionary<String, ?> payload,
+            @NotNull @ObjCBlock(name = "call_didReceiveLocationPushPayloadCompletion") Block_didReceiveLocationPushPayloadCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated

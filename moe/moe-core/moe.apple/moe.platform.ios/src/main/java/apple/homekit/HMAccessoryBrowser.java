@@ -39,10 +39,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This class is used to discover new accessories in the home
  * that have never been paired with and therefore not part of the home.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HomeKit")
@@ -74,22 +78,25 @@ public class HMAccessoryBrowser extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +131,10 @@ public class HMAccessoryBrowser extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,6 +165,7 @@ public class HMAccessoryBrowser extends NSObject {
     /**
      * Delegate that receives updates on the state of the accessories discovered.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -167,6 +176,7 @@ public class HMAccessoryBrowser extends NSObject {
      * accessories that were discovered as part of a search session.
      * This array is not updated when a search session is not in progress.
      */
+    @NotNull
     @Generated
     @Selector("discoveredAccessories")
     public native NSArray<? extends HMAccessory> discoveredAccessories();
@@ -180,13 +190,13 @@ public class HMAccessoryBrowser extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) HMAccessoryBrowserDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) HMAccessoryBrowserDelegate value);
 
     /**
      * Delegate that receives updates on the state of the accessories discovered.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) HMAccessoryBrowserDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) HMAccessoryBrowserDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -199,7 +209,7 @@ public class HMAccessoryBrowser extends NSObject {
 
     /**
      * Starts searching for accessories that are not associated to any home.
-     * <p>
+     * 
      * If any accessories are discovered, updates are sent to the delegate.
      * This will scan for the following types of accessories:
      * Accessories supporting HomeKit Wireless Accessory Configuration profile
@@ -216,7 +226,7 @@ public class HMAccessoryBrowser extends NSObject {
 
     /**
      * Stops searching for new accessories.
-     * <p>
+     * 
      * After this method is called, updates will not be sent to the delegate
      * if new accessories are found or removed. Scanning may continue for system
      * reasons or if other delegates are still in active searching sessions.

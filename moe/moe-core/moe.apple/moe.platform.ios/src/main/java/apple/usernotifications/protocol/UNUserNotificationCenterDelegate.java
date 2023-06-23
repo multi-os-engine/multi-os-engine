@@ -28,7 +28,12 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("UserNotifications")
 @Runtime(ObjCRuntime.class)
@@ -38,13 +43,15 @@ public interface UNUserNotificationCenterDelegate {
      * The method will be called on the delegate when the user responded to the notification by opening the application,
      * dismissing the notification or choosing a UNNotificationAction. The delegate must be set before the application
      * returns from application:didFinishLaunchingWithOptions:.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
     @Selector("userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:")
     default void userNotificationCenterDidReceiveNotificationResponseWithCompletionHandler(
-            UNUserNotificationCenter center, UNNotificationResponse response,
-            @ObjCBlock(name = "call_userNotificationCenterDidReceiveNotificationResponseWithCompletionHandler") Block_userNotificationCenterDidReceiveNotificationResponseWithCompletionHandler completionHandler) {
+            @NotNull UNUserNotificationCenter center, @NotNull UNNotificationResponse response,
+            @NotNull @ObjCBlock(name = "call_userNotificationCenterDidReceiveNotificationResponseWithCompletionHandler") Block_userNotificationCenterDidReceiveNotificationResponseWithCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -54,13 +61,15 @@ public interface UNUserNotificationCenterDelegate {
      * application can choose to have the notification presented as a sound, badge, alert and/or in the notification
      * list. This decision should be based on whether the information in the notification is otherwise visible to the
      * user.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
     @Selector("userNotificationCenter:willPresentNotification:withCompletionHandler:")
-    default void userNotificationCenterWillPresentNotificationWithCompletionHandler(UNUserNotificationCenter center,
-            UNNotification notification,
-            @ObjCBlock(name = "call_userNotificationCenterWillPresentNotificationWithCompletionHandler") Block_userNotificationCenterWillPresentNotificationWithCompletionHandler completionHandler) {
+    default void userNotificationCenterWillPresentNotificationWithCompletionHandler(
+            @NotNull UNUserNotificationCenter center, @NotNull UNNotification notification,
+            @NotNull @ObjCBlock(name = "call_userNotificationCenterWillPresentNotificationWithCompletionHandler") Block_userNotificationCenterWillPresentNotificationWithCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -83,12 +92,14 @@ public interface UNUserNotificationCenterDelegate {
      * view in-app notification settings. Add UNAuthorizationOptionProvidesAppNotificationSettings as an option in
      * requestAuthorizationWithOptions:completionHandler: to add a button to inline notification settings view and the
      * notification settings view in Settings. The notification will be nil when opened from Settings.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @IsOptional
     @Selector("userNotificationCenter:openSettingsForNotification:")
-    default void userNotificationCenterOpenSettingsForNotification(UNUserNotificationCenter center,
-            UNNotification notification) {
+    default void userNotificationCenterOpenSettingsForNotification(@NotNull UNUserNotificationCenter center,
+            @Nullable UNNotification notification) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

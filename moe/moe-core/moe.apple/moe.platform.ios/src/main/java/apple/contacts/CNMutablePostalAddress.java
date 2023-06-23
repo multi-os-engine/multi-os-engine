@@ -39,13 +39,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A mutable value object representing a postal address.
- * <p>
+ * 
  * CNMutablePostalAddress is not thread safe.
- * <p>
+ * 
  * [@note] To remove properties when saving a mutable postal address, set string properties to empty values.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -77,22 +81,25 @@ public class CNMutablePostalAddress extends CNPostalAddress {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,13 +134,15 @@ public class CNMutablePostalAddress extends CNPostalAddress {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("localizedStringForKey:")
-    public static native String localizedStringForKey(String key);
+    public static native String localizedStringForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,14 +174,17 @@ public class CNMutablePostalAddress extends CNPostalAddress {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("ISOCountryCode")
     public native String ISOCountryCode();
 
+    @NotNull
     @Generated
     @Selector("city")
     public native String city();
 
+    @NotNull
     @Generated
     @Selector("country")
     public native String country();
@@ -183,39 +195,41 @@ public class CNMutablePostalAddress extends CNPostalAddress {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNMutablePostalAddress initWithCoder(NSCoder coder);
+    public native CNMutablePostalAddress initWithCoder(@NotNull NSCoder coder);
 
+    @NotNull
     @Generated
     @Selector("postalCode")
     public native String postalCode();
 
     @Generated
     @Selector("setCity:")
-    public native void setCity(String value);
+    public native void setCity(@NotNull String value);
 
     @Generated
     @Selector("setCountry:")
-    public native void setCountry(String value);
+    public native void setCountry(@NotNull String value);
 
     @Generated
     @Selector("setISOCountryCode:")
-    public native void setISOCountryCode(String value);
+    public native void setISOCountryCode(@NotNull String value);
 
     @Generated
     @Selector("setPostalCode:")
-    public native void setPostalCode(String value);
+    public native void setPostalCode(@NotNull String value);
 
     @Generated
     @Selector("setState:")
-    public native void setState(String value);
+    public native void setState(@NotNull String value);
 
     /**
      * multi-street address is delimited with carriage returns “\n”
      */
     @Generated
     @Selector("setStreet:")
-    public native void setStreet(String value);
+    public native void setStreet(@NotNull String value);
 
+    @NotNull
     @Generated
     @Selector("state")
     public native String state();
@@ -223,6 +237,7 @@ public class CNMutablePostalAddress extends CNPostalAddress {
     /**
      * multi-street address is delimited with carriage returns “\n”
      */
+    @NotNull
     @Generated
     @Selector("street")
     public native String street();
@@ -233,18 +248,32 @@ public class CNMutablePostalAddress extends CNPostalAddress {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("setSubAdministrativeArea:")
-    public native void setSubAdministrativeArea(String value);
+    public native void setSubAdministrativeArea(@NotNull String value);
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("setSubLocality:")
-    public native void setSubLocality(String value);
+    public native void setSubLocality(@NotNull String value);
 
+    /**
+     * API-Since: 10.3
+     */
+    @NotNull
     @Generated
     @Selector("subAdministrativeArea")
     public native String subAdministrativeArea();
 
+    /**
+     * API-Since: 10.3
+     */
+    @NotNull
     @Generated
     @Selector("subLocality")
     public native String subLocality();

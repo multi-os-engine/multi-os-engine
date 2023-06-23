@@ -24,7 +24,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -56,8 +61,9 @@ public class UICollectionViewDiffableDataSourceReorderingHandlers<_SectionType, 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("canReorderItemHandler")
     @ObjCBlock(name = "call_canReorderItemHandler_ret")
@@ -67,32 +73,36 @@ public class UICollectionViewDiffableDataSourceReorderingHandlers<_SectionType, 
     @Generated
     public interface Block_canReorderItemHandler_ret {
         @Generated
-        boolean call_canReorderItemHandler_ret(@Mapped(ObjCObjectMapper.class) Object arg0);
+        boolean call_canReorderItemHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -102,6 +112,7 @@ public class UICollectionViewDiffableDataSourceReorderingHandlers<_SectionType, 
     @Selector("description")
     public static native String description_static();
 
+    @Nullable
     @Generated
     @Selector("didReorderHandler")
     @ObjCBlock(name = "call_didReorderHandler_ret")
@@ -111,7 +122,7 @@ public class UICollectionViewDiffableDataSourceReorderingHandlers<_SectionType, 
     @Generated
     public interface Block_didReorderHandler_ret {
         @Generated
-        void call_didReorderHandler_ret(NSDiffableDataSourceTransaction<Object, Object> arg0);
+        void call_didReorderHandler_ret(@NotNull NSDiffableDataSourceTransaction<Object, Object> arg0);
     }
 
     @Generated
@@ -140,9 +151,10 @@ public class UICollectionViewDiffableDataSourceReorderingHandlers<_SectionType, 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -160,25 +172,25 @@ public class UICollectionViewDiffableDataSourceReorderingHandlers<_SectionType, 
     @Generated
     @Selector("setCanReorderItemHandler:")
     public native void setCanReorderItemHandler(
-            @ObjCBlock(name = "call_setCanReorderItemHandler") Block_setCanReorderItemHandler value);
+            @Nullable @ObjCBlock(name = "call_setCanReorderItemHandler") Block_setCanReorderItemHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setCanReorderItemHandler {
         @Generated
-        boolean call_setCanReorderItemHandler(@Mapped(ObjCObjectMapper.class) Object arg0);
+        boolean call_setCanReorderItemHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
     @Generated
     @Selector("setDidReorderHandler:")
     public native void setDidReorderHandler(
-            @ObjCBlock(name = "call_setDidReorderHandler") Block_setDidReorderHandler value);
+            @Nullable @ObjCBlock(name = "call_setDidReorderHandler") Block_setDidReorderHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setDidReorderHandler {
         @Generated
-        void call_setDidReorderHandler(NSDiffableDataSourceTransaction<Object, Object> arg0);
+        void call_setDidReorderHandler(@NotNull NSDiffableDataSourceTransaction<Object, Object> arg0);
     }
 
     @Generated
@@ -188,13 +200,13 @@ public class UICollectionViewDiffableDataSourceReorderingHandlers<_SectionType, 
     @Generated
     @Selector("setWillReorderHandler:")
     public native void setWillReorderHandler(
-            @ObjCBlock(name = "call_setWillReorderHandler") Block_setWillReorderHandler value);
+            @Nullable @ObjCBlock(name = "call_setWillReorderHandler") Block_setWillReorderHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setWillReorderHandler {
         @Generated
-        void call_setWillReorderHandler(NSDiffableDataSourceTransaction<Object, Object> arg0);
+        void call_setWillReorderHandler(@NotNull NSDiffableDataSourceTransaction<Object, Object> arg0);
     }
 
     @Generated
@@ -206,6 +218,7 @@ public class UICollectionViewDiffableDataSourceReorderingHandlers<_SectionType, 
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("willReorderHandler")
     @ObjCBlock(name = "call_willReorderHandler_ret")
@@ -215,6 +228,6 @@ public class UICollectionViewDiffableDataSourceReorderingHandlers<_SectionType, 
     @Generated
     public interface Block_willReorderHandler_ret {
         @Generated
-        void call_willReorderHandler_ret(NSDiffableDataSourceTransaction<Object, Object> arg0);
+        void call_willReorderHandler_ret(@NotNull NSDiffableDataSourceTransaction<Object, Object> arg0);
     }
 }

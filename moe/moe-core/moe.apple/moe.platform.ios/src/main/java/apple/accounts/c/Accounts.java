@@ -39,22 +39,45 @@ public final class Accounts {
 
     /**
      * The identifiers for supported system account types are listed here:
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use Twitter SDK instead
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ACAccountTypeIdentifierTwitter();
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use Facebook SDK instead
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ACAccountTypeIdentifierFacebook();
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use Sina Weibo SDK instead
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ACAccountTypeIdentifierSinaWeibo();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use Tencent Weibo SDK instead
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -62,7 +85,12 @@ public final class Accounts {
 
     /**
      * Your Facebook App ID, as it appears on the Facebook website.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use Facebook SDK instead
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -70,7 +98,12 @@ public final class Accounts {
 
     /**
      * An array of of the permissions you're requesting.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use Facebook SDK instead
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -78,7 +111,12 @@ public final class Accounts {
 
     /**
      * Only required when posting permissions are requested.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use Facebook SDK instead
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -86,7 +124,12 @@ public final class Accounts {
 
     /**
      * Posts from your app are visible to everyone.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use Facebook SDK instead
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -94,7 +137,12 @@ public final class Accounts {
 
     /**
      * Posts are visible only to friends.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use Facebook SDK instead
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -102,7 +150,12 @@ public final class Accounts {
 
     /**
      * Posts are visible to the user only.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use Facebook SDK instead
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -110,7 +163,12 @@ public final class Accounts {
 
     /**
      * Tencent App ID
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use Tencent Weibo SDK instead
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -122,12 +180,20 @@ public final class Accounts {
      * You may need to deal with accounts being removed by an external process while you are using them.
      * Note: ensure when you add an observer for this notification, you do so specifying this object specifically.
      * Otherwise, you will receive n notifications, one per active ACAccountStore instance in your process.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Public notification deprecated. Internal clients, see private header for replacement
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ACAccountStoreDidChangeNotification();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

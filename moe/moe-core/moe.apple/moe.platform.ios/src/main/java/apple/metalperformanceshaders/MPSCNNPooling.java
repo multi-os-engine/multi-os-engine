@@ -40,14 +40,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNPooling
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * Pooling is a form of non-linear sub-sampling. Pooling partitions the input image into a set of
  * rectangles (overlapping or non-overlapping) and, for each such sub-region, outputs a value.
  * The pooling operation is used in computer vision to reduce the dimensionality of intermediate representations.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -79,22 +83,25 @@ public class MPSCNNPooling extends MPSCNNKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +136,10 @@ public class MPSCNNPooling extends MPSCNNKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,11 +173,11 @@ public class MPSCNNPooling extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNPooling initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNPooling initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize a pooling filter
-     *
+     * 
      * @param device       The device the filter will run on
      * @param kernelWidth  The width of the kernel. Can be an odd or even value.
      * @param kernelHeight The height of the kernel. Can be an odd or even value.
@@ -177,12 +185,13 @@ public class MPSCNNPooling extends MPSCNNKernel {
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:")
-    public native MPSCNNPooling initWithDeviceKernelWidthKernelHeight(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @NUInt long kernelWidth, @NUInt long kernelHeight);
+    public native MPSCNNPooling initWithDeviceKernelWidthKernelHeight(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth,
+            @NUInt long kernelHeight);
 
     /**
      * Initialize a pooling filter
-     *
+     * 
      * @param device          The device the filter will run on
      * @param kernelWidth     The width of the kernel. Can be an odd or even value.
      * @param kernelHeight    The height of the kernel. Can be an odd or even value.
@@ -193,25 +202,28 @@ public class MPSCNNPooling extends MPSCNNKernel {
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:")
     public native MPSCNNPooling initWithDeviceKernelWidthKernelHeightStrideInPixelsXStrideInPixelsY(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight,
-            @NUInt long strideInPixelsX, @NUInt long strideInPixelsY);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth,
+            @NUInt long kernelHeight, @NUInt long strideInPixelsX, @NUInt long strideInPixelsY);
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNPooling initWithCoder(NSCoder aDecoder);
+    public native MPSCNNPooling initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPooling
      * @param device   The MTLDevice on which to make the MPSCNNPooling
      * @return A new MPSCNNPooling object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNPooling initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNPooling initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("supportsSecureCoding")

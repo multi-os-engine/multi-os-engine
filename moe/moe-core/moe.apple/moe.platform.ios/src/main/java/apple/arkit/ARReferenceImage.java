@@ -2,7 +2,6 @@ package apple.arkit;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGImageRef;
-import apple.coregraphics.struct.CGSize;
 import apple.corevideo.opaque.CVBufferRef;
 import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
@@ -29,9 +28,14 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A reference image to be detected in the scene.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("ARKit")
@@ -63,22 +67,25 @@ public class ARReferenceImage extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,27 +109,27 @@ public class ARReferenceImage extends NSObject {
 
     /**
      * Creates a new reference image.
-     *
+     * 
      * @param image         The reference image as CGImage.
      * @param orientation   The image orientation.
      * @param physicalWidth The width in meters of the physical object.
      */
     @Generated
     @Selector("initWithCGImage:orientation:physicalWidth:")
-    public native ARReferenceImage initWithCGImageOrientationPhysicalWidth(CGImageRef image, int orientation,
+    public native ARReferenceImage initWithCGImageOrientationPhysicalWidth(@NotNull CGImageRef image, int orientation,
             @NFloat double physicalWidth);
 
     /**
      * Creates a new reference image.
-     *
+     * 
      * @param pixelBuffer   The reference image as CVPixelBuffer.
      * @param physicalWidth The width in meters of the physical object.
      * @param orientation   The image orientation.
      */
     @Generated
     @Selector("initWithPixelBuffer:orientation:physicalWidth:")
-    public native ARReferenceImage initWithPixelBufferOrientationPhysicalWidth(CVBufferRef pixelBuffer, int orientation,
-            @NFloat double physicalWidth);
+    public native ARReferenceImage initWithPixelBufferOrientationPhysicalWidth(@NotNull CVBufferRef pixelBuffer,
+            int orientation, @NFloat double physicalWidth);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -141,13 +148,15 @@ public class ARReferenceImage extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * An optional name used to identify the image.
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -167,15 +176,16 @@ public class ARReferenceImage extends NSObject {
 
     /**
      * Returns the set of ARReferenceImages in the specified resource group and bundle.
-     *
+     * 
      * @param name   The name of the resource group.
      * @param bundle The bundle containing the image file or asset catalog. Specify nil to search the app’s main bundle.
      * @return The set of reference images or nil on error.
      */
+    @Nullable
     @Generated
     @Selector("referenceImagesInGroupNamed:bundle:")
-    public static native NSSet<? extends ARReferenceImage> referenceImagesInGroupNamedBundle(String name,
-            NSBundle bundle);
+    public static native NSSet<? extends ARReferenceImage> referenceImagesInGroupNamedBundle(@NotNull String name,
+            @Nullable NSBundle bundle);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -187,11 +197,14 @@ public class ARReferenceImage extends NSObject {
 
     /**
      * The AR resource group name for this image.
-     * <p>
+     * 
      * If this image was loaded via an AR resource group in the Xcode asset catalogue this property will have the name
      * of the resource group,
      * else be set to nil.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("resourceGroupName")
     public native String resourceGroupName();
@@ -201,7 +214,7 @@ public class ARReferenceImage extends NSObject {
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     @Generated
     @Selector("setVersion:")
@@ -213,26 +226,28 @@ public class ARReferenceImage extends NSObject {
 
     /**
      * Validate if this image can be used for image detection or tracking.
-     * <p>
+     * 
      * When loading reference images from the asset catalog this verification is not needed as the same verification
      * happens
      * at compile time.
-     *
+     * 
      * @param completionHandler Completion handler invoked when validation is done. The completion handler takes the
      *                          following parameters:
      *                          error - An error that indicates why the image is not suitable for tracking, or nil if no
      *                          error occured.
+     * 
+     *                          API-Since: 13.0
      */
     @Generated
     @Selector("validateWithCompletionHandler:")
     public native void validateWithCompletionHandler(
-            @ObjCBlock(name = "call_validateWithCompletionHandler") Block_validateWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_validateWithCompletionHandler") Block_validateWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_validateWithCompletionHandler {
         @Generated
-        void call_validateWithCompletionHandler(NSError error);
+        void call_validateWithCompletionHandler(@Nullable NSError error);
     }
 
     @Generated

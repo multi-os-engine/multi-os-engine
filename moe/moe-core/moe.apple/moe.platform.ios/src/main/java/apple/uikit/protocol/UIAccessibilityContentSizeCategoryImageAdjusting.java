@@ -10,6 +10,8 @@ import org.moe.natj.objc.ann.Selector;
 /**
  * These should be used in conjunction with the "Preserve vector data" checkbox for an asset catalog asset, to allow
  * smooth scaling of symbolic glyphs.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("UIKit")

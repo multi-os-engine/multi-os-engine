@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("VideoSubscriberAccount")
@@ -39,7 +40,10 @@ public final class VideoSubscriberAccount {
 
     /**
      * The domain of all errors returned by VideoSubscriberAccount framework.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -48,7 +52,10 @@ public final class VideoSubscriberAccount {
     /**
      * A key that can be used to obtain the subscription provider's SAML response string from an error user info
      * dictionary.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -57,7 +64,10 @@ public final class VideoSubscriberAccount {
     /**
      * A key that can be used to obtain the subscription provider's SAML status code string from an error user info
      * dictionary.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -65,7 +75,10 @@ public final class VideoSubscriberAccount {
 
     /**
      * A key that can be used to obtain the account provider's response object from an error user info dictionary.
+     * 
+     * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -74,7 +87,10 @@ public final class VideoSubscriberAccount {
     /**
      * A key that can be used to obtain the identifier string of the user's unsupported subscription provider from an
      * error user info dictionary.
+     * 
+     * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -82,7 +98,10 @@ public final class VideoSubscriberAccount {
 
     /**
      * A boolean indicating whether the user may be prompted to grant access.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -90,7 +109,10 @@ public final class VideoSubscriberAccount {
 
     /**
      * The authentication scheme for responses that use the SAML protocol.
+     * 
+     * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -98,7 +120,10 @@ public final class VideoSubscriberAccount {
 
     /**
      * The URL string used to deep link to the system TV Provider settings.
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -106,7 +131,10 @@ public final class VideoSubscriberAccount {
 
     /**
      * The identifier for responses that use any authentication protocol.
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

@@ -25,92 +25,94 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An acceleration structure built over instances of other acceleration structures
- * <p>
+ * 
  * Instancing can be used to reduce memory usage in scenes that contain many copies
  * of the same object(s) or to combine multiple acceleration structures such as a static and
  * dynamic acceleration structure into a two-level instance hierarchy.
- * <p>
+ * 
  * The typical pattern for creating an instance acceleration structure is as follows. First,
  * create individual bottom-level acceleration structures. Then assign these acceleration
  * structures to the accelerationStructures property of an instance acceleration structure.
- * <p>
+ * 
  * All of the acceleration structures in the instance hierarchy must share the same
  * MPSAccelerationStructureGroup. Furthermore, all of the bottom-level acceleration structures
  * must share the same vertex buffer, index buffer, etc. although they may have different offsets
  * within those buffers.
- * <p>
+ * 
  * [@code]
  * MPSAccelerationStructureGroup *group = nil;
  * group = [[MPSAccelerationStructureGroup alloc] initWithDevice:device];
- * <p>
+ * 
  * MPSInstanceAccelerationStructure *instanceAccel = nil;
  * instanceAccel = [[MPSInstanceAccelerationStructure alloc] initWithGroup:group];
- * <p>
+ * 
  * NSMutableArray *accelerationStructures = [NSMutableArray array];
  * instanceAccel.accelerationStructures = accelerationStructures;
- * <p>
+ * 
  * instanceAccel.instanceCount = instanceCount;
- * <p>
+ * 
  * for (ObjectType *objectType in objectTypes) {
  * MPSTriangleAccelerationStructure *triAccel = nil;
  * triAccel = [[MPSTriangleAccelerationStructure alloc] initWithGroup:group];
- * <p>
+ * 
  * triAccel.vertexBuffer = objectType.vertexBuffer;
  * triAccel.vertexBufferOffset = objectType.vertexBufferOffset;
  * triAccel.triangleCount = objectType.triangleCount;
- * <p>
+ * 
  * [triAccel rebuild];
- * <p>
+ * 
  * [accelerationStructures addObject:triAccel];
  * }
  * [@endcode]
- * <p>
+ * 
  * Next, create a buffer containing the acceleration structure index for each instance, and
  * another acceleration structure containing the transformation matrix for each instance:
- * <p>
+ * 
  * [@code]
  * NSUInteger instanceBufferLength = sizeof(uint32_t) * instanceCount;
- * <p>
+ * 
  * id <MTLBuffer> instanceBuffer =
  * [device newBufferWithLength:instanceBufferLength
  * options:MTLResourceStorageModeManaged];
- * <p>
+ * 
  * memcpy(instanceBuffer.contents, instances,
  * instanceBufferLength);
  * [instanceBuffer
  * didModifyRange:NSMakeRange(0, instanceBufferLength)];
- * <p>
+ * 
  * instanceAccel.instanceBuffer = instanceBuffer;
- * <p>
+ * 
  * // Similar for transformation matrix buffer
  * [@endcode]
- * <p>
+ * 
  * Finally, rebuild the instance acceleration structure:
- * <p>
+ * 
  * [@code]
  * [instanceAccel rebuild];
  * [@endcode]
- * <p>
+ * 
  * Refitting and Rebuilding Bottom-Level Acceleration Structures: when a bottom level acceleration
  * structure is rebuild or refit, its' bounding box may change. Therefore, the instance
  * acceleration structure also needs to be rebuilt or refit.
- * <p>
+ * 
  * Copying and Serializing Instance Acceleration Structures: When an instance acceleration
  * structure is copied or serialized, the bottom level acceleration structures are not copied or
  * serialized. These must be copied or serialized along with the instance acceleration structure
  * and assigned to the new instance acceleration structure. This also applies to buffer properties
  * such as the instance buffer, transformation buffer, etc.
- * <p>
+ * 
  * Performance Guidelines:
- * <p>
+ * 
  * - Use instancing to reduce memory usage: if there are many copies of the same object(s) in
  * a scene, using instances of the same object can reduce memory usage and acceleration
  * structure build time. Rebuilding or refitting the top level acceleration structure can
  * also be much faster than rebuilding a large single level acceleration structure.
- * <p>
+ * 
  * - Consider flattening your instance hierarchy into a single acceleration structure if the
  * increased memory usage and acceleration structure build time are not a concern.
  * Intersecting a two level acceleration structure can have a significant performance cost so
@@ -119,10 +121,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * interactive scene editing and preview and flattening the instance hierarchy for the final
  * render. For smaller scenes, it may also be sufficient to refit a flattened acceleration
  * structure rather than rebuilding an instance hierarchy.
- * <p>
+ * 
  * - If there is only a single object in the scene, intersect its acceleration structure
  * directly instead of using an instance hierarchy.
- * <p>
+ * 
  * - Consider dividing objects into static and dynamic acceleration structures. If dynamic
  * objects require the acceleration structure to be rebuilt frequently, create a high quality
  * static acceleration structure and a lower quality but faster to build dynamic acceleration
@@ -130,8 +132,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * acceleration structure. Use MPSTransformTypeIdentity to reduce the overhead of this
  * technique. Whether this technique is more efficient than rebuilding the entire
  * acceleration structure depends on the scene.
- * <p>
+ * 
  * See MPSAccelerationStructure for more information
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -156,6 +160,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
      * structure group. If a polygon acceleration structure is rebuilt or refit, the instance
      * acceleration structure must subsequently be rebuilt or refit.
      */
+    @Nullable
     @Generated
     @Selector("accelerationStructures")
     public native NSArray<? extends MPSPolygonAccelerationStructure> accelerationStructures();
@@ -176,22 +181,25 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -215,30 +223,32 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSInstanceAccelerationStructure initWithCoder(NSCoder aDecoder);
+    public native MPSInstanceAccelerationStructure initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSInstanceAccelerationStructure initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSInstanceAccelerationStructure initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithCoder:group:")
-    public native MPSInstanceAccelerationStructure initWithCoderGroup(NSCoder aDecoder,
-            MPSAccelerationStructureGroup group);
+    public native MPSInstanceAccelerationStructure initWithCoderGroup(@NotNull NSCoder aDecoder,
+            @NotNull MPSAccelerationStructureGroup group);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSInstanceAccelerationStructure initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSInstanceAccelerationStructure initWithDevice(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithGroup:")
-    public native MPSInstanceAccelerationStructure initWithGroup(MPSAccelerationStructureGroup group);
+    public native MPSInstanceAccelerationStructure initWithGroup(@NotNull MPSAccelerationStructureGroup group);
 
     /**
      * Buffer containing the 32 bit unsigned integer index into the acceleration structure array
      * for each instance
      */
+    @Nullable
     @Generated
     @Selector("instanceBuffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -279,13 +289,15 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Mask buffer containing one uint32_t mask per instance. May be nil.
      */
+    @Nullable
     @Generated
     @Selector("maskBuffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -323,7 +335,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
      */
     @Generated
     @Selector("setAccelerationStructures:")
-    public native void setAccelerationStructures(NSArray<? extends MPSPolygonAccelerationStructure> value);
+    public native void setAccelerationStructures(@Nullable NSArray<? extends MPSPolygonAccelerationStructure> value);
 
     /**
      * Buffer containing the 32 bit unsigned integer index into the acceleration structure array
@@ -331,7 +343,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
      */
     @Generated
     @Selector("setInstanceBuffer:")
-    public native void setInstanceBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+    public native void setInstanceBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
      * Offset, in bytes, into the instance buffer. Defaults to 0 bytes. Must be aligned to 4
@@ -354,7 +366,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
      */
     @Generated
     @Selector("setMaskBuffer:")
-    public native void setMaskBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+    public native void setMaskBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
      * Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
@@ -368,7 +380,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
      */
     @Generated
     @Selector("setTransformBuffer:")
-    public native void setTransformBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+    public native void setTransformBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
      * Offset, in bytes, into the transform buffer. Defaults to 0 bytes. Must be aligned to the
@@ -407,6 +419,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     /**
      * Buffer containing one column major matrix_float4x4 transformation matrix per instance
      */
+    @Nullable
     @Generated
     @Selector("transformBuffer")
     @MappedReturn(ObjCObjectMapper.class)

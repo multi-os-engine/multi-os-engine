@@ -21,16 +21,18 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * virtual base class for MPSCNNNeuron nodes
- * <p>
+ * 
  * This is a virtual base class only. Please create a
  * subclass using +newNeuronNodeWithSouce:descriptor or
  * by making one of the subclasses directly. Better yet, skip
  * the node entirely and specify the neuron function directly in
  * your MPSCNNConvolutionDataSource.descriptor.neuronDescriptor.
- * <p>
+ * 
  * MPSCNNNeuronNodes are provided as a representational convenience.
  * However, you are usually better off incorporating your neuron
  * into the MPSCNNConvolutionDataSource when possible. The MPSNNGraph
@@ -39,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * if the neuron pass has a custom padding method or more than one
  * node reads from the convolution result. The graph -debugDescription
  * should reveal what happened.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -77,7 +81,7 @@ public class MPSCNNNeuronNode extends MPSNNFilterNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * filter parameter b
@@ -88,18 +92,21 @@ public class MPSCNNNeuronNode extends MPSNNFilterNode {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -138,9 +145,10 @@ public class MPSCNNNeuronNode extends MPSNNFilterNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -177,9 +185,11 @@ public class MPSCNNNeuronNode extends MPSNNFilterNode {
 
     /**
      * Create a neuron node of the appropriate type with a MPSNNNeuronDescriptor
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("nodeWithSource:descriptor:")
-    public static native MPSCNNNeuronNode nodeWithSourceDescriptor(MPSNNImageNode sourceNode,
-            MPSNNNeuronDescriptor descriptor);
+    public static native MPSCNNNeuronNode nodeWithSourceDescriptor(@NotNull MPSNNImageNode sourceNode,
+            @NotNull MPSNNNeuronDescriptor descriptor);
 }

@@ -29,7 +29,12 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -40,8 +45,8 @@ public interface PKAddPaymentPassViewControllerDelegate {
      */
     @Generated
     @Selector("addPaymentPassViewController:didFinishAddingPaymentPass:error:")
-    void addPaymentPassViewControllerDidFinishAddingPaymentPassError(PKAddPaymentPassViewController controller,
-            PKPaymentPass pass, NSError error);
+    void addPaymentPassViewControllerDidFinishAddingPaymentPassError(@NotNull PKAddPaymentPassViewController controller,
+            @Nullable PKPaymentPass pass, @Nullable NSError error);
 
     /**
      * Certificates is an array of NSData, each a DER encoded X.509 certificate, with the leaf first and root last.
@@ -51,15 +56,15 @@ public interface PKAddPaymentPassViewControllerDelegate {
     @Generated
     @Selector("addPaymentPassViewController:generateRequestWithCertificateChain:nonce:nonceSignature:completionHandler:")
     void addPaymentPassViewControllerGenerateRequestWithCertificateChainNonceNonceSignatureCompletionHandler(
-            PKAddPaymentPassViewController controller, NSArray<? extends NSData> certificates, NSData nonce,
-            NSData nonceSignature,
-            @ObjCBlock(name = "call_addPaymentPassViewControllerGenerateRequestWithCertificateChainNonceNonceSignatureCompletionHandler") Block_addPaymentPassViewControllerGenerateRequestWithCertificateChainNonceNonceSignatureCompletionHandler handler);
+            @NotNull PKAddPaymentPassViewController controller, @NotNull NSArray<? extends NSData> certificates,
+            @NotNull NSData nonce, @NotNull NSData nonceSignature,
+            @NotNull @ObjCBlock(name = "call_addPaymentPassViewControllerGenerateRequestWithCertificateChainNonceNonceSignatureCompletionHandler") Block_addPaymentPassViewControllerGenerateRequestWithCertificateChainNonceNonceSignatureCompletionHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addPaymentPassViewControllerGenerateRequestWithCertificateChainNonceNonceSignatureCompletionHandler {
         @Generated
         void call_addPaymentPassViewControllerGenerateRequestWithCertificateChainNonceNonceSignatureCompletionHandler(
-                PKAddPaymentPassRequest request);
+                @NotNull PKAddPaymentPassRequest request);
     }
 }

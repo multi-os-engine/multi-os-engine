@@ -17,8 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -44,7 +42,17 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 3.2
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: UIPopoverController is deprecated. Popovers are now implemented as UIViewController
+ * presentations. Use a modal presentation style of UIModalPresentationPopover and UIPopoverPresentationController.
+ */
 @Deprecated
 @Generated
 @Library("UIKit")
@@ -76,22 +84,25 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +137,10 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,7 +170,10 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
 
     /**
      * Set popover background color. Set to nil to use default background color. Default is nil.
+     * 
+     * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
@@ -168,10 +183,12 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
      * popover. This property can be changed while the popover is displayed to allow different view controllers in the
      * same popover session.
      */
+    @NotNull
     @Generated
     @Selector("contentViewController")
     public native UIViewController contentViewController();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -195,7 +212,7 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
      */
     @Generated
     @Selector("initWithContentViewController:")
-    public native UIPopoverController initWithContentViewController(UIViewController viewController);
+    public native UIPopoverController initWithContentViewController(@NotNull UIViewController viewController);
 
     /**
      * Returns whether the popover is visible (presented) or not.
@@ -209,6 +226,7 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
      * This property allows the specification of an array of UIView instances which the user is allowed to interact with
      * while the popover is up.
      */
+    @Nullable
     @Generated
     @Selector("passthroughViews")
     public native NSArray<? extends UIView> passthroughViews();
@@ -225,7 +243,10 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
     /**
      * Clients may customize the popover background chrome by providing a class which subclasses
      * `UIPopoverBackgroundView` and which implements the required instance and class methods on that class.
+     * 
+     * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("popoverBackgroundViewClass")
     public native Class popoverBackgroundViewClass();
@@ -245,6 +266,8 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
      * accounts for the status bar. The rectangle being inset is always expressed in terms of the current device
      * orientation; (0, 0) is always in the upper-left of the device. This may require insets to change on device
      * rotation.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("popoverLayoutMargins")
@@ -257,7 +280,7 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
      */
     @Generated
     @Selector("presentPopoverFromBarButtonItem:permittedArrowDirections:animated:")
-    public native void presentPopoverFromBarButtonItemPermittedArrowDirectionsAnimated(UIBarButtonItem item,
+    public native void presentPopoverFromBarButtonItemPermittedArrowDirectionsAnimated(@NotNull UIBarButtonItem item,
             @NUInt long arrowDirections, boolean animated);
 
     /**
@@ -267,15 +290,17 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
      */
     @Generated
     @Selector("presentPopoverFromRect:inView:permittedArrowDirections:animated:")
-    public native void presentPopoverFromRectInViewPermittedArrowDirectionsAnimated(@ByValue CGRect rect, UIView view,
-            @NUInt long arrowDirections, boolean animated);
+    public native void presentPopoverFromRectInViewPermittedArrowDirectionsAnimated(@ByValue CGRect rect,
+            @NotNull UIView view, @NUInt long arrowDirections, boolean animated);
 
     /**
      * Set popover background color. Set to nil to use default background color. Default is nil.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setBackgroundColor:")
-    public native void setBackgroundColor(UIColor value);
+    public native void setBackgroundColor(@Nullable UIColor value);
 
     /**
      * The content view controller is the `UIViewController` instance in charge of the content view of the displayed
@@ -284,18 +309,18 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
      */
     @Generated
     @Selector("setContentViewController:")
-    public native void setContentViewController(UIViewController value);
+    public native void setContentViewController(@NotNull UIViewController value);
 
     @Generated
     @Selector("setContentViewController:animated:")
-    public native void setContentViewControllerAnimated(UIViewController viewController, boolean animated);
+    public native void setContentViewControllerAnimated(@NotNull UIViewController viewController, boolean animated);
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIPopoverControllerDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UIPopoverControllerDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIPopoverControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIPopoverControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -313,15 +338,17 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
      */
     @Generated
     @Selector("setPassthroughViews:")
-    public native void setPassthroughViews(NSArray<? extends UIView> value);
+    public native void setPassthroughViews(@Nullable NSArray<? extends UIView> value);
 
     /**
      * Clients may customize the popover background chrome by providing a class which subclasses
      * `UIPopoverBackgroundView` and which implements the required instance and class methods on that class.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setPopoverBackgroundViewClass:")
-    public native void setPopoverBackgroundViewClass(Class value);
+    public native void setPopoverBackgroundViewClass(@Nullable Class value);
 
     /**
      * This property allows direction manipulation of the content size of the popover. Changing the property directly is
@@ -341,6 +368,8 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
      * accounts for the status bar. The rectangle being inset is always expressed in terms of the current device
      * orientation; (0, 0) is always in the upper-left of the device. This may require insets to change on device
      * rotation.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setPopoverLayoutMargins:")

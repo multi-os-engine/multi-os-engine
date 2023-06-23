@@ -41,11 +41,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSDataAsset represents the contents of data entries in your asset catalog.
  * Data assets are not in the same class of stored content as images, so you cannot use a data asset to get image data
  * for an image.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("UIKit")
@@ -77,22 +81,25 @@ public class NSDataAsset extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +134,10 @@ public class NSDataAsset extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,15 +165,17 @@ public class NSDataAsset extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * The data for this asset, as stored in the asset catalog
      */
+    @NotNull
     @Generated
     @Selector("data")
     public native NSData data();
@@ -179,18 +189,19 @@ public class NSDataAsset extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("initWithName:")
-    public native NSDataAsset initWithName(String name);
+    public native NSDataAsset initWithName(@NotNull String name);
 
     /**
      * Create a data asset with the given name from the given bundle. Returns nil if the asset was not found.
      */
     @Generated
     @Selector("initWithName:bundle:")
-    public native NSDataAsset initWithNameBundle(String name, NSBundle bundle);
+    public native NSDataAsset initWithNameBundle(@NotNull String name, @NotNull NSBundle bundle);
 
     /**
      * The name used to reference the data asset
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -198,6 +209,7 @@ public class NSDataAsset extends NSObject implements NSCopying {
     /**
      * The Uniform Type Identifier for this data object.
      */
+    @NotNull
     @Generated
     @Selector("typeIdentifier")
     public native String typeIdentifier();

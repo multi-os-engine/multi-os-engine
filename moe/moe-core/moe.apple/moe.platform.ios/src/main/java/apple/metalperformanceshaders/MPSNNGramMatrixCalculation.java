@@ -24,25 +24,29 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNGramMatrixCalculation
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * The MPSNNGramMatrixCalculation filter specifies a layer which computes the uncentered cross-correlation
  * values between the image planes of each feature channel of an image. If the input image batch is
  * x = x[b, y, x, c], where 'b' is batch index, 'y' and 'x' are the image coordinate and
  * 'c' is the feature channel index then this filter computes the values:
- * <p>
+ * 
  * y = y[b, 1, f, c] = alpha * sum_{x,y} x[b,y,x,f] * x[b,y,x,c], where
- * <p>
+ * 
  * 'alpha' is a scaling factor. This operation can be interpreted to be computing all combinations
  * of fully connected layers between the different image planes of the input image. The results
  * are stored in the feature channel and 'x'-coordinate indices of the output batch.
  * The operation is performed independently on different images in the batch.
- * <p>
+ * 
  * NOTE: Due to the nature of the operation this filter specifies a special padding policy
  * and hence does not support non-default offset or cliprect properties.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -74,7 +78,7 @@ public class MPSNNGramMatrixCalculation extends MPSCNNKernel {
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * Scaling factor for the output. Default: 1.0f.
      */
     @Generated
@@ -83,22 +87,25 @@ public class MPSNNGramMatrixCalculation extends MPSCNNKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,47 +129,47 @@ public class MPSNNGramMatrixCalculation extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNGramMatrixCalculation initWithCoder(NSCoder aDecoder);
+    public native MPSNNGramMatrixCalculation initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNNGramMatrixCalculation initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNGramMatrixCalculation initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initializes a MPSNNGramMatrixCalculation kernel with scaling factor alpha = 1.0f.
-     *
+     * 
      * @param device The MTLDevice on which this MPSNNGramMatrixCalculation filter will be used.
      * @return A valid MPSNNGramMatrixCalculation object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNNGramMatrixCalculation initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNGramMatrixCalculation initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initializes a MPSNNGramMatrixCalculation kernel.
-     *
+     * 
      * @param device The MTLDevice on which this MPSNNGramMatrixCalculation filter will be used.
      * @param alpha  Scaling factor for the output.
      * @return A valid MPSNNGramMatrixCalculation object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:alpha:")
-    public native MPSNNGramMatrixCalculation initWithDeviceAlpha(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            float alpha);
+    public native MPSNNGramMatrixCalculation initWithDeviceAlpha(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, float alpha);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -181,9 +188,10 @@ public class MPSNNGramMatrixCalculation extends MPSCNNKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -200,7 +208,7 @@ public class MPSNNGramMatrixCalculation extends MPSCNNKernel {
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * Scaling factor for the output. Default: 1.0f.
      */
     @Generated

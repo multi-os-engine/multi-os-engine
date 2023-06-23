@@ -5,9 +5,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVSampleBufferRequestMode
- * <p>
+ * 
  * Defines the allowed values for AVSampleBufferRequest's mode property.
- * <p>
+ * 
  * [@constant] AVSampleBufferRequestModeImmediate
  * Sample data for requests with AVSampleBufferRequestModeImmediate will be loaded as soon as possible. The current time
  * represented by AVSampleBufferGenerator's timebase has no influence on these requests.

@@ -23,12 +23,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSTextRange represents a contiguous range between two locations inside document contents. It consists of the starting
  * location and terminating location. They are the two basic properties, location and endLocation, respectively. The
  * terminating location, endLocation, is directly following the last location in the range. So, a location is contained
  * in a range if (range.location <= location) && (location < range.endLocation).
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("UIKit")
@@ -60,33 +64,36 @@ public class NSTextRange extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("containsLocation:")
-    public native boolean containsLocation(@Mapped(ObjCObjectMapper.class) NSTextLocation location);
+    public native boolean containsLocation(@NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location);
 
     @Generated
     @Selector("containsRange:")
-    public native boolean containsRange(NSTextRange textRange);
+    public native boolean containsRange(@NotNull NSTextRange textRange);
 
     @Generated
     @Selector("debugDescription")
@@ -96,6 +103,7 @@ public class NSTextRange extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("endLocation")
     @MappedReturn(ObjCObjectMapper.class)
@@ -112,15 +120,16 @@ public class NSTextRange extends NSObject {
 
     @Generated
     @Selector("initWithLocation:")
-    public native NSTextRange initWithLocation(@Mapped(ObjCObjectMapper.class) NSTextLocation location);
+    public native NSTextRange initWithLocation(@NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location);
 
     /**
      * Returns an empty range when endLocation=nil
      */
     @Generated
     @Selector("initWithLocation:endLocation:")
-    public native NSTextRange initWithLocationEndLocation(@Mapped(ObjCObjectMapper.class) NSTextLocation location,
-            @Mapped(ObjCObjectMapper.class) NSTextLocation endLocation);
+    public native NSTextRange initWithLocationEndLocation(
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location,
+            @Nullable @Mapped(ObjCObjectMapper.class) NSTextLocation endLocation);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -137,7 +146,7 @@ public class NSTextRange extends NSObject {
 
     @Generated
     @Selector("intersectsWithTextRange:")
-    public native boolean intersectsWithTextRange(NSTextRange textRange);
+    public native boolean intersectsWithTextRange(@NotNull NSTextRange textRange);
 
     /**
      * An empty range when location == endLocation
@@ -148,19 +157,21 @@ public class NSTextRange extends NSObject {
 
     @Generated
     @Selector("isEqualToTextRange:")
-    public native boolean isEqualToTextRange(NSTextRange textRange);
+    public native boolean isEqualToTextRange(@NotNull NSTextRange textRange);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Represented with the inclusive location and the exclusive endLocation
      */
+    @NotNull
     @Generated
     @Selector("location")
     @MappedReturn(ObjCObjectMapper.class)
@@ -187,16 +198,18 @@ public class NSTextRange extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("textRangeByFormingUnionWithTextRange:")
-    public native NSTextRange textRangeByFormingUnionWithTextRange(NSTextRange textRange);
+    public native NSTextRange textRangeByFormingUnionWithTextRange(@NotNull NSTextRange textRange);
 
     /**
      * Returns the intersection with textRange. Returns nil when not intersecting.
      */
+    @Nullable
     @Generated
     @Selector("textRangeByIntersectingWithTextRange:")
-    public native NSTextRange textRangeByIntersectingWithTextRange(NSTextRange textRange);
+    public native NSTextRange textRangeByIntersectingWithTextRange(@NotNull NSTextRange textRange);
 
     @Generated
     @Selector("version")

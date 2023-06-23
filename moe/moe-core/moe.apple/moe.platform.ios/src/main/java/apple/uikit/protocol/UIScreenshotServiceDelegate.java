@@ -1,6 +1,5 @@
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSData;
 import apple.uikit.UIScreenshotService;
 import org.moe.natj.general.ann.ByValue;
@@ -13,6 +12,9 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -21,9 +23,9 @@ import org.moe.natj.objc.ann.Selector;
 public interface UIScreenshotServiceDelegate {
     /**
      * The delegate method to send the PDF data to screenshots
-     * <p>
+     * 
      * The delegate is required to send the data via the completion handler
-     *
+     * 
      * @param screenshotService The screenshot service object associated per scene
      * @param completionHandler The block to execute when the PDF data is ready.
      *                          If no PDF data is available, data can be nil. The indexOfCurrentPage is zero-based, and
@@ -34,8 +36,9 @@ public interface UIScreenshotServiceDelegate {
     @Generated
     @IsOptional
     @Selector("screenshotService:generatePDFRepresentationWithCompletion:")
-    default void screenshotServiceGeneratePDFRepresentationWithCompletion(UIScreenshotService screenshotService,
-            @ObjCBlock(name = "call_screenshotServiceGeneratePDFRepresentationWithCompletion") Block_screenshotServiceGeneratePDFRepresentationWithCompletion completionHandler) {
+    default void screenshotServiceGeneratePDFRepresentationWithCompletion(
+            @NotNull UIScreenshotService screenshotService,
+            @NotNull @ObjCBlock(name = "call_screenshotServiceGeneratePDFRepresentationWithCompletion") Block_screenshotServiceGeneratePDFRepresentationWithCompletion completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -43,7 +46,7 @@ public interface UIScreenshotServiceDelegate {
     @Generated
     public interface Block_screenshotServiceGeneratePDFRepresentationWithCompletion {
         @Generated
-        void call_screenshotServiceGeneratePDFRepresentationWithCompletion(NSData PDFData,
+        void call_screenshotServiceGeneratePDFRepresentationWithCompletion(@Nullable NSData PDFData,
                 @NInt long indexOfCurrentPage, @ByValue CGRect rectInCurrentPage);
     }
 }

@@ -24,12 +24,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A MPSVector allocated on GPU private memory.
- * <p>
+ * 
  * It may alias one or more other MPSTemporaryVector objects. Undesired data destruction
  * due to aliasing is avoided using the readCount property.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -61,22 +65,25 @@ public class MPSTemporaryVector extends MPSVector {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -100,18 +107,19 @@ public class MPSTemporaryVector extends MPSVector {
 
     @Generated
     @Selector("initWithBuffer:descriptor:")
-    public native MPSTemporaryVector initWithBufferDescriptor(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
-            MPSVectorDescriptor descriptor);
+    public native MPSTemporaryVector initWithBufferDescriptor(@NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
+            @NotNull MPSVectorDescriptor descriptor);
 
     @Generated
     @Selector("initWithBuffer:offset:descriptor:")
-    public native MPSTemporaryVector initWithBufferOffsetDescriptor(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
-            @NUInt long offset, MPSVectorDescriptor descriptor);
+    public native MPSTemporaryVector initWithBufferOffsetDescriptor(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
+            @NotNull MPSVectorDescriptor descriptor);
 
     @Generated
     @Selector("initWithDevice:descriptor:")
-    public native MPSTemporaryVector initWithDeviceDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MPSVectorDescriptor descriptor);
+    public native MPSTemporaryVector initWithDeviceDescriptor(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull MPSVectorDescriptor descriptor);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -130,9 +138,10 @@ public class MPSTemporaryVector extends MPSVector {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -141,27 +150,27 @@ public class MPSTemporaryVector extends MPSVector {
 
     /**
      * Help MPS decide which allocations to make ahead of time
-     * <p>
+     * 
      * The buffer cache that underlies the MPSTemporaryVector can automatically allocate new storage as
      * needed as you create new temporary vectors. However, sometimes a more global view of what you
      * plan to make is useful for maximizing memory reuse to get the most efficient operation.
      * This class method hints to the cache what the list of matrices will be.
-     * <p>
+     * 
      * It is never necessary to call this method. It is purely a performance and memory optimization.
-     *
+     * 
      * @param commandBuffer  The command buffer on which the MPSTemporaryVector will be used
      * @param descriptorList A NSArray of MPSVectorDescriptor objects, indicating vectors that will be created
      */
     @Generated
     @Selector("prefetchStorageWithCommandBuffer:descriptorList:")
     public static native void prefetchStorageWithCommandBufferDescriptorList(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            NSArray<? extends MPSVectorDescriptor> descriptorList);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull NSArray<? extends MPSVectorDescriptor> descriptorList);
 
     /**
      * The number of times a temporary vector may be read by a MPSMatrix... kernel
      * before its contents become undefined.
-     * <p>
+     * 
      * MPSTemporaryVector objects must release their underlying buffers for reuse
      * immediately after last use. So as to facilitate *prompt* convenient
      * memory recycling, each time a MPSTemporaryVector is read by a
@@ -170,17 +179,17 @@ public class MPSTemporaryVector extends MPSVector {
      * automatically made available for reuse to MPS for its own needs and for
      * other MPSTemporaryVector objects prior to return from the -encode.. function.
      * The contents of the buffer become undefined at this time.
-     * <p>
+     * 
      * By default, the readCount is initialized to 1, indicating a matrix that
      * may be overwritten any number of times, but read only once.
-     * <p>
+     * 
      * You may change the readCount as desired to allow MPSMatrix kernels to read
      * the MPSTemporaryVector additional times. However, it is an error to change
      * the readCount once it is zero. It is an error to read or write to a
      * MPSTemporaryVector with a zero readCount. You may set the readCount to 0
      * yourself to cause the underlying buffer to be returned to MPS. Writing
      * to a MPSTemporaryVector does not adjust the readCount.
-     * <p>
+     * 
      * The Metal API Validation layer will assert if a MPSTemporaryVector is
      * deallocated with non-zero readCount to help identify cases when resources
      * are not returned promptly.
@@ -201,7 +210,7 @@ public class MPSTemporaryVector extends MPSVector {
     /**
      * The number of times a temporary vector may be read by a MPSMatrix... kernel
      * before its contents become undefined.
-     * <p>
+     * 
      * MPSTemporaryVector objects must release their underlying buffers for reuse
      * immediately after last use. So as to facilitate *prompt* convenient
      * memory recycling, each time a MPSTemporaryVector is read by a
@@ -210,17 +219,17 @@ public class MPSTemporaryVector extends MPSVector {
      * automatically made available for reuse to MPS for its own needs and for
      * other MPSTemporaryVector objects prior to return from the -encode.. function.
      * The contents of the buffer become undefined at this time.
-     * <p>
+     * 
      * By default, the readCount is initialized to 1, indicating a matrix that
      * may be overwritten any number of times, but read only once.
-     * <p>
+     * 
      * You may change the readCount as desired to allow MPSMatrix kernels to read
      * the MPSTemporaryVector additional times. However, it is an error to change
      * the readCount once it is zero. It is an error to read or write to a
      * MPSTemporaryVector with a zero readCount. You may set the readCount to 0
      * yourself to cause the underlying buffer to be returned to MPS. Writing
      * to a MPSTemporaryVector does not adjust the readCount.
-     * <p>
+     * 
      * The Metal API Validation layer will assert if a MPSTemporaryVector is
      * deallocated with non-zero readCount to help identify cases when resources
      * are not returned promptly.
@@ -239,7 +248,7 @@ public class MPSTemporaryVector extends MPSVector {
 
     /**
      * Initialize a MPSTemporaryVector for use on a MTLCommandBuffer
-     *
+     * 
      * @param commandBuffer The MTLCommandBuffer on which the MPSTemporaryMatrix will be exclusively used
      * @param descriptor    A valid MPSVectorDescriptor describing the MPSVector format to create
      * @return A valid MPSTemporaryVector. The object is not managed by a NSAutoreleasePool. The object will be
@@ -250,7 +259,8 @@ public class MPSTemporaryVector extends MPSVector {
     @Generated
     @Selector("temporaryVectorWithCommandBuffer:descriptor:")
     public static native MPSTemporaryVector temporaryVectorWithCommandBufferDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSVectorDescriptor descriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSVectorDescriptor descriptor);
 
     @Generated
     @Selector("version")

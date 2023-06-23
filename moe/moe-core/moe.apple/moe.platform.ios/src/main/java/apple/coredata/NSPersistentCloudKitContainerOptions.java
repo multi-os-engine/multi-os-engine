@@ -21,10 +21,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSPersistentCloudKitContainerOptions provides customization of how NSPersistentCloudKitContainer aligns a given
  * instance of NSPersistentStoreDescription with a CloudKit database.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreData")
@@ -56,22 +60,25 @@ public class NSPersistentCloudKitContainerOptions extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -79,6 +86,7 @@ public class NSPersistentCloudKitContainerOptions extends NSObject {
     /**
      * The container identifier of the CKContainer to use with a given instance of NSPersistentStoreDescription
      */
+    @NotNull
     @Generated
     @Selector("containerIdentifier")
     public native String containerIdentifier();
@@ -102,7 +110,7 @@ public class NSPersistentCloudKitContainerOptions extends NSObject {
 
     @Generated
     @Selector("initWithContainerIdentifier:")
-    public native NSPersistentCloudKitContainerOptions initWithContainerIdentifier(String containerIdentifier);
+    public native NSPersistentCloudKitContainerOptions initWithContainerIdentifier(@NotNull String containerIdentifier);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -121,9 +129,10 @@ public class NSPersistentCloudKitContainerOptions extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -151,11 +160,17 @@ public class NSPersistentCloudKitContainerOptions extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("databaseScope")
     @NInt
     public native long databaseScope();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setDatabaseScope:")
     public native void setDatabaseScope(@NInt long value);

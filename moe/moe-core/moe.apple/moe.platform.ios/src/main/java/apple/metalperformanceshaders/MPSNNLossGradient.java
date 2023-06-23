@@ -24,12 +24,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNLossGradient
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * The MPSNNLossGradient filter specifies the gradient filter for @ref MPSNNForwardLoss.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -61,29 +65,32 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] computeLabelGradients
-     * <p>
+     * 
      * The computeLabelGradients property is used to control whether the loss gradient
      * filter computes gradients for the primary (predictions) or secondary (labels) source image from the forward pass.
      * Default: NO.
@@ -119,31 +126,31 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNLossGradient initWithCoder(NSCoder aDecoder);
+    public native MPSNNLossGradient initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * <NSSecureCoding> support
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNNLossGradient initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNLossGradient initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNNLossGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNLossGradient initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize the loss gradient filter with a loss descriptor.
-     *
+     * 
      * @param device         The device the filter will run on.
      * @param lossDescriptor The loss descriptor.
      * @return A valid MPSNNLossGradient object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:lossDescriptor:")
-    public native MPSNNLossGradient initWithDeviceLossDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MPSCNNLossDescriptor lossDescriptor);
+    public native MPSNNLossGradient initWithDeviceLossDescriptor(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSCNNLossDescriptor lossDescriptor);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -162,9 +169,10 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Selector("labelSmoothing")
@@ -201,7 +209,7 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
 
     /**
      * [@property] computeLabelGradients
-     * <p>
+     * 
      * The computeLabelGradients property is used to control whether the loss gradient
      * filter computes gradients for the primary (predictions) or secondary (labels) source image from the forward pass.
      * Default: NO.
@@ -253,6 +261,9 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
     @Selector("weight")
     public native float weight();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("reduceAcrossBatch")
     public native boolean reduceAcrossBatch();

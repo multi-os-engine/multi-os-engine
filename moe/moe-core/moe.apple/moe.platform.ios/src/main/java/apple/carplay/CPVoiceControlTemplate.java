@@ -23,7 +23,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -44,25 +49,26 @@ public class CPVoiceControlTemplate extends CPTemplate {
 
     /**
      * Switch the voice control template to the state corresponding with a particular identifier.
-     * <p>
+     * 
      * [@note] The Voice Control template applies a rate-limit for voice control states; the template will
      * ignore voice control state changes that occur too rapidly or frequently in a short period of time.
-     * <p>
+     * 
      * [@warning] You must first present this voice control template through your @c CPInterfaceController before
      * activating a voice control state, otherwise this method will have no effect.
      * When the Voice Control template is first presented, the first state you specify in
      * [@c] initWithVoiceControlStates: will be visible.
-     *
+     * 
      * @param identifier An identifier corresponding to one of the voice control states used to initialize this
      *                   template.
      */
     @Generated
     @Selector("activateVoiceControlStateWithIdentifier:")
-    public native void activateVoiceControlStateWithIdentifier(String identifier);
+    public native void activateVoiceControlStateWithIdentifier(@NotNull String identifier);
 
     /**
      * The currently-active voice control state identifier.
      */
+    @Nullable
     @Generated
     @Selector("activeStateIdentifier")
     public native String activeStateIdentifier();
@@ -79,22 +85,25 @@ public class CPVoiceControlTemplate extends CPTemplate {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -118,23 +127,23 @@ public class CPVoiceControlTemplate extends CPTemplate {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CPVoiceControlTemplate initWithCoder(NSCoder coder);
+    public native CPVoiceControlTemplate initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initialize a voice control template with a list of voice control states.
-     * <p>
+     * 
      * [@note] By default, the Voice Control template will begin on the first state specified.
-     * <p>
+     * 
      * [@warning] You may specify a maximum of 5 voice control states. If you specify more than 5, only the first 5 will
      * be available.
-     *
+     * 
      * @param voiceControlStates An array of voice control states for this template. Your app can switch between these
      *                           states after the template is presented.
      */
     @Generated
     @Selector("initWithVoiceControlStates:")
     public native CPVoiceControlTemplate initWithVoiceControlStates(
-            NSArray<? extends CPVoiceControlState> voiceControlStates);
+            @NotNull NSArray<? extends CPVoiceControlState> voiceControlStates);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -153,9 +162,10 @@ public class CPVoiceControlTemplate extends CPTemplate {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -193,6 +203,7 @@ public class CPVoiceControlTemplate extends CPTemplate {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("voiceControlStates")
     public native NSArray<? extends CPVoiceControlState> voiceControlStates();

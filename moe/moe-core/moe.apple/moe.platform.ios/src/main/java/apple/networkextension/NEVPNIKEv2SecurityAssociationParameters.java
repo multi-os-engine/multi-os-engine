@@ -42,14 +42,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NEVPNIKEv2SecurityAssociationParameters
- * <p>
+ * 
  * The NEVPNIKEv2SecurityAssociationParameters class declares the programmatic interface of an object that manages
  * parameters for an IPSec Security Association
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -81,22 +85,25 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +138,10 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,16 +173,19 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] diffieHellmanGroup
-     * <p>
+     * 
      * The Diffie Hellman group used by the Security Association. Default is NEVPNIKEv2DiffieHellmanGroup2.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("diffieHellmanGroup")
@@ -183,13 +194,15 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] encryptionAlgorithm
-     * <p>
+     * 
      * The algorithm used by the Security Association to encrypt and decrypt data. Default is
      * NEVPNIKEv2EncryptionAlgorithm3DES.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("encryptionAlgorithm")
@@ -202,14 +215,16 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEVPNIKEv2SecurityAssociationParameters initWithCoder(NSCoder coder);
+    public native NEVPNIKEv2SecurityAssociationParameters initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] integrityAlgorithm
-     * <p>
+     * 
      * The algorithm used by the Security Association to verify the integrity of data. Default is
      * NEVPNIKEv2IntegrityAlgorithmSHA96. The IKE psedo-random function algorithm will be inferred based on the
      * integrity algorithm.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("integrityAlgorithm")
@@ -218,10 +233,12 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
 
     /**
      * [@property] lifetimeMinutes
-     * <p>
+     * 
      * The life time of the Security Association, in minutes. Default is 60 for IKE Security Associations, and 30 for
      * Child Security Associations. Before the lifetime is reached, IKEv2 will attempt to rekey the Security Association
      * to maintain the connection.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("lifetimeMinutes")
@@ -229,8 +246,10 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
 
     /**
      * [@property] diffieHellmanGroup
-     * <p>
+     * 
      * The Diffie Hellman group used by the Security Association. Default is NEVPNIKEv2DiffieHellmanGroup2.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDiffieHellmanGroup:")
@@ -238,9 +257,11 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
 
     /**
      * [@property] encryptionAlgorithm
-     * <p>
+     * 
      * The algorithm used by the Security Association to encrypt and decrypt data. Default is
      * NEVPNIKEv2EncryptionAlgorithm3DES.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setEncryptionAlgorithm:")
@@ -248,10 +269,12 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
 
     /**
      * [@property] integrityAlgorithm
-     * <p>
+     * 
      * The algorithm used by the Security Association to verify the integrity of data. Default is
      * NEVPNIKEv2IntegrityAlgorithmSHA96. The IKE psedo-random function algorithm will be inferred based on the
      * integrity algorithm.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setIntegrityAlgorithm:")
@@ -259,10 +282,12 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
 
     /**
      * [@property] lifetimeMinutes
-     * <p>
+     * 
      * The life time of the Security Association, in minutes. Default is 60 for IKE Security Associations, and 30 for
      * Child Security Associations. Before the lifetime is reached, IKEv2 will attempt to rekey the Security Association
      * to maintain the connection.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setLifetimeMinutes:")

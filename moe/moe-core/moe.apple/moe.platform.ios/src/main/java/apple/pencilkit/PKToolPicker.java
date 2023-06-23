@@ -1,7 +1,6 @@
 package apple.pencilkit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -27,9 +26,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A user interface for selecting a PKTool.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("PencilKit")
@@ -51,13 +55,13 @@ public class PKToolPicker extends NSObject {
 
     /**
      * Add an observer for a tool picker changes.
-     * <p>
+     * 
      * Adding a `PKCanvasView` as an observer, will also set its initial state.
      * Observers are held weakly.
      */
     @Generated
     @Selector("addObserver:")
-    public native void addObserver(@Mapped(ObjCObjectMapper.class) PKToolPickerObserver observer);
+    public native void addObserver(@NotNull @Mapped(ObjCObjectMapper.class) PKToolPickerObserver observer);
 
     @Generated
     @Owned
@@ -71,22 +75,25 @@ public class PKToolPicker extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,7 +103,7 @@ public class PKToolPicker extends NSObject {
      * specified user interface style. If this tool picker is used for selecting tools for canvas views that
      * have different user interface styles, `colorUserInterfaceStyle` should be set to the canvas's user
      * interface style.
-     * <p>
+     * 
      * By default this is `UIUserInterfaceStyleUnspecified`.
      */
     @Generated
@@ -114,7 +121,7 @@ public class PKToolPicker extends NSObject {
 
     /**
      * The frame within a specific view that the tool picker covers.
-     *
+     * 
      * @param view The view in which to return the frame to avoid.
      * @return The rect in `view` that the tool picker obscures. Will return
      *         `CGRectNull` if no rect is obscured, or the tool picker is movable.
@@ -122,7 +129,7 @@ public class PKToolPicker extends NSObject {
     @Generated
     @Selector("frameObscuredInView:")
     @ByValue
-    public native CGRect frameObscuredInView(UIView view);
+    public native CGRect frameObscuredInView(@NotNull UIView view);
 
     @Generated
     @Selector("hash")
@@ -131,9 +138,11 @@ public class PKToolPicker extends NSObject {
 
     /**
      * Returns a new `PKToolPicker` instance.
-     * <p>
+     * 
      * If two tool pickers are visible for the same first responder, or the same tool picker is visible in two windows
      * the result is deterministic, but undefined.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("init")
@@ -170,9 +179,10 @@ public class PKToolPicker extends NSObject {
     @Selector("isVisible")
     public native boolean isVisible();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -182,7 +192,7 @@ public class PKToolPicker extends NSObject {
     /**
      * Set `overrideUserInterfaceStyle` to cause this tool picker UI to have a specific user interface style.
      * Consider if you need to set `colorUserInterfaceStyle` if you set this property.
-     * <p>
+     * 
      * By default this is `UIUserInterfaceStyleUnspecified`.
      */
     @Generated
@@ -195,7 +205,7 @@ public class PKToolPicker extends NSObject {
      */
     @Generated
     @Selector("removeObserver:")
-    public native void removeObserver(@Mapped(ObjCObjectMapper.class) PKToolPickerObserver observer);
+    public native void removeObserver(@NotNull @Mapped(ObjCObjectMapper.class) PKToolPickerObserver observer);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -208,6 +218,7 @@ public class PKToolPicker extends NSObject {
     /**
      * The currently selected tool.
      */
+    @NotNull
     @Generated
     @Selector("selectedTool")
     public native PKTool selectedTool();
@@ -217,7 +228,7 @@ public class PKToolPicker extends NSObject {
      * specified user interface style. If this tool picker is used for selecting tools for canvas views that
      * have different user interface styles, `colorUserInterfaceStyle` should be set to the canvas's user
      * interface style.
-     * <p>
+     * 
      * By default this is `UIUserInterfaceStyleUnspecified`.
      */
     @Generated
@@ -227,7 +238,7 @@ public class PKToolPicker extends NSObject {
     /**
      * Set `overrideUserInterfaceStyle` to cause this tool picker UI to have a specific user interface style.
      * Consider if you need to set `colorUserInterfaceStyle` if you set this property.
-     * <p>
+     * 
      * By default this is `UIUserInterfaceStyleUnspecified`.
      */
     @Generated
@@ -246,7 +257,7 @@ public class PKToolPicker extends NSObject {
      */
     @Generated
     @Selector("setSelectedTool:")
-    public native void setSelectedTool(PKTool value);
+    public native void setSelectedTool(@NotNull PKTool value);
 
     @Generated
     @Selector("setVersion:")
@@ -254,21 +265,27 @@ public class PKToolPicker extends NSObject {
 
     /**
      * Sets when this tool picker should be visible.
-     *
+     * 
      * @param visible   The visible state of this tool picker.
      * @param responder The first responder for which this visible state applies.
      */
     @Generated
     @Selector("setVisible:forFirstResponder:")
-    public native void setVisibleForFirstResponder(boolean visible, UIResponder responder);
+    public native void setVisibleForFirstResponder(boolean visible, @NotNull UIResponder responder);
 
     /**
      * Returns the shared `PKToolPicker` instance for a window.
      * The returned tool picker object is typically shared between windows in the same UIWindowScene.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Create individual instances instead.
      */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("sharedToolPickerForWindow:")
-    public static native PKToolPicker sharedToolPickerForWindow(UIWindow window);
+    public static native PKToolPicker sharedToolPickerForWindow(@NotNull UIWindow window);
 
     @Generated
     @Selector("superclass")
@@ -281,8 +298,10 @@ public class PKToolPicker extends NSObject {
 
     /**
      * If this is true the tool picker will show UI that allows the default drawing policy to be changed.
-     * <p>
+     * 
      * By default this is true.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setShowsDrawingPolicyControls:")
@@ -290,15 +309,19 @@ public class PKToolPicker extends NSObject {
 
     /**
      * The name used to automatically save the tool picker's state in the defaults system.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setStateAutosaveName:")
-    public native void setStateAutosaveName(String value);
+    public native void setStateAutosaveName(@Nullable String value);
 
     /**
      * If this is true the tool picker will show UI that allows the default drawing policy to be changed.
-     * <p>
+     * 
      * By default this is true.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("showsDrawingPolicyControls")
@@ -306,7 +329,10 @@ public class PKToolPicker extends NSObject {
 
     /**
      * The name used to automatically save the tool picker's state in the defaults system.
+     * 
+     * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("stateAutosaveName")
     public native String stateAutosaveName();

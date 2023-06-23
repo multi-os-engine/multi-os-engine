@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueLockMechanismLastKnownAction
- * <p>
+ * 
  * [@constant] HMCharacteristicValueLockMechanismLastKnownActionSecuredUsingPhysicalMovementInterior Last known action
  * was secured using physical movement, interior.
  * [@constant] HMCharacteristicValueLockMechanismLastKnownActionUnsecuredUsingPhysicalMovementInterior Last known action
@@ -43,19 +43,54 @@ import org.moe.natj.general.ann.NInt;
  * secured using physical movement.
  * [@constant] HMCharacteristicValueLockMechanismLastKnownActionUnsecuredUsingPhysicalMovement Last known action was
  * unsecured using physical movement.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class HMCharacteristicValueLockMechanismLastKnownAction {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long SecuredUsingPhysicalMovementInterior = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long UnsecuredUsingPhysicalMovementInterior = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long SecuredUsingPhysicalMovementExterior = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long UnsecuredUsingPhysicalMovementExterior = 0x0000000000000003L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long SecuredWithKeypad = 0x0000000000000004L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long UnsecuredWithKeypad = 0x0000000000000005L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long SecuredRemotely = 0x0000000000000006L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long UnsecuredRemotely = 0x0000000000000007L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long SecuredWithAutomaticSecureTimeout = 0x0000000000000008L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long SecuredUsingPhysicalMovement = 0x0000000000000009L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long UnsecuredUsingPhysicalMovement = 0x000000000000000AL;
 
     @Generated

@@ -31,6 +31,9 @@ public final class NSLayoutFormatOptions {
     @Generated @NUInt public static final long AlignAllCenterY = 0x0000000000000400L;
     @Generated @NUInt public static final long AlignAllLastBaseline = 0x0000000000000800L;
     @Generated @NUInt public static final long AlignAllBaseline = 0x0000000000000800L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long AlignAllFirstBaseline = 0x0000000000001000L;
     @Generated @NUInt public static final long AlignmentMask = 0x000000000000FFFFL;
     /**
@@ -47,6 +50,8 @@ public final class NSLayoutFormatOptions {
 
     /**
      * default
+     * 
+     * API-Since: 11.0
      */
     @Generated @NUInt public static final long SpacingEdgeToEdge = 0x0000000000000000L;
     /**
@@ -56,6 +61,8 @@ public final class NSLayoutFormatOptions {
      * or bottom edge will be used in lieu of the baseline position.
      * The default spacing "]-[" will be determined from the line heights of the fonts
      * involved in views with text content, when present.
+     * 
+     * API-Since: 11.0
      */
     @Generated @NUInt public static final long SpacingBaselineToBaseline = 0x0000000000080000L;
     /**
@@ -65,6 +72,8 @@ public final class NSLayoutFormatOptions {
      * or bottom edge will be used in lieu of the baseline position.
      * The default spacing "]-[" will be determined from the line heights of the fonts
      * involved in views with text content, when present.
+     * 
+     * API-Since: 11.0
      */
     @Generated @NUInt public static final long SpacingMask = 0x0000000000080000L;
 }

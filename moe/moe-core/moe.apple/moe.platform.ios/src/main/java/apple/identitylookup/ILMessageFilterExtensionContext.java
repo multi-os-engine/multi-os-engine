@@ -24,9 +24,13 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a MessageFilter extension request's context.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("IdentityLookup")
@@ -58,22 +62,25 @@ public class ILMessageFilterExtensionContext extends NSExtensionContext {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -85,25 +92,26 @@ public class ILMessageFilterExtensionContext extends NSExtensionContext {
     /**
      * Defer the current query request to the app extension's associated network service and receive a network response
      * asynchronously.
-     * <p>
+     * 
      * This causes the system to perform an HTTPS network request to a URL specified in the app extension's Info.plist,
      * and the response
      * to that HTTPS request (or an error) is returned asynchronously. See documentation for details regarding how this
      * HTTPS request
      * is formatted, restrictions on the URL, etc.
-     *
+     * 
      * @param completion Completion block containing either the network response to the HTTPS request or an error.
      */
     @Generated
     @Selector("deferQueryRequestToNetworkWithCompletion:")
     public native void deferQueryRequestToNetworkWithCompletion(
-            @ObjCBlock(name = "call_deferQueryRequestToNetworkWithCompletion") Block_deferQueryRequestToNetworkWithCompletion completion);
+            @NotNull @ObjCBlock(name = "call_deferQueryRequestToNetworkWithCompletion") Block_deferQueryRequestToNetworkWithCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deferQueryRequestToNetworkWithCompletion {
         @Generated
-        void call_deferQueryRequestToNetworkWithCompletion(ILNetworkResponse response, NSError error);
+        void call_deferQueryRequestToNetworkWithCompletion(@Nullable ILNetworkResponse response,
+                @Nullable NSError error);
     }
 
     @Generated
@@ -136,9 +144,10 @@ public class ILMessageFilterExtensionContext extends NSExtensionContext {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

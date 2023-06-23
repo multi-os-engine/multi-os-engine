@@ -23,6 +23,8 @@ import org.moe.natj.general.ann.NUInt;
 public final class MPSKernelOptions {
     /**
      * Use default options
+     * 
+     * API-Since: 9.0
      */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     /**
@@ -33,6 +35,8 @@ public final class MPSKernelOptions {
      * if the requested operation can not be completed for some reason. Most error states
      * will be passed through to Metal which may do nothing or abort the program if Metal
      * API validation is turned on.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NUInt public static final long SkipAPIValidation = 0x0000000000000001L;
     /**
@@ -44,6 +48,8 @@ public final class MPSKernelOptions {
      * internally when it feels that a less precise result would yield better performance.
      * The expected performance win is often small, perhaps 0-20%. When enabled, the
      * precision of the result may vary by hardware and operating system.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NUInt public static final long AllowReducedPrecision = 0x0000000000000002L;
     /**
@@ -54,12 +60,16 @@ public final class MPSKernelOptions {
      * one another causing MPS to subdivide your tiles for its own use inefficiently. Pass
      * MPSKernelOptionsDisableInternalTiling to force MPS to process your data tile as a
      * single chunk.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NUInt public static final long DisableInternalTiling = 0x0000000000000004L;
     /**
      * Enabling this bit will cause various -encode... methods to call MTLCommandEncoder
      * push/popDebugGroup. The debug string will be drawn from MPSKernel.label, if any
      * or the name of the class otherwise.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NUInt public static final long InsertDebugGroups = 0x0000000000000008L;
 
@@ -77,6 +87,8 @@ public final class MPSKernelOptions {
      * [@code]
      * llvm> po <MPS object pointer>
      * [@endcode]
+     * 
+     * API-Since: 11.0
      */
     @Generated @NUInt public static final long Verbose = 0x0000000000000010L;
 }

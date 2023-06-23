@@ -5,6 +5,8 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * The destination where you want the GPU trace to be captured to.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 public final class MTLCaptureDestination {
@@ -14,10 +16,14 @@ public final class MTLCaptureDestination {
 
     /**
      * Capture to Developer Tools (Xcode) and stop the execution after capturing.
+     * 
+     * API-Since: 13.0
      */
     @Generated @NInt public static final long DeveloperTools = 0x0000000000000001L;
     /**
      * Capture to a GPU Trace document and continue execution after capturing.
+     * 
+     * API-Since: 13.0
      */
     @Generated @NInt public static final long GPUTraceDocument = 0x0000000000000002L;
 }

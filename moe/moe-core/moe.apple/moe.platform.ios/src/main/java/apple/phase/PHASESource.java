@@ -21,15 +21,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * PHASESource
- * <p>
+ * 
  * A PHASESource represents where sound originates within the simulated acoustic scene.
- * <p>
+ * 
  * PHASE supports both point sources and volumetric sources.
  * A point source simulates the sound from a point in space.
  * A volumetric source simulates the sound from a shape.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -61,22 +65,25 @@ public class PHASESource extends PHASEObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -91,7 +98,7 @@ public class PHASESource extends PHASEObject {
 
     /**
      * [@property] gain
-     * <p>
+     * 
      * Linear gain scalar.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
@@ -111,28 +118,30 @@ public class PHASESource extends PHASEObject {
 
     /**
      * initWithEngine:
-     * <p>
+     * 
      * Initialize a new point source.
      */
     @Generated
     @Selector("initWithEngine:")
-    public native PHASESource initWithEngine(PHASEEngine engine);
+    public native PHASESource initWithEngine(@NotNull PHASEEngine engine);
 
     /**
      * initWithEngine:shapes:
-     * <p>
+     * 
      * Initialize a new volumetric source with shapes.
-     * <p>
+     * 
      * The shapes array cannot be empty, otherwise an exception is thrown.
      * [@note]
      * This function is thread-safe.
      * Clients can safely run this function to create multiple sources from multiple threads, if required.
-     *
-     * @param shapes The shape(s) of the source within the world
+     * 
+     * @param shapes
+     *               The shape(s) of the source within the world
      */
     @Generated
     @Selector("initWithEngine:shapes:")
-    public native PHASESource initWithEngineShapes(PHASEEngine engine, NSArray<? extends PHASEShape> shapes);
+    public native PHASESource initWithEngineShapes(@NotNull PHASEEngine engine,
+            @NotNull NSArray<? extends PHASEShape> shapes);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -151,9 +160,10 @@ public class PHASESource extends PHASEObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,7 +180,7 @@ public class PHASESource extends PHASEObject {
 
     /**
      * [@property] gain
-     * <p>
+     * 
      * Linear gain scalar.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
@@ -185,9 +195,10 @@ public class PHASESource extends PHASEObject {
 
     /**
      * [@property] shapes
-     * <p>
+     * 
      * Array of shapes associated with this source.
      */
+    @NotNull
     @Generated
     @Selector("shapes")
     public native NSArray<? extends PHASEShape> shapes();

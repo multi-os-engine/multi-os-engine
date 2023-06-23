@@ -20,11 +20,22 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * Enums for color buffer formats.
+ * 
+ * API-Since: 5.0
  */
 @Generated
 public final class GLKViewDrawableColorFormat {
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int RGBA8888 = 0x00000000;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int RGB565 = 0x00000001;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int SRGBA8888 = 0x00000002;
 
     @Generated

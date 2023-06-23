@@ -19,11 +19,26 @@ package apple.contacts.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 public final class CNContainerType {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Unassigned = 0x0000000000000000L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Local = 0x0000000000000001L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Exchange = 0x0000000000000002L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long CardDAV = 0x0000000000000003L;
 
     @Generated

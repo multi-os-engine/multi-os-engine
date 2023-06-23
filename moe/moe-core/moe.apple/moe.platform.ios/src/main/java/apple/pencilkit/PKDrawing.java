@@ -1,8 +1,6 @@
 package apple.pencilkit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSData;
@@ -35,9 +33,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The data model object for storing drawing data created from PKCanvasView.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("PencilKit")
@@ -69,7 +73,7 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * The bounds of the drawing's contents, taking into account the rendered width of all content.
@@ -82,33 +86,38 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Generate a data representation of the drawing.
-     *
+     * 
      * @return A NSData object containing a representation of the drawing.
      */
+    @NotNull
     @Generated
     @Selector("dataRepresentation")
     public native NSData dataRepresentation();
@@ -123,33 +132,36 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns a new drawing by appending the contents of `drawing` on top of the receiver’s contents.
-     *
+     * 
      * @param drawing The drawing to append.
      * @return A new copy of this drawing with `drawing` appended onto it.
      */
+    @NotNull
     @Generated
     @Selector("drawingByAppendingDrawing:")
-    public native PKDrawing drawingByAppendingDrawing(PKDrawing drawing);
+    public native PKDrawing drawingByAppendingDrawing(@NotNull PKDrawing drawing);
 
     /**
      * Returns a new drawing with `transform` applied.
-     *
+     * 
      * @param transform The transform to apply to this drawing.
      * @return A new copy of this drawing with `transform` applied.
      */
+    @NotNull
     @Generated
     @Selector("drawingByApplyingTransform:")
     public native PKDrawing drawingByApplyingTransform(@ByValue CGAffineTransform transform);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
 
+    @NotNull
     @Generated
     @Selector("imageFromRect:scale:")
     public native UIImage imageFromRectScale(@ByValue CGRect rect, @NFloat double scale);
@@ -163,11 +175,11 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native PKDrawing initWithCoder(NSCoder coder);
+    public native PKDrawing initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initializes and returns the drawing with the specified data.
-     *
+     * 
      * @param data  The data containing the drawing data.
      * @param error If an error occurs, upon return the NSError object describes the error.
      *              Set to NULL to ignore errors.
@@ -176,7 +188,8 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("initWithData:error:")
-    public native PKDrawing initWithDataError(NSData data, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native PKDrawing initWithDataError(@NotNull NSData data,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -195,9 +208,10 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -238,24 +252,32 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Create a new drawing by appending an array of strokes to this drawing.
      * This is a convenience method, to quickly add strokes to a drawing.
-     *
+     * 
      * @param strokes The strokes to append.
      * @return A new copy of this drawing with `strokes` appended onto it.
+     * 
+     *         API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("drawingByAppendingStrokes:")
-    public native PKDrawing drawingByAppendingStrokes(NSArray<? extends PKStroke> strokes);
+    public native PKDrawing drawingByAppendingStrokes(@NotNull NSArray<? extends PKStroke> strokes);
 
     /**
      * Initializes a drawing with an array of strokes.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithStrokes:")
-    public native PKDrawing initWithStrokes(NSArray<? extends PKStroke> strokes);
+    public native PKDrawing initWithStrokes(@NotNull NSArray<? extends PKStroke> strokes);
 
     /**
      * The strokes that this drawing contains.
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("strokes")
     public native NSArray<? extends PKStroke> strokes();

@@ -24,7 +24,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -55,22 +60,25 @@ public class UIDragItem extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -94,7 +102,7 @@ public class UIDragItem extends NSObject {
 
     @Generated
     @Selector("initWithItemProvider:")
-    public native UIDragItem initWithItemProvider(NSItemProvider itemProvider);
+    public native UIDragItem initWithItemProvider(@NotNull NSItemProvider itemProvider);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -113,18 +121,21 @@ public class UIDragItem extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("itemProvider")
     public native NSItemProvider itemProvider();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Use `localObject` to attach additional information to
      * this drag item, visible only inside the app that started the drag.
      */
+    @Nullable
     @Generated
     @Selector("localObject")
     @MappedReturn(ObjCObjectMapper.class)
@@ -137,18 +148,19 @@ public class UIDragItem extends NSObject {
 
     /**
      * Use `previewProvider` to change the preview for an item.
-     * <p>
+     * 
      * Each item is usually given a preview when the drag begins,
      * either by the UIDragInteractionDelegate's `-dragInteraction:previewForLiftingItem:session:`
      * method, or by creating a preview from the dragging view.
-     * <p>
+     * 
      * During the drag, applications may attempt to change the item's preview,
      * by setting `previewProvider` to a block that returns a preview.
      * It will be called when and if the system requests it.
-     * <p>
+     * 
      * To use the default preview, set `previewProvider` to nil.
      * To hide the preview, set `previewProvider` to a block that returns nil.
      */
+    @Nullable
     @Generated
     @Selector("previewProvider")
     @ObjCBlock(name = "call_previewProvider_ret")
@@ -157,6 +169,7 @@ public class UIDragItem extends NSObject {
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_previewProvider_ret {
+        @Nullable
         @Generated
         UIDragPreview call_previewProvider_ret();
     }
@@ -175,29 +188,31 @@ public class UIDragItem extends NSObject {
      */
     @Generated
     @Selector("setLocalObject:")
-    public native void setLocalObject(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setLocalObject(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * Use `previewProvider` to change the preview for an item.
-     * <p>
+     * 
      * Each item is usually given a preview when the drag begins,
      * either by the UIDragInteractionDelegate's `-dragInteraction:previewForLiftingItem:session:`
      * method, or by creating a preview from the dragging view.
-     * <p>
+     * 
      * During the drag, applications may attempt to change the item's preview,
      * by setting `previewProvider` to a block that returns a preview.
      * It will be called when and if the system requests it.
-     * <p>
+     * 
      * To use the default preview, set `previewProvider` to nil.
      * To hide the preview, set `previewProvider` to a block that returns nil.
      */
     @Generated
     @Selector("setPreviewProvider:")
-    public native void setPreviewProvider(@ObjCBlock(name = "call_setPreviewProvider") Block_setPreviewProvider value);
+    public native void setPreviewProvider(
+            @Nullable @ObjCBlock(name = "call_setPreviewProvider") Block_setPreviewProvider value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setPreviewProvider {
+        @Nullable
         @Generated
         UIDragPreview call_setPreviewProvider();
     }

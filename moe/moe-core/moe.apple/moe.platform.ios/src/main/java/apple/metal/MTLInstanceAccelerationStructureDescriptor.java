@@ -23,9 +23,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Descriptor for an instance acceleration structure
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Metal")
@@ -57,22 +61,25 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -109,6 +116,7 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     /**
      * Buffer containing instance descriptors of the type specified by the instanceDescriptorType property
      */
+    @Nullable
     @Generated
     @Selector("instanceDescriptorBuffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -145,6 +153,7 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     /**
      * Acceleration structures to be instanced
      */
+    @Nullable
     @Generated
     @Selector("instancedAccelerationStructures")
     public native NSArray<?> instancedAccelerationStructures();
@@ -157,9 +166,10 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -186,7 +196,7 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
      */
     @Generated
     @Selector("setInstanceDescriptorBuffer:")
-    public native void setInstanceDescriptorBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+    public native void setInstanceDescriptorBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
      * Offset into the instance descriptor buffer. Must be a multiple of 64 bytes and must be
@@ -210,7 +220,7 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
      */
     @Generated
     @Selector("setInstancedAccelerationStructures:")
-    public native void setInstancedAccelerationStructures(NSArray<?> value);
+    public native void setInstancedAccelerationStructures(@Nullable NSArray<?> value);
 
     @Generated
     @Selector("setVersion:")
@@ -228,6 +238,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     /**
      * Type of instance descriptor in the instance descriptor buffer. Defaults to
      * MTLAccelerationStructureInstanceDescriptorTypeDefault.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("instanceDescriptorType")
@@ -236,7 +248,10 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
 
     /**
      * Buffer containing transformation information for motion
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("motionTransformBuffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -245,6 +260,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     /**
      * Offset into the instance motion descriptor buffer. Must be a multiple of 64 bytes and
      * must be aligned to the platform's buffer offset alignment.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("motionTransformBufferOffset")
@@ -253,6 +270,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
 
     /**
      * Number of motion transforms
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("motionTransformCount")
@@ -262,6 +281,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     /**
      * Type of instance descriptor in the instance descriptor buffer. Defaults to
      * MTLAccelerationStructureInstanceDescriptorTypeDefault.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setInstanceDescriptorType:")
@@ -269,14 +290,18 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
 
     /**
      * Buffer containing transformation information for motion
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMotionTransformBuffer:")
-    public native void setMotionTransformBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+    public native void setMotionTransformBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
      * Offset into the instance motion descriptor buffer. Must be a multiple of 64 bytes and
      * must be aligned to the platform's buffer offset alignment.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMotionTransformBufferOffset:")
@@ -284,6 +309,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
 
     /**
      * Number of motion transforms
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMotionTransformCount:")

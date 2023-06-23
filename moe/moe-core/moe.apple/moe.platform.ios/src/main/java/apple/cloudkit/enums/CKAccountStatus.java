@@ -30,17 +30,34 @@ import org.moe.natj.general.ann.NInt;
  * [@constant] CKAccountStatusTemporarilyUnavailable An iCloud account is logged in but not ready. The user can be asked
  * to verify their
  * credentials in Settings app.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class CKAccountStatus {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long CouldNotDetermine = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Available = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Restricted = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long NoAccount = 0x0000000000000003L;
 
     @Generated
     private CKAccountStatus() {
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated @NInt public static final long TemporarilyUnavailable = 0x0000000000000004L;
 }

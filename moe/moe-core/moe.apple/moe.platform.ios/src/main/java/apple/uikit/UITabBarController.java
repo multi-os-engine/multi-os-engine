@@ -44,17 +44,21 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * UITabBarController manages a button bar and transition view, for an application with multiple top-level modes.
- * <p>
+ * 
  * To use in your application, add its view to the view hierarchy, then add top-level view controllers in order.
  * Most clients will not need to subclass UITabBarController.
- * <p>
+ * 
  * If more than five view controllers are added to a tab bar controller, only the first four will display.
  * The rest will be accessible under an automatically generated More item.
- * <p>
+ * 
  * UITabBarController is rotatable if all of its view controllers are rotatable.
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("UIKit")
@@ -84,35 +88,39 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     @Selector("allocWithZone:")
     public static native UITabBarController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -144,9 +152,10 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -178,10 +187,12 @@ public class UITabBarController extends UIViewController implements UITabBarDele
      * If non-nil, then the "More" view will include an "Edit" button that displays customization UI for the specified
      * controllers. By default, all view controllers are customizable.
      */
+    @Nullable
     @Generated
     @Selector("customizableViewControllers")
     public native NSArray<? extends UIViewController> customizableViewControllers();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -189,7 +200,7 @@ public class UITabBarController extends UIViewController implements UITabBarDele
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -197,15 +208,17 @@ public class UITabBarController extends UIViewController implements UITabBarDele
 
     @Generated
     @Selector("initWithCoder:")
-    public native UITabBarController initWithCoder(NSCoder coder);
+    public native UITabBarController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native UITabBarController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native UITabBarController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * Returns the "More" navigation controller, creating it if it does not already exist.
      */
+    @NotNull
     @Generated
     @Selector("moreNavigationController")
     public native UINavigationController moreNavigationController();
@@ -218,6 +231,7 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     /**
      * This may return the "More" navigation controller if it exists.
      */
+    @Nullable
     @Generated
     @Selector("selectedViewController")
     public native UIViewController selectedViewController();
@@ -228,14 +242,14 @@ public class UITabBarController extends UIViewController implements UITabBarDele
      */
     @Generated
     @Selector("setCustomizableViewControllers:")
-    public native void setCustomizableViewControllers(NSArray<? extends UIViewController> value);
+    public native void setCustomizableViewControllers(@Nullable NSArray<? extends UIViewController> value);
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITabBarControllerDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UITabBarControllerDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UITabBarControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UITabBarControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -255,13 +269,13 @@ public class UITabBarController extends UIViewController implements UITabBarDele
      */
     @Generated
     @Selector("setSelectedViewController:")
-    public native void setSelectedViewController_unsafe(UIViewController value);
+    public native void setSelectedViewController_unsafe(@Nullable UIViewController value);
 
     /**
      * This may return the "More" navigation controller if it exists.
      */
     @Generated
-    public void setSelectedViewController(UIViewController value) {
+    public void setSelectedViewController(@Nullable UIViewController value) {
         Object __old = selectedViewController();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -274,7 +288,7 @@ public class UITabBarController extends UIViewController implements UITabBarDele
 
     @Generated
     @Selector("setViewControllers:")
-    public native void setViewControllers(NSArray<? extends UIViewController> value);
+    public native void setViewControllers(@Nullable NSArray<? extends UIViewController> value);
 
     /**
      * If the number of view controllers is greater than the number displayable by a tab bar, a "More" navigation
@@ -284,13 +298,16 @@ public class UITabBarController extends UIViewController implements UITabBarDele
      */
     @Generated
     @Selector("setViewControllers:animated:")
-    public native void setViewControllersAnimated(NSArray<? extends UIViewController> viewControllers,
+    public native void setViewControllersAnimated(@Nullable NSArray<? extends UIViewController> viewControllers,
             boolean animated);
 
     /**
      * Provided for -[UIActionSheet showFromTabBar:]. Attempting to modify the contents of the tab bar directly will
      * throw an exception.
+     * 
+     * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("tabBar")
     public native UITabBar tabBar();
@@ -298,30 +315,33 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     @Generated
     @IsOptional
     @Selector("tabBar:didBeginCustomizingItems:")
-    public native void tabBarDidBeginCustomizingItems(UITabBar tabBar, NSArray<? extends UITabBarItem> items);
+    public native void tabBarDidBeginCustomizingItems(@NotNull UITabBar tabBar,
+            @NotNull NSArray<? extends UITabBarItem> items);
 
     @Generated
     @IsOptional
     @Selector("tabBar:didEndCustomizingItems:changed:")
-    public native void tabBarDidEndCustomizingItemsChanged(UITabBar tabBar, NSArray<? extends UITabBarItem> items,
-            boolean changed);
+    public native void tabBarDidEndCustomizingItemsChanged(@NotNull UITabBar tabBar,
+            @NotNull NSArray<? extends UITabBarItem> items, boolean changed);
 
     @Generated
     @IsOptional
     @Selector("tabBar:didSelectItem:")
-    public native void tabBarDidSelectItem(UITabBar tabBar, UITabBarItem item);
+    public native void tabBarDidSelectItem(@NotNull UITabBar tabBar, @NotNull UITabBarItem item);
 
     @Generated
     @IsOptional
     @Selector("tabBar:willBeginCustomizingItems:")
-    public native void tabBarWillBeginCustomizingItems(UITabBar tabBar, NSArray<? extends UITabBarItem> items);
+    public native void tabBarWillBeginCustomizingItems(@NotNull UITabBar tabBar,
+            @NotNull NSArray<? extends UITabBarItem> items);
 
     @Generated
     @IsOptional
     @Selector("tabBar:willEndCustomizingItems:changed:")
-    public native void tabBarWillEndCustomizingItemsChanged(UITabBar tabBar, NSArray<? extends UITabBarItem> items,
-            boolean changed);
+    public native void tabBarWillEndCustomizingItemsChanged(@NotNull UITabBar tabBar,
+            @NotNull NSArray<? extends UITabBarItem> items, boolean changed);
 
+    @Nullable
     @Generated
     @Selector("viewControllers")
     public native NSArray<? extends UIViewController> viewControllers();

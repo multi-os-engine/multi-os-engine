@@ -23,11 +23,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCActivationDescriptor
- * <p>
+ * 
  * The MLCActivationDescriptor specifies a neuron descriptor.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -45,7 +49,7 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] a
-     * <p>
+     * 
      * Parameter to the activation function
      */
     @Generated
@@ -58,7 +62,7 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] activationType
-     * <p>
+     * 
      * The type of activation function
      */
     @Generated
@@ -77,11 +81,11 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] b
-     * <p>
+     * 
      * Parameter to the activation function
      */
     @Generated
@@ -90,7 +94,7 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] c
-     * <p>
+     * 
      * Parameter to the activation function
      */
     @Generated
@@ -99,27 +103,31 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -131,7 +139,7 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCActivationDescriptor object
-     *
+     * 
      * @param activationType A type of activation function.
      * @return A new neuron descriptor or nil if failure
      */
@@ -141,7 +149,7 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCActivationDescriptor object
-     *
+     * 
      * @param activationType A type of activation function.
      * @param a              Parameter "a".
      * @return A new neuron descriptor or nil if failure
@@ -152,7 +160,7 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCActivationDescriptor object
-     *
+     * 
      * @param activationType A type of activation function.
      * @param a              Parameter "a".
      * @param b              Parameter "b".
@@ -164,7 +172,7 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCActivationDescriptor object
-     *
+     * 
      * @param activationType A type of activation function.
      * @param a              Parameter "a".
      * @param b              Parameter "b".
@@ -201,9 +209,10 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

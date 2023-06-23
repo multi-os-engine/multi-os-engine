@@ -34,12 +34,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An immutable variant holding a data value of a supported MLFeatureType
- * <p>
+ * 
  * MLFeatureValue does not support type conversion in its accessor properties. It
  * can also have a missing or undefined value of a well defined type.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreML")
@@ -71,31 +75,35 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -108,6 +116,7 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
     /**
      * Populated value if the type is MLFeatureTypeDictionary
      */
+    @NotNull
     @Generated
     @Selector("dictionaryValue")
     public native NSDictionary<?, ? extends NSNumber> dictionaryValue();
@@ -126,8 +135,9 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
      */
     @Generated
     @Selector("featureValueWithDictionary:error:")
-    public static native MLFeatureValue featureValueWithDictionaryError(NSDictionary<?, ? extends NSNumber> value,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native MLFeatureValue featureValueWithDictionaryError(
+            @NotNull NSDictionary<?, ? extends NSNumber> value,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("featureValueWithDouble:")
@@ -142,15 +152,15 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("featureValueWithMultiArray:")
-    public static native MLFeatureValue featureValueWithMultiArray(MLMultiArray value);
+    public static native MLFeatureValue featureValueWithMultiArray(@NotNull MLMultiArray value);
 
     @Generated
     @Selector("featureValueWithPixelBuffer:")
-    public static native MLFeatureValue featureValueWithPixelBuffer(CVBufferRef value);
+    public static native MLFeatureValue featureValueWithPixelBuffer(@NotNull CVBufferRef value);
 
     @Generated
     @Selector("featureValueWithString:")
-    public static native MLFeatureValue featureValueWithString(String value);
+    public static native MLFeatureValue featureValueWithString(@NotNull String value);
 
     @Generated
     @Selector("hash")
@@ -160,6 +170,7 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
     /**
      * Populated value if the type is MLFeatureTypeImage
      */
+    @Nullable
     @Generated
     @Selector("imageBufferValue")
     public native CVBufferRef imageBufferValue();
@@ -188,9 +199,25 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
     @Selector("int64Value")
     public native long int64Value();
 
+    /**
+     * Returns a Boolean value that indicates whether a feature value is equal to another.
+     * 
+     * If the types of the MLFeatureValue objects "self" and "value" are integer in one case and
+     * double in the other (in either order) then those mixed mode numeric values are compared as NSNumbers.
+     * Otherwise if the types of the MLFeatureValue objects are different NO is returned.
+     * When "self" and "value" are both PixelBuffer MLFeatureValue types, only their CVPixelBufferRef values are
+     * compared for equality,
+     * the underlying arrays of pixelValues are not examined.
+     * [So, distinct PixelBuffer MLFeatureValue objects with distinct CVPixelBufferRef values which encapsulate the same
+     * array of pixels will compare *not* equal.]
+     * For all other (matching) MLFeatureValue types, the BOOL value returned is the result of comparing "self" with
+     * "value" via
+     * isEqualToNumber:, isEqualToString:, isEqualtoDictionary:, isEqualToMultiArray:, isEqualToArray: as chosen by the
+     * MLFeatureValue types.
+     */
     @Generated
     @Selector("isEqualToFeatureValue:")
-    public native boolean isEqualToFeatureValue(MLFeatureValue value);
+    public native boolean isEqualToFeatureValue(@NotNull MLFeatureValue value);
 
     @Generated
     @Selector("isSubclassOfClass:")
@@ -203,13 +230,15 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
     @Selector("isUndefined")
     public native boolean isUndefined();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Populated value if the type is MLFeatureTypeMultiArray
      */
+    @Nullable
     @Generated
     @Selector("multiArrayValue")
     public native MLMultiArray multiArrayValue();
@@ -234,6 +263,7 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
     /**
      * Populated value if the type is MLFeatureTypeString
      */
+    @NotNull
     @Generated
     @Selector("stringValue")
     public native String stringValue();
@@ -253,6 +283,7 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
     /**
      * Represent an undefined value of a specified type
      */
+    @NotNull
     @Generated
     @Selector("undefinedFeatureValueWithType:")
     public static native MLFeatureValue undefinedFeatureValueWithType(@NInt long type);
@@ -268,9 +299,9 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
      */
     @Generated
     @Selector("featureValueWithCGImage:constraint:options:error:")
-    public static native MLFeatureValue featureValueWithCGImageConstraintOptionsError(CGImageRef cgImage,
-            MLImageConstraint constraint, NSDictionary<String, ?> options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native MLFeatureValue featureValueWithCGImageConstraintOptionsError(@NotNull CGImageRef cgImage,
+            @NotNull MLImageConstraint constraint, @Nullable NSDictionary<String, ?> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Construct image feature value from CGImage w/ specified orientation, using the size and type information required
@@ -278,9 +309,10 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
      */
     @Generated
     @Selector("featureValueWithCGImage:orientation:constraint:options:error:")
-    public static native MLFeatureValue featureValueWithCGImageOrientationConstraintOptionsError(CGImageRef cgImage,
-            int orientation, MLImageConstraint constraint, NSDictionary<String, ?> options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native MLFeatureValue featureValueWithCGImageOrientationConstraintOptionsError(
+            @NotNull CGImageRef cgImage, int orientation, @NotNull MLImageConstraint constraint,
+            @Nullable NSDictionary<String, ?> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Construct image feature value from CGImage w/ specified orientation
@@ -288,8 +320,9 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
     @Generated
     @Selector("featureValueWithCGImage:orientation:pixelsWide:pixelsHigh:pixelFormatType:options:error:")
     public static native MLFeatureValue featureValueWithCGImageOrientationPixelsWidePixelsHighPixelFormatTypeOptionsError(
-            CGImageRef cgImage, int orientation, @NInt long pixelsWide, @NInt long pixelsHigh, int pixelFormatType,
-            NSDictionary<String, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull CGImageRef cgImage, int orientation, @NInt long pixelsWide, @NInt long pixelsHigh,
+            int pixelFormatType, @Nullable NSDictionary<String, ?> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Construct image feature value from CGImage (orientation is assumed to be kCGImagePropertyOrientationUp)
@@ -297,8 +330,9 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
     @Generated
     @Selector("featureValueWithCGImage:pixelsWide:pixelsHigh:pixelFormatType:options:error:")
     public static native MLFeatureValue featureValueWithCGImagePixelsWidePixelsHighPixelFormatTypeOptionsError(
-            CGImageRef cgImage, @NInt long pixelsWide, @NInt long pixelsHigh, int pixelFormatType,
-            NSDictionary<String, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull CGImageRef cgImage, @NInt long pixelsWide, @NInt long pixelsHigh, int pixelFormatType,
+            @Nullable NSDictionary<String, ?> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Construct image feature value from an image on disk, using a model specified image constraint. Orientation is
@@ -306,9 +340,9 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
      */
     @Generated
     @Selector("featureValueWithImageAtURL:constraint:options:error:")
-    public static native MLFeatureValue featureValueWithImageAtURLConstraintOptionsError(NSURL url,
-            MLImageConstraint constraint, NSDictionary<String, ?> options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native MLFeatureValue featureValueWithImageAtURLConstraintOptionsError(@NotNull NSURL url,
+            @NotNull MLImageConstraint constraint, @Nullable NSDictionary<String, ?> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Construct image feature value from an image on disk using a model specified image constraint. The passed in
@@ -316,9 +350,9 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
      */
     @Generated
     @Selector("featureValueWithImageAtURL:orientation:constraint:options:error:")
-    public static native MLFeatureValue featureValueWithImageAtURLOrientationConstraintOptionsError(NSURL url,
-            int orientation, MLImageConstraint constraint, NSDictionary<String, ?> options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native MLFeatureValue featureValueWithImageAtURLOrientationConstraintOptionsError(@NotNull NSURL url,
+            int orientation, @NotNull MLImageConstraint constraint, @Nullable NSDictionary<String, ?> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Construct image feature value from an image on disk. The passed in orientation supersedes any in the file
@@ -326,8 +360,9 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
     @Generated
     @Selector("featureValueWithImageAtURL:orientation:pixelsWide:pixelsHigh:pixelFormatType:options:error:")
     public static native MLFeatureValue featureValueWithImageAtURLOrientationPixelsWidePixelsHighPixelFormatTypeOptionsError(
-            NSURL url, int orientation, @NInt long pixelsWide, @NInt long pixelsHigh, int pixelFormatType,
-            NSDictionary<String, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull NSURL url, int orientation, @NInt long pixelsWide, @NInt long pixelsHigh, int pixelFormatType,
+            @Nullable NSDictionary<String, ?> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Construct image feature value from an image on disk. Orientation is read from Exif if avaiable
@@ -335,27 +370,34 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
     @Generated
     @Selector("featureValueWithImageAtURL:pixelsWide:pixelsHigh:pixelFormatType:options:error:")
     public static native MLFeatureValue featureValueWithImageAtURLPixelsWidePixelsHighPixelFormatTypeOptionsError(
-            NSURL url, @NInt long pixelsWide, @NInt long pixelsHigh, int pixelFormatType,
-            NSDictionary<String, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull NSURL url, @NInt long pixelsWide, @NInt long pixelsHigh, int pixelFormatType,
+            @Nullable NSDictionary<String, ?> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("featureValueWithSequence:")
-    public static native MLFeatureValue featureValueWithSequence(MLSequence sequence);
+    public static native MLFeatureValue featureValueWithSequence(@NotNull MLSequence sequence);
 
     /**
      * Populated value if the type is MLFeatureTypeSequence
+     * 
+     * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("sequenceValue")
     public native MLSequence sequenceValue();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithCoder:")
-    public native MLFeatureValue initWithCoder(NSCoder coder);
+    public native MLFeatureValue initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("supportsSecureCoding")

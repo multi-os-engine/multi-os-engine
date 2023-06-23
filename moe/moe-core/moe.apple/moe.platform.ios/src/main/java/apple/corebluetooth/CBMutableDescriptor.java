@@ -37,10 +37,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CBMutableDescriptor
- * <p>
+ * 
  * Used to create a local characteristic descriptor, which can be added to the local database via
  * <code>CBPeripheralManager</code>.
  * Once a descriptor is published, it is cached and can no longer be changed.
@@ -50,6 +52,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <code>Client Characteristic
  * Configuration</code> descriptors will be created automatically upon publication of the parent service, depending on
  * the properties of the characteristic itself.
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -81,22 +85,25 @@ public class CBMutableDescriptor extends CBDescriptor {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +138,10 @@ public class CBMutableDescriptor extends CBDescriptor {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,15 +175,16 @@ public class CBMutableDescriptor extends CBDescriptor {
 
     /**
      * initWithType:value:
-     * <p>
+     * 
      * Returns a decriptor, initialized with a service type and value. The <i>value</i> is required and cannot be
      * updated dynamically
      * once the parent service has been published.
-     *
+     * 
      * @param UUID  The Bluetooth UUID of the descriptor.
      * @param value The value of the descriptor.
      */
     @Generated
     @Selector("initWithType:value:")
-    public native CBMutableDescriptor initWithTypeValue(CBUUID UUID, @Mapped(ObjCObjectMapper.class) Object value);
+    public native CBMutableDescriptor initWithTypeValue(@NotNull CBUUID UUID,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object value);
 }

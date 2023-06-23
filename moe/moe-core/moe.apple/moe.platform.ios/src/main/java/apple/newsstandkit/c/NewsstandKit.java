@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("NewsstandKit")
@@ -39,9 +40,16 @@ public final class NewsstandKit {
 
     /**
      * [@constant] NKIssueDownloadCompletedNotification
-     * <p>
+     * 
      * Notification when an issue's assets have all been downloaded.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use the Remote Notifications Background Modes instead:
+     * https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_updates_to_your_app_silently
      */
+    @NotNull
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

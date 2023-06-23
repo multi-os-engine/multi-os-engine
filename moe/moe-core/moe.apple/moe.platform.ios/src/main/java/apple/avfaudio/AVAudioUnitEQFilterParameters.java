@@ -21,14 +21,18 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioUnitEQFilterParameters
- * <p>
+ * 
  * Filter parameters used by AVAudioUnitEQ.
- * <p>
+ * 
  * A standalone instance of AVAudioUnitEQFilterParameters cannot be created. Only an instance
  * vended out by a source object (e.g. AVAudioUnitEQ) can be used.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -60,13 +64,13 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] bandwidth
-     * <p>
+     * 
      * Bandwidth in octaves.
-     * <p>
+     * 
      * Range: 0.05 -> 5.0
      * Unit: Octaves
      */
@@ -76,9 +80,9 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
 
     /**
      * [@property] bypass
-     * <p>
+     * 
      * bypass state of band.
-     * <p>
+     * 
      * Default: YES
      */
     @Generated
@@ -87,18 +91,21 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -113,9 +120,9 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
 
     /**
      * [@property] filterType
-     * <p>
+     * 
      * AVAudioUnitEQFilterType
-     * <p>
+     * 
      * Default: AVAudioUnitEQFilterTypeParametric
      */
     @Generated
@@ -125,9 +132,9 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
 
     /**
      * [@property] frequency
-     * <p>
+     * 
      * Frequency in Hertz.
-     * <p>
+     * 
      * Range: 20 -> (SampleRate/2)
      * Unit: Hertz
      */
@@ -137,9 +144,9 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
 
     /**
      * [@property] gain
-     * <p>
+     * 
      * Gain in dB.
-     * <p>
+     * 
      * Range: -96 -> 24
      * Default: 0
      * Unit: dB
@@ -174,9 +181,10 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -193,9 +201,9 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
 
     /**
      * [@property] bandwidth
-     * <p>
+     * 
      * Bandwidth in octaves.
-     * <p>
+     * 
      * Range: 0.05 -> 5.0
      * Unit: Octaves
      */
@@ -205,9 +213,9 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
 
     /**
      * [@property] bypass
-     * <p>
+     * 
      * bypass state of band.
-     * <p>
+     * 
      * Default: YES
      */
     @Generated
@@ -216,9 +224,9 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
 
     /**
      * [@property] filterType
-     * <p>
+     * 
      * AVAudioUnitEQFilterType
-     * <p>
+     * 
      * Default: AVAudioUnitEQFilterTypeParametric
      */
     @Generated
@@ -227,9 +235,9 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
 
     /**
      * [@property] frequency
-     * <p>
+     * 
      * Frequency in Hertz.
-     * <p>
+     * 
      * Range: 20 -> (SampleRate/2)
      * Unit: Hertz
      */
@@ -239,9 +247,9 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
 
     /**
      * [@property] gain
-     * <p>
+     * 
      * Gain in dB.
-     * <p>
+     * 
      * Range: -96 -> 24
      * Default: 0
      * Unit: dB

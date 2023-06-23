@@ -11,7 +11,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -20,6 +24,7 @@ public interface UITextDragRequest {
     /**
      * The text range being dragged.
      */
+    @NotNull
     @Generated
     @Selector("dragRange")
     UITextRange dragRange();
@@ -27,6 +32,7 @@ public interface UITextDragRequest {
     /**
      * The current drag session.
      */
+    @NotNull
     @Generated
     @Selector("dragSession")
     @MappedReturn(ObjCObjectMapper.class)
@@ -36,6 +42,7 @@ public interface UITextDragRequest {
      * The existing items in the session.
      * Will be filled when we request new items.
      */
+    @NotNull
     @Generated
     @Selector("existingItems")
     NSArray<? extends UIDragItem> existingItems();
@@ -55,6 +62,7 @@ public interface UITextDragRequest {
      * if the responsible delegate method were not implemented.
      * This is populated lazily, so only use it when you need it.
      */
+    @NotNull
     @Generated
     @Selector("suggestedItems")
     NSArray<? extends UIDragItem> suggestedItems();

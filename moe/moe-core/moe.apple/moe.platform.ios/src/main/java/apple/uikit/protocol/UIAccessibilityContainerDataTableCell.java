@@ -12,6 +12,8 @@ import org.moe.natj.objc.ann.Selector;
 /**
  * The UIAccessibilityContainerDataTable and UIAccessibilityContainerDataTableCell protocols
  * convey more information specific to tables that contain structured data.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("UIKit")

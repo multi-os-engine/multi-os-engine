@@ -26,9 +26,12 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Recognition result receiver, to be used for complex or multi-utterance speech recognition requests
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("Speech")
@@ -41,7 +44,7 @@ public interface SFSpeechRecognitionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("speechRecognitionDidDetectSpeech:")
-    default void speechRecognitionDidDetectSpeech(SFSpeechRecognitionTask task) {
+    default void speechRecognitionDidDetectSpeech(@NotNull SFSpeechRecognitionTask task) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -51,8 +54,8 @@ public interface SFSpeechRecognitionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("speechRecognitionTask:didFinishRecognition:")
-    default void speechRecognitionTaskDidFinishRecognition(SFSpeechRecognitionTask task,
-            SFSpeechRecognitionResult recognitionResult) {
+    default void speechRecognitionTaskDidFinishRecognition(@NotNull SFSpeechRecognitionTask task,
+            @NotNull SFSpeechRecognitionResult recognitionResult) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -63,7 +66,8 @@ public interface SFSpeechRecognitionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("speechRecognitionTask:didFinishSuccessfully:")
-    default void speechRecognitionTaskDidFinishSuccessfully(SFSpeechRecognitionTask task, boolean successfully) {
+    default void speechRecognitionTaskDidFinishSuccessfully(@NotNull SFSpeechRecognitionTask task,
+            boolean successfully) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -73,8 +77,8 @@ public interface SFSpeechRecognitionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("speechRecognitionTask:didHypothesizeTranscription:")
-    default void speechRecognitionTaskDidHypothesizeTranscription(SFSpeechRecognitionTask task,
-            SFTranscription transcription) {
+    default void speechRecognitionTaskDidHypothesizeTranscription(@NotNull SFSpeechRecognitionTask task,
+            @NotNull SFTranscription transcription) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -84,7 +88,7 @@ public interface SFSpeechRecognitionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("speechRecognitionTaskFinishedReadingAudio:")
-    default void speechRecognitionTaskFinishedReadingAudio(SFSpeechRecognitionTask task) {
+    default void speechRecognitionTaskFinishedReadingAudio(@NotNull SFSpeechRecognitionTask task) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -94,7 +98,7 @@ public interface SFSpeechRecognitionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("speechRecognitionTaskWasCancelled:")
-    default void speechRecognitionTaskWasCancelled(SFSpeechRecognitionTask task) {
+    default void speechRecognitionTaskWasCancelled(@NotNull SFSpeechRecognitionTask task) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

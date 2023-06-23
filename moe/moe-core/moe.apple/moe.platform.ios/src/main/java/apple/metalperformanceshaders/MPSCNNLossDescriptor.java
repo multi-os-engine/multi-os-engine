@@ -23,14 +23,18 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNLossDescriptor
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * The MPSCNNLossDescriptor specifies a loss filter descriptor.
  * The same descriptor can be used to initialize both the
  * MPSCNNLoss and the MPSNNLossGradient filters.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -62,43 +66,48 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * Make a descriptor for a MPSCNNLoss or MPSNNLossGradient object.
-     *
+     * 
      * @param lossType      The type of a loss filter.
      * @param reductionType The type of a reduction operation to apply.
      *                      This argument is ignored in the MPSNNLossGradient filter.
      * @return A valid MPSCNNLossDescriptor object or nil, if failure.
      */
+    @NotNull
     @Generated
     @Selector("cnnLossDescriptorWithType:reductionType:")
     public static native MPSCNNLossDescriptor cnnLossDescriptorWithTypeReductionType(int lossType, int reductionType);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -106,12 +115,12 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] delta
-     * <p>
+     * 
      * The delta parameter. The default value is 1.0f.
-     * <p>
+     * 
      * This parameter is valid only for the loss functions of the following type(s):
      * MPSCNNLossTypeHuber.
-     * <p>
+     * 
      * Given predictions and labels (ground truth), it is applied in the following way:
      * if (|predictions - labels| <= delta, loss = 0.5f * predictions^2
      * if (|predictions - labels| > delta, loss = 0.5 * delta^2 + delta * (|predictions - labels| - delta)
@@ -126,12 +135,12 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] epsilon
-     * <p>
+     * 
      * The epsilon parameter. The default value is 1e-7.
-     * <p>
+     * 
      * This parameter is valid only for the loss functions of the following type(s):
      * MPSCNNLossTypeLog.
-     * <p>
+     * 
      * Given predictions and labels (ground truth), it is applied in the following way:
      * -(labels * log(predictions + epsilon)) - ((1 - labels) * log(1 - predictions + epsilon))
      */
@@ -165,21 +174,22 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] labelSmoothing
-     * <p>
+     * 
      * The label smoothing parameter. The default value is 0.0f.
-     * <p>
+     * 
      * This parameter is valid only for the loss functions of the following type(s):
      * MPSCNNLossFunctionTypeSoftmaxCrossEntropy, MPSCNNLossFunctionTypeSigmoidCrossEntropy.
-     * <p>
+     * 
      * MPSCNNLossFunctionTypeSoftmaxCrossEntropy: given labels (ground truth), it is applied in the following way:
      * labels = labelSmoothing > 0 ? labels * (1 - labelSmoothing) + labelSmoothing / numberOfClasses : labels
-     * <p>
+     * 
      * MPSCNNLossFunctionTypeSigmoidCrossEntropy: given labels (ground truth), it is applied in the following way:
      * labels = labelSmoothing > 0 ? labels * (1 - labelSmoothing) + 0.5 * labelSmoothing : labels
      */
@@ -189,9 +199,9 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] lossType
-     * <p>
+     * 
      * The type of a loss filter.
-     * <p>
+     * 
      * This parameter specifies the type of a loss filter.
      */
     @Generated
@@ -205,12 +215,12 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] numberOfClasses
-     * <p>
+     * 
      * The number of classes parameter. The default value is 1.
-     * <p>
+     * 
      * This parameter is valid only for the loss functions of the following type(s):
      * MPSCNNLossFunctionTypeSoftmaxCrossEntropy.
-     * <p>
+     * 
      * Given labels (ground truth), it is applied in the following way:
      * labels = labelSmoothing > 0 ? labels * (1 - labelSmoothing) + labelSmoothing / numberOfClasses : labels
      */
@@ -221,9 +231,9 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] reductionType
-     * <p>
+     * 
      * The type of a reduction operation performed in the loss filter.
-     * <p>
+     * 
      * This parameter specifies the type of a reduction operation
      * performed in the loss filter.
      */
@@ -241,12 +251,12 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] delta
-     * <p>
+     * 
      * The delta parameter. The default value is 1.0f.
-     * <p>
+     * 
      * This parameter is valid only for the loss functions of the following type(s):
      * MPSCNNLossTypeHuber.
-     * <p>
+     * 
      * Given predictions and labels (ground truth), it is applied in the following way:
      * if (|predictions - labels| <= delta, loss = 0.5f * predictions^2
      * if (|predictions - labels| > delta, loss = 0.5 * delta^2 + delta * (|predictions - labels| - delta)
@@ -257,12 +267,12 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] epsilon
-     * <p>
+     * 
      * The epsilon parameter. The default value is 1e-7.
-     * <p>
+     * 
      * This parameter is valid only for the loss functions of the following type(s):
      * MPSCNNLossTypeLog.
-     * <p>
+     * 
      * Given predictions and labels (ground truth), it is applied in the following way:
      * -(labels * log(predictions + epsilon)) - ((1 - labels) * log(1 - predictions + epsilon))
      */
@@ -272,15 +282,15 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] labelSmoothing
-     * <p>
+     * 
      * The label smoothing parameter. The default value is 0.0f.
-     * <p>
+     * 
      * This parameter is valid only for the loss functions of the following type(s):
      * MPSCNNLossFunctionTypeSoftmaxCrossEntropy, MPSCNNLossFunctionTypeSigmoidCrossEntropy.
-     * <p>
+     * 
      * MPSCNNLossFunctionTypeSoftmaxCrossEntropy: given labels (ground truth), it is applied in the following way:
      * labels = labelSmoothing > 0 ? labels * (1 - labelSmoothing) + labelSmoothing / numberOfClasses : labels
-     * <p>
+     * 
      * MPSCNNLossFunctionTypeSigmoidCrossEntropy: given labels (ground truth), it is applied in the following way:
      * labels = labelSmoothing > 0 ? labels * (1 - labelSmoothing) + 0.5 * labelSmoothing : labels
      */
@@ -290,9 +300,9 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] lossType
-     * <p>
+     * 
      * The type of a loss filter.
-     * <p>
+     * 
      * This parameter specifies the type of a loss filter.
      */
     @Generated
@@ -301,12 +311,12 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] numberOfClasses
-     * <p>
+     * 
      * The number of classes parameter. The default value is 1.
-     * <p>
+     * 
      * This parameter is valid only for the loss functions of the following type(s):
      * MPSCNNLossFunctionTypeSoftmaxCrossEntropy.
-     * <p>
+     * 
      * Given labels (ground truth), it is applied in the following way:
      * labels = labelSmoothing > 0 ? labels * (1 - labelSmoothing) + labelSmoothing / numberOfClasses : labels
      */
@@ -316,9 +326,9 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] reductionType
-     * <p>
+     * 
      * The type of a reduction operation performed in the loss filter.
-     * <p>
+     * 
      * This parameter specifies the type of a reduction operation
      * performed in the loss filter.
      */
@@ -332,9 +342,9 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] weight
-     * <p>
+     * 
      * The scale factor to apply to each element of a result.
-     * <p>
+     * 
      * Each element of a result is multiplied by the weight value.
      * The default value is 1.0f.
      */
@@ -353,9 +363,9 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] weight
-     * <p>
+     * 
      * The scale factor to apply to each element of a result.
-     * <p>
+     * 
      * Each element of a result is multiplied by the weight value.
      * The default value is 1.0f.
      */
@@ -365,7 +375,7 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] reduceAcrossBatch
-     * <p>
+     * 
      * If set to YES then the reduction operation is applied also across the batch-index dimension,
      * ie. the loss value is summed over images in the batch and the result of the reduction is written
      * on the first loss image in the batch while the other loss images will be set to zero.
@@ -377,6 +387,8 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
      * the final forward loss value is computed by first summing over the components and then by
      * dividing the result with: number of feature channels * width * height * number of images in the batch.
      * The default value is NO.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("reduceAcrossBatch")
@@ -384,7 +396,7 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] reduceAcrossBatch
-     * <p>
+     * 
      * If set to YES then the reduction operation is applied also across the batch-index dimension,
      * ie. the loss value is summed over images in the batch and the result of the reduction is written
      * on the first loss image in the batch while the other loss images will be set to zero.
@@ -396,6 +408,8 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
      * the final forward loss value is computed by first summing over the components and then by
      * dividing the result with: number of feature channels * width * height * number of images in the batch.
      * The default value is NO.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setReduceAcrossBatch:")

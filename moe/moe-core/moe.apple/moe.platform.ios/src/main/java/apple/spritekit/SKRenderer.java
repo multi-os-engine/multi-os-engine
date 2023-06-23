@@ -1,7 +1,6 @@
 package apple.spritekit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -28,9 +27,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A renderer for displaying a SpriteKit scene in an existing Metal workflow.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("SpriteKit")
@@ -62,22 +66,25 @@ public class SKRenderer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -100,10 +107,10 @@ public class SKRenderer extends NSObject {
      * possible.
      * This will require zPosition to be used in the scenes to properly guarantee elements are in front or behind each
      * other.
-     * <p>
+     * 
      * This defaults to NO, meaning that sibling order overrides efficiency heuristics in the rendering of the scenes in
      * the view.
-     * <p>
+     * 
      * Setting this to YES for a complex scene may substantially increase performance, but care must be taken as only
      * zPosition
      * determines render order before the efficiency heuristics are used.
@@ -133,9 +140,10 @@ public class SKRenderer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -144,7 +152,7 @@ public class SKRenderer extends NSObject {
 
     /**
      * Render the scene content in the specified Metal command buffer.
-     *
+     * 
      * @param viewport             The pixel dimensions in which to render.
      * @param commandBuffer        The Metal command buffer in which SpriteKit should schedule rendering commands.
      * @param renderPassDescriptor The Metal render pass descriptor describing the rendering target.
@@ -152,12 +160,12 @@ public class SKRenderer extends NSObject {
     @Generated
     @Selector("renderWithViewport:commandBuffer:renderPassDescriptor:")
     public native void renderWithViewportCommandBufferRenderPassDescriptor(@ByValue CGRect viewport,
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MTLRenderPassDescriptor renderPassDescriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MTLRenderPassDescriptor renderPassDescriptor);
 
     /**
      * Render the scene content using a specific Metal command encoder.
-     *
+     * 
      * @param viewport             The pixel dimensions in which to render.
      * @param renderCommandEncoder The Metal render command encoder that SpriteKit will use to encode rendering
      *                             commands. This method will not call endEncoding.
@@ -167,18 +175,20 @@ public class SKRenderer extends NSObject {
     @Generated
     @Selector("renderWithViewport:renderCommandEncoder:renderPassDescriptor:commandQueue:")
     public native void renderWithViewportRenderCommandEncoderRenderPassDescriptorCommandQueue(@ByValue CGRect viewport,
-            @Mapped(ObjCObjectMapper.class) MTLRenderCommandEncoder renderCommandEncoder,
-            MTLRenderPassDescriptor renderPassDescriptor, @Mapped(ObjCObjectMapper.class) MTLCommandQueue commandQueue);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLRenderCommandEncoder renderCommandEncoder,
+            @NotNull MTLRenderPassDescriptor renderPassDescriptor,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandQueue commandQueue);
 
     /**
      * Creates a renderer with the specified Metal device.
-     *
+     * 
      * @param device A Metal device.
      * @return A new renderer object.
      */
+    @NotNull
     @Generated
     @Selector("rendererWithDevice:")
-    public static native SKRenderer rendererWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public static native SKRenderer rendererWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -191,6 +201,7 @@ public class SKRenderer extends NSObject {
     /**
      * The currently presented scene, otherwise nil. If in a transition, the 'incoming' scene is returned.
      */
+    @Nullable
     @Generated
     @Selector("scene")
     public native SKScene scene();
@@ -200,10 +211,10 @@ public class SKRenderer extends NSObject {
      * possible.
      * This will require zPosition to be used in the scenes to properly guarantee elements are in front or behind each
      * other.
-     * <p>
+     * 
      * This defaults to NO, meaning that sibling order overrides efficiency heuristics in the rendering of the scenes in
      * the view.
-     * <p>
+     * 
      * Setting this to YES for a complex scene may substantially increase performance, but care must be taken as only
      * zPosition
      * determines render order before the efficiency heuristics are used.
@@ -217,7 +228,7 @@ public class SKRenderer extends NSObject {
      */
     @Generated
     @Selector("setScene:")
-    public native void setScene(SKScene value);
+    public native void setScene(@Nullable SKScene value);
 
     /**
      * A boolean that indicated whether non-visible nodes should be automatically culled when rendering.
@@ -289,7 +300,7 @@ public class SKRenderer extends NSObject {
 
     /**
      * Update the scene at the specified system time.
-     *
+     * 
      * @param currentTime The timestamp in seconds.
      */
     @Generated

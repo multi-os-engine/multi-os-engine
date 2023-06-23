@@ -32,14 +32,17 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INSearchForMessagesIntent. By implementing this protocol, a class can
  * provide logic for resolving, confirming and handling the intent.
- * <p>
+ * 
  * The minimum requirement for an implementing class is that it should be able to handle the intent. The resolution and
  * confirmation methods are optional. The handling method is always called last, after resolving and confirming the
  * intent.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("Intents")
@@ -48,87 +51,97 @@ import org.moe.natj.objc.ann.Selector;
 public interface INSearchForMessagesIntentHandling {
     /**
      * Confirmation method - Validate that this intent is ready for the next step (i.e. handling)
-     * <p>
+     * 
      * Called prior to asking the app to handle the intent. The app should return a response object that contains
      * additional information about the intent, which may be relevant for the system to show the user prior to handling.
      * If unimplemented, the system will assume the intent is valid following resolution, and will assume there is no
      * additional information relevant to this intent.
-     *
+     * 
      * @param intent     The input intent
      * @param completion The response block contains an INSearchForMessagesIntentResponse containing additional details
      *                   about the intent that may be relevant for the system to show the user prior to handling.
+     * 
      * @see INSearchForMessagesIntentResponse
      */
     @Generated
     @IsOptional
     @Selector("confirmSearchForMessages:completion:")
-    default void confirmSearchForMessagesCompletion(INSearchForMessagesIntent intent,
-            @ObjCBlock(name = "call_confirmSearchForMessagesCompletion") Block_confirmSearchForMessagesCompletion completion) {
+    default void confirmSearchForMessagesCompletion(@NotNull INSearchForMessagesIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmSearchForMessagesCompletion") Block_confirmSearchForMessagesCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Handling method - Execute the task represented by the INSearchForMessagesIntent that's passed in
-     * <p>
+     * 
      * Called to actually execute the intent. The app must return a response for this intent.
-     *
+     * 
      * @param intent     The input intent
      * @param completion The response handling block takes a INSearchForMessagesIntentResponse containing the details of
      *                   the result of having executed the intent
+     * 
      * @see INSearchForMessagesIntentResponse
      */
     @Generated
     @Selector("handleSearchForMessages:completion:")
-    void handleSearchForMessagesCompletion(INSearchForMessagesIntent intent,
-            @ObjCBlock(name = "call_handleSearchForMessagesCompletion") Block_handleSearchForMessagesCompletion completion);
+    void handleSearchForMessagesCompletion(@NotNull INSearchForMessagesIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleSearchForMessagesCompletion") Block_handleSearchForMessagesCompletion completion);
 
     @Generated
     @IsOptional
     @Selector("resolveAttributesForSearchForMessages:withCompletion:")
-    default void resolveAttributesForSearchForMessagesWithCompletion(INSearchForMessagesIntent intent,
-            @ObjCBlock(name = "call_resolveAttributesForSearchForMessagesWithCompletion") Block_resolveAttributesForSearchForMessagesWithCompletion completion) {
+    default void resolveAttributesForSearchForMessagesWithCompletion(@NotNull INSearchForMessagesIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveAttributesForSearchForMessagesWithCompletion") Block_resolveAttributesForSearchForMessagesWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("resolveDateTimeRangeForSearchForMessages:withCompletion:")
-    default void resolveDateTimeRangeForSearchForMessagesWithCompletion(INSearchForMessagesIntent intent,
-            @ObjCBlock(name = "call_resolveDateTimeRangeForSearchForMessagesWithCompletion") Block_resolveDateTimeRangeForSearchForMessagesWithCompletion completion) {
+    default void resolveDateTimeRangeForSearchForMessagesWithCompletion(@NotNull INSearchForMessagesIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveDateTimeRangeForSearchForMessagesWithCompletion") Block_resolveDateTimeRangeForSearchForMessagesWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: resolveGroupNamesForSearchForMessages:withCompletion: is deprecated. Use
+     * resolveSpeakableGroupNamesForSearchForMessages:withCompletion: instead
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveGroupNamesForSearchForMessages:withCompletion:")
-    default void resolveGroupNamesForSearchForMessagesWithCompletion(INSearchForMessagesIntent intent,
-            @ObjCBlock(name = "call_resolveGroupNamesForSearchForMessagesWithCompletion") Block_resolveGroupNamesForSearchForMessagesWithCompletion completion) {
+    default void resolveGroupNamesForSearchForMessagesWithCompletion(@NotNull INSearchForMessagesIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveGroupNamesForSearchForMessagesWithCompletion") Block_resolveGroupNamesForSearchForMessagesWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Resolution methods - Determine if this intent is ready for the next step (confirmation)
-     * <p>
+     * 
      * Called to make sure the app extension is capable of handling this intent in its current form. This method is for
      * validating if the intent needs any further fleshing out.
-     *
+     * 
      * @param intent     The input intent
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
+     * 
      * @see INIntentResolutionResult
      */
     @Generated
     @IsOptional
     @Selector("resolveRecipientsForSearchForMessages:withCompletion:")
-    default void resolveRecipientsForSearchForMessagesWithCompletion(INSearchForMessagesIntent intent,
-            @ObjCBlock(name = "call_resolveRecipientsForSearchForMessagesWithCompletion") Block_resolveRecipientsForSearchForMessagesWithCompletion completion) {
+    default void resolveRecipientsForSearchForMessagesWithCompletion(@NotNull INSearchForMessagesIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveRecipientsForSearchForMessagesWithCompletion") Block_resolveRecipientsForSearchForMessagesWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("resolveSendersForSearchForMessages:withCompletion:")
-    default void resolveSendersForSearchForMessagesWithCompletion(INSearchForMessagesIntent intent,
-            @ObjCBlock(name = "call_resolveSendersForSearchForMessagesWithCompletion") Block_resolveSendersForSearchForMessagesWithCompletion completion) {
+    default void resolveSendersForSearchForMessagesWithCompletion(@NotNull INSearchForMessagesIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveSendersForSearchForMessagesWithCompletion") Block_resolveSendersForSearchForMessagesWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -136,14 +149,14 @@ public interface INSearchForMessagesIntentHandling {
     @Generated
     public interface Block_confirmSearchForMessagesCompletion {
         @Generated
-        void call_confirmSearchForMessagesCompletion(INSearchForMessagesIntentResponse response);
+        void call_confirmSearchForMessagesCompletion(@NotNull INSearchForMessagesIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSearchForMessagesCompletion {
         @Generated
-        void call_handleSearchForMessagesCompletion(INSearchForMessagesIntentResponse response);
+        void call_handleSearchForMessagesCompletion(@NotNull INSearchForMessagesIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -151,7 +164,7 @@ public interface INSearchForMessagesIntentHandling {
     public interface Block_resolveAttributesForSearchForMessagesWithCompletion {
         @Generated
         void call_resolveAttributesForSearchForMessagesWithCompletion(
-                INMessageAttributeOptionsResolutionResult resolutionResult);
+                @NotNull INMessageAttributeOptionsResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -159,7 +172,7 @@ public interface INSearchForMessagesIntentHandling {
     public interface Block_resolveDateTimeRangeForSearchForMessagesWithCompletion {
         @Generated
         void call_resolveDateTimeRangeForSearchForMessagesWithCompletion(
-                INDateComponentsRangeResolutionResult resolutionResult);
+                @NotNull INDateComponentsRangeResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -167,7 +180,7 @@ public interface INSearchForMessagesIntentHandling {
     public interface Block_resolveGroupNamesForSearchForMessagesWithCompletion {
         @Generated
         void call_resolveGroupNamesForSearchForMessagesWithCompletion(
-                NSArray<? extends INStringResolutionResult> resolutionResults);
+                @NotNull NSArray<? extends INStringResolutionResult> resolutionResults);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -175,7 +188,7 @@ public interface INSearchForMessagesIntentHandling {
     public interface Block_resolveRecipientsForSearchForMessagesWithCompletion {
         @Generated
         void call_resolveRecipientsForSearchForMessagesWithCompletion(
-                NSArray<? extends INPersonResolutionResult> resolutionResults);
+                @NotNull NSArray<? extends INPersonResolutionResult> resolutionResults);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -183,14 +196,17 @@ public interface INSearchForMessagesIntentHandling {
     public interface Block_resolveSendersForSearchForMessagesWithCompletion {
         @Generated
         void call_resolveSendersForSearchForMessagesWithCompletion(
-                NSArray<? extends INPersonResolutionResult> resolutionResults);
+                @NotNull NSArray<? extends INPersonResolutionResult> resolutionResults);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveSpeakableGroupNamesForSearchForMessages:withCompletion:")
-    default void resolveSpeakableGroupNamesForSearchForMessagesWithCompletion(INSearchForMessagesIntent intent,
-            @ObjCBlock(name = "call_resolveSpeakableGroupNamesForSearchForMessagesWithCompletion") Block_resolveSpeakableGroupNamesForSearchForMessagesWithCompletion completion) {
+    default void resolveSpeakableGroupNamesForSearchForMessagesWithCompletion(@NotNull INSearchForMessagesIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveSpeakableGroupNamesForSearchForMessagesWithCompletion") Block_resolveSpeakableGroupNamesForSearchForMessagesWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -199,6 +215,6 @@ public interface INSearchForMessagesIntentHandling {
     public interface Block_resolveSpeakableGroupNamesForSearchForMessagesWithCompletion {
         @Generated
         void call_resolveSpeakableGroupNamesForSearchForMessagesWithCompletion(
-                NSArray<? extends INSpeakableStringResolutionResult> resolutionResults);
+                @NotNull NSArray<? extends INSpeakableStringResolutionResult> resolutionResults);
     }
 }

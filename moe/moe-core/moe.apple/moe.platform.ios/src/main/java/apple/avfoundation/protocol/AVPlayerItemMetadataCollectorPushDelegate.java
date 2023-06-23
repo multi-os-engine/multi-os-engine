@@ -26,6 +26,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("AVFoundation")
@@ -34,24 +35,29 @@ import org.moe.natj.objc.ann.Selector;
 public interface AVPlayerItemMetadataCollectorPushDelegate {
     /**
      * metadataCollector:didCollectDateRangeMetadataGroups:indexesOfNewGroup:indexesOfModifiedGroups:
-     * <p>
+     * 
      * A delegate callback that delivers the total set of AVDateRangeMetadataGroups for this collector.
-     * <p>
+     * 
      * This method will be invoked whenever new AVDateRangeMetadataGroups are added to metadataGroups or whenever any
      * AVDateRangeMetadataGroups in metadataGroups have been modified since previous invocations. The initial invocation
      * will have indexesOfNewGroup referring to every index in metadataGroups. Subsequent invocations may not contain
      * all previously collected metadata groups if they no longer refer to a region in the AVPlayerItem's
      * seekableTimeRanges.
-     *
-     * @param metadataCollector       The AVPlayerItemMetadataCollector source.
-     * @param metadataGroups          The set of all metadata groups meeting the criteria of the output.
-     * @param indexesOfNewGroups      Indexes of metadataGroups added since the last delegate invocation of this method.
-     * @param indexesOfModifiedGroups Indexes of metadataGroups modified since the last delegate invocation of this
+     * 
+     * @param metadataCollector
+     *                                The AVPlayerItemMetadataCollector source.
+     * @param metadataGroups
+     *                                The set of all metadata groups meeting the criteria of the output.
+     * @param indexesOfNewGroups
+     *                                Indexes of metadataGroups added since the last delegate invocation of this method.
+     * @param indexesOfModifiedGroups
+     *                                Indexes of metadataGroups modified since the last delegate invocation of this
      *                                method.
      */
     @Generated
     @Selector("metadataCollector:didCollectDateRangeMetadataGroups:indexesOfNewGroups:indexesOfModifiedGroups:")
     void metadataCollectorDidCollectDateRangeMetadataGroupsIndexesOfNewGroupsIndexesOfModifiedGroups(
-            AVPlayerItemMetadataCollector metadataCollector, NSArray<? extends AVDateRangeMetadataGroup> metadataGroups,
-            NSIndexSet indexesOfNewGroups, NSIndexSet indexesOfModifiedGroups);
+            @NotNull AVPlayerItemMetadataCollector metadataCollector,
+            @NotNull NSArray<? extends AVDateRangeMetadataGroup> metadataGroups, @NotNull NSIndexSet indexesOfNewGroups,
+            @NotNull NSIndexSet indexesOfModifiedGroups);
 }

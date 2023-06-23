@@ -44,7 +44,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -75,22 +80,25 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -100,6 +108,8 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
      * earlier default to NO. 10.6 and later default to YES.
      * Similarly, transient attributes may be individually flagged as not dirtying the object by adding
      * +(BOOL)contextShouldIgnoreChangesFor<key> where <key> is the property name.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("contextShouldIgnoreUnmodeledPropertyChanges")
@@ -116,11 +126,18 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
     /**
      * The Entity represented by this subclass. This method is only legal to call on subclasses of NSManagedObject that
      * represent a single entity in the model.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("entity")
     public static native NSEntityDescription entity_static();
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @Selector("fetchRequest")
     public static native NSFetchRequest<?> fetchRequest();
@@ -147,9 +164,10 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -194,6 +212,8 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
 
     /**
      * Callback for undo, redo, and other multi-property state resets
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("awakeFromSnapshotEvents:")
@@ -203,10 +223,15 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
      * returns a dictionary with the keys and (new) values that have been changed since last fetching or saving the
      * object (this is implemented efficiently without firing relationship faults)
      */
+    @NotNull
     @Generated
     @Selector("changedValues")
     public native NSDictionary<String, ?> changedValues();
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("changedValuesForCurrentEvent")
     public native NSDictionary<String, ?> changedValuesForCurrentEvent();
@@ -215,9 +240,10 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
      * returns a dictionary of the last fetched or saved keys and values of this object. Pass nil to get all persistent
      * modeled properties.
      */
+    @NotNull
     @Generated
     @Selector("committedValuesForKeys:")
-    public native NSDictionary<String, ?> committedValuesForKeys(NSArray<String> keys);
+    public native NSDictionary<String, ?> committedValuesForKeys(@Nullable NSArray<String> keys);
 
     /**
      * read notification (together with willAccessValueForKey used to maintain inverse relationships, to fire faults,
@@ -226,16 +252,16 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
      */
     @Generated
     @Selector("didAccessValueForKey:")
-    public native void didAccessValueForKey(String key);
+    public native void didAccessValueForKey(@Nullable String key);
 
     @Generated
     @Selector("didChangeValueForKey:")
-    public native void didChangeValueForKey(String key);
+    public native void didChangeValueForKey(@NotNull String key);
 
     @Generated
     @Selector("didChangeValueForKey:withSetMutation:usingObjects:")
-    public native void didChangeValueForKeyWithSetMutationUsingObjects(String inKey, @NUInt long inMutationKind,
-            NSSet<?> inObjects);
+    public native void didChangeValueForKeyWithSetMutationUsingObjects(@NotNull String inKey,
+            @NUInt long inMutationKind, @NotNull NSSet<?> inObjects);
 
     /**
      * commonly used to notify other objects after a save
@@ -251,6 +277,7 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
     @Selector("didTurnIntoFault")
     public native void didTurnIntoFault();
 
+    @NotNull
     @Generated
     @Selector("entity")
     public native NSEntityDescription entity();
@@ -258,12 +285,17 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
     /**
      * Allow developers to determine if an object is in a transitional phase when receiving a KVO notification. Returns
      * 0 if the object is fully initialized as a managed object and not transitioning to or from another state
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("faultingState")
     @NUInt
     public native long faultingState();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("hasChanges")
     public native boolean hasChanges();
@@ -272,15 +304,19 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
      * returns a Boolean indicating if the relationship for the specified key is a fault. If a value of NO is returned,
      * the resulting relationship is a realized object; otherwise the relationship is a fault. If the specified
      * relationship is a fault, calling this method does not result in the fault firing.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("hasFaultForRelationshipNamed:")
-    public native boolean hasFaultForRelationshipNamed(String key);
+    public native boolean hasFaultForRelationshipNamed(@NotNull String key);
 
     /**
      * returns YES if any persistent properties do not compare isEqual to their last saved state. Relationship faults
      * will not be unnecessarily fired. This differs from the existing -hasChanges method which is a simple dirty flag
      * and also includes transient properties
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("hasPersistentChangedValues")
@@ -293,18 +329,21 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
     /**
      * Returns a new object, inserted into managedObjectContext. This method is only legal to call on subclasses of
      * NSManagedObject that represent a single entity in the model.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithContext:")
-    public native NSManagedObject initWithContext(NSManagedObjectContext moc);
+    public native NSManagedObject initWithContext(@NotNull NSManagedObjectContext moc);
 
     /**
      * The designated initializer.
      */
+    @NotNull
     @Generated
     @Selector("initWithEntity:insertIntoManagedObjectContext:")
-    public native NSManagedObject initWithEntityInsertIntoManagedObjectContext(NSEntityDescription entity,
-            NSManagedObjectContext context);
+    public native NSManagedObject initWithEntityInsertIntoManagedObjectContext(@NotNull NSEntityDescription entity,
+            @Nullable NSManagedObjectContext context);
 
     @Generated
     @Selector("isDeleted")
@@ -333,10 +372,12 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
     /**
      * identity
      */
+    @Nullable
     @Generated
     @Selector("managedObjectContext")
     public native NSManagedObjectContext managedObjectContext();
 
+    @NotNull
     @Generated
     @Selector("objectID")
     public native NSManagedObjectID objectID();
@@ -345,14 +386,19 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
      * returns an array of objectIDs for the contents of a relationship. to-one relationships will return an NSArray
      * with a single NSManagedObjectID. Optional relationships may return an empty NSArray. The objectIDs will be
      * returned in an NSArray regardless of the type of the relationship.
+     * 
+     * API-Since: 8.3
      */
+    @NotNull
     @Generated
     @Selector("objectIDsForRelationshipNamed:")
-    public native NSArray<? extends NSManagedObjectID> objectIDsForRelationshipNamed(String key);
+    public native NSArray<? extends NSManagedObjectID> objectIDsForRelationshipNamed(@NotNull String key);
 
     /**
      * Callback before delete propagation while the object is still alive. Useful to perform custom propagation before
      * the relationships are torn down or reconfigure KVO observers.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("prepareForDeletion")
@@ -362,68 +408,72 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
      * primitive methods give access to the generic dictionary storage from subclasses that implement explicit accessors
      * like -setName/-name to add custom document logic
      */
+    @Nullable
     @Generated
     @Selector("primitiveValueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object primitiveValueForKey(String key);
+    public native Object primitiveValueForKey(@NotNull String key);
 
     @Generated
     @Selector("setPrimitiveValue:forKey:")
-    public native void setPrimitiveValueForKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
+    public native void setPrimitiveValueForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object value,
+            @NotNull String key);
 
     /**
      * KVC - overridden to access generic dictionary storage unless subclasses explicitly provide accessors
      */
     @Generated
     @Selector("setValue:forKey:")
-    public native void setValueForKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
+    public native void setValueForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object value, @NotNull String key);
 
     @Generated
     @Selector("validateForDelete:")
-    public native boolean validateForDelete(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean validateForDelete(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("validateForInsert:")
-    public native boolean validateForInsert(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean validateForInsert(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("validateForUpdate:")
-    public native boolean validateForUpdate(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean validateForUpdate(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * KVC
      */
     @Generated
     @Selector("validateValue:forKey:error:")
-    public native boolean validateValueForKeyError(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> value,
-            String key, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean validateValueForKeyError(
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> value, @NotNull String key,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * KVC - overridden to access generic dictionary storage unless subclasses explicitly provide accessors
      */
+    @Nullable
     @Generated
     @Selector("valueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object valueForKey(String key);
+    public native Object valueForKey(@NotNull String key);
 
     /**
      * read notification
      */
     @Generated
     @Selector("willAccessValueForKey:")
-    public native void willAccessValueForKey(String key);
+    public native void willAccessValueForKey(@Nullable String key);
 
     /**
      * KVO change notification
      */
     @Generated
     @Selector("willChangeValueForKey:")
-    public native void willChangeValueForKey(String key);
+    public native void willChangeValueForKey(@NotNull String key);
 
     @Generated
     @Selector("willChangeValueForKey:withSetMutation:usingObjects:")
-    public native void willChangeValueForKeyWithSetMutationUsingObjects(String inKey, @NUInt long inMutationKind,
-            NSSet<?> inObjects);
+    public native void willChangeValueForKeyWithSetMutationUsingObjects(@NotNull String inKey,
+            @NUInt long inMutationKind, @NotNull NSSet<?> inObjects);
 
     /**
      * commonly used to compute persisted values from other transient/scratchpad values, to set timestamps, etc. - this
@@ -437,6 +487,8 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
      * invoked automatically by the Core Data framework before receiver is converted (back) to a fault. This method is
      * the companion of the -didTurnIntoFault method, and may be used to (re)set state which requires access to property
      * values (for example, observers across keypaths.) The default implementation does nothing.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("willTurnIntoFault")

@@ -27,17 +27,21 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * OSLogStore
- * <p>
+ * 
  * A set of entries from the unified logging system. Instances
  * represent a fixed range of entries and may be backed by a
  * logarchive or the Mac's local store.
- * <p>
+ * 
  * Entries in OSLogStore objects are used by OSLogEnumerator
  * instances; one store can support multiple OSLogEnumerator
  * instances concurrently.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("OSLog")
@@ -69,22 +73,25 @@ public class OSLogStore extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,40 +106,55 @@ public class OSLogStore extends NSObject {
 
     /**
      * entriesEnumeratorAndReturnError
-     * <p>
+     * 
      * Return an OSLogEnumerator object with default options for
      * viewing the entries; all are viewed, from earliest to latest.
-     *
-     * @param error If the enumerator cannot be set up, return nil and set this
+     * 
+     * @param error
+     *              If the enumerator cannot be set up, return nil and set this
      *              to a pointer to an error object that describes the reason.
+     * 
+     *              API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("entriesEnumeratorAndReturnError:")
     public native OSLogEnumerator entriesEnumeratorAndReturnError(
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * entriesEnumeratorWithOptions
-     * <p>
+     * 
      * Return an OSLogEnumerator object based on an underlying store.
      * This object represents the sequence of entries for the store.
      * OSLogStore. Additional parameters control which entries are
      * yielded and their order.
-     *
-     * @param options   Control the direction of iteration.
-     * @param position  Where to start iteration. If nil, depend on the direction of
+     * 
+     * @param options
+     *                  Control the direction of iteration.
+     * 
+     * @param position
+     *                  Where to start iteration. If nil, depend on the direction of
      *                  the iteration: if forwards, start with the earliest entry; if
      *                  reverse, start with the latest entry.
-     * @param predicate A predicate that filters which entries are in the sequence. If
+     * 
+     * @param predicate
+     *                  A predicate that filters which entries are in the sequence. If
      *                  this is nil, yield all entries.
-     * @param error     If the enumerator cannot be set up --- for example, the
+     * 
+     * @param error
+     *                  If the enumerator cannot be set up --- for example, the
      *                  predicate has an unrecognized key --- return nil and set this
      *                  to a pointer to an error object that describes the reason.
+     * 
+     *                  API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("entriesEnumeratorWithOptions:position:predicate:error:")
     public native OSLogEnumerator entriesEnumeratorWithOptionsPositionPredicateError(@NUInt long options,
-            OSLogPosition position, NSPredicate predicate, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable OSLogPosition position, @Nullable NSPredicate predicate,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("hash")
@@ -160,9 +182,10 @@ public class OSLogStore extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -171,42 +194,54 @@ public class OSLogStore extends NSObject {
 
     /**
      * positionWithDate
-     * <p>
+     * 
      * Return a position representing the time specified.
-     * <p>
+     * 
      * If there are multiple occurences of the same time --- if, for
      * example, there was a time change during the range of entries
      * --- the earliest occurrence is used.
-     *
-     * @param date The date to look for.
+     * 
+     * API-Since: 15.0
+     * 
+     * @param date
+     *             The date to look for.
      */
+    @NotNull
     @Generated
     @Selector("positionWithDate:")
-    public native OSLogPosition positionWithDate(NSDate date);
+    public native OSLogPosition positionWithDate(@NotNull NSDate date);
 
     /**
      * positionWithTimeIntervalSinceEnd
-     * <p>
+     * 
      * Return a position representing an offset since the end of the time
      * range that the entries span.
-     *
-     * @param seconds The seconds to add to the last time point in the range of entries.
+     * 
+     * @param seconds
+     *                The seconds to add to the last time point in the range of entries.
+     * 
+     *                API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("positionWithTimeIntervalSinceEnd:")
     public native OSLogPosition positionWithTimeIntervalSinceEnd(double seconds);
 
     /**
      * positionWithTimeIntervalSinceLatestBoot
-     * <p>
+     * 
      * Return a position representing time since the last boot in the
      * series of entries.
-     * <p>
+     * 
      * Negative seconds would create an ambiguous or imprecise position;
      * this function asserts that the interval is positive.
-     *
-     * @param seconds The seconds to add to the boot time point in the log time range.
+     * 
+     * API-Since: 15.0
+     * 
+     * @param seconds
+     *                The seconds to add to the boot time point in the log time range.
      */
+    @NotNull
     @Generated
     @Selector("positionWithTimeIntervalSinceLatestBoot:")
     public native OSLogPosition positionWithTimeIntervalSinceLatestBoot(double seconds);
@@ -225,33 +260,43 @@ public class OSLogStore extends NSObject {
 
     /**
      * storeWithScope
-     * <p>
+     * 
      * Create an OSLogStore for a subset of entries in the local store.
-     *
-     * @param scope The kind of subset the OSLogStore is for.
-     * @param error If initialization is unsuccessful, return nil and set this parameter to a
+     * 
+     * @param scope
+     *              The kind of subset the OSLogStore is for.
+     * 
+     * @param error
+     *              If initialization is unsuccessful, return nil and set this parameter to a
      *              pointer to an error object that describes the reason.
+     * 
+     *              API-Since: 15.0
      */
     @Generated
     @Selector("storeWithScope:error:")
     public static native OSLogStore storeWithScopeError(@NInt long scope,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * storeWithURL
-     * <p>
+     * 
      * Create an OSLogStore based on a logarchive.
-     *
-     * @param url   The path identifying a logarchive to be read.
-     * @param error If initialization is unsuccessful --- for example, the path is not
+     * 
+     * @param url
+     *              The path identifying a logarchive to be read.
+     * 
+     * @param error
+     *              If initialization is unsuccessful --- for example, the path is not
      *              to a valid logarchive or the logarchive is not compatible because
      *              it is from a newer version --- return nil and set this parameter
      *              to a pointer to an error object that describes the reason.
+     * 
+     *              API-Since: 15.0
      */
     @Generated
     @Selector("storeWithURL:error:")
-    public static native OSLogStore storeWithURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native OSLogStore storeWithURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("superclass")

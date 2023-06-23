@@ -26,126 +26,172 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UISearchDisplayDelegate")
 public interface UISearchDisplayDelegate {
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("searchDisplayController:didHideSearchResultsTableView:")
-    default void searchDisplayControllerDidHideSearchResultsTableView(UISearchDisplayController controller,
-            UITableView tableView) {
+    default void searchDisplayControllerDidHideSearchResultsTableView(@NotNull UISearchDisplayController controller,
+            @NotNull UITableView tableView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * called when the table is created destroyed, shown or hidden. configure as necessary.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("searchDisplayController:didLoadSearchResultsTableView:")
-    default void searchDisplayControllerDidLoadSearchResultsTableView(UISearchDisplayController controller,
-            UITableView tableView) {
+    default void searchDisplayControllerDidLoadSearchResultsTableView(@NotNull UISearchDisplayController controller,
+            @NotNull UITableView tableView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("searchDisplayController:didShowSearchResultsTableView:")
-    default void searchDisplayControllerDidShowSearchResultsTableView(UISearchDisplayController controller,
-            UITableView tableView) {
+    default void searchDisplayControllerDidShowSearchResultsTableView(@NotNull UISearchDisplayController controller,
+            @NotNull UITableView tableView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("searchDisplayController:shouldReloadTableForSearchScope:")
-    default boolean searchDisplayControllerShouldReloadTableForSearchScope(UISearchDisplayController controller,
-            @NInt long searchOption) {
+    default boolean searchDisplayControllerShouldReloadTableForSearchScope(
+            @NotNull UISearchDisplayController controller, @NInt long searchOption) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * return YES to reload table. called when search string/option changes. convenience methods on top UISearchBar
      * delegate methods
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("searchDisplayController:shouldReloadTableForSearchString:")
-    default boolean searchDisplayControllerShouldReloadTableForSearchString(UISearchDisplayController controller,
-            String searchString) {
+    default boolean searchDisplayControllerShouldReloadTableForSearchString(
+            @NotNull UISearchDisplayController controller, @Nullable String searchString) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("searchDisplayController:willHideSearchResultsTableView:")
-    default void searchDisplayControllerWillHideSearchResultsTableView(UISearchDisplayController controller,
-            UITableView tableView) {
+    default void searchDisplayControllerWillHideSearchResultsTableView(@NotNull UISearchDisplayController controller,
+            @NotNull UITableView tableView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * called when table is shown/hidden
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("searchDisplayController:willShowSearchResultsTableView:")
-    default void searchDisplayControllerWillShowSearchResultsTableView(UISearchDisplayController controller,
-            UITableView tableView) {
+    default void searchDisplayControllerWillShowSearchResultsTableView(@NotNull UISearchDisplayController controller,
+            @NotNull UITableView tableView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("searchDisplayController:willUnloadSearchResultsTableView:")
-    default void searchDisplayControllerWillUnloadSearchResultsTableView(UISearchDisplayController controller,
-            UITableView tableView) {
+    default void searchDisplayControllerWillUnloadSearchResultsTableView(@NotNull UISearchDisplayController controller,
+            @NotNull UITableView tableView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("searchDisplayControllerDidBeginSearch:")
-    default void searchDisplayControllerDidBeginSearch(UISearchDisplayController controller) {
+    default void searchDisplayControllerDidBeginSearch(@NotNull UISearchDisplayController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("searchDisplayControllerDidEndSearch:")
-    default void searchDisplayControllerDidEndSearch(UISearchDisplayController controller) {
+    default void searchDisplayControllerDidEndSearch(@NotNull UISearchDisplayController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * when we start/end showing the search UI
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("searchDisplayControllerWillBeginSearch:")
-    default void searchDisplayControllerWillBeginSearch(UISearchDisplayController controller) {
+    default void searchDisplayControllerWillBeginSearch(@NotNull UISearchDisplayController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("searchDisplayControllerWillEndSearch:")
-    default void searchDisplayControllerWillEndSearch(UISearchDisplayController controller) {
+    default void searchDisplayControllerWillEndSearch(@NotNull UISearchDisplayController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -40,11 +40,15 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NWTCPConnection
- * <p>
+ * 
  * Establish TCP connections to an endpoint, and send and receive data on the TCP connection.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -76,22 +80,25 @@ public class NWTCPConnection extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +133,10 @@ public class NWTCPConnection extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,9 +166,11 @@ public class NWTCPConnection extends NSObject {
 
     /**
      * cancel:
-     * <p>
+     * 
      * Cancel the connection. This will clean up the resources associated with this object
      * and transition this object to NWTCPConnectionStateCancelled state.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("cancel")
@@ -168,44 +178,55 @@ public class NWTCPConnection extends NSObject {
 
     /**
      * [@property] connectedPath
-     * <p>
+     * 
      * The network path over which the connection was established. The caller can query
      * additional properties from the NWPath object for more information.
-     * <p>
+     * 
      * Note that this contains a snapshot of information at the time of connection establishment
      * for this connection only. As a result, some underlying properties might change in time and
      * might not reflect the path for other connections that might be established at different times.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("connectedPath")
     public native NWPath connectedPath();
 
     /**
      * [@property] endpoint
-     * <p>
+     * 
      * The destination endpoint with which this connection was created.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("endpoint")
     public native NWEndpoint endpoint();
 
     /**
      * [@property] error
-     * <p>
+     * 
      * The connection-wide error property indicates any fatal error that occurred while
      * processing the connection or performing data reading or writing.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("error")
     public native NSError error();
 
     /**
      * [@property] hasBetterPath
-     * <p>
+     * 
      * YES if the system determines there is a better path the destination can be reached if
      * the caller creates a new connection using the same endpoint and parameters. This can
      * be done using the convenience upgrade initializer method.
      * Use KVO to watch this property to get updates.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("hasBetterPath")
@@ -217,15 +238,15 @@ public class NWTCPConnection extends NSObject {
 
     /**
      * initWithUpgradeForConnection:
-     * <p>
+     * 
      * This convenience initializer can be used to create a new connection that would only
      * be connected if there exists a better path (as determined by the system) to the destination
      * endpoint of the original connection. It will be initialized using the same destination endpoint
      * and set of parameters from the original connection.
-     * <p>
+     * 
      * If the original connection becomes disconnected or cancelled, the new "upgrade" connection
      * would automatically be considered better.
-     * <p>
+     * 
      * The caller should create an NWTCPConnection and watch for the hasBetterPath property.
      * When this property is YES, the caller should attempt to create a new upgrade
      * connection, with the goal to start transferring data on the new better path as soon as
@@ -233,18 +254,22 @@ public class NWTCPConnection extends NSObject {
      * becomes connected and when the caller wraps up the previous caller session on
      * the original connection, the caller can start using the new upgrade connection and
      * tear down the original one.
-     *
+     * 
      * @param connection The original connection from which the caller will upgrade
      * @return An initialized NWTCPConnection
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("initWithUpgradeForConnection:")
-    public native NWTCPConnection initWithUpgradeForConnection(NWTCPConnection connection);
+    public native NWTCPConnection initWithUpgradeForConnection(@NotNull NWTCPConnection connection);
 
     /**
      * [@property] viable
-     * <p>
+     * 
      * YES if the connection can read and write data, NO otherwise. Use KVO to watch this property.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isViable")
@@ -252,70 +277,82 @@ public class NWTCPConnection extends NSObject {
 
     /**
      * [@property] localAddress
-     * <p>
+     * 
      * The IP address endpoint from which the connection was connected.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("localAddress")
     public native NWEndpoint localAddress();
 
     /**
      * readLength:completionHandler:
-     * <p>
+     * 
      * Read "length" number of bytes. See readMinimumLength:maximumLength:completionHandler:
      * for a complete discussion of the callback behavior.
-     *
+     * 
      * @param length     The exact number of bytes the application wants to read
      * @param completion The completion handler to be invoked when there is data to read or an error occurred
+     * 
+     *                   API-Since: 9.0
      */
     @Generated
     @Selector("readLength:completionHandler:")
     public native void readLengthCompletionHandler(@NUInt long length,
-            @ObjCBlock(name = "call_readLengthCompletionHandler") Block_readLengthCompletionHandler completion);
+            @NotNull @ObjCBlock(name = "call_readLengthCompletionHandler") Block_readLengthCompletionHandler completion);
 
     /**
      * readMinimumLength:maximumLength:completionHandler:
-     * <p>
+     * 
      * Read the requested range of bytes. The completion handler will be invoked when:
      * - Exactly "length" number of bytes have been read. 'data' will be non-nil.
-     * <p>
+     * 
      * - Fewer than "length" number of bytes, including 0 bytes, have been read, and the connection's
      * read side has been closed. 'data' might be nil, depending on whether there was any data to be
      * read when the connection's read side was closed.
-     * <p>
+     * 
      * - Some fatal error has occurred, and 'data' will be nil.
-     * <p>
+     * 
      * To know when to schedule a read again, check for the condition whether an error has occurred.
-     * <p>
+     * 
      * For better performance, the caller should pick the effective minimum and maximum lengths.
      * For example, if the caller absolutely needs a specific number of bytes before it can
      * make any progress, use that value as the minimum. The maximum bytes can be the upperbound
      * that the caller wants to read. Typically, the minimum length can be the caller
      * protocol fixed-size header and the maximum length can be the maximum size of the payload or
      * the size of the current read buffer.
-     *
+     * 
      * @param minimum    The minimum number of bytes the caller wants to read
      * @param maximum    The maximum number of bytes the caller wants to read
      * @param completion The completion handler to be invoked when there is data to read or an error occurred
+     * 
+     *                   API-Since: 9.0
      */
     @Generated
     @Selector("readMinimumLength:maximumLength:completionHandler:")
     public native void readMinimumLengthMaximumLengthCompletionHandler(@NUInt long minimum, @NUInt long maximum,
-            @ObjCBlock(name = "call_readMinimumLengthMaximumLengthCompletionHandler") Block_readMinimumLengthMaximumLengthCompletionHandler completion);
+            @NotNull @ObjCBlock(name = "call_readMinimumLengthMaximumLengthCompletionHandler") Block_readMinimumLengthMaximumLengthCompletionHandler completion);
 
     /**
      * [@property] remoteAddress
-     * <p>
+     * 
      * The IP address endpoint to which the connection was connected.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("remoteAddress")
     public native NWEndpoint remoteAddress();
 
     /**
      * [@property] state
-     * <p>
+     * 
      * The status of the connection. Use KVO to watch this property to get updates.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("state")
@@ -324,38 +361,45 @@ public class NWTCPConnection extends NSObject {
 
     /**
      * [@property] txtRecord
-     * <p>
+     * 
      * When the connection is connected to a Bonjour service endpoint, the TXT record associated
      * with the Bonjour service is available via this property. Beware that the value comes from
      * the network. Care must be taken when parsing this potentially malicious value.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("txtRecord")
     public native NSData txtRecord();
 
     /**
      * write:completionHandler:
-     * <p>
+     * 
      * Write the given data object content. Callers should wait until the completionHandler is executed
      * before issuing another write.
-     *
+     * 
      * @param data       The data object whose content will be written
      * @param completion The completion handler to be invoked when the data content has been written or an error has
      *                   occurred.
      *                   If the error is nil, the write succeeded and the caller can write more data.
+     * 
+     *                   API-Since: 9.0
      */
     @Generated
     @Selector("write:completionHandler:")
-    public native void writeCompletionHandler(NSData data,
-            @ObjCBlock(name = "call_writeCompletionHandler") Block_writeCompletionHandler completion);
+    public native void writeCompletionHandler(@NotNull NSData data,
+            @NotNull @ObjCBlock(name = "call_writeCompletionHandler") Block_writeCompletionHandler completion);
 
     /**
      * writeClose:
-     * <p>
+     * 
      * Close this connection's write side such that further write requests won't succeed.
      * Note that this has the effect of closing the read side of the peer connection.
      * When the connection's read side and write side are closed, the connection is considered
      * disconnected and will transition to the appropriate state.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("writeClose")
@@ -365,20 +409,20 @@ public class NWTCPConnection extends NSObject {
     @Generated
     public interface Block_readLengthCompletionHandler {
         @Generated
-        void call_readLengthCompletionHandler(NSData data, NSError error);
+        void call_readLengthCompletionHandler(@Nullable NSData data, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_readMinimumLengthMaximumLengthCompletionHandler {
         @Generated
-        void call_readMinimumLengthMaximumLengthCompletionHandler(NSData data, NSError error);
+        void call_readMinimumLengthMaximumLengthCompletionHandler(@Nullable NSData data, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeCompletionHandler {
         @Generated
-        void call_writeCompletionHandler(NSError error);
+        void call_writeCompletionHandler(@Nullable NSError error);
     }
 }

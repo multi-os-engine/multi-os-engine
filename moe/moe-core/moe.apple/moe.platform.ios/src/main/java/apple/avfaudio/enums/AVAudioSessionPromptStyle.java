@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] AVAudioSessionPromptStyle
- * <p>
+ * 
  * The prompt style is a hint to sessions that use AVAudioSessionModeVoicePrompt to modify the type of
  * prompt they play in response to other audio activity on the system, such as Siri or phone calls.
  * Sessions that issue voice prompts are encouraged to pay attention to changes in the prompt style and

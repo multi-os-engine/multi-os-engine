@@ -22,7 +22,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -53,22 +58,25 @@ public class NSPersistentHistoryChangeRequest extends NSPersistentStoreRequest {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -77,35 +85,43 @@ public class NSPersistentHistoryChangeRequest extends NSPersistentStoreRequest {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @NotNull
     @Generated
     @Selector("deleteHistoryBeforeDate:")
-    public static native NSPersistentHistoryChangeRequest deleteHistoryBeforeDate(NSDate date);
+    public static native NSPersistentHistoryChangeRequest deleteHistoryBeforeDate(@NotNull NSDate date);
 
+    @NotNull
     @Generated
     @Selector("deleteHistoryBeforeToken:")
-    public static native NSPersistentHistoryChangeRequest deleteHistoryBeforeToken(NSPersistentHistoryToken token);
+    public static native NSPersistentHistoryChangeRequest deleteHistoryBeforeToken(
+            @Nullable NSPersistentHistoryToken token);
 
+    @NotNull
     @Generated
     @Selector("deleteHistoryBeforeTransaction:")
     public static native NSPersistentHistoryChangeRequest deleteHistoryBeforeTransaction(
-            NSPersistentHistoryTransaction transaction);
+            @Nullable NSPersistentHistoryTransaction transaction);
 
     @Generated
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("fetchHistoryAfterDate:")
-    public static native NSPersistentHistoryChangeRequest fetchHistoryAfterDate(NSDate date);
+    public static native NSPersistentHistoryChangeRequest fetchHistoryAfterDate(@NotNull NSDate date);
 
+    @NotNull
     @Generated
     @Selector("fetchHistoryAfterToken:")
-    public static native NSPersistentHistoryChangeRequest fetchHistoryAfterToken(NSPersistentHistoryToken token);
+    public static native NSPersistentHistoryChangeRequest fetchHistoryAfterToken(
+            @Nullable NSPersistentHistoryToken token);
 
+    @NotNull
     @Generated
     @Selector("fetchHistoryAfterTransaction:")
     public static native NSPersistentHistoryChangeRequest fetchHistoryAfterTransaction(
-            NSPersistentHistoryTransaction transaction);
+            @Nullable NSPersistentHistoryTransaction transaction);
 
     @Generated
     @Selector("hash")
@@ -133,9 +149,10 @@ public class NSPersistentHistoryChangeRequest extends NSPersistentStoreRequest {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -175,6 +192,7 @@ public class NSPersistentHistoryChangeRequest extends NSPersistentStoreRequest {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Nullable
     @Generated
     @Selector("token")
     public native NSPersistentHistoryToken token();
@@ -184,15 +202,27 @@ public class NSPersistentHistoryChangeRequest extends NSPersistentStoreRequest {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 13.0
+     */
+    @NotNull
     @Generated
     @Selector("fetchHistoryWithFetchRequest:")
-    public static native NSPersistentHistoryChangeRequest fetchHistoryWithFetchRequest(NSFetchRequest<?> fetchRequest);
+    public static native NSPersistentHistoryChangeRequest fetchHistoryWithFetchRequest(
+            @NotNull NSFetchRequest<?> fetchRequest);
 
+    /**
+     * API-Since: 13.0
+     */
+    @Nullable
     @Generated
     @Selector("fetchRequest")
     public native NSFetchRequest<?> fetchRequest();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setFetchRequest:")
-    public native void setFetchRequest(NSFetchRequest<?> value);
+    public native void setFetchRequest(@Nullable NSFetchRequest<?> value);
 }

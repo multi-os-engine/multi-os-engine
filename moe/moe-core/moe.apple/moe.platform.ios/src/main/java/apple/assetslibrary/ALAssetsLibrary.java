@@ -44,7 +44,14 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.0
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Use PHPhotoLibrary from the Photos framework instead
+ */
 @Deprecated
 @Generated
 @Library("AssetsLibrary")
@@ -76,6 +83,10 @@ public class ALAssetsLibrary extends NSObject {
 
     /**
      * Returns photo data authorization status for this application
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use authorizationStatus on the shared PHPhotoLibrary from the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -85,22 +96,25 @@ public class ALAssetsLibrary extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -115,6 +129,10 @@ public class ALAssetsLibrary extends NSObject {
 
     /**
      * Disable retrieval and notifications for Shared Photo Streams
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -143,9 +161,10 @@ public class ALAssetsLibrary extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -183,6 +202,11 @@ public class ALAssetsLibrary extends NSObject {
      * user denies access to the application or if no application is allowed to access the data, the failure block will
      * be called.
      * If the data is currently unavailable, the failure block will be called.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use creationRequestForAssetCollectionWithTitle: on PHAssetCollectionChangeRequest from the
+     * Photos framework to create a new asset collection instead
      */
     @Generated
     @Deprecated
@@ -197,6 +221,12 @@ public class ALAssetsLibrary extends NSObject {
      * denies access to the application or if no application is allowed to access the data, the failure block will be
      * called.
      * If the data is currently unavailable, the failure block will be called.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use fetchAssetsWithLocalIdentifiers:options: on PHAsset to fetch assets by local identifier
+     * (or to lookup PHAssets by a previously known ALAssetPropertyAssetURL use fetchAssetsWithALAssetURLs:options:)
+     * from the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -213,6 +243,11 @@ public class ALAssetsLibrary extends NSObject {
      * denies access to the application or if no application is allowed to access the data, the failure block will be
      * called.
      * If the data is currently unavailable, the failure block will be called.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use the PHFetchResult returned by one of the fetch... methods on PHAssetCollection from the
+     * Photos framework to enumerate asset collections instead
      */
     @Generated
     @Deprecated
@@ -227,6 +262,13 @@ public class ALAssetsLibrary extends NSObject {
      * the user denies access to the application or if no application is allowed to access the data, the failure block
      * will be called.
      * If the data is currently unavailable, the failure block will be called.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use fetchAssetCollectionsWithLocalIdentifiers:options: on PHAssetCollection to fetch the
+     * asset collections by local identifier (or to lookup PHAssetCollections by a previously known
+     * ALAssetsGroupPropertyURL use fetchAssetCollectionsWithALAssetGroupURLs:options:) from the Photos framework
+     * instead
      */
     @Generated
     @Deprecated
@@ -239,6 +281,11 @@ public class ALAssetsLibrary extends NSObject {
     @Selector("init")
     public native ALAssetsLibrary init();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use isCompatibleWithSavedPhotosAlbum on AVAsset instead
+     */
     @Generated
     @Deprecated
     @Selector("videoAtPathIsCompatibleWithSavedPhotosAlbum:")
@@ -247,6 +294,11 @@ public class ALAssetsLibrary extends NSObject {
     /**
      * If there is a conflict between the metadata in the image data and the metadata dictionary, the image data
      * metadata values will be overwritten
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use creationRequestForAssetFromImageData: on PHAssetChangeRequest from the Photos framework
+     * to create a new asset instead
      */
     @Generated
     @Deprecated
@@ -258,6 +310,11 @@ public class ALAssetsLibrary extends NSObject {
     /**
      * The API user will have to specify the orientation key in the metadata dictionary to preserve the orientation of
      * the image
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use creationRequestForAssetFromImage: on PHAssetChangeRequest from the Photos framework to
+     * create a new asset instead
      */
     @Generated
     @Deprecated
@@ -269,6 +326,11 @@ public class ALAssetsLibrary extends NSObject {
     /**
      * With a UIImage, the API user can use -[UIImage CGImage] to get a CGImageRef, and cast -[UIImage imageOrientation]
      * to ALAssetOrientation.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use creationRequestForAssetFromImage: on PHAssetChangeRequest from the Photos framework to
+     * create a new asset instead
      */
     @Generated
     @Deprecated
@@ -277,6 +339,12 @@ public class ALAssetsLibrary extends NSObject {
             @NInt long orientation,
             @ObjCBlock(name = "call_writeImageToSavedPhotosAlbumOrientationCompletionBlock") Block_writeImageToSavedPhotosAlbumOrientationCompletionBlock completionBlock);
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use creationRequestForAssetFromVideoAtFilePath: on PHAssetChangeRequest from the Photos
+     * framework to create a new asset instead
+     */
     @Generated
     @Deprecated
     @Selector("writeVideoAtPathToSavedPhotosAlbum:completionBlock:")

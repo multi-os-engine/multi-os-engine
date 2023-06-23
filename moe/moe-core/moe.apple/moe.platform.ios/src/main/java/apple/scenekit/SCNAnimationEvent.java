@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNAnimationEvent encapsulates a block to trigger at a specific time.
@@ -73,37 +75,40 @@ public class SCNAnimationEvent extends NSObject {
 
     /**
      * animationEventWithKeyTime:block:
-     * <p>
+     * 
      * Returns an animation event instance
-     * <p>
+     * 
      * "time" is relative to animation duration and therefor it has to be a value in the range [0,1].
-     *
+     * 
      * @param time       The relative time to trigger the event.
      * @param eventBlock The block to call when the event is triggered.
      */
     @Generated
     @Selector("animationEventWithKeyTime:block:")
     public static native SCNAnimationEvent animationEventWithKeyTimeBlock(@NFloat double time,
-            @ObjCBlock(name = "call_animationEventWithKeyTimeBlock") Block_animationEventWithKeyTimeBlock eventBlock);
+            @NotNull @ObjCBlock(name = "call_animationEventWithKeyTimeBlock") Block_animationEventWithKeyTimeBlock eventBlock);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -138,9 +143,10 @@ public class SCNAnimationEvent extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -176,7 +182,7 @@ public class SCNAnimationEvent extends NSObject {
     @Generated
     public interface Block_animationEventWithKeyTimeBlock {
         @Generated
-        void call_animationEventWithKeyTimeBlock(@Mapped(ObjCObjectMapper.class) Object animation,
-                @Mapped(ObjCObjectMapper.class) Object animatedObject, boolean playingBackward);
+        void call_animationEventWithKeyTimeBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object animation,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object animatedObject, boolean playingBackward);
     }
 }

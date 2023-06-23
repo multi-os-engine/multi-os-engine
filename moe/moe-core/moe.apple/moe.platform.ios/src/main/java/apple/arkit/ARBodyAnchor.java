@@ -25,9 +25,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An anchor representing a body in the world.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("ARKit")
@@ -59,22 +63,25 @@ public class ARBodyAnchor extends ARAnchor implements ARTrackable {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -89,11 +96,11 @@ public class ARBodyAnchor extends ARAnchor implements ARTrackable {
 
     /**
      * The factor between estimated physical size and default size of the skeleton.
-     * <p>
+     * 
      * This value will be estimated if automaticSkeletonScaleEstimationEnabled is set to true on the
      * ARBodyTrackingConfiguration.
      * It is used to correct the transform's translation. Default value is 1.0.
-     *
+     * 
      * @see -[ARSkeletonDefinition neutralBodySkeleton3D]
      */
     @Generated
@@ -112,11 +119,11 @@ public class ARBodyAnchor extends ARAnchor implements ARTrackable {
 
     @Generated
     @Selector("initWithAnchor:")
-    public native ARBodyAnchor initWithAnchor(ARAnchor anchor);
+    public native ARBodyAnchor initWithAnchor(@NotNull ARAnchor anchor);
 
     @Generated
     @Selector("initWithCoder:")
-    public native ARBodyAnchor initWithCoder(NSCoder coder);
+    public native ARBodyAnchor initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -139,9 +146,10 @@ public class ARBodyAnchor extends ARAnchor implements ARTrackable {
     @Selector("isTracked")
     public native boolean isTracked();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,6 +173,7 @@ public class ARBodyAnchor extends ARAnchor implements ARTrackable {
      * [@note] The default height of this skeleton, measured from lowest to highest joint in standing position, is
      * defined to be 1.71 meters.
      */
+    @NotNull
     @Generated
     @Selector("skeleton")
     public native ARSkeleton3D skeleton();

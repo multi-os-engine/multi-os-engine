@@ -11,12 +11,15 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] MIDICIProfileResponderDelegate
- * <p>
+ * 
  * Protocol for an NSObject that constructs and issues responses for a MIDICIResponder.
  * A MIDICIProfileResponderDelegate is required to construct a MIDICIResponder.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("CoreMIDI")
@@ -28,12 +31,13 @@ public interface MIDICIProfileResponderDelegate {
      */
     @Generated
     @Selector("connectInitiator:withDeviceInfo:")
-    boolean connectInitiatorWithDeviceInfo(NSNumber initiatorMUID, MIDICIDeviceInfo deviceInfo);
+    boolean connectInitiatorWithDeviceInfo(@NotNull NSNumber initiatorMUID, @NotNull MIDICIDeviceInfo deviceInfo);
 
     @Generated
     @IsOptional
     @Selector("handleDataForProfile:onChannel:data:")
-    default void handleDataForProfileOnChannelData(MIDICIProfile aProfile, byte channel, NSData inData) {
+    default void handleDataForProfileOnChannelData(@NotNull MIDICIProfile aProfile, byte channel,
+            @NotNull NSData inData) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -42,7 +46,7 @@ public interface MIDICIProfileResponderDelegate {
      */
     @Generated
     @Selector("initiatorDisconnected:")
-    void initiatorDisconnected(NSNumber initiatorMUID);
+    void initiatorDisconnected(@NotNull NSNumber initiatorMUID);
 
     /**
      * These methods must be implemented if the associated responder implements MIDI-CI profiles.
@@ -50,7 +54,8 @@ public interface MIDICIProfileResponderDelegate {
     @Generated
     @IsOptional
     @Selector("willSetProfile:onChannel:enabled:")
-    default boolean willSetProfileOnChannelEnabled(MIDICIProfile aProfile, byte channel, boolean shouldEnable) {
+    default boolean willSetProfileOnChannelEnabled(@NotNull MIDICIProfile aProfile, byte channel,
+            boolean shouldEnable) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

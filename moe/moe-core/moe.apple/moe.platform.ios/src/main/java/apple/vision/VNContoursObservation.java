@@ -28,12 +28,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An observation that provides all of the detected contours in an image.
- * <p>
+ * 
  * Contours can be referenced as a flattened array or as a tree of enclosing parent contours to enclosed child contours.
- * <p>
+ * 
  * ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
  * ┌───────────────────┐ │
  * │ Λ │ ┌─────────┐ │
@@ -47,10 +49,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * │ V
  * │
  * └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
- * <p>
+ * 
  * Contour A index 0, index path [0].
  * Contour B index 1, index path [1].
  * Contour C index 2, index path [1, 0].
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Vision")
@@ -82,51 +86,56 @@ public class VNContoursObservation extends VNObservation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * Returns the VNContour object at the specified index, irrespective of hierarchy.
-     *
+     * 
      * @param contourIndex The index of the contour to request. Valid values are in the range [0..contourCount-1].
      * @param error        The error returned if the index path is out of range.
      * @return The detected VNContour at the specified index without regard to hierarchy.
      */
+    @Nullable
     @Generated
     @Selector("contourAtIndex:error:")
     public native VNContour contourAtIndexError(@NInt long contourIndex,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Returns the VNContour object at the specified index path.
-     * <p>
+     * 
      * Use the indexPath property from a VNContour instance to pass to this method.
-     *
+     * 
      * @param indexPath The index path is the heirarchical path to the contour.
      * @param error     The error returned if the index path is out of range.
      * @return The VNContour object at the specified index path.
      */
+    @Nullable
     @Generated
     @Selector("contourAtIndexPath:error:")
-    public native VNContour contourAtIndexPathError(NSIndexPath indexPath,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native VNContour contourAtIndexPathError(@NotNull NSIndexPath indexPath,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * The total number of contours detected.
@@ -155,7 +164,7 @@ public class VNContoursObservation extends VNObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNContoursObservation initWithCoder(NSCoder coder);
+    public native VNContoursObservation initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -174,9 +183,10 @@ public class VNContoursObservation extends VNObservation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -185,9 +195,10 @@ public class VNContoursObservation extends VNObservation {
 
     /**
      * Obtain all of the contours represented as a CGPath in normalized coordinates.
-     * <p>
+     * 
      * The path is owned by the observation and therefore will be alive as long as the the observation is alive.
      */
+    @NotNull
     @Generated
     @Selector("normalizedPath")
     public native CGPathRef normalizedPath();
@@ -228,12 +239,13 @@ public class VNContoursObservation extends VNObservation {
 
     /**
      * An array of the top level contours (i.e. contours that are not enclosed inside another contour),.
-     * <p>
+     * 
      * This array constitutes the top of the contour hierarchy. Each contour object can be further iterated to determine
      * its children.
-     *
+     * 
      * @see VNContour for more information.
      */
+    @NotNull
     @Generated
     @Selector("topLevelContours")
     public native NSArray<? extends VNContour> topLevelContours();

@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] AudioComponentValidationResult
- * <p>
+ * 
  * Constants for describing the result of validating an AudioComponent
  * [@constant] kAudioComponentValidationResult_Passed
  * The AudioComponent passed validation.

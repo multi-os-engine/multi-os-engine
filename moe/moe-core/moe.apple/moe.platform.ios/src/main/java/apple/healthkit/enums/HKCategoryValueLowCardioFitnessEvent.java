@@ -5,11 +5,13 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HKCategoryValueLowCardioFitnessEvent
- * <p>
+ * 
  * Specifies the type of cardio fitness event.
- * <p>
+ * 
  * [@constant] HKCategoryValueLowCardioFitnessEventLowFitness This constant defines an event where a VO2Max measurement
  * was recorded that falls into the "Low" fitness classification
+ * 
+ * API-Since: 14.3
  */
 @Generated
 public final class HKCategoryValueLowCardioFitnessEvent {
@@ -17,5 +19,8 @@ public final class HKCategoryValueLowCardioFitnessEvent {
     private HKCategoryValueLowCardioFitnessEvent() {
     }
 
+    /**
+     * API-Since: 14.3
+     */
     @Generated @NInt public static final long HKCategoryValueLowCardioFitnessEventLowFitness = 0x0000000000000001L;
 }

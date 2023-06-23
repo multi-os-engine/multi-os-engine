@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] PHASERenderingState
- * <p>
+ * 
  * Rendering state for sound events.
  * [@constant] PHASERenderingStateStopped
  * The sound event is stopped.

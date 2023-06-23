@@ -26,11 +26,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] PHASEObject
- * <p>
+ * 
  * A PHASEObject represents a 3D object in the engine, which can be organized into a hierarchy with relative transforms.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -52,16 +56,20 @@ public class PHASEObject extends NSObject implements NSCopying {
 
     /**
      * addChild:error:
-     * <p>
+     * 
      * Add a child to this object
-     *
-     * @param child The child object
-     * @param error Returns an error if the child already has a parent different from this object.
-     * @return YES for success
+     * 
+     * @param child
+     *              The child object
+     * @param error
+     *              Returns an error if the child already has a parent.
+     * @return
+     *         YES for success
      */
     @Generated
     @Selector("addChild:error:")
-    public native boolean addChildError(PHASEObject child, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean addChildError(@NotNull PHASEObject child,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Owned
@@ -75,40 +83,45 @@ public class PHASEObject extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * [@property] children
-     * <p>
+     * 
      * The children of this object.
      */
+    @NotNull
     @Generated
     @Selector("children")
     public native NSArray<? extends PHASEObject> children();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -129,12 +142,12 @@ public class PHASEObject extends NSObject implements NSCopying {
 
     /**
      * initWithEngine:
-     * <p>
+     * 
      * Initialize a new object.
      */
     @Generated
     @Selector("initWithEngine:")
-    public native PHASEObject initWithEngine(PHASEEngine engine);
+    public native PHASEObject initWithEngine(@NotNull PHASEEngine engine);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -153,9 +166,10 @@ public class PHASEObject extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,25 +178,26 @@ public class PHASEObject extends NSObject implements NSCopying {
 
     /**
      * [@property] parent
-     * <p>
+     * 
      * The parent of this object, or nil if this object doesn't have a parent object.
      */
+    @Nullable
     @Generated
     @Selector("parent")
     public native PHASEObject parent();
 
     /**
      * removeChild:
-     * <p>
+     * 
      * Remove a child from this object.
      */
     @Generated
     @Selector("removeChild:")
-    public native void removeChild(PHASEObject child);
+    public native void removeChild(@NotNull PHASEObject child);
 
     /**
      * removeChildren
-     * <p>
+     * 
      * Remove all the children from this object
      */
     @Generated

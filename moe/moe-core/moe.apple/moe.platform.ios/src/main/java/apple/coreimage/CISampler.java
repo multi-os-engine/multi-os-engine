@@ -17,7 +17,6 @@ limitations under the License.
 package apple.coreimage;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
@@ -43,7 +42,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -74,22 +79,25 @@ public class CISampler extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +132,10 @@ public class CISampler extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -146,20 +155,20 @@ public class CISampler extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("samplerWithImage:")
-    public static native CISampler samplerWithImage(CIImage im);
+    public static native CISampler samplerWithImage(@NotNull CIImage im);
 
     /**
      * Creates a new sampler object from 'im' specifying key/value option
      * pairs. Each key is an NSString. Supported keys include:
-     * <p>
+     * 
      * kCISamplerAffineMatrix: An NSArray [a b c d tx ty] defining the
      * transformation to be applied to the sampler.
-     * <p>
+     * 
      * kCISamplerWrapMode: An NSString defining how pixels outside the
      * sampler's extent are produced. Options include kCISamplerWrapBlack
      * (pixels are transparent black, the default) and kCISamplerWrapClamp
      * (coordinates are clamped to the extent).
-     * <p>
+     * 
      * kCISamplerFilterMode: An NSString defining the filter to use when
      * sampling the image. One of kCISamplerFilterNearest (point sampling)
      * or kCISamplerFilterLinear (bilinear interpolation, the default).
@@ -167,12 +176,12 @@ public class CISampler extends NSObject implements NSCopying {
     @Generated
     @Variadic()
     @Selector("samplerWithImage:keysAndValues:")
-    public static native CISampler samplerWithImageKeysAndValues(CIImage im,
+    public static native CISampler samplerWithImageKeysAndValues(@NotNull CIImage im,
             @Mapped(ObjCObjectMapper.class) Object key0, Object... varargs);
 
     @Generated
     @Selector("samplerWithImage:options:")
-    public static native CISampler samplerWithImageOptions(CIImage im, NSDictionary<?, ?> dict);
+    public static native CISampler samplerWithImageOptions(@NotNull CIImage im, @Nullable NSDictionary<?, ?> dict);
 
     @Generated
     @Selector("setVersion:")
@@ -187,11 +196,12 @@ public class CISampler extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Returns the shape containing the Domain Of Definition (DOD) of the
@@ -199,6 +209,7 @@ public class CISampler extends NSObject implements NSCopying {
      * pixels produced by referencing the sampler.
      * This property is KVO-safe
      */
+    @NotNull
     @Generated
     @Selector("definition")
     public native CIFilterShape definition();
@@ -221,15 +232,15 @@ public class CISampler extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("initWithImage:")
-    public native CISampler initWithImage(CIImage im);
+    public native CISampler initWithImage(@NotNull CIImage im);
 
     @Generated
     @Variadic()
     @Selector("initWithImage:keysAndValues:")
-    public native CISampler initWithImageKeysAndValues(CIImage im, @Mapped(ObjCObjectMapper.class) Object key0,
+    public native CISampler initWithImageKeysAndValues(@NotNull CIImage im, @Mapped(ObjCObjectMapper.class) Object key0,
             Object... varargs);
 
     @Generated
     @Selector("initWithImage:options:")
-    public native CISampler initWithImageOptions(CIImage im, NSDictionary<?, ?> dict);
+    public native CISampler initWithImageOptions(@NotNull CIImage im, @Nullable NSDictionary<?, ?> dict);
 }

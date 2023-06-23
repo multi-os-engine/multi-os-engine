@@ -41,7 +41,15 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ * Deprecated-Since: 13.0
+ * Deprecated-Message: Use UIContextualAction and related APIs instead.
+ */
+@Deprecated
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -72,22 +80,25 @@ public class UITableViewRowAction extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,9 +133,10 @@ public class UITableViewRowAction extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -141,8 +153,8 @@ public class UITableViewRowAction extends NSObject implements NSCopying {
 
     @Generated
     @Selector("rowActionWithStyle:title:handler:")
-    public static native UITableViewRowAction rowActionWithStyleTitleHandler(@NInt long style, String title,
-            @ObjCBlock(name = "call_rowActionWithStyleTitleHandler") Block_rowActionWithStyleTitleHandler handler);
+    public static native UITableViewRowAction rowActionWithStyleTitleHandler(@NInt long style, @Nullable String title,
+            @NotNull @ObjCBlock(name = "call_rowActionWithStyleTitleHandler") Block_rowActionWithStyleTitleHandler handler);
 
     @Generated
     @Selector("setVersion:")
@@ -160,19 +172,22 @@ public class UITableViewRowAction extends NSObject implements NSCopying {
     /**
      * default background color is dependent on style
      */
+    @Nullable
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
 
+    @Nullable
     @Generated
     @Selector("backgroundEffect")
     public native UIVisualEffect backgroundEffect();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("init")
@@ -183,21 +198,22 @@ public class UITableViewRowAction extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setBackgroundColor:")
-    public native void setBackgroundColor(UIColor value);
+    public native void setBackgroundColor(@Nullable UIColor value);
 
     @Generated
     @Selector("setBackgroundEffect:")
-    public native void setBackgroundEffect(UIVisualEffect value);
+    public native void setBackgroundEffect(@Nullable UIVisualEffect value);
 
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@Nullable String value);
 
     @Generated
     @Selector("style")
     @NInt
     public native long style();
 
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();
@@ -206,6 +222,6 @@ public class UITableViewRowAction extends NSObject implements NSCopying {
     @Generated
     public interface Block_rowActionWithStyleTitleHandler {
         @Generated
-        void call_rowActionWithStyleTitleHandler(UITableViewRowAction action, NSIndexPath indexPath);
+        void call_rowActionWithStyleTitleHandler(@NotNull UITableViewRowAction action, @NotNull NSIndexPath indexPath);
     }
 }

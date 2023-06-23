@@ -37,7 +37,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -68,22 +73,25 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -118,9 +126,10 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -151,6 +160,7 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
     /**
      * shape of specular highlight
      */
+    @NotNull
     @Generated
     @Selector("anisotropic")
     public native MDLMaterialProperty anisotropic();
@@ -158,6 +168,7 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
     /**
      * shape of specular highlight
      */
+    @NotNull
     @Generated
     @Selector("anisotropicRotation")
     public native MDLMaterialProperty anisotropicRotation();
@@ -165,6 +176,7 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
     /**
      * like clear acrylic on a car
      */
+    @NotNull
     @Generated
     @Selector("clearcoat")
     public native MDLMaterialProperty clearcoat();
@@ -172,6 +184,7 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
     /**
      * 0 = satin, 1 = glossy
      */
+    @NotNull
     @Generated
     @Selector("clearcoatGloss")
     public native MDLMaterialProperty clearcoatGloss();
@@ -183,6 +196,7 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
     /**
      * 0 = dielectric, 1 = metallic
      */
+    @NotNull
     @Generated
     @Selector("metallic")
     public native MDLMaterialProperty metallic();
@@ -190,6 +204,7 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
     /**
      * diffuse and specular response
      */
+    @NotNull
     @Generated
     @Selector("roughness")
     public native MDLMaterialProperty roughness();
@@ -197,6 +212,7 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
     /**
      * like velvet
      */
+    @NotNull
     @Generated
     @Selector("sheen")
     public native MDLMaterialProperty sheen();
@@ -204,6 +220,7 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
     /**
      * bias towards surface color
      */
+    @NotNull
     @Generated
     @Selector("sheenTint")
     public native MDLMaterialProperty sheenTint();
@@ -211,6 +228,7 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
     /**
      * specular value
      */
+    @NotNull
     @Generated
     @Selector("specularAmount")
     public native MDLMaterialProperty specularAmount();
@@ -218,6 +236,7 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
     /**
      * bias towards surface color
      */
+    @NotNull
     @Generated
     @Selector("specularTint")
     public native MDLMaterialProperty specularTint();
@@ -225,6 +244,7 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
     /**
      * diffuse shape
      */
+    @NotNull
     @Generated
     @Selector("subsurface")
     public native MDLMaterialProperty subsurface();

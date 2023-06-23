@@ -39,9 +39,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A collection of GKGraphNodes that are governed by a mesh formed by the space between a set of GKPolygonObstacles
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -73,22 +77,25 @@ public class GKMeshGraph<_NodeType> extends GKGraph {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -103,7 +110,7 @@ public class GKMeshGraph<_NodeType> extends GKGraph {
 
     @Generated
     @Selector("graphWithNodes:")
-    public static native GKMeshGraph<?> graphWithNodes(NSArray<? extends GKGraphNode> nodes);
+    public static native GKMeshGraph<?> graphWithNodes(@NotNull NSArray<? extends GKGraphNode> nodes);
 
     @Generated
     @Selector("hash")
@@ -127,9 +134,10 @@ public class GKMeshGraph<_NodeType> extends GKGraph {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,7 +170,7 @@ public class GKMeshGraph<_NodeType> extends GKGraph {
      */
     @Generated
     @Selector("addObstacles:")
-    public native void addObstacles(NSArray<? extends GKPolygonObstacle> obstacles);
+    public native void addObstacles(@NotNull NSArray<? extends GKPolygonObstacle> obstacles);
 
     /**
      * The distance by which all obstacles are extruded.
@@ -175,6 +183,7 @@ public class GKMeshGraph<_NodeType> extends GKGraph {
     /**
      * Returns the class of the specified generic index
      */
+    @NotNull
     @Generated
     @Selector("classForGenericArgumentAtIndex:")
     public native Class classForGenericArgumentAtIndex(@NUInt long index);
@@ -182,12 +191,12 @@ public class GKMeshGraph<_NodeType> extends GKGraph {
     /**
      * Connects the node to this graph by inserting it into an existing triangle and making the appropriate connections
      * Node must be in the space defined by the min and max coordinates of this graph.
-     *
+     * 
      * @param node the node to connect
      */
     @Generated
     @Selector("connectNodeUsingObstacles:")
-    public native void connectNodeUsingObstacles(GKGraphNode2D node);
+    public native void connectNodeUsingObstacles(@NotNull GKGraphNode2D node);
 
     @Generated
     @Selector("init")
@@ -195,15 +204,16 @@ public class GKMeshGraph<_NodeType> extends GKGraph {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKMeshGraph<?> initWithCoder(NSCoder coder);
+    public native GKMeshGraph<?> initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNodes:")
-    public native GKMeshGraph<?> initWithNodes(NSArray<? extends GKGraphNode> nodes);
+    public native GKMeshGraph<?> initWithNodes(@NotNull NSArray<? extends GKGraphNode> nodes);
 
     /**
      * Array of the extruded obstacles currently represented by this graph
      */
+    @NotNull
     @Generated
     @Selector("obstacles")
     public native NSArray<? extends GKPolygonObstacle> obstacles();
@@ -213,12 +223,12 @@ public class GKMeshGraph<_NodeType> extends GKGraph {
      */
     @Generated
     @Selector("removeObstacles:")
-    public native void removeObstacles(NSArray<? extends GKPolygonObstacle> obstacles);
+    public native void removeObstacles(@NotNull NSArray<? extends GKPolygonObstacle> obstacles);
 
     /**
      * Specifies how graph nodes are generated when you triangulate this graph.
      * You can combine triangulation modes using the | (OR) operator
-     *
+     * 
      * @see GKMeshGraphTriangulationMode
      */
     @Generated
@@ -246,7 +256,7 @@ public class GKMeshGraph<_NodeType> extends GKGraph {
     /**
      * Specifies how graph nodes are generated when you triangulate this graph.
      * You can combine triangulation modes using the | (OR) operator
-     *
+     * 
      * @see GKMeshGraphTriangulationMode
      */
     @Generated

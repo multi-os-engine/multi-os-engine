@@ -27,16 +27,19 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITimingCurveProvider")
 public interface UITimingCurveProvider extends NSCoding, NSCopying {
+    @Nullable
     @Generated
     @Selector("cubicTimingParameters")
     UICubicTimingParameters cubicTimingParameters();
 
+    @Nullable
     @Generated
     @Selector("springTimingParameters")
     UISpringTimingParameters springTimingParameters();

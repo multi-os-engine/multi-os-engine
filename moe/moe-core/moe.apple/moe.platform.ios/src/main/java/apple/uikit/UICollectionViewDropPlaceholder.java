@@ -23,7 +23,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -54,22 +59,25 @@ public class UICollectionViewDropPlaceholder extends UICollectionViewPlaceholder
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -94,7 +102,7 @@ public class UICollectionViewDropPlaceholder extends UICollectionViewPlaceholder
     @Generated
     @Selector("initWithInsertionIndexPath:reuseIdentifier:")
     public native UICollectionViewDropPlaceholder initWithInsertionIndexPathReuseIdentifier(
-            NSIndexPath insertionIndexPath, String reuseIdentifier);
+            @NotNull NSIndexPath insertionIndexPath, @NotNull String reuseIdentifier);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -113,9 +121,10 @@ public class UICollectionViewDropPlaceholder extends UICollectionViewPlaceholder
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -127,6 +136,7 @@ public class UICollectionViewDropPlaceholder extends UICollectionViewPlaceholder
      * placeholder cell) of the animating dropped item.
      * Handler will be called as-needed.
      */
+    @Nullable
     @Generated
     @Selector("previewParametersProvider")
     @ObjCBlock(name = "call_previewParametersProvider_ret")
@@ -135,8 +145,9 @@ public class UICollectionViewDropPlaceholder extends UICollectionViewPlaceholder
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_previewParametersProvider_ret {
+        @Nullable
         @Generated
-        UIDragPreviewParameters call_previewParametersProvider_ret(UICollectionViewCell arg0);
+        UIDragPreviewParameters call_previewParametersProvider_ret(@NotNull UICollectionViewCell arg0);
     }
 
     @Generated
@@ -155,13 +166,14 @@ public class UICollectionViewDropPlaceholder extends UICollectionViewPlaceholder
     @Generated
     @Selector("setPreviewParametersProvider:")
     public native void setPreviewParametersProvider(
-            @ObjCBlock(name = "call_setPreviewParametersProvider") Block_setPreviewParametersProvider value);
+            @Nullable @ObjCBlock(name = "call_setPreviewParametersProvider") Block_setPreviewParametersProvider value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setPreviewParametersProvider {
+        @Nullable
         @Generated
-        UIDragPreviewParameters call_setPreviewParametersProvider(UICollectionViewCell arg0);
+        UIDragPreviewParameters call_setPreviewParametersProvider(@NotNull UICollectionViewCell arg0);
     }
 
     @Generated

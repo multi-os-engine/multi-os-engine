@@ -24,10 +24,18 @@ import org.moe.natj.general.ann.NInt;
  * Unknown error.
  * [@constant] AVKitErrorPictureInPictureStartFailed
  * Failed to start Picture in Picture.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class AVKitError {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Unknown = 0xFFFFFFFFFFFFFC18L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long PictureInPictureStartFailed = 0xFFFFFFFFFFFFFC17L;
 
     @Generated

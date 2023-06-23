@@ -40,7 +40,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -71,26 +76,29 @@ public class MDLStereoscopicCamera extends MDLCamera {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cameraWithSCNCamera:")
-    public static native MDLStereoscopicCamera cameraWithSCNCamera(SCNCamera scnCamera);
+    public static native MDLStereoscopicCamera cameraWithSCNCamera(@NotNull SCNCamera scnCamera);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +133,10 @@ public class MDLStereoscopicCamera extends MDLCamera {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -136,12 +145,12 @@ public class MDLStereoscopicCamera extends MDLCamera {
 
     @Generated
     @Selector("objectWithSCNNode:")
-    public static native MDLStereoscopicCamera objectWithSCNNode(SCNNode scnNode);
+    public static native MDLStereoscopicCamera objectWithSCNNode(@NotNull SCNNode scnNode);
 
     @Generated
     @Selector("objectWithSCNNode:bufferAllocator:")
-    public static native MDLStereoscopicCamera objectWithSCNNodeBufferAllocator(SCNNode scnNode,
-            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+    public static native MDLStereoscopicCamera objectWithSCNNodeBufferAllocator(@NotNull SCNNode scnNode,
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -182,11 +191,11 @@ public class MDLStereoscopicCamera extends MDLCamera {
      * ray projected from the center of either sensor and lens meets at a point. A
      * parallel binocular stereoscopic camera accomplishes the same thing by shifting
      * the relative centers of the sensor and lens.
-     * <p>
+     * 
      * If a parallel binocular stereoscopic camera is modeled, the sensor should be
      * considered to have shifted by an amount h. If left and right vergence are equal,
      * h = (focal length * interOcularDistance) / distance to vergence point.
-     * <p>
+     * 
      * Vergence is measured in degrees towards center and is usually positive.
      */
     @Generated
@@ -220,11 +229,11 @@ public class MDLStereoscopicCamera extends MDLCamera {
      * ray projected from the center of either sensor and lens meets at a point. A
      * parallel binocular stereoscopic camera accomplishes the same thing by shifting
      * the relative centers of the sensor and lens.
-     * <p>
+     * 
      * If a parallel binocular stereoscopic camera is modeled, the sensor should be
      * considered to have shifted by an amount h. If left and right vergence are equal,
      * h = (focal length * interOcularDistance) / distance to vergence point.
-     * <p>
+     * 
      * Vergence is measured in degrees towards center and is usually positive.
      */
     @Generated

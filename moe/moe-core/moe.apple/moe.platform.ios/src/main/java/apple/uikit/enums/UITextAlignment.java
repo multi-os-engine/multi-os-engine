@@ -21,14 +21,28 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * Deprecated: use NSTextAlignment enum in UIKit/NSText.h
+ * 
+ * API-Since: 2.0
+ * Deprecated-Since: 6.0
  */
 @Deprecated
 @Generated
 public final class UITextAlignment {
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 6.0
+     */
     @Deprecated @Generated @NInt public static final long Left = 0x0000000000000000L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 6.0
+     */
     @Deprecated @Generated @NInt public static final long Center = 0x0000000000000001L;
     /**
      * could add justified in future
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 6.0
      */
     @Deprecated @Generated @NInt public static final long Right = 0x0000000000000002L;
 

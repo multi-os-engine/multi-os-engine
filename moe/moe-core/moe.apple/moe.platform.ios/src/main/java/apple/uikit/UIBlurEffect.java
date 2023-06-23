@@ -39,10 +39,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * UIBlurEffect will provide a blur that appears to have been applied to the content layered behind the
  * UIVisualEffectView. Views added to the contentView of a blur visual effect are not blurred themselves.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("UIKit")
@@ -74,22 +78,25 @@ public class UIBlurEffect extends UIVisualEffect {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,6 +109,7 @@ public class UIBlurEffect extends UIVisualEffect {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("effectWithStyle:")
     public static native UIBlurEffect effectWithStyle(@NInt long style);
@@ -128,9 +136,10 @@ public class UIBlurEffect extends UIVisualEffect {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,7 +177,7 @@ public class UIBlurEffect extends UIVisualEffect {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIBlurEffect initWithCoder(NSCoder coder);
+    public native UIBlurEffect initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

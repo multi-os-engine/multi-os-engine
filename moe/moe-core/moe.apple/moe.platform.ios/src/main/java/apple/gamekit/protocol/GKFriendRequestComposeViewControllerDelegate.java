@@ -23,10 +23,15 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Optional delegate
+ * 
+ * API-Since: 4.2
+ * Deprecated-Since: 10.0
  */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -34,8 +39,12 @@ import org.moe.natj.objc.ann.Selector;
 public interface GKFriendRequestComposeViewControllerDelegate {
     /**
      * The compose view has finished
+     * 
+     * API-Since: 4.2
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @Generated
     @Selector("friendRequestComposeViewControllerDidFinish:")
-    void friendRequestComposeViewControllerDidFinish(GKFriendRequestComposeViewController viewController);
+    void friendRequestComposeViewControllerDidFinish(@NotNull GKFriendRequestComposeViewController viewController);
 }

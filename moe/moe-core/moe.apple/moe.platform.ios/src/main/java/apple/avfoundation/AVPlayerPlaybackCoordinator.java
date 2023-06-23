@@ -23,12 +23,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVPlayerPlaybackCoordinator
- * <p>
+ * 
  * An AVPlaybackCoordinator subclass for controlling an AVPlayer
- * <p>
+ * 
  * While the coordinator is connected to other participants, it will intercept rate changes and seeks issued to the
  * player to share these with other participants if appropriate.
  * Clients of AVPlayer can thus use the AVPlayer interfaces to modify the playback state of connected participants. When
@@ -41,6 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * AVPlayerTimeControlStatusPlaying. This means that a suspension that begun because the player entered a waiting state,
  * will end automatically when the player is done waiting. A suspension that begun because the player paused, will only
  * end once the player's rate changes back to non-zero.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("AVFoundation")
@@ -72,22 +76,25 @@ public class AVPlayerPlaybackCoordinator extends AVPlaybackCoordinator {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -98,9 +105,10 @@ public class AVPlayerPlaybackCoordinator extends AVPlaybackCoordinator {
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * An object implementing the AVPlaybackCoordinatorDelegate protocol.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -136,9 +144,10 @@ public class AVPlayerPlaybackCoordinator extends AVPlaybackCoordinator {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -147,9 +156,10 @@ public class AVPlayerPlaybackCoordinator extends AVPlaybackCoordinator {
 
     /**
      * [@property] player
-     * <p>
+     * 
      * The AVPlayer this coordinator is controlling.
      */
+    @Nullable
     @Generated
     @Selector("player")
     public native AVPlayer player();
@@ -164,20 +174,21 @@ public class AVPlayerPlaybackCoordinator extends AVPlaybackCoordinator {
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * An object implementing the AVPlaybackCoordinatorDelegate protocol.
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVPlayerPlaybackCoordinatorDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) AVPlayerPlaybackCoordinatorDelegate value);
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * An object implementing the AVPlaybackCoordinatorDelegate protocol.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) AVPlayerPlaybackCoordinatorDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) AVPlayerPlaybackCoordinatorDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

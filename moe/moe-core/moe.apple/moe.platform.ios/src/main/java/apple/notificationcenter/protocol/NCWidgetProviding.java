@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.notificationcenter.protocol;
 
-import apple.coregraphics.struct.CGSize;
 import apple.uikit.struct.UIEdgeInsets;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
@@ -29,10 +28,17 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * 'NCWidgetProviding' is an optional protocol for further customizing aspects of the provided content.
+ * 
+ * API-Since: 10.0
+ * Deprecated-Since: 14.0
+ * Deprecated-Message: Use WidgetKit instead. Today View extensions have been deprecated.
  */
+@Deprecated
 @Generated
 @Library("NotificationCenter")
 @Runtime(ObjCRuntime.class)
@@ -41,7 +47,12 @@ public interface NCWidgetProviding {
     /**
      * If implemented, called when the active display mode changes.
      * The widget may wish to change its preferredContentSize to better accommodate the new display mode.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use WidgetKit instead. Today View extensions have been deprecated.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("widgetActiveDisplayModeDidChange:withMaximumSize:")
@@ -53,7 +64,12 @@ public interface NCWidgetProviding {
     /**
      * Widgets wishing to customize the default margin insets can return their preferred values.
      * Widgets that choose not to implement this method will receive the default margin insets.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: This method will not be called on widgets linked against iOS versions 10.0 and later.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("widgetMarginInsetsForProposedMarginInsets:")
@@ -72,12 +88,17 @@ public interface NCWidgetProviding {
      * Widgets should NOT block returning from 'viewWillAppear:' on the results of this operation.
      * Instead, widgets should load cached state in 'viewWillAppear:' in order to match the state of the view from the
      * last 'viewWillDisappear:', then transition smoothly to the new data when it arrives.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use WidgetKit instead. Today View extensions have been deprecated.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("widgetPerformUpdateWithCompletionHandler:")
     default void widgetPerformUpdateWithCompletionHandler(
-            @ObjCBlock(name = "call_widgetPerformUpdateWithCompletionHandler") Block_widgetPerformUpdateWithCompletionHandler completionHandler) {
+            @NotNull @ObjCBlock(name = "call_widgetPerformUpdateWithCompletionHandler") Block_widgetPerformUpdateWithCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 

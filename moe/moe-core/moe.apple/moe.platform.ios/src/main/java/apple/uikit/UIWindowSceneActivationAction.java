@@ -24,9 +24,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An action that facilitates activating a @c UIWindowScene when performed.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("UIKit")
@@ -49,11 +53,11 @@ public class UIWindowSceneActivationAction extends UIAction {
     @Generated
     @Selector("actionWithHandler:")
     public static native UIWindowSceneActivationAction actionWithHandler(
-            @ObjCBlock(name = "call_actionWithHandler") UIAction.Block_actionWithHandler handler);
+            @NotNull @ObjCBlock(name = "call_actionWithHandler") UIAction.Block_actionWithHandler handler);
 
     /**
      * Returns a new @c UIWindowSceneActivationAction
-     *
+     * 
      * @param identifier            The action's identifier. Pass nil to use an auto-generated identifier.
      * @param alternateAction       If running on a platform that doesn't support multiple windows, the alternate action
      *                              is used. Otherwise, the alternates handler is called if the scene activation request
@@ -65,22 +69,23 @@ public class UIWindowSceneActivationAction extends UIAction {
     @Generated
     @Selector("actionWithIdentifier:alternateAction:configurationProvider:")
     public static native UIWindowSceneActivationAction actionWithIdentifierAlternateActionConfigurationProvider(
-            String identifier, UIAction alternateAction,
-            @ObjCBlock(name = "call_actionWithIdentifierAlternateActionConfigurationProvider") Block_actionWithIdentifierAlternateActionConfigurationProvider configurationProvider);
+            @Nullable String identifier, @Nullable UIAction alternateAction,
+            @NotNull @ObjCBlock(name = "call_actionWithIdentifierAlternateActionConfigurationProvider") Block_actionWithIdentifierAlternateActionConfigurationProvider configurationProvider);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_actionWithIdentifierAlternateActionConfigurationProvider {
+        @Nullable
         @Generated
         UIWindowSceneActivationConfiguration call_actionWithIdentifierAlternateActionConfigurationProvider(
-                UIWindowSceneActivationAction action);
+                @NotNull UIWindowSceneActivationAction action);
     }
 
     @Generated
     @Selector("actionWithTitle:image:identifier:handler:")
-    public static native UIWindowSceneActivationAction actionWithTitleImageIdentifierHandler(String title,
-            UIImage image, String identifier,
-            @ObjCBlock(name = "call_actionWithTitleImageIdentifierHandler") UIAction.Block_actionWithTitleImageIdentifierHandler handler);
+    public static native UIWindowSceneActivationAction actionWithTitleImageIdentifierHandler(@NotNull String title,
+            @Nullable UIImage image, @Nullable String identifier,
+            @NotNull @ObjCBlock(name = "call_actionWithTitleImageIdentifierHandler") UIAction.Block_actionWithTitleImageIdentifierHandler handler);
 
     @Generated
     @Owned
@@ -94,27 +99,31 @@ public class UIWindowSceneActivationAction extends UIAction {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("captureTextFromCameraActionForResponder:identifier:")
     public static native UIWindowSceneActivationAction captureTextFromCameraActionForResponderIdentifier(
-            UIResponder responder, String identifier);
+            @NotNull UIResponder responder, @Nullable String identifier);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -138,7 +147,7 @@ public class UIWindowSceneActivationAction extends UIAction {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIWindowSceneActivationAction initWithCoder(NSCoder coder);
+    public native UIWindowSceneActivationAction initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -157,9 +166,10 @@ public class UIWindowSceneActivationAction extends UIAction {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

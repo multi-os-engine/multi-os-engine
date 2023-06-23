@@ -37,11 +37,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CBService
- * <p>
+ * 
  * Represents a peripheral's service or a service's included service.
+ * 
+ * 
+ * API-Since: 5.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -73,22 +78,25 @@ public class CBService extends CBAttribute {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +131,10 @@ public class CBService extends CBAttribute {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,18 +164,20 @@ public class CBService extends CBAttribute {
 
     /**
      * [@property] characteristics
-     * <p>
+     * 
      * A list of CBCharacteristics that have so far been discovered in this service.
      */
+    @Nullable
     @Generated
     @Selector("characteristics")
     public native NSArray<? extends CBCharacteristic> characteristics();
 
     /**
      * [@property] includedServices
-     * <p>
+     * 
      * A list of included CBServices that have so far been discovered in this service.
      */
+    @Nullable
     @Generated
     @Selector("includedServices")
     public native NSArray<? extends CBService> includedServices();
@@ -177,7 +188,7 @@ public class CBService extends CBAttribute {
 
     /**
      * [@property] isPrimary
-     * <p>
+     * 
      * The type of the service (primary or secondary).
      */
     @Generated
@@ -186,9 +197,10 @@ public class CBService extends CBAttribute {
 
     /**
      * [@property] peripheral
-     * <p>
+     * 
      * A back-pointer to the peripheral this service belongs to.
      */
+    @Nullable
     @Generated
     @Selector("peripheral")
     public native CBPeripheral peripheral();

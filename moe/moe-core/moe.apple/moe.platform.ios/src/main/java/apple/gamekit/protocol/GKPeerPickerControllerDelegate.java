@@ -26,9 +26,15 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * callbacks to the GKPeerPickerController delegate
+ * 
+ * API-Since: 3.0
+ * Deprecated-Since: 7.0
+ * Deprecated-Message: Use MCBrowserViewController along with MCBrowserViewControllerDelegate from the
+ * MultipeerConnectivity framework
  */
 @Deprecated
 @Generated
@@ -42,8 +48,8 @@ public interface GKPeerPickerControllerDelegate {
     @Generated
     @IsOptional
     @Selector("peerPickerController:didConnectPeer:toSession:")
-    default void peerPickerControllerDidConnectPeerToSession(GKPeerPickerController picker, String peerID,
-            GKSession session) {
+    default void peerPickerControllerDidConnectPeerToSession(@NotNull GKPeerPickerController picker,
+            @NotNull String peerID, @NotNull GKSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -53,20 +59,22 @@ public interface GKPeerPickerControllerDelegate {
     @Generated
     @IsOptional
     @Selector("peerPickerController:didSelectConnectionType:")
-    default void peerPickerControllerDidSelectConnectionType(GKPeerPickerController picker, @NUInt long type) {
+    default void peerPickerControllerDidSelectConnectionType(@NotNull GKPeerPickerController picker, @NUInt long type) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Notifies delegate that the connection type is requesting a GKSession object.
-     * <p>
+     * 
      * You should return a valid GKSession object for use by the picker. If this method is not implemented or returns
      * 'nil', a default GKSession is created on the delegate's behalf.
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("peerPickerController:sessionForConnectionType:")
-    default GKSession peerPickerControllerSessionForConnectionType(GKPeerPickerController picker, @NUInt long type) {
+    default GKSession peerPickerControllerSessionForConnectionType(@NotNull GKPeerPickerController picker,
+            @NUInt long type) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -76,7 +84,7 @@ public interface GKPeerPickerControllerDelegate {
     @Generated
     @IsOptional
     @Selector("peerPickerControllerDidCancel:")
-    default void peerPickerControllerDidCancel(GKPeerPickerController picker) {
+    default void peerPickerControllerDidCancel(@NotNull GKPeerPickerController picker) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -24,7 +24,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("DeviceCheck")
 @Runtime(ObjCRuntime.class)
@@ -56,42 +61,48 @@ public class DCAppAttestService extends NSObject {
     /**
      * Attest the key by keyId. The same key may be attested more than once, provided that the key has
      * not been used for generating assertions.
-     *
-     * @param keyId             The key identifier to be attested
-     * @param clientDataHash    An arbitrary byte (up to 32 bytes) to be supplied by caller. It will be used to compute
+     * 
+     * @param keyId
+     *                          The key identifier to be attested
+     * @param clientDataHash
+     *                          An arbitrary byte (up to 32 bytes) to be supplied by caller. It will be used to compute
      *                          a nonce to be embedded into the certificate that certifies the key.
-     * @param completionHandler The completion callback, returning the attestationObject upon success, or an error
+     * @param completionHandler
+     *                          The completion callback, returning the attestationObject upon success, or an error
      */
     @Generated
     @Selector("attestKey:clientDataHash:completionHandler:")
-    public native void attestKeyClientDataHashCompletionHandler(String keyId, NSData clientDataHash,
-            @ObjCBlock(name = "call_attestKeyClientDataHashCompletionHandler") Block_attestKeyClientDataHashCompletionHandler completionHandler);
+    public native void attestKeyClientDataHashCompletionHandler(@NotNull String keyId, @NotNull NSData clientDataHash,
+            @NotNull @ObjCBlock(name = "call_attestKeyClientDataHashCompletionHandler") Block_attestKeyClientDataHashCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_attestKeyClientDataHashCompletionHandler {
         @Generated
-        void call_attestKeyClientDataHashCompletionHandler(NSData attestationObject, NSError error);
+        void call_attestKeyClientDataHashCompletionHandler(@Nullable NSData attestationObject, @Nullable NSError error);
     }
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -107,41 +118,47 @@ public class DCAppAttestService extends NSObject {
     /**
      * Attest the key by keyId. The same key may be attested more than once, provided that the key has
      * not been used for generating assertions.
-     *
-     * @param keyId             The key identifier to the key to generate assertions with
-     * @param clientDataHash    An arbitrary byte (up to 32 bytes) to be supplied by caller. It will be used to compute
+     * 
+     * @param keyId
+     *                          The key identifier to the key to generate assertions with
+     * @param clientDataHash
+     *                          An arbitrary byte (up to 32 bytes) to be supplied by caller. It will be used to compute
      *                          a nonce to be embedded into the certificate that certifies the key.
-     * @param completionHandler The completion callback, returning the assertionObject upon success, or an error
+     * @param completionHandler
+     *                          The completion callback, returning the assertionObject upon success, or an error
      */
     @Generated
     @Selector("generateAssertion:clientDataHash:completionHandler:")
-    public native void generateAssertionClientDataHashCompletionHandler(String keyId, NSData clientDataHash,
-            @ObjCBlock(name = "call_generateAssertionClientDataHashCompletionHandler") Block_generateAssertionClientDataHashCompletionHandler completionHandler);
+    public native void generateAssertionClientDataHashCompletionHandler(@NotNull String keyId,
+            @NotNull NSData clientDataHash,
+            @NotNull @ObjCBlock(name = "call_generateAssertionClientDataHashCompletionHandler") Block_generateAssertionClientDataHashCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_generateAssertionClientDataHashCompletionHandler {
         @Generated
-        void call_generateAssertionClientDataHashCompletionHandler(NSData assertionObject, NSError error);
+        void call_generateAssertionClientDataHashCompletionHandler(@Nullable NSData assertionObject,
+                @Nullable NSError error);
     }
 
     /**
      * Generate a new unattested key. This call generates a new
      * key every time. the key identifier keyId is returned.
-     *
-     * @param completionHandler The key identifier (KeyId) for the newly generated unattested key upon success, or an
+     * 
+     * @param completionHandler
+     *                          The key identifier (KeyId) for the newly generated unattested key upon success, or an
      *                          error
      */
     @Generated
     @Selector("generateKeyWithCompletionHandler:")
     public native void generateKeyWithCompletionHandler(
-            @ObjCBlock(name = "call_generateKeyWithCompletionHandler") Block_generateKeyWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_generateKeyWithCompletionHandler") Block_generateKeyWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_generateKeyWithCompletionHandler {
         @Generated
-        void call_generateKeyWithCompletionHandler(String keyId, NSError error);
+        void call_generateKeyWithCompletionHandler(@Nullable String keyId, @Nullable NSError error);
     }
 
     @Generated
@@ -177,9 +194,10 @@ public class DCAppAttestService extends NSObject {
     @Selector("isSupported")
     public native boolean isSupported();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -201,6 +219,7 @@ public class DCAppAttestService extends NSObject {
     /**
      * The shared service instance
      */
+    @NotNull
     @Generated
     @Selector("sharedService")
     public static native DCAppAttestService sharedService();

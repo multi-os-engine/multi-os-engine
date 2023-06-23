@@ -39,12 +39,14 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CKFetchDatabaseChangesOperation
- * <p>
+ * 
  * This operation will fetch changes to record zones within a database
- * <p>
+ * 
  * If a change anchor from a previous @c CKFetchDatabaseChangesOperation is passed in, only the zones that have changed
  * since that anchor will be returned.
  * This per-database @c serverChangeToken is not to be confused with the per-recordZone @c serverChangeToken from @c
@@ -52,6 +54,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * If this is your first fetch or if you wish to re-fetch all zones, pass nil for the change token.
  * Change token are opaque tokens and clients should not infer any behavior based on their content.
  * [@c] CKFetchDatabaseChangesOperation is supported in a @c privateCloudDatabase and @c sharedCloudDatabase
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CloudKit")
@@ -83,22 +87,25 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +140,10 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,6 +175,7 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
      * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block
      * invocations.
      */
+    @Nullable
     @Generated
     @Selector("changeTokenUpdatedBlock")
     @ObjCBlock(name = "call_changeTokenUpdatedBlock_ret")
@@ -175,7 +184,7 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
     /**
      * When set to YES, this operation will send repeated requests to the server until all record zone changes have been
      * fetched.
-     * <p>
+     * 
      * [@c] changeTokenUpdatedBlock will be invoked periodically, to give clients an updated change token so that
      * already-fetched record zone changes don't need to be re-fetched on a subsequent operation.
      * When set to NO, it is the responsibility of the caller to issue subsequent fetch-changes operations when
@@ -189,7 +198,7 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * Clients are responsible for saving the change token at the end of the operation and passing it in to the next
      * call to @c CKFetchDatabaseChangesOperation.
      * If the server returns a @c CKErrorChangeTokenExpired error, the @c previousServerChangeToken value was too old
@@ -200,6 +209,7 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
      * operation.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
      */
+    @Nullable
     @Generated
     @Selector("fetchDatabaseChangesCompletionBlock")
     @ObjCBlock(name = "call_fetchDatabaseChangesCompletionBlock_ret")
@@ -212,17 +222,20 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
     @Generated
     @Selector("initWithPreviousServerChangeToken:")
     public native CKFetchDatabaseChangesOperation initWithPreviousServerChangeToken(
-            CKServerChangeToken previousServerChangeToken);
+            @Nullable CKServerChangeToken previousServerChangeToken);
 
+    @Nullable
     @Generated
     @Selector("previousServerChangeToken")
     public native CKServerChangeToken previousServerChangeToken();
 
+    @Nullable
     @Generated
     @Selector("recordZoneWithIDChangedBlock")
     @ObjCBlock(name = "call_recordZoneWithIDChangedBlock_ret")
     public native Block_recordZoneWithIDChangedBlock_ret recordZoneWithIDChangedBlock();
 
+    @Nullable
     @Generated
     @Selector("recordZoneWithIDWasDeletedBlock")
     @ObjCBlock(name = "call_recordZoneWithIDWasDeletedBlock_ret")
@@ -240,12 +253,12 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
     @Generated
     @Selector("setChangeTokenUpdatedBlock:")
     public native void setChangeTokenUpdatedBlock(
-            @ObjCBlock(name = "call_setChangeTokenUpdatedBlock") Block_setChangeTokenUpdatedBlock value);
+            @Nullable @ObjCBlock(name = "call_setChangeTokenUpdatedBlock") Block_setChangeTokenUpdatedBlock value);
 
     /**
      * When set to YES, this operation will send repeated requests to the server until all record zone changes have been
      * fetched.
-     * <p>
+     * 
      * [@c] changeTokenUpdatedBlock will be invoked periodically, to give clients an updated change token so that
      * already-fetched record zone changes don't need to be re-fetched on a subsequent operation.
      * When set to NO, it is the responsibility of the caller to issue subsequent fetch-changes operations when
@@ -259,7 +272,7 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * Clients are responsible for saving the change token at the end of the operation and passing it in to the next
      * call to @c CKFetchDatabaseChangesOperation.
      * If the server returns a @c CKErrorChangeTokenExpired error, the @c previousServerChangeToken value was too old
@@ -273,21 +286,21 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
     @Generated
     @Selector("setFetchDatabaseChangesCompletionBlock:")
     public native void setFetchDatabaseChangesCompletionBlock(
-            @ObjCBlock(name = "call_setFetchDatabaseChangesCompletionBlock") Block_setFetchDatabaseChangesCompletionBlock value);
+            @Nullable @ObjCBlock(name = "call_setFetchDatabaseChangesCompletionBlock") Block_setFetchDatabaseChangesCompletionBlock value);
 
     @Generated
     @Selector("setPreviousServerChangeToken:")
-    public native void setPreviousServerChangeToken(CKServerChangeToken value);
+    public native void setPreviousServerChangeToken(@Nullable CKServerChangeToken value);
 
     @Generated
     @Selector("setRecordZoneWithIDChangedBlock:")
     public native void setRecordZoneWithIDChangedBlock(
-            @ObjCBlock(name = "call_setRecordZoneWithIDChangedBlock") Block_setRecordZoneWithIDChangedBlock value);
+            @Nullable @ObjCBlock(name = "call_setRecordZoneWithIDChangedBlock") Block_setRecordZoneWithIDChangedBlock value);
 
     @Generated
     @Selector("setRecordZoneWithIDWasDeletedBlock:")
     public native void setRecordZoneWithIDWasDeletedBlock(
-            @ObjCBlock(name = "call_setRecordZoneWithIDWasDeletedBlock") Block_setRecordZoneWithIDWasDeletedBlock value);
+            @Nullable @ObjCBlock(name = "call_setRecordZoneWithIDWasDeletedBlock") Block_setRecordZoneWithIDWasDeletedBlock value);
 
     @Generated
     @Selector("setResultsLimit:")
@@ -297,66 +310,71 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
     @Generated
     public interface Block_changeTokenUpdatedBlock_ret {
         @Generated
-        void call_changeTokenUpdatedBlock_ret(CKServerChangeToken arg0);
+        void call_changeTokenUpdatedBlock_ret(@NotNull CKServerChangeToken arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchDatabaseChangesCompletionBlock_ret {
         @Generated
-        void call_fetchDatabaseChangesCompletionBlock_ret(CKServerChangeToken arg0, boolean arg1, NSError arg2);
+        void call_fetchDatabaseChangesCompletionBlock_ret(@Nullable CKServerChangeToken arg0, boolean arg1,
+                @Nullable NSError arg2);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_recordZoneWithIDChangedBlock_ret {
         @Generated
-        void call_recordZoneWithIDChangedBlock_ret(CKRecordZoneID arg0);
+        void call_recordZoneWithIDChangedBlock_ret(@NotNull CKRecordZoneID arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_recordZoneWithIDWasDeletedBlock_ret {
         @Generated
-        void call_recordZoneWithIDWasDeletedBlock_ret(CKRecordZoneID arg0);
+        void call_recordZoneWithIDWasDeletedBlock_ret(@NotNull CKRecordZoneID arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setChangeTokenUpdatedBlock {
         @Generated
-        void call_setChangeTokenUpdatedBlock(CKServerChangeToken arg0);
+        void call_setChangeTokenUpdatedBlock(@NotNull CKServerChangeToken arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setFetchDatabaseChangesCompletionBlock {
         @Generated
-        void call_setFetchDatabaseChangesCompletionBlock(CKServerChangeToken arg0, boolean arg1, NSError arg2);
+        void call_setFetchDatabaseChangesCompletionBlock(@Nullable CKServerChangeToken arg0, boolean arg1,
+                @Nullable NSError arg2);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setRecordZoneWithIDChangedBlock {
         @Generated
-        void call_setRecordZoneWithIDChangedBlock(CKRecordZoneID arg0);
+        void call_setRecordZoneWithIDChangedBlock(@NotNull CKRecordZoneID arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setRecordZoneWithIDWasDeletedBlock {
         @Generated
-        void call_setRecordZoneWithIDWasDeletedBlock(CKRecordZoneID arg0);
+        void call_setRecordZoneWithIDWasDeletedBlock(@NotNull CKRecordZoneID arg0);
     }
 
     /**
      * If this block is set it will be called instead of @c recordZoneWithIDWasDeletedBlock if the user deleted this
      * zone via the iCloud storage UI.
-     * <p>
+     * 
      * This is an indication that the user wanted all data deleted, so local cached data should be wiped and not
      * re-uploaded to the server.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("recordZoneWithIDWasPurgedBlock")
     @ObjCBlock(name = "call_recordZoneWithIDWasPurgedBlock_ret")
@@ -366,37 +384,42 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
     @Generated
     public interface Block_recordZoneWithIDWasPurgedBlock_ret {
         @Generated
-        void call_recordZoneWithIDWasPurgedBlock_ret(CKRecordZoneID arg0);
+        void call_recordZoneWithIDWasPurgedBlock_ret(@NotNull CKRecordZoneID arg0);
     }
 
     /**
      * If this block is set it will be called instead of @c recordZoneWithIDWasDeletedBlock if the user deleted this
      * zone via the iCloud storage UI.
-     * <p>
+     * 
      * This is an indication that the user wanted all data deleted, so local cached data should be wiped and not
      * re-uploaded to the server.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRecordZoneWithIDWasPurgedBlock:")
     public native void setRecordZoneWithIDWasPurgedBlock(
-            @ObjCBlock(name = "call_setRecordZoneWithIDWasPurgedBlock") Block_setRecordZoneWithIDWasPurgedBlock value);
+            @Nullable @ObjCBlock(name = "call_setRecordZoneWithIDWasPurgedBlock") Block_setRecordZoneWithIDWasPurgedBlock value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setRecordZoneWithIDWasPurgedBlock {
         @Generated
-        void call_setRecordZoneWithIDWasPurgedBlock(CKRecordZoneID arg0);
+        void call_setRecordZoneWithIDWasPurgedBlock(@NotNull CKRecordZoneID arg0);
     }
 
     /**
      * If this block is set it will be called instead of @c recordZoneWithIDWasDeletedBlock if the user chose to reset
      * all encrypted data for their account.
-     * <p>
+     * 
      * This is an indication that the user had to reset encrypted data during account recovery, so local cached data
      * should be re-uploaded to the server to minimize data loss.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("recordZoneWithIDWasDeletedDueToUserEncryptedDataResetBlock")
     @ObjCBlock(name = "call_recordZoneWithIDWasDeletedDueToUserEncryptedDataResetBlock_ret")
@@ -406,26 +429,28 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
     @Generated
     public interface Block_recordZoneWithIDWasDeletedDueToUserEncryptedDataResetBlock_ret {
         @Generated
-        void call_recordZoneWithIDWasDeletedDueToUserEncryptedDataResetBlock_ret(CKRecordZoneID arg0);
+        void call_recordZoneWithIDWasDeletedDueToUserEncryptedDataResetBlock_ret(@NotNull CKRecordZoneID arg0);
     }
 
     /**
      * If this block is set it will be called instead of @c recordZoneWithIDWasDeletedBlock if the user chose to reset
      * all encrypted data for their account.
-     * <p>
+     * 
      * This is an indication that the user had to reset encrypted data during account recovery, so local cached data
      * should be re-uploaded to the server to minimize data loss.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setRecordZoneWithIDWasDeletedDueToUserEncryptedDataResetBlock:")
     public native void setRecordZoneWithIDWasDeletedDueToUserEncryptedDataResetBlock(
-            @ObjCBlock(name = "call_setRecordZoneWithIDWasDeletedDueToUserEncryptedDataResetBlock") Block_setRecordZoneWithIDWasDeletedDueToUserEncryptedDataResetBlock value);
+            @Nullable @ObjCBlock(name = "call_setRecordZoneWithIDWasDeletedDueToUserEncryptedDataResetBlock") Block_setRecordZoneWithIDWasDeletedDueToUserEncryptedDataResetBlock value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setRecordZoneWithIDWasDeletedDueToUserEncryptedDataResetBlock {
         @Generated
-        void call_setRecordZoneWithIDWasDeletedDueToUserEncryptedDataResetBlock(CKRecordZoneID arg0);
+        void call_setRecordZoneWithIDWasDeletedDueToUserEncryptedDataResetBlock(@NotNull CKRecordZoneID arg0);
     }
 }

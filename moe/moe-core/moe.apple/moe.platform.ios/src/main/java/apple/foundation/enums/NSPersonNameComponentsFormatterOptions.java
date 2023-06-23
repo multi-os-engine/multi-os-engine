@@ -19,6 +19,9 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 public final class NSPersonNameComponentsFormatterOptions {
     /**
@@ -29,6 +32,8 @@ public final class NSPersonNameComponentsFormatterOptions {
      * <family:"Family", given:"Given", phoneticRepresentation:<family:"FamilyPhonetic", given:"GivenPhonetic">>.
      * If this option is specified, we perform formatting operations on <family "FamilyPhonetic", given "GivenPhonetic">
      * instead.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NUInt public static final long NSPersonNameComponentsFormatterPhonetic = 0x0000000000000002L;
 

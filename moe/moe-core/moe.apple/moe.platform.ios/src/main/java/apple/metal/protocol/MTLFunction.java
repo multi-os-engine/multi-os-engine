@@ -34,14 +34,18 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLFunction
- * <p>
+ * 
  * A handle to intermediate code used as inputs for either a MTLComputePipelineState or a MTLRenderPipelineState.
- * <p>
+ * 
  * MTLFunction is a single vertex shader, fragment shader, or compute function. A Function can only be used with the
  * device that it was created against.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Metal")
@@ -50,9 +54,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLFunction {
     /**
      * [@property] device
-     * <p>
+     * 
      * The device this resource was created against. This resource can only be used with this device.
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -60,16 +65,19 @@ public interface MTLFunction {
 
     /**
      * [@property] functionConstantsDictionary
-     * <p>
+     * 
      * A dictionary containing information about all function contents, keyed by the constant names.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("functionConstantsDictionary")
     NSDictionary<String, ? extends MTLFunctionConstant> functionConstantsDictionary();
 
     /**
      * [@property] functionType
-     * <p>
+     * 
      * The overall kind of entry point: compute, vertex, or fragment.
      */
     @Generated
@@ -79,27 +87,33 @@ public interface MTLFunction {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
+     * 
+     * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();
 
     /**
      * [@property] name
-     * <p>
+     * 
      * The name of the function in the shading language.
      */
+    @NotNull
     @Generated
     @Selector("name")
     String name();
 
     /**
      * [@property] patchControlPointCount
-     * <p>
+     * 
      * Returns the number of patch control points if it was specified in the shader. Returns -1 if it
      * was not specified.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("patchControlPointCount")
@@ -108,8 +122,10 @@ public interface MTLFunction {
 
     /**
      * [@property] patchType
-     * <p>
+     * 
      * Returns the patch type. MTLPatchTypeNone if it is not a post tessellation vertex shader.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("patchType")
@@ -118,32 +134,41 @@ public interface MTLFunction {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setLabel:")
-    void setLabel(String value);
+    void setLabel(@Nullable String value);
 
     /**
      * [@property] stageInputAttributes
-     * <p>
+     * 
      * Returns an array describing the attributes
+     * 
+     * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("stageInputAttributes")
     NSArray<? extends MTLAttribute> stageInputAttributes();
 
+    @Nullable
     @Generated
     @Selector("vertexAttributes")
     NSArray<? extends MTLVertexAttribute> vertexAttributes();
 
     /**
      * newArgumentEncoderWithBufferIndex:
-     * <p>
+     * 
      * Creates an argument encoder which will encode arguments matching the layout of the argument buffer at the given
      * bind point index.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("newArgumentEncoderWithBufferIndex:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -151,20 +176,25 @@ public interface MTLFunction {
 
     /**
      * newArgumentEncoderWithBufferIndex:
-     * <p>
+     * 
      * Creates an argument encoder which will encode arguments matching the layout of the argument buffer at the given
      * bind point index.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("newArgumentEncoderWithBufferIndex:reflection:")
     @MappedReturn(ObjCObjectMapper.class)
     MTLArgumentEncoder newArgumentEncoderWithBufferIndexReflection(@NUInt long bufferIndex,
-            @ReferenceInfo(type = MTLArgument.class) Ptr<MTLArgument> reflection);
+            @Nullable @ReferenceInfo(type = MTLArgument.class) Ptr<MTLArgument> reflection);
 
     /**
      * [@property] options
-     * <p>
+     * 
      * The options this function was created with.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("options")

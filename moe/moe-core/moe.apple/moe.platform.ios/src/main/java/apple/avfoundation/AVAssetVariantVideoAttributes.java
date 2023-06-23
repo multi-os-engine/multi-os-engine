@@ -1,7 +1,6 @@
 package apple.avfoundation;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSNumber;
@@ -24,7 +23,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -55,32 +60,36 @@ public class AVAssetVariantVideoAttributes extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] codecTypes
-     * <p>
+     * 
      * Provides an array of video sample codec types present in the variant's renditions if any are declared. Each value
      * in the array is a NSNumber representation of CMVideoCodecType.
      */
+    @NotNull
     @Generated
     @Selector("codecTypes")
     public native NSArray<? extends NSNumber> codecTypes();
@@ -119,9 +128,10 @@ public class AVAssetVariantVideoAttributes extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -130,7 +140,7 @@ public class AVAssetVariantVideoAttributes extends NSObject {
 
     /**
      * [@property] nominalFrameRate
-     * <p>
+     * 
      * If it is not declared, the value will be negative.
      */
     @Generated
@@ -139,7 +149,7 @@ public class AVAssetVariantVideoAttributes extends NSObject {
 
     /**
      * [@property] presentationSize
-     * <p>
+     * 
      * If it is not declared, it will be CGSizeZero.
      */
     @Generated
@@ -170,9 +180,10 @@ public class AVAssetVariantVideoAttributes extends NSObject {
 
     /**
      * [@property] videoRange
-     * <p>
+     * 
      * Provides the video range of the variant. If it is not declared, it will be AVVideoRangeSDR.
      */
+    @NotNull
     @Generated
     @Selector("videoRange")
     public native String videoRange();

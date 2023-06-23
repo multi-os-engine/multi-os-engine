@@ -25,7 +25,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 12.0
+ * Deprecated-Since: 13.0
+ */
+@Deprecated
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -56,22 +63,25 @@ public class HKCumulativeQuantitySeriesSample extends HKCumulativeQuantitySample
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -95,7 +105,7 @@ public class HKCumulativeQuantitySeriesSample extends HKCumulativeQuantitySample
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKCumulativeQuantitySeriesSample initWithCoder(NSCoder coder);
+    public native HKCumulativeQuantitySeriesSample initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -114,9 +124,10 @@ public class HKCumulativeQuantitySeriesSample extends HKCumulativeQuantitySample
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -126,19 +137,20 @@ public class HKCumulativeQuantitySeriesSample extends HKCumulativeQuantitySample
     @Generated
     @Selector("quantitySampleWithType:quantity:startDate:endDate:")
     public static native HKCumulativeQuantitySeriesSample quantitySampleWithTypeQuantityStartDateEndDate(
-            HKQuantityType quantityType, HKQuantity quantity, NSDate startDate, NSDate endDate);
+            @NotNull HKQuantityType quantityType, @NotNull HKQuantity quantity, @NotNull NSDate startDate,
+            @NotNull NSDate endDate);
 
     @Generated
     @Selector("quantitySampleWithType:quantity:startDate:endDate:device:metadata:")
     public static native HKCumulativeQuantitySeriesSample quantitySampleWithTypeQuantityStartDateEndDateDeviceMetadata(
-            HKQuantityType quantityType, HKQuantity quantity, NSDate startDate, NSDate endDate, HKDevice device,
-            NSDictionary<String, ?> metadata);
+            @NotNull HKQuantityType quantityType, @NotNull HKQuantity quantity, @NotNull NSDate startDate,
+            @NotNull NSDate endDate, @Nullable HKDevice device, @Nullable NSDictionary<String, ?> metadata);
 
     @Generated
     @Selector("quantitySampleWithType:quantity:startDate:endDate:metadata:")
     public static native HKCumulativeQuantitySeriesSample quantitySampleWithTypeQuantityStartDateEndDateMetadata(
-            HKQuantityType quantityType, HKQuantity quantity, NSDate startDate, NSDate endDate,
-            NSDictionary<String, ?> metadata);
+            @NotNull HKQuantityType quantityType, @NotNull HKQuantity quantity, @NotNull NSDate startDate,
+            @NotNull NSDate endDate, @Nullable NSDictionary<String, ?> metadata);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -152,6 +164,7 @@ public class HKCumulativeQuantitySeriesSample extends HKCumulativeQuantitySample
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("sum")
     public native HKQuantity sum();

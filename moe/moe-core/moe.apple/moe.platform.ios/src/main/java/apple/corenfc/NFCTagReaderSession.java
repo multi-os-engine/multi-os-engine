@@ -26,10 +26,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NFCTagReaderSession
- * <p>
+ * 
  * Reader session for processing NFC tags supporting one of the @link NFCTagType @link/ types. @link
  * [NFCTagReaderSessionDelegate readerSession:didDetectTags:] @link/
  * will return tag objects matching the requested type for the session. This session requires the
@@ -38,7 +40,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * NFCReaderErrorSecurityViolation @link/ will be
  * returned from @link [NFCTagReaderSessionDelegate tagReaderSession:didInvalidateWithError:] @link/ if the required
  * entitlement is missing when session is started.
- * <p>
+ * 
  * NOTE:
  * - Only one NFCReaderSession can be active at any time in the system. Subsequent opened sessions will get queued up
  * and processed by the system in FIFO order.
@@ -47,6 +49,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * "com.apple.developer.nfc.readersession.iso7816.select-identifiers" array in Info.plist is found, then @link
  * [NFCTagReaderSessionDelegate readerSession:didDetectTags:] @link/
  * will return a tag instance conform to the @link NFCISO7816Tag @link/ protocol.
+ * - Use of @link NFCPollingPACE @link/ requires "PACE" to be added into the
+ * "com.apple.developer.nfc.readersession.formats" entitlement.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreNFC")
@@ -78,36 +84,42 @@ public class NFCTagReaderSession extends NFCReaderSession {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * connectToTag:completionHandler:
-     * <p>
+     * 
      * This method establishes a tag connection and activates the tag. Connecting to the same tag that is currently
      * opened has no effect.
      * Connecting to a different tag will automatically terminate the previous tag connection and put it into the halt
      * state. Tag stays in the
      * connected state until another tag is connected or the polling is restarted.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param tag               A NFCTag protocol compliant tag object that will be connected to.
+     * 
      * @param completionHandler Completion handler called when the operation is completed. error is nil if operation
      *                          succeeds.
      *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with
@@ -115,19 +127,22 @@ public class NFCTagReaderSession extends NFCReaderSession {
      */
     @Generated
     @Selector("connectToTag:completionHandler:")
-    public native void connectToTagCompletionHandler(@Mapped(ObjCObjectMapper.class) NFCTag tag,
-            @ObjCBlock(name = "call_connectToTagCompletionHandler") Block_connectToTagCompletionHandler completionHandler);
+    public native void connectToTagCompletionHandler(@NotNull @Mapped(ObjCObjectMapper.class) NFCTag tag,
+            @NotNull @ObjCBlock(name = "call_connectToTagCompletionHandler") Block_connectToTagCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_connectToTagCompletionHandler {
         @Generated
-        void call_connectToTagCompletionHandler(NSError error);
+        void call_connectToTagCompletionHandler(@Nullable NSError error);
     }
 
     /**
      * [@property] connectedTag Current connected tag object; nil if no tag is connected in the session.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("connectedTag")
     @MappedReturn(ObjCObjectMapper.class)
@@ -152,7 +167,7 @@ public class NFCTagReaderSession extends NFCReaderSession {
 
     /**
      * initWithPollingOption:delegate:queue:
-     *
+     * 
      * @param pollingOption Configures the RF polling of the reader session; multiple options can be OR'ed together.
      *                      This option affects the possible NFC tag type discover.
      * @param delegate      The session will hold a weak ARC reference to this @link NFCTagReaderSessionDelegate @link/
@@ -161,12 +176,15 @@ public class NFCTagReaderSession extends NFCReaderSession {
      *                      A <i>nil</i> value will
      *                      cause the creation of a serial dispatch queue internally for the session. The session object
      *                      will retain the provided dispatch queue.
+     * 
      * @return A new NFCTagReaderSession instance.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithPollingOption:delegate:queue:")
     public native NFCTagReaderSession initWithPollingOptionDelegateQueue(@NInt long pollingOption,
-            @Mapped(ObjCObjectMapper.class) NFCTagReaderSessionDelegate delegate, NSObject queue);
+            @NotNull @Mapped(ObjCObjectMapper.class) NFCTagReaderSessionDelegate delegate, @Nullable NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -185,9 +203,10 @@ public class NFCTagReaderSession extends NFCReaderSession {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -208,15 +227,16 @@ public class NFCTagReaderSession extends NFCReaderSession {
 
     /**
      * restartPolling
-     * <p>
+     * 
      * Restart the polling sequence in this session to discover new tags. New tags discovered from polling will return
      * in the subsequent @link [NFCTagReaderSessionDelegate tagReaderSession:didDetectTags:]
-     *
      * @link/ call. Tags that are returned previously by @link [NFCTagReaderSessionDelegate
      * tagReaderSession:didDetectTags:] @link/ will become invalid,
      * and all references to these tags shall be removed to properly release the resources. Calling this method on an
      * invalidated session
      * will have no effect; a new reader session is required to restart the reader.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("restartPolling")

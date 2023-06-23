@@ -21,14 +21,29 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] CBPeripheralState
- * <p>
+ * 
  * Represents the current connection state of a CBPeripheral.
+ * 
+ * 
+ * API-Since: 7.0
  */
 @Generated
 public final class CBPeripheralState {
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Disconnected = 0x0000000000000000L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Connecting = 0x0000000000000001L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Connected = 0x0000000000000002L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Disconnecting = 0x0000000000000003L;
 
     @Generated

@@ -19,11 +19,26 @@ package apple.spritekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 public final class SKLabelVerticalAlignmentMode {
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Baseline = 0x0000000000000000L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Center = 0x0000000000000001L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Top = 0x0000000000000002L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Bottom = 0x0000000000000003L;
 
     @Generated

@@ -17,8 +17,6 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGRect;
 import apple.coremedia.struct.CMTime;
 import apple.coremedia.struct.CMTimeRange;
 import apple.foundation.NSArray;
@@ -49,7 +47,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -81,22 +86,25 @@ public class AVVideoCompositionLayerInstruction extends NSObject implements NSSe
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +139,10 @@ public class AVVideoCompositionLayerInstruction extends NSObject implements NSSe
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,79 +174,98 @@ public class AVVideoCompositionLayerInstruction extends NSObject implements NSSe
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * getCropRectangleRampForTime:startCropRectangle:endCropRectangle:timeRange:
-     * <p>
+     * 
      * Obtains the crop rectangle ramp that includes the specified time.
-     *
-     * @return An indication of success. NO will be returned if the specified time is beyond the duration of the last
-     *         crop rectangle ramp that has been set.
-     * @param time               If a ramp with a timeRange that contains the specified time has been set, information
+     * 
+     * @param time
+     *                           If a ramp with a timeRange that contains the specified time has been set, information
      *                           about the effective ramp for that time is supplied.
      *                           Otherwise, information about the first ramp that starts after the specified time is
      *                           supplied.
-     * @param startCropRectangle A pointer to a CGRect to receive the starting crop rectangle value for the crop
+     * @param startCropRectangle
+     *                           A pointer to a CGRect to receive the starting crop rectangle value for the crop
      *                           rectangle ramp. May be NULL.
-     * @param endCropRecrangle   A pointer to a CGRect to receive the ending crop rectangle value for the crop rectangle
+     * @param endCropRecrangle
+     *                           A pointer to a CGRect to receive the ending crop rectangle value for the crop rectangle
      *                           ramp. May be NULL.
-     * @param timeRange          A pointer to a CMTimeRange to receive the timeRange of the crop rectangle ramp. May be
+     * @param timeRange
+     *                           A pointer to a CMTimeRange to receive the timeRange of the crop rectangle ramp. May be
      *                           NULL.
+     * @return
+     *         An indication of success. NO will be returned if the specified time is beyond the duration of the last
+     *         crop rectangle ramp that has been set.
+     * 
+     *         API-Since: 7.0
      */
     @Generated
     @Selector("getCropRectangleRampForTime:startCropRectangle:endCropRectangle:timeRange:")
     public native boolean getCropRectangleRampForTimeStartCropRectangleEndCropRectangleTimeRange(@ByValue CMTime time,
-            CGRect startCropRectangle, CGRect endCropRectangle, CMTimeRange timeRange);
+            @Nullable CGRect startCropRectangle, @Nullable CGRect endCropRectangle, @Nullable CMTimeRange timeRange);
 
     /**
      * getOpacityRampForTime:startOpacity:endOpacity:timeRange:
-     * <p>
+     * 
      * Obtains the opacity ramp that includes the specified time.
-     *
-     * @return An indication of success. NO will be returned if the specified time is beyond the duration of the last
-     *         opacity ramp that has been set.
-     * @param time         If a ramp with a timeRange that contains the specified time has been set, information about
+     * 
+     * @param time
+     *                     If a ramp with a timeRange that contains the specified time has been set, information about
      *                     the effective ramp for that time is supplied.
      *                     Otherwise, information about the first ramp that starts after the specified time is supplied.
-     * @param startOpacity A pointer to a float to receive the starting opacity value for the opacity ramp. May be NULL.
-     * @param endOpacity   A pointer to a float to receive the ending opacity value for the opacity ramp. May be NULL.
-     * @param timeRange    A pointer to a CMTimeRange to receive the timeRange of the opacity ramp. May be NULL.
+     * @param startOpacity
+     *                     A pointer to a float to receive the starting opacity value for the opacity ramp. May be NULL.
+     * @param endOpacity
+     *                     A pointer to a float to receive the ending opacity value for the opacity ramp. May be NULL.
+     * @param timeRange
+     *                     A pointer to a CMTimeRange to receive the timeRange of the opacity ramp. May be NULL.
+     * @return
+     *         An indication of success. NO will be returned if the specified time is beyond the duration of the last
+     *         opacity ramp that has been set.
      */
     @Generated
     @Selector("getOpacityRampForTime:startOpacity:endOpacity:timeRange:")
     public native boolean getOpacityRampForTimeStartOpacityEndOpacityTimeRange(@ByValue CMTime time,
-            FloatPtr startOpacity, FloatPtr endOpacity, CMTimeRange timeRange);
+            @Nullable FloatPtr startOpacity, @Nullable FloatPtr endOpacity, @Nullable CMTimeRange timeRange);
 
     /**
      * getTransformRampForTime:startTransform:endTransform:timeRange:
-     * <p>
+     * 
      * Obtains the transform ramp that includes the specified time.
-     *
-     * @return An indication of success. NO will be returned if the specified time is beyond the duration of the last
-     *         transform ramp that has been set.
-     * @param time           If a ramp with a timeRange that contains the specified time has been set, information about
+     * 
+     * @param time
+     *                       If a ramp with a timeRange that contains the specified time has been set, information about
      *                       the effective ramp for that time is supplied.
      *                       Otherwise, information about the first ramp that starts after the specified time is
      *                       supplied.
-     * @param startTransform A pointer to a float to receive the starting transform value for the transform ramp. May be
+     * @param startTransform
+     *                       A pointer to a float to receive the starting transform value for the transform ramp. May be
      *                       NULL.
-     * @param endTransform   A pointer to a float to receive the ending transform value for the transform ramp. May be
+     * @param endTransform
+     *                       A pointer to a float to receive the ending transform value for the transform ramp. May be
      *                       NULL.
-     * @param timeRange      A pointer to a CMTimeRange to receive the timeRange of the transform ramp. May be NULL.
+     * @param timeRange
+     *                       A pointer to a CMTimeRange to receive the timeRange of the transform ramp. May be NULL.
+     * @return
+     *         An indication of success. NO will be returned if the specified time is beyond the duration of the last
+     *         transform ramp that has been set.
      */
     @Generated
     @Selector("getTransformRampForTime:startTransform:endTransform:timeRange:")
     public native boolean getTransformRampForTimeStartTransformEndTransformTimeRange(@ByValue CMTime time,
-            CGAffineTransform startTransform, CGAffineTransform endTransform, CMTimeRange timeRange);
+            @Nullable CGAffineTransform startTransform, @Nullable CGAffineTransform endTransform,
+            @Nullable CMTimeRange timeRange);
 
     @Generated
     @Selector("init")
@@ -245,13 +273,14 @@ public class AVVideoCompositionLayerInstruction extends NSObject implements NSSe
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVVideoCompositionLayerInstruction initWithCoder(NSCoder coder);
+    public native AVVideoCompositionLayerInstruction initWithCoder(@NotNull NSCoder coder);
 
+    @NotNull
     @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

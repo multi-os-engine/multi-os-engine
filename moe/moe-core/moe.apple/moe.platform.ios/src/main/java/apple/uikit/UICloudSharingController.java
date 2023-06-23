@@ -46,7 +46,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -75,35 +80,39 @@ public class UICloudSharingController extends UIViewController {
     @Selector("allocWithZone:")
     public static native UICloudSharingController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -135,9 +144,10 @@ public class UICloudSharingController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,6 +180,7 @@ public class UICloudSharingController extends UIViewController {
      * If the activity is selected, delegate methods will be called for the original instance of
      * the sharing controller.
      */
+    @NotNull
     @Generated
     @Selector("activityItemSource")
     @MappedReturn(ObjCObjectMapper.class)
@@ -184,6 +195,7 @@ public class UICloudSharingController extends UIViewController {
     @NUInt
     public native long availablePermissions();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -195,18 +207,20 @@ public class UICloudSharingController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UICloudSharingController initWithCoder(NSCoder coder);
+    public native UICloudSharingController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native UICloudSharingController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native UICloudSharingController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * Use this initializer when you already have an active CKShare that was set up previously.
      */
     @Generated
     @Selector("initWithShare:container:")
-    public native UICloudSharingController initWithShareContainer(CKShare share, CKContainer container);
+    public native UICloudSharingController initWithShareContainer(@NotNull CKShare share,
+            @NotNull CKContainer container);
 
     /**
      * Restrict the sharing invitation UI to specific types of share permissions. If set, only the specified
@@ -218,10 +232,11 @@ public class UICloudSharingController extends UIViewController {
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UICloudSharingControllerDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) UICloudSharingControllerDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UICloudSharingControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UICloudSharingControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -232,6 +247,7 @@ public class UICloudSharingController extends UIViewController {
         }
     }
 
+    @Nullable
     @Generated
     @Selector("share")
     public native CKShare share();
@@ -245,7 +261,7 @@ public class UICloudSharingController extends UIViewController {
     @Generated
     @Selector("initWithPreparationHandler:")
     public native UICloudSharingController initWithPreparationHandler(
-            @ObjCBlock(name = "call_initWithPreparationHandler") Block_initWithPreparationHandler preparationHandler);
+            @NotNull @ObjCBlock(name = "call_initWithPreparationHandler") Block_initWithPreparationHandler preparationHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -254,11 +270,12 @@ public class UICloudSharingController extends UIViewController {
         @Generated
         public interface Block_Block_initWithPreparationHandler {
             @Generated
-            void call_Block_initWithPreparationHandler(CKShare arg0, CKContainer arg1, NSError arg2);
+            void call_Block_initWithPreparationHandler(@Nullable CKShare arg0, @Nullable CKContainer arg1,
+                    @Nullable NSError arg2);
         }
 
         @Generated
-        void call_initWithPreparationHandler(UICloudSharingController controller,
-                @ObjCBlock(name = "call_Block_initWithPreparationHandler") Block_Block_initWithPreparationHandler preparationCompletionHandler);
+        void call_initWithPreparationHandler(@NotNull UICloudSharingController controller,
+                @NotNull @ObjCBlock(name = "call_Block_initWithPreparationHandler") Block_Block_initWithPreparationHandler preparationCompletionHandler);
     }
 }

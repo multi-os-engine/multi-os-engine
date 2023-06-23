@@ -44,7 +44,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ * Deprecated-Since: 10.0
+ * Deprecated-Message: Use UserNotifications Framework's UNNotificationAction
+ */
+@Deprecated
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -75,22 +83,25 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +136,10 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -169,25 +181,29 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
 
     /**
      * The behavior of this action when the user activates it.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("behavior")
     @NUInt
     public native long behavior();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * The unique identifier for this action.
      */
+    @Nullable
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -198,7 +214,7 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIUserNotificationAction initWithCoder(NSCoder coder);
+    public native UIUserNotificationAction initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Whether this action is secure and should require unlocking before being performed. If the activation mode is
@@ -215,15 +231,19 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
     @Selector("isDestructive")
     public native boolean isDestructive();
 
+    @NotNull
     @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Parameters that can be used by some types of actions.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("parameters")
     public native NSDictionary<?, ?> parameters();
@@ -237,6 +257,7 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
     /**
      * The localized title to display for this action.
      */
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();

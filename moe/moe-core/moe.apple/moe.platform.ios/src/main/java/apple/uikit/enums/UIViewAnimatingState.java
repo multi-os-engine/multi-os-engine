@@ -19,18 +19,27 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 public final class UIViewAnimatingState {
     /**
      * The animation is not executing.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Inactive = 0x0000000000000000L;
     /**
      * The animation is executing.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Active = 0x0000000000000001L;
     /**
      * The animation has been stopped and has not transitioned to inactive.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Stopped = 0x0000000000000002L;
 

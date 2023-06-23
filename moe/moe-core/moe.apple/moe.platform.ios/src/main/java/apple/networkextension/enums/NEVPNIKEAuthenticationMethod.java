@@ -21,22 +21,30 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEVPNIKEAuthenticationMethod
- * <p>
+ * 
  * Internet Key Exchange (IKE) authentication methods used to authenticate with the IPSec server.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class NEVPNIKEAuthenticationMethod {
     /**
      * [@const] NEVPNIKEAuthenticationMethodNone Do not authenticate with the IPSec server
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long None = 0x0000000000000000L;
     /**
      * [@const] NEVPNIKEAuthenticationMethodCertificate Use a certificate and private key as the authentication
      * credential
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Certificate = 0x0000000000000001L;
     /**
      * [@const] NEVPNIKEAuthenticationMethodSharedSecret Use a shared secret as the authentication credential
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long SharedSecret = 0x0000000000000002L;
 

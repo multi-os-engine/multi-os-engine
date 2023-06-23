@@ -35,9 +35,17 @@ public final class UIImagePickerControllerQualityType {
     @Generated @NInt public static final long TypeLow = 0x0000000000000002L;
     /**
      * VGA quality
+     * 
+     * API-Since: 4.0
      */
     @Generated @NInt public static final long Type640x480 = 0x0000000000000003L;
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NInt public static final long TypeIFrame1280x720 = 0x0000000000000004L;
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NInt public static final long TypeIFrame960x540 = 0x0000000000000005L;
 
     @Generated

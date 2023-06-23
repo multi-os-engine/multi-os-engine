@@ -1,8 +1,6 @@
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSAttributedString;
 import apple.foundation.NSCoder;
@@ -37,11 +35,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSTextLayoutManager is the center piece of the TextKit object network maintaining the layout geometry via an array of
  * NSTextContainer and layout results with NSTextLayoutFragment associated with NSTextElement vended from the owner
  * NSTextContentManager.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("UIKit")
@@ -68,8 +72,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      */
     @Generated
     @Selector("addRenderingAttribute:value:forTextRange:")
-    public native void addRenderingAttributeValueForTextRange(String renderingAttribute,
-            @Mapped(ObjCObjectMapper.class) Object value, NSTextRange textRange);
+    public native void addRenderingAttributeValueForTextRange(@NotNull String renderingAttribute,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object value, @NotNull NSTextRange textRange);
 
     @Generated
     @Owned
@@ -83,27 +87,30 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("baseWritingDirectionAtLocation:")
     @NInt
-    public native long baseWritingDirectionAtLocation(@Mapped(ObjCObjectMapper.class) NSTextLocation location);
+    public native long baseWritingDirectionAtLocation(@NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -112,6 +119,7 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -121,13 +129,14 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("documentRange")
     public native NSTextRange documentRange();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Performs the layout for filling bounds inside the last text container.
@@ -141,20 +150,20 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      */
     @Generated
     @Selector("ensureLayoutForRange:")
-    public native void ensureLayoutForRange(NSTextRange range);
+    public native void ensureLayoutForRange(@NotNull NSTextRange range);
 
     @Generated
     @Selector("enumerateCaretOffsetsInLineFragmentAtLocation:usingBlock:")
     public native void enumerateCaretOffsetsInLineFragmentAtLocationUsingBlock(
-            @Mapped(ObjCObjectMapper.class) NSTextLocation location,
-            @ObjCBlock(name = "call_enumerateCaretOffsetsInLineFragmentAtLocationUsingBlock") NSTextSelectionDataSource.Block_enumerateCaretOffsetsInLineFragmentAtLocationUsingBlock block);
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location,
+            @NotNull @ObjCBlock(name = "call_enumerateCaretOffsetsInLineFragmentAtLocationUsingBlock") NSTextSelectionDataSource.Block_enumerateCaretOffsetsInLineFragmentAtLocationUsingBlock block);
 
     @Generated
     @IsOptional
     @Selector("enumerateContainerBoundariesFromLocation:reverse:usingBlock:")
     public native void enumerateContainerBoundariesFromLocationReverseUsingBlock(
-            @Mapped(ObjCObjectMapper.class) NSTextLocation location, boolean reverse,
-            @ObjCBlock(name = "call_enumerateContainerBoundariesFromLocationReverseUsingBlock") NSTextSelectionDataSource.Block_enumerateContainerBoundariesFromLocationReverseUsingBlock block);
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location, boolean reverse,
+            @NotNull @ObjCBlock(name = "call_enumerateContainerBoundariesFromLocationReverseUsingBlock") NSTextSelectionDataSource.Block_enumerateContainerBoundariesFromLocationReverseUsingBlock block);
 
     /**
      * Enumerates the rendering attributes from location. It enumerates only ranges with rendering attributes specified.
@@ -163,22 +172,23 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
     @Generated
     @Selector("enumerateRenderingAttributesFromLocation:reverse:usingBlock:")
     public native void enumerateRenderingAttributesFromLocationReverseUsingBlock(
-            @Mapped(ObjCObjectMapper.class) NSTextLocation location, boolean reverse,
-            @ObjCBlock(name = "call_enumerateRenderingAttributesFromLocationReverseUsingBlock") Block_enumerateRenderingAttributesFromLocationReverseUsingBlock block);
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location, boolean reverse,
+            @NotNull @ObjCBlock(name = "call_enumerateRenderingAttributesFromLocationReverseUsingBlock") Block_enumerateRenderingAttributesFromLocationReverseUsingBlock block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateRenderingAttributesFromLocationReverseUsingBlock {
         @Generated
-        boolean call_enumerateRenderingAttributesFromLocationReverseUsingBlock(NSTextLayoutManager textLayoutManager,
-                NSDictionary<String, ?> attributes, NSTextRange textRange);
+        boolean call_enumerateRenderingAttributesFromLocationReverseUsingBlock(
+                @NotNull NSTextLayoutManager textLayoutManager, @NotNull NSDictionary<String, ?> attributes,
+                @NotNull NSTextRange textRange);
     }
 
     @Generated
     @Selector("enumerateSubstringsFromLocation:options:usingBlock:")
     public native void enumerateSubstringsFromLocationOptionsUsingBlock(
-            @Mapped(ObjCObjectMapper.class) NSTextLocation location, @NUInt long options,
-            @ObjCBlock(name = "call_enumerateSubstringsFromLocationOptionsUsingBlock") NSTextSelectionDataSource.Block_enumerateSubstringsFromLocationOptionsUsingBlock block);
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location, @NUInt long options,
+            @NotNull @ObjCBlock(name = "call_enumerateSubstringsFromLocationOptionsUsingBlock") NSTextSelectionDataSource.Block_enumerateSubstringsFromLocationOptionsUsingBlock block);
 
     /**
      * Enumerates the text layout fragments starting at textLocation. If textLocation=nil, it assumes
@@ -189,18 +199,20 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      * can limit the maximum number of text elements enumerated for a single invocation or hide some elements from the
      * layout). Returning NO from block breaks out of the enumeration.
      */
+    @Nullable
     @Generated
     @Selector("enumerateTextLayoutFragmentsFromLocation:options:usingBlock:")
     @MappedReturn(ObjCObjectMapper.class)
     public native NSTextLocation enumerateTextLayoutFragmentsFromLocationOptionsUsingBlock(
-            @Mapped(ObjCObjectMapper.class) NSTextLocation location, @NUInt long options,
-            @ObjCBlock(name = "call_enumerateTextLayoutFragmentsFromLocationOptionsUsingBlock") Block_enumerateTextLayoutFragmentsFromLocationOptionsUsingBlock block);
+            @Nullable @Mapped(ObjCObjectMapper.class) NSTextLocation location, @NUInt long options,
+            @NotNull @ObjCBlock(name = "call_enumerateTextLayoutFragmentsFromLocationOptionsUsingBlock") Block_enumerateTextLayoutFragmentsFromLocationOptionsUsingBlock block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateTextLayoutFragmentsFromLocationOptionsUsingBlock {
         @Generated
-        boolean call_enumerateTextLayoutFragmentsFromLocationOptionsUsingBlock(NSTextLayoutFragment layoutFragment);
+        boolean call_enumerateTextLayoutFragmentsFromLocationOptionsUsingBlock(
+                @NotNull NSTextLayoutFragment layoutFragment);
     }
 
     /**
@@ -210,16 +222,17 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      */
     @Generated
     @Selector("enumerateTextSegmentsInRange:type:options:usingBlock:")
-    public native void enumerateTextSegmentsInRangeTypeOptionsUsingBlock(NSTextRange textRange, @NInt long type,
-            @NUInt long options,
-            @ObjCBlock(name = "call_enumerateTextSegmentsInRangeTypeOptionsUsingBlock") Block_enumerateTextSegmentsInRangeTypeOptionsUsingBlock block);
+    public native void enumerateTextSegmentsInRangeTypeOptionsUsingBlock(@NotNull NSTextRange textRange,
+            @NInt long type, @NUInt long options,
+            @NotNull @ObjCBlock(name = "call_enumerateTextSegmentsInRangeTypeOptionsUsingBlock") Block_enumerateTextSegmentsInRangeTypeOptionsUsingBlock block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateTextSegmentsInRangeTypeOptionsUsingBlock {
         @Generated
-        boolean call_enumerateTextSegmentsInRangeTypeOptionsUsingBlock(NSTextRange textSegmentRange,
-                @ByValue CGRect textSegmentFrame, @NFloat double baselinePosition, NSTextContainer textContainer);
+        boolean call_enumerateTextSegmentsInRangeTypeOptionsUsingBlock(@Nullable NSTextRange textSegmentRange,
+                @ByValue CGRect textSegmentFrame, @NFloat double baselinePosition,
+                @NotNull NSTextContainer textContainer);
     }
 
     @Generated
@@ -233,7 +246,7 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSTextLayoutManager initWithCoder(NSCoder coder);
+    public native NSTextLayoutManager initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -253,7 +266,7 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      */
     @Generated
     @Selector("invalidateLayoutForRange:")
-    public native void invalidateLayoutForRange(NSTextRange range);
+    public native void invalidateLayoutForRange(@NotNull NSTextRange range);
 
     /**
      * Invalidates the rendering attributes in textRange. Enumerating rendering attributes will skip the invalidated
@@ -261,19 +274,21 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      */
     @Generated
     @Selector("invalidateRenderingAttributesForTextRange:")
-    public native void invalidateRenderingAttributesForTextRange(NSTextRange textRange);
+    public native void invalidateRenderingAttributesForTextRange(@NotNull NSTextRange textRange);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * If non-nil, it performs layout in the specified queue until estimatedUsageBounds=NO.
      */
+    @Nullable
     @Generated
     @Selector("layoutQueue")
     public native NSOperationQueue layoutQueue();
@@ -287,25 +302,28 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
     @Selector("limitsLayoutForSuspiciousContents")
     public native boolean limitsLayoutForSuspiciousContents();
 
+    @Nullable
     @Generated
     @Selector("lineFragmentRangeForPoint:inContainerAtLocation:")
     public native NSTextRange lineFragmentRangeForPointInContainerAtLocation(@ByValue CGPoint point,
-            @Mapped(ObjCObjectMapper.class) NSTextLocation location);
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location);
 
     /**
      * The default set of attributes for rendering NSLinkAttributeName. The base NSTextLayoutManager class returns with
      * NSUnderlineStyleSingle for NSUnderlineStyleAttributeName and the platform link color for
      * NSForegroundColorAttributeName. The platform color for macOS is +linkColor. Other platforms uses +blueColor.
      */
+    @NotNull
     @Generated
     @Selector("linkRenderingAttributes")
     public static native NSDictionary<String, ?> linkRenderingAttributes();
 
+    @Nullable
     @Generated
     @Selector("locationFromLocation:withOffset:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native NSTextLocation locationFromLocationWithOffset(@Mapped(ObjCObjectMapper.class) NSTextLocation location,
-            @NInt long offset);
+    public native NSTextLocation locationFromLocationWithOffset(
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location, @NInt long offset);
 
     @Generated
     @Owned
@@ -315,31 +333,35 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
     @Generated
     @Selector("offsetFromLocation:toLocation:")
     @NInt
-    public native long offsetFromLocationToLocation(@Mapped(ObjCObjectMapper.class) NSTextLocation from,
-            @Mapped(ObjCObjectMapper.class) NSTextLocation to);
+    public native long offsetFromLocationToLocation(@NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation from,
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation to);
 
     /**
      * Removes attribute from textRange. This is a convenience over -setRenderingAttributes:forTextRange:.
      */
     @Generated
     @Selector("removeRenderingAttribute:forTextRange:")
-    public native void removeRenderingAttributeForTextRange(String renderingAttribute, NSTextRange textRange);
+    public native void removeRenderingAttributeForTextRange(@NotNull String renderingAttribute,
+            @NotNull NSTextRange textRange);
 
     /**
      * Returns a dictionary of rendering attributes for rendering NSLinkAttributeName. Just as other rendering
      * attributes, specifying NSNull removes the attribute from the final attributes used for rendering. It has priority
      * over the general rendering attributes.
      */
+    @NotNull
     @Generated
     @Selector("renderingAttributesForLink:atLocation:")
     public native NSDictionary<String, ?> renderingAttributesForLinkAtLocation(
-            @Mapped(ObjCObjectMapper.class) Object link, @Mapped(ObjCObjectMapper.class) NSTextLocation location);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object link,
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location);
 
     /**
      * A callback block invoked whenever NSTextLayoutManager needs to validate the rendering attributes for the range.
      * The validator should use -setRenderingAttributes:forTextRange: to fill the rendering attributes appropriate for
      * the range inside textLayoutFragment.
      */
+    @Nullable
     @Generated
     @Selector("renderingAttributesValidator")
     @ObjCBlock(name = "call_renderingAttributesValidator_ret")
@@ -349,18 +371,19 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
     @Generated
     public interface Block_renderingAttributesValidator_ret {
         @Generated
-        void call_renderingAttributesValidator_ret(NSTextLayoutManager arg0, NSTextLayoutFragment arg1);
+        void call_renderingAttributesValidator_ret(@NotNull NSTextLayoutManager arg0,
+                @NotNull NSTextLayoutFragment arg1);
     }
 
     @Generated
     @Selector("replaceContentsInRange:withAttributedString:")
-    public native void replaceContentsInRangeWithAttributedString(NSTextRange range,
-            NSAttributedString attributedString);
+    public native void replaceContentsInRangeWithAttributedString(@NotNull NSTextRange range,
+            @NotNull NSAttributedString attributedString);
 
     @Generated
     @Selector("replaceContentsInRange:withTextElements:")
-    public native void replaceContentsInRangeWithTextElements(NSTextRange range,
-            NSArray<? extends NSTextElement> textElements);
+    public native void replaceContentsInRangeWithTextElements(@NotNull NSTextRange range,
+            @NotNull NSArray<? extends NSTextElement> textElements);
 
     /**
      * This method should be used in order to replace an NSTextContentManager with a new one, leaving all related
@@ -369,7 +392,7 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      */
     @Generated
     @Selector("replaceTextContentManager:")
-    public native void replaceTextContentManager(NSTextContentManager textContentManager);
+    public native void replaceTextContentManager(@NotNull NSTextContentManager textContentManager);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -381,10 +404,10 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSTextLayoutManagerDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) NSTextLayoutManagerDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) NSTextLayoutManagerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSTextLayoutManagerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -400,7 +423,7 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      */
     @Generated
     @Selector("setLayoutQueue:")
-    public native void setLayoutQueue(NSOperationQueue value);
+    public native void setLayoutQueue(@Nullable NSOperationQueue value);
 
     /**
      * When YES, enables internal security analysis for malicious inputs and activates defensive behaviors. By enabling
@@ -416,8 +439,8 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      */
     @Generated
     @Selector("setRenderingAttributes:forTextRange:")
-    public native void setRenderingAttributesForTextRange(NSDictionary<String, ?> renderingAttributes,
-            NSTextRange textRange);
+    public native void setRenderingAttributesForTextRange(@NotNull NSDictionary<String, ?> renderingAttributes,
+            @NotNull NSTextRange textRange);
 
     /**
      * A callback block invoked whenever NSTextLayoutManager needs to validate the rendering attributes for the range.
@@ -427,13 +450,14 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
     @Generated
     @Selector("setRenderingAttributesValidator:")
     public native void setRenderingAttributesValidator(
-            @ObjCBlock(name = "call_setRenderingAttributesValidator") Block_setRenderingAttributesValidator value);
+            @Nullable @ObjCBlock(name = "call_setRenderingAttributesValidator") Block_setRenderingAttributesValidator value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setRenderingAttributesValidator {
         @Generated
-        void call_setRenderingAttributesValidator(NSTextLayoutManager arg0, NSTextLayoutFragment arg1);
+        void call_setRenderingAttributesValidator(@NotNull NSTextLayoutManager arg0,
+                @NotNull NSTextLayoutFragment arg1);
     }
 
     /**
@@ -443,14 +467,14 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      */
     @Generated
     @Selector("setTextContainer:")
-    public native void setTextContainer(NSTextContainer value);
+    public native void setTextContainer(@Nullable NSTextContainer value);
 
     /**
      * Returns an NSTextSelectionNavigation configured to have the text layout manager as NSTextSelectionDataSource
      */
     @Generated
     @Selector("setTextSelectionNavigation:")
-    public native void setTextSelectionNavigation(NSTextSelectionNavigation value);
+    public native void setTextSelectionNavigation(@NotNull NSTextSelectionNavigation value);
 
     /**
      * An array of NSTextSelections associated by the text layout manager. Each NSTextSelection represents an insertion
@@ -459,7 +483,7 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      */
     @Generated
     @Selector("setTextSelections:")
-    public native void setTextSelections(NSArray<? extends NSTextSelection> value);
+    public native void setTextSelections(@NotNull NSArray<? extends NSTextSelection> value);
 
     /**
      * If YES, uses the leading as specified by the font. However, this is not appropriate for most UI text. YES by
@@ -502,6 +526,7 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      * isSimpleRectangularTextContainer=NO, NSTextLayoutManager always fill from the top instead of allowing
      * non-contiguous layout support.
      */
+    @Nullable
     @Generated
     @Selector("textContainer")
     public native NSTextContainer textContainer();
@@ -509,6 +534,7 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
     /**
      * Pointing to the NSTextContentManager object strongly referencing the text layout manager.
      */
+    @Nullable
     @Generated
     @Selector("textContentManager")
     public native NSTextContentManager textContentManager();
@@ -516,14 +542,16 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
     /**
      * Returns the text layout fragment containing the document location, location.
      */
+    @Nullable
     @Generated
     @Selector("textLayoutFragmentForLocation:")
     public native NSTextLayoutFragment textLayoutFragmentForLocation(
-            @Mapped(ObjCObjectMapper.class) NSTextLocation location);
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location);
 
     /**
      * Returns the text layout fragment containing position inside the coordinate system for textContainer.
      */
+    @Nullable
     @Generated
     @Selector("textLayoutFragmentForPosition:")
     public native NSTextLayoutFragment textLayoutFragmentForPosition(@ByValue CGPoint position);
@@ -532,16 +560,19 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
     @IsOptional
     @Selector("textLayoutOrientationAtLocation:")
     @NInt
-    public native long textLayoutOrientationAtLocation(@Mapped(ObjCObjectMapper.class) NSTextLocation location);
+    public native long textLayoutOrientationAtLocation(
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location);
 
+    @Nullable
     @Generated
     @Selector("textRangeForSelectionGranularity:enclosingLocation:")
     public native NSTextRange textRangeForSelectionGranularityEnclosingLocation(@NInt long selectionGranularity,
-            @Mapped(ObjCObjectMapper.class) NSTextLocation location);
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location);
 
     /**
      * Returns an NSTextSelectionNavigation configured to have the text layout manager as NSTextSelectionDataSource
      */
+    @NotNull
     @Generated
     @Selector("textSelectionNavigation")
     public native NSTextSelectionNavigation textSelectionNavigation();
@@ -551,6 +582,7 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
      * point. The selection state is shared among all view ports connected to the text layout manager via text
      * containers.
      */
+    @NotNull
     @Generated
     @Selector("textSelections")
     public native NSArray<? extends NSTextSelection> textSelections();
@@ -558,6 +590,7 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
     /**
      * Returns NSTextViewportLayoutController associated with textContainer.
      */
+    @NotNull
     @Generated
     @Selector("textViewportLayoutController")
     public native NSTextViewportLayoutController textViewportLayoutController();

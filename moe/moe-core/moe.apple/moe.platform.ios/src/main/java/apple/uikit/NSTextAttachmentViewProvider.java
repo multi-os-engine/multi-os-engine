@@ -1,8 +1,6 @@
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
@@ -27,7 +25,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -64,27 +69,31 @@ public class NSTextAttachmentViewProvider extends NSObject {
     @Selector("attachmentBoundsForAttributes:location:textContainer:proposedLineFragment:position:")
     @ByValue
     public native CGRect attachmentBoundsForAttributesLocationTextContainerProposedLineFragmentPosition(
-            NSDictionary<String, ?> attributes, @Mapped(ObjCObjectMapper.class) NSTextLocation location,
-            NSTextContainer textContainer, @ByValue CGRect proposedLineFragment, @ByValue CGPoint position);
+            @NotNull NSDictionary<String, ?> attributes,
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location, @Nullable NSTextContainer textContainer,
+            @ByValue CGRect proposedLineFragment, @ByValue CGPoint position);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -109,8 +118,9 @@ public class NSTextAttachmentViewProvider extends NSObject {
     @Generated
     @Selector("initWithTextAttachment:parentView:textLayoutManager:location:")
     public native NSTextAttachmentViewProvider initWithTextAttachmentParentViewTextLayoutManagerLocation(
-            NSTextAttachment textAttachment, UIView parentView, NSTextLayoutManager textLayoutManager,
-            @Mapped(ObjCObjectMapper.class) NSTextLocation location);
+            @NotNull NSTextAttachment textAttachment, @Nullable UIView parentView,
+            @Nullable NSTextLayoutManager textLayoutManager,
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -129,9 +139,10 @@ public class NSTextAttachmentViewProvider extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * This is where subclasses should create their custom view hierarchy. Should never be called directly.
@@ -140,6 +151,7 @@ public class NSTextAttachmentViewProvider extends NSObject {
     @Selector("loadView")
     public native void loadView();
 
+    @NotNull
     @Generated
     @Selector("location")
     @MappedReturn(ObjCObjectMapper.class)
@@ -178,16 +190,18 @@ public class NSTextAttachmentViewProvider extends NSObject {
      */
     @Generated
     @Selector("setView:")
-    public native void setView(UIView value);
+    public native void setView(@Nullable UIView value);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Nullable
     @Generated
     @Selector("textAttachment")
     public native NSTextAttachment textAttachment();
 
+    @Nullable
     @Generated
     @Selector("textLayoutManager")
     public native NSTextLayoutManager textLayoutManager();
@@ -211,6 +225,7 @@ public class NSTextAttachmentViewProvider extends NSObject {
      * The getter first invokes loadView if the view hasn't been set yet. Subclasses must call super if they override
      * the setter or getter.
      */
+    @Nullable
     @Generated
     @Selector("view")
     public native UIView view();

@@ -21,15 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * The formatting styles for contact names.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class CNContactFormatterStyle {
     /**
      * Combine the contact name components into a displayable full name.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long FullName = 0x0000000000000000L;
     /**
      * Combine the contact phonetic name components into a displayable phonetic full name.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long PhoneticFullName = 0x0000000000000001L;
 

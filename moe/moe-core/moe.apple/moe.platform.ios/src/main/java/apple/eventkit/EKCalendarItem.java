@@ -40,7 +40,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("EventKit")
 @Runtime(ObjCRuntime.class)
@@ -71,22 +76,25 @@ public class EKCalendarItem extends EKObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,9 +129,10 @@ public class EKCalendarItem extends EKObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -151,15 +160,23 @@ public class EKCalendarItem extends EKObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 5.0
+     */
+    @Nullable
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
     /**
      * [@property] UUID
-     * <p>
+     * 
      * This is now deprecated; use calendarItemIdentifier instead.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
      */
+    @NotNull
     @Generated
     @Deprecated
     @Selector("UUID")
@@ -167,24 +184,25 @@ public class EKCalendarItem extends EKObject {
 
     /**
      * addAlarm:
-     * <p>
+     * 
      * Adds an alarm to this item.
-     * <p>
+     * 
      * This method add an alarm to an item. Be warned that some calendars can only
      * allow a certain maximum number of alarms. When this item is saved, it will
      * truncate any extra alarms from the array.
      */
     @Generated
     @Selector("addAlarm:")
-    public native void addAlarm(EKAlarm alarm);
+    public native void addAlarm(@NotNull EKAlarm alarm);
 
     @Generated
     @Selector("addRecurrenceRule:")
-    public native void addRecurrenceRule(EKRecurrenceRule rule);
+    public native void addRecurrenceRule(@NotNull EKRecurrenceRule rule);
 
     /**
      * An array of EKAlarm objects
      */
+    @Nullable
     @Generated
     @Selector("alarms")
     public native NSArray<? extends EKAlarm> alarms();
@@ -192,15 +210,16 @@ public class EKCalendarItem extends EKObject {
     /**
      * An array of EKParticipant objects
      */
+    @Nullable
     @Generated
     @Selector("attendees")
     public native NSArray<? extends EKParticipant> attendees();
 
     /**
      * [@property] calendar
-     * <p>
+     * 
      * The calendar that this calendar item belongs to.
-     * <p>
+     * 
      * This will be nil for new calendar items until you set it.
      */
     @Generated
@@ -209,13 +228,13 @@ public class EKCalendarItem extends EKObject {
 
     /**
      * [@property] calendarItemExternalIdentifier
-     * <p>
+     * 
      * A server-provided identifier for this calendar item
-     * <p>
+     * 
      * This identifier, provided by the server, allows you to reference the same event or reminder across
      * multiple devices. For calendars stored locally on the device, including the birthday calendar,
      * it simply passes through to calendarItemIdentifier.
-     * <p>
+     * 
      * This identifier is unique as of creation for every calendar item. However, there are some
      * cases where duplicate copies of a calendar item can exist in the same database, including:
      * - A calendar item was imported from an ICS file into multiple calendars
@@ -224,15 +243,17 @@ public class EKCalendarItem extends EKObject {
      * - A subscribed calendar was added to multiple accounts
      * In such cases, you should choose between calendar items based on other factors, such as
      * the calendar or source.
-     * <p>
+     * 
      * This identifier is the same for all occurrences of a recurring event. If you wish to differentiate
      * between occurrences, you may want to use the start date.
-     * <p>
+     * 
      * This may be nil for new calendar items that do not yet belong to a calendar.
-     * <p>
+     * 
      * In addition, there are two caveats for Exchange-based calendars:
      * - This identifier will be different between EventKit on iOS versus OS X
      * - This identifier will be different between devices for EKReminders
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("calendarItemExternalIdentifier")
@@ -240,18 +261,25 @@ public class EKCalendarItem extends EKObject {
 
     /**
      * [@property] calendarItemIdentifier
-     * <p>
+     * 
      * A unique identifier for a calendar item.
-     * <p>
+     * 
      * Item identifiers are not sync-proof in that a full sync will lose
      * this identifier, so you should always have a back up plan for dealing
      * with a reminder that is no longer fetchable by this property, e.g. by title, etc.
      * Use [EKEventStore calendarItemWithIdentifier:] to look up the item by this value.
+     * 
+     * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("calendarItemIdentifier")
     public native String calendarItemIdentifier();
 
+    /**
+     * API-Since: 5.0
+     */
+    @Nullable
     @Generated
     @Selector("creationDate")
     public native NSDate creationDate();
@@ -262,19 +290,30 @@ public class EKCalendarItem extends EKObject {
      * fast path, it is a good idea to use these if you only need to know
      * the data exists anyway since at some point they will all be a
      * simple check.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("hasAlarms")
     public native boolean hasAlarms();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("hasAttendees")
     public native boolean hasAttendees();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("hasNotes")
     public native boolean hasNotes();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("hasRecurrenceRules")
     public native boolean hasRecurrenceRules();
@@ -283,52 +322,58 @@ public class EKCalendarItem extends EKObject {
     @Selector("init")
     public native EKCalendarItem init();
 
+    @Nullable
     @Generated
     @Selector("lastModifiedDate")
     public native NSDate lastModifiedDate();
 
+    @Nullable
     @Generated
     @Selector("location")
     public native String location();
 
+    @Nullable
     @Generated
     @Selector("notes")
     public native String notes();
 
     /**
      * [@property] recurrenceRules
-     * <p>
+     * 
      * An array of EKRecurrenceRules, or nil if none.
+     * 
+     * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("recurrenceRules")
     public native NSArray<? extends EKRecurrenceRule> recurrenceRules();
 
     /**
      * removeAlarm:
-     * <p>
+     * 
      * Removes an alarm from this item.
      */
     @Generated
     @Selector("removeAlarm:")
-    public native void removeAlarm(EKAlarm alarm);
+    public native void removeAlarm(@NotNull EKAlarm alarm);
 
     @Generated
     @Selector("removeRecurrenceRule:")
-    public native void removeRecurrenceRule(EKRecurrenceRule rule);
+    public native void removeRecurrenceRule(@NotNull EKRecurrenceRule rule);
 
     /**
      * An array of EKAlarm objects
      */
     @Generated
     @Selector("setAlarms:")
-    public native void setAlarms(NSArray<? extends EKAlarm> value);
+    public native void setAlarms(@Nullable NSArray<? extends EKAlarm> value);
 
     /**
      * [@property] calendar
-     * <p>
+     * 
      * The calendar that this calendar item belongs to.
-     * <p>
+     * 
      * This will be nil for new calendar items until you set it.
      */
     @Generated
@@ -337,50 +382,62 @@ public class EKCalendarItem extends EKObject {
 
     @Generated
     @Selector("setLocation:")
-    public native void setLocation(String value);
+    public native void setLocation(@Nullable String value);
 
     @Generated
     @Selector("setNotes:")
-    public native void setNotes(String value);
+    public native void setNotes(@Nullable String value);
 
     /**
      * [@property] recurrenceRules
-     * <p>
+     * 
      * An array of EKRecurrenceRules, or nil if none.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setRecurrenceRules:")
-    public native void setRecurrenceRules(NSArray<? extends EKRecurrenceRule> value);
+    public native void setRecurrenceRules(@Nullable NSArray<? extends EKRecurrenceRule> value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setTimeZone:")
-    public native void setTimeZone(NSTimeZone value);
+    public native void setTimeZone(@Nullable NSTimeZone value);
 
     /**
      * [@property] title
-     * <p>
+     * 
      * The title of this calendar item.
-     * <p>
-     * This will be nill for new calendar items until you set it.
+     * 
+     * This will be an empty string for new calendar items until you set it.
      */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setURL:")
-    public native void setURL(NSURL value);
+    public native void setURL(@Nullable NSURL value);
 
+    /**
+     * API-Since: 5.0
+     */
+    @Nullable
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();
 
     /**
      * [@property] title
-     * <p>
+     * 
      * The title of this calendar item.
-     * <p>
-     * This will be nill for new calendar items until you set it.
+     * 
+     * This will be an empty string for new calendar items until you set it.
      */
     @Generated
     @Selector("title")

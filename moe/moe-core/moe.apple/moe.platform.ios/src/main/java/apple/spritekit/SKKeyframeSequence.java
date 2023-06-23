@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("SpriteKit")
@@ -75,22 +77,25 @@ public class SKKeyframeSequence extends NSObject implements NSSecureCoding, NSCo
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +130,10 @@ public class SKKeyframeSequence extends NSObject implements NSSecureCoding, NSCo
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,13 +163,14 @@ public class SKKeyframeSequence extends NSObject implements NSSecureCoding, NSCo
 
     @Generated
     @Selector("addKeyframeValue:time:")
-    public native void addKeyframeValueTime(@Mapped(ObjCObjectMapper.class) Object value, @NFloat double time);
+    public native void addKeyframeValueTime(@NotNull @Mapped(ObjCObjectMapper.class) Object value, @NFloat double time);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("count")
@@ -172,13 +179,14 @@ public class SKKeyframeSequence extends NSObject implements NSSecureCoding, NSCo
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("getKeyframeTimeForIndex:")
     @NFloat
     public native double getKeyframeTimeForIndex(@NUInt long index);
 
+    @NotNull
     @Generated
     @Selector("getKeyframeValueForIndex:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -194,14 +202,15 @@ public class SKKeyframeSequence extends NSObject implements NSSecureCoding, NSCo
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKKeyframeSequence initWithCoder(NSCoder aDecoder);
+    public native SKKeyframeSequence initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * Designated initializer
      */
     @Generated
     @Selector("initWithKeyframeValues:times:")
-    public native SKKeyframeSequence initWithKeyframeValuesTimes(NSArray<?> values, NSArray<? extends NSNumber> times);
+    public native SKKeyframeSequence initWithKeyframeValuesTimes(@NotNull NSArray<?> values,
+            @NotNull NSArray<? extends NSNumber> times);
 
     /**
      * defaults to SKInterpolationModeLinear
@@ -227,6 +236,7 @@ public class SKKeyframeSequence extends NSObject implements NSSecureCoding, NSCo
     @NInt
     public native long repeatMode();
 
+    @Nullable
     @Generated
     @Selector("sampleAtTime:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -245,12 +255,13 @@ public class SKKeyframeSequence extends NSObject implements NSSecureCoding, NSCo
 
     @Generated
     @Selector("setKeyframeValue:forIndex:")
-    public native void setKeyframeValueForIndex(@Mapped(ObjCObjectMapper.class) Object value, @NUInt long index);
+    public native void setKeyframeValueForIndex(@NotNull @Mapped(ObjCObjectMapper.class) Object value,
+            @NUInt long index);
 
     @Generated
     @Selector("setKeyframeValue:time:forIndex:")
-    public native void setKeyframeValueTimeForIndex(@Mapped(ObjCObjectMapper.class) Object value, @NFloat double time,
-            @NUInt long index);
+    public native void setKeyframeValueTimeForIndex(@NotNull @Mapped(ObjCObjectMapper.class) Object value,
+            @NFloat double time, @NUInt long index);
 
     /**
      * defaults to SKRepeatModeClamp

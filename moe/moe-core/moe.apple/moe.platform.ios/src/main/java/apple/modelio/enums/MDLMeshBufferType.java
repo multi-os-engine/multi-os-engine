@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MDLMeshBufferType
- * <p>
+ * 
  * Type of data a MDLMeshBuffer has been allocated for
  */
 @Generated

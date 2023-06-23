@@ -41,7 +41,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 3.0
+ * Deprecated-Since: 8.0
+ * Deprecated-Message: UISearchDisplayController has been replaced with UISearchController
+ */
 @Deprecated
 @Generated
 @Library("UIKit")
@@ -73,22 +80,25 @@ public class UISearchDisplayController extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +133,10 @@ public class UISearchDisplayController extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -153,6 +164,7 @@ public class UISearchDisplayController extends NSObject {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -161,6 +173,8 @@ public class UISearchDisplayController extends NSObject {
     /**
      * Displaying the search bar in a navigation bar will override the contentsController's navigationItem if it has
      * one.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("displaysSearchBarInNavigationBar")
@@ -172,8 +186,8 @@ public class UISearchDisplayController extends NSObject {
 
     @Generated
     @Selector("initWithSearchBar:contentsController:")
-    public native UISearchDisplayController initWithSearchBarContentsController(UISearchBar searchBar,
-            UIViewController viewController);
+    public native UISearchDisplayController initWithSearchBarContentsController(@NotNull UISearchBar searchBar,
+            @NotNull UIViewController viewController);
 
     /**
      * configure the view controller for searching. default is NO. animated is NO
@@ -189,10 +203,15 @@ public class UISearchDisplayController extends NSObject {
     @Selector("setActive:")
     public native void setActive(boolean value);
 
+    /**
+     * API-Since: 7.0
+     */
+    @Nullable
     @Generated
     @Selector("navigationItem")
     public native UINavigationItem navigationItem();
 
+    @NotNull
     @Generated
     @Selector("searchBar")
     public native UISearchBar searchBar();
@@ -200,6 +219,7 @@ public class UISearchDisplayController extends NSObject {
     /**
      * the view we are searching (often a UITableViewController)
      */
+    @NotNull
     @Generated
     @Selector("searchContentsController")
     public native UIViewController searchContentsController();
@@ -207,6 +227,7 @@ public class UISearchDisplayController extends NSObject {
     /**
      * default is nil. delegate can provide
      */
+    @Nullable
     @Generated
     @Selector("searchResultsDataSource")
     @MappedReturn(ObjCObjectMapper.class)
@@ -215,6 +236,7 @@ public class UISearchDisplayController extends NSObject {
     /**
      * default is nil. delegate can provide
      */
+    @Nullable
     @Generated
     @Selector("searchResultsDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -223,13 +245,17 @@ public class UISearchDisplayController extends NSObject {
     /**
      * will return non-nil. create if requested
      */
+    @NotNull
     @Generated
     @Selector("searchResultsTableView")
     public native UITableView searchResultsTableView();
 
     /**
      * default is nil. If nil, the controller uses the default title string
+     * 
+     * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("searchResultsTitle")
     public native String searchResultsTitle();
@@ -243,10 +269,10 @@ public class UISearchDisplayController extends NSObject {
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UISearchDisplayDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UISearchDisplayDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UISearchDisplayDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UISearchDisplayDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -260,6 +286,8 @@ public class UISearchDisplayController extends NSObject {
     /**
      * Displaying the search bar in a navigation bar will override the contentsController's navigationItem if it has
      * one.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setDisplaysSearchBarInNavigationBar:")
@@ -270,13 +298,14 @@ public class UISearchDisplayController extends NSObject {
      */
     @Generated
     @Selector("setSearchResultsDataSource:")
-    public native void setSearchResultsDataSource_unsafe(@Mapped(ObjCObjectMapper.class) UITableViewDataSource value);
+    public native void setSearchResultsDataSource_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) UITableViewDataSource value);
 
     /**
      * default is nil. delegate can provide
      */
     @Generated
-    public void setSearchResultsDataSource(@Mapped(ObjCObjectMapper.class) UITableViewDataSource value) {
+    public void setSearchResultsDataSource(@Nullable @Mapped(ObjCObjectMapper.class) UITableViewDataSource value) {
         Object __old = searchResultsDataSource();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -292,13 +321,14 @@ public class UISearchDisplayController extends NSObject {
      */
     @Generated
     @Selector("setSearchResultsDelegate:")
-    public native void setSearchResultsDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITableViewDelegate value);
+    public native void setSearchResultsDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) UITableViewDelegate value);
 
     /**
      * default is nil. delegate can provide
      */
     @Generated
-    public void setSearchResultsDelegate(@Mapped(ObjCObjectMapper.class) UITableViewDelegate value) {
+    public void setSearchResultsDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UITableViewDelegate value) {
         Object __old = searchResultsDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -311,8 +341,10 @@ public class UISearchDisplayController extends NSObject {
 
     /**
      * default is nil. If nil, the controller uses the default title string
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setSearchResultsTitle:")
-    public native void setSearchResultsTitle(String value);
+    public native void setSearchResultsTitle(@Nullable String value);
 }

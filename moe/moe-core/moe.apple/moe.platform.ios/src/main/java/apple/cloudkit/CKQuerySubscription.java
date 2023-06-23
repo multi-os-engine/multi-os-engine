@@ -43,13 +43,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CKQuerySubscription
- * <p>
+ * 
  * A subscription that fires whenever a change matching the predicate occurs.
- * <p>
+ * 
  * [@c] CKQuerySubscriptions are not supported in a @c sharedCloudDatabase
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CloudKit")
@@ -81,22 +85,25 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +138,10 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,15 +173,16 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -181,28 +190,29 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKQuerySubscription initWithCoder(NSCoder aDecoder);
+    public native CKQuerySubscription initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithRecordType:predicate:options:")
-    public native CKQuerySubscription initWithRecordTypePredicateOptions(String recordType, NSPredicate predicate,
-            @NUInt long querySubscriptionOptions);
+    public native CKQuerySubscription initWithRecordTypePredicateOptions(@NotNull String recordType,
+            @NotNull NSPredicate predicate, @NUInt long querySubscriptionOptions);
 
     @Generated
     @Selector("initWithRecordType:predicate:subscriptionID:options:")
-    public native CKQuerySubscription initWithRecordTypePredicateSubscriptionIDOptions(String recordType,
-            NSPredicate predicate, String subscriptionID, @NUInt long querySubscriptionOptions);
+    public native CKQuerySubscription initWithRecordTypePredicateSubscriptionIDOptions(@NotNull String recordType,
+            @NotNull NSPredicate predicate, @NotNull String subscriptionID, @NUInt long querySubscriptionOptions);
 
     /**
      * A predicate that determines when the subscription fires.
      */
+    @NotNull
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();
 
     /**
      * Options flags describing the firing behavior subscription.
-     * <p>
+     * 
      * One of
      * [@c] CKQuerySubscriptionOptionsFiresOnRecordCreation,
      * [@c] CKQuerySubscriptionOptionsFiresOnRecordUpdate, or
@@ -217,6 +227,7 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
     /**
      * The record type that this subscription watches
      */
+    @NotNull
     @Generated
     @Selector("recordType")
     public native String recordType();
@@ -228,7 +239,7 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
      */
     @Generated
     @Selector("setZoneID:")
-    public native void setZoneID(CKRecordZoneID value);
+    public native void setZoneID(@Nullable CKRecordZoneID value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -241,6 +252,7 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
      * Query Subscriptions that do not specify a @c zoneID are scoped to record changes across all zones in the
      * database.
      */
+    @Nullable
     @Generated
     @Selector("zoneID")
     public native CKRecordZoneID zoneID();

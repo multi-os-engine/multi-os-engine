@@ -41,7 +41,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -62,8 +67,8 @@ public class UIPreviewAction extends NSObject implements NSCopying, UIPreviewAct
 
     @Generated
     @Selector("actionWithTitle:style:handler:")
-    public static native UIPreviewAction actionWithTitleStyleHandler(String title, @NInt long style,
-            @ObjCBlock(name = "call_actionWithTitleStyleHandler") Block_actionWithTitleStyleHandler handler);
+    public static native UIPreviewAction actionWithTitleStyleHandler(@NotNull String title, @NInt long style,
+            @NotNull @ObjCBlock(name = "call_actionWithTitleStyleHandler") Block_actionWithTitleStyleHandler handler);
 
     @Generated
     @Owned
@@ -77,22 +82,25 @@ public class UIPreviewAction extends NSObject implements NSCopying, UIPreviewAct
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +135,10 @@ public class UIPreviewAction extends NSObject implements NSCopying, UIPreviewAct
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,12 +166,14 @@ public class UIPreviewAction extends NSObject implements NSCopying, UIPreviewAct
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("handler")
     @ObjCBlock(name = "call_handler_ret")
@@ -172,6 +183,7 @@ public class UIPreviewAction extends NSObject implements NSCopying, UIPreviewAct
     @Selector("init")
     public native UIPreviewAction init();
 
+    @NotNull
     @Generated
     @Selector("title")
     public native String title();
@@ -180,13 +192,14 @@ public class UIPreviewAction extends NSObject implements NSCopying, UIPreviewAct
     @Generated
     public interface Block_actionWithTitleStyleHandler {
         @Generated
-        void call_actionWithTitleStyleHandler(UIPreviewAction action, UIViewController previewViewController);
+        void call_actionWithTitleStyleHandler(@NotNull UIPreviewAction action,
+                @NotNull UIViewController previewViewController);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handler_ret {
         @Generated
-        void call_handler_ret(@Mapped(ObjCObjectMapper.class) Object arg0, UIViewController arg1);
+        void call_handler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0, @NotNull UIViewController arg1);
     }
 }

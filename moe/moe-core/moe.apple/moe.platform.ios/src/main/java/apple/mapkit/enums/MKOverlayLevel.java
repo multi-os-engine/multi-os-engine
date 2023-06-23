@@ -19,12 +19,20 @@ package apple.mapkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 public final class MKOverlayLevel {
     /**
      * note that labels include shields and point of interest icons.
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long Roads = 0x0000000000000000L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Labels = 0x0000000000000001L;
 
     @Generated

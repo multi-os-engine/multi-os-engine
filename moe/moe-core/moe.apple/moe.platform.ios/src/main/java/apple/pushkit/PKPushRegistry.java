@@ -40,12 +40,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * PKPushRegistry
- * <p>
+ * 
  * An instance of this class can be used to register for 3rd party notifications. The supported push
  * notification types are listed above as PKPushType constants.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("PushKit")
@@ -77,22 +81,25 @@ public class PKPushRegistry extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +134,10 @@ public class PKPushRegistry extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,9 +167,10 @@ public class PKPushRegistry extends NSObject {
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * Setting a delegate is required to receive device push tokens and incoming pushes.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -169,10 +178,11 @@ public class PKPushRegistry extends NSObject {
 
     /**
      * [@property] desiredPushTypes
-     * <p>
+     * 
      * An app requests registration for various types of pushes by setting this NSSet to the desired
      * PKPushType constants. Push tokens and notifications will be delivered via delegate callback.
      */
+    @Nullable
     @Generated
     @Selector("desiredPushTypes")
     public native NSSet<String> desiredPushTypes();
@@ -183,49 +193,52 @@ public class PKPushRegistry extends NSObject {
 
     /**
      * initWithQueue:
-     * <p>
+     * 
      * Instantiates a PKPushRegistry with a delegate callback dispatch queue.
-     *
-     * @param queue All delegate callbacks are performed asynchronously by PKPushRegistry on this queue.
+     * 
+     * @param queue
+     *              All delegate callbacks are performed asynchronously by PKPushRegistry on this queue.
      * @return A PKPushRegistry instance that can be used to register for push tokens and notifications for supported
      *         push types.
      */
     @Generated
     @Selector("initWithQueue:")
-    public native PKPushRegistry initWithQueue(NSObject queue);
+    public native PKPushRegistry initWithQueue(@Nullable NSObject queue);
 
     /**
      * pushTokenForType:
-     * <p>
+     * 
      * Access the locally cached push token for a specified PKPushType.
-     * <p>
+     * 
      * A push token returned here has previously been given to the delegate via handlePushTokenUpdate:forType:
      * callback.
-     *
-     * @param type This is a PKPushType constant that is already in desiredPushTypes.
+     * 
+     * @param type
+     *             This is a PKPushType constant that is already in desiredPushTypes.
      * @return Returns the push token that can be used to send pushes to the device for the specified PKPushType.
      *         Returns nil if no push token is available for this PKPushType at the time of invocation.
      */
+    @Nullable
     @Generated
     @Selector("pushTokenForType:")
-    public native NSData pushTokenForType(String type);
+    public native NSData pushTokenForType(@NotNull String type);
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * Setting a delegate is required to receive device push tokens and incoming pushes.
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) PKPushRegistryDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) PKPushRegistryDelegate value);
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * Setting a delegate is required to receive device push tokens and incoming pushes.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) PKPushRegistryDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) PKPushRegistryDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -238,11 +251,11 @@ public class PKPushRegistry extends NSObject {
 
     /**
      * [@property] desiredPushTypes
-     * <p>
+     * 
      * An app requests registration for various types of pushes by setting this NSSet to the desired
      * PKPushType constants. Push tokens and notifications will be delivered via delegate callback.
      */
     @Generated
     @Selector("setDesiredPushTypes:")
-    public native void setDesiredPushTypes(NSSet<String> value);
+    public native void setDesiredPushTypes(@Nullable NSSet<String> value);
 }

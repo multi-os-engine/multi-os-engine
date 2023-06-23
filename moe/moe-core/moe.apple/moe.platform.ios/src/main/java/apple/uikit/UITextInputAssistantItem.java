@@ -37,7 +37,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -68,22 +73,25 @@ public class UITextInputAssistantItem extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -118,9 +126,10 @@ public class UITextInputAssistantItem extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,6 +172,7 @@ public class UITextInputAssistantItem extends NSObject {
     /**
      * Contains UIBarButtonItemGroups that should be displayed in the leading position on the keyboard's assistant bar.
      */
+    @NotNull
     @Generated
     @Selector("leadingBarButtonGroups")
     public native NSArray<? extends UIBarButtonItemGroup> leadingBarButtonGroups();
@@ -180,18 +190,19 @@ public class UITextInputAssistantItem extends NSObject {
      */
     @Generated
     @Selector("setLeadingBarButtonGroups:")
-    public native void setLeadingBarButtonGroups(NSArray<? extends UIBarButtonItemGroup> value);
+    public native void setLeadingBarButtonGroups(@NotNull NSArray<? extends UIBarButtonItemGroup> value);
 
     /**
      * Contains UIBarButtonItemGroups that should be displayed in the trailing position on the keyboard's assistant bar.
      */
     @Generated
     @Selector("setTrailingBarButtonGroups:")
-    public native void setTrailingBarButtonGroups(NSArray<? extends UIBarButtonItemGroup> value);
+    public native void setTrailingBarButtonGroups(@NotNull NSArray<? extends UIBarButtonItemGroup> value);
 
     /**
      * Contains UIBarButtonItemGroups that should be displayed in the trailing position on the keyboard's assistant bar.
      */
+    @NotNull
     @Generated
     @Selector("trailingBarButtonGroups")
     public native NSArray<? extends UIBarButtonItemGroup> trailingBarButtonGroups();

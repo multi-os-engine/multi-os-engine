@@ -11,14 +11,20 @@ public final class MPSRNNBidirectionalCombineMode {
 
     /**
      * The two sequences are kept separate
+     * 
+     * API-Since: 11.0
      */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     /**
      * The two sequences are summed together to form a single output
+     * 
+     * API-Since: 11.0
      */
     @Generated @NUInt public static final long Add = 0x0000000000000001L;
     /**
      * The two sequences are concatenated together along the feature channels to form a single output
+     * 
+     * API-Since: 11.0
      */
     @Generated @NUInt public static final long Concatenate = 0x0000000000000002L;
 }

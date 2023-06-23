@@ -42,24 +42,29 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MCPeerID
- * <p>
+ * 
  * MCPeerID represents a peer in a multipeer session.
- * <p>
+ * 
  * MCPeerID is used to reference a peer in a multipeer session.
- * <p>
+ * 
  * Use the init method -initWithDisplayName: to create a new ID for the
  * local app, and associate a display name with the ID.
- * <p>
+ * 
  * Note that the displayName is intended for a UI element, and should
  * be short and descriptive of the local peer.  The hard limit of
  * displayName is 63 bytes in UTF8 encoding. The displayName parameter
  * may not be nil or an empty string.
- * <p>
+ * 
  * MCPeerID conforms to NSCopying and can be used as a key in a
  * NSDictionary.
+ * 
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("MultipeerConnectivity")
@@ -91,22 +96,25 @@ public class MCPeerID extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -141,9 +149,10 @@ public class MCPeerID extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -175,19 +184,21 @@ public class MCPeerID extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("displayName")
     public native String displayName();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -195,11 +206,11 @@ public class MCPeerID extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MCPeerID initWithCoder(NSCoder coder);
+    public native MCPeerID initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithDisplayName:")
-    public native MCPeerID initWithDisplayName(String myDisplayName);
+    public native MCPeerID initWithDisplayName(@NotNull String myDisplayName);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.metalkit.protocol;
 
-import apple.coregraphics.struct.CGSize;
 import apple.metalkit.MTKView;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
@@ -25,11 +24,15 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * MTKViewDelegate
- * <p>
+ * 
  * Allows an object to render into the view and respond to resize events
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MetalKit")
@@ -38,27 +41,27 @@ import org.moe.natj.objc.ann.Selector;
 public interface MTKViewDelegate {
     /**
      * drawInMTKView:
-     * <p>
+     * 
      * Called on the delegate when it is asked to render into the view
-     * <p>
+     * 
      * Called on the delegate when it is asked to render into the view
      */
     @Generated
     @Selector("drawInMTKView:")
-    void drawInMTKView(MTKView view);
+    void drawInMTKView(@NotNull MTKView view);
 
     /**
      * mtkView:drawableSizeWillChange:
-     * <p>
+     * 
      * Called whenever the drawableSize of the view will change
-     * <p>
+     * 
      * Delegate can recompute view and projection matricies or regenerate any buffers to be compatible with the new view
      * size or resolution
-     *
+     * 
      * @param view MTKView which called this method
      * @param size New drawable size in pixels
      */
     @Generated
     @Selector("mtkView:drawableSizeWillChange:")
-    void mtkViewDrawableSizeWillChange(MTKView view, @ByValue CGSize size);
+    void mtkViewDrawableSizeWillChange(@NotNull MTKView view, @ByValue CGSize size);
 }

@@ -40,14 +40,18 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * EKAlarm
- * <p>
+ * 
  * The EKAlarm class provides an interface for accessing and manipulating calendar event alarms.
- * <p>
+ * 
  * The EKAlarm class represents alarms on an event. An alarm can be relative (e.g. 15 mins before)
  * or absolute (specific time).
+ * 
+ * API-Since: 4.0
  */
 @Generated
 @Library("EventKit")
@@ -69,25 +73,27 @@ public class EKAlarm extends EKObject implements NSCopying {
 
     /**
      * alarmWithAbsoluteDate:
-     * <p>
+     * 
      * Creates a new autoreleased alarm with an absolute trigger time.
-     *
+     * 
      * @param date The date the alarm should fire.
      */
+    @NotNull
     @Generated
     @Selector("alarmWithAbsoluteDate:")
-    public static native EKAlarm alarmWithAbsoluteDate(NSDate date);
+    public static native EKAlarm alarmWithAbsoluteDate(@NotNull NSDate date);
 
     /**
      * alarmWithRelativeOffset:
-     * <p>
+     * 
      * Creates a new autoreleased alarm with a relative trigger time.
-     * <p>
+     * 
      * Creates a new autoreleased alarm with a relative trigger time. This offset
      * is added to the start date of the event.
-     *
+     * 
      * @param offset The offset from the event start that the alarm should fire.
      */
+    @NotNull
     @Generated
     @Selector("alarmWithRelativeOffset:")
     public static native EKAlarm alarmWithRelativeOffset(double offset);
@@ -104,22 +110,25 @@ public class EKAlarm extends EKObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -154,9 +163,10 @@ public class EKAlarm extends EKObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -186,21 +196,23 @@ public class EKAlarm extends EKObject implements NSCopying {
 
     /**
      * [@property] absoluteDate
-     * <p>
+     * 
      * Represents an alarm that fires at a specific date.
-     * <p>
+     * 
      * Set this property to a date to establish an absolute alarm trigger. Setting this
      * clears any relative interval trigger.
      */
+    @Nullable
     @Generated
     @Selector("absoluteDate")
     public native NSDate absoluteDate();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("init")
@@ -208,7 +220,7 @@ public class EKAlarm extends EKObject implements NSCopying {
 
     /**
      * [@property] proximity
-     * <p>
+     * 
      * Defines whether this alarm triggers via entering/exiting a geofence as defined by
      * structuredLocation.
      */
@@ -219,9 +231,9 @@ public class EKAlarm extends EKObject implements NSCopying {
 
     /**
      * [@property] relativeOffset
-     * <p>
+     * 
      * Specifies a relative offset from an event start date to fire an alarm.
-     * <p>
+     * 
      * Set this property to an appropriate negative value to establish an alarm trigger
      * relative to the start date/time of an event. Setting this clears any existing
      * date trigger.
@@ -232,19 +244,19 @@ public class EKAlarm extends EKObject implements NSCopying {
 
     /**
      * [@property] absoluteDate
-     * <p>
+     * 
      * Represents an alarm that fires at a specific date.
-     * <p>
+     * 
      * Set this property to a date to establish an absolute alarm trigger. Setting this
      * clears any relative interval trigger.
      */
     @Generated
     @Selector("setAbsoluteDate:")
-    public native void setAbsoluteDate(NSDate value);
+    public native void setAbsoluteDate(@Nullable NSDate value);
 
     /**
      * [@property] proximity
-     * <p>
+     * 
      * Defines whether this alarm triggers via entering/exiting a geofence as defined by
      * structuredLocation.
      */
@@ -254,9 +266,9 @@ public class EKAlarm extends EKObject implements NSCopying {
 
     /**
      * [@property] relativeOffset
-     * <p>
+     * 
      * Specifies a relative offset from an event start date to fire an alarm.
-     * <p>
+     * 
      * Set this property to an appropriate negative value to establish an alarm trigger
      * relative to the start date/time of an event. Setting this clears any existing
      * date trigger.
@@ -267,22 +279,23 @@ public class EKAlarm extends EKObject implements NSCopying {
 
     /**
      * [@property] structuredLocation
-     * <p>
+     * 
      * Allows you to set a structured location (a location with a potential geo-coordinate)
      * on an alarm. This is used in conjunction with proximity to do geofence-based
      * triggering of reminders.
      */
     @Generated
     @Selector("setStructuredLocation:")
-    public native void setStructuredLocation(EKStructuredLocation value);
+    public native void setStructuredLocation(@Nullable EKStructuredLocation value);
 
     /**
      * [@property] structuredLocation
-     * <p>
+     * 
      * Allows you to set a structured location (a location with a potential geo-coordinate)
      * on an alarm. This is used in conjunction with proximity to do geofence-based
      * triggering of reminders.
      */
+    @Nullable
     @Generated
     @Selector("structuredLocation")
     public native EKStructuredLocation structuredLocation();

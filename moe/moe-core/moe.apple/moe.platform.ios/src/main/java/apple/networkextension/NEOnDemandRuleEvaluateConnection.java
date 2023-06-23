@@ -39,18 +39,22 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEOnDemandRuleEvaluateConnection
- * <p>
+ * 
  * The NEOnDemandRuleEvaluateConnection class declares the programmatic interface for an object that defines an On
  * Demand rule with the "Evaluate Connection" action.
- * <p>
+ * 
  * When rules of this class match, the properties of the network connection being established are matched against a set
  * of connection rules. The action of the matched rule (if any) is used to determine whether or not the VPN will be
  * started.
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -82,22 +86,25 @@ public class NEOnDemandRuleEvaluateConnection extends NEOnDemandRule {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -132,9 +139,10 @@ public class NEOnDemandRuleEvaluateConnection extends NEOnDemandRule {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,10 +176,13 @@ public class NEOnDemandRuleEvaluateConnection extends NEOnDemandRule {
 
     /**
      * [@property] connectionRules
-     * <p>
+     * 
      * An array of NEEvaluateConnectionRule objects. Each NEEvaluateConnectionRule object is evaluated in order against
      * the properties of the network connection being established.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("connectionRules")
     public native NSArray<? extends NEEvaluateConnectionRule> connectionRules();
@@ -182,17 +193,19 @@ public class NEOnDemandRuleEvaluateConnection extends NEOnDemandRule {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEOnDemandRuleEvaluateConnection initWithCoder(NSCoder coder);
+    public native NEOnDemandRuleEvaluateConnection initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] connectionRules
-     * <p>
+     * 
      * An array of NEEvaluateConnectionRule objects. Each NEEvaluateConnectionRule object is evaluated in order against
      * the properties of the network connection being established.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setConnectionRules:")
-    public native void setConnectionRules(NSArray<? extends NEEvaluateConnectionRule> value);
+    public native void setConnectionRules(@Nullable NSArray<? extends NEEvaluateConnectionRule> value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

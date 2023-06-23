@@ -23,6 +23,7 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -44,7 +45,7 @@ public final class gss_krb5_lucid_key extends StructObject {
     }
 
     @Generated
-    public gss_krb5_lucid_key(int type, int length, VoidPtr data) {
+    public gss_krb5_lucid_key(int type, int length, @Nullable VoidPtr data) {
         super(gss_krb5_lucid_key.class);
         setType(type);
         setLength(length);
@@ -67,11 +68,12 @@ public final class gss_krb5_lucid_key extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setLength(int value);
 
+    @Nullable
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native VoidPtr data();
 
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void setData(VoidPtr value);
+    public native void setData(@Nullable VoidPtr value);
 }

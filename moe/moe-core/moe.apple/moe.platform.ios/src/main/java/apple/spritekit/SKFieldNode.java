@@ -44,7 +44,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
@@ -75,29 +80,32 @@ public class SKFieldNode extends SKNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -111,6 +119,7 @@ public class SKFieldNode extends SKNode {
      * Slows an object proportionally to the object’s velocity.
      * Use this to simulate effects such as friction from motion through the air.
      */
+    @NotNull
     @Generated
     @Selector("dragField")
     public static native SKFieldNode dragField();
@@ -121,6 +130,7 @@ public class SKFieldNode extends SKNode {
      * from one another when they enter a region, or to make an object's behavior different than its mass based behavior
      * This field models the first part of the Lorentz equation, F = qE
      */
+    @NotNull
     @Generated
     @Selector("electricField")
     public static native SKFieldNode electricField();
@@ -147,9 +157,10 @@ public class SKFieldNode extends SKNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * A force proportional to the charge on the object and the object’s velocity. A charge property has been
@@ -157,6 +168,7 @@ public class SKFieldNode extends SKNode {
      * from one another when they enter a region, or to make an object's behavior different than its mass based behavior
      * This field models the second part of the Lorentz equation, F = qvB
      */
+    @NotNull
     @Generated
     @Selector("magneticField")
     public static native SKFieldNode magneticField();
@@ -172,36 +184,42 @@ public class SKFieldNode extends SKNode {
 
     @Generated
     @Selector("nodeWithFileNamed:")
-    public static native SKFieldNode nodeWithFileNamed(String filename);
+    public static native SKFieldNode nodeWithFileNamed(@NotNull String filename);
 
     /**
      * A time varying differentiable Perlin simplex noise field. By default a smooth noise is calculated,
      * and the field is time varying. Use this to simulate such effects as fireflies, or snow.
      * To freeze the noise in place, set animationSpeed to 0.0. Mass is ignored.
-     *
+     * 
      * @param smoothness value of 0 means as noisy as possible, 1 means as smooth as possible
      * @param speed      is the general rate in Hz that any particular texel changes to a different value
+     * 
      * @see smoothness
      * @see animationSpeed
      */
+    @NotNull
     @Generated
     @Selector("noiseFieldWithSmoothness:animationSpeed:")
     public static native SKFieldNode noiseFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
             @NFloat double speed);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodeBounds:")
-    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
+    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodePhysicsBodies:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodePhysicsBodies(
-            NSArray<? extends SKNode> nodes);
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromSpriteTextures:accuracy:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromSpriteTexturesAccuracy(
-            NSArray<? extends SKNode> sprites, float accuracy);
+            @NotNull NSArray<? extends SKNode> sprites, float accuracy);
 
     /**
      * Applies a force in the direction of the origin of the field in local space. To repel objects, use a negative
@@ -210,6 +228,7 @@ public class SKFieldNode extends SKNode {
      * F = ma
      * The field node's rotation property can be used to orient the gravity in a particular direction.
      */
+    @NotNull
     @Generated
     @Selector("radialGravityField")
     public static native SKFieldNode radialGravityField();
@@ -231,6 +250,7 @@ public class SKFieldNode extends SKNode {
      * field will oscillate with a period proportional to the inverse of the mass.
      * An example use is to keep objects confined to a particular region.
      */
+    @NotNull
     @Generated
     @Selector("springField")
     public static native SKFieldNode springField();
@@ -241,12 +261,14 @@ public class SKFieldNode extends SKNode {
 
     /**
      * Just like Noise, except the strength of the noise is proportional to the velocity of the object in the field.
-     *
+     * 
      * @param smoothness value of 0 means as noisy as possible, 1 means as smooth as possible
      * @param speed      is the general rate in Hz that any particular texel changes to a different value
+     * 
      * @see smoothness
      * @see animationSpeed
      */
+    @NotNull
     @Generated
     @Selector("turbulenceFieldWithSmoothness:animationSpeed:")
     public static native SKFieldNode turbulenceFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
@@ -258,14 +280,16 @@ public class SKFieldNode extends SKNode {
      * Velocity fields override the effect of any other acceleration applied to the body.
      * Velocity fields are typically used for such effects as advection, for example, a velocity field
      * might describe the velocity on the surface of a river. An object placed in the river would then follow the river.
-     *
+     * 
      * @param velocityTexture The R and G channels of the supplied texture become x and y components of velocity. B and
      *                        A, if present in the SKTexture, are ignored.
+     * 
      * @see texture
      */
+    @NotNull
     @Generated
     @Selector("velocityFieldWithTexture:")
-    public static native SKFieldNode velocityFieldWithTexture(SKTexture velocityTexture);
+    public static native SKFieldNode velocityFieldWithTexture(@NotNull SKTexture velocityTexture);
 
     @Generated
     @Selector("version")
@@ -278,15 +302,16 @@ public class SKFieldNode extends SKNode {
      * Amount is proportional to distance from center and the object's mass.
      * Use this to create effects such as tornadoes.
      */
+    @NotNull
     @Generated
     @Selector("vortexField")
     public static native SKFieldNode vortexField();
 
     /**
      * fields that can be animated can have non zero values.
-     * <p>
+     * 
      * A value of 2 will animated twice as fast as a value of 1.
-     *
+     * 
      * @see noiseFieldWithSmoothness:smoothness:animationSpeed
      * @see turbulenceFieldWithSmoothness:smoothness:animationSpeed
      */
@@ -298,7 +323,7 @@ public class SKFieldNode extends SKNode {
      * Logical categories the field belongs to. Default is all categories.
      * These categories correspond to fieldBitMasks, and can be used to enforce that a particular field applies
      * to a particular category of objects.
-     *
+     * 
      * @see SKPhysicsBody.fieldBitMask
      * @see SKEmitterNode.fieldBitMask
      */
@@ -309,9 +334,9 @@ public class SKFieldNode extends SKNode {
     /**
      * The falloff exponent used to calculate field strength at a distance.
      * Falloff starts at the minimum radius.
-     * <p>
+     * 
      * The default exponent is zero, which results in a uniform field with no falloff.
-     *
+     * 
      * @see minimumRadius
      */
     @Generated
@@ -324,11 +349,11 @@ public class SKFieldNode extends SKNode {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKFieldNode initWithCoder(NSCoder aDecoder);
+    public native SKFieldNode initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * If enabled, a field has an effect.
-     * <p>
+     * 
      * default YES
      */
     @Generated
@@ -337,7 +362,7 @@ public class SKFieldNode extends SKNode {
 
     /**
      * If enabled, a field has an effect.
-     * <p>
+     * 
      * default YES
      */
     @Generated
@@ -347,7 +372,7 @@ public class SKFieldNode extends SKNode {
     /**
      * If a field is exclusive, it suppresses any other field in its region of effect.
      * If two or more exclusive fields overlap, it is undefined which one of them will take effect
-     *
+     * 
      * @see region
      */
     @Generated
@@ -357,7 +382,7 @@ public class SKFieldNode extends SKNode {
     /**
      * If a field is exclusive, it suppresses any other field in its region of effect.
      * If two or more exclusive fields overlap, it is undefined which one of them will take effect
-     *
+     * 
      * @see region
      */
     @Generated
@@ -374,15 +399,16 @@ public class SKFieldNode extends SKNode {
     /**
      * The region property is the domain of the field's effect. No force is applied to objects outside the region.
      */
+    @Nullable
     @Generated
     @Selector("region")
     public native SKRegion region();
 
     /**
      * fields that can be animated can have non zero values.
-     * <p>
+     * 
      * A value of 2 will animated twice as fast as a value of 1.
-     *
+     * 
      * @see noiseFieldWithSmoothness:smoothness:animationSpeed
      * @see turbulenceFieldWithSmoothness:smoothness:animationSpeed
      */
@@ -394,7 +420,7 @@ public class SKFieldNode extends SKNode {
      * Logical categories the field belongs to. Default is all categories.
      * These categories correspond to fieldBitMasks, and can be used to enforce that a particular field applies
      * to a particular category of objects.
-     *
+     * 
      * @see SKPhysicsBody.fieldBitMask
      * @see SKEmitterNode.fieldBitMask
      */
@@ -405,9 +431,9 @@ public class SKFieldNode extends SKNode {
     /**
      * The falloff exponent used to calculate field strength at a distance.
      * Falloff starts at the minimum radius.
-     * <p>
+     * 
      * The default exponent is zero, which results in a uniform field with no falloff.
-     *
+     * 
      * @see minimumRadius
      */
     @Generated
@@ -426,11 +452,11 @@ public class SKFieldNode extends SKNode {
      */
     @Generated
     @Selector("setRegion:")
-    public native void setRegion(SKRegion value);
+    public native void setRegion(@Nullable SKRegion value);
 
     /**
      * fields without a smoothness component will return 0
-     *
+     * 
      * @see noiseFieldWithSmoothness:smoothness:animationSpeed
      * @see turbulenceFieldWithSmoothness:smoothness:animationSpeed
      */
@@ -447,16 +473,16 @@ public class SKFieldNode extends SKNode {
 
     /**
      * fields constructed with a texture can be uppdated by assigning a new texture
-     *
+     * 
      * @see velocityFieldWithTexture:velocityTexture
      */
     @Generated
     @Selector("setTexture:")
-    public native void setTexture(SKTexture value);
+    public native void setTexture(@Nullable SKTexture value);
 
     /**
      * fields without a smoothness component will return 0
-     *
+     * 
      * @see noiseFieldWithSmoothness:smoothness:animationSpeed
      * @see turbulenceFieldWithSmoothness:smoothness:animationSpeed
      */
@@ -473,17 +499,18 @@ public class SKFieldNode extends SKNode {
 
     /**
      * fields constructed with a texture can be uppdated by assigning a new texture
-     *
+     * 
      * @see velocityFieldWithTexture:velocityTexture
      */
+    @Nullable
     @Generated
     @Selector("texture")
     public native SKTexture texture();
 
     @Generated
     @Selector("nodeWithFileNamed:securelyWithClasses:andError:")
-    public static native SKFieldNode nodeWithFileNamedSecurelyWithClassesAndError(String filename,
-            NSSet<? extends Class> classes, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native SKFieldNode nodeWithFileNamedSecurelyWithClassesAndError(@NotNull String filename,
+            @NotNull NSSet<? extends Class> classes, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("supportsSecureCoding")

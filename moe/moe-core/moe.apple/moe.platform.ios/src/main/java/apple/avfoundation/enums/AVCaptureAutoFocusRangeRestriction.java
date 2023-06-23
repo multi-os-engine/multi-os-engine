@@ -21,21 +21,32 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVCaptureAutoFocusRangeRestriction
- * <p>
+ * 
  * Constants indicating the restriction of the receiver's autofocus system to a particular range of focus scan, if it
  * supports range restrictions.
- * <p>
+ * 
  * [@constant] AVCaptureAutoFocusRangeRestrictionNone
  * Indicates that the autofocus system should not restrict the focus range.
  * [@constant] AVCaptureAutoFocusRangeRestrictionNear
  * Indicates that the autofocus system should restrict the focus range for subject matter that is near to the camera.
  * [@constant] AVCaptureAutoFocusRangeRestrictionFar
  * Indicates that the autofocus system should restrict the focus range for subject matter that is far from the camera.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 public final class AVCaptureAutoFocusRangeRestriction {
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Near = 0x0000000000000001L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Far = 0x0000000000000002L;
 
     @Generated

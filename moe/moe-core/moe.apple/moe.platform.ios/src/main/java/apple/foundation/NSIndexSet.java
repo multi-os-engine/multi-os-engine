@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -75,22 +77,25 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -137,9 +142,10 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -177,23 +183,27 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
 
     @Generated
     @Selector("containsIndexes:")
-    public native boolean containsIndexes(NSIndexSet indexSet);
+    public native boolean containsIndexes(@NotNull NSIndexSet indexSet);
 
     @Generated
     @Selector("containsIndexesInRange:")
     public native boolean containsIndexesInRange(@ByValue NSRange range);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("count")
     @NUInt
     public native long count();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("countOfIndexesInRange:")
     @NUInt
@@ -201,46 +211,63 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("enumerateIndexesInRange:options:usingBlock:")
     public native void enumerateIndexesInRangeOptionsUsingBlock(@ByValue NSRange range, @NUInt long opts,
-            @ObjCBlock(name = "call_enumerateIndexesInRangeOptionsUsingBlock") Block_enumerateIndexesInRangeOptionsUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateIndexesInRangeOptionsUsingBlock") Block_enumerateIndexesInRangeOptionsUsingBlock block);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("enumerateIndexesUsingBlock:")
     public native void enumerateIndexesUsingBlock(
-            @ObjCBlock(name = "call_enumerateIndexesUsingBlock") Block_enumerateIndexesUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateIndexesUsingBlock") Block_enumerateIndexesUsingBlock block);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("enumerateIndexesWithOptions:usingBlock:")
     public native void enumerateIndexesWithOptionsUsingBlock(@NUInt long opts,
-            @ObjCBlock(name = "call_enumerateIndexesWithOptionsUsingBlock") Block_enumerateIndexesWithOptionsUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateIndexesWithOptionsUsingBlock") Block_enumerateIndexesWithOptionsUsingBlock block);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("enumerateRangesInRange:options:usingBlock:")
     public native void enumerateRangesInRangeOptionsUsingBlock(@ByValue NSRange range, @NUInt long opts,
-            @ObjCBlock(name = "call_enumerateRangesInRangeOptionsUsingBlock") Block_enumerateRangesInRangeOptionsUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateRangesInRangeOptionsUsingBlock") Block_enumerateRangesInRangeOptionsUsingBlock block);
 
     /**
      * The following three convenience methods allow you to enumerate the indexes in the receiver by ranges of
      * contiguous indexes. The performance of these methods is not guaranteed to be any better than if they were
      * implemented with enumerateIndexesInRange:options:usingBlock:. However, depending on the receiver's
      * implementation, they may perform better than that.
-     * <p>
+     * 
      * If the specified range for enumeration intersects a range of contiguous indexes in the receiver, then the block
      * will be invoked with the intersection of those two ranges.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("enumerateRangesUsingBlock:")
     public native void enumerateRangesUsingBlock(
-            @ObjCBlock(name = "call_enumerateRangesUsingBlock") Block_enumerateRangesUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateRangesUsingBlock") Block_enumerateRangesUsingBlock block);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("enumerateRangesWithOptions:usingBlock:")
     public native void enumerateRangesWithOptionsUsingBlock(@NUInt long opts,
-            @ObjCBlock(name = "call_enumerateRangesWithOptionsUsingBlock") Block_enumerateRangesWithOptionsUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateRangesWithOptionsUsingBlock") Block_enumerateRangesWithOptionsUsingBlock block);
 
     /**
      * The following six methods will return NSNotFound if there is no index in the set satisfying the query.
@@ -260,7 +287,8 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     @Generated
     @Selector("getIndexes:maxCount:inIndexRange:")
     @NUInt
-    public native long getIndexesMaxCountInIndexRange(NUIntPtr indexBuffer, @NUInt long bufferSize, NSRange range);
+    public native long getIndexesMaxCountInIndexRange(@NotNull NUIntPtr indexBuffer, @NUInt long bufferSize,
+            @Nullable NSRange range);
 
     @Generated
     @Selector("indexGreaterThanIndex:")
@@ -272,11 +300,14 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     @NUInt
     public native long indexGreaterThanOrEqualToIndex(@NUInt long value);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("indexInRange:options:passingTest:")
     @NUInt
     public native long indexInRangeOptionsPassingTest(@ByValue NSRange range, @NUInt long opts,
-            @ObjCBlock(name = "call_indexInRangeOptionsPassingTest") Block_indexInRangeOptionsPassingTest predicate);
+            @NotNull @ObjCBlock(name = "call_indexInRangeOptionsPassingTest") Block_indexInRangeOptionsPassingTest predicate);
 
     @Generated
     @Selector("indexLessThanIndex:")
@@ -288,31 +319,50 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     @NUInt
     public native long indexLessThanOrEqualToIndex(@NUInt long value);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("indexPassingTest:")
     @NUInt
-    public native long indexPassingTest(@ObjCBlock(name = "call_indexPassingTest") Block_indexPassingTest predicate);
+    public native long indexPassingTest(
+            @NotNull @ObjCBlock(name = "call_indexPassingTest") Block_indexPassingTest predicate);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("indexWithOptions:passingTest:")
     @NUInt
     public native long indexWithOptionsPassingTest(@NUInt long opts,
-            @ObjCBlock(name = "call_indexWithOptionsPassingTest") Block_indexWithOptionsPassingTest predicate);
+            @NotNull @ObjCBlock(name = "call_indexWithOptionsPassingTest") Block_indexWithOptionsPassingTest predicate);
 
+    /**
+     * API-Since: 4.0
+     */
+    @NotNull
     @Generated
     @Selector("indexesInRange:options:passingTest:")
     public native NSIndexSet indexesInRangeOptionsPassingTest(@ByValue NSRange range, @NUInt long opts,
-            @ObjCBlock(name = "call_indexesInRangeOptionsPassingTest") Block_indexesInRangeOptionsPassingTest predicate);
+            @NotNull @ObjCBlock(name = "call_indexesInRangeOptionsPassingTest") Block_indexesInRangeOptionsPassingTest predicate);
 
+    /**
+     * API-Since: 4.0
+     */
+    @NotNull
     @Generated
     @Selector("indexesPassingTest:")
     public native NSIndexSet indexesPassingTest(
-            @ObjCBlock(name = "call_indexesPassingTest") Block_indexesPassingTest predicate);
+            @NotNull @ObjCBlock(name = "call_indexesPassingTest") Block_indexesPassingTest predicate);
 
+    /**
+     * API-Since: 4.0
+     */
+    @NotNull
     @Generated
     @Selector("indexesWithOptions:passingTest:")
     public native NSIndexSet indexesWithOptionsPassingTest(@NUInt long opts,
-            @ObjCBlock(name = "call_indexesWithOptionsPassingTest") Block_indexesWithOptionsPassingTest predicate);
+            @NotNull @ObjCBlock(name = "call_indexesWithOptionsPassingTest") Block_indexesWithOptionsPassingTest predicate);
 
     @Generated
     @Selector("init")
@@ -320,7 +370,7 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSIndexSet initWithCoder(NSCoder coder);
+    public native NSIndexSet initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithIndex:")
@@ -328,7 +378,7 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
 
     @Generated
     @Selector("initWithIndexSet:")
-    public native NSIndexSet initWithIndexSet(NSIndexSet indexSet);
+    public native NSIndexSet initWithIndexSet(@NotNull NSIndexSet indexSet);
 
     @Generated
     @Selector("initWithIndexesInRange:")
@@ -340,18 +390,19 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
 
     @Generated
     @Selector("isEqualToIndexSet:")
-    public native boolean isEqualToIndexSet(NSIndexSet indexSet);
+    public native boolean isEqualToIndexSet(@NotNull NSIndexSet indexSet);
 
     @Generated
     @Selector("lastIndex")
     @NUInt
     public native long lastIndex();
 
+    @NotNull
     @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -363,83 +414,83 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     @Generated
     public interface Block_enumerateIndexesInRangeOptionsUsingBlock {
         @Generated
-        void call_enumerateIndexesInRangeOptionsUsingBlock(@NUInt long idx, BoolPtr stop);
+        void call_enumerateIndexesInRangeOptionsUsingBlock(@NUInt long idx, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateIndexesUsingBlock {
         @Generated
-        void call_enumerateIndexesUsingBlock(@NUInt long idx, BoolPtr stop);
+        void call_enumerateIndexesUsingBlock(@NUInt long idx, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateIndexesWithOptionsUsingBlock {
         @Generated
-        void call_enumerateIndexesWithOptionsUsingBlock(@NUInt long idx, BoolPtr stop);
+        void call_enumerateIndexesWithOptionsUsingBlock(@NUInt long idx, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateRangesInRangeOptionsUsingBlock {
         @Generated
-        void call_enumerateRangesInRangeOptionsUsingBlock(@ByValue NSRange range, BoolPtr stop);
+        void call_enumerateRangesInRangeOptionsUsingBlock(@ByValue NSRange range, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateRangesUsingBlock {
         @Generated
-        void call_enumerateRangesUsingBlock(@ByValue NSRange range, BoolPtr stop);
+        void call_enumerateRangesUsingBlock(@ByValue NSRange range, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateRangesWithOptionsUsingBlock {
         @Generated
-        void call_enumerateRangesWithOptionsUsingBlock(@ByValue NSRange range, BoolPtr stop);
+        void call_enumerateRangesWithOptionsUsingBlock(@ByValue NSRange range, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexInRangeOptionsPassingTest {
         @Generated
-        boolean call_indexInRangeOptionsPassingTest(@NUInt long idx, BoolPtr stop);
+        boolean call_indexInRangeOptionsPassingTest(@NUInt long idx, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexPassingTest {
         @Generated
-        boolean call_indexPassingTest(@NUInt long idx, BoolPtr stop);
+        boolean call_indexPassingTest(@NUInt long idx, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexWithOptionsPassingTest {
         @Generated
-        boolean call_indexWithOptionsPassingTest(@NUInt long idx, BoolPtr stop);
+        boolean call_indexWithOptionsPassingTest(@NUInt long idx, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexesInRangeOptionsPassingTest {
         @Generated
-        boolean call_indexesInRangeOptionsPassingTest(@NUInt long idx, BoolPtr stop);
+        boolean call_indexesInRangeOptionsPassingTest(@NUInt long idx, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexesPassingTest {
         @Generated
-        boolean call_indexesPassingTest(@NUInt long idx, BoolPtr stop);
+        boolean call_indexesPassingTest(@NUInt long idx, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexesWithOptionsPassingTest {
         @Generated
-        boolean call_indexesWithOptionsPassingTest(@NUInt long idx, BoolPtr stop);
+        boolean call_indexesWithOptionsPassingTest(@NUInt long idx, @NotNull BoolPtr stop);
     }
 }

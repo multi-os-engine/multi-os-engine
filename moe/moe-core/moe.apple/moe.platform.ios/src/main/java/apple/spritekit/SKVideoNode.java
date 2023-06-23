@@ -18,8 +18,6 @@ package apple.spritekit;
 
 import apple.NSObject;
 import apple.avfoundation.AVPlayer;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSError;
@@ -48,6 +46,10 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("SpriteKit")
@@ -79,29 +81,32 @@ public class SKVideoNode extends SKNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -133,9 +138,10 @@ public class SKVideoNode extends SKNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -148,21 +154,25 @@ public class SKVideoNode extends SKNode {
 
     @Generated
     @Selector("nodeWithFileNamed:")
-    public static native SKVideoNode nodeWithFileNamed(String filename);
+    public static native SKVideoNode nodeWithFileNamed(@NotNull String filename);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodeBounds:")
-    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
+    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodePhysicsBodies:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodePhysicsBodies(
-            NSArray<? extends SKNode> nodes);
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromSpriteTextures:accuracy:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromSpriteTexturesAccuracy(
-            NSArray<? extends SKNode> sprites, float accuracy);
+            @NotNull NSArray<? extends SKNode> sprites, float accuracy);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -188,33 +198,50 @@ public class SKVideoNode extends SKNode {
     /**
      * Create a video node from an AVPlayer. You can use the AVPlayer to control playback.
      */
+    @NotNull
     @Generated
     @Selector("videoNodeWithAVPlayer:")
-    public static native SKVideoNode videoNodeWithAVPlayer(AVPlayer player);
+    public static native SKVideoNode videoNodeWithAVPlayer(@NotNull AVPlayer player);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("videoNodeWithFileNamed:")
-    public static native SKVideoNode videoNodeWithFileNamed(String videoFile);
+    public static native SKVideoNode videoNodeWithFileNamed(@NotNull String videoFile);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("videoNodeWithURL:")
-    public static native SKVideoNode videoNodeWithURL(NSURL videoURL);
+    public static native SKVideoNode videoNodeWithURL(@NotNull NSURL videoURL);
 
     /**
      * Create a video node from a file.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 9.0
      */
+    @NotNull
     @Generated
     @Deprecated
     @Selector("videoNodeWithVideoFileNamed:")
-    public static native SKVideoNode videoNodeWithVideoFileNamed(String videoFile);
+    public static native SKVideoNode videoNodeWithVideoFileNamed(@NotNull String videoFile);
 
     /**
      * Create a video node from a URL.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 9.0
      */
+    @NotNull
     @Generated
     @Deprecated
     @Selector("videoNodeWithVideoURL:")
-    public static native SKVideoNode videoNodeWithVideoURL(NSURL videoURL);
+    public static native SKVideoNode videoNodeWithVideoURL(@NotNull NSURL videoURL);
 
     /**
      * The location in the video that maps to its 'position' in the parent's coordinate space. (0.0-1.0)
@@ -230,40 +257,53 @@ public class SKVideoNode extends SKNode {
 
     /**
      * Designated Initializer.
-     * <p>
+     * 
      * Initialize a video node from an AVPlayer. You can use the AVPlayer to control playback.
      */
     @Generated
     @Selector("initWithAVPlayer:")
-    public native SKVideoNode initWithAVPlayer(AVPlayer player);
+    public native SKVideoNode initWithAVPlayer(@NotNull AVPlayer player);
 
     /**
      * Support coding and decoding via NSKeyedArchiver.
      */
     @Generated
     @Selector("initWithCoder:")
-    public native SKVideoNode initWithCoder(NSCoder aDecoder);
+    public native SKVideoNode initWithCoder(@NotNull NSCoder aDecoder);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithFileNamed:")
-    public native SKVideoNode initWithFileNamed(String videoFile);
+    public native SKVideoNode initWithFileNamed(@NotNull String videoFile);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithURL:")
-    public native SKVideoNode initWithURL(NSURL url);
+    public native SKVideoNode initWithURL(@NotNull NSURL url);
 
     /**
      * Initialize a video node from a file.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @Deprecated
     @Selector("initWithVideoFileNamed:")
-    public native SKVideoNode initWithVideoFileNamed(String videoFile);
+    public native SKVideoNode initWithVideoFileNamed(@NotNull String videoFile);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
+     */
     @Generated
     @Deprecated
     @Selector("initWithVideoURL:")
-    public native SKVideoNode initWithVideoURL(NSURL url);
+    public native SKVideoNode initWithVideoURL(@NotNull NSURL url);
 
     @Generated
     @Selector("pause")
@@ -297,8 +337,8 @@ public class SKVideoNode extends SKNode {
 
     @Generated
     @Selector("nodeWithFileNamed:securelyWithClasses:andError:")
-    public static native SKVideoNode nodeWithFileNamedSecurelyWithClassesAndError(String filename,
-            NSSet<? extends Class> classes, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native SKVideoNode nodeWithFileNamedSecurelyWithClassesAndError(@NotNull String filename,
+            @NotNull NSSet<? extends Class> classes, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("supportsSecureCoding")

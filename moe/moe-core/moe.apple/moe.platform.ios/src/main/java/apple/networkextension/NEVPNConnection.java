@@ -42,13 +42,18 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.moe.natj.objc.ann.ObjCBlock;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEVPNConnection
- * <p>
+ * 
  * The NEVPNConnection class declares the programmatic interface for an object that manages VPN connections.
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -80,22 +85,25 @@ public class NEVPNConnection extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +138,10 @@ public class NEVPNConnection extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,10 +171,13 @@ public class NEVPNConnection extends NSObject {
 
     /**
      * [@property] connectedDate
-     * <p>
+     * 
      * The date and time when the connection status changed to NEVPNStatusConnected. This property is nil if the
      * connection is not fully established.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("connectedDate")
     public native NSDate connectedDate();
@@ -176,35 +188,41 @@ public class NEVPNConnection extends NSObject {
 
     /**
      * [@property] manager
-     * <p>
+     * 
      * The NEVPNManager associated with this NEVPNConnection.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("manager")
     public native NEVPNManager manager();
 
     /**
      * startVPNTunnelAndReturnError:
-     * <p>
+     * 
      * This function is used to start the VPN tunnel using the current VPN configuration. The VPN tunnel connection
      * process is started and this function returns immediately.
-     *
+     * 
      * @param error If the VPN tunnel was started successfully, this parameter is set to nil. Otherwise this parameter
      *              is set to the error that occurred. Possible errors include:
      *              1. NEVPNErrorConfigurationInvalid
      *              2. NEVPNErrorConfigurationDisabled
      * @return YES if the VPN tunnel was started successfully, NO if an error occurred.
+     * 
+     *         API-Since: 8.0
      */
     @Generated
     @Selector("startVPNTunnelAndReturnError:")
-    public native boolean startVPNTunnelAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean startVPNTunnelAndReturnError(
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * startVPNTunnelWithOptions:andReturnError:
-     * <p>
+     * 
      * This function is used to start the VPN tunnel using the current VPN configuration. The VPN tunnel connection
      * process is started and this function returns immediately.
-     *
+     * 
      * @param options A dictionary that will be passed to the tunnel provider during the process of starting the tunnel.
      *                If not nil, 'options' is an NSDictionary may contain the following keys
      *                NEVPNConnectionStartOptionUsername
@@ -214,16 +232,21 @@ public class NEVPNConnection extends NSObject {
      *                1. NEVPNErrorConfigurationInvalid
      *                2. NEVPNErrorConfigurationDisabled
      * @return YES if the VPN tunnel was started successfully, NO if an error occurred.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("startVPNTunnelWithOptions:andReturnError:")
-    public native boolean startVPNTunnelWithOptionsAndReturnError(NSDictionary<String, ? extends NSObject> options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean startVPNTunnelWithOptionsAndReturnError(
+            @Nullable NSDictionary<String, ? extends NSObject> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * [@property] status
-     * <p>
+     * 
      * The current status of the VPN.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("status")
@@ -232,11 +255,37 @@ public class NEVPNConnection extends NSObject {
 
     /**
      * stopVPNTunnel:
-     * <p>
+     * 
      * This function is used to stop the VPN tunnel. The VPN tunnel disconnect process is started and this function
      * returns immediately.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("stopVPNTunnel")
     public native void stopVPNTunnel();
+
+    /**
+     * fetchLastDisconnectErrorWithCompletionHandler:
+     * 
+     * Retrive the most recent error that caused the VPN to disconnect. If the error was generated by the VPN system
+     * (including the IPsec client) then the error will be in the NEVPNConnectionErrorDomain error domain. If the error
+     * was generated by a tunnel provider app extension then the error will be the NSError that the provider passed when
+     * disconnecting the tunnel.
+     * 
+     * @param handler A block which takes an optional NSError that will be called when the error is obtained.
+     * 
+     *                API-Since: 16.0
+     */
+    @Generated
+    @Selector("fetchLastDisconnectErrorWithCompletionHandler:")
+    public native void fetchLastDisconnectErrorWithCompletionHandler(
+            @NotNull @ObjCBlock(name = "call_fetchLastDisconnectErrorWithCompletionHandler") Block_fetchLastDisconnectErrorWithCompletionHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchLastDisconnectErrorWithCompletionHandler {
+        @Generated
+        void call_fetchLastDisconnectErrorWithCompletionHandler(@Nullable NSError arg0);
+    }
 }

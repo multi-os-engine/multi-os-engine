@@ -19,22 +19,33 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 public final class NSGlyphProperty {
     /**
      * null glyph ignored for layout and display
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long Null = 0x0000000000000001L;
     /**
      * control character such as tab, attachment, etc that has special behavior associated with
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long ControlCharacter = 0x0000000000000002L;
     /**
      * glyphs with elastic glyph width behavior such as white spaces
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long Elastic = 0x0000000000000004L;
     /**
      * glyphs with combining properties. typically characters in Unicode Mn class.
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long NonBaseCharacter = 0x0000000000000008L;
 

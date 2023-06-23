@@ -28,12 +28,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * VNRecognizedPointsObservation
  * [@superclass] VNObservation
- * <p>
+ * 
  * VNRecognizedPointsObservation is a request result detailing points in an image.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Vision")
@@ -65,11 +69,12 @@ public class VNRecognizedPointsObservation extends VNObservation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * The availableGroupKeys property returns all of the point group labels usable with the observation.
      */
+    @NotNull
     @Generated
     @Selector("availableGroupKeys")
     public native NSArray<String> availableGroupKeys();
@@ -77,24 +82,28 @@ public class VNRecognizedPointsObservation extends VNObservation {
     /**
      * Returns all of the point group keys available in the observation.
      */
+    @NotNull
     @Generated
     @Selector("availableKeys")
     public native NSArray<String> availableKeys();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -118,7 +127,7 @@ public class VNRecognizedPointsObservation extends VNObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNRecognizedPointsObservation initWithCoder(NSCoder coder);
+    public native VNRecognizedPointsObservation initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -137,27 +146,30 @@ public class VNRecognizedPointsObservation extends VNObservation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Returns the recognized points packaged into an MLMultiArray.
-     * <p>
+     * 
      * The MLMultiArray will contain the raw data output of (x coordinate, y coordinate, confidence) for specific points
      * in the format expected by CreateML action recognition models.
      * The datatype of the elements in the array is double and the dimensions are [1, 3, # of possible points]. If an
      * expected point key is not available in the obeservation, that entry in the MLMultiArray will be populated with
      * 0s.
-     *
+     * 
      * @param error The address of a variable that will be populated with the error that describes the failure. If the
      *              caller does not require this information, NULL can be passed.
+     * 
      * @return the MLMultiArray representation of the points, or nil if an error was encountered.
      */
+    @Nullable
     @Generated
     @Selector("keypointsMultiArrayAndReturnError:")
     public native MLMultiArray keypointsMultiArrayAndReturnError(
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Owned
@@ -166,32 +178,36 @@ public class VNRecognizedPointsObservation extends VNObservation {
 
     /**
      * Obtains a specific normalized recognized point.
-     *
+     * 
      * @param pointKey The key specifying the desired recognized point.
+     * 
      * @param error    The address of a variable that will be populated with the error that describes the failure. If
      *                 the caller does not require this information, NULL can be passed.
+     * 
      * @return the recognized point, or nil if the specific point is not defined.
      */
+    @Nullable
     @Generated
     @Selector("recognizedPointForKey:error:")
-    public native VNRecognizedPoint recognizedPointForKeyError(String pointKey,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native VNRecognizedPoint recognizedPointForKeyError(@NotNull String pointKey,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Obtains the collection of points associated with an identified grouping.
-     * <p>
+     * 
      * The obtained collection is a dictionary that provides the mapping of a recognized point's key to the recognized
      * point.
-     *
+     * 
      * @param groupKey The key representing a specific grouping of points.
      * @param error    The address of a variable that will be populated with the error that describes the failure. If
      *                 the caller does not require this information, NULL can be passed.
      * @return the dictionary of recognized points in the group, or nil if an error was encountered.
      */
+    @Nullable
     @Generated
     @Selector("recognizedPointsForGroupKey:error:")
-    public native NSDictionary<String, ? extends VNRecognizedPoint> recognizedPointsForGroupKeyError(String groupKey,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSDictionary<String, ? extends VNRecognizedPoint> recognizedPointsForGroupKeyError(
+            @NotNull String groupKey, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("resolveClassMethod:")

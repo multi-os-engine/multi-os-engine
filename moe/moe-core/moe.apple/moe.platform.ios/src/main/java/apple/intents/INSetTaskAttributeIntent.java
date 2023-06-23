@@ -23,7 +23,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -54,22 +59,25 @@ public class INSetTaskAttributeIntent extends INIntent {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -93,13 +101,19 @@ public class INSetTaskAttributeIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSetTaskAttributeIntent initWithCoder(NSCoder coder);
+    public native INSetTaskAttributeIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use the designated initializer instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithTargetTask:status:spatialEventTrigger:temporalEventTrigger:")
     public native INSetTaskAttributeIntent initWithTargetTaskStatusSpatialEventTriggerTemporalEventTrigger(
-            INTask targetTask, @NInt long status, INSpatialEventTrigger spatialEventTrigger,
-            INTemporalEventTrigger temporalEventTrigger);
+            @Nullable INTask targetTask, @NInt long status, @Nullable INSpatialEventTrigger spatialEventTrigger,
+            @Nullable INTemporalEventTrigger temporalEventTrigger);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -118,9 +132,10 @@ public class INSetTaskAttributeIntent extends INIntent {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -139,6 +154,7 @@ public class INSetTaskAttributeIntent extends INIntent {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @Nullable
     @Generated
     @Selector("spatialEventTrigger")
     public native INSpatialEventTrigger spatialEventTrigger();
@@ -162,10 +178,12 @@ public class INSetTaskAttributeIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    @Nullable
     @Generated
     @Selector("targetTask")
     public native INTask targetTask();
 
+    @Nullable
     @Generated
     @Selector("temporalEventTrigger")
     public native INTemporalEventTrigger temporalEventTrigger();
@@ -175,17 +193,27 @@ public class INSetTaskAttributeIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithTargetTask:taskTitle:status:priority:spatialEventTrigger:temporalEventTrigger:")
     public native INSetTaskAttributeIntent initWithTargetTaskTaskTitleStatusPrioritySpatialEventTriggerTemporalEventTrigger(
-            INTask targetTask, INSpeakableString taskTitle, @NInt long status, @NInt long priority,
-            INSpatialEventTrigger spatialEventTrigger, INTemporalEventTrigger temporalEventTrigger);
+            @Nullable INTask targetTask, @Nullable INSpeakableString taskTitle, @NInt long status, @NInt long priority,
+            @Nullable INSpatialEventTrigger spatialEventTrigger, @Nullable INTemporalEventTrigger temporalEventTrigger);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("priority")
     @NInt
     public native long priority();
 
+    /**
+     * API-Since: 13.0
+     */
+    @Nullable
     @Generated
     @Selector("taskTitle")
     public native INSpeakableString taskTitle();

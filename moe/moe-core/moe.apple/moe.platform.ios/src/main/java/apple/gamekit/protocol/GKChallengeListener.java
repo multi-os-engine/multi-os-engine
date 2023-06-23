@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("GameKit")
@@ -37,12 +38,14 @@ public interface GKChallengeListener {
      * player: The player who completed the challenge
      * challenge: The challenge which the player completed
      * friendPlayer: The friend who sent the challenge originally
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
     @Selector("player:didCompleteChallenge:issuedByFriend:")
-    default void playerDidCompleteChallengeIssuedByFriend(GKPlayer player, GKChallenge challenge,
-            GKPlayer friendPlayer) {
+    default void playerDidCompleteChallengeIssuedByFriend(@NotNull GKPlayer player, @NotNull GKChallenge challenge,
+            @NotNull GKPlayer friendPlayer) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -51,11 +54,13 @@ public interface GKChallengeListener {
      * while the game is running.
      * player: The player who received the challenge
      * challenge: The challenge which was received
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
     @Selector("player:didReceiveChallenge:")
-    default void playerDidReceiveChallenge(GKPlayer player, GKChallenge challenge) {
+    default void playerDidReceiveChallenge(@NotNull GKPlayer player, @NotNull GKChallenge challenge) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -65,12 +70,14 @@ public interface GKChallengeListener {
      * player: The player who sent the challenge originally
      * challenge: The challenge which the player created and sent
      * friendPlayer: The friend who completed the challenge
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
     @Selector("player:issuedChallengeWasCompleted:byFriend:")
-    default void playerIssuedChallengeWasCompletedByFriend(GKPlayer player, GKChallenge challenge,
-            GKPlayer friendPlayer) {
+    default void playerIssuedChallengeWasCompletedByFriend(@NotNull GKPlayer player, @NotNull GKChallenge challenge,
+            @NotNull GKPlayer friendPlayer) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,11 +86,13 @@ public interface GKChallengeListener {
      * selecting it within the in-game Game Center UI.
      * player: The player who selected the challenge
      * challenge: The challenge which was selected
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
     @Selector("player:wantsToPlayChallenge:")
-    default void playerWantsToPlayChallenge(GKPlayer player, GKChallenge challenge) {
+    default void playerWantsToPlayChallenge(@NotNull GKPlayer player, @NotNull GKChallenge challenge) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

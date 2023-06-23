@@ -8,7 +8,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -16,10 +20,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLEvent {
     /**
      * [@property] device
-     * <p>
+     * 
      * The device this event can be used with. Will be nil when the event is shared across devices (i.e.
      * MTLSharedEvent).
      */
+    @Nullable
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -27,19 +32,20 @@ public interface MTLEvent {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
     @Generated
     @Selector("setLabel:")
-    void setLabel(String value);
+    void setLabel(@Nullable String value);
 }

@@ -18,6 +18,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSListFormatter provides locale-correct formatting of a list of items using the appropriate separator and
@@ -25,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * the beginning of the sentence or used as a standalone string in the UI, so it will not provide any sort of
  * capitalization customization on the given items, but merely join them as-is. The string joined this way may not be
  * grammatically correct when placed in a sentence, and it should only be used in a standalone manner.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Foundation")
@@ -56,22 +60,25 @@ public class NSListFormatter extends NSFormatter {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -95,7 +102,7 @@ public class NSListFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSListFormatter initWithCoder(NSCoder coder);
+    public native NSListFormatter initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -118,13 +125,15 @@ public class NSListFormatter extends NSFormatter {
      * Specifies how each object should be formatted. If not set, the object is formatted using its instance method in
      * the following order: -descriptionWithLocale:, -localizedDescription, and -description.
      */
+    @Nullable
     @Generated
     @Selector("itemFormatter")
     public native NSFormatter itemFormatter();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Specifies the locale to format the items. Defaults to autoupdatingCurrentLocale. Also resets to
@@ -139,9 +148,10 @@ public class NSListFormatter extends NSFormatter {
      * current locale. It is recommended to join only disjointed strings that are ready to display in a bullet-point
      * list. Sentences, phrases with punctuations, and appositions may not work well when joined together.
      */
+    @NotNull
     @Generated
     @Selector("localizedStringByJoiningStrings:")
-    public static native String localizedStringByJoiningStrings(NSArray<String> strings);
+    public static native String localizedStringByJoiningStrings(@NotNull NSArray<String> strings);
 
     @Generated
     @Owned
@@ -162,7 +172,7 @@ public class NSListFormatter extends NSFormatter {
      */
     @Generated
     @Selector("setItemFormatter:")
-    public native void setItemFormatter(NSFormatter value);
+    public native void setItemFormatter(@Nullable NSFormatter value);
 
     /**
      * Specifies the locale to format the items. Defaults to autoupdatingCurrentLocale. Also resets to
@@ -180,22 +190,24 @@ public class NSListFormatter extends NSFormatter {
      * Inherited from NSFormatter. `obj` must be an instance of NSArray. Returns nil if `obj` is nil, not an instance of
      * NSArray, or if the list formatter cannot generate a string representation for all objects in the array.
      */
+    @Nullable
     @Generated
     @Selector("stringForObjectValue:")
-    public native String stringForObjectValue(@Mapped(ObjCObjectMapper.class) Object obj);
+    public native String stringForObjectValue(@Nullable @Mapped(ObjCObjectMapper.class) Object obj);
 
     /**
      * Convenience method for -stringForObjectValue:. Returns a string constructed from an array in the locale-aware
      * format. Each item is formatted using the itemFormatter. If the itemFormatter does not apply to a particular item,
      * the method will fall back to the item's -descriptionWithLocale: or -localizedDescription if implemented, or
      * -description if not.
-     * <p>
+     * 
      * Returns nil if `items` is nil or if the list formatter cannot generate a string representation for all items in
      * the array.
      */
+    @Nullable
     @Generated
     @Selector("stringFromItems:")
-    public native String stringFromItems(NSArray<?> items);
+    public native String stringFromItems(@NotNull NSArray<?> items);
 
     @Generated
     @Selector("superclass")

@@ -23,7 +23,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("MetalPerformanceShadersGraph")
 @Runtime(ObjCRuntime.class)
@@ -54,42 +59,48 @@ public class MPSGraphPooling2DOpDescriptor extends NSObject implements NSCopying
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * [@property] ceilMode
-     * <p>
+     * 
      * If set then the output size is computed by rounding up instead of down when
      * dividing by stride.
      * Default value: @code NO @endcode
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("ceilMode")
     public native boolean ceilMode();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("dataLayout")
@@ -134,11 +145,13 @@ public class MPSGraphPooling2DOpDescriptor extends NSObject implements NSCopying
 
     /**
      * [@property] includeZeroPadToAverage
-     * <p>
+     * 
      * For average pooling use a mode where samples outside the input tensor count as
      * zeroes in the average computation. Otherwise the result is sum over samples divided by
      * number of samples that didn't come from padding.
      * Default value: @code NO @endcode
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("includeZeroPadToAverage")
@@ -172,7 +185,7 @@ public class MPSGraphPooling2DOpDescriptor extends NSObject implements NSCopying
 
     /**
      * [@property] groups
-     * <p>
+     * 
      * groups of the operation
      */
     @Generated
@@ -180,9 +193,10 @@ public class MPSGraphPooling2DOpDescriptor extends NSObject implements NSCopying
     @NUInt
     public native long kernelWidth();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -224,10 +238,12 @@ public class MPSGraphPooling2DOpDescriptor extends NSObject implements NSCopying
 
     /**
      * [@property] ceilMode
-     * <p>
+     * 
      * If set then the output size is computed by rounding up instead of down when
      * dividing by stride.
      * Default value: @code NO @endcode
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setCeilMode:")
@@ -252,11 +268,13 @@ public class MPSGraphPooling2DOpDescriptor extends NSObject implements NSCopying
 
     /**
      * [@property] includeZeroPadToAverage
-     * <p>
+     * 
      * For average pooling use a mode where samples outside the input tensor count as
      * zeroes in the average computation. Otherwise the result is sum over samples divided by
      * number of samples that didn't come from padding.
      * Default value: @code NO @endcode
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setIncludeZeroPadToAverage:")
@@ -268,7 +286,7 @@ public class MPSGraphPooling2DOpDescriptor extends NSObject implements NSCopying
 
     /**
      * [@property] groups
-     * <p>
+     * 
      * groups of the operation
      */
     @Generated
@@ -325,4 +343,59 @@ public class MPSGraphPooling2DOpDescriptor extends NSObject implements NSCopying
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * [@property] returnIndicesDataType
+     * 
+     * Used in conjunction with maxPooling4DAndReturnIndicesWithSourceTensor API.
+     * If MPSGraphPoolingReturnIndicesNone, this property is not used.
+     * Currently supports MPSDataTypeInt32
+     * Default value: @code MPSDataTypeInt32 @endcode
+     * 
+     * API-Since: 15.3
+     */
+    @Generated
+    @Selector("returnIndicesDataType")
+    public native int returnIndicesDataType();
+
+    /**
+     * [@property] returnIndicesMode
+     * 
+     * Used in conjunction with maxPooling2DAndReturnIndicesWithSourceTensor API.
+     * If MPSGraphPoolingReturnIndicesNone, returns a nil tensor for indices.
+     * Default value: @code MPSGraphPoolingReturnIndicesNone @endcode
+     * 
+     * API-Since: 15.3
+     */
+    @Generated
+    @Selector("returnIndicesMode")
+    @NUInt
+    public native long returnIndicesMode();
+
+    /**
+     * [@property] returnIndicesDataType
+     * 
+     * Used in conjunction with maxPooling4DAndReturnIndicesWithSourceTensor API.
+     * If MPSGraphPoolingReturnIndicesNone, this property is not used.
+     * Currently supports MPSDataTypeInt32
+     * Default value: @code MPSDataTypeInt32 @endcode
+     * 
+     * API-Since: 15.3
+     */
+    @Generated
+    @Selector("setReturnIndicesDataType:")
+    public native void setReturnIndicesDataType(int value);
+
+    /**
+     * [@property] returnIndicesMode
+     * 
+     * Used in conjunction with maxPooling2DAndReturnIndicesWithSourceTensor API.
+     * If MPSGraphPoolingReturnIndicesNone, returns a nil tensor for indices.
+     * Default value: @code MPSGraphPoolingReturnIndicesNone @endcode
+     * 
+     * API-Since: 15.3
+     */
+    @Generated
+    @Selector("setReturnIndicesMode:")
+    public native void setReturnIndicesMode(@NUInt long value);
 }

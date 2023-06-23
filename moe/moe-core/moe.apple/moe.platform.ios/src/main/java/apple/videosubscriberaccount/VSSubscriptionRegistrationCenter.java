@@ -21,9 +21,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * VSSubscriptionRegistrationCenter stores subscription information.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("VideoSubscriberAccount")
@@ -55,22 +59,25 @@ public class VSSubscriptionRegistrationCenter extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -83,6 +90,7 @@ public class VSSubscriptionRegistrationCenter extends NSObject {
      * Use the default subscription registration center to tell the system about
      * the customer's ability to access content within your app.
      */
+    @NotNull
     @Generated
     @Selector("defaultSubscriptionRegistrationCenter")
     public static native VSSubscriptionRegistrationCenter defaultSubscriptionRegistrationCenter();
@@ -117,9 +125,10 @@ public class VSSubscriptionRegistrationCenter extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -137,22 +146,22 @@ public class VSSubscriptionRegistrationCenter extends NSObject {
     /**
      * Provide a subscription when the subscriber first authenticates, and when the
      * subscription changes.
-     * <p>
+     * 
      * When the subscriber signs out or otherwise loses access to subscription
      * content, invoke this method with nil.
-     * <p>
+     * 
      * You might also want to call this method opportunistically, if you happen to
      * have just confirmed the validity of the subscription, or in response to app
      * lifecycle events, e.g. when your app becomes active. The system may use
      * this activity as a hint that the user is actively using the subscription.
-     * <p>
+     * 
      * It is an error to provide a current subscription with an unknown access
      * level; you should not provide a subscription if the user only has access to
      * content that is offered for free without any account requirements.
      */
     @Generated
     @Selector("setCurrentSubscription:")
-    public native void setCurrentSubscription(VSSubscription currentSubscription);
+    public native void setCurrentSubscription(@Nullable VSSubscription currentSubscription);
 
     @Generated
     @Selector("setVersion:")

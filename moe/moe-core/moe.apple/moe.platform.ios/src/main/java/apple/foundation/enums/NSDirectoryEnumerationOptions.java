@@ -19,6 +19,9 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 public final class NSDirectoryEnumerationOptions {
     @Generated
@@ -28,14 +31,20 @@ public final class NSDirectoryEnumerationOptions {
     /**
      * NSDirectoryEnumerationSkipsSubdirectoryDescendants causes the NSDirectoryEnumerator to perform a shallow
      * enumeration and not descend into directories it encounters.
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long SkipsSubdirectoryDescendants = 0x0000000000000001L;
     /**
      * NSDirectoryEnumerationSkipsPackageDescendants will cause the NSDirectoryEnumerator to not descend into packages.
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long SkipsPackageDescendants = 0x0000000000000002L;
     /**
      * NSDirectoryEnumerationSkipsHiddenFiles causes the NSDirectoryEnumerator to not enumerate hidden files.
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long SkipsHiddenFiles = 0x0000000000000004L;
     /**
@@ -43,11 +52,15 @@ public final class NSDirectoryEnumerationOptions {
      * second time after all of its contained files have been enumerated. Use
      * NSDirectoryEnumerator.isEnumeratingDirectoryPostOrder to differentiate a post-order enumerated directory from a
      * pre-order one.
+     * 
+     * API-Since: 13.0
      */
     @Generated @NUInt public static final long IncludesDirectoriesPostOrder = 0x0000000000000008L;
     /**
      * NSDirectoryEnumerationProducesRelativePathURLs causes the NSDirectoryEnumerator to always produce file path URLs
      * relative to the directoryURL. This can reduce the size of each URL object returned during enumeration.
+     * 
+     * API-Since: 13.0
      */
     @Generated @NUInt public static final long ProducesRelativePathURLs = 0x0000000000000010L;
 }

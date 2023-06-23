@@ -9,7 +9,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 13.4
+ */
 @Generated
 @Library("AutomaticAssessmentConfiguration")
 @Runtime(ObjCRuntime.class)
@@ -18,28 +22,29 @@ public interface AEAssessmentSessionDelegate {
     @Generated
     @IsOptional
     @Selector("assessmentSession:failedToBeginWithError:")
-    default void assessmentSessionFailedToBeginWithError(AEAssessmentSession session, NSError error) {
+    default void assessmentSessionFailedToBeginWithError(@NotNull AEAssessmentSession session, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("assessmentSession:wasInterruptedWithError:")
-    default void assessmentSessionWasInterruptedWithError(AEAssessmentSession session, NSError error) {
+    default void assessmentSessionWasInterruptedWithError(@NotNull AEAssessmentSession session,
+            @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("assessmentSessionDidBegin:")
-    default void assessmentSessionDidBegin(AEAssessmentSession session) {
+    default void assessmentSessionDidBegin(@NotNull AEAssessmentSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("assessmentSessionDidEnd:")
-    default void assessmentSessionDidEnd(AEAssessmentSession session) {
+    default void assessmentSessionDidEnd(@NotNull AEAssessmentSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

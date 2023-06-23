@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] EKAuthorizationStatus
- * <p>
+ * 
  * This enumerated type is used to indicate the currently granted authorization status for a specific
  * entity type.
  * [@constant] EKAuthorizationStatusNotDetermined The user has not yet made a choice regarding whether this application
@@ -31,12 +31,26 @@ import org.moe.natj.general.ann.NInt;
  * active restrictions such as parental controls being in place.
  * [@constant] EKAuthorizationStatusDenied The user explicitly denied access to the service for this application.
  * [@constant] EKAuthorizationStatusAuthorized This application is authorized to access the service.
+ * 
+ * API-Since: 6.0
  */
 @Generated
 public final class EKAuthorizationStatus {
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long NotDetermined = 0x0000000000000000L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long Restricted = 0x0000000000000001L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long Denied = 0x0000000000000002L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long Authorized = 0x0000000000000003L;
 
     @Generated

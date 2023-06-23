@@ -42,7 +42,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -73,22 +78,25 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,19 +131,21 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * localDevice
-     * <p>
+     * 
      * Returns a device representing the host.
-     * <p>
+     * 
      * If an app chooses to save samples that were retrieved from the local device, e.g. an HKWorkout with a
      * totalDistance HKQuantity gathered from CoreLocation GPS distances, then this would be an appropriate
      * HKDevice to use.
      */
+    @NotNull
     @Generated
     @Selector("localDevice")
     public static native HKDevice localDevice();
@@ -172,9 +182,9 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * [@property] UDIDeviceIdentifier
-     * <p>
+     * 
      * Represents the device identifier portion of a device's FDA UDI (Unique Device Identifier).
-     * <p>
+     * 
      * The device identifier can be used to reference the FDA's GUDID (Globally Unique Device
      * Identifier Database). Note that for user privacy concerns this field should not be used to
      * persist the production identifier portion of the device UDI. HealthKit clients should manage
@@ -182,34 +192,38 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
      * See http://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/UniqueDeviceIdentification/ for more
      * information.
      */
+    @Nullable
     @Generated
     @Selector("UDIDeviceIdentifier")
     public native String UDIDeviceIdentifier();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] firmwareVersion
-     * <p>
+     * 
      * The firmware revision of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("firmwareVersion")
     public native String firmwareVersion();
 
     /**
      * [@property] hardwareVersion
-     * <p>
+     * 
      * The hardware revision of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("hardwareVersion")
     public native String hardwareVersion();
@@ -220,71 +234,77 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKDevice initWithCoder(NSCoder coder);
+    public native HKDevice initWithCoder(@NotNull NSCoder coder);
 
     /**
      * initWithName:manufacturer:model:hardwareVersion:firmwareVersion:softwareVersion:localIdentifier:UDIDeviceIdentifier:
-     * <p>
+     * 
      * Initialize a new HKDevice with the specified values.
-     * <p>
+     * 
      * This allows initialization of an HKDevice object based on the
      * information provided.
      */
     @Generated
     @Selector("initWithName:manufacturer:model:hardwareVersion:firmwareVersion:softwareVersion:localIdentifier:UDIDeviceIdentifier:")
     public native HKDevice initWithNameManufacturerModelHardwareVersionFirmwareVersionSoftwareVersionLocalIdentifierUDIDeviceIdentifier(
-            String name, String manufacturer, String model, String hardwareVersion, String firmwareVersion,
-            String softwareVersion, String localIdentifier, String UDIDeviceIdentifier);
+            @Nullable String name, @Nullable String manufacturer, @Nullable String model,
+            @Nullable String hardwareVersion, @Nullable String firmwareVersion, @Nullable String softwareVersion,
+            @Nullable String localIdentifier, @Nullable String UDIDeviceIdentifier);
 
     /**
      * [@property] localIdentifier
-     * <p>
+     * 
      * A unique identifier for the receiver.
-     * <p>
+     * 
      * This property is available to clients for a local identifier.
      * For example, Bluetooth peripherals managed by HealthKit use this
      * for the CoreBluetooth UUID which is valid only on the local
      * device and thus distinguish the same Bluetooth peripheral used
      * between multiple devices.
      */
+    @Nullable
     @Generated
     @Selector("localIdentifier")
     public native String localIdentifier();
 
     /**
      * [@property] manufacturer
-     * <p>
+     * 
      * The manufacturer of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("manufacturer")
     public native String manufacturer();
 
     /**
      * [@property] model
-     * <p>
+     * 
      * The model of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("model")
     public native String model();
 
     /**
      * [@property] name
-     * <p>
+     * 
      * The name of the receiver.
-     * <p>
+     * 
      * The user-facing name, such as the one displayed in the Bluetooth Settings for a BLE device.
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
 
     /**
      * [@property] softwareVersion
-     * <p>
+     * 
      * The software revision of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("softwareVersion")
     public native String softwareVersion();

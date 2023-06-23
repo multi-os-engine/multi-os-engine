@@ -11,7 +11,11 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -19,7 +23,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface CPSearchTemplateDelegate {
     /**
      * The user has selected an item in the search result list.
-     *
+     * 
      * @param searchTemplate    The search template in use by the user
      * @param item              The item selected by the user
      * @param completionHandler You must call the completionHandler when you have handled the row selection in the
@@ -27,8 +31,9 @@ public interface CPSearchTemplateDelegate {
      */
     @Generated
     @Selector("searchTemplate:selectedResult:completionHandler:")
-    void searchTemplateSelectedResultCompletionHandler(CPSearchTemplate searchTemplate, CPListItem item,
-            @ObjCBlock(name = "call_searchTemplateSelectedResultCompletionHandler") Block_searchTemplateSelectedResultCompletionHandler completionHandler);
+    void searchTemplateSelectedResultCompletionHandler(@NotNull CPSearchTemplate searchTemplate,
+            @NotNull CPListItem item,
+            @NotNull @ObjCBlock(name = "call_searchTemplateSelectedResultCompletionHandler") Block_searchTemplateSelectedResultCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -39,33 +44,35 @@ public interface CPSearchTemplateDelegate {
 
     /**
      * The user has entered characters in the search text field.
-     *
+     * 
      * @param searchTemplate    The search template in use by the user
      * @param searchText        The search text entered by the user
      * @param completionHandler You must call the completionHandler with updated search results
      */
     @Generated
     @Selector("searchTemplate:updatedSearchText:completionHandler:")
-    void searchTemplateUpdatedSearchTextCompletionHandler(CPSearchTemplate searchTemplate, String searchText,
-            @ObjCBlock(name = "call_searchTemplateUpdatedSearchTextCompletionHandler") Block_searchTemplateUpdatedSearchTextCompletionHandler completionHandler);
+    void searchTemplateUpdatedSearchTextCompletionHandler(@NotNull CPSearchTemplate searchTemplate,
+            @NotNull String searchText,
+            @NotNull @ObjCBlock(name = "call_searchTemplateUpdatedSearchTextCompletionHandler") Block_searchTemplateUpdatedSearchTextCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_searchTemplateUpdatedSearchTextCompletionHandler {
         @Generated
-        void call_searchTemplateUpdatedSearchTextCompletionHandler(NSArray<? extends CPListItem> searchResults);
+        void call_searchTemplateUpdatedSearchTextCompletionHandler(
+                @NotNull NSArray<? extends CPListItem> searchResults);
     }
 
     /**
      * The user has selected the keyboard's search button. Generally, you should push a @c CPListTemplate containing the
      * current search results.
-     *
+     * 
      * @param searchTemplate The search template in use by the user
      */
     @Generated
     @IsOptional
     @Selector("searchTemplateSearchButtonPressed:")
-    default void searchTemplateSearchButtonPressed(CPSearchTemplate searchTemplate) {
+    default void searchTemplateSearchButtonPressed(@NotNull CPSearchTemplate searchTemplate) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

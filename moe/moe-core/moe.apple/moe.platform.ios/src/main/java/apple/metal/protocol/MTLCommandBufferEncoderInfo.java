@@ -8,9 +8,12 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Provides execution status information for a Metal command encoder.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Metal")
@@ -20,6 +23,7 @@ public interface MTLCommandBufferEncoderInfo {
     /**
      * The debug signposts inserted into the associated Metal command encoder.
      */
+    @NotNull
     @Generated
     @Selector("debugSignposts")
     NSArray<String> debugSignposts();
@@ -35,6 +39,7 @@ public interface MTLCommandBufferEncoderInfo {
     /**
      * The debug label given to the associated Metal command encoder at command buffer submission.
      */
+    @NotNull
     @Generated
     @Selector("label")
     String label();

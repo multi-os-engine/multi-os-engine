@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] NSURLCredentialPersistence
- * <p>
+ * 
  * Constants defining how long a credential will be kept around
  * [@constant] NSURLCredentialPersistenceNone This credential won't be saved.
  * [@constant] NSURLCredentialPersistenceForSession This credential will only be stored for this session.
@@ -39,6 +39,9 @@ public final class NSURLCredentialPersistence {
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long ForSession = 0x0000000000000001L;
     @Generated @NUInt public static final long Permanent = 0x0000000000000002L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NUInt public static final long Synchronizable = 0x0000000000000003L;
 
     @Generated

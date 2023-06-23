@@ -26,12 +26,16 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A request that detects trajectories of shapes (even small ones) that follow a parabolic path in a sequence of images.
- * <p>
+ * 
  * This request detects objects moving and (once their path follows the constraint of a parabola), a
  * VNTrajectoryObservation will be returned with the detected points and the equation describing the parabola.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Vision")
@@ -63,22 +67,25 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -113,17 +120,17 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
     @Generated
     @Selector("initWithCompletionHandler:")
     public native VNDetectTrajectoriesRequest initWithCompletionHandler(
-            @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithFrameAnalysisSpacing:completionHandler:")
     public native VNDetectTrajectoriesRequest initWithFrameAnalysisSpacingCompletionHandler(
             @ByValue CMTime frameAnalysisSpacing,
-            @ObjCBlock(name = "call_initWithFrameAnalysisSpacingCompletionHandler") VNStatefulRequest.Block_initWithFrameAnalysisSpacingCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_initWithFrameAnalysisSpacingCompletionHandler") VNStatefulRequest.Block_initWithFrameAnalysisSpacingCompletionHandler completionHandler);
 
     /**
      * Create a new request that will detect the trajectory of a shape in motion.
-     *
+     * 
      * @param frameAnalysisSpacing The reciprocal of the maximum rate at which buffers will be processed. The request
      *                             will not process buffers that fall within the frameAnalysisSpacing after it has
      *                             performed the analysis. The analysis is not done by wall time but by analysis of the
@@ -140,13 +147,14 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
     @Selector("initWithFrameAnalysisSpacing:trajectoryLength:completionHandler:")
     public native VNDetectTrajectoriesRequest initWithFrameAnalysisSpacingTrajectoryLengthCompletionHandler(
             @ByValue CMTime frameAnalysisSpacing, @NInt long trajectoryLength,
-            @ObjCBlock(name = "call_initWithFrameAnalysisSpacingTrajectoryLengthCompletionHandler") Block_initWithFrameAnalysisSpacingTrajectoryLengthCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_initWithFrameAnalysisSpacingTrajectoryLengthCompletionHandler") Block_initWithFrameAnalysisSpacingTrajectoryLengthCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithFrameAnalysisSpacingTrajectoryLengthCompletionHandler {
         @Generated
-        void call_initWithFrameAnalysisSpacingTrajectoryLengthCompletionHandler(VNRequest request, NSError error);
+        void call_initWithFrameAnalysisSpacingTrajectoryLengthCompletionHandler(@NotNull VNRequest request,
+                @Nullable NSError error);
     }
 
     @Generated
@@ -166,14 +174,25 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 14.0
+     */
+    @Deprecated
     @Generated
     @Selector("maximumObjectSize")
     public native float maximumObjectSize();
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 14.0
+     */
+    @Deprecated
     @Generated
     @Selector("minimumObjectSize")
     public native float minimumObjectSize();
@@ -214,14 +233,25 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
     /**
      * Provides VNTrajectoryObservation results.
      */
+    @Nullable
     @Generated
     @Selector("results")
     public native NSArray<? extends VNTrajectoryObservation> results();
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 14.0
+     */
+    @Deprecated
     @Generated
     @Selector("setMaximumObjectSize:")
     public native void setMaximumObjectSize(float value);
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 14.0
+     */
+    @Deprecated
     @Generated
     @Selector("setMinimumObjectSize:")
     public native void setMinimumObjectSize(float value);
@@ -254,6 +284,7 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();
@@ -278,6 +309,8 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
      * attempt to reduce the amount of time taken by reducing the accuracy (down to a set minimum) for the next frame.
      * If a frame takes less time than this target, then accuracy of the next frame will be increased (up to a set
      * maximum). The default value is kCMTimeIndefinite, meaning accuracy stays at the predefined maximum.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTargetFrameTime:")
@@ -290,6 +323,8 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
      * attempt to reduce the amount of time taken by reducing the accuracy (down to a set minimum) for the next frame.
      * If a frame takes less time than this target, then accuracy of the next frame will be increased (up to a set
      * maximum). The default value is kCMTimeIndefinite, meaning accuracy stays at the predefined maximum.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("targetFrameTime")

@@ -10,9 +10,12 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * The interface through which clients receive the results of an analysis request
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("SoundAnalysis")
@@ -21,38 +24,39 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface SNResultsObserving {
     /**
      * Informs the client of an error produced during analysis
-     * <p>
+     * 
      * If an error is produced by a request, that request will not produce any more results, and is in a terminal state.
      * The request:didFailWithError and requestDidComplete methods are mutually exclusive.
      */
     @Generated
     @IsOptional
     @Selector("request:didFailWithError:")
-    default void requestDidFailWithError(@Mapped(ObjCObjectMapper.class) SNRequest request, NSError error) {
+    default void requestDidFailWithError(@NotNull @Mapped(ObjCObjectMapper.class) SNRequest request,
+            @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Provides a new analysis result to the client with the specified time range
-     * <p>
+     * 
      * This function will be called each time a new analysis result is available. Different types of analysis may
      * produce results at different rates, spanning different time ranges.
      */
     @Generated
     @Selector("request:didProduceResult:")
-    void requestDidProduceResult(@Mapped(ObjCObjectMapper.class) SNRequest request,
-            @Mapped(ObjCObjectMapper.class) SNResult result);
+    void requestDidProduceResult(@NotNull @Mapped(ObjCObjectMapper.class) SNRequest request,
+            @NotNull @Mapped(ObjCObjectMapper.class) SNResult result);
 
     /**
      * Informs the client that the analysis request was completed normally
-     * <p>
+     * 
      * If an analysis request completes normally, that request will not produce any more results, and is in a terminal
      * state. The request:didFailWithError and requestDidComplete methods are mutually exclusive.
      */
     @Generated
     @IsOptional
     @Selector("requestDidComplete:")
-    default void requestDidComplete(@Mapped(ObjCObjectMapper.class) SNRequest request) {
+    default void requestDidComplete(@NotNull @Mapped(ObjCObjectMapper.class) SNRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

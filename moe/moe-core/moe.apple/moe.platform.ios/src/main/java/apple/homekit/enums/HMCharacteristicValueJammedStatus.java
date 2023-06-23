@@ -21,13 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueJammedStatus
- * <p>
+ * 
  * [@constant] HMCharacteristicValueJammedStatusNone Not Jammed.
  * [@constant] HMCharacteristicValueJammedStatusJammed Jammed.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class HMCharacteristicValueJammedStatus {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Jammed = 0x0000000000000001L;
 
     @Generated

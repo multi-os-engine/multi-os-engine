@@ -25,14 +25,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSURL;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CHHapticPattern
- * <p>
+ * 
  * A set of one or more haptic events and/or Dynamic parameters/parameter curves.
- * <p>
+ * 
  * The passed-in arrays' contents are not owned by the pattern object. Changes made to those arrays
  * after a CHHapticPattern object is created have no effect on that object.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreHaptics")
@@ -64,22 +69,25 @@ public class CHHapticPattern extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -103,16 +111,17 @@ public class CHHapticPattern extends NSObject {
 
     /**
      * exportDictionaryAndReturnError:error
-     * <p>
+     * 
      * Returns a NSDictionary representation of the contents of the pattern.
-     * <p>
+     * 
      * Patterns containing custom audio resource IDs cannot be exported and will return nil
      * with the error code set to CHHapticErrorCodeOperationNotPermitted.
      */
+    @Nullable
     @Generated
     @Selector("exportDictionaryAndReturnError:")
     public native NSDictionary<String, ?> exportDictionaryAndReturnError(
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("hash")
@@ -125,43 +134,48 @@ public class CHHapticPattern extends NSObject {
 
     /**
      * initWithDictionary:error
-     * <p>
+     * 
      * Initialize a new CHHapticPattern using the passed-in NSDictionary.
-     *
-     * @param patternDict NSDictionary containing a pattern property list.
+     * 
+     * @param patternDict
+     *                    NSDictionary containing a pattern property list.
      */
     @Generated
     @Selector("initWithDictionary:error:")
-    public native CHHapticPattern initWithDictionaryError(NSDictionary<String, ?> patternDict,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native CHHapticPattern initWithDictionaryError(@NotNull NSDictionary<String, ?> patternDict,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * initWithEvents:parameterCurves:error
-     * <p>
+     * 
      * Initialize a new CHHapticPattern with parameters modulated by parameter curves.
-     *
-     * @param events          An NSArray of CHHapticEvents. Can be empty.
-     * @param parameterCurves An NSArray of CHHapticParameterCurves. Can be empty.
+     * 
+     * @param events
+     *                        An NSArray of CHHapticEvents. Can be empty.
+     * @param parameterCurves
+     *                        An NSArray of CHHapticParameterCurves. Can be empty.
      */
     @Generated
     @Selector("initWithEvents:parameterCurves:error:")
-    public native CHHapticPattern initWithEventsParameterCurvesError(NSArray<? extends CHHapticEvent> events,
-            NSArray<? extends CHHapticParameterCurve> parameterCurves,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native CHHapticPattern initWithEventsParameterCurvesError(@NotNull NSArray<? extends CHHapticEvent> events,
+            @NotNull NSArray<? extends CHHapticParameterCurve> parameterCurves,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * initWithEvents:parameters:error
-     * <p>
+     * 
      * Initialize a new CHHapticPattern.
-     *
-     * @param events     An NSArray of CHHapticEvents. Can be empty.
-     * @param parameters An NSArray of CHHapticDynamicParameters. Can be empty.
+     * 
+     * @param events
+     *                   An NSArray of CHHapticEvents. Can be empty.
+     * @param parameters
+     *                   An NSArray of CHHapticDynamicParameters. Can be empty.
      */
     @Generated
     @Selector("initWithEvents:parameters:error:")
-    public native CHHapticPattern initWithEventsParametersError(NSArray<? extends CHHapticEvent> events,
-            NSArray<? extends CHHapticDynamicParameter> parameters,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native CHHapticPattern initWithEventsParametersError(@NotNull NSArray<? extends CHHapticEvent> events,
+            @NotNull NSArray<? extends CHHapticDynamicParameter> parameters,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -180,9 +194,10 @@ public class CHHapticPattern extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -209,4 +224,21 @@ public class CHHapticPattern extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * initWithContentsOfURL:error
+     * 
+     * Initialize a new CHHapticPattern using the contents of the passed-in NSURL.
+     * 
+     * This URL must reference a valid AHAP file.
+     * 
+     * API-Since: 16.0
+     * 
+     * @param ahapURL
+     *                NSURL of an ahap file.
+     */
+    @Generated
+    @Selector("initWithContentsOfURL:error:")
+    public native CHHapticPattern initWithContentsOfURLError(@NotNull NSURL ahapURL,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 }

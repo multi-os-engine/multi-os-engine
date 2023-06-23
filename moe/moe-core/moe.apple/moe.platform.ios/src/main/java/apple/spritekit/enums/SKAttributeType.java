@@ -19,16 +19,46 @@ package apple.spritekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 public final class SKAttributeType {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Float = 0x0000000000000001L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long VectorFloat2 = 0x0000000000000002L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long VectorFloat3 = 0x0000000000000003L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long VectorFloat4 = 0x0000000000000004L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long HalfFloat = 0x0000000000000005L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long VectorHalfFloat2 = 0x0000000000000006L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long VectorHalfFloat3 = 0x0000000000000007L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long VectorHalfFloat4 = 0x0000000000000008L;
 
     @Generated

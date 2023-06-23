@@ -35,7 +35,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -66,22 +71,25 @@ public class NSInvocationOperation extends NSOperation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -116,9 +124,10 @@ public class NSInvocationOperation extends NSOperation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -152,17 +161,20 @@ public class NSInvocationOperation extends NSOperation {
 
     @Generated
     @Selector("initWithInvocation:")
-    public native NSInvocationOperation initWithInvocation(NSInvocation inv);
+    public native NSInvocationOperation initWithInvocation(@NotNull NSInvocation inv);
 
     @Generated
     @Selector("initWithTarget:selector:object:")
-    public native NSInvocationOperation initWithTargetSelectorObject(@Mapped(ObjCObjectMapper.class) Object target,
-            SEL sel, @Mapped(ObjCObjectMapper.class) Object arg);
+    public native NSInvocationOperation initWithTargetSelectorObject(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object target, @NotNull SEL sel,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object arg);
 
+    @NotNull
     @Generated
     @Selector("invocation")
     public native NSInvocation invocation();
 
+    @Nullable
     @Generated
     @Selector("result")
     @MappedReturn(ObjCObjectMapper.class)

@@ -22,11 +22,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCLayerNormalizationLayer
- * <p>
+ * 
  * The layer normalizaion layer. For more information, refer to https://pytorch.org/docs/stable/nn.html#layernorm.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -58,40 +62,45 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] beta
-     * <p>
+     * 
      * The beta tensor
      */
+    @Nullable
     @Generated
     @Selector("beta")
     public native MLCTensor beta();
 
     /**
      * [@property] betaParameter
-     * <p>
+     * 
      * The beta tensor parameter used for optimizer update
      */
+    @Nullable
     @Generated
     @Selector("betaParameter")
     public native MLCTensorParameter betaParameter();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,18 +115,20 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] gamma
-     * <p>
+     * 
      * The gamma tensor
      */
+    @Nullable
     @Generated
     @Selector("gamma")
     public native MLCTensor gamma();
 
     /**
      * [@property] gammaParameter
-     * <p>
+     * 
      * The gamma tensor parameter used for optimizer update
      */
+    @Nullable
     @Generated
     @Selector("gammaParameter")
     public native MLCTensorParameter gammaParameter();
@@ -148,23 +159,26 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Create a layer normalization layer
-     *
+     * 
      * @param normalizedShape The shape of the axes over which normalization occurs, currently (C,H,W) only
      * @param beta            Training parameter
      * @param gamma           Training parameter
      * @param varianceEpsilon A small numerical value added to variance for stability
      * @return A new layer normalization layer.
      */
+    @Nullable
     @Generated
     @Selector("layerWithNormalizedShape:beta:gamma:varianceEpsilon:")
     public static native MLCLayerNormalizationLayer layerWithNormalizedShapeBetaGammaVarianceEpsilon(
-            NSArray<? extends NSNumber> normalizedShape, MLCTensor beta, MLCTensor gamma, float varianceEpsilon);
+            @NotNull NSArray<? extends NSNumber> normalizedShape, @Nullable MLCTensor beta, @Nullable MLCTensor gamma,
+            float varianceEpsilon);
 
     @Generated
     @Owned
@@ -173,9 +187,10 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] normalizedShape
-     * <p>
+     * 
      * The shape of the axes over which normalization occurs, (W), (H,W) or (C,H,W)
      */
+    @NotNull
     @Generated
     @Selector("normalizedShape")
     public native NSArray<? extends NSNumber> normalizedShape();
@@ -198,11 +213,11 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
 
     @Generated
     @Selector("supportsDataType:onDevice:")
-    public static native boolean supportsDataTypeOnDevice(int dataType, MLCDevice device);
+    public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
 
     /**
      * [@property] varianceEpsilon
-     * <p>
+     * 
      * A value used for numerical stability
      */
     @Generated

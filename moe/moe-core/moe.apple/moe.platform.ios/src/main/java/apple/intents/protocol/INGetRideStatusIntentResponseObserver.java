@@ -23,7 +23,11 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -31,5 +35,5 @@ import org.moe.natj.objc.ann.Selector;
 public interface INGetRideStatusIntentResponseObserver {
     @Generated
     @Selector("getRideStatusResponseDidUpdate:")
-    void getRideStatusResponseDidUpdate(INGetRideStatusIntentResponse response);
+    void getRideStatusResponseDidUpdate(@NotNull INGetRideStatusIntentResponse response);
 }

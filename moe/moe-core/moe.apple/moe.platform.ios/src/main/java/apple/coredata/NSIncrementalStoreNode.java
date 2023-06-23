@@ -39,9 +39,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Provides the basic unit of external data that the Core Data stack interacts with.
+ * 
+ * API-Since: 5.0
  */
 @Generated
 @Library("CoreData")
@@ -73,22 +77,25 @@ public class NSIncrementalStoreNode extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +130,10 @@ public class NSIncrementalStoreNode extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,35 +163,36 @@ public class NSIncrementalStoreNode extends NSObject {
     /**
      * Returns an object initialized with the following values
      * objectID -> The NSManagedObjectID corresponding to the object whose values are cached
-     * <p>
+     * 
      * values -> A dictionary containing the values persisted in an external store with keys corresponding to the names
      * of the NSPropertyDescriptions
      * in the NSEntityDescription described by the NSManagedObjectID. Unknown or unmodeled keys will be stripped out.
-     * <p>
+     * 
      * For attributes: an immutable value (NSNumber, NSString, NSData etc). Missing attribute keys will assume a nil
      * value.
-     * <p>
+     * 
      * For to-one relationships: the NSManagedObjectID of the related object or NSNull for nil relationship values. A
      * missing key will be resolved lazily through calling
      * -newValueForRelationship:forObjectWithID:withContext:error: on the NSPersistentStore. Lazy resolution for to-ones
      * is discouraged.
-     * <p>
+     * 
      * For to-many relationships: an NSArray or NSSet containing the NSManagedObjectIDs of the related objects. Empty
      * to-many relationships must
      * be represented by an empty non-nil collection. A missing key will be resolved lazily through calling. Lazy
      * resolution for to-manys is encouraged.
      * -newValueForRelationship:forObjectWithID:withContext:error: on the NSPersistentStore
-     * <p>
+     * 
      * version -> The revision number of this state; used for conflict detection and merging
      */
     @Generated
     @Selector("initWithObjectID:withValues:version:")
-    public native NSIncrementalStoreNode initWithObjectIDWithValuesVersion(NSManagedObjectID objectID,
-            NSDictionary<String, ?> values, long version);
+    public native NSIncrementalStoreNode initWithObjectIDWithValuesVersion(@NotNull NSManagedObjectID objectID,
+            @NotNull NSDictionary<String, ?> values, long version);
 
     /**
      * Return the object ID that identifies the data stored by this node
      */
+    @NotNull
     @Generated
     @Selector("objectID")
     public native NSManagedObjectID objectID();
@@ -194,16 +203,17 @@ public class NSIncrementalStoreNode extends NSObject {
      */
     @Generated
     @Selector("updateWithValues:version:")
-    public native void updateWithValuesVersion(NSDictionary<String, ?> values, long version);
+    public native void updateWithValuesVersion(@NotNull NSDictionary<String, ?> values, long version);
 
     /**
      * May return NSNull for to-one relationships. If a relationship is nil, clients should invoke
      * -newValueForRelationship:forObjectWithID:withContext:error: on the NSPersistentStore
      */
+    @Nullable
     @Generated
     @Selector("valueForPropertyDescription:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object valueForPropertyDescription(NSPropertyDescription prop);
+    public native Object valueForPropertyDescription(@NotNull NSPropertyDescription prop);
 
     /**
      * Return the version of data in this node.

@@ -37,7 +37,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.1
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -68,22 +73,25 @@ public class MPMusicPlayerStoreQueueDescriptor extends MPMusicPlayerQueueDescrip
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -118,9 +126,10 @@ public class MPMusicPlayerStoreQueueDescriptor extends MPMusicPlayerQueueDescrip
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,28 +163,30 @@ public class MPMusicPlayerStoreQueueDescriptor extends MPMusicPlayerQueueDescrip
 
     @Generated
     @Selector("initWithStoreIDs:")
-    public native MPMusicPlayerStoreQueueDescriptor initWithStoreIDs(NSArray<String> storeIDs);
+    public native MPMusicPlayerStoreQueueDescriptor initWithStoreIDs(@NotNull NSArray<String> storeIDs);
 
     @Generated
     @Selector("setEndTime:forItemWithStoreID:")
-    public native void setEndTimeForItemWithStoreID(double endTime, String storeID);
+    public native void setEndTimeForItemWithStoreID(double endTime, @NotNull String storeID);
 
     @Generated
     @Selector("setStartItemID:")
-    public native void setStartItemID(String value);
+    public native void setStartItemID(@Nullable String value);
 
     @Generated
     @Selector("setStartTime:forItemWithStoreID:")
-    public native void setStartTimeForItemWithStoreID(double startTime, String storeID);
+    public native void setStartTimeForItemWithStoreID(double startTime, @NotNull String storeID);
 
     @Generated
     @Selector("setStoreIDs:")
-    public native void setStoreIDs(NSArray<String> value);
+    public native void setStoreIDs(@Nullable NSArray<String> value);
 
+    @Nullable
     @Generated
     @Selector("startItemID")
     public native String startItemID();
 
+    @Nullable
     @Generated
     @Selector("storeIDs")
     public native NSArray<String> storeIDs();

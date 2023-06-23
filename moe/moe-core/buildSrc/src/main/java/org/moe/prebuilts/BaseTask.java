@@ -19,6 +19,7 @@ package org.moe.prebuilts;
 import org.gradle.api.Action;
 import org.gradle.api.DefaultTask;
 import org.gradle.api.GradleException;
+import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.TaskAction;
 import org.gradle.process.ExecResult;
 import org.gradle.process.ExecSpec;
@@ -33,6 +34,7 @@ abstract class BaseTask extends DefaultTask {
     private File logFile;
     private NonClosingFileOutputStream log;
 
+    @Internal
     protected final File getLogFile() {
         if (logFile == null) {
             throw new NullPointerException();
@@ -40,6 +42,7 @@ abstract class BaseTask extends DefaultTask {
         return logFile;
     }
 
+    @Internal
     protected final FileOutputStream getLog() {
         if (log == null) {
             throw new NullPointerException();

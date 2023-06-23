@@ -37,26 +37,51 @@ public final class Social {
     private Social() {
     }
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SLServiceTypeTwitter();
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SLServiceTypeFacebook();
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SLServiceTypeSinaWeibo();
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SLServiceTypeTencentWeibo();
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

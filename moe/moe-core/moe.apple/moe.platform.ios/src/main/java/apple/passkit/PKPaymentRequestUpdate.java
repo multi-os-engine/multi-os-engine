@@ -21,7 +21,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -52,22 +57,25 @@ public class PKPaymentRequestUpdate extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -92,7 +100,7 @@ public class PKPaymentRequestUpdate extends NSObject {
     @Generated
     @Selector("initWithPaymentSummaryItems:")
     public native PKPaymentRequestUpdate initWithPaymentSummaryItems(
-            NSArray<? extends PKPaymentSummaryItem> paymentSummaryItems);
+            @NotNull NSArray<? extends PKPaymentSummaryItem> paymentSummaryItems);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -111,9 +119,10 @@ public class PKPaymentRequestUpdate extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -123,6 +132,7 @@ public class PKPaymentRequestUpdate extends NSObject {
     /**
      * The new payment summary items to update the payment request with
      */
+    @NotNull
     @Generated
     @Selector("paymentSummaryItems")
     public native NSArray<? extends PKPaymentSummaryItem> paymentSummaryItems();
@@ -140,7 +150,7 @@ public class PKPaymentRequestUpdate extends NSObject {
      */
     @Generated
     @Selector("setPaymentSummaryItems:")
-    public native void setPaymentSummaryItems(NSArray<? extends PKPaymentSummaryItem> value);
+    public native void setPaymentSummaryItems(@NotNull NSArray<? extends PKPaymentSummaryItem> value);
 
     /**
      * The status of the payment request update. Set PKPaymentAuthorizationStatusSuccess for a successful update,
@@ -177,16 +187,104 @@ public class PKPaymentRequestUpdate extends NSObject {
     /**
      * The new shipping methods to update the payment request with. An empty array, the default value,
      * indicates that the shipping methods don't need updating.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setShippingMethods:")
-    public native void setShippingMethods(NSArray<? extends PKShippingMethod> value);
+    public native void setShippingMethods(@NotNull NSArray<? extends PKShippingMethod> value);
 
     /**
      * The new shipping methods to update the payment request with. An empty array, the default value,
      * indicates that the shipping methods don't need updating.
+     * 
+     * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("shippingMethods")
     public native NSArray<? extends PKShippingMethod> shippingMethods();
+
+    /**
+     * The new automatic reload payment request to update the payment request with.
+     * The default value is `nil`, which indicates no update is needed.
+     * 
+     * The billing agreement cannot be changed.
+     * 
+     * This property cannot be used simultaneously with multi token contexts or recurring payment requests.
+     * 
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("automaticReloadPaymentRequest")
+    public native PKAutomaticReloadPaymentRequest automaticReloadPaymentRequest();
+
+    /**
+     * The new array of payment token contexts to update the payment request with.
+     * The default value is `nil`, which indicates no update is needed.
+     * 
+     * This property cannot be used simultaneously with recurring or automatic reload payment requests.
+     * 
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("multiTokenContexts")
+    public native NSArray<? extends PKPaymentTokenContext> multiTokenContexts();
+
+    /**
+     * The new recurring payment request to update the payment request with.
+     * The default value is `nil`, which indicates no update is needed.
+     * 
+     * The billing agreement cannot be changed.
+     * 
+     * This property cannot be used simultaneously with multi token contexts or automatic reload payment requests.
+     * 
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("recurringPaymentRequest")
+    public native PKRecurringPaymentRequest recurringPaymentRequest();
+
+    /**
+     * The new automatic reload payment request to update the payment request with.
+     * The default value is `nil`, which indicates no update is needed.
+     * 
+     * The billing agreement cannot be changed.
+     * 
+     * This property cannot be used simultaneously with multi token contexts or recurring payment requests.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setAutomaticReloadPaymentRequest:")
+    public native void setAutomaticReloadPaymentRequest(@Nullable PKAutomaticReloadPaymentRequest value);
+
+    /**
+     * The new array of payment token contexts to update the payment request with.
+     * The default value is `nil`, which indicates no update is needed.
+     * 
+     * This property cannot be used simultaneously with recurring or automatic reload payment requests.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setMultiTokenContexts:")
+    public native void setMultiTokenContexts(@Nullable NSArray<? extends PKPaymentTokenContext> value);
+
+    /**
+     * The new recurring payment request to update the payment request with.
+     * The default value is `nil`, which indicates no update is needed.
+     * 
+     * The billing agreement cannot be changed.
+     * 
+     * This property cannot be used simultaneously with multi token contexts or automatic reload payment requests.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setRecurringPaymentRequest:")
+    public native void setRecurringPaymentRequest(@Nullable PKRecurringPaymentRequest value);
 }

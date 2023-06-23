@@ -28,9 +28,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
- *
+ * API-Since: 13.0
  */
 @Generated
 @Library("Vision")
@@ -62,40 +64,45 @@ public class VNFeaturePrintObservation extends VNObservation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * Computes the distance between two observations.
-     * <p>
+     * 
      * The larger the distance the more dissimlar the feature prints are. In case of an error this method returns false
      * with an error describing the error condition, for instance comparing two non-comparable feature prints.
      */
     @Generated
     @Selector("computeDistance:toFeaturePrintObservation:error:")
-    public native boolean computeDistanceToFeaturePrintObservationError(FloatPtr outDistance,
-            VNFeaturePrintObservation featurePrint, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean computeDistanceToFeaturePrintObservationError(@NotNull FloatPtr outDistance,
+            @NotNull VNFeaturePrintObservation featurePrint,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * The feature print data.
      */
+    @NotNull
     @Generated
     @Selector("data")
     public native NSData data();
@@ -135,7 +142,7 @@ public class VNFeaturePrintObservation extends VNObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNFeaturePrintObservation initWithCoder(NSCoder coder);
+    public native VNFeaturePrintObservation initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -154,9 +161,10 @@ public class VNFeaturePrintObservation extends VNObservation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

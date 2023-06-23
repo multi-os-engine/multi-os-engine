@@ -35,10 +35,14 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSURLSessionDownloadTask is a task that represents a download to
  * local storage.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("Foundation")
@@ -70,22 +74,25 @@ public class NSURLSessionDownloadTask extends NSURLSessionTask {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,10 +127,18 @@ public class NSURLSessionDownloadTask extends NSURLSessionTask {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Please use -[NSURLSession downloadTaskWithRequest:] or other NSURLSession methods to create
+     * instances
+     */
+    @Deprecated
     @Generated
     @Owned
     @Selector("new")
@@ -161,8 +176,15 @@ public class NSURLSessionDownloadTask extends NSURLSessionTask {
     @Generated
     @Selector("cancelByProducingResumeData:")
     public native void cancelByProducingResumeData(
-            @ObjCBlock(name = "call_cancelByProducingResumeData") Block_cancelByProducingResumeData completionHandler);
+            @NotNull @ObjCBlock(name = "call_cancelByProducingResumeData") Block_cancelByProducingResumeData completionHandler);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Please use -[NSURLSession downloadTaskWithRequest:] or other NSURLSession methods to create
+     * instances
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native NSURLSessionDownloadTask init();
@@ -171,6 +193,6 @@ public class NSURLSessionDownloadTask extends NSURLSessionTask {
     @Generated
     public interface Block_cancelByProducingResumeData {
         @Generated
-        void call_cancelByProducingResumeData(NSData resumeData);
+        void call_cancelByProducingResumeData(@Nullable NSData resumeData);
     }
 }

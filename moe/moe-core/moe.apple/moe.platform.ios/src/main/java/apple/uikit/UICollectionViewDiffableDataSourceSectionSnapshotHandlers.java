@@ -24,7 +24,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -56,31 +61,35 @@ public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -116,9 +125,10 @@ public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -136,38 +146,40 @@ public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType
     @Generated
     @Selector("setShouldCollapseItemHandler:")
     public native void setShouldCollapseItemHandler(
-            @ObjCBlock(name = "call_setShouldCollapseItemHandler") Block_setShouldCollapseItemHandler value);
+            @Nullable @ObjCBlock(name = "call_setShouldCollapseItemHandler") Block_setShouldCollapseItemHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setShouldCollapseItemHandler {
         @Generated
-        boolean call_setShouldCollapseItemHandler(@Mapped(ObjCObjectMapper.class) Object arg0);
+        boolean call_setShouldCollapseItemHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
     @Generated
     @Selector("setShouldExpandItemHandler:")
     public native void setShouldExpandItemHandler(
-            @ObjCBlock(name = "call_setShouldExpandItemHandler") Block_setShouldExpandItemHandler value);
+            @Nullable @ObjCBlock(name = "call_setShouldExpandItemHandler") Block_setShouldExpandItemHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setShouldExpandItemHandler {
         @Generated
-        boolean call_setShouldExpandItemHandler(@Mapped(ObjCObjectMapper.class) Object arg0);
+        boolean call_setShouldExpandItemHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
     @Generated
     @Selector("setSnapshotForExpandingParentItemHandler:")
     public native void setSnapshotForExpandingParentItemHandler(
-            @ObjCBlock(name = "call_setSnapshotForExpandingParentItemHandler") Block_setSnapshotForExpandingParentItemHandler value);
+            @Nullable @ObjCBlock(name = "call_setSnapshotForExpandingParentItemHandler") Block_setSnapshotForExpandingParentItemHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setSnapshotForExpandingParentItemHandler {
+        @NotNull
         @Generated
         NSDiffableDataSourceSectionSnapshot<Object> call_setSnapshotForExpandingParentItemHandler(
-                @Mapped(ObjCObjectMapper.class) Object arg0, NSDiffableDataSourceSectionSnapshot<Object> arg1);
+                @NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
+                @NotNull NSDiffableDataSourceSectionSnapshot<Object> arg1);
     }
 
     @Generated
@@ -177,27 +189,28 @@ public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType
     @Generated
     @Selector("setWillCollapseItemHandler:")
     public native void setWillCollapseItemHandler(
-            @ObjCBlock(name = "call_setWillCollapseItemHandler") Block_setWillCollapseItemHandler value);
+            @Nullable @ObjCBlock(name = "call_setWillCollapseItemHandler") Block_setWillCollapseItemHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setWillCollapseItemHandler {
         @Generated
-        void call_setWillCollapseItemHandler(@Mapped(ObjCObjectMapper.class) Object arg0);
+        void call_setWillCollapseItemHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
     @Generated
     @Selector("setWillExpandItemHandler:")
     public native void setWillExpandItemHandler(
-            @ObjCBlock(name = "call_setWillExpandItemHandler") Block_setWillExpandItemHandler value);
+            @Nullable @ObjCBlock(name = "call_setWillExpandItemHandler") Block_setWillExpandItemHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setWillExpandItemHandler {
         @Generated
-        void call_setWillExpandItemHandler(@Mapped(ObjCObjectMapper.class) Object arg0);
+        void call_setWillExpandItemHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
+    @Nullable
     @Generated
     @Selector("shouldCollapseItemHandler")
     @ObjCBlock(name = "call_shouldCollapseItemHandler_ret")
@@ -207,9 +220,10 @@ public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType
     @Generated
     public interface Block_shouldCollapseItemHandler_ret {
         @Generated
-        boolean call_shouldCollapseItemHandler_ret(@Mapped(ObjCObjectMapper.class) Object arg0);
+        boolean call_shouldCollapseItemHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
+    @Nullable
     @Generated
     @Selector("shouldExpandItemHandler")
     @ObjCBlock(name = "call_shouldExpandItemHandler_ret")
@@ -219,9 +233,10 @@ public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType
     @Generated
     public interface Block_shouldExpandItemHandler_ret {
         @Generated
-        boolean call_shouldExpandItemHandler_ret(@Mapped(ObjCObjectMapper.class) Object arg0);
+        boolean call_shouldExpandItemHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
+    @Nullable
     @Generated
     @Selector("snapshotForExpandingParentItemHandler")
     @ObjCBlock(name = "call_snapshotForExpandingParentItemHandler_ret")
@@ -230,9 +245,11 @@ public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_snapshotForExpandingParentItemHandler_ret {
+        @NotNull
         @Generated
         NSDiffableDataSourceSectionSnapshot<Object> call_snapshotForExpandingParentItemHandler_ret(
-                @Mapped(ObjCObjectMapper.class) Object arg0, NSDiffableDataSourceSectionSnapshot<Object> arg1);
+                @NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
+                @NotNull NSDiffableDataSourceSectionSnapshot<Object> arg1);
     }
 
     @Generated
@@ -244,6 +261,7 @@ public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("willCollapseItemHandler")
     @ObjCBlock(name = "call_willCollapseItemHandler_ret")
@@ -253,9 +271,10 @@ public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType
     @Generated
     public interface Block_willCollapseItemHandler_ret {
         @Generated
-        void call_willCollapseItemHandler_ret(@Mapped(ObjCObjectMapper.class) Object arg0);
+        void call_willCollapseItemHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
+    @Nullable
     @Generated
     @Selector("willExpandItemHandler")
     @ObjCBlock(name = "call_willExpandItemHandler_ret")
@@ -265,6 +284,6 @@ public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType
     @Generated
     public interface Block_willExpandItemHandler_ret {
         @Generated
-        void call_willExpandItemHandler_ret(@Mapped(ObjCObjectMapper.class) Object arg0);
+        void call_willExpandItemHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 }

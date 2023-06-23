@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] CTUnderlineStyle
- * <p>
+ * 
  * Underline style specifiers.
- * <p>
+ * 
  * These underline type specifiers can be applied to the value set
  * with the kCTUnderlineStyleAttributeName attribute to tell
  * CoreText that you want a different underline style.

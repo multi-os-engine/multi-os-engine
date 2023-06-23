@@ -41,7 +41,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.3
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -72,22 +77,25 @@ public class MKLocalSearchCompleter extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,9 +130,10 @@ public class MKLocalSearchCompleter extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,6 +165,7 @@ public class MKLocalSearchCompleter extends NSObject {
     @Selector("cancel")
     public native void cancel();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -163,7 +173,12 @@ public class MKLocalSearchCompleter extends NSObject {
 
     /**
      * Defaults to MKSearchCompletionFilterTypeLocationsAndQueries
+     * 
+     * API-Since: 9.3
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use resultTypes
      */
+    @Deprecated
     @Generated
     @Selector("filterType")
     @NInt
@@ -177,6 +192,7 @@ public class MKLocalSearchCompleter extends NSObject {
     @Selector("isSearching")
     public native boolean isSearching();
 
+    @NotNull
     @Generated
     @Selector("queryFragment")
     public native String queryFragment();
@@ -186,16 +202,18 @@ public class MKLocalSearchCompleter extends NSObject {
     @ByValue
     public native MKCoordinateRegion region();
 
+    @NotNull
     @Generated
     @Selector("results")
     public native NSArray<? extends MKLocalSearchCompletion> results();
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MKLocalSearchCompleterDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) MKLocalSearchCompleterDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) MKLocalSearchCompleterDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) MKLocalSearchCompleterDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -208,32 +226,50 @@ public class MKLocalSearchCompleter extends NSObject {
 
     /**
      * Defaults to MKSearchCompletionFilterTypeLocationsAndQueries
+     * 
+     * API-Since: 9.3
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use resultTypes
      */
+    @Deprecated
     @Generated
     @Selector("setFilterType:")
     public native void setFilterType(@NInt long value);
 
     @Generated
     @Selector("setQueryFragment:")
-    public native void setQueryFragment(String value);
+    public native void setQueryFragment(@NotNull String value);
 
     @Generated
     @Selector("setRegion:")
     public native void setRegion(@ByValue MKCoordinateRegion value);
 
+    /**
+     * API-Since: 13.0
+     */
+    @Nullable
     @Generated
     @Selector("pointOfInterestFilter")
     public native MKPointOfInterestFilter pointOfInterestFilter();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("resultTypes")
     @NUInt
     public native long resultTypes();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setPointOfInterestFilter:")
-    public native void setPointOfInterestFilter(MKPointOfInterestFilter value);
+    public native void setPointOfInterestFilter(@Nullable MKPointOfInterestFilter value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setResultTypes:")
     public native void setResultTypes(@NUInt long value);

@@ -22,13 +22,17 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVMutableAssetDownloadStorageManagementPolicy
- * <p>
+ * 
  * A mutable subclass of AVAssetDownloadStorageManagementPolicy.
- * <p>
+ * 
  * System will put in best-effort to evict all the assets based on expirationDate before evicting based on priority.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("AVFoundation")
@@ -60,22 +64,25 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -90,9 +97,10 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
 
     /**
      * [@property] expirationDate
-     * <p>
+     * 
      * Returns the expiration date of asset.
      */
+    @NotNull
     @Generated
     @Selector("expirationDate")
     public native NSDate expirationDate();
@@ -123,9 +131,10 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -134,12 +143,13 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
 
     /**
      * [@property] priority
-     * <p>
+     * 
      * Indicates the eviction priority of downloaded asset.
-     * <p>
+     * 
      * Assets with default priority will be purged first before assets with higher priorities.
      * In case this is not set, default priority is used.
      */
+    @NotNull
     @Generated
     @Selector("priority")
     public native String priority();
@@ -154,24 +164,24 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
 
     /**
      * [@property] expirationDate
-     * <p>
+     * 
      * Returns the expiration date of asset.
      */
     @Generated
     @Selector("setExpirationDate:")
-    public native void setExpirationDate(NSDate value);
+    public native void setExpirationDate(@NotNull NSDate value);
 
     /**
      * [@property] priority
-     * <p>
+     * 
      * Indicates the eviction priority of downloaded asset.
-     * <p>
+     * 
      * Assets with default priority will be purged first before assets with higher priorities.
      * In case this is not set, default priority is used.
      */
     @Generated
     @Selector("setPriority:")
-    public native void setPriority(String value);
+    public native void setPriority(@NotNull String value);
 
     @Generated
     @Selector("setVersion:")

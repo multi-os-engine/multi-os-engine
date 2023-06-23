@@ -18,7 +18,6 @@ package apple.quartzcore;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGColorSpaceRef;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -47,10 +46,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSDictionary;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Note: The default value of the `opaque' property for CAMetalLayer
  * instances is true.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("QuartzCore")
@@ -82,22 +87,25 @@ public class CAMetalLayer extends CALayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,15 +114,17 @@ public class CAMetalLayer extends CALayer {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("defaultActionForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native CAAction defaultActionForKey(String event);
+    public static native CAAction defaultActionForKey(@NotNull String event);
 
+    @Nullable
     @Generated
     @Selector("defaultValueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultValueForKey(String key);
+    public static native Object defaultValueForKey(@NotNull String key);
 
     @Generated
     @Selector("description")
@@ -142,9 +152,10 @@ public class CAMetalLayer extends CALayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Selector("layer")
@@ -152,7 +163,7 @@ public class CAMetalLayer extends CALayer {
 
     @Generated
     @Selector("needsDisplayForKey:")
-    public static native boolean needsDisplayForKey(String key);
+    public static native boolean needsDisplayForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -187,6 +198,7 @@ public class CAMetalLayer extends CALayer {
      * On macOS this defaults to nil and must be set explicitly before asking for
      * the first drawable.
      */
+    @Nullable
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -221,11 +233,11 @@ public class CAMetalLayer extends CALayer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAMetalLayer initWithCoder(NSCoder coder);
+    public native CAMetalLayer initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
-    public native CAMetalLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
+    public native CAMetalLayer initWithLayer(@NotNull @Mapped(ObjCObjectMapper.class) Object layer);
 
     /**
      * Get the swap queue's next available drawable. Always blocks until a drawable
@@ -235,6 +247,7 @@ public class CAMetalLayer extends CALayer {
      * has elapsed. (except when `allowsNextDrawableTimeout' is set to NO)
      * 3) Process is out of memory.
      */
+    @Nullable
     @Generated
     @Selector("nextDrawable")
     @MappedReturn(ObjCObjectMapper.class)
@@ -269,7 +282,7 @@ public class CAMetalLayer extends CALayer {
      */
     @Generated
     @Selector("setDevice:")
-    public native void setDevice(@Mapped(ObjCObjectMapper.class) MTLDevice value);
+    public native void setDevice(@Nullable @Mapped(ObjCObjectMapper.class) MTLDevice value);
 
     /**
      * This property controls the pixel dimensions of the returned drawable
@@ -317,6 +330,8 @@ public class CAMetalLayer extends CALayer {
      * nil if * the system does not have a free drawable available. The default
      * value is YES. If set to NO, then `-nextDrawable' will block forever until a
      * free drawable is available.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allowsNextDrawableTimeout")
@@ -327,6 +342,8 @@ public class CAMetalLayer extends CALayer {
      * nil if * the system does not have a free drawable available. The default
      * value is YES. If set to NO, then `-nextDrawable' will block forever until a
      * free drawable is available.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAllowsNextDrawableTimeout:")
@@ -347,6 +364,7 @@ public class CAMetalLayer extends CALayer {
      * If non-nil, the rendered content will be colormatched to the colorspace of
      * the context containing this layer (typically the display's colorspace).
      */
+    @Nullable
     @Generated
     @Selector("colorspace")
     public native CGColorSpaceRef colorspace();
@@ -354,12 +372,14 @@ public class CAMetalLayer extends CALayer {
     @Generated
     @Selector("cornerCurveExpansionFactor:")
     @NFloat
-    public static native double cornerCurveExpansionFactor(String curve);
+    public static native double cornerCurveExpansionFactor(@NotNull String curve);
 
     /**
      * Controls the number maximum number of drawables in the swap queue. The
      * default value is 3. Values set outside of range [2, 3] are ignored and an
      * exception will be thrown.
+     * 
+     * API-Since: 11.2
      */
     @Generated
     @Selector("maximumDrawableCount")
@@ -368,7 +388,10 @@ public class CAMetalLayer extends CALayer {
 
     /**
      * This property returns the preferred MTLDevice for this CAMetalLayer.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("preferredDevice")
     @MappedReturn(ObjCObjectMapper.class)
@@ -381,14 +404,86 @@ public class CAMetalLayer extends CALayer {
      */
     @Generated
     @Selector("setColorspace:")
-    public native void setColorspace(CGColorSpaceRef value);
+    public native void setColorspace(@Nullable CGColorSpaceRef value);
 
     /**
      * Controls the number maximum number of drawables in the swap queue. The
      * default value is 3. Values set outside of range [2, 3] are ignored and an
      * exception will be thrown.
+     * 
+     * API-Since: 11.2
      */
     @Generated
     @Selector("setMaximumDrawableCount:")
     public native void setMaximumDrawableCount(@NUInt long value);
+
+    /**
+     * Metadata describing extended dynamic range content in the layer's drawable.
+     * Must be set before calling nextDrawable. If non-nil, content may be
+     * tone mapped to match the current display characteristics. If nil, samples
+     * will be rendered without tone mapping and values above the maximum EDR value
+     * -[NSScreen maximumExtendedDynamicRangeColorComponentValue] may be clamped.
+     * Defaults to nil.
+     * 
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("EDRMetadata")
+    public native CAEDRMetadata EDRMetadata();
+
+    /**
+     * When non-nil, controls the options of developer HUD. Defaults to nil.
+     * 
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("developerHUDProperties")
+    public native NSDictionary<?, ?> developerHUDProperties();
+
+    /**
+     * When non-nil, controls the options of developer HUD. Defaults to nil.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setDeveloperHUDProperties:")
+    public native void setDeveloperHUDProperties(@Nullable NSDictionary<?, ?> value);
+
+    /**
+     * Metadata describing extended dynamic range content in the layer's drawable.
+     * Must be set before calling nextDrawable. If non-nil, content may be
+     * tone mapped to match the current display characteristics. If nil, samples
+     * will be rendered without tone mapping and values above the maximum EDR value
+     * -[NSScreen maximumExtendedDynamicRangeColorComponentValue] may be clamped.
+     * Defaults to nil.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setEDRMetadata:")
+    public native void setEDRMetadata(@Nullable CAEDRMetadata value);
+
+    /**
+     * If any rendering context on the screen has this enabled, all content will be
+     * clamped to its NSScreen’s maximumExtendedDynamicRangeColorComponentValue
+     * rather than 1.0. The default is NO.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setWantsExtendedDynamicRangeContent:")
+    public native void setWantsExtendedDynamicRangeContent(boolean value);
+
+    /**
+     * If any rendering context on the screen has this enabled, all content will be
+     * clamped to its NSScreen’s maximumExtendedDynamicRangeColorComponentValue
+     * rather than 1.0. The default is NO.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("wantsExtendedDynamicRangeContent")
+    public native boolean wantsExtendedDynamicRangeContent();
 }

@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * UITextAutocorrectionType
- * <p>
+ * 
  * Controls keyboard autocorrection behavior for a text widget.
  * Note: Some input methods do not support inline autocorrection, and
  * instead use a conversion and/or candidate selection methodology. In such

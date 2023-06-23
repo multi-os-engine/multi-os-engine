@@ -11,7 +11,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 13.4
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -19,10 +23,10 @@ import org.moe.natj.objc.ann.Selector;
 public interface CPTemplateApplicationDashboardSceneDelegate extends UISceneDelegate {
     /**
      * The Dashboard navigation widget has connected and is ready to present content.
-     * <p>
+     * 
      * Your app should create its view controller and assign it to the @c rootViewController property
      * of this window.
-     * <p>
+     * 
      * [@note] The dashboardController object will be strongly retained by the CPTemplateApplicationDashboardScene, the
      * delegate does not need to retain it.
      */
@@ -30,8 +34,8 @@ public interface CPTemplateApplicationDashboardSceneDelegate extends UISceneDele
     @IsOptional
     @Selector("templateApplicationDashboardScene:didConnectDashboardController:toWindow:")
     default void templateApplicationDashboardSceneDidConnectDashboardControllerToWindow(
-            CPTemplateApplicationDashboardScene templateApplicationDashboardScene,
-            CPDashboardController dashboardController, UIWindow window) {
+            @NotNull CPTemplateApplicationDashboardScene templateApplicationDashboardScene,
+            @NotNull CPDashboardController dashboardController, @NotNull UIWindow window) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -42,8 +46,8 @@ public interface CPTemplateApplicationDashboardSceneDelegate extends UISceneDele
     @IsOptional
     @Selector("templateApplicationDashboardScene:didDisconnectDashboardController:fromWindow:")
     default void templateApplicationDashboardSceneDidDisconnectDashboardControllerFromWindow(
-            CPTemplateApplicationDashboardScene templateApplicationDashboardScene,
-            CPDashboardController dashboardController, UIWindow window) {
+            @NotNull CPTemplateApplicationDashboardScene templateApplicationDashboardScene,
+            @NotNull CPDashboardController dashboardController, @NotNull UIWindow window) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

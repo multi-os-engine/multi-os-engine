@@ -8,10 +8,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] AVRoutePickerViewDelegate
- * <p>
+ * 
  * Defines an interface for delegates of AVRoutePickerView.
  */
 @Generated
@@ -21,25 +22,25 @@ import org.moe.natj.objc.ann.Selector;
 public interface AVRoutePickerViewDelegate {
     /**
      * routePickerViewDidEndPresentingRoutes:
-     * <p>
+     * 
      * Informs the delegate that the route picker view finished presenting routes to the user.
      */
     @Generated
     @IsOptional
     @Selector("routePickerViewDidEndPresentingRoutes:")
-    default void routePickerViewDidEndPresentingRoutes(AVRoutePickerView routePickerView) {
+    default void routePickerViewDidEndPresentingRoutes(@NotNull AVRoutePickerView routePickerView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * routePickerViewWillBeginPresentingRoutes:
-     * <p>
+     * 
      * Informs the delegate that the route picker view will start presenting routes to the user.
      */
     @Generated
     @IsOptional
     @Selector("routePickerViewWillBeginPresentingRoutes:")
-    default void routePickerViewWillBeginPresentingRoutes(AVRoutePickerView routePickerView) {
+    default void routePickerViewWillBeginPresentingRoutes(@NotNull AVRoutePickerView routePickerView) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

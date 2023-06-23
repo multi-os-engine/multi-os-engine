@@ -42,13 +42,26 @@ public final class UIBarButtonSystemItem {
     @Generated @NInt public static final long Pause = 0x0000000000000012L;
     @Generated @NInt public static final long Rewind = 0x0000000000000013L;
     @Generated @NInt public static final long FastForward = 0x0000000000000014L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long Undo = 0x0000000000000015L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long Redo = 0x0000000000000016L;
-    @Generated @NInt public static final long PageCurl = 0x0000000000000017L;
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated @Generated @NInt public static final long PageCurl = 0x0000000000000017L;
 
     @Generated
     private UIBarButtonSystemItem() {
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long Close = 0x0000000000000018L;
 }

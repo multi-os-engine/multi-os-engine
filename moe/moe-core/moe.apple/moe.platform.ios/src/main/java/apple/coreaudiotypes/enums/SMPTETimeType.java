@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] SMPTE Time Types
- * <p>
+ * 
  * Constants that describe the type of SMPTE time.
  * [@constant] kSMPTETimeType24
  * 24 Frame

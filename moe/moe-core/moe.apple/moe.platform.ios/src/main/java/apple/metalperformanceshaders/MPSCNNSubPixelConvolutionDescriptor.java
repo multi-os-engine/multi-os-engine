@@ -23,12 +23,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNSubPixelConvolutionDescriptor can be used to create MPSCNNConvolution object that does sub pixel upsamling
  * and reshaping opeartion as described in
  * http://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Shi_Real-Time_Single_Image_CVPR_2016_paper.pdf
- * <p>
+ * 
  * Conceptually MPSCNNConvolution with subPixelScaleFactor > 1 can be thought of as filter performing regular CNN
  * convolution producing N output feature channels at each pixel of
  * an intermediate MPSImage followed by a kernel that rearranges/reshapes these N channels at each pixel of intermediate
@@ -51,12 +53,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * mod(x,r) ) + c ]
  * where x in [0,clipRect.size.width-1], y in [0,clipRect.size.height-1], c in [0,N/r^2 - 1]
  * [@endcode]
- * <p>
+ * 
  * The following conditions must be met:
  * 1) N (outputFeatureChannels) must be multiple of r^2 (subPixelScaleFactor * subPixelScaleFactor).
  * 2) The destination MPSImage to encode call must have at least N/r^2 + destinationFeatureChannelOffset channels.
  * 3) Number of feature channels in reshaped output image (N/r^2) can be any value when groups = 1 but must be multiple
  * of 4 when groups > 1.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -88,37 +92,43 @@ public class MPSCNNSubPixelConvolutionDescriptor extends MPSCNNConvolutionDescri
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("cnnConvolutionDescriptorWithKernelWidth:kernelHeight:inputFeatureChannels:outputFeatureChannels:")
     public static native MPSCNNSubPixelConvolutionDescriptor cnnConvolutionDescriptorWithKernelWidthKernelHeightInputFeatureChannelsOutputFeatureChannels(
             @NUInt long kernelWidth, @NUInt long kernelHeight, @NUInt long inputFeatureChannels,
             @NUInt long outputFeatureChannels);
 
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("cnnConvolutionDescriptorWithKernelWidth:kernelHeight:inputFeatureChannels:outputFeatureChannels:neuronFilter:")
     public static native MPSCNNSubPixelConvolutionDescriptor cnnConvolutionDescriptorWithKernelWidthKernelHeightInputFeatureChannelsOutputFeatureChannelsNeuronFilter(
             @NUInt long kernelWidth, @NUInt long kernelHeight, @NUInt long inputFeatureChannels,
-            @NUInt long outputFeatureChannels, MPSCNNNeuron neuronFilter);
+            @NUInt long outputFeatureChannels, @Nullable MPSCNNNeuron neuronFilter);
 
     @Generated
     @Selector("debugDescription")
@@ -139,7 +149,7 @@ public class MPSCNNSubPixelConvolutionDescriptor extends MPSCNNConvolutionDescri
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNSubPixelConvolutionDescriptor initWithCoder(NSCoder aDecoder);
+    public native MPSCNNSubPixelConvolutionDescriptor initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -158,9 +168,10 @@ public class MPSCNNSubPixelConvolutionDescriptor extends MPSCNNConvolutionDescri
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -177,7 +188,7 @@ public class MPSCNNSubPixelConvolutionDescriptor extends MPSCNNConvolutionDescri
 
     /**
      * [@property] subPixelScaleFactor
-     * <p>
+     * 
      * Upsampling scale factor. Each pixel in input is upsampled into a subPixelScaleFactor x subPixelScaleFactor pixel
      * block by rearranging
      * the outputFeatureChannels as described above. Default value is 1.
@@ -192,7 +203,7 @@ public class MPSCNNSubPixelConvolutionDescriptor extends MPSCNNConvolutionDescri
 
     /**
      * [@property] subPixelScaleFactor
-     * <p>
+     * 
      * Upsampling scale factor. Each pixel in input is upsampled into a subPixelScaleFactor x subPixelScaleFactor pixel
      * block by rearranging
      * the outputFeatureChannels as described above. Default value is 1.

@@ -44,7 +44,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Speech")
 @Runtime(ObjCRuntime.class)
@@ -80,22 +85,25 @@ public class SFSpeechRecognizer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +138,10 @@ public class SFSpeechRecognizer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -142,7 +151,7 @@ public class SFSpeechRecognizer extends NSObject {
     @Generated
     @Selector("requestAuthorization:")
     public static native void requestAuthorization(
-            @ObjCBlock(name = "call_requestAuthorization") Block_requestAuthorization handler);
+            @NotNull @ObjCBlock(name = "call_requestAuthorization") Block_requestAuthorization handler);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -165,6 +174,7 @@ public class SFSpeechRecognizer extends NSObject {
      * Note that supported does not mean currently available; some locales may require an internet connection, for
      * example.
      */
+    @NotNull
     @Generated
     @Selector("supportedLocales")
     public static native NSSet<? extends NSLocale> supportedLocales();
@@ -182,6 +192,7 @@ public class SFSpeechRecognizer extends NSObject {
     @NInt
     public native long defaultTaskHint();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -199,12 +210,13 @@ public class SFSpeechRecognizer extends NSObject {
      */
     @Generated
     @Selector("initWithLocale:")
-    public native SFSpeechRecognizer initWithLocale(NSLocale locale);
+    public native SFSpeechRecognizer initWithLocale(@NotNull NSLocale locale);
 
     @Generated
     @Selector("isAvailable")
     public native boolean isAvailable();
 
+    @NotNull
     @Generated
     @Selector("locale")
     public native NSLocale locale();
@@ -213,6 +225,7 @@ public class SFSpeechRecognizer extends NSObject {
      * Queue used the recognizer for recognition task handlers and delegate messages
      * Defaults to the main queue
      */
+    @NotNull
     @Generated
     @Selector("queue")
     public native NSOperationQueue queue();
@@ -221,20 +234,24 @@ public class SFSpeechRecognizer extends NSObject {
      * Advanced API: Recognize a custom request with with a delegate
      * The delegate will be weakly referenced by the returned task
      */
+    @NotNull
     @Generated
     @Selector("recognitionTaskWithRequest:delegate:")
-    public native SFSpeechRecognitionTask recognitionTaskWithRequestDelegate(SFSpeechRecognitionRequest request,
-            @Mapped(ObjCObjectMapper.class) SFSpeechRecognitionTaskDelegate delegate);
+    public native SFSpeechRecognitionTask recognitionTaskWithRequestDelegate(
+            @NotNull SFSpeechRecognitionRequest request,
+            @NotNull @Mapped(ObjCObjectMapper.class) SFSpeechRecognitionTaskDelegate delegate);
 
     /**
      * Recognize speech utterance with a request
      * If request.shouldReportPartialResults is true, result handler will be called
      * repeatedly with partial results, then finally with a final result or an error.
      */
+    @NotNull
     @Generated
     @Selector("recognitionTaskWithRequest:resultHandler:")
-    public native SFSpeechRecognitionTask recognitionTaskWithRequestResultHandler(SFSpeechRecognitionRequest request,
-            @ObjCBlock(name = "call_recognitionTaskWithRequestResultHandler") Block_recognitionTaskWithRequestResultHandler resultHandler);
+    public native SFSpeechRecognitionTask recognitionTaskWithRequestResultHandler(
+            @NotNull SFSpeechRecognitionRequest request,
+            @NotNull @ObjCBlock(name = "call_recognitionTaskWithRequestResultHandler") Block_recognitionTaskWithRequestResultHandler resultHandler);
 
     /**
      * Default task for requests, overrides SFSpeechRecognitionTaskHintUnspecified for requests
@@ -245,10 +262,10 @@ public class SFSpeechRecognizer extends NSObject {
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SFSpeechRecognizerDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) SFSpeechRecognizerDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) SFSpeechRecognizerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SFSpeechRecognizerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -265,13 +282,14 @@ public class SFSpeechRecognizer extends NSObject {
      */
     @Generated
     @Selector("setQueue:")
-    public native void setQueue(NSOperationQueue value);
+    public native void setQueue(@NotNull NSOperationQueue value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_recognitionTaskWithRequestResultHandler {
         @Generated
-        void call_recognitionTaskWithRequestResultHandler(SFSpeechRecognitionResult result, NSError error);
+        void call_recognitionTaskWithRequestResultHandler(@Nullable SFSpeechRecognitionResult result,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -283,6 +301,8 @@ public class SFSpeechRecognizer extends NSObject {
 
     /**
      * True if this recognition can handle requests with requiresOnDeviceRecognition set to true
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setSupportsOnDeviceRecognition:")
@@ -290,6 +310,8 @@ public class SFSpeechRecognizer extends NSObject {
 
     /**
      * True if this recognition can handle requests with requiresOnDeviceRecognition set to true
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("supportsOnDeviceRecognition")

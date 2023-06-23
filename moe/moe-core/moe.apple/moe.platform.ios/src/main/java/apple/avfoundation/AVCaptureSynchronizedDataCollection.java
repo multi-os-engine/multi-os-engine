@@ -25,15 +25,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCaptureSynchronizedDataCollection
- * <p>
+ * 
  * A collection of AVCaptureSynchronizedData objects.
- * <p>
+ * 
  * AVCaptureDataOutputSynchronizer's -dataOutputSynchronizer:didOutputSynchronizedDataCollection: delegate method
- * delivers a collection of AVCaptureSynchronizedData objects which can be iterated by use AVCaptureOutput.
+ * delivers a collection of AVCaptureSynchronizedData objects which can be iterated by AVCaptureOutput.
  * AVCaptureSynchronizedDataCollection supports object subscripting and fast enumeration of the data outputs as keys.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("AVFoundation")
@@ -65,31 +69,34 @@ public class AVCaptureSynchronizedDataCollection extends NSObject implements NSF
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] count
-     * <p>
+     * 
      * The number of items in the collection.
-     * <p>
+     * 
      * Returns the number of data output / synchronized data pairs present in the collection.
      */
     @Generated
@@ -100,8 +107,8 @@ public class AVCaptureSynchronizedDataCollection extends NSObject implements NSF
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
+    public native long countByEnumeratingWithStateObjectsCount(@NotNull VoidPtr state,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
     @Generated
     @Selector("debugDescription")
@@ -137,9 +144,10 @@ public class AVCaptureSynchronizedDataCollection extends NSObject implements NSF
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -148,19 +156,22 @@ public class AVCaptureSynchronizedDataCollection extends NSObject implements NSF
 
     /**
      * objectForKeyedSubscript:
-     * <p>
+     * 
      * Method that provides support for object subscripting.
-     * <p>
+     * 
      * AVCaptureSynchronizedDataCollection supports object subscripting. If you'd like to find the synchronized data for
      * a given data output, simply:
      * AVCaptureSynchronizedData *synchronizedData = synchronizedDataCollection[dataOutput];
-     *
-     * @param key The data output whose synchronized data you'd like to inspect.
-     * @return The synchronized data object associated with the provided output, or nil, if there is none.
+     * 
+     * @param key
+     *            The data output whose synchronized data you'd like to inspect.
+     * @return
+     *         The synchronized data object associated with the provided output, or nil, if there is none.
      */
+    @Nullable
     @Generated
     @Selector("objectForKeyedSubscript:")
-    public native AVCaptureSynchronizedData objectForKeyedSubscript(AVCaptureOutput key);
+    public native AVCaptureSynchronizedData objectForKeyedSubscript(@NotNull AVCaptureOutput key);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -180,15 +191,18 @@ public class AVCaptureSynchronizedDataCollection extends NSObject implements NSF
 
     /**
      * synchronizedDataForCaptureOutput:
-     * <p>
+     * 
      * Provides the synchronized data object for a given capture output.
-     *
-     * @param captureOutput The data output whose synchronized data you'd like to inspect.
-     * @return The synchronized data object associated with the provided output, or nil, if there is none.
+     * 
+     * @param captureOutput
+     *                      The data output whose synchronized data you'd like to inspect.
+     * @return
+     *         The synchronized data object associated with the provided output, or nil, if there is none.
      */
+    @Nullable
     @Generated
     @Selector("synchronizedDataForCaptureOutput:")
-    public native AVCaptureSynchronizedData synchronizedDataForCaptureOutput(AVCaptureOutput captureOutput);
+    public native AVCaptureSynchronizedData synchronizedDataForCaptureOutput(@NotNull AVCaptureOutput captureOutput);
 
     @Generated
     @Selector("version")

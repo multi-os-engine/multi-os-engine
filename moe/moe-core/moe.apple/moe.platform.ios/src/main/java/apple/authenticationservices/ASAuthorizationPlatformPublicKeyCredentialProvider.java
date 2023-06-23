@@ -23,7 +23,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
@@ -54,48 +59,53 @@ public class ASAuthorizationPlatformPublicKeyCredentialProvider extends NSObject
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * Create a request to authenticate using an existing credential.
-     *
+     * 
      * @param challenge The challenge to sign.
      */
+    @NotNull
     @Generated
     @Selector("createCredentialAssertionRequestWithChallenge:")
     public native ASAuthorizationPlatformPublicKeyCredentialAssertionRequest createCredentialAssertionRequestWithChallenge(
-            NSData challenge);
+            @NotNull NSData challenge);
 
     /**
      * Create a request to register a new platform credential.
-     *
+     * 
      * @param challenge The challenge to sign.
      * @param name      The user name for the new credential.
      * @param userID    An identifier to be stored alongside the credential, which will be returned with the credential
      *                  when it is used to authenticate.
      */
+    @NotNull
     @Generated
     @Selector("createCredentialRegistrationRequestWithChallenge:name:userID:")
     public native ASAuthorizationPlatformPublicKeyCredentialRegistrationRequest createCredentialRegistrationRequestWithChallengeNameUserID(
-            NSData challenge, String name, NSData userID);
+            @NotNull NSData challenge, @NotNull String name, @NotNull NSData userID);
 
     @Generated
     @Selector("debugDescription")
@@ -117,7 +127,7 @@ public class ASAuthorizationPlatformPublicKeyCredentialProvider extends NSObject
     @Generated
     @Selector("initWithRelyingPartyIdentifier:")
     public native ASAuthorizationPlatformPublicKeyCredentialProvider initWithRelyingPartyIdentifier(
-            String relyingPartyIdentifier);
+            @NotNull String relyingPartyIdentifier);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -136,9 +146,10 @@ public class ASAuthorizationPlatformPublicKeyCredentialProvider extends NSObject
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -148,6 +159,7 @@ public class ASAuthorizationPlatformPublicKeyCredentialProvider extends NSObject
     /**
      * The Relying Party identifier used for all requests created by this object.
      */
+    @NotNull
     @Generated
     @Selector("relyingPartyIdentifier")
     public native String relyingPartyIdentifier();

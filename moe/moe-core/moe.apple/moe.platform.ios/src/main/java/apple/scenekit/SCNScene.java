@@ -54,10 +54,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNScene
- * <p>
+ * 
  * SCNScene is the class that describes a 3d scene. It encapsulates a node hierarchy.
  */
 @Generated
@@ -90,22 +92,25 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -140,9 +145,10 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,25 +169,25 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
 
     /**
      * sceneNamed:
-     * <p>
+     * 
      * Creates and returns a scene associated with the specified filename.
-     * <p>
+     * 
      * This method initializes with no options and does not check for errors. The resulting object is not cached.
-     *
+     * 
      * @param name The name of the file. The method looks for a file with the specified name in the application’s main
      *             bundle.
      */
     @Generated
     @Selector("sceneNamed:")
-    public static native SCNScene sceneNamed(String name);
+    public static native SCNScene sceneNamed(@NotNull String name);
 
     /**
      * sceneNamed:options:
-     * <p>
+     * 
      * Creates and returns a scene associated with the specified filename.
-     * <p>
+     * 
      * This method initializes with no options and does not check for errors. The resulting object is not cached.
-     *
+     * 
      * @param name      The name of the file. The method looks for a file with the specified name in the application’s
      *                  main bundle.
      * @param directory The name of the bundle sub-directory to search into.
@@ -189,21 +195,24 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      */
     @Generated
     @Selector("sceneNamed:inDirectory:options:")
-    public static native SCNScene sceneNamedInDirectoryOptions(String name, String directory,
-            NSDictionary<String, ?> options);
+    public static native SCNScene sceneNamedInDirectoryOptions(@NotNull String name, @Nullable String directory,
+            @Nullable NSDictionary<String, ?> options);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("sceneWithMDLAsset:")
-    public static native SCNScene sceneWithMDLAsset(MDLAsset mdlAsset);
+    public static native SCNScene sceneWithMDLAsset(@NotNull MDLAsset mdlAsset);
 
     /**
      * sceneWithURL:options:error:
-     * <p>
+     * 
      * Creates and returns a scene from the specified URL.
-     * <p>
+     * 
      * This method is here for convenience. It is equivalent to initializing a SCNSceneSource with the specified
      * url and options, and asking it for its scene with the same options.
-     *
+     * 
      * @param url     The URL to the 3D file.
      * @param options An options dictionary. The relevant keys are documented in the SCNSceneSource class.
      * @param error   A NSError object passed by reference to get more information about the error when a nil is
@@ -211,8 +220,9 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      */
     @Generated
     @Selector("sceneWithURL:options:error:")
-    public static native SCNScene sceneWithURLOptionsError(NSURL url, NSDictionary<String, ?> options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native SCNScene sceneWithURLOptionsError(@NotNull NSURL url,
+            @Nullable NSDictionary<String, ?> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("setVersion:")
@@ -236,47 +246,50 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      */
     @Generated
     @Selector("addParticleSystem:withTransform:")
-    public native void addParticleSystemWithTransform(SCNParticleSystem system, @ByValue SCNMatrix4 transform);
+    public native void addParticleSystemWithTransform(@NotNull SCNParticleSystem system, @ByValue SCNMatrix4 transform);
 
     /**
      * attributeForKey:
-     * <p>
+     * 
      * Retrieves a scene attribute.
-     * <p>
+     * 
      * The available keys are listed in the "Scene attributes" group.
-     *
+     * 
      * @param key An NSString object that specifies the attribute to be read
      */
+    @Nullable
     @Generated
     @Selector("attributeForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object attributeForKey(String key);
+    public native Object attributeForKey(@NotNull String key);
 
     /**
      * [@property] background
-     * <p>
+     * 
      * Specifies the background of the receiver.
-     * <p>
+     * 
      * The background is rendered before the rest of the scene.
      * The background can be rendered as a skybox by setting a cube map as described in SCNMaterialProperty.h
      * Colors are supported starting in macOS 10.12 and iOS 10. Prior to that you can use SCNView.backgroundColor.
      * MDLSkyCubeTexture is supported starting in macOS 10.13 and iOS 11.
      */
+    @NotNull
     @Generated
     @Selector("background")
     public native SCNMaterialProperty background();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] fogColor
-     * <p>
+     * 
      * Specifies the receiver's fog color (NSColor or CGColorRef). Animatable. Defaults to white.
-     * <p>
+     * 
      * The initial value is a NSColor.
      */
+    @NotNull
     @Generated
     @Selector("fogColor")
     @MappedReturn(ObjCObjectMapper.class)
@@ -284,9 +297,9 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
 
     /**
      * [@property] fogDensityExponent
-     * <p>
+     * 
      * Specifies the receiver's fog power exponent. Animatable. Defaults to 1.
-     * <p>
+     * 
      * Controls the attenuation between the start and end fog distances. 0 means a constant fog, 1 a linear fog and 2 a
      * quadratic fog, but any positive value will work.
      */
@@ -297,7 +310,7 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
 
     /**
      * [@property] fogEndDistance
-     * <p>
+     * 
      * Specifies the receiver's fog end distance. Animatable. Defaults to 0.
      */
     @Generated
@@ -307,7 +320,7 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
 
     /**
      * [@property] fogStartDistance
-     * <p>
+     * 
      * Specifies the receiver's fog start distance. Animatable. Defaults to 0.
      */
     @Generated
@@ -321,13 +334,13 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNScene initWithCoder(NSCoder coder);
+    public native SCNScene initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] paused
-     * <p>
+     * 
      * Controls whether or not the scene is paused. Defaults to NO.
-     * <p>
+     * 
      * Pausing a scene will pause animations, actions, particles and physics.
      */
     @Generated
@@ -336,9 +349,9 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
 
     /**
      * [@property] paused
-     * <p>
+     * 
      * Controls whether or not the scene is paused. Defaults to NO.
-     * <p>
+     * 
      * Pausing a scene will pause animations, actions, particles and physics.
      */
     @Generated
@@ -347,12 +360,15 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
 
     /**
      * [@property] lightingEnvironment
-     * <p>
+     * 
      * Specifies the receiver's environment for image-based lighting (IBL).
-     * <p>
+     * 
      * The environment should be a cube map as described in SCNMaterialProperty.h.
      * MDLSkyCubeTexture is supported starting in macOS 10.13 and iOS 11.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("lightingEnvironment")
     public native SCNMaterialProperty lightingEnvironment();
@@ -360,19 +376,21 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
     /**
      * The particle systems attached to the scene that are active.
      */
+    @Nullable
     @Generated
     @Selector("particleSystems")
     public native NSArray<? extends SCNParticleSystem> particleSystems();
 
     /**
      * [@property] physicsWorld
-     * <p>
+     * 
      * Specifies the physics world of the receiver.
-     * <p>
+     * 
      * Every scene automatically creates a physics world object to simulate physics on nodes in the scene. You use this
      * property to access the scene’s global physics properties, such as gravity. To add physics to a particular node,
      * see physicsBody.
      */
+    @NotNull
     @Generated
     @Selector("physicsWorld")
     public native SCNPhysicsWorld physicsWorld();
@@ -389,51 +407,53 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      */
     @Generated
     @Selector("removeParticleSystem:")
-    public native void removeParticleSystem(SCNParticleSystem system);
+    public native void removeParticleSystem(@NotNull SCNParticleSystem system);
 
     /**
      * [@property] root
-     * <p>
+     * 
      * Specifies the root node of the node hierarchy.
-     * <p>
+     * 
      * Note that we have only one root node, whereas some file formats might have many nodes
      * at the root of their hierarchies. The root node(s) of the imported files will therefore be children
      * of the SCNScene's root node.
      */
+    @NotNull
     @Generated
     @Selector("rootNode")
     public native SCNNode rootNode();
 
     /**
      * setAttribute:forKey:
-     * <p>
+     * 
      * Sets a scene attribute
-     * <p>
+     * 
      * The available keys are listed in the "Scene attributes" group.
-     *
+     * 
      * @param attribute An object that specifies the value of the attribute to be written.
      * @param key       An NSString object that specifies the attribute to be written
      */
     @Generated
     @Selector("setAttribute:forKey:")
-    public native void setAttributeForKey(@Mapped(ObjCObjectMapper.class) Object attribute, String key);
+    public native void setAttributeForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object attribute,
+            @NotNull String key);
 
     /**
      * [@property] fogColor
-     * <p>
+     * 
      * Specifies the receiver's fog color (NSColor or CGColorRef). Animatable. Defaults to white.
-     * <p>
+     * 
      * The initial value is a NSColor.
      */
     @Generated
     @Selector("setFogColor:")
-    public native void setFogColor(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setFogColor(@NotNull @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * [@property] fogDensityExponent
-     * <p>
+     * 
      * Specifies the receiver's fog power exponent. Animatable. Defaults to 1.
-     * <p>
+     * 
      * Controls the attenuation between the start and end fog distances. 0 means a constant fog, 1 a linear fog and 2 a
      * quadratic fog, but any positive value will work.
      */
@@ -443,7 +463,7 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
 
     /**
      * [@property] fogEndDistance
-     * <p>
+     * 
      * Specifies the receiver's fog end distance. Animatable. Defaults to 0.
      */
     @Generated
@@ -452,7 +472,7 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
 
     /**
      * [@property] fogStartDistance
-     * <p>
+     * 
      * Specifies the receiver's fog start distance. Animatable. Defaults to 0.
      */
     @Generated
@@ -467,13 +487,15 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
 
     /**
      * writeToURL:options:delegate:progressHandler:
-     * <p>
+     * 
      * write the scene to the specified url.
-     * <p>
+     * 
      * macOS 10.10 and lower only supports exporting to .dae files.
      * Starting macOS 10.11 exporting supports .dae, .scn as well as file all formats supported by Model I/O.
      * Starting iOS 10 exporting supports .scn as well as all file formats supported by Model I/O.
-     *
+     * 
+     * API-Since: 10.0
+     * 
      * @param url             the destination url to write the scene to.
      * @param options         A dictionary of options. The valid keys are described in the "Scene writing options"
      *                        section.
@@ -484,23 +506,27 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      */
     @Generated
     @Selector("writeToURL:options:delegate:progressHandler:")
-    public native boolean writeToURLOptionsDelegateProgressHandler(NSURL url, NSDictionary<String, ?> options,
-            @Mapped(ObjCObjectMapper.class) SCNSceneExportDelegate delegate,
-            @ObjCBlock(name = "call_writeToURLOptionsDelegateProgressHandler") Block_writeToURLOptionsDelegateProgressHandler progressHandler);
+    public native boolean writeToURLOptionsDelegateProgressHandler(@NotNull NSURL url,
+            @Nullable NSDictionary<String, ?> options,
+            @Nullable @Mapped(ObjCObjectMapper.class) SCNSceneExportDelegate delegate,
+            @Nullable @ObjCBlock(name = "call_writeToURLOptionsDelegateProgressHandler") Block_writeToURLOptionsDelegateProgressHandler progressHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeToURLOptionsDelegateProgressHandler {
         @Generated
-        void call_writeToURLOptionsDelegateProgressHandler(float totalProgress, NSError error, BoolPtr stop);
+        void call_writeToURLOptionsDelegateProgressHandler(float totalProgress, @Nullable NSError error,
+                @NotNull BoolPtr stop);
     }
 
     /**
      * [@property] screenSpaceReflectionMaximumDistance
-     * <p>
+     * 
      * Determines the maximum distance in world units.
-     * <p>
+     * 
      * Defaults to 1000.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("screenSpaceReflectionMaximumDistance")
@@ -509,10 +535,12 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
 
     /**
      * [@property] screenSpaceReflectionSampleCount
-     * <p>
+     * 
      * Determines the sample count of the screen space reflection.
-     * <p>
+     * 
      * Defaults to 64.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("screenSpaceReflectionSampleCount")
@@ -521,10 +549,12 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
 
     /**
      * [@property] screenSpaceReflectionStride
-     * <p>
+     * 
      * Raytracing step size in pixel. The lower the better, the higher the faster.
-     * <p>
+     * 
      * Defaults to 8.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("screenSpaceReflectionStride")
@@ -533,10 +563,12 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
 
     /**
      * [@property] screenSpaceReflectionMaximumDistance
-     * <p>
+     * 
      * Determines the maximum distance in world units.
-     * <p>
+     * 
      * Defaults to 1000.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setScreenSpaceReflectionMaximumDistance:")
@@ -544,10 +576,12 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
 
     /**
      * [@property] screenSpaceReflectionSampleCount
-     * <p>
+     * 
      * Determines the sample count of the screen space reflection.
-     * <p>
+     * 
      * Defaults to 64.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setScreenSpaceReflectionSampleCount:")
@@ -555,10 +589,12 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
 
     /**
      * [@property] screenSpaceReflectionStride
-     * <p>
+     * 
      * Raytracing step size in pixel. The lower the better, the higher the faster.
-     * <p>
+     * 
      * Defaults to 8.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setScreenSpaceReflectionStride:")
@@ -566,10 +602,12 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
 
     /**
      * [@property] wantsScreenSpaceReflection
-     * <p>
+     * 
      * Determines if the scene use screen space reflection.
-     * <p>
+     * 
      * Defaults to NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setWantsScreenSpaceReflection:")
@@ -577,10 +615,12 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
 
     /**
      * [@property] wantsScreenSpaceReflection
-     * <p>
+     * 
      * Determines if the scene use screen space reflection.
-     * <p>
+     * 
      * Defaults to NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("wantsScreenSpaceReflection")

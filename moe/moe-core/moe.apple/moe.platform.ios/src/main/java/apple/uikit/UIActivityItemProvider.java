@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSOperation;
@@ -44,7 +43,13 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -75,22 +80,25 @@ public class UIActivityItemProvider extends NSOperation implements UIActivityIte
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +133,10 @@ public class UIActivityItemProvider extends NSOperation implements UIActivityIte
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,38 +168,46 @@ public class UIActivityItemProvider extends NSOperation implements UIActivityIte
      * activity type available when -item is called. nil at other times. use this in your -item method to customize the
      * data to return
      */
+    @Nullable
     @Generated
     @Selector("activityType")
     public native String activityType();
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("activityViewController:dataTypeIdentifierForActivityType:")
     public native String activityViewControllerDataTypeIdentifierForActivityType(
-            UIActivityViewController activityViewController, String activityType);
+            @NotNull UIActivityViewController activityViewController, @Nullable String activityType);
 
+    @Nullable
     @Generated
     @Selector("activityViewController:itemForActivityType:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object activityViewControllerItemForActivityType(UIActivityViewController activityViewController,
-            String activityType);
+    public native Object activityViewControllerItemForActivityType(
+            @NotNull UIActivityViewController activityViewController, @Nullable String activityType);
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("activityViewController:subjectForActivityType:")
-    public native String activityViewControllerSubjectForActivityType(UIActivityViewController activityViewController,
-            String activityType);
+    public native String activityViewControllerSubjectForActivityType(
+            @NotNull UIActivityViewController activityViewController, @Nullable String activityType);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("activityViewController:thumbnailImageForActivityType:suggestedSize:")
     public native UIImage activityViewControllerThumbnailImageForActivityTypeSuggestedSize(
-            UIActivityViewController activityViewController, String activityType, @ByValue CGSize size);
+            @NotNull UIActivityViewController activityViewController, @Nullable String activityType,
+            @ByValue CGSize size);
 
+    @NotNull
     @Generated
     @Selector("activityViewControllerPlaceholderItem:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object activityViewControllerPlaceholderItem(UIActivityViewController activityViewController);
+    public native Object activityViewControllerPlaceholderItem(
+            @NotNull UIActivityViewController activityViewController);
 
     @Generated
     @Selector("init")
@@ -202,24 +219,28 @@ public class UIActivityItemProvider extends NSOperation implements UIActivityIte
     @Generated
     @Selector("initWithPlaceholderItem:")
     public native UIActivityItemProvider initWithPlaceholderItem(
-            @Mapped(ObjCObjectMapper.class) Object placeholderItem);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object placeholderItem);
 
     /**
      * called on secondary thread when user selects an activity. you must subclass and return a non-nil value. The item
      * can use the UIActivityItemSource protocol to return extra information
      */
+    @NotNull
     @Generated
     @Selector("item")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object item();
 
+    @Nullable
     @Generated
     @Selector("placeholderItem")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object placeholderItem();
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("activityViewControllerLinkMetadata:")
-    public native LPLinkMetadata activityViewControllerLinkMetadata(UIActivityViewController activityViewController);
+    public native LPLinkMetadata activityViewControllerLinkMetadata(
+            @NotNull UIActivityViewController activityViewController);
 }

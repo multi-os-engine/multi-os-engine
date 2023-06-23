@@ -43,12 +43,16 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * RPBroadcastController
- * <p>
+ * 
  * Available once a user has successfully initiated a broadcast using an RPBroadcastActivityViewController. Can be used
  * to start, pause and stop a broadcast.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("ReplayKit")
@@ -80,22 +84,25 @@ public class RPBroadcastController extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +137,10 @@ public class RPBroadcastController extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,7 +170,13 @@ public class RPBroadcastController extends NSObject {
 
     /**
      * bundleID of the broadcast extension which was selected by the user.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: No longer supported
      */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("broadcastExtensionBundleID")
     public native String broadcastExtensionBundleID();
@@ -170,6 +184,7 @@ public class RPBroadcastController extends NSObject {
     /**
      * URL that can be used to redirect the user to the on-going or completed broadcast.
      */
+    @NotNull
     @Generated
     @Selector("broadcastURL")
     public native NSURL broadcastURL();
@@ -177,6 +192,7 @@ public class RPBroadcastController extends NSObject {
     /**
      * Delegate which will be notified when an error occurs during broadcast.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -184,14 +200,14 @@ public class RPBroadcastController extends NSObject {
 
     /**
      * Finish the broadcast.
-     *
+     * 
      * @param error Optional error in the RPRecordingErrorCode domain. A nil error signifies that broadcasting has
      *              finished successfully.
      */
     @Generated
     @Selector("finishBroadcastWithHandler:")
     public native void finishBroadcastWithHandler(
-            @ObjCBlock(name = "call_finishBroadcastWithHandler") Block_finishBroadcastWithHandler handler);
+            @NotNull @ObjCBlock(name = "call_finishBroadcastWithHandler") Block_finishBroadcastWithHandler handler);
 
     @Generated
     @Selector("init")
@@ -229,6 +245,7 @@ public class RPBroadcastController extends NSObject {
      * Dictionary updated by the service during a broadcast. The keys and values of this dictionary are defined by the
      * broadcast service. KVO observable.
      */
+    @Nullable
     @Generated
     @Selector("serviceInfo")
     public native NSDictionary<String, ? extends NSObject> serviceInfo();
@@ -238,13 +255,14 @@ public class RPBroadcastController extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) RPBroadcastControllerDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) RPBroadcastControllerDelegate value);
 
     /**
      * Delegate which will be notified when an error occurs during broadcast.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) RPBroadcastControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) RPBroadcastControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -257,26 +275,26 @@ public class RPBroadcastController extends NSObject {
 
     /**
      * Start the broadcast.
-     *
+     * 
      * @param error Optional error in the RPRecordingErrorCode domain. A nil error signifies that broadcasting has
      *              started successfully.
      */
     @Generated
     @Selector("startBroadcastWithHandler:")
     public native void startBroadcastWithHandler(
-            @ObjCBlock(name = "call_startBroadcastWithHandler") Block_startBroadcastWithHandler handler);
+            @NotNull @ObjCBlock(name = "call_startBroadcastWithHandler") Block_startBroadcastWithHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_finishBroadcastWithHandler {
         @Generated
-        void call_finishBroadcastWithHandler(NSError error);
+        void call_finishBroadcastWithHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startBroadcastWithHandler {
         @Generated
-        void call_startBroadcastWithHandler(NSError error);
+        void call_startBroadcastWithHandler(@Nullable NSError error);
     }
 }

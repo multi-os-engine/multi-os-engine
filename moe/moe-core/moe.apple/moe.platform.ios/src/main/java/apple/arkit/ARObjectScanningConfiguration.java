@@ -21,14 +21,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.avfoundation.AVCaptureDevice;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A configuration for scanning objects.
- * <p>
+ * 
  * The object scanning configuration runs world tracking, capturing additional detail in order to create reference
  * objects.
  * Running object scanning will consume additional power in order to provide more detailed features.
  * The createReferenceObject method can be called on the session to capture a scan of an object in the world.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("ARKit")
@@ -60,22 +65,25 @@ public class ARObjectScanningConfiguration extends ARConfiguration {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -112,7 +120,7 @@ public class ARObjectScanningConfiguration extends ARConfiguration {
 
     /**
      * Enable or disable continuous auto focus.
-     * <p>
+     * 
      * Enabled by default.
      */
     @Generated
@@ -127,9 +135,10 @@ public class ARObjectScanningConfiguration extends ARConfiguration {
     @Selector("isSupported")
     public static native boolean isSupported();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -138,7 +147,7 @@ public class ARObjectScanningConfiguration extends ARConfiguration {
 
     /**
      * Type of planes to detect in the scene.
-     * <p>
+     * 
      * If set, new planes will continue to be detected and updated over time. Detected planes will be added to the
      * session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
@@ -159,7 +168,7 @@ public class ARObjectScanningConfiguration extends ARConfiguration {
 
     /**
      * Enable or disable continuous auto focus.
-     * <p>
+     * 
      * Enabled by default.
      */
     @Generated
@@ -168,7 +177,7 @@ public class ARObjectScanningConfiguration extends ARConfiguration {
 
     /**
      * Type of planes to detect in the scene.
-     * <p>
+     * 
      * If set, new planes will continue to be detected and updated over time. Detected planes will be added to the
      * session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
@@ -186,6 +195,7 @@ public class ARObjectScanningConfiguration extends ARConfiguration {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("supportedVideoFormats")
     public static native NSArray<? extends ARVideoFormat> supportedVideoFormats();
@@ -198,4 +208,19 @@ public class ARObjectScanningConfiguration extends ARConfiguration {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Nullable
+    @Generated
+    @Selector("configurableCaptureDeviceForPrimaryCamera")
+    public static native AVCaptureDevice configurableCaptureDeviceForPrimaryCamera();
+
+    @Nullable
+    @Generated
+    @Selector("recommendedVideoFormatFor4KResolution")
+    public static native ARVideoFormat recommendedVideoFormatFor4KResolution();
+
+    @Nullable
+    @Generated
+    @Selector("recommendedVideoFormatForHighResolutionFrameCapturing")
+    public static native ARVideoFormat recommendedVideoFormatForHighResolutionFrameCapturing();
 }

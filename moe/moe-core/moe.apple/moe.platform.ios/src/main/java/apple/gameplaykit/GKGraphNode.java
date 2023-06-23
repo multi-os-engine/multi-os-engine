@@ -40,9 +40,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A node in a directed graph. Edges are directed and can have variable costs.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -74,22 +78,25 @@ public class GKGraphNode extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +131,10 @@ public class GKGraphNode extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,17 +165,19 @@ public class GKGraphNode extends NSObject implements NSSecureCoding {
     /**
      * Add a connection to a group of other nodes indicating those nodes can be reached from this node.
      * A new connection is not created if it already exists.
-     *
+     * 
      * @param nodes         The array of nodes that are end points for their respective connections
      * @param bidirectional should a connection also be added connecting the destination node back to this node?
      */
     @Generated
     @Selector("addConnectionsToNodes:bidirectional:")
-    public native void addConnectionsToNodesBidirectional(NSArray<? extends GKGraphNode> nodes, boolean bidirectional);
+    public native void addConnectionsToNodesBidirectional(@NotNull NSArray<? extends GKGraphNode> nodes,
+            boolean bidirectional);
 
     /**
      * List of other graph nodes that this node has an edge leading to.
      */
+    @NotNull
     @Generated
     @Selector("connectedNodes")
     public native NSArray<? extends GKGraphNode> connectedNodes();
@@ -177,40 +187,42 @@ public class GKGraphNode extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("costToNode:")
-    public native float costToNode(GKGraphNode node);
+    public native float costToNode(@NotNull GKGraphNode node);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Returns the estimated heuristic cost to reach the indicated node from this node
-     *
+     * 
      * @param node The end point of the edge who's cost is to be estimated
      */
     @Generated
     @Selector("estimatedCostToNode:")
-    public native float estimatedCostToNode(GKGraphNode node);
+    public native float estimatedCostToNode(@NotNull GKGraphNode node);
 
     /**
      * As with findPathToNode: except this node is the goal node and a startNode is specified
-     *
+     * 
      * @param startNode the start node of the pathfinding attempt
      */
+    @NotNull
     @Generated
     @Selector("findPathFromNode:")
-    public native NSArray<? extends GKGraphNode> findPathFromNode(GKGraphNode startNode);
+    public native NSArray<? extends GKGraphNode> findPathFromNode(@NotNull GKGraphNode startNode);
 
     /**
      * Attempts to find the optimal path between this node and the indicated goal node.
      * If such a path exists, it is returned in start to end order.
      * If it doesn't exist, the array returned will be empty.
-     *
+     * 
      * @param goalNode the goal node of the pathfinding attempt
      */
+    @NotNull
     @Generated
     @Selector("findPathToNode:")
-    public native NSArray<? extends GKGraphNode> findPathToNode(GKGraphNode goalNode);
+    public native NSArray<? extends GKGraphNode> findPathToNode(@NotNull GKGraphNode goalNode);
 
     @Generated
     @Selector("init")
@@ -218,19 +230,19 @@ public class GKGraphNode extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKGraphNode initWithCoder(NSCoder coder);
+    public native GKGraphNode initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Removes connections to a group of other nodes indicating those nodes can no longer be reached from this node.
      * Nothing happens if a particular connection does not exist.
-     *
+     * 
      * @param nodes         The array of nodes that are end points of the edges to be removed
      * @param bidirectional should the connection also be added the destination node back to this node also be removed
      *                      if it exists?
      */
     @Generated
     @Selector("removeConnectionsToNodes:bidirectional:")
-    public native void removeConnectionsToNodesBidirectional(NSArray<? extends GKGraphNode> nodes,
+    public native void removeConnectionsToNodesBidirectional(@NotNull NSArray<? extends GKGraphNode> nodes,
             boolean bidirectional);
 
     @Generated

@@ -43,7 +43,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.1
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -72,35 +77,39 @@ public class GKMatchmakerViewController extends UINavigationController {
     @Selector("allocWithZone:")
     public static native GKMatchmakerViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -132,9 +141,10 @@ public class GKMatchmakerViewController extends UINavigationController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,14 +176,20 @@ public class GKMatchmakerViewController extends UINavigationController {
      * Add additional players (not currently connected) to an existing peer-to-peer match.
      * Apps should elect a single device to do this, otherwise conflicts could arise resulting in unexpected connection
      * errors.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("addPlayersToMatch:")
-    public native void addPlayersToMatch(GKMatch match);
+    public native void addPlayersToMatch(@NotNull GKMatch match);
 
     /**
      * default message to use when inviting friends. Can be edited by the user.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("defaultInvitationMessage")
@@ -185,7 +201,7 @@ public class GKMatchmakerViewController extends UINavigationController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKMatchmakerViewController initWithCoder(NSCoder coder);
+    public native GKMatchmakerViewController initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initialize with an accepted invite, allowing the user to see the status of other invited players and get notified
@@ -193,27 +209,28 @@ public class GKMatchmakerViewController extends UINavigationController {
      */
     @Generated
     @Selector("initWithInvite:")
-    public native GKMatchmakerViewController initWithInvite(GKInvite invite);
+    public native GKMatchmakerViewController initWithInvite(@NotNull GKInvite invite);
 
     /**
      * Initialize with a matchmaking request, allowing the user to send invites and/or start matchmaking
      */
     @Generated
     @Selector("initWithMatchRequest:")
-    public native GKMatchmakerViewController initWithMatchRequest(GKMatchRequest request);
+    public native GKMatchmakerViewController initWithMatchRequest(@NotNull GKMatchRequest request);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")
-    public native GKMatchmakerViewController initWithNavigationBarClassToolbarClass(Class navigationBarClass,
-            Class toolbarClass);
+    public native GKMatchmakerViewController initWithNavigationBarClassToolbarClass(@Nullable Class navigationBarClass,
+            @Nullable Class toolbarClass);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native GKMatchmakerViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native GKMatchmakerViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     @Generated
     @Selector("initWithRootViewController:")
-    public native GKMatchmakerViewController initWithRootViewController(UIViewController rootViewController);
+    public native GKMatchmakerViewController initWithRootViewController(@NotNull UIViewController rootViewController);
 
     /**
      * set to YES to receive hosted (eg. not peer-to-peer) match results. Will cause the controller to return an array
@@ -231,10 +248,12 @@ public class GKMatchmakerViewController extends UINavigationController {
     @Selector("setHosted:")
     public native void setHosted(boolean value);
 
+    @NotNull
     @Generated
     @Selector("matchRequest")
     public native GKMatchRequest matchRequest();
 
+    @Nullable
     @Generated
     @Selector("matchmakerDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -242,39 +261,55 @@ public class GKMatchmakerViewController extends UINavigationController {
 
     /**
      * default message to use when inviting friends. Can be edited by the user.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
     @Selector("setDefaultInvitationMessage:")
-    public native void setDefaultInvitationMessage(String value);
+    public native void setDefaultInvitationMessage(@Nullable String value);
 
     /**
      * This method is obsolete. It will never be invoked and its implementation does nothing**
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, use setHostedPlayer:didConnect:
      */
     @Generated
     @Deprecated
     @Selector("setHostedPlayer:connected:")
-    public native void setHostedPlayerConnected(String playerID, boolean connected);
+    public native void setHostedPlayerConnected(@NotNull String playerID, boolean connected);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setHostedPlayer:didConnect:")
-    public native void setHostedPlayerDidConnect(GKPlayer player, boolean connected);
+    public native void setHostedPlayerDidConnect(@NotNull GKPlayer player, boolean connected);
 
     /**
      * This method is obsolete. It will never be invoked and its implementation does nothing**
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 5.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, use setHostedPlayer:connected:
+     * instead
      */
     @Generated
     @Deprecated
     @Selector("setHostedPlayerReady:")
-    public native void setHostedPlayerReady(String playerID);
+    public native void setHostedPlayerReady(@NotNull String playerID);
 
     @Generated
     @Selector("setMatchmakerDelegate:")
     public native void setMatchmakerDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) GKMatchmakerViewControllerDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) GKMatchmakerViewControllerDelegate value);
 
     @Generated
-    public void setMatchmakerDelegate(@Mapped(ObjCObjectMapper.class) GKMatchmakerViewControllerDelegate value) {
+    public void setMatchmakerDelegate(
+            @Nullable @Mapped(ObjCObjectMapper.class) GKMatchmakerViewControllerDelegate value) {
         Object __old = matchmakerDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -309,6 +344,8 @@ public class GKMatchmakerViewController extends UINavigationController {
      * If the value is set to YES, then once the number of connected players is greater than or equal to minPlayers of
      * the match request, matchmakerViewController:didFindMatch: will be called and the game can get the match instance,
      * and update the game scene accordingly. The remaining players wil continue to connect.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("canStartWithMinimumPlayers")
@@ -321,6 +358,8 @@ public class GKMatchmakerViewController extends UINavigationController {
      * If the value is set to YES, then once the number of connected players is greater than or equal to minPlayers of
      * the match request, matchmakerViewController:didFindMatch: will be called and the game can get the match instance,
      * and update the game scene accordingly. The remaining players wil continue to connect.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setCanStartWithMinimumPlayers:")

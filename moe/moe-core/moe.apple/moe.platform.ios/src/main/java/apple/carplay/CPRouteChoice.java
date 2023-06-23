@@ -26,9 +26,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@c] CPRouteChoice describes a possible route for a @c CPTrip.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CarPlay")
@@ -55,6 +59,7 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
      * localized, displayable content.
      * Examples: "Fastest Route", "Avoids Tolls"
      */
+    @Nullable
     @Generated
     @Selector("additionalInformationVariants")
     public native NSArray<String> additionalInformationVariants();
@@ -71,31 +76,35 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -107,7 +116,7 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -120,7 +129,7 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native CPRouteChoice initWithCoder(NSCoder coder);
+    public native CPRouteChoice initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initialize a @c CPRouteChoice with summary variants, additional information variants, and selection summary
@@ -130,8 +139,8 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
     @Generated
     @Selector("initWithSummaryVariants:additionalInformationVariants:selectionSummaryVariants:")
     public native CPRouteChoice initWithSummaryVariantsAdditionalInformationVariantsSelectionSummaryVariants(
-            NSArray<String> summaryVariants, NSArray<String> additionalInformationVariants,
-            NSArray<String> selectionSummaryVariants);
+            @NotNull NSArray<String> summaryVariants, @NotNull NSArray<String> additionalInformationVariants,
+            @NotNull NSArray<String> selectionSummaryVariants);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -150,9 +159,10 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -172,6 +182,7 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
      * preferred. You must provide at least one variant.
      * The system will select the first variant that fits the available space.
      */
+    @Nullable
     @Generated
     @Selector("selectionSummaryVariants")
     public native NSArray<String> selectionSummaryVariants();
@@ -181,7 +192,7 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
      */
     @Generated
     @Selector("setUserInfo:")
-    public native void setUserInfo(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setUserInfo(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
     @Selector("setVersion:")
@@ -194,6 +205,7 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
      * localized, displayable content.
      * Example: "Via I-280 S"
      */
+    @NotNull
     @Generated
     @Selector("summaryVariants")
     public native NSArray<String> summaryVariants();
@@ -215,6 +227,7 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
     /**
      * Any custom user info related to this route choice.
      */
+    @Nullable
     @Generated
     @Selector("userInfo")
     @MappedReturn(ObjCObjectMapper.class)

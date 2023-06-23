@@ -19,17 +19,38 @@ package apple.mapkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 public final class MKMapType {
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NUInt public static final long Standard = 0x0000000000000000L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NUInt public static final long Satellite = 0x0000000000000001L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NUInt public static final long Hybrid = 0x0000000000000002L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long SatelliteFlyover = 0x0000000000000003L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long HybridFlyover = 0x0000000000000004L;
 
     @Generated
     private MKMapType() {
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NUInt public static final long MutedStandard = 0x0000000000000005L;
 }

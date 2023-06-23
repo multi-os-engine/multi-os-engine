@@ -27,12 +27,26 @@ import org.moe.natj.general.ann.NInt;
  * permission status, consult the corresponding NSError
  * [@constant] CKApplicationPermissionStatusDenied The user has denied this application permission
  * [@constant] CKApplicationPermissionStatusGranted The user has granted this application permission
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class CKApplicationPermissionStatus {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long InitialState = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long CouldNotComplete = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Denied = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Granted = 0x0000000000000003L;
 
     @Generated

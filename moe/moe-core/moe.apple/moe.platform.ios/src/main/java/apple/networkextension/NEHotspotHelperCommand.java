@@ -37,15 +37,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEHotspotHelperCommand
- * <p>
+ * 
  * An NEHotspotHelperCommand object is provided to the helper's
  * command handler block. The HotspotHelper processes the command
  * instantiates an NEHotspotHelperResponse object, sets the annotated
  * network or networkList (Evaluate/FilterScanList only),
  * then delivers it.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -77,22 +81,25 @@ public class NEHotspotHelperCommand extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +134,10 @@ public class NEHotspotHelperCommand extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,8 +167,10 @@ public class NEHotspotHelperCommand extends NSObject {
 
     /**
      * [@property] commandType
-     * <p>
+     * 
      * The type of the command.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("commandType")
@@ -169,44 +179,56 @@ public class NEHotspotHelperCommand extends NSObject {
 
     /**
      * createResponse:
-     * <p>
+     * 
      * Create a response to the command.
-     * <p>
+     * 
      * Instantiate an NEHotspotHelperResponse for the command.
-     *
-     * @return NEHotspotHelperResponse with the specified result.
+     * 
+     * @return
+     *         NEHotspotHelperResponse with the specified result.
+     * 
+     *         API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("createResponse:")
     public native NEHotspotHelperResponse createResponse(@NInt long result);
 
     /**
      * createTCPConnection
-     * <p>
+     * 
      * Create a new TCP connection over the interface associated with the command.
-     * <p>
+     * 
      * Instantiate an NWTCPConnection to the specified endpoint
      * bound to the network interface associated with the command.
-     *
-     * @return non-nil NWTCPConnection object if successful, nil otherwise
+     * 
+     * @return
+     *         non-nil NWTCPConnection object if successful, nil otherwise
+     * 
+     *         API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("createTCPConnection:")
-    public native NWTCPConnection createTCPConnection(NWEndpoint endpoint);
+    public native NWTCPConnection createTCPConnection(@NotNull NWEndpoint endpoint);
 
     /**
      * createUDPSession
-     * <p>
+     * 
      * Create a new UDP session over the interface associated with the command.
-     * <p>
+     * 
      * Instantiate an NWUDPSession to the specified endpoint
      * bound to the network interface associated with the command.
-     *
-     * @return non-nil NWUDPSession object if successful, nil otherwise
+     * 
+     * @return
+     *         non-nil NWUDPSession object if successful, nil otherwise
+     * 
+     *         API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("createUDPSession:")
-    public native NWUDPSession createUDPSession(NWEndpoint endpoint);
+    public native NWUDPSession createUDPSession(@NotNull NWEndpoint endpoint);
 
     @Generated
     @Selector("init")
@@ -214,20 +236,26 @@ public class NEHotspotHelperCommand extends NSObject {
 
     /**
      * [@property] network
-     * <p>
+     * 
      * The network associated with the command. May be nil.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("network")
     public native NEHotspotNetwork network();
 
     /**
      * [@property] networkList
-     * <p>
+     * 
      * The list of networks associated with a command. Will be nil unless
      * the command type is kNEHotspotHelperCommandTypeFilterScanList.
      * This property returns an NSArray of NEHotspotNetwork.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("networkList")
     public native NSArray<? extends NEHotspotNetwork> networkList();

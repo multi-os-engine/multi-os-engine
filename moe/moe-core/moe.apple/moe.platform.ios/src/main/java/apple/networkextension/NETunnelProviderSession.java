@@ -43,14 +43,18 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@file] NETunnelProviderSession.h
- * <p>
+ * 
  * This file declares the NETunnelProviderSession API. The NETunnelProviderSession API is used to control network tunnel
  * services provided by NETunnelProvider implementations.
- * <p>
+ * 
  * This API is part of NetworkExtension.framework.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -82,22 +86,25 @@ public class NETunnelProviderSession extends NEVPNConnection {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -132,9 +139,10 @@ public class NETunnelProviderSession extends NEVPNConnection {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,9 +176,9 @@ public class NETunnelProviderSession extends NEVPNConnection {
 
     /**
      * sendProviderMessage:responseHandler:
-     * <p>
+     * 
      * This function sends a message to the NETunnelProvider and provides a way to receive a response.
-     *
+     * 
      * @param messageData     An NSData object containing the message to be sent.
      * @param error           If the message was sent successfully, this parameter is set to nil. Otherwise this
      *                        parameter is set to the error that occurred. Possible errors include:
@@ -178,19 +186,21 @@ public class NETunnelProviderSession extends NEVPNConnection {
      *                        2. NEVPNErrorConfigurationDisabled
      * @param responseHandler A block that handles the response. Can be set to nil if no response is expected.
      * @return YES if the message was sent successfully, NO if an error occurred.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("sendProviderMessage:returnError:responseHandler:")
-    public native boolean sendProviderMessageReturnErrorResponseHandler(NSData messageData,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error,
-            @ObjCBlock(name = "call_sendProviderMessageReturnErrorResponseHandler") Block_sendProviderMessageReturnErrorResponseHandler responseHandler);
+    public native boolean sendProviderMessageReturnErrorResponseHandler(@NotNull NSData messageData,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error,
+            @Nullable @ObjCBlock(name = "call_sendProviderMessageReturnErrorResponseHandler") Block_sendProviderMessageReturnErrorResponseHandler responseHandler);
 
     /**
      * startTunnelWithOptions:andReturnError:
-     * <p>
+     * 
      * This function is used to start the tunnel using the configuration associated with this connection object. The
      * tunnel connection process is started and this function returns immediately.
-     *
+     * 
      * @param options A dictionary that will be passed as-is to the tunnel provider during the process of starting the
      *                tunnel.
      * @param error   If the tunnel was started successfully, this parameter is set to nil. Otherwise this parameter is
@@ -198,17 +208,21 @@ public class NETunnelProviderSession extends NEVPNConnection {
      *                1. NEVPNErrorConfigurationInvalid
      *                2. NEVPNErrorConfigurationDisabled
      * @return YES if the tunnel was started successfully, NO if an error occurred.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("startTunnelWithOptions:andReturnError:")
-    public native boolean startTunnelWithOptionsAndReturnError(NSDictionary<String, ?> options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean startTunnelWithOptionsAndReturnError(@Nullable NSDictionary<String, ?> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * stopTunnel
-     * <p>
+     * 
      * This function is used to stop the tunnel. The tunnel disconnect process is started and this function returns
      * immediately.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("stopTunnel")
@@ -218,6 +232,6 @@ public class NETunnelProviderSession extends NEVPNConnection {
     @Generated
     public interface Block_sendProviderMessageReturnErrorResponseHandler {
         @Generated
-        void call_sendProviderMessageReturnErrorResponseHandler(NSData responseData);
+        void call_sendProviderMessageReturnErrorResponseHandler(@Nullable NSData responseData);
     }
 }

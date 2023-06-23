@@ -44,7 +44,14 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.0
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Use PHAsset from the Photos framework instead
+ */
 @Deprecated
 @Generated
 @Library("AssetsLibrary")
@@ -76,22 +83,25 @@ public class ALAsset extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +136,10 @@ public class ALAsset extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,6 +170,11 @@ public class ALAsset extends NSObject {
     /**
      * Returns a CGImage with an aspect ratio thumbnail of the asset. The size of the thumbnail is the appropriate size
      * for the platform. The thumbnail will be in the correct orientation.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use the PHImageContentMode options to request thumbnail aspect ratio in PHImageRequestOptions
+     * with the PHImageManager
      */
     @Generated
     @Deprecated
@@ -167,6 +183,10 @@ public class ALAsset extends NSObject {
 
     /**
      * Returns an ALAssetRepresentation object for the default representation of the ALAsset
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use PHImageRequestOptions with the PHImageManager from the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -181,6 +201,10 @@ public class ALAsset extends NSObject {
      * Returns YES if the application is able to edit the asset. Returns NO if the application is not able to edit the
      * asset.
      * Applications are only allowed to edit assets that they originally wrote.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use canPerformEditOperation: on a PHAsset from the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -190,6 +214,11 @@ public class ALAsset extends NSObject {
     /**
      * Returns the original asset if the caller was saved as a modified version of an asset.
      * Returns nil if the caller was not saved as a modified version of an asset.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use the PHImageRequestOptionsVersionOriginal or PHImageRequestOptionsVersionUnadjusted option
+     * in PHImageRequestOptions with the PHImageManager from the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -199,6 +228,10 @@ public class ALAsset extends NSObject {
     /**
      * Returns an ALAssetRepresentation object for the given representation UTI. If the ALAsset does not
      * support the representation, nil is returned.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use PHImageRequestOptions with the PHImageManager from the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -212,6 +245,10 @@ public class ALAsset extends NSObject {
      * asset, since a new asset is not being created.
      * If the application is not able to edit the asset, the completion block will return a nil assetURL and an
      * ALAssetsLibraryWriteFailedError.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use contentEditingOutput on a PHAssetChangeRequest from the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -226,6 +263,10 @@ public class ALAsset extends NSObject {
      * asset, since a new asset is not being created.
      * If the application is not able to edit the asset (see the editable property on ALAsset), the completion block
      * will return a nil assetURL and an ALAssetsLibraryWriteFailedError.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use contentEditingOutput on a PHAssetChangeRequest from the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -236,6 +277,11 @@ public class ALAsset extends NSObject {
     /**
      * Returns a CGImage with a square thumbnail of the asset. The size of the thumbnail is the appropriate size for the
      * platform. The thumbnail will be in the correct orientation.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use requestImageForAsset:targetSize:contentMode:options:resultHandler: on PHImageManager to
+     * request a thumbnail sized image for a PHAsset from the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -245,6 +291,10 @@ public class ALAsset extends NSObject {
     /**
      * Returns the value for a given property (as defined above). Calling it with an invalid property returns a
      * ALErrorInvalidProperty error.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use PHAsset class properties from the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -255,6 +305,11 @@ public class ALAsset extends NSObject {
     /**
      * Saves image data to the saved photos album as a new ALAsset that is considered a modified version of the calling
      * ALAsset.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use creationRequestForAssetFromImage: on PHAssetChangeRequest from the Photos framework to
+     * create a new asset instead
      */
     @Generated
     @Deprecated
@@ -266,6 +321,11 @@ public class ALAsset extends NSObject {
     /**
      * Saves the video at the specified path to the saved photos album as a new ALAsset that is considered a modified
      * version of the calling ALAsset.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use creationRequestForAssetFromVideoAtFileURL: on PHAssetChangeRequest from the Photos
+     * framework to create a new asset instead
      */
     @Generated
     @Deprecated

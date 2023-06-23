@@ -27,14 +27,18 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A view controller that will take the user through the setup flow to add a shortcut to Siri.
- * <p>
+ * 
  * First create the @c INShortcut object that represents the shortcut the user wants to perform. Then create an @c
  * INUIAddVoiceShortcutViewController object and set its delegate. Then, present the view controller modally from
  * another view controller in your app. The delegate must dismiss the view controller when the user completes the set
  * up.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("IntentsUI")
@@ -64,40 +68,45 @@ public class INUIAddVoiceShortcutViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native INUIAddVoiceShortcutViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -118,12 +127,12 @@ public class INUIAddVoiceShortcutViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INUIAddVoiceShortcutViewController initWithCoder(NSCoder coder);
+    public native INUIAddVoiceShortcutViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native INUIAddVoiceShortcutViewController initWithNibNameBundle(String nibNameOrNil,
-            NSBundle nibBundleOrNil);
+    public native INUIAddVoiceShortcutViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * @param shortcut The shortcut is what will be run when the resulting voice shortcut is invoked. It also provides
@@ -132,7 +141,7 @@ public class INUIAddVoiceShortcutViewController extends UIViewController {
      */
     @Generated
     @Selector("initWithShortcut:")
-    public native INUIAddVoiceShortcutViewController initWithShortcut(INShortcut shortcut);
+    public native INUIAddVoiceShortcutViewController initWithShortcut(@NotNull INShortcut shortcut);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -151,9 +160,10 @@ public class INUIAddVoiceShortcutViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -171,10 +181,11 @@ public class INUIAddVoiceShortcutViewController extends UIViewController {
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) INUIAddVoiceShortcutViewControllerDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) INUIAddVoiceShortcutViewControllerDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) INUIAddVoiceShortcutViewControllerDelegate value) {
+    public void setDelegate(
+            @Nullable @Mapped(ObjCObjectMapper.class) INUIAddVoiceShortcutViewControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

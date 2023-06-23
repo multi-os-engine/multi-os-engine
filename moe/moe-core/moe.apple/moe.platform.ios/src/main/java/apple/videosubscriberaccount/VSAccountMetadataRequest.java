@@ -37,10 +37,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Specifies which information the app wants to obtain about the subscriber's account.
  * You should only request the information you need to fulfill your contractual obligations.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("VideoSubscriberAccount")
@@ -72,22 +76,25 @@ public class VSAccountMetadataRequest extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,9 +129,10 @@ public class VSAccountMetadataRequest extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,6 +163,7 @@ public class VSAccountMetadataRequest extends NSObject {
     /**
      * Attributes to add to a SAML attributeQuery request and sent to the account provider.
      */
+    @NotNull
     @Generated
     @Selector("attributeNames")
     public native NSArray<String> attributeNames();
@@ -163,6 +172,7 @@ public class VSAccountMetadataRequest extends NSObject {
      * Identifies who is making the request.
      * For use by applications using the SAML authentication scheme only.
      */
+    @Nullable
     @Generated
     @Selector("channelIdentifier")
     public native String channelIdentifier();
@@ -211,6 +221,7 @@ public class VSAccountMetadataRequest extends NSObject {
      * For example, "What's New in Swift" or "Office Space"
      * Do not provide a value if the request will not be used to play a specific video.
      */
+    @Nullable
     @Generated
     @Selector("localizedVideoTitle")
     public native String localizedVideoTitle();
@@ -220,7 +231,7 @@ public class VSAccountMetadataRequest extends NSObject {
      */
     @Generated
     @Selector("setAttributeNames:")
-    public native void setAttributeNames(NSArray<String> value);
+    public native void setAttributeNames(@NotNull NSArray<String> value);
 
     /**
      * Identifies who is making the request.
@@ -228,7 +239,7 @@ public class VSAccountMetadataRequest extends NSObject {
      */
     @Generated
     @Selector("setChannelIdentifier:")
-    public native void setChannelIdentifier(String value);
+    public native void setChannelIdentifier(@Nullable String value);
 
     /**
      * Requests that the TV Provider reauthenticate the user if they are already authenticated.
@@ -258,34 +269,37 @@ public class VSAccountMetadataRequest extends NSObject {
      */
     @Generated
     @Selector("setLocalizedVideoTitle:")
-    public native void setLocalizedVideoTitle(String value);
+    public native void setLocalizedVideoTitle(@Nullable String value);
 
     /**
      * If non-empty, limits which account providers can respond to the request.
      */
     @Generated
     @Selector("setSupportedAccountProviderIdentifiers:")
-    public native void setSupportedAccountProviderIdentifiers(NSArray<String> value);
+    public native void setSupportedAccountProviderIdentifiers(@NotNull NSArray<String> value);
 
     /**
      * The collection of authentication schemes that the app supports for this request.
      * This list may be used to determine compatibility of the app with providers.
      * Defaults to SAML.
+     * 
+     * API-Since: 10.2
      */
     @Generated
     @Selector("setSupportedAuthenticationSchemes:")
-    public native void setSupportedAuthenticationSchemes(NSArray<String> value);
+    public native void setSupportedAuthenticationSchemes(@NotNull NSArray<String> value);
 
     /**
      * A value that the account provider may use to verify the identity of the requesting app.
      */
     @Generated
     @Selector("setVerificationToken:")
-    public native void setVerificationToken(String value);
+    public native void setVerificationToken(@Nullable String value);
 
     /**
      * If non-empty, limits which account providers can respond to the request.
      */
+    @NotNull
     @Generated
     @Selector("supportedAccountProviderIdentifiers")
     public native NSArray<String> supportedAccountProviderIdentifiers();
@@ -294,7 +308,10 @@ public class VSAccountMetadataRequest extends NSObject {
      * The collection of authentication schemes that the app supports for this request.
      * This list may be used to determine compatibility of the app with providers.
      * Defaults to SAML.
+     * 
+     * API-Since: 10.2
      */
+    @NotNull
     @Generated
     @Selector("supportedAuthenticationSchemes")
     public native NSArray<String> supportedAuthenticationSchemes();
@@ -302,6 +319,7 @@ public class VSAccountMetadataRequest extends NSObject {
     /**
      * A value that the account provider may use to verify the identity of the requesting app.
      */
+    @Nullable
     @Generated
     @Selector("verificationToken")
     public native String verificationToken();
@@ -309,7 +327,10 @@ public class VSAccountMetadataRequest extends NSObject {
     /**
      * If non-empty, specifies providers which may be given more prominent placement
      * when choosing an account provider during authentication.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("featuredAccountProviderIdentifiers")
     public native NSArray<String> featuredAccountProviderIdentifiers();
@@ -317,15 +338,20 @@ public class VSAccountMetadataRequest extends NSObject {
     /**
      * If non-empty, specifies providers which may be given more prominent placement
      * when choosing an account provider during authentication.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setFeaturedAccountProviderIdentifiers:")
-    public native void setFeaturedAccountProviderIdentifiers(NSArray<String> value);
+    public native void setFeaturedAccountProviderIdentifiers(@NotNull NSArray<String> value);
 
     /**
      * A value that an account provider application may set to pass an existing authentication session.
      * For use by TV Provider applications only.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("accountProviderAuthenticationToken")
     public native String accountProviderAuthenticationToken();
@@ -333,22 +359,29 @@ public class VSAccountMetadataRequest extends NSObject {
     /**
      * A value that an account provider application may set to pass an existing authentication session.
      * For use by TV Provider applications only.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAccountProviderAuthenticationToken:")
-    public native void setAccountProviderAuthenticationToken(String value);
+    public native void setAccountProviderAuthenticationToken(@Nullable String value);
 
     /**
      * Application-specific providers to be added to the list of account providers.
+     * 
+     * API-Since: 14.2
      */
+    @Nullable
     @Generated
     @Selector("applicationAccountProviders")
     public native NSArray<? extends VSAccountApplicationProvider> applicationAccountProviders();
 
     /**
      * Application-specific providers to be added to the list of account providers.
+     * 
+     * API-Since: 14.2
      */
     @Generated
     @Selector("setApplicationAccountProviders:")
-    public native void setApplicationAccountProviders(NSArray<? extends VSAccountApplicationProvider> value);
+    public native void setApplicationAccountProviders(@Nullable NSArray<? extends VSAccountApplicationProvider> value);
 }

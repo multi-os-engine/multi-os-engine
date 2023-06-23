@@ -36,7 +36,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -67,22 +72,25 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -117,9 +125,10 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -153,7 +162,7 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -161,7 +170,7 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMeasurementFormatter initWithCoder(NSCoder coder);
+    public native NSMeasurementFormatter initWithCoder(@NotNull NSCoder coder);
 
     /**
      * If not specified, locale is set to the user's current locale.
@@ -195,19 +204,19 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
      * This property can be set to ensure that the formatter behaves in a way the developer expects, even if it is not
      * standard according to the preferences of the user's locale. If not specified, unitOptions defaults to localizing
      * according to the preferences of the locale.
-     * <p>
+     * 
      * Ex:
-     * <p>
+     * 
      * By default, if unitOptions is set to the empty set, the formatter will do the following:
      * - kilocalories may be formatted as "C" instead of "kcal" depending on the locale.
      * - kilometersPerHour may be formatted as "miles per hour" for US and UK locales but "kilometers per hour" for
      * other locales.
-     * <p>
+     * 
      * However, if NSMeasurementFormatterUnitOptionsProvidedUnit is set, the formatter will do the following:
      * - kilocalories would be formatted as "kcal" in the language of the locale, even if the locale prefers "C".
      * - kilometersPerHour would be formatted as "kilometers per hour" for US and UK locales even though the preference
      * is for "miles per hour."
-     * <p>
+     * 
      * Note that NSMeasurementFormatter will handle converting measurement objects to the preferred units in a
      * particular locale. For instance, if provided a measurement object in kilometers and the set locale is en_US, the
      * formatter will implicitly convert the measurement object to miles and return the formatted string as the
@@ -224,18 +233,20 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
     @Selector("setUnitStyle:")
     public native void setUnitStyle(@NInt long value);
 
+    @NotNull
     @Generated
     @Selector("stringFromMeasurement:")
-    public native String stringFromMeasurement(NSMeasurement<?> measurement);
+    public native String stringFromMeasurement(@NotNull NSMeasurement<?> measurement);
 
     /**
      * @param An NSUnit
      * @return A formatted string representing the localized form of the unit without a value attached to it. This
      *         method will return [unit symbol] if the provided unit cannot be localized.
      */
+    @NotNull
     @Generated
     @Selector("stringFromUnit:")
-    public native String stringFromUnit(NSUnit unit);
+    public native String stringFromUnit(@NotNull NSUnit unit);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -247,19 +258,19 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
      * This property can be set to ensure that the formatter behaves in a way the developer expects, even if it is not
      * standard according to the preferences of the user's locale. If not specified, unitOptions defaults to localizing
      * according to the preferences of the locale.
-     * <p>
+     * 
      * Ex:
-     * <p>
+     * 
      * By default, if unitOptions is set to the empty set, the formatter will do the following:
      * - kilocalories may be formatted as "C" instead of "kcal" depending on the locale.
      * - kilometersPerHour may be formatted as "miles per hour" for US and UK locales but "kilometers per hour" for
      * other locales.
-     * <p>
+     * 
      * However, if NSMeasurementFormatterUnitOptionsProvidedUnit is set, the formatter will do the following:
      * - kilocalories would be formatted as "kcal" in the language of the locale, even if the locale prefers "C".
      * - kilometersPerHour would be formatted as "kilometers per hour" for US and UK locales even though the preference
      * is for "miles per hour."
-     * <p>
+     * 
      * Note that NSMeasurementFormatter will handle converting measurement objects to the preferred units in a
      * particular locale. For instance, if provided a measurement object in kilometers and the set locale is en_US, the
      * formatter will implicitly convert the measurement object to miles and return the formatted string as the

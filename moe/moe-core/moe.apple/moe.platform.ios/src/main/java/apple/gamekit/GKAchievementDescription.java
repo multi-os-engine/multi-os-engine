@@ -44,10 +44,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * GKAchievementDescription is a full description of the achievement as defined before app submission in App Store
  * Connect.
+ * 
+ * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -79,22 +83,25 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -115,6 +122,7 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     /**
      * The default image for any incomplete achievement
      */
+    @NotNull
     @Generated
     @Selector("incompleteAchievementImage")
     public static native UIImage incompleteAchievementImage();
@@ -136,9 +144,10 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Asynchronously load all achievement descriptions
@@ -146,7 +155,7 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     @Generated
     @Selector("loadAchievementDescriptionsWithCompletionHandler:")
     public static native void loadAchievementDescriptionsWithCompletionHandler(
-            @ObjCBlock(name = "call_loadAchievementDescriptionsWithCompletionHandler") Block_loadAchievementDescriptionsWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_loadAchievementDescriptionsWithCompletionHandler") Block_loadAchievementDescriptionsWithCompletionHandler completionHandler);
 
     @Generated
     @Owned
@@ -156,6 +165,7 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     /**
      * A placeholder image to be used for any completed achievement until the description image has loaded.
      */
+    @NotNull
     @Generated
     @Selector("placeholderCompletedAchievementImage")
     public static native UIImage placeholderCompletedAchievementImage();
@@ -188,21 +198,26 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     /**
      * The description for an unachieved achievement.
      */
+    @Nullable
     @Generated
     @Selector("achievedDescription")
     public native String achievedDescription();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * The group identifier for the achievement, if one exists.
+     * 
+     * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("groupIdentifier")
     public native String groupIdentifier();
 
+    @Nullable
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -210,7 +225,12 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     /**
      * Image for completed achievement. Not valid until loadImage: has completed. Deprecated -- use
      * loadImageWithCompletionHandler: instead.
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use loadImageWithCompletionHandler: instead
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("image")
@@ -222,7 +242,7 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKAchievementDescription initWithCoder(NSCoder coder);
+    public native GKAchievementDescription initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Whether or not the achievement should be listed or displayed if not yet unhidden by the game.
@@ -234,6 +254,8 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     /**
      * Whether or not the achievement will be reported by the game when the user earns it again. This allows the
      * achievement to be used for challenges when the recipient has previously earned it.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("isReplayable")
@@ -245,7 +267,7 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     @Generated
     @Selector("loadImageWithCompletionHandler:")
     public native void loadImageWithCompletionHandler(
-            @ObjCBlock(name = "call_loadImageWithCompletionHandler") Block_loadImageWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_loadImageWithCompletionHandler") Block_loadImageWithCompletionHandler completionHandler);
 
     /**
      * Maximum points available for completing this achievement.
@@ -264,6 +286,7 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     /**
      * The title of the achievement.
      */
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();
@@ -271,6 +294,7 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     /**
      * The description for an achieved achievement.
      */
+    @Nullable
     @Generated
     @Selector("unachievedDescription")
     public native String unachievedDescription();
@@ -280,13 +304,13 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     public interface Block_loadAchievementDescriptionsWithCompletionHandler {
         @Generated
         void call_loadAchievementDescriptionsWithCompletionHandler(
-                NSArray<? extends GKAchievementDescription> descriptions, NSError error);
+                @Nullable NSArray<? extends GKAchievementDescription> descriptions, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadImageWithCompletionHandler {
         @Generated
-        void call_loadImageWithCompletionHandler(UIImage image, NSError error);
+        void call_loadImageWithCompletionHandler(@Nullable UIImage image, @Nullable NSError error);
     }
 }

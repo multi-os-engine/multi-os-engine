@@ -37,7 +37,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -68,22 +73,25 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -118,9 +126,10 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -148,14 +157,20 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.1
+     */
+    @NotNull
     @Generated
     @Selector("cardDetails")
     public native NSArray<? extends PKLabeledValue> cardDetails();
 
+    @Nullable
     @Generated
     @Selector("cardholderName")
     public native String cardholderName();
 
+    @NotNull
     @Generated
     @Selector("encryptionScheme")
     public native String encryptionScheme();
@@ -174,8 +189,9 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
      */
     @Generated
     @Selector("initWithEncryptionScheme:")
-    public native PKAddPaymentPassRequestConfiguration initWithEncryptionScheme(String encryptionScheme);
+    public native PKAddPaymentPassRequestConfiguration initWithEncryptionScheme(@NotNull String encryptionScheme);
 
+    @Nullable
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
@@ -183,6 +199,7 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     /**
      * Filters introduction page to a specific network - does not function as a restriction.
      */
+    @Nullable
     @Generated
     @Selector("paymentNetwork")
     public native String paymentNetwork();
@@ -191,36 +208,44 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
      * Pass Library Filters:
      * If the filtered set is empty, then all filter will be ignored.
      */
+    @Nullable
     @Generated
     @Selector("primaryAccountIdentifier")
     public native String primaryAccountIdentifier();
 
+    @Nullable
     @Generated
     @Selector("primaryAccountSuffix")
     public native String primaryAccountSuffix();
 
+    /**
+     * API-Since: 10.1
+     */
     @Generated
     @Selector("requiresFelicaSecureElement")
     public native boolean requiresFelicaSecureElement();
 
+    /**
+     * API-Since: 10.1
+     */
     @Generated
     @Selector("setCardDetails:")
-    public native void setCardDetails(NSArray<? extends PKLabeledValue> value);
+    public native void setCardDetails(@NotNull NSArray<? extends PKLabeledValue> value);
 
     @Generated
     @Selector("setCardholderName:")
-    public native void setCardholderName(String value);
+    public native void setCardholderName(@Nullable String value);
 
     @Generated
     @Selector("setLocalizedDescription:")
-    public native void setLocalizedDescription(String value);
+    public native void setLocalizedDescription(@Nullable String value);
 
     /**
      * Filters introduction page to a specific network - does not function as a restriction.
      */
     @Generated
     @Selector("setPaymentNetwork:")
-    public native void setPaymentNetwork(String value);
+    public native void setPaymentNetwork(@Nullable String value);
 
     /**
      * Pass Library Filters:
@@ -228,33 +253,43 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
      */
     @Generated
     @Selector("setPrimaryAccountIdentifier:")
-    public native void setPrimaryAccountIdentifier(String value);
+    public native void setPrimaryAccountIdentifier(@Nullable String value);
 
     @Generated
     @Selector("setPrimaryAccountSuffix:")
-    public native void setPrimaryAccountSuffix(String value);
+    public native void setPrimaryAccountSuffix(@Nullable String value);
 
+    /**
+     * API-Since: 10.1
+     */
     @Generated
     @Selector("setRequiresFelicaSecureElement:")
     public native void setRequiresFelicaSecureElement(boolean value);
 
     /**
      * Filters introduction page to a specific set of images - does not function as a restriction.
+     * 
+     * API-Since: 12.3
      */
+    @NotNull
     @Generated
     @Selector("productIdentifiers")
     public native NSSet<String> productIdentifiers();
 
     /**
      * Filters introduction page to a specific set of images - does not function as a restriction.
+     * 
+     * API-Since: 12.3
      */
     @Generated
     @Selector("setProductIdentifiers:")
-    public native void setProductIdentifiers(NSSet<String> value);
+    public native void setProductIdentifiers(@NotNull NSSet<String> value);
 
     /**
      * Display Properties:
      * At least one of cardholder name or primary account suffix must be supplied.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setStyle:")
@@ -263,6 +298,8 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     /**
      * Display Properties:
      * At least one of cardholder name or primary account suffix must be supplied.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("style")

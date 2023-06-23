@@ -38,7 +38,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -69,22 +74,25 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -119,9 +127,10 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,27 +165,30 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * -initDirectoryWithFileWrappers:, -initRegularFileWithContents:, and -initSymbolicLinkWithDestinationURL: do not
      * automatically set the preferred file name.
      */
+    @NotNull
     @Generated
     @Selector("addFileWrapper:")
-    public native String addFileWrapper(NSFileWrapper child);
+    public native String addFileWrapper(@NotNull NSFileWrapper child);
 
     /**
      * A convenience method. The default implementation merely allocates a new file wrapper, initializes it with
      * -initRegularFileWithContents:, sends it -setPreferredFileName:fileName, adds it to the receiver with
      * -addFileWrapper:, and returns what -addFileWrapper: returned.
      */
+    @NotNull
     @Generated
     @Selector("addRegularFileWithContents:preferredFilename:")
-    public native String addRegularFileWithContentsPreferredFilename(NSData data, String fileName);
+    public native String addRegularFileWithContentsPreferredFilename(@NotNull NSData data, @NotNull String fileName);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * The file attributes, in a dictionary of the same sort as those returned by -[NSFileManager
      * attributesOfItemAtPath:error:].
      */
+    @NotNull
     @Generated
     @Selector("fileAttributes")
     public native NSDictionary<String, ?> fileAttributes();
@@ -186,6 +198,7 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * been assigned to each one. This method may return nil if the receiver is the result of reading a parent from the
      * file system (use NSFileWrapperReadingImmediately if appropriate to prevent that).
      */
+    @Nullable
     @Generated
     @Selector("fileWrappers")
     public native NSDictionary<String, ? extends NSFileWrapper> fileWrappers();
@@ -196,6 +209,7 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * you should not use it to find out the name of a child that's about to be written, because the name might be about
      * to change. Send -keyForFileWrapper: to the parent instead.
      */
+    @Nullable
     @Generated
     @Selector("filename")
     public native String filename();
@@ -213,45 +227,49 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("initDirectoryWithFileWrappers:")
     public native NSFileWrapper initDirectoryWithFileWrappers(
-            NSDictionary<String, ? extends NSFileWrapper> childrenByPreferredName);
+            @NotNull NSDictionary<String, ? extends NSFileWrapper> childrenByPreferredName);
 
     /**
      * A designated initializer for creating an instance for which -isRegularFile returns YES.
      */
     @Generated
     @Selector("initRegularFileWithContents:")
-    public native NSFileWrapper initRegularFileWithContents(NSData contents);
+    public native NSFileWrapper initRegularFileWithContents(@NotNull NSData contents);
 
     /**
      * A designated initializer for creating an instance for which -isSymbolicLink returns YES.
      * -writeToURL:options:originalContentsURL:error: uses the result of sending -relativePath to this URL when creating
      * a symbolic link. (An NSURL initialized by -initFileURLWithPath: returns that entire path when sent -relativePath
      * though.)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("initSymbolicLinkWithDestinationURL:")
-    public native NSFileWrapper initSymbolicLinkWithDestinationURL(NSURL url);
+    public native NSFileWrapper initSymbolicLinkWithDestinationURL(@NotNull NSURL url);
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSFileWrapper initWithCoder(NSCoder inCoder);
+    public native NSFileWrapper initWithCoder(@NotNull NSCoder inCoder);
 
     /**
      * A designated initializer. The data must be in the same format as that returned by -serializedRepresentation.
      */
     @Generated
     @Selector("initWithSerializedRepresentation:")
-    public native NSFileWrapper initWithSerializedRepresentation(NSData serializeRepresentation);
+    public native NSFileWrapper initWithSerializedRepresentation(@NotNull NSData serializeRepresentation);
 
     /**
      * A designated initializer for creating an instance whose kind (directory, regular file, or symbolic link) is
      * determined based on what the URL locates. If reading is not successful return nil after setting *outError to an
      * NSError that encapsulates the reason why the file wrapper could not be read.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("initWithURL:options:error:")
-    public native NSFileWrapper initWithURLOptionsError(NSURL url, @NUInt long options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native NSFileWrapper initWithURLOptionsError(@NotNull NSURL url, @NUInt long options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * What kind of file wrapper it is. Invocations of -readFromURL:options:error: may change what subsequent
@@ -272,9 +290,10 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
     /**
      * Return the unique file name that has been assigned to a child or nil if it is not a child of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("keyForFileWrapper:")
-    public native String keyForFileWrapper(NSFileWrapper child);
+    public native String keyForFileWrapper(@NotNull NSFileWrapper child);
 
     /**
      * Whether the receiver matches the directory, regular file, or symbolic link that is located by the URL. For a
@@ -284,10 +303,12 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * NSFileWrapperReadingImmediate is used, creating a file wrapper and then later sending it this message is not a
      * reliable way to simply check whether anything in a directory has changed. You can use this method to determine
      * whether the receiver's contents in memory are out of date relative to the file system.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("matchesContentsOfURL:")
-    public native boolean matchesContentsOfURL(NSURL url);
+    public native boolean matchesContentsOfURL(@NotNull NSURL url);
 
     /**
      * The file name that is "preferred." When the receiver is added to a parent directory file wrapper the parent will
@@ -297,11 +318,12 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * names of children are not effectively preserved when you write a file wrapper to disk and then later instantiate
      * another file wrapper by reading. If your application needs to preserve the user-visible names of attachments it
      * has to make its own arrangements for their storage.
-     * <p>
+     * 
      * Some instances of NSFileWrapper may be created without a preferredFilename (e.g. -initDirectoryWithFileWrappers:
      * or -initRegularFileWithContents:), meaning preferredFilename may be nil. However, setting nil is never allowed
      * and will result in an exception.
      */
+    @Nullable
     @Generated
     @Selector("preferredFilename")
     public native String preferredFilename();
@@ -311,16 +333,19 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * If not successful, return NO after setting *outError to an NSError that encapsulates the reason why the file
      * wrapper could not be reread. When reading a directory children are added and removed as necessary to match the
      * file system.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("readFromURL:options:error:")
-    public native boolean readFromURLOptionsError(NSURL url, @NUInt long options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean readFromURLOptionsError(@NotNull NSURL url, @NUInt long options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * Return the receiver's contents. This may return nil if the receiver is the result of reading a parent from the
      * file system (use NSFileWrapperReadingImmediately if appropriate to prevent that).
      */
+    @Nullable
     @Generated
     @Selector("regularFileContents")
     public native NSData regularFileContents();
@@ -330,13 +355,14 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("removeFileWrapper:")
-    public native void removeFileWrapper(NSFileWrapper child);
+    public native void removeFileWrapper(@NotNull NSFileWrapper child);
 
     /**
      * Return an NSData suitable for passing to -initWithSerializedRepresentation:. This method may return nil if the
      * receiver is the result of reading from the file system (use NSFileWrapperReadingImmediately if appropriate to
      * prevent that).
      */
+    @Nullable
     @Generated
     @Selector("serializedRepresentation")
     public native NSData serializedRepresentation();
@@ -347,7 +373,7 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setFileAttributes:")
-    public native void setFileAttributes(NSDictionary<String, ?> value);
+    public native void setFileAttributes(@NotNull NSDictionary<String, ?> value);
 
     /**
      * The actual file name. Often it will be the same as the preferred file name but might instead be a name derived
@@ -357,7 +383,7 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setFilename:")
-    public native void setFilename(String value);
+    public native void setFilename(@Nullable String value);
 
     /**
      * The file name that is "preferred." When the receiver is added to a parent directory file wrapper the parent will
@@ -367,19 +393,22 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * names of children are not effectively preserved when you write a file wrapper to disk and then later instantiate
      * another file wrapper by reading. If your application needs to preserve the user-visible names of attachments it
      * has to make its own arrangements for their storage.
-     * <p>
+     * 
      * Some instances of NSFileWrapper may be created without a preferredFilename (e.g. -initDirectoryWithFileWrappers:
      * or -initRegularFileWithContents:), meaning preferredFilename may be nil. However, setting nil is never allowed
      * and will result in an exception.
      */
     @Generated
     @Selector("setPreferredFilename:")
-    public native void setPreferredFilename(String value);
+    public native void setPreferredFilename(@Nullable String value);
 
     /**
      * Return the destination link of the receiver. This may return nil if the receiver is the result of reading a
      * parent from the file system (use NSFileWrapperReadingImmediately if appropriate to prevent that).
+     * 
+     * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("symbolicLinkDestinationURL")
     public native NSURL symbolicLinkDestinationURL();
@@ -392,11 +421,13 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * merely writing hard links to regular files instead of actually writing out their contents. The descendant file
      * wrappers must return accurate values when sent -filename for this to work (use
      * NSFileWrapperWritingWithNameUpdating to increase the likelihood of that).
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("writeToURL:options:originalContentsURL:error:")
-    public native boolean writeToURLOptionsOriginalContentsURLError(NSURL url, @NUInt long options,
-            NSURL originalContentsURL, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean writeToURLOptionsOriginalContentsURLError(@NotNull NSURL url, @NUInt long options,
+            @Nullable NSURL originalContentsURL, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("supportsSecureCoding")

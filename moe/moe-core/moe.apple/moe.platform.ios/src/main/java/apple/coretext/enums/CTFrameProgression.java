@@ -20,21 +20,21 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] CTFrameProgression
- * <p>
+ * 
  * These constants specify frame progression types.
- * <p>
+ * 
  * The lines of text within a frame may be stacked for either
  * horizontal or vertical text. Values are enumerated for each
  * stacking type supported by CTFrame. Frames created with a
  * progression type specifying vertical text will rotate lines
  * 90 degrees counterclockwise when drawing.
- * <p>
+ * 
  * [@constant] kCTFrameProgressionTopToBottom
  * Lines are stacked top to bottom for horizontal text.
- * <p>
+ * 
  * [@constant] kCTFrameProgressionRightToLeft
  * Lines are stacked right to left for vertical text.
- * <p>
+ * 
  * [@constant] kCTFrameProgressionLeftToRight
  * Lines are stacked left to right for vertical text.
  */

@@ -6,7 +6,7 @@ import org.moe.natj.general.ann.NInt;
 /**
  * Fall Detection Event Resolution
  * [@sa] CMFallDetectionEvent
- * <p>
+ * 
  * This enumeration defines the different states in which a Fall Detection event can be resolved
  */
 @Generated

@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("WebKit")
@@ -39,27 +40,54 @@ public final class WebKit {
 
     /**
      * [@constant] WKErrorDomain Indicates a WebKit error.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String WKErrorDomain();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: This API will be replaced
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String WKPreviewActionItemIdentifierOpen();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: This API will be replaced
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String WKPreviewActionItemIdentifierAddToReadingList();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: This API will be replaced
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String WKPreviewActionItemIdentifierCopy();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: This API will be replaced
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -67,7 +95,10 @@ public final class WebKit {
 
     /**
      * [@constant] WKWebsiteDataTypeDiskCache On-disk caches.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -75,7 +106,10 @@ public final class WebKit {
 
     /**
      * [@constant] WKWebsiteDataTypeMemoryCache In-memory caches.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -83,7 +117,10 @@ public final class WebKit {
 
     /**
      * [@constant] WKWebsiteDataTypeOfflineWebApplicationCache HTML offline web application caches.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -91,7 +128,10 @@ public final class WebKit {
 
     /**
      * [@constant] WKWebsiteDataTypeCookies Cookies.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -99,7 +139,10 @@ public final class WebKit {
 
     /**
      * [@constant] WKWebsiteDataTypeSessionStorage HTML session storage.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -107,7 +150,10 @@ public final class WebKit {
 
     /**
      * [@constant] WKWebsiteDataTypeLocalStorage HTML local storage.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -115,7 +161,10 @@ public final class WebKit {
 
     /**
      * [@constant] WKWebsiteDataTypeWebSQLDatabases WebSQL databases.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -123,7 +172,10 @@ public final class WebKit {
 
     /**
      * [@constant] WKWebsiteDataTypeIndexedDBDatabases IndexedDB databases.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -131,11 +183,14 @@ public final class WebKit {
 
     /**
      * Indicates which local files WebKit can access when loading content.
-     * <p>
+     * 
      * If NSReadAccessURLDocumentOption references a single file, only that file may be
      * loaded by WebKit. If NSReadAccessURLDocumentOption references a directory, files inside that
      * directory may be loaded by WebKit.
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -143,7 +198,10 @@ public final class WebKit {
 
     /**
      * [@constant] WKWebsiteDataTypeFetchCache On-disk Fetch caches.
+     * 
+     * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -151,9 +209,23 @@ public final class WebKit {
 
     /**
      * [@constant] WKWebsiteDataTypeServiceWorkerRegistrations Service worker registrations.
+     * 
+     * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String WKWebsiteDataTypeServiceWorkerRegistrations();
+
+    /**
+     * [@constant] WKWebsiteDataTypeFileSystem File system storage.
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKWebsiteDataTypeFileSystem();
 }

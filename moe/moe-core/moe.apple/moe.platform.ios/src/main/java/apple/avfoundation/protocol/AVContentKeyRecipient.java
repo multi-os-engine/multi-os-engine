@@ -9,12 +9,15 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] AVContentKeyRecipient
- * <p>
+ * 
  * Classes of objects that may require decryption keys for media data in order to enable processing, such as parsing or
  * playback, conform to this protocol.
+ * 
+ * API-Since: 10.3
  */
 @Generated
 @Library("AVFoundation")
@@ -23,9 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 public interface AVContentKeyRecipient {
     /**
      * [@property] mayRequireContentKeysForMediaDataProcessing
-     * <p>
+     * 
      * Indicates whether the receiver may require decryption keys for media data in order to enable processing.
-     * <p>
+     * 
      * When the value of mayRequireContentKeysForMediaDataProcessing is YES, adding the receiver to an
      * AVContentKeySession allows it to employ the session's already existing keys and also enables the handling of new
      * key requests by the AVContentKeySession's delegate.
@@ -36,17 +39,20 @@ public interface AVContentKeyRecipient {
 
     /**
      * contentKeySession:didProvideContentKey:
-     * <p>
+     * 
      * Informs the receiver that an AVContentKey has been obtained as the result of an invocation of
      * -[AVContentKeyRequest processContentKeyResponse:].
-     * <p>
+     * 
      * The recipient may employ the AVContentKey for use with objects that support manual attachment of keys, such as
      * CMSampleBuffer via an invocation of AVSampleBufferAttachContentKey.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @IsOptional
     @Selector("contentKeySession:didProvideContentKey:")
-    default void contentKeySessionDidProvideContentKey(AVContentKeySession contentKeySession, AVContentKey contentKey) {
+    default void contentKeySessionDidProvideContentKey(@NotNull AVContentKeySession contentKeySession,
+            @NotNull AVContentKey contentKey) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

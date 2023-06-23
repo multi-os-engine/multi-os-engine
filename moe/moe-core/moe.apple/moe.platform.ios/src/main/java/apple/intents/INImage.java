@@ -18,7 +18,6 @@ package apple.intents;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGImageRef;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSData;
@@ -49,7 +48,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -80,22 +85,25 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -115,31 +123,39 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("imageNamed:")
-    public static native INImage imageNamed(String name);
+    public static native INImage imageNamed(@NotNull String name);
 
     /**
      * Returns the image size at which the image for an INIntentResponse will be displayed
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("imageSizeForIntentResponse:")
     @ByValue
-    public static native CGSize imageSizeForIntentResponse(INIntentResponse response);
+    public static native CGSize imageSizeForIntentResponse(@NotNull INIntentResponse response);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("imageWithCGImage:")
-    public static native INImage imageWithCGImage(CGImageRef imageRef);
+    public static native INImage imageWithCGImage(@NotNull CGImageRef imageRef);
 
     @Generated
     @Selector("imageWithImageData:")
-    public static native INImage imageWithImageData(NSData imageData);
+    public static native INImage imageWithImageData(@NotNull NSData imageData);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("imageWithUIImage:")
-    public static native INImage imageWithUIImage(UIImage image);
+    public static native INImage imageWithUIImage(@NotNull UIImage image);
 
     @Generated
     @Selector("imageWithURL:")
-    public static native INImage imageWithURL(NSURL URL);
+    public static native INImage imageWithURL(@NotNull NSURL URL);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -158,9 +174,10 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -192,15 +209,16 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -208,7 +226,7 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INImage initWithCoder(NSCoder coder);
+    public native INImage initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -216,23 +234,33 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("fetchUIImageWithCompletion:")
     public native void fetchUIImageWithCompletion(
-            @ObjCBlock(name = "call_fetchUIImageWithCompletion") Block_fetchUIImageWithCompletion completion);
+            @NotNull @ObjCBlock(name = "call_fetchUIImageWithCompletion") Block_fetchUIImageWithCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchUIImageWithCompletion {
         @Generated
-        void call_fetchUIImageWithCompletion(UIImage image);
+        void call_fetchUIImageWithCompletion(@Nullable UIImage image);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("imageWithURL:width:height:")
-    public static native INImage imageWithURLWidthHeight(NSURL URL, double width, double height);
+    public static native INImage imageWithURLWidthHeight(@NotNull NSURL URL, double width, double height);
 
+    /**
+     * API-Since: 14.0
+     */
+    @NotNull
     @Generated
     @Selector("systemImageNamed:")
-    public static native INImage systemImageNamed(String systemImageName);
+    public static native INImage systemImageNamed(@NotNull String systemImageName);
 }

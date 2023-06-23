@@ -30,9 +30,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A reference object to track in the scene.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("ARKit")
@@ -64,22 +68,25 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -94,14 +101,14 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Exports the object as an archive at the given URL.
-     * <p>
+     * 
      * The URL path should use ARReferenceObjectArchiveExtension (.arobject) for the file extension.
      * If serialization across devices is desired, NSKeyedArchiver should be used instead.
-     *
+     * 
      * @param url          The URL at which to write the exported object.
      * @param previewImage An optional preview image to include in the archive.
      * @param error        The error to populate if the write is not successful.
@@ -109,8 +116,8 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("exportObjectToURL:previewImage:error:")
-    public native boolean exportObjectToURLPreviewImageError(NSURL url, UIImage previewImage,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean exportObjectToURLPreviewImageError(@NotNull NSURL url, @Nullable UIImage previewImage,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("hash")
@@ -123,18 +130,18 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
 
     /**
      * Initializes a new reference object with the contents of an archive at the specified URL.
-     *
+     * 
      * @param url   The URL from which to read data (.arobject archive).
      * @param error The error to populate if the object could not be initialized.
      */
     @Generated
     @Selector("initWithArchiveURL:error:")
-    public native ARReferenceObject initWithArchiveURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native ARReferenceObject initWithArchiveURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("initWithCoder:")
-    public native ARReferenceObject initWithCoder(NSCoder coder);
+    public native ARReferenceObject initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -153,13 +160,15 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * An optional name used to identify the object.
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -172,37 +181,40 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
     /**
      * The feature points of the object.
      */
+    @NotNull
     @Generated
     @Selector("rawFeaturePoints")
     public native ARPointCloud rawFeaturePoints();
 
     /**
      * Returns a new reference object by aligning and merging the provided object with this reference.
-     * <p>
+     * 
      * This can be used to combine multiple scans of the same object for detection in different conditions. The object
      * being merged
      * must share similar feature points for the merge to succeed.
-     *
+     * 
      * @param object The reference object to align and merge.
      * @param error  The error to populate if the merge is not successful.
      * @return A new reference object combining features of both scans or nil if the merge was not successful.
      */
+    @Nullable
     @Generated
     @Selector("referenceObjectByMergingObject:error:")
-    public native ARReferenceObject referenceObjectByMergingObjectError(ARReferenceObject object,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native ARReferenceObject referenceObjectByMergingObjectError(@NotNull ARReferenceObject object,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Returns the set of ARReferenceObjects in the specified resource group and bundle.
-     *
+     * 
      * @param name   The name of the resource group.
      * @param bundle The bundle containing the image file or asset catalog. Specify nil to search the app’s main bundle.
      * @return The set of reference objects or nil on error.
      */
+    @Nullable
     @Generated
     @Selector("referenceObjectsInGroupNamed:bundle:")
-    public static native NSSet<? extends ARReferenceObject> referenceObjectsInGroupNamedBundle(String name,
-            NSBundle bundle);
+    public static native NSSet<? extends ARReferenceObject> referenceObjectsInGroupNamedBundle(@NotNull String name,
+            @Nullable NSBundle bundle);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -214,11 +226,14 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
 
     /**
      * The AR resource group name for this object.
-     * <p>
+     * 
      * If this object was loaded via an AR resource group in the Xcode asset catalogue this property will have the name
      * of the resource group,
      * else be set to nil.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("resourceGroupName")
     public native String resourceGroupName();
@@ -228,7 +243,7 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     @Generated
     @Selector("setVersion:")

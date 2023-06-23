@@ -19,14 +19,25 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 public final class UIDisplayGamut {
     /**
      * UIKit will not set this anymore, instead a sensible default is chosen based on the device capabilities and
      * settings always
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Unspecified = 0xFFFFFFFFFFFFFFFFL;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long SRGB = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long P3 = 0x0000000000000001L;
 
     @Generated

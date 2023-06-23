@@ -42,14 +42,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEFilterDataVerdict
- * <p>
+ * 
  * The NEFilterDataVerdict class declares the programmatic interface of an object that is the verdict for a flow of
  * network data after some of the data has been seen by the filter.
- * <p>
+ * 
  * NEFilterDataVerdict is part of NetworkExtension.framework
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -81,49 +85,58 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
 
     /**
      * allowVerdict
-     * <p>
+     * 
      * This class method returns a verdict indicating that the flow should be allowed.
-     *
+     * 
      * @return The NEFilterDataVerdict object.
+     * 
+     *         API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("allowVerdict")
     public static native NEFilterDataVerdict allowVerdict();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * dataVerdictWithPassBytes:peekBytes:
-     * <p>
+     * 
      * This class method returns a data verdict indicating that the filter is passing a given number of bytes through
      * the filter and needs to see a given number of bytes after the bytes that are passed.
-     *
+     * 
      * @param passBytes The number of bytes to pass through the filter.
      * @param peekBytes The number of bytes after the end of the bytes passed that the filter wants to see in the next
      *                  call to -[NEFilterDataProvider handleOutboundDataFromFlow:readBytesStartOffset:readBytes:] or
      *                  -[NEFilterDataProvider handleInboundDataFromFlow:readBytesStartOffset:readBytes:].
      * @return The data flow verdict.
+     * 
+     *         API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("dataVerdictWithPassBytes:peekBytes:")
     public static native NEFilterDataVerdict dataVerdictWithPassBytesPeekBytes(@NUInt long passBytes,
@@ -139,11 +152,14 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
 
     /**
      * dropVerdict
-     * <p>
+     * 
      * This class method returns a verdict indicating that the flow should be dropped.
-     *
+     * 
      * @return The NEFilterDataVerdict object.
+     * 
+     *         API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("dropVerdict")
     public static native NEFilterDataVerdict dropVerdict();
@@ -170,19 +186,23 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * needRulesVerdict
-     * <p>
+     * 
      * This class method returns a verdict indicating that control provider needs to be asked how to handle the data
      * flow. The control provider can either drop or allow the flow, or update the rules and ask the data provider to
      * decide on the data flow again.
-     *
+     * 
      * @return The NEFilterDataVerdict object.
+     * 
+     *         API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("needRulesVerdict")
     public static native NEFilterDataVerdict needRulesVerdict();
@@ -194,21 +214,24 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
 
     /**
      * remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:
-     * <p>
+     * 
      * This class method returns a verdict indicating that a "content blocked" page should be displayed to the user. The
      * block page should contain a link to the given URL.
-     *
+     * 
      * @param remediationURLMapKey        Remediation map key used by data plugin to get remediation url. Passing nil
      *                                    will result into data provider being notified with the callback
      *                                    handleRemediationForFlow:
      * @param remediationButtonTextMapKey Remediation button map key used by the data plugin to get the remediation
      *                                    button text. Passing nil will set the button text to "Request Access"
      * @return The NEFilterDataVerdict object.
+     * 
+     *         API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:")
     public static native NEFilterDataVerdict remediateVerdictWithRemediationURLMapKeyRemediationButtonTextMapKey(
-            String remediationURLMapKey, String remediationButtonTextMapKey);
+            @Nullable String remediationURLMapKey, @Nullable String remediationButtonTextMapKey);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -235,15 +258,16 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -251,7 +275,7 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEFilterDataVerdict initWithCoder(NSCoder coder);
+    public native NEFilterDataVerdict initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

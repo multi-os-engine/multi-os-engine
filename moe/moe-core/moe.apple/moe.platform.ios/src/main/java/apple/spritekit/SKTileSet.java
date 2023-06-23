@@ -17,7 +17,6 @@ limitations under the License.
 package apple.spritekit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -45,10 +44,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A tile set contains all of the tile definitions that are available for use in a tile map. In addition, it also
  * contains tile groups, which define collections of related tile definitions and the rules that govern their placement.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("SpriteKit")
@@ -80,22 +84,25 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +137,10 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,41 +166,41 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Creates a tile set from the specified tile set file. Returns nil if the URL doesn't point to a valid tile set
      * file.
-     *
+     * 
      * @param url the URL of the tile set file
      */
     @Generated
     @Selector("tileSetFromURL:")
-    public static native SKTileSet tileSetFromURL(NSURL url);
+    public static native SKTileSet tileSetFromURL(@NotNull NSURL url);
 
     /**
      * Gets the tile set with the specified name from the SpriteKit resource bundle. Returns nil if a tile set with a
      * matching name cannot be found.
-     *
+     * 
      * @param name the name of the tile set to search for
      */
     @Generated
     @Selector("tileSetNamed:")
-    public static native SKTileSet tileSetNamed(String name);
+    public static native SKTileSet tileSetNamed(@NotNull String name);
 
     /**
      * Create a tile set with the specified tile groups.
-     *
+     * 
      * @param tileGroups the tile groups that will be available for use with this set
      */
     @Generated
     @Selector("tileSetWithTileGroups:")
-    public static native SKTileSet tileSetWithTileGroups(NSArray<? extends SKTileGroup> tileGroups);
+    public static native SKTileSet tileSetWithTileGroups(@NotNull NSArray<? extends SKTileGroup> tileGroups);
 
     /**
      * Create a tile set with the specified tile groups and tile set type.
-     *
+     * 
      * @param tileGroups  the tile groups that will be available for use with this set
      * @param tileSetType the type of tile set this will be
      */
     @Generated
     @Selector("tileSetWithTileGroups:tileSetType:")
-    public static native SKTileSet tileSetWithTileGroupsTileSetType(NSArray<? extends SKTileGroup> tileGroups,
+    public static native SKTileSet tileSetWithTileGroupsTileSetType(@NotNull NSArray<? extends SKTileGroup> tileGroups,
             @NUInt long tileSetType);
 
     @Generated
@@ -200,12 +208,14 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    @Nullable
     @Generated
     @Selector("defaultTileGroup")
     public native SKTileGroup defaultTileGroup();
@@ -220,7 +230,7 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -228,38 +238,39 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKTileSet initWithCoder(NSCoder coder);
+    public native SKTileSet initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initilize a tile set with the specified tile groups.
-     *
+     * 
      * @param tileGroups the tile groups that will be available for use with this set
      */
     @Generated
     @Selector("initWithTileGroups:")
-    public native SKTileSet initWithTileGroups(NSArray<? extends SKTileGroup> tileGroups);
+    public native SKTileSet initWithTileGroups(@NotNull NSArray<? extends SKTileGroup> tileGroups);
 
     /**
      * Initilize a tile set with the specified tile groups and tile set type.
-     *
+     * 
      * @param tileGroups  the tile groups that will be available for use with this set
      * @param tileSetType the type of tile set this will be
      */
     @Generated
     @Selector("initWithTileGroups:tileSetType:")
-    public native SKTileSet initWithTileGroupsTileSetType(NSArray<? extends SKTileGroup> tileGroups,
+    public native SKTileSet initWithTileGroupsTileSetType(@NotNull NSArray<? extends SKTileGroup> tileGroups,
             @NUInt long tileSetType);
 
     /**
      * Client-assignable name for the tile set. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
 
     @Generated
     @Selector("setDefaultTileGroup:")
-    public native void setDefaultTileGroup(SKTileGroup value);
+    public native void setDefaultTileGroup(@Nullable SKTileGroup value);
 
     /**
      * The default tile size is the value an SKTileMapNode will use for it's tiles when the tile set is assigned to it.
@@ -273,14 +284,14 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     /**
      * The tile groups that this set provides for use.
      */
     @Generated
     @Selector("setTileGroups:")
-    public native void setTileGroups(NSArray<? extends SKTileGroup> value);
+    public native void setTileGroups(@NotNull NSArray<? extends SKTileGroup> value);
 
     /**
      * The tile set type specifies how the tiles in the set will be arranged when placed in a tile map. Defaults to
@@ -293,6 +304,7 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * The tile groups that this set provides for use.
      */
+    @NotNull
     @Generated
     @Selector("tileGroups")
     public native NSArray<? extends SKTileGroup> tileGroups();

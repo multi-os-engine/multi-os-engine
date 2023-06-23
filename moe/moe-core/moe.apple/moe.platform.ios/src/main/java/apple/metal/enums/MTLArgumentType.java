@@ -21,36 +21,74 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLArgumentType
- * <p>
+ * 
  * The type for an input to a MTLRenderPipelineState or a MTLComputePipelineState
- * <p>
+ * 
  * [@constant] MTLArgumentTypeBuffer
  * This input is a MTLBuffer
- * <p>
+ * 
  * [@constant] MTLArgumentTypeThreadgroupMemory
  * This input is a pointer to the threadgroup memory.
- * <p>
+ * 
  * [@constant] MTLArgumentTypeTexture
  * This input is a MTLTexture.
- * <p>
+ * 
  * [@constant] MTLArgumentTypeSampler
  * This input is a sampler.
+ * 
+ * API-Since: 8.0
+ * Deprecated-Since: 16.0
  */
+@Deprecated
 @Generated
 public final class MTLArgumentType {
-    @Generated @NUInt public static final long Buffer = 0x0000000000000000L;
-    @Generated @NUInt public static final long ThreadgroupMemory = 0x0000000000000001L;
-    @Generated @NUInt public static final long Texture = 0x0000000000000002L;
-    @Generated @NUInt public static final long Sampler = 0x0000000000000003L;
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
+     */
+    @Deprecated @Generated @NUInt public static final long Buffer = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
+     */
+    @Deprecated @Generated @NUInt public static final long ThreadgroupMemory = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
+     */
+    @Deprecated @Generated @NUInt public static final long Texture = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
+     */
+    @Deprecated @Generated @NUInt public static final long Sampler = 0x0000000000000003L;
 
     @Generated
     private MTLArgumentType() {
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NUInt public static final long ImageblockData = 0x0000000000000010L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NUInt public static final long Imageblock = 0x0000000000000011L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NUInt public static final long VisibleFunctionTable = 0x0000000000000018L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NUInt public static final long PrimitiveAccelerationStructure = 0x0000000000000019L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NUInt public static final long InstanceAccelerationStructure = 0x000000000000001AL;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NUInt public static final long IntersectionFunctionTable = 0x000000000000001BL;
 }

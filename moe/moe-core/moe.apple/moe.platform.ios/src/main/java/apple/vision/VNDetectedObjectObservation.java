@@ -1,7 +1,6 @@
 package apple.vision;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -25,15 +24,20 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * VNDetectedObjectObservation
  * [@superclass] VNObservation
- * <p>
+ * 
  * VNDetectedObjectObservation is VNObservation in an image that has a location and/or dimension. Further attributes
  * depend on the specific detected object.
- * <p>
+ * 
  * All result objects (faces, scene objects, shapes etc) must extend from this class.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -65,7 +69,7 @@ public class VNDetectedObjectObservation extends VNObservation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * The bounding box of the detected object. The coordinates are normalized to the dimensions of the processed image,
@@ -78,18 +82,21 @@ public class VNDetectedObjectObservation extends VNObservation {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -113,7 +120,7 @@ public class VNDetectedObjectObservation extends VNObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNDetectedObjectObservation initWithCoder(NSCoder coder);
+    public native VNDetectedObjectObservation initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -132,9 +139,10 @@ public class VNDetectedObjectObservation extends VNObservation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -179,6 +187,9 @@ public class VNDetectedObjectObservation extends VNObservation {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("observationWithRequestRevision:boundingBox:")
     public static native VNDetectedObjectObservation observationWithRequestRevisionBoundingBox(
@@ -186,7 +197,10 @@ public class VNDetectedObjectObservation extends VNObservation {
 
     /**
      * The resulting CVPixelBuffer from requests that generate a segmentation mask for the entire image.
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("globalSegmentationMask")
     public native VNPixelBufferObservation globalSegmentationMask();

@@ -1,8 +1,6 @@
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -26,7 +24,14 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -57,22 +62,25 @@ public class UIBandSelectionInteraction extends NSObject implements UIInteractio
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -87,7 +95,7 @@ public class UIBandSelectionInteraction extends NSObject implements UIInteractio
 
     @Generated
     @Selector("didMoveToView:")
-    public native void didMoveToView(UIView view);
+    public native void didMoveToView(@Nullable UIView view);
 
     @Generated
     @Selector("hash")
@@ -100,19 +108,19 @@ public class UIBandSelectionInteraction extends NSObject implements UIInteractio
 
     /**
      * Creates a UIBandSelectionInteraction with the given selection handler.
-     *
+     * 
      * @param selectionHandler Called when the interaction's state and/or selection rect change.
      */
     @Generated
     @Selector("initWithSelectionHandler:")
     public native UIBandSelectionInteraction initWithSelectionHandler(
-            @ObjCBlock(name = "call_initWithSelectionHandler") Block_initWithSelectionHandler selectionHandler);
+            @NotNull @ObjCBlock(name = "call_initWithSelectionHandler") Block_initWithSelectionHandler selectionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithSelectionHandler {
         @Generated
-        void call_initWithSelectionHandler(UIBandSelectionInteraction interaction);
+        void call_initWithSelectionHandler(@NotNull UIBandSelectionInteraction interaction);
     }
 
     /**
@@ -147,9 +155,10 @@ public class UIBandSelectionInteraction extends NSObject implements UIInteractio
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -186,13 +195,13 @@ public class UIBandSelectionInteraction extends NSObject implements UIInteractio
     @Generated
     @Selector("setShouldBeginHandler:")
     public native void setShouldBeginHandler(
-            @ObjCBlock(name = "call_setShouldBeginHandler") Block_setShouldBeginHandler value);
+            @Nullable @ObjCBlock(name = "call_setShouldBeginHandler") Block_setShouldBeginHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setShouldBeginHandler {
         @Generated
-        boolean call_setShouldBeginHandler(UIBandSelectionInteraction arg0, @ByValue CGPoint arg1);
+        boolean call_setShouldBeginHandler(@NotNull UIBandSelectionInteraction arg0, @ByValue CGPoint arg1);
     }
 
     @Generated
@@ -203,6 +212,7 @@ public class UIBandSelectionInteraction extends NSObject implements UIInteractio
      * Called when the interaction is about to begin.
      * Return a boolean indicating whether the interaction should begin at the given location.
      */
+    @Nullable
     @Generated
     @Selector("shouldBeginHandler")
     @ObjCBlock(name = "call_shouldBeginHandler_ret")
@@ -212,7 +222,7 @@ public class UIBandSelectionInteraction extends NSObject implements UIInteractio
     @Generated
     public interface Block_shouldBeginHandler_ret {
         @Generated
-        boolean call_shouldBeginHandler_ret(UIBandSelectionInteraction arg0, @ByValue CGPoint arg1);
+        boolean call_shouldBeginHandler_ret(@NotNull UIBandSelectionInteraction arg0, @ByValue CGPoint arg1);
     }
 
     /**
@@ -232,11 +242,12 @@ public class UIBandSelectionInteraction extends NSObject implements UIInteractio
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("view")
     public native UIView view();
 
     @Generated
     @Selector("willMoveToView:")
-    public native void willMoveToView(UIView view);
+    public native void willMoveToView(@Nullable UIView view);
 }

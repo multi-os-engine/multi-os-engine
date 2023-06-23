@@ -42,7 +42,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -74,39 +79,51 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * atm
      */
+    @NotNull
     @Generated
     @Selector("atmosphereUnit")
     public static native HKUnit atmosphereUnit();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use smallCalorieUnit or largeCalorieUnit, depending on which you mean
+     */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("calorieUnit")
     public static native HKUnit calorieUnit();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * cmAq
      */
+    @NotNull
     @Generated
     @Selector("centimeterOfWaterUnit")
     public static native HKUnit centimeterOfWaterUnit();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -114,20 +131,27 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * count
      */
+    @NotNull
     @Generated
     @Selector("countUnit")
     public static native HKUnit countUnit();
 
     /**
      * cup_imp
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("cupImperialUnit")
     public static native HKUnit cupImperialUnit();
 
     /**
      * cup_us
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("cupUSUnit")
     public static native HKUnit cupUSUnit();
@@ -135,6 +159,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * d
      */
+    @NotNull
     @Generated
     @Selector("dayUnit")
     public static native HKUnit dayUnit();
@@ -146,6 +171,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * degC
      */
+    @NotNull
     @Generated
     @Selector("degreeCelsiusUnit")
     public static native HKUnit degreeCelsiusUnit();
@@ -153,6 +179,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * degF
      */
+    @NotNull
     @Generated
     @Selector("degreeFahrenheitUnit")
     public static native HKUnit degreeFahrenheitUnit();
@@ -164,11 +191,12 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("energyFormatterUnitFromUnit:")
     @NInt
-    public static native long energyFormatterUnitFromUnit(HKUnit unit);
+    public static native long energyFormatterUnitFromUnit(@NotNull HKUnit unit);
 
     /**
      * fl_oz_imp
      */
+    @NotNull
     @Generated
     @Selector("fluidOunceImperialUnit")
     public static native HKUnit fluidOunceImperialUnit();
@@ -176,6 +204,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * fl_oz_us
      */
+    @NotNull
     @Generated
     @Selector("fluidOunceUSUnit")
     public static native HKUnit fluidOunceUSUnit();
@@ -183,6 +212,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * ft
      */
+    @NotNull
     @Generated
     @Selector("footUnit")
     public static native HKUnit footUnit();
@@ -190,6 +220,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * g
      */
+    @NotNull
     @Generated
     @Selector("gramUnit")
     public static native HKUnit gramUnit();
@@ -197,6 +228,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * g
      */
+    @NotNull
     @Generated
     @Selector("gramUnitWithMetricPrefix:")
     public static native HKUnit gramUnitWithMetricPrefix(@NInt long prefix);
@@ -209,6 +241,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * hr
      */
+    @NotNull
     @Generated
     @Selector("hourUnit")
     public static native HKUnit hourUnit();
@@ -216,6 +249,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * in
      */
+    @NotNull
     @Generated
     @Selector("inchUnit")
     public static native HKUnit inchUnit();
@@ -240,6 +274,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * J
      */
+    @NotNull
     @Generated
     @Selector("jouleUnit")
     public static native HKUnit jouleUnit();
@@ -247,6 +282,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * J
      */
+    @NotNull
     @Generated
     @Selector("jouleUnitWithMetricPrefix:")
     public static native HKUnit jouleUnitWithMetricPrefix(@NInt long prefix);
@@ -254,17 +290,20 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * K
      */
+    @NotNull
     @Generated
     @Selector("kelvinUnit")
     public static native HKUnit kelvinUnit();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * 1 kcal = 4184.0 J
      */
+    @NotNull
     @Generated
     @Selector("kilocalorieUnit")
     public static native HKUnit kilocalorieUnit();
@@ -272,11 +311,12 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("lengthFormatterUnitFromUnit:")
     @NInt
-    public static native long lengthFormatterUnitFromUnit(HKUnit unit);
+    public static native long lengthFormatterUnitFromUnit(@NotNull HKUnit unit);
 
     /**
      * L
      */
+    @NotNull
     @Generated
     @Selector("literUnit")
     public static native HKUnit literUnit();
@@ -284,6 +324,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * L
      */
+    @NotNull
     @Generated
     @Selector("literUnitWithMetricPrefix:")
     public static native HKUnit literUnitWithMetricPrefix(@NInt long prefix);
@@ -291,11 +332,12 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("massFormatterUnitFromUnit:")
     @NInt
-    public static native long massFormatterUnitFromUnit(HKUnit unit);
+    public static native long massFormatterUnitFromUnit(@NotNull HKUnit unit);
 
     /**
      * m
      */
+    @NotNull
     @Generated
     @Selector("meterUnit")
     public static native HKUnit meterUnit();
@@ -303,6 +345,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * m
      */
+    @NotNull
     @Generated
     @Selector("meterUnitWithMetricPrefix:")
     public static native HKUnit meterUnitWithMetricPrefix(@NInt long prefix);
@@ -310,6 +353,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * mi
      */
+    @NotNull
     @Generated
     @Selector("mileUnit")
     public static native HKUnit mileUnit();
@@ -317,6 +361,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * mmHg
      */
+    @NotNull
     @Generated
     @Selector("millimeterOfMercuryUnit")
     public static native HKUnit millimeterOfMercuryUnit();
@@ -324,6 +369,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * min
      */
+    @NotNull
     @Generated
     @Selector("minuteUnit")
     public static native HKUnit minuteUnit();
@@ -331,6 +377,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * mol<double>
      */
+    @NotNull
     @Generated
     @Selector("moleUnitWithMetricPrefix:molarMass:")
     public static native HKUnit moleUnitWithMetricPrefixMolarMass(@NInt long prefix, double gramsPerMole);
@@ -338,6 +385,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * mol<double>
      */
+    @NotNull
     @Generated
     @Selector("moleUnitWithMolarMass:")
     public static native HKUnit moleUnitWithMolarMass(double gramsPerMole);
@@ -350,6 +398,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * oz
      */
+    @NotNull
     @Generated
     @Selector("ounceUnit")
     public static native HKUnit ounceUnit();
@@ -357,6 +406,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Pa
      */
+    @NotNull
     @Generated
     @Selector("pascalUnit")
     public static native HKUnit pascalUnit();
@@ -364,6 +414,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Pa
      */
+    @NotNull
     @Generated
     @Selector("pascalUnitWithMetricPrefix:")
     public static native HKUnit pascalUnitWithMetricPrefix(@NInt long prefix);
@@ -371,6 +422,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * % (0.0 - 1.0)
      */
+    @NotNull
     @Generated
     @Selector("percentUnit")
     public static native HKUnit percentUnit();
@@ -378,6 +430,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * pt_imp
      */
+    @NotNull
     @Generated
     @Selector("pintImperialUnit")
     public static native HKUnit pintImperialUnit();
@@ -385,6 +438,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * pt_us
      */
+    @NotNull
     @Generated
     @Selector("pintUSUnit")
     public static native HKUnit pintUSUnit();
@@ -392,6 +446,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * lb
      */
+    @NotNull
     @Generated
     @Selector("poundUnit")
     public static native HKUnit poundUnit();
@@ -407,6 +462,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * s
      */
+    @NotNull
     @Generated
     @Selector("secondUnit")
     public static native HKUnit secondUnit();
@@ -414,6 +470,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * s
      */
+    @NotNull
     @Generated
     @Selector("secondUnitWithMetricPrefix:")
     public static native HKUnit secondUnitWithMetricPrefix(@NInt long prefix);
@@ -425,6 +482,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * S
      */
+    @NotNull
     @Generated
     @Selector("siemenUnit")
     public static native HKUnit siemenUnit();
@@ -432,6 +490,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * S
      */
+    @NotNull
     @Generated
     @Selector("siemenUnitWithMetricPrefix:")
     public static native HKUnit siemenUnitWithMetricPrefix(@NInt long prefix);
@@ -439,6 +498,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * st
      */
+    @NotNull
     @Generated
     @Selector("stoneUnit")
     public static native HKUnit stoneUnit();
@@ -471,7 +531,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("unitFromString:")
-    public static native HKUnit unitFromString(String string);
+    public static native HKUnit unitFromString(@NotNull String string);
 
     @Generated
     @Selector("version")
@@ -480,20 +540,24 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * yd
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("yardUnit")
     public static native HKUnit yardUnit();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -501,12 +565,13 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKUnit initWithCoder(NSCoder coder);
+    public native HKUnit initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("isNull")
     public native boolean isNull();
 
+    @NotNull
     @Generated
     @Selector("reciprocalUnit")
     public native HKUnit reciprocalUnit();
@@ -517,14 +582,17 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
         return supportsSecureCoding();
     }
 
+    @NotNull
     @Generated
     @Selector("unitDividedByUnit:")
-    public native HKUnit unitDividedByUnit(HKUnit unit);
+    public native HKUnit unitDividedByUnit(@NotNull HKUnit unit);
 
+    @NotNull
     @Generated
     @Selector("unitMultipliedByUnit:")
-    public native HKUnit unitMultipliedByUnit(HKUnit unit);
+    public native HKUnit unitMultipliedByUnit(@NotNull HKUnit unit);
 
+    @NotNull
     @Generated
     @Selector("unitRaisedToPower:")
     public native HKUnit unitRaisedToPower(@NInt long power);
@@ -532,77 +600,178 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Returns a unique string representation for the unit that could be used with +unitFromString:
      */
+    @NotNull
     @Generated
     @Selector("unitString")
     public native String unitString();
 
     /**
      * IU
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("internationalUnit")
     public static native HKUnit internationalUnit();
 
     /**
      * 1 Cal = 4184.0 J
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("largeCalorieUnit")
     public static native HKUnit largeCalorieUnit();
 
     /**
      * 1 cal = 4.1840 J
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("smallCalorieUnit")
     public static native HKUnit smallCalorieUnit();
 
     /**
      * dBASPL
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("decibelAWeightedSoundPressureLevelUnit")
     public static native HKUnit decibelAWeightedSoundPressureLevelUnit();
 
     /**
      * dBHL
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("decibelHearingLevelUnit")
     public static native HKUnit decibelHearingLevelUnit();
 
     /**
      * Hz
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("hertzUnit")
     public static native HKUnit hertzUnit();
 
     /**
      * Hz
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("hertzUnitWithMetricPrefix:")
     public static native HKUnit hertzUnitWithMetricPrefix(@NInt long prefix);
 
     /**
      * inHg
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("inchesOfMercuryUnit")
     public static native HKUnit inchesOfMercuryUnit();
 
     /**
      * V
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("voltUnit")
     public static native HKUnit voltUnit();
 
     /**
      * V
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("voltUnitWithMetricPrefix:")
     public static native HKUnit voltUnitWithMetricPrefix(@NInt long prefix);
+
+    /**
+     * deg
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @Selector("degreeAngleUnit")
+    public static native HKUnit degreeAngleUnit();
+
+    /**
+     * D
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @Selector("diopterUnit")
+    public static native HKUnit diopterUnit();
+
+    /**
+     * pD
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @Selector("prismDiopterUnit")
+    public static native HKUnit prismDiopterUnit();
+
+    /**
+     * rad
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @Selector("radianAngleUnit")
+    public static native HKUnit radianAngleUnit();
+
+    /**
+     * rad
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @Selector("radianAngleUnitWithMetricPrefix:")
+    public static native HKUnit radianAngleUnitWithMetricPrefix(@NInt long prefix);
+
+    /**
+     * W
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @Selector("wattUnit")
+    public static native HKUnit wattUnit();
+
+    /**
+     * W
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @Selector("wattUnitWithMetricPrefix:")
+    public static native HKUnit wattUnitWithMetricPrefix(@NInt long prefix);
 }

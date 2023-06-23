@@ -5,9 +5,9 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] AVDelegatingPlaybackCoordinatorSeekOptions
- * <p>
+ * 
  * Configuration for a call to [AVDelegatingPlaybackCoordinator coordinateSeekToTime:options:].
- * <p>
+ * 
  * [@constant] AVDelegatingPlaybackCoordinatorSeekOptionResumeImmediately
  * Requests that the coordinator resume playback as soon as possible after the seek is complete and ignore other
  * participant's readiness and suspensions.

@@ -19,11 +19,26 @@ package apple.photos.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 public final class PHAssetSourceType {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long TypeNone = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long TypeUserLibrary = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long TypeCloudShared = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long TypeiTunesSynced = 0x0000000000000004L;
 
     @Generated

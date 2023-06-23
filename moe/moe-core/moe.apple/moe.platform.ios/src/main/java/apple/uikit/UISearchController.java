@@ -48,7 +48,12 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -78,35 +83,39 @@ public class UISearchController extends UIViewController implements UIViewContro
     @Selector("allocWithZone:")
     public static native UISearchController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -138,9 +147,10 @@ public class UISearchController extends UIViewController implements UIViewContro
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -171,27 +181,31 @@ public class UISearchController extends UIViewController implements UIViewContro
     @Generated
     @Selector("animateTransition:")
     public native void animateTransition(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("animationControllerForDismissedController:")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIViewControllerAnimatedTransitioning animationControllerForDismissedController(
-            UIViewController dismissed);
+            @NotNull UIViewController dismissed);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("animationControllerForPresentedController:presentingController:sourceController:")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIViewControllerAnimatedTransitioning animationControllerForPresentedControllerPresentingControllerSourceController(
-            UIViewController presented, UIViewController presenting, UIViewController source);
+            @NotNull UIViewController presented, @NotNull UIViewController presenting,
+            @NotNull UIViewController source);
 
     @Generated
     @IsOptional
     @Selector("animationEnded:")
     public native void animationEnded(boolean transitionCompleted);
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -199,7 +213,11 @@ public class UISearchController extends UIViewController implements UIViewContro
 
     /**
      * default is YES, and has the same behavior as obscuresBackgroundDuringPresentation.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 12.0
      */
+    @Deprecated
     @Generated
     @Selector("dimsBackgroundDuringPresentation")
     public native boolean dimsBackgroundDuringPresentation();
@@ -217,14 +235,15 @@ public class UISearchController extends UIViewController implements UIViewContro
 
     @Generated
     @Selector("initWithCoder:")
-    public native UISearchController initWithCoder(NSCoder coder);
+    public native UISearchController initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Creates a search controller without a results controller
      */
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native UISearchController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native UISearchController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * Pass nil if you wish to display search results in the same view that you are searching. This is not supported on
@@ -232,28 +251,32 @@ public class UISearchController extends UIViewController implements UIViewContro
      */
     @Generated
     @Selector("initWithSearchResultsController:")
-    public native UISearchController initWithSearchResultsController(UIViewController searchResultsController);
+    public native UISearchController initWithSearchResultsController(
+            @Nullable UIViewController searchResultsController);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("interactionControllerForDismissal:")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIViewControllerInteractiveTransitioning interactionControllerForDismissal(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerAnimatedTransitioning animator);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerAnimatedTransitioning animator);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("interactionControllerForPresentation:")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIViewControllerInteractiveTransitioning interactionControllerForPresentation(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerAnimatedTransitioning animator);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerAnimatedTransitioning animator);
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("interruptibleAnimatorForTransition:")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIViewImplicitlyAnimating interruptibleAnimatorForTransition(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
     /**
      * Setting this property to YES is a convenience method that performs a default presentation of the search
@@ -276,24 +299,30 @@ public class UISearchController extends UIViewController implements UIViewContro
     /**
      * On iOS, default is NO for apps linked on iOS 15.0 and later, YES otherwise.
      * On tvOS, default is NO when contained in UISearchContainerViewController, YES otherwise.
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @Selector("obscuresBackgroundDuringPresentation")
     public native boolean obscuresBackgroundDuringPresentation();
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("presentationControllerForPresentedViewController:presentingViewController:sourceViewController:")
     public native UIPresentationController presentationControllerForPresentedViewControllerPresentingViewControllerSourceViewController(
-            UIViewController presented, UIViewController presenting, UIViewController source);
+            @NotNull UIViewController presented, @Nullable UIViewController presenting,
+            @NotNull UIViewController source);
 
     /**
      * You are free to become the search bar's delegate to monitor for text changes and button presses.
      */
+    @NotNull
     @Generated
     @Selector("searchBar")
     public native UISearchBar searchBar();
 
+    @Nullable
     @Generated
     @Selector("searchResultsController")
     public native UIViewController searchResultsController();
@@ -301,6 +330,7 @@ public class UISearchController extends UIViewController implements UIViewContro
     /**
      * The object responsible for updating the content of the searchResultsController.
      */
+    @Nullable
     @Generated
     @Selector("searchResultsUpdater")
     @MappedReturn(ObjCObjectMapper.class)
@@ -308,10 +338,10 @@ public class UISearchController extends UIViewController implements UIViewContro
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UISearchControllerDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UISearchControllerDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UISearchControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UISearchControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -324,7 +354,11 @@ public class UISearchController extends UIViewController implements UIViewContro
 
     /**
      * default is YES, and has the same behavior as obscuresBackgroundDuringPresentation.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 12.0
      */
+    @Deprecated
     @Generated
     @Selector("setDimsBackgroundDuringPresentation:")
     public native void setDimsBackgroundDuringPresentation(boolean value);
@@ -339,6 +373,8 @@ public class UISearchController extends UIViewController implements UIViewContro
     /**
      * On iOS, default is NO for apps linked on iOS 15.0 and later, YES otherwise.
      * On tvOS, default is NO when contained in UISearchContainerViewController, YES otherwise.
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @Selector("setObscuresBackgroundDuringPresentation:")
@@ -349,13 +385,14 @@ public class UISearchController extends UIViewController implements UIViewContro
      */
     @Generated
     @Selector("setSearchResultsUpdater:")
-    public native void setSearchResultsUpdater_unsafe(@Mapped(ObjCObjectMapper.class) UISearchResultsUpdating value);
+    public native void setSearchResultsUpdater_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) UISearchResultsUpdating value);
 
     /**
      * The object responsible for updating the content of the searchResultsController.
      */
     @Generated
-    public void setSearchResultsUpdater(@Mapped(ObjCObjectMapper.class) UISearchResultsUpdating value) {
+    public void setSearchResultsUpdater(@Nullable @Mapped(ObjCObjectMapper.class) UISearchResultsUpdating value) {
         Object __old = searchResultsUpdater();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -369,18 +406,35 @@ public class UISearchController extends UIViewController implements UIViewContro
     @Generated
     @Selector("transitionDuration:")
     public native double transitionDuration(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
     /**
      * Default YES
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("automaticallyShowsCancelButton")
     public native boolean automaticallyShowsCancelButton();
 
     /**
-     * Defaults to YES
+     * By default, UISearchController will show the search bar's scope bar
+     * (when there are at least two scope button titles for the search bar)
+     * when search becomes active and hide it when search is dismissed.
+     * 
+     * Clients can take over showing and hiding the scope bar by setting automaticallyShowsScopeBar
+     * to NO and using UISearchBar's showsScopeBar property to manage scope bar visibility.
+     * 
+     * Additionally, setting the showsScopeBar property on the searchController's searchBar
+     * will change the UISearchController's automaticallyShowsScopeBar property to NO.
+     * 
+     * On iOS, this will be fully deprecated in a future release in favor of `scopeBarActivation`
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use scopeBarActivation instead
      */
+    @Deprecated
     @Generated
     @Selector("automaticallyShowsScopeBar")
     public native boolean automaticallyShowsScopeBar();
@@ -388,6 +442,8 @@ public class UISearchController extends UIViewController implements UIViewContro
     /**
      * When true, UISearchController will automatically show its results controller based on the contents of its text
      * property. Defaults to true. Setting the showsSearchResultsController property will change this property to false.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("automaticallyShowsSearchResultsController")
@@ -395,14 +451,31 @@ public class UISearchController extends UIViewController implements UIViewContro
 
     /**
      * Default YES
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAutomaticallyShowsCancelButton:")
     public native void setAutomaticallyShowsCancelButton(boolean value);
 
     /**
-     * Defaults to YES
+     * By default, UISearchController will show the search bar's scope bar
+     * (when there are at least two scope button titles for the search bar)
+     * when search becomes active and hide it when search is dismissed.
+     * 
+     * Clients can take over showing and hiding the scope bar by setting automaticallyShowsScopeBar
+     * to NO and using UISearchBar's showsScopeBar property to manage scope bar visibility.
+     * 
+     * Additionally, setting the showsScopeBar property on the searchController's searchBar
+     * will change the UISearchController's automaticallyShowsScopeBar property to NO.
+     * 
+     * On iOS, this will be fully deprecated in a future release in favor of `scopeBarActivation`
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use scopeBarActivation instead
      */
+    @Deprecated
     @Generated
     @Selector("setAutomaticallyShowsScopeBar:")
     public native void setAutomaticallyShowsScopeBar(boolean value);
@@ -410,6 +483,8 @@ public class UISearchController extends UIViewController implements UIViewContro
     /**
      * When true, UISearchController will automatically show its results controller based on the contents of its text
      * property. Defaults to true. Setting the showsSearchResultsController property will change this property to false.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAutomaticallyShowsSearchResultsController:")
@@ -418,6 +493,8 @@ public class UISearchController extends UIViewController implements UIViewContro
     /**
      * Set this property to directly control the visibility of the search results controller. Setting this property
      * changes the automaticallyShowsSearchResultsController property to false.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setShowsSearchResultsController:")
@@ -426,8 +503,113 @@ public class UISearchController extends UIViewController implements UIViewContro
     /**
      * Set this property to directly control the visibility of the search results controller. Setting this property
      * changes the automaticallyShowsSearchResultsController property to false.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("showsSearchResultsController")
     public native boolean showsSearchResultsController();
+
+    /**
+     * Default NO. When YES, the UISearchController will not create its internal child view controller
+     * for presenting the list of search suggestions when the searchBarPlacement is stacked.
+     * This property is intended to be set at the time that the search controller is initialized.
+     * If set after that point, the internal view controller will not be destroyed, but its view will be hidden and
+     * remain so.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("ignoresSearchSuggestionsForSearchBarPlacementStacked")
+    public native boolean ignoresSearchSuggestionsForSearchBarPlacementStacked();
+
+    /**
+     * Controls if and when the UISearchController shows and hides the scope bar
+     * However, UISearchBar will not show the scope bar if `scopeButtonTitles` contains fewer than two titles
+     * Defaults to `UISearchControllerScopeBarActivationAutomatic`
+     * `UISearchControllerScopeBarActivationAutomatic` is equivalent to earlier `automaticallyShowsScopeBar == YES`
+     * `UISearchControllerScopeBarActivationManual` is equivalent to earlier `automaticallyShowsScopeBar == NO`
+     * Similar to the behavior of `automaticallyShowsScopeBar`, setting the `showsScopeBar` property on the
+     * `searchController`'s `searchBar`
+     * will change `scopeBarActivation` to `UISearchControllerScopeBarActivationManual`
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("scopeBarActivation")
+    @NInt
+    public native long scopeBarActivation();
+
+    /**
+     * For inspecting the current placement of the search bar when the search controller has been assigned to a
+     * UINavigationItem
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("searchBarPlacement")
+    @NInt
+    public native long searchBarPlacement();
+
+    /**
+     * List of search hint objects to be displayed under keyboard on tvOS,
+     * as a menu under the search field when the search bar is placed inline on iOS 16,
+     * or as a list in front of the searchResultsController when the search bar is stacked.
+     * Assigning with new array immediately updates the list on screen.
+     * searchSuggestions is set to nil when user interaction selects a suggestion,
+     * or when the user otherwise interacts with search (e.g., typing in the search field, choosing a different search
+     * scope, canceling search)
+     * after dismissing the menu by tapping outside
+     * 
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("searchSuggestions")
+    public native NSArray<?> searchSuggestions();
+
+    /**
+     * Default NO. When YES, the UISearchController will not create its internal child view controller
+     * for presenting the list of search suggestions when the searchBarPlacement is stacked.
+     * This property is intended to be set at the time that the search controller is initialized.
+     * If set after that point, the internal view controller will not be destroyed, but its view will be hidden and
+     * remain so.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setIgnoresSearchSuggestionsForSearchBarPlacementStacked:")
+    public native void setIgnoresSearchSuggestionsForSearchBarPlacementStacked(boolean value);
+
+    /**
+     * Controls if and when the UISearchController shows and hides the scope bar
+     * However, UISearchBar will not show the scope bar if `scopeButtonTitles` contains fewer than two titles
+     * Defaults to `UISearchControllerScopeBarActivationAutomatic`
+     * `UISearchControllerScopeBarActivationAutomatic` is equivalent to earlier `automaticallyShowsScopeBar == YES`
+     * `UISearchControllerScopeBarActivationManual` is equivalent to earlier `automaticallyShowsScopeBar == NO`
+     * Similar to the behavior of `automaticallyShowsScopeBar`, setting the `showsScopeBar` property on the
+     * `searchController`'s `searchBar`
+     * will change `scopeBarActivation` to `UISearchControllerScopeBarActivationManual`
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setScopeBarActivation:")
+    public native void setScopeBarActivation(@NInt long value);
+
+    /**
+     * List of search hint objects to be displayed under keyboard on tvOS,
+     * as a menu under the search field when the search bar is placed inline on iOS 16,
+     * or as a list in front of the searchResultsController when the search bar is stacked.
+     * Assigning with new array immediately updates the list on screen.
+     * searchSuggestions is set to nil when user interaction selects a suggestion,
+     * or when the user otherwise interacts with search (e.g., typing in the search field, choosing a different search
+     * scope, canceling search)
+     * after dismissing the menu by tapping outside
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setSearchSuggestions:")
+    public native void setSearchSuggestions(@Nullable NSArray<?> value);
 }

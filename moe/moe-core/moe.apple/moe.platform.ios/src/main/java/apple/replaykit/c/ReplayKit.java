@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("ReplayKit")
@@ -37,6 +38,7 @@ public final class ReplayKit {
     private ReplayKit() {
     }
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -44,10 +46,13 @@ public final class ReplayKit {
 
     /**
      * [@key] RPVideoSampleOrientationKey
-     * <p>
+     * 
      * Use this key in conjunction with CMGetAttachment on CMSampleBufferRef to get the orientation for the sample. The
      * orientation will follow the enum CGImagePropertyOrientation
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -55,11 +60,20 @@ public final class ReplayKit {
 
     /**
      * [@key] RPApplicationInfoBundleIdentifierKey
-     * <p>
+     * 
      * Use this key to retrieve bundle identifier from dictionary provided by broadcastAnnotatedWithApplicationInfo
+     * 
+     * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String RPApplicationInfoBundleIdentifierKey();
+
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SCStreamErrorDomain();
 }

@@ -38,7 +38,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -69,22 +74,25 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -119,9 +127,10 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -153,19 +162,21 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Name passed from one generation to another to indicate lineage, e.g. Appleseed
      */
+    @Nullable
     @Generated
     @Selector("familyName")
     public native String familyName();
@@ -173,6 +184,7 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
     /**
      * Name bestowed upon an individual by one's parents, e.g. Johnathan
      */
+    @Nullable
     @Generated
     @Selector("givenName")
     public native String givenName();
@@ -183,11 +195,12 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSPersonNameComponents initWithCoder(NSCoder coder);
+    public native NSPersonNameComponents initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Secondary given name chosen to differentiate those with the same first name, e.g. Maple
      */
+    @Nullable
     @Generated
     @Selector("middleName")
     public native String middleName();
@@ -195,6 +208,7 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
     /**
      * Pre-nominal letters denoting title, salutation, or honorific, e.g. Dr., Mr.
      */
+    @Nullable
     @Generated
     @Selector("namePrefix")
     public native String namePrefix();
@@ -202,6 +216,7 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
     /**
      * Post-nominal letters denoting degree, accreditation, or other honor, e.g. Esq., Jr., Ph.D.
      */
+    @Nullable
     @Generated
     @Selector("nameSuffix")
     public native String nameSuffix();
@@ -209,6 +224,7 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
     /**
      * Name substituted for the purposes of familiarity, e.g. "Johnny"
      */
+    @Nullable
     @Generated
     @Selector("nickname")
     public native String nickname();
@@ -219,6 +235,7 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
      * The phoneticRepresentation of the phoneticRepresentation object itself will be ignored. nil by default, must be
      * instantiated.
      */
+    @Nullable
     @Generated
     @Selector("phoneticRepresentation")
     public native NSPersonNameComponents phoneticRepresentation();
@@ -228,42 +245,42 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
      */
     @Generated
     @Selector("setFamilyName:")
-    public native void setFamilyName(String value);
+    public native void setFamilyName(@Nullable String value);
 
     /**
      * Name bestowed upon an individual by one's parents, e.g. Johnathan
      */
     @Generated
     @Selector("setGivenName:")
-    public native void setGivenName(String value);
+    public native void setGivenName(@Nullable String value);
 
     /**
      * Secondary given name chosen to differentiate those with the same first name, e.g. Maple
      */
     @Generated
     @Selector("setMiddleName:")
-    public native void setMiddleName(String value);
+    public native void setMiddleName(@Nullable String value);
 
     /**
      * Pre-nominal letters denoting title, salutation, or honorific, e.g. Dr., Mr.
      */
     @Generated
     @Selector("setNamePrefix:")
-    public native void setNamePrefix(String value);
+    public native void setNamePrefix(@Nullable String value);
 
     /**
      * Post-nominal letters denoting degree, accreditation, or other honor, e.g. Esq., Jr., Ph.D.
      */
     @Generated
     @Selector("setNameSuffix:")
-    public native void setNameSuffix(String value);
+    public native void setNameSuffix(@Nullable String value);
 
     /**
      * Name substituted for the purposes of familiarity, e.g. "Johnny"
      */
     @Generated
     @Selector("setNickname:")
-    public native void setNickname(String value);
+    public native void setNickname(@Nullable String value);
 
     /**
      * Each element of the phoneticRepresentation should correspond to an element of the original PersonNameComponents
@@ -273,7 +290,7 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
      */
     @Generated
     @Selector("setPhoneticRepresentation:")
-    public native void setPhoneticRepresentation(NSPersonNameComponents value);
+    public native void setPhoneticRepresentation(@Nullable NSPersonNameComponents value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

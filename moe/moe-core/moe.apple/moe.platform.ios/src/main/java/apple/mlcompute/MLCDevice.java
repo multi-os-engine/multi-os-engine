@@ -23,10 +23,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCDevice
- * <p>
+ * 
  * A device that will be used to execute a neural network.
  * If a MLCdevice is created with multiple devices using the [devicesWithType:selectMultipleDvices], on configurations
  * where multiple GPUs are available such as on the Mac Pro, the framework may transparently schedule the execution
@@ -35,6 +37,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * using
  * MLCGraphCompilationOptionsLinkGraphs specified in compileOptions and the multiple graphs should be linked together
  * with linkWithGraphs.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -56,11 +60,13 @@ public class MLCDevice extends NSObject implements NSCopying {
 
     /**
      * [@property] actualDeviceType
-     * <p>
+     * 
      * The specific device selected.
-     * <p>
+     * 
      * This can be CPU, GPU or ANE. If type is MLCDeviceTypeAny, this property
      * can be used to find out the specific device type that is selected.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("actualDeviceType")
@@ -78,46 +84,54 @@ public class MLCDevice extends NSObject implements NSCopying {
 
     /**
      * Creates a device which uses the Apple Neural Engine, if any.
-     *
+     * 
      * @return A new device, or `nil` if no ANE exists.
+     * 
+     *         API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("aneDevice")
     public static native MLCDevice aneDevice();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Creates a device which uses the CPU.
-     *
+     * 
      * @return A new device.
      */
+    @NotNull
     @Generated
     @Selector("cpuDevice")
     public static native MLCDevice cpuDevice();
@@ -132,19 +146,19 @@ public class MLCDevice extends NSObject implements NSCopying {
 
     /**
      * Create a MLCDevice object
-     * <p>
+     * 
      * This method can be used by developers to select specific GPUs
-     *
+     * 
      * @param gpus List of Metal devices
      * @return A new device object
      */
     @Generated
     @Selector("deviceWithGPUDevices:")
-    public static native MLCDevice deviceWithGPUDevices(NSArray<?> gpus);
+    public static native MLCDevice deviceWithGPUDevices(@NotNull NSArray<?> gpus);
 
     /**
      * Create a MLCDevice object
-     *
+     * 
      * @param type A device type
      * @return A new device object
      */
@@ -154,10 +168,12 @@ public class MLCDevice extends NSObject implements NSCopying {
 
     /**
      * Create a MLCDevice object that uses multiple devices if available
-     *
+     * 
      * @param type                          A device type
      * @param selectsMultipleComputeDevices A boolean to indicate whether to select multiple compute devices
      * @return A new device object
+     * 
+     *         API-Since: 14.5
      */
     @Generated
     @Selector("deviceWithType:selectsMultipleComputeDevices:")
@@ -166,13 +182,15 @@ public class MLCDevice extends NSObject implements NSCopying {
 
     /**
      * Creates a device which uses a GPU, if any.
-     *
+     * 
      * @return A new device, or `nil` if no GPU exists.
      */
+    @Nullable
     @Generated
     @Selector("gpuDevice")
     public static native MLCDevice gpuDevice();
 
+    @NotNull
     @Generated
     @Selector("gpuDevices")
     public native NSArray<?> gpuDevices();
@@ -203,9 +221,10 @@ public class MLCDevice extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -230,9 +249,9 @@ public class MLCDevice extends NSObject implements NSCopying {
 
     /**
      * [@property] type
-     * <p>
+     * 
      * The type specified when the device is created
-     * <p>
+     * 
      * Recommend that developers use MLCDeviceTypeAny as the device type.
      * This will ensure that MLCompute will select the best device to execute the neural network.
      * If developers want to be able to control device selection, they can select CPU or GPU and

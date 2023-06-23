@@ -18,11 +18,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This object holds all information about the interface of an exported or imported object. This includes: what messages
  * are allowed, what kinds of objects are allowed as arguments, what the signature of any reply blocks are, and any
  * information about additional proxy objects.
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("Foundation")
@@ -54,29 +58,33 @@ public class NSXPCInterface extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("classesForSelector:argumentIndex:ofReply:")
-    public native NSSet<? extends Class> classesForSelectorArgumentIndexOfReply(SEL sel, @NUInt long arg,
+    public native NSSet<? extends Class> classesForSelectorArgumentIndexOfReply(@NotNull SEL sel, @NUInt long arg,
             boolean ofReply);
 
     @Generated
@@ -109,17 +117,20 @@ public class NSXPCInterface extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    @Nullable
     @Generated
     @Selector("interfaceForSelector:argumentIndex:ofReply:")
-    public native NSXPCInterface interfaceForSelectorArgumentIndexOfReply(SEL sel, @NUInt long arg, boolean ofReply);
+    public native NSXPCInterface interfaceForSelectorArgumentIndexOfReply(@NotNull SEL sel, @NUInt long arg,
+            boolean ofReply);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -142,13 +153,13 @@ public class NSXPCInterface extends NSObject {
      * of the method the NSSet applies to. If the NSSet is for an argument of the reply block in the method, pass YES
      * for the ofReply: argument. The first argument is index 0 for both the method and the reply block.
      * If the expected classes are all property list types, calling this method is optional (property list types are
-     * automatically whitelisted for collection objects). You may use this method to further restrict the set of allowed
+     * automatically allowed for collection objects). You may use this method to further restrict the set of allowed
      * classes.
      */
     @Generated
     @Selector("setClasses:forSelector:argumentIndex:ofReply:")
-    public native void setClassesForSelectorArgumentIndexOfReply(NSSet<? extends Class> classes, SEL sel,
-            @NUInt long arg, boolean ofReply);
+    public native void setClassesForSelectorArgumentIndexOfReply(@NotNull NSSet<? extends Class> classes,
+            @NotNull SEL sel, @NUInt long arg, boolean ofReply);
 
     /**
      * If an argument to a method in your protocol should be sent as a proxy object instead of by copy, then the
@@ -158,8 +169,8 @@ public class NSXPCInterface extends NSObject {
      */
     @Generated
     @Selector("setInterface:forSelector:argumentIndex:ofReply:")
-    public native void setInterfaceForSelectorArgumentIndexOfReply(NSXPCInterface ifc, SEL sel, @NUInt long arg,
-            boolean ofReply);
+    public native void setInterfaceForSelectorArgumentIndexOfReply(@NotNull NSXPCInterface ifc, @NotNull SEL sel,
+            @NUInt long arg, boolean ofReply);
 
     @Generated
     @Selector("setVersion:")

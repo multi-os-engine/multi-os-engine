@@ -42,11 +42,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MDLMeshBufferData
- * <p>
+ * 
  * A CPU memory backed mesh buffer
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("ModelIO")
@@ -78,22 +82,25 @@ public class MDLMeshBufferData extends NSObject implements MDLMeshBuffer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,9 +135,10 @@ public class MDLMeshBufferData extends NSObject implements MDLMeshBuffer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,24 +166,27 @@ public class MDLMeshBufferData extends NSObject implements MDLMeshBuffer {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("allocator")
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBufferAllocator allocator();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("data")
     public native NSData data();
 
     @Generated
     @Selector("fillData:offset:")
-    public native void fillDataOffset(NSData data, @NUInt long offset);
+    public native void fillDataOffset(@NotNull NSData data, @NUInt long offset);
 
     @Generated
     @Selector("init")
@@ -183,21 +194,21 @@ public class MDLMeshBufferData extends NSObject implements MDLMeshBuffer {
 
     /**
      * initWithType:data
-     * <p>
+     * 
      * instantiate a new data backed mesh buffer
-     *
+     * 
      * @param type the intended use of the buffer
      * @param data the data to be used as a mesh buffer. It will be copied.
      */
     @Generated
     @Selector("initWithType:data:")
-    public native MDLMeshBufferData initWithTypeData(@NUInt long type, NSData data);
+    public native MDLMeshBufferData initWithTypeData(@NUInt long type, @Nullable NSData data);
 
     /**
      * initWithType:length
-     * <p>
+     * 
      * instantiate a new data backed mesh buffer
-     *
+     * 
      * @param type   the intended use of the buffer
      * @param length the size of buffer to allocate, in bytes
      */
@@ -210,6 +221,7 @@ public class MDLMeshBufferData extends NSObject implements MDLMeshBuffer {
     @NUInt
     public native long length();
 
+    @NotNull
     @Generated
     @Selector("map")
     public native MDLMeshBufferMap map();
@@ -219,6 +231,7 @@ public class MDLMeshBufferData extends NSObject implements MDLMeshBuffer {
     @NUInt
     public native long type();
 
+    @NotNull
     @Generated
     @Selector("zone")
     @MappedReturn(ObjCObjectMapper.class)

@@ -39,16 +39,20 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEVPNManager
- * <p>
+ * 
  * The NEVPNManager class declares the programmatic interface for an object that manages Virtual Private Network (VPN)
  * configurations.
- * <p>
+ * 
  * NEVPNManager declares methods and properties for configuring and controlling a VPN.
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -80,22 +84,25 @@ public class NEVPNManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +137,10 @@ public class NEVPNManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -153,9 +161,12 @@ public class NEVPNManager extends NSObject {
 
     /**
      * sharedManager
-     *
+     * 
      * @return The singleton NEVPNManager object for the calling process.
+     * 
+     *         API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("sharedManager")
     public static native NEVPNManager sharedManager();
@@ -171,9 +182,12 @@ public class NEVPNManager extends NSObject {
 
     /**
      * [@property] connection
-     * <p>
+     * 
      * The NEVPNConnection object used for controlling the VPN tunnel.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("connection")
     public native NEVPNConnection connection();
@@ -184,9 +198,11 @@ public class NEVPNManager extends NSObject {
 
     /**
      * [@property] enabled
-     * <p>
+     * 
      * Toggles the enabled status of the VPN. Setting this property will disable VPN configurations of other apps. This
      * property will be set to NO when other VPN configurations are enabled.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isEnabled")
@@ -194,9 +210,11 @@ public class NEVPNManager extends NSObject {
 
     /**
      * [@property] enabled
-     * <p>
+     * 
      * Toggles the enabled status of the VPN. Setting this property will disable VPN configurations of other apps. This
      * property will be set to NO when other VPN configurations are enabled.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setEnabled:")
@@ -204,8 +222,10 @@ public class NEVPNManager extends NSObject {
 
     /**
      * [@property] onDemandEnabled
-     * <p>
+     * 
      * Toggles VPN On Demand.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isOnDemandEnabled")
@@ -213,8 +233,10 @@ public class NEVPNManager extends NSObject {
 
     /**
      * [@property] onDemandEnabled
-     * <p>
+     * 
      * Toggles VPN On Demand.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setOnDemandEnabled:")
@@ -222,41 +244,53 @@ public class NEVPNManager extends NSObject {
 
     /**
      * loadFromPreferencesWithCompletionHandler:
-     * <p>
+     * 
      * This function loads the current VPN configuration from the caller's VPN preferences.
-     *
+     * 
      * @param completionHandler A block that will be called on the main thread when the load operation is completed. The
      *                          NSError passed to this block will be nil if the load operation succeeded, non-nil
      *                          otherwise.
+     * 
+     *                          API-Since: 8.0
      */
     @Generated
     @Selector("loadFromPreferencesWithCompletionHandler:")
     public native void loadFromPreferencesWithCompletionHandler(
-            @ObjCBlock(name = "call_loadFromPreferencesWithCompletionHandler") Block_loadFromPreferencesWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_loadFromPreferencesWithCompletionHandler") Block_loadFromPreferencesWithCompletionHandler completionHandler);
 
     /**
      * [@property] localizedDescription
-     * <p>
+     * 
      * A string containing a description of the VPN.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
 
     /**
      * [@property] onDemandRules
-     * <p>
+     * 
      * An array of NEOnDemandRule objects.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("onDemandRules")
     public native NSArray<? extends NEOnDemandRule> onDemandRules();
 
     /**
      * [@property] protocol
-     * <p>
+     * 
      * An NEVPNProtocol object containing the protocol-specific portion of the VPN configuration.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("protocol")
@@ -264,98 +298,114 @@ public class NEVPNManager extends NSObject {
 
     /**
      * [@property] protocolConfiguration
-     * <p>
+     * 
      * An NEVPNProtocol object containing the protocol-specific portion of the VPN configuration.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("protocolConfiguration")
     public native NEVPNProtocol protocolConfiguration();
 
     /**
      * removeFromPreferencesWithCompletionHandler:
-     * <p>
+     * 
      * This function removes the VPN configuration from the caller's VPN preferences. If the VPN is enabled, has VPN On
      * Demand enabled, and has VPN On Demand rules, the VPN is disabled and the VPN On Demand rules are de-activated.
-     *
+     * 
      * @param completionHandler A block that will be called on the main thread when the remove operation is completed.
      *                          The NSError passed to this block will be nil if the remove operation succeeded, non-nil
      *                          otherwise.
+     * 
+     *                          API-Since: 8.0
      */
     @Generated
     @Selector("removeFromPreferencesWithCompletionHandler:")
     public native void removeFromPreferencesWithCompletionHandler(
-            @ObjCBlock(name = "call_removeFromPreferencesWithCompletionHandler") Block_removeFromPreferencesWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_removeFromPreferencesWithCompletionHandler") Block_removeFromPreferencesWithCompletionHandler completionHandler);
 
     /**
      * saveToPreferencesWithCompletionHandler:
-     * <p>
+     * 
      * This function saves the VPN configuration in the caller's VPN preferences. If the VPN is enabled, has VPN On
      * Demand enabled, and has VPN On Demand rules, the VPN On Demand rules are activated.
-     *
+     * 
      * @param completionHandler A block that will be called on the main thread when the save operation is completed. The
      *                          NSError passed to this block will be nil if the save operation succeeded, non-nil
      *                          otherwise.
+     * 
+     *                          API-Since: 8.0
      */
     @Generated
     @Selector("saveToPreferencesWithCompletionHandler:")
     public native void saveToPreferencesWithCompletionHandler(
-            @ObjCBlock(name = "call_saveToPreferencesWithCompletionHandler") Block_saveToPreferencesWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_saveToPreferencesWithCompletionHandler") Block_saveToPreferencesWithCompletionHandler completionHandler);
 
     /**
      * [@property] localizedDescription
-     * <p>
+     * 
      * A string containing a description of the VPN.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setLocalizedDescription:")
-    public native void setLocalizedDescription(String value);
+    public native void setLocalizedDescription(@Nullable String value);
 
     /**
      * [@property] onDemandRules
-     * <p>
+     * 
      * An array of NEOnDemandRule objects.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setOnDemandRules:")
-    public native void setOnDemandRules(NSArray<? extends NEOnDemandRule> value);
+    public native void setOnDemandRules(@Nullable NSArray<? extends NEOnDemandRule> value);
 
     /**
      * [@property] protocol
-     * <p>
+     * 
      * An NEVPNProtocol object containing the protocol-specific portion of the VPN configuration.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
      */
     @Generated
     @Deprecated
     @Selector("setProtocol:")
-    public native void setProtocol(NEVPNProtocol value);
+    public native void setProtocol(@Nullable NEVPNProtocol value);
 
     /**
      * [@property] protocolConfiguration
-     * <p>
+     * 
      * An NEVPNProtocol object containing the protocol-specific portion of the VPN configuration.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setProtocolConfiguration:")
-    public native void setProtocolConfiguration(NEVPNProtocol value);
+    public native void setProtocolConfiguration(@Nullable NEVPNProtocol value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadFromPreferencesWithCompletionHandler {
         @Generated
-        void call_loadFromPreferencesWithCompletionHandler(NSError error);
+        void call_loadFromPreferencesWithCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeFromPreferencesWithCompletionHandler {
         @Generated
-        void call_removeFromPreferencesWithCompletionHandler(NSError error);
+        void call_removeFromPreferencesWithCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveToPreferencesWithCompletionHandler {
         @Generated
-        void call_saveToPreferencesWithCompletionHandler(NSError error);
+        void call_saveToPreferencesWithCompletionHandler(@Nullable NSError error);
     }
 }

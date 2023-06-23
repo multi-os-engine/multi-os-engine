@@ -11,11 +11,15 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Protocol dictating how texture allocator objects should operate so that they can be used
  * by an MPSSVGFDenoiser object to allocate and reuse intermediate and output textures during the
  * denoising process.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -29,11 +33,12 @@ public interface MPSSVGFTextureAllocator {
      */
     @Generated
     @Selector("returnTexture:")
-    void returnTexture(@Mapped(ObjCObjectMapper.class) MTLTexture texture);
+    void returnTexture(@NotNull @Mapped(ObjCObjectMapper.class) MTLTexture texture);
 
     /**
      * Returns an autoreleased Metal 2D texture with a matching pixel format, width, and height.
      */
+    @Nullable
     @Generated
     @Selector("textureWithPixelFormat:width:height:")
     @MappedReturn(ObjCObjectMapper.class)

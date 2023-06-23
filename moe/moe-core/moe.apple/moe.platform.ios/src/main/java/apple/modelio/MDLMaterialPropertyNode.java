@@ -39,7 +39,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -70,22 +75,25 @@ public class MDLMaterialPropertyNode extends NSObject implements MDLNamed {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,9 +128,10 @@ public class MDLMaterialPropertyNode extends NSObject implements MDLNamed {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -150,6 +159,7 @@ public class MDLMaterialPropertyNode extends NSObject implements MDLNamed {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("evaluationFunction")
     @ObjCBlock(name = "call_evaluationFunction_ret")
@@ -162,17 +172,21 @@ public class MDLMaterialPropertyNode extends NSObject implements MDLNamed {
     @Generated
     @Selector("initWithInputs:outputs:evaluationFunction:")
     public native MDLMaterialPropertyNode initWithInputsOutputsEvaluationFunction(
-            NSArray<? extends MDLMaterialProperty> inputs, NSArray<? extends MDLMaterialProperty> outputs,
-            @ObjCBlock(name = "call_initWithInputsOutputsEvaluationFunction") Block_initWithInputsOutputsEvaluationFunction function);
+            @NotNull NSArray<? extends MDLMaterialProperty> inputs,
+            @NotNull NSArray<? extends MDLMaterialProperty> outputs,
+            @NotNull @ObjCBlock(name = "call_initWithInputsOutputsEvaluationFunction") Block_initWithInputsOutputsEvaluationFunction function);
 
+    @NotNull
     @Generated
     @Selector("inputs")
     public native NSArray<? extends MDLMaterialProperty> inputs();
 
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
 
+    @NotNull
     @Generated
     @Selector("outputs")
     public native NSArray<? extends MDLMaterialProperty> outputs();
@@ -180,30 +194,30 @@ public class MDLMaterialPropertyNode extends NSObject implements MDLNamed {
     @Generated
     @Selector("setEvaluationFunction:")
     public native void setEvaluationFunction(
-            @ObjCBlock(name = "call_setEvaluationFunction") Block_setEvaluationFunction value);
+            @NotNull @ObjCBlock(name = "call_setEvaluationFunction") Block_setEvaluationFunction value);
 
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@NotNull String value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_evaluationFunction_ret {
         @Generated
-        void call_evaluationFunction_ret(MDLMaterialPropertyNode arg0);
+        void call_evaluationFunction_ret(@NotNull MDLMaterialPropertyNode arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithInputsOutputsEvaluationFunction {
         @Generated
-        void call_initWithInputsOutputsEvaluationFunction(MDLMaterialPropertyNode arg0);
+        void call_initWithInputsOutputsEvaluationFunction(@NotNull MDLMaterialPropertyNode arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setEvaluationFunction {
         @Generated
-        void call_setEvaluationFunction(MDLMaterialPropertyNode arg0);
+        void call_setEvaluationFunction(@NotNull MDLMaterialPropertyNode arg0);
     }
 }

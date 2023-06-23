@@ -36,6 +36,8 @@ public final class UITableViewStyle {
 
     /**
      * grouped sections are inset with rounded corners
+     * 
+     * API-Since: 13.0
      */
     @Generated @NInt public static final long InsetGrouped = 0x0000000000000002L;
 }

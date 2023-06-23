@@ -27,7 +27,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -58,36 +63,42 @@ public class INNote extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("contents")
     public native NSArray<? extends INNoteContent> contents();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    @Nullable
     @Generated
     @Selector("createdDateComponents")
     public native NSDateComponents createdDateComponents();
@@ -102,8 +113,9 @@ public class INNote extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    @Nullable
     @Generated
     @Selector("groupName")
     public native INSpeakableString groupName();
@@ -113,6 +125,7 @@ public class INNote extends NSObject implements NSCopying, NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    @Nullable
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -123,13 +136,14 @@ public class INNote extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INNote initWithCoder(NSCoder coder);
+    public native INNote initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithTitle:contents:groupName:createdDateComponents:modifiedDateComponents:identifier:")
     public native INNote initWithTitleContentsGroupNameCreatedDateComponentsModifiedDateComponentsIdentifier(
-            INSpeakableString title, NSArray<? extends INNoteContent> contents, INSpeakableString groupName,
-            NSDateComponents createdDateComponents, NSDateComponents modifiedDateComponents, String identifier);
+            @NotNull INSpeakableString title, @NotNull NSArray<? extends INNoteContent> contents,
+            @Nullable INSpeakableString groupName, @Nullable NSDateComponents createdDateComponents,
+            @Nullable NSDateComponents modifiedDateComponents, @Nullable String identifier);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -148,10 +162,12 @@ public class INNote extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("modifiedDateComponents")
     public native NSDateComponents modifiedDateComponents();
@@ -187,6 +203,7 @@ public class INNote extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    @NotNull
     @Generated
     @Selector("title")
     public native INSpeakableString title();

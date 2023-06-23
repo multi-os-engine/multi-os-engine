@@ -8,11 +8,14 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Describes a data axis for the chart (e.g. X, Y, etc.)
  * Each AXChart requires at least two AXDataAxis objects
  * to describe, at minimum, and X and a Y axis.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("Accessibility")
@@ -23,6 +26,7 @@ public interface AXDataAxisDescriptor extends NSCopying {
      * An attributed version of the title of this axis.
      * When set, this will be used instead of `title`.
      */
+    @NotNull
     @Generated
     @Selector("attributedTitle")
     NSAttributedString attributedTitle();
@@ -33,18 +37,19 @@ public interface AXDataAxisDescriptor extends NSCopying {
      */
     @Generated
     @Selector("setAttributedTitle:")
-    void setAttributedTitle(NSAttributedString value);
+    void setAttributedTitle(@NotNull NSAttributedString value);
 
     /**
      * The name or title of this axis.
      */
     @Generated
     @Selector("setTitle:")
-    void setTitle(String value);
+    void setTitle(@NotNull String value);
 
     /**
      * The name or title of this axis.
      */
+    @NotNull
     @Generated
     @Selector("title")
     String title();

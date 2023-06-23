@@ -26,16 +26,20 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * VNRequest
- * <p>
+ * 
  * VNRequest objects describe the operation to be performed as well as act as the recipient of the operation's resultant
  * observations.
- * <p>
+ * 
  * VNRequest objects are instantiated in a pre-configured nominal state. Prior to sending a VNRequest to a request
  * handler to perform a desired operation, the default configuration can be changed by modifying the values of VNRequest
  * properties. The VNRequest class itself acts as a base class and is not meant to be directly instantiated.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -67,31 +71,35 @@ public class VNRequest extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] completionHandler
-     * <p>
+     * 
      * The completion handler block that will be invoked after the request has completed processing.
      */
+    @Nullable
     @Generated
     @Selector("completionHandler")
     @ObjCBlock(name = "call_completionHandler_ret")
@@ -101,14 +109,15 @@ public class VNRequest extends NSObject implements NSCopying {
     @Generated
     public interface Block_completionHandler_ret {
         @Generated
-        void call_completionHandler_ret(VNRequest request, NSError error);
+        void call_completionHandler_ret(@NotNull VNRequest request, @Nullable NSError error);
     }
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -132,20 +141,20 @@ public class VNRequest extends NSObject implements NSCopying {
 
     /**
      * Creates a new VNRequest with an optional completion handler.
-     *
+     * 
      * @param completionHandler The block to be invoked after the request has completed its processing. The completion
      *                          handler gets executed on the same dispatch queue as the request being executed.
      */
     @Generated
     @Selector("initWithCompletionHandler:")
     public native VNRequest initWithCompletionHandler(
-            @ObjCBlock(name = "call_initWithCompletionHandler") Block_initWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_initWithCompletionHandler") Block_initWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithCompletionHandler {
         @Generated
-        void call_initWithCompletionHandler(VNRequest request, NSError error);
+        void call_initWithCompletionHandler(@NotNull VNRequest request, @Nullable NSError error);
     }
 
     @Generated
@@ -165,9 +174,10 @@ public class VNRequest extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -193,13 +203,14 @@ public class VNRequest extends NSObject implements NSCopying {
 
     /**
      * [@property] results
-     * <p>
+     * 
      * The collection of VNObservations generated by the processing of the request.
-     * <p>
+     * 
      * The only valid time to access this property is after the request has been processed by a request handler. If the
      * request failed, this property will be nil; otherwise, it will be an array of zero or more VNObservation
      * subclasses specific to the VNRequest subclass.
      */
+    @Nullable
     @Generated
     @Selector("results")
     public native NSArray<? extends VNObservation> results();
@@ -247,13 +258,17 @@ public class VNRequest extends NSObject implements NSCopying {
     /**
      * Tries to abort the request as soon as possible. Results will be nil. The completionHandler (if present) will be
      * called with an error of VNErrorRequestCancelled.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cancel")
     public native void cancel();
 
     /**
-     * Provides the current revison supported by the request.
+     * Provides the current revision supported by the request.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("currentRevision")
@@ -263,6 +278,8 @@ public class VNRequest extends NSObject implements NSCopying {
     /**
      * Provides the revision of the request that was latest for the particular SDK that was linked with the client
      * application.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("defaultRevision")
@@ -271,6 +288,8 @@ public class VNRequest extends NSObject implements NSCopying {
 
     /**
      * The specific algorithm or implementation revision that is to be used to perform the request.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("revision")
@@ -279,6 +298,8 @@ public class VNRequest extends NSObject implements NSCopying {
 
     /**
      * The specific algorithm or implementation revision that is to be used to perform the request.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setRevision:")
@@ -286,10 +307,13 @@ public class VNRequest extends NSObject implements NSCopying {
 
     /**
      * Provides the collection of currently-supported algorithm or implementation versions for the class of request.
-     * <p>
+     * 
      * This method allows clients to introspect at runtime what capabilities are available for each class of VNRequest
      * in the Vision framework.
+     * 
+     * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();

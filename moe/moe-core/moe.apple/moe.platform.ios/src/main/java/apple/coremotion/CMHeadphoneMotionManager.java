@@ -26,12 +26,16 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CMHeadphoneMotionManager
- * <p>
+ * 
  * Discussion:
  * The CMHeadphoneMotionManager object is your entry point to the headphone motion service.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("CoreMotion")
@@ -63,7 +67,7 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * authorizationStatus
-     * <p>
+     * 
      * Discussion:
      * Returns the current authorization status for headphone motion.
      */
@@ -74,22 +78,25 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -100,10 +107,11 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * delegate
-     * <p>
+     * 
      * Discussion:
      * The delegate object to receive motion manager events.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -115,10 +123,11 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * deviceMotion
-     * <p>
+     * 
      * Discussion:
      * Returns the latest sample of device motion data, or nil if none is available.
      */
+    @Nullable
     @Generated
     @Selector("deviceMotion")
     public native CMDeviceMotion deviceMotion();
@@ -147,7 +156,7 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * deviceMotionActive
-     * <p>
+     * 
      * Discussion:
      * Determines whether the CMHeadphoneMotionManager is currently providing device
      * motion updates.
@@ -158,7 +167,7 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * deviceMotionAvailable
-     * <p>
+     * 
      * Discussion:
      * Determines whether device motion is available.
      */
@@ -170,9 +179,10 @@ public class CMHeadphoneMotionManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -189,22 +199,23 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * delegate
-     * <p>
+     * 
      * Discussion:
      * The delegate object to receive motion manager events.
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CMHeadphoneMotionManagerDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) CMHeadphoneMotionManagerDelegate value);
 
     /**
      * delegate
-     * <p>
+     * 
      * Discussion:
      * The delegate object to receive motion manager events.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) CMHeadphoneMotionManagerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CMHeadphoneMotionManagerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -221,7 +232,7 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * startDeviceMotionUpdates
-     * <p>
+     * 
      * Discussion:
      * Starts device motion updates with no handler. To receive the latest device motion data
      * when desired, examine the deviceMotion property.
@@ -232,25 +243,25 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * startDeviceMotionUpdatesToQueue:withHandler:
-     * <p>
+     * 
      * Discussion:
      * Starts device motion updates, providing data to the given handler through the given queue.
      */
     @Generated
     @Selector("startDeviceMotionUpdatesToQueue:withHandler:")
-    public native void startDeviceMotionUpdatesToQueueWithHandler(NSOperationQueue queue,
-            @ObjCBlock(name = "call_startDeviceMotionUpdatesToQueueWithHandler") Block_startDeviceMotionUpdatesToQueueWithHandler handler);
+    public native void startDeviceMotionUpdatesToQueueWithHandler(@NotNull NSOperationQueue queue,
+            @NotNull @ObjCBlock(name = "call_startDeviceMotionUpdatesToQueueWithHandler") Block_startDeviceMotionUpdatesToQueueWithHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startDeviceMotionUpdatesToQueueWithHandler {
         @Generated
-        void call_startDeviceMotionUpdatesToQueueWithHandler(CMDeviceMotion motion, NSError error);
+        void call_startDeviceMotionUpdatesToQueueWithHandler(@Nullable CMDeviceMotion motion, @Nullable NSError error);
     }
 
     /**
      * stopDeviceMotionUpdates
-     * <p>
+     * 
      * Discussion:
      * Stops device motion updates.
      */

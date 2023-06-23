@@ -29,12 +29,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An object representing the geometry of a face.
- * <p>
+ * 
  * The face geometry will have a constant number of triangles
  * and vertices, updating only the vertex positions from frame to frame.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("ARKit")
@@ -66,31 +70,35 @@ public class ARFaceGeometry extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -111,15 +119,15 @@ public class ARFaceGeometry extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * Creates and returns a face geometry by applying a set of given blend shape coefficients.
-     * <p>
+     * 
      * An empty dictionary can be provided to create a neutral face geometry.
-     *
+     * 
      * @param blendShapes A dictionary of blend shape coefficients.
      * @return Face geometry after applying the blend shapes.
      */
     @Generated
     @Selector("initWithBlendShapes:")
-    public native ARFaceGeometry initWithBlendShapes(NSDictionary<String, ? extends NSNumber> blendShapes);
+    public native ARFaceGeometry initWithBlendShapes(@NotNull NSDictionary<String, ? extends NSNumber> blendShapes);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -138,9 +146,10 @@ public class ARFaceGeometry extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -182,6 +191,7 @@ public class ARFaceGeometry extends NSObject implements NSSecureCoding, NSCopyin
     /**
      * The triangle indices of the geometry.
      */
+    @NotNull
     @Generated
     @Selector("triangleIndices")
     public native ConstShortPtr triangleIndices();
@@ -201,11 +211,11 @@ public class ARFaceGeometry extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithCoder:")
-    public native ARFaceGeometry initWithCoder(NSCoder coder);
+    public native ARFaceGeometry initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("supportsSecureCoding")

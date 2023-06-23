@@ -23,10 +23,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCRMSPropOptimizer
- * <p>
+ * 
  * The MLCRMSPropOptimizer specifies the RMSProp optimizer.
  */
 @Generated
@@ -59,9 +61,9 @@ public class MLCRMSPropOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * The smoothing constant.
-     * <p>
+     * 
      * The default is 0.99.
      */
     @Generated
@@ -70,31 +72,35 @@ public class MLCRMSPropOptimizer extends MLCOptimizer implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -106,9 +112,9 @@ public class MLCRMSPropOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * [@property] epsilon
-     * <p>
+     * 
      * A term added to improve numerical stability.
-     * <p>
+     * 
      * The default is 1e-8.
      */
     @Generated
@@ -139,9 +145,9 @@ public class MLCRMSPropOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * [@property] isCentered
-     * <p>
+     * 
      * If True, compute the centered RMSProp, the gradient is normalized by an estimation of its variance.
-     * <p>
+     * 
      * The default is false.
      */
     @Generated
@@ -152,15 +158,16 @@ public class MLCRMSPropOptimizer extends MLCOptimizer implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] momentumScale
-     * <p>
+     * 
      * The momentum factor. A hyper-parameter.
-     * <p>
+     * 
      * The default is 0.0.
      */
     @Generated
@@ -174,16 +181,17 @@ public class MLCRMSPropOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * Create a MLCRMSPropOptimizer object with defaults
-     *
+     * 
      * @return A new MLCRMSPropOptimizer object.
      */
     @Generated
     @Selector("optimizerWithDescriptor:")
-    public static native MLCRMSPropOptimizer optimizerWithDescriptor(MLCOptimizerDescriptor optimizerDescriptor);
+    public static native MLCRMSPropOptimizer optimizerWithDescriptor(
+            @NotNull MLCOptimizerDescriptor optimizerDescriptor);
 
     /**
      * Create a MLCRMSPropOptimizer object
-     *
+     * 
      * @param optimizerDescriptor The optimizer descriptor object
      * @param momentumScale       The momentum scale
      * @param alpha               The smoothing constant value
@@ -194,7 +202,7 @@ public class MLCRMSPropOptimizer extends MLCOptimizer implements NSCopying {
     @Generated
     @Selector("optimizerWithDescriptor:momentumScale:alpha:epsilon:isCentered:")
     public static native MLCRMSPropOptimizer optimizerWithDescriptorMomentumScaleAlphaEpsilonIsCentered(
-            MLCOptimizerDescriptor optimizerDescriptor, float momentumScale, float alpha, float epsilon,
+            @NotNull MLCOptimizerDescriptor optimizerDescriptor, float momentumScale, float alpha, float epsilon,
             boolean isCentered);
 
     @Generated

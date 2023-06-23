@@ -1,7 +1,6 @@
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSAttributedString;
 import apple.foundation.NSMethodSignature;
@@ -24,6 +23,9 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * UIAccessibilityLocationDescriptor objects are used to describe to assistive
@@ -31,6 +33,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * should describe them. For example, the `accessibilityDragSourceDescriptors` and
  * `accessibilityDropPointDescriptors` properties in the UIAccessibilityDragging informal protocol
  * use UIAccessibilityLocationDescriptor objects to describe where drags may begin and end.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("UIKit")
@@ -64,28 +68,32 @@ public class UIAccessibilityLocationDescriptor extends NSObject {
      * Assistive technologies will use the attributedName of the descriptor when describing it to the
      * user (for instance, VoiceOver will speak it).
      */
+    @NotNull
     @Generated
     @Selector("attributedName")
     public native NSAttributedString attributedName();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -109,8 +117,8 @@ public class UIAccessibilityLocationDescriptor extends NSObject {
 
     @Generated
     @Selector("initWithAttributedName:point:inView:")
-    public native UIAccessibilityLocationDescriptor initWithAttributedNamePointInView(NSAttributedString attributedName,
-            @ByValue CGPoint point, UIView view);
+    public native UIAccessibilityLocationDescriptor initWithAttributedNamePointInView(
+            @NotNull NSAttributedString attributedName, @ByValue CGPoint point, @NotNull UIView view);
 
     /**
      * Provide the view, the point in that view's coordinate space that is of interest, and a name to
@@ -118,18 +126,18 @@ public class UIAccessibilityLocationDescriptor extends NSObject {
      */
     @Generated
     @Selector("initWithName:point:inView:")
-    public native UIAccessibilityLocationDescriptor initWithNamePointInView(String name, @ByValue CGPoint point,
-            UIView view);
+    public native UIAccessibilityLocationDescriptor initWithNamePointInView(@NotNull String name,
+            @ByValue CGPoint point, @NotNull UIView view);
 
     /**
      * Convenience initializer that uses the view's accessibilityActivationPoint. (This point will be
      * converted to the coordinate space of the view).
-     * <p>
+     * 
      * Note that by default, the accessibilityActivationPoint of a view is its center.
      */
     @Generated
     @Selector("initWithName:view:")
-    public native UIAccessibilityLocationDescriptor initWithNameView(String name, UIView view);
+    public native UIAccessibilityLocationDescriptor initWithNameView(@NotNull String name, @NotNull UIView view);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -148,14 +156,16 @@ public class UIAccessibilityLocationDescriptor extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The "name" property and initializer are conveniences for referring to the "attributedName"
      * property, which is the real underlying property.
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -196,11 +206,12 @@ public class UIAccessibilityLocationDescriptor extends NSObject {
 
     /**
      * The view in which the described point resides.
-     * <p>
+     * 
      * This property is weak to make it simple to avoid reference cycles. Descriptors whose views have
      * been deallocated (or are no longer in a visible window, or are obscured) will be silently
      * ignored. That said, you should still clean up after yourself.
      */
+    @Nullable
     @Generated
     @Selector("view")
     public native UIView view();

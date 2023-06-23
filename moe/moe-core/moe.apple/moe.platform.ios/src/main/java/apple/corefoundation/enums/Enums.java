@@ -76,18 +76,26 @@ public final class Enums {
     @Generated @NUInt public static final long kCFStringTokenizerAttributeLanguage = 0x0000000000020000L;
     /**
      * Error parsing a property list
+     * 
+     * API-Since: 4.0
      */
     @Generated @NInt public static final long kCFPropertyListReadCorruptError = 0x0000000000000F00L;
     /**
      * The version number in the property list is unknown
+     * 
+     * API-Since: 4.0
      */
     @Generated @NInt public static final long kCFPropertyListReadUnknownVersionError = 0x0000000000000F01L;
     /**
      * Stream error reading a property list
+     * 
+     * API-Since: 4.0
      */
     @Generated @NInt public static final long kCFPropertyListReadStreamError = 0x0000000000000F02L;
     /**
      * Stream error writing a property list
+     * 
+     * API-Since: 4.0
      */
     @Generated @NInt public static final long kCFPropertyListWriteStreamError = 0x0000000000000F0BL;
     @Generated @NUInt public static final long kCFNotificationDeliverImmediately = 0x0000000000000001L;
@@ -96,15 +104,30 @@ public final class Enums {
     @Generated @NUInt public static final long kCFSocketAutomaticallyReenableAcceptCallBack = 0x0000000000000002L;
     @Generated @NUInt public static final long kCFSocketAutomaticallyReenableDataCallBack = 0x0000000000000003L;
     @Generated @NUInt public static final long kCFSocketAutomaticallyReenableWriteCallBack = 0x0000000000000008L;
+    /**
+     * API-Since: 2.0
+     */
     @Generated @NUInt public static final long kCFSocketLeaveErrors = 0x0000000000000040L;
     @Generated @NUInt public static final long kCFSocketCloseOnInvalidate = 0x0000000000000080L;
     /**
      * option for adding
      */
     @Generated @NUInt public static final long kCFCalendarComponentsWrap = 0x0000000000000001L;
+    /**
+     * API-Since: 2.0
+     */
     @Generated public static final int kCFBundleExecutableArchitectureI386 = 0x00000007;
+    /**
+     * API-Since: 2.0
+     */
     @Generated public static final int kCFBundleExecutableArchitecturePPC = 0x00000012;
+    /**
+     * API-Since: 2.0
+     */
     @Generated public static final int kCFBundleExecutableArchitectureX86_64 = 0x01000007;
+    /**
+     * API-Since: 2.0
+     */
     @Generated public static final int kCFBundleExecutableArchitecturePPC64 = 0x01000012;
     @Generated public static final int kCFMessagePortSuccess = 0x00000000;
     @Generated public static final int kCFMessagePortSendTimeout = 0xFFFFFFFF;
@@ -117,5 +140,8 @@ public final class Enums {
     private Enums() {
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated public static final int kCFBundleExecutableArchitectureARM64 = 0x0100000C;
 }

@@ -23,7 +23,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
@@ -54,22 +59,25 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -93,7 +101,7 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
 
     @Generated
     @Selector("initWithCoder:")
-    public native ASAuthorizationOpenIDRequest initWithCoder(NSCoder coder);
+    public native ASAuthorizationOpenIDRequest initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -112,9 +120,10 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -127,6 +136,7 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
      * [@note] The nonce size may depend on the actual technology used and an error might be returned by the request
      * execution.
      */
+    @Nullable
     @Generated
     @Selector("nonce")
     public native String nonce();
@@ -135,6 +145,7 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
      * Operation to be executed by the request. The ASAuthorizationOperationImplicit operation interpretation depends on
      * the credential provider implementation.
      */
+    @NotNull
     @Generated
     @Selector("requestedOperation")
     public native String requestedOperation();
@@ -143,6 +154,7 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
      * The contact information to be requested from the user. Only scopes for which this app was authorized for will be
      * returned.
      */
+    @Nullable
     @Generated
     @Selector("requestedScopes")
     public native NSArray<String> requestedScopes();
@@ -163,7 +175,7 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
      */
     @Generated
     @Selector("setNonce:")
-    public native void setNonce(String value);
+    public native void setNonce(@Nullable String value);
 
     /**
      * Operation to be executed by the request. The ASAuthorizationOperationImplicit operation interpretation depends on
@@ -171,7 +183,7 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
      */
     @Generated
     @Selector("setRequestedOperation:")
-    public native void setRequestedOperation(String value);
+    public native void setRequestedOperation(@NotNull String value);
 
     /**
      * The contact information to be requested from the user. Only scopes for which this app was authorized for will be
@@ -179,7 +191,7 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
      */
     @Generated
     @Selector("setRequestedScopes:")
-    public native void setRequestedScopes(NSArray<String> value);
+    public native void setRequestedScopes(@Nullable NSArray<String> value);
 
     /**
      * State to be passed to the identity provider. This value will be returned as a part of successful ASAuthorization
@@ -189,7 +201,7 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
      */
     @Generated
     @Selector("setState:")
-    public native void setState(String value);
+    public native void setState(@Nullable String value);
 
     @Generated
     @Selector("setVersion:")
@@ -201,6 +213,7 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
      * [@note] The state size may depend on the actual technology used and an error might be returned by the request
      * execution.
      */
+    @Nullable
     @Generated
     @Selector("state")
     public native String state();

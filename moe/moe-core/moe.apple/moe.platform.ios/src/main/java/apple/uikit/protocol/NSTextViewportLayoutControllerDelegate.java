@@ -1,6 +1,5 @@
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGRect;
 import apple.uikit.NSTextLayoutFragment;
 import apple.uikit.NSTextViewportLayoutController;
 import org.moe.natj.general.ann.ByValue;
@@ -11,7 +10,12 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -26,7 +30,8 @@ public interface NSTextViewportLayoutControllerDelegate {
     @Generated
     @Selector("textViewportLayoutController:configureRenderingSurfaceForTextLayoutFragment:")
     void textViewportLayoutControllerConfigureRenderingSurfaceForTextLayoutFragment(
-            NSTextViewportLayoutController textViewportLayoutController, NSTextLayoutFragment textLayoutFragment);
+            @NotNull NSTextViewportLayoutController textViewportLayoutController,
+            @NotNull NSTextLayoutFragment textLayoutFragment);
 
     /**
      * Called when textViewportLayoutController is about to layout.
@@ -35,7 +40,8 @@ public interface NSTextViewportLayoutControllerDelegate {
     @Generated
     @IsOptional
     @Selector("textViewportLayoutControllerDidLayout:")
-    default void textViewportLayoutControllerDidLayout(NSTextViewportLayoutController textViewportLayoutController) {
+    default void textViewportLayoutControllerDidLayout(
+            @NotNull NSTextViewportLayoutController textViewportLayoutController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -46,7 +52,8 @@ public interface NSTextViewportLayoutControllerDelegate {
     @Generated
     @IsOptional
     @Selector("textViewportLayoutControllerWillLayout:")
-    default void textViewportLayoutControllerWillLayout(NSTextViewportLayoutController textViewportLayoutController) {
+    default void textViewportLayoutControllerWillLayout(
+            @NotNull NSTextViewportLayoutController textViewportLayoutController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -56,5 +63,6 @@ public interface NSTextViewportLayoutControllerDelegate {
     @Generated
     @Selector("viewportBoundsForTextViewportLayoutController:")
     @ByValue
-    CGRect viewportBoundsForTextViewportLayoutController(NSTextViewportLayoutController textViewportLayoutController);
+    CGRect viewportBoundsForTextViewportLayoutController(
+            @NotNull NSTextViewportLayoutController textViewportLayoutController);
 }

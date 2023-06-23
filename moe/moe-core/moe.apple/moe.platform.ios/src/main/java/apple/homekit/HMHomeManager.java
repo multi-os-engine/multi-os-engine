@@ -41,11 +41,15 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Manages collection of one or more homes.
- * <p>
+ * 
  * This class is responsible for managing a collection of homes.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HomeKit")
@@ -77,22 +81,25 @@ public class HMHomeManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +134,10 @@ public class HMHomeManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,20 +167,22 @@ public class HMHomeManager extends NSObject {
 
     /**
      * Adds a new home to the collection.
-     *
+     * 
      * @param homeName   Name of the home to create and add to the collection.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
      */
     @Generated
     @Selector("addHomeWithName:completionHandler:")
-    public native void addHomeWithNameCompletionHandler(String homeName,
-            @ObjCBlock(name = "call_addHomeWithNameCompletionHandler") Block_addHomeWithNameCompletionHandler completion);
+    public native void addHomeWithNameCompletionHandler(@NotNull String homeName,
+            @NotNull @ObjCBlock(name = "call_addHomeWithNameCompletionHandler") Block_addHomeWithNameCompletionHandler completion);
 
     /**
      * Delegate that receives updates on the collection of homes.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -180,11 +190,12 @@ public class HMHomeManager extends NSObject {
 
     /**
      * Array of HMHome objects that represents the homes associated with the home manager.
-     * <p>
+     * 
      * When a new home manager is created, this array is initialized as an empty array. It is
      * not guaranteed to be filled with the list of homes, represented as HMHome objects,
      * until the homeManagerDidUpdateHomes: delegate method has been invoked.
      */
+    @NotNull
     @Generated
     @Selector("homes")
     public native NSArray<? extends HMHome> homes();
@@ -195,36 +206,43 @@ public class HMHomeManager extends NSObject {
 
     /**
      * The primary home for this collection.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 16.1
+     * Deprecated-Message: No longer supported.
      */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("primaryHome")
     public native HMHome primaryHome();
 
     /**
      * Removes an existing home from the collection.
-     *
+     * 
      * @param home       Home object that needs to be removed from the collection.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
      */
     @Generated
     @Selector("removeHome:completionHandler:")
-    public native void removeHomeCompletionHandler(HMHome home,
-            @ObjCBlock(name = "call_removeHomeCompletionHandler") Block_removeHomeCompletionHandler completion);
+    public native void removeHomeCompletionHandler(@NotNull HMHome home,
+            @NotNull @ObjCBlock(name = "call_removeHomeCompletionHandler") Block_removeHomeCompletionHandler completion);
 
     /**
      * Delegate that receives updates on the collection of homes.
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) HMHomeManagerDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) HMHomeManagerDelegate value);
 
     /**
      * Delegate that receives updates on the collection of homes.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) HMHomeManagerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) HMHomeManagerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -237,42 +255,50 @@ public class HMHomeManager extends NSObject {
 
     /**
      * This method is used to change the primary home.
-     *
+     * 
      * @param home       New primary home.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
+     * 
+     *                   API-Since: 8.0
+     *                   Deprecated-Since: 16.1
+     *                   Deprecated-Message: No longer supported.
      */
+    @Deprecated
     @Generated
     @Selector("updatePrimaryHome:completionHandler:")
-    public native void updatePrimaryHomeCompletionHandler(HMHome home,
-            @ObjCBlock(name = "call_updatePrimaryHomeCompletionHandler") Block_updatePrimaryHomeCompletionHandler completion);
+    public native void updatePrimaryHomeCompletionHandler(@NotNull HMHome home,
+            @NotNull @ObjCBlock(name = "call_updatePrimaryHomeCompletionHandler") Block_updatePrimaryHomeCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addHomeWithNameCompletionHandler {
         @Generated
-        void call_addHomeWithNameCompletionHandler(HMHome home, NSError error);
+        void call_addHomeWithNameCompletionHandler(@Nullable HMHome home, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeHomeCompletionHandler {
         @Generated
-        void call_removeHomeCompletionHandler(NSError error);
+        void call_removeHomeCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updatePrimaryHomeCompletionHandler {
         @Generated
-        void call_updatePrimaryHomeCompletionHandler(NSError error);
+        void call_updatePrimaryHomeCompletionHandler(@Nullable NSError error);
     }
 
     /**
      * The current authorization status of the application.
-     * <p>
+     * 
      * The authorization is managed by the system, there is no need to explicitly request authorization.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("authorizationStatus")

@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] SCNetworkReachabilityFlags
- * <p>
+ * 
  * Flags that indicate whether the specified network
  * nodename or address is reachable, whether a connection is
  * required, and whether some user intervention may be required
@@ -35,7 +35,7 @@ import org.moe.natj.general.ann.Generated;
  * This flag indicates that the specified nodename or address can
  * be reached using the current network configuration, but a
  * connection must first be established.
- * <p>
+ * 
  * As an example, this status would be returned for a dialup
  * connection that was not currently active, but could handle
  * network traffic for the target system.
@@ -44,7 +44,7 @@ import org.moe.natj.general.ann.Generated;
  * be reached using the current network configuration, but a
  * connection must first be established. Any traffic directed
  * to the specified name or address will initiate the connection.
- * <p>
+ * 
  * Note: this flag was previously named kSCNetworkReachabilityFlagsConnectionAutomatic
  * [@constant] kSCNetworkReachabilityFlagsInterventionRequired
  * This flag indicates that the specified nodename or address can
@@ -53,7 +53,7 @@ import org.moe.natj.general.ann.Generated;
  * form of user intervention will be required to establish this
  * connection, such as providing a password, an authentication
  * token, etc.
- * <p>
+ * 
  * Note: At the present time, this flag will only be returned
  * in the case where you have a dial-on-traffic configuration
  * (ConnectionOnTraffic), where an attempt to connect has
@@ -88,9 +88,15 @@ public final class SCNetworkReachabilityFlags {
     @Generated public static final int ConnectionRequired = 0x00000004;
     @Generated public static final int ConnectionOnTraffic = 0x00000008;
     @Generated public static final int InterventionRequired = 0x00000010;
+    /**
+     * API-Since: 3.0
+     */
     @Generated public static final int ConnectionOnDemand = 0x00000020;
     @Generated public static final int IsLocalAddress = 0x00010000;
     @Generated public static final int IsDirect = 0x00020000;
+    /**
+     * API-Since: 2.0
+     */
     @Generated public static final int IsWWAN = 0x00040000;
     @Generated public static final int ConnectionAutomatic = 0x00000008;
 

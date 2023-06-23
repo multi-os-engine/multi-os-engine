@@ -2,7 +2,6 @@ package apple.pdfkit;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGPDFDocumentRef;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
 import apple.foundation.NSDictionary;
@@ -30,7 +29,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("PDFKit")
 @Runtime(ObjCRuntime.class)
@@ -61,6 +66,8 @@ public class PDFDocument extends NSObject implements NSCopying {
 
     /**
      * Create or modify annotations, including form field entries
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allowsCommenting")
@@ -68,6 +75,8 @@ public class PDFDocument extends NSObject implements NSCopying {
 
     /**
      * Extract content, but only for the purpose of accessibility
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allowsContentAccessibility")
@@ -75,6 +84,8 @@ public class PDFDocument extends NSObject implements NSCopying {
 
     /**
      * Extract content (text, images, etc.)
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allowsCopying")
@@ -82,6 +93,8 @@ public class PDFDocument extends NSObject implements NSCopying {
 
     /**
      * Page management: insert, delete, and rotate pages
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allowsDocumentAssembly")
@@ -89,6 +102,8 @@ public class PDFDocument extends NSObject implements NSCopying {
 
     /**
      * Modify the document contents except for page management (document attrubutes)
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allowsDocumentChanges")
@@ -96,6 +111,8 @@ public class PDFDocument extends NSObject implements NSCopying {
 
     /**
      * Modify form field entries, even if allowsCommenting is NO
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allowsFormFieldEntry")
@@ -103,6 +120,8 @@ public class PDFDocument extends NSObject implements NSCopying {
 
     /**
      * Printing the document
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allowsPrinting")
@@ -110,7 +129,7 @@ public class PDFDocument extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Begins a find, searching the document for string. Search results are handled via a
@@ -119,15 +138,17 @@ public class PDFDocument extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("beginFindString:withOptions:")
-    public native void beginFindStringWithOptions(String string, @NUInt long options);
+    public native void beginFindStringWithOptions(@NotNull String string, @NUInt long options);
 
     /**
      * Like -[beginFindString:withOptions:] above but it accepts an array of strings to search for.
      * All other comments for -[beginFindString:withOptions:] above apply.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("beginFindStrings:withOptions:")
-    public native void beginFindStringsWithOptions(NSArray<String> strings, @NUInt long options);
+    public native void beginFindStringsWithOptions(@NotNull NSArray<String> strings, @NUInt long options);
 
     /**
      * Method to cancel a search. Can be called from a user method being serviced by a find notification.
@@ -138,27 +159,31 @@ public class PDFDocument extends NSObject implements NSCopying {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Methods to record the current state of the PDFDocument as data or a file. Passing a QuartzFilter object in the
@@ -166,13 +191,18 @@ public class PDFDocument extends NSObject implements NSCopying {
      * NOTE: Versions of PDFKit before SnowLeopard did not return autorelease data for -[dataRepresentation]. You had to
      * release the data yourself. Beginning with apps compiled on SnowLeopard the data returned is autoreleased.
      */
+    @Nullable
     @Generated
     @Selector("dataRepresentation")
     public native NSData dataRepresentation();
 
+    /**
+     * API-Since: 11.0
+     */
+    @Nullable
     @Generated
     @Selector("dataRepresentationWithOptions:")
-    public native NSData dataRepresentationWithOptions(NSDictionary<?, ?> options);
+    public native NSData dataRepresentationWithOptions(@NotNull NSDictionary<?, ?> options);
 
     @Generated
     @Selector("debugDescription")
@@ -182,6 +212,7 @@ public class PDFDocument extends NSObject implements NSCopying {
      * If a PDFDocument has a delegate, delegate methods may be called. See: NSNotificationNames and
      * PDFDocumentDelegate below.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -196,6 +227,7 @@ public class PDFDocument extends NSObject implements NSCopying {
      * the
      * entire dictionary may be empty. See attributes above for keys.
      */
+    @Nullable
     @Generated
     @Selector("documentAttributes")
     public native NSDictionary<?, ?> documentAttributes();
@@ -204,6 +236,7 @@ public class PDFDocument extends NSObject implements NSCopying {
      * This is the CGPDFDocument associated with the PDFDocument object. With this object you can call many CoreGraphics
      * API. May return NULL if the document was not created from an existing PDF file or data.
      */
+    @Nullable
     @Generated
     @Selector("documentRef")
     public native CGPDFDocumentRef documentRef();
@@ -211,6 +244,7 @@ public class PDFDocument extends NSObject implements NSCopying {
     /**
      * May return NULL if the document was created from NSData.
      */
+    @Nullable
     @Generated
     @Selector("documentURL")
     public native NSURL documentURL();
@@ -226,19 +260,21 @@ public class PDFDocument extends NSObject implements NSCopying {
      * NSCaseInsensitiveSearch, NSLiteralSearch, and NSBackwardsSearch. Passing in NULL for selection will start the
      * search from the beginning of the document (or end if NSBackwardsSearch is specified).
      */
+    @Nullable
     @Generated
     @Selector("findString:fromSelection:withOptions:")
-    public native PDFSelection findStringFromSelectionWithOptions(String string, PDFSelection selection,
-            @NUInt long options);
+    public native PDFSelection findStringFromSelectionWithOptions(@NotNull String string,
+            @Nullable PDFSelection selection, @NUInt long options);
 
     /**
      * Searches entire document for string and returns an array of PDFSelections representing all instances found. May
      * return an empty array (if not found). Supported options are: NSCaseInsensitiveSearch, NSLiteralSearch, and
      * NSBackwardsSearch.
      */
+    @NotNull
     @Generated
     @Selector("findString:withOptions:")
-    public native NSArray<? extends PDFSelection> findStringWithOptions(String string, @NUInt long options);
+    public native NSArray<? extends PDFSelection> findStringWithOptions(@NotNull String string, @NUInt long options);
 
     @Generated
     @Selector("hash")
@@ -251,7 +287,7 @@ public class PDFDocument extends NSObject implements NSCopying {
     @Generated
     @Selector("indexForPage:")
     @NUInt
-    public native long indexForPage(PDFPage page);
+    public native long indexForPage(@NotNull PDFPage page);
 
     /**
      * Initializers.
@@ -262,11 +298,11 @@ public class PDFDocument extends NSObject implements NSCopying {
 
     @Generated
     @Selector("initWithData:")
-    public native PDFDocument initWithData(NSData data);
+    public native PDFDocument initWithData(@NotNull NSData data);
 
     @Generated
     @Selector("initWithURL:")
-    public native PDFDocument initWithURL(NSURL url);
+    public native PDFDocument initWithURL(@NotNull NSURL url);
 
     /**
      * Methods allowing pages to be inserted, removed, and re-ordered. Can throw range exceptions.
@@ -279,7 +315,7 @@ public class PDFDocument extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("insertPage:atIndex:")
-    public native void insertPageAtIndex(PDFPage page, @NUInt long index);
+    public native void insertPageAtIndex(@NotNull PDFPage page, @NUInt long index);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -323,9 +359,10 @@ public class PDFDocument extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * PDF version of the PDF file (example: major version = 1, minor = 4; PDF v1.4).
@@ -352,16 +389,20 @@ public class PDFDocument extends NSObject implements NSCopying {
      * considered. Typically, outlines indicate things like chapters for the PDF. Therefore, this method would help you
      * identify the chapter the selection falls within.
      */
+    @Nullable
     @Generated
     @Selector("outlineItemForSelection:")
-    public native PDFOutline outlineItemForSelection(PDFSelection selection);
+    public native PDFOutline outlineItemForSelection(@NotNull PDFSelection selection);
 
     /**
      * Allows you specify a PDFOutline as the root outline item for this document. When the PDF is saved the outline
      * tree
      * structure is written out to the destination PDF file. Passing NULL is a way to strip any outline from a document.
      * Returns the root outline object for the PDF (or NULL if none).
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("outlineRoot")
     public native PDFOutline outlineRoot();
@@ -371,6 +412,7 @@ public class PDFDocument extends NSObject implements NSCopying {
      * Indices
      * are zero-based.
      */
+    @Nullable
     @Generated
     @Selector("pageAtIndex:")
     public native PDFPage pageAtIndex(@NUInt long index);
@@ -382,6 +424,7 @@ public class PDFDocument extends NSObject implements NSCopying {
      * of
      * PDFPage (otherwise the behavior is undefined).
      */
+    @NotNull
     @Generated
     @Selector("pageClass")
     public native Class pageClass();
@@ -398,6 +441,8 @@ public class PDFDocument extends NSObject implements NSCopying {
      * Returns the permissions status of the PDF document. You have kPDFDocumentPermissionsNone status for an encrypted
      * document that you have not supplied either a valid user or owner password. For a document with no encryption, you
      * automatically have kPDFDocumentPermissionsOwner status.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("permissionsStatus")
@@ -419,6 +464,7 @@ public class PDFDocument extends NSObject implements NSCopying {
     /**
      * Returns a selection representing text for the entire document.
      */
+    @Nullable
     @Generated
     @Selector("selectionForEntireDocument")
     public native PDFSelection selectionForEntireDocument();
@@ -426,20 +472,22 @@ public class PDFDocument extends NSObject implements NSCopying {
     /**
      * Similar to the above method but allows you to specify a character index for the start and end pages.
      */
+    @Nullable
     @Generated
     @Selector("selectionFromPage:atCharacterIndex:toPage:atCharacterIndex:")
-    public native PDFSelection selectionFromPageAtCharacterIndexToPageAtCharacterIndex(PDFPage startPage,
-            @NUInt long startCharacter, PDFPage endPage, @NUInt long endCharacter);
+    public native PDFSelection selectionFromPageAtCharacterIndexToPageAtCharacterIndex(@NotNull PDFPage startPage,
+            @NUInt long startCharacter, @NotNull PDFPage endPage, @NUInt long endCharacter);
 
     /**
      * Returns a selection representing text from page startPage and point startPt to page endPage and to point endPt on
      * that page. Points are in page-space and relative to their respective pages. Start and end page can be the same
      * (and are then equivalent to calling -[PDFPage selectionFromPoint: toPoint:]).
      */
+    @Nullable
     @Generated
     @Selector("selectionFromPage:atPoint:toPage:atPoint:")
-    public native PDFSelection selectionFromPageAtPointToPageAtPoint(PDFPage startPage, @ByValue CGPoint startPoint,
-            PDFPage endPage, @ByValue CGPoint endPoint);
+    public native PDFSelection selectionFromPageAtPointToPageAtPoint(@NotNull PDFPage startPage,
+            @ByValue CGPoint startPoint, @NotNull PDFPage endPage, @ByValue CGPoint endPoint);
 
     /**
      * If a PDFDocument has a delegate, delegate methods may be called. See: NSNotificationNames and
@@ -447,14 +495,14 @@ public class PDFDocument extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) PDFDocumentDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) PDFDocumentDelegate value);
 
     /**
      * If a PDFDocument has a delegate, delegate methods may be called. See: NSNotificationNames and
      * PDFDocumentDelegate below.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) PDFDocumentDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) PDFDocumentDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -472,17 +520,19 @@ public class PDFDocument extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setDocumentAttributes:")
-    public native void setDocumentAttributes(NSDictionary<?, ?> value);
+    public native void setDocumentAttributes(@Nullable NSDictionary<?, ?> value);
 
     /**
      * Allows you specify a PDFOutline as the root outline item for this document. When the PDF is saved the outline
      * tree
      * structure is written out to the destination PDF file. Passing NULL is a way to strip any outline from a document.
      * Returns the root outline object for the PDF (or NULL if none).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setOutlineRoot:")
-    public native void setOutlineRoot(PDFOutline value);
+    public native void setOutlineRoot(@Nullable PDFOutline value);
 
     @Generated
     @Selector("setVersion:")
@@ -492,6 +542,7 @@ public class PDFDocument extends NSObject implements NSCopying {
      * Convenience method. Returns a string representing the entire document (each page's string concatenated with line
      * feeds between pages).
      */
+    @Nullable
     @Generated
     @Selector("string")
     public native String string();
@@ -509,7 +560,7 @@ public class PDFDocument extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("unlockWithPassword:")
-    public native boolean unlockWithPassword(String password);
+    public native boolean unlockWithPassword(@NotNull String password);
 
     @Generated
     @Selector("version")
@@ -527,19 +578,19 @@ public class PDFDocument extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("writeToFile:")
-    public native boolean writeToFile(String path);
+    public native boolean writeToFile(@NotNull String path);
 
     @Generated
     @Selector("writeToFile:withOptions:")
-    public native boolean writeToFileWithOptions(String path, NSDictionary<String, ?> options);
+    public native boolean writeToFileWithOptions(@NotNull String path, @Nullable NSDictionary<String, ?> options);
 
     @Generated
     @Selector("writeToURL:")
-    public native boolean writeToURL(NSURL url);
+    public native boolean writeToURL(@NotNull NSURL url);
 
     @Generated
     @Selector("writeToURL:withOptions:")
-    public native boolean writeToURLWithOptions(NSURL url, NSDictionary<String, ?> options);
+    public native boolean writeToURLWithOptions(@NotNull NSURL url, @Nullable NSDictionary<String, ?> options);
 
     /**
      * Returns all 7 properties above as a PDFAccessPermissions value.

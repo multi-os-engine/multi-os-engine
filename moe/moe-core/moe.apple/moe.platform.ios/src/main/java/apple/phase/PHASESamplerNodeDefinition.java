@@ -21,13 +21,17 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] PHASESamplerNodeDefinition
- * <p>
+ * 
  * Sampler node definition.
- * <p>
+ * 
  * Sampler nodes play back registered sound assets.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -59,40 +63,44 @@ public class PHASESamplerNodeDefinition extends PHASEGeneratorNodeDefinition {
 
     /**
      * [@property] assetIdentifier
-     * <p>
+     * 
      * The identifier that uniquely represents the registered sound asset this sampler will play.
      */
+    @NotNull
     @Generated
     @Selector("assetIdentifier")
     public native String assetIdentifier();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] cullOption
-     * <p>
+     * 
      * The cull option for the sampler.
-     * <p>
+     * 
      * The default value is PHASECullOptionTerminate.
      */
     @Generated
@@ -119,32 +127,40 @@ public class PHASESamplerNodeDefinition extends PHASEGeneratorNodeDefinition {
 
     /**
      * initWithSoundAssetIdentifier:mixerDefinition
-     * <p>
+     * 
      * Create a sampler node definition
-     *
-     * @param soundAssetIdentifier The identifier of the registered sound asset this sampler will play
-     * @param mixerDefinition      The mixer definition this sampler will be assigned to
-     * @return A new PHASESamplerNodeDefinition object
+     * 
+     * @param soundAssetIdentifier
+     *                             The identifier of the registered sound asset this sampler will play
+     * @param mixerDefinition
+     *                             The mixer definition this sampler will be assigned to
+     * @return
+     *         A new PHASESamplerNodeDefinition object
      */
     @Generated
     @Selector("initWithSoundAssetIdentifier:mixerDefinition:")
-    public native PHASESamplerNodeDefinition initWithSoundAssetIdentifierMixerDefinition(String soundAssetIdentifier,
-            PHASEMixerDefinition mixerDefinition);
+    public native PHASESamplerNodeDefinition initWithSoundAssetIdentifierMixerDefinition(
+            @NotNull String soundAssetIdentifier, @NotNull PHASEMixerDefinition mixerDefinition);
 
     /**
      * initWithSoundAssetIdentifier:mixerDefinition:identifier
-     * <p>
+     * 
      * Create a sampler node definition
-     *
-     * @param soundAssetIdentifier The identifier of the registered sound asset this sampler will play
-     * @param mixerDefinition      The mixer definition this sampler will be assigned to
-     * @param identifier           An optional custom identifier to give to this object
-     * @return A new PHASESamplerNodeDefinition object
+     * 
+     * @param soundAssetIdentifier
+     *                             The identifier of the registered sound asset this sampler will play
+     * @param mixerDefinition
+     *                             The mixer definition this sampler will be assigned to
+     * @param identifier
+     *                             An optional custom identifier to give to this object
+     * @return
+     *         A new PHASESamplerNodeDefinition object
      */
     @Generated
     @Selector("initWithSoundAssetIdentifier:mixerDefinition:identifier:")
     public native PHASESamplerNodeDefinition initWithSoundAssetIdentifierMixerDefinitionIdentifier(
-            String soundAssetIdentifier, PHASEMixerDefinition mixerDefinition, String identifier);
+            @NotNull String soundAssetIdentifier, @NotNull PHASEMixerDefinition mixerDefinition,
+            @NotNull String identifier);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -163,9 +179,10 @@ public class PHASESamplerNodeDefinition extends PHASEGeneratorNodeDefinition {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -174,9 +191,9 @@ public class PHASESamplerNodeDefinition extends PHASEGeneratorNodeDefinition {
 
     /**
      * [@property] playbackMode
-     * <p>
+     * 
      * The playback mode for the sampler.
-     * <p>
+     * 
      * If the playback mode is set to PHASEPlaybackModeOneShot, you need to make sure the the audio data in the
      * registered sound asset associated with this sampler
      * begins and ends at zero crossings. Otherwise, you'll hear a click when beginning playback and / or ending
@@ -202,9 +219,9 @@ public class PHASESamplerNodeDefinition extends PHASEGeneratorNodeDefinition {
 
     /**
      * [@property] cullOption
-     * <p>
+     * 
      * The cull option for the sampler.
-     * <p>
+     * 
      * The default value is PHASECullOptionTerminate.
      */
     @Generated
@@ -213,9 +230,9 @@ public class PHASESamplerNodeDefinition extends PHASEGeneratorNodeDefinition {
 
     /**
      * [@property] playbackMode
-     * <p>
+     * 
      * The playback mode for the sampler.
-     * <p>
+     * 
      * If the playback mode is set to PHASEPlaybackModeOneShot, you need to make sure the the audio data in the
      * registered sound asset associated with this sampler
      * begins and ends at zero crossings. Otherwise, you'll hear a click when beginning playback and / or ending

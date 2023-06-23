@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("MetalPerformanceShadersGraph")
@@ -54,35 +56,39 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] dataType
-     * <p>
+     * 
      * The data type of the generated result values.
      * When sampling from the uniform distribution, valid types are MPSDataTypeFloat16,
      * MPSDataTypeFloat32, and MPSDataTypeInt32.
@@ -107,7 +113,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] distribution
-     * <p>
+     * 
      * The type of distribution to draw samples from. See MPSGraphRandomDistribution.
      */
     @Generated
@@ -140,13 +146,14 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] max
-     * <p>
+     * 
      * The upper range of the distribution. This value is used for Uniform distributions with float data types and
      * Truncated Normal disributions.
      * Defaults to 1 for uniform distributions and 2 for normal distributions.
@@ -157,7 +164,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] maxInteger
-     * <p>
+     * 
      * The upper range of the distribution. This value is used for Uniform with integer data types
      * Defaults to INT32_MAX for uniform distributions and 0 for normal distributions.
      */
@@ -168,7 +175,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] mean
-     * <p>
+     * 
      * The mean of the distribution. This value is used for Normal and Truncated Normal disributions.
      * Defaults to 0.
      */
@@ -178,7 +185,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] min
-     * <p>
+     * 
      * The lower range of the distribution. This value is used for Uniform distributions with float data types and
      * Truncated Normal disributions.
      * Defaults to 0 for uniform distributions and -2 for normal distributions.
@@ -189,7 +196,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] minInteger
-     * <p>
+     * 
      * The lower range of the distribution. This value is used for Uniform with integer data types
      * Defaults to 0.
      */
@@ -213,7 +220,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] samplingMethod
-     * <p>
+     * 
      * The sampling method of the distribution. This value is used for Normal and Truncated Normal disributions. See
      * MPSGraphRandomNormalSamplingMethod.
      * Defaults to MPSGraphRandomNormalSamplingInvCDF.
@@ -224,7 +231,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] dataType
-     * <p>
+     * 
      * The data type of the generated result values.
      * When sampling from the uniform distribution, valid types are MPSDataTypeFloat16,
      * MPSDataTypeFloat32, and MPSDataTypeInt32.
@@ -237,7 +244,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] distribution
-     * <p>
+     * 
      * The type of distribution to draw samples from. See MPSGraphRandomDistribution.
      */
     @Generated
@@ -246,7 +253,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] max
-     * <p>
+     * 
      * The upper range of the distribution. This value is used for Uniform distributions with float data types and
      * Truncated Normal disributions.
      * Defaults to 1 for uniform distributions and 2 for normal distributions.
@@ -257,7 +264,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] maxInteger
-     * <p>
+     * 
      * The upper range of the distribution. This value is used for Uniform with integer data types
      * Defaults to INT32_MAX for uniform distributions and 0 for normal distributions.
      */
@@ -267,7 +274,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] mean
-     * <p>
+     * 
      * The mean of the distribution. This value is used for Normal and Truncated Normal disributions.
      * Defaults to 0.
      */
@@ -277,7 +284,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] min
-     * <p>
+     * 
      * The lower range of the distribution. This value is used for Uniform distributions with float data types and
      * Truncated Normal disributions.
      * Defaults to 0 for uniform distributions and -2 for normal distributions.
@@ -288,7 +295,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] minInteger
-     * <p>
+     * 
      * The lower range of the distribution. This value is used for Uniform with integer data types
      * Defaults to 0.
      */
@@ -298,7 +305,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] samplingMethod
-     * <p>
+     * 
      * The sampling method of the distribution. This value is used for Normal and Truncated Normal disributions. See
      * MPSGraphRandomNormalSamplingMethod.
      * Defaults to MPSGraphRandomNormalSamplingInvCDF.
@@ -309,7 +316,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] standardDeviation
-     * <p>
+     * 
      * The standardDeviation of the distribution. This value is used for Normal and Truncated Normal disributions.
      * For Truncated Normal distribution this defines the standard deviation parameter of the underlying Normal
      * distribution, that is the width
@@ -328,7 +335,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] standardDeviation
-     * <p>
+     * 
      * The standardDeviation of the distribution. This value is used for Normal and Truncated Normal disributions.
      * For Truncated Normal distribution this defines the standard deviation parameter of the underlying Normal
      * distribution, that is the width

@@ -38,18 +38,26 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A GCExtendedGamepadSnapshot snapshot is a concrete GCExtendedGamepad implementation. It can be used directly in an
  * application to implement controller input replays. It is also returned as the result of polling a controller.
- * <p>
+ * 
  * The current snapshotData is readily available to access as NSData. A developer can serialize this to any
  * destination necessary using the NSData API.
- * <p>
+ * 
  * The data contains some version of a GCExtendedGamepadSnapShotData structure.
- *
+ * 
  * @see -[GCExtendedGamepad saveSnapshot]
+ * 
+ *      API-Since: 9.0
+ *      Deprecated-Since: 13.0
+ *      Deprecated-Message: GCExtendedGamepadSnapshot has been deprecated, use [GCController
+ *      controllerWithExtendedGamepad] instead
  */
+@Deprecated
 @Generated
 @Library("GameController")
 @Runtime(ObjCRuntime.class)
@@ -80,22 +88,25 @@ public class GCExtendedGamepadSnapshot extends GCExtendedGamepad {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +141,10 @@ public class GCExtendedGamepadSnapshot extends GCExtendedGamepad {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,16 +178,18 @@ public class GCExtendedGamepadSnapshot extends GCExtendedGamepad {
 
     @Generated
     @Selector("initWithController:snapshotData:")
-    public native GCExtendedGamepadSnapshot initWithControllerSnapshotData(GCController controller, NSData data);
+    public native GCExtendedGamepadSnapshot initWithControllerSnapshotData(@NotNull GCController controller,
+            @NotNull NSData data);
 
     @Generated
     @Selector("initWithSnapshotData:")
-    public native GCExtendedGamepadSnapshot initWithSnapshotData(NSData data);
+    public native GCExtendedGamepadSnapshot initWithSnapshotData(@NotNull NSData data);
 
     @Generated
     @Selector("setSnapshotData:")
-    public native void setSnapshotData(NSData value);
+    public native void setSnapshotData(@NotNull NSData value);
 
+    @NotNull
     @Generated
     @Selector("snapshotData")
     public native NSData snapshotData();

@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * UIVibrancyEffect amplifies and adjusts the color of content layered behind the view, allowing content placed inside
@@ -47,6 +49,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * vibrancy effect is color dependent, subviews added to the contentView need to be tintColorDidChange aware and must be
  * prepared to update themselves accordingly. UIImageView will need its image to have a rendering mode of
  * UIImageRenderingModeAlwaysTemplate to receive the proper effect.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("UIKit")
@@ -78,22 +82,25 @@ public class UIVibrancyEffect extends UIVisualEffect {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,9 +113,10 @@ public class UIVibrancyEffect extends UIVisualEffect {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("effectForBlurEffect:")
-    public static native UIVibrancyEffect effectForBlurEffect(UIBlurEffect blurEffect);
+    public static native UIVibrancyEffect effectForBlurEffect(@NotNull UIBlurEffect blurEffect);
 
     @Generated
     @Selector("hash")
@@ -132,15 +140,22 @@ public class UIVibrancyEffect extends UIVisualEffect {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native UIVibrancyEffect new_objc();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("notificationCenterVibrancyEffect")
     public static native UIVibrancyEffect notificationCenterVibrancyEffect();
@@ -172,14 +187,24 @@ public class UIVibrancyEffect extends UIVisualEffect {
 
     /**
      * For use with select supporting text and glyphs.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
      */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("widgetPrimaryVibrancyEffect")
     public static native UIVibrancyEffect widgetPrimaryVibrancyEffect();
 
     /**
      * For use with select supporting text and glyphs where further diminution is required.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
      */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("widgetSecondaryVibrancyEffect")
     public static native UIVibrancyEffect widgetSecondaryVibrancyEffect();
@@ -190,7 +215,7 @@ public class UIVibrancyEffect extends UIVisualEffect {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIVibrancyEffect initWithCoder(NSCoder coder);
+    public native UIVibrancyEffect initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -198,10 +223,21 @@ public class UIVibrancyEffect extends UIVisualEffect {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 13.0
+     */
+    @NotNull
     @Generated
     @Selector("effectForBlurEffect:style:")
-    public static native UIVibrancyEffect effectForBlurEffectStyle(UIBlurEffect blurEffect, @NInt long style);
+    public static native UIVibrancyEffect effectForBlurEffectStyle(@NotNull UIBlurEffect blurEffect, @NInt long style);
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use WidgetKit instead. Today View extensions have been deprecated.
+     */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("widgetEffectForVibrancyStyle:")
     public static native UIVibrancyEffect widgetEffectForVibrancyStyle(@NInt long vibrancyStyle);

@@ -19,9 +19,18 @@ package apple.mediaplayer.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 public final class MPNowPlayingInfoLanguageOptionType {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long Audible = 0x0000000000000000L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long Legible = 0x0000000000000001L;
 
     @Generated

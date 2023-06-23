@@ -27,17 +27,21 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIGestureRecognizerDelegate")
 public interface UIGestureRecognizerDelegate {
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("gestureRecognizer:shouldBeRequiredToFailByGestureRecognizer:")
-    default boolean gestureRecognizerShouldBeRequiredToFailByGestureRecognizer(UIGestureRecognizer gestureRecognizer,
-            UIGestureRecognizer otherGestureRecognizer) {
+    default boolean gestureRecognizerShouldBeRequiredToFailByGestureRecognizer(
+            @NotNull UIGestureRecognizer gestureRecognizer, @NotNull UIGestureRecognizer otherGestureRecognizer) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -48,7 +52,8 @@ public interface UIGestureRecognizerDelegate {
     @Generated
     @IsOptional
     @Selector("gestureRecognizer:shouldReceivePress:")
-    default boolean gestureRecognizerShouldReceivePress(UIGestureRecognizer gestureRecognizer, UIPress press) {
+    default boolean gestureRecognizerShouldReceivePress(@NotNull UIGestureRecognizer gestureRecognizer,
+            @NotNull UIPress press) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -59,7 +64,8 @@ public interface UIGestureRecognizerDelegate {
     @Generated
     @IsOptional
     @Selector("gestureRecognizer:shouldReceiveTouch:")
-    default boolean gestureRecognizerShouldReceiveTouch(UIGestureRecognizer gestureRecognizer, UITouch touch) {
+    default boolean gestureRecognizerShouldReceiveTouch(@NotNull UIGestureRecognizer gestureRecognizer,
+            @NotNull UITouch touch) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -67,7 +73,7 @@ public interface UIGestureRecognizerDelegate {
      * called when the recognition of one of gestureRecognizer or otherGestureRecognizer would be blocked by the other
      * return YES to allow both to recognize simultaneously. the default implementation returns NO (by default no two
      * gestures can be recognized simultaneously)
-     * <p>
+     * 
      * note: returning YES is guaranteed to allow simultaneous recognition. returning NO is not guaranteed to prevent
      * simultaneous recognition, as the other gesture's delegate may return YES
      */
@@ -75,7 +81,7 @@ public interface UIGestureRecognizerDelegate {
     @IsOptional
     @Selector("gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:")
     default boolean gestureRecognizerShouldRecognizeSimultaneouslyWithGestureRecognizer(
-            UIGestureRecognizer gestureRecognizer, UIGestureRecognizer otherGestureRecognizer) {
+            @NotNull UIGestureRecognizer gestureRecognizer, @NotNull UIGestureRecognizer otherGestureRecognizer) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -83,15 +89,17 @@ public interface UIGestureRecognizerDelegate {
      * called once per attempt to recognize, so failure requirements can be determined lazily and may be set up between
      * recognizers across view hierarchies
      * return YES to set up a dynamic failure requirement between gestureRecognizer and otherGestureRecognizer
-     * <p>
+     * 
      * note: returning YES is guaranteed to set up the failure requirement. returning NO does not guarantee that there
      * will not be a failure requirement as the other gesture's counterpart delegate or subclass methods may return YES
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
     @Selector("gestureRecognizer:shouldRequireFailureOfGestureRecognizer:")
-    default boolean gestureRecognizerShouldRequireFailureOfGestureRecognizer(UIGestureRecognizer gestureRecognizer,
-            UIGestureRecognizer otherGestureRecognizer) {
+    default boolean gestureRecognizerShouldRequireFailureOfGestureRecognizer(
+            @NotNull UIGestureRecognizer gestureRecognizer, @NotNull UIGestureRecognizer otherGestureRecognizer) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -102,18 +110,21 @@ public interface UIGestureRecognizerDelegate {
     @Generated
     @IsOptional
     @Selector("gestureRecognizerShouldBegin:")
-    default boolean gestureRecognizerShouldBegin(UIGestureRecognizer gestureRecognizer) {
+    default boolean gestureRecognizerShouldBegin(@NotNull UIGestureRecognizer gestureRecognizer) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * called once before either -gestureRecognizer:shouldReceiveTouch: or -gestureRecognizer:shouldReceivePress:
      * return NO to prevent the gesture recognizer from seeing this event
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @IsOptional
     @Selector("gestureRecognizer:shouldReceiveEvent:")
-    default boolean gestureRecognizerShouldReceiveEvent(UIGestureRecognizer gestureRecognizer, UIEvent event) {
+    default boolean gestureRecognizerShouldReceiveEvent(@NotNull UIGestureRecognizer gestureRecognizer,
+            @NotNull UIEvent event) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

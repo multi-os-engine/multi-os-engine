@@ -27,7 +27,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -45,12 +49,13 @@ public interface NSURLSessionStreamDelegate extends NSURLSessionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:betterRouteDiscoveredForStreamTask:")
-    default void URLSessionBetterRouteDiscoveredForStreamTask(NSURLSession session, NSURLSessionStreamTask streamTask) {
+    default void URLSessionBetterRouteDiscoveredForStreamTask(@NotNull NSURLSession session,
+            @NotNull NSURLSessionStreamTask streamTask) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
-     * Indiciates that the read side of a connection has been closed. Any
+     * Indicates that the read side of a connection has been closed. Any
      * outstanding reads complete, but future reads will immediately fail.
      * This may be sent even when no reads are in progress. However, when
      * this delegate message is received, there may still be bytes
@@ -60,7 +65,8 @@ public interface NSURLSessionStreamDelegate extends NSURLSessionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:readClosedForStreamTask:")
-    default void URLSessionReadClosedForStreamTask(NSURLSession session, NSURLSessionStreamTask streamTask) {
+    default void URLSessionReadClosedForStreamTask(@NotNull NSURLSession session,
+            @NotNull NSURLSessionStreamTask streamTask) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -74,20 +80,22 @@ public interface NSURLSessionStreamDelegate extends NSURLSessionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:streamTask:didBecomeInputStream:outputStream:")
-    default void URLSessionStreamTaskDidBecomeInputStreamOutputStream(NSURLSession session,
-            NSURLSessionStreamTask streamTask, NSInputStream inputStream, NSOutputStream outputStream) {
+    default void URLSessionStreamTaskDidBecomeInputStreamOutputStream(@NotNull NSURLSession session,
+            @NotNull NSURLSessionStreamTask streamTask, @NotNull NSInputStream inputStream,
+            @NotNull NSOutputStream outputStream) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
-     * Indiciates that the write side of a connection has been closed.
+     * Indicates that the write side of a connection has been closed.
      * Any outstanding writes complete, but future writes will immediately
      * fail.
      */
     @Generated
     @IsOptional
     @Selector("URLSession:writeClosedForStreamTask:")
-    default void URLSessionWriteClosedForStreamTask(NSURLSession session, NSURLSessionStreamTask streamTask) {
+    default void URLSessionWriteClosedForStreamTask(@NotNull NSURLSession session,
+            @NotNull NSURLSessionStreamTask streamTask) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

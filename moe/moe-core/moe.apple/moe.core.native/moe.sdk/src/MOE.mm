@@ -255,24 +255,24 @@ int moevm(const int jargc, char* const* jargv) {
 //  }
 //  return 0;
 }
-    
+
 JNIEXPORT jstring JNICALL Java_org_moe_MOE_getUserMainClassName(JNIEnv* env,
                                                                 jclass clazz) {
     @autoreleasepool {
         NSBundle* mainBundle = [NSBundle mainBundle];
-        
+
         NSString* mainClass = [[mainBundle infoDictionary] objectForKey:@"MOE.Main.Class"];
         if (mainClass == nil) {
             std::cerr << "FATAL: mainClass is nil! Please specify with the 'MOE.Main.Class' key in Info.plist file.\n";
             return nil;
         }
-        
+
         const char* cStr = [mainClass UTF8String];
-        
+
         return env->NewStringUTF(cStr);
     }
 }
-    
+
 /*
  * Defined in NatJ
  */
@@ -282,7 +282,7 @@ JNIEXPORT void JNICALL Java_org_moe_MOE_handleStartup(JNIEnv* env, jclass clazz)
     @autoreleasepool {
         // Build up class preregister list
         NSBundle* mainBundle = [NSBundle mainBundle];
-        
+
         NSURL* url = [NSURL URLWithString:@"preregister.txt"
                             relativeToURL:[mainBundle resourceURL]];
         NSString* fileContents =
@@ -297,11 +297,11 @@ JNIEXPORT void JNICALL Java_org_moe_MOE_handleStartup(JNIEnv* env, jclass clazz)
                 [NSPredicate predicateWithBlock:^BOOL(id line, NSDictionary* dict) {
                     return [line length] > 0;
                 }]];
-        
+
         // Handle startup initialization
         for (NSString* clazz in lines) {
             handleStartup(env, [clazz UTF8String]);
-            
+
             if (env->ExceptionOccurred()) {
                 return;
             }

@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("PassKit")
@@ -57,37 +59,42 @@ public class PKDisbursementAuthorizationController extends NSObject {
     /**
      * This presents the Apple Pay sheet. If the sheet is presented successfully, success is YES. Otherwise, an error
      * will be returned.
+     * 
+     * API-Since: 12.2
      */
     @Generated
     @Selector("authorizeDisbursementWithCompletion:")
     public native void authorizeDisbursementWithCompletion(
-            @ObjCBlock(name = "call_authorizeDisbursementWithCompletion") Block_authorizeDisbursementWithCompletion completion);
+            @NotNull @ObjCBlock(name = "call_authorizeDisbursementWithCompletion") Block_authorizeDisbursementWithCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_authorizeDisbursementWithCompletion {
         @Generated
-        void call_authorizeDisbursementWithCompletion(boolean success, NSError error);
+        void call_authorizeDisbursementWithCompletion(boolean success, @Nullable NSError error);
     }
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -98,7 +105,10 @@ public class PKDisbursementAuthorizationController extends NSObject {
 
     /**
      * The controller's delegate.
+     * 
+     * API-Since: 12.2
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -119,12 +129,14 @@ public class PKDisbursementAuthorizationController extends NSObject {
 
     /**
      * Initializes and returns a newly created controller for the supplied disbursement request.
+     * 
+     * API-Since: 12.2
      */
     @Generated
     @Selector("initWithDisbursementRequest:delegate:")
     public native PKDisbursementAuthorizationController initWithDisbursementRequestDelegate(
-            PKDisbursementRequest disbursementRequest,
-            @Mapped(ObjCObjectMapper.class) PKDisbursementAuthorizationControllerDelegate delegate);
+            @NotNull PKDisbursementRequest disbursementRequest,
+            @NotNull @Mapped(ObjCObjectMapper.class) PKDisbursementAuthorizationControllerDelegate delegate);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -143,9 +155,10 @@ public class PKDisbursementAuthorizationController extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,6 +183,8 @@ public class PKDisbursementAuthorizationController extends NSObject {
 
     /**
      * Determine whether this user's account supports disbursements.
+     * 
+     * API-Since: 12.2
      */
     @Generated
     @Selector("supportsDisbursements")

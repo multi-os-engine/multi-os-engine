@@ -15,7 +15,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -31,22 +36,24 @@ public interface UIDropSession extends UIDragDropSession, NSProgressReporting {
      * The progress returned is an aggregate of the progress for all objects
      * that are loaded.
      */
+    @NotNull
     @Generated
     @Selector("loadObjectsOfClass:completion:")
-    NSProgress loadObjectsOfClassCompletion(@Mapped(ObjCObjectMapper.class) NSItemProviderReading aClass,
-            @ObjCBlock(name = "call_loadObjectsOfClassCompletion") Block_loadObjectsOfClassCompletion completion);
+    NSProgress loadObjectsOfClassCompletion(@NotNull @Mapped(ObjCObjectMapper.class) NSItemProviderReading aClass,
+            @NotNull @ObjCBlock(name = "call_loadObjectsOfClassCompletion") Block_loadObjectsOfClassCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadObjectsOfClassCompletion {
         @Generated
-        void call_loadObjectsOfClassCompletion(NSArray<?> objects);
+        void call_loadObjectsOfClassCompletion(@NotNull NSArray<?> objects);
     }
 
     /**
      * The `UIDragSession` that corresponds to this `UIDropSession`.
      * If the drag was started in a different app, this is nil.
      */
+    @Nullable
     @Generated
     @Selector("localDragSession")
     @MappedReturn(ObjCObjectMapper.class)
@@ -55,7 +62,7 @@ public interface UIDropSession extends UIDragDropSession, NSProgressReporting {
     /**
      * The kind of progress and cancellation UI that UIKit will display
      * if handling this session's drop takes a significant amount of time.
-     * <p>
+     * 
      * The default value is UIDropSessionProgressIndicatorStyleDefault,
      * meaning that some progress UI will be shown. If you show your own
      * progress indicator, hide the system progress UI by setting this
@@ -69,7 +76,7 @@ public interface UIDropSession extends UIDragDropSession, NSProgressReporting {
     /**
      * The kind of progress and cancellation UI that UIKit will display
      * if handling this session's drop takes a significant amount of time.
-     * <p>
+     * 
      * The default value is UIDropSessionProgressIndicatorStyleDefault,
      * meaning that some progress UI will be shown. If you show your own
      * progress indicator, hide the system progress UI by setting this

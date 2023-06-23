@@ -33,14 +33,41 @@ public final class NSLayoutAttribute {
     @Generated @NInt public static final long CenterY = 0x000000000000000AL;
     @Generated @NInt public static final long LastBaseline = 0x000000000000000BL;
     @Generated @NInt public static final long Baseline = 0x000000000000000BL;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long FirstBaseline = 0x000000000000000CL;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long LeftMargin = 0x000000000000000DL;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long RightMargin = 0x000000000000000EL;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long TopMargin = 0x000000000000000FL;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long BottomMargin = 0x0000000000000010L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long LeadingMargin = 0x0000000000000011L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long TrailingMargin = 0x0000000000000012L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long CenterXWithinMargins = 0x0000000000000013L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long CenterYWithinMargins = 0x0000000000000014L;
     @Generated @NInt public static final long NotAnAttribute = 0x0000000000000000L;
 

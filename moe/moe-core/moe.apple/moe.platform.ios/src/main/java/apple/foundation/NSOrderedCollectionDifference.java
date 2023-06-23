@@ -23,7 +23,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -54,22 +59,25 @@ public class NSOrderedCollectionDifference<_ObjectType> extends NSObject impleme
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -77,8 +85,8 @@ public class NSOrderedCollectionDifference<_ObjectType> extends NSObject impleme
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
+    public native long countByEnumeratingWithStateObjectsCount(@NotNull VoidPtr state,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
     @Generated
     @Selector("debugDescription")
@@ -91,17 +99,19 @@ public class NSOrderedCollectionDifference<_ObjectType> extends NSObject impleme
     /**
      * Create a new difference by mapping over this difference's members
      */
+    @NotNull
     @Generated
     @Selector("differenceByTransformingChangesWithBlock:")
     public native NSOrderedCollectionDifference<Object> differenceByTransformingChangesWithBlock(
-            @ObjCBlock(name = "call_differenceByTransformingChangesWithBlock") Block_differenceByTransformingChangesWithBlock block);
+            @NotNull @ObjCBlock(name = "call_differenceByTransformingChangesWithBlock") Block_differenceByTransformingChangesWithBlock block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_differenceByTransformingChangesWithBlock {
+        @NotNull
         @Generated
         NSOrderedCollectionChange<Object> call_differenceByTransformingChangesWithBlock(
-                NSOrderedCollectionChange<Object> arg0);
+                @NotNull NSOrderedCollectionChange<Object> arg0);
     }
 
     @Generated
@@ -119,14 +129,14 @@ public class NSOrderedCollectionDifference<_ObjectType> extends NSObject impleme
 
     /**
      * Creates a new difference representing the changes in the parameter.
-     * <p>
+     * 
      * For clients interested in the difference between two collections, the
      * collection's differenceFrom method should be used instead.
-     * <p>
+     * 
      * To guarantee that instances are unambiguous and safe for compatible base
      * states, this method requires that its parameter conform to the following
      * requirements:
-     * <p>
+     * 
      * 1) All insertion offsets are unique
      * 2) All removal offsets are unique
      * 3) All associated indexes match a change with the opposite parity.
@@ -134,20 +144,25 @@ public class NSOrderedCollectionDifference<_ObjectType> extends NSObject impleme
     @Generated
     @Selector("initWithChanges:")
     public native NSOrderedCollectionDifference<?> initWithChanges(
-            NSArray<? extends NSOrderedCollectionChange<_ObjectType>> changes);
+            @NotNull NSArray<? extends NSOrderedCollectionChange<_ObjectType>> changes);
 
     @Generated
     @Selector("initWithInsertIndexes:insertedObjects:removeIndexes:removedObjects:")
     public native NSOrderedCollectionDifference<?> initWithInsertIndexesInsertedObjectsRemoveIndexesRemovedObjects(
-            NSIndexSet inserts, NSArray<_ObjectType> insertedObjects, NSIndexSet removes,
-            NSArray<_ObjectType> removedObjects);
+            @NotNull NSIndexSet inserts, @Nullable NSArray<_ObjectType> insertedObjects, @NotNull NSIndexSet removes,
+            @Nullable NSArray<_ObjectType> removedObjects);
 
     @Generated
     @Selector("initWithInsertIndexes:insertedObjects:removeIndexes:removedObjects:additionalChanges:")
     public native NSOrderedCollectionDifference<?> initWithInsertIndexesInsertedObjectsRemoveIndexesRemovedObjectsAdditionalChanges(
-            NSIndexSet inserts, NSArray<_ObjectType> insertedObjects, NSIndexSet removes,
-            NSArray<_ObjectType> removedObjects, NSArray<? extends NSOrderedCollectionChange<_ObjectType>> changes);
+            @NotNull NSIndexSet inserts, @Nullable NSArray<_ObjectType> insertedObjects, @NotNull NSIndexSet removes,
+            @Nullable NSArray<_ObjectType> removedObjects,
+            @NotNull NSArray<? extends NSOrderedCollectionChange<_ObjectType>> changes);
 
+    /**
+     * API-Since: 13.0
+     */
+    @NotNull
     @Generated
     @Selector("insertions")
     public native NSArray<? extends NSOrderedCollectionChange<_ObjectType>> insertions();
@@ -167,12 +182,15 @@ public class NSOrderedCollectionDifference<_ObjectType> extends NSObject impleme
 
     /**
      * Returns a difference that is the inverse of the receiver.
-     * <p>
+     * 
      * In other words, given a valid difference `diff` the array `a` is equal to
      * [[a arrayByApplyingDifference:diff] arrayByApplyingDifference:diff.inverseDifference]
-     * <p>
+     * 
      * To revert a chronological sequence of diffs, apply their inverses in reverse order.
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("inverseDifference")
     public native NSOrderedCollectionDifference<?> inverseDifference();
@@ -181,15 +199,20 @@ public class NSOrderedCollectionDifference<_ObjectType> extends NSObject impleme
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native NSOrderedCollectionDifference<?> new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
+    @NotNull
     @Generated
     @Selector("removals")
     public native NSArray<? extends NSOrderedCollectionChange<_ObjectType>> removals();

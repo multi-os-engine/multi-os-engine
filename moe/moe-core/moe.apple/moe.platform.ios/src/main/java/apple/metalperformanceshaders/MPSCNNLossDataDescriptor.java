@@ -26,14 +26,18 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNLossDataDescriptor
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * The MPSCNNLossDataDescriptor specifies a loss data descriptor.
  * The same descriptor can be used to initialize both the
  * labels and the optional weights data.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -65,13 +69,13 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] bytesPerImage
-     * <p>
+     * 
      * Slice bytes of loss data.
-     * <p>
+     * 
      * This parameter specifies the slice bytes of loss data.
      */
     @Generated
@@ -81,9 +85,9 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] bytesPerRow
-     * <p>
+     * 
      * Row bytes of loss data.
-     * <p>
+     * 
      * This parameter specifies the row bytes of loss data.
      */
     @Generated
@@ -93,18 +97,21 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -114,22 +121,24 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
      * are automatically calculated assuming a dense array. If it is
      * not a dense array, adjust bytesPerRow and bytesPerImage to the
      * right value by changing properties.
-     *
+     * 
      * @param data   The per-element loss data. The data must be in floating point format.
      * @param layout The data layout of loss data.
      * @param size   The size of loss data.
      * @return A valid MPSCNNLossDataDescriptor object or nil, if failure.
      */
+    @Nullable
     @Generated
     @Selector("cnnLossDataDescriptorWithData:layout:size:")
-    public static native MPSCNNLossDataDescriptor cnnLossDataDescriptorWithDataLayoutSize(NSData data,
+    public static native MPSCNNLossDataDescriptor cnnLossDataDescriptorWithDataLayoutSize(@NotNull NSData data,
             @NUInt long layout, @ByValue MTLSize size);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -165,15 +174,16 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] layout
-     * <p>
+     * 
      * Data layout of loss data. See MPSImage.h for more information.
-     * <p>
+     * 
      * This parameter specifies the layout of loss data.
      */
     @Generated
@@ -196,9 +206,9 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] bytesPerImage
-     * <p>
+     * 
      * Slice bytes of loss data.
-     * <p>
+     * 
      * This parameter specifies the slice bytes of loss data.
      */
     @Generated
@@ -207,9 +217,9 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] bytesPerRow
-     * <p>
+     * 
      * Row bytes of loss data.
-     * <p>
+     * 
      * This parameter specifies the row bytes of loss data.
      */
     @Generated
@@ -222,9 +232,9 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] size
-     * <p>
+     * 
      * Size of loss data: (width, height, feature channels}.
-     * <p>
+     * 
      * This parameter specifies the size of loss data.
      */
     @Generated

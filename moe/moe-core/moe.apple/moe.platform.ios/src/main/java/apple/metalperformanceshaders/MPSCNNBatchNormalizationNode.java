@@ -23,12 +23,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNBatchNormalizationNode
- * <p>
+ * 
  * A node representing batch normalization for inference or training
- * <p>
+ * 
  * Batch normalization operates differently for inference and training.
  * For inference, the normalization is done according to a static statistical
  * representation of data saved during training. For training, this representation
@@ -38,7 +40,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * by normalization once the statistics are known for the entire batch.
  * These are MPSCNNBatchNormalizationStatistics and MPSCNNBatchNormalization,
  * respectively.
- * <p>
+ * 
  * When this node appears in a graph and is not required to produce a
  * MPSCNNBatchNormalizationState -- that is, MPSCNNBatchNormalizationNode.resultState
  * is not used within the graph -- then it operates in inference mode
@@ -49,6 +51,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * MPSCNNBatchNormalizationStatisticsGradient as necessary. This should
  * allow you to construct an identical sequence of nodes for inference
  * and training and expect the right thing to happen.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -80,22 +84,25 @@ public class MPSCNNBatchNormalizationNode extends MPSNNFilterNode implements MPS
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -110,7 +117,7 @@ public class MPSCNNBatchNormalizationNode extends MPSNNFilterNode implements MPS
 
     /**
      * Options controlling how batch normalization is calculated
-     * <p>
+     * 
      * Default: MPSCNNBatchNormalizationFlagsDefault
      */
     @Generated
@@ -129,8 +136,8 @@ public class MPSCNNBatchNormalizationNode extends MPSNNFilterNode implements MPS
 
     @Generated
     @Selector("initWithSource:dataSource:")
-    public native MPSCNNBatchNormalizationNode initWithSourceDataSource(MPSNNImageNode source,
-            @Mapped(ObjCObjectMapper.class) MPSCNNBatchNormalizationDataSource dataSource);
+    public native MPSCNNBatchNormalizationNode initWithSourceDataSource(@NotNull MPSNNImageNode source,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNBatchNormalizationDataSource dataSource);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -149,9 +156,10 @@ public class MPSCNNBatchNormalizationNode extends MPSNNFilterNode implements MPS
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -160,8 +168,8 @@ public class MPSCNNBatchNormalizationNode extends MPSNNFilterNode implements MPS
 
     @Generated
     @Selector("nodeWithSource:dataSource:")
-    public static native MPSCNNBatchNormalizationNode nodeWithSourceDataSource(MPSNNImageNode source,
-            @Mapped(ObjCObjectMapper.class) MPSCNNBatchNormalizationDataSource dataSource);
+    public static native MPSCNNBatchNormalizationNode nodeWithSourceDataSource(@NotNull MPSNNImageNode source,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNBatchNormalizationDataSource dataSource);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -173,7 +181,7 @@ public class MPSCNNBatchNormalizationNode extends MPSNNFilterNode implements MPS
 
     /**
      * Options controlling how batch normalization is calculated
-     * <p>
+     * 
      * Default: MPSCNNBatchNormalizationFlagsDefault
      */
     @Generated

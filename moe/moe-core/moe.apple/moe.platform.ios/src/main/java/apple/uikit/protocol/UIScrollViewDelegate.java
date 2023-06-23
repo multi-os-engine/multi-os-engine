@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGPoint;
 import apple.uikit.UIScrollView;
 import apple.uikit.UIView;
 import org.moe.natj.general.ann.ByValue;
@@ -28,6 +27,9 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -40,7 +42,7 @@ public interface UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("scrollViewDidEndDecelerating:")
-    default void scrollViewDidEndDecelerating(UIScrollView scrollView) {
+    default void scrollViewDidEndDecelerating(@NotNull UIScrollView scrollView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -50,7 +52,7 @@ public interface UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("scrollViewDidEndDragging:willDecelerate:")
-    default void scrollViewDidEndDraggingWillDecelerate(UIScrollView scrollView, boolean decelerate) {
+    default void scrollViewDidEndDraggingWillDecelerate(@NotNull UIScrollView scrollView, boolean decelerate) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -60,7 +62,7 @@ public interface UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("scrollViewDidEndScrollingAnimation:")
-    default void scrollViewDidEndScrollingAnimation(UIScrollView scrollView) {
+    default void scrollViewDidEndScrollingAnimation(@NotNull UIScrollView scrollView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -70,7 +72,8 @@ public interface UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("scrollViewDidEndZooming:withView:atScale:")
-    default void scrollViewDidEndZoomingWithViewAtScale(UIScrollView scrollView, UIView view, @NFloat double scale) {
+    default void scrollViewDidEndZoomingWithViewAtScale(@NotNull UIScrollView scrollView, @Nullable UIView view,
+            @NFloat double scale) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -80,7 +83,7 @@ public interface UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("scrollViewDidScroll:")
-    default void scrollViewDidScroll(UIScrollView scrollView) {
+    default void scrollViewDidScroll(@NotNull UIScrollView scrollView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -90,17 +93,19 @@ public interface UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("scrollViewDidScrollToTop:")
-    default void scrollViewDidScrollToTop(UIScrollView scrollView) {
+    default void scrollViewDidScrollToTop(@NotNull UIScrollView scrollView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * any zoom scale changes
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @IsOptional
     @Selector("scrollViewDidZoom:")
-    default void scrollViewDidZoom(UIScrollView scrollView) {
+    default void scrollViewDidZoom(@NotNull UIScrollView scrollView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -110,7 +115,7 @@ public interface UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("scrollViewShouldScrollToTop:")
-    default boolean scrollViewShouldScrollToTop(UIScrollView scrollView) {
+    default boolean scrollViewShouldScrollToTop(@NotNull UIScrollView scrollView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -120,7 +125,7 @@ public interface UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("scrollViewWillBeginDecelerating:")
-    default void scrollViewWillBeginDecelerating(UIScrollView scrollView) {
+    default void scrollViewWillBeginDecelerating(@NotNull UIScrollView scrollView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -130,49 +135,56 @@ public interface UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("scrollViewWillBeginDragging:")
-    default void scrollViewWillBeginDragging(UIScrollView scrollView) {
+    default void scrollViewWillBeginDragging(@NotNull UIScrollView scrollView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * called before the scroll view begins zooming its content
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @IsOptional
     @Selector("scrollViewWillBeginZooming:withView:")
-    default void scrollViewWillBeginZoomingWithView(UIScrollView scrollView, UIView view) {
+    default void scrollViewWillBeginZoomingWithView(@NotNull UIScrollView scrollView, @Nullable UIView view) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * called on finger up if the user dragged. velocity is in points/millisecond. targetContentOffset may be changed to
      * adjust where the scroll view comes to rest
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @IsOptional
     @Selector("scrollViewWillEndDragging:withVelocity:targetContentOffset:")
-    default void scrollViewWillEndDraggingWithVelocityTargetContentOffset(UIScrollView scrollView,
-            @ByValue CGPoint velocity, CGPoint targetContentOffset) {
+    default void scrollViewWillEndDraggingWithVelocityTargetContentOffset(@NotNull UIScrollView scrollView,
+            @ByValue CGPoint velocity, @NotNull CGPoint targetContentOffset) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * return a view that will be scaled. if delegate returns nil, nothing happens
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("viewForZoomingInScrollView:")
-    default UIView viewForZoomingInScrollView(UIScrollView scrollView) {
+    default UIView viewForZoomingInScrollView(@NotNull UIScrollView scrollView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Also see -[UIScrollView adjustedContentInsetDidChange]
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
     @Selector("scrollViewDidChangeAdjustedContentInset:")
-    default void scrollViewDidChangeAdjustedContentInset(UIScrollView scrollView) {
+    default void scrollViewDidChangeAdjustedContentInset(@NotNull UIScrollView scrollView) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

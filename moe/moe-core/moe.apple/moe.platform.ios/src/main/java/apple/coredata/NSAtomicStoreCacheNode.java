@@ -39,7 +39,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -70,22 +75,25 @@ public class NSAtomicStoreCacheNode extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,9 +128,10 @@ public class NSAtomicStoreCacheNode extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,11 +168,12 @@ public class NSAtomicStoreCacheNode extends NSObject {
      */
     @Generated
     @Selector("initWithObjectID:")
-    public native NSAtomicStoreCacheNode initWithObjectID(NSManagedObjectID moid);
+    public native NSAtomicStoreCacheNode initWithObjectID(@NotNull NSManagedObjectID moid);
 
     /**
      * Returns the managed object ID for the cache node.
      */
+    @NotNull
     @Generated
     @Selector("objectID")
     public native NSManagedObjectID objectID();
@@ -174,6 +184,7 @@ public class NSAtomicStoreCacheNode extends NSObject {
      * -setPropertyCache: method is invoked, or -setValue:forKey: is invoked on the cache node with non-nil property
      * values.
      */
+    @Nullable
     @Generated
     @Selector("propertyCache")
     public native NSMutableDictionary<String, Object> propertyCache();
@@ -186,7 +197,7 @@ public class NSAtomicStoreCacheNode extends NSObject {
      */
     @Generated
     @Selector("setPropertyCache:")
-    public native void setPropertyCache(NSMutableDictionary<String, Object> value);
+    public native void setPropertyCache(@Nullable NSMutableDictionary<String, Object> value);
 
     /**
      * Sets the value for the specified key. The default implementation forwards the request to the -propertyCache
@@ -195,20 +206,21 @@ public class NSAtomicStoreCacheNode extends NSObject {
      */
     @Generated
     @Selector("setValue:forKey:")
-    public native void setValueForKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
+    public native void setValueForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object value, @NotNull String key);
 
     /**
      * Returns the value for the specified key. Subclasses must return the appropriate object value for all property
      * keys (as specified by the names of the NSPropertyDescriptions for the entity of this cache node.) For attributes,
      * these are instances of NSObject; for to-one relationships, the return value must be another cache node instance;
      * for a to-many relationship, the return value must be an NSSet of the related cache nodes.
-     * <p>
+     * 
      * The default implementation forwards the request to the -propertyCache dictionary if the key matches a property
      * name of the entity for the cache node. If the key does not represent a property, the standard -valueForKey:
      * implementation will be used.
      */
+    @Nullable
     @Generated
     @Selector("valueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object valueForKey(String key);
+    public native Object valueForKey(@NotNull String key);
 }

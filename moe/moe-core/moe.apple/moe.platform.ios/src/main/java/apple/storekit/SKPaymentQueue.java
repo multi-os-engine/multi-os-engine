@@ -40,9 +40,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SKPaymentQueue interacts with the server-side payment queue
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("StoreKit")
@@ -74,10 +78,12 @@ public class SKPaymentQueue extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * NO if this device is not able or allowed to make payments
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("canMakePayments")
@@ -85,18 +91,21 @@ public class SKPaymentQueue extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -105,6 +114,10 @@ public class SKPaymentQueue extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 3.0
+     */
+    @NotNull
     @Generated
     @Selector("defaultQueue")
     public static native SKPaymentQueue defaultQueue();
@@ -135,9 +148,10 @@ public class SKPaymentQueue extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,33 +182,45 @@ public class SKPaymentQueue extends NSObject {
     /**
      * Asynchronous. Add a payment to the server queue. The payment is copied to add an SKPaymentTransaction to the
      * transactions array. The same payment can be added multiple times to create multiple transactions.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("addPayment:")
-    public native void addPayment(SKPayment payment);
+    public native void addPayment(@NotNull SKPayment payment);
 
     /**
      * Observers are not retained. The transactions array will only be synchronized with the server while the queue has
      * observers. This may require that the user authenticate.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("addTransactionObserver:")
-    public native void addTransactionObserver(@Mapped(ObjCObjectMapper.class) SKPaymentTransactionObserver observer);
+    public native void addTransactionObserver(
+            @NotNull @Mapped(ObjCObjectMapper.class) SKPaymentTransactionObserver observer);
 
     /**
      * Asynchronous. Cancel downloads (SKDownload)
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
      */
+    @Deprecated
     @Generated
     @Selector("cancelDownloads:")
-    public native void cancelDownloads(NSArray<? extends SKDownload> downloads);
+    public native void cancelDownloads(@NotNull NSArray<? extends SKDownload> downloads);
 
     /**
      * Asynchronous. Remove a finished (i.e. failed or completed) transaction from the queue. Attempting to finish a
      * purchasing transaction will throw an exception.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("finishTransaction:")
-    public native void finishTransaction(SKPaymentTransaction transaction);
+    public native void finishTransaction(@NotNull SKPaymentTransaction transaction);
 
     @Generated
     @Selector("init")
@@ -202,14 +228,23 @@ public class SKPaymentQueue extends NSObject {
 
     /**
      * Asynchronous. Pause/resume downloads (SKDownload).
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
      */
+    @Deprecated
     @Generated
     @Selector("pauseDownloads:")
-    public native void pauseDownloads(NSArray<? extends SKDownload> downloads);
+    public native void pauseDownloads(@NotNull NSArray<? extends SKDownload> downloads);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("removeTransactionObserver:")
-    public native void removeTransactionObserver(@Mapped(ObjCObjectMapper.class) SKPaymentTransactionObserver observer);
+    public native void removeTransactionObserver(
+            @NotNull @Mapped(ObjCObjectMapper.class) SKPaymentTransactionObserver observer);
 
     /**
      * Asynchronous. Will add completed transactions for the current user back to the queue to be re-completed. User
@@ -217,44 +252,73 @@ public class SKPaymentQueue extends NSObject {
      * either -paymentQueueRestoreCompletedTransactionsFinished: on success or
      * -paymentQueue:restoreCompletedTransactionsFailedWithError: on failure. In the case of partial success, some
      * transactions may still be delivered.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("restoreCompletedTransactions")
     public native void restoreCompletedTransactions();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("restoreCompletedTransactionsWithApplicationUsername:")
-    public native void restoreCompletedTransactionsWithApplicationUsername(String username);
+    public native void restoreCompletedTransactionsWithApplicationUsername(@Nullable String username);
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
+     */
+    @Deprecated
     @Generated
     @Selector("resumeDownloads:")
-    public native void resumeDownloads(NSArray<? extends SKDownload> downloads);
+    public native void resumeDownloads(@NotNull NSArray<? extends SKDownload> downloads);
 
     /**
      * Asynchronous. Start the given downloads (SKDownload).
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
      */
+    @Deprecated
     @Generated
     @Selector("startDownloads:")
-    public native void startDownloads(NSArray<? extends SKDownload> downloads);
+    public native void startDownloads(@NotNull NSArray<? extends SKDownload> downloads);
 
     /**
      * Array of unfinished SKPaymentTransactions. Only valid while the queue has observers. Updated asynchronously.
+     * 
+     * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("transactions")
     public native NSArray<? extends SKPaymentTransaction> transactions();
 
+    /**
+     * API-Since: 13.0
+     */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native SKPaymentQueueDelegate delegate();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SKPaymentQueueDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) SKPaymentQueueDelegate value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) SKPaymentQueueDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SKPaymentQueueDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -265,6 +329,10 @@ public class SKPaymentQueue extends NSObject {
         }
     }
 
+    /**
+     * API-Since: 13.0
+     */
+    @Nullable
     @Generated
     @Selector("storefront")
     public native SKStorefront storefront();
@@ -273,6 +341,8 @@ public class SKPaymentQueue extends NSObject {
      * If StoreKit has called your SKPaymentQueueDelegate's "paymentQueueShouldShowPriceConsent:" method and you
      * returned NO, you can use this method to show the price consent UI at a later time that is more appropriate for
      * your app. If there is no pending price consent, this method will do nothing.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("showPriceConsentIfNeeded")
@@ -280,6 +350,8 @@ public class SKPaymentQueue extends NSObject {
 
     /**
      * Call this method to have StoreKit present a sheet enabling the user to redeem codes provided by your app.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("presentCodeRedemptionSheet")
@@ -287,7 +359,10 @@ public class SKPaymentQueue extends NSObject {
 
     /**
      * Array of transactionObservers that are available. Transaction observers are not retained.
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("transactionObservers")
     public native NSArray<?> transactionObservers();

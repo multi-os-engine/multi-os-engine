@@ -19,15 +19,25 @@ package apple.mediaplayer.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 public final class MPShuffleType {
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long Off = 0x0000000000000000L;
     /**
      * Nothing is shuffled during playback.
+     * 
+     * API-Since: 3.0
      */
     @Generated @NInt public static final long Items = 0x0000000000000001L;
     /**
      * Individual items are shuffled during playback.
+     * 
+     * API-Since: 3.0
      */
     @Generated @NInt public static final long Collections = 0x0000000000000002L;
 

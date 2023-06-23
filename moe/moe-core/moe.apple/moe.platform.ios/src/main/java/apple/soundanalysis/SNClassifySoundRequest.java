@@ -28,15 +28,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Configure an analyzer to perform sound classification using the provided MLModel.
- * <p>
+ * 
  * When a new classification result is produced, the results observer will be called with an SNClassificationResult.
  * Audio buffers provided to SNAudioStreamAnalyzer may vary in size, and the analyzer will reblock the audio data to the
  * block size expected by the MLModel. By default, analysis will occur on the first audio channel in the audio stream,
  * and the analyzer will apply sample rate conversion if the provided audio does not match the sample rate required by
  * the MLModel.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("SoundAnalysis")
@@ -68,22 +72,25 @@ public class SNClassifySoundRequest extends NSObject implements SNRequest {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -107,16 +114,16 @@ public class SNClassifySoundRequest extends NSObject implements SNRequest {
 
     /**
      * Initializes a sound classification request with the provided MLModel
-     * <p>
+     * 
      * The provided model must accept audio data as input, and output a classification dictionary containing the
      * probability of each category.
-     *
+     * 
      * @param mlModel The CoreML audio classification model to be used with this request
      */
     @Generated
     @Selector("initWithMLModel:error:")
-    public native SNClassifySoundRequest initWithMLModelError(MLModel mlModel,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native SNClassifySoundRequest initWithMLModelError(@NotNull MLModel mlModel,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -135,9 +142,10 @@ public class SNClassifySoundRequest extends NSObject implements SNRequest {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -147,7 +155,7 @@ public class SNClassifySoundRequest extends NSObject implements SNRequest {
     /**
      * The overlap factor of the windows of audio data provided to the classifier, if the model operates on fixed audio
      * block sizes.
-     * <p>
+     * 
      * When performing audio analysis on fixed audio block sizes, it is common for the analysis windows to overlap by
      * some factor. Without overlapping the analysis windows (when the overlap factor is 0.0), a sound might be split
      * across two analysis windows, which could negatively affect classification performance. Overlapping the analysis
@@ -170,7 +178,7 @@ public class SNClassifySoundRequest extends NSObject implements SNRequest {
     /**
      * The overlap factor of the windows of audio data provided to the classifier, if the model operates on fixed audio
      * block sizes.
-     * <p>
+     * 
      * When performing audio analysis on fixed audio block sizes, it is common for the analysis windows to overlap by
      * some factor. Without overlapping the analysis windows (when the overlap factor is 0.0), a sound might be split
      * across two analysis windows, which could negatively affect classification performance. Overlapping the analysis
@@ -197,10 +205,12 @@ public class SNClassifySoundRequest extends NSObject implements SNRequest {
 
     /**
      * Initializes a sound classification request with a known classifier.
-     * <p>
+     * 
      * This initializer may be used to classify sounds using Apple-provided sound classifiers. Note that Apple may add
      * new classifiers in the future, but it commits to ensuring the consistent performance of existing classifiers.
-     *
+     * 
+     * API-Since: 15.0
+     * 
      * @param classifierIdentifier An identifier identifying the particular classifier to use for labeling sounds.
      * @param error                An output parameter which, in the case of an error, will be populated with details
      *                             about that error. Upon success, the contents of this output parameter are undefined.
@@ -211,21 +221,24 @@ public class SNClassifySoundRequest extends NSObject implements SNRequest {
      */
     @Generated
     @Selector("initWithClassifierIdentifier:error:")
-    public native SNClassifySoundRequest initWithClassifierIdentifierError(String classifierIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native SNClassifySoundRequest initWithClassifierIdentifierError(@NotNull String classifierIdentifier,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Lists all labels that can be produced by this request.
-     *
+     * 
      * @return An array of strings containing all sound identifiers which can be produced by this request.
+     * 
+     *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("knownClassifications")
     public native NSArray<String> knownClassifications();
 
     /**
      * The duration of a single analysis window.
-     * <p>
+     * 
      * When performing classification over an audio stream, a classifier computes each classification result based on a
      * single 'analysis window' of audio. Analysis windows are uniformly-sized time intervals, where the size of any
      * given window is considered that window's 'duration'. Some classifiers can operate over analysis windows which
@@ -237,6 +250,8 @@ public class SNClassifySoundRequest extends NSObject implements SNRequest {
      * supported window durations can be discovered using the `windowDurationConstraint` property. If an unsupported
      * window duration is selected, the window duration will be automatically rounded down to the nearest supported
      * value if possible, else rounded up.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setWindowDuration:")
@@ -244,7 +259,7 @@ public class SNClassifySoundRequest extends NSObject implements SNRequest {
 
     /**
      * The duration of a single analysis window.
-     * <p>
+     * 
      * When performing classification over an audio stream, a classifier computes each classification result based on a
      * single 'analysis window' of audio. Analysis windows are uniformly-sized time intervals, where the size of any
      * given window is considered that window's 'duration'. Some classifiers can operate over analysis windows which
@@ -256,6 +271,8 @@ public class SNClassifySoundRequest extends NSObject implements SNRequest {
      * supported window durations can be discovered using the `windowDurationConstraint` property. If an unsupported
      * window duration is selected, the window duration will be automatically rounded down to the nearest supported
      * value if possible, else rounded up.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("windowDuration")
@@ -264,11 +281,14 @@ public class SNClassifySoundRequest extends NSObject implements SNRequest {
 
     /**
      * The constraints governing permitted analysis window durations.
-     * <p>
+     * 
      * The analysis window duration is controlled using the `windowDuration` property. If an analysis window duration is
      * selected which does not meet the necessary constraints, it will automatically be adjusted to meet these
      * constraints (see `windowDuration` for more information regarding how this adjustment will be applied).
+     * 
+     * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("windowDurationConstraint")
     public native SNTimeDurationConstraint windowDurationConstraint();

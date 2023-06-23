@@ -32,10 +32,14 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Messages related to the operation of a task that delivers data
  * directly to the delegate.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("Foundation")
@@ -49,8 +53,8 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:dataTask:didBecomeDownloadTask:")
-    default void URLSessionDataTaskDidBecomeDownloadTask(NSURLSession session, NSURLSessionDataTask dataTask,
-            NSURLSessionDownloadTask downloadTask) {
+    default void URLSessionDataTaskDidBecomeDownloadTask(@NotNull NSURLSession session,
+            @NotNull NSURLSessionDataTask dataTask, @NotNull NSURLSessionDownloadTask downloadTask) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -59,22 +63,24 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
      * task. No future messages will be sent to the data task. The newly
      * created streamTask will carry the original request and response as
      * properties.
-     * <p>
+     * 
      * For requests that were pipelined, the stream object will only allow
      * reading, and the object will immediately issue a
      * -URLSession:writeClosedForStream:. Pipelining can be disabled for
      * all requests in a session, or by the NSURLRequest
      * HTTPShouldUsePipelining property.
-     * <p>
+     * 
      * The underlying connection is no longer considered part of the HTTP
      * connection cache and won't count against the total number of
      * connections per host.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @IsOptional
     @Selector("URLSession:dataTask:didBecomeStreamTask:")
-    default void URLSessionDataTaskDidBecomeStreamTask(NSURLSession session, NSURLSessionDataTask dataTask,
-            NSURLSessionStreamTask streamTask) {
+    default void URLSessionDataTaskDidBecomeStreamTask(@NotNull NSURLSession session,
+            @NotNull NSURLSessionDataTask dataTask, @NotNull NSURLSessionStreamTask streamTask) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -87,7 +93,8 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:dataTask:didReceiveData:")
-    default void URLSessionDataTaskDidReceiveData(NSURLSession session, NSURLSessionDataTask dataTask, NSData data) {
+    default void URLSessionDataTaskDidReceiveData(@NotNull NSURLSession session, @NotNull NSURLSessionDataTask dataTask,
+            @NotNull NSData data) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -97,15 +104,15 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
      * allows you to cancel a request or to turn a data task into a
      * download task. This delegate message is optional - if you do not
      * implement it, you can get the response as a property of the task.
-     * <p>
+     * 
      * This method will not be called for background upload tasks (which cannot be converted to download tasks).
      */
     @Generated
     @IsOptional
     @Selector("URLSession:dataTask:didReceiveResponse:completionHandler:")
-    default void URLSessionDataTaskDidReceiveResponseCompletionHandler(NSURLSession session,
-            NSURLSessionDataTask dataTask, NSURLResponse response,
-            @ObjCBlock(name = "call_URLSessionDataTaskDidReceiveResponseCompletionHandler") Block_URLSessionDataTaskDidReceiveResponseCompletionHandler completionHandler) {
+    default void URLSessionDataTaskDidReceiveResponseCompletionHandler(@NotNull NSURLSession session,
+            @NotNull NSURLSessionDataTask dataTask, @NotNull NSURLResponse response,
+            @NotNull @ObjCBlock(name = "call_URLSessionDataTaskDidReceiveResponseCompletionHandler") Block_URLSessionDataTaskDidReceiveResponseCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -119,9 +126,9 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:dataTask:willCacheResponse:completionHandler:")
-    default void URLSessionDataTaskWillCacheResponseCompletionHandler(NSURLSession session,
-            NSURLSessionDataTask dataTask, NSCachedURLResponse proposedResponse,
-            @ObjCBlock(name = "call_URLSessionDataTaskWillCacheResponseCompletionHandler") Block_URLSessionDataTaskWillCacheResponseCompletionHandler completionHandler) {
+    default void URLSessionDataTaskWillCacheResponseCompletionHandler(@NotNull NSURLSession session,
+            @NotNull NSURLSessionDataTask dataTask, @NotNull NSCachedURLResponse proposedResponse,
+            @NotNull @ObjCBlock(name = "call_URLSessionDataTaskWillCacheResponseCompletionHandler") Block_URLSessionDataTaskWillCacheResponseCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -136,6 +143,6 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
     @Generated
     public interface Block_URLSessionDataTaskWillCacheResponseCompletionHandler {
         @Generated
-        void call_URLSessionDataTaskWillCacheResponseCompletionHandler(NSCachedURLResponse cachedResponse);
+        void call_URLSessionDataTaskWillCacheResponseCompletionHandler(@Nullable NSCachedURLResponse cachedResponse);
     }
 }

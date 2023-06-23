@@ -42,17 +42,21 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEAppRule
- * <p>
+ * 
  * The NEAppRule class declares the programmatic interface for an object that contains the match conditions for a rule
  * that is used to match network traffic originated by applications.
- * <p>
+ * 
  * NEAppRule is used in the context of a Network Extension configuration to specify what traffic should be made
  * available to the Network Extension.
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -84,22 +88,25 @@ public class NEAppRule extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,9 +141,10 @@ public class NEAppRule extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,15 +176,16 @@ public class NEAppRule extends NSObject implements NSSecureCoding, NSCopying {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -184,70 +193,85 @@ public class NEAppRule extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEAppRule initWithCoder(NSCoder coder);
+    public native NEAppRule initWithCoder(@NotNull NSCoder coder);
 
     /**
      * initWithSigningIdentifier:
-     * <p>
+     * 
      * Initializes a newly-allocated NEAppRule object.
-     *
+     * 
      * @param signingIdentifier The signing identifier of the executable that matches the rule.
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("initWithSigningIdentifier:")
-    public native NEAppRule initWithSigningIdentifier(String signingIdentifier);
+    public native NEAppRule initWithSigningIdentifier(@NotNull String signingIdentifier);
 
     /**
      * [@property] matchDomains
-     * <p>
+     * 
      * An array of strings. This property is actually read-only. If the destination host of the network traffic being
      * evaluated has a suffix equal to one of the strings in this array and all other conditions of the rule match, then
      * the rule matches. This property is optional.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("matchDomains")
     public native NSArray<?> matchDomains();
 
     /**
      * [@property] matchPath
-     * <p>
+     * 
      * A string containing a file system path. If the file system path of the executable being evaluated is equal to
      * this string and all other conditions of the rule match, then the rule matches. This property is optional.
+     * 
+     * API-Since: 9.3
      */
+    @Nullable
     @Generated
     @Selector("matchPath")
     public native String matchPath();
 
     /**
      * [@property] matchSigningIdentifier
-     * <p>
+     * 
      * A string containing a signing identifier. If the code signature of the executable being evaluated has a signing
      * identifier equal to this string and all other conditions of the rule match, then the rule matches.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("matchSigningIdentifier")
     public native String matchSigningIdentifier();
 
     /**
      * [@property] matchDomains
-     * <p>
+     * 
      * An array of strings. This property is actually read-only. If the destination host of the network traffic being
      * evaluated has a suffix equal to one of the strings in this array and all other conditions of the rule match, then
      * the rule matches. This property is optional.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMatchDomains:")
-    public native void setMatchDomains(NSArray<?> value);
+    public native void setMatchDomains(@Nullable NSArray<?> value);
 
     /**
      * [@property] matchPath
-     * <p>
+     * 
      * A string containing a file system path. If the file system path of the executable being evaluated is equal to
      * this string and all other conditions of the rule match, then the rule matches. This property is optional.
+     * 
+     * API-Since: 9.3
      */
     @Generated
     @Selector("setMatchPath:")
-    public native void setMatchPath(String value);
+    public native void setMatchPath(@Nullable String value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

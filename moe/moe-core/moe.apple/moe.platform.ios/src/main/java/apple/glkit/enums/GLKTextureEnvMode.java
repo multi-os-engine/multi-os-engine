@@ -20,11 +20,22 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * Texture env mode
+ * 
+ * API-Since: 5.0
  */
 @Generated
 public final class GLKTextureEnvMode {
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int Replace = 0x00000000;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int Modulate = 0x00000001;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int Decal = 0x00000002;
 
     @Generated

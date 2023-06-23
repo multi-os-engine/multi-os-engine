@@ -23,7 +23,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -54,41 +59,46 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] constantValues
-     * <p>
+     * 
      * The set of constant values assigned to the function constants. Compilation fails if you do not provide valid
      * constant values for all required function constants.
      */
+    @Nullable
     @Generated
     @Selector("constantValues")
     public native MTLFunctionConstantValues constantValues();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -100,9 +110,10 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
 
     /**
      * functionDescriptor
-     * <p>
+     * 
      * Create an autoreleased function descriptor
      */
+    @NotNull
     @Generated
     @Selector("functionDescriptor")
     public static native MTLFunctionDescriptor functionDescriptor();
@@ -133,15 +144,17 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] name
-     * <p>
+     * 
      * The name of the `visible` function to find.
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -153,7 +166,7 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] options
-     * <p>
+     * 
      * The options to use for this new `MTLFunction`.
      */
     @Generated
@@ -171,26 +184,26 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] constantValues
-     * <p>
+     * 
      * The set of constant values assigned to the function constants. Compilation fails if you do not provide valid
      * constant values for all required function constants.
      */
     @Generated
     @Selector("setConstantValues:")
-    public native void setConstantValues(MTLFunctionConstantValues value);
+    public native void setConstantValues(@Nullable MTLFunctionConstantValues value);
 
     /**
      * [@property] name
-     * <p>
+     * 
      * The name of the `visible` function to find.
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     /**
      * [@property] options
-     * <p>
+     * 
      * The options to use for this new `MTLFunction`.
      */
     @Generated
@@ -199,12 +212,12 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] specializedName
-     * <p>
+     * 
      * An optional new name for a `visible` function to allow reuse with different specializations.
      */
     @Generated
     @Selector("setSpecializedName:")
-    public native void setSpecializedName(String value);
+    public native void setSpecializedName(@Nullable String value);
 
     @Generated
     @Selector("setVersion:")
@@ -212,9 +225,10 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] specializedName
-     * <p>
+     * 
      * An optional new name for a `visible` function to allow reuse with different specializations.
      */
+    @Nullable
     @Generated
     @Selector("specializedName")
     public native String specializedName();
@@ -230,23 +244,28 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] binaryArchives
-     * <p>
+     * 
      * The array of archives to be searched.
-     * <p>
+     * 
      * Binary archives to be searched for precompiled functions during the compilation of this function.
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("binaryArchives")
     public native NSArray<?> binaryArchives();
 
     /**
      * [@property] binaryArchives
-     * <p>
+     * 
      * The array of archives to be searched.
-     * <p>
+     * 
      * Binary archives to be searched for precompiled functions during the compilation of this function.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setBinaryArchives:")
-    public native void setBinaryArchives(NSArray<?> value);
+    public native void setBinaryArchives(@Nullable NSArray<?> value);
 }

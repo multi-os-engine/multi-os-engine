@@ -26,6 +26,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -35,20 +36,24 @@ public interface UICollectionViewDataSourcePrefetching {
     /**
      * indexPaths that previously were considered as candidates for pre-fetching, but were not actually used; may be a
      * subset of the previous call to -collectionView:prefetchItemsAtIndexPaths:
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
     @Selector("collectionView:cancelPrefetchingForItemsAtIndexPaths:")
-    default void collectionViewCancelPrefetchingForItemsAtIndexPaths(UICollectionView collectionView,
-            NSArray<? extends NSIndexPath> indexPaths) {
+    default void collectionViewCancelPrefetchingForItemsAtIndexPaths(@NotNull UICollectionView collectionView,
+            @NotNull NSArray<? extends NSIndexPath> indexPaths) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * indexPaths are ordered ascending by geometric distance from the collection view
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("collectionView:prefetchItemsAtIndexPaths:")
-    void collectionViewPrefetchItemsAtIndexPaths(UICollectionView collectionView,
-            NSArray<? extends NSIndexPath> indexPaths);
+    void collectionViewPrefetchItemsAtIndexPaths(@NotNull UICollectionView collectionView,
+            @NotNull NSArray<? extends NSIndexPath> indexPaths);
 }

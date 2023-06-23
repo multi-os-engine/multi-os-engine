@@ -29,16 +29,20 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioSourceNode
- * <p>
+ * 
  * AVAudioSourceNode wraps a client provided block to supply audio.
- * <p>
+ * 
  * With AVAudioSourceNode the client can supply audio data for rendering through an
  * AVAudioSourceNodeRenderBlock block.
  * This is similar to setting the input callback on an Audio Unit with the
  * kAudioUnitProperty_SetRenderCallback property.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("AVFAudio")
@@ -70,22 +74,25 @@ public class AVAudioSourceNode extends AVAudioNode implements AVAudioMixing {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -98,9 +105,10 @@ public class AVAudioSourceNode extends AVAudioNode implements AVAudioMixing {
     @Selector("description")
     public static native String description_static();
 
+    @Nullable
     @Generated
     @Selector("destinationForMixer:bus:")
-    public native AVAudioMixingDestination destinationForMixerBus(AVAudioNode mixer, @NUInt long bus);
+    public native AVAudioMixingDestination destinationForMixerBus(@NotNull AVAudioNode mixer, @NUInt long bus);
 
     @Generated
     @Selector("hash")
@@ -113,65 +121,68 @@ public class AVAudioSourceNode extends AVAudioNode implements AVAudioMixing {
 
     /**
      * initWithFormat:renderBlock:
-     * <p>
+     * 
      * Create a node with a render block.
-     * <p>
+     * 
      * The block can be called on realtime or non-realtime threads depending on the engine’s
      * operating mode and it is the client's responsibility to handle it in a thread-safe manner.
-     * <p>
+     * 
      * The audio format for the output bus will be set from the connection format when connecting
      * to another node.
-     * <p>
+     * 
      * AVAudioSourceNode supports different audio formats for the block and output, but only
      * Linear PCM conversions are supported (sample rate, bit depth, interleaving).
-     *
-     * @param format The format of the PCM audio data that will be supplied by the block.
-     * @param block  The block to supply audio data to the output.
+     * 
+     * @param format
+     *               The format of the PCM audio data that will be supplied by the block.
+     * @param block
+     *               The block to supply audio data to the output.
      */
     @Generated
     @Selector("initWithFormat:renderBlock:")
-    public native AVAudioSourceNode initWithFormatRenderBlock(AVAudioFormat format,
-            @ObjCBlock(name = "call_initWithFormatRenderBlock") Block_initWithFormatRenderBlock block);
+    public native AVAudioSourceNode initWithFormatRenderBlock(@NotNull AVAudioFormat format,
+            @NotNull @ObjCBlock(name = "call_initWithFormatRenderBlock") Block_initWithFormatRenderBlock block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithFormatRenderBlock {
         @Generated
-        int call_initWithFormatRenderBlock(BoolPtr isSilence,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp timestamp,
+        int call_initWithFormatRenderBlock(@NotNull BoolPtr isSilence,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp timestamp,
                 int frameCount,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outputData);
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outputData);
     }
 
     /**
      * initWithRenderBlock:
-     * <p>
+     * 
      * Create a node with a render block.
-     * <p>
+     * 
      * The block can be called on realtime or non-realtime threads depending on the engine’s
      * operating mode and it is the client's responsibility to handle it in a thread-safe manner.
-     * <p>
+     * 
      * The audio format for the output bus will be set from the connection format when connecting
      * to another node.
-     * <p>
+     * 
      * The audio format for the block will be set to the node's output format. If node is
      * reconnected with a different output format, the audio format for the block will also change.
-     *
-     * @param block The block to supply audio data to the output.
+     * 
+     * @param block
+     *              The block to supply audio data to the output.
      */
     @Generated
     @Selector("initWithRenderBlock:")
     public native AVAudioSourceNode initWithRenderBlock(
-            @ObjCBlock(name = "call_initWithRenderBlock") Block_initWithRenderBlock block);
+            @NotNull @ObjCBlock(name = "call_initWithRenderBlock") Block_initWithRenderBlock block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithRenderBlock {
         @Generated
-        int call_initWithRenderBlock(BoolPtr isSilence,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp timestamp,
+        int call_initWithRenderBlock(@NotNull BoolPtr isSilence,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp timestamp,
                 int frameCount,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outputData);
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outputData);
     }
 
     @Generated
@@ -191,9 +202,10 @@ public class AVAudioSourceNode extends AVAudioNode implements AVAudioMixing {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

@@ -12,7 +12,12 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -26,8 +31,8 @@ public interface NSTextContentManagerDelegate {
     @Generated
     @IsOptional
     @Selector("textContentManager:shouldEnumerateTextElement:options:")
-    default boolean textContentManagerShouldEnumerateTextElementOptions(NSTextContentManager textContentManager,
-            NSTextElement textElement, @NUInt long options) {
+    default boolean textContentManagerShouldEnumerateTextElementOptions(
+            @NotNull NSTextContentManager textContentManager, @NotNull NSTextElement textElement, @NUInt long options) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -35,11 +40,12 @@ public interface NSTextContentManagerDelegate {
      * Returns a custom element for location. When non-nil, textContentManager uses the element instead of creating
      * based on its standard mapping logic.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("textContentManager:textElementAtLocation:")
-    default NSTextElement textContentManagerTextElementAtLocation(NSTextContentManager textContentManager,
-            @Mapped(ObjCObjectMapper.class) NSTextLocation location) {
+    default NSTextElement textContentManagerTextElementAtLocation(@NotNull NSTextContentManager textContentManager,
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

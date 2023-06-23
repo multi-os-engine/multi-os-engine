@@ -26,7 +26,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("NaturalLanguage")
 @Runtime(ObjCRuntime.class)
@@ -57,22 +62,25 @@ public class NLTokenizer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -90,17 +98,20 @@ public class NLTokenizer extends NSObject {
      * block iterator, that iterates over all tokens intersecting a given range, supplying token ranges and flags. The
      * range passed in must not extend beyond the end of the tokenizer's string, or the method will raise an exception.
      * Note that a given instance of NLTokenizer should not be used from more than one thread simultaneously.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("enumerateTokensInRange:usingBlock:")
     public native void enumerateTokensInRangeUsingBlock(@ByValue NSRange range,
-            @ObjCBlock(name = "call_enumerateTokensInRangeUsingBlock") Block_enumerateTokensInRangeUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateTokensInRangeUsingBlock") Block_enumerateTokensInRangeUsingBlock block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateTokensInRangeUsingBlock {
         @Generated
-        void call_enumerateTokensInRangeUsingBlock(@ByValue NSRange tokenRange, @NUInt long flags, BoolPtr stop);
+        void call_enumerateTokensInRangeUsingBlock(@ByValue NSRange tokenRange, @NUInt long flags,
+                @NotNull BoolPtr stop);
     }
 
     @Generated
@@ -112,6 +123,9 @@ public class NLTokenizer extends NSObject {
     @Selector("init")
     public native NLTokenizer init();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithUnit:")
     public native NLTokenizer initWithUnit(@NInt long unit);
@@ -133,9 +147,10 @@ public class NLTokenizer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -152,18 +167,22 @@ public class NLTokenizer extends NSObject {
 
     /**
      * Clients may specify the language of the string, if it is known; otherwise it will be determined from the text.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setLanguage:")
-    public native void setLanguage(String language);
+    public native void setLanguage(@NotNull String language);
 
     /**
      * An NLTokenizer instance must be assigned a string to tokenize, and clients can then obtain ranges for tokens in
      * that string appropriate to the tokenizer's unit.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setString:")
-    public native void setString(String value);
+    public native void setString(@Nullable String value);
 
     @Generated
     @Selector("setVersion:")
@@ -172,7 +191,10 @@ public class NLTokenizer extends NSObject {
     /**
      * An NLTokenizer instance must be assigned a string to tokenize, and clients can then obtain ranges for tokens in
      * that string appropriate to the tokenizer's unit.
+     * 
+     * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("string")
     public native String string();
@@ -184,6 +206,8 @@ public class NLTokenizer extends NSObject {
     /**
      * Returns the range corresponding to the token for the tokenizer's unit that contains the given character index.
      * The index must not extend beyond the end of the tokenizer's string, or the method will raise an exception.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("tokenRangeAtIndex:")
@@ -192,11 +216,17 @@ public class NLTokenizer extends NSObject {
 
     /**
      * Returns the ranges corresponding to the tokens for the tokenizer's unit that intersect the given range.
+     * 
+     * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Selector("tokensForRange:")
     public native NSArray<? extends NSValue> tokensForRange(@ByValue NSRange range);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("unit")
     @NInt
@@ -210,6 +240,8 @@ public class NLTokenizer extends NSObject {
     /**
      * Returns the smallest range covering all tokens for the tokenizer's unit intersecting the given range. If
      * range.length == 0, this is equivalent to tokenRangeAtIndex:.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("tokenRangeForRange:")

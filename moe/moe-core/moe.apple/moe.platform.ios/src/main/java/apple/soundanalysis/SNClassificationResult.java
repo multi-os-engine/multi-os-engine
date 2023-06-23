@@ -24,9 +24,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A result containing the most likely classification candidates in the time range specified
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("SoundAnalysis")
@@ -58,22 +62,25 @@ public class SNClassificationResult extends NSObject implements SNResult {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -81,6 +88,7 @@ public class SNClassificationResult extends NSObject implements SNResult {
     /**
      * All classification candidates, sorted with highest confidence first.
      */
+    @NotNull
     @Generated
     @Selector("classifications")
     public native NSArray<? extends SNClassification> classifications();
@@ -119,9 +127,10 @@ public class SNClassificationResult extends NSObject implements SNResult {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -146,7 +155,7 @@ public class SNClassificationResult extends NSObject implements SNResult {
 
     /**
      * The time range in the client-provided audio stream to which this classification result corresponds
-     * <p>
+     * 
      * Each CMTime contains of a value (audio frame count) and timescale (client sample rate). This enables the client
      * to precisely identify the frame range in the original audio stream to which this result corresponds. Time ranges
      * will often be in the past compared to the frame count of the most recent audio buffer provided to the analyzer,
@@ -164,14 +173,17 @@ public class SNClassificationResult extends NSObject implements SNResult {
 
     /**
      * Retrieves the classification candidate with the specified identifier.
-     *
+     * 
      * @param identifier An identifier on which to query for a particular classification candidate. The query will match
      *                   to any classification candidate whose `identifier` property (see `identifier` property of
      *                   `SNClassification`) contains a value equal to the provided argument.
      * @return The classification candidate which has the specified identifier, if it exists. If no such candidate
      *         exists, `nil` will be returned.
+     * 
+     *         API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("classificationForIdentifier:")
-    public native SNClassification classificationForIdentifier(String identifier);
+    public native SNClassification classificationForIdentifier(@NotNull String identifier);
 }

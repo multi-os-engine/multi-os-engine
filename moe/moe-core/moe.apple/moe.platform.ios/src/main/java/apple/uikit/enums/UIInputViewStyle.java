@@ -19,11 +19,19 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 public final class UIInputViewStyle {
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Default = 0x0000000000000000L;
     /**
      * mimics the keyboard background
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long Keyboard = 0x0000000000000001L;
 

@@ -17,8 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -52,9 +50,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * ______________________________________________________
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("UIKit")
@@ -78,7 +82,7 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     @Selector("addKeyframeWithRelativeStartTime:relativeDuration:animations:")
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
-            @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
 
     @Generated
     @Owned
@@ -94,64 +98,70 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
     public static native void animateKeyframesWithDurationDelayOptionsAnimationsCompletion(double duration,
             double delay, @NUInt long options,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:animations:")
     public static native void animateWithDurationAnimations(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
 
     @Generated
     @Selector("animateWithDuration:animations:completion:")
     public static native void animateWithDurationAnimationsCompletion(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:options:animations:completion:")
     public static native void animateWithDurationDelayOptionsAnimationsCompletion(double duration, double delay,
             @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:")
     public static native void animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion(
             double duration, double delay, @NFloat double dampingRatio, @NFloat double velocity, @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
 
+    @NotNull
     @Generated
     @Selector("appearance")
     public static native UIControl appearance();
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:")
-    public static native UIControl appearanceForTraitCollection(UITraitCollection trait);
+    public static native UIControl appearanceForTraitCollection(@NotNull UITraitCollection trait);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    public static native UIControl appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native UIControl appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     public static native UIControl appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            UITraitCollection trait, NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     public static native UIControl appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    public static native UIControl appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native UIControl appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes);
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -159,34 +169,39 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
-    public static native void beginAnimationsContext(String animationID, VoidPtr context);
+    public static native void beginAnimationsContext(@Nullable String animationID, @Nullable VoidPtr context);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -225,10 +240,12 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("layerClass")
     public static native Class layerClass();
@@ -241,14 +258,14 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")
     public static native void performSystemAnimationOnViewsOptionsAnimationsCompletion(@NUInt long animation,
-            NSArray<? extends UIView> views, @NUInt long options,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
+            @NotNull NSArray<? extends UIView> views, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("performWithoutAnimation:")
     public static native void performWithoutAnimation(
-            @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
+            @NotNull @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
 
     @Generated
     @Selector("requiresConstraintBasedLayout")
@@ -262,49 +279,61 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
-    public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
+    public static native void setAnimationDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
-    public static native void setAnimationDidStopSelector(SEL selector);
+    public static native void setAnimationDidStopSelector(@Nullable SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
-    public static native void setAnimationStartDate(NSDate startDate);
+    public static native void setAnimationStartDate(@NotNull NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
-    public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
+    public static native void setAnimationTransitionForViewCache(@NInt long transition, @NotNull UIView view,
+            boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
-    public static native void setAnimationWillStartSelector(SEL selector);
+    public static native void setAnimationWillStartSelector(@Nullable SEL selector);
 
     @Generated
     @Selector("setAnimationsEnabled:")
@@ -320,16 +349,16 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     @Generated
     @Selector("transitionFromView:toView:duration:options:completion:")
-    public static native void transitionFromViewToViewDurationOptionsCompletion(UIView fromView, UIView toView,
-            double duration, @NUInt long options,
-            @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
+    public static native void transitionFromViewToViewDurationOptionsCompletion(@NotNull UIView fromView,
+            @NotNull UIView toView, double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
 
     @Generated
     @Selector("transitionWithView:duration:options:animations:completion:")
-    public static native void transitionWithViewDurationOptionsAnimationsCompletion(UIView view, double duration,
-            @NUInt long options,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
+    public static native void transitionWithViewDurationOptionsAnimationsCompletion(@NotNull UIView view,
+            double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:")
@@ -350,10 +379,11 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     /**
      * single event. returns NSArray of NSString selector names. returns nil if none
      */
+    @Nullable
     @Generated
     @Selector("actionsForTarget:forControlEvent:")
-    public native NSArray<String> actionsForTargetForControlEvent(@Mapped(ObjCObjectMapper.class) Object target,
-            @NUInt long controlEvent);
+    public native NSArray<String> actionsForTargetForControlEvent(
+            @Nullable @Mapped(ObjCObjectMapper.class) Object target, @NUInt long controlEvent);
 
     /**
      * add target/action for particular event. you can call this multiple times and you can specify multiple
@@ -364,8 +394,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
      */
     @Generated
     @Selector("addTarget:action:forControlEvents:")
-    public native void addTargetActionForControlEvents(@Mapped(ObjCObjectMapper.class) Object target, SEL action,
-            @NUInt long controlEvents);
+    public native void addTargetActionForControlEvents(@Nullable @Mapped(ObjCObjectMapper.class) Object target,
+            @NotNull SEL action, @NUInt long controlEvents);
 
     /**
      * list of all events that have at least one action
@@ -378,61 +408,68 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     /**
      * set may include NSNull to indicate at least one nil target
      */
+    @NotNull
     @Generated
     @Selector("allTargets")
     public native NSSet<?> allTargets();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearance")
     public UIControl _appearance() {
         return appearance();
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    public UIControl _appearanceForTraitCollection(UITraitCollection trait) {
+    public UIControl _appearanceForTraitCollection(@NotNull UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    public UIControl _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public UIControl _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    public UIControl _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
+    public UIControl _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(@NotNull UITraitCollection trait,
+            @NotNull NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    public UIControl _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
-            Object... varargs) {
+    public UIControl _appearanceWhenContainedIn(
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public UIControl _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public UIControl _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
     @Generated
     @Selector("beginTrackingWithTouch:withEvent:")
-    public native boolean beginTrackingWithTouchWithEvent(UITouch touch, UIEvent event);
+    public native boolean beginTrackingWithTouchWithEvent(@NotNull UITouch touch, @Nullable UIEvent event);
 
     /**
      * event may be nil if cancelled for non-event reasons, e.g. removed from window
      */
     @Generated
     @Selector("cancelTrackingWithEvent:")
-    public native void cancelTrackingWithEvent(UIEvent event);
+    public native void cancelTrackingWithEvent(@Nullable UIEvent event);
 
     /**
      * how to position content horizontally inside control. default is center
@@ -452,14 +489,14 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     @Generated
     @Selector("continueTrackingWithTouch:withEvent:")
-    public native boolean continueTrackingWithTouchWithEvent(UITouch touch, UIEvent event);
+    public native boolean continueTrackingWithTouchWithEvent(@NotNull UITouch touch, @Nullable UIEvent event);
 
     /**
      * touch is sometimes nil if cancelTracking calls through to this.
      */
     @Generated
     @Selector("endTrackingWithTouch:withEvent:")
-    public native void endTrackingWithTouchWithEvent(UITouch touch, UIEvent event);
+    public native void endTrackingWithTouchWithEvent(@Nullable UITouch touch, @Nullable UIEvent event);
 
     @Generated
     @Selector("init")
@@ -467,7 +504,7 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIControl initWithCoder(NSCoder coder);
+    public native UIControl initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -531,8 +568,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
      */
     @Generated
     @Selector("removeTarget:action:forControlEvents:")
-    public native void removeTargetActionForControlEvents(@Mapped(ObjCObjectMapper.class) Object target, SEL action,
-            @NUInt long controlEvents);
+    public native void removeTargetActionForControlEvents(@Nullable @Mapped(ObjCObjectMapper.class) Object target,
+            @Nullable SEL action, @NUInt long controlEvents);
 
     /**
      * Dispatch the target-action pair. This method is called repeatedly by -sendActionsForControlEvents: and is a point
@@ -540,7 +577,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
      */
     @Generated
     @Selector("sendAction:to:forEvent:")
-    public native void sendActionToForEvent(SEL action, @Mapped(ObjCObjectMapper.class) Object target, UIEvent event);
+    public native void sendActionToForEvent(@NotNull SEL action,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object target, @Nullable UIEvent event);
 
     /**
      * send all actions associated with the given control events
@@ -630,89 +668,104 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
-            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+            @NotNull @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
     /**
      * Adds the UIAction to a given event. UIActions are uniqued based on their identifier, and subsequent actions with
      * the same identifier replace previously added actions. You may add multiple UIActions for corresponding
      * controlEvents, and you may add the same action to multiple controlEvents.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("addAction:forControlEvents:")
-    public native void addActionForControlEvents(UIAction action, @NUInt long controlEvents);
+    public native void addActionForControlEvents(@NotNull UIAction action, @NUInt long controlEvents);
 
     /**
      * Returns a UIContextMenuInteraction with this control set as its delegate. Before constructing the
      * UIContextMenuInteraction, UIControl verifies 'self' is a viable delegate. See 'Implementing UIControl Menus'
      * below for more details.
+     * 
+     * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("contextMenuInteraction")
     public native UIContextMenuInteraction contextMenuInteraction();
 
+    @Nullable
     @Generated
     @Selector("contextMenuInteraction:configurationForMenuAtLocation:")
     public native UIContextMenuConfiguration contextMenuInteractionConfigurationForMenuAtLocation(
-            UIContextMenuInteraction interaction, @ByValue CGPoint location);
+            @NotNull UIContextMenuInteraction interaction, @ByValue CGPoint location);
 
+    @Nullable
     @Generated
     @Selector("contextMenuInteraction:previewForDismissingMenuWithConfiguration:")
     public native UITargetedPreview contextMenuInteractionPreviewForDismissingMenuWithConfiguration(
-            UIContextMenuInteraction interaction, UIContextMenuConfiguration configuration);
+            @NotNull UIContextMenuInteraction interaction, @NotNull UIContextMenuConfiguration configuration);
 
+    @Nullable
     @Generated
     @Selector("contextMenuInteraction:previewForHighlightingMenuWithConfiguration:")
     public native UITargetedPreview contextMenuInteractionPreviewForHighlightingMenuWithConfiguration(
-            UIContextMenuInteraction interaction, UIContextMenuConfiguration configuration);
+            @NotNull UIContextMenuInteraction interaction, @NotNull UIContextMenuConfiguration configuration);
 
     @Generated
     @Selector("contextMenuInteraction:willDisplayMenuForConfiguration:animator:")
     public native void contextMenuInteractionWillDisplayMenuForConfigurationAnimator(
-            UIContextMenuInteraction interaction, UIContextMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator);
+            @NotNull UIContextMenuInteraction interaction, @NotNull UIContextMenuConfiguration configuration,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator);
 
     @Generated
     @Selector("contextMenuInteraction:willEndForConfiguration:animator:")
-    public native void contextMenuInteractionWillEndForConfigurationAnimator(UIContextMenuInteraction interaction,
-            UIContextMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator);
+    public native void contextMenuInteractionWillEndForConfigurationAnimator(
+            @NotNull UIContextMenuInteraction interaction, @NotNull UIContextMenuConfiguration configuration,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator);
 
     @Generated
     @IsOptional
     @Selector("contextMenuInteraction:willPerformPreviewActionForMenuWithConfiguration:animator:")
     public native void contextMenuInteractionWillPerformPreviewActionForMenuWithConfigurationAnimator(
-            UIContextMenuInteraction interaction, UIContextMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator);
+            @NotNull UIContextMenuInteraction interaction, @NotNull UIContextMenuConfiguration configuration,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator);
 
     /**
      * Iterate over the event handlers installed on this control at the time this method is called. For each call,
      * either actionHandler or action will be non-nil. controlEvents is always non-zero. Setting *stop to YES will
      * terminate the enumeration early. It is legal to manipulate the control's event handlers within the block.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("enumerateEventHandlers:")
     public native void enumerateEventHandlers(
-            @ObjCBlock(name = "call_enumerateEventHandlers") Block_enumerateEventHandlers iterator);
+            @NotNull @ObjCBlock(name = "call_enumerateEventHandlers") Block_enumerateEventHandlers iterator);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateEventHandlers {
         @Generated
-        void call_enumerateEventHandlers(UIAction actionHandler, @Mapped(ObjCObjectMapper.class) Object target,
-                SEL action, @NUInt long controlEvents, BoolPtr stop);
+        void call_enumerateEventHandlers(@Nullable UIAction actionHandler,
+                @Nullable @Mapped(ObjCObjectMapper.class) Object target, @Nullable SEL action,
+                @NUInt long controlEvents, @NotNull BoolPtr stop);
     }
 
     /**
      * Initializes the control and adds primaryAction for the UIControlEventPrimaryActionTriggered control event.
      * Subclasses of UIControl may alter or add behaviors around the usage of primaryAction, see subclass documentation
      * of this initializer for additional information.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithFrame:primaryAction:")
-    public native UIControl initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
+    public native UIControl initWithFramePrimaryAction(@ByValue CGRect frame, @Nullable UIAction primaryAction);
 
     /**
      * Specifies if the context menu interaction is enabled. NO by default.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isContextMenuInteractionEnabled")
@@ -720,37 +773,48 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * Return a point in this control's coordinate space to which to attach the given configuration's menu.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("menuAttachmentPointForConfiguration:")
     @ByValue
-    public native CGPoint menuAttachmentPointForConfiguration(UIContextMenuConfiguration configuration);
+    public native CGPoint menuAttachmentPointForConfiguration(@NotNull UIContextMenuConfiguration configuration);
 
     /**
      * Removes the action from the set of passed control events.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("removeAction:forControlEvents:")
-    public native void removeActionForControlEvents(UIAction action, @NUInt long controlEvents);
+    public native void removeActionForControlEvents(@NotNull UIAction action, @NUInt long controlEvents);
 
     /**
      * Removes the action with the provided identifier from the set of passed control events.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("removeActionForIdentifier:forControlEvents:")
-    public native void removeActionForIdentifierForControlEvents(String actionIdentifier, @NUInt long controlEvents);
+    public native void removeActionForIdentifierForControlEvents(@NotNull String actionIdentifier,
+            @NUInt long controlEvents);
 
     /**
      * Like -sendAction:to:forEvent:, this method is called by -sendActionsForControlEvents:. You may override this
      * method to observe or modify behavior. If you override this method, you should call super precisely once to
      * dispatch the action, or not call super to suppress sending that action.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("sendAction:")
-    public native void sendAction(UIAction action);
+    public native void sendAction(@NotNull UIAction action);
 
     /**
      * Specifies if the context menu interaction is enabled. NO by default.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setContextMenuInteractionEnabled:")
@@ -758,6 +822,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * If the contextMenuInteraction is the primary action of the control, invoked on touch-down. NO by default.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setShowsMenuAsPrimaryAction:")
@@ -765,6 +831,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * If the contextMenuInteraction is the primary action of the control, invoked on touch-down. NO by default.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("showsMenuAsPrimaryAction")
@@ -773,23 +841,47 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     /**
      * Assigning a value to this property causes the tool tip to be displayed for the view. Setting the property to nil
      * cancels the display of the tool tip for the view.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setToolTip:")
-    public native void setToolTip(String value);
+    public native void setToolTip(@Nullable String value);
 
     /**
      * Assigning a value to this property causes the tool tip to be displayed for the view. Setting the property to nil
      * cancels the display of the tool tip for the view.
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("toolTip")
     public native String toolTip();
 
     /**
      * Returns the control's default UIToolTipInteraction.
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("toolTipInteraction")
     public native UIToolTipInteraction toolTipInteraction();
+
+    @Nullable
+    @Generated
+    @IsOptional
+    @Selector("contextMenuInteraction:configuration:dismissalPreviewForItemWithIdentifier:")
+    public native UITargetedPreview contextMenuInteractionConfigurationDismissalPreviewForItemWithIdentifier(
+            @NotNull UIContextMenuInteraction interaction, @NotNull UIContextMenuConfiguration configuration,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object identifier);
+
+    @Nullable
+    @Generated
+    @IsOptional
+    @Selector("contextMenuInteraction:configuration:highlightPreviewForItemWithIdentifier:")
+    public native UITargetedPreview contextMenuInteractionConfigurationHighlightPreviewForItemWithIdentifier(
+            @NotNull UIContextMenuInteraction interaction, @NotNull UIContextMenuConfiguration configuration,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object identifier);
 }

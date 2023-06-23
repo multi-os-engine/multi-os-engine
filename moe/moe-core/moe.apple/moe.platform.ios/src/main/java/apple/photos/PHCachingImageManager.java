@@ -17,7 +17,6 @@ limitations under the License.
 package apple.photos;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -39,7 +38,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -70,22 +75,25 @@ public class PHCachingImageManager extends PHImageManager {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -94,6 +102,7 @@ public class PHCachingImageManager extends PHImageManager {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @NotNull
     @Generated
     @Selector("defaultManager")
     public static native PHImageManager defaultManager();
@@ -124,9 +133,10 @@ public class PHCachingImageManager extends PHImageManager {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,6 +166,8 @@ public class PHCachingImageManager extends PHImageManager {
 
     /**
      * Defaults to YES
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("allowsCachingHighQualityImages")
@@ -167,6 +179,8 @@ public class PHCachingImageManager extends PHImageManager {
 
     /**
      * Defaults to YES
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setAllowsCachingHighQualityImages:")
@@ -178,18 +192,28 @@ public class PHCachingImageManager extends PHImageManager {
      * The options values shall exactly match the options values used in loading methods. If two or more caching
      * requests are done on the same asset using different options or different targetSize the first
      * caching request will have precedence (until it is stopped)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("startCachingImagesForAssets:targetSize:contentMode:options:")
-    public native void startCachingImagesForAssetsTargetSizeContentModeOptions(NSArray<? extends PHAsset> assets,
-            @ByValue CGSize targetSize, @NInt long contentMode, PHImageRequestOptions options);
+    public native void startCachingImagesForAssetsTargetSizeContentModeOptions(
+            @NotNull NSArray<? extends PHAsset> assets, @ByValue CGSize targetSize, @NInt long contentMode,
+            @Nullable PHImageRequestOptions options);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("stopCachingImagesForAllAssets")
     public native void stopCachingImagesForAllAssets();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("stopCachingImagesForAssets:targetSize:contentMode:options:")
-    public native void stopCachingImagesForAssetsTargetSizeContentModeOptions(NSArray<? extends PHAsset> assets,
-            @ByValue CGSize targetSize, @NInt long contentMode, PHImageRequestOptions options);
+    public native void stopCachingImagesForAssetsTargetSizeContentModeOptions(
+            @NotNull NSArray<? extends PHAsset> assets, @ByValue CGSize targetSize, @NInt long contentMode,
+            @Nullable PHImageRequestOptions options);
 }

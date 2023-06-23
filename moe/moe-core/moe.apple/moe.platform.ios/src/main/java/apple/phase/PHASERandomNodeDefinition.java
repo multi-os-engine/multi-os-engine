@@ -22,13 +22,17 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] PHASERandomNodeDefinition
- * <p>
+ * 
  * An object for defining a random sound event node when building a sound event.
- * <p>
+ * 
  * A random node selects one of its children based on a weighted random choice.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -50,17 +54,19 @@ public class PHASERandomNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * addSubtree
-     * <p>
+     * 
      * Add a subtree to a random node
-     *
-     * @param subtree A PHASESoundEventNodeDefinition that will be a child node of this random node
-     * @param weight  The probability weight of this subtree. Higher numbers compared to other subtree weights will
+     * 
+     * @param subtree
+     *                A PHASESoundEventNodeDefinition that will be a child node of this random node
+     * @param weight
+     *                The probability weight of this subtree. Higher numbers compared to other subtree weights will
      *                increase the likelihood of being
      *                chosen. This value must be greater than or equal to 1, and is clamped otherwise.
      */
     @Generated
     @Selector("addSubtree:weight:")
-    public native void addSubtreeWeight(PHASESoundEventNodeDefinition subtree, NSNumber weight);
+    public native void addSubtreeWeight(@NotNull PHASESoundEventNodeDefinition subtree, @NotNull NSNumber weight);
 
     @Generated
     @Owned
@@ -74,22 +80,25 @@ public class PHASERandomNodeDefinition extends PHASESoundEventNodeDefinition {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -109,10 +118,11 @@ public class PHASERandomNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * init
-     * <p>
+     * 
      * Create a random node definition
-     *
-     * @return A new PHASERandomNodeDefinition object
+     * 
+     * @return
+     *         A new PHASERandomNodeDefinition object
      */
     @Generated
     @Selector("init")
@@ -120,15 +130,17 @@ public class PHASERandomNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * initWithIdentifier
-     * <p>
+     * 
      * Create a random node definition
-     *
-     * @param identifier An optional custom identifier to give to this object
-     * @return A new PHASERandomNodeDefinition object
+     * 
+     * @param identifier
+     *                   An optional custom identifier to give to this object
+     * @return
+     *         A new PHASERandomNodeDefinition object
      */
     @Generated
     @Selector("initWithIdentifier:")
-    public native PHASERandomNodeDefinition initWithIdentifier(String identifier);
+    public native PHASERandomNodeDefinition initWithIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -147,9 +159,10 @@ public class PHASERandomNodeDefinition extends PHASESoundEventNodeDefinition {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,7 +179,7 @@ public class PHASERandomNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * [@property] uniqueSelectionQueueLength
-     * <p>
+     * 
      * Subtrees will not be repeated until after this random node is activated uniqueSelectionQueueLength number of
      * times.
      */
@@ -184,7 +197,7 @@ public class PHASERandomNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * [@property] uniqueSelectionQueueLength
-     * <p>
+     * 
      * Subtrees will not be repeated until after this random node is activated uniqueSelectionQueueLength number of
      * times.
      */

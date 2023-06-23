@@ -21,16 +21,20 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CHHapticDynamicParameter
- * <p>
+ * 
  * A CHHapticDynamicParameter contains a CHHapticDynamicParameterID/value pair which will modify (modulate) the ongoing
  * character
  * of a haptic or audio event.
- * <p>
+ * 
  * CHHapticDynamicParameters have a relative time property to allow specifying the time relationship between parameters
  * in a pattern.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreHaptics")
@@ -62,22 +66,25 @@ public class CHHapticDynamicParameter extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,17 +108,20 @@ public class CHHapticDynamicParameter extends NSObject {
 
     /**
      * initWithParameterID:value:relativeTime
-     * <p>
+     * 
      * Initialize a CHHapticDynamicParameter with a parameter ID, value, and relative time.
-     *
-     * @param parameterID The CHHapticDynamicParameterID for the desired parameter change.
-     * @param value       The value for that parameter.
-     * @param time        The time at which this parameter should be applied, relative to the start time of the pattern.
+     * 
+     * @param parameterID
+     *                    The CHHapticDynamicParameterID for the desired parameter change.
+     * @param value
+     *                    The value for that parameter.
+     * @param time
+     *                    The time at which this parameter should be applied, relative to the start time of the pattern.
      */
     @Generated
     @Selector("initWithParameterID:value:relativeTime:")
-    public native CHHapticDynamicParameter initWithParameterIDValueRelativeTime(String parameterID, float value,
-            double time);
+    public native CHHapticDynamicParameter initWithParameterIDValueRelativeTime(@NotNull String parameterID,
+            float value, double time);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -130,9 +140,10 @@ public class CHHapticDynamicParameter extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -143,6 +154,7 @@ public class CHHapticDynamicParameter extends NSObject {
      * [@property] parameterID
      * The ID of the dynamic parameter to use.
      */
+    @NotNull
     @Generated
     @Selector("parameterID")
     public native String parameterID();

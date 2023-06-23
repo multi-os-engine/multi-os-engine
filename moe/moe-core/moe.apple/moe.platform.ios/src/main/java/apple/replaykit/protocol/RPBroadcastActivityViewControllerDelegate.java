@@ -25,7 +25,12 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("ReplayKit")
 @Runtime(ObjCRuntime.class)
@@ -33,17 +38,19 @@ import org.moe.natj.objc.ann.Selector;
 public interface RPBroadcastActivityViewControllerDelegate {
     /**
      * Called when the view controller is finished.
-     *
+     * 
      * @param broadcastActivityViewController The view controller instance.
      * @param broadcastController             An RPBroadcastController instance that can be used to start and stop
      *                                        broadcasts to a user selected service.
      * @param error                           Optional error in the RPRecordingErrorCode domain. A nil error signifies
      *                                        that the user has successfully set up the broadcast with a broadcast
      *                                        service and is ready to start broadcasting.
+     * 
+     *                                        API-Since: 10.0
      */
     @Generated
     @Selector("broadcastActivityViewController:didFinishWithBroadcastController:error:")
     void broadcastActivityViewControllerDidFinishWithBroadcastControllerError(
-            RPBroadcastActivityViewController broadcastActivityViewController,
-            RPBroadcastController broadcastController, NSError error);
+            @NotNull RPBroadcastActivityViewController broadcastActivityViewController,
+            @Nullable RPBroadcastController broadcastController, @Nullable NSError error);
 }

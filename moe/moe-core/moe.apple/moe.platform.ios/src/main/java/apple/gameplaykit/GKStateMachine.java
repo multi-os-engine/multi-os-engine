@@ -37,9 +37,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Models a finite state machine that has a single current state.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -71,22 +75,25 @@ public class GKStateMachine extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,9 +128,10 @@ public class GKStateMachine extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -144,12 +152,12 @@ public class GKStateMachine extends NSObject {
 
     /**
      * Creates a state machine with an array of possible states and an initial state.
-     *
+     * 
      * @param states a list of possible states for this state machine.
      */
     @Generated
     @Selector("stateMachineWithStates:")
-    public static native GKStateMachine stateMachineWithStates(NSArray<? extends GKState> states);
+    public static native GKStateMachine stateMachineWithStates(@NotNull NSArray<? extends GKState> states);
 
     @Generated
     @Selector("superclass")
@@ -162,17 +170,18 @@ public class GKStateMachine extends NSObject {
 
     /**
      * Returns YES if the indicated class is a a valid next state or if currentState is nil
-     *
+     * 
      * @param stateClass the class of the state to be tested
      */
     @Generated
     @Selector("canEnterState:")
-    public native boolean canEnterState(Class stateClass);
+    public native boolean canEnterState(@NotNull Class stateClass);
 
     /**
      * The current state that the state machine is in.
      * Prior to the first called to enterState this is equal to nil.
      */
+    @Nullable
     @Generated
     @Selector("currentState")
     public native GKState currentState();
@@ -181,13 +190,13 @@ public class GKStateMachine extends NSObject {
      * Calls canEnterState to check if we can enter the given state and then enters that state if so.
      * [GKState willExitWithNextState:] is called on the old current state.
      * [GKState didEnterWithPreviousState:] is called on the new state.
-     *
+     * 
      * @param stateClass the class of the state to switch to
      * @return YES if state was entered. NO otherwise.
      */
     @Generated
     @Selector("enterState:")
-    public native boolean enterState(Class stateClass);
+    public native boolean enterState(@NotNull Class stateClass);
 
     @Generated
     @Selector("init")
@@ -195,21 +204,22 @@ public class GKStateMachine extends NSObject {
 
     @Generated
     @Selector("initWithStates:")
-    public native GKStateMachine initWithStates(NSArray<? extends GKState> states);
+    public native GKStateMachine initWithStates(@NotNull NSArray<? extends GKState> states);
 
     /**
      * Gets the instance of the indicated state class from this state machine.
      * Returns nil if the state does not exist
-     *
+     * 
      * @param stateClass the class of the state to be retrieved
      */
+    @Nullable
     @Generated
     @Selector("stateForClass:")
-    public native GKState stateForClass(Class stateClass);
+    public native GKState stateForClass(@NotNull Class stateClass);
 
     /**
      * Updates the current state machine.
-     *
+     * 
      * @param sec the time, in seconds, since the last frame
      */
     @Generated

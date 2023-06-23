@@ -7,7 +7,11 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -15,9 +19,10 @@ import org.moe.natj.objc.ann.Selector;
 public interface MDLAssetResolver {
     @Generated
     @Selector("canResolveAssetNamed:")
-    boolean canResolveAssetNamed(String name);
+    boolean canResolveAssetNamed(@NotNull String name);
 
+    @NotNull
     @Generated
     @Selector("resolveAssetNamed:")
-    NSURL resolveAssetNamed(String name);
+    NSURL resolveAssetNamed(@NotNull String name);
 }

@@ -23,6 +23,7 @@ import org.moe.natj.c.ann.StructureField;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Structure()
@@ -43,13 +44,14 @@ public final class AUSamplerInstrumentData extends StructObject {
         super(peer);
     }
 
+    @NotNull
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native CFURLRef fileURL();
 
     @Generated
     @StructureField(order = 0, isGetter = false)
-    public native void setFileURL(CFURLRef value);
+    public native void setFileURL(@NotNull CFURLRef value);
 
     @Generated
     @StructureField(order = 1, isGetter = true)

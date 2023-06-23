@@ -18,9 +18,18 @@ package apple.glkit.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 public final class GLKLightingType {
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int Vertex = 0x00000000;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int Pixel = 0x00000001;
 
     @Generated

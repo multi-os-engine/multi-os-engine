@@ -30,9 +30,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNAnimationPlayer let you control when and how to play and blend an animation
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("SceneKit")
@@ -54,11 +58,12 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
+    public native void addAnimationForKey(@NotNull @Mapped(ObjCObjectMapper.class) SCNAnimation animation,
+            @Nullable String key);
 
     @Generated
     @Selector("addAnimationPlayer:forKey:")
-    public native void addAnimationPlayerForKey(SCNAnimationPlayer player, String key);
+    public native void addAnimationPlayerForKey(@NotNull SCNAnimationPlayer player, @Nullable String key);
 
     @Generated
     @Owned
@@ -73,34 +78,40 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
     /**
      * The played animation
      */
+    @NotNull
     @Generated
     @Selector("animation")
     public native SCNAnimation animation();
 
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("animationForKey:")
-    public native CAAnimation animationForKey(String key);
+    public native CAAnimation animationForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("animationKeys")
     public native NSArray<String> animationKeys();
 
+    @Nullable
     @Generated
     @Selector("animationPlayerForKey:")
-    public native SCNAnimationPlayer animationPlayerForKey(String key);
+    public native SCNAnimationPlayer animationPlayerForKey(@NotNull String key);
 
     /**
      * Initialize an animation player with an animation
-     *
+     * 
      * @param animation The animation to play
      */
+    @NotNull
     @Generated
     @Selector("animationPlayerWithAnimation:")
-    public static native SCNAnimationPlayer animationPlayerWithAnimation(SCNAnimation animation);
+    public static native SCNAnimationPlayer animationPlayerWithAnimation(@NotNull SCNAnimation animation);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Controls the influence of the played animation. When set to 1 the animation is applied without any blending. When
@@ -114,27 +125,31 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -146,7 +161,7 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -159,7 +174,7 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNAnimationPlayer initWithCoder(NSCoder coder);
+    public native SCNAnimationPlayer initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -174,26 +189,29 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    @Deprecated
     @Generated
     @Selector("isAnimationForKeyPaused:")
-    public native boolean isAnimationForKeyPaused(String key);
+    public native boolean isAnimationForKeyPaused(@NotNull String key);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native SCNAnimationPlayer new_objc();
 
+    @Deprecated
     @Generated
     @Selector("pauseAnimationForKey:")
-    public native void pauseAnimationForKey(String key);
+    public native void pauseAnimationForKey(@NotNull String key);
 
     /**
      * Specifies if the animation is paused. Defaults to NO.
@@ -215,15 +233,16 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
 
     @Generated
     @Selector("removeAnimationForKey:")
-    public native void removeAnimationForKey(String key);
+    public native void removeAnimationForKey(@NotNull String key);
 
     @Generated
     @Selector("removeAnimationForKey:blendOutDuration:")
-    public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
+    public native void removeAnimationForKeyBlendOutDuration(@NotNull String key, @NFloat double duration);
 
+    @Deprecated
     @Generated
     @Selector("removeAnimationForKey:fadeOutDuration:")
-    public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
+    public native void removeAnimationForKeyFadeOutDuration(@NotNull String key, @NFloat double duration);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -233,9 +252,10 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("resumeAnimationForKey:")
-    public native void resumeAnimationForKey(String key);
+    public native void resumeAnimationForKey(@NotNull String key);
 
     /**
      * Controls the influence of the played animation. When set to 1 the animation is applied without any blending. When
@@ -260,9 +280,10 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
     @Selector("setSpeed:")
     public native void setSpeed(@NFloat double value);
 
+    @Deprecated
     @Generated
     @Selector("setSpeed:forAnimationKey:")
-    public native void setSpeedForAnimationKey(@NFloat double speed, String key);
+    public native void setSpeedForAnimationKey(@NFloat double speed, @NotNull String key);
 
     @Generated
     @Selector("setVersion:")

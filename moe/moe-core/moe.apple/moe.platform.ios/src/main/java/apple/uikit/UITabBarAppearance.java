@@ -24,7 +24,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -55,22 +60,25 @@ public class UITabBarAppearance extends UIBarAppearance {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -78,6 +86,7 @@ public class UITabBarAppearance extends UIBarAppearance {
     /**
      * The appearance for the compact inline tab bar item layout
      */
+    @NotNull
     @Generated
     @Selector("compactInlineLayoutAppearance")
     public native UITabBarItemAppearance compactInlineLayoutAppearance();
@@ -101,11 +110,11 @@ public class UITabBarAppearance extends UIBarAppearance {
 
     @Generated
     @Selector("initWithBarAppearance:")
-    public native UITabBarAppearance initWithBarAppearance(UIBarAppearance barAppearance);
+    public native UITabBarAppearance initWithBarAppearance(@NotNull UIBarAppearance barAppearance);
 
     @Generated
     @Selector("initWithCoder:")
-    public native UITabBarAppearance initWithCoder(NSCoder coder);
+    public native UITabBarAppearance initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithIdiom:")
@@ -114,6 +123,7 @@ public class UITabBarAppearance extends UIBarAppearance {
     /**
      * The appearance for the inline tab bar item layout
      */
+    @NotNull
     @Generated
     @Selector("inlineLayoutAppearance")
     public native UITabBarItemAppearance inlineLayoutAppearance();
@@ -135,9 +145,10 @@ public class UITabBarAppearance extends UIBarAppearance {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,6 +167,7 @@ public class UITabBarAppearance extends UIBarAppearance {
      * An image that is rendered behind the selected UITabBarItem and above the tab bar's background. Modified by
      * selectionIndicatorTintColor when appropriate.
      */
+    @Nullable
     @Generated
     @Selector("selectionIndicatorImage")
     public native UIImage selectionIndicatorImage();
@@ -168,6 +180,7 @@ public class UITabBarAppearance extends UIBarAppearance {
      * nil or clearColor selectionIndicatorTintColor will also result in no indicator. If the selectionIndicatorImage is
      * not a template image, then it will be rendered without respect to the value of selectionIndicatorTintColor.
      */
+    @Nullable
     @Generated
     @Selector("selectionIndicatorTintColor")
     public native UIColor selectionIndicatorTintColor();
@@ -177,14 +190,14 @@ public class UITabBarAppearance extends UIBarAppearance {
      */
     @Generated
     @Selector("setCompactInlineLayoutAppearance:")
-    public native void setCompactInlineLayoutAppearance(UITabBarItemAppearance value);
+    public native void setCompactInlineLayoutAppearance(@NotNull UITabBarItemAppearance value);
 
     /**
      * The appearance for the inline tab bar item layout
      */
     @Generated
     @Selector("setInlineLayoutAppearance:")
-    public native void setInlineLayoutAppearance(UITabBarItemAppearance value);
+    public native void setInlineLayoutAppearance(@NotNull UITabBarItemAppearance value);
 
     /**
      * An image that is rendered behind the selected UITabBarItem and above the tab bar's background. Modified by
@@ -192,7 +205,7 @@ public class UITabBarAppearance extends UIBarAppearance {
      */
     @Generated
     @Selector("setSelectionIndicatorImage:")
-    public native void setSelectionIndicatorImage(UIImage value);
+    public native void setSelectionIndicatorImage(@Nullable UIImage value);
 
     /**
      * A color to use for the selectionIndicator, its specific behavior depends on the value of selectionIndicatorImage.
@@ -204,7 +217,7 @@ public class UITabBarAppearance extends UIBarAppearance {
      */
     @Generated
     @Selector("setSelectionIndicatorTintColor:")
-    public native void setSelectionIndicatorTintColor(UIColor value);
+    public native void setSelectionIndicatorTintColor(@Nullable UIColor value);
 
     /**
      * Determines how items in the tab bar lay out in the stacked item layout
@@ -226,7 +239,7 @@ public class UITabBarAppearance extends UIBarAppearance {
      */
     @Generated
     @Selector("setStackedLayoutAppearance:")
-    public native void setStackedLayoutAppearance(UITabBarItemAppearance value);
+    public native void setStackedLayoutAppearance(@NotNull UITabBarItemAppearance value);
 
     @Generated
     @Selector("setVersion:")
@@ -253,6 +266,7 @@ public class UITabBarAppearance extends UIBarAppearance {
     /**
      * The appearance for the stacked tab bar item layout
      */
+    @NotNull
     @Generated
     @Selector("stackedLayoutAppearance")
     public native UITabBarItemAppearance stackedLayoutAppearance();

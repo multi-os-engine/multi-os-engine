@@ -26,13 +26,17 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A request that will recognize various animals in an image. The list of animals supported by the recognition algorithm
  * can be queried by -supportedIdentifiersAndReturnError:
- * <p>
+ * 
  * This request will generate VNRecognizedObjectObservation objects with a defined boundingBox, label and confidence
  * level.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Vision")
@@ -64,22 +68,25 @@ public class VNRecognizeAnimalsRequest extends VNImageBasedRequest {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -114,7 +121,7 @@ public class VNRecognizeAnimalsRequest extends VNImageBasedRequest {
     @Generated
     @Selector("initWithCompletionHandler:")
     public native VNRecognizeAnimalsRequest initWithCompletionHandler(
-            @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -133,19 +140,25 @@ public class VNRecognizeAnimalsRequest extends VNImageBasedRequest {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * This class method returns a list of all animals supported by the recognition algorithm
-     * <p>
+     * 
      * This request will generate a collection of names for supported animals by current recognition algorithm.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 15.0
      */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("knownAnimalIdentifiersForRevision:error:")
     public static native NSArray<String> knownAnimalIdentifiersForRevisionError(@NUInt long requestRevision,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Owned
@@ -168,6 +181,7 @@ public class VNRecognizeAnimalsRequest extends VNImageBasedRequest {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();
@@ -180,21 +194,26 @@ public class VNRecognizeAnimalsRequest extends VNImageBasedRequest {
     /**
      * VNRecognizedObjectObservation results.
      */
+    @Nullable
     @Generated
     @Selector("results")
     public native NSArray<? extends VNRecognizedObjectObservation> results();
 
     /**
      * Obtain the collection of identifiers supported by the target request.
-     * <p>
+     * 
      * This method will return the collection of all possible classification identifiers that are produced by the target
      * request based on its current state of configuration at the time of the call.
-     *
+     * 
      * @param error The address of the variable that will be populated with the error if the call fails.
+     * 
      * @return The collection of classification identifiers, or nil if a failure occurs.
+     * 
+     *         API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("supportedIdentifiersAndReturnError:")
     public native NSArray<String> supportedIdentifiersAndReturnError(
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

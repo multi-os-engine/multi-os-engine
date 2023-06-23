@@ -42,9 +42,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Mutable Ordered Set ***************
+ * 
+ * API-Since: 5.0
  */
 @Generated
 @Library("Foundation")
@@ -76,22 +80,25 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +133,10 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -141,12 +149,12 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
 
     @Generated
     @Selector("orderedSetWithArray:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithArray(NSArray<_ObjectType> array);
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithArray(@NotNull NSArray<_ObjectType> array);
 
     @Generated
     @Selector("orderedSetWithArray:range:copyItems:")
     public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithArrayRangeCopyItems(
-            NSArray<_ObjectType> array, @ByValue NSRange range, boolean flag);
+            @NotNull NSArray<_ObjectType> array, @ByValue NSRange range, boolean flag);
 
     @Generated
     @Selector("orderedSetWithCapacity:")
@@ -155,36 +163,37 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     @Generated
     @Selector("orderedSetWithObject:")
     public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithObject(
-            @Mapped(ObjCObjectMapper.class) _ObjectType object);
+            @NotNull @Mapped(ObjCObjectMapper.class) _ObjectType object);
 
     @Generated
     @Variadic()
     @Selector("orderedSetWithObjects:")
     public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithObjects(
-            @Mapped(ObjCObjectMapper.class) _ObjectType firstObj, Object... varargs);
+            @NotNull @Mapped(ObjCObjectMapper.class) _ObjectType firstObj, Object... varargs);
 
     @Generated
     @Selector("orderedSetWithObjects:count:")
     public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithObjectsCount(
-            @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("orderedSetWithOrderedSet:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithOrderedSet(NSOrderedSet<_ObjectType> set);
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithOrderedSet(
+            @NotNull NSOrderedSet<_ObjectType> set);
 
     @Generated
     @Selector("orderedSetWithOrderedSet:range:copyItems:")
     public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithOrderedSetRangeCopyItems(
-            NSOrderedSet<_ObjectType> set, @ByValue NSRange range, boolean flag);
+            @NotNull NSOrderedSet<_ObjectType> set, @ByValue NSRange range, boolean flag);
 
     @Generated
     @Selector("orderedSetWithSet:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithSet(NSSet<_ObjectType> set);
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithSet(@NotNull NSSet<_ObjectType> set);
 
     @Generated
     @Selector("orderedSetWithSet:copyItems:")
-    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithSetCopyItems(NSSet<_ObjectType> set,
-            boolean flag);
+    public static native <_ObjectType> NSMutableOrderedSet<?> orderedSetWithSetCopyItems(
+            @NotNull NSSet<_ObjectType> set, boolean flag);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -213,16 +222,16 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
 
     @Generated
     @Selector("addObject:")
-    public native void addObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
+    public native void addObject(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType object);
 
     @Generated
     @Selector("addObjects:count:")
-    public native void addObjectsCount(@ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
+    public native void addObjectsCount(@Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
             @NUInt long count);
 
     @Generated
     @Selector("addObjectsFromArray:")
-    public native void addObjectsFromArray(NSArray<_ObjectType> array);
+    public native void addObjectsFromArray(@NotNull NSArray<_ObjectType> array);
 
     @Generated
     @Selector("exchangeObjectAtIndex:withObjectAtIndex:")
@@ -230,10 +239,12 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
 
     /**
      * evaluate a predicate against an ordered set of objects and filter the mutable ordered set directly
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("filterUsingPredicate:")
-    public native void filterUsingPredicate(NSPredicate p);
+    public native void filterUsingPredicate(@NotNull NSPredicate p);
 
     @Generated
     @Selector("init")
@@ -241,16 +252,16 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
 
     @Generated
     @Selector("initWithArray:")
-    public native NSMutableOrderedSet<?> initWithArray(NSArray<_ObjectType> array);
+    public native NSMutableOrderedSet<?> initWithArray(@NotNull NSArray<_ObjectType> array);
 
     @Generated
     @Selector("initWithArray:copyItems:")
-    public native NSMutableOrderedSet<?> initWithArrayCopyItems(NSArray<_ObjectType> set, boolean flag);
+    public native NSMutableOrderedSet<?> initWithArrayCopyItems(@NotNull NSArray<_ObjectType> set, boolean flag);
 
     @Generated
     @Selector("initWithArray:range:copyItems:")
-    public native NSMutableOrderedSet<?> initWithArrayRangeCopyItems(NSArray<_ObjectType> set, @ByValue NSRange range,
-            boolean flag);
+    public native NSMutableOrderedSet<?> initWithArrayRangeCopyItems(@NotNull NSArray<_ObjectType> set,
+            @ByValue NSRange range, boolean flag);
 
     @Generated
     @Selector("initWithCapacity:")
@@ -258,71 +269,73 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMutableOrderedSet<?> initWithCoder(NSCoder coder);
+    public native NSMutableOrderedSet<?> initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithObject:")
-    public native NSMutableOrderedSet<?> initWithObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
+    public native NSMutableOrderedSet<?> initWithObject(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType object);
 
     @Generated
     @Variadic()
     @Selector("initWithObjects:")
-    public native NSMutableOrderedSet<?> initWithObjects(@Mapped(ObjCObjectMapper.class) _ObjectType firstObj,
+    public native NSMutableOrderedSet<?> initWithObjects(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType firstObj,
             Object... varargs);
 
     @Generated
     @Selector("initWithObjects:count:")
     public native NSMutableOrderedSet<?> initWithObjectsCount(
-            @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("initWithOrderedSet:")
-    public native NSMutableOrderedSet<?> initWithOrderedSet(NSOrderedSet<_ObjectType> set);
+    public native NSMutableOrderedSet<?> initWithOrderedSet(@NotNull NSOrderedSet<_ObjectType> set);
 
     @Generated
     @Selector("initWithOrderedSet:copyItems:")
-    public native NSMutableOrderedSet<?> initWithOrderedSetCopyItems(NSOrderedSet<_ObjectType> set, boolean flag);
+    public native NSMutableOrderedSet<?> initWithOrderedSetCopyItems(@NotNull NSOrderedSet<_ObjectType> set,
+            boolean flag);
 
     @Generated
     @Selector("initWithOrderedSet:range:copyItems:")
-    public native NSMutableOrderedSet<?> initWithOrderedSetRangeCopyItems(NSOrderedSet<_ObjectType> set,
+    public native NSMutableOrderedSet<?> initWithOrderedSetRangeCopyItems(@NotNull NSOrderedSet<_ObjectType> set,
             @ByValue NSRange range, boolean flag);
 
     @Generated
     @Selector("initWithSet:")
-    public native NSMutableOrderedSet<?> initWithSet(NSSet<_ObjectType> set);
+    public native NSMutableOrderedSet<?> initWithSet(@NotNull NSSet<_ObjectType> set);
 
     @Generated
     @Selector("initWithSet:copyItems:")
-    public native NSMutableOrderedSet<?> initWithSetCopyItems(NSSet<_ObjectType> set, boolean flag);
+    public native NSMutableOrderedSet<?> initWithSetCopyItems(@NotNull NSSet<_ObjectType> set, boolean flag);
 
     @Generated
     @Selector("insertObject:atIndex:")
-    public native void insertObjectAtIndex(@Mapped(ObjCObjectMapper.class) _ObjectType object, @NUInt long idx);
+    public native void insertObjectAtIndex(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType object,
+            @NUInt long idx);
 
     @Generated
     @Selector("insertObjects:atIndexes:")
-    public native void insertObjectsAtIndexes(NSArray<_ObjectType> objects, NSIndexSet indexes);
+    public native void insertObjectsAtIndexes(@NotNull NSArray<_ObjectType> objects, @NotNull NSIndexSet indexes);
 
     @Generated
     @Selector("intersectOrderedSet:")
-    public native void intersectOrderedSet(NSOrderedSet<_ObjectType> other);
+    public native void intersectOrderedSet(@NotNull NSOrderedSet<_ObjectType> other);
 
     @Generated
     @Selector("intersectSet:")
-    public native void intersectSet(NSSet<_ObjectType> other);
+    public native void intersectSet(@NotNull NSSet<_ObjectType> other);
 
     @Generated
     @Selector("minusOrderedSet:")
-    public native void minusOrderedSet(NSOrderedSet<_ObjectType> other);
+    public native void minusOrderedSet(@NotNull NSOrderedSet<_ObjectType> other);
 
     @Generated
     @Selector("minusSet:")
-    public native void minusSet(NSSet<_ObjectType> other);
+    public native void minusSet(@NotNull NSSet<_ObjectType> other);
 
     @Generated
     @Selector("moveObjectsAtIndexes:toIndex:")
-    public native void moveObjectsAtIndexesToIndex(NSIndexSet indexes, @NUInt long idx);
+    public native void moveObjectsAtIndexesToIndex(@NotNull NSIndexSet indexes, @NUInt long idx);
 
     @Generated
     @Selector("removeAllObjects")
@@ -330,7 +343,7 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
 
     @Generated
     @Selector("removeObject:")
-    public native void removeObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
+    public native void removeObject(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType object);
 
     @Generated
     @Selector("removeObjectAtIndex:")
@@ -338,11 +351,11 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
 
     @Generated
     @Selector("removeObjectsAtIndexes:")
-    public native void removeObjectsAtIndexes(NSIndexSet indexes);
+    public native void removeObjectsAtIndexes(@NotNull NSIndexSet indexes);
 
     @Generated
     @Selector("removeObjectsInArray:")
-    public native void removeObjectsInArray(NSArray<_ObjectType> array);
+    public native void removeObjectsInArray(@NotNull NSArray<_ObjectType> array);
 
     @Generated
     @Selector("removeObjectsInRange:")
@@ -351,46 +364,53 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     @Generated
     @Selector("replaceObjectAtIndex:withObject:")
     public native void replaceObjectAtIndexWithObject(@NUInt long idx,
-            @Mapped(ObjCObjectMapper.class) _ObjectType object);
+            @NotNull @Mapped(ObjCObjectMapper.class) _ObjectType object);
 
     @Generated
     @Selector("replaceObjectsAtIndexes:withObjects:")
-    public native void replaceObjectsAtIndexesWithObjects(NSIndexSet indexes, NSArray<_ObjectType> objects);
+    public native void replaceObjectsAtIndexesWithObjects(@NotNull NSIndexSet indexes,
+            @NotNull NSArray<_ObjectType> objects);
 
     @Generated
     @Selector("replaceObjectsInRange:withObjects:count:")
     public native void replaceObjectsInRangeWithObjectsCount(@ByValue NSRange range,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long count);
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long count);
 
     @Generated
     @Selector("setObject:atIndex:")
-    public native void setObjectAtIndex(@Mapped(ObjCObjectMapper.class) _ObjectType obj, @NUInt long idx);
+    public native void setObjectAtIndex(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType obj, @NUInt long idx);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setObject:atIndexedSubscript:")
-    public native void setObjectAtIndexedSubscript(@Mapped(ObjCObjectMapper.class) _ObjectType obj, @NUInt long idx);
+    public native void setObjectAtIndexedSubscript(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType obj,
+            @NUInt long idx);
 
     @Generated
     @Selector("sortRange:options:usingComparator:")
     public native void sortRangeOptionsUsingComparator(@ByValue NSRange range, @NUInt long opts,
-            @ObjCBlock(name = "call_sortRangeOptionsUsingComparator") Block_sortRangeOptionsUsingComparator cmptr);
+            @NotNull @ObjCBlock(name = "call_sortRangeOptionsUsingComparator") Block_sortRangeOptionsUsingComparator cmptr);
 
     @Generated
     @Selector("sortUsingComparator:")
     public native void sortUsingComparator(
-            @ObjCBlock(name = "call_sortUsingComparator") Block_sortUsingComparator cmptr);
+            @NotNull @ObjCBlock(name = "call_sortUsingComparator") Block_sortUsingComparator cmptr);
 
     /**
      * sorts the ordered set itself
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("sortUsingDescriptors:")
-    public native void sortUsingDescriptors(NSArray<? extends NSSortDescriptor> sortDescriptors);
+    public native void sortUsingDescriptors(@NotNull NSArray<? extends NSSortDescriptor> sortDescriptors);
 
     @Generated
     @Selector("sortWithOptions:usingComparator:")
     public native void sortWithOptionsUsingComparator(@NUInt long opts,
-            @ObjCBlock(name = "call_sortWithOptionsUsingComparator") Block_sortWithOptionsUsingComparator cmptr);
+            @NotNull @ObjCBlock(name = "call_sortWithOptionsUsingComparator") Block_sortWithOptionsUsingComparator cmptr);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -400,19 +420,19 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
 
     @Generated
     @Selector("unionOrderedSet:")
-    public native void unionOrderedSet(NSOrderedSet<_ObjectType> other);
+    public native void unionOrderedSet(@NotNull NSOrderedSet<_ObjectType> other);
 
     @Generated
     @Selector("unionSet:")
-    public native void unionSet(NSSet<_ObjectType> other);
+    public native void unionSet(@NotNull NSSet<_ObjectType> other);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sortRangeOptionsUsingComparator {
         @Generated
         @NInt
-        long call_sortRangeOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
-                @Mapped(ObjCObjectMapper.class) Object obj2);
+        long call_sortRangeOptionsUsingComparator(@NotNull @Mapped(ObjCObjectMapper.class) Object obj1,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -420,8 +440,8 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     public interface Block_sortUsingComparator {
         @Generated
         @NInt
-        long call_sortUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
-                @Mapped(ObjCObjectMapper.class) Object obj2);
+        long call_sortUsingComparator(@NotNull @Mapped(ObjCObjectMapper.class) Object obj1,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -429,11 +449,11 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     public interface Block_sortWithOptionsUsingComparator {
         @Generated
         @NInt
-        long call_sortWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
-                @Mapped(ObjCObjectMapper.class) Object obj2);
+        long call_sortWithOptionsUsingComparator(@NotNull @Mapped(ObjCObjectMapper.class) Object obj1,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Generated
     @Selector("applyDifference:")
-    public native void applyDifference(NSOrderedCollectionDifference<_ObjectType> difference);
+    public native void applyDifference(@NotNull NSOrderedCollectionDifference<_ObjectType> difference);
 }

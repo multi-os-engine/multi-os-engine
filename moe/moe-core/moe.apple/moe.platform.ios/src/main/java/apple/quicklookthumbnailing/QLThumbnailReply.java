@@ -2,7 +2,6 @@ package apple.quicklookthumbnailing;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGContextRef;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -26,13 +25,18 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * To provide a thumbnail for a request, you have to return a QLThumbnailReply object.
- * <p>
+ * 
  * To provide a thumbnail, you have two options:
  * 1. Draw the thumbnail, by providing a QLThumbnailReply created with a drawing block.
  * 2. Pass the thumbnail file URL, by providing a QLThumbnailReply created with a file URL.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("QuickLookThumbnailing")
@@ -64,22 +68,25 @@ public class QLThumbnailReply extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -118,9 +125,10 @@ public class QLThumbnailReply extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -130,11 +138,11 @@ public class QLThumbnailReply extends NSObject {
     /**
      * You can create a reply with a drawing block that will draw into the current context with the coordinate system of
      * UIKit or AppKit.
-     *
+     * 
      * @param contextSize  The desired size of the context that will be passed to the drawing block.
      *                     It should be as close as possible to the maximumSize of the QLFileThumbnailRequest and it has
      *                     to be greater than or equal to its minimumSize.
-     *                     <p>
+     * 
      *                     Ideally, at least either contextSize's width matches maximumSize's width or contextSize's
      *                     height matches maximumSize's height.
      *                     The context size will be scaled to QLFileThumbnailRequest's scale value (if you pass (x, y),
@@ -149,7 +157,7 @@ public class QLThumbnailReply extends NSObject {
     @Generated
     @Selector("replyWithContextSize:currentContextDrawingBlock:")
     public static native QLThumbnailReply replyWithContextSizeCurrentContextDrawingBlock(@ByValue CGSize contextSize,
-            @ObjCBlock(name = "call_replyWithContextSizeCurrentContextDrawingBlock") Block_replyWithContextSizeCurrentContextDrawingBlock drawingBlock);
+            @NotNull @ObjCBlock(name = "call_replyWithContextSizeCurrentContextDrawingBlock") Block_replyWithContextSizeCurrentContextDrawingBlock drawingBlock);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -161,11 +169,11 @@ public class QLThumbnailReply extends NSObject {
     /**
      * You can create a reply with a drawing block that will draw into a given context with the coordinate system of
      * Core Graphics.
-     *
+     * 
      * @param contextSize  The desired size of the context that will be passed to the drawing block.
      *                     It should be as close as possible to the maximumSize of the QLFileThumbnailRequest and it has
      *                     to be greater than or equal to its minimumSize.
-     *                     <p>
+     * 
      *                     Ideally, at least either contextSize's width matches maximumSize's width or contextSize's
      *                     height matches maximumSize's height.
      *                     The context size will be scaled to QLFileThumbnailRequest's scale value (if you pass (x, y),
@@ -177,13 +185,13 @@ public class QLThumbnailReply extends NSObject {
     @Generated
     @Selector("replyWithContextSize:drawingBlock:")
     public static native QLThumbnailReply replyWithContextSizeDrawingBlock(@ByValue CGSize contextSize,
-            @ObjCBlock(name = "call_replyWithContextSizeDrawingBlock") Block_replyWithContextSizeDrawingBlock drawingBlock);
+            @NotNull @ObjCBlock(name = "call_replyWithContextSizeDrawingBlock") Block_replyWithContextSizeDrawingBlock drawingBlock);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_replyWithContextSizeDrawingBlock {
         @Generated
-        boolean call_replyWithContextSizeDrawingBlock(CGContextRef context);
+        boolean call_replyWithContextSizeDrawingBlock(@NotNull CGContextRef context);
     }
 
     /**
@@ -192,7 +200,7 @@ public class QLThumbnailReply extends NSObject {
      */
     @Generated
     @Selector("replyWithImageFileURL:")
-    public static native QLThumbnailReply replyWithImageFileURL(NSURL fileURL);
+    public static native QLThumbnailReply replyWithImageFileURL(@NotNull NSURL fileURL);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -217,15 +225,20 @@ public class QLThumbnailReply extends NSObject {
 
     /**
      * The extensionBadge is a short string identifying the file type used as a badge when producing an icon.
+     * 
+     * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("extensionBadge")
     public native String extensionBadge();
 
     /**
      * The extensionBadge is a short string identifying the file type used as a badge when producing an icon.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setExtensionBadge:")
-    public native void setExtensionBadge(String value);
+    public native void setExtensionBadge(@NotNull String value);
 }

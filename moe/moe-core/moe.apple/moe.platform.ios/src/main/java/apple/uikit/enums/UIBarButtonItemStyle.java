@@ -22,6 +22,10 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class UIBarButtonItemStyle {
     @Generated @NInt public static final long Plain = 0x0000000000000000L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated @Generated @NInt public static final long Bordered = 0x0000000000000001L;
     @Generated @NInt public static final long Done = 0x0000000000000002L;
 

@@ -41,7 +41,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -62,8 +67,8 @@ public class UIAlertAction extends NSObject implements NSCopying, UIAccessibilit
 
     @Generated
     @Selector("actionWithTitle:style:handler:")
-    public static native UIAlertAction actionWithTitleStyleHandler(String title, @NInt long style,
-            @ObjCBlock(name = "call_actionWithTitleStyleHandler") Block_actionWithTitleStyleHandler handler);
+    public static native UIAlertAction actionWithTitleStyleHandler(@Nullable String title, @NInt long style,
+            @Nullable @ObjCBlock(name = "call_actionWithTitleStyleHandler") Block_actionWithTitleStyleHandler handler);
 
     @Generated
     @Owned
@@ -77,22 +82,25 @@ public class UIAlertAction extends NSObject implements NSCopying, UIAccessibilit
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +135,10 @@ public class UIAlertAction extends NSObject implements NSCopying, UIAccessibilit
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,11 +166,12 @@ public class UIAlertAction extends NSObject implements NSCopying, UIAccessibilit
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("init")
@@ -180,6 +190,7 @@ public class UIAlertAction extends NSObject implements NSCopying, UIAccessibilit
     @NInt
     public native long style();
 
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();
@@ -188,14 +199,15 @@ public class UIAlertAction extends NSObject implements NSCopying, UIAccessibilit
     @Generated
     public interface Block_actionWithTitleStyleHandler {
         @Generated
-        void call_actionWithTitleStyleHandler(UIAlertAction action);
+        void call_actionWithTitleStyleHandler(@NotNull UIAlertAction action);
     }
 
+    @Nullable
     @Generated
     @Selector("accessibilityIdentifier")
     public native String accessibilityIdentifier();
 
     @Generated
     @Selector("setAccessibilityIdentifier:")
-    public native void setAccessibilityIdentifier(String value);
+    public native void setAccessibilityIdentifier(@Nullable String value);
 }

@@ -44,13 +44,17 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * UIMotionEffect is an abstract superclass which declaratively represents a rendering
  * effect that depends on the motion of the device. Given some device pose, subclassers
  * provide relative values which are to be applied to the key paths of the target's view.
- * <p>
+ * 
  * Subclasses must implement conformance for NSCopying and NSCoding.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("UIKit")
@@ -82,22 +86,25 @@ public class UIMotionEffect extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -132,9 +139,10 @@ public class UIMotionEffect extends NSObject implements NSCopying, NSCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,15 +170,16 @@ public class UIMotionEffect extends NSObject implements NSCopying, NSCoding {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -178,27 +187,27 @@ public class UIMotionEffect extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIMotionEffect initWithCoder(NSCoder coder);
+    public native UIMotionEffect initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Abstract method. Given the `viewerOffset`, this method should compute a set of key paths
      * and relative values pairs which will represent the effect of the device's motion on
      * the target view. The return value is a dictionary whose keys and values are these
      * key paths (as NSStrings) and relative values, respectively.
-     * <p>
+     * 
      * The `viewerOffset` is an estimate of the viewer's position relative to direction the
      * screen's facing. Values in each dimension range from -1 to 1. Facing straight at the
      * viewer is (0, 0). Tilting the phone to the right produces a more positive horizontal
      * value; tilting the phone down produces a more positive vertical value.
-     * <p>
+     * 
      * `keyPaths` should be expressed relative to the effect's target view. Only key paths
      * which would animate if set in an animation block may be targeted by motion effects.
-     * <p>
+     * 
      * Example return value: `@{ @"center": [NSValue
      * valueFromCGPoint:CGPointMake(3.4, 1.2)],
-     *
      * @"layer.shadowOffset.x": @(-1.1) }`
      */
+    @Nullable
     @Generated
     @Selector("keyPathsAndRelativeValuesForViewerOffset:")
     public native NSDictionary<String, ?> keyPathsAndRelativeValuesForViewerOffset(@ByValue UIOffset viewerOffset);

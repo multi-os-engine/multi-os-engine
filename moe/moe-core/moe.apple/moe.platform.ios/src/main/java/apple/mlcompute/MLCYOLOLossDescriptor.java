@@ -24,11 +24,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCYOLOLossDescriptor
- * <p>
+ * 
  * The MLCYOLOLossDescriptor specifies a YOLO loss filter descriptor.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -60,7 +64,7 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] anchorBoxCount
-     * <p>
+     * 
      * number of anchor boxes used to detect object per grid cell
      */
     @Generated
@@ -70,42 +74,47 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] anchorBoxes
-     * <p>
+     * 
      * \p NSData containing the width and height for \p anchorBoxCount anchor boxes
      * This \p NSData should have 2 floating-point values per anchor box which represent the width
      * and height of the anchor box.
      */
+    @NotNull
     @Generated
     @Selector("anchorBoxes")
     public native NSData anchorBoxes();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -117,14 +126,14 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a YOLO loss descriptor object
-     *
+     * 
      * @param anchorBoxes    The anchor box data
      * @param anchorBoxCount The number of anchor boxes
      * @return A new MLCYOLOLossDescriptor object.
      */
     @Generated
     @Selector("descriptorWithAnchorBoxes:anchorBoxCount:")
-    public static native MLCYOLOLossDescriptor descriptorWithAnchorBoxesAnchorBoxCount(NSData anchorBoxes,
+    public static native MLCYOLOLossDescriptor descriptorWithAnchorBoxesAnchorBoxCount(@NotNull NSData anchorBoxes,
             @NUInt long anchorBoxCount);
 
     @Generated
@@ -153,13 +162,14 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] negative IOU
-     * <p>
+     * 
      * If the prediction IOU with groundTruth is lower than this
      * value we consider it a confident object absence. The default is 0.3
      */
@@ -169,7 +179,7 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] positive IOU
-     * <p>
+     * 
      * If the prediction IOU with groundTruth is higher than this
      * value we consider it a confident object presence, The default is 0.7
      */
@@ -192,7 +202,7 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] scaleClass
-     * <p>
+     * 
      * The scale factor for no object classes loss and loss gradient. The default is 2.0
      */
     @Generated
@@ -201,7 +211,7 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] scaleNoObject
-     * <p>
+     * 
      * The scale factor for no object confidence loss and loss gradient. The default is 5.0
      */
     @Generated
@@ -210,7 +220,7 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] scaleObject
-     * <p>
+     * 
      * The scale factor for object confidence loss and loss gradient. The default is 100.0
      */
     @Generated
@@ -219,7 +229,7 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] scaleSpatialPositionLoss
-     * <p>
+     * 
      * The scale factor for spatial position loss and loss gradient. The default is 10.0
      */
     @Generated
@@ -228,7 +238,7 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] scaleSpatialSizeLoss
-     * <p>
+     * 
      * The scale factor for spatial size loss and loss gradient. The default is 10.0
      */
     @Generated
@@ -237,7 +247,7 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] negative IOU
-     * <p>
+     * 
      * If the prediction IOU with groundTruth is lower than this
      * value we consider it a confident object absence. The default is 0.3
      */
@@ -247,7 +257,7 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] positive IOU
-     * <p>
+     * 
      * If the prediction IOU with groundTruth is higher than this
      * value we consider it a confident object presence, The default is 0.7
      */
@@ -257,7 +267,7 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] scaleClass
-     * <p>
+     * 
      * The scale factor for no object classes loss and loss gradient. The default is 2.0
      */
     @Generated
@@ -266,7 +276,7 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] scaleNoObject
-     * <p>
+     * 
      * The scale factor for no object confidence loss and loss gradient. The default is 5.0
      */
     @Generated
@@ -275,7 +285,7 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] scaleObject
-     * <p>
+     * 
      * The scale factor for object confidence loss and loss gradient. The default is 100.0
      */
     @Generated
@@ -284,7 +294,7 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] scaleSpatialPositionLoss
-     * <p>
+     * 
      * The scale factor for spatial position loss and loss gradient. The default is 10.0
      */
     @Generated
@@ -293,7 +303,7 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] scaleSpatialSizeLoss
-     * <p>
+     * 
      * The scale factor for spatial size loss and loss gradient. The default is 10.0
      */
     @Generated
@@ -302,7 +312,7 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] shouldRescore
-     * <p>
+     * 
      * Rescore pertains to multiplying the confidence groundTruth with IOU (intersection over union)
      * of predicted bounding box and the groundTruth boundingBox. The default is YES
      */
@@ -316,7 +326,7 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] shouldRescore
-     * <p>
+     * 
      * Rescore pertains to multiplying the confidence groundTruth with IOU (intersection over union)
      * of predicted bounding box and the groundTruth boundingBox. The default is YES
      */

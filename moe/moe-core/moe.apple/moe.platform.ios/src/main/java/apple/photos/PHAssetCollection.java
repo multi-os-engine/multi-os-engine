@@ -40,7 +40,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -71,22 +76,25 @@ public class PHAssetCollection extends PHCollection {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,56 +109,88 @@ public class PHAssetCollection extends PHCollection {
 
     /**
      * Smart Albums are not supported, only Albums and Moments
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("fetchAssetCollectionsContainingAsset:withType:options:")
     public static native PHFetchResult<? extends PHAssetCollection> fetchAssetCollectionsContainingAssetWithTypeOptions(
-            PHAsset asset, @NInt long type, PHFetchOptions options);
+            @NotNull PHAsset asset, @NInt long type, @Nullable PHFetchOptions options);
 
     /**
      * assetGroupURLs are URLs retrieved from ALAssetGroup's ALAssetsGroupPropertyURL
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Will be removed in a future release
      */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("fetchAssetCollectionsWithALAssetGroupURLs:options:")
     public static native PHFetchResult<? extends PHAssetCollection> fetchAssetCollectionsWithALAssetGroupURLsOptions(
-            NSArray<? extends NSURL> assetGroupURLs, PHFetchOptions options);
+            @NotNull NSArray<? extends NSURL> assetGroupURLs, @Nullable PHFetchOptions options);
 
     /**
      * Fetch asset collections of a single type matching the provided local identifiers (type is inferred from the local
      * identifiers)
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("fetchAssetCollectionsWithLocalIdentifiers:options:")
     public static native PHFetchResult<? extends PHAssetCollection> fetchAssetCollectionsWithLocalIdentifiersOptions(
-            NSArray<String> identifiers, PHFetchOptions options);
+            @NotNull NSArray<String> identifiers, @Nullable PHFetchOptions options);
 
     /**
      * Fetch asset collections of a single type and subtype provided (use PHAssetCollectionSubtypeAny to match all
      * subtypes)
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("fetchAssetCollectionsWithType:subtype:options:")
     public static native PHFetchResult<? extends PHAssetCollection> fetchAssetCollectionsWithTypeSubtypeOptions(
-            @NInt long type, @NInt long subtype, PHFetchOptions options);
+            @NInt long type, @NInt long subtype, @Nullable PHFetchOptions options);
 
+    @NotNull
     @Generated
     @Selector("fetchCollectionsInCollectionList:options:")
     public static native PHFetchResult<? extends PHCollection> fetchCollectionsInCollectionListOptions(
-            PHCollectionList collectionList, PHFetchOptions options);
+            @NotNull PHCollectionList collectionList, @Nullable PHFetchOptions options);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Will be removed in a future release
+     */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("fetchMomentsInMomentList:options:")
     public static native PHFetchResult<? extends PHAssetCollection> fetchMomentsInMomentListOptions(
-            PHCollectionList momentList, PHFetchOptions options);
+            @NotNull PHCollectionList momentList, @Nullable PHFetchOptions options);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Will be removed in a future release
+     */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("fetchMomentsWithOptions:")
-    public static native PHFetchResult<? extends PHAssetCollection> fetchMomentsWithOptions(PHFetchOptions options);
+    public static native PHFetchResult<? extends PHAssetCollection> fetchMomentsWithOptions(
+            @Nullable PHFetchOptions options);
 
+    @NotNull
     @Generated
     @Selector("fetchTopLevelUserCollectionsWithOptions:")
     public static native PHFetchResult<? extends PHCollection> fetchTopLevelUserCollectionsWithOptions(
-            PHFetchOptions options);
+            @Nullable PHFetchOptions options);
 
     @Generated
     @Selector("hash")
@@ -174,9 +214,10 @@ public class PHAssetCollection extends PHCollection {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -199,38 +240,59 @@ public class PHAssetCollection extends PHCollection {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @Selector("transientAssetCollectionWithAssetFetchResult:title:")
     public static native PHAssetCollection transientAssetCollectionWithAssetFetchResultTitle(
-            PHFetchResult<? extends PHAsset> fetchResult, String title);
+            @NotNull PHFetchResult<? extends PHAsset> fetchResult, @Nullable String title);
 
     /**
      * These asset collections are only in-memory and are not persisted to disk
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("transientAssetCollectionWithAssets:title:")
-    public static native PHAssetCollection transientAssetCollectionWithAssetsTitle(NSArray<? extends PHAsset> assets,
-            String title);
+    public static native PHAssetCollection transientAssetCollectionWithAssetsTitle(
+            @NotNull NSArray<? extends PHAsset> assets, @Nullable String title);
 
     @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
+    @Nullable
     @Generated
     @Selector("approximateLocation")
     public native CLLocation approximateLocation();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("assetCollectionSubtype")
     @NInt
     public native long assetCollectionSubtype();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("assetCollectionType")
     @NInt
     public native long assetCollectionType();
 
+    /**
+     * API-Since: 8.0
+     */
+    @Nullable
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
@@ -238,6 +300,8 @@ public class PHAssetCollection extends PHCollection {
     /**
      * These counts are just estimates; the actual count of objects returned from a fetch should be used if you care
      * about accuracy. Returns NSNotFound if a count cannot be quickly returned.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("estimatedAssetCount")
@@ -248,10 +312,18 @@ public class PHAssetCollection extends PHCollection {
     @Selector("init")
     public native PHAssetCollection init();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @Selector("localizedLocationNames")
     public native NSArray<String> localizedLocationNames();
 
+    /**
+     * API-Since: 8.0
+     */
+    @Nullable
     @Generated
     @Selector("startDate")
     public native NSDate startDate();

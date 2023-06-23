@@ -79,6 +79,8 @@ public final class CFCharacterSetPredefinedSet {
     @Generated @NInt public static final long Symbol = 0x000000000000000EL;
     /**
      * Newline character set (U000A ~ U000D, U0085, U2028, and U2029)
+     * 
+     * API-Since: 2.0
      */
     @Generated @NInt public static final long Newline = 0x000000000000000FL;
     /**

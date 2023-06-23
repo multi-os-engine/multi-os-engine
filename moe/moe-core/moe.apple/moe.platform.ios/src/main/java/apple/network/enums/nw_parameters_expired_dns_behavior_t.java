@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_parameters_expired_dns_behavior_t
- * <p>
+ * 
  * Expired DNS behavior defines whether or not a connection will allow the use
  * of expired DNS answers during connection establishment.
  */

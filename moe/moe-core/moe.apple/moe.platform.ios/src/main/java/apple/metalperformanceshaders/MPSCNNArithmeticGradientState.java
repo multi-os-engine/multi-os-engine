@@ -25,18 +25,22 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNArithmeticGradientState
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * The MPSCNNArithmeticGradientState is used to hold the clamp mask used by both
  * MPSCNNArithmetic forward filter and MPSCNNArithmeticGradient backward filter.
  * The MPSCNNArithmetic forward filter populates the MPSCNNArithmeticGradientState
  * object and the MPSCNNArithmeticGradient backward filter consumes the state
  * object.
- * <p>
+ * 
  * The clamp mask is stored internally and is not accessible by the user.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -68,22 +72,25 @@ public class MPSCNNArithmeticGradientState extends MPSNNBinaryGradientState {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -108,25 +115,26 @@ public class MPSCNNArithmeticGradientState extends MPSNNBinaryGradientState {
     @Generated
     @Selector("initWithDevice:bufferSize:")
     public native MPSCNNArithmeticGradientState initWithDeviceBufferSize(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long bufferSize);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long bufferSize);
 
     @Generated
     @Selector("initWithDevice:resourceList:")
     public native MPSCNNArithmeticGradientState initWithDeviceResourceList(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, MPSStateResourceList resourceList);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSStateResourceList resourceList);
 
     @Generated
     @Selector("initWithDevice:textureDescriptor:")
     public native MPSCNNArithmeticGradientState initWithDeviceTextureDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, MTLTextureDescriptor descriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MTLTextureDescriptor descriptor);
 
     @Generated
     @Selector("initWithResource:")
-    public native MPSCNNArithmeticGradientState initWithResource(@Mapped(ObjCObjectMapper.class) MTLResource resource);
+    public native MPSCNNArithmeticGradientState initWithResource(
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLResource resource);
 
     @Generated
     @Selector("initWithResources:")
-    public native MPSCNNArithmeticGradientState initWithResources(NSArray<?> resources);
+    public native MPSCNNArithmeticGradientState initWithResources(@Nullable NSArray<?> resources);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -145,9 +153,10 @@ public class MPSCNNArithmeticGradientState extends MPSNNBinaryGradientState {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,25 +179,30 @@ public class MPSCNNArithmeticGradientState extends MPSNNBinaryGradientState {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:")
     public static native MPSCNNArithmeticGradientState temporaryStateWithCommandBuffer(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:bufferSize:")
     public static native MPSCNNArithmeticGradientState temporaryStateWithCommandBufferBufferSize(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:resourceList:")
     public static native MPSCNNArithmeticGradientState temporaryStateWithCommandBufferResourceList(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSStateResourceList resourceList);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSStateResourceList resourceList);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:textureDescriptor:")
     public static native MPSCNNArithmeticGradientState temporaryStateWithCommandBufferTextureDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MTLTextureDescriptor descriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NotNull MTLTextureDescriptor descriptor);
 
     @Generated
     @Selector("version")

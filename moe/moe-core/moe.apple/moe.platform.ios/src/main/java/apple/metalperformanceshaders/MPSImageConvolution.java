@@ -41,22 +41,24 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImageConvolution
- * <p>
+ * 
  * The MPSImageConvolution convolves an image with given filter of odd width and height.
  * The center of the kernel aligns with the MPSImageConvolution.offset. That is, the position
  * of the top left corner of the area covered by the kernel is given by
  * MPSImageConvolution.offset - {kernel_width>>1, kernel_height>>1, 0}
- * <p>
+ * 
  * Optimized cases include 3x3,5x5,7x7,9x9,11x11, 1xN and Nx1. If a convolution kernel
  * does not fall into one of these cases but is a rank-1 matrix (a.k.a. separable)
  * then it will fall on an optimzied separable path. Other convolutions will execute with
  * full MxN complexity.
- * <p>
+ * 
  * If there are multiple channels in the source image, each channel is processed independently.
- * <p>
+ * 
  * [@performance] Separable convolution filters may perform better when done in two passes. A convolution filter
  * is separable if the ratio of filter values between all rows is constant over the whole row. For
  * example, this edge detection filter:
@@ -74,6 +76,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * and consequently can be done as two, one-dimensional convolution passes back to back on the same image.
  * In this way, the number of multiplies (ignoring the fact that we could skip zeros here) is reduced from
  * 3*3=9 to 3+3 = 6. There are similar savings for addition. For large filters, the savings can be profound.
+ * 
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -105,22 +110,25 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -155,9 +163,10 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -187,14 +196,14 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
 
     /**
      * [@property] bias
-     * <p>
+     * 
      * The bias is a value to be added to convolved pixel before it is converted back to the storage format.
      * It can be used to convert negative values into a representable range for a unsigned MTLPixelFormat.
      * For example, many edge detection filters produce results in the range [-k,k]. By scaling the filter
      * weights by 0.5/k and adding 0.5, the results will be in range [0,1] suitable for use with unorm formats.
      * It can be used in combination with renormalization of the filter weights to do video ranging as part
      * of the convolution effect. It can also just be used to increase the brightness of the image.
-     * <p>
+     * 
      * Default value is 0.0f.
      */
     @Generated
@@ -207,11 +216,11 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImageConvolution initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageConvolution initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize a convolution filter
-     *
+     * 
      * @param device        The device the filter will run on
      * @param kernelWidth   the width of the kernel
      * @param kernelHeight  the height of the kernel
@@ -222,12 +231,12 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:weights:")
     public native MPSImageConvolution initWithDeviceKernelWidthKernelHeightWeights(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight,
-            ConstFloatPtr kernelWeights);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth,
+            @NUInt long kernelHeight, @NotNull ConstFloatPtr kernelWeights);
 
     /**
      * [@property] kernelHeight
-     * <p>
+     * 
      * The height of the filter window. Must be an odd number.
      */
     @Generated
@@ -237,7 +246,7 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
 
     /**
      * [@property] kernelWidth
-     * <p>
+     * 
      * The width of the filter window. Must be an odd number.
      */
     @Generated
@@ -247,14 +256,14 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
 
     /**
      * [@property] bias
-     * <p>
+     * 
      * The bias is a value to be added to convolved pixel before it is converted back to the storage format.
      * It can be used to convert negative values into a representable range for a unsigned MTLPixelFormat.
      * For example, many edge detection filters produce results in the range [-k,k]. By scaling the filter
      * weights by 0.5/k and adding 0.5, the results will be in range [0,1] suitable for use with unorm formats.
      * It can be used in combination with renormalization of the filter weights to do video ranging as part
      * of the convolution effect. It can also just be used to increase the brightness of the image.
-     * <p>
+     * 
      * Default value is 0.0f.
      */
     @Generated
@@ -263,25 +272,27 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSImageConvolution initWithCoder(NSCoder aDecoder);
+    public native MPSImageConvolution initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSImageConvolution initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageConvolution initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("supportsSecureCoding")

@@ -24,19 +24,23 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CKOperationGroup
- * <p>
+ * 
  * A mechanism for your app to group several operations at the granularity of a user action.
- * <p>
+ * 
  * For example, when building a Calendar application, these things might warrant being their own operation groups:
  * - an initial fetch of data from the server, consisting of many queries, fetchChanges, and fetch operations
  * - doing an incremental fetch of data in response to a push notification
  * - saving several records due to a user saving a calendar event
- * <p>
+ * 
  * You associate @c CKOperationGroup s with@c CKOperation s by setting the @c CKOperation.group property. Create a
  * new @c CKOperationGroup instance for each distinct user action.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CloudKit")
@@ -68,22 +72,25 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -94,7 +101,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     /**
      * This is the default configuration applied to operations in this operation group.
-     * <p>
+     * 
      * If an operation associated with this operation group has its own configuration, then any explicitly-set
      * properties in that operation's configuration will override these default configuration values. See the example in
      * CKOperation.h
@@ -109,11 +116,11 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Estimated size of traffic being downloaded from the CloudKit Server
-     * <p>
+     * 
      * Inform the system how much data you plan on transferring. Obviously, these won't be exact. Be as accurate as
      * possible, but even an order-of-magnitude estimate is better than no value. The system will consult these values
      * when scheduling discretionary network requests (see the description of @c
@@ -133,7 +140,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     /**
      * Estimated size of traffic being uploaded to the CloudKit Server
-     * <p>
+     * 
      * Inform the system how much data you plan on transferring. Obviously, these won't be exact. Be as accurate as
      * possible, but even an order-of-magnitude estimate is better than no value. The system will consult these values
      * when scheduling discretionary network requests (see the description of @c
@@ -162,7 +169,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKOperationGroup initWithCoder(NSCoder aDecoder);
+    public native CKOperationGroup initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -181,13 +188,14 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Describes the user action attributed to the operation group.
-     * <p>
+     * 
      * [@c] name should describe the type of work being done. Some examples:
      * "Initial Fetch"
      * "Incremental Fetch"
@@ -195,6 +203,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
      * This string will be sent to Apple servers to provide aggregate reporting for @c CKOperationGroup s and therefore
      * must not include personally identifying data.
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -206,18 +215,19 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     /**
      * This is an identifier unique to this @c CKOperationGroup
-     * <p>
+     * 
      * This value is chosen by the system, and will be unique to this instance of a @c CKOperationGroup. This identifier
      * will be sent to Apple's servers, and can be used to identify any server-side logging associated with this
      * operation group.
      */
+    @NotNull
     @Generated
     @Selector("operationGroupID")
     public native String operationGroupID();
 
     /**
      * Describes an application-specific "number of elements" associated with the operation group.
-     * <p>
+     * 
      * [@c] quantity is intended to show the app-specific count of items contained within the operation group. It is
      * your job to assign meaning to this value. For example, if an app created an operation group to save 3 calendar
      * events the user had created, the app might want to set this to "3". This value is not shown to your users, it's
@@ -239,7 +249,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     /**
      * This is the default configuration applied to operations in this operation group.
-     * <p>
+     * 
      * If an operation associated with this operation group has its own configuration, then any explicitly-set
      * properties in that operation's configuration will override these default configuration values. See the example in
      * CKOperation.h
@@ -250,7 +260,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     /**
      * Estimated size of traffic being downloaded from the CloudKit Server
-     * <p>
+     * 
      * Inform the system how much data you plan on transferring. Obviously, these won't be exact. Be as accurate as
      * possible, but even an order-of-magnitude estimate is better than no value. The system will consult these values
      * when scheduling discretionary network requests (see the description of @c
@@ -269,7 +279,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     /**
      * Estimated size of traffic being uploaded to the CloudKit Server
-     * <p>
+     * 
      * Inform the system how much data you plan on transferring. Obviously, these won't be exact. Be as accurate as
      * possible, but even an order-of-magnitude estimate is better than no value. The system will consult these values
      * when scheduling discretionary network requests (see the description of @c
@@ -288,7 +298,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     /**
      * Describes the user action attributed to the operation group.
-     * <p>
+     * 
      * [@c] name should describe the type of work being done. Some examples:
      * "Initial Fetch"
      * "Incremental Fetch"
@@ -298,11 +308,11 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     /**
      * Describes an application-specific "number of elements" associated with the operation group.
-     * <p>
+     * 
      * [@c] quantity is intended to show the app-specific count of items contained within the operation group. It is
      * your job to assign meaning to this value. For example, if an app created an operation group to save 3 calendar
      * events the user had created, the app might want to set this to "3". This value is not shown to your users, it's

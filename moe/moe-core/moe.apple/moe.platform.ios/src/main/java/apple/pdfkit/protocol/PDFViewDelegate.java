@@ -11,6 +11,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("PDFKit")
@@ -24,11 +25,13 @@ public interface PDFViewDelegate {
      * indicated by the URL and go to the page and point indicated. The easiest way to do the latter is to create a
      * PDFDestination with the page index and point once a PDFDocument from the URL is created - then you can call:
      * -[PDFView goToDestination:]. The default implementation simply beeps.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
     @Selector("PDFViewOpenPDF:forRemoteGoToAction:")
-    default void PDFViewOpenPDFForRemoteGoToAction(PDFView sender, PDFActionRemoteGoTo action) {
+    default void PDFViewOpenPDFForRemoteGoToAction(@NotNull PDFView sender, @NotNull PDFActionRemoteGoTo action) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -36,7 +39,10 @@ public interface PDFViewDelegate {
      * A delegate that should return the main view controller the PDFView resides in. This is to add additional
      * support to one's view such as 'Lookup' from the text selection menu, along with support of entering text for
      * notes.
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("PDFViewParentViewController")
@@ -47,11 +53,13 @@ public interface PDFViewDelegate {
     /**
      * Certain PDFAction's may request that the PDF viewer application perform a Find. Delegates responding to the below
      * method will be called when the user clicks on an annotation with such an action.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
     @Selector("PDFViewPerformFind:")
-    default void PDFViewPerformFind(PDFView sender) {
+    default void PDFViewPerformFind(@NotNull PDFView sender) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -60,22 +68,26 @@ public interface PDFViewDelegate {
      * specific page number. Delegates responding to the below method will be called when the user clicks on an
      * annotation
      * with such an action.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
     @Selector("PDFViewPerformGoToPage:")
-    default void PDFViewPerformGoToPage(PDFView sender) {
+    default void PDFViewPerformGoToPage(@NotNull PDFView sender) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Delegates implementing the following method will be called to handle clicks on URL links within the PDFView. The
      * default implementation calls [[NSWorkspace sharedWorkspace] openURL: url].
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
     @Selector("PDFViewWillClickOnLink:withURL:")
-    default void PDFViewWillClickOnLinkWithURL(PDFView sender, NSURL url) {
+    default void PDFViewWillClickOnLinkWithURL(@NotNull PDFView sender, @NotNull NSURL url) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

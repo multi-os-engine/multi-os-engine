@@ -12,6 +12,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * For view based previews, the view controller that implements the QLPreviewingController protocol must at least
@@ -19,14 +21,14 @@ import org.moe.natj.objc.ann.Selector;
  * -[QLPreviewingController preparePreviewOfSearchableItemWithIdentifier:queryString:completionHandler:], to generate
  * previews for Spotlight searchable items.
  * -[QLPreviewingController preparePreviewOfFileAtURL:completionHandler:], to generate previews for file URLs.
- * <p>
+ * 
  * The main preview should be presented by the view controller implementing QLPreviewingController.
  * Avoid presenting additional view controllers over your QLPreviewingController.
  * For Catalyst compatibility, avoid using gesture recognizers that take interactions over large portions of the view to
  * avoid collisions with standard macOS preview behaviors.
  * Avoid holding the file open during the duration of the preview. If access to the file is necessary for interaction,
  * it is best to keep the file open only for the duration of the interaction.
- * <p>
+ * 
  * For data-based previews, subclass QLPreviewProvider which conforms to this protocol.
  */
 @Generated
@@ -36,10 +38,10 @@ import org.moe.natj.objc.ann.Selector;
 public interface QLPreviewingController {
     /**
      * Use this method to prepare the content of the view controller with the given file URL.
-     * <p>
+     * 
      * This method will be called only once. It will be called in the main thread before presenting the view controller.
      * Heavy work potentially blocking the main thread should be avoided in this method.
-     *
+     * 
      * @param url     The URL of the file the user is about to preview.
      * @param handler The completion handler should be called whenever the view is ready to be displayed. A loading
      *                spinner will be shown until the handler is called.
@@ -48,8 +50,8 @@ public interface QLPreviewingController {
     @Generated
     @IsOptional
     @Selector("preparePreviewOfFileAtURL:completionHandler:")
-    default void preparePreviewOfFileAtURLCompletionHandler(NSURL url,
-            @ObjCBlock(name = "call_preparePreviewOfFileAtURLCompletionHandler") Block_preparePreviewOfFileAtURLCompletionHandler handler) {
+    default void preparePreviewOfFileAtURLCompletionHandler(@NotNull NSURL url,
+            @NotNull @ObjCBlock(name = "call_preparePreviewOfFileAtURLCompletionHandler") Block_preparePreviewOfFileAtURLCompletionHandler handler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -57,15 +59,15 @@ public interface QLPreviewingController {
     @Generated
     public interface Block_preparePreviewOfFileAtURLCompletionHandler {
         @Generated
-        void call_preparePreviewOfFileAtURLCompletionHandler(NSError arg0);
+        void call_preparePreviewOfFileAtURLCompletionHandler(@Nullable NSError arg0);
     }
 
     /**
      * Use this method to prepare the content of the view controller with the data that the searchable item represents.
-     * <p>
+     * 
      * This method will be called only once. It will be called in the main thread before presenting the view controller.
      * Heavy work potentially blocking the main thread should be avoided in this method.
-     *
+     * 
      * @param identifier  The identifier of the CSSearchableItem the user interacted with in Spotlight.
      * @param queryString The query string the user entered in Spotlight before interacting with the CSSearchableItem.
      * @param handler     The completion handler should be called whenever the view is ready to be displayed. A loading
@@ -75,9 +77,9 @@ public interface QLPreviewingController {
     @Generated
     @IsOptional
     @Selector("preparePreviewOfSearchableItemWithIdentifier:queryString:completionHandler:")
-    default void preparePreviewOfSearchableItemWithIdentifierQueryStringCompletionHandler(String identifier,
-            String queryString,
-            @ObjCBlock(name = "call_preparePreviewOfSearchableItemWithIdentifierQueryStringCompletionHandler") Block_preparePreviewOfSearchableItemWithIdentifierQueryStringCompletionHandler handler) {
+    default void preparePreviewOfSearchableItemWithIdentifierQueryStringCompletionHandler(@NotNull String identifier,
+            @Nullable String queryString,
+            @NotNull @ObjCBlock(name = "call_preparePreviewOfSearchableItemWithIdentifierQueryStringCompletionHandler") Block_preparePreviewOfSearchableItemWithIdentifierQueryStringCompletionHandler handler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -85,13 +87,13 @@ public interface QLPreviewingController {
     @Generated
     public interface Block_preparePreviewOfSearchableItemWithIdentifierQueryStringCompletionHandler {
         @Generated
-        void call_preparePreviewOfSearchableItemWithIdentifierQueryStringCompletionHandler(NSError arg0);
+        void call_preparePreviewOfSearchableItemWithIdentifierQueryStringCompletionHandler(@Nullable NSError arg0);
     }
 
     /**
      * Use this method to provide a QLPreviewReply that provides preview in the form of NSData, NSURL, PDFDocument, or a
      * drawing into a context.
-     *
+     * 
      * @param request An object which contains information about the preview that should be provided. It contains the
      *                URL of the file to provide a preview for.
      * @param handler Call the completion handler with a QLPreviewReply if you can provide a preview, or with an NSError
@@ -101,8 +103,8 @@ public interface QLPreviewingController {
     @Generated
     @IsOptional
     @Selector("providePreviewForFileRequest:completionHandler:")
-    default void providePreviewForFileRequestCompletionHandler(QLFilePreviewRequest request,
-            @ObjCBlock(name = "call_providePreviewForFileRequestCompletionHandler") Block_providePreviewForFileRequestCompletionHandler handler) {
+    default void providePreviewForFileRequestCompletionHandler(@NotNull QLFilePreviewRequest request,
+            @NotNull @ObjCBlock(name = "call_providePreviewForFileRequestCompletionHandler") Block_providePreviewForFileRequestCompletionHandler handler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -110,6 +112,7 @@ public interface QLPreviewingController {
     @Generated
     public interface Block_providePreviewForFileRequestCompletionHandler {
         @Generated
-        void call_providePreviewForFileRequestCompletionHandler(QLPreviewReply reply, NSError error);
+        void call_providePreviewForFileRequestCompletionHandler(@Nullable QLPreviewReply reply,
+                @Nullable NSError error);
     }
 }

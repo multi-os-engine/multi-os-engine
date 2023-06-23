@@ -24,7 +24,11 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
@@ -42,7 +46,7 @@ public interface SKWarpable {
      */
     @Generated
     @Selector("setWarpGeometry:")
-    void setWarpGeometry(SKWarpGeometry value);
+    void setWarpGeometry(@Nullable SKWarpGeometry value);
 
     /**
      * maximum number of subdivision iterations used to generate the final vertices
@@ -55,6 +59,7 @@ public interface SKWarpable {
     /**
      * Warp geometry used to define the distortion
      */
+    @Nullable
     @Generated
     @Selector("warpGeometry")
     SKWarpGeometry warpGeometry();

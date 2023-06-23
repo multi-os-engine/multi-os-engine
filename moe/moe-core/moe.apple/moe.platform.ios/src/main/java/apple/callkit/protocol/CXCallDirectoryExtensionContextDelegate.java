@@ -24,7 +24,11 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CallKit")
 @Runtime(ObjCRuntime.class)
@@ -32,5 +36,6 @@ import org.moe.natj.objc.ann.Selector;
 public interface CXCallDirectoryExtensionContextDelegate {
     @Generated
     @Selector("requestFailedForExtensionContext:withError:")
-    void requestFailedForExtensionContextWithError(CXCallDirectoryExtensionContext extensionContext, NSError error);
+    void requestFailedForExtensionContextWithError(@NotNull CXCallDirectoryExtensionContext extensionContext,
+            @NotNull NSError error);
 }

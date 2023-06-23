@@ -40,7 +40,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -71,22 +76,25 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,9 +129,10 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -151,15 +160,16 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] depthPlane
-     * <p>
+     * 
      * The depth plane of the texture to be used for rendering. Default is zero.
      */
     @Generated
@@ -173,7 +183,7 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] level
-     * <p>
+     * 
      * The mipmap level of the texture to be used for rendering. Default is zero.
      */
     @Generated
@@ -183,7 +193,7 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] loadAction
-     * <p>
+     * 
      * The action to be performed with this attachment at the beginning of a render pass. Default is
      * MTLLoadActionDontCare unless specified by a creation or init method.
      */
@@ -194,7 +204,7 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] resolveDepthPlane
-     * <p>
+     * 
      * The texture depth plane of the resolve texture to be used for multisample resolve. Defaults to zero.
      */
     @Generated
@@ -204,7 +214,7 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] resolveLevel
-     * <p>
+     * 
      * The mipmap level of the resolve texture to be used for multisample resolve. Defaults to zero.
      */
     @Generated
@@ -214,7 +224,7 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] resolveLevel
-     * <p>
+     * 
      * The texture slice of the resolve texture to be used for multisample resolve. Defaults to zero.
      */
     @Generated
@@ -224,10 +234,11 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] resolveTexture
-     * <p>
+     * 
      * The texture used for multisample resolve operations. Only used (and required)
      * if the store action is set to MTLStoreActionMultisampleResolve.
      */
+    @Nullable
     @Generated
     @Selector("resolveTexture")
     @MappedReturn(ObjCObjectMapper.class)
@@ -235,7 +246,7 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] depthPlane
-     * <p>
+     * 
      * The depth plane of the texture to be used for rendering. Default is zero.
      */
     @Generated
@@ -244,7 +255,7 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] level
-     * <p>
+     * 
      * The mipmap level of the texture to be used for rendering. Default is zero.
      */
     @Generated
@@ -253,7 +264,7 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] loadAction
-     * <p>
+     * 
      * The action to be performed with this attachment at the beginning of a render pass. Default is
      * MTLLoadActionDontCare unless specified by a creation or init method.
      */
@@ -263,7 +274,7 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] resolveDepthPlane
-     * <p>
+     * 
      * The texture depth plane of the resolve texture to be used for multisample resolve. Defaults to zero.
      */
     @Generated
@@ -272,7 +283,7 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] resolveLevel
-     * <p>
+     * 
      * The mipmap level of the resolve texture to be used for multisample resolve. Defaults to zero.
      */
     @Generated
@@ -281,7 +292,7 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] resolveLevel
-     * <p>
+     * 
      * The texture slice of the resolve texture to be used for multisample resolve. Defaults to zero.
      */
     @Generated
@@ -290,17 +301,17 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] resolveTexture
-     * <p>
+     * 
      * The texture used for multisample resolve operations. Only used (and required)
      * if the store action is set to MTLStoreActionMultisampleResolve.
      */
     @Generated
     @Selector("setResolveTexture:")
-    public native void setResolveTexture(@Mapped(ObjCObjectMapper.class) MTLTexture value);
+    public native void setResolveTexture(@Nullable @Mapped(ObjCObjectMapper.class) MTLTexture value);
 
     /**
      * [@property] slice
-     * <p>
+     * 
      * The slice of the texture to be used for rendering. Default is zero.
      */
     @Generated
@@ -309,7 +320,7 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] storeAction
-     * <p>
+     * 
      * The action to be performed with this attachment at the end of a render pass. Default is
      * MTLStoreActionDontCare unless specified by a creation or init method.
      */
@@ -319,16 +330,16 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] texture
-     * <p>
+     * 
      * The MTLTexture object for this attachment.
      */
     @Generated
     @Selector("setTexture:")
-    public native void setTexture(@Mapped(ObjCObjectMapper.class) MTLTexture value);
+    public native void setTexture(@Nullable @Mapped(ObjCObjectMapper.class) MTLTexture value);
 
     /**
      * [@property] slice
-     * <p>
+     * 
      * The slice of the texture to be used for rendering. Default is zero.
      */
     @Generated
@@ -338,7 +349,7 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] storeAction
-     * <p>
+     * 
      * The action to be performed with this attachment at the end of a render pass. Default is
      * MTLStoreActionDontCare unless specified by a creation or init method.
      */
@@ -349,9 +360,10 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] texture
-     * <p>
+     * 
      * The MTLTexture object for this attachment.
      */
+    @Nullable
     @Generated
     @Selector("texture")
     @MappedReturn(ObjCObjectMapper.class)
@@ -359,10 +371,12 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] storeActionOptions
-     * <p>
+     * 
      * Optional configuration for the store action performed with this attachment at the end of a render pass. Default
      * is
      * MTLStoreActionOptionNone.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setStoreActionOptions:")
@@ -370,10 +384,12 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] storeActionOptions
-     * <p>
+     * 
      * Optional configuration for the store action performed with this attachment at the end of a render pass. Default
      * is
      * MTLStoreActionOptionNone.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("storeActionOptions")

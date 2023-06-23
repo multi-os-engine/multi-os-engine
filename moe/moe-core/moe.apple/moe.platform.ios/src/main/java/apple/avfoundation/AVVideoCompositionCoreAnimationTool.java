@@ -38,7 +38,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -69,22 +74,25 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -119,9 +127,10 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -151,9 +160,9 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
 
     /**
      * videoCompositionCoreAnimationToolWithAdditionalLayer:asTrackID:
-     * <p>
+     * 
      * Add a Core Animation layer to the video composition
-     * <p>
+     * 
      * Include a Core Animation layer as an individual track input in video composition.
      * This layer should not come from, or be added to, another layer tree.
      * trackID should not match any real trackID in the source. Use -[AVAsset unusedTrackID]
@@ -169,13 +178,13 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
     @Generated
     @Selector("videoCompositionCoreAnimationToolWithAdditionalLayer:asTrackID:")
     public static native AVVideoCompositionCoreAnimationTool videoCompositionCoreAnimationToolWithAdditionalLayerAsTrackID(
-            CALayer layer, int trackID);
+            @NotNull CALayer layer, int trackID);
 
     /**
      * videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:inLayer:
-     * <p>
+     * 
      * Compose the composited video frames with the Core Animation layer
-     * <p>
+     * 
      * Place composited video frames in videoLayer and render animationLayer
      * to produce the final frame. Normally videoLayer should be in animationLayer's sublayer tree.
      * The animationLayer should not come from, or be added to, another layer tree.
@@ -188,13 +197,13 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
     @Generated
     @Selector("videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:inLayer:")
     public static native AVVideoCompositionCoreAnimationTool videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayerInLayer(
-            CALayer videoLayer, CALayer animationLayer);
+            @NotNull CALayer videoLayer, @NotNull CALayer animationLayer);
 
     /**
      * videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayers:inLayer:
-     * <p>
+     * 
      * Compose the composited video frames with the Core Animation layer
-     * <p>
+     * 
      * Duplicate the composited video frames in each videoLayer and render animationLayer
      * to produce the final frame. Normally videoLayers should be in animationLayer's sublayer tree.
      * The animationLayer should not come from, or be added to, another layer tree.
@@ -203,11 +212,13 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
      * to YES in the layer hierarchy to get the same result when attaching a CALayer to a
      * AVVideoCompositionCoreAnimationTool
      * as when using it to back a UIView.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayers:inLayer:")
     public static native AVVideoCompositionCoreAnimationTool videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayersInLayer(
-            NSArray<? extends CALayer> videoLayers, CALayer animationLayer);
+            @NotNull NSArray<? extends CALayer> videoLayers, @NotNull CALayer animationLayer);
 
     @Generated
     @Selector("init")

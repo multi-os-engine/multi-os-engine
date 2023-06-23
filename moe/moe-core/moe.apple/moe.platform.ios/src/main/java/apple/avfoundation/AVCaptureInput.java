@@ -37,19 +37,23 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCaptureInput
- * <p>
+ * 
  * AVCaptureInput is an abstract class that provides an interface for connecting capture input sources to an
  * AVCaptureSession.
- * <p>
+ * 
  * Concrete instances of AVCaptureInput representing input sources such as cameras can be added to instances of
  * AVCaptureSession using the -[AVCaptureSession addInput:] method. An AVCaptureInput vends one or more streams of media
  * data. For example, input devices can provide both audio and video data. Each media stream provided by an input is
  * represented by an AVCaptureInputPort object. Within a capture session, connections are made between AVCaptureInput
  * instances and AVCaptureOutput instances via AVCaptureConnection objects that define the mapping between a set of
  * AVCaptureInputPort objects and a single AVCaptureOutput.
+ * 
+ * API-Since: 4.0
  */
 @Generated
 @Library("AVFoundation")
@@ -81,22 +85,25 @@ public class AVCaptureInput extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +138,10 @@ public class AVCaptureInput extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,12 +175,13 @@ public class AVCaptureInput extends NSObject {
 
     /**
      * [@property] ports
-     * <p>
+     * 
      * The ports owned by the receiver.
-     * <p>
+     * 
      * The value of this property is an array of AVCaptureInputPort objects, each exposing an interface to a single
      * stream of media data provided by an input.
      */
+    @NotNull
     @Generated
     @Selector("ports")
     public native NSArray<? extends AVCaptureInputPort> ports();

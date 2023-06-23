@@ -24,14 +24,18 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVDelegatingPlaybackCoordinatorSeekCommand
- * <p>
+ * 
  * A playback command requesting a seek.
- * <p>
+ * 
  * If the current playback rate is non-zero, playback should not automatically resume after the seek. Instead the
  * delegate should pause and wait for the coordinator to issue another PlayCommand.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("AVFoundation")
@@ -63,7 +67,7 @@ public class AVDelegatingPlaybackCoordinatorSeekCommand extends AVDelegatingPlay
 
     /**
      * [@property] anticipatedPlaybackRate
-     * <p>
+     * 
      * The rate to prepare for if shouldBufferInAnticipationOfPlayback is YES.
      */
     @Generated
@@ -72,31 +76,34 @@ public class AVDelegatingPlaybackCoordinatorSeekCommand extends AVDelegatingPlay
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] completionDueDate
-     * <p>
+     * 
      * Communicates when the coordinator expects the command's completion handler at the latest.
-     * <p>
+     * 
      * A seek command expecting buffering in anticipation of playback does expect the receiver to fire the completion
      * handler by this date at the latest.
      * This is useful in buffering situations where the receiver has not yet buffered enough data to be considered ready
@@ -107,6 +114,7 @@ public class AVDelegatingPlaybackCoordinatorSeekCommand extends AVDelegatingPlay
      * Completing the command after this date means that the coordinator will likely send a play command for a later
      * time than the receiver buffered for.
      */
+    @Nullable
     @Generated
     @Selector("completionDueDate")
     public native NSDate completionDueDate();
@@ -147,9 +155,9 @@ public class AVDelegatingPlaybackCoordinatorSeekCommand extends AVDelegatingPlay
 
     /**
      * [@property] itemTime
-     * <p>
+     * 
      * The time to seek the currentItem to.
-     * <p>
+     * 
      * Playback should never automatically resume after seeking to this time. The coordinator will issue a new
      * PlayCommand when everyone else is ready to resume.
      */
@@ -158,9 +166,10 @@ public class AVDelegatingPlaybackCoordinatorSeekCommand extends AVDelegatingPlay
     @ByValue
     public native CMTime itemTime();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -181,9 +190,9 @@ public class AVDelegatingPlaybackCoordinatorSeekCommand extends AVDelegatingPlay
 
     /**
      * [@property] shouldBufferInAnticipationOfPlayback
-     * <p>
+     * 
      * Indicates that playback is anticipated and the player should begin buffering if necessary.
-     * <p>
+     * 
      * When shouldBufferInAnticipationOfPlayback, playback is expected to eventually resume at the rate indicated by the
      * anticipatedPlaybackRate property.
      * This should be treated similar to receiving a separate AVDelegatingPlaybackCoordinatorBufferingCommand.

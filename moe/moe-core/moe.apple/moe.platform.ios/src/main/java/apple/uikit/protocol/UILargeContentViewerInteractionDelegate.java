@@ -1,6 +1,5 @@
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGPoint;
 import apple.uikit.UILargeContentViewerInteraction;
 import apple.uikit.UIViewController;
 import org.moe.natj.general.ann.ByValue;
@@ -14,7 +13,13 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -31,8 +36,8 @@ public interface UILargeContentViewerInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("largeContentViewerInteraction:didEndOnItem:atPoint:")
-    default void largeContentViewerInteractionDidEndOnItemAtPoint(UILargeContentViewerInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UILargeContentViewerItem item, @ByValue CGPoint point) {
+    default void largeContentViewerInteractionDidEndOnItemAtPoint(@NotNull UILargeContentViewerInteraction interaction,
+            @Nullable @Mapped(ObjCObjectMapper.class) UILargeContentViewerItem item, @ByValue CGPoint point) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -41,12 +46,13 @@ public interface UILargeContentViewerInteractionDelegate {
      * If this is not implemented, -[UIView pointInside:withEvent:] will be called recursively on the interaction's view
      * to find an appropriate view.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("largeContentViewerInteraction:itemAtPoint:")
     @MappedReturn(ObjCObjectMapper.class)
     default UILargeContentViewerItem largeContentViewerInteractionItemAtPoint(
-            UILargeContentViewerInteraction interaction, @ByValue CGPoint point) {
+            @NotNull UILargeContentViewerInteraction interaction, @ByValue CGPoint point) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -54,11 +60,12 @@ public interface UILargeContentViewerInteractionDelegate {
      * Returns the view controller whose region of the screen should be used to display the large content viewer.
      * If this is not implemented, a view controller that contains the interaction's view will be chosen.
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("viewControllerForLargeContentViewerInteraction:")
     default UIViewController viewControllerForLargeContentViewerInteraction(
-            UILargeContentViewerInteraction interaction) {
+            @NotNull UILargeContentViewerInteraction interaction) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

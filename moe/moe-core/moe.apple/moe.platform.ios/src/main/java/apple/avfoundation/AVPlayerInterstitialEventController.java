@@ -23,16 +23,18 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVPlayerInterstitialEventController
- * <p>
+ * 
  * An AVPlayerInterstitialEventController allows you to specify a schedule of interstitial events for items played by a
  * primary player.
  * By creating an instance of AVPlayerInterstitialEventController and setting a schedule of interstitial events, you
  * pre-empt directives the are intrinsic to the items played by the primary player, if any exist, causing them to be
  * ignored.
- * <p>
+ * 
  * The schedule of interstitial events is specified as an array of AVPlayerInterstitialEvents. For each
  * AVPlayerInterstitialEvent, when the primary player's current item is the primary item of the interstitial event and
  * its currentDate reaches the date of the event, playback of the primary item by the primary player is temporarily
@@ -43,6 +45,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * AVPlayerLayers that reference the primary player. Once the interstitial player has advanced through playback of the
  * interstitial items specified by the event or its current item otherwise becomes nil, playback of the primary content
  * will resume, at an offset from the time at which it was suspended as specified by the event.
+ * 
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("AVFoundation")
@@ -74,20 +79,21 @@ public class AVPlayerInterstitialEventController extends AVPlayerInterstitialEve
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * cancelCurrentEventWithResumptionOffset:
-     * <p>
+     * 
      * Causes the playback of any and all interstitial content currently in progress to be abandoned and the playback of
      * primary content to be resumed.
-     * <p>
+     * 
      * If invoked during the handling of coinciding interstitial events, they will all be canceled.
      * When you cancel interstitial events via the use of this method, the value of resumptionOffset that you pass
      * overrides the events' resumptionOffset.
      * Has no effect while currentEvent is nil.
-     *
-     * @param resumptionOffset Specifies the offset in time at which playback of the primary player's current item
+     * 
+     * @param resumptionOffset
+     *                         Specifies the offset in time at which playback of the primary player's current item
      *                         should resume after interstitial playback has finished. To specify that the effective
      *                         resumption time offset should accord with the wallclock time elapsed during interstitial
      *                         playback, pass a value of kCMTimeIndefinite.
@@ -98,18 +104,21 @@ public class AVPlayerInterstitialEventController extends AVPlayerInterstitialEve
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,27 +133,33 @@ public class AVPlayerInterstitialEventController extends AVPlayerInterstitialEve
 
     /**
      * [@property] events
-     * <p>
+     * 
      * Specifies the current schedule of interstitial events.
-     * <p>
+     * 
      * Setting this property to a non-nil value cancels and overrides all previously scheduled future interstitial
      * events, including those that are intrinsically specified by the content of primary items, such as directives
      * carried by HLS media playlists. Setting it to nil causes its value to be reset in accordance with the content of
      * the current primary item.
-     * <p>
+     * 
      * If you change the value of events during an interstitial event and the current event is not included in the new
      * value of events, the current event is nevertheless allowed to continue until completion. If you wish to cancel
      * the current event, use -cancelCurrentEventWithResumptionOffset:.
-     * <p>
+     * 
      * If interstitial events are scheduled with dates that coincide either with the date of another scheduled
      * interstitial event or with the date range of the primary content that's omitted according to the resumption
      * offset of another scheduled interstitial event, the primary content will remain suspended until all coinciding
      * interstitial events have been completed. The effective resumption offset will be the sum of the resumption
      * offsets of the coinciding interstitial events. (Note that the sum of a numeric CMTime and kCMTimeIndefinite is
      * kCMTimeIndefinite.)
-     * <p>
+     * 
      * If interstitial events are scheduled for the same date, they are ordered according to their position in the
      * events array.
+     * 
+     * The receiver will make a copy of the events that are set on it. Subsequent mutations on the original events will
+     * have no effect on the copy.
+     * 
+     * An NSInvalidArgumentException will be raised if an under-specified AVPlayerInterstitialEvent is set, such as one
+     * with a nil primaryItem, or with neither a time nor a date.
      */
     @Generated
     @Selector("events")
@@ -159,9 +174,14 @@ public class AVPlayerInterstitialEventController extends AVPlayerInterstitialEve
     @Selector("init")
     public native AVPlayerInterstitialEventController init();
 
+    /**
+     * initWithPrimaryPlayer:
+     * 
+     * This method throws an exception if the primary player is an interstitial player.
+     */
     @Generated
     @Selector("initWithPrimaryPlayer:")
-    public native AVPlayerInterstitialEventController initWithPrimaryPlayer(AVPlayer primaryPlayer);
+    public native AVPlayerInterstitialEventController initWithPrimaryPlayer(@NotNull AVPlayer primaryPlayer);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -178,29 +198,33 @@ public class AVPlayerInterstitialEventController extends AVPlayerInterstitialEve
 
     /**
      * interstitialEventControllerWithPrimaryPlayer
-     * <p>
+     * 
      * Returns an instance of AVPlayerInterstitialEvent for use in observing and scheduling interstitial playback.
-     *
-     * @param primaryPlayer The AVPlayer that will play the primaryItems of the receiver's interstitial events.
+     * 
+     * This method throws an exception if the primary player is an interstitial player.
+     * 
+     * @param primaryPlayer
+     *                      The AVPlayer that will play the primaryItems of the receiver's interstitial events.
      * @return An instance of AVPlayerInterstitialEventController.
      */
     @Generated
     @Selector("interstitialEventControllerWithPrimaryPlayer:")
     public static native AVPlayerInterstitialEventController interstitialEventControllerWithPrimaryPlayer(
-            AVPlayer primaryPlayer);
+            @NotNull AVPlayer primaryPlayer);
 
     @Generated
     @Selector("interstitialEventMonitorWithPrimaryPlayer:")
     public static native AVPlayerInterstitialEventController interstitialEventMonitorWithPrimaryPlayer(
-            AVPlayer primaryPlayer);
+            @NotNull AVPlayer primaryPlayer);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -217,27 +241,33 @@ public class AVPlayerInterstitialEventController extends AVPlayerInterstitialEve
 
     /**
      * [@property] events
-     * <p>
+     * 
      * Specifies the current schedule of interstitial events.
-     * <p>
+     * 
      * Setting this property to a non-nil value cancels and overrides all previously scheduled future interstitial
      * events, including those that are intrinsically specified by the content of primary items, such as directives
      * carried by HLS media playlists. Setting it to nil causes its value to be reset in accordance with the content of
      * the current primary item.
-     * <p>
+     * 
      * If you change the value of events during an interstitial event and the current event is not included in the new
      * value of events, the current event is nevertheless allowed to continue until completion. If you wish to cancel
      * the current event, use -cancelCurrentEventWithResumptionOffset:.
-     * <p>
+     * 
      * If interstitial events are scheduled with dates that coincide either with the date of another scheduled
      * interstitial event or with the date range of the primary content that's omitted according to the resumption
      * offset of another scheduled interstitial event, the primary content will remain suspended until all coinciding
      * interstitial events have been completed. The effective resumption offset will be the sum of the resumption
      * offsets of the coinciding interstitial events. (Note that the sum of a numeric CMTime and kCMTimeIndefinite is
      * kCMTimeIndefinite.)
-     * <p>
+     * 
      * If interstitial events are scheduled for the same date, they are ordered according to their position in the
      * events array.
+     * 
+     * The receiver will make a copy of the events that are set on it. Subsequent mutations on the original events will
+     * have no effect on the copy.
+     * 
+     * An NSInvalidArgumentException will be raised if an under-specified AVPlayerInterstitialEvent is set, such as one
+     * with a nil primaryItem, or with neither a time nor a date.
      */
     @Generated
     @Selector("setEvents:")

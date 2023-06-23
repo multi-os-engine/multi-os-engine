@@ -44,13 +44,17 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Class that represents an authentication context.
- * <p>
+ * 
  * This context can be used for evaluating policies.
- *
+ * 
  * @see LAPolicy
+ * 
+ *      API-Since: 8.0
  */
 @Generated
 @Library("LocalAuthentication")
@@ -82,22 +86,25 @@ public class LAContext extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -132,9 +139,10 @@ public class LAContext extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,72 +172,81 @@ public class LAContext extends NSObject {
 
     /**
      * Determines if a particular policy can be evaluated.
-     * <p>
+     * 
      * Policies can have certain requirements which, when not satisfied, would always cause
      * the policy evaluation to fail - e.g. a passcode set, a fingerprint
      * enrolled with Touch ID or a face set up with Face ID. This method allows easy checking
      * for such conditions.
-     * <p>
+     * 
      * Applications should consume the returned value immediately and avoid relying on it
      * for an extensive period of time. At least, it is guaranteed to stay valid until the
      * application enters background.
-     * <p>
+     * 
      * [@warning] Do not call this method in the reply block of evaluatePolicy:reply: because it could
      * lead to a deadlock.
-     *
+     * 
      * @param policy Policy for which the preflight check should be run.
+     * 
      * @param error  Optional output parameter which is set to nil if the policy can be evaluated, or it
      *               contains error information if policy evaluation is not possible.
+     * 
      * @return YES if the policy can be evaluated, NO otherwise.
+     * 
+     *         API-Since: 8.0
      */
     @Generated
     @Selector("canEvaluatePolicy:error:")
     public native boolean canEvaluatePolicyError(@NInt long policy,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Evaluates access control object for the specified operation.
-     * <p>
+     * 
      * Access control evaluation may involve prompting user for various kinds of interaction
      * or authentication. Actual behavior is dependent on evaluated access control, device type,
      * and can be affected by installed configuration profiles.
-     * <p>
+     * 
      * Be sure to keep a strong reference to the context while the evaluation is in progress.
      * Otherwise, an evaluation would be canceled when the context is being deallocated.
-     * <p>
+     * 
      * The method does not block. Instead, the caller must provide a reply block to be
      * called asynchronously when evaluation finishes. The block is executed on a private
      * queue internal to the framework in an unspecified threading context. Other than that,
      * no guarantee is made about which queue, thread, or run-loop the block is executed on.
-     * <p>
+     * 
      * After successful access control evaluation, the LAContext can be used with keychain operations,
      * so that they do not require user to authenticate.
-     * <p>
+     * 
      * Access control evaluation may fail for various reasons, including user cancel, system cancel
      * and others, see LAError codes.
-     * <p>
+     * 
      * [@warning] localizedReason parameter is mandatory and the call will throw NSInvalidArgumentException if
      * nil or empty string is specified.
-     * <p>
+     * 
      * [@warning] Applications should also supply NSFaceIDUsageDescription key in the Info.plist. This key identifies
      * a string value that contains a message to be displayed to users when the app is trying to use
      * Face ID for the first time. Users can choose to allow or deny the use of Face ID by the app before
      * the first use or later in Face ID privacy settings. When the use of Face ID is denied, evaluations
      * will fail with LAErrorBiometryNotAvailable.
-     *
+     * 
+     * API-Since: 9.0
+     * 
      * @param accessControl   Access control object that is typically created by SecAccessControlCreateWithFlags.
+     * 
      * @param operation       Type of operation the access control will be used with.
+     * 
      * @param localizedReason Application reason for authentication. This string must be provided in correct
      *                        localization and should be short and clear. It will be eventually displayed in
      *                        the authentication dialog subtitle for Touch ID or passcode. The name of the
      *                        calling application will be displayed in title, so it should not be duplicated here.
-     *                        <p>
+     * 
      *                        This parameter is mostly ignored by Face ID authentication. Face ID will show
      *                        generic instructions unless a customized fallback title is provided in
      *                        localizedFallbackTitle property. For that case, it will show the authentication
      *                        reason so that the instructions can be made consistent with the custom button
      *                        title. Therefore, you should make sure that users are already aware of the need
      *                        and reason for Face ID authentication before they have triggered the policy evaluation.
+     * 
      * @param reply           Reply block that is executed when access control evaluation finishes.
      *                        success Reply parameter that is YES if the access control has been evaluated successfully
      *                        or
@@ -240,71 +257,76 @@ public class LAContext extends NSObject {
      */
     @Generated
     @Selector("evaluateAccessControl:operation:localizedReason:reply:")
-    public native void evaluateAccessControlOperationLocalizedReasonReply(SecAccessControlRef accessControl,
-            @NInt long operation, String localizedReason,
-            @ObjCBlock(name = "call_evaluateAccessControlOperationLocalizedReasonReply") Block_evaluateAccessControlOperationLocalizedReasonReply reply);
+    public native void evaluateAccessControlOperationLocalizedReasonReply(@NotNull SecAccessControlRef accessControl,
+            @NInt long operation, @NotNull String localizedReason,
+            @NotNull @ObjCBlock(name = "call_evaluateAccessControlOperationLocalizedReasonReply") Block_evaluateAccessControlOperationLocalizedReasonReply reply);
 
     /**
      * Evaluates the specified policy.
-     * <p>
+     * 
      * Policy evaluation may involve prompting user for various kinds of interaction
      * or authentication. Actual behavior is dependent on evaluated policy, device type,
      * and can be affected by installed configuration profiles.
-     * <p>
+     * 
      * Be sure to keep a strong reference to the context while the evaluation is in progress.
      * Otherwise, an evaluation would be canceled when the context is being deallocated.
-     * <p>
+     * 
      * The method does not block. Instead, the caller must provide a reply block to be
      * called asynchronously when evaluation finishes. The block is executed on a private
      * queue internal to the framework in an unspecified threading context. Other than that,
      * no guarantee is made about which queue, thread, or run-loop the block is executed on.
-     * <p>
+     * 
      * Implications of successful policy evaluation are policy specific. In general, this
      * operation is not idempotent. Policy evaluation may fail for various reasons, including
      * user cancel, system cancel and others, see LAError codes.
-     * <p>
+     * 
      * [@warning] localizedReason parameter is mandatory and the call will throw NSInvalidArgumentException if
      * nil or empty string is specified.
-     * <p>
+     * 
      * [@warning] Applications should also supply NSFaceIDUsageDescription key in the Info.plist. This key identifies
      * a string value that contains a message to be displayed to users when the app is trying to use
      * Face ID for the first time. Users can choose to allow or deny the use of Face ID by the app before
      * the first use or later in Face ID privacy settings. When the use of Face ID is denied, evaluations
      * will fail with LAErrorBiometryNotAvailable.
-     * <p>
+     * 
      * [@li] LAErrorUserFallback if user tapped the fallback button
      * [@li] LAErrorUserCancel if user has tapped the Cancel button
      * [@li] LAErrorSystemCancel if some system event interrupted the evaluation (e.g. Home button pressed).
-     *
+     * 
+     * API-Since: 8.0
+     * 
      * @param policy          Policy to be evaluated.
+     * 
      * @param reply           Reply block that is executed when policy evaluation finishes.
      *                        success Reply parameter that is YES if the policy has been evaluated successfully or
      *                        NO if the evaluation failed.
      *                        error Reply parameter that is nil if the policy has been evaluated successfully, or it
      *                        contains error information about the evaluation failure.
+     * 
      * @param localizedReason Application reason for authentication. This string must be provided in correct
      *                        localization and should be short and clear. It will be eventually displayed in
      *                        the authentication dialog subtitle for Touch ID or passcode. The name of the
      *                        calling application will be displayed in title, so it should not be duplicated here.
-     *                        <p>
+     * 
      *                        This parameter is mostly ignored by Face ID authentication. Face ID will show
      *                        generic instructions unless a customized fallback title is provided in
      *                        localizedFallbackTitle property. For that case, it will show the authentication
      *                        reason so that the instructions can be made consistent with the custom button
      *                        title. Therefore, you should make sure that users are already aware of the need
      *                        and reason for Face ID authentication before they have triggered the policy evaluation.
+     * 
      * @see LAError
-     *      <p>
+     * 
      *      Typical error codes returned by this call are:
      */
     @Generated
     @Selector("evaluatePolicy:localizedReason:reply:")
-    public native void evaluatePolicyLocalizedReasonReply(@NInt long policy, String localizedReason,
-            @ObjCBlock(name = "call_evaluatePolicyLocalizedReasonReply") Block_evaluatePolicyLocalizedReasonReply reply);
+    public native void evaluatePolicyLocalizedReasonReply(@NInt long policy, @NotNull String localizedReason,
+            @NotNull @ObjCBlock(name = "call_evaluatePolicyLocalizedReasonReply") Block_evaluatePolicyLocalizedReasonReply reply);
 
     /**
      * Contains policy domain state.
-     * <p>
+     * 
      * This property is set only when evaluatePolicy is called and succesful Touch ID or Face ID authentication
      * was performed, or when canEvaluatePolicy succeeds for a biometric policy.
      * It stays nil for all other cases.
@@ -312,11 +334,14 @@ public class LAContext extends NSObject {
      * data will change. Nature of such database changes cannot be determined
      * but comparing data of evaluatedPolicyDomainState after different evaluatePolicy
      * will reveal the fact database was changed between calls.
-     * <p>
+     * 
      * [@warning] Please note that the value returned by this property can change exceptionally between major OS
      * versions even if
      * the state of biometry has not changed.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("evaluatedPolicyDomainState")
     public native NSData evaluatedPolicyDomainState();
@@ -327,15 +352,17 @@ public class LAContext extends NSObject {
 
     /**
      * Invalidates the context.
-     * <p>
+     * 
      * The context is invalidated automatically when it is (auto)released. This method
      * allows invalidating it manually while it is still in scope.
-     * <p>
+     * 
      * Invalidation terminates any existing policy evaluation and the respective call will
      * fail with LAErrorAppCancel. After the context has been invalidated, it can not be
      * used for policy evaluation and an attempt to do so will fail with LAErrorInvalidContext.
-     * <p>
+     * 
      * Invalidating a context that has been already invalidated has no effect.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("invalidate")
@@ -343,9 +370,13 @@ public class LAContext extends NSObject {
 
     /**
      * Reveals if credential was set with this context.
-     *
+     * 
      * @param type Type of credential we are asking for.
+     * 
      * @return YES on success, NO otherwise.
+     * 
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("isCredentialSet:")
@@ -353,27 +384,38 @@ public class LAContext extends NSObject {
 
     /**
      * Cancel button title.
-     * <p>
+     * 
      * Allows cancel button title customization. A default title "Cancel" is used when
      * this property is left nil or is set to empty string.
+     * 
+     * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("localizedCancelTitle")
     public native String localizedCancelTitle();
 
     /**
      * Fallback button title.
-     * <p>
+     * 
      * Allows fallback button title customization. If set to empty string, the button will be hidden.
      * A default title "Enter Password" is used when this property is left nil.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("localizedFallbackTitle")
     public native String localizedFallbackTitle();
 
     /**
      * This property is deprecated and setting it has no effect.
+     * 
+     * API-Since: 8.3
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: No longer supported
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("maxBiometryFailures")
@@ -381,63 +423,78 @@ public class LAContext extends NSObject {
 
     /**
      * Sets a credential to this context.
-     * <p>
+     * 
      * Some policies allow to bind application-provided credential with them.
      * This method allows credential to be passed to the right context.
-     *
+     * 
      * @param credential Credential to be used with subsequent calls. Setting this parameter to nil will remove
      *                   any existing credential of the specified type.
+     * 
      * @param type       Type of the provided credential.
+     * 
      * @return YES if the credential was set successfully, NO otherwise.
+     * 
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("setCredential:type:")
-    public native boolean setCredentialType(NSData credential, @NInt long type);
+    public native boolean setCredentialType(@Nullable NSData credential, @NInt long type);
 
     /**
      * Cancel button title.
-     * <p>
+     * 
      * Allows cancel button title customization. A default title "Cancel" is used when
      * this property is left nil or is set to empty string.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setLocalizedCancelTitle:")
-    public native void setLocalizedCancelTitle(String value);
+    public native void setLocalizedCancelTitle(@Nullable String value);
 
     /**
      * Fallback button title.
-     * <p>
+     * 
      * Allows fallback button title customization. If set to empty string, the button will be hidden.
      * A default title "Enter Password" is used when this property is left nil.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setLocalizedFallbackTitle:")
-    public native void setLocalizedFallbackTitle(String value);
+    public native void setLocalizedFallbackTitle(@Nullable String value);
 
     /**
      * This property is deprecated and setting it has no effect.
+     * 
+     * API-Since: 8.3
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: No longer supported
      */
     @Generated
     @Deprecated
     @Selector("setMaxBiometryFailures:")
-    public native void setMaxBiometryFailures(NSNumber value);
+    public native void setMaxBiometryFailures(@Nullable NSNumber value);
 
     /**
      * Time interval for accepting a successful Touch ID or Face ID device unlock (on the lock screen) from the past.
-     * <p>
+     * 
      * This property can be set with a time interval in seconds. If the device was successfully unlocked by
      * biometry within this time interval, then biometric authentication on this context will succeed
      * automatically and the reply block will be called without prompting user for Touch ID or Face ID.
-     * <p>
+     * 
      * The default value is 0, meaning that no previous biometric unlock can be reused.
-     * <p>
+     * 
      * This property is meant only for reusing biometric matches from the device lock screen.
      * It does not allow reusing previous biometric matches in application or between applications.
-     * <p>
+     * 
      * The maximum supported interval is 5 minutes and setting the value beyond 5 minutes does not increase
      * the accepted interval.
-     *
+     * 
      * @see LATouchIDAuthenticationMaximumAllowableReuseDuration
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("setTouchIDAuthenticationAllowableReuseDuration:")
@@ -445,20 +502,22 @@ public class LAContext extends NSObject {
 
     /**
      * Time interval for accepting a successful Touch ID or Face ID device unlock (on the lock screen) from the past.
-     * <p>
+     * 
      * This property can be set with a time interval in seconds. If the device was successfully unlocked by
      * biometry within this time interval, then biometric authentication on this context will succeed
      * automatically and the reply block will be called without prompting user for Touch ID or Face ID.
-     * <p>
+     * 
      * The default value is 0, meaning that no previous biometric unlock can be reused.
-     * <p>
+     * 
      * This property is meant only for reusing biometric matches from the device lock screen.
      * It does not allow reusing previous biometric matches in application or between applications.
-     * <p>
+     * 
      * The maximum supported interval is 5 minutes and setting the value beyond 5 minutes does not increase
      * the accepted interval.
-     *
+     * 
      * @see LATouchIDAuthenticationMaximumAllowableReuseDuration
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("touchIDAuthenticationAllowableReuseDuration")
@@ -468,21 +527,23 @@ public class LAContext extends NSObject {
     @Generated
     public interface Block_evaluateAccessControlOperationLocalizedReasonReply {
         @Generated
-        void call_evaluateAccessControlOperationLocalizedReasonReply(boolean success, NSError error);
+        void call_evaluateAccessControlOperationLocalizedReasonReply(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_evaluatePolicyLocalizedReasonReply {
         @Generated
-        void call_evaluatePolicyLocalizedReasonReply(boolean success, NSError error);
+        void call_evaluatePolicyLocalizedReasonReply(boolean success, @Nullable NSError error);
     }
 
     /**
      * Indicates the type of the biometry supported by the device.
-     * <p>
+     * 
      * This property is set when canEvaluatePolicy has been called for a biometric policy.
      * The default value is LABiometryTypeNone.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("biometryType")
@@ -491,14 +552,16 @@ public class LAContext extends NSObject {
 
     /**
      * Allows running authentication in non-interactive mode.
-     * <p>
+     * 
      * If the context is used in a keychain query by the means of kSecUseAuthenticationContext,
      * then setting this property to YES has the same effect as passing kSecUseNoAuthenticationUI
      * in the query, i.e. the keychain call will eventually fail with errSecInteractionNotAllowed
      * instead of displaying the authentication UI.
-     * <p>
+     * 
      * If this property is used with a LocalAuthentication evaluation, it will eventually fail with
      * LAErrorNotInteractive instead of displaying the authentication UI.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("interactionNotAllowed")
@@ -506,25 +569,30 @@ public class LAContext extends NSObject {
 
     /**
      * Allows setting the default localized authentication reason on context.
-     * <p>
+     * 
      * A localized string from this property is displayed in the authentication UI if the caller didn't specify
      * its own authentication reason (e.g. a keychain operation with kSecUseAuthenticationContext). This property
      * is ignored if the authentication reason was provided by caller.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("localizedReason")
     public native String localizedReason();
 
     /**
      * Allows running authentication in non-interactive mode.
-     * <p>
+     * 
      * If the context is used in a keychain query by the means of kSecUseAuthenticationContext,
      * then setting this property to YES has the same effect as passing kSecUseNoAuthenticationUI
      * in the query, i.e. the keychain call will eventually fail with errSecInteractionNotAllowed
      * instead of displaying the authentication UI.
-     * <p>
+     * 
      * If this property is used with a LocalAuthentication evaluation, it will eventually fail with
      * LAErrorNotInteractive instead of displaying the authentication UI.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setInteractionNotAllowed:")
@@ -532,12 +600,14 @@ public class LAContext extends NSObject {
 
     /**
      * Allows setting the default localized authentication reason on context.
-     * <p>
+     * 
      * A localized string from this property is displayed in the authentication UI if the caller didn't specify
      * its own authentication reason (e.g. a keychain operation with kSecUseAuthenticationContext). This property
      * is ignored if the authentication reason was provided by caller.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setLocalizedReason:")
-    public native void setLocalizedReason(String value);
+    public native void setLocalizedReason(@NotNull String value);
 }

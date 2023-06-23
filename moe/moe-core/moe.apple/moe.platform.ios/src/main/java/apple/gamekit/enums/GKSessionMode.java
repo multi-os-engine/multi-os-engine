@@ -20,18 +20,31 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * Specifies how GKSession behaves when it is made available.
+ * 
+ * API-Since: 3.0
+ * Deprecated-Since: 7.0
  */
 @Deprecated
 @Generated
 public final class GKSessionMode {
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     */
     @Deprecated @Generated public static final int Server = 0x00000000;
     /**
      * delegate will get -didReceiveConnectionRequestFromPeer callback when a client wants to connect
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
     @Deprecated @Generated public static final int Client = 0x00000001;
     /**
      * delegate will get -session:peer:didChangeState: callback with GKPeerStateAvailable, or GKPeerStateUnavailable for
      * discovered servers
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
     @Deprecated @Generated public static final int Peer = 0x00000002;
 

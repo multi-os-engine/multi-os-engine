@@ -37,7 +37,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -68,22 +73,25 @@ public class PHObjectChangeDetails<_ObjectType> extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -118,9 +126,10 @@ public class PHObjectChangeDetails<_ObjectType> extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -150,6 +159,8 @@ public class PHObjectChangeDetails<_ObjectType> extends NSObject {
 
     /**
      * YES if the image or video content for this object has been changed
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("assetContentChanged")
@@ -161,20 +172,29 @@ public class PHObjectChangeDetails<_ObjectType> extends NSObject {
 
     /**
      * the object in the state after this change
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("objectAfterChanges")
     public native PHObject objectAfterChanges();
 
     /**
-     * the object in the state before this change (returns the object that was passed in to changeDetailsForObject:)
+     * returns the object that was passed in to changeDetailsForObject: (used to determine the changes to the object vs.
+     * the objectAfterChanges)
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("objectBeforeChanges")
     public native PHObject objectBeforeChanges();
 
     /**
      * YES if the object was deleted
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("objectWasDeleted")

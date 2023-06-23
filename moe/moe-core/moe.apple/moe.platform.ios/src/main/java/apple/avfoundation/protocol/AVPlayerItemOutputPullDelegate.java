@@ -24,10 +24,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] AVPlayerItemOutputPullDelegate
- * <p>
+ * 
  * Defines common delegate methods for objects participating in AVPlayerItemOutput pull sample output acquisition.
  */
 @Generated
@@ -37,32 +38,36 @@ import org.moe.natj.objc.ann.Selector;
 public interface AVPlayerItemOutputPullDelegate {
     /**
      * outputMediaDataWillChange:
-     * <p>
+     * 
      * A method invoked once, prior to a new sample, if the AVPlayerItemOutput sender was previously messaged
      * requestNotificationOfMediaDataChangeWithAdvanceInterval:.
-     * <p>
+     * 
      * This method is invoked once after the sender is messaged
      * requestNotificationOfMediaDataChangeWithAdvanceInterval:.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @IsOptional
     @Selector("outputMediaDataWillChange:")
-    default void outputMediaDataWillChange(AVPlayerItemOutput sender) {
+    default void outputMediaDataWillChange(@NotNull AVPlayerItemOutput sender) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * outputSequenceWasFlushed:
-     * <p>
+     * 
      * A method invoked when the output is commencing a new sequence.
-     * <p>
+     * 
      * This method is invoked after any seeking and change in playback direction. If you are maintaining any queued
      * future samples, copied previously, you may want to discard these after receiving this message.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @IsOptional
     @Selector("outputSequenceWasFlushed:")
-    default void outputSequenceWasFlushed(AVPlayerItemOutput output) {
+    default void outputSequenceWasFlushed(@NotNull AVPlayerItemOutput output) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

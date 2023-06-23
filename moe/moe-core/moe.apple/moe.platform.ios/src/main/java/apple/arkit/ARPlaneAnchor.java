@@ -23,11 +23,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An anchor representing a planar surface in the world.
- * <p>
+ * 
  * Planes are defined in the X and Z direction, where Y is the surface’s normal.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("ARKit")
@@ -67,22 +71,25 @@ public class ARPlaneAnchor extends ARAnchor {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,9 +128,10 @@ public class ARPlaneAnchor extends ARAnchor {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -153,6 +161,8 @@ public class ARPlaneAnchor extends ARAnchor {
 
     /**
      * Classification of the plane.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("classification")
@@ -161,6 +171,8 @@ public class ARPlaneAnchor extends ARAnchor {
 
     /**
      * Classification status of the plane.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("classificationStatus")
@@ -169,21 +181,26 @@ public class ARPlaneAnchor extends ARAnchor {
 
     /**
      * Geometry of the plane in the anchor's coordinate space.
+     * 
+     * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @Selector("geometry")
     public native ARPlaneGeometry geometry();
 
     @Generated
     @Selector("initWithAnchor:")
-    public native ARPlaneAnchor initWithAnchor(ARAnchor anchor);
+    public native ARPlaneAnchor initWithAnchor(@NotNull ARAnchor anchor);
 
     @Generated
     @Selector("initWithCoder:")
-    public native ARPlaneAnchor initWithCoder(NSCoder coder);
+    public native ARPlaneAnchor initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Determines whether plane classification is supported on this device.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("isClassificationSupported")
@@ -198,4 +215,14 @@ public class ARPlaneAnchor extends ARAnchor {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    /**
+     * The extent of the plane in the anchor’s coordinate space.
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @Selector("planeExtent")
+    public native ARPlaneExtent planeExtent();
 }

@@ -26,7 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 /**
  * GLKNamedEffect.h
  * GLKit
- * <p>
+ * 
  * Copyright (c) 2011-2012 Apple Inc. All rights reserved.
  */
 @Generated

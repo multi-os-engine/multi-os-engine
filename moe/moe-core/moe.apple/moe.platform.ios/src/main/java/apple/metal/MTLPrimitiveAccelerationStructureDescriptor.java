@@ -21,9 +21,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Descriptor for a primitive acceleration structure
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Metal")
@@ -55,22 +59,25 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -91,6 +98,7 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
      * Array of geometry descriptors. If motionKeyframeCount is greater than one all geometryDescriptors
      * must be motion versions and have motionKeyframeCount of primitive buffers.
      */
+    @Nullable
     @Generated
     @Selector("geometryDescriptors")
     public native NSArray<? extends MTLAccelerationStructureGeometryDescriptor> geometryDescriptors();
@@ -121,9 +129,10 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -144,7 +153,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
      */
     @Generated
     @Selector("setGeometryDescriptors:")
-    public native void setGeometryDescriptors(NSArray<? extends MTLAccelerationStructureGeometryDescriptor> value);
+    public native void setGeometryDescriptors(
+            @Nullable NSArray<? extends MTLAccelerationStructureGeometryDescriptor> value);
 
     @Generated
     @Selector("setVersion:")
@@ -162,6 +172,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
     /**
      * Motion border mode describing what happens if acceleration structure is sampled after
      * motionEndTime. If not set defaults to MTLMotionBorderModeClamp.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("motionEndBorderMode")
@@ -169,6 +181,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
 
     /**
      * Motion end time of this geometry. If not set defaults to 1.0f.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("motionEndTime")
@@ -176,6 +190,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
 
     /**
      * Motion keyframe count. Is 1 by default which means no motion.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("motionKeyframeCount")
@@ -185,6 +201,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
     /**
      * Motion border mode describing what happens if acceleration structure is sampled before
      * motionStartTime. If not set defaults to MTLMotionBorderModeClamp.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("motionStartBorderMode")
@@ -192,6 +210,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
 
     /**
      * Motion start time of this geometry. If not set defaults to 0.0f.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("motionStartTime")
@@ -200,6 +220,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
     /**
      * Motion border mode describing what happens if acceleration structure is sampled after
      * motionEndTime. If not set defaults to MTLMotionBorderModeClamp.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMotionEndBorderMode:")
@@ -207,6 +229,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
 
     /**
      * Motion end time of this geometry. If not set defaults to 1.0f.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMotionEndTime:")
@@ -214,6 +238,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
 
     /**
      * Motion keyframe count. Is 1 by default which means no motion.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMotionKeyframeCount:")
@@ -222,6 +248,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
     /**
      * Motion border mode describing what happens if acceleration structure is sampled before
      * motionStartTime. If not set defaults to MTLMotionBorderModeClamp.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMotionStartBorderMode:")
@@ -229,6 +257,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
 
     /**
      * Motion start time of this geometry. If not set defaults to 0.0f.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMotionStartTime:")

@@ -39,7 +39,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -70,13 +75,13 @@ public class SCNBillboardConstraint extends SCNConstraint {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * billboardConstraint:
-     * <p>
+     * 
      * Creates and returns a SCNBillboardConstraint constraint.
-     * <p>
+     * 
      * A billboard constraint forces the receiver to look into the direction of the current point of view.
      */
     @Generated
@@ -85,18 +90,21 @@ public class SCNBillboardConstraint extends SCNConstraint {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +139,10 @@ public class SCNBillboardConstraint extends SCNConstraint {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,7 +176,7 @@ public class SCNBillboardConstraint extends SCNConstraint {
 
     /**
      * [@property] freeAxes
-     * <p>
+     * 
      * Specifies the axes on which the billboarding orientation operates. Defaults to SCNBillboardAxisAll.
      */
     @Generated
@@ -181,11 +190,11 @@ public class SCNBillboardConstraint extends SCNConstraint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNBillboardConstraint initWithCoder(NSCoder coder);
+    public native SCNBillboardConstraint initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] freeAxes
-     * <p>
+     * 
      * Specifies the axes on which the billboarding orientation operates. Defaults to SCNBillboardAxisAll.
      */
     @Generated

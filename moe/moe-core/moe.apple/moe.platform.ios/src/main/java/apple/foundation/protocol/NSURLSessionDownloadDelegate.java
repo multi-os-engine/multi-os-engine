@@ -26,10 +26,13 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Messages related to the operation of a task that writes data to a
  * file and notifies the delegate upon completion.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("Foundation")
@@ -44,8 +47,8 @@ public interface NSURLSessionDownloadDelegate extends NSURLSessionTaskDelegate {
      */
     @Generated
     @Selector("URLSession:downloadTask:didFinishDownloadingToURL:")
-    void URLSessionDownloadTaskDidFinishDownloadingToURL(NSURLSession session, NSURLSessionDownloadTask downloadTask,
-            NSURL location);
+    void URLSessionDownloadTaskDidFinishDownloadingToURL(@NotNull NSURLSession session,
+            @NotNull NSURLSessionDownloadTask downloadTask, @NotNull NSURL location);
 
     /**
      * Sent when a download has been resumed. If a download failed with an
@@ -56,8 +59,8 @@ public interface NSURLSessionDownloadDelegate extends NSURLSessionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:downloadTask:didResumeAtOffset:expectedTotalBytes:")
-    default void URLSessionDownloadTaskDidResumeAtOffsetExpectedTotalBytes(NSURLSession session,
-            NSURLSessionDownloadTask downloadTask, long fileOffset, long expectedTotalBytes) {
+    default void URLSessionDownloadTaskDidResumeAtOffsetExpectedTotalBytes(@NotNull NSURLSession session,
+            @NotNull NSURLSessionDownloadTask downloadTask, long fileOffset, long expectedTotalBytes) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -67,9 +70,9 @@ public interface NSURLSessionDownloadDelegate extends NSURLSessionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:downloadTask:didWriteData:totalBytesWritten:totalBytesExpectedToWrite:")
-    default void URLSessionDownloadTaskDidWriteDataTotalBytesWrittenTotalBytesExpectedToWrite(NSURLSession session,
-            NSURLSessionDownloadTask downloadTask, long bytesWritten, long totalBytesWritten,
-            long totalBytesExpectedToWrite) {
+    default void URLSessionDownloadTaskDidWriteDataTotalBytesWrittenTotalBytesExpectedToWrite(
+            @NotNull NSURLSession session, @NotNull NSURLSessionDownloadTask downloadTask, long bytesWritten,
+            long totalBytesWritten, long totalBytesExpectedToWrite) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

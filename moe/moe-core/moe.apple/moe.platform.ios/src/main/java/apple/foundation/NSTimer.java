@@ -36,6 +36,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -67,22 +69,25 @@ public class NSTimer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -117,9 +122,10 @@ public class NSTimer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -134,10 +140,11 @@ public class NSTimer extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @NotNull
     @Generated
     @Selector("scheduledTimerWithTimeInterval:invocation:repeats:")
-    public static native NSTimer scheduledTimerWithTimeIntervalInvocationRepeats(double ti, NSInvocation invocation,
-            boolean yesOrNo);
+    public static native NSTimer scheduledTimerWithTimeIntervalInvocationRepeats(double ti,
+            @NotNull NSInvocation invocation, boolean yesOrNo);
 
     /**
      * Creates and returns a new NSTimer object initialized with the specified block object and schedules it on the
@@ -148,17 +155,21 @@ public class NSTimer extends NSObject {
      * be invalidated after it fires.
      * - parameter: block The execution body of the timer; the timer itself is passed as the parameter to this block
      * when executed to aid in avoiding cyclical references
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("scheduledTimerWithTimeInterval:repeats:block:")
     public static native NSTimer scheduledTimerWithTimeIntervalRepeatsBlock(double interval, boolean repeats,
-            @ObjCBlock(name = "call_scheduledTimerWithTimeIntervalRepeatsBlock") Block_scheduledTimerWithTimeIntervalRepeatsBlock block);
+            @NotNull @ObjCBlock(name = "call_scheduledTimerWithTimeIntervalRepeatsBlock") Block_scheduledTimerWithTimeIntervalRepeatsBlock block);
 
+    @NotNull
     @Generated
     @Selector("scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:")
     public static native NSTimer scheduledTimerWithTimeIntervalTargetSelectorUserInfoRepeats(double ti,
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object userInfo, boolean yesOrNo);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object userInfo, boolean yesOrNo);
 
     @Generated
     @Selector("setVersion:")
@@ -168,9 +179,10 @@ public class NSTimer extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("timerWithTimeInterval:invocation:repeats:")
-    public static native NSTimer timerWithTimeIntervalInvocationRepeats(double ti, NSInvocation invocation,
+    public static native NSTimer timerWithTimeIntervalInvocationRepeats(double ti, @NotNull NSInvocation invocation,
             boolean yesOrNo);
 
     /**
@@ -182,17 +194,21 @@ public class NSTimer extends NSObject {
      * be invalidated after it fires.
      * - parameter: block The execution body of the timer; the timer itself is passed as the parameter to this block
      * when executed to aid in avoiding cyclical references
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("timerWithTimeInterval:repeats:block:")
     public static native NSTimer timerWithTimeIntervalRepeatsBlock(double interval, boolean repeats,
-            @ObjCBlock(name = "call_timerWithTimeIntervalRepeatsBlock") Block_timerWithTimeIntervalRepeatsBlock block);
+            @NotNull @ObjCBlock(name = "call_timerWithTimeIntervalRepeatsBlock") Block_timerWithTimeIntervalRepeatsBlock block);
 
+    @NotNull
     @Generated
     @Selector("timerWithTimeInterval:target:selector:userInfo:repeats:")
     public static native NSTimer timerWithTimeIntervalTargetSelectorUserInfoRepeats(double ti,
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object userInfo, boolean yesOrNo);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object userInfo, boolean yesOrNo);
 
     @Generated
     @Selector("version")
@@ -203,6 +219,7 @@ public class NSTimer extends NSObject {
     @Selector("fire")
     public native void fire();
 
+    @NotNull
     @Generated
     @Selector("fireDate")
     public native NSDate fireDate();
@@ -221,16 +238,19 @@ public class NSTimer extends NSObject {
      * be invalidated after it fires.
      * - parameter: block The execution body of the timer; the timer itself is passed as the parameter to this block
      * when executed to aid in avoiding cyclical references
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithFireDate:interval:repeats:block:")
-    public native NSTimer initWithFireDateIntervalRepeatsBlock(NSDate date, double interval, boolean repeats,
-            @ObjCBlock(name = "call_initWithFireDateIntervalRepeatsBlock") Block_initWithFireDateIntervalRepeatsBlock block);
+    public native NSTimer initWithFireDateIntervalRepeatsBlock(@NotNull NSDate date, double interval, boolean repeats,
+            @NotNull @ObjCBlock(name = "call_initWithFireDateIntervalRepeatsBlock") Block_initWithFireDateIntervalRepeatsBlock block);
 
     @Generated
     @Selector("initWithFireDate:interval:target:selector:userInfo:repeats:")
-    public native NSTimer initWithFireDateIntervalTargetSelectorUserInfoRepeats(NSDate date, double ti,
-            @Mapped(ObjCObjectMapper.class) Object t, SEL s, @Mapped(ObjCObjectMapper.class) Object ui, boolean rep);
+    public native NSTimer initWithFireDateIntervalTargetSelectorUserInfoRepeats(@NotNull NSDate date, double ti,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object t, @NotNull SEL s,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object ui, boolean rep);
 
     @Generated
     @Selector("invalidate")
@@ -242,7 +262,7 @@ public class NSTimer extends NSObject {
 
     @Generated
     @Selector("setFireDate:")
-    public native void setFireDate(NSDate value);
+    public native void setFireDate(@NotNull NSDate value);
 
     /**
      * Setting a tolerance for a timer allows it to fire later than the scheduled fire date, improving the ability of
@@ -256,6 +276,8 @@ public class NSTimer extends NSObject {
      * general rule of thumb, though, is to set the tolerance to at least 10% of the interval, for a repeating timer.
      * Even a small amount of tolerance will have a significant positive impact on the power usage of your application.
      * The system may put a maximum value of the tolerance.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setTolerance:")
@@ -277,11 +299,14 @@ public class NSTimer extends NSObject {
      * general rule of thumb, though, is to set the tolerance to at least 10% of the interval, for a repeating timer.
      * Even a small amount of tolerance will have a significant positive impact on the power usage of your application.
      * The system may put a maximum value of the tolerance.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("tolerance")
     public native double tolerance();
 
+    @Nullable
     @Generated
     @Selector("userInfo")
     @MappedReturn(ObjCObjectMapper.class)
@@ -291,20 +316,20 @@ public class NSTimer extends NSObject {
     @Generated
     public interface Block_initWithFireDateIntervalRepeatsBlock {
         @Generated
-        void call_initWithFireDateIntervalRepeatsBlock(NSTimer timer);
+        void call_initWithFireDateIntervalRepeatsBlock(@NotNull NSTimer timer);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_scheduledTimerWithTimeIntervalRepeatsBlock {
         @Generated
-        void call_scheduledTimerWithTimeIntervalRepeatsBlock(NSTimer timer);
+        void call_scheduledTimerWithTimeIntervalRepeatsBlock(@NotNull NSTimer timer);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_timerWithTimeIntervalRepeatsBlock {
         @Generated
-        void call_timerWithTimeIntervalRepeatsBlock(NSTimer timer);
+        void call_timerWithTimeIntervalRepeatsBlock(@NotNull NSTimer timer);
     }
 }

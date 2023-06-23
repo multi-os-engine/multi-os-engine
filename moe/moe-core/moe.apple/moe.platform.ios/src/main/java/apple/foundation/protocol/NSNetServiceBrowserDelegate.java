@@ -27,7 +27,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -41,8 +45,8 @@ public interface NSNetServiceBrowserDelegate {
     @Generated
     @IsOptional
     @Selector("netServiceBrowser:didFindDomain:moreComing:")
-    default void netServiceBrowserDidFindDomainMoreComing(NSNetServiceBrowser browser, String domainString,
-            boolean moreComing) {
+    default void netServiceBrowserDidFindDomainMoreComing(@NotNull NSNetServiceBrowser browser,
+            @NotNull String domainString, boolean moreComing) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -54,8 +58,8 @@ public interface NSNetServiceBrowserDelegate {
     @Generated
     @IsOptional
     @Selector("netServiceBrowser:didFindService:moreComing:")
-    default void netServiceBrowserDidFindServiceMoreComing(NSNetServiceBrowser browser, NSNetService service,
-            boolean moreComing) {
+    default void netServiceBrowserDidFindServiceMoreComing(@NotNull NSNetServiceBrowser browser,
+            @NotNull NSNetService service, boolean moreComing) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,8 +72,8 @@ public interface NSNetServiceBrowserDelegate {
     @Generated
     @IsOptional
     @Selector("netServiceBrowser:didNotSearch:")
-    default void netServiceBrowserDidNotSearch(NSNetServiceBrowser browser,
-            NSDictionary<String, ? extends NSNumber> errorDict) {
+    default void netServiceBrowserDidNotSearch(@NotNull NSNetServiceBrowser browser,
+            @NotNull NSDictionary<String, ? extends NSNumber> errorDict) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,8 +83,8 @@ public interface NSNetServiceBrowserDelegate {
     @Generated
     @IsOptional
     @Selector("netServiceBrowser:didRemoveDomain:moreComing:")
-    default void netServiceBrowserDidRemoveDomainMoreComing(NSNetServiceBrowser browser, String domainString,
-            boolean moreComing) {
+    default void netServiceBrowserDidRemoveDomainMoreComing(@NotNull NSNetServiceBrowser browser,
+            @NotNull String domainString, boolean moreComing) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -90,8 +94,8 @@ public interface NSNetServiceBrowserDelegate {
     @Generated
     @IsOptional
     @Selector("netServiceBrowser:didRemoveService:moreComing:")
-    default void netServiceBrowserDidRemoveServiceMoreComing(NSNetServiceBrowser browser, NSNetService service,
-            boolean moreComing) {
+    default void netServiceBrowserDidRemoveServiceMoreComing(@NotNull NSNetServiceBrowser browser,
+            @NotNull NSNetService service, boolean moreComing) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -102,7 +106,7 @@ public interface NSNetServiceBrowserDelegate {
     @Generated
     @IsOptional
     @Selector("netServiceBrowserDidStopSearch:")
-    default void netServiceBrowserDidStopSearch(NSNetServiceBrowser browser) {
+    default void netServiceBrowserDidStopSearch(@NotNull NSNetServiceBrowser browser) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -114,7 +118,7 @@ public interface NSNetServiceBrowserDelegate {
     @Generated
     @IsOptional
     @Selector("netServiceBrowserWillSearch:")
-    default void netServiceBrowserWillSearch(NSNetServiceBrowser browser) {
+    default void netServiceBrowserWillSearch(@NotNull NSNetServiceBrowser browser) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

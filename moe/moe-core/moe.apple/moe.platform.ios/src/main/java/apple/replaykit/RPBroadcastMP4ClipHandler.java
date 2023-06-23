@@ -40,13 +40,20 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * RPBroadcastMP4ClipHandler
- * <p>
+ * 
  * Subclass this class to handle movie clips as they are recorded by ReplayKit during the broadcast flow. ReplayKit will
  * call processMP4ClipWithURL when a movie clip is available for processing.
+ * 
+ * API-Since: 10.0
+ * Deprecated-Since: 11.0
+ * Deprecated-Message: No longer supported, use RPBroadcastSampleHandler instead.
  */
+@Deprecated
 @Generated
 @Library("ReplayKit")
 @Runtime(ObjCRuntime.class)
@@ -77,22 +84,25 @@ public class RPBroadcastMP4ClipHandler extends RPBroadcastHandler {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +137,10 @@ public class RPBroadcastMP4ClipHandler extends RPBroadcastHandler {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,7 +170,7 @@ public class RPBroadcastMP4ClipHandler extends RPBroadcastHandler {
 
     /**
      * Method that should be called when processing is complete.
-     *
+     * 
      * @param broadcastConfiguration Optional updated configuration that will be applied to the next MP4 clip.
      * @param error                  Optional error to communicate to ReplayKit and the host application that there was
      *                               an issue with the broadcast and to stop broadcasting. Note that once this is
@@ -169,7 +180,7 @@ public class RPBroadcastMP4ClipHandler extends RPBroadcastHandler {
     @Generated
     @Selector("finishedProcessingMP4ClipWithUpdatedBroadcastConfiguration:error:")
     public native void finishedProcessingMP4ClipWithUpdatedBroadcastConfigurationError(
-            RPBroadcastConfiguration broadcastConfiguration, NSError error);
+            @Nullable RPBroadcastConfiguration broadcastConfiguration, @Nullable NSError error);
 
     @Generated
     @Selector("init")
@@ -177,7 +188,7 @@ public class RPBroadcastMP4ClipHandler extends RPBroadcastHandler {
 
     /**
      * Method which ReplayKit will call when an MP4 movie clip is ready for processing.
-     *
+     * 
      * @param mp4ClipURL URL that points to the location of the movie clip recorded by ReplayKit. Note that the URL may
      *                   be nil in certain cases such as an error.
      * @param setupInfo  Dictionary supplied by the UI extension that may contain setup information required for
@@ -186,6 +197,6 @@ public class RPBroadcastMP4ClipHandler extends RPBroadcastHandler {
      */
     @Generated
     @Selector("processMP4ClipWithURL:setupInfo:finished:")
-    public native void processMP4ClipWithURLSetupInfoFinished(NSURL mp4ClipURL,
-            NSDictionary<String, ? extends NSObject> setupInfo, boolean finished);
+    public native void processMP4ClipWithURLSetupInfoFinished(@Nullable NSURL mp4ClipURL,
+            @Nullable NSDictionary<String, ? extends NSObject> setupInfo, boolean finished);
 }

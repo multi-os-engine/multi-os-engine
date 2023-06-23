@@ -23,11 +23,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] TKTokenKeychainKey
- * <p>
+ * 
  * Interface for propagation token's keys into the keychain.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CryptoTokenKit")
@@ -60,13 +64,14 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
     /**
      * Represents private tag data. The property is an equivalent to kSecAttrApplicationTag in SecItem.h
      */
+    @Nullable
     @Generated
     @Selector("applicationTag")
     public native NSData applicationTag();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Indicates whether this key can be used to decrypt data. The property is an equivalent to kSecAttrCanDecrypt in
@@ -93,18 +98,21 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,12 +141,12 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
      */
     @Generated
     @Selector("initWithCertificate:objectID:")
-    public native TKTokenKeychainKey initWithCertificateObjectID(SecCertificateRef certificateRef,
-            @Mapped(ObjCObjectMapper.class) Object objectID);
+    public native TKTokenKeychainKey initWithCertificateObjectID(@Nullable SecCertificateRef certificateRef,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object objectID);
 
     @Generated
     @Selector("initWithObjectID:")
-    public native TKTokenKeychainKey initWithObjectID(@Mapped(ObjCObjectMapper.class) Object objectID);
+    public native TKTokenKeychainKey initWithObjectID(@NotNull @Mapped(ObjCObjectMapper.class) Object objectID);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -164,9 +172,10 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
     @Selector("isSuitableForLogin")
     public native boolean isSuitableForLogin();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Indicates the number of bits in this key. The property is an equivalent to kSecAttrKeySizeInBits in SecItem.h
@@ -180,6 +189,7 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
      * Type of the key, currently kSecAttrKeyTypeRSA and kSecAttrKeyTypeECSECPrimeRandom is supported). The property is
      * an equivalent to kSecAttrKeyType in SecItem.h
      */
+    @NotNull
     @Generated
     @Selector("keyType")
     public native String keyType();
@@ -192,6 +202,7 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
     /**
      * Contains raw public key data for this private key.
      */
+    @Nullable
     @Generated
     @Selector("publicKeyData")
     public native NSData publicKeyData();
@@ -199,6 +210,7 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
     /**
      * SHA1 hash of the raw public key. The property is an equivalent to kSecAttrApplicationLabel in SecItem.h
      */
+    @Nullable
     @Generated
     @Selector("publicKeyHash")
     public native NSData publicKeyHash();
@@ -216,7 +228,7 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
      */
     @Generated
     @Selector("setApplicationTag:")
-    public native void setApplicationTag(NSData value);
+    public native void setApplicationTag(@Nullable NSData value);
 
     /**
      * Indicates whether this key can be used to decrypt data. The property is an equivalent to kSecAttrCanDecrypt in
@@ -254,21 +266,21 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
      */
     @Generated
     @Selector("setKeyType:")
-    public native void setKeyType(String value);
+    public native void setKeyType(@NotNull String value);
 
     /**
      * Contains raw public key data for this private key.
      */
     @Generated
     @Selector("setPublicKeyData:")
-    public native void setPublicKeyData(NSData value);
+    public native void setPublicKeyData(@Nullable NSData value);
 
     /**
      * SHA1 hash of the raw public key. The property is an equivalent to kSecAttrApplicationLabel in SecItem.h
      */
     @Generated
     @Selector("setPublicKeyHash:")
-    public native void setPublicKeyHash(NSData value);
+    public native void setPublicKeyHash(@Nullable NSData value);
 
     /**
      * Indicates whether this key can be used for login in to the system.

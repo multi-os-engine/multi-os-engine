@@ -27,20 +27,21 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] NSURLConnectionDelegate
- * <p>
+ * 
  * Delegate methods that are common to all forms of
  * NSURLConnection. These are all optional. This
  * protocol should be considered a base class for the
  * NSURLConnectionDataDelegate and
  * NSURLConnectionDownloadDelegate protocols.
- * <p>
+ * 
  * connection:didFailWithError: will be called at
  * most once, if an error occurs during a resource
  * load. No other callbacks will be made after.<p>
- * <p>
+ * 
  * connectionShouldUseCredentialStorage: will be
  * called at most once, before a resource load begins
  * (which means it may be called during construction
@@ -50,7 +51,7 @@ import org.moe.natj.objc.ann.Selector;
  * authentication challenges. Regardless of the
  * result, the authentication challenge methods may
  * still be called.
- * <p>
+ * 
  * connection:willSendRequestForAuthenticationChallenge:
  * is the preferred (Mac OS X 10.7 and iOS 5.0 or
  * later) mechanism for responding to authentication
@@ -58,67 +59,84 @@ import org.moe.natj.objc.ann.Selector;
  * <Foundation/NSURLAuthenticationChallenge.h> for
  * more information on dealing with the various types
  * of authentication challenges.
- * <p>
+ * 
  * connection:canAuthenticateAgainstProtectionSpace:
- * connection:didReciveAuthenticationChallenge:
+ * connection:didReceiveAuthenticationChallenge:
  * connection:didCancelAuthenticationChallenge: are
- * deprected and new code should adopt
+ * deprecated and new code should adopt
  * connection:willSendRequestForAuthenticationChallenge.
  * The older delegates will still be called for
- * compatability, but incur more latency in dealing
+ * compatibility, but incur more latency in dealing
  * with the authentication challenge.
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSURLConnectionDelegate")
 public interface NSURLConnectionDelegate {
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use -connection:willSendRequestForAuthenticationChallenge: instead.
+     */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("connection:canAuthenticateAgainstProtectionSpace:")
-    default boolean connectionCanAuthenticateAgainstProtectionSpace(NSURLConnection connection,
-            NSURLProtectionSpace protectionSpace) {
+    default boolean connectionCanAuthenticateAgainstProtectionSpace(@NotNull NSURLConnection connection,
+            @NotNull NSURLProtectionSpace protectionSpace) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use -connection:willSendRequestForAuthenticationChallenge: instead.
+     */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("connection:didCancelAuthenticationChallenge:")
-    default void connectionDidCancelAuthenticationChallenge(NSURLConnection connection,
-            NSURLAuthenticationChallenge challenge) {
+    default void connectionDidCancelAuthenticationChallenge(@NotNull NSURLConnection connection,
+            @NotNull NSURLAuthenticationChallenge challenge) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("connection:didFailWithError:")
-    default void connectionDidFailWithError(NSURLConnection connection, NSError error) {
+    default void connectionDidFailWithError(@NotNull NSURLConnection connection, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use -connection:willSendRequestForAuthenticationChallenge: instead.
+     */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("connection:didReceiveAuthenticationChallenge:")
-    default void connectionDidReceiveAuthenticationChallenge(NSURLConnection connection,
-            NSURLAuthenticationChallenge challenge) {
+    default void connectionDidReceiveAuthenticationChallenge(@NotNull NSURLConnection connection,
+            @NotNull NSURLAuthenticationChallenge challenge) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("connection:willSendRequestForAuthenticationChallenge:")
-    default void connectionWillSendRequestForAuthenticationChallenge(NSURLConnection connection,
-            NSURLAuthenticationChallenge challenge) {
+    default void connectionWillSendRequestForAuthenticationChallenge(@NotNull NSURLConnection connection,
+            @NotNull NSURLAuthenticationChallenge challenge) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("connectionShouldUseCredentialStorage:")
-    default boolean connectionShouldUseCredentialStorage(NSURLConnection connection) {
+    default boolean connectionShouldUseCredentialStorage(@NotNull NSURLConnection connection) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

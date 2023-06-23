@@ -4,11 +4,11 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] AudioSettingsFlags
- * <p>
+ * 
  * Constants to be used with kAudioSettings_Hint
  * in the kAudioCodecPropertySettings property dictionary.
  * Indicates any special characteristics of each parameter within the dictionary,
- * <p>
+ * 
  * [@constant] kAudioSettingsFlags_ExpertParameter
  * If set, then the parameter is an expert parameter.
  * [@constant] kAudioSettingsFlags_InvisibleParameter

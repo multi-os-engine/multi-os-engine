@@ -39,11 +39,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSURLProtectionSpace
- * <p>
+ * 
  * This class represents a protection space requiring authentication.
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("Foundation")
@@ -75,22 +79,25 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +132,10 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,39 +169,45 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
 
     /**
      * Get the authentication method to be used for this protection space
-     *
+     * 
      * @return The authentication method
      */
+    @NotNull
     @Generated
     @Selector("authenticationMethod")
     public native String authenticationMethod();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Returns an array of acceptable certificate issuing authorities for client certification authentication. Issuers
      * are identified by their distinguished name and returned as a DER encoded data.
-     *
+     * 
      * @return An array of NSData objects. (Nil if the authenticationMethod is not
      *         NSURLAuthenticationMethodClientCertificate)
+     * 
+     *         API-Since: 3.0
      */
+    @Nullable
     @Generated
     @Selector("distinguishedNames")
     public native NSArray<? extends NSData> distinguishedNames();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Get the proxy host if this is a proxy authentication, or the host from the URL.
-     *
+     * 
      * @return The host for this protection space.
      */
+    @NotNull
     @Generated
     @Selector("host")
     public native String host();
@@ -204,16 +218,16 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSURLProtectionSpace initWithCoder(NSCoder coder);
+    public native NSURLProtectionSpace initWithCoder(@NotNull NSCoder coder);
 
     /**
      * initWithHost:port:protocol:realm:authenticationMethod:
-     * <p>
+     * 
      * Initialize a protection space representing an origin server, or a realm on one
-     *
+     * 
      * @param host                 The hostname of the server
      * @param port                 The port for the server
-     * @param protocol             The sprotocol for this server - e.g. "http", "ftp", "https"
+     * @param protocol             The protocol for this server - e.g. "http", "ftp", "https"
      * @param realm                A string indicating a protocol-specific subdivision
      *                             of a single host. For http and https, this maps to the realm
      *                             string in http authentication challenges. For many other protocols
@@ -224,14 +238,14 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
      */
     @Generated
     @Selector("initWithHost:port:protocol:realm:authenticationMethod:")
-    public native NSURLProtectionSpace initWithHostPortProtocolRealmAuthenticationMethod(String host, @NInt long port,
-            String protocol, String realm, String authenticationMethod);
+    public native NSURLProtectionSpace initWithHostPortProtocolRealmAuthenticationMethod(@NotNull String host,
+            @NInt long port, @Nullable String protocol, @Nullable String realm, @Nullable String authenticationMethod);
 
     /**
      * initWithProxyHost:port:type:realm:authenticationMethod:
-     * <p>
+     * 
      * Initialize a protection space representing a proxy server, or a realm on one
-     *
+     * 
      * @param host                 The hostname of the proxy server
      * @param port                 The port for the proxy server
      * @param type                 The type of proxy - e.g. "http", "ftp", "SOCKS"
@@ -245,12 +259,12 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
      */
     @Generated
     @Selector("initWithProxyHost:port:type:realm:authenticationMethod:")
-    public native NSURLProtectionSpace initWithProxyHostPortTypeRealmAuthenticationMethod(String host, @NInt long port,
-            String type, String realm, String authenticationMethod);
+    public native NSURLProtectionSpace initWithProxyHostPortTypeRealmAuthenticationMethod(@NotNull String host,
+            @NInt long port, @Nullable String type, @Nullable String realm, @Nullable String authenticationMethod);
 
     /**
      * Determine if this authenticating protection space is a proxy server
-     *
+     * 
      * @return YES if a proxy, NO otherwise
      */
     @Generated
@@ -259,7 +273,7 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
 
     /**
      * Get the proxy port if this is a proxy authentication, or the port from the URL.
-     *
+     * 
      * @return The port for this protection space, or 0 if not set.
      */
     @Generated
@@ -269,18 +283,20 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
 
     /**
      * Get the protocol of this protection space, if not a proxy
-     *
+     * 
      * @return The type string, or nil if a proxy.
      */
+    @Nullable
     @Generated
     @Selector("protocol")
     public native String protocol();
 
     /**
      * Get the type of this protection space, if a proxy
-     *
+     * 
      * @return The type string, or nil if not a proxy.
      */
+    @Nullable
     @Generated
     @Selector("proxyType")
     public native String proxyType();
@@ -288,19 +304,20 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
     /**
      * Get the authentication realm for which the protection space that
      * needs authentication
-     * <p>
+     * 
      * This is generally only available for http
      * authentication, and may be nil otherwise.
-     *
+     * 
      * @return The realm string
      */
+    @Nullable
     @Generated
     @Selector("realm")
     public native String realm();
 
     /**
      * Determine if the password for this protection space can be sent securely
-     *
+     * 
      * @return YES if a secure authentication method or protocol will be used, NO otherwise
      */
     @Generated
@@ -309,10 +326,13 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
 
     /**
      * Returns a SecTrustRef which represents the state of the servers SSL transaction state
-     *
+     * 
      * @return A SecTrustRef from Security.framework. (Nil if the authenticationMethod is not
      *         NSURLAuthenticationMethodServerTrust)
+     * 
+     *         API-Since: 3.0
      */
+    @Nullable
     @Generated
     @Selector("serverTrust")
     public native SecTrustRef serverTrust();

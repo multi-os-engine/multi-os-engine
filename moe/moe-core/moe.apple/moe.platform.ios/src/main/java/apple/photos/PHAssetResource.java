@@ -37,7 +37,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -66,32 +71,43 @@ public class PHAssetResource extends NSObject {
     @Selector("allocWithZone:")
     public static native PHAssetResource allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("assetResourcesForAsset:")
-    public static native NSArray<? extends PHAssetResource> assetResourcesForAsset(PHAsset asset);
+    public static native NSArray<? extends PHAssetResource> assetResourcesForAsset(@NotNull PHAsset asset);
 
+    /**
+     * API-Since: 9.1
+     */
+    @NotNull
     @Generated
     @Selector("assetResourcesForLivePhoto:")
-    public static native NSArray<? extends PHAssetResource> assetResourcesForLivePhoto(PHLivePhoto livePhoto);
+    public static native NSArray<? extends PHAssetResource> assetResourcesForLivePhoto(@NotNull PHLivePhoto livePhoto);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +142,10 @@ public class PHAssetResource extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,6 +173,10 @@ public class PHAssetResource extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("assetLocalIdentifier")
     public native String assetLocalIdentifier();
@@ -164,16 +185,43 @@ public class PHAssetResource extends NSObject {
     @Selector("init")
     public native PHAssetResource init();
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("originalFilename")
     public native String originalFilename();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("type")
     @NInt
     public native long type();
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("uniformTypeIdentifier")
     public native String uniformTypeIdentifier();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("pixelHeight")
+    @NInt
+    public native long pixelHeight();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("pixelWidth")
+    @NInt
+    public native long pixelWidth();
 }

@@ -39,10 +39,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Relationships represent references to other objects. They usually come in pairs, where the reference back is called
  * the "inverse".
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("CoreData")
@@ -74,22 +78,25 @@ public class NSRelationshipDescription extends NSPropertyDescription {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +131,10 @@ public class NSRelationshipDescription extends NSPropertyDescription {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,6 +167,7 @@ public class NSRelationshipDescription extends NSPropertyDescription {
     @NUInt
     public native long deleteRule();
 
+    @Nullable
     @Generated
     @Selector("destinationEntity")
     public native NSEntityDescription destinationEntity();
@@ -169,16 +178,23 @@ public class NSRelationshipDescription extends NSPropertyDescription {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSRelationshipDescription initWithCoder(NSCoder coder);
+    public native NSRelationshipDescription initWithCoder(@NotNull NSCoder coder);
 
+    @Nullable
     @Generated
     @Selector("inverseRelationship")
     public native NSRelationshipDescription inverseRelationship();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("isOrdered")
     public native boolean isOrdered();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setOrdered:")
     public native void setOrdered(boolean value);
@@ -212,10 +228,10 @@ public class NSRelationshipDescription extends NSPropertyDescription {
 
     @Generated
     @Selector("setDestinationEntity:")
-    public native void setDestinationEntity_unsafe(NSEntityDescription value);
+    public native void setDestinationEntity_unsafe(@Nullable NSEntityDescription value);
 
     @Generated
-    public void setDestinationEntity(NSEntityDescription value) {
+    public void setDestinationEntity(@Nullable NSEntityDescription value) {
         Object __old = destinationEntity();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -228,10 +244,10 @@ public class NSRelationshipDescription extends NSPropertyDescription {
 
     @Generated
     @Selector("setInverseRelationship:")
-    public native void setInverseRelationship_unsafe(NSRelationshipDescription value);
+    public native void setInverseRelationship_unsafe(@Nullable NSRelationshipDescription value);
 
     @Generated
-    public void setInverseRelationship(NSRelationshipDescription value) {
+    public void setInverseRelationship(@Nullable NSRelationshipDescription value) {
         Object __old = inverseRelationship();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -260,7 +276,10 @@ public class NSRelationshipDescription extends NSPropertyDescription {
      * Returns the version hash for the relationship. This value includes the versionHash information from the
      * NSPropertyDescription superclass, the name of the destination entity and the inverse relationship, and the min
      * and max count.
+     * 
+     * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("versionHash")
     public native NSData versionHash();

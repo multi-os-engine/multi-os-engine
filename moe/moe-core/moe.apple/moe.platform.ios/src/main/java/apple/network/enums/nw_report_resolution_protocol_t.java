@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_report_resolution_protocol_t
- * <p>
+ * 
  * The protocol used for endpoint resolution.
  */
 @Generated

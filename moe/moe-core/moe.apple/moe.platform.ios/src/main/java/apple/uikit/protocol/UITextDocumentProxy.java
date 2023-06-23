@@ -27,6 +27,8 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -37,10 +39,12 @@ public interface UITextDocumentProxy extends UIKeyInput {
     @Selector("adjustTextPositionByCharacterOffset:")
     void adjustTextPositionByCharacterOffset(@NInt long offset);
 
+    @Nullable
     @Generated
     @Selector("documentContextAfterInput")
     String documentContextAfterInput();
 
+    @Nullable
     @Generated
     @Selector("documentContextBeforeInput")
     String documentContextBeforeInput();
@@ -49,15 +53,26 @@ public interface UITextDocumentProxy extends UIKeyInput {
      * An app can store UITextInputMode in its document context, when user switches to the document, the host will pass
      * the inputMode as documentInputMode to the UIInputViewController,
      * which can switch to the inputMode and set primaryLanguage if it supports it.
+     * 
+     * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("documentInputMode")
     UITextInputMode documentInputMode();
 
+    /**
+     * API-Since: 11.0
+     */
+    @NotNull
     @Generated
     @Selector("documentIdentifier")
     NSUUID documentIdentifier();
 
+    /**
+     * API-Since: 11.0
+     */
+    @Nullable
     @Generated
     @Selector("selectedText")
     String selectedText();
@@ -65,13 +80,17 @@ public interface UITextDocumentProxy extends UIKeyInput {
     /**
      * Setting marked text either replaces the existing marked text or, if none is present, inserts it in place of the
      * current input location.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setMarkedText:selectedRange:")
-    void setMarkedTextSelectedRange(String markedText, @ByValue NSRange selectedRange);
+    void setMarkedTextSelectedRange(@NotNull String markedText, @ByValue NSRange selectedRange);
 
     /**
      * Unmark the currently marked text.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("unmarkText")

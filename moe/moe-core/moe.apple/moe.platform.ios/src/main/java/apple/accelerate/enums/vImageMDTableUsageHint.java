@@ -23,7 +23,13 @@ import org.moe.natj.general.ann.Generated;
  */
 @Generated
 public final class vImageMDTableUsageHint {
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int kvImageMDTableHint_16Q12 = 0x00000001;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int kvImageMDTableHint_Float = 0x00000002;
 
     @Generated

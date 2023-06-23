@@ -26,7 +26,11 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -34,52 +38,54 @@ import org.moe.natj.objc.ann.Selector;
 public interface INGetRestaurantGuestIntentHandling {
     /**
      * Confirmation method - Validate that this intent is ready for the next step (i.e. handling)
-     * <p>
+     * 
      * These methods are called prior to asking the app to handle the intent. The app should return a response object
      * that contains additional information about the intent, which may be relevant for the system to show the user
      * prior to handling. If unimplemented, the system will assume the intent is valid following resolution, and will
      * assume there is no additional information relevant to this intent.
-     *
+     * 
      * @param guestIntent The input intent
      * @param completion  The response block contains an INGetRestaurantGuestIntentResponse containing additional
      *                    details about the intent that may be relevant for the system to show the user prior to
      *                    handling.
+     * 
      * @see INGetRestaurantGuestIntentResponse
      */
     @Generated
     @IsOptional
     @Selector("confirmGetRestaurantGuest:completion:")
-    default void confirmGetRestaurantGuestCompletion(INGetRestaurantGuestIntent guestIntent,
-            @ObjCBlock(name = "call_confirmGetRestaurantGuestCompletion") Block_confirmGetRestaurantGuestCompletion completion) {
+    default void confirmGetRestaurantGuestCompletion(@NotNull INGetRestaurantGuestIntent guestIntent,
+            @NotNull @ObjCBlock(name = "call_confirmGetRestaurantGuestCompletion") Block_confirmGetRestaurantGuestCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Handling method - Execute the task represented by the INGetRestaurantGuestIntent that's passed in
-     * <p>
+     * 
      * This method is called to actually execute the intent, the app must return a response for this intent and an
      * NSUserActivity capturing the state that the app must be restored to at the end of handling this intent
-     *
+     * 
      * @param intent     The input intent
      * @param completion The response handling block to invoke with the response to handling the intent.
+     * 
      * @see INGetRestaurantGuestIntentResponse
      */
     @Generated
     @Selector("handleGetRestaurantGuest:completion:")
-    void handleGetRestaurantGuestCompletion(INGetRestaurantGuestIntent intent,
-            @ObjCBlock(name = "call_handleGetRestaurantGuestCompletion") Block_handleGetRestaurantGuestCompletion completion);
+    void handleGetRestaurantGuestCompletion(@NotNull INGetRestaurantGuestIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleGetRestaurantGuestCompletion") Block_handleGetRestaurantGuestCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_confirmGetRestaurantGuestCompletion {
         @Generated
-        void call_confirmGetRestaurantGuestCompletion(INGetRestaurantGuestIntentResponse response);
+        void call_confirmGetRestaurantGuestCompletion(@NotNull INGetRestaurantGuestIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleGetRestaurantGuestCompletion {
         @Generated
-        void call_handleGetRestaurantGuestCompletion(INGetRestaurantGuestIntentResponse response);
+        void call_handleGetRestaurantGuestCompletion(@NotNull INGetRestaurantGuestIntentResponse response);
     }
 }

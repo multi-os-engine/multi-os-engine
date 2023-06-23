@@ -24,11 +24,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCTensorDescriptor
- * <p>
+ * 
  * The MLCTensorDescriptor specifies a tensor descriptor.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -60,47 +64,52 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] batchSizePerSequenceStep
-     * <p>
+     * 
      * The batch size for each sequence
-     * <p>
+     * 
      * We populate this only when sequenceLengths is valid. The length of this array should be
      * the maximum sequence length in sequenceLengths (i.e sequenceLengths[0]).
      */
+    @Nullable
     @Generated
     @Selector("batchSizePerSequenceStep")
     public native NSArray<? extends NSNumber> batchSizePerSequenceStep();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * Create a MLCTensorDescriptor object
-     * <p>
+     * 
      * This method is provided as an easy to use API to create a bias tensor.
-     *
+     * 
      * @param featureChannelCount The number of input feature channels
      * @param dataType            The tensor data type
      * @return A new MLCTensorDescriptor object or nil if failure.
      */
+    @Nullable
     @Generated
     @Selector("convolutionBiasesDescriptorWithFeatureChannelCount:dataType:")
     public static native MLCTensorDescriptor convolutionBiasesDescriptorWithFeatureChannelCountDataType(
@@ -108,14 +117,15 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensorDescriptor object
-     * <p>
+     * 
      * This method is provided as an easy to use API to create a weight tensor for a kernel of size 1.
-     *
+     * 
      * @param inputFeatureChannelCount  The number of input feature channels
      * @param outputFeatureChannelCount The number of output feature channels
      * @param dataType                  The tensor data type
      * @return A new MLCTensorDescriptor object or nil if failure.
      */
+    @Nullable
     @Generated
     @Selector("convolutionWeightsDescriptorWithInputFeatureChannelCount:outputFeatureChannelCount:dataType:")
     public static native MLCTensorDescriptor convolutionWeightsDescriptorWithInputFeatureChannelCountOutputFeatureChannelCountDataType(
@@ -123,9 +133,9 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensorDescriptor object
-     * <p>
+     * 
      * This method is provided as an easy to use API to create a weight tensor.
-     *
+     * 
      * @param width                     The tensor width
      * @param height                    The tensor height
      * @param inputFeatureChannelCount  The number of input feature channels
@@ -133,21 +143,23 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      * @param dataType                  The tensor data type
      * @return A new MLCTensorDescriptor object or nil if failure.
      */
+    @Nullable
     @Generated
     @Selector("convolutionWeightsDescriptorWithWidth:height:inputFeatureChannelCount:outputFeatureChannelCount:dataType:")
     public static native MLCTensorDescriptor convolutionWeightsDescriptorWithWidthHeightInputFeatureChannelCountOutputFeatureChannelCountDataType(
             @NUInt long width, @NUInt long height, @NUInt long inputFeatureChannelCount,
             @NUInt long outputFeatureChannelCount, int dataType);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] dataType
-     * <p>
+     * 
      * The tensor data type. The default is MLCDataTypeFloat32.
      */
     @Generated
@@ -164,21 +176,21 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensorDescriptor object
-     *
+     * 
      * @param shape    The tensor shape
      * @param dataType The tensor data type
      * @return A new MLCTensorDescriptor object or nil if failure.
      */
     @Generated
     @Selector("descriptorWithShape:dataType:")
-    public static native MLCTensorDescriptor descriptorWithShapeDataType(NSArray<? extends NSNumber> shape,
+    public static native MLCTensorDescriptor descriptorWithShapeDataType(@NotNull NSArray<? extends NSNumber> shape,
             int dataType);
 
     /**
      * Create a MLCTensorDescriptor object
-     * <p>
+     * 
      * This method is provided as an easy to use API to create sequence tensors used by recurrent layers.
-     *
+     * 
      * @param shape           The tensor shape
      * @param sequenceLengths The sequence lengths in tensor
      * @param sortedSequences A boolean to indicate whether sequences are sorted
@@ -188,14 +200,14 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("descriptorWithShape:sequenceLengths:sortedSequences:dataType:")
     public static native MLCTensorDescriptor descriptorWithShapeSequenceLengthsSortedSequencesDataType(
-            NSArray<? extends NSNumber> shape, NSArray<? extends NSNumber> sequenceLengths, boolean sortedSequences,
-            int dataType);
+            @NotNull NSArray<? extends NSNumber> shape, @NotNull NSArray<? extends NSNumber> sequenceLengths,
+            boolean sortedSequences, int dataType);
 
     /**
      * Create a MLCTensorDescriptor object
-     * <p>
+     * 
      * This method is provided as an easy to use API to create [NCHW] tensors used by convolutional layers.
-     *
+     * 
      * @param width           The tensor width
      * @param height          The tensor height
      * @param featureChannels The number of feature channels
@@ -209,9 +221,9 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensorDescriptor object
-     * <p>
+     * 
      * This method is provided as an easy to use API to create [NCHW] tensors used by convolutional layers.
-     *
+     * 
      * @param width               The tensor width
      * @param height              The tensor height
      * @param featureChannelCount The number of feature channels
@@ -227,7 +239,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] dimensionCount
-     * <p>
+     * 
      * The number of dimensions in the tensor
      */
     @Generated
@@ -261,13 +273,14 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] maxTensorDimensions
-     * <p>
+     * 
      * The maximum number of tensor dimensions supported
      */
     @Generated
@@ -290,9 +303,10 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] sequenceLengths
-     * <p>
+     * 
      * TODO
      */
+    @Nullable
     @Generated
     @Selector("sequenceLengths")
     public native NSArray<? extends NSNumber> sequenceLengths();
@@ -303,16 +317,17 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] shape
-     * <p>
+     * 
      * The size in each dimension
      */
+    @NotNull
     @Generated
     @Selector("shape")
     public native NSArray<? extends NSNumber> shape();
 
     /**
      * [@property] sortedSequences
-     * <p>
+     * 
      * Specifies whether the sequences are sorted or not.
      */
     @Generated
@@ -321,9 +336,10 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] stride
-     * <p>
+     * 
      * The stride in bytes in each dimension
      */
+    @NotNull
     @Generated
     @Selector("stride")
     public native NSArray<? extends NSNumber> stride();
@@ -334,7 +350,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] tensorAllocationSizeInBytes
-     * <p>
+     * 
      * The allocation size in bytes for a tensor.
      */
     @Generated

@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -33,34 +34,46 @@ import org.moe.natj.objc.ann.Selector;
 public interface UIAlertViewDelegate {
     /**
      * Called when a button is clicked. The view will be automatically dismissed after this call returns
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use UIAlertController instead.
      */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("alertView:clickedButtonAtIndex:")
-    default void alertViewClickedButtonAtIndex(UIAlertView alertView, @NInt long buttonIndex) {
+    default void alertViewClickedButtonAtIndex(@NotNull UIAlertView alertView, @NInt long buttonIndex) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * after animation
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use UIAlertController instead.
      */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("alertView:didDismissWithButtonIndex:")
-    default void alertViewDidDismissWithButtonIndex(UIAlertView alertView, @NInt long buttonIndex) {
+    default void alertViewDidDismissWithButtonIndex(@NotNull UIAlertView alertView, @NInt long buttonIndex) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * before animation and hiding view
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use UIAlertController instead.
      */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("alertView:willDismissWithButtonIndex:")
-    default void alertViewWillDismissWithButtonIndex(UIAlertView alertView, @NInt long buttonIndex) {
+    default void alertViewWillDismissWithButtonIndex(@NotNull UIAlertView alertView, @NInt long buttonIndex) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,45 +81,61 @@ public interface UIAlertViewDelegate {
      * Called when we cancel a view (eg. the user clicks the Home button). This is not called when the user clicks the
      * cancel button.
      * If not defined in the delegate, we simulate a click in the cancel button
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use UIAlertController instead.
      */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("alertViewCancel:")
-    default void alertViewCancel(UIAlertView alertView) {
+    default void alertViewCancel(@NotNull UIAlertView alertView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Called after edits in any of the default fields added by the style
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use UIAlertController instead.
      */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("alertViewShouldEnableFirstOtherButton:")
-    default boolean alertViewShouldEnableFirstOtherButton(UIAlertView alertView) {
+    default boolean alertViewShouldEnableFirstOtherButton(@NotNull UIAlertView alertView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * after animation
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use UIAlertController instead.
      */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("didPresentAlertView:")
-    default void didPresentAlertView(UIAlertView alertView) {
+    default void didPresentAlertView(@NotNull UIAlertView alertView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * before animation and showing view
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use UIAlertController instead.
      */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("willPresentAlertView:")
-    default void willPresentAlertView(UIAlertView alertView) {
+    default void willPresentAlertView(@NotNull UIAlertView alertView) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

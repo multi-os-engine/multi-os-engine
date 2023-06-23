@@ -23,17 +23,21 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A group of acceleration structures which may be used together in an instance acceleration
  * structure.
- * <p>
+ * 
  * All acceleration structures in an instance acceleration structures must be created
  * with the same group, although they do not all need to be used in the same instance acceleration
  * structure. The acceleration structures in a group share internal GPU memory allocations, so
  * the total number and size of acceleration structures that can be created with the same group is
  * limited by the Metal device's buffer size limits. Therefore, do not group acceleration
  * structures unless they are likely to be used in the same instance acceleration structure.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -65,22 +69,25 @@ public class MPSAccelerationStructureGroup extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,6 +103,7 @@ public class MPSAccelerationStructureGroup extends NSObject {
     /**
      * The Metal device this acceleration structure group was created with
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -112,7 +120,8 @@ public class MPSAccelerationStructureGroup extends NSObject {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSAccelerationStructureGroup initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSAccelerationStructureGroup initWithDevice(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -131,9 +140,10 @@ public class MPSAccelerationStructureGroup extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

@@ -24,14 +24,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEDNSProxyProviderProtocol
- * <p>
+ * 
  * The NEDNSProxyProviderProtocol class declares the programmatic interface for an object that contains
  * NEDNSProxyProvider-specific configuration settings.
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -63,22 +67,25 @@ public class NEDNSProxyProviderProtocol extends NEVPNProtocol {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,7 +109,7 @@ public class NEDNSProxyProviderProtocol extends NEVPNProtocol {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEDNSProxyProviderProtocol initWithCoder(NSCoder coder);
+    public native NEDNSProxyProviderProtocol initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -121,9 +128,10 @@ public class NEDNSProxyProviderProtocol extends NEVPNProtocol {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -132,19 +140,25 @@ public class NEDNSProxyProviderProtocol extends NEVPNProtocol {
 
     /**
      * [@property] providerBundleIdentifier
-     * <p>
+     * 
      * A string containing the bundle identifier of the NEDNSProxyProvider to be used by this configuration.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("providerBundleIdentifier")
     public native String providerBundleIdentifier();
 
     /**
      * [@property] providerConfiguration
-     * <p>
+     * 
      * A dictionary containing NEDNSProxyProvider vendor-specific configuration parameters. This dictionary is passed
      * as-is to NEDNSProxyProviders when a DNS proxy is started.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("providerConfiguration")
     public native NSDictionary<String, ?> providerConfiguration();
@@ -159,22 +173,26 @@ public class NEDNSProxyProviderProtocol extends NEVPNProtocol {
 
     /**
      * [@property] providerBundleIdentifier
-     * <p>
+     * 
      * A string containing the bundle identifier of the NEDNSProxyProvider to be used by this configuration.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setProviderBundleIdentifier:")
-    public native void setProviderBundleIdentifier(String value);
+    public native void setProviderBundleIdentifier(@Nullable String value);
 
     /**
      * [@property] providerConfiguration
-     * <p>
+     * 
      * A dictionary containing NEDNSProxyProvider vendor-specific configuration parameters. This dictionary is passed
      * as-is to NEDNSProxyProviders when a DNS proxy is started.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setProviderConfiguration:")
-    public native void setProviderConfiguration(NSDictionary<String, ?> value);
+    public native void setProviderConfiguration(@Nullable NSDictionary<String, ?> value);
 
     @Generated
     @Selector("setVersion:")

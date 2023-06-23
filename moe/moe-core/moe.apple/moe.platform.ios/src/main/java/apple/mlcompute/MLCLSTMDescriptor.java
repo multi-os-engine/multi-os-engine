@@ -23,11 +23,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCLSTMDescriptor
- * <p>
+ * 
  * The MLCLSTMDescriptor specifies a LSTM descriptor
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -59,11 +63,11 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] batchFirst
-     * <p>
+     * 
      * LSTM only supports batchFirst=YES. This means the input and output will have shape [batch size, time steps,
      * feature]. Default is YES.
      */
@@ -73,27 +77,31 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -105,7 +113,7 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
 
     /**
      * Creates a LSTM descriptor with batchFirst = YES
-     *
+     * 
      * @param inputSize  The number of expected features in the input
      * @param hiddenSize The number of features in the hidden state
      * @param layerCount Number of recurrent layers
@@ -130,7 +138,7 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
 
     /**
      * Creates a LSTM descriptor.
-     *
+     * 
      * @param inputSize        The number of expected features in the input
      * @param hiddenSize       The number of features in the hidden state
      * @param layerCount       Number of recurrent layers
@@ -157,7 +165,7 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
 
     /**
      * Creates a LSTM descriptor descriptor with batchFirst = YES
-     *
+     * 
      * @param inputSize       The number of expected features in the input
      * @param hiddenSize      The number of features in the hidden state
      * @param layerCount      Number of recurrent layers
@@ -176,7 +184,7 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] dropout
-     * <p>
+     * 
      * If non-zero, intrdouces a dropout layer on the outputs of each LSTM layer
      * except the last layer, with dropout probablity equal to dropout. Default is 0.0.
      */
@@ -191,7 +199,7 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] hiddenSize
-     * <p>
+     * 
      * The number of feature channels in the hidden state
      */
     @Generated
@@ -205,7 +213,7 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] inputSize
-     * <p>
+     * 
      * The number of expected feature channels in the input
      */
     @Generated
@@ -228,7 +236,7 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] isBidirectional
-     * <p>
+     * 
      * If YES, becomes a bidirectional LSTM. Default is NO.
      */
     @Generated
@@ -239,13 +247,14 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] layerCount
-     * <p>
+     * 
      * The number of recurrent layers. Default is 1.
      */
     @Generated
@@ -268,7 +277,7 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] resultMode
-     * <p>
+     * 
      * MLCLSTMResultModeOutput returns output data. MLCLSTMResultModeOutputAndStates returns
      * output data, last hidden state h_n, and last cell state c_n. Default MLCLSTMResultModeOutput.
      */
@@ -278,7 +287,7 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] returnsSequences
-     * <p>
+     * 
      * if YES return output for all sequences else return output only for the last sequences. Default: YES
      */
     @Generated
@@ -295,7 +304,7 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] usesBiases
-     * <p>
+     * 
      * If NO, the layer does not use bias terms. Default is YES.
      */
     @Generated

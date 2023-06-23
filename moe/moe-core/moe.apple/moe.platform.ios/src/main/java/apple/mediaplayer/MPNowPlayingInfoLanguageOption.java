@@ -37,9 +37,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a single language option option.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MediaPlayer")
@@ -71,22 +75,25 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,9 +128,10 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,6 +162,7 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
     /**
      * A user presentable display name for this option.
      */
+    @Nullable
     @Generated
     @Selector("displayName")
     public native String displayName();
@@ -161,6 +170,7 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
     /**
      * A unique identifier representing this option.
      */
+    @Nullable
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -172,8 +182,9 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
     @Generated
     @Selector("initWithType:languageTag:characteristics:displayName:identifier:")
     public native MPNowPlayingInfoLanguageOption initWithTypeLanguageTagCharacteristicsDisplayNameIdentifier(
-            @NUInt long languageOptionType, String languageTag, NSArray<String> languageOptionCharacteristics,
-            String displayName, String identifier);
+            @NUInt long languageOptionType, @NotNull String languageTag,
+            @Nullable NSArray<String> languageOptionCharacteristics, @NotNull String displayName,
+            @NotNull String identifier);
 
     /**
      * Represents a special case that is used to
@@ -197,6 +208,7 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
      * Characteristics describing the content of the language options.
      * See the LanguageOptionCharacteristics for the most commonly used values.
      */
+    @Nullable
     @Generated
     @Selector("languageOptionCharacteristics")
     public native NSArray<String> languageOptionCharacteristics();
@@ -215,6 +227,7 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
      * A languageTag with the value of MPLangaugeOptionAutoLangaugeTag represents
      * that the best langauge based on the system preferences should be used.
      */
+    @Nullable
     @Generated
     @Selector("languageTag")
     public native String languageTag();

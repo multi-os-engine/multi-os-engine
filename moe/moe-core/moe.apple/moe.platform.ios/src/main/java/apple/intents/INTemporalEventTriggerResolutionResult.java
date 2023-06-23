@@ -21,7 +21,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -52,22 +57,25 @@ public class INTemporalEventTriggerResolutionResult extends INIntentResolutionRe
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -76,10 +84,11 @@ public class INTemporalEventTriggerResolutionResult extends INIntentResolutionRe
      * This resolution result is to ask Siri to confirm if this is the temporalEventTrigger with which the user wants to
      * continue.
      */
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithTemporalEventTriggerToConfirm:")
     public static native INTemporalEventTriggerResolutionResult confirmationRequiredWithTemporalEventTriggerToConfirm(
-            INTemporalEventTrigger temporalEventTriggerToConfirm);
+            @Nullable INTemporalEventTrigger temporalEventTriggerToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -92,10 +101,11 @@ public class INTemporalEventTriggerResolutionResult extends INIntentResolutionRe
     /**
      * This resolution result is to ask Siri to disambiguate between the provided INTemporalEventTrigger.
      */
+    @NotNull
     @Generated
     @Selector("disambiguationWithTemporalEventTriggersToDisambiguate:")
     public static native INTemporalEventTriggerResolutionResult disambiguationWithTemporalEventTriggersToDisambiguate(
-            NSArray<? extends INTemporalEventTrigger> temporalEventTriggersToDisambiguate);
+            @NotNull NSArray<? extends INTemporalEventTrigger> temporalEventTriggersToDisambiguate);
 
     @Generated
     @Selector("hash")
@@ -123,10 +133,12 @@ public class INTemporalEventTriggerResolutionResult extends INIntentResolutionRe
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("needsValue")
     public static native INTemporalEventTriggerResolutionResult needsValue();
@@ -136,6 +148,7 @@ public class INTemporalEventTriggerResolutionResult extends INIntentResolutionRe
     @Selector("new")
     public static native INTemporalEventTriggerResolutionResult new_objc();
 
+    @NotNull
     @Generated
     @Selector("notRequired")
     public static native INTemporalEventTriggerResolutionResult notRequired();
@@ -158,15 +171,17 @@ public class INTemporalEventTriggerResolutionResult extends INIntentResolutionRe
      * INTemporalEventTrigger. This allows app extensions to apply business logic constraints.
      * Use +notRequired to continue with a 'nil' value.
      */
+    @NotNull
     @Generated
     @Selector("successWithResolvedTemporalEventTrigger:")
     public static native INTemporalEventTriggerResolutionResult successWithResolvedTemporalEventTrigger(
-            INTemporalEventTrigger resolvedTemporalEventTrigger);
+            @NotNull INTemporalEventTrigger resolvedTemporalEventTrigger);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("unsupported")
     public static native INTemporalEventTriggerResolutionResult unsupported();
@@ -176,11 +191,13 @@ public class INTemporalEventTriggerResolutionResult extends INIntentResolutionRe
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
     public static native INTemporalEventTriggerResolutionResult confirmationRequiredWithItemToConfirmForReason(
-            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
+    @NotNull
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INTemporalEventTriggerResolutionResult unsupportedWithReason(@NInt long reason);

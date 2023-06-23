@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] SSLAuthenticate
- * <p>
+ * 
  * Optional; Default is kNeverAuthenticate.
  * Can only be called when no session is active.
  */

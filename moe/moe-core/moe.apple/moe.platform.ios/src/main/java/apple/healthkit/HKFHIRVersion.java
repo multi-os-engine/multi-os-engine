@@ -29,16 +29,20 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * HKFHIRVersion
- * <p>
+ * 
  * Represents a FHIR version.
- * <p>
+ * 
  * FHIR uses semantic versions ("1.0.2", "4.0.1") to communicate which FHIR version a server supports or a
  * given resource is represented in. A FHIR version is associated with one FHIR release.
- *
+ * 
  * @see http://hl7.org/fhir/versions.html#versions
+ * 
+ *      API-Since: 14.0
  */
 @Generated
 @Library("HealthKit")
@@ -54,6 +58,7 @@ public class HKFHIRVersion extends NSObject implements NSCopying, NSSecureCoding
         super(peer);
     }
 
+    @NotNull
     @Generated
     @Selector("FHIRRelease")
     public native String FHIRRelease();
@@ -74,31 +79,35 @@ public class HKFHIRVersion extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -110,7 +119,7 @@ public class HKFHIRVersion extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -123,7 +132,7 @@ public class HKFHIRVersion extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKFHIRVersion initWithCoder(NSCoder coder);
+    public native HKFHIRVersion initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -142,9 +151,10 @@ public class HKFHIRVersion extends NSObject implements NSCopying, NSSecureCoding
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Selector("majorVersion")
@@ -166,10 +176,12 @@ public class HKFHIRVersion extends NSObject implements NSCopying, NSSecureCoding
     @NInt
     public native long patchVersion();
 
+    @NotNull
     @Generated
     @Selector("primaryDSTU2Version")
     public static native HKFHIRVersion primaryDSTU2Version();
 
+    @NotNull
     @Generated
     @Selector("primaryR4Version")
     public static native HKFHIRVersion primaryR4Version();
@@ -188,9 +200,10 @@ public class HKFHIRVersion extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * [@property] stringRepresentation
-     * <p>
+     * 
      * A string representation in the format "{major}.{minor}.{patch}".
      */
+    @NotNull
     @Generated
     @Selector("stringRepresentation")
     public native String stringRepresentation();
@@ -216,6 +229,6 @@ public class HKFHIRVersion extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("versionFromVersionString:error:")
-    public static native HKFHIRVersion versionFromVersionStringError(String versionString,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorOut);
+    public static native HKFHIRVersion versionFromVersionStringError(@NotNull String versionString,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> errorOut);
 }

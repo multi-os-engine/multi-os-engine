@@ -22,9 +22,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An individual token in a UISearchTextField.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("UIKit")
@@ -56,22 +60,25 @@ public class UISearchToken extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -110,9 +117,10 @@ public class UISearchToken extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -121,15 +129,16 @@ public class UISearchToken extends NSObject {
 
     /**
      * The object which this token represents.
-     * <p>
+     * 
      * The application can assign any object it wants to this property. UISearchTextField does not attempt to interpret
      * this object.
-     * <p>
+     * 
      * [@note]
      * Because UISearchToken strongly references its representedObject, consider assigning a lightweight representation
      * (such as NSManagedObjectID) instead of a complete model object to this property. The lifetime of a UISearchToken
      * may be considerably longer than expected, especially if the token has been copied to a pasteboard.
      */
+    @Nullable
     @Generated
     @Selector("representedObject")
     @MappedReturn(ObjCObjectMapper.class)
@@ -145,10 +154,10 @@ public class UISearchToken extends NSObject {
 
     /**
      * The object which this token represents.
-     * <p>
+     * 
      * The application can assign any object it wants to this property. UISearchTextField does not attempt to interpret
      * this object.
-     * <p>
+     * 
      * [@note]
      * Because UISearchToken strongly references its representedObject, consider assigning a lightweight representation
      * (such as NSManagedObjectID) instead of a complete model object to this property. The lifetime of a UISearchToken
@@ -156,7 +165,7 @@ public class UISearchToken extends NSObject {
      */
     @Generated
     @Selector("setRepresentedObject:")
-    public native void setRepresentedObject(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setRepresentedObject(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
     @Selector("setVersion:")
@@ -166,9 +175,10 @@ public class UISearchToken extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("tokenWithIcon:text:")
-    public static native UISearchToken tokenWithIconText(UIImage icon, String text);
+    public static native UISearchToken tokenWithIconText(@Nullable UIImage icon, @NotNull String text);
 
     @Generated
     @Selector("version")

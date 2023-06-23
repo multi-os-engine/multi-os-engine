@@ -40,9 +40,13 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This class describes a room in the home.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HomeKit")
@@ -74,22 +78,25 @@ public class HMRoom extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +131,10 @@ public class HMRoom extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,6 +166,7 @@ public class HMRoom extends NSObject {
      * Array of HMAccessory objects that correspond to the accessories
      * associated with this room.
      */
+    @NotNull
     @Generated
     @Selector("accessories")
     public native NSArray<? extends HMAccessory> accessories();
@@ -169,34 +178,39 @@ public class HMRoom extends NSObject {
     /**
      * Name of the room.
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
 
     /**
      * A unique identifier for the room.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
 
     /**
      * This method is used to change the name of the room.
-     *
+     * 
      * @param name       New name for the room.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
      */
     @Generated
     @Selector("updateName:completionHandler:")
-    public native void updateNameCompletionHandler(String name,
-            @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
+    public native void updateNameCompletionHandler(@NotNull String name,
+            @NotNull @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateNameCompletionHandler {
         @Generated
-        void call_updateNameCompletionHandler(NSError error);
+        void call_updateNameCompletionHandler(@Nullable NSError error);
     }
 }

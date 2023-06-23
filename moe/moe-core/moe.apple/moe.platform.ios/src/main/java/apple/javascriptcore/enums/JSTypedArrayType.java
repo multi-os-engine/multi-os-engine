@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] JSTypedArrayType
- * <p>
+ * 
  * A constant identifying the Typed Array type of a JSObjectRef.
  * [@constant] kJSTypedArrayTypeInt8Array Int8Array
  * [@constant] kJSTypedArrayTypeInt16Array Int16Array

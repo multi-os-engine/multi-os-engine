@@ -1,6 +1,5 @@
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.uikit.UIDragInteraction;
 import apple.uikit.UIDragItem;
@@ -17,7 +16,13 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -31,64 +36,66 @@ public interface UIDragInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("dragInteraction:item:willAnimateCancelWithAnimator:")
-    default void dragInteractionItemWillAnimateCancelWithAnimator(UIDragInteraction interaction, UIDragItem item,
-            @Mapped(ObjCObjectMapper.class) UIDragAnimating animator) {
+    default void dragInteractionItemWillAnimateCancelWithAnimator(@NotNull UIDragInteraction interaction,
+            @NotNull UIDragItem item, @NotNull @Mapped(ObjCObjectMapper.class) UIDragAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * To allow touches on this view to add items to an existing drag,
      * implement `-dragInteraction:itemsForAddingToSession:withTouchAtPoint:`.
-     * <p>
+     * 
      * If the provided session is an appropriate one to use, then return an array of items,
      * just like in `-dragInteraction:itemsForBeginningSession:`. They will be added to the
      * drag session.
      * Afterwards, `-dragInteraction:session:willAddItems:forInteraction:` will be sent
      * to each interaction which has contributed items to the session, including this one.
-     * <p>
+     * 
      * Otherwise, return an empty array. No items will be added, and the touch
      * will be handled as if the other drag session did not exist.
-     * <p>
+     * 
      * If this method is not implemented, acts as though an an empty array was returned.
-     * <p>
+     * 
      * Use the point, in the view's coordinate space, to determine what part of your view
      * has been touched.
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("dragInteraction:itemsForAddingToSession:withTouchAtPoint:")
     default NSArray<? extends UIDragItem> dragInteractionItemsForAddingToSessionWithTouchAtPoint(
-            UIDragInteraction interaction, @Mapped(ObjCObjectMapper.class) UIDragSession session,
+            @NotNull UIDragInteraction interaction, @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession session,
             @ByValue CGPoint point) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Provide items to begin a drag.
-     * <p>
+     * 
      * If these items represent things that are displayed in a linear order
      * (for example, rows in a table), provide them in the same order, first
      * to last.
-     * <p>
+     * 
      * If an empty array is returned, then no drag will begin.
      */
+    @NotNull
     @Generated
     @Selector("dragInteraction:itemsForBeginningSession:")
-    NSArray<? extends UIDragItem> dragInteractionItemsForBeginningSession(UIDragInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDragSession session);
+    NSArray<? extends UIDragItem> dragInteractionItemsForBeginningSession(@NotNull UIDragInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession session);
 
     /**
      * Return whether this drag's items' previews should be shown in their full
      * original size while over the source view. For instance, if you are reordering
      * items, you may want them not to shrink like they otherwise would.
-     * <p>
+     * 
      * If not implemented, defaults to false.
      */
     @Generated
     @IsOptional
     @Selector("dragInteraction:prefersFullSizePreviewsForSession:")
-    default boolean dragInteractionPrefersFullSizePreviewsForSession(UIDragInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDragSession session) {
+    default boolean dragInteractionPrefersFullSizePreviewsForSession(@NotNull UIDragInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -102,11 +109,13 @@ public interface UIDragInteractionDelegate {
      * - [defaultPreview retargetedPreviewWithTarget:] to move the preview to a different target
      * - a UITargetedDragPreview that you create however you like
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("dragInteraction:previewForCancellingItem:withDefault:")
-    default UITargetedDragPreview dragInteractionPreviewForCancellingItemWithDefault(UIDragInteraction interaction,
-            UIDragItem item, UITargetedDragPreview defaultPreview) {
+    default UITargetedDragPreview dragInteractionPreviewForCancellingItemWithDefault(
+            @NotNull UIDragInteraction interaction, @NotNull UIDragItem item,
+            @NotNull UITargetedDragPreview defaultPreview) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -115,33 +124,34 @@ public interface UIDragInteractionDelegate {
      * Return nil to indicate that this item is not visible and should have no lift animation.
      * If not implemented, a UITargetedDragPreview initialized with interaction.view will be used.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("dragInteraction:previewForLiftingItem:session:")
-    default UITargetedDragPreview dragInteractionPreviewForLiftingItemSession(UIDragInteraction interaction,
-            UIDragItem item, @Mapped(ObjCObjectMapper.class) UIDragSession session) {
+    default UITargetedDragPreview dragInteractionPreviewForLiftingItemSession(@NotNull UIDragInteraction interaction,
+            @NotNull UIDragItem item, @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Called when the user is done dragging and all related animations are
      * completed. The app should now return to its normal appearance.
-     * <p>
+     * 
      * If the operation is UIDropOperationCopy or UIDropOperationMove,
      * then data transfer will begin, and -dragInteraction:sessionDidTransferItems: will be called later.
      */
     @Generated
     @IsOptional
     @Selector("dragInteraction:session:didEndWithOperation:")
-    default void dragInteractionSessionDidEndWithOperation(UIDragInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDragSession session, @NUInt long operation) {
+    default void dragInteractionSessionDidEndWithOperation(@NotNull UIDragInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession session, @NUInt long operation) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Similar to -dragInteraction:sessionWillBegin:, but for
      * items added to an session after it has already begun.
-     * <p>
+     * 
      * Note that the interaction that is causing the items to be added
      * may be different than the interaction that started the drag.
      * This method is called on the delegates of all interactions that ever added items
@@ -151,15 +161,15 @@ public interface UIDragInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("dragInteraction:session:willAddItems:forInteraction:")
-    default void dragInteractionSessionWillAddItemsForInteraction(UIDragInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDragSession session, NSArray<? extends UIDragItem> items,
-            UIDragInteraction addingInteraction) {
+    default void dragInteractionSessionWillAddItemsForInteraction(@NotNull UIDragInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession session,
+            @NotNull NSArray<? extends UIDragItem> items, @NotNull UIDragInteraction addingInteraction) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Called when the user is done dragging, and the drag will finish.
-     * <p>
+     * 
      * If the operation is UIDropOperationCancel or UIDropOperationForbidden,
      * the delegate should prepare its views to show an appropriate appearance
      * before the cancel animation starts.
@@ -167,26 +177,26 @@ public interface UIDragInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("dragInteraction:session:willEndWithOperation:")
-    default void dragInteractionSessionWillEndWithOperation(UIDragInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDragSession session, @NUInt long operation) {
+    default void dragInteractionSessionWillEndWithOperation(@NotNull UIDragInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession session, @NUInt long operation) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Return whether this drag allows the "move" drop operation to happen.
      * This only applies to drops inside the same app. Drops in other apps are always copies.
-     * <p>
+     * 
      * If true, then a UIDropInteraction's delegate's -dropInteraction:sessionDidUpdate:
      * may choose to return UIDropOperationMove, and that operation will be provided to
      * -dragInteraction:session:willEndWithOperation: and -dragInteraction:session:didEndWithOperation:.
-     * <p>
+     * 
      * If not implemented, defaults to true.
      */
     @Generated
     @IsOptional
     @Selector("dragInteraction:sessionAllowsMoveOperation:")
-    default boolean dragInteractionSessionAllowsMoveOperation(UIDragInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDragSession session) {
+    default boolean dragInteractionSessionAllowsMoveOperation(@NotNull UIDragInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -197,8 +207,8 @@ public interface UIDragInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("dragInteraction:sessionDidMove:")
-    default void dragInteractionSessionDidMove(UIDragInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDragSession session) {
+    default void dragInteractionSessionDidMove(@NotNull UIDragInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -210,51 +220,52 @@ public interface UIDragInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("dragInteraction:sessionDidTransferItems:")
-    default void dragInteractionSessionDidTransferItems(UIDragInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDragSession session) {
+    default void dragInteractionSessionDidTransferItems(@NotNull UIDragInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * If there are two or more existing drag sessions, it may not be clear to the user
      * which session items will be added to. Therefore, by default, we do not add to any session.
-     * <p>
+     * 
      * If you *do* want to add the item to a session, implement
      * `-dragInteraction:sessionForAddingItems:withTouchAtPoint:` and return the
      * appropriate session. This should be rare.
-     * <p>
+     * 
      * To continue without adding items, return nil.
-     * <p>
+     * 
      * If this method is not implemented, defaults to nil.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("dragInteraction:sessionForAddingItems:withTouchAtPoint:")
     @MappedReturn(ObjCObjectMapper.class)
-    default UIDragSession dragInteractionSessionForAddingItemsWithTouchAtPoint(UIDragInteraction interaction,
-            NSArray<?> sessions, @ByValue CGPoint point) {
+    default UIDragSession dragInteractionSessionForAddingItemsWithTouchAtPoint(@NotNull UIDragInteraction interaction,
+            @NotNull NSArray<?> sessions, @ByValue CGPoint point) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Return whether this drag is restricted to only this application.
-     * <p>
+     * 
      * If true, then the drag will be restricted. Only this application will be
      * able to see the drag, and other applications will not.
      * If the user drops it on another application, the drag will be cancelled.
-     * <p>
+     * 
      * If false, then the drag is not restricted. Other applications may see the drag,
      * and the user may drop it onto them.
-     * <p>
+     * 
      * If not implemented, defaults to false.
-     * <p>
+     * 
      * Note that this method is called only on devices that support dragging across applications.
      */
     @Generated
     @IsOptional
     @Selector("dragInteraction:sessionIsRestrictedToDraggingApplication:")
-    default boolean dragInteractionSessionIsRestrictedToDraggingApplication(UIDragInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDragSession session) {
+    default boolean dragInteractionSessionIsRestrictedToDraggingApplication(@NotNull UIDragInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -265,8 +276,8 @@ public interface UIDragInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("dragInteraction:sessionWillBegin:")
-    default void dragInteractionSessionWillBegin(UIDragInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDragSession session) {
+    default void dragInteractionSessionWillBegin(@NotNull UIDragInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -278,9 +289,9 @@ public interface UIDragInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("dragInteraction:willAnimateLiftWithAnimator:session:")
-    default void dragInteractionWillAnimateLiftWithAnimatorSession(UIDragInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UIDragAnimating animator,
-            @Mapped(ObjCObjectMapper.class) UIDragSession session) {
+    default void dragInteractionWillAnimateLiftWithAnimatorSession(@NotNull UIDragInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDragAnimating animator,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

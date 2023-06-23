@@ -39,7 +39,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 6.0
+ * Deprecated-Since: 16.0
+ * Deprecated-Message: Hosted content is no longer supported
+ */
+@Deprecated
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -70,22 +78,25 @@ public class SKDownload extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,9 +131,10 @@ public class SKDownload extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -152,29 +164,57 @@ public class SKDownload extends NSObject {
 
     /**
      * Identifier for this content
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
      */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("contentIdentifier")
     public native String contentIdentifier();
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated
     @Generated
     @Selector("contentLength")
     public native long contentLength();
 
     /**
      * Location of the content data, if state is SKDownloadStateFinished
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
      */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("contentURL")
     public native NSURL contentURL();
 
     /**
      * Content version
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
      */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("contentVersion")
     public native String contentVersion();
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @Selector("downloadState")
     @NInt
@@ -182,7 +222,13 @@ public class SKDownload extends NSObject {
 
     /**
      * Failure error, if state is SKDownloadStateFailed
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
      */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("error")
     public native NSError error();
@@ -193,7 +239,12 @@ public class SKDownload extends NSObject {
 
     /**
      * Overall progress for the download [0..1]
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
      */
+    @Deprecated
     @Generated
     @Selector("progress")
     public native float progress();
@@ -201,28 +252,49 @@ public class SKDownload extends NSObject {
     /**
      * Estimated time remaining to complete the download, in seconds. Value is SKDownloadTimeRemainingUnknown if
      * estimate is unknownxx.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
      */
+    @Deprecated
     @Generated
     @Selector("timeRemaining")
     public native double timeRemaining();
 
     /**
      * Transaction for this download
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
      */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("transaction")
     public native SKPaymentTransaction transaction();
 
     /**
      * Total size of the content, in bytes
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
      */
+    @Deprecated
     @Generated
     @Selector("expectedContentLength")
     public native long expectedContentLength();
 
     /**
      * State of the download
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
      */
+    @Deprecated
     @Generated
     @Selector("state")
     @NInt

@@ -24,7 +24,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSData;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -55,22 +61,25 @@ public class NEDNSOverHTTPSSettings extends NEDNSSettings {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -94,11 +103,11 @@ public class NEDNSOverHTTPSSettings extends NEDNSSettings {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEDNSOverHTTPSSettings initWithCoder(NSCoder coder);
+    public native NEDNSOverHTTPSSettings initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithServers:")
-    public native NEDNSOverHTTPSSettings initWithServers(NSArray<String> servers);
+    public native NEDNSOverHTTPSSettings initWithServers(@NotNull NSArray<String> servers);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -117,9 +126,10 @@ public class NEDNSOverHTTPSSettings extends NEDNSSettings {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -136,23 +146,28 @@ public class NEDNSOverHTTPSSettings extends NEDNSSettings {
 
     /**
      * [@property] serverURL
-     * <p>
+     * 
      * The URL to which to make DNS-over-HTTPS requests. The format should be an HTTPS URL with the path indicating the
      * location of the DNS-over-HTTPS server, such as: "https://dnsserver.example.net/dns-query".
+     * 
+     * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("serverURL")
     public native NSURL serverURL();
 
     /**
      * [@property] serverURL
-     * <p>
+     * 
      * The URL to which to make DNS-over-HTTPS requests. The format should be an HTTPS URL with the path indicating the
      * location of the DNS-over-HTTPS server, such as: "https://dnsserver.example.net/dns-query".
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setServerURL:")
-    public native void setServerURL(NSURL value);
+    public native void setServerURL(@Nullable NSURL value);
 
     @Generated
     @Selector("setVersion:")
@@ -176,4 +191,27 @@ public class NEDNSOverHTTPSSettings extends NEDNSSettings {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * [@property] identityReference
+     * 
+     * The optional certificate identity keychain reference to use as a TLS client certificate.
+     * 
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("identityReference")
+    public native NSData identityReference();
+
+    /**
+     * [@property] identityReference
+     * 
+     * The optional certificate identity keychain reference to use as a TLS client certificate.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setIdentityReference:")
+    public native void setIdentityReference(@Nullable NSData value);
 }

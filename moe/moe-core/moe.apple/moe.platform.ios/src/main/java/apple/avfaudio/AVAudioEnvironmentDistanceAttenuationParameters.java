@@ -21,14 +21,18 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioEnvironmentDistanceAttenuationParameters
- * <p>
+ * 
  * Parameters specifying the amount of distance attenuation
- * <p>
+ * 
  * A standalone instance of AVAudioEnvironmentDistanceAttenuationParameters cannot be created.
  * Only an instance vended out by a source object (e.g. AVAudioEnvironmentNode) can be used.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -60,22 +64,25 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -90,9 +97,9 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
 
     /**
      * [@property] distanceAttenuationModel
-     * <p>
+     * 
      * Type of distance attenuation model
-     * <p>
+     * 
      * Default: AVAudioEnvironmentDistanceAttenuationModelInverse
      */
     @Generated
@@ -126,15 +133,16 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] maximumDistance
-     * <p>
+     * 
      * The distance beyond which no further attenuation is applied
-     * <p>
+     * 
      * Default: 100000.0 meters
      * Models: AVAudioEnvironmentDistanceAttenuationModelLinear
      */
@@ -149,9 +157,9 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
 
     /**
      * [@property] referenceDistance
-     * <p>
+     * 
      * The minimum distance at which attenuation is applied
-     * <p>
+     * 
      * Default: 1.0 meter
      * Models: AVAudioEnvironmentDistanceAttenuationModelInverse,
      * AVAudioEnvironmentDistanceAttenuationModelLinear
@@ -170,9 +178,9 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
 
     /**
      * [@property] rolloffFactor
-     * <p>
+     * 
      * Determines the attenuation curve
-     * <p>
+     * 
      * A higher value results in a steeper attenuation curve.
      * The rolloff factor should be a value greater than 0.
      * Default: 1.0
@@ -186,9 +194,9 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
 
     /**
      * [@property] distanceAttenuationModel
-     * <p>
+     * 
      * Type of distance attenuation model
-     * <p>
+     * 
      * Default: AVAudioEnvironmentDistanceAttenuationModelInverse
      */
     @Generated
@@ -197,9 +205,9 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
 
     /**
      * [@property] maximumDistance
-     * <p>
+     * 
      * The distance beyond which no further attenuation is applied
-     * <p>
+     * 
      * Default: 100000.0 meters
      * Models: AVAudioEnvironmentDistanceAttenuationModelLinear
      */
@@ -209,9 +217,9 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
 
     /**
      * [@property] referenceDistance
-     * <p>
+     * 
      * The minimum distance at which attenuation is applied
-     * <p>
+     * 
      * Default: 1.0 meter
      * Models: AVAudioEnvironmentDistanceAttenuationModelInverse,
      * AVAudioEnvironmentDistanceAttenuationModelLinear
@@ -222,9 +230,9 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
 
     /**
      * [@property] rolloffFactor
-     * <p>
+     * 
      * Determines the attenuation curve
-     * <p>
+     * 
      * A higher value results in a steeper attenuation curve.
      * The rolloff factor should be a value greater than 0.
      * Default: 1.0

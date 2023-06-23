@@ -25,19 +25,24 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNOptimizerRMSProp
- * <p>
+ * 
  * The MPSNNOptimizerRMSProp performs an RMSProp Update
  * RMSProp is also known as root mean square propagation.
- * <p>
+ * 
  * s[t] = decay * s[t-1] + (1 - decay) * (g ^ 2)
  * variable = variable - learningRate * g / (sqrt(s[t]) + epsilon)
- * <p>
+ * 
  * where,
  * g is gradient of error wrt variable
  * s[t] is weighted sum of squares of gradients
+ * 
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -69,22 +74,25 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -95,9 +103,9 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
 
     /**
      * [@property] decay
-     * <p>
+     * 
      * The decay at which we update sumOfSquares
-     * <p>
+     * 
      * Default value is 0.9
      */
     @Generated
@@ -110,17 +118,17 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
 
     /**
      * Encode an MPSNNOptimizerRMSProp object to a command buffer to perform out of place update
-     * <p>
+     * 
      * The following operations would be applied
-     * <p>
-     * <p>
+     * 
+     * 
      * s[t] = decay * s[t-1] + (1 - decay) * (g ^ 2)
      * variable = variable - learningRate * g / (sqrt(s[t]) + epsilon)
-     * <p>
+     * 
      * where,
      * g is gradient of error wrt variable
      * s[t] is weighted sum of squares of gradients
-     *
+     * 
      * @param commandBuffer                   A valid MTLCommandBuffer to receive the encoded kernel.
      * @param batchNormalizationGradientState A valid MPSCNNBatchNormalizationState object which specifies the input
      *                                        state with gradients for this update.
@@ -138,24 +146,25 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:batchNormalizationGradientState:batchNormalizationSourceState:inputSumOfSquaresVectors:resultState:")
     public native void encodeToCommandBufferBatchNormalizationGradientStateBatchNormalizationSourceStateInputSumOfSquaresVectorsResultState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNBatchNormalizationState batchNormalizationGradientState,
-            MPSCNNBatchNormalizationState batchNormalizationSourceState,
-            NSArray<? extends MPSVector> inputSumOfSquaresVectors, MPSCNNNormalizationGammaAndBetaState resultState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNBatchNormalizationState batchNormalizationGradientState,
+            @NotNull MPSCNNBatchNormalizationState batchNormalizationSourceState,
+            @Nullable NSArray<? extends MPSVector> inputSumOfSquaresVectors,
+            @NotNull MPSCNNNormalizationGammaAndBetaState resultState);
 
     /**
      * Encode an MPSNNOptimizerRMSProp object to a command buffer to perform out of place update
-     * <p>
+     * 
      * The following operations would be applied
-     * <p>
-     * <p>
+     * 
+     * 
      * s[t] = decay * s[t-1] + (1 - decay) * (g ^ 2)
      * variable = variable - learningRate * g / (sqrt(s[t]) + epsilon)
-     * <p>
+     * 
      * where,
      * g is gradient of error wrt variable
      * s[t] is weighted sum of squares of gradients
-     *
+     * 
      * @param commandBuffer            A valid MTLCommandBuffer to receive the encoded kernel.
      * @param batchNormalizationState  A valid MPSCNNBatchNormalizationState object which specifies the input state with
      *                                 gradients and original gamma/beta for this update.
@@ -171,23 +180,24 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:batchNormalizationState:inputSumOfSquaresVectors:resultState:")
     public native void encodeToCommandBufferBatchNormalizationStateInputSumOfSquaresVectorsResultState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNBatchNormalizationState batchNormalizationState,
-            NSArray<? extends MPSVector> inputSumOfSquaresVectors, MPSCNNNormalizationGammaAndBetaState resultState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNBatchNormalizationState batchNormalizationState,
+            @Nullable NSArray<? extends MPSVector> inputSumOfSquaresVectors,
+            @NotNull MPSCNNNormalizationGammaAndBetaState resultState);
 
     /**
      * Encode an MPSNNOptimizerRMSProp object to a command buffer to perform out of place update
-     * <p>
+     * 
      * The following operations would be applied
-     * <p>
-     * <p>
+     * 
+     * 
      * s[t] = decay * s[t-1] + (1 - decay) * (g ^ 2)
      * variable = variable - learningRate * g / (sqrt(s[t]) + epsilon)
-     * <p>
+     * 
      * where,
      * g is gradient of error wrt variable
      * s[t] is weighted sum of squares of gradients
-     *
+     * 
      * @param commandBuffer            A valid MTLCommandBuffer to receive the encoded kernel.
      * @param convolutionGradientState A valid MPSCNNConvolutionGradientState object which specifies the input state
      *                                 with gradients for this update.
@@ -205,30 +215,35 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:convolutionGradientState:convolutionSourceState:inputSumOfSquaresVectors:resultState:")
     public native void encodeToCommandBufferConvolutionGradientStateConvolutionSourceStateInputSumOfSquaresVectorsResultState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNConvolutionGradientState convolutionGradientState,
-            MPSCNNConvolutionWeightsAndBiasesState convolutionSourceState,
-            NSArray<? extends MPSVector> inputSumOfSquaresVectors, MPSCNNConvolutionWeightsAndBiasesState resultState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNConvolutionGradientState convolutionGradientState,
+            @NotNull MPSCNNConvolutionWeightsAndBiasesState convolutionSourceState,
+            @Nullable NSArray<? extends MPSVector> inputSumOfSquaresVectors,
+            @NotNull MPSCNNConvolutionWeightsAndBiasesState resultState);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("encodeToCommandBuffer:inputGradientMatrix:inputValuesMatrix:inputSumOfSquaresMatrix:resultValuesMatrix:")
     public native void encodeToCommandBufferInputGradientMatrixInputValuesMatrixInputSumOfSquaresMatrixResultValuesMatrix(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSMatrix inputGradientMatrix,
-            MPSMatrix inputValuesMatrix, MPSMatrix inputSumOfSquaresMatrix, MPSMatrix resultValuesMatrix);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSMatrix inputGradientMatrix, @NotNull MPSMatrix inputValuesMatrix,
+            @NotNull MPSMatrix inputSumOfSquaresMatrix, @NotNull MPSMatrix resultValuesMatrix);
 
     /**
      * Encode an MPSNNOptimizerRMSProp object to a command buffer to perform out of place update
-     * <p>
+     * 
      * The following operations would be applied
-     * <p>
-     * <p>
+     * 
+     * 
      * s[t] = decay * s[t-1] + (1 - decay) * (g ^ 2)
      * variable = variable - learningRate * g / (sqrt(s[t]) + epsilon)
-     * <p>
+     * 
      * where,
      * g is gradient of error wrt variable
      * s[t] is weighted sum of squares of gradients
-     *
+     * 
      * @param commandBuffer           A valid MTLCommandBuffer to receive the encoded kernel.
      * @param inputGradientVector     A valid MPSVector object which specifies the input vector of gradients for this
      *                                update.
@@ -241,14 +256,15 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:inputGradientVector:inputValuesVector:inputSumOfSquaresVector:resultValuesVector:")
     public native void encodeToCommandBufferInputGradientVectorInputValuesVectorInputSumOfSquaresVectorResultValuesVector(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSVector inputGradientVector,
-            MPSVector inputValuesVector, MPSVector inputSumOfSquaresVector, MPSVector resultValuesVector);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSVector inputGradientVector, @NotNull MPSVector inputValuesVector,
+            @NotNull MPSVector inputSumOfSquaresVector, @NotNull MPSVector resultValuesVector);
 
     /**
      * [@property] epsilon
-     * <p>
+     * 
      * The epsilon at which we update values
-     * <p>
+     * 
      * This value is usually used to ensure to avoid divide by 0, default value is 1e-8
      */
     @Generated
@@ -266,43 +282,46 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNOptimizerRMSProp initWithCoder(NSCoder aDecoder);
+    public native MPSNNOptimizerRMSProp initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNNOptimizerRMSProp initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNOptimizerRMSProp initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNNOptimizerRMSProp initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNOptimizerRMSProp initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Full initialization for the rmsProp update
-     *
+     * 
      * @param device              The device on which the kernel will execute.
      * @param decay               The decay to update sumOfSquares
      * @param epsilon             The epsilon which will be applied
      * @param optimizerDescriptor The optimizerDescriptor which will have a bunch of properties to be applied
+     * 
+     * 
      * @return A valid MPSNNOptimizerRMSProp object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:decay:epsilon:optimizerDescriptor:")
     public native MPSNNOptimizerRMSProp initWithDeviceDecayEpsilonOptimizerDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, double decay, float epsilon,
-            MPSNNOptimizerDescriptor optimizerDescriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, double decay, float epsilon,
+            @NotNull MPSNNOptimizerDescriptor optimizerDescriptor);
 
     /**
      * Convenience initialization for the RMSProp update
-     *
+     * 
      * @param device       The device on which the kernel will execute.
      * @param learningRate The learningRate which will be applied
+     * 
      * @return A valid MPSNNOptimizerRMSProp object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:learningRate:")
-    public native MPSNNOptimizerRMSProp initWithDeviceLearningRate(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            float learningRate);
+    public native MPSNNOptimizerRMSProp initWithDeviceLearningRate(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, float learningRate);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -321,9 +340,10 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

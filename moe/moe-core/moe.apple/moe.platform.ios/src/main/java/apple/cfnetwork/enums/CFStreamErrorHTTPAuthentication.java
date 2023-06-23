@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * CFStreamErrorHTTPAuthentication
- * <p>
+ * 
  * Discussion:
  * Authentication errors which may be returned as a result of trying
  * to apply authentication to a request. These errors are in the

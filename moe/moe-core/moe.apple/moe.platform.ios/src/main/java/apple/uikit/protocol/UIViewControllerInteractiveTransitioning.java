@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -52,7 +53,7 @@ public interface UIViewControllerInteractiveTransitioning {
     @Generated
     @Selector("startInteractiveTransition:")
     void startInteractiveTransition(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
     /**
      * In 10.0, if an object conforming to UIViewControllerAnimatedTransitioning is
@@ -60,6 +61,8 @@ public interface UIViewControllerInteractiveTransitioning {
      * interactive and then interrupt the transition and interact with it. In this
      * case, implement this method and return NO. If an interactor does not
      * implement this method, YES is assumed.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional

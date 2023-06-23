@@ -42,7 +42,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -73,22 +78,25 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +131,10 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -188,6 +197,8 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
      * Use this method to pause a running interruptible animator. This will ensure that all blocks
      * provided by a transition coordinator's notifyWhenInteractionChangesUsingBlock: method
      * are executed when a transition moves in and out of an interactive mode.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("pauseInteractiveTransition")
@@ -226,15 +237,19 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
      * For an interruptible animator, one can specify a different timing curve provider to use when the
      * transition is continued. This property is ignored if the animated transitioning object does not
      * vend an interruptible animator.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setTimingCurve:")
-    public native void setTimingCurve(@Mapped(ObjCObjectMapper.class) UITimingCurveProvider value);
+    public native void setTimingCurve(@Nullable @Mapped(ObjCObjectMapper.class) UITimingCurveProvider value);
 
     /**
      * Set this to NO in order to start an interruptible transition non
      * interactively. By default this is YES, which is consistent with the behavior
      * before 10.0.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setWantsInteractiveStart:")
@@ -243,13 +258,16 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
     @Generated
     @Selector("startInteractiveTransition:")
     public native void startInteractiveTransition(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
     /**
      * For an interruptible animator, one can specify a different timing curve provider to use when the
      * transition is continued. This property is ignored if the animated transitioning object does not
      * vend an interruptible animator.
+     * 
+     * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("timingCurve")
     @MappedReturn(ObjCObjectMapper.class)

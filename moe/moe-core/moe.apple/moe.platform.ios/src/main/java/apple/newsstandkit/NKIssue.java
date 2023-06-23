@@ -40,12 +40,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NKIssue
- * <p>
+ * 
  * Represents the Newsstand issue and its location on disk.
- * <p>
+ * 
  * All Newsstand issues have a publication date and a unique name.
  * You register assets for download through this class.
  * All of the Newsstand content that represents this issue should be
@@ -56,7 +58,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * is "content available".
  * An issue is created by adding it to the library with
  * -[NKLibrary addIssueWithName:date:].
+ * 
+ * API-Since: 5.0
+ * Deprecated-Since: 13.0
+ * Deprecated-Message: Use the Remote Notifications Background Modes instead:
+ * https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_updates_to_your_app_silently
  */
+@Deprecated
 @Generated
 @Library("NewsstandKit")
 @Runtime(ObjCRuntime.class)
@@ -87,22 +95,25 @@ public class NKIssue extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -137,9 +148,10 @@ public class NKIssue extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -169,38 +181,42 @@ public class NKIssue extends NSObject {
 
     /**
      * addAssetWithRequest:
-     * <p>
+     * 
      * Add a downloading asset to this issue. Initiate the download for this
      * asset with the downloadWithDelegate: method on the NKAssetDownload.
      */
+    @NotNull
     @Generated
     @Selector("addAssetWithRequest:")
-    public native NKAssetDownload addAssetWithRequest(NSURLRequest request);
+    public native NKAssetDownload addAssetWithRequest(@NotNull NSURLRequest request);
 
     /**
      * [@property] contentURL
-     * <p>
+     * 
      * All content that represents this issue should be placed in the
      * URL provided.
      */
+    @NotNull
     @Generated
     @Selector("contentURL")
     public native NSURL contentURL();
 
     /**
      * [@property] date
-     * <p>
+     * 
      * The date of this issue
      */
+    @NotNull
     @Generated
     @Selector("date")
     public native NSDate date();
 
     /**
      * [@property] downloadingAssets
-     * <p>
+     * 
      * An array of NKAssetDownload associated with this issue.
      */
+    @NotNull
     @Generated
     @Selector("downloadingAssets")
     public native NSArray<? extends NKAssetDownload> downloadingAssets();
@@ -211,18 +227,19 @@ public class NKIssue extends NSObject {
 
     /**
      * [@property] name
-     * <p>
+     * 
      * The unique name given to this issue
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
 
     /**
      * [@property] status
-     * <p>
+     * 
      * The availability of this issue's content.
-     * <p>
+     * 
      * If there are asset downloads associated with this issue, the status
      * is NKIssueContentStatusDownloading. If there are no downloading assets
      * and the directory represented by contentURL is non-empty, the status

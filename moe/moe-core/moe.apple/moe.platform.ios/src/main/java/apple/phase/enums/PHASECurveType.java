@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] PHASECurveType
- * <p>
+ * 
  * Curve types.
  * [@constant] PHASECurveTypeLinear
  * A curve of the form y = x.
@@ -27,6 +27,10 @@ import org.moe.natj.general.ann.NInt;
  * [@constant] PHASECurveTypeInverseSigmoid
  * An inverse sigmoid curve.
  * Also known as an inverse s-curve, quick at the ends and slow in the middle.
+ * [@constant] PHASECurveTypeHoldStartValue
+ * Holds the start value for the duration of the curve.
+ * [@constant] PHASECurveTypeJumpToEndValue
+ * Jumps to the end value and holds it for the duration of the curve.
  */
 @Generated
 public final class PHASECurveType {
@@ -43,4 +47,6 @@ public final class PHASECurveType {
     @Generated @NInt public static final long InverseSine = 0x0000000063724953L;
     @Generated @NInt public static final long Sigmoid = 0x0000000063725367L;
     @Generated @NInt public static final long InverseSigmoid = 0x0000000063724947L;
+    @Generated @NInt public static final long HoldStartValue = 0x0000000063724853L;
+    @Generated @NInt public static final long JumpToEndValue = 0x0000000063724A45L;
 }

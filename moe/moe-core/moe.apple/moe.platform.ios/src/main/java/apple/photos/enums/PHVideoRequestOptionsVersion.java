@@ -19,14 +19,21 @@ package apple.photos.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class PHVideoRequestOptionsVersion {
     /**
      * version with edits (aka adjustments) rendered or unadjusted version if there is no edits
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Current = 0x0000000000000000L;
     /**
      * original version
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Original = 0x0000000000000001L;
 

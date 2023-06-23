@@ -19,58 +19,87 @@ package apple.mediaplayer.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 public final class MPMediaType {
     /**
      * audio
+     * 
+     * API-Since: 3.0
      */
     @Generated @NUInt public static final long Music = 0x0000000000000001L;
     /**
      * audio
+     * 
+     * API-Since: 3.0
      */
     @Generated @NUInt public static final long Podcast = 0x0000000000000002L;
     /**
      * audio
+     * 
+     * API-Since: 3.0
      */
     @Generated @NUInt public static final long AudioBook = 0x0000000000000004L;
     /**
      * audio
+     * 
+     * API-Since: 5.0
      */
     @Generated @NUInt public static final long AudioITunesU = 0x0000000000000008L;
     /**
      * audio
+     * 
+     * API-Since: 3.0
      */
     @Generated @NUInt public static final long AnyAudio = 0x00000000000000FFL;
     /**
      * video
+     * 
+     * API-Since: 5.0
      */
     @Generated @NUInt public static final long Movie = 0x0000000000000100L;
     /**
      * video
+     * 
+     * API-Since: 5.0
      */
     @Generated @NUInt public static final long TVShow = 0x0000000000000200L;
     /**
      * video
+     * 
+     * API-Since: 5.0
      */
     @Generated @NUInt public static final long VideoPodcast = 0x0000000000000400L;
     /**
      * video
+     * 
+     * API-Since: 5.0
      */
     @Generated @NUInt public static final long MusicVideo = 0x0000000000000800L;
     /**
      * video
+     * 
+     * API-Since: 5.0
      */
     @Generated @NUInt public static final long VideoITunesU = 0x0000000000001000L;
     /**
      * video
+     * 
+     * API-Since: 7.0
      */
     @Generated @NUInt public static final long HomeVideo = 0x0000000000002000L;
     /**
      * video
+     * 
+     * API-Since: 5.0
      */
     @Generated @NUInt public static final long AnyVideo = 0x000000000000FF00L;
     /**
      * video
+     * 
+     * API-Since: 3.0
      */
     @Generated @NUInt public static final long Any = org.moe.natj.general.NatJ.is64Bit() ?
             0xFFFFFFFFFFFFFFFFL :

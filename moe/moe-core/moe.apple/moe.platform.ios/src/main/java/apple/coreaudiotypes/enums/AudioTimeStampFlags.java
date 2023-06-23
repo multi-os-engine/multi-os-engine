@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] AudioTimeStampFlags
- * <p>
+ * 
  * The flags that indicate which fields in an AudioTimeStamp structure are valid.
  * [@constant] kAudioTimeStampSampleTimeValid
  * The sample frame time is valid.

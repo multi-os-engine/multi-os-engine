@@ -19,9 +19,18 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class MTLTriangleFillMode {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Fill = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Lines = 0x0000000000000001L;
 
     @Generated

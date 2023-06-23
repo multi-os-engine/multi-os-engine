@@ -41,14 +41,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Interface for browsing unconfigured accessories
- * <p>
+ * 
  * This class brokers access to the MFi Wireless Accessory Configuration (WAC) process.
  * This browser enables the application to scan for unconfigured accessories,
  * connect them to the user's Wi-Fi infrastructure and configure attributes of
  * the accessory.
+ * 
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("ExternalAccessory")
@@ -80,22 +85,25 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +138,10 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,7 +171,7 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
 
     /**
      * Begin the configuration process for the chosen accessory
-     * <p>
+     * 
      * Stop the search for unconfigured accessories and begins the configuration process of the specified
      * EAWiFiUnconfiguredAccessory.
      * The user is guided through the configuration process via Apple UI. This process can take up to a few minutes to
@@ -170,20 +179,24 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
      * The host application delegate will receive the didFinishConfiguringAccessory callback with an error that should
      * be
      * checked upon completion.
-     *
+     * 
      * @param accessory      The accessory the application wishes to configure
      * @param viewController The UIViewController that will host the Apple guided setup UI in the host application.
+     * 
+     * 
+     *                       API-Since: 8.0
      */
     @Generated
     @Selector("configureAccessory:withConfigurationUIOnViewController:")
-    public native void configureAccessoryWithConfigurationUIOnViewController(EAWiFiUnconfiguredAccessory accessory,
-            UIViewController viewController);
+    public native void configureAccessoryWithConfigurationUIOnViewController(
+            @NotNull EAWiFiUnconfiguredAccessory accessory, @NotNull UIViewController viewController);
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The delegate object that will receive the browser events.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -195,37 +208,43 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
 
     /**
      * Designated initializer.
-     * <p>
+     * 
      * Initializes an instance of the EAWiFiUnconfiguredAccessoryBrowser class
      * which can be further configured based on the application's interests.
-     *
+     * 
      * @param delegate The delegate that will receive the EAWiFiUnconfiguredAccessoryBrowserDelegate events.
      * @param queue    The dispatch queue the delegate would like to receive events on. If nil the events will be on the
      *                 main queue.
+     * 
      * @return Instance object
+     * 
+     * 
+     *         API-Since: 8.0
      */
     @Generated
     @Selector("initWithDelegate:queue:")
     public native EAWiFiUnconfiguredAccessoryBrowser initWithDelegateQueue(
-            @Mapped(ObjCObjectMapper.class) EAWiFiUnconfiguredAccessoryBrowserDelegate delegate, NSObject queue);
+            @Nullable @Mapped(ObjCObjectMapper.class) EAWiFiUnconfiguredAccessoryBrowserDelegate delegate,
+            @Nullable NSObject queue);
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The delegate object that will receive the browser events.
      */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) EAWiFiUnconfiguredAccessoryBrowserDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) EAWiFiUnconfiguredAccessoryBrowserDelegate value);
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The delegate object that will receive the browser events.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) EAWiFiUnconfiguredAccessoryBrowserDelegate value) {
+    public void setDelegate(
+            @Nullable @Mapped(ObjCObjectMapper.class) EAWiFiUnconfiguredAccessoryBrowserDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -238,20 +257,26 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
 
     /**
      * Start the search for unconfigured accessories
-     * <p>
+     * 
      * Starts a Wi-Fi scan for unconfigured accessories. This power and resource intensive process and must
      * only be used when actively searching for accessories. Scans should be stopped immediately when the
      * desired accessories have been located.
-     *
+     * 
      * @param predicate The desired filter for unconfigured accessory results conforming to the
      *                  EAWiFiUnconfiguredAccessory protocol.
+     * 
+     * 
+     *                  API-Since: 8.0
      */
     @Generated
     @Selector("startSearchingForUnconfiguredAccessoriesMatchingPredicate:")
-    public native void startSearchingForUnconfiguredAccessoriesMatchingPredicate(NSPredicate predicate);
+    public native void startSearchingForUnconfiguredAccessoriesMatchingPredicate(@Nullable NSPredicate predicate);
 
     /**
      * Stop the search for unconfigured MFi Wireless Accessory Configuration accessories
+     * 
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("stopSearchingForUnconfiguredAccessories")
@@ -259,10 +284,11 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
 
     /**
      * [@property] unconfiguredAccessories
-     * <p>
+     * 
      * The set of discovered unconfigured accessories described by EAWiFiUnconfiguredAccessory objects.
      * This snapshot will only include objects matching the filter predicate defined when starting the search.
      */
+    @NotNull
     @Generated
     @Selector("unconfiguredAccessories")
     public native NSSet<? extends EAWiFiUnconfiguredAccessory> unconfiguredAccessories();

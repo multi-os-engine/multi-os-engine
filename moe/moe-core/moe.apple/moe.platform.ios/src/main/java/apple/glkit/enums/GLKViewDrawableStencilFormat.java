@@ -20,10 +20,18 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * Enums for stencil buffer formats.
+ * 
+ * API-Since: 5.0
  */
 @Generated
 public final class GLKViewDrawableStencilFormat {
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int FormatNone = 0x00000000;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int Format8 = 0x00000001;
 
     @Generated

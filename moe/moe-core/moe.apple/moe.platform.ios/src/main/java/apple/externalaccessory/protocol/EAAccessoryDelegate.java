@@ -24,16 +24,20 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("ExternalAccessory")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("EAAccessoryDelegate")
 public interface EAAccessoryDelegate {
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("accessoryDidDisconnect:")
-    default void accessoryDidDisconnect(EAAccessory accessory) {
+    default void accessoryDidDisconnect(@NotNull EAAccessory accessory) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -26,6 +26,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("GameKit")
@@ -34,40 +35,52 @@ import org.moe.natj.objc.ann.Selector;
 public interface GKTurnBasedMatchmakerViewControllerDelegate {
     /**
      * Matchmaking has failed with an error
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("turnBasedMatchmakerViewController:didFailWithError:")
-    void turnBasedMatchmakerViewControllerDidFailWithError(GKTurnBasedMatchmakerViewController viewController,
-            NSError error);
+    void turnBasedMatchmakerViewControllerDidFailWithError(@NotNull GKTurnBasedMatchmakerViewController viewController,
+            @NotNull NSError error);
 
     /**
      * Deprecated
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: use GKTurnBasedEventListener player:receivedTurnEventForMatch:didBecomeActive:
      */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("turnBasedMatchmakerViewController:didFindMatch:")
-    default void turnBasedMatchmakerViewControllerDidFindMatch(GKTurnBasedMatchmakerViewController viewController,
-            GKTurnBasedMatch match) {
+    default void turnBasedMatchmakerViewControllerDidFindMatch(
+            @NotNull GKTurnBasedMatchmakerViewController viewController, @NotNull GKTurnBasedMatch match) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Deprectated
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: use GKTurnBasedEventListener player:wantsToQuitMatch:
      */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("turnBasedMatchmakerViewController:playerQuitForMatch:")
-    default void turnBasedMatchmakerViewControllerPlayerQuitForMatch(GKTurnBasedMatchmakerViewController viewController,
-            GKTurnBasedMatch match) {
+    default void turnBasedMatchmakerViewControllerPlayerQuitForMatch(
+            @NotNull GKTurnBasedMatchmakerViewController viewController, @NotNull GKTurnBasedMatch match) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * The user has cancelled
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("turnBasedMatchmakerViewControllerWasCancelled:")
-    void turnBasedMatchmakerViewControllerWasCancelled(GKTurnBasedMatchmakerViewController viewController);
+    void turnBasedMatchmakerViewControllerWasCancelled(@NotNull GKTurnBasedMatchmakerViewController viewController);
 }

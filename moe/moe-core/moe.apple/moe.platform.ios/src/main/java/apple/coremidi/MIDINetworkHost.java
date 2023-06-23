@@ -38,16 +38,20 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * __________________________________________________________________________________________________
  * MIDINetworkHost
- * <p>
+ * 
  * Represents a network address.
  * name: the user's tag for this object.
  * Representations are either:
  * - address (IP address or hostname) and UDP port
  * - netServiceName and netServiceDomain
+ * 
+ * API-Since: 4.2
  */
 @Generated
 @Library("CoreMIDI")
@@ -79,22 +83,25 @@ public class MIDINetworkHost extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -114,16 +121,17 @@ public class MIDINetworkHost extends NSObject {
 
     @Generated
     @Selector("hostWithName:address:port:")
-    public static native MIDINetworkHost hostWithNameAddressPort(String name, String address, @NUInt long port);
+    public static native MIDINetworkHost hostWithNameAddressPort(@NotNull String name, @NotNull String address,
+            @NUInt long port);
 
     @Generated
     @Selector("hostWithName:netService:")
-    public static native MIDINetworkHost hostWithNameNetService(String name, NSNetService netService);
+    public static native MIDINetworkHost hostWithNameNetService(@NotNull String name, @NotNull NSNetService netService);
 
     @Generated
     @Selector("hostWithName:netServiceName:netServiceDomain:")
-    public static native MIDINetworkHost hostWithNameNetServiceNameNetServiceDomain(String name, String netServiceName,
-            String netServiceDomain);
+    public static native MIDINetworkHost hostWithNameNetServiceNameNetServiceDomain(@NotNull String name,
+            @NotNull String netServiceName, @NotNull String netServiceDomain);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -142,9 +150,10 @@ public class MIDINetworkHost extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -175,13 +184,14 @@ public class MIDINetworkHost extends NSObject {
     /**
      * IP address or hostname
      */
+    @NotNull
     @Generated
     @Selector("address")
     public native String address();
 
     @Generated
     @Selector("hasSameAddressAs:")
-    public native boolean hasSameAddressAs(MIDINetworkHost other);
+    public native boolean hasSameAddressAs(@NotNull MIDINetworkHost other);
 
     @Generated
     @Selector("init")
@@ -190,6 +200,7 @@ public class MIDINetworkHost extends NSObject {
     /**
      * user's tag
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -197,6 +208,7 @@ public class MIDINetworkHost extends NSObject {
     /**
      * NSNetService domain
      */
+    @Nullable
     @Generated
     @Selector("netServiceDomain")
     public native String netServiceDomain();
@@ -204,6 +216,7 @@ public class MIDINetworkHost extends NSObject {
     /**
      * NSNetService name
      */
+    @Nullable
     @Generated
     @Selector("netServiceName")
     public native String netServiceName();

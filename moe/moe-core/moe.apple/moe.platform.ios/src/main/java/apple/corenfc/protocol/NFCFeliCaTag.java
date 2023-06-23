@@ -11,10 +11,12 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] NFCFeliCaTag
- * <p>
+ * 
  * A @link NFCTagReaderSession @link/ reader session returns an instance conforming to this protocol
  * when a FeliCa tag is detected. Unless it is specified all block completion handlers are dispatched on the
  * session work queue that is associated with the tag. Your process requires to include the
@@ -36,6 +38,8 @@ import org.moe.natj.objc.ann.Selector;
  * on the first successful Polling command matching one of the system codes. Tag will not be returned
  * to the NFCTagReaderSessionDelegate if no matching system is found based on entries listed in the Info.plist.
  * Tag must be in the connected state for NFCNDEFTag protocol properties and methods to work correctly.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreNFC")
@@ -46,7 +50,10 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
      * [@property] currentIDm Manufacturer ID of the currently selected system. Value is updated on each Polling command
      * execution.
      * It will be empty if system selection fails.
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("currentIDm")
     NSData currentIDm();
@@ -55,20 +62,25 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
      * [@property] currentSystemCode The system code most recently selected by the reader using the Polling command.
      * This will match one of the entries in the "com.apple.developer.nfc.readersession.felica.systemcodes"
      * in the Info.plist.
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("currentSystemCode")
     NSData currentSystemCode();
 
     /**
      * pollingWithSystemCode:requestCode:timeSlot:completionHandler:
-     * <p>
+     * 
      * Polling command defined by FeliCa card specification. Refer to the FeliCa specification for details.
      * System code must be one of the provided values in the "com.apple.developer.nfc.readersession.felica.systemcodes"
      * in the Info.plist; @link NFCReaderErrorSecurityViolation @link/ will be returned when an invalid system code is
      * used.
      * Polling with wildcard value in the upper or lower byte is not supported.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param systemCode        Designation of System Code. Wildcard value (0xFF) in the upper or the lower byte is not
      *                          supported.
      * @param requestCode       Designation of Requset Data output.
@@ -84,24 +96,26 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
      */
     @Generated
     @Selector("pollingWithSystemCode:requestCode:timeSlot:completionHandler:")
-    void pollingWithSystemCodeRequestCodeTimeSlotCompletionHandler(NSData systemCode, @NInt long requestCode,
+    void pollingWithSystemCodeRequestCodeTimeSlotCompletionHandler(@NotNull NSData systemCode, @NInt long requestCode,
             @NInt long timeSlot,
-            @ObjCBlock(name = "call_pollingWithSystemCodeRequestCodeTimeSlotCompletionHandler") Block_pollingWithSystemCodeRequestCodeTimeSlotCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_pollingWithSystemCodeRequestCodeTimeSlotCompletionHandler") Block_pollingWithSystemCodeRequestCodeTimeSlotCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_pollingWithSystemCodeRequestCodeTimeSlotCompletionHandler {
         @Generated
-        void call_pollingWithSystemCodeRequestCodeTimeSlotCompletionHandler(NSData pmm, NSData requestData,
-                NSError error);
+        void call_pollingWithSystemCodeRequestCodeTimeSlotCompletionHandler(@NotNull NSData pmm,
+                @NotNull NSData requestData, @Nullable NSError error);
     }
 
     /**
      * readWithoutEncryptionWithServiceCodeList:blockList:completionHandler:
-     * <p>
+     * 
      * Read Without Encrypton command defined by FeliCa card specification. Refer to the FeliCa specification for
      * details.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param serviceCodeList   Service Code list represented in a NSArray of NSData objects. Number of nodes specified
      *                          should be between 1 to 16 inclusive.
      *                          Each service code should be 2 bytes stored in Little Endian format.
@@ -115,23 +129,25 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
      */
     @Generated
     @Selector("readWithoutEncryptionWithServiceCodeList:blockList:completionHandler:")
-    void readWithoutEncryptionWithServiceCodeListBlockListCompletionHandler(NSArray<? extends NSData> serviceCodeList,
-            NSArray<? extends NSData> blockList,
-            @ObjCBlock(name = "call_readWithoutEncryptionWithServiceCodeListBlockListCompletionHandler") Block_readWithoutEncryptionWithServiceCodeListBlockListCompletionHandler completionHandler);
+    void readWithoutEncryptionWithServiceCodeListBlockListCompletionHandler(
+            @NotNull NSArray<? extends NSData> serviceCodeList, @NotNull NSArray<? extends NSData> blockList,
+            @NotNull @ObjCBlock(name = "call_readWithoutEncryptionWithServiceCodeListBlockListCompletionHandler") Block_readWithoutEncryptionWithServiceCodeListBlockListCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_readWithoutEncryptionWithServiceCodeListBlockListCompletionHandler {
         @Generated
         void call_readWithoutEncryptionWithServiceCodeListBlockListCompletionHandler(@NInt long statusFlag1,
-                @NInt long statusFlag2, NSArray<? extends NSData> blockData, NSError error);
+                @NInt long statusFlag2, @NotNull NSArray<? extends NSData> blockData, @Nullable NSError error);
     }
 
     /**
      * requestResponseWithCompletionHandler:
-     * <p>
+     * 
      * Request Response command defined by FeliCa card specification. Refer to the FeliCa specification for details.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param completionHandler Completion handler called when the operation is completed. error is nil if the
      *                          contactless transceive operation succeeds,
      *                          else all other return values shall be ignored. Valid mode value ranges from 0 to 3
@@ -140,20 +156,22 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
     @Generated
     @Selector("requestResponseWithCompletionHandler:")
     void requestResponseWithCompletionHandler(
-            @ObjCBlock(name = "call_requestResponseWithCompletionHandler") Block_requestResponseWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_requestResponseWithCompletionHandler") Block_requestResponseWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestResponseWithCompletionHandler {
         @Generated
-        void call_requestResponseWithCompletionHandler(@NInt long mode, NSError error);
+        void call_requestResponseWithCompletionHandler(@NInt long mode, @Nullable NSError error);
     }
 
     /**
      * requestServiceV2WithNodeCodeList:completionHandler:
-     * <p>
+     * 
      * Request Service V2 command defined by FeliCa card specification. Refer to the FeliCa specification for details.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param nodeCodeList      Node Code list represent in a NSArray of NSData. Number of nodes specified should be
      *                          between 1 to 32 inclusive.
      *                          Each node code should be 2 bytes stored in Little Endian format.
@@ -167,23 +185,25 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
      */
     @Generated
     @Selector("requestServiceV2WithNodeCodeList:completionHandler:")
-    void requestServiceV2WithNodeCodeListCompletionHandler(NSArray<? extends NSData> nodeCodeList,
-            @ObjCBlock(name = "call_requestServiceV2WithNodeCodeListCompletionHandler") Block_requestServiceV2WithNodeCodeListCompletionHandler completionHandler);
+    void requestServiceV2WithNodeCodeListCompletionHandler(@NotNull NSArray<? extends NSData> nodeCodeList,
+            @NotNull @ObjCBlock(name = "call_requestServiceV2WithNodeCodeListCompletionHandler") Block_requestServiceV2WithNodeCodeListCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestServiceV2WithNodeCodeListCompletionHandler {
         @Generated
         void call_requestServiceV2WithNodeCodeListCompletionHandler(@NInt long statusFlag1, @NInt long statusFlag2,
-                @NInt long encryptionIdentifier, NSArray<? extends NSData> nodeKeyVersionListAES,
-                NSArray<? extends NSData> nodeKeyVersionListDES, NSError error);
+                @NInt long encryptionIdentifier, @NotNull NSArray<? extends NSData> nodeKeyVersionListAES,
+                @NotNull NSArray<? extends NSData> nodeKeyVersionListDES, @Nullable NSError error);
     }
 
     /**
      * requestServiceWithNodeCodeList:completionHandler:
-     * <p>
+     * 
      * Request Service command defined by FeliCa card specification. Refer to the FeliCa specification for details.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param nodeCodeList      Node Code list represented in a NSArray of NSData objects. Number of nodes specified
      *                          should be between 1 to 32 inclusive.
      *                          Each node code should be 2 bytes stored in Little Endian format.
@@ -195,24 +215,26 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
      */
     @Generated
     @Selector("requestServiceWithNodeCodeList:completionHandler:")
-    void requestServiceWithNodeCodeListCompletionHandler(NSArray<? extends NSData> nodeCodeList,
-            @ObjCBlock(name = "call_requestServiceWithNodeCodeListCompletionHandler") Block_requestServiceWithNodeCodeListCompletionHandler completionHandler);
+    void requestServiceWithNodeCodeListCompletionHandler(@NotNull NSArray<? extends NSData> nodeCodeList,
+            @NotNull @ObjCBlock(name = "call_requestServiceWithNodeCodeListCompletionHandler") Block_requestServiceWithNodeCodeListCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestServiceWithNodeCodeListCompletionHandler {
         @Generated
-        void call_requestServiceWithNodeCodeListCompletionHandler(NSArray<? extends NSData> nodeKeyVersionList,
-                NSError error);
+        void call_requestServiceWithNodeCodeListCompletionHandler(@NotNull NSArray<? extends NSData> nodeKeyVersionList,
+                @Nullable NSError error);
     }
 
     /**
      * requestSpecificationVersionWithCompletionHandler:
-     * <p>
+     * 
      * Request Specification Verison command defined by FeliCa card specification. This command supports response format
      * version `00`h.
      * Refer to the FeliCa specification for details.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param completionHandler Completion handler called when the operation is completed. error is nil if the
      *                          contactless transceive operation succeeds,
      *                          else all other return values shall be ignored. basicVersion and optionVersion may be
@@ -222,21 +244,23 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
     @Generated
     @Selector("requestSpecificationVersionWithCompletionHandler:")
     void requestSpecificationVersionWithCompletionHandler(
-            @ObjCBlock(name = "call_requestSpecificationVersionWithCompletionHandler") Block_requestSpecificationVersionWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_requestSpecificationVersionWithCompletionHandler") Block_requestSpecificationVersionWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestSpecificationVersionWithCompletionHandler {
         @Generated
         void call_requestSpecificationVersionWithCompletionHandler(@NInt long statusFlag1, @NInt long statusFlag2,
-                NSData basicVersion, NSData optionVersion, NSError error);
+                @NotNull NSData basicVersion, @NotNull NSData optionVersion, @Nullable NSError error);
     }
 
     /**
      * requestSystemCodeWithCompletionHandler:
-     * <p>
+     * 
      * Request System Code command defined by FeliCa card specification. Refer to the FeliCa specification for details.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param completionHandler Completion handler called when the operation is completed. error is nil if the
      *                          contactless transceive operation succeeds,
      *                          else all other return values shall be ignored. Each system code is 2 bytes stored in
@@ -245,20 +269,23 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
     @Generated
     @Selector("requestSystemCodeWithCompletionHandler:")
     void requestSystemCodeWithCompletionHandler(
-            @ObjCBlock(name = "call_requestSystemCodeWithCompletionHandler") Block_requestSystemCodeWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_requestSystemCodeWithCompletionHandler") Block_requestSystemCodeWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestSystemCodeWithCompletionHandler {
         @Generated
-        void call_requestSystemCodeWithCompletionHandler(NSArray<? extends NSData> systemCodeList, NSError error);
+        void call_requestSystemCodeWithCompletionHandler(@NotNull NSArray<? extends NSData> systemCodeList,
+                @Nullable NSError error);
     }
 
     /**
      * resetModeWithCompletionHandler:
-     * <p>
+     * 
      * Reset Mode command defined by FeliCa card specification. Refer to the FeliCa specification for details.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param completionHandler Completion handler called when the operation is completed. error is nil if the
      *                          contactless transceive operation succeeds,
      *                          else all other return values shall be ignored.
@@ -266,22 +293,25 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
     @Generated
     @Selector("resetModeWithCompletionHandler:")
     void resetModeWithCompletionHandler(
-            @ObjCBlock(name = "call_resetModeWithCompletionHandler") Block_resetModeWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_resetModeWithCompletionHandler") Block_resetModeWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resetModeWithCompletionHandler {
         @Generated
-        void call_resetModeWithCompletionHandler(@NInt long statusFlag1, @NInt long statusFlag2, NSError error);
+        void call_resetModeWithCompletionHandler(@NInt long statusFlag1, @NInt long statusFlag2,
+                @Nullable NSError error);
     }
 
     /**
      * sendFeliCaCommandPacket:completionHandler:
-     * <p>
+     * 
      * Transmission of FeliCa Command Packet Data at the applicaiton layer. Refer to the FeliCa specification for
      * details.
      * Manufacturer ID (IDm) of the currently selected system can be read from the currentIDm property.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param commandPacket     Command packet send to the FeliCa card. Maximum packet length is 254. Data length (LEN)
      *                          byte and CRC bytes are calculated and inserted
      *                          automatically to the provided packet data frame.
@@ -292,22 +322,24 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
      */
     @Generated
     @Selector("sendFeliCaCommandPacket:completionHandler:")
-    void sendFeliCaCommandPacketCompletionHandler(NSData commandPacket,
-            @ObjCBlock(name = "call_sendFeliCaCommandPacketCompletionHandler") Block_sendFeliCaCommandPacketCompletionHandler completionHandler);
+    void sendFeliCaCommandPacketCompletionHandler(@NotNull NSData commandPacket,
+            @NotNull @ObjCBlock(name = "call_sendFeliCaCommandPacketCompletionHandler") Block_sendFeliCaCommandPacketCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sendFeliCaCommandPacketCompletionHandler {
         @Generated
-        void call_sendFeliCaCommandPacketCompletionHandler(NSData responsePacket, NSError error);
+        void call_sendFeliCaCommandPacketCompletionHandler(@NotNull NSData responsePacket, @Nullable NSError error);
     }
 
     /**
      * writeWithoutEncryptionWithServiceCodeList:blockList:blockData:completionHandler:
-     * <p>
+     * 
      * Write Without Encrypton command defined by FeliCa card specification. Refer to the FeliCa specification for
      * details.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param serviceCodeList   Service Code list represented in a NSArray of NSData objects. Number of nodes specified
      *                          should be between 1 to 16 inclusive.
      *                          Each service code should be 2 bytes stored in Little Endian format.
@@ -324,15 +356,15 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
     @Generated
     @Selector("writeWithoutEncryptionWithServiceCodeList:blockList:blockData:completionHandler:")
     void writeWithoutEncryptionWithServiceCodeListBlockListBlockDataCompletionHandler(
-            NSArray<? extends NSData> serviceCodeList, NSArray<? extends NSData> blockList,
-            NSArray<? extends NSData> blockData,
-            @ObjCBlock(name = "call_writeWithoutEncryptionWithServiceCodeListBlockListBlockDataCompletionHandler") Block_writeWithoutEncryptionWithServiceCodeListBlockListBlockDataCompletionHandler completionHandler);
+            @NotNull NSArray<? extends NSData> serviceCodeList, @NotNull NSArray<? extends NSData> blockList,
+            @NotNull NSArray<? extends NSData> blockData,
+            @NotNull @ObjCBlock(name = "call_writeWithoutEncryptionWithServiceCodeListBlockListBlockDataCompletionHandler") Block_writeWithoutEncryptionWithServiceCodeListBlockListBlockDataCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeWithoutEncryptionWithServiceCodeListBlockListBlockDataCompletionHandler {
         @Generated
         void call_writeWithoutEncryptionWithServiceCodeListBlockListBlockDataCompletionHandler(@NInt long statusFlag1,
-                @NInt long statusFlag2, NSError error);
+                @NInt long statusFlag2, @Nullable NSError error);
     }
 }

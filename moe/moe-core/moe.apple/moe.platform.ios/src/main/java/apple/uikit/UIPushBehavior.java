@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGVector;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -42,7 +41,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGVector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -73,22 +78,25 @@ public class UIPushBehavior extends UIDynamicBehavior {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +131,10 @@ public class UIPushBehavior extends UIDynamicBehavior {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,7 +168,7 @@ public class UIPushBehavior extends UIDynamicBehavior {
 
     @Generated
     @Selector("addItem:")
-    public native void addItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
+    public native void addItem(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
     @Generated
     @Selector("angle")
@@ -172,8 +181,9 @@ public class UIPushBehavior extends UIDynamicBehavior {
 
     @Generated
     @Selector("initWithItems:mode:")
-    public native UIPushBehavior initWithItemsMode(NSArray<?> items, @NInt long mode);
+    public native UIPushBehavior initWithItemsMode(@NotNull NSArray<?> items, @NInt long mode);
 
+    @NotNull
     @Generated
     @Selector("items")
     public native NSArray<?> items();
@@ -199,7 +209,7 @@ public class UIPushBehavior extends UIDynamicBehavior {
 
     @Generated
     @Selector("removeItem:")
-    public native void removeItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
+    public native void removeItem(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
     @Generated
     @Selector("setActive:")
@@ -228,10 +238,10 @@ public class UIPushBehavior extends UIDynamicBehavior {
     @Generated
     @Selector("setTargetOffsetFromCenter:forItem:")
     public native void setTargetOffsetFromCenterForItem(@ByValue UIOffset o,
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
     @Generated
     @Selector("targetOffsetFromCenterForItem:")
     @ByValue
-    public native UIOffset targetOffsetFromCenterForItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
+    public native UIOffset targetOffsetFromCenterForItem(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 }

@@ -24,15 +24,20 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * VNCoreMLFeatureValueObservation
  * [@superclass] VNObservation
- * <p>
+ * 
  * VNCoreMLFeatureValueObservation returns the prediction of a model as an MLFeatureValue.
- * <p>
+ * 
  * This is the returned observations for models that are not classifiers and that do not return an image as a
  * prediction. The confidence for these observations is always 1.0.
+ * 
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -64,22 +69,25 @@ public class VNCoreMLFeatureValueObservation extends VNObservation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,6 +104,7 @@ public class VNCoreMLFeatureValueObservation extends VNObservation {
      * The result VNCoreMLRequest where the model produces an MLFeatureValue that is neither a classification or image.
      * Refer to the Core ML documentation and the model itself for the handling of the content of the featureValue.
      */
+    @NotNull
     @Generated
     @Selector("featureValue")
     public native MLFeatureValue featureValue();
@@ -111,7 +120,7 @@ public class VNCoreMLFeatureValueObservation extends VNObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNCoreMLFeatureValueObservation initWithCoder(NSCoder coder);
+    public native VNCoreMLFeatureValueObservation initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -130,9 +139,10 @@ public class VNCoreMLFeatureValueObservation extends VNObservation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -173,7 +183,11 @@ public class VNCoreMLFeatureValueObservation extends VNObservation {
     /**
      * The name used in the model description of the CoreML model that produced this observation allowing to correlate
      * the observation back to the output of the model.
+     * 
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("featureName")
     public native String featureName();

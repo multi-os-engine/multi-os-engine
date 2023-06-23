@@ -27,13 +27,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNPad
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * Describes a padding operation
- * <p>
+ * 
  * You should not use this filter to zero pad your data in the XY-plane.
  * This filter achieves padding by copying the input image and therefore should only be used in
  * special circumstances where the normal padding operation, defined for most filters through
@@ -61,14 +63,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * filled in the destination is determined by the number of active feature channels
  * determined by @ref sourceFeatureChannelOffset and @ref sourceFeatureChannelMaxCount and
  * the amount of padding to be added on each side of the source.
- * <p>
+ * 
  * Example for feature channel indices:
  * [@code]
  * paddingSizeBefore.channel = 2, paddingSizeAfter.channel = 3,
  * sourceFeatureChannelOffset = 1, sourceFeatureChannelMaxCount = 3,
  * destinationFeatureChannelOffset = 4.
  * We get the following padding operation:
- * <p>
+ * 
  * Source:
  * |-----------------------------|
  * | x0 | x1 | x2 | x3 | x4 | x5 |
@@ -77,9 +79,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * |----------------------------------------------------------------|
  * | - | - | - | - | 0 | 0 | x1 | x2 | x3 | 0 | 0 | 0 | - |
  * |----------------------------------------------------------------|
- * <p>
+ * 
  * And with @ref edgeMode = MPSImageEdgeModeMirrorWithEdge:
- * <p>
+ * 
  * Source:
  * |-----------------------------|
  * | x0 | x1 | x2 | x3 | x4 | x5 |
@@ -88,19 +90,22 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * |----------------------------------------------------------------|
  * | - | - | - | - | x2 | x1 | x1 | x2 | x3 | x3 | x2 | x1 | - |
  * |----------------------------------------------------------------|
- * <p>
+ * 
  * Here the symbols '-' denote pixels not written by the kernel.
- * <p>
+ * 
  * NOTE: The 'channel' coordinate and size in sourceRegion can be
  * set to other values than those with multiple of four channels,
  * but the @ref destinationFeatureChannelOffset property must be multiple of
  * four, which means that there are some limitations to what can be achieved
  * with this filter alone.
- * <p>
+ * 
  * [@endcode]
  * [@NOTE] MPSNNPad is currently the only filter that supports
  * [@ref] MPSImageEdgeModeMirror, @ref MPSImageEdgeModeMirrorWithEdge and
  * [@ref] MPSImageEdgeModeConstant.
+ * 
+ * 
+ * API-Since: 12.1
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -132,22 +137,25 @@ public class MPSNNPad extends MPSCNNKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -162,7 +170,7 @@ public class MPSNNPad extends MPSCNNKernel {
 
     /**
      * [@property] fillValue
-     * <p>
+     * 
      * Determines the constant value to apply when using @ref MPSImageEdgeModeConstant. Default: 0.0f.
      * NOTE: this value is ignored if the filter is initialized with a per-channel fill value
      * using @ref initWithDevice:paddingSizeBefore:paddingSizeAfter:fillValueArray:.
@@ -182,34 +190,35 @@ public class MPSNNPad extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNPad initWithCoder(NSCoder aDecoder);
+    public native MPSNNPad initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSNNPad
      * @param device   The MTLDevice on which to make the MPSNNPad
      * @return A new MPSNNPad object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNNPad initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNPad initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize a MPSNNPad kernel
-     *
+     * 
      * @param device The device the filter will run on.
      * @return A valid MPSNNPad object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNNPad initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNPad initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize a MPSNNPad kernel
-     *
+     * 
      * @param device            The device the filter will run on
      * @param paddingSizeBefore The amount of padding to add before the source image - see details above.
      * @param paddingSizeAfter  The amount of padding to add after the source image - see details above.
@@ -218,12 +227,12 @@ public class MPSNNPad extends MPSCNNKernel {
     @Generated
     @Selector("initWithDevice:paddingSizeBefore:paddingSizeAfter:")
     public native MPSNNPad initWithDevicePaddingSizeBeforePaddingSizeAfter(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @ByValue MPSImageCoordinate paddingSizeBefore,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @ByValue MPSImageCoordinate paddingSizeBefore,
             @ByValue MPSImageCoordinate paddingSizeAfter);
 
     /**
      * Initialize a MPSNNPad kernel
-     *
+     * 
      * @param device            The device the filter will run on
      * @param paddingSizeBefore The amount of padding to add before the source image - see details above.
      * @param paddingSizeAfter  The amount of padding to add after the source image - see details above.
@@ -238,8 +247,8 @@ public class MPSNNPad extends MPSCNNKernel {
     @Generated
     @Selector("initWithDevice:paddingSizeBefore:paddingSizeAfter:fillValueArray:")
     public native MPSNNPad initWithDevicePaddingSizeBeforePaddingSizeAfterFillValueArray(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @ByValue MPSImageCoordinate paddingSizeBefore,
-            @ByValue MPSImageCoordinate paddingSizeAfter, NSData fillValueArray);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @ByValue MPSImageCoordinate paddingSizeBefore,
+            @ByValue MPSImageCoordinate paddingSizeAfter, @Nullable NSData fillValueArray);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -258,9 +267,10 @@ public class MPSNNPad extends MPSCNNKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -269,7 +279,7 @@ public class MPSNNPad extends MPSCNNKernel {
 
     /**
      * [@property] paddingSizeAfter
-     * <p>
+     * 
      * This property is used for automatically sizing the destination image
      * for the function @ref destinationImageDescriptorForSourceImages:sourceStates:. Defines
      * how much padding to assign on the right, bottom and higher feature channel indices
@@ -289,7 +299,7 @@ public class MPSNNPad extends MPSCNNKernel {
 
     /**
      * [@property] paddingSizeBefore
-     * <p>
+     * 
      * This property is used for automatically sizing the destination image
      * for the function @ref destinationImageDescriptorForSourceImages:sourceStates:. Defines
      * how much padding to assign on the left, top and smaller feature channel indices
@@ -316,7 +326,7 @@ public class MPSNNPad extends MPSCNNKernel {
 
     /**
      * [@property] fillValue
-     * <p>
+     * 
      * Determines the constant value to apply when using @ref MPSImageEdgeModeConstant. Default: 0.0f.
      * NOTE: this value is ignored if the filter is initialized with a per-channel fill value
      * using @ref initWithDevice:paddingSizeBefore:paddingSizeAfter:fillValueArray:.
@@ -327,7 +337,7 @@ public class MPSNNPad extends MPSCNNKernel {
 
     /**
      * [@property] paddingSizeAfter
-     * <p>
+     * 
      * This property is used for automatically sizing the destination image
      * for the function @ref destinationImageDescriptorForSourceImages:sourceStates:. Defines
      * how much padding to assign on the right, bottom and higher feature channel indices
@@ -346,7 +356,7 @@ public class MPSNNPad extends MPSCNNKernel {
 
     /**
      * [@property] paddingSizeBefore
-     * <p>
+     * 
      * This property is used for automatically sizing the destination image
      * for the function @ref destinationImageDescriptorForSourceImages:sourceStates:. Defines
      * how much padding to assign on the left, top and smaller feature channel indices

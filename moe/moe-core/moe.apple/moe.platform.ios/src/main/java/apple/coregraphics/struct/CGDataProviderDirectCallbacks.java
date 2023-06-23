@@ -28,6 +28,8 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -56,6 +58,7 @@ public final class CGDataProviderDirectCallbacks extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setVersion(int value);
 
+    @Nullable
     @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_getBytePointer")
@@ -63,8 +66,10 @@ public final class CGDataProviderDirectCallbacks extends StructObject {
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setGetBytePointer(@FunctionPtr(name = "call_getBytePointer") Function_getBytePointer value);
+    public native void setGetBytePointer(
+            @Nullable @FunctionPtr(name = "call_getBytePointer") Function_getBytePointer value);
 
+    @Nullable
     @Generated
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_releaseBytePointer")
@@ -73,8 +78,9 @@ public final class CGDataProviderDirectCallbacks extends StructObject {
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setReleaseBytePointer(
-            @FunctionPtr(name = "call_releaseBytePointer") Function_releaseBytePointer value);
+            @Nullable @FunctionPtr(name = "call_releaseBytePointer") Function_releaseBytePointer value);
 
+    @Nullable
     @Generated
     @StructureField(order = 3, isGetter = true)
     @FunctionPtr(name = "call_getBytesAtPosition")
@@ -83,8 +89,9 @@ public final class CGDataProviderDirectCallbacks extends StructObject {
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setGetBytesAtPosition(
-            @FunctionPtr(name = "call_getBytesAtPosition") Function_getBytesAtPosition value);
+            @Nullable @FunctionPtr(name = "call_getBytesAtPosition") Function_getBytesAtPosition value);
 
+    @Nullable
     @Generated
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_releaseInfo")
@@ -92,20 +99,21 @@ public final class CGDataProviderDirectCallbacks extends StructObject {
 
     @Generated
     @StructureField(order = 4, isGetter = false)
-    public native void setReleaseInfo(@FunctionPtr(name = "call_releaseInfo") Function_releaseInfo value);
+    public native void setReleaseInfo(@Nullable @FunctionPtr(name = "call_releaseInfo") Function_releaseInfo value);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_getBytePointer {
+        @Nullable
         @Generated
-        ConstVoidPtr call_getBytePointer(VoidPtr arg0);
+        ConstVoidPtr call_getBytePointer(@Nullable VoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_releaseBytePointer {
         @Generated
-        void call_releaseBytePointer(VoidPtr arg0, ConstVoidPtr arg1);
+        void call_releaseBytePointer(@Nullable VoidPtr arg0, @NotNull ConstVoidPtr arg1);
     }
 
     @Runtime(CRuntime.class)
@@ -113,13 +121,13 @@ public final class CGDataProviderDirectCallbacks extends StructObject {
     public interface Function_getBytesAtPosition {
         @Generated
         @NUInt
-        long call_getBytesAtPosition(VoidPtr arg0, VoidPtr arg1, long arg2, @NUInt long arg3);
+        long call_getBytesAtPosition(@Nullable VoidPtr arg0, @NotNull VoidPtr arg1, long arg2, @NUInt long arg3);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_releaseInfo {
         @Generated
-        void call_releaseInfo(VoidPtr arg0);
+        void call_releaseInfo(@Nullable VoidPtr arg0);
     }
 }

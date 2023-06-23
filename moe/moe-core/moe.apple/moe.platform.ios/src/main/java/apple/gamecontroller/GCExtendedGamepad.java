@@ -38,7 +38,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("GameController")
 @Runtime(ObjCRuntime.class)
@@ -69,22 +74,25 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -119,9 +127,10 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -152,29 +161,34 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     /**
      * All face buttons are required to be analog in the Extended profile. These must be arranged
      * in the diamond pattern given below:
-     * <p>
+     * 
      * Y
      * / \
      * X B
      * \ /
      * A
      */
+    @NotNull
     @Generated
     @Selector("buttonA")
     public native GCControllerButtonInput buttonA();
 
+    @NotNull
     @Generated
     @Selector("buttonB")
     public native GCControllerButtonInput buttonB();
 
+    @NotNull
     @Generated
     @Selector("buttonX")
     public native GCControllerButtonInput buttonX();
 
+    @NotNull
     @Generated
     @Selector("buttonY")
     public native GCControllerButtonInput buttonY();
 
+    @Nullable
     @Generated
     @Selector("controller")
     public native GCController controller();
@@ -182,6 +196,7 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     /**
      * Required to be analog in the Extended profile. All the elements of this directional input are thus analog.
      */
+    @NotNull
     @Generated
     @Selector("dpad")
     public native GCControllerDirectionPad dpad();
@@ -193,6 +208,7 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     /**
      * Shoulder buttons are required to be analog inputs.
      */
+    @NotNull
     @Generated
     @Selector("leftShoulder")
     public native GCControllerButtonInput leftShoulder();
@@ -201,6 +217,7 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
      * A thumbstick is a 2-axis control that is physically required to be analog. All the elements of this directional
      * input are thus analog.
      */
+    @NotNull
     @Generated
     @Selector("leftThumbstick")
     public native GCControllerDirectionPad leftThumbstick();
@@ -209,6 +226,7 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
      * Triggers are required to be analog inputs. Common uses would be acceleration and decelleration in a driving game
      * for example.
      */
+    @NotNull
     @Generated
     @Selector("leftTrigger")
     public native GCControllerButtonInput leftTrigger();
@@ -216,6 +234,7 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     /**
      * Shoulder buttons are required to be analog inputs.
      */
+    @NotNull
     @Generated
     @Selector("rightShoulder")
     public native GCControllerButtonInput rightShoulder();
@@ -224,10 +243,12 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
      * A thumbstick is a 2-axis control that is physically required to be analog. All the elements of this directional
      * input are thus analog.
      */
+    @NotNull
     @Generated
     @Selector("rightThumbstick")
     public native GCControllerDirectionPad rightThumbstick();
 
+    @NotNull
     @Generated
     @Selector("rightTrigger")
     public native GCControllerButtonInput rightTrigger();
@@ -237,10 +258,16 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
      * independent
      * format that can be serialized and used at a later date. This is useful for features such as quality assurance,
      * save game or replay functionality among many.
-     * <p>
+     * 
      * If your application is heavily multithreaded this may also be useful to guarantee atomicity of input handling as
      * a snapshot will not change based on user input once it is taken.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: GCExtendedGamepadSnapshot has been deprecated, use [GCController capture] instead
      */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("saveSnapshot")
     public native GCExtendedGamepadSnapshot saveSnapshot();
@@ -248,8 +275,9 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     @Generated
     @Selector("setValueChangedHandler:")
     public native void setValueChangedHandler(
-            @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
+            @Nullable @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
 
+    @Nullable
     @Generated
     @Selector("valueChangedHandler")
     @ObjCBlock(name = "call_valueChangedHandler_ret")
@@ -259,19 +287,22 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     @Generated
     public interface Block_setValueChangedHandler {
         @Generated
-        void call_setValueChangedHandler(GCExtendedGamepad gamepad, GCControllerElement element);
+        void call_setValueChangedHandler(@NotNull GCExtendedGamepad gamepad, @NotNull GCControllerElement element);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_valueChangedHandler_ret {
         @Generated
-        void call_valueChangedHandler_ret(GCExtendedGamepad gamepad, GCControllerElement element);
+        void call_valueChangedHandler_ret(@NotNull GCExtendedGamepad gamepad, @NotNull GCControllerElement element);
     }
 
     /**
      * Button menu is the primary menu button, and should be used to enter the main menu and pause the game.
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("buttonMenu")
     public native GCControllerButtonInput buttonMenu();
@@ -279,37 +310,52 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     /**
      * Button options is the secondary menu button. It should be used to enter a secondary menu, such as graphics and
      * sound configuration, and pause the game.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("buttonOptions")
     public native GCControllerButtonInput buttonOptions();
 
     /**
      * A thumbstick may also have a clickable component, which is treated as a non-analog button.
+     * 
+     * API-Since: 12.1
      */
+    @Nullable
     @Generated
     @Selector("leftThumbstickButton")
     public native GCControllerButtonInput leftThumbstickButton();
 
+    /**
+     * API-Since: 12.1
+     */
+    @Nullable
     @Generated
     @Selector("rightThumbstickButton")
     public native GCControllerButtonInput rightThumbstickButton();
 
     /**
      * Sets the state vector of the extended gamepad to a copy of the input extended gamepad's state vector.
-     * <p>
+     * 
      * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
-     *
+     * 
      * @see GCController.snapshot
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("setStateFromExtendedGamepad:")
-    public native void setStateFromExtendedGamepad(GCExtendedGamepad extendedGamepad);
+    public native void setStateFromExtendedGamepad(@NotNull GCExtendedGamepad extendedGamepad);
 
     /**
      * Button home is a special menu button. If the system does not consume button home events, they will be passed to
      * your application and should be used to enter a secondary menu, and pause the game.
+     * 
+     * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("buttonHome")
     public native GCControllerButtonInput buttonHome();

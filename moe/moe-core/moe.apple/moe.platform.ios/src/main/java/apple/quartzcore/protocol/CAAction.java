@@ -25,6 +25,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Action (event handler) protocol. *
@@ -42,6 +44,6 @@ public interface CAAction {
      */
     @Generated
     @Selector("runActionForKey:object:arguments:")
-    void runActionForKeyObjectArguments(String event, @Mapped(ObjCObjectMapper.class) Object anObject,
-            NSDictionary<?, ?> dict);
+    void runActionForKeyObjectArguments(@NotNull String event, @NotNull @Mapped(ObjCObjectMapper.class) Object anObject,
+            @Nullable NSDictionary<?, ?> dict);
 }

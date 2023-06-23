@@ -12,7 +12,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -40,13 +44,16 @@ public interface MTLIndirectComputeCommand {
     @Selector("setBarrier")
     void setBarrier();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setComputePipelineState:")
-    void setComputePipelineState(@Mapped(ObjCObjectMapper.class) MTLComputePipelineState pipelineState);
+    void setComputePipelineState(@NotNull @Mapped(ObjCObjectMapper.class) MTLComputePipelineState pipelineState);
 
     @Generated
     @Selector("setKernelBuffer:offset:atIndex:")
-    void setKernelBufferOffsetAtIndex(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
+    void setKernelBufferOffsetAtIndex(@NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
             @NUInt long index);
 
     @Generated
@@ -57,6 +64,9 @@ public interface MTLIndirectComputeCommand {
     @Selector("setThreadgroupMemoryLength:atIndex:")
     void setThreadgroupMemoryLengthAtIndex(@NUInt long length, @NUInt long index);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setImageblockWidth:height:")
     void setImageblockWidthHeight(@NUInt long width, @NUInt long height);

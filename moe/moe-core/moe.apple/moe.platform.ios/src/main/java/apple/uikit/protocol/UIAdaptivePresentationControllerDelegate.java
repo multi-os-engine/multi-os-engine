@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -43,43 +45,48 @@ public interface UIAdaptivePresentationControllerDelegate {
     @IsOptional
     @Selector("adaptivePresentationStyleForPresentationController:")
     @NInt
-    default long adaptivePresentationStyleForPresentationController(UIPresentationController controller) {
+    default long adaptivePresentationStyleForPresentationController(@NotNull UIPresentationController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Returning UIModalPresentationNone will indicate that an adaptation should not happen.
+     * 
+     * API-Since: 8.3
      */
     @Generated
     @IsOptional
     @Selector("adaptivePresentationStyleForPresentationController:traitCollection:")
     @NInt
-    default long adaptivePresentationStyleForPresentationControllerTraitCollection(UIPresentationController controller,
-            UITraitCollection traitCollection) {
+    default long adaptivePresentationStyleForPresentationControllerTraitCollection(
+            @NotNull UIPresentationController controller, @NotNull UITraitCollection traitCollection) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * If this method is not implemented, or returns nil, then the originally presented view controller is used.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("presentationController:viewControllerForAdaptivePresentationStyle:")
     default UIViewController presentationControllerViewControllerForAdaptivePresentationStyle(
-            UIPresentationController controller, @NInt long style) {
+            @NotNull UIPresentationController controller, @NInt long style) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * If there is no adaptation happening and an original style is used UIModalPresentationNone will be passed as an
      * argument.
+     * 
+     * API-Since: 8.3
      */
     @Generated
     @IsOptional
     @Selector("presentationController:willPresentWithAdaptiveStyle:transitionCoordinator:")
     default void presentationControllerWillPresentWithAdaptiveStyleTransitionCoordinator(
-            UIPresentationController presentationController, @NInt long style,
-            @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator transitionCoordinator) {
+            @NotNull UIPresentationController presentationController, @NInt long style,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator transitionCoordinator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -89,11 +96,13 @@ public interface UIAdaptivePresentationControllerDelegate {
      * returned NO.
      * When this method is called, it is recommended that the user be informed why they cannot dismiss the presentation,
      * such as by presenting an instance of UIAlertController.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
     @Selector("presentationControllerDidAttemptToDismiss:")
-    default void presentationControllerDidAttemptToDismiss(UIPresentationController presentationController) {
+    default void presentationControllerDidAttemptToDismiss(@NotNull UIPresentationController presentationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -101,11 +110,13 @@ public interface UIAdaptivePresentationControllerDelegate {
      * Called on the delegate when the user has taken action to dismiss the presentation successfully, after all
      * animations are finished.
      * This is not called if the presentation is dismissed programatically.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
     @Selector("presentationControllerDidDismiss:")
-    default void presentationControllerDidDismiss(UIPresentationController presentationController) {
+    default void presentationControllerDidDismiss(@NotNull UIPresentationController presentationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -115,11 +126,13 @@ public interface UIAdaptivePresentationControllerDelegate {
      * or presentationControllerDidDismiss:.
      * Any implementation of this method should be fast.
      * Return NO to prevent dismissal of the view controller.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
     @Selector("presentationControllerShouldDismiss:")
-    default boolean presentationControllerShouldDismiss(UIPresentationController presentationController) {
+    default boolean presentationControllerShouldDismiss(@NotNull UIPresentationController presentationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -129,23 +142,28 @@ public interface UIAdaptivePresentationControllerDelegate {
      * Use this callback to setup alongside animations or interaction notifications with the presentingViewController's
      * transitionCoordinator.
      * This is not called if the presentation is dismissed programatically.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
     @Selector("presentationControllerWillDismiss:")
-    default void presentationControllerWillDismiss(UIPresentationController presentationController) {
+    default void presentationControllerWillDismiss(@NotNull UIPresentationController presentationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Called during adaptation so the delegate may configure properties of the adaptive presentation controller before
      * it is presented.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @IsOptional
     @Selector("presentationController:prepareAdaptivePresentationController:")
     default void presentationControllerPrepareAdaptivePresentationController(
-            UIPresentationController presentationController, UIPresentationController adaptivePresentationController) {
+            @NotNull UIPresentationController presentationController,
+            @NotNull UIPresentationController adaptivePresentationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

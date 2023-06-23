@@ -39,7 +39,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -70,22 +75,25 @@ public class INGetAvailableRestaurantReservationBookingDefaultsIntent extends IN
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,9 +128,10 @@ public class INGetAvailableRestaurantReservationBookingDefaultsIntent extends IN
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -160,11 +169,12 @@ public class INGetAvailableRestaurantReservationBookingDefaultsIntent extends IN
 
     @Generated
     @Selector("initWithCoder:")
-    public native INGetAvailableRestaurantReservationBookingDefaultsIntent initWithCoder(NSCoder coder);
+    public native INGetAvailableRestaurantReservationBookingDefaultsIntent initWithCoder(@NotNull NSCoder coder);
 
     /**
      * an optional restaurant that the extension may or may not use to tailor reservation defaults
      */
+    @Nullable
     @Generated
     @Selector("restaurant")
     public native INRestaurant restaurant();
@@ -174,7 +184,7 @@ public class INGetAvailableRestaurantReservationBookingDefaultsIntent extends IN
      */
     @Generated
     @Selector("setRestaurant:")
-    public native void setRestaurant(INRestaurant value);
+    public native void setRestaurant(@Nullable INRestaurant value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -182,7 +192,11 @@ public class INGetAvailableRestaurantReservationBookingDefaultsIntent extends IN
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithRestaurant:")
-    public native INGetAvailableRestaurantReservationBookingDefaultsIntent initWithRestaurant(INRestaurant restaurant);
+    public native INGetAvailableRestaurantReservationBookingDefaultsIntent initWithRestaurant(
+            @Nullable INRestaurant restaurant);
 }

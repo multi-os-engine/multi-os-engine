@@ -25,11 +25,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * OSLogEntrySignpost
- * <p>
+ * 
  * Entries made by the os_signpost API.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("OSLog")
@@ -65,30 +69,35 @@ public class OSLogEntrySignpost extends OSLogEntry implements OSLogEntryFromProc
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("category")
     public native String category();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("components")
     public native NSArray<? extends OSLogMessageComponent> components();
@@ -101,6 +110,7 @@ public class OSLogEntrySignpost extends OSLogEntry implements OSLogEntryFromProc
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("formatString")
     public native String formatString();
@@ -116,7 +126,7 @@ public class OSLogEntrySignpost extends OSLogEntry implements OSLogEntryFromProc
 
     @Generated
     @Selector("initWithCoder:")
-    public native OSLogEntrySignpost initWithCoder(NSCoder coder);
+    public native OSLogEntrySignpost initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -135,15 +145,17 @@ public class OSLogEntrySignpost extends OSLogEntry implements OSLogEntryFromProc
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native OSLogEntrySignpost new_objc();
 
+    @NotNull
     @Generated
     @Selector("process")
     public native String process();
@@ -160,6 +172,7 @@ public class OSLogEntrySignpost extends OSLogEntry implements OSLogEntryFromProc
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @NotNull
     @Generated
     @Selector("sender")
     public native String sender();
@@ -170,8 +183,10 @@ public class OSLogEntrySignpost extends OSLogEntry implements OSLogEntryFromProc
 
     /**
      * [@property] signpostIdentifier
-     * <p>
+     * 
      * The signpost ID associated with this entry.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("signpostIdentifier")
@@ -179,23 +194,29 @@ public class OSLogEntrySignpost extends OSLogEntry implements OSLogEntryFromProc
 
     /**
      * [@property] signpostName
-     * <p>
+     * 
      * The signpost name associated with this entry.
+     * 
+     * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("signpostName")
     public native String signpostName();
 
     /**
      * [@property] signpostType
-     * <p>
+     * 
      * The signpost type associated with this entry.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("signpostType")
     @NInt
     public native long signpostType();
 
+    @NotNull
     @Generated
     @Selector("subsystem")
     public native String subsystem();

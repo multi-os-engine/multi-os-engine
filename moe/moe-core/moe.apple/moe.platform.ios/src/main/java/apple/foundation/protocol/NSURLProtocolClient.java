@@ -30,13 +30,16 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] NSURLProtocolClient
- * <p>
+ * 
  * NSURLProtocolClient provides the interface to the URL
  * loading system that is intended for use by NSURLProtocol
  * implementors.
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("Foundation")
@@ -45,84 +48,86 @@ import org.moe.natj.objc.ann.Selector;
 public interface NSURLProtocolClient {
     /**
      * URLProtocol:cachedResponseIsValid:
-     * <p>
+     * 
      * Indicates to an NSURLProtocolClient that the protocol
      * implementation has examined a cached response and has
      * determined that it is valid.
-     *
+     * 
      * @param protocol       the NSURLProtocol object sending the message.
      * @param cachedResponse the NSCachedURLResponse object that has
      *                       examined and is valid.
      */
     @Generated
     @Selector("URLProtocol:cachedResponseIsValid:")
-    void URLProtocolCachedResponseIsValid(NSURLProtocol protocol, NSCachedURLResponse cachedResponse);
+    void URLProtocolCachedResponseIsValid(@NotNull NSURLProtocol protocol, @NotNull NSCachedURLResponse cachedResponse);
 
     /**
      * URLProtocol:didCancelAuthenticationChallenge:
-     * <p>
+     * 
      * Cancel authentication for the specified request
-     *
+     * 
      * @param protocol  The protocol object cancelling authentication.
      * @param challenge The authentication challenge.
      */
     @Generated
     @Selector("URLProtocol:didCancelAuthenticationChallenge:")
-    void URLProtocolDidCancelAuthenticationChallenge(NSURLProtocol protocol, NSURLAuthenticationChallenge challenge);
+    void URLProtocolDidCancelAuthenticationChallenge(@NotNull NSURLProtocol protocol,
+            @NotNull NSURLAuthenticationChallenge challenge);
 
     /**
      * URLProtocol:didFailWithError:
-     * <p>
+     * 
      * Indicates to an NSURLProtocolClient that the protocol
      * implementation has failed to load successfully.
-     *
+     * 
      * @param protocol the NSURLProtocol object sending the message.
      * @param error    The error that caused the load to fail.
      */
     @Generated
     @Selector("URLProtocol:didFailWithError:")
-    void URLProtocolDidFailWithError(NSURLProtocol protocol, NSError error);
+    void URLProtocolDidFailWithError(@NotNull NSURLProtocol protocol, @NotNull NSError error);
 
     /**
      * URLProtocol:didLoadData:
-     * <p>
+     * 
      * Indicates to an NSURLProtocolClient that the protocol
      * implementation has loaded URL data.
-     * <p>
+     * 
      * The data object must contain only new data loaded since
      * the previous call to this method (if any), not cumulative data for
      * the entire load.
-     *
+     * 
      * @param protocol the NSURLProtocol object sending the message.
      * @param data     URL load data being made available.
      */
     @Generated
     @Selector("URLProtocol:didLoadData:")
-    void URLProtocolDidLoadData(NSURLProtocol protocol, NSData data);
+    void URLProtocolDidLoadData(@NotNull NSURLProtocol protocol, @NotNull NSData data);
 
     /**
      * URLProtocol:didReceiveAuthenticationChallenge:
-     * <p>
+     * 
      * Start authentication for the specified request
-     * <p>
+     * 
      * The protocol client guarantees that it will answer the
      * request on the same thread that called this method. It may add a
      * default credential to the challenge it issues to the connection delegate,
      * if the protocol did not provide one.
-     *
+     * 
      * @param protocol  The protocol object requesting authentication.
      * @param challenge The authentication challenge.
      */
     @Generated
     @Selector("URLProtocol:didReceiveAuthenticationChallenge:")
-    void URLProtocolDidReceiveAuthenticationChallenge(NSURLProtocol protocol, NSURLAuthenticationChallenge challenge);
+    void URLProtocolDidReceiveAuthenticationChallenge(@NotNull NSURLProtocol protocol,
+            @NotNull NSURLAuthenticationChallenge challenge);
 
     /**
      * URLProtocol:didReceiveResponse:
-     * <p>
+     * 
      * Indicates to an NSURLProtocolClient that the protocol
      * implementation has created an NSURLResponse for the current load.
-     *
+     * 
      * @param protocol the NSURLProtocol object sending the message.
      * @param response the NSURLResponse object the protocol implementation
      *                 has created.
@@ -132,33 +137,33 @@ public interface NSURLProtocolClient {
      */
     @Generated
     @Selector("URLProtocol:didReceiveResponse:cacheStoragePolicy:")
-    void URLProtocolDidReceiveResponseCacheStoragePolicy(NSURLProtocol protocol, NSURLResponse response,
-            @NUInt long policy);
+    void URLProtocolDidReceiveResponseCacheStoragePolicy(@NotNull NSURLProtocol protocol,
+            @NotNull NSURLResponse response, @NUInt long policy);
 
     /**
      * URLProtocol:wasRedirectedToRequest:
-     * <p>
+     * 
      * Indicates to an NSURLProtocolClient that a redirect has
      * occurred.
-     *
+     * 
      * @param protocol the NSURLProtocol object sending the message.
      * @param request  the NSURLRequest to which the protocol implementation
      *                 has redirected.
      */
     @Generated
     @Selector("URLProtocol:wasRedirectedToRequest:redirectResponse:")
-    void URLProtocolWasRedirectedToRequestRedirectResponse(NSURLProtocol protocol, NSURLRequest request,
-            NSURLResponse redirectResponse);
+    void URLProtocolWasRedirectedToRequestRedirectResponse(@NotNull NSURLProtocol protocol,
+            @NotNull NSURLRequest request, @NotNull NSURLResponse redirectResponse);
 
     /**
      * URLProtocolDidFinishLoading:
-     * <p>
+     * 
      * Indicates to an NSURLProtocolClient that the protocol
      * implementation has finished loading successfully.
-     *
+     * 
      * @param protocol the NSURLProtocol object sending the message.
      */
     @Generated
     @Selector("URLProtocolDidFinishLoading:")
-    void URLProtocolDidFinishLoading(NSURLProtocol protocol);
+    void URLProtocolDidFinishLoading(@NotNull NSURLProtocol protocol);
 }

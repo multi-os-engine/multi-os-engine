@@ -26,7 +26,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.4
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -57,33 +62,37 @@ public class CPTemplateApplicationDashboardScene extends UIScene {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     /**
      * The dashboardController object for this scene.
      */
+    @NotNull
     @Generated
     @Selector("dashboardController")
     public native CPDashboardController dashboardController();
@@ -91,6 +100,7 @@ public class CPTemplateApplicationDashboardScene extends UIScene {
     /**
      * The UIWindow created for this CPTemplateApplicationDashboardScene
      */
+    @NotNull
     @Generated
     @Selector("dashboardWindow")
     public native UIWindow dashboardWindow();
@@ -103,6 +113,7 @@ public class CPTemplateApplicationDashboardScene extends UIScene {
      * The delegate for a CPTemplateApplicationDashboardScene must conform to the
      * CPTemplateApplicationDashboardSceneDelegate protocol.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -123,8 +134,8 @@ public class CPTemplateApplicationDashboardScene extends UIScene {
 
     @Generated
     @Selector("initWithSession:connectionOptions:")
-    public native CPTemplateApplicationDashboardScene initWithSessionConnectionOptions(UISceneSession session,
-            UISceneConnectionOptions connectionOptions);
+    public native CPTemplateApplicationDashboardScene initWithSessionConnectionOptions(@NotNull UISceneSession session,
+            @NotNull UISceneConnectionOptions connectionOptions);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -143,9 +154,10 @@ public class CPTemplateApplicationDashboardScene extends UIScene {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,7 +178,7 @@ public class CPTemplateApplicationDashboardScene extends UIScene {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
     @Selector("setVersion:")

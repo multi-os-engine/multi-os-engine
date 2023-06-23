@@ -5,12 +5,12 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] CHHapticEngineFinishedAction
- * <p>
+ * 
  * Constants indicating what the engine should do in response to the finished handler being called.
- * <p>
+ * 
  * [@constant] CHHapticEngineFinishedActionStopEngine
  * Stop the engine. This is useful if the client knows that the client is about to go inactive.
- * <p>
+ * 
  * [@constant] CHHapticEngineFinishedActionLeaveEngineRunning
  * Do not stop the engine. This is useful if the client expects more activity.
  */

@@ -18,11 +18,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSRelativeDateTimeFormatter provides locale-aware formatting of a relative date or time, such as "1 hour ago", "in 2
  * weeks", "yesterday", and "tomorrow." Note that the string produced by the formatter should only be used in a
  * standalone manner as it may not be grammatically correct to embed the string in longer strings.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Foundation")
@@ -54,7 +58,7 @@ public class NSRelativeDateTimeFormatter extends NSFormatter {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Specifies the calendar to use for formatting values that do not have an inherent calendar of their own. Defaults
@@ -66,18 +70,21 @@ public class NSRelativeDateTimeFormatter extends NSFormatter {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -118,7 +125,7 @@ public class NSRelativeDateTimeFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSRelativeDateTimeFormatter initWithCoder(NSCoder coder);
+    public native NSRelativeDateTimeFormatter initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -137,9 +144,10 @@ public class NSRelativeDateTimeFormatter extends NSFormatter {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Specifies the locale of the output string. Defaults to and resets on assignment of nil to the calendar's locale.
@@ -151,26 +159,29 @@ public class NSRelativeDateTimeFormatter extends NSFormatter {
     /**
      * Formats the date interval from the reference date to the given date using the formatter's calendar.
      */
+    @NotNull
     @Generated
     @Selector("localizedStringForDate:relativeToDate:")
-    public native String localizedStringForDateRelativeToDate(NSDate date, NSDate referenceDate);
+    public native String localizedStringForDateRelativeToDate(@NotNull NSDate date, @NotNull NSDate referenceDate);
 
     /**
      * Convenience method for formatting a relative time represented by an NSDateComponents object. Negative component
      * values are evaluated as a date in the past. This method formats the value of the least granular unit in the
      * NSDateComponents object, and does not provide a compound format of the date component.
-     * <p>
+     * 
      * Note this method only supports the following components: year, month, week of month, day, hour, minute, and
      * second. The rest will be ignored.
      */
+    @NotNull
     @Generated
     @Selector("localizedStringFromDateComponents:")
-    public native String localizedStringFromDateComponents(NSDateComponents dateComponents);
+    public native String localizedStringFromDateComponents(@NotNull NSDateComponents dateComponents);
 
     /**
      * Convenience method for formatting a time interval using the formatter's calendar. Negative time interval is
      * evaluated as a date in the past.
      */
+    @NotNull
     @Generated
     @Selector("localizedStringFromTimeInterval:")
     public native String localizedStringFromTimeInterval(double timeInterval);
@@ -234,9 +245,10 @@ public class NSRelativeDateTimeFormatter extends NSFormatter {
      * Inherited from NSFormatter. 'obj' must be an instance of NSDate. Returns nil otherwise. When formatting a
      * relative date using this method, the class uses -[NSDate date] as the reference date.
      */
+    @Nullable
     @Generated
     @Selector("stringForObjectValue:")
-    public native String stringForObjectValue(@Mapped(ObjCObjectMapper.class) Object obj);
+    public native String stringForObjectValue(@Nullable @Mapped(ObjCObjectMapper.class) Object obj);
 
     @Generated
     @Selector("superclass")

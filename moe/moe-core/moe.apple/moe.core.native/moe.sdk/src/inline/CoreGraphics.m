@@ -14,8 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+#import <CoreFoundation/CFCGTypes.h>
 #import <CoreGraphics/CGAffineTransform.h>
-#import <CoreGraphics/CGBase.h>
 #import <CoreGraphics/CGGeometry.h>
 
 

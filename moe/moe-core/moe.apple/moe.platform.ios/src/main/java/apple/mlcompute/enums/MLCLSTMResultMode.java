@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] MLCLSTMResultMode
- * <p>
+ * 
  * A result mode for an LSTM layer.
  */
 @Generated

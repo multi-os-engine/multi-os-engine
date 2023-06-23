@@ -23,7 +23,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -54,22 +59,25 @@ public class CPContactDirectionsButton extends CPButton {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -94,25 +102,25 @@ public class CPContactDirectionsButton extends CPButton {
     /**
      * Create a contact button with a system-provided navigation directions image that, when tapped, calls your custom
      * handler.
-     *
+     * 
      * @param handler A block that will be called when the user taps this button.
      */
     @Generated
     @Selector("initWithHandler:")
     public native CPContactDirectionsButton initWithHandler(
-            @ObjCBlock(name = "call_initWithHandler") Block_initWithHandler handler);
+            @Nullable @ObjCBlock(name = "call_initWithHandler") Block_initWithHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithHandler {
         @Generated
-        void call_initWithHandler(CPButton contactButton);
+        void call_initWithHandler(@NotNull CPButton contactButton);
     }
 
     @Generated
     @Selector("initWithImage:handler:")
-    public native CPContactDirectionsButton initWithImageHandler(UIImage image,
-            @ObjCBlock(name = "call_initWithImageHandler") CPButton.Block_initWithImageHandler handler);
+    public native CPContactDirectionsButton initWithImageHandler(@NotNull UIImage image,
+            @Nullable @ObjCBlock(name = "call_initWithImageHandler") CPButton.Block_initWithImageHandler handler);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -131,9 +139,10 @@ public class CPContactDirectionsButton extends CPButton {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

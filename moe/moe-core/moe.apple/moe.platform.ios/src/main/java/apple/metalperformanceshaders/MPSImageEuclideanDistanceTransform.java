@@ -23,11 +23,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImageEuclideanDistanceTransform
- * <p>
+ * 
  * Perform a Euclidean Distance Transform
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -59,22 +63,25 @@ public class MPSImageEuclideanDistanceTransform extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -98,35 +105,36 @@ public class MPSImageEuclideanDistanceTransform extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSImageEuclideanDistanceTransform initWithCoder(NSCoder aDecoder);
+    public native MPSImageEuclideanDistanceTransform initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSImageEuclideanDistanceTransform initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageEuclideanDistanceTransform initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Specifies information to apply the statistics min-max operation on an image.
-     *
+     * 
      * @param device The device the filter will run on
      * @return A valid MPSImageEuclideanDistanceTransform object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImageEuclideanDistanceTransform initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageEuclideanDistanceTransform initWithDevice(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -145,9 +153,10 @@ public class MPSImageEuclideanDistanceTransform extends MPSUnaryImageKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -187,9 +196,9 @@ public class MPSImageEuclideanDistanceTransform extends MPSUnaryImageKernel {
 
     /**
      * [@property] searchLimitRadius
-     * <p>
+     * 
      * Defines a search scope size around output pixel to limit closest non-zero pixel search. Optional variable.
-     * <p>
+     * 
      * When the non-zeroes in the input image are on average very far away from each other (ie. the distances are
      * large),
      * the distance calculation algorithm has to work harder to find the closest pixel. If you don't care about getting
@@ -201,6 +210,8 @@ public class MPSImageEuclideanDistanceTransform extends MPSUnaryImageKernel {
      * which results in the exact EDT, so use this only if you need additional performance.
      * Typical good values are: 32, 64, 96, 128.
      * Default: FLT_MAX
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("searchLimitRadius")
@@ -208,9 +219,9 @@ public class MPSImageEuclideanDistanceTransform extends MPSUnaryImageKernel {
 
     /**
      * [@property] searchLimitRadius
-     * <p>
+     * 
      * Defines a search scope size around output pixel to limit closest non-zero pixel search. Optional variable.
-     * <p>
+     * 
      * When the non-zeroes in the input image are on average very far away from each other (ie. the distances are
      * large),
      * the distance calculation algorithm has to work harder to find the closest pixel. If you don't care about getting
@@ -222,6 +233,8 @@ public class MPSImageEuclideanDistanceTransform extends MPSUnaryImageKernel {
      * which results in the exact EDT, so use this only if you need additional performance.
      * Typical good values are: 32, 64, 96, 128.
      * Default: FLT_MAX
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setSearchLimitRadius:")

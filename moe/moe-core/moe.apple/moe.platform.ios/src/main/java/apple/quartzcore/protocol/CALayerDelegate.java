@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Delegate methods. *
@@ -44,11 +46,12 @@ public interface CALayerDelegate {
      * '[NSNull null]') explicitly forces no further search. (I.e. the
      * +defaultActionForKey: method will not be called.)
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("actionForLayer:forKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    default CAAction actionForLayerForKey(CALayer layer, String event) {
+    default CAAction actionForLayerForKey(@NotNull CALayer layer, @NotNull String event) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -60,7 +63,7 @@ public interface CALayerDelegate {
     @Generated
     @IsOptional
     @Selector("displayLayer:")
-    default void displayLayer(CALayer layer) {
+    default void displayLayer(@NotNull CALayer layer) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -70,7 +73,7 @@ public interface CALayerDelegate {
     @Generated
     @IsOptional
     @Selector("drawLayer:inContext:")
-    default void drawLayerInContext(CALayer layer, CGContextRef ctx) {
+    default void drawLayerInContext(@NotNull CALayer layer, @NotNull CGContextRef ctx) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,11 +82,13 @@ public interface CALayerDelegate {
      * Allows the delegate to configure any layer state affecting contents prior
      * to -drawLayer:InContext: such as `contentsFormat' and `opaque'. It will not
      * be called if the delegate implements -displayLayer.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
     @Selector("layerWillDraw:")
-    default void layerWillDraw(CALayer layer) {
+    default void layerWillDraw(@NotNull CALayer layer) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -95,7 +100,7 @@ public interface CALayerDelegate {
     @Generated
     @IsOptional
     @Selector("layoutSublayersOfLayer:")
-    default void layoutSublayersOfLayer(CALayer layer) {
+    default void layoutSublayersOfLayer(@NotNull CALayer layer) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

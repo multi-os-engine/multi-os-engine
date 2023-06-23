@@ -8,12 +8,15 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * CMHeadphoneMotionManagerDelegate
- * <p>
+ * 
  * Discussion:
  * Delegate for CMHeadphoneMotionManager.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("CoreMotion")
@@ -22,7 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface CMHeadphoneMotionManagerDelegate {
     /**
      * headphoneMotionManagerDidConnect:
-     * <p>
+     * 
      * Discussion:
      * Invoked when a headphone is connected. Execution of the delegate callback occurs on the operation queue used to
      * deliver the device motion updates. The main thread is used if the queue was not specified.
@@ -30,13 +33,13 @@ public interface CMHeadphoneMotionManagerDelegate {
     @Generated
     @IsOptional
     @Selector("headphoneMotionManagerDidConnect:")
-    default void headphoneMotionManagerDidConnect(CMHeadphoneMotionManager manager) {
+    default void headphoneMotionManagerDidConnect(@NotNull CMHeadphoneMotionManager manager) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * headphoneMotionManagerDidDisconnect:
-     * <p>
+     * 
      * Discussion:
      * Invoked when a headphone is disconnected. Execution of the delegate callback occurs on the operation queue used
      * to
@@ -45,7 +48,7 @@ public interface CMHeadphoneMotionManagerDelegate {
     @Generated
     @IsOptional
     @Selector("headphoneMotionManagerDidDisconnect:")
-    default void headphoneMotionManagerDidDisconnect(CMHeadphoneMotionManager manager) {
+    default void headphoneMotionManagerDidDisconnect(@NotNull CMHeadphoneMotionManager manager) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

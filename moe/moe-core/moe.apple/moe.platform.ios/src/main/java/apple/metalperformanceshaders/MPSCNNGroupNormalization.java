@@ -27,19 +27,23 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNGroupNormalization
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * This kernel normalizes each image, on a per-group basis, to
  * have zero mean and unit variance:
- * <p>
+ * 
  * for each image:
  * for each channel:
  * y = (x - mean) * gamma / sqrt(variance + epsilon) + beta;
- * <p>
+ * 
  * The mean and variance are computed per group of channels, as given by the dataSource.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -71,22 +75,25 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -94,6 +101,7 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
     /**
      * The data source that the object was initialized with
      */
+    @NotNull
     @Generated
     @Selector("dataSource")
     @MappedReturn(ObjCObjectMapper.class)
@@ -109,7 +117,7 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
 
     /**
      * [@property] epsilon
-     * <p>
+     * 
      * The epsilon value used to bias the variance when normalizing.
      */
     @Generated
@@ -127,40 +135,41 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNGroupNormalization initWithCoder(NSCoder aDecoder);
+    public native MPSCNNGroupNormalization initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSCNNGroupNormalization object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNGroupNormalization initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNGroupNormalization initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNGroupNormalization initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNGroupNormalization initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize a MPSCNNGroupNormalization kernel on a device.
-     *
+     * 
      * @param dataSource An object conforming to the MPSCNNGroupNormalizationDataSource
      *                   protocol which
      */
     @Generated
     @Selector("initWithDevice:dataSource:")
-    public native MPSCNNGroupNormalization initWithDeviceDataSource(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @Mapped(ObjCObjectMapper.class) MPSCNNGroupNormalizationDataSource dataSource);
+    public native MPSCNNGroupNormalization initWithDeviceDataSource(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNGroupNormalizationDataSource dataSource);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -179,9 +188,10 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -198,16 +208,17 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
     /**
      * Reload data using new gamma and beta terms contained within an
      * MPSCNNGroupNormalizationGradientState object.
-     *
+     * 
      * @param commandBuffer     The command buffer on which to encode the reload.
+     * 
      * @param gammaAndBetaState The state containing the updated weights which are to
      *                          be reloaded.
      */
     @Generated
     @Selector("reloadGammaAndBetaWithCommandBuffer:gammaAndBetaState:")
     public native void reloadGammaAndBetaWithCommandBufferGammaAndBetaState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNNormalizationGammaAndBetaState gammaAndBetaState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNNormalizationGammaAndBetaState gammaAndBetaState);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -221,14 +232,16 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
      * Return a MPSCNNGroupNormalizationGradientState object for the provided
      * source image, source states, and destination image.
      */
+    @Nullable
     @Generated
     @Selector("resultStateForSourceImage:sourceStates:destinationImage:")
     public native MPSCNNGroupNormalizationGradientState resultStateForSourceImageSourceStatesDestinationImage(
-            MPSImage sourceImage, NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
+            @NotNull MPSImage sourceImage, @Nullable NSArray<? extends MPSState> sourceStates,
+            @NotNull MPSImage destinationImage);
 
     /**
      * [@property] epsilon
-     * <p>
+     * 
      * The epsilon value used to bias the variance when normalizing.
      */
     @Generated
@@ -257,11 +270,12 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
      * Return a temporary MPSCNNGroupNormalizationGradientState object which may be used with
      * a MPSCNNGroupNormalization filter.
      */
+    @Nullable
     @Generated
     @Selector("temporaryResultStateForCommandBuffer:sourceImage:sourceStates:destinationImage:")
     public native MPSCNNGroupNormalizationGradientState temporaryResultStateForCommandBufferSourceImageSourceStatesDestinationImage(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
-            NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceImage,
+            @Nullable NSArray<? extends MPSState> sourceStates, @NotNull MPSImage destinationImage);
 
     @Generated
     @Selector("version")

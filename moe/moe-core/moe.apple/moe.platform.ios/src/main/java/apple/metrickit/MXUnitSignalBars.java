@@ -25,11 +25,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MXUnitSignalBars
- * <p>
+ * 
  * An NSUnit subclass representing the number of signal bars for signal strength.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetricKit")
@@ -61,33 +65,38 @@ public class MXUnitSignalBars extends NSDimension {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Base unit - bars
      */
+    @NotNull
     @Generated
     @Selector("bars")
     public static native MXUnitSignalBars bars();
 
+    @NotNull
     @Generated
     @Selector("baseUnit")
     public static native MXUnitSignalBars baseUnit();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -111,15 +120,15 @@ public class MXUnitSignalBars extends NSDimension {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MXUnitSignalBars initWithCoder(NSCoder coder);
+    public native MXUnitSignalBars initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")
-    public native MXUnitSignalBars initWithSymbol(String symbol);
+    public native MXUnitSignalBars initWithSymbol(@NotNull String symbol);
 
     @Generated
     @Selector("initWithSymbol:converter:")
-    public native MXUnitSignalBars initWithSymbolConverter(String symbol, NSUnitConverter converter);
+    public native MXUnitSignalBars initWithSymbolConverter(@NotNull String symbol, @NotNull NSUnitConverter converter);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -138,9 +147,10 @@ public class MXUnitSignalBars extends NSDimension {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

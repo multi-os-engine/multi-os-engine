@@ -39,7 +39,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -70,22 +75,25 @@ public class UICollectionViewTransitionLayout extends UICollectionViewLayout {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -116,6 +124,7 @@ public class UICollectionViewTransitionLayout extends UICollectionViewLayout {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    @NotNull
     @Generated
     @Selector("invalidationContextClass")
     public static native Class invalidationContextClass();
@@ -124,10 +133,12 @@ public class UICollectionViewTransitionLayout extends UICollectionViewLayout {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("layoutAttributesClass")
     public static native Class layoutAttributesClass();
@@ -158,6 +169,7 @@ public class UICollectionViewTransitionLayout extends UICollectionViewLayout {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("currentLayout")
     public native UICollectionViewLayout currentLayout();
@@ -168,13 +180,14 @@ public class UICollectionViewTransitionLayout extends UICollectionViewLayout {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UICollectionViewTransitionLayout initWithCoder(NSCoder coder);
+    public native UICollectionViewTransitionLayout initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithCurrentLayout:nextLayout:")
-    public native UICollectionViewTransitionLayout initWithCurrentLayoutNextLayout(UICollectionViewLayout currentLayout,
-            UICollectionViewLayout newLayout);
+    public native UICollectionViewTransitionLayout initWithCurrentLayoutNextLayout(
+            @NotNull UICollectionViewLayout currentLayout, @NotNull UICollectionViewLayout newLayout);
 
+    @NotNull
     @Generated
     @Selector("nextLayout")
     public native UICollectionViewLayout nextLayout();
@@ -190,10 +203,10 @@ public class UICollectionViewTransitionLayout extends UICollectionViewLayout {
 
     @Generated
     @Selector("updateValue:forAnimatedKey:")
-    public native void updateValueForAnimatedKey(@NFloat double value, String key);
+    public native void updateValueForAnimatedKey(@NFloat double value, @NotNull String key);
 
     @Generated
     @Selector("valueForAnimatedKey:")
     @NFloat
-    public native double valueForAnimatedKey(String key);
+    public native double valueForAnimatedKey(@NotNull String key);
 }

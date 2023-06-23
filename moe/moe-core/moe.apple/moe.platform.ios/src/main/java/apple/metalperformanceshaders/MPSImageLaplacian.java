@@ -39,18 +39,22 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImageLaplacian
- * <p>
+ * 
  * The MPSImageLaplacian is an optimized variant of the MPSImageConvolution filter provided primarily for ease of use.
  * This filter uses an optimized convolution filter with a 3 x 3 kernel with the following weights:
  * [ 0 1 0
  * 1 -4 1
  * 0 1 0 ]
- * <p>
+ * 
  * The optimized convolution filter used by MPSImageLaplacian can also be used by creating a MPSImageConvolution
  * object with kernelWidth = 3, kernelHeight = 3 and weights as specified above.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -82,22 +86,25 @@ public class MPSImageLaplacian extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -132,9 +139,10 @@ public class MPSImageLaplacian extends MPSUnaryImageKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,14 +172,14 @@ public class MPSImageLaplacian extends MPSUnaryImageKernel {
 
     /**
      * [@property] bias
-     * <p>
+     * 
      * The bias is a value to be added to convolved pixel before it is converted back to the storage format.
      * It can be used to convert negative values into a representable range for a unsigned MTLPixelFormat.
      * For example, many edge detection filters produce results in the range [-k,k]. By scaling the filter
      * weights by 0.5/k and adding 0.5, the results will be in range [0,1] suitable for use with unorm formats.
      * It can be used in combination with renormalization of the filter weights to do video ranging as part
      * of the convolution effect. It can also just be used to increase the brightness of the image.
-     * <p>
+     * 
      * Default value is 0.0f.
      */
     @Generated
@@ -184,18 +192,18 @@ public class MPSImageLaplacian extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImageLaplacian initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageLaplacian initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * [@property] bias
-     * <p>
+     * 
      * The bias is a value to be added to convolved pixel before it is converted back to the storage format.
      * It can be used to convert negative values into a representable range for a unsigned MTLPixelFormat.
      * For example, many edge detection filters produce results in the range [-k,k]. By scaling the filter
      * weights by 0.5/k and adding 0.5, the results will be in range [0,1] suitable for use with unorm formats.
      * It can be used in combination with renormalization of the filter weights to do video ranging as part
      * of the convolution effect. It can also just be used to increase the brightness of the image.
-     * <p>
+     * 
      * Default value is 0.0f.
      */
     @Generated
@@ -204,12 +212,12 @@ public class MPSImageLaplacian extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSImageLaplacian initWithCoder(NSCoder aDecoder);
+    public native MPSImageLaplacian initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSImageLaplacian initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageLaplacian initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("supportsSecureCoding")

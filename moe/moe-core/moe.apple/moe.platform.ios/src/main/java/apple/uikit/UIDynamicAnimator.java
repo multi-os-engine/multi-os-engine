@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSIndexPath;
 import apple.foundation.NSMethodSignature;
@@ -43,7 +42,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -74,22 +79,25 @@ public class UIDynamicAnimator extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +132,10 @@ public class UIDynamicAnimator extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,12 +165,14 @@ public class UIDynamicAnimator extends NSObject {
 
     @Generated
     @Selector("addBehavior:")
-    public native void addBehavior(UIDynamicBehavior behavior);
+    public native void addBehavior(@NotNull UIDynamicBehavior behavior);
 
+    @NotNull
     @Generated
     @Selector("behaviors")
     public native NSArray<? extends UIDynamicBehavior> behaviors();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -182,7 +193,7 @@ public class UIDynamicAnimator extends NSObject {
      */
     @Generated
     @Selector("initWithCollectionViewLayout:")
-    public native UIDynamicAnimator initWithCollectionViewLayout(UICollectionViewLayout layout);
+    public native UIDynamicAnimator initWithCollectionViewLayout(@NotNull UICollectionViewLayout layout);
 
     /**
      * When you initialize a dynamic animator with this method, you should only associates views with your behaviors.
@@ -191,7 +202,7 @@ public class UIDynamicAnimator extends NSObject {
      */
     @Generated
     @Selector("initWithReferenceView:")
-    public native UIDynamicAnimator initWithReferenceView(UIView view);
+    public native UIDynamicAnimator initWithReferenceView(@NotNull UIView view);
 
     @Generated
     @Selector("isRunning")
@@ -200,6 +211,7 @@ public class UIDynamicAnimator extends NSObject {
     /**
      * Returns the dynamic items associated with the animator’s behaviors that intersect a specified rectangle
      */
+    @NotNull
     @Generated
     @Selector("itemsInRect:")
     public native NSArray<?> itemsInRect(@ByValue CGRect rect);
@@ -208,20 +220,24 @@ public class UIDynamicAnimator extends NSObject {
      * The three convenience methods returning layout attributes (if associated to behaviors in the animator) if the
      * animator was configured with collection view layout
      */
+    @Nullable
     @Generated
     @Selector("layoutAttributesForCellAtIndexPath:")
-    public native UICollectionViewLayoutAttributes layoutAttributesForCellAtIndexPath(NSIndexPath indexPath);
+    public native UICollectionViewLayoutAttributes layoutAttributesForCellAtIndexPath(@NotNull NSIndexPath indexPath);
 
+    @Nullable
     @Generated
     @Selector("layoutAttributesForDecorationViewOfKind:atIndexPath:")
     public native UICollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKindAtIndexPath(
-            String decorationViewKind, NSIndexPath indexPath);
+            @NotNull String decorationViewKind, @NotNull NSIndexPath indexPath);
 
+    @Nullable
     @Generated
     @Selector("layoutAttributesForSupplementaryViewOfKind:atIndexPath:")
-    public native UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKindAtIndexPath(String kind,
-            NSIndexPath indexPath);
+    public native UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKindAtIndexPath(
+            @NotNull String kind, @NotNull NSIndexPath indexPath);
 
+    @Nullable
     @Generated
     @Selector("referenceView")
     public native UIView referenceView();
@@ -232,14 +248,14 @@ public class UIDynamicAnimator extends NSObject {
 
     @Generated
     @Selector("removeBehavior:")
-    public native void removeBehavior(UIDynamicBehavior behavior);
+    public native void removeBehavior(@NotNull UIDynamicBehavior behavior);
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIDynamicAnimatorDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UIDynamicAnimatorDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIDynamicAnimatorDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIDynamicAnimatorDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -255,5 +271,5 @@ public class UIDynamicAnimator extends NSObject {
      */
     @Generated
     @Selector("updateItemUsingCurrentState:")
-    public native void updateItemUsingCurrentState(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
+    public native void updateItemUsingCurrentState(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 }

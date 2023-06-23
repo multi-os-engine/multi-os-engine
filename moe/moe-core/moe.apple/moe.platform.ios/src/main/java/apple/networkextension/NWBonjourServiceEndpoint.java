@@ -39,14 +39,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NWBonjourServiceEndpoint
- * <p>
+ * 
  * NWBonjourServiceEndpoint is a subclass of NWEndpoint. It represents an endpoint
  * backed by a Bonjour service, specified with a name, type, and domain. For example, the
  * Bonjour service MyMusicStudio._music._tcp.local. has the name "MyMusicStudio",
  * the type "_music._tcp", and the domain "local".
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -78,22 +82,25 @@ public class NWBonjourServiceEndpoint extends NWEndpoint {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -108,15 +115,18 @@ public class NWBonjourServiceEndpoint extends NWEndpoint {
 
     /**
      * endpointWithName:type:domain:
-     *
+     * 
      * @param name   The Bonjour service name.
      * @param type   The Bonjour service type.
      * @param domain The Bonjour service domain.
      * @return An initialized NWBonjourServiceEndpoint object.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("endpointWithName:type:domain:")
-    public static native NWBonjourServiceEndpoint endpointWithNameTypeDomain(String name, String type, String domain);
+    public static native NWBonjourServiceEndpoint endpointWithNameTypeDomain(@NotNull String name, @NotNull String type,
+            @NotNull String domain);
 
     @Generated
     @Selector("hash")
@@ -140,9 +150,10 @@ public class NWBonjourServiceEndpoint extends NWEndpoint {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -176,9 +187,12 @@ public class NWBonjourServiceEndpoint extends NWEndpoint {
 
     /**
      * [@property] domain
-     * <p>
+     * 
      * The endpoint's Bonjour service domain.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("domain")
     public native String domain();
@@ -189,13 +203,16 @@ public class NWBonjourServiceEndpoint extends NWEndpoint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NWBonjourServiceEndpoint initWithCoder(NSCoder coder);
+    public native NWBonjourServiceEndpoint initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] name
-     * <p>
+     * 
      * The endpoint's Bonjour service name.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -208,9 +225,12 @@ public class NWBonjourServiceEndpoint extends NWEndpoint {
 
     /**
      * [@property] type
-     * <p>
+     * 
      * The endpoint's Bonjour service type.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("type")
     public native String type();

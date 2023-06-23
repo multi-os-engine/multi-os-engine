@@ -26,20 +26,22 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNPoolingGradient
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * Specifies the base class for computing the gradient of the pooling filters.
  * The operation backpropagates a gradient vector using the chain rule.
- * <p>
+ * 
  * Given the input gradient vector dL(x) = dL/d out(x), which is the derivative of the
  * loss-function wrt. (original) pooling filter output the output gradient at position y
  * (dL/d in(y)) is computed as follows:
- * <p>
+ * 
  * dL/d in(y) = sum_x (dL/d out(x)) * (d out(x)/d in(y)), where
- * <p>
+ * 
  * the sum runs over the input gradient pixels starting from primaryOffset
  * extending to primaryOffset + sourceSize. Note here that we need a separate
  * variable 'sourceSize' to specify which input gradients are included in the output
@@ -49,7 +51,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * as the cliprect.size of the forward pooling filter in order to compute the gradients for
  * all outputs the forward direction produced and the primaryOffset is set to
  * cliprect.origin of the original forward pooling operation for the same reason.
- * <p>
+ * 
  * The cliprect property of the filter allows the user to send the gradients to a new location,
  * which may not match the original forward pooling filter window locations:
  * The index 'y' in the formula above refers to the pixel location in the secondary source,
@@ -61,14 +63,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * This means that typically the cliprect is set to fill the effective source area of the original forward
  * operation, clamped to edges of the original source image, which in the normal case is the same size
  * as the size of the gradient destination image.
- * <p>
+ * 
  * If there are any values in the destination cliprect that do not contribute to the forward
  * pooling result in the area specified by primaryOffset and sourceSize,
  * due to large strides or dilation factors or simply because all forward pass induced values would be
  * outside the source area, then those result values are set to zero.
- * <p>
+ * 
  * The actual value of d out(x) / d in(y) depends on the pooling operation and these are defined in the
  * subclasses of MPSCNNPoolingGradient.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -100,22 +104,25 @@ public class MPSCNNPoolingGradient extends MPSCNNGradientKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -139,29 +146,29 @@ public class MPSCNNPoolingGradient extends MPSCNNGradientKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNPoolingGradient initWithCoder(NSCoder aDecoder);
+    public native MPSCNNPoolingGradient initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPoolingGradient
      * @param device   The MTLDevice on which to make the MPSCNNPoolingGradient
      * @return A new MPSCNNPooling object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNPoolingGradient initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNPoolingGradient initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNPoolingGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNPoolingGradient initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize a gradient pooling filter
-     *
+     * 
      * @param device       The device the filter will run on
      * @param kernelWidth  The width of the kernel. Can be an odd or even value.
      * @param kernelHeight The height of the kernel. Can be an odd or even value.
@@ -170,11 +177,12 @@ public class MPSCNNPoolingGradient extends MPSCNNGradientKernel {
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:")
     public native MPSCNNPoolingGradient initWithDeviceKernelWidthKernelHeight(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth,
+            @NUInt long kernelHeight);
 
     /**
      * Initialize a gradient pooling filter
-     *
+     * 
      * @param device          The device the filter will run on
      * @param kernelWidth     The width of the kernel. Can be an odd or even value.
      * @param kernelHeight    The height of the kernel. Can be an odd or even value.
@@ -185,8 +193,8 @@ public class MPSCNNPoolingGradient extends MPSCNNGradientKernel {
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:")
     public native MPSCNNPoolingGradient initWithDeviceKernelWidthKernelHeightStrideInPixelsXStrideInPixelsY(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight,
-            @NUInt long strideInPixelsX, @NUInt long strideInPixelsY);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth,
+            @NUInt long kernelHeight, @NUInt long strideInPixelsX, @NUInt long strideInPixelsY);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -205,9 +213,10 @@ public class MPSCNNPoolingGradient extends MPSCNNGradientKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -224,10 +233,10 @@ public class MPSCNNPoolingGradient extends MPSCNNGradientKernel {
 
     /**
      * [@property] sourceSize
-     * <p>
+     * 
      * An optional source size which defines together with primaryOffset, the set of input gradient
      * pixels to take into account in the gradient computations.
-     * <p>
+     * 
      * A MTLSize that together with primaryOffset indicates which part of the source gradient to consider.
      * If the area does not lie completely within the primary source image, the intersection between
      * source area rectangle and primary source bounds is used.
@@ -244,10 +253,10 @@ public class MPSCNNPoolingGradient extends MPSCNNGradientKernel {
 
     /**
      * [@property] sourceSize
-     * <p>
+     * 
      * An optional source size which defines together with primaryOffset, the set of input gradient
      * pixels to take into account in the gradient computations.
-     * <p>
+     * 
      * A MTLSize that together with primaryOffset indicates which part of the source gradient to consider.
      * If the area does not lie completely within the primary source image, the intersection between
      * source area rectangle and primary source bounds is used.

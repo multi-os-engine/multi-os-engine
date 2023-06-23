@@ -27,6 +27,13 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.foundation.NSArray;
+import apple.uikit.UIMenu;
+import apple.uikit.UIMenuElement;
+import org.moe.natj.general.ann.Mapped;
+import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -39,8 +46,8 @@ public interface UITextFieldDelegate {
     @Generated
     @IsOptional
     @Selector("textField:shouldChangeCharactersInRange:replacementString:")
-    default boolean textFieldShouldChangeCharactersInRangeReplacementString(UITextField textField,
-            @ByValue NSRange range, String string) {
+    default boolean textFieldShouldChangeCharactersInRangeReplacementString(@NotNull UITextField textField,
+            @ByValue NSRange range, @NotNull String string) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -50,7 +57,7 @@ public interface UITextFieldDelegate {
     @Generated
     @IsOptional
     @Selector("textFieldDidBeginEditing:")
-    default void textFieldDidBeginEditing(UITextField textField) {
+    default void textFieldDidBeginEditing(@NotNull UITextField textField) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -61,17 +68,19 @@ public interface UITextFieldDelegate {
     @Generated
     @IsOptional
     @Selector("textFieldDidEndEditing:")
-    default void textFieldDidEndEditing(UITextField textField) {
+    default void textFieldDidEndEditing(@NotNull UITextField textField) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * if implemented, called in place of textFieldDidEndEditing:
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
     @Selector("textFieldDidEndEditing:reason:")
-    default void textFieldDidEndEditingReason(UITextField textField, @NInt long reason) {
+    default void textFieldDidEndEditingReason(@NotNull UITextField textField, @NInt long reason) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -81,7 +90,7 @@ public interface UITextFieldDelegate {
     @Generated
     @IsOptional
     @Selector("textFieldShouldBeginEditing:")
-    default boolean textFieldShouldBeginEditing(UITextField textField) {
+    default boolean textFieldShouldBeginEditing(@NotNull UITextField textField) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -91,7 +100,7 @@ public interface UITextFieldDelegate {
     @Generated
     @IsOptional
     @Selector("textFieldShouldClear:")
-    default boolean textFieldShouldClear(UITextField textField) {
+    default boolean textFieldShouldClear(@NotNull UITextField textField) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -102,7 +111,7 @@ public interface UITextFieldDelegate {
     @Generated
     @IsOptional
     @Selector("textFieldShouldEndEditing:")
-    default boolean textFieldShouldEndEditing(UITextField textField) {
+    default boolean textFieldShouldEndEditing(@NotNull UITextField textField) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -112,14 +121,71 @@ public interface UITextFieldDelegate {
     @Generated
     @IsOptional
     @Selector("textFieldShouldReturn:")
-    default boolean textFieldShouldReturn(UITextField textField) {
+    default boolean textFieldShouldReturn(@NotNull UITextField textField) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("textFieldDidChangeSelection:")
-    default void textFieldDidChangeSelection(UITextField textField) {
+    default void textFieldDidChangeSelection(@NotNull UITextField textField) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Asks the delegate for the menu to be shown for the specified text range.
+     * 
+     * @param textField        The text field requesting the menu.
+     * @param range            The characters range for which the menu is presented for.
+     * @param suggestedActions The actions and commands that the system suggests.
+     * 
+     * @return Return a UIMenu describing the desired menu hierarchy. Return @c nil to present the default system menu.
+     * 
+     *         API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @IsOptional
+    @Selector("textField:editMenuForCharactersInRange:suggestedActions:")
+    default UIMenu textFieldEditMenuForCharactersInRangeSuggestedActions(@NotNull UITextField textField,
+            @ByValue NSRange range, @NotNull NSArray<? extends UIMenuElement> suggestedActions) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called when the text field is about to dismiss the edit menu.
+     * 
+     * @param textField The text field displaying the menu.
+     * @param animator  Dismissal animator. Add animations to this object to run them alongside the dismissal
+     *                  transition.
+     * 
+     *                  API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("textField:willDismissEditMenuWithAnimator:")
+    default void textFieldWillDismissEditMenuWithAnimator(@NotNull UITextField textField,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called when the text field is about to present the edit menu.
+     * 
+     * @param textField The text field displaying the menu.
+     * @param animator  Appearance animator. Add animations to this object to run them alongside the appearance
+     *                  transition.
+     * 
+     *                  API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("textField:willPresentEditMenuWithAnimator:")
+    default void textFieldWillPresentEditMenuWithAnimator(@NotNull UITextField textField,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

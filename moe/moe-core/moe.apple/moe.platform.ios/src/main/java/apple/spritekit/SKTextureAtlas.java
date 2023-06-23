@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("SpriteKit")
@@ -77,33 +79,38 @@ public class SKTextureAtlas extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("atlasNamed:")
-    public static native SKTextureAtlas atlasNamed(String name);
+    public static native SKTextureAtlas atlasNamed(@NotNull String name);
 
     /**
      * Create a texture atlas on the fly
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("atlasWithDictionary:")
-    public static native SKTextureAtlas atlasWithDictionary(NSDictionary<String, ?> properties);
+    public static native SKTextureAtlas atlasWithDictionary(@NotNull NSDictionary<String, ?> properties);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -138,9 +145,10 @@ public class SKTextureAtlas extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -149,29 +157,31 @@ public class SKTextureAtlas extends NSObject implements NSSecureCoding {
 
     /**
      * Start a texture atlas preload operation on an array of texture atlas
-     *
+     * 
      * @param textureAtlases    an array of SKTextureAtlas to be preloaded
      * @param completionHandler will be called upon the preload completion
      */
     @Generated
     @Selector("preloadTextureAtlases:withCompletionHandler:")
     public static native void preloadTextureAtlasesWithCompletionHandler(
-            NSArray<? extends SKTextureAtlas> textureAtlases,
-            @ObjCBlock(name = "call_preloadTextureAtlasesWithCompletionHandler") Block_preloadTextureAtlasesWithCompletionHandler completionHandler);
+            @NotNull NSArray<? extends SKTextureAtlas> textureAtlases,
+            @NotNull @ObjCBlock(name = "call_preloadTextureAtlasesWithCompletionHandler") Block_preloadTextureAtlasesWithCompletionHandler completionHandler);
 
     /**
      * Start a texture atlas preload operation on an array of texture atlas identifiers, error == nil if all atlases
      * were found,
      * else an NSError is returned and the user info will contain a list of the atlases that couldn't be found
      * the ones that could be found are looked up and prefetched.
-     *
+     * 
      * @param atlasNames        is an array of the SKTextureAtlas, that were located and preloaded.
      * @param completionHandler will be called upon the preload completion.
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("preloadTextureAtlasesNamed:withCompletionHandler:")
-    public static native void preloadTextureAtlasesNamedWithCompletionHandler(NSArray<String> atlasNames,
-            @ObjCBlock(name = "call_preloadTextureAtlasesNamedWithCompletionHandler") Block_preloadTextureAtlasesNamedWithCompletionHandler completionHandler);
+    public static native void preloadTextureAtlasesNamedWithCompletionHandler(@NotNull NSArray<String> atlasNames,
+            @NotNull @ObjCBlock(name = "call_preloadTextureAtlasesNamedWithCompletionHandler") Block_preloadTextureAtlasesNamedWithCompletionHandler completionHandler);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -196,7 +206,7 @@ public class SKTextureAtlas extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -204,7 +214,7 @@ public class SKTextureAtlas extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKTextureAtlas initWithCoder(NSCoder coder);
+    public native SKTextureAtlas initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Request that this texture atlas be loaded into vram on the next render update, with a callback handler.
@@ -212,18 +222,20 @@ public class SKTextureAtlas extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("preloadWithCompletionHandler:")
     public native void preloadWithCompletionHandler(
-            @ObjCBlock(name = "call_preloadWithCompletionHandler") Block_preloadWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_preloadWithCompletionHandler") Block_preloadWithCompletionHandler completionHandler);
 
     /**
      * Individual texture for image name within the atlas
      */
+    @NotNull
     @Generated
     @Selector("textureNamed:")
-    public native SKTexture textureNamed(String name);
+    public native SKTexture textureNamed(@NotNull String name);
 
     /**
      * Returns the array of valid textures in the atlas
      */
+    @NotNull
     @Generated
     @Selector("textureNames")
     public native NSArray<String> textureNames();
@@ -239,8 +251,8 @@ public class SKTextureAtlas extends NSObject implements NSSecureCoding {
     @Generated
     public interface Block_preloadTextureAtlasesNamedWithCompletionHandler {
         @Generated
-        void call_preloadTextureAtlasesNamedWithCompletionHandler(NSError error,
-                NSArray<? extends SKTextureAtlas> foundAtlases);
+        void call_preloadTextureAtlasesNamedWithCompletionHandler(@Nullable NSError error,
+                @NotNull NSArray<? extends SKTextureAtlas> foundAtlases);
     }
 
     @Runtime(ObjCRuntime.class)

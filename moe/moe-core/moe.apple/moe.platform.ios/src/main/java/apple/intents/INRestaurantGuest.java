@@ -40,7 +40,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -71,22 +76,25 @@ public class INRestaurantGuest extends INPerson {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,9 +129,10 @@ public class INRestaurantGuest extends INPerson {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,6 +164,7 @@ public class INRestaurantGuest extends INPerson {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("emailAddress")
     public native String emailAddress();
@@ -165,52 +175,60 @@ public class INRestaurantGuest extends INPerson {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRestaurantGuest initWithCoder(NSCoder coder);
+    public native INRestaurantGuest initWithCoder(@NotNull NSCoder coder);
 
+    @Deprecated
     @Generated
     @Selector("initWithHandle:displayName:contactIdentifier:")
-    public native INRestaurantGuest initWithHandleDisplayNameContactIdentifier(String handle, String displayName,
-            String contactIdentifier);
+    public native INRestaurantGuest initWithHandleDisplayNameContactIdentifier(@NotNull String handle,
+            @Nullable String displayName, @Nullable String contactIdentifier);
 
+    @Deprecated
     @Generated
     @Selector("initWithHandle:nameComponents:contactIdentifier:")
-    public native INRestaurantGuest initWithHandleNameComponentsContactIdentifier(String handle,
-            NSPersonNameComponents nameComponents, String contactIdentifier);
+    public native INRestaurantGuest initWithHandleNameComponentsContactIdentifier(@NotNull String handle,
+            @NotNull NSPersonNameComponents nameComponents, @Nullable String contactIdentifier);
 
+    @Deprecated
     @Generated
     @Selector("initWithHandle:nameComponents:displayName:image:contactIdentifier:")
-    public native INRestaurantGuest initWithHandleNameComponentsDisplayNameImageContactIdentifier(String handle,
-            NSPersonNameComponents nameComponents, String displayName, INImage image, String contactIdentifier);
+    public native INRestaurantGuest initWithHandleNameComponentsDisplayNameImageContactIdentifier(
+            @NotNull String handle, @Nullable NSPersonNameComponents nameComponents, @Nullable String displayName,
+            @Nullable INImage image, @Nullable String contactIdentifier);
 
     @Generated
     @Selector("initWithNameComponents:phoneNumber:emailAddress:")
-    public native INRestaurantGuest initWithNameComponentsPhoneNumberEmailAddress(NSPersonNameComponents nameComponents,
-            String phoneNumber, String emailAddress);
+    public native INRestaurantGuest initWithNameComponentsPhoneNumberEmailAddress(
+            @Nullable NSPersonNameComponents nameComponents, @Nullable String phoneNumber,
+            @Nullable String emailAddress);
 
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:")
     public native INRestaurantGuest initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifier(
-            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
-            String contactIdentifier, String customIdentifier);
+            @NotNull INPersonHandle personHandle, @Nullable NSPersonNameComponents nameComponents,
+            @Nullable String displayName, @Nullable INImage image, @Nullable String contactIdentifier,
+            @Nullable String customIdentifier);
 
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:aliases:suggestionType:")
     public native INRestaurantGuest initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierAliasesSuggestionType(
-            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
-            String contactIdentifier, String customIdentifier, NSArray<? extends INPersonHandle> aliases,
+            @NotNull INPersonHandle personHandle, @Nullable NSPersonNameComponents nameComponents,
+            @Nullable String displayName, @Nullable INImage image, @Nullable String contactIdentifier,
+            @Nullable String customIdentifier, @Nullable NSArray<? extends INPersonHandle> aliases,
             @NInt long suggestionType);
 
+    @Nullable
     @Generated
     @Selector("phoneNumber")
     public native String phoneNumber();
 
     @Generated
     @Selector("setEmailAddress:")
-    public native void setEmailAddress(String value);
+    public native void setEmailAddress(@Nullable String value);
 
     @Generated
     @Selector("setPhoneNumber:")
-    public native void setPhoneNumber(String value);
+    public native void setPhoneNumber(@Nullable String value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -221,24 +239,28 @@ public class INRestaurantGuest extends INPerson {
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:isMe:")
     public native INRestaurantGuest initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierIsMe(
-            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
-            String contactIdentifier, String customIdentifier, boolean isMe);
+            @NotNull INPersonHandle personHandle, @Nullable NSPersonNameComponents nameComponents,
+            @Nullable String displayName, @Nullable INImage image, @Nullable String contactIdentifier,
+            @Nullable String customIdentifier, boolean isMe);
 
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:relationship:")
     public native INRestaurantGuest initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierRelationship(
-            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
-            String contactIdentifier, String customIdentifier, String relationship);
+            @NotNull INPersonHandle personHandle, @Nullable NSPersonNameComponents nameComponents,
+            @Nullable String displayName, @Nullable INImage image, @Nullable String contactIdentifier,
+            @Nullable String customIdentifier, @Nullable String relationship);
 
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:isContactSuggestion:suggestionType:")
     public native INRestaurantGuest initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierIsContactSuggestionSuggestionType(
-            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
-            String contactIdentifier, String customIdentifier, boolean isContactSuggestion, @NInt long suggestionType);
+            @NotNull INPersonHandle personHandle, @Nullable NSPersonNameComponents nameComponents,
+            @Nullable String displayName, @Nullable INImage image, @Nullable String contactIdentifier,
+            @Nullable String customIdentifier, boolean isContactSuggestion, @NInt long suggestionType);
 
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:isMe:suggestionType:")
     public native INRestaurantGuest initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierIsMeSuggestionType(
-            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
-            String contactIdentifier, String customIdentifier, boolean isMe, @NInt long suggestionType);
+            @NotNull INPersonHandle personHandle, @Nullable NSPersonNameComponents nameComponents,
+            @Nullable String displayName, @Nullable INImage image, @Nullable String contactIdentifier,
+            @Nullable String customIdentifier, boolean isMe, @NInt long suggestionType);
 }

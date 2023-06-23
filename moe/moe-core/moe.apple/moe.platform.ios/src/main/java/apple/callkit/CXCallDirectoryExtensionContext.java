@@ -41,7 +41,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CallKit")
 @Runtime(ObjCRuntime.class)
@@ -72,22 +77,25 @@ public class CXCallDirectoryExtensionContext extends NSExtensionContext {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,9 +130,10 @@ public class CXCallDirectoryExtensionContext extends NSExtensionContext {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,13 +167,15 @@ public class CXCallDirectoryExtensionContext extends NSExtensionContext {
 
     @Generated
     @Selector("addIdentificationEntryWithNextSequentialPhoneNumber:label:")
-    public native void addIdentificationEntryWithNextSequentialPhoneNumberLabel(long phoneNumber, String label);
+    public native void addIdentificationEntryWithNextSequentialPhoneNumberLabel(long phoneNumber,
+            @NotNull String label);
 
     @Generated
     @Selector("completeRequestWithCompletionHandler:")
     public native void completeRequestWithCompletionHandler(
-            @ObjCBlock(name = "call_completeRequestWithCompletionHandler") Block_completeRequestWithCompletionHandler completion);
+            @Nullable @ObjCBlock(name = "call_completeRequestWithCompletionHandler") Block_completeRequestWithCompletionHandler completion);
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -177,10 +188,10 @@ public class CXCallDirectoryExtensionContext extends NSExtensionContext {
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) CXCallDirectoryExtensionContextDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) CXCallDirectoryExtensionContextDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) CXCallDirectoryExtensionContextDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CXCallDirectoryExtensionContextDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -200,7 +211,7 @@ public class CXCallDirectoryExtensionContext extends NSExtensionContext {
 
     /**
      * Whether the request should provide incremental data.
-     * <p>
+     * 
      * If this is called at the beginning of the request (before any entries have been added or removed) and the result
      * is YES,
      * then the request must only provide an "incremental" set of entries, i.e. only add or remove entries relative to
@@ -210,6 +221,8 @@ public class CXCallDirectoryExtensionContext extends NSExtensionContext {
      * a "complete" set of entries, adding the full list of entries from scratch (and removing none), regardless of
      * whether data has ever been
      * successfully loaded in the past.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isIncremental")
@@ -217,10 +230,12 @@ public class CXCallDirectoryExtensionContext extends NSExtensionContext {
 
     /**
      * Remove all currently-stored blocking entries.
-     * <p>
+     * 
      * May only be used when `-isIncremental` returns YES, indicating that the request should provide incremental
      * entries and thus may use this
      * API to remove all previously-added blocking entries.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("removeAllBlockingEntries")
@@ -228,10 +243,12 @@ public class CXCallDirectoryExtensionContext extends NSExtensionContext {
 
     /**
      * Remove all currently-stored identification entries.
-     * <p>
+     * 
      * May only be used when `-isIncremental` returns YES, indicating that the request should provide incremental
      * entries and thus may use this
      * API to remove all previously-added identification entries.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("removeAllIdentificationEntries")
@@ -239,12 +256,14 @@ public class CXCallDirectoryExtensionContext extends NSExtensionContext {
 
     /**
      * Remove blocking entry with the specified phone number.
-     * <p>
+     * 
      * May only be used when `-isIncremental` returns YES, indicating that the request should provide incremental
      * entries and thus may use this
      * API to remove a previously-added blocking entry.
-     *
+     * 
      * @param phoneNumber The blocking entry phone number to remove.
+     * 
+     *                    API-Since: 11.0
      */
     @Generated
     @Selector("removeBlockingEntryWithPhoneNumber:")
@@ -252,14 +271,16 @@ public class CXCallDirectoryExtensionContext extends NSExtensionContext {
 
     /**
      * Remove identification entry with the specified phone number.
-     * <p>
+     * 
      * May only be used when `-isIncremental` returns YES, indicating that the request should provide incremental
      * entries and thus may use this
      * API to remove a previously-added identification entry. Removes all identification entries with the specified
      * phone number, even if
      * multiple identification entries with different labels are present for a single phone number.
-     *
+     * 
      * @param phoneNumber The identification entry phone number to remove.
+     * 
+     *                    API-Since: 11.0
      */
     @Generated
     @Selector("removeIdentificationEntryWithPhoneNumber:")

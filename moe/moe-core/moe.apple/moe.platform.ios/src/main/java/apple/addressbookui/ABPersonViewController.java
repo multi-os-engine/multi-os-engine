@@ -46,7 +46,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 2.0
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Use +[CNContactViewController viewControllerForContact:] from ContactsUI.framework instead
+ */
 @Deprecated
 @Generated
 @Library("AddressBookUI")
@@ -76,35 +83,39 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
     @Selector("allocWithZone:")
     public static native ABPersonViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -136,9 +147,10 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,15 +178,17 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("viewControllerWithRestorationIdentifierPath:coder:")
     public static native UIViewController viewControllerWithRestorationIdentifierPathCoder(
-            NSArray<String> identifierComponents, NSCoder coder);
+            @NotNull NSArray<String> identifierComponents, @NotNull NSCoder coder);
 
     /**
      * The Address Book to use. Any contact returned will be from this ABAddressBook instance.
      * If not set, a new ABAddressBook will be created the first time the property is accessed.
      */
+    @Nullable
     @Generated
     @Selector("addressBook")
     public native ConstVoidPtr addressBook();
@@ -182,6 +196,8 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
     /**
      * Specifies whether buttons appear to let the user perform actions such as sharing the contact,
      * initiating a FaceTime call, or sending a text message.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("allowsActions")
@@ -198,6 +214,7 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
      * If displayedPerson has been added to an ABAddressBook, then the addressBook
      * property will be updated to use the displayedPerson's ABAddressBook.
      */
+    @NotNull
     @Generated
     @Selector("displayedPerson")
     public native ConstVoidPtr displayedPerson();
@@ -207,6 +224,7 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
      * be visible when viewing the person. Note that all the properties are visible when
      * editing a person.
      */
+    @Nullable
     @Generated
     @Selector("displayedProperties")
     public native NSArray<? extends NSNumber> displayedProperties();
@@ -217,15 +235,17 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
 
     @Generated
     @Selector("initWithCoder:")
-    public native ABPersonViewController initWithCoder(NSCoder coder);
+    public native ABPersonViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native ABPersonViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native ABPersonViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * ABPersonViewController does not support subclassing in iOS 7.0 and later. A nil instance will be returned.
      */
+    @Nullable
     @Generated
     @Selector("personViewDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -237,11 +257,13 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
      */
     @Generated
     @Selector("setAddressBook:")
-    public native void setAddressBook(ConstVoidPtr value);
+    public native void setAddressBook(@Nullable ConstVoidPtr value);
 
     /**
      * Specifies whether buttons appear to let the user perform actions such as sharing the contact,
      * initiating a FaceTime call, or sending a text message.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setAllowsActions:")
@@ -260,7 +282,7 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
      */
     @Generated
     @Selector("setDisplayedPerson:")
-    public native void setDisplayedPerson(ConstVoidPtr value);
+    public native void setDisplayedPerson(@NotNull ConstVoidPtr value);
 
     /**
      * An array of NSNumber instances representing the properties (ABPropertyID) that should
@@ -269,7 +291,7 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
      */
     @Generated
     @Selector("setDisplayedProperties:")
-    public native void setDisplayedProperties(NSArray<? extends NSNumber> value);
+    public native void setDisplayedProperties(@Nullable NSArray<? extends NSNumber> value);
 
     /**
      * Indicates whether to highlight a certain value for the displayedPerson,
@@ -285,13 +307,13 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
     @Generated
     @Selector("setPersonViewDelegate:")
     public native void setPersonViewDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) ABPersonViewControllerDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) ABPersonViewControllerDelegate value);
 
     /**
      * ABPersonViewController does not support subclassing in iOS 7.0 and later. A nil instance will be returned.
      */
     @Generated
-    public void setPersonViewDelegate(@Mapped(ObjCObjectMapper.class) ABPersonViewControllerDelegate value) {
+    public void setPersonViewDelegate(@Nullable @Mapped(ObjCObjectMapper.class) ABPersonViewControllerDelegate value) {
         Object __old = personViewDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -304,6 +326,8 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
 
     /**
      * Indicates whether to show data from people linked to the displayedPerson, defaults to NO
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setShouldShowLinkedPeople:")
@@ -311,15 +335,18 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
 
     /**
      * Indicates whether to show data from people linked to the displayedPerson, defaults to NO
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("shouldShowLinkedPeople")
     public native boolean shouldShowLinkedPeople();
 
+    @Nullable
     @Generated
     @ProtocolClassMethod("viewControllerWithRestorationIdentifierPathCoder")
-    public UIViewController _viewControllerWithRestorationIdentifierPathCoder(NSArray<String> identifierComponents,
-            NSCoder coder) {
+    public UIViewController _viewControllerWithRestorationIdentifierPathCoder(
+            @NotNull NSArray<String> identifierComponents, @NotNull NSCoder coder) {
         return viewControllerWithRestorationIdentifierPathCoder(identifierComponents, coder);
     }
 }

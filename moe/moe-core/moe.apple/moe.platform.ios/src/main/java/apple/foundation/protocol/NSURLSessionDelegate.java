@@ -29,9 +29,13 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Messages related to the URL session as a whole
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("Foundation")
@@ -46,7 +50,7 @@ public interface NSURLSessionDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:didBecomeInvalidWithError:")
-    default void URLSessionDidBecomeInvalidWithError(NSURLSession session, NSError error) {
+    default void URLSessionDidBecomeInvalidWithError(@NotNull NSURLSession session, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -63,9 +67,9 @@ public interface NSURLSessionDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:didReceiveChallenge:completionHandler:")
-    default void URLSessionDidReceiveChallengeCompletionHandler(NSURLSession session,
-            NSURLAuthenticationChallenge challenge,
-            @ObjCBlock(name = "call_URLSessionDidReceiveChallengeCompletionHandler") Block_URLSessionDidReceiveChallengeCompletionHandler completionHandler) {
+    default void URLSessionDidReceiveChallengeCompletionHandler(@NotNull NSURLSession session,
+            @NotNull NSURLAuthenticationChallenge challenge,
+            @NotNull @ObjCBlock(name = "call_URLSessionDidReceiveChallengeCompletionHandler") Block_URLSessionDidReceiveChallengeCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -77,11 +81,13 @@ public interface NSURLSessionDelegate {
      * delivered. At this time it is safe to invoke the previously stored
      * completion handler, or to begin any internal updates that will
      * result in invoking the completion handler.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
     @Selector("URLSessionDidFinishEventsForBackgroundURLSession:")
-    default void URLSessionDidFinishEventsForBackgroundURLSession(NSURLSession session) {
+    default void URLSessionDidFinishEventsForBackgroundURLSession(@NotNull NSURLSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -89,6 +95,7 @@ public interface NSURLSessionDelegate {
     @Generated
     public interface Block_URLSessionDidReceiveChallengeCompletionHandler {
         @Generated
-        void call_URLSessionDidReceiveChallengeCompletionHandler(@NInt long disposition, NSURLCredential credential);
+        void call_URLSessionDidReceiveChallengeCompletionHandler(@NInt long disposition,
+                @Nullable NSURLCredential credential);
     }
 }

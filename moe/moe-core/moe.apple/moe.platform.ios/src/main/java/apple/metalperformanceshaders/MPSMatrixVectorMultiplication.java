@@ -25,26 +25,31 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSMatrixVectorMultiplication
- * <p>
+ * 
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * A matrix-vector multiplication kernel.
- * <p>
+ * 
  * A MPSMatrixVectorMultiplication object computes:
- * <p>
+ * 
  * y = alpha * op(A) * x + beta * y
- * <p>
+ * 
  * A is a matrix represented by a MPSMatrix object. alpha and beta
  * are scalar values (of the same data type as values of y) which are
  * applied as shown above. A may have an optional transposition
  * operation applied.
- * <p>
+ * 
  * A MPSMatrixVectorMultiplication object is initialized with the transpose
  * operator to apply to A, sizes for the operation to perform,
  * and the scalar values alpha and beta.
+ * 
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -76,22 +81,25 @@ public class MPSMatrixVectorMultiplication extends MPSMatrixBinaryKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,29 +114,32 @@ public class MPSMatrixVectorMultiplication extends MPSMatrixBinaryKernel {
 
     /**
      * Encode a MPSMatrixVectorMultiplication object to a command buffer.
-     * <p>
+     * 
      * The left input matrix must be large enough to hold an array of size (rows x columns)
      * elements beginning at primarySourceMatrixOrigin.
-     * <p>
+     * 
      * The input vector must be large enough to hold an array of size (columns)
      * elements beginning at secondarySourceMatrixOrigin.x secondarySourceMatrixOrigin.y and
      * secondarySourceMatrixOrigin.z must be zero.
-     * <p>
+     * 
      * The result vector must be large enough to hold an array of size (rows)
      * elements beginning at resultMatrixOrigin.x. resultMatrixOrigin.y and
      * resultMatrixOrigin.z must be zero.
-     *
+     * 
      * @param commandBuffer A valid MTLCommandBuffer to receive the encoded kernel.
+     * 
      * @param inputMatrix   A valid MPSMatrix object which specifies the input matrix A.
+     * 
      * @param inputVector   A valid MPSVector object which specifies the input vector x.
+     * 
      * @param resultVector  A valid MPSVector object which specifies the addend vector which will
      *                      also be overwritten by the result.
      */
     @Generated
     @Selector("encodeToCommandBuffer:inputMatrix:inputVector:resultVector:")
     public native void encodeToCommandBufferInputMatrixInputVectorResultVector(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSMatrix inputMatrix,
-            MPSVector inputVector, MPSVector resultVector);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSMatrix inputMatrix,
+            @NotNull MPSVector inputVector, @NotNull MPSVector resultVector);
 
     @Generated
     @Selector("hash")
@@ -141,60 +152,69 @@ public class MPSMatrixVectorMultiplication extends MPSMatrixBinaryKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSMatrixVectorMultiplication initWithCoder(NSCoder aDecoder);
+    public native MPSMatrixVectorMultiplication initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSMatrixVectorMultiplication initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixVectorMultiplication initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSMatrixVectorMultiplication initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixVectorMultiplication initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Convenience initialization for a matrix-vector multiplication
      * with no transposition, unit scaling of the product, and no
      * accumulation of the result. The scaling factors alpha and beta
      * are taken to be 1.0 and 0.0 respectively.
-     *
+     * 
      * @param device  The device on which the kernel will execute.
+     * 
      * @param rows    The number of rows in the input matrix A, and the number of elements
      *                in the vector y.
+     * 
      * @param columns The number of columns in the input matrix A, and the number of
      *                elements in the input vector x.
+     * 
      * @return A valid MPSMatrixVectorMultiplication object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:rows:columns:")
     public native MPSMatrixVectorMultiplication initWithDeviceRowsColumns(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long rows, @NUInt long columns);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long rows, @NUInt long columns);
 
     /**
      * Initialize an MPSMatrixVectorMultiplication object on a device for a given size
      * and desired transpose and scale values.
-     *
+     * 
      * @param device    The device on which the kernel will execute.
+     * 
      * @param transpose A boolean value which indicates if the input matrix should be
      *                  used in transposed form. if 'YES' then op(A) == A**T, otherwise
      *                  op(A) == A.
+     * 
      * @param rows      The number of rows in the input matrix op(A), and the number of elements
      *                  in the vector y.
+     * 
      * @param columns   The number of columns in the input matrix op(A), and the number of
      *                  elements in the input vector x.
+     * 
      * @param alpha     The scale factor to apply to the product. Specified in double
      *                  precision. Will be converted to the appropriate precision in the
      *                  implementation subject to rounding and/or clamping as necessary.
+     * 
      * @param beta      The scale factor to apply to the initial values of y. Specified
      *                  in double precision. Will be converted to the appropriate precision in the
      *                  implementation subject to rounding and/or clamping as necessary.
+     * 
      * @return A valid MPSMatrixVectorMultiplication object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:transpose:rows:columns:alpha:beta:")
     public native MPSMatrixVectorMultiplication initWithDeviceTransposeRowsColumnsAlphaBeta(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, boolean transpose, @NUInt long rows, @NUInt long columns,
-            double alpha, double beta);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, boolean transpose, @NUInt long rows,
+            @NUInt long columns, double alpha, double beta);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -213,9 +233,10 @@ public class MPSMatrixVectorMultiplication extends MPSMatrixBinaryKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

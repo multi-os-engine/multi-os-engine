@@ -41,7 +41,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Messages")
 @Runtime(ObjCRuntime.class)
@@ -72,22 +77,25 @@ public class MSSticker extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,9 +130,10 @@ public class MSSticker extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,9 +163,10 @@ public class MSSticker extends NSObject {
 
     /**
      * [@property] imageFileURL
-     * <p>
+     * 
      * The file URL to the Sticker was initialized with.
      */
+    @NotNull
     @Generated
     @Selector("imageFileURL")
     public native NSURL imageFileURL();
@@ -167,15 +177,15 @@ public class MSSticker extends NSObject {
 
     /**
      * initWithContentsOfFileURL:localizedDescription:error:
-     * <p>
+     * 
      * Initializes a sticker with the contents of the URL and the localized description.
-     * <p>
+     * 
      * Initializes a sticker with the contents of the URL and the localized description.
      * The specified file must have a maximum size of 500KB and must conform to kUTTypePNG, kUTTypeGIF
      * or kUTTypeJPEG. The image loaded from the file must be no smaller than 300px X 300px and must
      * be no larger 618px x 618px. This localized description string is limited to 150 Unicode
      * characters in length.
-     *
+     * 
      * @param fileURL              The URL from which to read sticker data.
      * @param localizedDescription A succinct localized string describing the sticker.
      * @param error                If this method could not initialize a sticker, this will contain an NSError object
@@ -185,14 +195,15 @@ public class MSSticker extends NSObject {
      */
     @Generated
     @Selector("initWithContentsOfFileURL:localizedDescription:error:")
-    public native MSSticker initWithContentsOfFileURLLocalizedDescriptionError(NSURL fileURL,
-            String localizedDescription, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native MSSticker initWithContentsOfFileURLLocalizedDescriptionError(@NotNull NSURL fileURL,
+            @NotNull String localizedDescription, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * [@property] localizedDescription
-     * <p>
+     * 
      * A succinct localized string describing the sticker.
      */
+    @NotNull
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();

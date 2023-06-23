@@ -20,12 +20,12 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] AudioQueueProcessingTapFlags
- * <p>
+ * 
  * Flags used in conjunction with processing taps
- * <p>
+ * 
  * In the flags passed to AudioQueueProcessingTapNew, either the PreEffects
  * or PostEffects flag must be set, but not both.
- * <p>
+ * 
  * [@constant] kAudioQueueProcessingTap_PreEffects
  * Signifies that the processing tap is inserted before any effects.
  * Passed to AudioQueueProcessingTapNew and to the callback.

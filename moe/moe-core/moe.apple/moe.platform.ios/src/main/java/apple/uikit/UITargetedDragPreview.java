@@ -22,7 +22,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -53,22 +58,25 @@ public class UITargetedDragPreview extends UITargetedPreview {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -92,16 +100,17 @@ public class UITargetedDragPreview extends UITargetedPreview {
 
     @Generated
     @Selector("initWithView:")
-    public native UITargetedDragPreview initWithView(UIView view);
+    public native UITargetedDragPreview initWithView(@NotNull UIView view);
 
     @Generated
     @Selector("initWithView:parameters:")
-    public native UITargetedDragPreview initWithViewParameters(UIView view, UIPreviewParameters parameters);
+    public native UITargetedDragPreview initWithViewParameters(@NotNull UIView view,
+            @NotNull UIPreviewParameters parameters);
 
     @Generated
     @Selector("initWithView:parameters:target:")
-    public native UITargetedDragPreview initWithViewParametersTarget(UIView view, UIPreviewParameters parameters,
-            UIPreviewTarget target);
+    public native UITargetedDragPreview initWithViewParametersTarget(@NotNull UIView view,
+            @NotNull UIPreviewParameters parameters, @NotNull UIPreviewTarget target);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -120,26 +129,33 @@ public class UITargetedDragPreview extends UITargetedPreview {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native UITargetedDragPreview new_objc();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("previewForURL:target:")
-    public static native UITargetedDragPreview previewForURLTarget(NSURL url, UIDragPreviewTarget target);
+    public static native UITargetedDragPreview previewForURLTarget(@NotNull NSURL url,
+            @NotNull UIDragPreviewTarget target);
 
     /**
      * If the title is nil or empty, this is the same as `previewForURL:target:`.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("previewForURL:title:target:")
-    public static native UITargetedDragPreview previewForURLTitleTarget(NSURL url, String title,
-            UIDragPreviewTarget target);
+    public static native UITargetedDragPreview previewForURLTitleTarget(@NotNull NSURL url, @Nullable String title,
+            @NotNull UIDragPreviewTarget target);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -151,15 +167,16 @@ public class UITargetedDragPreview extends UITargetedPreview {
 
     /**
      * Returns a preview with the same view and parameters, but a new target.
-     * <p>
+     * 
      * You might call this in a UIDropInteractionDelegate in
      * -dropInteraction:previewForDroppingItem:withDefault:, or in
      * a UIDropInteractionDelegate in -dropInteraction:previewForCancellingItem:withDefault:,
      * to direct the default UITargetedDragPreview to a different target.
      */
+    @NotNull
     @Generated
     @Selector("retargetedPreviewWithTarget:")
-    public native UITargetedDragPreview retargetedPreviewWithTarget(UIDragPreviewTarget newTarget);
+    public native UITargetedDragPreview retargetedPreviewWithTarget(@NotNull UIDragPreviewTarget newTarget);
 
     @Generated
     @Selector("setVersion:")

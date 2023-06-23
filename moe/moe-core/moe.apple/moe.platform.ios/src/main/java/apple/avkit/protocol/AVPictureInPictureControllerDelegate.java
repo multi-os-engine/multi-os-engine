@@ -26,11 +26,14 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] AVPictureInPictureControllerDelegate
- * <p>
+ * 
  * A protocol for delegates of AVPictureInPictureController.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("AVKit")
@@ -39,94 +42,102 @@ import org.moe.natj.objc.ann.Selector;
 public interface AVPictureInPictureControllerDelegate {
     /**
      * pictureInPictureController:failedToStartPictureInPictureWithError:
-     * <p>
+     * 
      * Delegate can implement this method to be notified when Picture in Picture failed to start.
-     *
-     * @param pictureInPictureController The Picture in Picture controller.
-     * @param error                      An error describing why it failed.
+     * 
+     * @param pictureInPictureController
+     *                                   The Picture in Picture controller.
+     * @param error
+     *                                   An error describing why it failed.
      */
     @Generated
     @IsOptional
     @Selector("pictureInPictureController:failedToStartPictureInPictureWithError:")
     default void pictureInPictureControllerFailedToStartPictureInPictureWithError(
-            AVPictureInPictureController pictureInPictureController, NSError error) {
+            @NotNull AVPictureInPictureController pictureInPictureController, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * pictureInPictureController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:
-     * <p>
+     * 
      * Delegate can implement this method to restore the user interface before Picture in Picture stops.
-     *
-     * @param pictureInPictureController The Picture in Picture controller.
-     * @param completionHandler          The completion handler the delegate needs to call after restore.
+     * 
+     * @param pictureInPictureController
+     *                                   The Picture in Picture controller.
+     * @param completionHandler
+     *                                   The completion handler the delegate needs to call after restore.
      */
     @Generated
     @IsOptional
     @Selector("pictureInPictureController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:")
     default void pictureInPictureControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler(
-            AVPictureInPictureController pictureInPictureController,
-            @ObjCBlock(name = "call_pictureInPictureControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler") Block_pictureInPictureControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler completionHandler) {
+            @NotNull AVPictureInPictureController pictureInPictureController,
+            @NotNull @ObjCBlock(name = "call_pictureInPictureControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler") Block_pictureInPictureControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * pictureInPictureControllerDidStartPictureInPicture:
-     * <p>
+     * 
      * Delegate can implement this method to be notified when Picture in Picture did start.
-     *
-     * @param pictureInPictureController The Picture in Picture controller.
+     * 
+     * @param pictureInPictureController
+     *                                   The Picture in Picture controller.
      */
     @Generated
     @IsOptional
     @Selector("pictureInPictureControllerDidStartPictureInPicture:")
     default void pictureInPictureControllerDidStartPictureInPicture(
-            AVPictureInPictureController pictureInPictureController) {
+            @NotNull AVPictureInPictureController pictureInPictureController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * pictureInPictureControllerDidStopPictureInPicture:
-     * <p>
+     * 
      * Delegate can implement this method to be notified when Picture in Picture did stop.
-     *
-     * @param pictureInPictureController The Picture in Picture controller.
+     * 
+     * @param pictureInPictureController
+     *                                   The Picture in Picture controller.
      */
     @Generated
     @IsOptional
     @Selector("pictureInPictureControllerDidStopPictureInPicture:")
     default void pictureInPictureControllerDidStopPictureInPicture(
-            AVPictureInPictureController pictureInPictureController) {
+            @NotNull AVPictureInPictureController pictureInPictureController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * pictureInPictureControllerWillStartPictureInPicture:
-     * <p>
+     * 
      * Delegate can implement this method to be notified when Picture in Picture will start.
-     *
-     * @param pictureInPictureController The Picture in Picture controller.
+     * 
+     * @param pictureInPictureController
+     *                                   The Picture in Picture controller.
      */
     @Generated
     @IsOptional
     @Selector("pictureInPictureControllerWillStartPictureInPicture:")
     default void pictureInPictureControllerWillStartPictureInPicture(
-            AVPictureInPictureController pictureInPictureController) {
+            @NotNull AVPictureInPictureController pictureInPictureController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * pictureInPictureControllerWillStopPictureInPicture:
-     * <p>
+     * 
      * Delegate can implement this method to be notified when Picture in Picture will stop.
-     *
-     * @param pictureInPictureController The Picture in Picture controller.
+     * 
+     * @param pictureInPictureController
+     *                                   The Picture in Picture controller.
      */
     @Generated
     @IsOptional
     @Selector("pictureInPictureControllerWillStopPictureInPicture:")
     default void pictureInPictureControllerWillStopPictureInPicture(
-            AVPictureInPictureController pictureInPictureController) {
+            @NotNull AVPictureInPictureController pictureInPictureController) {
         throw new java.lang.UnsupportedOperationException();
     }
 

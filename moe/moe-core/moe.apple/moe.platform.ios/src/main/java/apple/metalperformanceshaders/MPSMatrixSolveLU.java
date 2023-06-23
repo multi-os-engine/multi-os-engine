@@ -25,22 +25,26 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSMatrixSolveLU
- * <p>
+ * 
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * A kernel for computing the solution of a linear system of equations
  * using the LU factorization resulting from a MPSMatrixDecompositionLU
  * kernel.
- * <p>
+ * 
  * A MPSMatrixSolveLU finds the solution matrix to the system:
- * <p>
+ * 
  * op(A) * X = B
- * <p>
+ * 
  * Where op(A) is A**T or A. B is the array of right hand sides for which
  * the equations are to be solved. X is the resulting matrix of solutions.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -72,22 +76,25 @@ public class MPSMatrixSolveLU extends MPSMatrixBinaryKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,35 +109,39 @@ public class MPSMatrixSolveLU extends MPSMatrixBinaryKernel {
 
     /**
      * Encode a MPSMatrixSolveLU kernel into a command Buffer.
-     * <p>
+     * 
      * This function encodes the MPSMatrixSolveLU object to a valid command buffer.
      * sourceMatrix should contain the lower and upper triangular factors of A as
      * results from a previous execution of MPSMatrixDecompositionLU.
-     * <p>
+     * 
      * pivotIndices is an array of pivots resulting from a previous execution of
      * MPSMatrixDecompositionLU.
-     * <p>
+     * 
      * rightHandSideMatrix and solutionMatrix must be large enough to hold a matrix
      * of size order x numberOfRightHandSides starting at secondarySourceMatrixOrigin and
      * resultMatrixOrigin respectively.
-     * <p>
+     * 
      * sourceMatrix must be at least size order x order starting at primarySourceMatrixOrigin.
-     *
+     * 
      * @param commandBuffer       A valid MTLCommandBuffer to receive the encoded filter
+     * 
      * @param sourceMatrix        A valid MPSMatrix containing the source matrix in factored
      *                            form as returned by a previous successful execution of a
      *                            MPSMatrixDecompositionLU kernel.
+     * 
      * @param rightHandSideMatrix A valid MPSMatrix containing the right hand side values.
+     * 
      * @param pivotIndices        A valid MPSMatrix which contains the pivot indices as returned by
      *                            a previous successful execution of a MPSMatrixDecompositionLU
      *                            kernel.
+     * 
      * @param solutionMatrix      A valid MPSMatrix to contain the result.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceMatrix:rightHandSideMatrix:pivotIndices:solutionMatrix:")
     public native void encodeToCommandBufferSourceMatrixRightHandSideMatrixPivotIndicesSolutionMatrix(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSMatrix sourceMatrix,
-            MPSMatrix rightHandSideMatrix, MPSMatrix pivotIndices, MPSMatrix solutionMatrix);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSMatrix sourceMatrix,
+            @NotNull MPSMatrix rightHandSideMatrix, @NotNull MPSMatrix pivotIndices, @NotNull MPSMatrix solutionMatrix);
 
     @Generated
     @Selector("hash")
@@ -143,32 +154,37 @@ public class MPSMatrixSolveLU extends MPSMatrixBinaryKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSMatrixSolveLU initWithCoder(NSCoder aDecoder);
+    public native MPSMatrixSolveLU initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSMatrixSolveLU initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixSolveLU initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSMatrixSolveLU initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixSolveLU initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize an MPSMatrixSolveLU object on a device
-     *
+     * 
      * @param device                 The device on which the kernel will execute.
+     * 
      * @param transpose              A boolean value which indicates if the source
      *                               matrix should be used in transposed form.
+     * 
      * @param order                  The order of the source matrix and the number of
      *                               rows in the solution and right hand side matrices.
+     * 
      * @param numberOfRightHandSides The number of columns in the solution and right hand side
      *                               matrices.
+     * 
      * @return A valid MPSMatrixSolveLU object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:transpose:order:numberOfRightHandSides:")
     public native MPSMatrixSolveLU initWithDeviceTransposeOrderNumberOfRightHandSides(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, boolean transpose, @NUInt long order,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, boolean transpose, @NUInt long order,
             @NUInt long numberOfRightHandSides);
 
     @Generated
@@ -188,9 +204,10 @@ public class MPSMatrixSolveLU extends MPSMatrixBinaryKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

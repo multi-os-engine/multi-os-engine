@@ -40,24 +40,26 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * GLKEffectPropertyLight
- * <p>
+ * 
  * GLKEffectPropertyLight provides a single directional or spot light for an GLKEffect
  * in accordance with the OpenGL ES 1.1 specification.
- * <p>
+ * 
  * Per the OpenGL ES 1.1 specification, light position and directions are transformed
  * by the modelview matrix. Accordingly, GLKEffectPropertyLight has a transform property.
  * If light transformation is required the transform property must be explicitly set
  * for light properties.
- * <p>
+ * 
  * In order for lighting calculations to function properly, clients of GLKEffectPropertyLight
  * must enable the vertex attribute array GLKVertexAttribNormal to provide normals for
  * lighting calculations. The normals are always normalized.
- * <p>
+ * 
  * The default values for GLKEffectPropertyLight properties are as follows:
- * <p>
+ * 
  * { 0, 0, 1, 0}, // position
  * { 0, 0, 0, 1}, // ambient color
  * { 1, 1, 1, 1}, // diffuse color
@@ -68,12 +70,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * 1, // constant attenuation
  * 0, // linear attenuation
  * 0, // quadratic attenuation
- * <p>
+ * 
  * Note that, as with OpenGL ES 1.1 differentiation between a directional and spot light
  * pivots on the value specified for _spotCutoff. A _spotCutoff of 180.0, the default
  * value, indicates a directional light while values less than 180.0 indicates a
  * spot light.
+ * 
+ * API-Since: 5.0
+ * Deprecated-Since: 12.0
+ * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
  */
+@Deprecated
 @Generated
 @Library("GLKit")
 @Runtime(ObjCRuntime.class)
@@ -104,22 +111,25 @@ public class GLKEffectPropertyLight extends GLKEffectProperty {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -154,9 +164,10 @@ public class GLKEffectPropertyLight extends GLKEffectProperty {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -322,7 +333,7 @@ public class GLKEffectPropertyLight extends GLKEffectProperty {
      */
     @Generated
     @Selector("setTransform:")
-    public native void setTransform(GLKEffectPropertyTransform value);
+    public native void setTransform(@NotNull GLKEffectPropertyTransform value);
 
     /**
      * { 1.0, 1.0, 1.0, 1.0 }
@@ -357,6 +368,7 @@ public class GLKEffectPropertyLight extends GLKEffectProperty {
     /**
      * All identity matrices
      */
+    @NotNull
     @Generated
     @Selector("transform")
     public native GLKEffectPropertyTransform transform();

@@ -36,6 +36,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -67,22 +69,25 @@ public class NSXMLParser extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -117,9 +122,10 @@ public class NSXMLParser extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,6 +160,10 @@ public class NSXMLParser extends NSObject {
     @Selector("abortParsing")
     public native void abortParsing();
 
+    /**
+     * API-Since: 8.0
+     */
+    @Nullable
     @Generated
     @Selector("allowedExternalEntityURLs")
     public native NSSet<? extends NSURL> allowedExternalEntityURLs();
@@ -166,6 +176,7 @@ public class NSXMLParser extends NSObject {
     /**
      * delegate management. The delegate is not retained.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -173,6 +184,8 @@ public class NSXMLParser extends NSObject {
 
     /**
      * defaults to NSXMLNodeLoadExternalEntitiesNever
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("externalEntityResolvingPolicy")
@@ -188,21 +201,23 @@ public class NSXMLParser extends NSObject {
      */
     @Generated
     @Selector("initWithContentsOfURL:")
-    public native NSXMLParser initWithContentsOfURL(NSURL url);
+    public native NSXMLParser initWithContentsOfURL(@NotNull NSURL url);
 
     /**
      * create the parser from data
      */
     @Generated
     @Selector("initWithData:")
-    public native NSXMLParser initWithData(NSData data);
+    public native NSXMLParser initWithData(@NotNull NSData data);
 
     /**
      * create a parser that incrementally pulls data from the specified stream and parses it.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("initWithStream:")
-    public native NSXMLParser initWithStream(NSInputStream stream);
+    public native NSXMLParser initWithStream(@NotNull NSInputStream stream);
 
     @Generated
     @Selector("lineNumber")
@@ -219,30 +234,35 @@ public class NSXMLParser extends NSObject {
     /**
      * can be called after a parse is over to determine parser state.
      */
+    @Nullable
     @Generated
     @Selector("parserError")
     public native NSError parserError();
 
+    @Nullable
     @Generated
     @Selector("publicID")
     public native String publicID();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setAllowedExternalEntityURLs:")
-    public native void setAllowedExternalEntityURLs(NSSet<? extends NSURL> value);
+    public native void setAllowedExternalEntityURLs(@Nullable NSSet<? extends NSURL> value);
 
     /**
      * delegate management. The delegate is not retained.
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSXMLParserDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) NSXMLParserDelegate value);
 
     /**
      * delegate management. The delegate is not retained.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) NSXMLParserDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSXMLParserDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -255,6 +275,8 @@ public class NSXMLParser extends NSObject {
 
     /**
      * defaults to NSXMLNodeLoadExternalEntitiesNever
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setExternalEntityResolvingPolicy:")
@@ -294,6 +316,7 @@ public class NSXMLParser extends NSObject {
     @Selector("shouldResolveExternalEntities")
     public native boolean shouldResolveExternalEntities();
 
+    @Nullable
     @Generated
     @Selector("systemID")
     public native String systemID();

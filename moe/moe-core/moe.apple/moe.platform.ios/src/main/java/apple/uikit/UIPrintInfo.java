@@ -42,7 +42,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.2
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -73,22 +78,25 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,22 +131,25 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native UIPrintInfo new_objc();
 
+    @NotNull
     @Generated
     @Selector("printInfo")
     public static native UIPrintInfo printInfo();
 
+    @NotNull
     @Generated
     @Selector("printInfoWithDictionary:")
-    public static native UIPrintInfo printInfoWithDictionary(NSDictionary<?, ?> dictionary);
+    public static native UIPrintInfo printInfoWithDictionary(@Nullable NSDictionary<?, ?> dictionary);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -161,12 +172,14 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("dictionaryRepresentation")
     public native NSDictionary<?, ?> dictionaryRepresentation();
@@ -181,7 +194,7 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -189,11 +202,12 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIPrintInfo initWithCoder(NSCoder coder);
+    public native UIPrintInfo initWithCoder(@NotNull NSCoder coder);
 
     /**
      * default is application name
      */
+    @NotNull
     @Generated
     @Selector("jobName")
     public native String jobName();
@@ -217,6 +231,7 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
     /**
      * default is nil. set after user selects printer
      */
+    @Nullable
     @Generated
     @Selector("printerID")
     public native String printerID();
@@ -233,7 +248,7 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
      */
     @Generated
     @Selector("setJobName:")
-    public native void setJobName(String value);
+    public native void setJobName(@NotNull String value);
 
     /**
      * default is UIPrintInfoOrientationPortrait
@@ -254,5 +269,5 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
      */
     @Generated
     @Selector("setPrinterID:")
-    public native void setPrinterID(String value);
+    public native void setPrinterID(@Nullable String value);
 }

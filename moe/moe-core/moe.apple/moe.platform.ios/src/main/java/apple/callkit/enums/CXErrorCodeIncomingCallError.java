@@ -19,12 +19,30 @@ package apple.callkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 public final class CXErrorCodeIncomingCallError {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Unentitled = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long CallUUIDAlreadyExists = 0x0000000000000002L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long FilteredByDoNotDisturb = 0x0000000000000003L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long FilteredByBlockList = 0x0000000000000004L;
 
     @Generated

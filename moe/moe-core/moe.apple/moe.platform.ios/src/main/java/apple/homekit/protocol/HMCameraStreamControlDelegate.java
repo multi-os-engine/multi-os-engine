@@ -25,9 +25,13 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This delegate receives updates on the camera stream.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("HomeKit")
@@ -36,26 +40,28 @@ import org.moe.natj.objc.ann.Selector;
 public interface HMCameraStreamControlDelegate {
     /**
      * Informs the delegate that the stream has stopped.
-     *
+     * 
      * @param cameraStreamControl Sender of this message.
+     * 
      * @param error               When stream stops because of an error, 'error' will be populated.
      */
     @Generated
     @IsOptional
     @Selector("cameraStreamControl:didStopStreamWithError:")
-    default void cameraStreamControlDidStopStreamWithError(HMCameraStreamControl cameraStreamControl, NSError error) {
+    default void cameraStreamControlDidStopStreamWithError(@NotNull HMCameraStreamControl cameraStreamControl,
+            @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Informs the delegate that the stream has started.
-     *
+     * 
      * @param cameraStreamControl Sender of this message.
      */
     @Generated
     @IsOptional
     @Selector("cameraStreamControlDidStartStream:")
-    default void cameraStreamControlDidStartStream(HMCameraStreamControl cameraStreamControl) {
+    default void cameraStreamControlDidStartStream(@NotNull HMCameraStreamControl cameraStreamControl) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

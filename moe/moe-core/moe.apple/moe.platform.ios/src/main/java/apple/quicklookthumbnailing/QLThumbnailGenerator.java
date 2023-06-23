@@ -24,7 +24,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("QuickLookThumbnailing")
 @Runtime(ObjCRuntime.class)
@@ -55,31 +60,34 @@ public class QLThumbnailGenerator extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Cancels the given QLThumbnailGenerationRequest.
-     *
+     * 
      * @param request The request that should be cancelled.
      */
     @Generated
     @Selector("cancelRequest:")
-    public native void cancelRequest(QLThumbnailGenerationRequest request);
+    public native void cancelRequest(@NotNull QLThumbnailGenerationRequest request);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -93,7 +101,8 @@ public class QLThumbnailGenerator extends NSObject {
     public static native String description_static();
 
     /**
-     * @param completionHandler Always called when the thumbnail generation is over.
+     * @param completionHandler
+     *                          Always called when the thumbnail generation is over.
      *                          The thumbnail passed to this handler is the most representative version of the thumbnail
      *                          that was successfully generated (if any).
      *                          If set, the error contains information about the issue that occurred while trying to
@@ -102,19 +111,21 @@ public class QLThumbnailGenerator extends NSObject {
      */
     @Generated
     @Selector("generateBestRepresentationForRequest:completionHandler:")
-    public native void generateBestRepresentationForRequestCompletionHandler(QLThumbnailGenerationRequest request,
-            @ObjCBlock(name = "call_generateBestRepresentationForRequestCompletionHandler") Block_generateBestRepresentationForRequestCompletionHandler completionHandler);
+    public native void generateBestRepresentationForRequestCompletionHandler(
+            @NotNull QLThumbnailGenerationRequest request,
+            @NotNull @ObjCBlock(name = "call_generateBestRepresentationForRequestCompletionHandler") Block_generateBestRepresentationForRequestCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_generateBestRepresentationForRequestCompletionHandler {
         @Generated
-        void call_generateBestRepresentationForRequestCompletionHandler(QLThumbnailRepresentation thumbnail,
-                NSError error);
+        void call_generateBestRepresentationForRequestCompletionHandler(@Nullable QLThumbnailRepresentation thumbnail,
+                @Nullable NSError error);
     }
 
     /**
-     * @param updateHandler Called for the successive requested representations of a thumbnail.
+     * @param updateHandler
+     *                      Called for the successive requested representations of a thumbnail.
      *                      If a representation was not successfully generated, this may be called with a nil
      *                      representation.
      *                      If a requested more representative version was successfully generated before a less
@@ -128,15 +139,15 @@ public class QLThumbnailGenerator extends NSObject {
      */
     @Generated
     @Selector("generateRepresentationsForRequest:updateHandler:")
-    public native void generateRepresentationsForRequestUpdateHandler(QLThumbnailGenerationRequest request,
-            @ObjCBlock(name = "call_generateRepresentationsForRequestUpdateHandler") Block_generateRepresentationsForRequestUpdateHandler updateHandler);
+    public native void generateRepresentationsForRequestUpdateHandler(@NotNull QLThumbnailGenerationRequest request,
+            @Nullable @ObjCBlock(name = "call_generateRepresentationsForRequestUpdateHandler") Block_generateRepresentationsForRequestUpdateHandler updateHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_generateRepresentationsForRequestUpdateHandler {
         @Generated
-        void call_generateRepresentationsForRequestUpdateHandler(QLThumbnailRepresentation thumbnail, @NInt long type,
-                NSError error);
+        void call_generateRepresentationsForRequestUpdateHandler(@Nullable QLThumbnailRepresentation thumbnail,
+                @NInt long type, @Nullable NSError error);
     }
 
     @Generated
@@ -165,9 +176,10 @@ public class QLThumbnailGenerator extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -187,29 +199,31 @@ public class QLThumbnailGenerator extends NSObject {
      * The file saved at fileURL has to be deleted when it is not used anymore.
      * This is primarily intended for file provider extensions which need to upload thumbnails and have a small memory
      * limit.
-     *
+     * 
      * @param contentType       An image content type to save the thumbnail as, supported by CGImageDestination, such as
      *                          kUTTypePNG or kUTTypeJPEG
-     * @param completionHandler Always called when the thumbnail generation is over. Will contain an error if the
+     * @param completionHandler
+     *                          Always called when the thumbnail generation is over. Will contain an error if the
      *                          thumbnail could not be successfully saved to disk at fileURL.
      */
     @Generated
     @Selector("saveBestRepresentationForRequest:toFileAtURL:withContentType:completionHandler:")
     public native void saveBestRepresentationForRequestToFileAtURLWithContentTypeCompletionHandler(
-            QLThumbnailGenerationRequest request, NSURL fileURL, String contentType,
-            @ObjCBlock(name = "call_saveBestRepresentationForRequestToFileAtURLWithContentTypeCompletionHandler") Block_saveBestRepresentationForRequestToFileAtURLWithContentTypeCompletionHandler completionHandler);
+            @NotNull QLThumbnailGenerationRequest request, @NotNull NSURL fileURL, @NotNull String contentType,
+            @NotNull @ObjCBlock(name = "call_saveBestRepresentationForRequestToFileAtURLWithContentTypeCompletionHandler") Block_saveBestRepresentationForRequestToFileAtURLWithContentTypeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveBestRepresentationForRequestToFileAtURLWithContentTypeCompletionHandler {
         @Generated
-        void call_saveBestRepresentationForRequestToFileAtURLWithContentTypeCompletionHandler(NSError error);
+        void call_saveBestRepresentationForRequestToFileAtURLWithContentTypeCompletionHandler(@Nullable NSError error);
     }
 
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("sharedGenerator")
     public static native QLThumbnailGenerator sharedGenerator();

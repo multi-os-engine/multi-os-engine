@@ -26,13 +26,17 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNDArrayDescriptor
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * A MPSNDArrayDescriptor object describes a attributes of MPSNDArray and is used to
  * create one (see MPSNDArray discussion below)
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -64,22 +68,25 @@ public class MPSNDArrayDescriptor extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,7 +108,7 @@ public class MPSNDArrayDescriptor extends NSObject {
 
     /**
      * Create an MPSNDArrayDescriptor object for a given size of dimensions.
-     * <p>
+     * 
      * Sample code:
      * [@code]
      * // Creates an NDArrayDescriptor of dimensions [32, 6, 5, 3]
@@ -110,7 +117,7 @@ public class MPSNDArrayDescriptor extends NSObject {
      * dimensionCount: 4
      * dimensionSizes: sizes ]; // array of numberOfDimensions dimensions. Starts with dimension 0
      * [@endcode]
-     *
+     * 
      * @param dataType           MPSDataType of elements in the MPSNDArray
      * @param numberOfDimensions Number of dimensions in the NDArray. May not exceed 16.
      * @param dimensionSizes     An array of NSUIntegers where dimension lengths provided by the user goes from fastest
@@ -122,11 +129,11 @@ public class MPSNDArrayDescriptor extends NSObject {
     @Generated
     @Selector("descriptorWithDataType:dimensionCount:dimensionSizes:")
     public static native MPSNDArrayDescriptor descriptorWithDataTypeDimensionCountDimensionSizes(int dataType,
-            @NUInt long numberOfDimensions, NUIntPtr dimensionSizes);
+            @NUInt long numberOfDimensions, @NotNull NUIntPtr dimensionSizes);
 
     /**
      * Create an MPSNDArrayDescriptor object for a given size of dimensions.
-     * <p>
+     * 
      * Sample code:
      * [@code]
      * // Creates an NDArrayDescriptor of dimensions [32, 5, 6, 3]
@@ -134,7 +141,7 @@ public class MPSNDArrayDescriptor extends NSObject {
      * dimensionSizes: 3, 6, 5, 32, 0 //<--list terminator! ]; // array of numberOfDimensions dimensions. Starts with
      * dimension 0
      * [@endcode]
-     *
+     * 
      * @param dataType   MPSDataType of elements in the MPSNDArray
      * @param dimension0 The start of a 0-terminated variadric list of NSUIntegers where dimension lengths provided by
      *                   the user goes from fastest
@@ -151,7 +158,7 @@ public class MPSNDArrayDescriptor extends NSObject {
 
     /**
      * A convenience function to create an MPSNDArrayDescriptor object for a given size of dimensions.
-     * <p>
+     * 
      * Sample code:
      * [@code]
      * // Creates an NDArrayDescriptor of dimensions [32, 6, 5, 3]
@@ -159,7 +166,7 @@ public class MPSNDArrayDescriptor extends NSObject {
      * [ MPSNDArray descriptorWithDataType: MPSDataTypeFloat32
      * shape: &sizes];
      * [@endcode]
-     *
+     * 
      * @param dataType MPSDataType of elements in the MPSNDArray
      * @param shape    An array of NSUIntegers where dimension lengths provided by the user goes from slowest
      *                 moving to fastest moving dimension. This is same order as MLMultiArray in coreML and most
@@ -171,7 +178,7 @@ public class MPSNDArrayDescriptor extends NSObject {
     @Generated
     @Selector("descriptorWithDataType:shape:")
     public static native MPSNDArrayDescriptor descriptorWithDataTypeShape(int dataType,
-            NSArray<? extends NSNumber> shape);
+            @NotNull NSArray<? extends NSNumber> shape);
 
     @Generated
     @Selector("hash")
@@ -199,15 +206,16 @@ public class MPSNDArrayDescriptor extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The number of elements of type dataType in the indicated dimension.
-     * <p>
+     * 
      * If dimensionIndex >= numberOfDimensions, 1 will be returned.
-     *
+     * 
      * @param dimensionIndex dimension the MPSNDArray for which to return the length
      * @return The number of elements in that dimension.
      */
@@ -223,7 +231,7 @@ public class MPSNDArrayDescriptor extends NSObject {
 
     /**
      * The number of dimensions in the NDArray.
-     * <p>
+     * 
      * May not exceed 16. A 0-diumension MPSNDArray is a single scalar value.
      * Undefined dimensions are implicitly length 1.
      */
@@ -234,7 +242,7 @@ public class MPSNDArrayDescriptor extends NSObject {
 
     /**
      * Changes dimension sizes and number of dimensions on the current descriptor
-     *
+     * 
      * @param numberOfDimensions Number of dimensions in the NDArray. May not exceed 16.
      * @param dimensionSizes     An array of NSUIntegers where dimension lengths provided by the user goes from fastest
      *                           moving to slowest moving dimension.
@@ -243,11 +251,12 @@ public class MPSNDArrayDescriptor extends NSObject {
      */
     @Generated
     @Selector("reshapeWithDimensionCount:dimensionSizes:")
-    public native void reshapeWithDimensionCountDimensionSizes(@NUInt long numberOfDimensions, NUIntPtr dimensionSizes);
+    public native void reshapeWithDimensionCountDimensionSizes(@NUInt long numberOfDimensions,
+            @NotNull NUIntPtr dimensionSizes);
 
     /**
      * Changes dimension sizes and number of dimensions on the current descriptor
-     *
+     * 
      * @param shape An array of NSUIntegers where dimension lengths provided by the user goes from slowest
      *              moving to fastest moving dimension. This is same order as MLMultiArray in coreML and most frameworks
      *              in Python
@@ -256,7 +265,7 @@ public class MPSNDArrayDescriptor extends NSObject {
      */
     @Generated
     @Selector("reshapeWithShape:")
-    public native void reshapeWithShape(NSArray<? extends NSNumber> shape);
+    public native void reshapeWithShape(@NotNull NSArray<? extends NSNumber> shape);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -275,7 +284,7 @@ public class MPSNDArrayDescriptor extends NSObject {
 
     /**
      * The number of dimensions in the NDArray.
-     * <p>
+     * 
      * May not exceed 16. A 0-diumension MPSNDArray is a single scalar value.
      * Undefined dimensions are implicitly length 1.
      */
@@ -291,9 +300,9 @@ public class MPSNDArrayDescriptor extends NSObject {
      * The slice dimensions for each dimension
      * [@discusion] A slice is a subregion of a dimension. It is
      * used to calve off a fraction of a larger NDArray.
-     * <p>
+     * 
      * Default: NSRange(0, lengthOfDimension(i))
-     *
+     * 
      * @param subRange       The region of the slice, start value is wrt dimensionLength of the NDArray.
      * @param dimensionIndex The index of the dimension. Must be < numberOfDimensions
      */
@@ -305,7 +314,7 @@ public class MPSNDArrayDescriptor extends NSObject {
      * The slice dimensions for each dimension
      * [@discusion] A slice is a subregion of a dimension. It is
      * used to calve off a fraction of a larger NDArray.
-     *
+     * 
      * @param dimensionIndex The index of the dimension
      * @return Returns the slice range for the index. If the
      *         dimensionIndex >= numberOfDimensions, {0,1} is returned.
@@ -322,7 +331,7 @@ public class MPSNDArrayDescriptor extends NSObject {
     /**
      * transpose two dimensions
      * [@discusion] If the intention is to insert a length 1 dimension, increment the numberOfDimensions first.
-     *
+     * 
      * @param dimensionIndex  The first dimension. Must be < numberOfDimensions
      * @param dimensionIndex2 The second dimension. Must be < number of Dimensions.
      */

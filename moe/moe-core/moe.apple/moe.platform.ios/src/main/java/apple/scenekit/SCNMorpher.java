@@ -45,10 +45,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNMorpher
- * <p>
+ * 
  * SCNMorpher controls the deformation of morphed geometries
  */
 @Generated
@@ -81,22 +83,25 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +136,10 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,19 +173,23 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
+    public native void addAnimationForKey(@NotNull @Mapped(ObjCObjectMapper.class) SCNAnimation animation,
+            @Nullable String key);
 
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("animationForKey:")
-    public native CAAnimation animationForKey(String key);
+    public native CAAnimation animationForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("animationKeys")
     public native NSArray<String> animationKeys();
 
     /**
      * [@property] calculationMode
-     * <p>
+     * 
      * Specifies how the morph result is calculated by the receiver. Defaults to SCNMorpherCalculationModeNormalized.
      */
     @Generated
@@ -189,7 +199,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -197,15 +207,17 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNMorpher initWithCoder(NSCoder coder);
+    public native SCNMorpher initWithCoder(@NotNull NSCoder coder);
 
+    @Deprecated
     @Generated
     @Selector("isAnimationForKeyPaused:")
-    public native boolean isAnimationForKeyPaused(String key);
+    public native boolean isAnimationForKeyPaused(@NotNull String key);
 
+    @Deprecated
     @Generated
     @Selector("pauseAnimationForKey:")
-    public native void pauseAnimationForKey(String key);
+    public native void pauseAnimationForKey(@NotNull String key);
 
     @Generated
     @Selector("removeAllAnimations")
@@ -213,44 +225,47 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     @Generated
     @Selector("removeAnimationForKey:")
-    public native void removeAnimationForKey(String key);
+    public native void removeAnimationForKey(@NotNull String key);
 
+    @Deprecated
     @Generated
     @Selector("removeAnimationForKey:fadeOutDuration:")
-    public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
+    public native void removeAnimationForKeyFadeOutDuration(@NotNull String key, @NFloat double duration);
 
+    @Deprecated
     @Generated
     @Selector("resumeAnimationForKey:")
-    public native void resumeAnimationForKey(String key);
+    public native void resumeAnimationForKey(@NotNull String key);
 
     /**
      * [@property] calculationMode
-     * <p>
+     * 
      * Specifies how the morph result is calculated by the receiver. Defaults to SCNMorpherCalculationModeNormalized.
      */
     @Generated
     @Selector("setCalculationMode:")
     public native void setCalculationMode(@NInt long value);
 
+    @Deprecated
     @Generated
     @Selector("setSpeed:forAnimationKey:")
-    public native void setSpeedForAnimationKey(@NFloat double speed, String key);
+    public native void setSpeedForAnimationKey(@NFloat double speed, @NotNull String key);
 
     /**
      * [@property] targets
-     * <p>
+     * 
      * Specifies the morph targets as an array of SCNGeometry.
-     * <p>
+     * 
      * The target geometries must have the same number of entries in their geometry sources and the same topology as the
      * base geometry.
      */
     @Generated
     @Selector("setTargets:")
-    public native void setTargets(NSArray<? extends SCNGeometry> value);
+    public native void setTargets(@NotNull NSArray<? extends SCNGeometry> value);
 
     /**
      * setWeight:forTargetAtIndex:
-     * <p>
+     * 
      * Sets the weight for the target at the specified index. Animatable implicitly or explicitly with the keyPath
      * "weights[index]" or "weights["targetName"]" (targetName is the name of the target geometry).
      */
@@ -266,19 +281,20 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * [@property] targets
-     * <p>
+     * 
      * Specifies the morph targets as an array of SCNGeometry.
-     * <p>
+     * 
      * The target geometries must have the same number of entries in their geometry sources and the same topology as the
      * base geometry.
      */
+    @NotNull
     @Generated
     @Selector("targets")
     public native NSArray<? extends SCNGeometry> targets();
 
     /**
      * weightForTargetAtIndex:
-     * <p>
+     * 
      * Retrieves the weight for the target at the specified index.
      */
     @Generated
@@ -288,21 +304,24 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     @Generated
     @Selector("addAnimationPlayer:forKey:")
-    public native void addAnimationPlayerForKey(SCNAnimationPlayer player, String key);
+    public native void addAnimationPlayerForKey(@NotNull SCNAnimationPlayer player, @Nullable String key);
 
+    @Nullable
     @Generated
     @Selector("animationPlayerForKey:")
-    public native SCNAnimationPlayer animationPlayerForKey(String key);
+    public native SCNAnimationPlayer animationPlayerForKey(@NotNull String key);
 
     @Generated
     @Selector("removeAnimationForKey:blendOutDuration:")
-    public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
+    public native void removeAnimationForKeyBlendOutDuration(@NotNull String key, @NFloat double duration);
 
     /**
      * [@property] unifiesNormals
-     * <p>
+     * 
      * When set to YES the normals are not morphed but are recomputed after morphing the vertex instead. When set to NO,
      * the morpher will morph the normals if the geometry targets have normals. Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setUnifiesNormals:")
@@ -310,27 +329,33 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * setWeight:forTargetNamed:
-     * <p>
+     * 
      * Sets the weight for the target with the specified name (targetName is the name of the target geometry).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setWeight:forTargetNamed:")
-    public native void setWeightForTargetNamed(@NFloat double weight, String targetName);
+    public native void setWeightForTargetNamed(@NFloat double weight, @NotNull String targetName);
 
     /**
      * [@property] weights
-     * <p>
+     * 
      * Access to all the weights of all the targets.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setWeights:")
-    public native void setWeights(NSArray<? extends NSNumber> value);
+    public native void setWeights(@NotNull NSArray<? extends NSNumber> value);
 
     /**
      * [@property] unifiesNormals
-     * <p>
+     * 
      * When set to YES the normals are not morphed but are recomputed after morphing the vertex instead. When set to NO,
      * the morpher will morph the normals if the geometry targets have normals. Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("unifiesNormals")
@@ -338,19 +363,24 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * weightForTargetNamed:
-     * <p>
+     * 
      * Retrieves the weight for the target with the specified name (targetName is the name of the target geometry).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("weightForTargetNamed:")
     @NFloat
-    public native double weightForTargetNamed(String targetName);
+    public native double weightForTargetNamed(@NotNull String targetName);
 
     /**
      * [@property] weights
-     * <p>
+     * 
      * Access to all the weights of all the targets.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("weights")
     public native NSArray<? extends NSNumber> weights();

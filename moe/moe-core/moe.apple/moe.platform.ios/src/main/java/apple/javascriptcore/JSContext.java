@@ -40,13 +40,17 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface]
- * <p>
+ * 
  * A JSContext is a JavaScript execution environment. All
  * JavaScript execution takes place within a context, and all JavaScript values
  * are tied to a context.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("JavaScriptCore")
@@ -78,29 +82,32 @@ public class JSContext extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * Create a JSContext, wrapping its C API counterpart.
-     *
+     * 
      * @return The JSContext equivalent of the provided JSGlobalContextRef.
      */
     @Generated
@@ -109,12 +116,12 @@ public class JSContext extends NSObject {
 
     /**
      * Get the arguments to the current callback.
-     * <p>
+     * 
      * This method may be called from within an Objective-C block or method invoked
      * as a callback from JavaScript to retrieve the callback's arguments, objects
      * in the returned array are instances of JSValue. Outside of a callback from
      * JavaScript this method will return nil.
-     *
+     * 
      * @return An NSArray of the arguments nil if there is no current callback.
      */
     @Generated
@@ -123,12 +130,14 @@ public class JSContext extends NSObject {
 
     /**
      * Get the JavaScript function that is currently executing.
-     * <p>
+     * 
      * This method may be called from within an Objective-C block or method invoked
      * as a callback from JavaScript to retrieve the callback's context. Outside of
      * a callback from JavaScript this method will return nil.
-     *
+     * 
      * @return The currently executing JavaScript function or nil if there isn't one.
+     * 
+     *         API-Since: 8.0
      */
     @Generated
     @Selector("currentCallee")
@@ -136,13 +145,13 @@ public class JSContext extends NSObject {
 
     /**
      * [@methodgroup] Callback Accessors
-     * <p>
+     * 
      * Get the JSContext that is currently executing.
-     * <p>
+     * 
      * This method may be called from within an Objective-C block or method invoked
      * as a callback from JavaScript to retrieve the callback's context. Outside of
      * a callback from JavaScript this method will return nil.
-     *
+     * 
      * @return The currently executing JSContext or nil if there isn't one.
      */
     @Generated
@@ -151,11 +160,11 @@ public class JSContext extends NSObject {
 
     /**
      * Get the <code>this</code> value of the currently executing method.
-     * <p>
+     * 
      * This method may be called from within an Objective-C block or method invoked
      * as a callback from JavaScript to retrieve the callback's this value. Outside
      * of a callback from JavaScript this method will return nil.
-     *
+     * 
      * @return The current <code>this</code> value or nil if there isn't one.
      */
     @Generated
@@ -192,9 +201,10 @@ public class JSContext extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -224,9 +234,9 @@ public class JSContext extends NSObject {
 
     /**
      * [@property]
-     * <p>
+     * 
      * Get the C API counterpart wrapped by a JSContext.
-     *
+     * 
      * @return The C API equivalent of this JSContext.
      */
     @Generated
@@ -235,9 +245,9 @@ public class JSContext extends NSObject {
 
     /**
      * [@methodgroup] Evaluating Scripts
-     * <p>
+     * 
      * Evaluate a string of JavaScript code.
-     *
+     * 
      * @param script A string containing the JavaScript code to evaluate.
      * @return The last value generated by the script.
      */
@@ -247,11 +257,13 @@ public class JSContext extends NSObject {
 
     /**
      * Evaluate a string of JavaScript code, with a URL for the script's source file.
-     *
+     * 
      * @param script    A string containing the JavaScript code to evaluate.
      * @param sourceURL A URL for the script's source file. Used by debuggers and when reporting exceptions. This
      *                  parameter is informative only: it does not change the behavior of the script.
      * @return The last value generated by the script.
+     * 
+     *         API-Since: 8.0
      */
     @Generated
     @Selector("evaluateScript:withSourceURL:")
@@ -259,15 +271,15 @@ public class JSContext extends NSObject {
 
     /**
      * [@property]
-     * <p>
+     * 
      * The <code>exception</code> property may be used to throw an exception to JavaScript.
-     * <p>
+     * 
      * Before a callback is made from JavaScript to an Objective-C block or method,
      * the prior value of the exception property will be preserved and the property
      * will be set to nil. After the callback has completed the new value of the
      * exception property will be read, and prior value restored. If the new value
      * of exception is not nil, the callback will result in that value being thrown.
-     * <p>
+     * 
      * This property may also be used to check for uncaught exceptions arising from
      * API function calls (since the default behaviour of <code>exceptionHandler</code> is to
      * assign an uncaught exception to this property).
@@ -278,7 +290,7 @@ public class JSContext extends NSObject {
 
     /**
      * [@property]
-     * <p>
+     * 
      * If a call to an API function results in an uncaught JavaScript exception, the
      * <code>exceptionHandler</code> block will be invoked. The default implementation for the
      * exception handler will store the exception to the exception property on
@@ -294,13 +306,13 @@ public class JSContext extends NSObject {
 
     /**
      * [@property]
-     * <p>
+     * 
      * Get the global object of the context.
-     * <p>
+     * 
      * This method retrieves the global object of the JavaScript execution context.
      * Instances of JSContext originating from WebKit will return a reference to the
      * WindowProxy object.
-     *
+     * 
      * @return The global object.
      */
     @Generated
@@ -309,9 +321,9 @@ public class JSContext extends NSObject {
 
     /**
      * [@methodgroup] Creating New JSContexts
-     * <p>
+     * 
      * Create a JSContext.
-     *
+     * 
      * @return The new context.
      */
     @Generated
@@ -320,7 +332,7 @@ public class JSContext extends NSObject {
 
     /**
      * Create a JSContext in the specified virtual machine.
-     *
+     * 
      * @param virtualMachine The JSVirtualMachine in which the context will be created.
      * @return The new context.
      */
@@ -330,8 +342,10 @@ public class JSContext extends NSObject {
 
     /**
      * [@property]
-     * <p>
+     * 
      * Name of the JSContext. Exposed when remote debugging the context.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("name")
@@ -339,7 +353,7 @@ public class JSContext extends NSObject {
 
     /**
      * Get a particular property on the global object.
-     *
+     * 
      * @return The JSValue for the global object's property.
      */
     @Generated
@@ -348,15 +362,15 @@ public class JSContext extends NSObject {
 
     /**
      * [@property]
-     * <p>
+     * 
      * The <code>exception</code> property may be used to throw an exception to JavaScript.
-     * <p>
+     * 
      * Before a callback is made from JavaScript to an Objective-C block or method,
      * the prior value of the exception property will be preserved and the property
      * will be set to nil. After the callback has completed the new value of the
      * exception property will be read, and prior value restored. If the new value
      * of exception is not nil, the callback will result in that value being thrown.
-     * <p>
+     * 
      * This property may also be used to check for uncaught exceptions arising from
      * API function calls (since the default behaviour of <code>exceptionHandler</code> is to
      * assign an uncaught exception to this property).
@@ -367,7 +381,7 @@ public class JSContext extends NSObject {
 
     /**
      * [@property]
-     * <p>
+     * 
      * If a call to an API function results in an uncaught JavaScript exception, the
      * <code>exceptionHandler</code> block will be invoked. The default implementation for the
      * exception handler will store the exception to the exception property on
@@ -383,8 +397,10 @@ public class JSContext extends NSObject {
 
     /**
      * [@property]
-     * <p>
+     * 
      * Name of the JSContext. Exposed when remote debugging the context.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setName:")
@@ -399,7 +415,7 @@ public class JSContext extends NSObject {
 
     /**
      * [@property]
-     * <p>
+     * 
      * All instances of JSContext are associated with a JSVirtualMachine.
      */
     @Generated

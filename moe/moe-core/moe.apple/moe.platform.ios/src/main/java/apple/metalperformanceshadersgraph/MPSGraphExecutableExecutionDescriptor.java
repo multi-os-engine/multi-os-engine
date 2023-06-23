@@ -23,12 +23,20 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.protocol.NSCopying;
+import apple.metal.protocol.MTLSharedEvent;
+import org.moe.natj.general.ann.MappedReturn;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("MetalPerformanceShadersGraph")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPSGraphExecutableExecutionDescriptor extends NSObject {
+public class MPSGraphExecutableExecutionDescriptor extends NSObject implements NSCopying {
     static {
         NatJ.register();
     }
@@ -54,31 +62,35 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] completionHandler
-     * <p>
+     * 
      * completionHandler for the graph executable, default value is nil
      */
+    @NotNull
     @Generated
     @Selector("completionHandler")
     @ObjCBlock(name = "call_completionHandler_ret")
@@ -88,7 +100,7 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject {
     @Generated
     public interface Block_completionHandler_ret {
         @Generated
-        void call_completionHandler_ret(NSArray<? extends MPSGraphTensorData> arg0, NSError arg1);
+        void call_completionHandler_ret(@NotNull NSArray<? extends MPSGraphTensorData> arg0, @Nullable NSError arg1);
     }
 
     @Generated
@@ -125,9 +137,10 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -144,9 +157,10 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject {
 
     /**
      * [@property] scheduledHandler
-     * <p>
+     * 
      * scheduledHandler for the graph executable, default value is nil
      */
+    @NotNull
     @Generated
     @Selector("scheduledHandler")
     @ObjCBlock(name = "call_scheduledHandler_ret")
@@ -156,41 +170,41 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject {
     @Generated
     public interface Block_scheduledHandler_ret {
         @Generated
-        void call_scheduledHandler_ret(NSArray<? extends MPSGraphTensorData> arg0, NSError arg1);
+        void call_scheduledHandler_ret(@NotNull NSArray<? extends MPSGraphTensorData> arg0, @Nullable NSError arg1);
     }
 
     /**
      * [@property] completionHandler
-     * <p>
+     * 
      * completionHandler for the graph executable, default value is nil
      */
     @Generated
     @Selector("setCompletionHandler:")
     public native void setCompletionHandler(
-            @ObjCBlock(name = "call_setCompletionHandler") Block_setCompletionHandler value);
+            @NotNull @ObjCBlock(name = "call_setCompletionHandler") Block_setCompletionHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setCompletionHandler {
         @Generated
-        void call_setCompletionHandler(NSArray<? extends MPSGraphTensorData> arg0, NSError arg1);
+        void call_setCompletionHandler(@NotNull NSArray<? extends MPSGraphTensorData> arg0, @Nullable NSError arg1);
     }
 
     /**
      * [@property] scheduledHandler
-     * <p>
+     * 
      * scheduledHandler for the graph executable, default value is nil
      */
     @Generated
     @Selector("setScheduledHandler:")
     public native void setScheduledHandler(
-            @ObjCBlock(name = "call_setScheduledHandler") Block_setScheduledHandler value);
+            @NotNull @ObjCBlock(name = "call_setScheduledHandler") Block_setScheduledHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setScheduledHandler {
         @Generated
-        void call_setScheduledHandler(NSArray<? extends MPSGraphTensorData> arg0, NSError arg1);
+        void call_setScheduledHandler(@NotNull NSArray<? extends MPSGraphTensorData> arg0, @Nullable NSError arg1);
     }
 
     @Generated
@@ -199,7 +213,7 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject {
 
     /**
      * [@property] waitUntilCompleted
-     * <p>
+     * 
      * waitUntilCompleted for the graph executable, default value is false
      */
     @Generated
@@ -217,10 +231,44 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject {
 
     /**
      * [@property] waitUntilCompleted
-     * <p>
+     * 
      * waitUntilCompleted for the graph executable, default value is false
      */
     @Generated
     @Selector("waitUntilCompleted")
     public native boolean waitUntilCompleted();
+
+    @NotNull
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(@Nullable VoidPtr zone);
+
+    /**
+     * Executable signals these shared events at execution stage and immediately proceeds
+     * 
+     * @param event          shared event to signal
+     * @param executionStage execution stage to signal event at
+     * @param value          value for shared event to wait on
+     * 
+     *                       API-Since: 16.0
+     */
+    @Generated
+    @Selector("signalEvent:atExecutionEvent:value:")
+    public native void signalEventAtExecutionEventValue(@NotNull @Mapped(ObjCObjectMapper.class) MTLSharedEvent event,
+            long executionStage, long value);
+
+    /**
+     * Executable waits on these shared events before scheduling execution on the HW, this does not include encoding
+     * which can still continue.
+     * 
+     * @param event shared event to wait on
+     * @param value value for shared event to wait on
+     * 
+     *              API-Since: 16.0
+     */
+    @Generated
+    @Selector("waitForEvent:value:")
+    public native void waitForEventValue(@NotNull @Mapped(ObjCObjectMapper.class) MTLSharedEvent event, long value);
 }

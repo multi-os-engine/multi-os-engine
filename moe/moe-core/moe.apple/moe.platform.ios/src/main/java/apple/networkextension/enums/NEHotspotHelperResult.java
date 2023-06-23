@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEHotspotHelperResult
- * <p>
+ * 
  * The result of processing the NEHotspotHelperCommand.
- * <p>
+ * 
  * The HotspotHelper provides the result of
  * processing the NEHotspotHelperCommand when it instantiates
  * its NEHotspotHelperResponse.
@@ -47,15 +47,38 @@ import org.moe.natj.general.ann.NInt;
  * This result is only valid in response to commands of type
  * kNEHotspotHelperCommandTypeAuthenticate and
  * kNEHotspotHelperCommandTypePresentUI.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class NEHotspotHelperResult {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Success = 0x0000000000000000L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Failure = 0x0000000000000001L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long UIRequired = 0x0000000000000002L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long CommandNotRecognized = 0x0000000000000003L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long AuthenticationRequired = 0x0000000000000004L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long UnsupportedNetwork = 0x0000000000000005L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long TemporaryFailure = 0x0000000000000006L;
 
     @Generated

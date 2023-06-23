@@ -25,9 +25,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Holds configuration of one token identified by unique token's instanceID
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("CryptoTokenKit")
@@ -59,43 +63,49 @@ public class TKTokenConfiguration extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Returns certificate with specified objectID. Fills error with TKTokenErrorCodeObjectNotFound if no such
      * certificate exists.
      */
+    @Nullable
     @Generated
     @Selector("certificateForObjectID:error:")
     public native TKTokenKeychainCertificate certificateForObjectIDError(
-            @Mapped(ObjCObjectMapper.class) Object objectID, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object objectID,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * Additional configuration available for token instance.
-     * <p>
+     * 
      * Token implementation and its hosting application can use this data for specifying any additional configuration
      * for the token. System does not interpret this data in any way. For example, network-based HSM can store here
      * (using Codable or other serialization mechanisms) target network address, access credentials and the list of
      * identities accessible in the HSM.
      */
+    @Nullable
     @Generated
     @Selector("configurationData")
     public native NSData configurationData();
@@ -121,6 +131,7 @@ public class TKTokenConfiguration extends NSObject {
      * Unique, persistent identifier of this token, always created by specific token implementation. Typically
      * implemented by some kind of serial number of the target hardware, for example SmartCard serial number.
      */
+    @NotNull
     @Generated
     @Selector("instanceID")
     public native String instanceID();
@@ -146,18 +157,21 @@ public class TKTokenConfiguration extends NSObject {
      * Returns keychain item key with specified objectID. Fills error with TKTokenErrorCodeObjectNotFound if no such key
      * exists.
      */
+    @Nullable
     @Generated
     @Selector("keyForObjectID:error:")
-    public native TKTokenKeychainKey keyForObjectIDError(@Mapped(ObjCObjectMapper.class) Object objectID,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native TKTokenKeychainKey keyForObjectIDError(@NotNull @Mapped(ObjCObjectMapper.class) Object objectID,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * All keychain items of this token.
      */
+    @NotNull
     @Generated
     @Selector("keychainItems")
     public native NSArray<? extends TKTokenKeychainItem> keychainItems();
@@ -177,7 +191,7 @@ public class TKTokenConfiguration extends NSObject {
 
     /**
      * Additional configuration available for token instance.
-     * <p>
+     * 
      * Token implementation and its hosting application can use this data for specifying any additional configuration
      * for the token. System does not interpret this data in any way. For example, network-based HSM can store here
      * (using Codable or other serialization mechanisms) target network address, access credentials and the list of
@@ -185,14 +199,14 @@ public class TKTokenConfiguration extends NSObject {
      */
     @Generated
     @Selector("setConfigurationData:")
-    public native void setConfigurationData(NSData value);
+    public native void setConfigurationData(@Nullable NSData value);
 
     /**
      * All keychain items of this token.
      */
     @Generated
     @Selector("setKeychainItems:")
-    public native void setKeychainItems(NSArray<? extends TKTokenKeychainItem> value);
+    public native void setKeychainItems(@NotNull NSArray<? extends TKTokenKeychainItem> value);
 
     @Generated
     @Selector("setVersion:")

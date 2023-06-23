@@ -23,7 +23,11 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -32,8 +36,10 @@ public interface PHPhotoLibraryChangeObserver {
     /**
      * This callback is invoked on an arbitrary serial queue. If you need this to be handled on a specific queue, you
      * should redispatch appropriately
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("photoLibraryDidChange:")
-    void photoLibraryDidChange(PHChange changeInstance);
+    void photoLibraryDidChange(@NotNull PHChange changeInstance);
 }

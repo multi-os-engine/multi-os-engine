@@ -19,30 +19,49 @@ package apple.photos.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class PHCollectionListSubtype {
     /**
      * PHCollectionListTypeMomentList subtypes
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Will be removed in a future release
      */
-    @Generated @NInt public static final long MomentListCluster = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long MomentListCluster = 0x0000000000000001L;
     /**
      * PHCollectionListTypeMomentList subtypes
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Will be removed in a future release
      */
-    @Generated @NInt public static final long MomentListYear = 0x0000000000000002L;
+    @Deprecated @Generated @NInt public static final long MomentListYear = 0x0000000000000002L;
     /**
      * PHCollectionListTypeFolder subtypes
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long RegularFolder = 0x0000000000000064L;
     /**
      * PHCollectionListTypeSmartFolder subtypes
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long SmartFolderEvents = 0x00000000000000C8L;
     /**
      * PHCollectionListTypeSmartFolder subtypes
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long SmartFolderFaces = 0x00000000000000C9L;
     /**
      * Used for fetching if you don't care about the exact subtype
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Any = org.moe.natj.general.NatJ.is64Bit() ?
             0x7FFFFFFFFFFFFFFFL :

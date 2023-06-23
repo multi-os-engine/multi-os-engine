@@ -18,9 +18,6 @@ package apple.uikit;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGImageRef;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.coreimage.CIImage;
 import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
@@ -60,7 +57,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -92,46 +97,64 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
 
     /**
      * read sequence of files with suffix starting at 0 or 1
+     * 
+     * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("animatedImageNamed:duration:")
-    public static native UIImage animatedImageNamedDuration(String name, double duration);
+    public static native UIImage animatedImageNamedDuration(@NotNull String name, double duration);
 
+    /**
+     * API-Since: 5.0
+     */
+    @Nullable
     @Generated
     @Selector("animatedImageWithImages:duration:")
-    public static native UIImage animatedImageWithImagesDuration(NSArray<? extends UIImage> images, double duration);
+    public static native UIImage animatedImageWithImagesDuration(@NotNull NSArray<? extends UIImage> images,
+            double duration);
 
     /**
      * sequence of files
+     * 
+     * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("animatedResizableImageNamed:capInsets:duration:")
-    public static native UIImage animatedResizableImageNamedCapInsetsDuration(String name,
+    public static native UIImage animatedResizableImageNamedCapInsetsDuration(@NotNull String name,
             @ByValue UIEdgeInsets capInsets, double duration);
 
+    /**
+     * API-Since: 6.0
+     */
+    @Nullable
     @Generated
     @Selector("animatedResizableImageNamed:capInsets:resizingMode:duration:")
-    public static native UIImage animatedResizableImageNamedCapInsetsResizingModeDuration(String name,
+    public static native UIImage animatedResizableImageNamedCapInsetsResizingModeDuration(@NotNull String name,
             @ByValue UIEdgeInsets capInsets, @NInt long resizingMode, double duration);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -152,44 +175,68 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     /**
      * load from main bundle
      */
+    @Nullable
     @Generated
     @Selector("imageNamed:")
-    public static native UIImage imageNamed(String name);
+    public static native UIImage imageNamed(@NotNull String name);
 
+    /**
+     * API-Since: 8.0
+     */
+    @Nullable
     @Generated
     @Selector("imageNamed:inBundle:compatibleWithTraitCollection:")
-    public static native UIImage imageNamedInBundleCompatibleWithTraitCollection(String name, NSBundle bundle,
-            UITraitCollection traitCollection);
+    public static native UIImage imageNamedInBundleCompatibleWithTraitCollection(@NotNull String name,
+            @Nullable NSBundle bundle, @Nullable UITraitCollection traitCollection);
 
+    @NotNull
     @Generated
     @Selector("imageWithCGImage:")
-    public static native UIImage imageWithCGImage(CGImageRef cgImage);
+    public static native UIImage imageWithCGImage(@NotNull CGImageRef cgImage);
 
+    /**
+     * API-Since: 4.0
+     */
+    @NotNull
     @Generated
     @Selector("imageWithCGImage:scale:orientation:")
-    public static native UIImage imageWithCGImageScaleOrientation(CGImageRef cgImage, @NFloat double scale,
+    public static native UIImage imageWithCGImageScaleOrientation(@NotNull CGImageRef cgImage, @NFloat double scale,
             @NInt long orientation);
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("imageWithCIImage:")
-    public static native UIImage imageWithCIImage(CIImage ciImage);
+    public static native UIImage imageWithCIImage(@NotNull CIImage ciImage);
 
+    /**
+     * API-Since: 6.0
+     */
+    @NotNull
     @Generated
     @Selector("imageWithCIImage:scale:orientation:")
-    public static native UIImage imageWithCIImageScaleOrientation(CIImage ciImage, @NFloat double scale,
+    public static native UIImage imageWithCIImageScaleOrientation(@NotNull CIImage ciImage, @NFloat double scale,
             @NInt long orientation);
 
+    @Nullable
     @Generated
     @Selector("imageWithContentsOfFile:")
-    public static native UIImage imageWithContentsOfFile(String path);
+    public static native UIImage imageWithContentsOfFile(@NotNull String path);
 
+    @Nullable
     @Generated
     @Selector("imageWithData:")
-    public static native UIImage imageWithData(NSData data);
+    public static native UIImage imageWithData(@NotNull NSData data);
 
+    /**
+     * API-Since: 6.0
+     */
+    @Nullable
     @Generated
     @Selector("imageWithData:scale:")
-    public static native UIImage imageWithDataScale(NSData data, @NFloat double scale);
+    public static native UIImage imageWithDataScale(@NotNull NSData data, @NFloat double scale);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -208,9 +255,10 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -242,21 +290,29 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("CGImage")
     public native CGImageRef CGImage();
 
     /**
      * returns underlying CIImage or nil if CGImageRef based
+     * 
+     * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("CIImage")
     public native CIImage CIImage();
 
+    @Nullable
     @Generated
     @Selector("accessibilityIdentifier")
     public native String accessibilityIdentifier();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("alignmentRectInsets")
     @ByValue
@@ -264,6 +320,8 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
 
     /**
      * default is UIEdgeInsetsZero for non resizable images
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("capInsets")
@@ -301,6 +359,8 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
 
     /**
      * total duration for all frames. default is 0 for non-animated images
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("duration")
@@ -308,15 +368,21 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("flipsForRightToLeftLayoutDirection")
     public native boolean flipsForRightToLeftLayoutDirection();
 
     /**
      * The asset is not encoded along with the image. Returns nil if the image is not CGImage based.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("imageAsset")
     public native UIImageAsset imageAsset();
@@ -328,7 +394,10 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
      * This method cannot be used to create a left-to-right version of a right-to-left source image, and will be
      * deprecated in a future release. New code should instead use -imageWithHorizontallyFlippedOrientation to construct
      * a UIImageAsset.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("imageFlippedForRightToLeftLayoutDirection")
     public native UIImage imageFlippedForRightToLeftLayoutDirection();
@@ -344,7 +413,10 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     /**
      * Returns an optimal UIGraphicsImageRendererFormat instance for this image, maintaining pixel format and color
      * space.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("imageRendererFormat")
     public native UIGraphicsImageRendererFormat imageRendererFormat();
@@ -355,7 +427,10 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
      * subclasses that take custom images to determine the view's alignment rect insets for
      * constraint-based layout.
      * The default alignmentRectInsets are UIEdgeInsetsZero.
+     * 
+     * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("imageWithAlignmentRectInsets:")
     public native UIImage imageWithAlignmentRectInsets(@ByValue UIEdgeInsets alignmentInsets);
@@ -363,7 +438,10 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     /**
      * Creates a version of this image with an imageOrientation property that is horizontally mirrored from this
      * image’s. Does not affect the flipsForRightToLeftLayoutDirection property.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("imageWithHorizontallyFlippedOrientation")
     public native UIImage imageWithHorizontallyFlippedOrientation();
@@ -371,14 +449,20 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     /**
      * Create a version of this image with the specified rendering mode. By default, images have a rendering mode of
      * UIImageRenderingModeAutomatic.
+     * 
+     * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("imageWithRenderingMode:")
     public native UIImage imageWithRenderingMode(@NInt long renderingMode);
 
     /**
      * default is nil for non-animated images
+     * 
+     * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("images")
     public native NSArray<? extends UIImage> images();
@@ -389,37 +473,49 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
 
     @Generated
     @Selector("initWithCGImage:")
-    public native UIImage initWithCGImage(CGImageRef cgImage);
+    public native UIImage initWithCGImage(@NotNull CGImageRef cgImage);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("initWithCGImage:scale:orientation:")
-    public native UIImage initWithCGImageScaleOrientation(CGImageRef cgImage, @NFloat double scale,
+    public native UIImage initWithCGImageScaleOrientation(@NotNull CGImageRef cgImage, @NFloat double scale,
             @NInt long orientation);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithCIImage:")
-    public native UIImage initWithCIImage(CIImage ciImage);
+    public native UIImage initWithCIImage(@NotNull CIImage ciImage);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("initWithCIImage:scale:orientation:")
-    public native UIImage initWithCIImageScaleOrientation(CIImage ciImage, @NFloat double scale,
+    public native UIImage initWithCIImageScaleOrientation(@NotNull CIImage ciImage, @NFloat double scale,
             @NInt long orientation);
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIImage initWithCoder(NSCoder coder);
+    public native UIImage initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithContentsOfFile:")
-    public native UIImage initWithContentsOfFile(String path);
+    public native UIImage initWithContentsOfFile(@NotNull String path);
 
     @Generated
     @Selector("initWithData:")
-    public native UIImage initWithData(NSData data);
+    public native UIImage initWithData(@NotNull NSData data);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("initWithData:scale:")
-    public native UIImage initWithDataScale(NSData data, @NFloat double scale);
+    public native UIImage initWithDataScale(@NotNull NSData data, @NFloat double scale);
 
     /**
      * default is 0. if non-zero, horiz. stretchable. right cap is calculated as width - leftCapWidth - 1
@@ -429,6 +525,9 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     @NInt
     public native long leftCapWidth();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("renderingMode")
     @NInt
@@ -436,14 +535,20 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
 
     /**
      * create a resizable version of this image. the interior is tiled when drawn.
+     * 
+     * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @Selector("resizableImageWithCapInsets:")
     public native UIImage resizableImageWithCapInsets(@ByValue UIEdgeInsets capInsets);
 
     /**
      * the interior is resized according to the resizingMode
+     * 
+     * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("resizableImageWithCapInsets:resizingMode:")
     public native UIImage resizableImageWithCapInsetsResizingMode(@ByValue UIEdgeInsets capInsets,
@@ -451,12 +556,17 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
 
     /**
      * default is UIImageResizingModeTile
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("resizingMode")
     @NInt
     public native long resizingMode();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("scale")
     @NFloat
@@ -464,7 +574,7 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
 
     @Generated
     @Selector("setAccessibilityIdentifier:")
-    public native void setAccessibilityIdentifier(String value);
+    public native void setAccessibilityIdentifier(@Nullable String value);
 
     /**
      * reflects orientation setting. In iOS 4.0 and later, this is measured in points. In 3.x and earlier, measured in
@@ -478,6 +588,7 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     /**
      * use resizableImageWithCapInsets: and capInsets.
      */
+    @NotNull
     @Generated
     @Selector("stretchableImageWithLeftCapWidth:topCapHeight:")
     public native UIImage stretchableImageWithLeftCapWidthTopCapHeight(@NInt long leftCapWidth,
@@ -499,7 +610,10 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
 
     /**
      * describes the image in terms of its traits
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("traitCollection")
     public native UITraitCollection traitCollection();
@@ -508,13 +622,14 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     @IsOptional
     @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
     @NInt
-    public static native long itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier);
+    public static native long itemProviderVisibilityForRepresentationWithTypeIdentifier_static(
+            @NotNull String typeIdentifier);
 
     @Generated
     @IsOptional
     @ProtocolClassMethod("itemProviderVisibilityForRepresentationWithTypeIdentifier_static")
     @NInt
-    public long _itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier) {
+    public long _itemProviderVisibilityForRepresentationWithTypeIdentifier_static(@NotNull String typeIdentifier) {
         return itemProviderVisibilityForRepresentationWithTypeIdentifier_static(typeIdentifier);
     }
 
@@ -522,22 +637,25 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     @IsOptional
     @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
     @NInt
-    public native long itemProviderVisibilityForRepresentationWithTypeIdentifier(String typeIdentifier);
+    public native long itemProviderVisibilityForRepresentationWithTypeIdentifier(@NotNull String typeIdentifier);
 
+    @Nullable
     @Generated
     @Selector("loadDataWithTypeIdentifier:forItemProviderCompletionHandler:")
-    public native NSProgress loadDataWithTypeIdentifierForItemProviderCompletionHandler(String typeIdentifier,
-            @ObjCBlock(name = "call_loadDataWithTypeIdentifierForItemProviderCompletionHandler") NSItemProviderWriting.Block_loadDataWithTypeIdentifierForItemProviderCompletionHandler completionHandler);
+    public native NSProgress loadDataWithTypeIdentifierForItemProviderCompletionHandler(@NotNull String typeIdentifier,
+            @NotNull @ObjCBlock(name = "call_loadDataWithTypeIdentifierForItemProviderCompletionHandler") NSItemProviderWriting.Block_loadDataWithTypeIdentifierForItemProviderCompletionHandler completionHandler);
 
+    @Nullable
     @Generated
     @Selector("objectWithItemProviderData:typeIdentifier:error:")
-    public static native UIImage objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public static native UIImage objectWithItemProviderDataTypeIdentifierError(@NotNull NSData data,
+            @NotNull String typeIdentifier, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    @Nullable
     @Generated
     @ProtocolClassMethod("objectWithItemProviderDataTypeIdentifierError")
-    public UIImage _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
+    public UIImage _objectWithItemProviderDataTypeIdentifierError(@NotNull NSData data, @NotNull String typeIdentifier,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
         return objectWithItemProviderDataTypeIdentifierError(data, typeIdentifier, outError);
     }
 
@@ -546,26 +664,31 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     @ByValue
     public native CGSize preferredPresentationSizeForItemProvider();
 
+    @NotNull
     @Generated
     @Selector("readableTypeIdentifiersForItemProvider")
     public static native NSArray<String> readableTypeIdentifiersForItemProvider();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("readableTypeIdentifiersForItemProvider")
     public NSArray<String> _readableTypeIdentifiersForItemProvider() {
         return readableTypeIdentifiersForItemProvider();
     }
 
+    @NotNull
     @Generated
     @Selector("writableTypeIdentifiersForItemProvider")
     public static native NSArray<String> writableTypeIdentifiersForItemProvider_static();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("writableTypeIdentifiersForItemProvider_static")
     public NSArray<String> _writableTypeIdentifiersForItemProvider_static() {
         return writableTypeIdentifiersForItemProvider_static();
     }
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("writableTypeIdentifiersForItemProvider")
@@ -573,14 +696,20 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
 
     /**
      * currently: white ellipsis on tinted filled circle
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("actionsImage")
     public static native UIImage actionsImage();
 
     /**
      * currently: white + on green filled circle
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("addImage")
     public static native UIImage addImage();
@@ -590,6 +719,8 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
      * If the image doesn't have a defined baseline, this value will be 0, but you can
      * use -hasBaseline to see if it actually has one defined (because it is perfectly possible to have
      * a baseline with the value of 0).
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("baselineOffsetFromBottom")
@@ -598,7 +729,10 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
 
     /**
      * currently: white ✓ on tinted filled circle
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("checkmarkImage")
     public static native UIImage checkmarkImage();
@@ -614,11 +748,17 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
      * Images start off with an unspecified configuration but can be modified by the methods below.
      * The preferred ways of adding configurations for displaying images is to specify them on
      * the image view, but it is possible to modify images with a more specific configuration.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("configuration")
     public native UIImageConfiguration configuration();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("hasBaseline")
     public native boolean hasBaseline();
@@ -627,24 +767,35 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
      * This is a convenience method to apply another symbol configuration over an existing one.
      * If the image doesn't have a symbol configuration, it will just merge the traits of the existing
      * with the new one (where the new traits override the old traits).
-     * <p>
+     * 
      * Create a new image by applying the specified configuration over the existing one.
      * This only works if the configuration already has a configuration (i.e. is a symbol image).
      * The image will be configured with a combination of both configurations.
-     * <p>
+     * 
      * If you use this on a symbol image with other layout modifications done (e.g. changed baseline),
      * those changes will be lost and overwritten with the new configuration's layout properties.
      * This applies to size, contentInsets and baseline.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("imageByApplyingSymbolConfiguration:")
-    public native UIImage imageByApplyingSymbolConfiguration(UIImageSymbolConfiguration configuration);
+    public native UIImage imageByApplyingSymbolConfiguration(@NotNull UIImageSymbolConfiguration configuration);
 
+    /**
+     * API-Since: 13.0
+     */
+    @Nullable
     @Generated
     @Selector("imageNamed:inBundle:withConfiguration:")
-    public static native UIImage imageNamedInBundleWithConfiguration(String name, NSBundle bundle,
-            UIImageConfiguration configuration);
+    public static native UIImage imageNamedInBundleWithConfiguration(@NotNull String name, @Nullable NSBundle bundle,
+            @Nullable UIImageConfiguration configuration);
 
+    /**
+     * API-Since: 13.0
+     */
+    @NotNull
     @Generated
     @Selector("imageWithBaselineOffsetFromBottom:")
     public native UIImage imageWithBaselineOffsetFromBottom(@NFloat double baselineOffset);
@@ -659,7 +810,7 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
      * * Important note! Given (for example):
      * *
      * * image = image(named:"the_image").withRenderingMode(.alwaysTemplate)
-     * <p>
+     * 
      * * the following two statements aren't exactly equivalent:
      * *
      * * a = image.imageAsset.withConfiguration(configuration)
@@ -671,37 +822,61 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
      * * The second one will resolve the image, but apply and changes that were made to the image.
      * * That means that `b` might be a different image, but it will still have the same rendering mode
      * * as `image`.
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("imageWithConfiguration:")
-    public native UIImage imageWithConfiguration(UIImageConfiguration configuration);
+    public native UIImage imageWithConfiguration(@NotNull UIImageConfiguration configuration);
 
+    /**
+     * API-Since: 13.0
+     */
+    @NotNull
     @Generated
     @Selector("imageWithTintColor:")
-    public native UIImage imageWithTintColor(UIColor color);
+    public native UIImage imageWithTintColor(@NotNull UIColor color);
 
+    /**
+     * API-Since: 13.0
+     */
+    @NotNull
     @Generated
     @Selector("imageWithTintColor:renderingMode:")
-    public native UIImage imageWithTintColorRenderingMode(UIColor color, @NInt long renderingMode);
+    public native UIImage imageWithTintColorRenderingMode(@NotNull UIColor color, @NInt long renderingMode);
 
+    /**
+     * API-Since: 13.0
+     */
+    @NotNull
     @Generated
     @Selector("imageWithoutBaseline")
     public native UIImage imageWithoutBaseline();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("isSymbolImage")
     public native boolean isSymbolImage();
 
     /**
      * currently: white - on red filled circle
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("removeImage")
     public static native UIImage removeImage();
 
     /**
      * currently: white ✓ on tinted filled and white stroked circle
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("strokedCheckmarkImage")
     public static native UIImage strokedCheckmarkImage();
@@ -712,13 +887,16 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
      * This describes the symbol configuration of a symbol image.
      * Symbol images start off with an unspecified configuration but can be modified by using
      * `image.withConfiguration(:)`.
-     * <p>
+     * 
      * However... the preferred ways of adding configurations for displaying images is to specify
      * them on the image view using `preferredSymbolConfiguration`, but it is possible to modify
      * images with a more specific configuration. This include image related traits, for example
      * you can use this to fix a symbol image to a dynamic type style at a fixed preferred content size
      * category.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("symbolConfiguration")
     public native UIImageSymbolConfiguration symbolConfiguration();
@@ -727,76 +905,132 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
      * Retrieve a system-provided image with the specified name.
      * This will only return system-provided images. If you want a custom
      * image as defined in your own catalogs, you should use +imageNamed:.
-     * <p>
+     * 
      * UIKit applications on macOS may pass NSImageName values (defined in
      * <AppKit/NSImage.h>) for the name to access macOS system images.
-     * <p>
+     * 
      * Returns nil if an image with specified name doesn't exist.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("systemImageNamed:")
-    public static native UIImage systemImageNamed(String name);
+    public static native UIImage systemImageNamed(@NotNull String name);
 
+    /**
+     * API-Since: 13.0
+     */
+    @Nullable
     @Generated
     @Selector("systemImageNamed:compatibleWithTraitCollection:")
-    public static native UIImage systemImageNamedCompatibleWithTraitCollection(String name,
-            UITraitCollection traitCollection);
+    public static native UIImage systemImageNamedCompatibleWithTraitCollection(@NotNull String name,
+            @Nullable UITraitCollection traitCollection);
 
+    /**
+     * API-Since: 13.0
+     */
+    @Nullable
     @Generated
     @Selector("systemImageNamed:withConfiguration:")
-    public static native UIImage systemImageNamedWithConfiguration(String name, UIImageConfiguration configuration);
+    public static native UIImage systemImageNamedWithConfiguration(@NotNull String name,
+            @Nullable UIImageConfiguration configuration);
 
     /**
      * Synchronously prepares this image for displaying on the specified screen.
-     * <p>
+     * 
      * [@note] The prepared UIImage is not related to the original image. If the properties of the screen (such as its
      * resolution or color gamut) change, or if the image is displayed on a different screen that the one it was
      * prepared for, it may not render correctly.
-     *
+     * 
+     * API-Since: 15.0
+     * 
      * @return A UIImage object that contains the prepared image.
      */
+    @Nullable
     @Generated
     @Selector("imageByPreparingForDisplay")
     public native UIImage imageByPreparingForDisplay();
 
+    /**
+     * API-Since: 15.0
+     */
+    @Nullable
     @Generated
     @Selector("imageByPreparingThumbnailOfSize:")
     public native UIImage imageByPreparingThumbnailOfSize(@ByValue CGSize size);
 
     /**
      * Asynchronously prepares this image for displaying on the specified screen.
-     * <p>
+     * 
      * The completion handler will be invoked on a private queue. Be sure to return to the main queue before assigning
      * the prepared image to an image view.
-     * <p>
+     * 
      * [@note] The prepared UIImage is not related to the original image. If the properties of the screen (such as its
      * resolution or color gamut) change, or if the image is displayed on a different screen that the one it was
      * prepared for, it may not render correctly.
-     *
+     * 
+     * API-Since: 15.0
+     * 
      * @param completionHandler A block to invoke with the prepared image. If preparation failed (for example, beacuse
      *                          the image data is corrupt), @c image will be nil.
      */
     @Generated
     @Selector("prepareForDisplayWithCompletionHandler:")
     public native void prepareForDisplayWithCompletionHandler(
-            @ObjCBlock(name = "call_prepareForDisplayWithCompletionHandler") Block_prepareForDisplayWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_prepareForDisplayWithCompletionHandler") Block_prepareForDisplayWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_prepareForDisplayWithCompletionHandler {
         @Generated
-        void call_prepareForDisplayWithCompletionHandler(UIImage arg0);
+        void call_prepareForDisplayWithCompletionHandler(@Nullable UIImage arg0);
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("prepareThumbnailOfSize:completionHandler:")
     public native void prepareThumbnailOfSizeCompletionHandler(@ByValue CGSize size,
-            @ObjCBlock(name = "call_prepareThumbnailOfSizeCompletionHandler") Block_prepareThumbnailOfSizeCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_prepareThumbnailOfSizeCompletionHandler") Block_prepareThumbnailOfSizeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_prepareThumbnailOfSizeCompletionHandler {
         @Generated
-        void call_prepareThumbnailOfSizeCompletionHandler(UIImage arg0);
+        void call_prepareThumbnailOfSizeCompletionHandler(@Nullable UIImage arg0);
     }
+
+    /**
+     * Retrieve a image with the specified name and variable value (between 0 and 1).
+     * 
+     * This will only return custom images defined in your own catalogs. If you want a system-provided image,
+     * you should use @c +systemImageNamed:variableValue:withConfiguration:.
+     * 
+     * Returns @c nil if an image with specified name doesn't exist.
+     * 
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("imageNamed:inBundle:variableValue:withConfiguration:")
+    public static native UIImage imageNamedInBundleVariableValueWithConfiguration(@NotNull String name,
+            @Nullable NSBundle bundle, double value, @Nullable UIImageConfiguration configuration);
+
+    /**
+     * Retrieve a system-provided image with the specified name and variable value (between 0 and 1).
+     * 
+     * This will only return system-provided images. If you want a custom image as defined in your own catalogs,
+     * you should use @c +imageNamed:inBundle:variableValue:withConfiguration:.
+     * 
+     * Returns @c nil if an image with specified name doesn't exist.
+     * 
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("systemImageNamed:variableValue:withConfiguration:")
+    public static native UIImage systemImageNamedVariableValueWithConfiguration(@NotNull String name, double value,
+            @Nullable UIImageConfiguration configuration);
 }

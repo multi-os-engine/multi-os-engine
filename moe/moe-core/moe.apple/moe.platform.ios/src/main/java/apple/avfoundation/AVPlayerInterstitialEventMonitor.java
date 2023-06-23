@@ -21,14 +21,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVPlayerInterstitialEventMonitor
- * <p>
+ * 
  * An AVPlayerInterstitialEventMonitor allows you to observe the scheduling and progress of interstitial events,
  * specified either intrinsically within the content of primary items, such as via use of directives carried by HLS
  * media playlists, or via use of an AVPlayerInterstitialEventController.
- * <p>
+ * 
  * The schedule of interstitial events is provided as an array of AVPlayerInterstitialEvents. For each
  * AVPlayerInterstitialEvent, when the primary player's current item is the primary item of the interstitial event and
  * its currentDate reaches the date of the event, playback of the primary item by the primary player is temporarily
@@ -39,6 +41,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * AVPlayerLayers that reference the primary player. Once the interstitial player has advanced through playback of the
  * interstitial items specified by the event or its current item otherwise becomes nil, playback of the primary content
  * will resume, at an offset from the time at which it was suspended as specified by the event.
+ * 
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("AVFoundation")
@@ -70,31 +75,35 @@ public class AVPlayerInterstitialEventMonitor extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] currentEvent
-     * <p>
+     * 
      * The current interstitial event. Has a value of nil during playback of primary content by the primary player.
      */
+    @Nullable
     @Generated
     @Selector("currentEvent")
     public native AVPlayerInterstitialEvent currentEvent();
@@ -109,18 +118,21 @@ public class AVPlayerInterstitialEventMonitor extends NSObject {
 
     /**
      * [@property] events
-     * <p>
+     * 
      * Provides the current schedule of interstitial events, specified either intrinsically within the content of
      * primary items, such as via use of directives carried by HLS media playlists, or via use of an
      * AVPlayerInterstitialEventController.
-     * <p>
+     * 
      * When interstitial events follow a schedule specified intrinsically within the content of primary items, the value
      * of this property will typically change whenever the currentItem of the primaryPlayer changes. For HLS content
      * that specifies interstitials via the use of DATERANGE tags, the value of this property may also change whenever
      * the set of DATERANGE tags in the currentItem's media playlist changes.
      * When interstitial events follow a schedule specified via use of an AVPlayerInterstitialEventController, the value
      * of this property changes only when a new schedule is set on the AVPlayerInterstitialEventController.
+     * The events returned in this array are immutable. Attempting to mutate them will trigger an exception. To alter an
+     * event, make a copy and mutate the copy.
      */
+    @NotNull
     @Generated
     @Selector("events")
     public native NSArray<? extends AVPlayerInterstitialEvent> events();
@@ -136,7 +148,7 @@ public class AVPlayerInterstitialEventMonitor extends NSObject {
 
     @Generated
     @Selector("initWithPrimaryPlayer:")
-    public native AVPlayerInterstitialEventMonitor initWithPrimaryPlayer(AVPlayer primaryPlayer);
+    public native AVPlayerInterstitialEventMonitor initWithPrimaryPlayer(@NotNull AVPlayer primaryPlayer);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -153,22 +165,24 @@ public class AVPlayerInterstitialEventMonitor extends NSObject {
 
     /**
      * interstitialEventMonitorWithPrimaryPlayer:
-     * <p>
+     * 
      * Returns an instance of AVPlayerInterstitialEvent for use in observing and scheduling interstitial playback.
-     *
-     * @param primaryPlayer The AVPlayer that will play the primaryItems of the receiver's interstitial events.
+     * 
+     * @param primaryPlayer
+     *                      The AVPlayer that will play the primaryItems of the receiver's interstitial events.
      * @return An instance of AVPlayerInterstitialEventMonitor.
      */
     @Generated
     @Selector("interstitialEventMonitorWithPrimaryPlayer:")
     public static native AVPlayerInterstitialEventMonitor interstitialEventMonitorWithPrimaryPlayer(
-            AVPlayer primaryPlayer);
+            @NotNull AVPlayer primaryPlayer);
 
     /**
      * [@property] interstitialPlayer
-     * <p>
+     * 
      * The AVQueuePlayer that will play interstitial items during suspension of playback of primary items.
      */
+    @NotNull
     @Generated
     @Selector("interstitialPlayer")
     public native AVQueuePlayer interstitialPlayer();
@@ -177,9 +191,10 @@ public class AVPlayerInterstitialEventMonitor extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -188,9 +203,10 @@ public class AVPlayerInterstitialEventMonitor extends NSObject {
 
     /**
      * [@property] primaryPlayer
-     * <p>
+     * 
      * The AVPlayer that will play the primaryItems of the receiver's interstitial events.
      */
+    @Nullable
     @Generated
     @Selector("primaryPlayer")
     public native AVPlayer primaryPlayer();

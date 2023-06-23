@@ -1,7 +1,5 @@
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.uikit.UIIndirectScribbleInteraction;
 import apple.uikit.UIResponder;
@@ -16,11 +14,17 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The protocol to be implemented by the delegate of UIIndirectScribbleInteraction. It will be responsible for supplying
  * a list of writable elements, focusing them, and ultimately providing a real UITextInput that will handle text editing
  * operations.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("UIKit")
@@ -30,15 +34,16 @@ public interface UIIndirectScribbleInteractionDelegate {
     /**
      * Will be called when the user finished writing into an element, after the last word has been transcribed and
      * committed.
-     *
+     * 
      * @param interaction       The interaction notifying about writing state changes.
      * @param elementIdentifier The identifier of the element the user finished writing into.
      */
     @Generated
     @IsOptional
     @Selector("indirectScribbleInteraction:didFinishWritingInElement:")
-    default void indirectScribbleInteractionDidFinishWritingInElement(UIIndirectScribbleInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) Object elementIdentifier) {
+    default void indirectScribbleInteractionDidFinishWritingInElement(
+            @NotNull UIIndirectScribbleInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object elementIdentifier) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -49,7 +54,7 @@ public interface UIIndirectScribbleInteractionDelegate {
      * focusReferencePoint, to avoid any scrolling or shifting of content.
      * If the element was focused already, no changes in selection should be made and this call can be ignored, but you
      * must still call the completion handler with a reference to the text input.
-     *
+     * 
      * @param interaction       The interaction that is requesting to focus an element.
      * @param elementIdentifier The identifier of the element that should be focused.
      * @param completion        You must always call the completion handler, either synchronously or asynchronously. On
@@ -60,20 +65,21 @@ public interface UIIndirectScribbleInteractionDelegate {
     @Generated
     @Selector("indirectScribbleInteraction:focusElementIfNeeded:referencePoint:completion:")
     void indirectScribbleInteractionFocusElementIfNeededReferencePointCompletion(
-            UIIndirectScribbleInteraction interaction, @Mapped(ObjCObjectMapper.class) Object elementIdentifier,
-            @ByValue CGPoint focusReferencePoint,
-            @ObjCBlock(name = "call_indirectScribbleInteractionFocusElementIfNeededReferencePointCompletion") Block_indirectScribbleInteractionFocusElementIfNeededReferencePointCompletion completion);
+            @NotNull UIIndirectScribbleInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object elementIdentifier, @ByValue CGPoint focusReferencePoint,
+            @NotNull @ObjCBlock(name = "call_indirectScribbleInteractionFocusElementIfNeededReferencePointCompletion") Block_indirectScribbleInteractionFocusElementIfNeededReferencePointCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indirectScribbleInteractionFocusElementIfNeededReferencePointCompletion {
         @Generated
-        void call_indirectScribbleInteractionFocusElementIfNeededReferencePointCompletion(UIResponder focusedInput);
+        void call_indirectScribbleInteractionFocusElementIfNeededReferencePointCompletion(
+                @Nullable UIResponder focusedInput);
     }
 
     /**
      * Asks the delegate to provide the frame of an element.
-     *
+     * 
      * @param interaction       The interaction asking for the element's frame.
      * @param elementIdentifier The identifier of the element the interaction is asking about.
      * @return Frame for the element, in the interactions's view coordinate system.
@@ -81,25 +87,25 @@ public interface UIIndirectScribbleInteractionDelegate {
     @Generated
     @Selector("indirectScribbleInteraction:frameForElement:")
     @ByValue
-    CGRect indirectScribbleInteractionFrameForElement(UIIndirectScribbleInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) Object elementIdentifier);
+    CGRect indirectScribbleInteractionFrameForElement(@NotNull UIIndirectScribbleInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object elementIdentifier);
 
     /**
      * Asks the delegate if an element is currently focused, according to the internal state of the interaction's view.
-     *
+     * 
      * @param interaction       The interaction asking for the focused state.
      * @param elementIdentifier The identifier of the element the interaction is asking about.
      * @return Return YES if the element is the one currently focused.
      */
     @Generated
     @Selector("indirectScribbleInteraction:isElementFocused:")
-    boolean indirectScribbleInteractionIsElementFocused(UIIndirectScribbleInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) Object elementIdentifier);
+    boolean indirectScribbleInteractionIsElementFocused(@NotNull UIIndirectScribbleInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object elementIdentifier);
 
     /**
      * This method will be called to request the text input elements in a certain rect of the view, each of which
      * represents an area where the user can start writing even if it's not a text input field itself.
-     *
+     * 
      * @param interaction The interaction asking for the elements.
      * @param rect        The rect around the area where the user is trying to write, in the interaction's view
      *                    coordinate system. Only elements intersecting this rect should be returned.
@@ -108,15 +114,15 @@ public interface UIIndirectScribbleInteractionDelegate {
      */
     @Generated
     @Selector("indirectScribbleInteraction:requestElementsInRect:completion:")
-    void indirectScribbleInteractionRequestElementsInRectCompletion(UIIndirectScribbleInteraction interaction,
+    void indirectScribbleInteractionRequestElementsInRectCompletion(@NotNull UIIndirectScribbleInteraction interaction,
             @ByValue CGRect rect,
-            @ObjCBlock(name = "call_indirectScribbleInteractionRequestElementsInRectCompletion") Block_indirectScribbleInteractionRequestElementsInRectCompletion completion);
+            @NotNull @ObjCBlock(name = "call_indirectScribbleInteractionRequestElementsInRectCompletion") Block_indirectScribbleInteractionRequestElementsInRectCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indirectScribbleInteractionRequestElementsInRectCompletion {
         @Generated
-        void call_indirectScribbleInteractionRequestElementsInRectCompletion(NSArray<?> elements);
+        void call_indirectScribbleInteractionRequestElementsInRectCompletion(@NotNull NSArray<?> elements);
     }
 
     /**
@@ -126,7 +132,7 @@ public interface UIIndirectScribbleInteractionDelegate {
      * disruptive to a user trying to handwrite into it.
      * Wherever possible it is preferable to adjust the UI behavior to avoid the layout changes, and only use delayed
      * focus as a last resort, since transcription will happen all at once instead of incrementally.
-     *
+     * 
      * @param interaction       The interaction asking about delaying focus.
      * @param elementIdentifier The identifier of the element the interaction is asking about.
      * @return Return YES to delay focusing the element.
@@ -134,8 +140,9 @@ public interface UIIndirectScribbleInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("indirectScribbleInteraction:shouldDelayFocusForElement:")
-    default boolean indirectScribbleInteractionShouldDelayFocusForElement(UIIndirectScribbleInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) Object elementIdentifier) {
+    default boolean indirectScribbleInteractionShouldDelayFocusForElement(
+            @NotNull UIIndirectScribbleInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object elementIdentifier) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -143,15 +150,16 @@ public interface UIIndirectScribbleInteractionDelegate {
      * Will be called when the user begins writing into an element. This call will always be paired with a corresponding
      * call to indirectScribbleInteraction:didFinishWritingInElement:. It is recommended to use this call to hide custom
      * placeholders or other UI elements that can interfere with writing.
-     *
+     * 
      * @param interaction       The interaction notifying about writing state changes.
      * @param elementIdentifier The identifier of the element the user is writing into.
      */
     @Generated
     @IsOptional
     @Selector("indirectScribbleInteraction:willBeginWritingInElement:")
-    default void indirectScribbleInteractionWillBeginWritingInElement(UIIndirectScribbleInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) Object elementIdentifier) {
+    default void indirectScribbleInteractionWillBeginWritingInElement(
+            @NotNull UIIndirectScribbleInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object elementIdentifier) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

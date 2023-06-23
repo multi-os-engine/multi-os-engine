@@ -8,7 +8,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -17,14 +21,14 @@ public interface SCNCameraControllerDelegate {
     @Generated
     @IsOptional
     @Selector("cameraInertiaDidEndForController:")
-    default void cameraInertiaDidEndForController(SCNCameraController cameraController) {
+    default void cameraInertiaDidEndForController(@NotNull SCNCameraController cameraController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("cameraInertiaWillStartForController:")
-    default void cameraInertiaWillStartForController(SCNCameraController cameraController) {
+    default void cameraInertiaWillStartForController(@NotNull SCNCameraController cameraController) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

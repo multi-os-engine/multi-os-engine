@@ -23,24 +23,29 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A NSDiffableDataSourceSnapshot represents the complete state of a UI element (e.g. UICollectionView)
- * <p>
+ * 
  * Snapshots can be created in two ways:
  * 1. From a connected data source: e.g. UICollectionViewDiffableDataSource.snapshot()
  * This will contain the current state of the UI element.
- * <p>
+ * 
  * 2. Constructing a new instance: e.g. NSDiffableDataSourceSnapshot<Int,UUID>()
  * This will construct an empty snapshot with no section or item identifiers.
- * <p>
+ * 
  * Notes:
  * 1. All identifiers must be unique. Section and Item identifiers do not overlap and may contain values that exist in
  * the other (i.e. it is OK
  * to have a section identifier == 1 and an item identifier == 1)
- * <p>
+ * 
  * 2. If you pass duplicate values in an item or section array (e.g. -appendItemsWithIdentifiers:), the system will
  * throw an exception.
+ * 
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("UIKit")
@@ -76,47 +81,52 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
      */
     @Generated
     @Selector("appendItemsWithIdentifiers:")
-    public native void appendItemsWithIdentifiers(NSArray<_ItemIdentifierType> identifiers);
+    public native void appendItemsWithIdentifiers(@NotNull NSArray<_ItemIdentifierType> identifiers);
 
     @Generated
     @Selector("appendItemsWithIdentifiers:intoSectionWithIdentifier:")
-    public native void appendItemsWithIdentifiersIntoSectionWithIdentifier(NSArray<_ItemIdentifierType> identifiers,
-            @Mapped(ObjCObjectMapper.class) _SectionIdentifierType sectionIdentifier);
+    public native void appendItemsWithIdentifiersIntoSectionWithIdentifier(
+            @NotNull NSArray<_ItemIdentifierType> identifiers,
+            @NotNull @Mapped(ObjCObjectMapper.class) _SectionIdentifierType sectionIdentifier);
 
     /**
      * section operations
      */
     @Generated
     @Selector("appendSectionsWithIdentifiers:")
-    public native void appendSectionsWithIdentifiers(NSArray<?> sectionIdentifiers);
+    public native void appendSectionsWithIdentifiers(@NotNull NSArray<_SectionIdentifierType> sectionIdentifiers);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -128,11 +138,11 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
 
     @Generated
     @Selector("deleteItemsWithIdentifiers:")
-    public native void deleteItemsWithIdentifiers(NSArray<_ItemIdentifierType> identifiers);
+    public native void deleteItemsWithIdentifiers(@NotNull NSArray<_ItemIdentifierType> identifiers);
 
     @Generated
     @Selector("deleteSectionsWithIdentifiers:")
-    public native void deleteSectionsWithIdentifiers(NSArray<_SectionIdentifierType> sectionIdentifiers);
+    public native void deleteSectionsWithIdentifiers(@NotNull NSArray<_SectionIdentifierType> sectionIdentifiers);
 
     @Generated
     @Selector("description")
@@ -149,7 +159,8 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
     @Generated
     @Selector("indexOfItemIdentifier:")
     @NInt
-    public native long indexOfItemIdentifier(@Mapped(ObjCObjectMapper.class) _ItemIdentifierType itemIdentifier);
+    public native long indexOfItemIdentifier(
+            @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType itemIdentifier);
 
     /**
      * If section identifier is not present returns NSNotFound
@@ -158,7 +169,7 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
     @Selector("indexOfSectionIdentifier:")
     @NInt
     public native long indexOfSectionIdentifier(
-            @Mapped(ObjCObjectMapper.class) _SectionIdentifierType sectionIdentifier);
+            @NotNull @Mapped(ObjCObjectMapper.class) _SectionIdentifierType sectionIdentifier);
 
     @Generated
     @Selector("init")
@@ -166,25 +177,27 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
 
     @Generated
     @Selector("insertItemsWithIdentifiers:afterItemWithIdentifier:")
-    public native void insertItemsWithIdentifiersAfterItemWithIdentifier(NSArray<_ItemIdentifierType> identifiers,
-            @Mapped(ObjCObjectMapper.class) _ItemIdentifierType itemIdentifier);
+    public native void insertItemsWithIdentifiersAfterItemWithIdentifier(
+            @NotNull NSArray<_ItemIdentifierType> identifiers,
+            @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType itemIdentifier);
 
     @Generated
     @Selector("insertItemsWithIdentifiers:beforeItemWithIdentifier:")
-    public native void insertItemsWithIdentifiersBeforeItemWithIdentifier(NSArray<_ItemIdentifierType> identifiers,
-            @Mapped(ObjCObjectMapper.class) _ItemIdentifierType itemIdentifier);
+    public native void insertItemsWithIdentifiersBeforeItemWithIdentifier(
+            @NotNull NSArray<_ItemIdentifierType> identifiers,
+            @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType itemIdentifier);
 
     @Generated
     @Selector("insertSectionsWithIdentifiers:afterSectionWithIdentifier:")
     public native void insertSectionsWithIdentifiersAfterSectionWithIdentifier(
-            NSArray<_SectionIdentifierType> sectionIdentifiers,
-            @Mapped(ObjCObjectMapper.class) _SectionIdentifierType toSectionIdentifier);
+            @NotNull NSArray<_SectionIdentifierType> sectionIdentifiers,
+            @NotNull @Mapped(ObjCObjectMapper.class) _SectionIdentifierType toSectionIdentifier);
 
     @Generated
     @Selector("insertSectionsWithIdentifiers:beforeSectionWithIdentifier:")
     public native void insertSectionsWithIdentifiersBeforeSectionWithIdentifier(
-            NSArray<_SectionIdentifierType> sectionIdentifiers,
-            @Mapped(ObjCObjectMapper.class) _SectionIdentifierType toSectionIdentifier);
+            @NotNull NSArray<_SectionIdentifierType> sectionIdentifiers,
+            @NotNull @Mapped(ObjCObjectMapper.class) _SectionIdentifierType toSectionIdentifier);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -203,42 +216,45 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("itemIdentifiers")
     public native NSArray<_ItemIdentifierType> itemIdentifiers();
 
+    @NotNull
     @Generated
     @Selector("itemIdentifiersInSectionWithIdentifier:")
     public native NSArray<_ItemIdentifierType> itemIdentifiersInSectionWithIdentifier(
-            @Mapped(ObjCObjectMapper.class) _SectionIdentifierType sectionIdentifier);
+            @NotNull @Mapped(ObjCObjectMapper.class) _SectionIdentifierType sectionIdentifier);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Selector("moveItemWithIdentifier:afterItemWithIdentifier:")
     public native void moveItemWithIdentifierAfterItemWithIdentifier(
-            @Mapped(ObjCObjectMapper.class) _ItemIdentifierType fromIdentifier,
-            @Mapped(ObjCObjectMapper.class) _ItemIdentifierType toIdentifier);
+            @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType fromIdentifier,
+            @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType toIdentifier);
 
     @Generated
     @Selector("moveItemWithIdentifier:beforeItemWithIdentifier:")
     public native void moveItemWithIdentifierBeforeItemWithIdentifier(
-            @Mapped(ObjCObjectMapper.class) _ItemIdentifierType fromIdentifier,
-            @Mapped(ObjCObjectMapper.class) _ItemIdentifierType toIdentifier);
+            @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType fromIdentifier,
+            @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType toIdentifier);
 
     @Generated
     @Selector("moveSectionWithIdentifier:afterSectionWithIdentifier:")
     public native void moveSectionWithIdentifierAfterSectionWithIdentifier(
-            @Mapped(ObjCObjectMapper.class) _SectionIdentifierType fromSectionIdentifier,
-            @Mapped(ObjCObjectMapper.class) _SectionIdentifierType toSectionIdentifier);
+            @NotNull @Mapped(ObjCObjectMapper.class) _SectionIdentifierType fromSectionIdentifier,
+            @NotNull @Mapped(ObjCObjectMapper.class) _SectionIdentifierType toSectionIdentifier);
 
     @Generated
     @Selector("moveSectionWithIdentifier:beforeSectionWithIdentifier:")
     public native void moveSectionWithIdentifierBeforeSectionWithIdentifier(
-            @Mapped(ObjCObjectMapper.class) _SectionIdentifierType fromSectionIdentifier,
-            @Mapped(ObjCObjectMapper.class) _SectionIdentifierType toSectionIdentifier);
+            @NotNull @Mapped(ObjCObjectMapper.class) _SectionIdentifierType fromSectionIdentifier,
+            @NotNull @Mapped(ObjCObjectMapper.class) _SectionIdentifierType toSectionIdentifier);
 
     @Generated
     @Owned
@@ -256,7 +272,8 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
     @Generated
     @Selector("numberOfItemsInSection:")
     @NInt
-    public native long numberOfItemsInSection(@Mapped(ObjCObjectMapper.class) _SectionIdentifierType sectionIdentifier);
+    public native long numberOfItemsInSection(
+            @NotNull @Mapped(ObjCObjectMapper.class) _SectionIdentifierType sectionIdentifier);
 
     @Generated
     @Selector("numberOfSections")
@@ -265,11 +282,11 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
 
     @Generated
     @Selector("reloadItemsWithIdentifiers:")
-    public native void reloadItemsWithIdentifiers(NSArray<_ItemIdentifierType> identifiers);
+    public native void reloadItemsWithIdentifiers(@NotNull NSArray<_ItemIdentifierType> identifiers);
 
     @Generated
     @Selector("reloadSectionsWithIdentifiers:")
-    public native void reloadSectionsWithIdentifiers(NSArray<_SectionIdentifierType> sectionIdentifiers);
+    public native void reloadSectionsWithIdentifiers(@NotNull NSArray<_SectionIdentifierType> sectionIdentifiers);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -279,12 +296,14 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Nullable
     @Generated
     @Selector("sectionIdentifierForSectionContainingItemIdentifier:")
     @MappedReturn(ObjCObjectMapper.class)
     public native _SectionIdentifierType sectionIdentifierForSectionContainingItemIdentifier(
-            @Mapped(ObjCObjectMapper.class) _ItemIdentifierType itemIdentifier);
+            @NotNull @Mapped(ObjCObjectMapper.class) _ItemIdentifierType itemIdentifier);
 
+    @NotNull
     @Generated
     @Selector("sectionIdentifiers")
     public native NSArray<_SectionIdentifierType> sectionIdentifiers();
@@ -307,19 +326,33 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
      * not replace the
      * existing cell with a new cell. Prefer reconfiguring over reloading unless you actually need an entirely new cell
      * for the item.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("reconfigureItemsWithIdentifiers:")
-    public native void reconfigureItemsWithIdentifiers(NSArray<_ItemIdentifierType> identifiers);
+    public native void reconfigureItemsWithIdentifiers(@NotNull NSArray<_ItemIdentifierType> identifiers);
 
+    /**
+     * API-Since: 15.0
+     */
+    @NotNull
     @Generated
     @Selector("reconfiguredItemIdentifiers")
     public native NSArray<_ItemIdentifierType> reconfiguredItemIdentifiers();
 
+    /**
+     * API-Since: 15.0
+     */
+    @NotNull
     @Generated
     @Selector("reloadedItemIdentifiers")
     public native NSArray<_ItemIdentifierType> reloadedItemIdentifiers();
 
+    /**
+     * API-Since: 15.0
+     */
+    @NotNull
     @Generated
     @Selector("reloadedSectionIdentifiers")
     public native NSArray<_SectionIdentifierType> reloadedSectionIdentifiers();

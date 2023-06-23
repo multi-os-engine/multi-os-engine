@@ -22,14 +22,18 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NFCReaderSession
- * <p>
+ * 
  * This represents a NFC reader session for processing tags; this base class cannot be instantiate. Only one
  * NFCReaderSession
  * can be active at any time in the system. Subsequent opened sessions will get queued up and processed by the system in
  * FIFO order.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreNFC")
@@ -49,6 +53,7 @@ public class NFCReaderSession extends NSObject implements apple.corenfc.protocol
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    @NotNull
     @Generated
     @Selector("alertMessage")
     public native String alertMessage();
@@ -65,7 +70,7 @@ public class NFCReaderSession extends NSObject implements apple.corenfc.protocol
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("beginSession")
@@ -73,18 +78,21 @@ public class NFCReaderSession extends NSObject implements apple.corenfc.protocol
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -93,6 +101,10 @@ public class NFCReaderSession extends NSObject implements apple.corenfc.protocol
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 11.0
+     */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -130,7 +142,7 @@ public class NFCReaderSession extends NSObject implements apple.corenfc.protocol
 
     @Generated
     @Selector("invalidateSessionWithErrorMessage:")
-    public native void invalidateSessionWithErrorMessage(String errorMessage);
+    public native void invalidateSessionWithErrorMessage(@NotNull String errorMessage);
 
     @Generated
     @Selector("isReady")
@@ -140,9 +152,10 @@ public class NFCReaderSession extends NSObject implements apple.corenfc.protocol
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -151,8 +164,10 @@ public class NFCReaderSession extends NSObject implements apple.corenfc.protocol
 
     /**
      * [@property] readingAvailable
-     * <p>
+     * 
      * YES if device supports NFC tag reading.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("readingAvailable")
@@ -168,17 +183,20 @@ public class NFCReaderSession extends NSObject implements apple.corenfc.protocol
 
     /**
      * [@property] sessionQueue
-     * <p>
+     * 
      * The NFCReaderSessionDelegate delegate callbacks and the completion block handlers for tag operation will be
      * dispatched on this queue.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("sessionQueue")
     public native NSObject sessionQueue();
 
     @Generated
     @Selector("setAlertMessage:")
-    public native void setAlertMessage(String value);
+    public native void setAlertMessage(@NotNull String value);
 
     @Generated
     @Selector("setVersion:")

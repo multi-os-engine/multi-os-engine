@@ -39,7 +39,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -70,22 +75,25 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,9 +128,10 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -150,6 +159,7 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("icon")
     public native UIApplicationShortcutIcon icon();
@@ -160,14 +170,16 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
 
     @Generated
     @Selector("initWithType:localizedTitle:")
-    public native UIMutableApplicationShortcutItem initWithTypeLocalizedTitle(String type, String localizedTitle);
+    public native UIMutableApplicationShortcutItem initWithTypeLocalizedTitle(@NotNull String type,
+            @NotNull String localizedTitle);
 
     @Generated
     @Selector("initWithType:localizedTitle:localizedSubtitle:icon:userInfo:")
-    public native UIMutableApplicationShortcutItem initWithTypeLocalizedTitleLocalizedSubtitleIconUserInfo(String type,
-            String localizedTitle, String localizedSubtitle, UIApplicationShortcutIcon icon,
-            NSDictionary<String, ?> userInfo);
+    public native UIMutableApplicationShortcutItem initWithTypeLocalizedTitleLocalizedSubtitleIconUserInfo(
+            @NotNull String type, @NotNull String localizedTitle, @Nullable String localizedSubtitle,
+            @Nullable UIApplicationShortcutIcon icon, @Nullable NSDictionary<String, ?> userInfo);
 
+    @Nullable
     @Generated
     @Selector("localizedSubtitle")
     public native String localizedSubtitle();
@@ -175,31 +187,32 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
     /**
      * Properties controlling how the item should be displayed on the home screen.
      */
+    @NotNull
     @Generated
     @Selector("localizedTitle")
     public native String localizedTitle();
 
     @Generated
     @Selector("setIcon:")
-    public native void setIcon(UIApplicationShortcutIcon value);
+    public native void setIcon(@Nullable UIApplicationShortcutIcon value);
 
     @Generated
     @Selector("setLocalizedSubtitle:")
-    public native void setLocalizedSubtitle(String value);
+    public native void setLocalizedSubtitle(@Nullable String value);
 
     /**
      * Properties controlling how the item should be displayed on the home screen.
      */
     @Generated
     @Selector("setLocalizedTitle:")
-    public native void setLocalizedTitle(String value);
+    public native void setLocalizedTitle(@NotNull String value);
 
     /**
      * An application-specific string that identifies the type of action to perform.
      */
     @Generated
     @Selector("setType:")
-    public native void setType(String value);
+    public native void setType(@NotNull String value);
 
     /**
      * Application-specific information needed to perform the action.
@@ -207,11 +220,12 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
      */
     @Generated
     @Selector("setUserInfo:")
-    public native void setUserInfo(NSDictionary<String, ?> value);
+    public native void setUserInfo(@Nullable NSDictionary<String, ?> value);
 
     /**
      * An application-specific string that identifies the type of action to perform.
      */
+    @NotNull
     @Generated
     @Selector("type")
     public native String type();
@@ -220,6 +234,7 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
      * Application-specific information needed to perform the action.
      * Will throw an exception if the NSDictionary is not plist-encodable.
      */
+    @Nullable
     @Generated
     @Selector("userInfo")
     public native NSDictionary<String, ?> userInfo();
@@ -229,11 +244,12 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
      */
     @Generated
     @Selector("setTargetContentIdentifier:")
-    public native void setTargetContentIdentifier(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setTargetContentIdentifier(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * used with UISceneActivationConditions to customize what scene should be activated for a shortcut
      */
+    @Nullable
     @Generated
     @Selector("targetContentIdentifier")
     @MappedReturn(ObjCObjectMapper.class)

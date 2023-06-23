@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] AudioUnitParameterOptions
- * <p>
+ * 
  * Bit positions 18, 17, and 16 are set aside for display scales. Bit 19 is reserved.
  * [@constant] kAudioUnitParameterFlag_CFNameRelease
  * [@constant] kAudioUnitParameterFlag_PlotHistory

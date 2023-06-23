@@ -21,13 +21,17 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A node for a MPSCNNPooling kernel
- * <p>
+ * 
  * This is an abstract base class that does not correspond with any
  * particular MPSCNNKernel. Please make one of the MPSCNNPooling
  * subclasses instead.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -59,22 +63,25 @@ public class MPSCNNPoolingNode extends MPSNNFilterNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -98,18 +105,18 @@ public class MPSCNNPoolingNode extends MPSNNFilterNode {
 
     /**
      * Convenience initializer for MPSCNNPooling nodes with square non-overlapping kernels
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @param size       kernelWidth = kernelHeight = strideInPixelsX = strideInPixelsY = size
      * @return A new MPSNNFilter node for a MPSCNNPooling kernel.
      */
     @Generated
     @Selector("initWithSource:filterSize:")
-    public native MPSCNNPoolingNode initWithSourceFilterSize(MPSNNImageNode sourceNode, @NUInt long size);
+    public native MPSCNNPoolingNode initWithSourceFilterSize(@NotNull MPSNNImageNode sourceNode, @NUInt long size);
 
     /**
      * Convenience initializer for MPSCNNPooling nodes with square kernels
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @param size       kernelWidth = kernelHeight = size
      * @param stride     strideInPixelsX = strideInPixelsY = stride
@@ -117,12 +124,12 @@ public class MPSCNNPoolingNode extends MPSNNFilterNode {
      */
     @Generated
     @Selector("initWithSource:filterSize:stride:")
-    public native MPSCNNPoolingNode initWithSourceFilterSizeStride(MPSNNImageNode sourceNode, @NUInt long size,
+    public native MPSCNNPoolingNode initWithSourceFilterSizeStride(@NotNull MPSNNImageNode sourceNode, @NUInt long size,
             @NUInt long stride);
 
     /**
      * Init a node representing a MPSCNNPooling kernel
-     *
+     * 
      * @param sourceNode      The MPSNNImageNode representing the source MPSImage for the filter
      * @param kernelWidth     The width of the max filter window
      * @param kernelHeight    The height of the max filter window
@@ -133,8 +140,8 @@ public class MPSCNNPoolingNode extends MPSNNFilterNode {
     @Generated
     @Selector("initWithSource:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:")
     public native MPSCNNPoolingNode initWithSourceKernelWidthKernelHeightStrideInPixelsXStrideInPixelsY(
-            MPSNNImageNode sourceNode, @NUInt long kernelWidth, @NUInt long kernelHeight, @NUInt long strideInPixelsX,
-            @NUInt long strideInPixelsY);
+            @NotNull MPSNNImageNode sourceNode, @NUInt long kernelWidth, @NUInt long kernelHeight,
+            @NUInt long strideInPixelsX, @NUInt long strideInPixelsY);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -153,9 +160,10 @@ public class MPSCNNPoolingNode extends MPSNNFilterNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,18 +172,19 @@ public class MPSCNNPoolingNode extends MPSNNFilterNode {
 
     /**
      * Convenience initializer for MPSCNNPooling nodes with square non-overlapping kernels
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @param size       kernelWidth = kernelHeight = strideInPixelsX = strideInPixelsY = size
      * @return A new MPSNNFilter node for a MPSCNNPooling kernel.
      */
     @Generated
     @Selector("nodeWithSource:filterSize:")
-    public static native MPSCNNPoolingNode nodeWithSourceFilterSize(MPSNNImageNode sourceNode, @NUInt long size);
+    public static native MPSCNNPoolingNode nodeWithSourceFilterSize(@NotNull MPSNNImageNode sourceNode,
+            @NUInt long size);
 
     /**
      * Convenience initializer for MPSCNNPooling nodes with square non-overlapping kernels and a different stride
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @param size       kernelWidth = kernelHeight = size
      * @param stride     strideInPixelsX = strideInPixelsY = stride
@@ -183,8 +192,8 @@ public class MPSCNNPoolingNode extends MPSNNFilterNode {
      */
     @Generated
     @Selector("nodeWithSource:filterSize:stride:")
-    public static native MPSCNNPoolingNode nodeWithSourceFilterSizeStride(MPSNNImageNode sourceNode, @NUInt long size,
-            @NUInt long stride);
+    public static native MPSCNNPoolingNode nodeWithSourceFilterSizeStride(@NotNull MPSNNImageNode sourceNode,
+            @NUInt long size, @NUInt long stride);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -207,21 +216,33 @@ public class MPSCNNPoolingNode extends MPSNNFilterNode {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("kernelHeight")
     @NUInt
     public native long kernelHeight();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("kernelWidth")
     @NUInt
     public native long kernelWidth();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("strideInPixelsX")
     @NUInt
     public native long strideInPixelsX();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("strideInPixelsY")
     @NUInt

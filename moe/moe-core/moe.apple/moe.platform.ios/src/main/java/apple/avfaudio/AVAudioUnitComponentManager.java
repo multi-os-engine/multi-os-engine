@@ -26,26 +26,30 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioUnitComponentManager
- * <p>
+ * 
  * A singleton object that provides an easy way to find audio components that are
  * registered with the system.
- * <p>
+ * 
  * AVAudioUnitComponentManager provides methods to search and query various information about the
  * audio components without opening them.
- * <p>
+ * 
  * Currently audio components that are audio units can only be searched.
- * <p>
+ * 
  * The class also supports predefined system tags and arbitrary user tags. Each audio unit can be
  * tagged as part of its definition. Refer to AudioComponent.h for more details. AudioUnit Hosts
  * such as Logic or GarageBand can present groupings of audio units based on the tags.
- * <p>
+ * 
  * Searching for audio units can be done in various ways
  * - using a NSPredicate that contains search strings for tags or descriptions
  * - using a block to match on custom criteria
  * - using an AudioComponentDescription
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("AVFAudio")
@@ -77,35 +81,39 @@ public class AVAudioUnitComponentManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * componentsMatchingDescription:
-     * <p>
+     * 
      * returns an array of AVAudioUnitComponent objects that match the description.
-     * <p>
+     * 
      * This method provides a mechanism to search for AudioComponents using AudioComponentDescription
      * structure. The type, subtype and manufacturer fields are used to search for audio units. A
      * value of 0 for any of these fields is a wildcard and returns the first match found.
      */
+    @NotNull
     @Generated
     @Selector("componentsMatchingDescription:")
     public native NSArray<? extends AVAudioUnitComponent> componentsMatchingDescription(
@@ -113,35 +121,37 @@ public class AVAudioUnitComponentManager extends NSObject {
 
     /**
      * componentsMatchingPredicate:
-     * <p>
+     * 
      * returns an array of AVAudioUnitComponent objects that match the search predicate.
-     * <p>
+     * 
      * AudioComponent's information or tags can be used to build a search criteria.
      * For example, "typeName CONTAINS 'Effect'" or tags IN {'Sampler', 'MIDI'}"
      */
+    @NotNull
     @Generated
     @Selector("componentsMatchingPredicate:")
-    public native NSArray<? extends AVAudioUnitComponent> componentsMatchingPredicate(NSPredicate predicate);
+    public native NSArray<? extends AVAudioUnitComponent> componentsMatchingPredicate(@NotNull NSPredicate predicate);
 
     /**
      * componentsPassingTest:
-     * <p>
+     * 
      * returns an array of AVAudioUnitComponent objects that pass the user provided block method.
-     * <p>
+     * 
      * For each AudioComponent found by the manager, the block method will be called. If the return
      * value is YES then the AudioComponent is added to the resulting array else it will excluded.
      * This gives more control to the block provider to filter out the components returned.
      */
+    @NotNull
     @Generated
     @Selector("componentsPassingTest:")
     public native NSArray<? extends AVAudioUnitComponent> componentsPassingTest(
-            @ObjCBlock(name = "call_componentsPassingTest") Block_componentsPassingTest testHandler);
+            @NotNull @ObjCBlock(name = "call_componentsPassingTest") Block_componentsPassingTest testHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_componentsPassingTest {
         @Generated
-        boolean call_componentsPassingTest(AVAudioUnitComponent comp, BoolPtr stop);
+        boolean call_componentsPassingTest(@NotNull AVAudioUnitComponent comp, @NotNull BoolPtr stop);
     }
 
     @Generated
@@ -178,9 +188,10 @@ public class AVAudioUnitComponentManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -202,6 +213,7 @@ public class AVAudioUnitComponentManager extends NSObject {
     /**
      * returns singleton instance of AVAudioUnitComponentManager
      */
+    @NotNull
     @Generated
     @Selector("sharedAudioUnitComponentManager")
     public static native AVAudioUnitComponentManager sharedAudioUnitComponentManager();
@@ -209,6 +221,7 @@ public class AVAudioUnitComponentManager extends NSObject {
     /**
      * returns the localized standard system tags defined by the audio unit(s).
      */
+    @NotNull
     @Generated
     @Selector("standardLocalizedTagNames")
     public native NSArray<String> standardLocalizedTagNames();
@@ -221,6 +234,7 @@ public class AVAudioUnitComponentManager extends NSObject {
      * returns all tags associated with the current user as well as all system tags defined by
      * the audio unit(s).
      */
+    @NotNull
     @Generated
     @Selector("tagNames")
     public native NSArray<String> tagNames();

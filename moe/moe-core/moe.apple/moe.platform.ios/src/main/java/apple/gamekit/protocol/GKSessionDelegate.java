@@ -25,9 +25,15 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Callbacks to the GKSession delegate.
+ * 
+ * API-Since: 3.0
+ * Deprecated-Since: 7.0
+ * Deprecated-Message: Use MCSession in association with MCSessionDelegate from the MultipeerConnectivity framework
+ * instead
  */
 @Deprecated
 @Generated
@@ -42,7 +48,8 @@ public interface GKSessionDelegate {
     @Generated
     @IsOptional
     @Selector("session:connectionWithPeerFailed:withError:")
-    default void sessionConnectionWithPeerFailedWithError(GKSession session, String peerID, NSError error) {
+    default void sessionConnectionWithPeerFailedWithError(@NotNull GKSession session, @NotNull String peerID,
+            @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -52,27 +59,27 @@ public interface GKSessionDelegate {
     @Generated
     @IsOptional
     @Selector("session:didFailWithError:")
-    default void sessionDidFailWithError(GKSession session, NSError error) {
+    default void sessionDidFailWithError(@NotNull GKSession session, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Indicates a connection request was received from another peer.
-     * <p>
+     * 
      * Accept by calling -acceptConnectionFromPeer:
      * Deny by calling -denyConnectionFromPeer:
      */
     @Generated
     @IsOptional
     @Selector("session:didReceiveConnectionRequestFromPeer:")
-    default void sessionDidReceiveConnectionRequestFromPeer(GKSession session, String peerID) {
+    default void sessionDidReceiveConnectionRequestFromPeer(@NotNull GKSession session, @NotNull String peerID) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("session:peer:didChangeState:")
-    default void sessionPeerDidChangeState(GKSession session, String peerID, int state) {
+    default void sessionPeerDidChangeState(@NotNull GKSession session, @NotNull String peerID, int state) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

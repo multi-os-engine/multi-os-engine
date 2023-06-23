@@ -21,14 +21,18 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCLayer
- * <p>
+ * 
  * The base class for all MLCompute layers
- * <p>
+ * 
  * There are as many MLCLayer subclasses as there are MLCompute neural network layer objects. Make one of those.
  * This class defines an polymorphic interface for them.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -60,22 +64,25 @@ public class MLCLayer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -90,14 +97,16 @@ public class MLCLayer extends NSObject {
 
     /**
      * [@property] deviceType
-     * <p>
+     * 
      * The device type where this layer will be executed
-     * <p>
+     * 
      * Typically the MLCDevice passed to compileWithOptions will be the device used to execute layers in the graph.
      * If MLCDeviceTypeANE is selected, it is possible that some of the layers of the graph may not be executed on the
      * ANE
      * but instead on the CPU or GPU. This property can be used to determine which device type the layer will be
      * executed on.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("deviceType")
@@ -127,9 +136,9 @@ public class MLCLayer extends NSObject {
 
     /**
      * [@property] isDebuggingEnabled
-     * <p>
+     * 
      * A flag to identify if we want to debug this layer when executing a graph that includes this layer
-     * <p>
+     * 
      * If this is set, we will make sure that the result tensor and gradient tensors are available for reading on CPU
      * The default is NO. If isDebuggingEnabled is set to YES, make sure to set options to enable debugging when
      * compiling the graph. Otherwise this property may be ignored.
@@ -142,24 +151,26 @@ public class MLCLayer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
+    @NotNull
     @Generated
     @Selector("label")
     public native String label();
 
     /**
      * [@property] layerID
-     * <p>
+     * 
      * The layer ID
-     * <p>
+     * 
      * A unique number to identify each layer. Assigned when the layer is created.
      */
     @Generated
@@ -182,9 +193,9 @@ public class MLCLayer extends NSObject {
 
     /**
      * [@property] isDebuggingEnabled
-     * <p>
+     * 
      * A flag to identify if we want to debug this layer when executing a graph that includes this layer
-     * <p>
+     * 
      * If this is set, we will make sure that the result tensor and gradient tensors are available for reading on CPU
      * The default is NO. If isDebuggingEnabled is set to YES, make sure to set options to enable debugging when
      * compiling the graph. Otherwise this property may be ignored.
@@ -195,12 +206,12 @@ public class MLCLayer extends NSObject {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
     @Generated
     @Selector("setLabel:")
-    public native void setLabel(String value);
+    public native void setLabel(@NotNull String value);
 
     @Generated
     @Selector("setVersion:")
@@ -212,14 +223,14 @@ public class MLCLayer extends NSObject {
 
     /**
      * Determine whether instances of this layer accept source tensors of the given data type on the given device.
-     *
+     * 
      * @param dataType A data type of a possible input tensor to the layer
      * @param device   A device
      * @return A boolean indicating whether the data type is supported
      */
     @Generated
     @Selector("supportsDataType:onDevice:")
-    public static native boolean supportsDataTypeOnDevice(int dataType, MLCDevice device);
+    public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
 
     @Generated
     @Selector("version")

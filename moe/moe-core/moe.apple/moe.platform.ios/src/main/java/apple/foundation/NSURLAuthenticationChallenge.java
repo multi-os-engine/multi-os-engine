@@ -38,13 +38,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSURLAuthenticationChallenge
- * <p>
+ * 
  * This class represents an authentication challenge. It
  * provides all the information about the challenge, and has a method
  * to indicate when it's done.
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("Foundation")
@@ -76,22 +80,25 @@ public class NSURLAuthenticationChallenge extends NSObject implements NSSecureCo
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +133,10 @@ public class NSURLAuthenticationChallenge extends NSObject implements NSSecureCo
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,30 +170,32 @@ public class NSURLAuthenticationChallenge extends NSObject implements NSSecureCo
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Get the error representing authentication failure.
-     * <p>
+     * 
      * If there was a previous authentication failure, and
      * this protocol uses errors to indicate authentication failure,
      * then this method will return the error. Otherwise it will
      * return nil.
      */
+    @Nullable
     @Generated
     @Selector("error")
     public native NSError error();
 
     /**
      * Get the response representing authentication failure.
-     * <p>
+     * 
      * If there was a previous authentication failure, and
      * this protocol uses responses to indicate authentication failure,
      * then this method will return the response. Otherwise it will
      * return nil.
-     *
+     * 
      * @return The failure response or nil
      */
+    @Nullable
     @Generated
     @Selector("failureResponse")
     public native NSURLResponse failureResponse();
@@ -196,29 +206,29 @@ public class NSURLAuthenticationChallenge extends NSObject implements NSSecureCo
 
     /**
      * initWithAuthenticationChallenge:
-     * <p>
+     * 
      * Initialize an authentication challenge copying all parameters from another one.
-     * <p>
+     * 
      * This initializer may be useful to subclassers that want to proxy
      * one type of authentication challenge to look like another type.
-     *
+     * 
      * @return A new challenge initialized with the parameters from the passed in challenge
      */
     @Generated
     @Selector("initWithAuthenticationChallenge:sender:")
     public native NSURLAuthenticationChallenge initWithAuthenticationChallengeSender(
-            NSURLAuthenticationChallenge challenge,
-            @Mapped(ObjCObjectMapper.class) NSURLAuthenticationChallengeSender sender);
+            @NotNull NSURLAuthenticationChallenge challenge,
+            @NotNull @Mapped(ObjCObjectMapper.class) NSURLAuthenticationChallengeSender sender);
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSURLAuthenticationChallenge initWithCoder(NSCoder coder);
+    public native NSURLAuthenticationChallenge initWithCoder(@NotNull NSCoder coder);
 
     /**
      * initWithProtectionSpace:proposedCredential:previousFailureCount:failureResponse:error:
-     * <p>
+     * 
      * Initialize an authentication challenge
-     *
+     * 
      * @param space                The NSURLProtectionSpace to use
      * @param credential           The proposed NSURLCredential for this challenge, or nil
      * @param previousFailureCount A count of previous failures attempting access.
@@ -229,13 +239,13 @@ public class NSURLAuthenticationChallenge extends NSObject implements NSSecureCo
     @Generated
     @Selector("initWithProtectionSpace:proposedCredential:previousFailureCount:failureResponse:error:sender:")
     public native NSURLAuthenticationChallenge initWithProtectionSpaceProposedCredentialPreviousFailureCountFailureResponseErrorSender(
-            NSURLProtectionSpace space, NSURLCredential credential, @NInt long previousFailureCount,
-            NSURLResponse response, NSError error,
-            @Mapped(ObjCObjectMapper.class) NSURLAuthenticationChallengeSender sender);
+            @NotNull NSURLProtectionSpace space, @Nullable NSURLCredential credential, @NInt long previousFailureCount,
+            @Nullable NSURLResponse response, @Nullable NSError error,
+            @NotNull @Mapped(ObjCObjectMapper.class) NSURLAuthenticationChallengeSender sender);
 
     /**
      * Get count of previous failed authentication attempts
-     *
+     * 
      * @return The count of previous failures
      */
     @Generated
@@ -245,7 +255,7 @@ public class NSURLAuthenticationChallenge extends NSObject implements NSSecureCo
 
     /**
      * Get the proposed credential for this challenge
-     * <p>
+     * 
      * proposedCredential may be nil, if there is no default
      * credential to use for this challenge (either stored or in the
      * URL). If the credential is not nil and returns YES for
@@ -253,29 +263,32 @@ public class NSURLAuthenticationChallenge extends NSObject implements NSSecureCo
      * is ready to use as-is. If it returns NO for hasPassword, then the
      * credential is not ready to use as-is, but provides a default
      * username the client could use when prompting.
-     *
+     * 
      * @return The proposed credential
      */
+    @Nullable
     @Generated
     @Selector("proposedCredential")
     public native NSURLCredential proposedCredential();
 
     /**
      * Get a description of the protection space that requires authentication
-     *
+     * 
      * @return The protection space that needs authentication
      */
+    @NotNull
     @Generated
     @Selector("protectionSpace")
     public native NSURLProtectionSpace protectionSpace();
 
     /**
      * Get the sender of this challenge
-     * <p>
+     * 
      * The sender is the object you should reply to when done processing the challenge.
-     *
+     * 
      * @return The sender of the challenge
      */
+    @Nullable
     @Generated
     @Selector("sender")
     @MappedReturn(ObjCObjectMapper.class)

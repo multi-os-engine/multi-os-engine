@@ -24,7 +24,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
@@ -56,28 +61,32 @@ public class ASAuthorizationController extends NSObject {
     /**
      * Authorization requests that are being serviced by this controller
      */
+    @NotNull
     @Generated
     @Selector("authorizationRequests")
     public native NSArray<? extends ASAuthorizationRequest> authorizationRequests();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -90,6 +99,7 @@ public class ASAuthorizationController extends NSObject {
      * This delegate will be invoked upon completion of the authorization indicating success or failure.
      * Delegate is required to receive the results of authorization.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -110,14 +120,14 @@ public class ASAuthorizationController extends NSObject {
 
     /**
      * Initialize the controller with authorization requests.
-     *
+     * 
      * @param authorizationRequests At least one request should be provided. Requests of same type maybe honored in
      *                              first in first out order
      */
     @Generated
     @Selector("initWithAuthorizationRequests:")
     public native ASAuthorizationController initWithAuthorizationRequests(
-            NSArray<? extends ASAuthorizationRequest> authorizationRequests);
+            @NotNull NSArray<? extends ASAuthorizationRequest> authorizationRequests);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -136,9 +146,10 @@ public class ASAuthorizationController extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -147,10 +158,11 @@ public class ASAuthorizationController extends NSObject {
 
     /**
      * Initiate the authorization flows. Upon completion, the delegate will be called with either success or failure.
-     * Certain authorization flows may require a presentation context, the presentationContextProvider will be called to
-     * provider it.
-     * <p>
-     * The instance will remain retained until the user completes the flow and the delegate callback is made.
+     * Certain authorization flows may require a presentation context. The @c presentationContextProvider will be called
+     * to provide it.
+     * 
+     * The instance will remain retained until the flow is either completed or canceled, and the delegate callback is
+     * made.
      */
     @Generated
     @Selector("performRequests")
@@ -159,6 +171,7 @@ public class ASAuthorizationController extends NSObject {
     /**
      * This delegate will be invoked upon needing a presentation context to display authorization UI.
      */
+    @Nullable
     @Generated
     @Selector("presentationContextProvider")
     @MappedReturn(ObjCObjectMapper.class)
@@ -178,14 +191,15 @@ public class ASAuthorizationController extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) ASAuthorizationControllerDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) ASAuthorizationControllerDelegate value);
 
     /**
      * This delegate will be invoked upon completion of the authorization indicating success or failure.
      * Delegate is required to receive the results of authorization.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) ASAuthorizationControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) ASAuthorizationControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -202,14 +216,14 @@ public class ASAuthorizationController extends NSObject {
     @Generated
     @Selector("setPresentationContextProvider:")
     public native void setPresentationContextProvider_unsafe(
-            @Mapped(ObjCObjectMapper.class) ASAuthorizationControllerPresentationContextProviding value);
+            @Nullable @Mapped(ObjCObjectMapper.class) ASAuthorizationControllerPresentationContextProviding value);
 
     /**
      * This delegate will be invoked upon needing a presentation context to display authorization UI.
      */
     @Generated
     public void setPresentationContextProvider(
-            @Mapped(ObjCObjectMapper.class) ASAuthorizationControllerPresentationContextProviding value) {
+            @Nullable @Mapped(ObjCObjectMapper.class) ASAuthorizationControllerPresentationContextProviding value) {
         Object __old = presentationContextProvider();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -232,4 +246,44 @@ public class ASAuthorizationController extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Cancel the running authorization flows, if there are any. If a flow is canceled, the delegate callback will
+     * be made indicating the cancel.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("cancel")
+    public native void cancel();
+
+    /**
+     * Initiate the authorization flows for requests that support AutoFill presentation. UI will be shown when
+     * focusing a text field with the appropriate text content type. Upon completion, the delegate will be called with
+     * either success
+     * or failure.
+     * 
+     * The instance will remain retained until the flow is either completed or canceled, and the delegate callback is
+     * made.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("performAutoFillAssistedRequests")
+    public native void performAutoFillAssistedRequests();
+
+    /**
+     * Initiate the authorization flows. Upon completion, the delegate will be called with either success or failure.
+     * Certain authorization flows may require a presentation context. The @c presentationContextProvider will be called
+     * to provide it.
+     * 
+     * Calling this method with no options is the same as calling @c performRequests. The instance will remain retained
+     * until
+     * the flow is either completed or canceled, and the delegate callback is made.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("performRequestsWithOptions:")
+    public native void performRequestsWithOptions(@NUInt long options);
 }

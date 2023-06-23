@@ -44,10 +44,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SFSafariViewController
  * A view controller for displaying web content in a Safari-like interface with some of Safari’s features.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("SafariServices")
@@ -77,35 +81,39 @@ public class SFSafariViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native SFSafariViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -137,9 +145,10 @@ public class SFSafariViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,6 +179,7 @@ public class SFSafariViewController extends UIViewController {
     /**
      * The view controller's delegate.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -181,32 +191,38 @@ public class SFSafariViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SFSafariViewController initWithCoder(NSCoder coder);
+    public native SFSafariViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native SFSafariViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native SFSafariViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * Returns a view controller that loads a URL.
-     *
+     * 
      * @param URL the initial URL to navigate to. Only supports initial URLs with http:// or https:// schemes.
      */
     @Generated
     @Selector("initWithURL:")
-    public native SFSafariViewController initWithURL(NSURL URL);
+    public native SFSafariViewController initWithURL(@NotNull NSURL URL);
 
     /**
      * Returns a view controller that loads a URL.
-     *
+     * 
      * @param URL                     the initial URL to navigate to. Only supports initial URLs with http:// or
      *                                https:// schemes.
      * @param entersReaderIfAvailable indicates if the Safari Reader version of content should be shown automatically
      *                                when Safari Reader is available on a web page.
+     * 
+     *                                API-Since: 9.0
+     *                                Deprecated-Since: 11.0
      */
+    @Deprecated
     @Generated
     @Selector("initWithURL:entersReaderIfAvailable:")
-    public native SFSafariViewController initWithURLEntersReaderIfAvailable(NSURL URL, boolean entersReaderIfAvailable);
+    public native SFSafariViewController initWithURLEntersReaderIfAvailable(@NotNull NSURL URL,
+            boolean entersReaderIfAvailable);
 
     /**
      * The preferred color to tint the background of the navigation bar and toolbar. If SFSafariViewController is in
@@ -214,7 +230,10 @@ public class SFSafariViewController extends UIViewController {
      * Browsing mode or is displaying an anti-phishing warning page, this color will be ignored. Changes made after the
      * view controller
      * has been presented will not be reflected.
+     * 
+     * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("preferredBarTintColor")
     public native UIColor preferredBarTintColor();
@@ -225,7 +244,10 @@ public class SFSafariViewController extends UIViewController {
      * Browsing mode or is displaying an anti-phishing warning page, this color will be ignored. Changes made after the
      * view controller
      * has been presented will not be reflected.
+     * 
+     * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("preferredControlTintColor")
     public native UIColor preferredControlTintColor();
@@ -235,13 +257,14 @@ public class SFSafariViewController extends UIViewController {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SFSafariViewControllerDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) SFSafariViewControllerDelegate value);
 
     /**
      * The view controller's delegate.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) SFSafariViewControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SFSafariViewControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -258,10 +281,12 @@ public class SFSafariViewController extends UIViewController {
      * Browsing mode or is displaying an anti-phishing warning page, this color will be ignored. Changes made after the
      * view controller
      * has been presented will not be reflected.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setPreferredBarTintColor:")
-    public native void setPreferredBarTintColor(UIColor value);
+    public native void setPreferredBarTintColor(@Nullable UIColor value);
 
     /**
      * The preferred color to tint the control buttons on the navigation bar and toolbar. If SFSafariViewController is
@@ -269,15 +294,20 @@ public class SFSafariViewController extends UIViewController {
      * Browsing mode or is displaying an anti-phishing warning page, this color will be ignored. Changes made after the
      * view controller
      * has been presented will not be reflected.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setPreferredControlTintColor:")
-    public native void setPreferredControlTintColor(UIColor value);
+    public native void setPreferredControlTintColor(@Nullable UIColor value);
 
     /**
      * A copy of the configuration with which the view controller was
      * initialized.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("configuration")
     public native SFSafariViewControllerConfiguration configuration();
@@ -288,6 +318,8 @@ public class SFSafariViewController extends UIViewController {
      * string "Done". You can use other values such as "Close" to provide consistency with your app. "Cancel" is
      * ideal when using SFSafariViewController to log in to an external service. All values will show a string localized
      * to the user's locale. Changing this property after SFSafariViewController is presented will animate the change.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("dismissButtonStyle")
@@ -296,18 +328,20 @@ public class SFSafariViewController extends UIViewController {
 
     /**
      * Returns a view controller that loads a URL.
-     * <p>
+     * 
      * This is a designated initializer. You can use
      * [@link] -initWithURL: @/link to initialize an instance with the default configuration. Mutating the configuration
      * after invoking the initializer has no effect on the view controller.
-     *
+     * 
+     * API-Since: 11.0
+     * 
      * @param URL           the initial URL to navigate to. Only supports initial URLs with http:// or https:// schemes.
      * @param configuration the configuration for the new view controller.
      */
     @Generated
     @Selector("initWithURL:configuration:")
-    public native SFSafariViewController initWithURLConfiguration(NSURL URL,
-            SFSafariViewControllerConfiguration configuration);
+    public native SFSafariViewController initWithURLConfiguration(@NotNull NSURL URL,
+            @NotNull SFSafariViewControllerConfiguration configuration);
 
     /**
      * The style of dismiss button to use in the navigation bar to close SFSafariViewController.
@@ -315,6 +349,8 @@ public class SFSafariViewController extends UIViewController {
      * string "Done". You can use other values such as "Close" to provide consistency with your app. "Cancel" is
      * ideal when using SFSafariViewController to log in to an external service. All values will show a string localized
      * to the user's locale. Changing this property after SFSafariViewController is presented will animate the change.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDismissButtonStyle:")
@@ -323,12 +359,14 @@ public class SFSafariViewController extends UIViewController {
     /**
      * Prewarms a connection to each URL. SFSafariViewController will automatically use a
      * prewarmed connection if possible when loading its initial URL.
-     * <p>
+     * 
      * This method uses a best-effort approach to prewarming connections, but may delay
      * or drop requests based on the volume of requests made by your app. Use this method when you expect
      * to present SFSafariViewController soon. Many HTTP servers time out connections after a few minutes.
      * After a timeout, prewarming delivers less performance benefit.
-     *
+     * 
+     * API-Since: 15.0
+     * 
      * @param URLs the URLs of servers that SFSafariViewController should prewarm connections to.
      *             Only supports URLs with http:// or https:// schemes.
      * @return Returns a token object that corresponds to the requested URLs. You must keep a strong
@@ -336,7 +374,9 @@ public class SFSafariViewController extends UIViewController {
      *         server is requested in multiple calls to this method, all of the corresponding tokens must be
      *         invalidated or released to end the prewarmed connection to that server.
      */
+    @NotNull
     @Generated
     @Selector("prewarmConnectionsToURLs:")
-    public static native SFSafariViewControllerPrewarmingToken prewarmConnectionsToURLs(NSArray<? extends NSURL> URLs);
+    public static native SFSafariViewControllerPrewarmingToken prewarmConnectionsToURLs(
+            @NotNull NSArray<? extends NSURL> URLs);
 }

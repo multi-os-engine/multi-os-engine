@@ -21,18 +21,18 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] NSURLCacheStoragePolicy
- * <p>
+ * 
  * The NSURLCacheStoragePolicy enum defines constants that
  * can be used to specify the type of storage that is allowable for an
  * NSCachedURLResponse object that is to be stored in an NSURLCache.
- * <p>
+ * 
  * [@constant] NSURLCacheStorageAllowed Specifies that storage in an
  * NSURLCache is allowed without restriction.
- * <p>
+ * 
  * [@constant] NSURLCacheStorageAllowedInMemoryOnly Specifies that
  * storage in an NSURLCache is allowed; however storage should be
  * done in memory only, no disk storage should be done.
- * <p>
+ * 
  * [@constant] NSURLCacheStorageNotAllowed Specifies that storage in an
  * NSURLCache is not allowed in any fashion, either in memory or on
  * disk.

@@ -11,10 +11,12 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] ICCameraDeviceDownloadDelegate <NSObject>
- * <p>
+ * 
  * The object passed in as 'downloadDelegate' in the
  * 'requestDownloadFile:options:downloadDelegate:didDownloadSelector:contextInfo:' message must conform to
  * ICCameraDeviceDownloadDelegate protocol.
@@ -26,27 +28,29 @@ import org.moe.natj.objc.ann.Selector;
 public interface ICCameraDeviceDownloadDelegate {
     /**
      * didDownloadFile:error:options:contextInfo:
-     * <p>
+     * 
      * This message is sent to the delegate when the requested download operation is complete.
      */
     @Generated
     @IsOptional
     @Selector("didDownloadFile:error:options:contextInfo:")
-    default void didDownloadFileErrorOptionsContextInfo(ICCameraFile file, NSError error,
-            NSDictionary<String, ?> options, VoidPtr contextInfo) {
+    default void didDownloadFileErrorOptionsContextInfo(@NotNull ICCameraFile file, @Nullable NSError error,
+            @NotNull NSDictionary<String, ?> options, @Nullable VoidPtr contextInfo) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * didReceiveDownloadProgressForFile:downloadedBytes:maxBytes:
-     * <p>
+     * 
      * This message is sent to the delegate to provide status of the download operation.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
     @Selector("didReceiveDownloadProgressForFile:downloadedBytes:maxBytes:")
-    default void didReceiveDownloadProgressForFileDownloadedBytesMaxBytes(ICCameraFile file, long downloadedBytes,
-            long maxBytes) {
+    default void didReceiveDownloadProgressForFileDownloadedBytesMaxBytes(@NotNull ICCameraFile file,
+            long downloadedBytes, long maxBytes) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

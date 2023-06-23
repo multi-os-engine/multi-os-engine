@@ -21,7 +21,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.4
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -52,22 +57,25 @@ public class PKAddCarKeyPassConfiguration extends PKAddSecureElementPassConfigur
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,15 +114,17 @@ public class PKAddCarKeyPassConfiguration extends PKAddSecureElementPassConfigur
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native PKAddCarKeyPassConfiguration new_objc();
 
+    @NotNull
     @Generated
     @Selector("password")
     public native String password();
@@ -129,7 +139,7 @@ public class PKAddCarKeyPassConfiguration extends PKAddSecureElementPassConfigur
 
     @Generated
     @Selector("setPassword:")
-    public native void setPassword(String value);
+    public native void setPassword(@NotNull String value);
 
     @Generated
     @Selector("setVersion:")
@@ -144,12 +154,48 @@ public class PKAddCarKeyPassConfiguration extends PKAddSecureElementPassConfigur
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 14.5
+     */
     @Generated
     @Selector("setSupportedRadioTechnologies:")
     public native void setSupportedRadioTechnologies(@NUInt long value);
 
+    /**
+     * API-Since: 14.5
+     */
     @Generated
     @Selector("supportedRadioTechnologies")
     @NUInt
     public native long supportedRadioTechnologies();
+
+    /**
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @Selector("manufacturerIdentifier")
+    public native String manufacturerIdentifier();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("provisioningTemplateIdentifier")
+    public native String provisioningTemplateIdentifier();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setManufacturerIdentifier:")
+    public native void setManufacturerIdentifier(@NotNull String value);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setProvisioningTemplateIdentifier:")
+    public native void setProvisioningTemplateIdentifier(@Nullable String value);
 }

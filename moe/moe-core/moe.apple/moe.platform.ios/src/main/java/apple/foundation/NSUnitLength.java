@@ -36,7 +36,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -65,36 +70,42 @@ public class NSUnitLength extends NSDimension implements NSSecureCoding {
     @Selector("allocWithZone:")
     public static native NSUnitLength allocWithZone(VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("astronomicalUnits")
     public static native NSUnitLength astronomicalUnits();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("baseUnit")
     public static native NSUnitLength baseUnit();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("centimeters")
     public static native NSUnitLength centimeters();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -103,10 +114,12 @@ public class NSUnitLength extends NSDimension implements NSSecureCoding {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @NotNull
     @Generated
     @Selector("decameters")
     public static native NSUnitLength decameters();
 
+    @NotNull
     @Generated
     @Selector("decimeters")
     public static native NSUnitLength decimeters();
@@ -115,14 +128,17 @@ public class NSUnitLength extends NSDimension implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("fathoms")
     public static native NSUnitLength fathoms();
 
+    @NotNull
     @Generated
     @Selector("feet")
     public static native NSUnitLength feet();
 
+    @NotNull
     @Generated
     @Selector("furlongs")
     public static native NSUnitLength furlongs();
@@ -132,10 +148,12 @@ public class NSUnitLength extends NSDimension implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    @NotNull
     @Generated
     @Selector("hectometers")
     public static native NSUnitLength hectometers();
 
+    @NotNull
     @Generated
     @Selector("inches")
     public static native NSUnitLength inches();
@@ -157,14 +175,17 @@ public class NSUnitLength extends NSDimension implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("kilometers")
     public static native NSUnitLength kilometers();
 
+    @NotNull
     @Generated
     @Selector("lightyears")
     public static native NSUnitLength lightyears();
@@ -172,30 +193,37 @@ public class NSUnitLength extends NSDimension implements NSSecureCoding {
     /**
      * Base unit - meters
      */
+    @NotNull
     @Generated
     @Selector("megameters")
     public static native NSUnitLength megameters();
 
+    @NotNull
     @Generated
     @Selector("meters")
     public static native NSUnitLength meters();
 
+    @NotNull
     @Generated
     @Selector("micrometers")
     public static native NSUnitLength micrometers();
 
+    @NotNull
     @Generated
     @Selector("miles")
     public static native NSUnitLength miles();
 
+    @NotNull
     @Generated
     @Selector("millimeters")
     public static native NSUnitLength millimeters();
 
+    @NotNull
     @Generated
     @Selector("nanometers")
     public static native NSUnitLength nanometers();
 
+    @NotNull
     @Generated
     @Selector("nauticalMiles")
     public static native NSUnitLength nauticalMiles();
@@ -205,10 +233,12 @@ public class NSUnitLength extends NSDimension implements NSSecureCoding {
     @Selector("new")
     public static native NSUnitLength new_objc();
 
+    @NotNull
     @Generated
     @Selector("parsecs")
     public static native NSUnitLength parsecs();
 
+    @NotNull
     @Generated
     @Selector("picometers")
     public static native NSUnitLength picometers();
@@ -221,6 +251,7 @@ public class NSUnitLength extends NSDimension implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @NotNull
     @Generated
     @Selector("scandinavianMiles")
     public static native NSUnitLength scandinavianMiles();
@@ -242,13 +273,14 @@ public class NSUnitLength extends NSDimension implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("yards")
     public static native NSUnitLength yards();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -256,15 +288,15 @@ public class NSUnitLength extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUnitLength initWithCoder(NSCoder coder);
+    public native NSUnitLength initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")
-    public native NSUnitLength initWithSymbol(String symbol);
+    public native NSUnitLength initWithSymbol(@NotNull String symbol);
 
     @Generated
     @Selector("initWithSymbol:converter:")
-    public native NSUnitLength initWithSymbolConverter(String symbol, NSUnitConverter converter);
+    public native NSUnitLength initWithSymbolConverter(@NotNull String symbol, @NotNull NSUnitConverter converter);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

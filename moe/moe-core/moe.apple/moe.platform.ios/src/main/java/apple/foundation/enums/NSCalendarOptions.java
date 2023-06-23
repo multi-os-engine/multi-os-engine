@@ -25,12 +25,33 @@ public final class NSCalendarOptions {
      * option for arithmetic operations that do calendar addition
      */
     @Generated @NUInt public static final long WrapComponents = 0x0000000000000001L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NUInt public static final long MatchStrictly = 0x0000000000000002L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NUInt public static final long SearchBackwards = 0x0000000000000004L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NUInt public static final long MatchPreviousTimePreservingSmallerUnits = 0x0000000000000100L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NUInt public static final long MatchNextTimePreservingSmallerUnits = 0x0000000000000200L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NUInt public static final long MatchNextTime = 0x0000000000000400L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NUInt public static final long MatchFirst = 0x0000000000001000L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NUInt public static final long MatchLast = 0x0000000000002000L;
 
     @Generated

@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.glkit.protocol;
 
-import apple.coregraphics.struct.CGRect;
 import apple.glkit.GLKView;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
@@ -25,6 +24,8 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("GLKit")
@@ -39,5 +40,5 @@ public interface GLKViewDelegate {
      */
     @Generated
     @Selector("glkView:drawInRect:")
-    void glkViewDrawInRect(GLKView view, @ByValue CGRect rect);
+    void glkViewDrawInRect(@NotNull GLKView view, @ByValue CGRect rect);
 }

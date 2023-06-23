@@ -23,11 +23,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAssetSegmentTrackReport
- * <p>
+ * 
  * This class is vended by AVAssetSegmentReport. It will provide information on a track in a segment data.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("AVFoundation")
@@ -59,22 +63,25 @@ public class AVAssetSegmentTrackReport extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -89,7 +96,7 @@ public class AVAssetSegmentTrackReport extends NSObject {
 
     /**
      * [@property] duration
-     * <p>
+     * 
      * Indicates the duration for this track. The value is kCMTimeInvalid if there is no information available.
      */
     @Generated
@@ -99,7 +106,7 @@ public class AVAssetSegmentTrackReport extends NSObject {
 
     /**
      * [@property] earliestPresentationTimeStamp
-     * <p>
+     * 
      * Indicates the earliest presentation timestamp (PTS) for this track. The value is kCMTimeInvalid if there is no
      * information available.
      */
@@ -110,10 +117,11 @@ public class AVAssetSegmentTrackReport extends NSObject {
 
     /**
      * [@property] firstVideoSampleInformation
-     * <p>
+     * 
      * Provides information on the first video sample in this track. The value is nil if this track is not video track
      * or no information available.
      */
+    @Nullable
     @Generated
     @Selector("firstVideoSampleInformation")
     public native AVAssetSegmentReportSampleInformation firstVideoSampleInformation();
@@ -144,15 +152,17 @@ public class AVAssetSegmentTrackReport extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] mediaType
-     * <p>
+     * 
      * Indicates the media type for this track. Media types are declared in AVMediaFormat.h.
      */
+    @NotNull
     @Generated
     @Selector("mediaType")
     public native String mediaType();
@@ -180,7 +190,7 @@ public class AVAssetSegmentTrackReport extends NSObject {
 
     /**
      * [@property] trackID
-     * <p>
+     * 
      * Indicates the persistent unique identifier for this track.
      */
     @Generated

@@ -24,11 +24,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCEmbeddingDescriptor
- * <p>
+ * 
  * The MLCEmbeddingDescriptor specifies an embedding layer descriptor
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -60,31 +64,35 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -96,29 +104,31 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("descriptorWithEmbeddingCount:embeddingDimension:")
-    public static native MLCEmbeddingDescriptor descriptorWithEmbeddingCountEmbeddingDimension(NSNumber embeddingCount,
-            NSNumber embeddingDimension);
+    public static native MLCEmbeddingDescriptor descriptorWithEmbeddingCountEmbeddingDimension(
+            @NotNull NSNumber embeddingCount, @NotNull NSNumber embeddingDimension);
 
     @Generated
     @Selector("descriptorWithEmbeddingCount:embeddingDimension:paddingIndex:maximumNorm:pNorm:scalesGradientByFrequency:")
     public static native MLCEmbeddingDescriptor descriptorWithEmbeddingCountEmbeddingDimensionPaddingIndexMaximumNormPNormScalesGradientByFrequency(
-            NSNumber embeddingCount, NSNumber embeddingDimension, NSNumber paddingIndex, NSNumber maximumNorm,
-            NSNumber pNorm, boolean scalesGradientByFrequency);
+            @NotNull NSNumber embeddingCount, @NotNull NSNumber embeddingDimension, @Nullable NSNumber paddingIndex,
+            @Nullable NSNumber maximumNorm, @Nullable NSNumber pNorm, boolean scalesGradientByFrequency);
 
     /**
      * [@property] embeddingCount
-     * <p>
+     * 
      * The size of the dictionary
      */
+    @NotNull
     @Generated
     @Selector("embeddingCount")
     public native NSNumber embeddingCount();
 
     /**
      * [@property] embeddingDimension
-     * <p>
+     * 
      * The dimension of embedding vectors
      */
+    @NotNull
     @Generated
     @Selector("embeddingDimension")
     public native NSNumber embeddingDimension();
@@ -149,16 +159,18 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] maximumNorm
-     * <p>
+     * 
      * A float, if set, in the forward pass only, the selected embedding vectors will be re-normalized to have an Lp
      * norm of less than maximumNorm in the dictionary, Default=nil
      */
+    @Nullable
     @Generated
     @Selector("maximumNorm")
     public native NSNumber maximumNorm();
@@ -170,19 +182,21 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] pNorm
-     * <p>
+     * 
      * A float, the p of the Lp norm, can be set to infinity norm by [NSNumber numberWithFloat:INFINITY]. Default=2.0
      */
+    @Nullable
     @Generated
     @Selector("pNorm")
     public native NSNumber pNorm();
 
     /**
      * [@property] paddingIndex
-     * <p>
+     * 
      * If set, the embedding vector at paddingIndex is initialized with zero and will not be updated in gradient pass,
      * Default=nil
      */
+    @Nullable
     @Generated
     @Selector("paddingIndex")
     public native NSNumber paddingIndex();
@@ -197,7 +211,7 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] scalesGradientByFrequency
-     * <p>
+     * 
      * If set, the gradients are scaled by the inverse of the frequency of the words in batch before the weight update.
      * Default=NO
      */

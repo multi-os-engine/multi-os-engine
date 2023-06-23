@@ -39,15 +39,19 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A deterministic pseudo-random source that generates random numbers based on a linear congruential algorithm.
  * This is a deterministic random source suitable for creating reliable gameplay mechanics.
  * It is slightly faster than an Arc4 source, but less random. In particular the lower bits
  * of the generated values are less random than the higher bits.
- * <p>
+ * 
  * While deterministic, this is not a cryptographic random source. It is also not suitable
  * for obfuscation of gameplay data.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -79,22 +83,25 @@ public class GKLinearCongruentialRandomSource extends GKRandomSource {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +136,10 @@ public class GKLinearCongruentialRandomSource extends GKRandomSource {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -150,6 +158,7 @@ public class GKLinearCongruentialRandomSource extends GKRandomSource {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("sharedRandom")
     public static native GKRandomSource sharedRandom();
@@ -177,7 +186,7 @@ public class GKLinearCongruentialRandomSource extends GKRandomSource {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKLinearCongruentialRandomSource initWithCoder(NSCoder aDecoder);
+    public native GKLinearCongruentialRandomSource initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * Initializes a linear congruential random source with bits the given 64 bit seed.

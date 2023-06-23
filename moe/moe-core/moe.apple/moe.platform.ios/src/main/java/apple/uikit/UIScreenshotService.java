@@ -23,10 +23,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This class allows your application to produce a higher fidelity, PDF screenshot to the user. Set the delegate so that
  * when a screenshot is taken, screenshots can show the full document content from the application.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("UIKit")
@@ -58,22 +62,25 @@ public class UIScreenshotService extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -85,6 +92,7 @@ public class UIScreenshotService extends NSObject {
     /**
      * Assign a delegate in order to send PDF data to accompany the screenshot taken by the user
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -120,9 +128,10 @@ public class UIScreenshotService extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -142,13 +151,13 @@ public class UIScreenshotService extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIScreenshotServiceDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UIScreenshotServiceDelegate value);
 
     /**
      * Assign a delegate in order to send PDF data to accompany the screenshot taken by the user
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIScreenshotServiceDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIScreenshotServiceDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -175,6 +184,7 @@ public class UIScreenshotService extends NSObject {
     /**
      * The window scene associated with the screenshot service
      */
+    @Nullable
     @Generated
     @Selector("windowScene")
     public native UIWindowScene windowScene();

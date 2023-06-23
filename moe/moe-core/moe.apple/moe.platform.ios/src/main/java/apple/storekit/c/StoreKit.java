@@ -25,6 +25,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("StoreKit")
@@ -38,15 +39,26 @@ public final class StoreKit {
     private StoreKit() {
     }
 
+    /**
+     * API-Since: 7.1
+     */
     @Generated
     @CFunction
     public static native void SKTerminateForInvalidReceipt();
 
+    /**
+     * API-Since: 9.3
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SKStorefrontIdentifierDidChangeNotification();
 
+    /**
+     * API-Since: 9.3
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -54,7 +66,10 @@ public final class StoreKit {
 
     /**
      * Action for setup entry point (of type SKCloudServiceSetupAction).
+     * 
+     * API-Since: 10.1
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -62,7 +77,10 @@ public final class StoreKit {
 
     /**
      * Identifier of the iTunes Store item the user is trying to access which requires cloud service setup (NSNumber).
+     * 
+     * API-Since: 10.1
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -70,16 +88,29 @@ public final class StoreKit {
 
     /**
      * Supported actions for setup entry point.
+     * 
+     * API-Since: 10.1
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SKCloudServiceSetupActionSubscribe();
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
+     */
+    @Deprecated
     @Generated
     @CVariable()
     public static native double SKDownloadTimeRemainingUnknown();
 
+    /**
+     * API-Since: 3.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -87,7 +118,10 @@ public final class StoreKit {
 
     /**
      * NSNumber BOOL, defaults to NO
+     * 
+     * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -95,7 +129,10 @@ public final class StoreKit {
 
     /**
      * NSNumber BOOL, defaults to NO
+     * 
+     * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -103,7 +140,10 @@ public final class StoreKit {
 
     /**
      * NSNumber BOOL, defaults to NO
+     * 
+     * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -111,7 +151,10 @@ public final class StoreKit {
 
     /**
      * iTunes Store item identifier (NSNumber) of the product
+     * 
+     * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -119,7 +162,10 @@ public final class StoreKit {
 
     /**
      * iTunes Store affiliate token (NSString)
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -127,7 +173,10 @@ public final class StoreKit {
 
     /**
      * iTunes Store affiliate campaign token (NSString)
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -135,7 +184,10 @@ public final class StoreKit {
 
     /**
      * Analytics provider token (NSString)
+     * 
+     * API-Since: 8.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -143,12 +195,19 @@ public final class StoreKit {
 
     /**
      * Advertising partner token (NSString)
+     * 
+     * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SKStoreProductParameterAdvertisingPartnerToken();
 
+    /**
+     * API-Since: 11.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -156,7 +215,10 @@ public final class StoreKit {
 
     /**
      * iTunes Store affiliate token (NSString).
+     * 
+     * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -164,7 +226,10 @@ public final class StoreKit {
 
     /**
      * iTunes Store affiliate campaign token (NSString).
+     * 
+     * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -175,7 +240,10 @@ public final class StoreKit {
      * (SKCloudServiceSetupMessageIdentifier).
      * When missing, the setup view will be configured in a way that is equivalent to using
      * SKCloudServiceSetupMessageIdentifierJoin.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -183,22 +251,37 @@ public final class StoreKit {
 
     /**
      * Supported message identifiers.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SKCloudServiceSetupMessageIdentifierJoin();
 
+    /**
+     * API-Since: 11.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SKCloudServiceSetupMessageIdentifierConnect();
 
+    /**
+     * API-Since: 11.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SKCloudServiceSetupMessageIdentifierAddMusic();
 
+    /**
+     * API-Since: 11.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -206,7 +289,10 @@ public final class StoreKit {
 
     /**
      * SKU for the In-App Purchase product (NSString) to render at the top of the product page
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -214,7 +300,10 @@ public final class StoreKit {
 
     /**
      * Advertising network's cryptographic signature for the atribution params (NSString)
+     * 
+     * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -222,7 +311,10 @@ public final class StoreKit {
 
     /**
      * Advertising network campaign identifier (NSNumber)
+     * 
+     * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -230,7 +322,10 @@ public final class StoreKit {
 
     /**
      * Advertising network identifier (NSString)
+     * 
+     * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -238,7 +333,10 @@ public final class StoreKit {
 
     /**
      * Random entropy value for security (NSUUID)
+     * 
+     * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -246,7 +344,10 @@ public final class StoreKit {
 
     /**
      * Timestamp for this ad impression (NSNumber)
+     * 
+     * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -254,12 +355,19 @@ public final class StoreKit {
 
     /**
      * App Store item identifier of the source app (NSNumber)
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SKStoreProductParameterAdNetworkSourceAppStoreIdentifier();
 
+    /**
+     * API-Since: 14.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -267,9 +375,57 @@ public final class StoreKit {
 
     /**
      * Identifier to specify a custom product page for a given `SKStoreProductParameterITunesItemIdentifier` (NSString).
+     * 
+     * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SKStoreProductParameterCustomProductPageIdentifier();
+
+    /**
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKAdNetworkCoarseConversionValueHigh();
+
+    /**
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKAdNetworkCoarseConversionValueMedium();
+
+    /**
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKAdNetworkCoarseConversionValueLow();
+
+    /**
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKStoreProductParameterAdNetworkSourceIdentifier();
+
+    /**
+     * API-Since: 15.4
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKANErrorDomain();
 }

@@ -22,15 +22,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVDelegatingPlaybackCoordinatorBufferingCommand
- * <p>
+ * 
  * A playback command requesting buffering in anticipation of playback.
- * <p>
+ * 
  * Receiving this command should be reflected to the user as playback in a buffering state.
  * To cancel the group intent to begin playback and move back into a paused state, call [AVDelegatingPlaybackCoordinator
  * coordinateRateChangeToRate:0 options: 0]
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("AVFoundation")
@@ -63,9 +67,9 @@ public class AVDelegatingPlaybackCoordinatorBufferingCommand extends
 
     /**
      * [@property] anticipatedPlaybackRate
-     * <p>
+     * 
      * The rate to prepare playback for.
-     * <p>
+     * 
      * The command should only be considered complete once the player is ready to receive an
      * AVDelegatingPlaybackCoordinatorPlayCommand with the indicated rate.
      */
@@ -75,31 +79,34 @@ public class AVDelegatingPlaybackCoordinatorBufferingCommand extends
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] completionDueDate
-     * <p>
+     * 
      * Communicates when the coordinator expects the command's completion handler at the latest.
-     * <p>
+     * 
      * A receiver of a buffering command should fire the completion handler by this date at the latest. This is useful
      * in buffering situations where the receiver
      * has not yet buffered enough data to be considered ready to play by the due date. The receiver should then decide
@@ -109,6 +116,7 @@ public class AVDelegatingPlaybackCoordinatorBufferingCommand extends
      * Completing the command after this date means that the coordinator will likely send a play command for a later
      * time than the receiver buffered for.
      */
+    @Nullable
     @Generated
     @Selector("completionDueDate")
     public native NSDate completionDueDate();
@@ -147,9 +155,10 @@ public class AVDelegatingPlaybackCoordinatorBufferingCommand extends
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

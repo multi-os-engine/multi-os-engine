@@ -23,11 +23,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNLogSoftMaxGradient
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * The logSoftMax gradient filter calculates the gradient to be backpropagated.
  * The logSoftMax gradient just as the log softMax filter, is applied across feature channels and at all spatial
  * locations.
@@ -40,9 +42,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * outputGradient(x,y,k) = inputGradient(x,y,k) - exp(logSoftMax(x,y,k)) * sum(inputGradient(x,y,0) ...
  * inputGradient(x,y,N-1))
  * where N is the number of feature channels
- * <p>
+ * 
  * The incoming gradient is the primary source.
  * The original output of corresponding logSoftMax is the secondary source.
+ * 
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -74,22 +79,25 @@ public class MPSCNNLogSoftMaxGradient extends MPSCNNGradientKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -113,35 +121,36 @@ public class MPSCNNLogSoftMaxGradient extends MPSCNNGradientKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNLogSoftMaxGradient initWithCoder(NSCoder aDecoder);
+    public native MPSCNNLogSoftMaxGradient initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNLogSoftMaxGradient initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNLogSoftMaxGradient initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initializes a MPSCNNLogSoftMaxGradient function
-     *
+     * 
      * @param device The MTLDevice on which this MPSCNNLogSoftMaxGradient filter will be used
+     * 
      * @return A valid MPSCNNLogSoftMaxGradient object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNLogSoftMaxGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNLogSoftMaxGradient initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -160,9 +169,10 @@ public class MPSCNNLogSoftMaxGradient extends MPSCNNGradientKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

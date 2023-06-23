@@ -25,9 +25,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AUTO-GENERATED FROM CodeGenArray.h
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("ModelIO")
@@ -59,22 +63,25 @@ public class MDLAnimatedScalarArray extends MDLAnimatedValue {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -95,22 +102,22 @@ public class MDLAnimatedScalarArray extends MDLAnimatedValue {
     @Generated
     @Selector("getDoubleArray:maxCount:")
     @NUInt
-    public native long getDoubleArrayMaxCount(DoublePtr valuesArray, @NUInt long maxCount);
+    public native long getDoubleArrayMaxCount(@NotNull DoublePtr valuesArray, @NUInt long maxCount);
 
     @Generated
     @Selector("getDoubleArray:maxCount:atTime:")
     @NUInt
-    public native long getDoubleArrayMaxCountAtTime(DoublePtr array, @NUInt long maxCount, double time);
+    public native long getDoubleArrayMaxCountAtTime(@NotNull DoublePtr array, @NUInt long maxCount, double time);
 
     @Generated
     @Selector("getFloatArray:maxCount:")
     @NUInt
-    public native long getFloatArrayMaxCount(FloatPtr valuesArray, @NUInt long maxCount);
+    public native long getFloatArrayMaxCount(@NotNull FloatPtr valuesArray, @NUInt long maxCount);
 
     @Generated
     @Selector("getFloatArray:maxCount:atTime:")
     @NUInt
-    public native long getFloatArrayMaxCountAtTime(FloatPtr array, @NUInt long maxCount, double time);
+    public native long getFloatArrayMaxCountAtTime(@NotNull FloatPtr array, @NUInt long maxCount, double time);
 
     @Generated
     @Selector("hash")
@@ -142,9 +149,10 @@ public class MDLAnimatedScalarArray extends MDLAnimatedValue {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -153,13 +161,13 @@ public class MDLAnimatedScalarArray extends MDLAnimatedValue {
 
     @Generated
     @Selector("resetWithDoubleArray:count:atTimes:count:")
-    public native void resetWithDoubleArrayCountAtTimesCount(ConstDoublePtr valuesArray, @NUInt long valuesCount,
-            ConstDoublePtr timesArray, @NUInt long timesCount);
+    public native void resetWithDoubleArrayCountAtTimesCount(@NotNull ConstDoublePtr valuesArray,
+            @NUInt long valuesCount, @NotNull ConstDoublePtr timesArray, @NUInt long timesCount);
 
     @Generated
     @Selector("resetWithFloatArray:count:atTimes:count:")
-    public native void resetWithFloatArrayCountAtTimesCount(ConstFloatPtr valuesArray, @NUInt long valuesCount,
-            ConstDoublePtr timesArray, @NUInt long timesCount);
+    public native void resetWithFloatArrayCountAtTimesCount(@NotNull ConstFloatPtr valuesArray, @NUInt long valuesCount,
+            @NotNull ConstDoublePtr timesArray, @NUInt long timesCount);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -171,11 +179,11 @@ public class MDLAnimatedScalarArray extends MDLAnimatedValue {
 
     @Generated
     @Selector("setDoubleArray:count:atTime:")
-    public native void setDoubleArrayCountAtTime(ConstDoublePtr array, @NUInt long count, double time);
+    public native void setDoubleArrayCountAtTime(@NotNull ConstDoublePtr array, @NUInt long count, double time);
 
     @Generated
     @Selector("setFloatArray:count:atTime:")
-    public native void setFloatArrayCountAtTime(ConstFloatPtr array, @NUInt long count, double time);
+    public native void setFloatArrayCountAtTime(@NotNull ConstFloatPtr array, @NUInt long count, double time);
 
     @Generated
     @Selector("setVersion:")

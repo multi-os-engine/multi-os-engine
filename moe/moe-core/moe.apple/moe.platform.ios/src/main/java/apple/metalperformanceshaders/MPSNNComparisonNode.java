@@ -21,9 +21,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * returns elementwise comparison of left and right
+ * 
+ * API-Since: 12.1
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -55,29 +59,32 @@ public class MPSNNComparisonNode extends MPSNNBinaryArithmeticNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] comparisonType
-     * <p>
+     * 
      * The comparison type to set on the underlying kernel. Defaults
      * to MPSNNComparisonTypeEqual.
      */
@@ -105,11 +112,12 @@ public class MPSNNComparisonNode extends MPSNNBinaryArithmeticNode {
 
     @Generated
     @Selector("initWithLeftSource:rightSource:")
-    public native MPSNNComparisonNode initWithLeftSourceRightSource(MPSNNImageNode left, MPSNNImageNode right);
+    public native MPSNNComparisonNode initWithLeftSourceRightSource(@NotNull MPSNNImageNode left,
+            @NotNull MPSNNImageNode right);
 
     @Generated
     @Selector("initWithSources:")
-    public native MPSNNComparisonNode initWithSources(NSArray<? extends MPSNNImageNode> sourceNodes);
+    public native MPSNNComparisonNode initWithSources(@NotNull NSArray<? extends MPSNNImageNode> sourceNodes);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -128,9 +136,10 @@ public class MPSNNComparisonNode extends MPSNNBinaryArithmeticNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -139,11 +148,12 @@ public class MPSNNComparisonNode extends MPSNNBinaryArithmeticNode {
 
     @Generated
     @Selector("nodeWithLeftSource:rightSource:")
-    public static native MPSNNComparisonNode nodeWithLeftSourceRightSource(MPSNNImageNode left, MPSNNImageNode right);
+    public static native MPSNNComparisonNode nodeWithLeftSourceRightSource(@NotNull MPSNNImageNode left,
+            @NotNull MPSNNImageNode right);
 
     @Generated
     @Selector("nodeWithSources:")
-    public static native MPSNNComparisonNode nodeWithSources(NSArray<? extends MPSNNImageNode> sourceNodes);
+    public static native MPSNNComparisonNode nodeWithSources(@NotNull NSArray<? extends MPSNNImageNode> sourceNodes);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -155,7 +165,7 @@ public class MPSNNComparisonNode extends MPSNNBinaryArithmeticNode {
 
     /**
      * [@property] comparisonType
-     * <p>
+     * 
      * The comparison type to set on the underlying kernel. Defaults
      * to MPSNNComparisonTypeEqual.
      */

@@ -39,9 +39,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An MPMediaItemCollection is a collection of related MPMediaItems in a media library.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("MediaPlayer")
@@ -73,26 +77,29 @@ public class MPMediaItemCollection extends MPMediaEntity {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("canFilterByProperty:")
-    public static native boolean canFilterByProperty(String property);
+    public static native boolean canFilterByProperty(@NotNull String property);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -100,9 +107,10 @@ public class MPMediaItemCollection extends MPMediaEntity {
     /**
      * Creates a media item collection by copying an array of MPMediaItems.
      */
+    @NotNull
     @Generated
     @Selector("collectionWithItems:")
-    public static native MPMediaItemCollection collectionWithItems(NSArray<? extends MPMediaItem> items);
+    public static native MPMediaItemCollection collectionWithItems(@NotNull NSArray<? extends MPMediaItem> items);
 
     @Generated
     @Selector("debugDescription")
@@ -134,9 +142,10 @@ public class MPMediaItemCollection extends MPMediaEntity {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -183,15 +192,16 @@ public class MPMediaItemCollection extends MPMediaEntity {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPMediaItemCollection initWithCoder(NSCoder coder);
+    public native MPMediaItemCollection initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithItems:")
-    public native MPMediaItemCollection initWithItems(NSArray<? extends MPMediaItem> items);
+    public native MPMediaItemCollection initWithItems(@NotNull NSArray<? extends MPMediaItem> items);
 
     /**
      * Returns the MPMediaItems in the collection.
      */
+    @NotNull
     @Generated
     @Selector("items")
     public native NSArray<? extends MPMediaItem> items();
@@ -209,6 +219,7 @@ public class MPMediaItemCollection extends MPMediaEntity {
      * This item can be used for common item properties in the collection, often more efficiently than fetching an item
      * out of the items array.
      */
+    @Nullable
     @Generated
     @Selector("representativeItem")
     public native MPMediaItem representativeItem();

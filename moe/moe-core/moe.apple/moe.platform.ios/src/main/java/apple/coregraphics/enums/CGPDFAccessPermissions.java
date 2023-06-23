@@ -6,20 +6,20 @@ import org.moe.natj.general.ann.Generated;
  * To get access permissions from a CGPDFDocument, call CGPDFDocumentGetAccessPermissions. Setting permissions
  * can only be done using the kCGPDFContextAccessPermissions property in the auxiliary info dictionary passed
  * in to CGPDFContextCreate.
- * <p>
+ * 
  * Some PDF access permissions are non-strict supersets of other permissions. Granting access to a superset
  * permission also grants access to permission(s) it is a superset of. These permissions are as follows:
- * <p>
+ * 
  * * Granting kCGPDFAllowsHighQualityPrinting also grants kCGPDFAllowsLowQualityPrinting
  * * Granting kCGPDFAllowsDocumentChanges also grants kCGPDFAllowsCommenting and kCGPDFAllowsFormFieldEntry
  * * Granting kCGPDFAllowsContentCopying also grants kCGPDFAllowsContentAccessibility
  * * Granting kCGPDFAllowsCommenting also grants kCGPDFAllowsFormFieldEntry
- * <p>
+ * 
  * These relationships don't come from the PDF spec. There is nothing in the spec that says you always get
  * low-quality printing if you've already got high-quality printing. They are just two different bits with
  * no explicit dependencies. However, in practice, the software that most people use to edit PDF permissions
  * only allows creation of PDFs that follow these conventions.
- * <p>
+ * 
  * In the interest of consistency with how these bits are used in practice, kCGPDFContextAccessPermissions
  * enforces the superset model of PDF permissions. For example, if you try to grant high-quality printing but
  * not low-quality printing, the low-quality bit will get turned on anyway. This does not apply to how permissions

@@ -26,7 +26,12 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -57,22 +62,25 @@ public class UITextFormattingCoordinator extends NSObject implements UIFontPicke
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -81,6 +89,7 @@ public class UITextFormattingCoordinator extends NSObject implements UIFontPicke
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -93,12 +102,12 @@ public class UITextFormattingCoordinator extends NSObject implements UIFontPicke
     @Generated
     @IsOptional
     @Selector("fontPickerViewControllerDidCancel:")
-    public native void fontPickerViewControllerDidCancel(UIFontPickerViewController viewController);
+    public native void fontPickerViewControllerDidCancel(@NotNull UIFontPickerViewController viewController);
 
     @Generated
     @IsOptional
     @Selector("fontPickerViewControllerDidPickFont:")
-    public native void fontPickerViewControllerDidPickFont(UIFontPickerViewController viewController);
+    public native void fontPickerViewControllerDidPickFont(@NotNull UIFontPickerViewController viewController);
 
     @Generated
     @Selector("hash")
@@ -111,7 +120,7 @@ public class UITextFormattingCoordinator extends NSObject implements UIFontPicke
 
     @Generated
     @Selector("initWithWindowScene:")
-    public native UITextFormattingCoordinator initWithWindowScene(UIWindowScene windowScene);
+    public native UITextFormattingCoordinator initWithWindowScene(@NotNull UIWindowScene windowScene);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -134,9 +143,10 @@ public class UITextFormattingCoordinator extends NSObject implements UIFontPicke
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -153,10 +163,11 @@ public class UITextFormattingCoordinator extends NSObject implements UIFontPicke
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextFormattingCoordinatorDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) UITextFormattingCoordinatorDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UITextFormattingCoordinatorDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UITextFormattingCoordinatorDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -173,7 +184,7 @@ public class UITextFormattingCoordinator extends NSObject implements UIFontPicke
      */
     @Generated
     @Selector("setSelectedAttributes:isMultiple:")
-    public native void setSelectedAttributesIsMultiple(NSDictionary<String, ?> attributes, boolean flag);
+    public native void setSelectedAttributesIsMultiple(@NotNull NSDictionary<String, ?> attributes, boolean flag);
 
     @Generated
     @Selector("setVersion:")
@@ -185,14 +196,15 @@ public class UITextFormattingCoordinator extends NSObject implements UIFontPicke
 
     @Generated
     @Selector("textFormattingCoordinatorForWindowScene:")
-    public static native UITextFormattingCoordinator textFormattingCoordinatorForWindowScene(UIWindowScene windowScene);
+    public static native UITextFormattingCoordinator textFormattingCoordinatorForWindowScene(
+            @NotNull UIWindowScene windowScene);
 
     /**
      * On macOS only, will toggle standard system Font Panel visibility.
      */
     @Generated
     @Selector("toggleFontPanel:")
-    public static native void toggleFontPanel(@Mapped(ObjCObjectMapper.class) Object sender);
+    public static native void toggleFontPanel(@NotNull @Mapped(ObjCObjectMapper.class) Object sender);
 
     @Generated
     @Selector("version")

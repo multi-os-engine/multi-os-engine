@@ -38,7 +38,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -69,22 +74,25 @@ public class NSLayoutYAxisAnchor extends NSLayoutAnchor<NSLayoutYAxisAnchor> {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -119,9 +127,10 @@ public class NSLayoutYAxisAnchor extends NSLayoutAnchor<NSLayoutYAxisAnchor> {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,10 +164,13 @@ public class NSLayoutYAxisAnchor extends NSLayoutAnchor<NSLayoutYAxisAnchor> {
 
     /**
      * A composite anchor for creating constraints relating vertical distances between locations.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("anchorWithOffsetToAnchor:")
-    public native NSLayoutDimension anchorWithOffsetToAnchor(NSLayoutYAxisAnchor otherAnchor);
+    public native NSLayoutDimension anchorWithOffsetToAnchor(@NotNull NSLayoutYAxisAnchor otherAnchor);
 
     /**
      * Constraints of the form,
@@ -167,19 +179,30 @@ public class NSLayoutYAxisAnchor extends NSLayoutAnchor<NSLayoutYAxisAnchor> {
      * The constraint affects how far the receiver will be positioned below 'anchor'.
      * If either the receiver or 'anchor' is the firstBaselineAnchor or lastBaselineAnchor of a view with text content
      * then the spacing will depend on the fonts involved and will change when those do.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("constraintEqualToSystemSpacingBelowAnchor:multiplier:")
-    public native NSLayoutConstraint constraintEqualToSystemSpacingBelowAnchorMultiplier(NSLayoutYAxisAnchor anchor,
-            @NFloat double multiplier);
+    public native NSLayoutConstraint constraintEqualToSystemSpacingBelowAnchorMultiplier(
+            @NotNull NSLayoutYAxisAnchor anchor, @NFloat double multiplier);
 
+    /**
+     * API-Since: 11.0
+     */
+    @NotNull
     @Generated
     @Selector("constraintGreaterThanOrEqualToSystemSpacingBelowAnchor:multiplier:")
     public native NSLayoutConstraint constraintGreaterThanOrEqualToSystemSpacingBelowAnchorMultiplier(
-            NSLayoutYAxisAnchor anchor, @NFloat double multiplier);
+            @NotNull NSLayoutYAxisAnchor anchor, @NFloat double multiplier);
 
+    /**
+     * API-Since: 11.0
+     */
+    @NotNull
     @Generated
     @Selector("constraintLessThanOrEqualToSystemSpacingBelowAnchor:multiplier:")
     public native NSLayoutConstraint constraintLessThanOrEqualToSystemSpacingBelowAnchorMultiplier(
-            NSLayoutYAxisAnchor anchor, @NFloat double multiplier);
+            @NotNull NSLayoutYAxisAnchor anchor, @NFloat double multiplier);
 }

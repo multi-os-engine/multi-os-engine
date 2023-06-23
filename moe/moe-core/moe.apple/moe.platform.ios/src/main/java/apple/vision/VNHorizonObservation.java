@@ -1,7 +1,6 @@
 package apple.vision;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGAffineTransform;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -26,14 +25,19 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGAffineTransform;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * VNHorizonObservation
  * [@superclass] VNObservation
- * <p>
+ * 
  * VNHorizonObservation is the result of a VNDetectHorizonRequest
- * <p>
+ * 
  * Use the transform or angle to upright the image and make the detected horizon level.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -63,6 +67,9 @@ public class VNHorizonObservation extends VNObservation {
     @Selector("allocWithZone:")
     public static native VNHorizonObservation allocWithZone(VoidPtr zone);
 
+    /**
+     * Angle of the observed horizon.
+     */
     @Generated
     @Selector("angle")
     @NFloat
@@ -70,22 +77,25 @@ public class VNHorizonObservation extends VNObservation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -109,7 +119,7 @@ public class VNHorizonObservation extends VNObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNHorizonObservation initWithCoder(NSCoder coder);
+    public native VNHorizonObservation initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -128,9 +138,10 @@ public class VNHorizonObservation extends VNObservation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,6 +174,11 @@ public class VNHorizonObservation extends VNObservation {
         return supportsSecureCoding();
     }
 
+    /**
+     * Transform applied to the detected horizon in image coordinates.
+     * 
+     * This is the transform in image coordinates and not a normalized transform.
+     */
     @Generated
     @Selector("transform")
     @ByValue
@@ -172,4 +188,14 @@ public class VNHorizonObservation extends VNObservation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Creates a transform for the specified width and height.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("transformForImageWidth:height:")
+    @ByValue
+    public native CGAffineTransform transformForImageWidthHeight(@NUInt long width, @NUInt long height);
 }

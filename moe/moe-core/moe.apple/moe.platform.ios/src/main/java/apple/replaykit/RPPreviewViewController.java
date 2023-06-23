@@ -42,6 +42,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("ReplayKit")
@@ -71,35 +73,39 @@ public class RPPreviewViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native RPPreviewViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -131,9 +137,10 @@ public class RPPreviewViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,12 +174,14 @@ public class RPPreviewViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native RPPreviewViewController initWithCoder(NSCoder coder);
+    public native RPPreviewViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native RPPreviewViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native RPPreviewViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
+    @Nullable
     @Generated
     @Selector("previewControllerDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -181,10 +190,11 @@ public class RPPreviewViewController extends UIViewController {
     @Generated
     @Selector("setPreviewControllerDelegate:")
     public native void setPreviewControllerDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) RPPreviewViewControllerDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) RPPreviewViewControllerDelegate value);
 
     @Generated
-    public void setPreviewControllerDelegate(@Mapped(ObjCObjectMapper.class) RPPreviewViewControllerDelegate value) {
+    public void setPreviewControllerDelegate(
+            @Nullable @Mapped(ObjCObjectMapper.class) RPPreviewViewControllerDelegate value) {
         Object __old = previewControllerDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

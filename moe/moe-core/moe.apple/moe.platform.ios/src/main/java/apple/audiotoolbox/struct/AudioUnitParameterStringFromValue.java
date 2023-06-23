@@ -24,6 +24,8 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.ConstFloatPtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -45,7 +47,8 @@ public final class AudioUnitParameterStringFromValue extends StructObject {
     }
 
     @Generated
-    public AudioUnitParameterStringFromValue(int inParamID, ConstFloatPtr inValue, CFStringRef outString) {
+    public AudioUnitParameterStringFromValue(int inParamID, @NotNull ConstFloatPtr inValue,
+            @Nullable CFStringRef outString) {
         super(AudioUnitParameterStringFromValue.class);
         setInParamID(inParamID);
         setInValue(inValue);
@@ -60,19 +63,21 @@ public final class AudioUnitParameterStringFromValue extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setInParamID(int value);
 
+    @NotNull
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native ConstFloatPtr inValue();
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setInValue(ConstFloatPtr value);
+    public native void setInValue(@NotNull ConstFloatPtr value);
 
+    @Nullable
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native CFStringRef outString();
 
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void setOutString(CFStringRef value);
+    public native void setOutString(@Nullable CFStringRef value);
 }

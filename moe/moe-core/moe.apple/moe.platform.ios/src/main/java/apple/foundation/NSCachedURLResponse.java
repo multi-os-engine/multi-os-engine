@@ -38,6 +38,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSCachedURLResponse
@@ -45,6 +47,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * objects that are stored in the framework's caching system.
  * It is used to maintain characteristics and attributes of a cached
  * object.
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("Foundation")
@@ -76,22 +80,25 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +133,10 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -160,24 +168,26 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Returns the data of the receiver.
-     *
+     * 
      * @return The data of the receiver.
      */
+    @NotNull
     @Generated
     @Selector("data")
     public native NSData data();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -185,18 +195,18 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSCachedURLResponse initWithCoder(NSCoder coder);
+    public native NSCachedURLResponse initWithCoder(@NotNull NSCoder coder);
 
     /**
      * initWithResponse:data
-     * <p>
+     * 
      * Initializes an NSCachedURLResponse with the given
      * response and data.
-     * <p>
+     * 
      * A default NSURLCacheStoragePolicy is used for
      * NSCachedURLResponse objects initialized with this method:
      * NSURLCacheStorageAllowed.
-     *
+     * 
      * @param response a NSURLResponse object.
      * @param data     an NSData object representing the URL content
      *                 corresponding to the given response.
@@ -204,14 +214,14 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
      */
     @Generated
     @Selector("initWithResponse:data:")
-    public native NSCachedURLResponse initWithResponseData(NSURLResponse response, NSData data);
+    public native NSCachedURLResponse initWithResponseData(@NotNull NSURLResponse response, @NotNull NSData data);
 
     /**
      * initWithResponse:data:userInfo:storagePolicy:
-     * <p>
+     * 
      * Initializes an NSCachedURLResponse with the given
      * response, data, user-info dictionary, and storage policy.
-     *
+     * 
      * @param response      a NSURLResponse object.
      * @param data          an NSData object representing the URL content
      *                      corresponding to the given response.
@@ -222,21 +232,22 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
      */
     @Generated
     @Selector("initWithResponse:data:userInfo:storagePolicy:")
-    public native NSCachedURLResponse initWithResponseDataUserInfoStoragePolicy(NSURLResponse response, NSData data,
-            NSDictionary<?, ?> userInfo, @NUInt long storagePolicy);
+    public native NSCachedURLResponse initWithResponseDataUserInfoStoragePolicy(@NotNull NSURLResponse response,
+            @NotNull NSData data, @Nullable NSDictionary<?, ?> userInfo, @NUInt long storagePolicy);
 
     /**
      * Returns the response wrapped by this instance.
-     *
+     * 
      * @return The response wrapped by this instance.
      */
+    @NotNull
     @Generated
     @Selector("response")
     public native NSURLResponse response();
 
     /**
      * Returns the NSURLCacheStoragePolicy constant of the receiver.
-     *
+     * 
      * @return The NSURLCacheStoragePolicy constant of the receiver.
      */
     @Generated
@@ -252,9 +263,10 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
 
     /**
      * Returns the userInfo dictionary of the receiver.
-     *
+     * 
      * @return The userInfo dictionary of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();

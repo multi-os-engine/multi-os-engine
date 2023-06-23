@@ -36,7 +36,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -67,22 +72,25 @@ public class NSUnitConverterLinear extends NSUnitConverter implements NSSecureCo
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -117,9 +125,10 @@ public class NSUnitConverterLinear extends NSUnitConverter implements NSSecureCo
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,19 +166,19 @@ public class NSUnitConverterLinear extends NSUnitConverter implements NSSecureCo
      * - y is the value in terms of the base unit of the dimension
      * - a is the known coefficient used for this unit's conversion
      * - b is the known constant used for this unit's conversion
-     * <p>
+     * 
      * baseUnitValueFromValue: performs the conversion in the form of y = ax + b, where x represents the value passed in
      * and y represents the value returned.
      * valueFromBaseUnitValue: performs the inverse conversion in the form of x = (y + (-1 * b))/a, where y represents
      * the value passed in and x represents the value returned.
-     * <p>
+     * 
      * An example of this is NSUnitTemperature. For Celsius, baseUnitValueFromValue: calculates the value in Kelvin
      * using the formula
      * K = 1 * °C + 273.15
      * and valueFromBaseUnitValue: calculates the value in Celsius using the formula
      * C° = (K + (-1 * 273.15))/1
      * where the coefficient is 1 and the constant is 273.15.
-     * <p>
+     * 
      * For units that only require conversion by scale factor, the coefficient is the scale factor and the constant is
      * always 0. baseUnitValueFromValue: calculates the value in meters using the formula
      * valueInMeters = 1000 * valueInKilometers + 0
@@ -188,7 +197,7 @@ public class NSUnitConverterLinear extends NSUnitConverter implements NSSecureCo
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -196,7 +205,7 @@ public class NSUnitConverterLinear extends NSUnitConverter implements NSSecureCo
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUnitConverterLinear initWithCoder(NSCoder coder);
+    public native NSUnitConverterLinear initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithCoefficient:")

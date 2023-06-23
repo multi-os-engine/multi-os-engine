@@ -37,7 +37,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -58,6 +63,8 @@ public class UIActivity extends NSObject {
 
     /**
      * default is UIActivityCategoryAction.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("activityCategory")
@@ -76,22 +83,25 @@ public class UIActivity extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +136,10 @@ public class UIActivity extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,6 +177,7 @@ public class UIActivity extends NSObject {
     /**
      * default returns nil. subclass must override and must return non-nil value
      */
+    @Nullable
     @Generated
     @Selector("activityImage")
     public native UIImage activityImage();
@@ -173,6 +185,7 @@ public class UIActivity extends NSObject {
     /**
      * default returns nil. subclass must override and must return non-nil value
      */
+    @Nullable
     @Generated
     @Selector("activityTitle")
     public native String activityTitle();
@@ -180,6 +193,7 @@ public class UIActivity extends NSObject {
     /**
      * default returns nil. subclass may override to return custom activity type that is reported to completion handler
      */
+    @Nullable
     @Generated
     @Selector("activityType")
     public native String activityType();
@@ -187,6 +201,7 @@ public class UIActivity extends NSObject {
     /**
      * return non-nil to have view controller presented modally. call activityDidFinish at end. default returns nil
      */
+    @Nullable
     @Generated
     @Selector("activityViewController")
     public native UIViewController activityViewController();
@@ -196,7 +211,7 @@ public class UIActivity extends NSObject {
      */
     @Generated
     @Selector("canPerformWithActivityItems:")
-    public native boolean canPerformWithActivityItems(NSArray<?> activityItems);
+    public native boolean canPerformWithActivityItems(@NotNull NSArray<?> activityItems);
 
     @Generated
     @Selector("init")
@@ -215,5 +230,5 @@ public class UIActivity extends NSObject {
      */
     @Generated
     @Selector("prepareWithActivityItems:")
-    public native void prepareWithActivityItems(NSArray<?> activityItems);
+    public native void prepareWithActivityItems(@NotNull NSArray<?> activityItems);
 }

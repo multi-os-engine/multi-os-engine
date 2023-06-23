@@ -24,7 +24,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
@@ -53,35 +58,39 @@ public class ASCredentialProviderViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native ASCredentialProviderViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -91,6 +100,7 @@ public class ASCredentialProviderViewController extends UIViewController {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("extensionContext")
     public native ASCredentialProviderExtensionContext extensionContext();
@@ -106,12 +116,12 @@ public class ASCredentialProviderViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native ASCredentialProviderViewController initWithCoder(NSCoder coder);
+    public native ASCredentialProviderViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native ASCredentialProviderViewController initWithNibNameBundle(String nibNameOrNil,
-            NSBundle nibBundleOrNil);
+    public native ASCredentialProviderViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -130,9 +140,10 @@ public class ASCredentialProviderViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -141,7 +152,7 @@ public class ASCredentialProviderViewController extends UIViewController {
 
     /**
      * Prepare the view controller to show a list of credentials.
-     * <p>
+     * 
      * This method is called by the system to prepare the extension's view controller to present the list of
      * credentials.
      * A service identifier array is passed which can be used to filter or prioritize the credentials that closely match
@@ -154,17 +165,17 @@ public class ASCredentialProviderViewController extends UIViewController {
      * credential.
      * If the array of service identifiers is empty, it is expected that the credential list should still show
      * credentials that the user can pick from.
-     *
+     * 
      * @param serviceIdentifiers the array of service identifiers.
      */
     @Generated
     @Selector("prepareCredentialListForServiceIdentifiers:")
     public native void prepareCredentialListForServiceIdentifiers(
-            NSArray<? extends ASCredentialServiceIdentifier> serviceIdentifiers);
+            @NotNull NSArray<? extends ASCredentialServiceIdentifier> serviceIdentifiers);
 
     /**
      * Prepare the view controller to show user interface when the user enables your extension.
-     * <p>
+     * 
      * The system calls this method after your extension is enabled by the user in Settings. You can
      * use this method to give the user a chance to configure the extension or to provide credential identities
      * to the system. After the configuration is done, call -[ASCredentialProviderExtensionContext
@@ -178,7 +189,7 @@ public class ASCredentialProviderViewController extends UIViewController {
 
     /**
      * Prepare the view controller to show user interface for providing the user-requested credential.
-     * <p>
+     * 
      * The system calls this method when your extension cannot provide the requested credential without user
      * interaction.
      * Set up the view controller for any user interaction required to provide the requested credential only. The user
@@ -193,16 +204,17 @@ public class ASCredentialProviderViewController extends UIViewController {
      * ASExtensionErrorDomain and an appropriate error code from ASExtensionErrorCode. For example, if the credential
      * identity cannot
      * be found in the database, pass an error with code ASExtensionErrorCodeCredentialIdentityNotFound.
-     *
+     * 
      * @param credentialIdentity the credential identity for which a credential should be provided.
      */
     @Generated
     @Selector("prepareInterfaceToProvideCredentialForIdentity:")
-    public native void prepareInterfaceToProvideCredentialForIdentity(ASPasswordCredentialIdentity credentialIdentity);
+    public native void prepareInterfaceToProvideCredentialForIdentity(
+            @NotNull ASPasswordCredentialIdentity credentialIdentity);
 
     /**
      * Attempt to provide the user-requested credential without any user interaction.
-     * <p>
+     * 
      * After the user selects a credential identity, the system may ask your extension to provide the credential without
      * showing any
      * user interface if possible to enhance the user experience. If your extension can accomplish this (for example,
@@ -219,13 +231,13 @@ public class ASCredentialProviderViewController extends UIViewController {
      * [@note] When this method is called, your extension's view controller is not present on the screen. Do not attempt
      * or expect to show any user
      * interface in this method.
-     *
+     * 
      * @param credentialIdentity the credential identity for which a credential should be provided.
      */
     @Generated
     @Selector("provideCredentialWithoutUserInteractionForIdentity:")
     public native void provideCredentialWithoutUserInteractionForIdentity(
-            ASPasswordCredentialIdentity credentialIdentity);
+            @NotNull ASPasswordCredentialIdentity credentialIdentity);
 
     @Generated
     @Selector("resolveClassMethod:")

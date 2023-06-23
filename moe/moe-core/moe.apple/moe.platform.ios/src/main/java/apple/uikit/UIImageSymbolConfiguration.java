@@ -24,7 +24,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -55,22 +60,25 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -80,14 +88,14 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
      */
     @Generated
     @Selector("configurationWithFont:")
-    public static native UIImageSymbolConfiguration configurationWithFont(UIFont font);
+    public static native UIImageSymbolConfiguration configurationWithFont(@NotNull UIFont font);
 
     /**
      * Adjusts for Dynamic Type. Use UIFontMetrics to get automatic adjustment with a custom font.
      */
     @Generated
     @Selector("configurationWithFont:scale:")
-    public static native UIImageSymbolConfiguration configurationWithFontScale(UIFont font, @NInt long scale);
+    public static native UIImageSymbolConfiguration configurationWithFontScale(@NotNull UIFont font, @NInt long scale);
 
     /**
      * Fixed point size configurations
@@ -118,20 +126,23 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
      */
     @Generated
     @Selector("configurationWithTextStyle:")
-    public static native UIImageSymbolConfiguration configurationWithTextStyle(String textStyle);
+    public static native UIImageSymbolConfiguration configurationWithTextStyle(@NotNull String textStyle);
 
     @Generated
     @Selector("configurationWithTextStyle:scale:")
-    public static native UIImageSymbolConfiguration configurationWithTextStyleScale(String textStyle, @NInt long scale);
+    public static native UIImageSymbolConfiguration configurationWithTextStyleScale(@NotNull String textStyle,
+            @NInt long scale);
 
     @Generated
     @Selector("configurationWithWeight:")
     public static native UIImageSymbolConfiguration configurationWithWeight(@NInt long weight);
 
+    @NotNull
     @Generated
     @Selector("configurationWithoutPointSizeAndWeight")
     public native UIImageSymbolConfiguration configurationWithoutPointSizeAndWeight();
 
+    @NotNull
     @Generated
     @Selector("configurationWithoutScale")
     public native UIImageSymbolConfiguration configurationWithoutScale();
@@ -139,10 +150,12 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
     /**
      * Removes attributes from the configuration if they are set
      */
+    @NotNull
     @Generated
     @Selector("configurationWithoutTextStyle")
     public native UIImageSymbolConfiguration configurationWithoutTextStyle();
 
+    @NotNull
     @Generated
     @Selector("configurationWithoutWeight")
     public native UIImageSymbolConfiguration configurationWithoutWeight();
@@ -166,7 +179,7 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIImageSymbolConfiguration initWithCoder(NSCoder coder);
+    public native UIImageSymbolConfiguration initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -188,15 +201,16 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
      */
     @Generated
     @Selector("isEqualToConfiguration:")
-    public native boolean isEqualToConfiguration(UIImageSymbolConfiguration otherConfiguration);
+    public native boolean isEqualToConfiguration(@Nullable UIImageSymbolConfiguration otherConfiguration);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -232,6 +246,7 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
     /**
      * everything is "unspecified". This is essentially the same as nil but's more explicit.
      */
+    @NotNull
     @Generated
     @Selector("unspecifiedConfiguration")
     public static native UIImageSymbolConfiguration unspecifiedConfiguration();
@@ -241,16 +256,33 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("configurationPreferringMulticolor")
     public static native UIImageSymbolConfiguration configurationPreferringMulticolor();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("configurationWithHierarchicalColor:")
-    public static native UIImageSymbolConfiguration configurationWithHierarchicalColor(UIColor hierarchicalColor);
+    public static native UIImageSymbolConfiguration configurationWithHierarchicalColor(
+            @NotNull UIColor hierarchicalColor);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("configurationWithPaletteColors:")
     public static native UIImageSymbolConfiguration configurationWithPaletteColors(
-            NSArray<? extends UIColor> paletteColors);
+            @NotNull NSArray<? extends UIColor> paletteColors);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("configurationPreferringMonochrome")
+    public static native UIImageSymbolConfiguration configurationPreferringMonochrome();
 }

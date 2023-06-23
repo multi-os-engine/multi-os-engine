@@ -27,12 +27,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNDArray
- * <p>
+ * 
  * A MPSNDArray object is a MTLBuffer based storage container for multi-dimensional data.
- * <p>
+ * 
  * Operations on MPSNDArrays will commonly implicitly reshape the multidimensional
  * structure into a 2-dimensional structure by reinterpreting higher dimensions as a single dimensional
  * array of matrix rows. For example a [a, b, c, d] NDArray passed to a matrix multiplication may
@@ -43,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * to allow for performance improvement arising from better data alignment in memory. In principle,
  * the rowBytes may also be used to create a 0th-dimension slice out of a larger array stored in the
  * underlying MTLBuffer.
- * <p>
+ * 
  * MPS will automatically manage the storage size of the major row ("rowBytes") though you may
  * set it in the descriptor if you have a need to do so. Generally, it should be at least a multiple
  * of 16 bytes. Dimensions after the 0th are a densely packed array of rows of size rowBytes.
@@ -51,7 +53,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * identical size, and so forth. When the reduction to 2 dimensions is done, no data is moved. MPS
  * just reinterprets a higher order N-1 dimensions of matrix rows as a single large 1-dimensional
  * array of rows.
- * <p>
+ * 
  * It is a common desire to reorder the dimensions of NDArrays or define a subregion thereof. A transpose
  * or slice operation is performed by making a MPSNDArray view of the original. The dimensions to transpose
  * or slice are given by the descriptor for the new view. If both a transpose and slice operation are defined,
@@ -65,6 +67,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * can handle 0th dimension transposes. Other filters may insert a physical repacking operation. If you wish
  * to force a physical repacking use MPSAliasingStrategyShallNotAlias. To avoid confusion with aliased NDArrays
  * the parent property is provided. MPSNDArrays that alias share a common ancestor.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -96,7 +100,7 @@ public class MPSNDArray extends NSObject {
 
     /**
      * Make a new representation of a MPSNDArray with a slice, transpose or other change in property
-     * <p>
+     * 
      * If possible, the views will merely record the slice or transpose without performing the
      * operation. Many MPSKernels are able to operate on subregions of a MPSNDArray or operate on transposed
      * data, so making a new copy of the data for these operations would be wasteful. A copy may be forced by
@@ -104,7 +108,7 @@ public class MPSNDArray extends NSObject {
      * the deferred operation. To force an operation to occur immediately, use MPSAliasingStrategyShallNotAlias
      * Otherwise, it is likely that the new MPSNDArray will share a MTLBuffer with the parent and alias
      * its memory.
-     *
+     * 
      * @param cmdBuf     The command buffer on which to perform physical copies if any are required
      * @param descriptor A MPSNDArrayDescriptor describing the shape of the new view of the data
      * @param aliasing   A aliasing strategy to direct MPS how to respond to cases when aliasing can or can not
@@ -112,30 +116,34 @@ public class MPSNDArray extends NSObject {
      * @return A new MPSNDArray, if it is possible to make one. Otherwise nil is returned. The MPSNDArray is
      *         autoreleased.
      */
+    @Nullable
     @Generated
     @Selector("arrayViewWithCommandBuffer:descriptor:aliasing:")
     public native MPSNDArray arrayViewWithCommandBufferDescriptorAliasing(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MPSNDArrayDescriptor descriptor,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NotNull MPSNDArrayDescriptor descriptor,
             @NUInt long aliasing);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -162,6 +170,7 @@ public class MPSNDArray extends NSObject {
     /**
      * Get a well known <MPSNDArrayAllocator> that makes standard MTLBuffers
      */
+    @NotNull
     @Generated
     @Selector("defaultAllocator")
     @MappedReturn(ObjCObjectMapper.class)
@@ -173,25 +182,27 @@ public class MPSNDArray extends NSObject {
 
     /**
      * Create a MPSNDArrayDescriptor that describes this MPSNDArray
-     * <p>
+     * 
      * The descriptor will describe the shape of the MPSNDArray
      * after all deferred slicing and transposes have completed.
      * A new descriptor is created each time to allow for
      * further customization of the descriptor by the application.
-     *
+     * 
      * @return A new autoreleased MPSNDArrayDescriptor that matches the
      *         shape of the MPSNDArray, suitable for introduction of slice,
      *         cast and transpose operations.
      */
+    @NotNull
     @Generated
     @Selector("descriptor")
     public native MPSNDArrayDescriptor descriptor();
 
     /**
      * [@property] device
-     * <p>
+     * 
      * The device on which the MSPNDArray may be used
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -199,9 +210,9 @@ public class MPSNDArray extends NSObject {
 
     /**
      * Do a GPU side copy of the contents of a MPSNDArray to a MTLBuffer
-     * <p>
+     * 
      * To do a transpose or slice as part of the operation, make a MPSNDArray view first that encodes that operation.
-     *
+     * 
      * @param cmdBuf              The command buffer on which to encode the operation
      * @param buffer              The destination to overwrite
      * @param destinationDataType The destination data type.
@@ -212,8 +223,9 @@ public class MPSNDArray extends NSObject {
     @Generated
     @Selector("exportDataWithCommandBuffer:toBuffer:destinationDataType:offset:rowStrides:")
     public native void exportDataWithCommandBufferToBufferDestinationDataTypeOffsetRowStrides(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
-            int destinationDataType, @NUInt long offset, NIntPtr rowStrides);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, int destinationDataType, @NUInt long offset,
+            @Nullable NIntPtr rowStrides);
 
     @Generated
     @Selector("hash")
@@ -222,9 +234,9 @@ public class MPSNDArray extends NSObject {
 
     /**
      * Do a GPU side copy of the contents of a MTLBuffer into a MPSNDArray
-     * <p>
+     * 
      * Copy data from provided buffer to the NDArray. Implicit transposes and slicing shall be honored.
-     *
+     * 
      * @param cmdBuf         The command buffer on which to encode the operation
      * @param buffer         The destination to read from
      * @param sourceDataType The source data type.
@@ -235,8 +247,9 @@ public class MPSNDArray extends NSObject {
     @Generated
     @Selector("importDataWithCommandBuffer:fromBuffer:sourceDataType:offset:rowStrides:")
     public native void importDataWithCommandBufferFromBufferSourceDataTypeOffsetRowStrides(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
-            int sourceDataType, @NUInt long offset, NIntPtr rowStrides);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, int sourceDataType, @NUInt long offset,
+            @Nullable NIntPtr rowStrides);
 
     @Generated
     @Selector("init")
@@ -245,22 +258,25 @@ public class MPSNDArray extends NSObject {
     /**
      * Initialize an MPSNDArrayDescriptor object on a device
      * for given dimension sizes in descriptor.
-     *
+     * 
      * @param device     The device on which the data type will be created.
+     * 
      * @param descriptor The MPSNDArrayDescriptor used for initializing the the NDArray
+     * 
      * @return A valid MPSNDArray object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:descriptor:")
-    public native MPSNDArray initWithDeviceDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MPSNDArrayDescriptor descriptor);
+    public native MPSNDArray initWithDeviceDescriptor(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull MPSNDArrayDescriptor descriptor);
 
     /**
      * Create a 1-Dimensional length=1 NDArray to hold a scalar
      */
     @Generated
     @Selector("initWithDevice:scalar:")
-    public native MPSNDArray initWithDeviceScalar(@Mapped(ObjCObjectMapper.class) MTLDevice device, double value);
+    public native MPSNDArray initWithDeviceScalar(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            double value);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -279,22 +295,24 @@ public class MPSNDArray extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * A used specified string to help identify the array during debugging.
-     * <p>
+     * 
      * May be externally visible to tools like Instruments
      */
+    @Nullable
     @Generated
     @Selector("label")
     public native String label();
 
     /**
      * The number of elements in the dimension at dimensionIndex
-     * <p>
+     * 
      * The dimension length is at least as large as the existing
      * slice length. Views of this MPSNDArray may have differing
      * dimension lengths.
@@ -319,21 +337,22 @@ public class MPSNDArray extends NSObject {
 
     /**
      * The parent MPSNDArray that this object aliases
-     * <p>
+     * 
      * If the MPSNDArray was createrd as a array view of another MPSNDArray object, and aliases content
      * in the same MTLBuffer, the original MPSNDArray will be retained as the parent here. Two MPSNDArrays
      * alias if they share a common ancestor. Note that the parent may itself have a parent, and so forth.
      */
+    @Nullable
     @Generated
     @Selector("parent")
     public native MPSNDArray parent();
 
     /**
      * Copy bytes from MPSNDArray into buffer
-     * <p>
+     * 
      * The dimensionality and size of the copy region is given by the size of the MPSNDArray
      * For subregions, use a MPSNDArray view.
-     *
+     * 
      * @param buffer                  A pointer to memory where to write the data
      * @param strideBytesPerDimension An optional array of numberOfDimensions sizes, which gives the distance
      *                                in bytes from one element to the next in that dimension in buffer. The first value
@@ -344,7 +363,7 @@ public class MPSNDArray extends NSObject {
      */
     @Generated
     @Selector("readBytes:strideBytes:")
-    public native void readBytesStrideBytes(VoidPtr buffer, NIntPtr strideBytesPerDimension);
+    public native void readBytesStrideBytes(@NotNull VoidPtr buffer, @Nullable NIntPtr strideBytesPerDimension);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -356,14 +375,14 @@ public class MPSNDArray extends NSObject {
 
     /**
      * Get the number of bytes used to allocate underyling MTLResources
-     * <p>
+     * 
      * This is the size of the backing store of underlying MTLResources.
      * It does not include all storage used by the object, for example
      * the storage used to hold the MPSNDArray instantiation and MTLBuffer
      * is not included. It only measures the size of the allocation used
      * to hold the MPSNDArray data in the MTLBuffer. This value is subject to
      * change between different devices and operating systems.
-     * <p>
+     * 
      * Except when -initWithBuffer:descriptor: is used, most MPSNDArrays are allocated
      * initiallly without a backing store. The backing store is allocated lazily when
      * it is needed, typically when the MPSNDArray is written to the first time.
@@ -378,12 +397,12 @@ public class MPSNDArray extends NSObject {
 
     /**
      * A used specified string to help identify the array during debugging.
-     * <p>
+     * 
      * May be externally visible to tools like Instruments
      */
     @Generated
     @Selector("setLabel:")
-    public native void setLabel(String value);
+    public native void setLabel(@Nullable String value);
 
     @Generated
     @Selector("setVersion:")
@@ -395,12 +414,13 @@ public class MPSNDArray extends NSObject {
 
     /**
      * Use a blit encoder if a discrete device to update CPU contents of underlying buffer with latest GPU value
-     *
+     * 
      * @param commandBuffer The commandBuffer on which we transfer the contents.
      */
     @Generated
     @Selector("synchronizeOnCommandBuffer:")
-    public native void synchronizeOnCommandBuffer(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
+    public native void synchronizeOnCommandBuffer(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
 
     @Generated
     @Selector("version")
@@ -409,10 +429,10 @@ public class MPSNDArray extends NSObject {
 
     /**
      * Copy bytes from a buffer into the MPSNDArray
-     * <p>
+     * 
      * The dimensionality and size of the copy region is given by the size of the MPSNDArray
      * For subregions, use a MPSNDArray view.
-     *
+     * 
      * @param buffer                  A pointer to memory where to read the data
      * @param strideBytesPerDimension An optional array of numberOfDimensions sizes, which gives the distance
      *                                in bytes from one element to the next in that dimension in buffer. The first value
@@ -424,5 +444,5 @@ public class MPSNDArray extends NSObject {
      */
     @Generated
     @Selector("writeBytes:strideBytes:")
-    public native void writeBytesStrideBytes(VoidPtr buffer, NIntPtr strideBytesPerDimension);
+    public native void writeBytesStrideBytes(@NotNull VoidPtr buffer, @Nullable NIntPtr strideBytesPerDimension);
 }

@@ -39,7 +39,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.3
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -68,6 +73,9 @@ public class SKCloudServiceController extends NSObject {
     @Selector("allocWithZone:")
     public static native SKCloudServiceController allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("authorizationStatus")
     @NInt
@@ -75,22 +83,25 @@ public class SKCloudServiceController extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,19 +136,23 @@ public class SKCloudServiceController extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native SKCloudServiceController new_objc();
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("requestAuthorization:")
     public static native void requestAuthorization(
-            @ObjCBlock(name = "call_requestAuthorization") Block_requestAuthorization completionHandler);
+            @NotNull @ObjCBlock(name = "call_requestAuthorization") Block_requestAuthorization completionHandler);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -164,15 +179,21 @@ public class SKCloudServiceController extends NSObject {
     @Selector("init")
     public native SKCloudServiceController init();
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("requestCapabilitiesWithCompletionHandler:")
     public native void requestCapabilitiesWithCompletionHandler(
-            @ObjCBlock(name = "call_requestCapabilitiesWithCompletionHandler") Block_requestCapabilitiesWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_requestCapabilitiesWithCompletionHandler") Block_requestCapabilitiesWithCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("requestStorefrontIdentifierWithCompletionHandler:")
     public native void requestStorefrontIdentifierWithCompletionHandler(
-            @ObjCBlock(name = "call_requestStorefrontIdentifierWithCompletionHandler") Block_requestStorefrontIdentifierWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_requestStorefrontIdentifierWithCompletionHandler") Block_requestStorefrontIdentifierWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -185,50 +206,64 @@ public class SKCloudServiceController extends NSObject {
     @Generated
     public interface Block_requestCapabilitiesWithCompletionHandler {
         @Generated
-        void call_requestCapabilitiesWithCompletionHandler(@NUInt long capabilities, NSError error);
+        void call_requestCapabilitiesWithCompletionHandler(@NUInt long capabilities, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestStorefrontIdentifierWithCompletionHandler {
         @Generated
-        void call_requestStorefrontIdentifierWithCompletionHandler(String storefrontIdentifier, NSError error);
+        void call_requestStorefrontIdentifierWithCompletionHandler(@Nullable String storefrontIdentifier,
+                @Nullable NSError error);
     }
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated
     @Generated
     @Selector("requestPersonalizationTokenForClientToken:withCompletionHandler:")
-    public native void requestPersonalizationTokenForClientTokenWithCompletionHandler(String clientToken,
-            @ObjCBlock(name = "call_requestPersonalizationTokenForClientTokenWithCompletionHandler") Block_requestPersonalizationTokenForClientTokenWithCompletionHandler completionHandler);
+    public native void requestPersonalizationTokenForClientTokenWithCompletionHandler(@NotNull String clientToken,
+            @NotNull @ObjCBlock(name = "call_requestPersonalizationTokenForClientTokenWithCompletionHandler") Block_requestPersonalizationTokenForClientTokenWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestPersonalizationTokenForClientTokenWithCompletionHandler {
         @Generated
-        void call_requestPersonalizationTokenForClientTokenWithCompletionHandler(String personalizationToken,
-                NSError error);
+        void call_requestPersonalizationTokenForClientTokenWithCompletionHandler(@Nullable String personalizationToken,
+                @Nullable NSError error);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("requestStorefrontCountryCodeWithCompletionHandler:")
     public native void requestStorefrontCountryCodeWithCompletionHandler(
-            @ObjCBlock(name = "call_requestStorefrontCountryCodeWithCompletionHandler") Block_requestStorefrontCountryCodeWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_requestStorefrontCountryCodeWithCompletionHandler") Block_requestStorefrontCountryCodeWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestStorefrontCountryCodeWithCompletionHandler {
         @Generated
-        void call_requestStorefrontCountryCodeWithCompletionHandler(String storefrontCountryCode, NSError error);
+        void call_requestStorefrontCountryCodeWithCompletionHandler(@Nullable String storefrontCountryCode,
+                @Nullable NSError error);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("requestUserTokenForDeveloperToken:completionHandler:")
-    public native void requestUserTokenForDeveloperTokenCompletionHandler(String developerToken,
-            @ObjCBlock(name = "call_requestUserTokenForDeveloperTokenCompletionHandler") Block_requestUserTokenForDeveloperTokenCompletionHandler completionHandler);
+    public native void requestUserTokenForDeveloperTokenCompletionHandler(@NotNull String developerToken,
+            @NotNull @ObjCBlock(name = "call_requestUserTokenForDeveloperTokenCompletionHandler") Block_requestUserTokenForDeveloperTokenCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestUserTokenForDeveloperTokenCompletionHandler {
         @Generated
-        void call_requestUserTokenForDeveloperTokenCompletionHandler(String userToken, NSError error);
+        void call_requestUserTokenForDeveloperTokenCompletionHandler(@Nullable String userToken,
+                @Nullable NSError error);
     }
 }

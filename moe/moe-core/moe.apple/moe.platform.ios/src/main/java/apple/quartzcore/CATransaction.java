@@ -39,7 +39,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
@@ -83,13 +88,14 @@ public class CATransaction extends NSObject {
      * animations added to layers will have this value set as their
      * "timingFunction" property. Added in Mac OS X 10.6.
      */
+    @Nullable
     @Generated
     @Selector("animationTimingFunction")
     public static native CAMediaTimingFunction animationTimingFunction();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Begin a new transaction for the current thread; nests.
@@ -100,18 +106,21 @@ public class CATransaction extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,6 +133,7 @@ public class CATransaction extends NSObject {
     @Selector("commit")
     public static native void commit();
 
+    @Nullable
     @Generated
     @Selector("completionBlock")
     @ObjCBlock(name = "call_completionBlock_ret")
@@ -177,9 +187,10 @@ public class CATransaction extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Methods to lock and unlock the global lock. Layer methods automatically
@@ -210,12 +221,12 @@ public class CATransaction extends NSObject {
 
     @Generated
     @Selector("setAnimationTimingFunction:")
-    public static native void setAnimationTimingFunction(CAMediaTimingFunction function);
+    public static native void setAnimationTimingFunction(@Nullable CAMediaTimingFunction function);
 
     @Generated
     @Selector("setCompletionBlock:")
     public static native void setCompletionBlock(
-            @ObjCBlock(name = "call_setCompletionBlock") Block_setCompletionBlock block);
+            @Nullable @ObjCBlock(name = "call_setCompletionBlock") Block_setCompletionBlock block);
 
     @Generated
     @Selector("setDisableActions:")
@@ -223,7 +234,8 @@ public class CATransaction extends NSObject {
 
     @Generated
     @Selector("setValue:forKey:")
-    public static native void setValueForKey_static(@Mapped(ObjCObjectMapper.class) Object anObject, String key);
+    public static native void setValueForKey_static(@Nullable @Mapped(ObjCObjectMapper.class) Object anObject,
+            @NotNull String key);
 
     @Generated
     @Selector("setVersion:")
@@ -240,23 +252,24 @@ public class CATransaction extends NSObject {
     /**
      * Associate arbitrary keyed-data with the current transaction (i.e.
      * with the current thread).
-     * <p>
+     * 
      * Nested transactions have nested data scope, i.e. reading a key
      * searches for the innermost scope that has set it, setting a key
      * always sets it in the innermost scope.
-     * <p>
+     * 
      * Currently supported transaction properties include:
      * "animationDuration", "animationTimingFunction", "completionBlock",
      * "disableActions". See method declarations above for descriptions of
      * each property.
-     * <p>
+     * 
      * Attempting to set a property to a type other than its document type
      * has an undefined result.
      */
+    @Nullable
     @Generated
     @Selector("valueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object valueForKey_static(String key);
+    public static native Object valueForKey_static(@NotNull String key);
 
     @Generated
     @Selector("version")

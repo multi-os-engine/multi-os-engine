@@ -23,11 +23,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNInitialGradient
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * The MPSCNNInitialGradient filter specifies a layer which computes the initial gradient for
  * an aribitrary input image. The operation itself is extremely simple: it computes the gradient of the input image
  * with itself, resulting in an output image which is filled with '1's for all the inputs that were used.
@@ -42,12 +44,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * f = MPSCNNMultiply(L1, L2), where
  * L1 = MPSNNForwardLoss1(x1) and
  * L2 = MPSNNForwardLoss1(x2)
- * <p>
+ * 
  * To compute df/dx1 we apply the chain rule:
- * <p>
+ * 
  * df/dx1 = d(L1 * L2)/dx1 = d(L1 * L2)/dL1 * dL1/dx1 + d(L1 * L2)/dL2 * dL2/dx1
  * = d(L1 * L2)/dL1 * dL1/dx1 = L2 * dL1/dx1
- * <p>
+ * 
  * The MPSCNNMultiplyGradient filter computes for f = L1 * L2 forward op:
  * dL/dL1 = dL/df * df/dL1 = dL/df * L2 and
  * dL/dL2 = dL/df * df/dL2 = dL/df * L1 where
@@ -58,6 +60,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * L = f, which means that dL/dL1 = df/df * df/dL1 = 1 * L2, which
  * shows that we get the correct gradient by providing unit input as input gradient to
  * the MPSCNNMultiplyGradient.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -89,22 +93,25 @@ public class MPSNNInitialGradient extends MPSCNNKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,22 +135,22 @@ public class MPSNNInitialGradient extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNInitialGradient initWithCoder(NSCoder aDecoder);
+    public native MPSNNInitialGradient initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNNInitialGradient initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNInitialGradient initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initializes a MPSNNInitialGradient kernel.
-     *
+     * 
      * @param device The MTLDevice on which this MPSNNInitialGradient filter will be used.
      * @return A valid MPSNNInitialGradient object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNNInitialGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNInitialGradient initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -162,9 +169,10 @@ public class MPSNNInitialGradient extends MPSCNNKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

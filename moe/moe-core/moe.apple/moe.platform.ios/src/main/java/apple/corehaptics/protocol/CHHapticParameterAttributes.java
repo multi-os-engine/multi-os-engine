@@ -9,9 +9,11 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] CHHapticParameterAttributes
- * <p>
+ * 
  * A protocol for querying mininum, maximum, and default values for a CHHapticEventParameter or
  * CHHapticDynamicParameter.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreHaptics")
@@ -20,7 +22,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface CHHapticParameterAttributes {
     /**
      * [@property] maxValue
-     * <p>
+     * 
      * The default value for the parameter.
      */
     @Generated
@@ -29,7 +31,7 @@ public interface CHHapticParameterAttributes {
 
     /**
      * [@property] maxValue
-     * <p>
+     * 
      * The maximum value for the parameter.
      */
     @Generated
@@ -38,7 +40,7 @@ public interface CHHapticParameterAttributes {
 
     /**
      * [@property] minValue
-     * <p>
+     * 
      * The minimum value for the parameter.
      */
     @Generated

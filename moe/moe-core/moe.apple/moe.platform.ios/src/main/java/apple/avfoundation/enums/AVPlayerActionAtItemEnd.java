@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVPlayerActionAtItemEnd
- * <p>
+ * 
  * These constants are the allowable values of AVPlayer's actionAtItemEnd property.
- * <p>
+ * 
  * [@constant] AVPlayerActionAtItemEndAdvance
  * Indicates that when an AVPlayerItem reaches its end time the player will automatically advance to the next item in
  * its queue.

@@ -24,11 +24,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNNeuronReLUN
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * Specifies the ReLUN neuron filter.
  * For each pixel, applies the following function: f(x) = [ x , x >= 0
  * [ a * x, x < 0
@@ -36,6 +38,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * As an example, the TensorFlow Relu6 activation layer can be implemented
  * by setting the parameter b to 6.0f:
  * https://www.tensorflow.org/api_docs/cc/class/tensorflow/ops/relu6.
+ * 
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -67,22 +72,25 @@ public class MPSCNNNeuronReLUN extends MPSCNNNeuron {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,28 +114,32 @@ public class MPSCNNNeuronReLUN extends MPSCNNNeuron {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNNeuronReLUN initWithCoder(NSCoder aDecoder);
+    public native MPSCNNNeuronReLUN initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNNeuronReLUN initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNNeuronReLUN initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNNeuronReLUN initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNNeuronReLUN initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize a ReLUN neuron filter
-     *
+     * 
      * @param device The device the filter will run on
      * @param a      Filter property "a". See class discussion.
      * @param b      Filter property "b". See class discussion.
      * @return A valid MPSCNNNeuronReLUN object or nil, if failure.
+     * 
+     *         API-Since: 10.0
+     *         Deprecated-Since: 12.0
      */
+    @Deprecated
     @Generated
     @Selector("initWithDevice:a:b:")
-    public native MPSCNNNeuronReLUN initWithDeviceAB(@Mapped(ObjCObjectMapper.class) MTLDevice device, float a,
+    public native MPSCNNNeuronReLUN initWithDeviceAB(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, float a,
             float b);
 
     @Generated
@@ -147,9 +159,10 @@ public class MPSCNNNeuronReLUN extends MPSCNNNeuron {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -189,6 +202,6 @@ public class MPSCNNNeuronReLUN extends MPSCNNNeuron {
 
     @Generated
     @Selector("initWithDevice:neuronDescriptor:")
-    public native MPSCNNNeuronReLUN initWithDeviceNeuronDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MPSNNNeuronDescriptor neuronDescriptor);
+    public native MPSCNNNeuronReLUN initWithDeviceNeuronDescriptor(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSNNNeuronDescriptor neuronDescriptor);
 }

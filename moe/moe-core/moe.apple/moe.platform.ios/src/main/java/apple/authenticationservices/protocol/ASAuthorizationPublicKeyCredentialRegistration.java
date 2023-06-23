@@ -7,7 +7,11 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
@@ -16,6 +20,7 @@ public interface ASAuthorizationPublicKeyCredentialRegistration extends ASPublic
     /**
      * The raw data containing the authenticator's attestation statement, if one was provided.
      */
+    @Nullable
     @Generated
     @Selector("rawAttestationObject")
     NSData rawAttestationObject();

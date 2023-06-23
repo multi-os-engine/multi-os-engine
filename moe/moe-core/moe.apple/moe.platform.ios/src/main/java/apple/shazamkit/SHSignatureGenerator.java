@@ -26,9 +26,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.avfoundation.AVAsset;
+import org.moe.natj.objc.ann.ObjCBlock;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@c] SHSignatureGenerator provides a way to convert audio data into instances of @c SHSignature
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("ShazamKit")
@@ -60,41 +66,44 @@ public class SHSignatureGenerator extends NSObject {
 
     /**
      * Add audio to the generator
-     * <p>
+     * 
      * Audio passed to the generator should be contiguous, passing non contiguous data will affect the quality of the @c
      * SHSignature
      * produced. Passing the @c AVAudioTime is not required but recommended, it allows the generator to detect when the
      * audio is not contiguous.
      * This method will throw an exception if the audio format is not PCM in one of the following sample rates: 48000,
      * 44100, 32000, 16000.
-     *
+     * 
      * @param time   Where in the stream the audio represents
      * @param buffer The audio data to be appended to the signature
      * @param error  An error if there was an issue appending the buffer
      */
     @Generated
     @Selector("appendBuffer:atTime:error:")
-    public native boolean appendBufferAtTimeError(AVAudioPCMBuffer buffer, AVAudioTime time,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean appendBufferAtTimeError(@NotNull AVAudioPCMBuffer buffer, @Nullable AVAudioTime time,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +142,10 @@ public class SHSignatureGenerator extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,10 +166,11 @@ public class SHSignatureGenerator extends NSObject {
 
     /**
      * Convert the current audio data into a @c SHSignature
-     * <p>
+     * 
      * Signature may be called as many times as needed, each time producing a @c SHSignature from
      * the audio data
      */
+    @NotNull
     @Generated
     @Selector("signature")
     public native SHSignature signature();
@@ -172,4 +183,28 @@ public class SHSignatureGenerator extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Create a `SHSignature` from an @c AVAsset.
+     * 
+     * The asset can be any type of media that has audio tracks. If the asset has multiple tracks, they
+     * will be mixed into one @c SHSignature
+     * 
+     * @param asset             An AVAsset that contains audio you would like to convert to a Signature
+     * @param completionHandler A block called with the created @c SHSignature or nil and a populated error parameter if
+     *                          a signature could not be created.
+     * 
+     *                          API-Since: 16.0
+     */
+    @Generated
+    @Selector("generateSignatureFromAsset:completionHandler:")
+    public static native void generateSignatureFromAssetCompletionHandler(@NotNull AVAsset asset,
+            @NotNull @ObjCBlock(name = "call_generateSignatureFromAssetCompletionHandler") Block_generateSignatureFromAssetCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_generateSignatureFromAssetCompletionHandler {
+        @Generated
+        void call_generateSignatureFromAssetCompletionHandler(@Nullable SHSignature signature, @Nullable NSError error);
+    }
 }

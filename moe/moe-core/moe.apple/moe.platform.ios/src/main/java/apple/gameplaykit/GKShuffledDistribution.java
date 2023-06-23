@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A shuffled distribution tries to make sure individual samples are not clustered whilst retaining a uniform
@@ -45,9 +47,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * over time. This is often referred to as fair or less random, as the predicatability of the outcomes in a series is
  * vastly increased,
  * yet the distribution of values is uniform.
- * <p>
+ * 
  * Do not use with distributions ranging more than 256 between lowest and highest as the shuffling seqeunce is stored
  * internally in memory.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -79,30 +83,35 @@ public class GKShuffledDistribution extends GKRandomDistribution {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("d20")
     public static native GKShuffledDistribution d20();
 
+    @NotNull
     @Generated
     @Selector("d6")
     public static native GKShuffledDistribution d6();
@@ -146,9 +155,10 @@ public class GKShuffledDistribution extends GKRandomDistribution {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -183,5 +193,6 @@ public class GKShuffledDistribution extends GKRandomDistribution {
     @Generated
     @Selector("initWithRandomSource:lowestValue:highestValue:")
     public native GKShuffledDistribution initWithRandomSourceLowestValueHighestValue(
-            @Mapped(ObjCObjectMapper.class) GKRandom source, @NInt long lowestInclusive, @NInt long highestInclusive);
+            @NotNull @Mapped(ObjCObjectMapper.class) GKRandom source, @NInt long lowestInclusive,
+            @NInt long highestInclusive);
 }

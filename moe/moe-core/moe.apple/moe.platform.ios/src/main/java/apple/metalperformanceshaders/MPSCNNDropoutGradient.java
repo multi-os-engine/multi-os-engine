@@ -26,17 +26,21 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNDropoutGradient
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * This filter is the backward filter for the MPSCNNDropout forward filter.
  * It requires the mask data, along with all the associated parameters used
  * to generate the mask, from the forward pass. The mask is associated with
  * a MPSCNNDropoutGradientState object.
- * <p>
+ * 
  * In this kernel, use the secondaryOffset to apply an offset to the mask data.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -68,22 +72,25 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -107,23 +114,23 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNDropoutGradient initWithCoder(NSCoder aDecoder);
+    public native MPSCNNDropoutGradient initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * <NSSecureCoding> support
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNDropoutGradient initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNDropoutGradient initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNDropoutGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNDropoutGradient initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Standard init with default properties per filter type.
-     *
+     * 
      * @param device             The device that the filter will be used on.
      * @param keepProbability    The probability that each element in the input is kept.
      *                           The valid range is (0.0f, 1.0f).
@@ -138,7 +145,7 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
     @Generated
     @Selector("initWithDevice:keepProbability:seed:maskStrideInPixels:")
     public native MPSCNNDropoutGradient initWithDeviceKeepProbabilitySeedMaskStrideInPixels(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, float keepProbability, @NUInt long seed,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, float keepProbability, @NUInt long seed,
             @ByValue MTLSize maskStrideInPixels);
 
     @Generated
@@ -160,7 +167,7 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
 
     /**
      * [@property] keepProbability
-     * <p>
+     * 
      * The probability that each element in the input is kept.
      * The valid range is (0.0f, 1.0f).
      */
@@ -168,16 +175,17 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
     @Selector("keepProbability")
     public native float keepProbability();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] maskStrideInPixels
-     * <p>
+     * 
      * The mask stride in the x, y, and x dimensions, which
      * allows for the broadcasting the mask data.
-     * <p>
+     * 
      * The only valid values are 0 and 1 for each dimension.
      * For no broadcasting, set the values for each dimension
      * to 1. For broadcasting, set desired values to 0.
@@ -202,7 +210,7 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
 
     /**
      * [@property] seed
-     * <p>
+     * 
      * The seed used to generate random numbers.
      */
     @Generated

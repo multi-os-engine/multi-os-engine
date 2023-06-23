@@ -19,13 +19,34 @@ package apple.mediaplayer.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 public final class MPMusicPlaybackState {
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long Stopped = 0x0000000000000000L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long Playing = 0x0000000000000001L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long Paused = 0x0000000000000002L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long Interrupted = 0x0000000000000003L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long SeekingForward = 0x0000000000000004L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long SeekingBackward = 0x0000000000000005L;
 
     @Generated

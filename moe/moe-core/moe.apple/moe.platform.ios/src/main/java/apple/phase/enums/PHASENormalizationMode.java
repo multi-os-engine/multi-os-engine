@@ -5,9 +5,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] PHASENormalizationMode
- * <p>
+ * 
  * Normalization mode
- * <p>
+ * 
  * Determines how sound assets are normalized for calibrated loudness on the output device.
  * [@note] In general, clients are advised to normalize sound assets (and streams).
  * This will make it easier to mix the content once assigned to a generator with a specified calbration mode and level.

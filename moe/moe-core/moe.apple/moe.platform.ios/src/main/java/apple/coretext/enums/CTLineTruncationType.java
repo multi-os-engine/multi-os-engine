@@ -20,19 +20,19 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] CTLineTruncationType
- * <p>
+ * 
  * Truncation types required by CTLineCreateTruncatedLine. These
  * will tell truncation engine which type of truncation is being
  * requested.
- * <p>
+ * 
  * [@constant] kCTLineTruncationStart
  * Truncate at the beginning of the line, leaving the end portion
  * visible.
- * <p>
+ * 
  * [@constant] kCTLineTruncationEnd
  * Truncate at the end of the line, leaving the start portion
  * visible.
- * <p>
+ * 
  * [@constant] kCTLineTruncationMiddle
  * Truncate in the middle of the line, leaving both the start
  * and the end portions visible.

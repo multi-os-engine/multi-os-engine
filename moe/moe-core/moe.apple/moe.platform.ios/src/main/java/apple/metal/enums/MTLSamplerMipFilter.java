@@ -21,18 +21,29 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLSamplerMipFilter
- * <p>
+ * 
  * Options for selecting and filtering between mipmap levels
  * [@constant] MTLSamplerMipFilterNotMipmapped The texture is sampled as if it only had a single mipmap level. All
  * samples are read from level 0.
  * [@constant] MTLSamplerMipFilterNearest The nearst mipmap level is selected.
  * [@constant] MTLSamplerMipFilterLinear If the filter falls between levels, both levels are sampled, and their results
  * linearly interpolated between levels.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class MTLSamplerMipFilter {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long NotMipmapped = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Nearest = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Linear = 0x0000000000000002L;
 
     @Generated

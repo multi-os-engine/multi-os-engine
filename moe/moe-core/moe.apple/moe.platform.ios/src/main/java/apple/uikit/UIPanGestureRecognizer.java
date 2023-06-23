@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -40,7 +39,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 3.2
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -71,22 +76,25 @@ public class UIPanGestureRecognizer extends UIGestureRecognizer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,9 +129,10 @@ public class UIPanGestureRecognizer extends UIGestureRecognizer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,8 +166,8 @@ public class UIPanGestureRecognizer extends UIGestureRecognizer {
 
     @Generated
     @Selector("initWithTarget:action:")
-    public native UIPanGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target,
-            SEL action);
+    public native UIPanGestureRecognizer initWithTargetAction(@Nullable @Mapped(ObjCObjectMapper.class) Object target,
+            @Nullable SEL action);
 
     /**
      * default is UINT_MAX. the maximum number of touches that can be down
@@ -192,7 +201,7 @@ public class UIPanGestureRecognizer extends UIGestureRecognizer {
 
     @Generated
     @Selector("setTranslation:inView:")
-    public native void setTranslationInView(@ByValue CGPoint translation, UIView view);
+    public native void setTranslationInView(@ByValue CGPoint translation, @Nullable UIView view);
 
     /**
      * translation in the coordinate system of the specified view
@@ -200,7 +209,7 @@ public class UIPanGestureRecognizer extends UIGestureRecognizer {
     @Generated
     @Selector("translationInView:")
     @ByValue
-    public native CGPoint translationInView(UIView view);
+    public native CGPoint translationInView(@Nullable UIView view);
 
     /**
      * velocity of the pan in points/second in the coordinate system of the specified view
@@ -208,17 +217,23 @@ public class UIPanGestureRecognizer extends UIGestureRecognizer {
     @Generated
     @Selector("velocityInView:")
     @ByValue
-    public native CGPoint velocityInView(UIView view);
+    public native CGPoint velocityInView(@Nullable UIView view);
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIPanGestureRecognizer initWithCoder(NSCoder coder);
+    public native UIPanGestureRecognizer initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("allowedScrollTypesMask")
     @NInt
     public native long allowedScrollTypesMask();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("setAllowedScrollTypesMask:")
     public native void setAllowedScrollTypesMask(@NInt long value);

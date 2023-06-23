@@ -37,13 +37,18 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAssetCache
- * <p>
+ * 
  * AVAssetCache is a class vended by an AVAsset used for the inspection of locally available media data.
- * <p>
+ * 
  * AVAssetCaches are vended by AVURLAsset's assetCache property.
+ * 
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("AVFoundation")
@@ -75,22 +80,25 @@ public class AVAssetCache extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +133,10 @@ public class AVAssetCache extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,9 +170,9 @@ public class AVAssetCache extends NSObject {
 
     /**
      * [@property] playableOffline
-     * <p>
+     * 
      * Returns YES if a complete rendition of an AVAsset is available to be played without a network connection.
-     * <p>
+     * 
      * An answer of YES does not indicate that any given media selection is available for offline playback. To determine
      * if a specific media selection is available offline, see mediaSelectionOptionsInMediaSelectionGroup:.
      */
@@ -173,12 +182,13 @@ public class AVAssetCache extends NSObject {
 
     /**
      * mediaSelectionOptionsInMediaSelectionGroup:
-     * <p>
+     * 
      * Returns an array of AVMediaSelectionOptions in an AVMediaSelectionGroup that are available for offline
      * operations, e.g. playback.
      */
+    @NotNull
     @Generated
     @Selector("mediaSelectionOptionsInMediaSelectionGroup:")
     public native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsInMediaSelectionGroup(
-            AVMediaSelectionGroup mediaSelectionGroup);
+            @NotNull AVMediaSelectionGroup mediaSelectionGroup);
 }

@@ -24,15 +24,19 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MXBackgroundExitData
- * <p>
+ * 
  * A class that encapsulates cumulative application exit metrics when the application is off screen.
- * <p>
+ * 
  * Background exits are terminations that, when unexpected, can impact performance metrics, such as launch time.
- * <p>
+ * 
  * Not all background exits are unexpected. See the documentation for each exit reason for more information.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MetricKit")
@@ -64,31 +68,34 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] cumulativeAbnormalExitCount
-     * <p>
+     * 
      * Cumulative number of times the application exited abnormally.
-     * <p>
+     * 
      * The most common causes of crashes with this exception type are uncaught Objective-C/C++ exceptions and calls to
      * abort().
      */
@@ -99,9 +106,9 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] cumulativeAppWatchdogExitCount
-     * <p>
+     * 
      * Cumulative number of times the application was terminated because a watchdog timeout occured.
-     * <p>
+     * 
      * These can occur when the application took too long to launch, terminate, or respond to system events.
      */
     @Generated
@@ -111,10 +118,10 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] cumulativeBackgroundTaskAssertionTimeoutExitCount
-     * <p>
+     * 
      * Cumulative number of times the application was terminated for exceeding the alotted time limit associated with a
      * background tasks.
-     * <p>
+     * 
      * If your application begins a background task, you must call endBackgroundTask() to signal completion of the task
      * to prevent your application from being terminated. You can do this in the expiration handler of the task, but it
      * must be done immediately.
@@ -126,7 +133,7 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] cumulativeBadAccessExitCount
-     * <p>
+     * 
      * Cumulative number of times the application was terminated for attempting to access invalid memory, or attempting
      * to access memory in a manner not allowed by the memory's protection level (e.g. writing to read-only memory).
      */
@@ -137,7 +144,7 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] cumulativeCPUResourceLimitExitCount
-     * <p>
+     * 
      * Cumulative number of times the application was terminated for exceeding a CPU consumption limit.
      */
     @Generated
@@ -147,10 +154,10 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] cumulativeIllegalInstructionExitCount
-     * <p>
+     * 
      * Cumulative number of times the application terminated for attempting to execute an illegal or undefined
      * instruction.
-     * <p>
+     * 
      * The process may have attempted to jump to an invalid address via a misconfigured function pointer.
      */
     @Generated
@@ -160,7 +167,7 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] cumulativeMemoryPressureExitCount
-     * <p>
+     * 
      * Cumulative number of times the application exited due to memory pressure on the system.
      */
     @Generated
@@ -170,7 +177,7 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] cumulativeMemoryResourceLimitExitCount
-     * <p>
+     * 
      * Cumulative number of times the application was terminated for exceeding a memory consumption limit.
      */
     @Generated
@@ -180,7 +187,7 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] cumulativeNormalAppExitCount
-     * <p>
+     * 
      * Cumulative number of times the application exited normally, or was gracefully terminated by the system.
      */
     @Generated
@@ -190,10 +197,10 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] cumulativeSuspendedWithLockedFileExitCount
-     * <p>
+     * 
      * Cumulative number of times the application was terminated because it became suspended while holding onto file
      * locks or sqlite database locks.
-     * <p>
+     * 
      * If your application is performing operations on a locked file or sqlite database at suspension time, it must
      * request additional background execution time to complete those operations and relinquish the lock before
      * suspending.
@@ -213,7 +220,7 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -226,7 +233,7 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MXBackgroundExitData initWithCoder(NSCoder coder);
+    public native MXBackgroundExitData initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -245,9 +252,10 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

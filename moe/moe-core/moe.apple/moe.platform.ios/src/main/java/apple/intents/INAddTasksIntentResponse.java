@@ -24,7 +24,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -43,6 +48,7 @@ public class INAddTasksIntentResponse extends INIntentResponse {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    @Nullable
     @Generated
     @Selector("addedTasks")
     public native NSArray<? extends INTask> addedTasks();
@@ -59,22 +65,25 @@ public class INAddTasksIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -112,11 +121,12 @@ public class INAddTasksIntentResponse extends INIntentResponse {
      */
     @Generated
     @Selector("initWithCode:userActivity:")
-    public native INAddTasksIntentResponse initWithCodeUserActivity(@NInt long code, NSUserActivity userActivity);
+    public native INAddTasksIntentResponse initWithCodeUserActivity(@NInt long code,
+            @Nullable NSUserActivity userActivity);
 
     @Generated
     @Selector("initWithCoder:")
-    public native INAddTasksIntentResponse initWithCoder(NSCoder coder);
+    public native INAddTasksIntentResponse initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -135,10 +145,12 @@ public class INAddTasksIntentResponse extends INIntentResponse {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("modifiedTaskList")
     public native INTaskList modifiedTaskList();
@@ -158,11 +170,11 @@ public class INAddTasksIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("setAddedTasks:")
-    public native void setAddedTasks(NSArray<? extends INTask> value);
+    public native void setAddedTasks(@Nullable NSArray<? extends INTask> value);
 
     @Generated
     @Selector("setModifiedTaskList:")
-    public native void setModifiedTaskList(INTaskList value);
+    public native void setModifiedTaskList(@Nullable INTaskList value);
 
     @Generated
     @Selector("setVersion:")

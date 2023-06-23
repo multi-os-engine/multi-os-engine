@@ -50,6 +50,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -73,46 +75,57 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
      * original file or directory could not be located or is not reachable, or if the original file or directory is on a
      * volume that could not be located or mounted. If this method fails, the optional error is populated. The
      * NSURLBookmarkResolutionWithSecurityScope option is not supported by this method.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("URLByResolvingAliasFileAtURL:options:error:")
-    public static native NSURL URLByResolvingAliasFileAtURLOptionsError(NSURL url, @NUInt long options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSURL URLByResolvingAliasFileAtURLOptionsError(@NotNull NSURL url, @NUInt long options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Creates and Initializes an NSURL that refers to a location specified by resolving bookmark data. If this method
      * returns nil, the optional error is populated.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("URLByResolvingBookmarkData:options:relativeToURL:bookmarkDataIsStale:error:")
     public static native NSURL URLByResolvingBookmarkDataOptionsRelativeToURLBookmarkDataIsStaleError(
-            NSData bookmarkData, @NUInt long options, NSURL relativeURL, BoolPtr isStale,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull NSData bookmarkData, @NUInt long options, @Nullable NSURL relativeURL, @Nullable BoolPtr isStale,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Initializes and returns a newly created NSURL using the contents of the given data, relative to a base URL. If
      * the data representation is not a legal URL string as ASCII bytes, the URL object may not behave as expected.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("URLWithDataRepresentation:relativeToURL:")
-    public static native NSURL URLWithDataRepresentationRelativeToURL(NSData data, NSURL baseURL);
+    public static native NSURL URLWithDataRepresentationRelativeToURL(@NotNull NSData data, @Nullable NSURL baseURL);
 
     @Generated
     @Selector("URLWithString:")
-    public static native NSURL URLWithString(String URLString);
+    public static native NSURL URLWithString(@NotNull String URLString);
 
     @Generated
     @Selector("URLWithString:relativeToURL:")
-    public static native NSURL URLWithStringRelativeToURL(String URLString, NSURL baseURL);
+    public static native NSURL URLWithStringRelativeToURL(@NotNull String URLString, @Nullable NSURL baseURL);
 
     /**
      * Initializes and returns a newly created absolute NSURL using the contents of the given data, relative to a base
      * URL. If the data representation is not a legal URL string as ASCII bytes, the URL object may not behave as
      * expected.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("absoluteURLWithDataRepresentation:relativeToURL:")
-    public static native NSURL absoluteURLWithDataRepresentationRelativeToURL(NSData data, NSURL baseURL);
+    public static native NSURL absoluteURLWithDataRepresentationRelativeToURL(@NotNull NSData data,
+            @Nullable NSURL baseURL);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -130,33 +143,39 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Initializes and returns bookmark data derived from an alias file pointed to by a specified URL. If
      * bookmarkFileURL refers to an alias file created prior to OS X v10.6 that contains Alias Manager information but
      * no bookmark data, this method synthesizes bookmark data for the file. If this method returns nil, the optional
      * error is populated.
+     * 
+     * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("bookmarkDataWithContentsOfURL:error:")
-    public static native NSData bookmarkDataWithContentsOfURLError(NSURL bookmarkFileURL,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSData bookmarkDataWithContentsOfURLError(@NotNull NSURL bookmarkFileURL,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -173,47 +192,65 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
      * Initializes and returns a newly created URL referencing the local file or directory at the file system
      * representation of the path. File system representation is a null-terminated C string with canonical UTF-8
      * encoding.
+     * 
+     * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("fileURLWithFileSystemRepresentation:isDirectory:relativeToURL:")
     public static native NSURL fileURLWithFileSystemRepresentationIsDirectoryRelativeToURL(
-            @Mapped(CStringMapper.class) String path, boolean isDir, NSURL baseURL);
+            @NotNull @Mapped(CStringMapper.class) String path, boolean isDir, @Nullable NSURL baseURL);
 
     /**
      * Better to use fileURLWithPath:isDirectory: if you know if the path is a directory vs non-directory, as it saves
      * an i/o.
      */
+    @NotNull
     @Generated
     @Selector("fileURLWithPath:")
-    public static native NSURL fileURLWithPath(String path);
+    public static native NSURL fileURLWithPath(@NotNull String path);
 
+    /**
+     * API-Since: 2.0
+     */
+    @NotNull
     @Generated
     @Selector("fileURLWithPath:isDirectory:")
-    public static native NSURL fileURLWithPathIsDirectory(String path, boolean isDir);
+    public static native NSURL fileURLWithPathIsDirectory(@NotNull String path, boolean isDir);
 
     /**
      * Initializes and returns a newly created file NSURL referencing the local file or directory at path, relative to a
      * base URL.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("fileURLWithPath:isDirectory:relativeToURL:")
-    public static native NSURL fileURLWithPathIsDirectoryRelativeToURL(String path, boolean isDir, NSURL baseURL);
+    public static native NSURL fileURLWithPathIsDirectoryRelativeToURL(@NotNull String path, boolean isDir,
+            @Nullable NSURL baseURL);
 
     /**
      * Better to use fileURLWithPath:isDirectory:relativeToURL: if you know if the path is a directory vs non-directory,
      * as it saves an I/O.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("fileURLWithPath:relativeToURL:")
-    public static native NSURL fileURLWithPathRelativeToURL(String path, NSURL baseURL);
+    public static native NSURL fileURLWithPathRelativeToURL(@NotNull String path, @Nullable NSURL baseURL);
 
     /**
      * The following methods work on the path portion of a URL in the same manner that the NSPathUtilities methods on
      * NSString do.
+     * 
+     * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("fileURLWithPathComponents:")
-    public static native NSURL fileURLWithPathComponents(NSArray<String> components);
+    public static native NSURL fileURLWithPathComponents(@NotNull NSArray<String> components);
 
     @Generated
     @Selector("hash")
@@ -237,9 +274,10 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -258,11 +296,14 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
      * Returns the resource values for properties identified by a specified array of keys contained in specified
      * bookmark data. If the result dictionary does not contain a resource value for one or more of the requested
      * resource keys, it means those resource properties are not available in the bookmark data.
+     * 
+     * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("resourceValuesForKeys:fromBookmarkData:")
-    public static native NSDictionary<String, ?> resourceValuesForKeysFromBookmarkData(NSArray<String> keys,
-            NSData bookmarkData);
+    public static native NSDictionary<String, ?> resourceValuesForKeysFromBookmarkData(@NotNull NSArray<String> keys,
+            @NotNull NSData bookmarkData);
 
     @Generated
     @Selector("setVersion:")
@@ -286,32 +327,59 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
      * created with the NSURLBookmarkCreationSuitableForBookmarkFile option. bookmarkFileURL must either refer to an
      * existing file (which will be overwritten), or to location in an existing directory. If this method returns NO,
      * the optional error is populated.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("writeBookmarkData:toURL:options:error:")
-    public static native boolean writeBookmarkDataToURLOptionsError(NSData bookmarkData, NSURL bookmarkFileURL,
-            @NUInt long options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native boolean writeBookmarkDataToURLOptionsError(@NotNull NSData bookmarkData,
+            @NotNull NSURL bookmarkFileURL, @NUInt long options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 4.0
+     */
+    @Nullable
     @Generated
     @Selector("URLByAppendingPathComponent:")
-    public native NSURL URLByAppendingPathComponent(String pathComponent);
+    public native NSURL URLByAppendingPathComponent(@NotNull String pathComponent);
 
+    /**
+     * API-Since: 5.0
+     */
+    @Nullable
     @Generated
     @Selector("URLByAppendingPathComponent:isDirectory:")
-    public native NSURL URLByAppendingPathComponentIsDirectory(String pathComponent, boolean isDirectory);
+    public native NSURL URLByAppendingPathComponentIsDirectory(@NotNull String pathComponent, boolean isDirectory);
 
+    /**
+     * API-Since: 4.0
+     */
+    @Nullable
     @Generated
     @Selector("URLByAppendingPathExtension:")
-    public native NSURL URLByAppendingPathExtension(String pathExtension);
+    public native NSURL URLByAppendingPathExtension(@NotNull String pathExtension);
 
+    /**
+     * API-Since: 4.0
+     */
+    @Nullable
     @Generated
     @Selector("URLByDeletingLastPathComponent")
     public native NSURL URLByDeletingLastPathComponent();
 
+    /**
+     * API-Since: 4.0
+     */
+    @Nullable
     @Generated
     @Selector("URLByDeletingPathExtension")
     public native NSURL URLByDeletingPathExtension();
 
+    /**
+     * API-Since: 4.0
+     */
+    @Nullable
     @Generated
     @Selector("URLByResolvingSymlinksInPath")
     public native NSURL URLByResolvingSymlinksInPath();
@@ -319,11 +387,15 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
     /**
      * The following methods work only on `file:` scheme URLs; for non-`file:` scheme URLs, these methods return the URL
      * unchanged.
+     * 
+     * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("URLByStandardizingPath")
     public native NSURL URLByStandardizingPath();
 
+    @Nullable
     @Generated
     @Selector("absoluteString")
     public native String absoluteString();
@@ -331,6 +403,7 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
     /**
      * if the receiver is itself absolute, this will return self.
      */
+    @Nullable
     @Generated
     @Selector("absoluteURL")
     public native NSURL absoluteURL();
@@ -338,6 +411,7 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
     /**
      * may be nil.
      */
+    @Nullable
     @Generated
     @Selector("baseURL")
     public native NSURL baseURL();
@@ -345,16 +419,23 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
     /**
      * Returns bookmark data for the URL, created with specified options and resource values. If this method returns
      * nil, the optional error is populated.
+     * 
+     * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("bookmarkDataWithOptions:includingResourceValuesForKeys:relativeToURL:error:")
     public native NSData bookmarkDataWithOptionsIncludingResourceValuesForKeysRelativeToURLError(@NUInt long options,
-            NSArray<String> keys, NSURL relativeURL, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable NSArray<String> keys, @Nullable NSURL relativeURL,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("checkPromisedItemIsReachableAndReturnError:")
     public native boolean checkPromisedItemIsReachableAndReturnError(
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Returns whether the URL's resource exists and is reachable. This method synchronously checks if the resource's
@@ -364,37 +445,46 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
      * efficient to simply try the operation and handle failures. If this method returns NO, the optional error is
      * populated. This method is currently applicable only to URLs for file system resources. For other URL types, NO is
      * returned. Symbol is present in iOS 4, but performs no operation.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("checkResourceIsReachableAndReturnError:")
     public native boolean checkResourceIsReachableAndReturnError(
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Returns the data representation of the URL's relativeString. If the URL was initialized with
      * -initWithData:relativeToURL:, the data representation returned are the same bytes as those used at
      * initialization; otherwise, the data representation returned are the bytes of the relativeString encoded with
      * NSUTF8StringEncoding.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("dataRepresentation")
     public native NSData dataRepresentation();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Returns a file path URL that refers to the same resource as a specified URL. File path URLs use a file system
      * style path. An error will occur if the url parameter is not a file URL. A file reference URL's resource must
      * exist and be reachable to be converted to a file path URL. Symbol is present in iOS 4, but performs no operation.
+     * 
+     * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("filePathURL")
     public native NSURL filePathURL();
@@ -409,7 +499,10 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
      * across system restarts, and across remounts of volumes -- if you want to create a persistent reference to a file
      * system object, use a bookmark (see -bookmarkDataWithOptions:includingResourceValuesForKeys:relativeToURL:error:).
      * Symbol is present in iOS 4, but performs no operation.
+     * 
+     * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("fileReferenceURL")
     public native NSURL fileReferenceURL();
@@ -419,12 +512,16 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
      * with canonical UTF-8 encoding. The returned C string will be automatically freed just as a returned object would
      * be released; your code should copy the representation or use getFileSystemRepresentation:maxLength: if it needs
      * to store the representation outside of the autorelease context in which the representation is created.
+     * 
+     * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("fileSystemRepresentation")
     @MappedReturn(CStringMapper.class)
     public native String fileSystemRepresentation();
 
+    @Nullable
     @Generated
     @Selector("fragment")
     public native String fragment();
@@ -432,10 +529,12 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
     /**
      * Returns the URL's path in file system representation. File system representation is a null-terminated C string
      * with canonical UTF-8 encoding.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("getFileSystemRepresentation:maxLength:")
-    public native boolean getFileSystemRepresentationMaxLength(BytePtr buffer, @NUInt long maxBufferLength);
+    public native boolean getFileSystemRepresentationMaxLength(@NotNull BytePtr buffer, @NUInt long maxBufferLength);
 
     /**
      * Get resource values from URLs of 'promised' items. A promised item is not guaranteed to have its contents in the
@@ -445,7 +544,7 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
      * - NSMetadataQueryUbiquitousDocumentsScope
      * - An NSFilePresenter presenting the contents of the directory located by -URLForUbiquitousContainerIdentifier: or
      * a subdirectory thereof
-     * <p>
+     * 
      * The following methods behave identically to their similarly named methods above (-getResourceValue:forKey:error:,
      * etc.), except that they allow you to get resource values and check for presence regardless of whether the
      * promised item's contents currently exist at the URL. You must use these APIs instead of the normal NSURL resource
@@ -454,16 +553,18 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
      * - You are inside the accessor block of a coordinated read or write that used
      * NSFileCoordinatorReadingImmediatelyAvailableMetadataOnly, NSFileCoordinatorWritingForDeleting,
      * NSFileCoordinatorWritingForMoving, or NSFileCoordinatorWritingContentIndependentMetadataOnly
-     * <p>
+     * 
      * Most of the NSURL resource value keys will work with these APIs. However, there are some that are tied to the
      * item's contents that will not work, such as NSURLContentAccessDateKey or NSURLGenerationIdentifierKey. If one of
      * these keys is used, the method will return YES, but the value for the key will be nil.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("getPromisedItemResourceValue:forKey:error:")
     public native boolean getPromisedItemResourceValueForKeyError(
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> value, String key,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> value, @NotNull String key,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Returns the resource value identified by a given resource key. This method first checks if the URL object already
@@ -474,15 +575,20 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
      * property is not available for the specified resource and no errors occurred when determining the resource
      * property was not available. If this method returns NO, the optional error is populated. This method is currently
      * applicable only to URLs for file system resources. Symbol is present in iOS 4, but performs no operation.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("getResourceValue:forKey:error:")
-    public native boolean getResourceValueForKeyError(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> value,
-            String key, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean getResourceValueForKeyError(
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> value, @NotNull String key,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Determines if a given URL string's path represents a directory (i.e. the path component in the URL string ends
      * with a '/' character). This does not check the resource the URL refers to.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("hasDirectoryPath")
@@ -494,6 +600,7 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
      * the first two characters of resourceSpecifier is @"//". In all cases, they return the component's value after
      * resolving the receiver against its base URL.
      */
+    @Nullable
     @Generated
     @Selector("host")
     public native String host();
@@ -505,29 +612,36 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
     /**
      * Initializes a newly created absolute NSURL using the contents of the given data, relative to a base URL. If the
      * data representation is not a legal URL string as ASCII bytes, the URL object may not behave as expected.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initAbsoluteURLWithDataRepresentation:relativeToURL:")
-    public native NSURL initAbsoluteURLWithDataRepresentationRelativeToURL(NSData data, NSURL baseURL);
+    public native NSURL initAbsoluteURLWithDataRepresentationRelativeToURL(@NotNull NSData data,
+            @Nullable NSURL baseURL);
 
     /**
      * Initializes a newly created NSURL that refers to a location specified by resolving bookmark data. If this method
      * returns nil, the optional error is populated.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("initByResolvingBookmarkData:options:relativeToURL:bookmarkDataIsStale:error:")
-    public native NSURL initByResolvingBookmarkDataOptionsRelativeToURLBookmarkDataIsStaleError(NSData bookmarkData,
-            @NUInt long options, NSURL relativeURL, BoolPtr isStale,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSURL initByResolvingBookmarkDataOptionsRelativeToURLBookmarkDataIsStaleError(
+            @NotNull NSData bookmarkData, @NUInt long options, @Nullable NSURL relativeURL, @Nullable BoolPtr isStale,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Initializes a newly created URL referencing the local file or directory at the file system representation of the
      * path. File system representation is a null-terminated C string with canonical UTF-8 encoding.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("initFileURLWithFileSystemRepresentation:isDirectory:relativeToURL:")
     public native NSURL initFileURLWithFileSystemRepresentationIsDirectoryRelativeToURL(
-            @Mapped(CStringMapper.class) String path, boolean isDir, NSURL baseURL);
+            @NotNull @Mapped(CStringMapper.class) String path, boolean isDir, @Nullable NSURL baseURL);
 
     /**
      * Better to use initFileURLWithPath:isDirectory: if you know if the path is a directory vs non-directory, as it
@@ -535,47 +649,63 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
      */
     @Generated
     @Selector("initFileURLWithPath:")
-    public native NSURL initFileURLWithPath(String path);
+    public native NSURL initFileURLWithPath(@NotNull String path);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initFileURLWithPath:isDirectory:")
-    public native NSURL initFileURLWithPathIsDirectory(String path, boolean isDir);
+    public native NSURL initFileURLWithPathIsDirectory(@NotNull String path, boolean isDir);
 
     /**
      * Initializes a newly created file NSURL referencing the local file or directory at path, relative to a base URL.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initFileURLWithPath:isDirectory:relativeToURL:")
-    public native NSURL initFileURLWithPathIsDirectoryRelativeToURL(String path, boolean isDir, NSURL baseURL);
+    public native NSURL initFileURLWithPathIsDirectoryRelativeToURL(@NotNull String path, boolean isDir,
+            @Nullable NSURL baseURL);
 
     /**
      * Better to use initFileURLWithPath:isDirectory:relativeToURL: if you know if the path is a directory vs
      * non-directory, as it saves an I/O.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initFileURLWithPath:relativeToURL:")
-    public native NSURL initFileURLWithPathRelativeToURL(String path, NSURL baseURL);
+    public native NSURL initFileURLWithPathRelativeToURL(@NotNull String path, @Nullable NSURL baseURL);
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSURL initWithCoder(NSCoder coder);
+    public native NSURL initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initializes a newly created NSURL using the contents of the given data, relative to a base URL. If the data
      * representation is not a legal URL string as ASCII bytes, the URL object may not behave as expected.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithDataRepresentation:relativeToURL:")
-    public native NSURL initWithDataRepresentationRelativeToURL(NSData data, NSURL baseURL);
+    public native NSURL initWithDataRepresentationRelativeToURL(@NotNull NSData data, @Nullable NSURL baseURL);
 
     /**
      * this call percent-encodes both the host and path, so this cannot be used to set a username/password or port in
      * the hostname part or with a IPv6 '[...]' type address. NSURLComponents handles IPv6 addresses correctly.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLComponents instead, which lets you create a valid URL with any valid combination of
+     * URL components and subcomponents (not just scheme, host and path), and lets you set components and subcomponents
+     * with either percent-encoded or un-percent-encoded strings.
      */
     @Generated
     @Deprecated
     @Selector("initWithScheme:host:path:")
-    public native NSURL initWithSchemeHostPath(String scheme, String host, String path);
+    public native NSURL initWithSchemeHostPath(@NotNull String scheme, @Nullable String host, @NotNull String path);
 
     /**
      * These methods expect their string arguments to contain any percent escape codes that are necessary. It is an
@@ -583,14 +713,16 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
      */
     @Generated
     @Selector("initWithString:")
-    public native NSURL initWithString(String URLString);
+    public native NSURL initWithString(@NotNull String URLString);
 
     @Generated
     @Selector("initWithString:relativeToURL:")
-    public native NSURL initWithStringRelativeToURL(String URLString, NSURL baseURL);
+    public native NSURL initWithStringRelativeToURL(@NotNull String URLString, @Nullable NSURL baseURL);
 
     /**
      * Returns whether the URL is a file reference URL. Symbol is present in iOS 4, but performs no operation.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isFileReferenceURL")
@@ -604,48 +736,80 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
     @Selector("isFileURL")
     public native boolean isFileURL();
 
+    /**
+     * API-Since: 4.0
+     */
+    @Nullable
     @Generated
     @Selector("lastPathComponent")
     public native String lastPathComponent();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: The parameterString method is deprecated. Post deprecation for applications linked with or
+     * after the macOS 10.15, and for all iOS, watchOS, and tvOS applications, parameterString will always return nil,
+     * and the path method will return the complete path including the semicolon separator and params component if the
+     * URL string contains them.
+     */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("parameterString")
     public native String parameterString();
 
+    @Nullable
     @Generated
     @Selector("password")
     public native String password();
 
+    @Nullable
     @Generated
     @Selector("path")
     public native String path();
 
+    /**
+     * API-Since: 4.0
+     */
+    @Nullable
     @Generated
     @Selector("pathComponents")
     public native NSArray<String> pathComponents();
 
+    /**
+     * API-Since: 4.0
+     */
+    @Nullable
     @Generated
     @Selector("pathExtension")
     public native String pathExtension();
 
+    @Nullable
     @Generated
     @Selector("port")
     public native NSNumber port();
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("previewItemTitle")
     public native String previewItemTitle();
 
+    @Nullable
     @Generated
     @Selector("previewItemURL")
     public native NSURL previewItemURL();
 
+    /**
+     * API-Since: 8.0
+     */
+    @Nullable
     @Generated
     @Selector("promisedItemResourceValuesForKeys:error:")
-    public native NSDictionary<String, ?> promisedItemResourceValuesForKeysError(NSArray<String> keys,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSDictionary<String, ?> promisedItemResourceValuesForKeysError(@NotNull NSArray<String> keys,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    @Nullable
     @Generated
     @Selector("query")
     public native String query();
@@ -653,6 +817,7 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
     /**
      * The same as path if baseURL is nil
      */
+    @Nullable
     @Generated
     @Selector("relativePath")
     public native String relativePath();
@@ -661,6 +826,7 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
      * The relative portion of a URL. If baseURL is nil, or if the receiver is itself absolute, this is the same as
      * absoluteString
      */
+    @NotNull
     @Generated
     @Selector("relativeString")
     public native String relativeString();
@@ -668,6 +834,8 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
     /**
      * Removes all cached resource values and all temporary resource values from the URL object. This method is
      * currently applicable only to URLs for file system resources.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("removeAllCachedResourceValues")
@@ -678,11 +846,14 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
      * resource value may remove other cached resource values because some resource values are cached as a set of
      * values, and because some resource values depend on other resource values (temporary resource values have no
      * dependencies). This method is currently applicable only to URLs for file system resources.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("removeCachedResourceValueForKey:")
-    public native void removeCachedResourceValueForKey(String key);
+    public native void removeCachedResourceValueForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("resourceSpecifier")
     public native String resourceSpecifier();
@@ -697,16 +868,20 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
      * resource and no errors occurred when determining those resource properties were not available. If this method
      * returns NULL, the optional error is populated. This method is currently applicable only to URLs for file system
      * resources. Symbol is present in iOS 4, but performs no operation.
+     * 
+     * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("resourceValuesForKeys:error:")
-    public native NSDictionary<String, ?> resourceValuesForKeysError(NSArray<String> keys,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSDictionary<String, ?> resourceValuesForKeysError(@NotNull NSArray<String> keys,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Any URL is composed of these two basic pieces. The full URL would be the concatenation of [myURL scheme], ':',
      * [myURL resourceSpecifier]
      */
+    @Nullable
     @Generated
     @Selector("scheme")
     public native String scheme();
@@ -717,11 +892,13 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
      * resource are ignored and are not considered errors. If this method returns NO, the optional error is populated.
      * This method is currently applicable only to URLs for file system resources. Symbol is present in iOS 4, but
      * performs no operation.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setResourceValue:forKey:error:")
-    public native boolean setResourceValueForKeyError(@Mapped(ObjCObjectMapper.class) Object value, String key,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean setResourceValueForKeyError(@Nullable @Mapped(ObjCObjectMapper.class) Object value,
+            @NotNull String key, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Sets any number of resource values of a URL's resource. This method writes the new resource values out to the
@@ -733,26 +910,25 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
      * to -setResourceValue:forKey:error: to guarantee the order. If this method returns NO, the optional error is
      * populated. This method is currently applicable only to URLs for file system resources. Symbol is present in iOS
      * 4, but performs no operation.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setResourceValues:error:")
-    public native boolean setResourceValuesError(NSDictionary<String, ?> keyedValues,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean setResourceValuesError(@NotNull NSDictionary<String, ?> keyedValues,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * Sets a temporary resource value on the URL object. Temporary resource values are for client use. Temporary
-     * resource values exist only in memory and are never written to the resource's backing store. Once set, a temporary
-     * resource value can be copied from the URL object with -getResourceValue:forKey:error: or
-     * -resourceValuesForKeys:error:. To remove a temporary resource value from the URL object, use
-     * -removeCachedResourceValueForKey:. Care should be taken to ensure the key that identifies a temporary resource
-     * value is unique and does not conflict with system defined keys (using reverse domain name notation in your
-     * temporary resource value keys is recommended). This method is currently applicable only to URLs for file system
-     * resources.
+     * NS_SWIFT_SENDABLE
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setTemporaryResourceValue:forKey:")
-    public native void setTemporaryResourceValueForKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
+    public native void setTemporaryResourceValueForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object value,
+            @NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("standardizedURL")
     public native NSURL standardizedURL();
@@ -762,6 +938,8 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
      * the url accessible to the process. When access to this resource is no longer needed the client must call
      * stopAccessingSecurityScopedResource. Each call to startAccessingSecurityScopedResource must be balanced with a
      * call to stopAccessingSecurityScopedResource (Note: this is not reference counted).
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("startAccessingSecurityScopedResource")
@@ -769,6 +947,8 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
 
     /**
      * Revokes the access granted to the url by a prior successful call to startAccessingSecurityScopedResource.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("stopAccessingSecurityScopedResource")
@@ -780,6 +960,7 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
         return supportsSecureCoding();
     }
 
+    @Nullable
     @Generated
     @Selector("user")
     public native String user();
@@ -788,13 +969,14 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
     @IsOptional
     @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
     @NInt
-    public static native long itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier);
+    public static native long itemProviderVisibilityForRepresentationWithTypeIdentifier_static(
+            @NotNull String typeIdentifier);
 
     @Generated
     @IsOptional
     @ProtocolClassMethod("itemProviderVisibilityForRepresentationWithTypeIdentifier_static")
     @NInt
-    public long _itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier) {
+    public long _itemProviderVisibilityForRepresentationWithTypeIdentifier_static(@NotNull String typeIdentifier) {
         return itemProviderVisibilityForRepresentationWithTypeIdentifier_static(typeIdentifier);
     }
 
@@ -802,45 +984,53 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
     @IsOptional
     @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
     @NInt
-    public native long itemProviderVisibilityForRepresentationWithTypeIdentifier(String typeIdentifier);
+    public native long itemProviderVisibilityForRepresentationWithTypeIdentifier(@NotNull String typeIdentifier);
 
+    @Nullable
     @Generated
     @Selector("loadDataWithTypeIdentifier:forItemProviderCompletionHandler:")
-    public native NSProgress loadDataWithTypeIdentifierForItemProviderCompletionHandler(String typeIdentifier,
-            @ObjCBlock(name = "call_loadDataWithTypeIdentifierForItemProviderCompletionHandler") NSItemProviderWriting.Block_loadDataWithTypeIdentifierForItemProviderCompletionHandler completionHandler);
+    public native NSProgress loadDataWithTypeIdentifierForItemProviderCompletionHandler(@NotNull String typeIdentifier,
+            @NotNull @ObjCBlock(name = "call_loadDataWithTypeIdentifierForItemProviderCompletionHandler") NSItemProviderWriting.Block_loadDataWithTypeIdentifierForItemProviderCompletionHandler completionHandler);
 
+    @Nullable
     @Generated
     @Selector("objectWithItemProviderData:typeIdentifier:error:")
-    public static native NSURL objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public static native NSURL objectWithItemProviderDataTypeIdentifierError(@NotNull NSData data,
+            @NotNull String typeIdentifier, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    @Nullable
     @Generated
     @ProtocolClassMethod("objectWithItemProviderDataTypeIdentifierError")
-    public NSURL _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
+    public NSURL _objectWithItemProviderDataTypeIdentifierError(@NotNull NSData data, @NotNull String typeIdentifier,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
         return objectWithItemProviderDataTypeIdentifierError(data, typeIdentifier, outError);
     }
 
+    @NotNull
     @Generated
     @Selector("readableTypeIdentifiersForItemProvider")
     public static native NSArray<String> readableTypeIdentifiersForItemProvider();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("readableTypeIdentifiersForItemProvider")
     public NSArray<String> _readableTypeIdentifiersForItemProvider() {
         return readableTypeIdentifiersForItemProvider();
     }
 
+    @NotNull
     @Generated
     @Selector("writableTypeIdentifiersForItemProvider")
     public static native NSArray<String> writableTypeIdentifiersForItemProvider_static();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("writableTypeIdentifiersForItemProvider_static")
     public NSArray<String> _writableTypeIdentifiersForItemProvider_static() {
         return writableTypeIdentifiersForItemProvider_static();
     }
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("writableTypeIdentifiersForItemProvider")
@@ -849,21 +1039,21 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
     /**
      * \brief Generate a path component based on a partial filename and a file
      * type, then append it to a copy of the receiver.
-     * <p>
+     * 
      * \param partialName The partial filename that should be expanded upon,
      * e.g. \c "readme".
      * \param contentType The type the resulting file should conform to, e.g.
      * \c UTTypePlainText.
-     * <p>
+     * 
      * \result A complete URL. Using the argument examples above, this method would
      * return a URL with a last path component of \c "readme.txt".
-     * <p>
+     * 
      * Use this method when you have partial input from a user or other source and
      * need to produce a complete filename suitable for that input. For example, if
      * you are downloading a file from the Internet and know its MIME type, you can
      * use this method to ensure the correct filename extension is applied to the
      * URL where you save the file.
-     * <p>
+     * 
      * If \a partialName already has a path extension, and that path extension is
      * valid for file system objects of type \a contentType, no additional
      * extension is appended to the path component before constructing the URL. For
@@ -873,34 +1063,38 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
      * respectively, the resulting URL will have a last path component of
      * \c "puppy.jpg.txt" . If you want to ensure any existing path extension is
      * replaced, you can use the \c URLByDeletingPathExtension property first.
-     * <p>
+     * 
      * If the path component could not be appended, this method returns a copy of
      * \c self .
-     * <p>
+     * 
      * \note The resulting URL has a directory path if \c contentType conforms to
      * \c UTTypeDirectory .
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("URLByAppendingPathComponent:conformingToType:")
-    public native NSURL URLByAppendingPathComponentConformingToType(String partialName, UTType contentType);
+    public native NSURL URLByAppendingPathComponentConformingToType(@NotNull String partialName,
+            @NotNull UTType contentType);
 
     /**
      * \brief Generate a path component based on the last path component of the
      * receiver and a file type, then append it to a copy of the receiver.
-     * <p>
+     * 
      * \param contentType The type the resulting file should conform to, e.g.
      * \c UTTypePlainText.
-     * <p>
+     * 
      * \result A complete URL. Using the argument example above and assuming
      * the receiver equals \c "file:///readme" , this method would return
      * \c "file:///readme.txt".
-     * <p>
+     * 
      * Use this method when you have partial input from a user or other source and
      * need to produce a complete filename suitable for that input. For example, if
      * you are downloading a file from the Internet and know its MIME type, you can
      * use this method to ensure the correct filename extension is applied to the
      * URL where you save the file.
-     * <p>
+     * 
      * If the receiver already has a path extension, and that path extension is
      * valid for file system objects of type \a contentType, no additional
      * extension is appended to the path component before constructing the URL.
@@ -911,14 +1105,17 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
      * have a last path component of \c "puppy.jpg.txt" . If you want to ensure any
      * existing path extension is replaced, you can use the
      * \c URLByDeletingPathExtension property first.
-     * <p>
+     * 
      * If the extension could not be appended, this method returns a copy of
      * \c self .
-     * <p>
+     * 
      * \note The resulting URL has a directory path if \c contentType conforms to
      * \c UTTypeDirectory .
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("URLByAppendingPathExtensionForType:")
-    public native NSURL URLByAppendingPathExtensionForType(UTType contentType);
+    public native NSURL URLByAppendingPathExtensionForType(@NotNull UTType contentType);
 }

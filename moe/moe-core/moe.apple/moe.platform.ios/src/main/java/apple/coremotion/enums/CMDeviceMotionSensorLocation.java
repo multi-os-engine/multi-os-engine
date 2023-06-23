@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * CMDeviceMotionSensorLocation
- * <p>
+ * 
  * Discussion:
  * CMDeviceMotionSensorLocation indicates the location of
  * the sensors used to compute the device motion data.

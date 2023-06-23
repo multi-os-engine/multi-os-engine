@@ -22,11 +22,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioCompressedBuffer
- * <p>
+ * 
  * A subclass of AVAudioBuffer for use with compressed audio formats.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("AVFAudio")
@@ -58,12 +62,14 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] byteCapacity
-     * <p>
+     * 
      * The buffer's capacity in bytes
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("byteCapacity")
@@ -71,10 +77,12 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
 
     /**
      * [@property] byteLength
-     * <p>
+     * 
      * The current number of valid bytes in the buffer.
-     * <p>
+     * 
      * Can be changed as part of an operation that modifies the contents.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("byteLength")
@@ -82,27 +90,31 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] data
-     * <p>
+     * 
      * Access the buffer's data bytes.
      */
+    @NotNull
     @Generated
     @Selector("data")
     public native VoidPtr data();
@@ -126,35 +138,41 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
 
     /**
      * initWithFormat:packetCapacity:
-     * <p>
+     * 
      * Initialize a buffer that is to contain constant bytes per packet compressed audio data.
-     * <p>
+     * 
      * This fails if the format is PCM or if the format has variable bytes per packet
      * (format.streamDescription->mBytesPerPacket == 0).
-     *
-     * @param format         The format of the audio to be contained in the buffer.
-     * @param packetCapacity The capacity of the buffer in packets.
+     * 
+     * @param format
+     *                       The format of the audio to be contained in the buffer.
+     * @param packetCapacity
+     *                       The capacity of the buffer in packets.
      */
     @Generated
     @Selector("initWithFormat:packetCapacity:")
-    public native AVAudioCompressedBuffer initWithFormatPacketCapacity(AVAudioFormat format, int packetCapacity);
+    public native AVAudioCompressedBuffer initWithFormatPacketCapacity(@NotNull AVAudioFormat format,
+            int packetCapacity);
 
     /**
      * initWithFormat:packetCapacity:maximumPacketSize:
-     * <p>
+     * 
      * Initialize a buffer that is to contain compressed audio data.
-     * <p>
+     * 
      * An exception is raised if the format is PCM.
-     *
-     * @param format            The format of the audio to be contained in the buffer.
-     * @param packetCapacity    The capacity of the buffer in packets.
-     * @param maximumPacketSize The maximum size in bytes of a compressed packet.
+     * 
+     * @param format
+     *                          The format of the audio to be contained in the buffer.
+     * @param packetCapacity
+     *                          The capacity of the buffer in packets.
+     * @param maximumPacketSize
+     *                          The maximum size in bytes of a compressed packet.
      *                          The maximum packet size can be obtained from the maximumOutputPacketSize property of an
      *                          AVAudioConverter configured for encoding this format.
      */
     @Generated
     @Selector("initWithFormat:packetCapacity:maximumPacketSize:")
-    public native AVAudioCompressedBuffer initWithFormatPacketCapacityMaximumPacketSize(AVAudioFormat format,
+    public native AVAudioCompressedBuffer initWithFormatPacketCapacityMaximumPacketSize(@NotNull AVAudioFormat format,
             int packetCapacity, @NInt long maximumPacketSize);
 
     @Generated
@@ -174,13 +192,14 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] maximumPacketSize
-     * <p>
+     * 
      * The maximum size of a compressed packet in bytes.
      */
     @Generated
@@ -195,7 +214,7 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
 
     /**
      * [@property] packetCapacity
-     * <p>
+     * 
      * The number of compressed packets the buffer can contain.
      */
     @Generated
@@ -204,9 +223,9 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
 
     /**
      * [@property] packetCount
-     * <p>
+     * 
      * The current number of compressed packets in the buffer.
-     * <p>
+     * 
      * You may modify the packetCount as part of an operation that modifies its contents.
      * The packetCount must be less than or equal to the packetCapacity.
      */
@@ -216,12 +235,13 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
 
     /**
      * [@property] packetDescriptions
-     * <p>
+     * 
      * Access the buffer's array of packet descriptions, if any.
-     * <p>
+     * 
      * If the format has constant bytes per packet (format.streamDescription->mBytesPerPacket != 0), then this will
      * return nil.
      */
+    @Nullable
     @Generated
     @Selector("packetDescriptions")
     public native AudioStreamPacketDescription packetDescriptions();
@@ -236,10 +256,12 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
 
     /**
      * [@property] byteLength
-     * <p>
+     * 
      * The current number of valid bytes in the buffer.
-     * <p>
+     * 
      * Can be changed as part of an operation that modifies the contents.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setByteLength:")
@@ -247,9 +269,9 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
 
     /**
      * [@property] packetCount
-     * <p>
+     * 
      * The current number of compressed packets in the buffer.
-     * <p>
+     * 
      * You may modify the packetCount as part of an operation that modifies its contents.
      * The packetCount must be less than or equal to the packetCapacity.
      */

@@ -19,19 +19,31 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 public final class NSURLSessionTaskState {
     /**
      * The task is currently being serviced by the session
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long Running = 0x0000000000000000L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Suspended = 0x0000000000000001L;
     /**
      * The task has been told to cancel. The session will receive a URLSession:task:didCompleteWithError: message.
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long Canceling = 0x0000000000000002L;
     /**
      * The task has completed and the session will receive no more delegate notifications
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long Completed = 0x0000000000000003L;
 

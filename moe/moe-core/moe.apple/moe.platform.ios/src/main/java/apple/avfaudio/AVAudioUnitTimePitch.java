@@ -24,13 +24,18 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioUnitTimePitch
- * <p>
+ * 
  * an AVAudioUnitTimeEffect that provides good quality time stretching and pitch shifting
- * <p>
+ * 
  * In this time effect, the playback rate and pitch parameters function independently of each other
+ * 
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -62,22 +67,25 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,15 +129,16 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
     @Selector("instantiateWithComponentDescription:options:completionHandler:")
     public static native void instantiateWithComponentDescriptionOptionsCompletionHandler(
             @ByValue AudioComponentDescription audioComponentDescription, int options,
-            @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") AVAudioUnit.Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") AVAudioUnit.Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -138,12 +147,12 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
 
     /**
      * [@property] overlap
-     * <p>
+     * 
      * amount of overlap between segments of the input audio signal
-     * <p>
+     * 
      * A higher value results in fewer artifacts in the output signal.
      * This parameter also impacts the amount of CPU used.
-     * <p>
+     * 
      * Range: 3.0 -> 32.0
      * Default: 8.0
      * Unit: Generic
@@ -154,12 +163,12 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
 
     /**
      * [@property] pitch
-     * <p>
+     * 
      * amount by which the input signal is pitch shifted
-     * <p>
+     * 
      * 1 octave = 1200 cents
      * 1 musical semitone = 100 cents
-     * <p>
+     * 
      * Range: -2400 -> 2400
      * Default: 0.0
      * Unit: Cents
@@ -170,9 +179,9 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
 
     /**
      * [@property] rate
-     * <p>
+     * 
      * playback rate of the input signal
-     * <p>
+     * 
      * Range: 1/32 -> 32.0
      * Default: 1.0
      * Unit: Generic
@@ -191,12 +200,12 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
 
     /**
      * [@property] overlap
-     * <p>
+     * 
      * amount of overlap between segments of the input audio signal
-     * <p>
+     * 
      * A higher value results in fewer artifacts in the output signal.
      * This parameter also impacts the amount of CPU used.
-     * <p>
+     * 
      * Range: 3.0 -> 32.0
      * Default: 8.0
      * Unit: Generic
@@ -207,12 +216,12 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
 
     /**
      * [@property] pitch
-     * <p>
+     * 
      * amount by which the input signal is pitch shifted
-     * <p>
+     * 
      * 1 octave = 1200 cents
      * 1 musical semitone = 100 cents
-     * <p>
+     * 
      * Range: -2400 -> 2400
      * Default: 0.0
      * Unit: Cents
@@ -223,9 +232,9 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
 
     /**
      * [@property] rate
-     * <p>
+     * 
      * playback rate of the input signal
-     * <p>
+     * 
      * Range: 1/32 -> 32.0
      * Default: 1.0
      * Unit: Generic

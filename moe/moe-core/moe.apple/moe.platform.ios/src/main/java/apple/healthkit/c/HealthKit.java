@@ -33,6 +33,10 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.NIntPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import apple.foundation.NSNumber;
+import apple.foundation.NSSet;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("HealthKit")
@@ -51,6 +55,10 @@ public final class HealthKit {
     private HealthKit() {
     }
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -58,7 +66,10 @@ public final class HealthKit {
 
     /**
      * Predicate Key Paths
+     * 
+     * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -66,37 +77,64 @@ public final class HealthKit {
 
     /**
      * Predicate Key Paths
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathUUID();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathSource();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathMetadata();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathCorrelation();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathWorkout();
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathDevice();
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -104,12 +142,19 @@ public final class HealthKit {
 
     /**
      * Sort Identifiers
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKSampleSortIdentifierStartDate();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -117,12 +162,19 @@ public final class HealthKit {
 
     /**
      * Predicate Key Paths
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathStartDate();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -130,27 +182,46 @@ public final class HealthKit {
 
     /**
      * Predicate Key Paths
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathWorkoutDuration();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathWorkoutTotalDistance();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathWorkoutTotalEnergyBurned();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathWorkoutType();
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -158,22 +229,37 @@ public final class HealthKit {
 
     /**
      * Sort Identifiers
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKWorkoutSortIdentifierDuration();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKWorkoutSortIdentifierTotalDistance();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKWorkoutSortIdentifierTotalEnergyBurned();
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -181,7 +267,10 @@ public final class HealthKit {
 
     /**
      * [@constant] HKPredicateKeyPathCategoryValue
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -189,7 +278,10 @@ public final class HealthKit {
 
     /**
      * [@constant] HKPredicateKeyPathCDATitle
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -197,7 +289,10 @@ public final class HealthKit {
 
     /**
      * [@constant] HKPredicateKeyPathCDAPatientName
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -205,7 +300,10 @@ public final class HealthKit {
 
     /**
      * [@constant] HKPredicateKeyPathCDAAuthorName
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -213,7 +311,10 @@ public final class HealthKit {
 
     /**
      * [@constant] HKPredicateKeyPathCDACustodianName
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -221,11 +322,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKDetailedCDAValidationErrorKey
-     * <p>
+     * 
      * This may be used with the validationError parameter of
      * CDADocumentSampleWithData:startDate:endDate:device:metadata:validationError: to obtain a detailed
      * description of the validation errors encountered when creating a CDA document.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -233,11 +337,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKDevicePropertyKeyName
-     * <p>
+     * 
      * Used with predicateForObjectsWithDeviceProperty to specify a device name.
-     * <p>
+     * 
      * The expected value type is an NSString.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -245,11 +352,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKDevicePropertyKeyManufacturer
-     * <p>
+     * 
      * Used with predicateForObjectsWithDeviceProperty to specify a device manufacturer.
-     * <p>
+     * 
      * The expected value type is an NSString.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -257,11 +367,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKDevicePropertyKeyModel
-     * <p>
+     * 
      * Used with predicateForObjectsWithDeviceProperty to specify a device model.
-     * <p>
+     * 
      * The expected value type is an NSString.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -269,11 +382,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKDevicePropertyKeyHardwareVersion
-     * <p>
+     * 
      * Used with predicateForObjectsWithDeviceProperty to specify a hardware version.
-     * <p>
+     * 
      * The expected value type is an NSString.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -281,11 +397,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKDevicePropertyKeyFirmwareVersion
-     * <p>
+     * 
      * Used with predicateForObjectsWithDeviceProperty to specify a firmware version.
-     * <p>
+     * 
      * The expected value type is an NSString.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -293,11 +412,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKDevicePropertyKeySoftwareVersion
-     * <p>
+     * 
      * Used with predicateForObjectsWithDeviceProperty to specify a software version.
-     * <p>
+     * 
      * The expected value type is an NSString.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -305,11 +427,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKDevicePropertyKeyLocalIdentifier
-     * <p>
+     * 
      * Used with predicateForObjectsWithDeviceProperty to specify a local identifier.
-     * <p>
+     * 
      * The expected value type is an NSString.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -317,11 +442,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKDevicePropertyKeyUDIDeviceIdentifier
-     * <p>
+     * 
      * Used with predicateForObjectsWithDeviceProperty to specify a UDI device identifier.
-     * <p>
+     * 
      * The expected value type is an NSString.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -329,14 +457,17 @@ public final class HealthKit {
 
     /**
      * [@constant] HKUserPreferencesDidChangeNotification
-     * <p>
+     * 
      * A notification posted every time the user updates their preferred units.
-     * <p>
+     * 
      * Each HKHealthStore posts a HKUserPreferencesDidChangeNotification notification when the preferred unit
      * for a HKQuantityType is changed by the user. To guarantee your listener will only receive a single
      * notification when this occurs, it is necessary to provide an HKHealthStore instance for the object
      * parameter of NSNotificationCenter's addObserver methods.
+     * 
+     * API-Since: 8.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -344,11 +475,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyUDIProductionIdentifier
-     * <p>
+     * 
      * Represents the serial number of the device that created the HKObject.
-     * <p>
+     * 
      * The expected value type is NSString.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -356,11 +490,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyBodyTemperatureSensorLocation
-     * <p>
+     * 
      * Represents the location where a particular body temperature reading was taken.
-     * <p>
+     * 
      * The expected value type is an NSNumber containing a HKBodyTemperatureSensorLocation value.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -368,11 +505,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyHeartRateSensorLocation
-     * <p>
+     * 
      * Represents the location where a particular heart rate reading was taken.
-     * <p>
+     * 
      * The expected value type is an NSNumber containing a HKHeartRateSensorLocation value.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -380,12 +520,15 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyFoodType
-     * <p>
+     * 
      * Represents the type of food that was consumed when creating an HKObject.
-     * <p>
+     * 
      * This should be a short string representing the type of food, such as 'Banana'. The expected value type
      * is NSString.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -393,14 +536,17 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyUDIDeviceIdentifier
-     * <p>
+     * 
      * Represents the device identifier portion of a device's UDI (Unique Device Identifier).
-     * <p>
+     * 
      * The device identifier can be used to reference the GUDID (Globally Unique Device Identifier Database).
      * The expected value type is NSString.
-     * <p>
+     * 
      * ** Note that the use of this key is now discouraged in favor of the HKDevice class.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -408,15 +554,18 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyUDIProductionIdentifier
-     * <p>
+     * 
      * Represents the production identifier portion of a device's UDI (Unique Device Identifier).
-     * <p>
+     * 
      * While part of a device's UDI, the production identifier is not saved in the FDA's GUDID
      * (Globally Unique Device Identifier Database) and its use in HealthKit is now discouraged for
      * user privacy reasons. Apps should consider handling this independently of HealthKit APIs if
      * needed.
      * The expected value type is NSString.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -424,16 +573,20 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyDigitalSignature
-     * <p>
+     * 
      * Represents a digital signature validating the origin of an HKObject's value.
-     * <p>
+     * 
      * Intended to provide data integrity for sample data produced by trusted (tamper resistant) measuring devices.
      * The digital signature format should be CMS (Cryptographic Message Syntax specified in IETF RFC 5652).
      * It should be a “Signed-data” type signature containing the data items to be signed (e.g., timestamp, value, etc.)
      * using ASN.1 encoding with DER (Distinguished Encoding Rules). The entire enveloping signature should be further
      * encoded using base64. Recommended digest is SHA256, and recommended cipher is FIPS PUB 186-4 Digital Signature
      * Standard Elliptic Curve P-256. See documentation for details.
+     * 
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -441,12 +594,15 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyExternalUUID
-     * <p>
+     * 
      * Represents a unique identifier for an HKObject that is set by its source.
      * Uniqueness of objects with the same value of this key is not enforced by HealthKit.
-     * <p>
+     * 
      * The expected value type is NSString.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -454,11 +610,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyTimeZone
-     * <p>
+     * 
      * Represents the time zone that the user was in when the HKObject was created.
-     * <p>
+     * 
      * The expected value type is an NSString compatible with NSTimeZone's +timeZoneWithName:.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -466,13 +625,16 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyDeviceName
-     * <p>
+     * 
      * Represents the name of the device that took the reading.
-     * <p>
+     * 
      * The expected value type is NSString.
-     * <p>
+     * 
      * ** Note that the use of this key is now discouraged in favor of the HKDevice class.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -480,13 +642,16 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyDeviceManufacturerName
-     * <p>
+     * 
      * Represents the name of the manufacturer of the device that took the reading.
-     * <p>
+     * 
      * The expected value type is NSString.
-     * <p>
+     * 
      * ** Note that the use of this key is now discouraged in favor of the HKDevice class.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -494,11 +659,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyWasTakenInLab
-     * <p>
+     * 
      * Represents whether or not the reading was taken in a lab.
-     * <p>
+     * 
      * The expected value type is an NSNumber containing a BOOL value.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -506,11 +674,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyReferenceRangeLowerLimit
-     * <p>
+     * 
      * Represents the lower limit of the reference range for a lab result.
-     * <p>
+     * 
      * The expected value type is an NSNumber.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -518,11 +689,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyReferenceRangeUpperLimit
-     * <p>
+     * 
      * Represents the upper limit of the reference range for a lab result.
-     * <p>
+     * 
      * The expected value type is an NSNumber.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -530,11 +704,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyWasUserEntered
-     * <p>
+     * 
      * Represents whether or not the reading was entered by the user.
-     * <p>
+     * 
      * The expected value type is an NSNumber containing a BOOL value.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -542,11 +719,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyWorkoutBrandName
-     * <p>
+     * 
      * Represents the brand name of a particular workout.
-     * <p>
+     * 
      * The expected value type is NSString.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -554,11 +734,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyGroupFitness
-     * <p>
+     * 
      * Represents whether or not a workout was performed as part of a group fitness class.
-     * <p>
+     * 
      * The expected value type is an NSNumber containing a BOOL value.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -566,11 +749,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyIndoorWorkout
-     * <p>
+     * 
      * Represents whether or not a workout was performed indoors as opposed to outdoors.
-     * <p>
+     * 
      * The expected value type is an NSNumber containing a BOOL value.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -578,11 +764,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyCoachedWorkout
-     * <p>
+     * 
      * Represents whether or not a workout was performed with a coach or personal trainer.
-     * <p>
+     * 
      * The expected value type is an NSNumber containing a BOOL value.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -590,12 +779,15 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyWeatherCondition
-     * <p>
+     * 
      * Represents the weather condition during the sample.
-     * <p>
+     * 
      * The expected value type is an NSNumber containing an HKWeatherCondition value. This key may be set on an
      * HKWorkout object to represent the overall weather condition during the workout.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -603,25 +795,31 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyWeatherTemperature
-     * <p>
+     * 
      * Represents the weather temperature during the sample.
-     * <p>
+     * 
      * The expected value type is an HKQuantity expressed in a temperature unit. This key may be set on an
      * HKWorkout object to represent the overall temperature during the workout.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKMetadataKeyWeatherTemperature();
 
     /**
-     * [@constant] HKMetadataKeyHumidity
-     * <p>
+     * [@constant] HKMetadataKeyWeatherHumidity
+     * 
      * Represents the weather humidity during the sample.
-     * <p>
+     * 
      * The expected value type is an HKQuantity expressed in percent. This key may be set on an HKWorkout
      * object to represent the overall humidity during the workout.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -629,12 +827,15 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeySexualActivityProtectionUsed
-     * <p>
+     * 
      * Represents whether or not protection was used during sexual activity. This can be used to track either
      * protection from STIs or protection from pregnancy.
-     * <p>
+     * 
      * The expected value type is an NSNumber containing a BOOL value.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -642,12 +843,15 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyMenstrualCycleStart
-     * <p>
+     * 
      * Indicates whether or not the sample represents the start of a menstrual cycle. This is a required
      * metadata key for category samples of type HKCategoryTypeIdentifierMenstrualFlow.
-     * <p>
+     * 
      * The expected value type is an NSNumber containing a BOOL value.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -655,12 +859,15 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyLapLength
-     * <p>
+     * 
      * Represents the length of a lap recorded during a workout.
-     * <p>
+     * 
      * The expected value type is an HKQuantity object compatible with a length unit. This key may be set on an
      * HKWorkout object to represent the length of a lap.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -668,12 +875,15 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeySwimmingLocationType
-     * <p>
+     * 
      * Represents the location type of a swimming workout.
-     * <p>
+     * 
      * The expected value type is an NSNumber containing an HKWorkoutSwimmingLocationType value. This key may
      * be set on an HKWorkout object to represent the swimming location type.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -681,13 +891,16 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeySwimmingStrokeStyle
-     * <p>
+     * 
      * Represents the predominant stroke style during a lap of a swimming workout.
-     * <p>
+     * 
      * The expected value type is an NSNumber containing an HKSwimmingStrokeStyle value. This key may be set on
      * an HKWorkoutEvent object with the type HKWorkoutEventTypeLap to represent the predominant style used
      * during the lap.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -695,7 +908,10 @@ public final class HealthKit {
 
     /**
      * Scalar(Count), Discrete
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -703,7 +919,10 @@ public final class HealthKit {
 
     /**
      * Scalar(Percent, 0.0 - 1.0), Discrete
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -711,7 +930,10 @@ public final class HealthKit {
 
     /**
      * Length, Discrete
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -719,7 +941,10 @@ public final class HealthKit {
 
     /**
      * Mass, Discrete
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -727,7 +952,10 @@ public final class HealthKit {
 
     /**
      * Mass, Discrete
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -735,7 +963,10 @@ public final class HealthKit {
 
     /**
      * Scalar(Count), Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -743,7 +974,10 @@ public final class HealthKit {
 
     /**
      * Length, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -751,7 +985,10 @@ public final class HealthKit {
 
     /**
      * Length, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -759,7 +996,10 @@ public final class HealthKit {
 
     /**
      * Length, Cumulative
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -767,7 +1007,10 @@ public final class HealthKit {
 
     /**
      * Energy, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -775,7 +1018,10 @@ public final class HealthKit {
 
     /**
      * Energy, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -783,7 +1029,10 @@ public final class HealthKit {
 
     /**
      * Scalar(Count), Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -791,7 +1040,10 @@ public final class HealthKit {
 
     /**
      * Scalar(Count), Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -799,7 +1051,10 @@ public final class HealthKit {
 
     /**
      * Time Cumulative
+     * 
+     * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -807,7 +1062,10 @@ public final class HealthKit {
 
     /**
      * Scalar(Count), Cumulative
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -815,7 +1073,10 @@ public final class HealthKit {
 
     /**
      * Length, Cumulative
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -823,7 +1084,10 @@ public final class HealthKit {
 
     /**
      * Scalar(Count), Cumulative
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -831,7 +1095,10 @@ public final class HealthKit {
 
     /**
      * Scalar(Count)/Time, Discrete
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -839,7 +1106,10 @@ public final class HealthKit {
 
     /**
      * Temperature, Discrete
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -847,7 +1117,10 @@ public final class HealthKit {
 
     /**
      * Basal Body Temperature, Discrete
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -855,7 +1128,10 @@ public final class HealthKit {
 
     /**
      * Pressure, Discrete
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -863,7 +1139,10 @@ public final class HealthKit {
 
     /**
      * Pressure, Discrete
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -871,7 +1150,10 @@ public final class HealthKit {
 
     /**
      * Scalar(Count)/Time, Discrete
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -879,7 +1161,10 @@ public final class HealthKit {
 
     /**
      * Scalar(Percent, 0.0 - 1.0), Discrete
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -887,7 +1172,10 @@ public final class HealthKit {
 
     /**
      * Scalar(Percent, 0.0 - 1.0), Discrete
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -895,7 +1183,10 @@ public final class HealthKit {
 
     /**
      * Mass/Volume, Discrete
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -903,7 +1194,10 @@ public final class HealthKit {
 
     /**
      * Scalar(Count), Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -911,7 +1205,10 @@ public final class HealthKit {
 
     /**
      * Conductance, Discrete
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -919,7 +1216,10 @@ public final class HealthKit {
 
     /**
      * Scalar(Count), Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -927,7 +1227,10 @@ public final class HealthKit {
 
     /**
      * Scalar(Percent, 0.0 - 1.0), Discrete
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -935,7 +1238,10 @@ public final class HealthKit {
 
     /**
      * Volume, Discrete
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -943,7 +1249,10 @@ public final class HealthKit {
 
     /**
      * Volume, Discrete
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -951,7 +1260,10 @@ public final class HealthKit {
 
     /**
      * Volume/Time, Discrete
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -959,7 +1271,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -967,7 +1282,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -975,7 +1293,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -983,7 +1304,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -991,7 +1315,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -999,7 +1326,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1007,7 +1337,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1015,7 +1348,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1023,7 +1359,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1031,7 +1370,10 @@ public final class HealthKit {
 
     /**
      * Energy, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1039,7 +1381,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1047,7 +1392,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1055,7 +1403,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1063,7 +1414,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1071,7 +1425,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1079,7 +1436,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1087,7 +1447,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1095,7 +1458,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1103,7 +1469,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1111,7 +1480,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1119,7 +1491,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1127,7 +1502,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1135,7 +1513,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1143,7 +1524,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1151,7 +1535,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1159,7 +1546,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1167,7 +1557,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1175,7 +1568,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1183,7 +1579,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1191,7 +1590,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1199,7 +1601,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1207,7 +1612,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1215,7 +1623,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1223,7 +1634,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1231,7 +1645,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1239,7 +1656,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1247,7 +1667,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1255,7 +1678,10 @@ public final class HealthKit {
 
     /**
      * Mass, Cumulative
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1263,7 +1689,10 @@ public final class HealthKit {
 
     /**
      * Volume, Cumulative
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1271,7 +1700,10 @@ public final class HealthKit {
 
     /**
      * Scalar(Count), Discrete
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1279,7 +1711,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSleepAnalysis
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1287,7 +1722,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueAppleStandHour
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1295,7 +1733,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueCervicalMucusQuality
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1303,7 +1744,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueOvulationTestResult
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1311,7 +1755,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueMenstrualFlow
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1319,7 +1766,10 @@ public final class HealthKit {
 
     /**
      * (Spotting) HKCategoryValue
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1327,7 +1777,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValue
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1335,7 +1788,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValue
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1343,7 +1799,10 @@ public final class HealthKit {
 
     /**
      * HKBiologicalSexObject
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1351,7 +1810,10 @@ public final class HealthKit {
 
     /**
      * HKBloodTypeObject
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1359,7 +1821,10 @@ public final class HealthKit {
 
     /**
      * NSDateComponents
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1367,7 +1832,10 @@ public final class HealthKit {
 
     /**
      * HKFitzpatrickSkinTypeObject
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1375,22 +1843,37 @@ public final class HealthKit {
 
     /**
      * HKWheelchairUseObject
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKCharacteristicTypeIdentifierWheelchairUse();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKCorrelationTypeIdentifierBloodPressure();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKCorrelationTypeIdentifierFood();
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1400,7 +1883,10 @@ public final class HealthKit {
      * ------------------------------
      * HKWorkoutType Identifier
      * ------------------------------
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1408,17 +1894,28 @@ public final class HealthKit {
 
     /**
      * Predicate Key Paths
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathQuantity();
 
+    /**
+     * API-Since: 11.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathWorkoutTotalFlightsClimbed();
 
+    /**
+     * API-Since: 11.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1426,13 +1923,16 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyHeartRateMotionContext
-     * <p>
+     * 
      * Represents the context in which a particular heart rate reading was taken.
-     * <p>
+     * 
      * The expected value type is an NSNumber containing a HKHeartRateMotionContext value. The value is active
      * (HKHeartRateMotionContextActive) if the user is in motion or working out, sedentary if the user is
      * still (HKHeartRateMotionContextSedentary), or not set (HKHeartRateMotionContextNotSet) otherwise.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1440,16 +1940,19 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeySyncIdentifier
-     * <p>
+     * 
      * Represents an identifier for an HKObject that is set by its source and is used by HealthKit to uniquely
      * identify an object.
-     * <p>
+     * 
      * Saving a HKObject with a HKMetadataKeySyncIdentifier will replace an existing HKObject with the
      * same HKMetadataKeySyncIdentifier value if the new HKObject has a greater HKMetadataKeySyncVersion.
      * The new sample will be added to all HKWorkouts or HKCorrelations containing the replaced sample.
      * HKMetadataKeySyncVersion must be provided if HKMetadataKeySyncIdentifier is provided.
      * The expected value type is NSString.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1457,13 +1960,16 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeySyncVersion
-     * <p>
+     * 
      * Represents the version of the HKObject that is set by its source and is used by HealthKit to identify an
      * object's version.
-     * <p>
+     * 
      * HKMetadataKeySyncVersion may not be provided if HKMetadataKeySyncIdentifier is not provided.
      * The expected value type is NSNumber.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1471,12 +1977,15 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyInsulinDeliveryReason
-     * <p>
+     * 
      * Represents the medical reason for the delivery of an insulin dose. This is a required metadata key for
      * samples of type HKQuantityTypeIdentifierInsulinDelivery.
-     * <p>
+     * 
      * The expected value type is an NSNumber containing a HKInsulinDeliveryReason value.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1484,15 +1993,18 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyBloodGlucoseMealTime
-     * <p>
+     * 
      * Indicates the relative timing of a blood glucose reading to a meal.
-     * <p>
+     * 
      * This timing, as well as other factors like meal composition, can be used by medical professionals to
      * determine the acceptable value range for a blood glucose reading. For use cases requiring the capture of
      * precise timing and composition information, developers should record additional dietary samples, such as
      * HKQuantityTypeIdentifierDietaryCarbohydrates. The expected value type is an NSNumber containing a
      * HKBloodGlucoseMealTime value.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1500,11 +2012,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyVO2MaxTestType
-     * <p>
+     * 
      * Represents the test used to create VO2 Max Sample
-     * <p>
+     * 
      * The expected value type is an NSNumber containing a HKVO2MaxTestType value.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1512,7 +2027,10 @@ public final class HealthKit {
 
     /**
      * Length, Discrete
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1520,7 +2038,10 @@ public final class HealthKit {
 
     /**
      * ml/(kg*min) Discrete
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1528,7 +2049,10 @@ public final class HealthKit {
 
     /**
      * Scalar(Count)/Time, Discrete
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1536,7 +2060,10 @@ public final class HealthKit {
 
     /**
      * Scalar(Count)/Time, Discrete
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1544,7 +2071,10 @@ public final class HealthKit {
 
     /**
      * Time (ms), Discrete
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1552,7 +2082,10 @@ public final class HealthKit {
 
     /**
      * Pharmacology (IU) Cumulative
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1562,7 +2095,10 @@ public final class HealthKit {
      * --------------------------------
      * HKSeriesSample Identifiers
      * --------------------------------
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1570,67 +2106,117 @@ public final class HealthKit {
 
     /**
      * Constants to match on any value of that property when querying for samples from an HKSourceRevision
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKSourceRevisionAnyVersion();
 
+    /**
+     * API-Since: 11.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKSourceRevisionAnyProductType();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @ByValue
     public static native NSOperatingSystemVersion HKSourceRevisionAnyOperatingSystem();
 
+    /**
+     * API-Since: 12.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKFHIRResourceTypeAllergyIntolerance();
 
+    /**
+     * API-Since: 12.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKFHIRResourceTypeCondition();
 
+    /**
+     * API-Since: 12.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKFHIRResourceTypeImmunization();
 
+    /**
+     * API-Since: 12.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKFHIRResourceTypeMedicationDispense();
 
+    /**
+     * API-Since: 12.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKFHIRResourceTypeMedicationOrder();
 
+    /**
+     * API-Since: 12.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKFHIRResourceTypeMedicationStatement();
 
+    /**
+     * API-Since: 12.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKFHIRResourceTypeObservation();
 
+    /**
+     * API-Since: 12.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKFHIRResourceTypeProcedure();
 
+    /**
+     * API-Since: 12.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathClinicalRecordFHIRResourceIdentifier();
 
+    /**
+     * API-Since: 12.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1638,7 +2224,10 @@ public final class HealthKit {
 
     /**
      * Length, Cumulative
+     * 
+     * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1646,7 +2235,10 @@ public final class HealthKit {
 
     /**
      * Time, Cumulative
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1654,7 +2246,10 @@ public final class HealthKit {
 
     /**
      * Pressure, DiscreteEquivalentContinuousLevel
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1662,7 +2257,10 @@ public final class HealthKit {
 
     /**
      * Pressure, DiscreteEquivalentContinuousLevel
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1670,7 +2268,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValue
+     * 
+     * API-Since: 12.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1678,7 +2279,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValue
+     * 
+     * API-Since: 12.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1686,7 +2290,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValue
+     * 
+     * API-Since: 12.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1694,7 +2301,12 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueAudioExposureEvent
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
      */
+    @NotNull
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1702,52 +2314,105 @@ public final class HealthKit {
 
     /**
      * HKCategoryValue
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKCategoryTypeIdentifierToothbrushingEvent();
 
+    /**
+     * API-Since: 13.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKDataTypeIdentifierHeartbeatSeries();
 
+    /**
+     * A type identifier for records of allergies or intolerances.
+     * 
+     * API-Since: 12.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKClinicalTypeIdentifierAllergyRecord();
 
+    /**
+     * A type identifier for records of a condition, problem, or diagnosis.
+     * 
+     * API-Since: 12.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKClinicalTypeIdentifierConditionRecord();
 
+    /**
+     * A type identifier for records of vaccine administration.
+     * 
+     * API-Since: 12.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKClinicalTypeIdentifierImmunizationRecord();
 
+    /**
+     * A type identifier for records of lab results.
+     * 
+     * API-Since: 12.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKClinicalTypeIdentifierLabResultRecord();
 
+    /**
+     * A type identifier for records of medication prescription, intake, or administration.
+     * 
+     * API-Since: 12.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKClinicalTypeIdentifierMedicationRecord();
 
+    /**
+     * A type identifier for records of clinical procedures.
+     * 
+     * API-Since: 12.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKClinicalTypeIdentifierProcedureRecord();
 
+    /**
+     * A type identifier for records of vital signs.
+     * 
+     * API-Since: 12.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKClinicalTypeIdentifierVitalSignRecord();
 
+    /**
+     * API-Since: 13.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1755,7 +2420,10 @@ public final class HealthKit {
 
     /**
      * Predicate Key Paths
+     * 
+     * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1763,37 +2431,64 @@ public final class HealthKit {
 
     /**
      * Predicate Key Paths
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathMin();
 
+    /**
+     * API-Since: 13.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathAverage();
 
+    /**
+     * API-Since: 13.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathMax();
 
+    /**
+     * API-Since: 13.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathMostRecent();
 
+    /**
+     * API-Since: 13.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathMostRecentStartDate();
 
+    /**
+     * API-Since: 13.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathMostRecentEndDate();
 
+    /**
+     * API-Since: 13.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1801,16 +2496,19 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyAverageSpeed
-     * <p>
+     * 
      * Represents the average speed for a workout segment or distance sample.
-     * <p>
+     * 
      * This represents the average speed when moving so it may not match the value of distance/time for a
      * distance sample.
-     * <p>
+     * 
      * The expected value type is an HKQuantity object compatible with a speed unit (e.g. m/s). This key may be
      * set on quantity samples of type HKQuantityTypeIdentifierDistanceDownhillSnowSports or a workout segment
      * representing a skiing run.
+     * 
+     * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1818,13 +2516,16 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyMaximumSpeed
-     * <p>
+     * 
      * Represents the maximum speed for a workout segment or distance sample.
-     * <p>
+     * 
      * The expected value type is an HKQuantity object compatible with a speed unit (e.g. m/s). This key may be
      * set on quantity samples of type HKQuantityTypeIdentifierDistanceDownhillSnowSports or a workout segment
      * representing a skiing run.
+     * 
+     * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1832,15 +2533,18 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyAlpineSlopeGrade
-     * <p>
+     * 
      * Represents the grade of a ski run.
-     * <p>
+     * 
      * Alpine slope grade is measured in percent where 100% grade is a 45 degree slope.
-     * <p>
+     * 
      * The expected value type is an HKQuantity object compatible with percent unit. This key may be set on
      * quantity samples of type HKQuantityTypeIdentifierDistanceDownhillSnowSports or a workout segment
      * representing a skiing run.
+     * 
+     * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1848,12 +2552,15 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyElevationAscended
-     * <p>
+     * 
      * Represents the cumulative elevation ascent during a workout.
-     * <p>
+     * 
      * The expected value type is an HKQuantity object compatible with length unit. This key may be set on a
      * workout, workout segments or distance samples.
+     * 
+     * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1861,12 +2568,15 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyElevationDescended
-     * <p>
+     * 
      * Represents the cumulative elevation descent during a workout.
-     * <p>
+     * 
      * The expected value type is an HKQuantity object compatible with length unit. This key may be set on a
      * workout, workout segments or distance samples.
+     * 
+     * API-Since: 11.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1874,13 +2584,16 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyFitnessMachineDuration
-     * <p>
+     * 
      * Represents the workout duration as displayed by a GymKit connected fitness machine.
-     * <p>
+     * 
      * The expected value type is an HKQuantity object compatible with a time unit. This key may be set on an
      * HKWorkout object to represent the duration of the workout as displayed by a GymKit connected fitness
      * machine.
+     * 
+     * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1888,12 +2601,15 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyIndoorBikeDistance
-     * <p>
+     * 
      * Represents the distance covered during an indoor bike workout.
-     * <p>
+     * 
      * The expected value type is an HKQuantity object compatible with a length unit. This key may be set on an
      * HKWorkout object to represent the distance covered during an indoor bike workout.
+     * 
+     * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1901,12 +2617,15 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyCrossTrainerDistance
-     * <p>
+     * 
      * Represents the distance covered during a cross trainer workout.
-     * <p>
+     * 
      * The expected value type is an HKQuantity object compatible with a length unit. This key may be set on an
      * HKWorkout object to represent the distance covered during a cross trainer workout.
+     * 
+     * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1914,13 +2633,16 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyHeartRateEventThreshold
-     * <p>
+     * 
      * Represents the threshold heart rate that triggered a heart rate event.
-     * <p>
+     * 
      * The expected value is an HKQuantity object with a compatible unit (e.g. count/min).
      * This key will be set on heart rate event samples of type HKCategoryTypeIdentifierHighHeartRateEvent and
      * HKCategoryTypeIdentifierLowHeartRateEvent.
+     * 
+     * API-Since: 12.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1928,12 +2650,15 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyAverageMETs
-     * <p>
+     * 
      * Represents the average METs, or Metabolic Equivalent of Task during a workout.
-     * <p>
+     * 
      * The expected value type is an HKQuantity expressed in a METs (kcal/(kg*hr)) unit. This key may be set on an
      * HKWorkout object to represent the average workout intensity represented as METs over the entire workout duration.
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1941,12 +2666,15 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyAudioExposureLevel
-     * <p>
+     * 
      * Represents the audio level associated with an audio event.
-     * <p>
+     * 
      * The expected value is an HKQuantity whose value is the audio level
      * associated with the event measured in dBASPL units.
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1954,7 +2682,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1962,7 +2693,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1970,7 +2704,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueAppetiteChanges
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1978,7 +2715,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1986,7 +2726,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1994,7 +2737,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2002,7 +2748,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2010,7 +2759,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2018,7 +2770,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2026,7 +2781,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2034,7 +2792,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2042,7 +2803,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2050,7 +2814,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2058,7 +2825,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2066,7 +2836,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2074,7 +2847,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2082,7 +2858,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2090,7 +2869,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2098,7 +2880,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2106,7 +2891,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2114,7 +2902,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2122,7 +2913,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValuePresence
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2130,7 +2924,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2138,7 +2935,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2146,7 +2946,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2154,7 +2957,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2162,7 +2968,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2170,7 +2979,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2178,7 +2990,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2186,7 +3001,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValuePresence
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2194,7 +3012,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2202,7 +3023,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2210,7 +3034,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 13.6
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2218,27 +3045,46 @@ public final class HealthKit {
 
     /**
      * Predicate Key Paths
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathAverageHeartRate();
 
+    /**
+     * API-Since: 14.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathECGClassification();
 
+    /**
+     * API-Since: 14.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathECGSymptomsStatus();
 
+    /**
+     * API-Since: 14.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKFHIRResourceTypeCoverage();
 
+    /**
+     * API-Since: 14.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2246,7 +3092,10 @@ public final class HealthKit {
 
     /**
      * m/s, Discrete
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2254,7 +3103,10 @@ public final class HealthKit {
 
     /**
      * Scalar(Percent, 0.0 - 1.0), Discrete
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2262,7 +3114,10 @@ public final class HealthKit {
 
     /**
      * Scalar(Percent, 0.0 - 1.0), Discrete
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2270,7 +3125,10 @@ public final class HealthKit {
 
     /**
      * Length, Discrete
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2278,7 +3136,10 @@ public final class HealthKit {
 
     /**
      * Length, Discrete
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2286,7 +3147,10 @@ public final class HealthKit {
 
     /**
      * m/s, Discrete
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2294,7 +3158,10 @@ public final class HealthKit {
 
     /**
      * m/s), Discrete
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2302,7 +3169,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueEnvironmentalAudioExposureEvent
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2310,7 +3180,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValue
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2318,7 +3191,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2326,7 +3202,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2334,7 +3213,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2342,7 +3224,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2350,7 +3235,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2358,7 +3246,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueSeverity
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2366,12 +3257,21 @@ public final class HealthKit {
 
     /**
      * HKActivityMoveModeObject
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKCharacteristicTypeIdentifierActivityMoveMode();
 
+    /**
+     * A type identifier for records containing information about the user’s insurance coverage.
+     * 
+     * API-Since: 14.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2379,7 +3279,10 @@ public final class HealthKit {
 
     /**
      * The "DSTU2" release: http://hl7.org/fhir/DSTU2/
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2387,7 +3290,10 @@ public final class HealthKit {
 
     /**
      * The "R4" release: http://hl7.org/fhir/R4/
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2395,7 +3301,10 @@ public final class HealthKit {
 
     /**
      * An unknown release
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2403,11 +3312,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyAppleECGAlgorithmVersion
-     * <p>
+     * 
      * Represents the ECG algorithm version that was used to generate a particular HKElectrocardiogram.
-     * <p>
+     * 
      * The expected value type is an an NSNumber containing a HKAppleECGAlgorithmVersion value.
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2415,12 +3327,15 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyDevicePlacementSide
-     * <p>
+     * 
      * Represents the detected placement of the device during the bout of walking
-     * <p>
+     * 
      * The expected value type is an NSNumber containing a HKDevicePlacementSide value. This key is expected to
      * be written for Walking Aymmetry Percentage.
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2428,12 +3343,15 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyBarometricPressure
-     * <p>
+     * 
      * Represents the barometric pressure recorded at the time of a sample.
-     * <p>
+     * 
      * The expected value type is an HKQuantity representing a value in units of pressure (atmospheres, pascals,
      * millimeters of Mercury).
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2441,12 +3359,15 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyAppleDeviceCalibrated
-     * <p>
+     * 
      * Represents the calibration status of the devices used to generate this sample.
-     * <p>
+     * 
      * The expected value is a boolean NSNumber indicating whether the sample value was estimated using a sufficient set
      * of device calibration data. The calibration status of a device may vary per data type. This key is read-only.
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2454,7 +3375,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueHeadphoneAudioExposureEvent
+     * 
+     * API-Since: 14.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2462,13 +3386,16 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyAudioExposureDuration
-     * <p>
+     * 
      * Represents the duration of time that is covered by audio samples.
-     * <p>
+     * 
      * The expected value type is an HKQuantity object compatible with a time unit.
      * This key may be set on headphone audio exposure event samples to indicate
      * the duration of time that the user was actually exposed to audio through their headphones.
+     * 
+     * API-Since: 14.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2476,39 +3403,50 @@ public final class HealthKit {
 
     /**
      * Determines the Apple Walking Steadiness classification for the provided Apple Walking Steadiness value.
-     *
+     * 
      * @param value             Apple Walking Steadiness quantity with expected value between 0% and 100%.
      * @param classificationOut A pointer to the classification determined for the provided value.
      * @param errorOut          A pointer to an error describing why an unknown classification was returned.
      * @return YES if the classification was successful. NO otherwise, meaning the provided value could not be
      *         classified.
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @CFunction
-    public static native boolean HKAppleWalkingSteadinessClassificationForQuantity(HKQuantity value,
-            NIntPtr classificationOut, Ptr<NSError> errorOut);
+    public static native boolean HKAppleWalkingSteadinessClassificationForQuantity(@NotNull HKQuantity value,
+            @NotNull NIntPtr classificationOut, @Nullable Ptr<NSError> errorOut);
 
     /**
      * Retrieves the minimum quantity in percent unit for an Apple Walking Steadiness classification.
-     *
+     * 
      * @param classification Apple Walking Steadiness classification for desired minimum value.
+     * 
+     *                       API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native HKQuantity HKAppleWalkingSteadinessMinimumQuantityForClassification(@NInt long classification);
 
     /**
      * Retrieves the maximum quantity in percent unit for an Apple Walking Steadiness classification.
-     *
+     * 
      * @param classification Apple Walking Steadiness classification for desired maximum value.
+     * 
+     *                       API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native HKQuantity HKAppleWalkingSteadinessMaximumQuantityForClassification(@NInt long classification);
 
     /**
      * Time, Cumulative
+     * 
+     * API-Since: 14.5
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2516,7 +3454,10 @@ public final class HealthKit {
 
     /**
      * Scalar(Percent, 0.0 - 1.0), Discrete
+     * 
+     * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2524,7 +3465,10 @@ public final class HealthKit {
 
     /**
      * Scalar(Count), Cumulative
+     * 
+     * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2532,7 +3476,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValuePregnancyTestResult
+     * 
+     * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2540,7 +3487,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueProgesteroneTestResult
+     * 
+     * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2548,7 +3498,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValue
+     * 
+     * API-Since: 14.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2556,7 +3509,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValue
+     * 
+     * API-Since: 14.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2564,12 +3520,19 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueContraceptive
+     * 
+     * API-Since: 14.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKCategoryTypeIdentifierContraceptive();
 
+    /**
+     * API-Since: 14.3
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2577,7 +3540,10 @@ public final class HealthKit {
 
     /**
      * HKCategoryValueAppleWalkingSteadinessEvent
+     * 
+     * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2585,11 +3551,14 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyVO2MaxValue
-     * <p>
+     * 
      * Represents a VO2Max value that can be associated with, for example, Cardio Fitness Events
-     * <p>
+     * 
      * This key should be used to store an HKQuantity with a unit of `ml/kg·min`
+     * 
+     * API-Since: 14.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2597,12 +3566,15 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyLowCardioFitnessEventThreshold
-     * <p>
+     * 
      * Can be used to store a snapshot of the threshold used to classify VO2Max values as "low"
-     * <p>
+     * 
      * This key should be used to store an HKQuantity, with a unit of `ml/kg·min`, representing the low fitness
      * threshold.
+     * 
+     * API-Since: 14.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2610,12 +3582,15 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyDateOfEarliestDataUsedForEstimate
-     * <p>
+     * 
      * Represents how far back an estimation algorithm incorporated data from.
-     * <p>
+     * 
      * The expected value is an NSDate indicating the earliest date of data used to produce an estimated value for an
      * HKSample.
+     * 
+     * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2623,14 +3598,549 @@ public final class HealthKit {
 
     /**
      * [@constant] HKMetadataKeyAlgorithmVersion
-     * <p>
+     * 
      * The version of the algorithm used to generate the sample.
-     * <p>
+     * 
      * The key for an NSNumber containing an NSInteger indicating the version of the algorithm used to generate the
      * sample.
+     * 
+     * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKMetadataKeyAlgorithmVersion();
+
+    /**
+     * Returns the set of `HKCategoryValueSleepAnalysis` values that are considered to be asleep.
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CFunction
+    public static native NSSet<? extends NSNumber> HKCategoryValueSleepAnalysisAsleepValues();
+
+    /**
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKPredicateKeyPathWorkoutSumQuantity();
+
+    /**
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKPredicateKeyPathWorkoutMinimumQuantity();
+
+    /**
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKPredicateKeyPathWorkoutMaximumQuantity();
+
+    /**
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKPredicateKeyPathWorkoutAverageQuantity();
+
+    /**
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKPredicateKeyPathWorkoutActivity();
+
+    /**
+     * Temperature, Discrete
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKQuantityTypeIdentifierAppleSleepingWristTemperature();
+
+    /**
+     * Length, Discrete
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKQuantityTypeIdentifierRunningStrideLength();
+
+    /**
+     * Length, Discrete
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKQuantityTypeIdentifierRunningVerticalOscillation();
+
+    /**
+     * Time, Discrete
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKQuantityTypeIdentifierRunningGroundContactTime();
+
+    /**
+     * Power Discrete
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKQuantityTypeIdentifierRunningPower();
+
+    /**
+     * m/s, Discrete
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKQuantityTypeIdentifierRunningSpeed();
+
+    /**
+     * Scalar(Count)/Time, Discrete
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKQuantityTypeIdentifierHeartRateRecoveryOneMinute();
+
+    /**
+     * Scalar(Percent, 0.0 - 1.0), Discrete
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKQuantityTypeIdentifierAtrialFibrillationBurden();
+
+    /**
+     * Length, Discrete
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKQuantityTypeIdentifierUnderwaterDepth();
+
+    /**
+     * Temperature, Discrete
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKQuantityTypeIdentifierWaterTemperature();
+
+    /**
+     * HKCategoryValue
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierPersistentIntermenstrualBleeding();
+
+    /**
+     * HKCategoryValue
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierProlongedMenstrualPeriods();
+
+    /**
+     * HKCategoryValue
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierIrregularMenstrualCycles();
+
+    /**
+     * HKCategoryValue
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierInfrequentMenstrualCycles();
+
+    /**
+     * -----------------------------------
+     * HKVisionPrescription Identifier
+     * -----------------------------------
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKVisionPrescriptionTypeIdentifier();
+
+    /**
+     * [@constant] HKMetadataKeyUserMotionContext
+     * 
+     * Represents the user's motion when a particular sample was taken.
+     * 
+     * The expected value type is an NSNumber containing a HKUserMotionContext value. The value is active
+     * (HKUserMotionContextActive) if the user is in motion or working out, stationary if the user is
+     * still (HKUserMotionContextStationary), or not set (HKUserMotionContextNotSet) otherwise.
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeyUserMotionContext();
+
+    /**
+     * [@constant] HKMetadataKeySessionEstimate
+     * 
+     * Represents a per-session estimate prior to longitudinal smoothing applied to the value stored in the associated
+     * HKQuantitySample.
+     * 
+     * The expected value type is an HKQuantity object with a unit compatible with the associated HKQuantitySample.
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeySessionEstimate();
+
+    /**
+     * [@constant] HKMetadataKeyHeartRateRecoveryTestType
+     * 
+     * Represents the test used to determine a Heart Rate Recovery value
+     * 
+     * The expected value type is an NSNumber containing a HKHeartRateRecoveryTestType value.
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeyHeartRateRecoveryTestType();
+
+    /**
+     * [@constant] HKMetadataKeyHeartRateRecoveryActivityType
+     * 
+     * Represents the activity which preceded a Heart Rate Recovery value
+     * 
+     * The expected value type is an NSNumber containing a HKWorkoutActivityType value.
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeyHeartRateRecoveryActivityType();
+
+    /**
+     * [@constant] HKMetadataKeyHeartRateRecoveryActivityDuration
+     * 
+     * Represents the duration of activity which preceded a Heart Rate Recovery value
+     * 
+     * The expected value type is an HKQuantity object compatible with a time unit.
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeyHeartRateRecoveryActivityDuration();
+
+    /**
+     * [@constant] HKMetadataKeyHeartRateRecoveryMaxObservedRecoveryHeartRate
+     * 
+     * Represents the maximum heart rate observed during the corresponding Heart Rate Recovery sample interval
+     * 
+     * The expected value type is an HKQuantity object compatible with "count/min" unit (eg "BPM").
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeyHeartRateRecoveryMaxObservedRecoveryHeartRate();
+
+    /**
+     * [@constant] HKMetadataKeySWOLFScore
+     * 
+     * Represents sum of strokes per length and time for the length. Calculated for each lap event and segment event
+     * during swimming workout.
+     * 
+     * The expected value type is an NSNumber containing a score. This key may be set on an HKWorkout object to
+     * represent the SWOLF Score during the whole workout.
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeySWOLFScore();
+
+    /**
+     * [@constant] HKMetadataKeyQuantityClampedToLowerBound
+     * 
+     * Indicates the quantity was clamped to a lower bound.
+     * 
+     * Value is a BOOL indicating whether or not the quantity value in the sample has been clamped to some lower bound
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeyQuantityClampedToLowerBound();
+
+    /**
+     * [@constant] HKMetadataKeyQuantityClampedToUpperBound
+     * 
+     * Indicates the quantity was clamped to an upper bound.
+     * 
+     * Value is a BOOL indicating whether or not the quantity value in the sample has been clamped to some upper bound
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeyQuantityClampedToUpperBound();
+
+    /**
+     * [@constant] HKMetadataKeyGlassesPrescriptionDescription
+     * 
+     * Represents the description that may be associated with a HKGlassesPrescription.
+     * 
+     * Glasses are often customized for different purposes like reading or distance. Prescriptions received by an eye
+     * care professional can provide different ocular functions.
+     * Users may also customize their glasses for different scenarios. The value of the metadata is a NSString that
+     * describes the purpose of a HKGlassesPrescription.
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeyGlassesPrescriptionDescription();
+
+    /**
+     * [@constant] HKVerifiableClinicalRecordSourceTypeSMARTHealthCard
+     * 
+     * Represents a SMART Health Card source type for a verifiable record.
+     * 
+     * API-Since: 15.4
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKVerifiableClinicalRecordSourceTypeSMARTHealthCard();
+
+    /**
+     * [@constant] HKVerifiableClinicalRecordSourceTypeEUDigitalCOVIDCertificate
+     * 
+     * Represents a EU Digital COVID Certificate source type for a verifiable record.
+     * 
+     * API-Since: 15.4
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKVerifiableClinicalRecordSourceTypeEUDigitalCOVIDCertificate();
+
+    /**
+     * [@constant] HKVerifiableClinicalRecordCredentialTypeCOVID19
+     * 
+     * Represents the COVID-19 credential type for a verifiable record.
+     * 
+     * API-Since: 15.4
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKVerifiableClinicalRecordCredentialTypeCOVID19();
+
+    /**
+     * [@constant] HKVerifiableClinicalRecordCredentialTypeImmunization
+     * 
+     * Represents the immunization credential type for a verifiable record.
+     * 
+     * API-Since: 15.4
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKVerifiableClinicalRecordCredentialTypeImmunization();
+
+    /**
+     * [@constant] HKVerifiableClinicalRecordCredentialTypeLaboratory
+     * 
+     * Represents the laboratory credential type for a verifiable record.
+     * 
+     * API-Since: 15.4
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKVerifiableClinicalRecordCredentialTypeLaboratory();
+
+    /**
+     * [@constant] HKVerifiableClinicalRecordCredentialTypeRecovery
+     * 
+     * Represents the recovery credential type for a verifiable record.
+     * 
+     * API-Since: 15.4
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKVerifiableClinicalRecordCredentialTypeRecovery();
+
+    /**
+     * Predicate Key Paths
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKPredicateKeyPathWorkoutActivityType();
+
+    /**
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKPredicateKeyPathWorkoutActivityDuration();
+
+    /**
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKPredicateKeyPathWorkoutActivityStartDate();
+
+    /**
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKPredicateKeyPathWorkoutActivityEndDate();
+
+    /**
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKPredicateKeyPathWorkoutActivitySumQuantity();
+
+    /**
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKPredicateKeyPathWorkoutActivityMinimumQuantity();
+
+    /**
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKPredicateKeyPathWorkoutActivityMaximumQuantity();
+
+    /**
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKPredicateKeyPathWorkoutActivityAverageQuantity();
 }

@@ -40,7 +40,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -71,22 +76,25 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,9 +129,10 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -153,19 +162,21 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
 
     /**
      * [@property] computeFunction
-     * <p>
+     * 
      * The function to use with the MTLComputePipelineState
      */
+    @Nullable
     @Generated
     @Selector("computeFunction")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLFunction computeFunction();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("init")
@@ -173,16 +184,17 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
+    @Nullable
     @Generated
     @Selector("label")
     public native String label();
 
     /**
      * reset
-     * <p>
+     * 
      * Restore all compute pipeline descriptor properties to their default values.
      */
     @Generated
@@ -191,34 +203,36 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
 
     /**
      * [@property] computeFunction
-     * <p>
+     * 
      * The function to use with the MTLComputePipelineState
      */
     @Generated
     @Selector("setComputeFunction:")
-    public native void setComputeFunction(@Mapped(ObjCObjectMapper.class) MTLFunction value);
+    public native void setComputeFunction(@Nullable @Mapped(ObjCObjectMapper.class) MTLFunction value);
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
     @Generated
     @Selector("setLabel:")
-    public native void setLabel(String value);
+    public native void setLabel(@Nullable String value);
 
     /**
      * [@property] computeDataDescriptor
-     * <p>
+     * 
      * An MTLStageInputOutputDescriptor to fetch data from buffers
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setStageInputDescriptor:")
-    public native void setStageInputDescriptor(MTLStageInputOutputDescriptor value);
+    public native void setStageInputDescriptor(@Nullable MTLStageInputOutputDescriptor value);
 
     /**
      * [@property] threadGroupSizeIsMultipleOfThreadExecutionWidth
-     * <p>
+     * 
      * An optimization flag, set if the thread group size will always be a multiple of thread execution width
      */
     @Generated
@@ -227,16 +241,19 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
 
     /**
      * [@property] computeDataDescriptor
-     * <p>
+     * 
      * An MTLStageInputOutputDescriptor to fetch data from buffers
+     * 
+     * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("stageInputDescriptor")
     public native MTLStageInputOutputDescriptor stageInputDescriptor();
 
     /**
      * [@property] threadGroupSizeIsMultipleOfThreadExecutionWidth
-     * <p>
+     * 
      * An optimization flag, set if the thread group size will always be a multiple of thread execution width
      */
     @Generated
@@ -245,17 +262,22 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
 
     /**
      * [@property] buffers
-     * <p>
+     * 
      * Optional properties for each buffer binding used by the compute function.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("buffers")
     public native MTLPipelineBufferDescriptorArray buffers();
 
     /**
      * [@property] maxTotalThreadsPerThreadgroup
-     * <p>
+     * 
      * Optional property. Set the maxTotalThreadsPerThreadgroup. If it is not set, returns zero.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("maxTotalThreadsPerThreadgroup")
@@ -264,8 +286,10 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
 
     /**
      * [@property] maxTotalThreadsPerThreadgroup
-     * <p>
+     * 
      * Optional property. Set the maxTotalThreadsPerThreadgroup. If it is not set, returns zero.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setMaxTotalThreadsPerThreadgroup:")
@@ -273,8 +297,10 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
 
     /**
      * [@property] supportIndirectCommandBuffers
-     * <p>
+     * 
      * This flag makes this pipeline usable with indirect command buffers.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setSupportIndirectCommandBuffers:")
@@ -282,8 +308,10 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
 
     /**
      * [@property] supportIndirectCommandBuffers
-     * <p>
+     * 
      * This flag makes this pipeline usable with indirect command buffers.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("supportIndirectCommandBuffers")
@@ -291,52 +319,65 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
 
     /**
      * [@property] binaryArchives
-     * <p>
+     * 
      * The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
-     * <p>
+     * 
      * Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to
      * happen on the fast path.
-     *
+     * 
      * @see MTLBinaryArchive
+     * 
+     *      API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("binaryArchives")
     public native NSArray<?> binaryArchives();
 
     /**
      * [@property] insertLibraries
-     * <p>
+     * 
      * The set of MTLDynamicLibrary to use to resolve external symbols before considering symbols from dependent
      * MTLDynamicLibrary.
-     * <p>
+     * 
      * Typical workflows use the libraries property of MTLCompileOptions to record dependent libraries at compile time
      * without having to use insertLibraries.
      * This property can be used to override symbols from dependent libraries for experimentation or evaluating
      * alternative implementations.
      * It can also be used to provide dynamic libraries that are dynamically created (for example, from source) that
      * have no stable installName that can be used to automatically load from the file system.
-     *
+     * 
      * @see MTLDynamicLibrary
+     * 
+     *      API-Since: 14.0
+     *      Deprecated-Since: 15.0
      */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("insertLibraries")
     public native NSArray<?> insertLibraries();
 
     /**
      * [@property] linkedFunctions
-     * <p>
+     * 
      * The set of functions to be linked with the pipeline state and accessed from the compute function.
-     *
+     * 
      * @see MTLLinkedFunctions
+     * 
+     *      API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("linkedFunctions")
     public native MTLLinkedFunctions linkedFunctions();
 
     /**
      * [@property] maxCallStackDepth
-     * <p>
+     * 
      * The maximum depth of the call stack in stack frames from the kernel. Defaults to 1 additional stack frame.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("maxCallStackDepth")
@@ -345,52 +386,62 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
 
     /**
      * [@property] binaryArchives
-     * <p>
+     * 
      * The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
-     * <p>
+     * 
      * Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to
      * happen on the fast path.
-     *
+     * 
      * @see MTLBinaryArchive
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("setBinaryArchives:")
-    public native void setBinaryArchives(NSArray<?> value);
+    public native void setBinaryArchives(@Nullable NSArray<?> value);
 
     /**
      * [@property] insertLibraries
-     * <p>
+     * 
      * The set of MTLDynamicLibrary to use to resolve external symbols before considering symbols from dependent
      * MTLDynamicLibrary.
-     * <p>
+     * 
      * Typical workflows use the libraries property of MTLCompileOptions to record dependent libraries at compile time
      * without having to use insertLibraries.
      * This property can be used to override symbols from dependent libraries for experimentation or evaluating
      * alternative implementations.
      * It can also be used to provide dynamic libraries that are dynamically created (for example, from source) that
      * have no stable installName that can be used to automatically load from the file system.
-     *
+     * 
      * @see MTLDynamicLibrary
+     * 
+     *      API-Since: 14.0
+     *      Deprecated-Since: 15.0
      */
+    @Deprecated
     @Generated
     @Selector("setInsertLibraries:")
-    public native void setInsertLibraries(NSArray<?> value);
+    public native void setInsertLibraries(@Nullable NSArray<?> value);
 
     /**
      * [@property] linkedFunctions
-     * <p>
+     * 
      * The set of functions to be linked with the pipeline state and accessed from the compute function.
-     *
+     * 
      * @see MTLLinkedFunctions
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("setLinkedFunctions:")
-    public native void setLinkedFunctions(MTLLinkedFunctions value);
+    public native void setLinkedFunctions(@Nullable MTLLinkedFunctions value);
 
     /**
      * [@property] maxCallStackDepth
-     * <p>
+     * 
      * The maximum depth of the call stack in stack frames from the kernel. Defaults to 1 additional stack frame.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setMaxCallStackDepth:")
@@ -398,8 +449,10 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
 
     /**
      * [@property] supportAddingBinaryFunctions
-     * <p>
+     * 
      * This flag makes this pipeline support creating a new pipeline by adding binary functions.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setSupportAddingBinaryFunctions:")
@@ -407,8 +460,10 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
 
     /**
      * [@property] supportAddingBinaryFunctions
-     * <p>
+     * 
      * This flag makes this pipeline support creating a new pipeline by adding binary functions.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("supportAddingBinaryFunctions")
@@ -416,39 +471,44 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
 
     /**
      * [@property] preloadedLibraries
-     * <p>
+     * 
      * The set of MTLDynamicLibrary to use to resolve external symbols before considering symbols from dependent
      * MTLDynamicLibrary.
-     * <p>
+     * 
      * Typical workflows use the libraries property of MTLCompileOptions to record dependent libraries at compile time
      * without having to use preloadedLibraries.
      * This property can be used to override symbols from dependent libraries for experimentation or evaluating
      * alternative implementations.
      * It can also be used to provide dynamic libraries that are dynamically created (for example, from source) that
      * have no stable installName that can be used to automatically load from the file system.
-     *
+     * 
      * @see MTLDynamicLibrary
+     * 
+     *      API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("preloadedLibraries")
     public native NSArray<?> preloadedLibraries();
 
     /**
      * [@property] preloadedLibraries
-     * <p>
+     * 
      * The set of MTLDynamicLibrary to use to resolve external symbols before considering symbols from dependent
      * MTLDynamicLibrary.
-     * <p>
+     * 
      * Typical workflows use the libraries property of MTLCompileOptions to record dependent libraries at compile time
      * without having to use preloadedLibraries.
      * This property can be used to override symbols from dependent libraries for experimentation or evaluating
      * alternative implementations.
      * It can also be used to provide dynamic libraries that are dynamically created (for example, from source) that
      * have no stable installName that can be used to automatically load from the file system.
-     *
+     * 
      * @see MTLDynamicLibrary
+     * 
+     *      API-Since: 15.0
      */
     @Generated
     @Selector("setPreloadedLibraries:")
-    public native void setPreloadedLibraries(NSArray<?> value);
+    public native void setPreloadedLibraries(@NotNull NSArray<?> value);
 }

@@ -26,16 +26,23 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIDocumentPickerDelegate")
 public interface UIDocumentPickerDelegate {
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated
     @IsOptional
     @Generated
     @Selector("documentPicker:didPickDocumentAtURL:")
-    default void documentPickerDidPickDocumentAtURL(UIDocumentPickerViewController controller, NSURL url) {
+    default void documentPickerDidPickDocumentAtURL(@NotNull UIDocumentPickerViewController controller,
+            @NotNull NSURL url) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -45,15 +52,18 @@ public interface UIDocumentPickerDelegate {
     @Generated
     @IsOptional
     @Selector("documentPickerWasCancelled:")
-    default void documentPickerWasCancelled(UIDocumentPickerViewController controller) {
+    default void documentPickerWasCancelled(@NotNull UIDocumentPickerViewController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("documentPicker:didPickDocumentsAtURLs:")
-    default void documentPickerDidPickDocumentsAtURLs(UIDocumentPickerViewController controller,
-            NSArray<? extends NSURL> urls) {
+    default void documentPickerDidPickDocumentsAtURLs(@NotNull UIDocumentPickerViewController controller,
+            @NotNull NSArray<? extends NSURL> urls) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -39,7 +39,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("UserNotifications")
 @Runtime(ObjCRuntime.class)
@@ -60,8 +65,8 @@ public class UNTextInputNotificationAction extends UNNotificationAction {
 
     @Generated
     @Selector("actionWithIdentifier:title:options:")
-    public static native UNTextInputNotificationAction actionWithIdentifierTitleOptions(String identifier, String title,
-            @NUInt long options);
+    public static native UNTextInputNotificationAction actionWithIdentifierTitleOptions(@NotNull String identifier,
+            @NotNull String title, @NUInt long options);
 
     /**
      * Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a string that will be localized at
@@ -70,8 +75,8 @@ public class UNTextInputNotificationAction extends UNNotificationAction {
     @Generated
     @Selector("actionWithIdentifier:title:options:textInputButtonTitle:textInputPlaceholder:")
     public static native UNTextInputNotificationAction actionWithIdentifierTitleOptionsTextInputButtonTitleTextInputPlaceholder(
-            String identifier, String title, @NUInt long options, String textInputButtonTitle,
-            String textInputPlaceholder);
+            @NotNull String identifier, @NotNull String title, @NUInt long options,
+            @NotNull String textInputButtonTitle, @NotNull String textInputPlaceholder);
 
     @Generated
     @Owned
@@ -85,22 +90,25 @@ public class UNTextInputNotificationAction extends UNNotificationAction {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,9 +143,10 @@ public class UNTextInputNotificationAction extends UNNotificationAction {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -175,7 +184,7 @@ public class UNTextInputNotificationAction extends UNNotificationAction {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNTextInputNotificationAction initWithCoder(NSCoder coder);
+    public native UNTextInputNotificationAction initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -186,6 +195,7 @@ public class UNTextInputNotificationAction extends UNNotificationAction {
     /**
      * The text input button title displayed for this action.
      */
+    @NotNull
     @Generated
     @Selector("textInputButtonTitle")
     public native String textInputButtonTitle();
@@ -193,18 +203,23 @@ public class UNTextInputNotificationAction extends UNNotificationAction {
     /**
      * The placeholder text displayed in the text input field for this action.
      */
+    @NotNull
     @Generated
     @Selector("textInputPlaceholder")
     public native String textInputPlaceholder();
 
     @Generated
     @Selector("actionWithIdentifier:title:options:icon:")
-    public static native UNTextInputNotificationAction actionWithIdentifierTitleOptionsIcon(String identifier,
-            String title, @NUInt long options, UNNotificationActionIcon icon);
+    public static native UNTextInputNotificationAction actionWithIdentifierTitleOptionsIcon(@NotNull String identifier,
+            @NotNull String title, @NUInt long options, @Nullable UNNotificationActionIcon icon);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("actionWithIdentifier:title:options:icon:textInputButtonTitle:textInputPlaceholder:")
     public static native UNTextInputNotificationAction actionWithIdentifierTitleOptionsIconTextInputButtonTitleTextInputPlaceholder(
-            String identifier, String title, @NUInt long options, UNNotificationActionIcon icon,
-            String textInputButtonTitle, String textInputPlaceholder);
+            @NotNull String identifier, @NotNull String title, @NUInt long options,
+            @Nullable UNNotificationActionIcon icon, @NotNull String textInputButtonTitle,
+            @NotNull String textInputPlaceholder);
 }

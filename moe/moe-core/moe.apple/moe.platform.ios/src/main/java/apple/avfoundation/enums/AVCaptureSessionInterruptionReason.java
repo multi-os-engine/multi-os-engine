@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVCaptureSessionInterruptionReason
- * <p>
+ * 
  * Constants indicating interruption reason. One of these is returned with the
  * AVCaptureSessionWasInterruptedNotification (see AVCaptureSessionInterruptionReasonKey).
- * <p>
+ * 
  * [@constant] AVCaptureSessionInterruptionReasonVideoDeviceNotAvailableInBackground
  * An interruption caused by the app being sent to the background while using a camera. Camera usage is prohibited while
  * in the background. Beginning in iOS 9.0, AVCaptureSession no longer produces an
@@ -46,17 +46,34 @@ import org.moe.natj.general.ann.NInt;
  * [@constant] AVCaptureSessionInterruptionReasonVideoDeviceNotAvailableDueToSystemPressure
  * An interruption caused by the video device temporarily being made unavailable due to system pressure, such as thermal
  * duress. See AVCaptureDevice's AVCaptureSystemPressure category for more information.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class AVCaptureSessionInterruptionReason {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long VideoDeviceNotAvailableInBackground = 0x0000000000000001L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long AudioDeviceInUseByAnotherClient = 0x0000000000000002L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long VideoDeviceInUseByAnotherClient = 0x0000000000000003L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long VideoDeviceNotAvailableWithMultipleForegroundApps = 0x0000000000000004L;
 
     @Generated
     private AVCaptureSessionInterruptionReason() {
     }
 
+    /**
+     * API-Since: 11.1
+     */
     @Generated @NInt public static final long VideoDeviceNotAvailableDueToSystemPressure = 0x0000000000000005L;
 }

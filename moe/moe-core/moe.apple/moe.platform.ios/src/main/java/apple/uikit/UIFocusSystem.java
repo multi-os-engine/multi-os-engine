@@ -24,10 +24,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * UIFocusSystem instances manage focus state within a part of the user interface. They are in charge of tracking the
  * current focused item, as well as processing focus updates.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("UIKit")
@@ -59,22 +63,25 @@ public class UIFocusSystem extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -93,8 +100,8 @@ public class UIFocusSystem extends NSObject {
     @Generated
     @Selector("environment:containsEnvironment:")
     public static native boolean environmentContainsEnvironment(
-            @Mapped(ObjCObjectMapper.class) UIFocusEnvironment environment,
-            @Mapped(ObjCObjectMapper.class) UIFocusEnvironment otherEnvironment);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIFocusEnvironment environment,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIFocusEnvironment otherEnvironment);
 
     @Generated
     @Selector("hash")
@@ -122,9 +129,10 @@ public class UIFocusSystem extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -152,14 +160,21 @@ public class UIFocusSystem extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 12.0
+     */
+    @Nullable
     @Generated
     @Selector("focusSystemForEnvironment:")
     public static native UIFocusSystem focusSystemForEnvironment(
-            @Mapped(ObjCObjectMapper.class) UIFocusEnvironment environment);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIFocusEnvironment environment);
 
     /**
      * The currently focused item in this focus system.
+     * 
+     * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("focusedItem")
     @MappedReturn(ObjCObjectMapper.class)
@@ -168,13 +183,18 @@ public class UIFocusSystem extends NSObject {
     /**
      * Requests a focus update to the specified environment. If accepted, the focus update will happen
      * in the next run loop cycle.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("requestFocusUpdateToEnvironment:")
-    public native void requestFocusUpdateToEnvironment(@Mapped(ObjCObjectMapper.class) UIFocusEnvironment environment);
+    public native void requestFocusUpdateToEnvironment(
+            @NotNull @Mapped(ObjCObjectMapper.class) UIFocusEnvironment environment);
 
     /**
      * Forces any pending focus update to be committed immediately.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("updateFocusIfNeeded")

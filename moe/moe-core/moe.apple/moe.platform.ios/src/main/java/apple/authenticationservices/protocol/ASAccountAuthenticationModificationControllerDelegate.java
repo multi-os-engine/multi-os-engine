@@ -11,7 +11,12 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
@@ -21,8 +26,8 @@ public interface ASAccountAuthenticationModificationControllerDelegate {
     @IsOptional
     @Selector("accountAuthenticationModificationController:didFailRequest:withError:")
     default void accountAuthenticationModificationControllerDidFailRequestWithError(
-            ASAccountAuthenticationModificationController controller,
-            ASAccountAuthenticationModificationRequest request, NSError error) {
+            @NotNull ASAccountAuthenticationModificationController controller,
+            @NotNull ASAccountAuthenticationModificationRequest request, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -30,8 +35,8 @@ public interface ASAccountAuthenticationModificationControllerDelegate {
     @IsOptional
     @Selector("accountAuthenticationModificationController:didSuccessfullyCompleteRequest:withUserInfo:")
     default void accountAuthenticationModificationControllerDidSuccessfullyCompleteRequestWithUserInfo(
-            ASAccountAuthenticationModificationController controller,
-            ASAccountAuthenticationModificationRequest request, NSDictionary<?, ?> userInfo) {
+            @NotNull ASAccountAuthenticationModificationController controller,
+            @NotNull ASAccountAuthenticationModificationRequest request, @Nullable NSDictionary<?, ?> userInfo) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

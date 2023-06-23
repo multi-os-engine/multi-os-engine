@@ -10,11 +10,14 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] NFCTagReaderSessionDelegate
- * <p>
+ * 
  * Tag reader session delegate
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreNFC")
@@ -23,44 +26,50 @@ import org.moe.natj.objc.ann.Selector;
 public interface NFCTagReaderSessionDelegate {
     /**
      * tagReaderSession:didDetectTags:
-     * <p>
+     * 
      * Gets called when the reader detects NFC tag(s) in the polling sequence.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param session The session object used for tag detection.
      * @param tags    Array of @link NFCTag @link/ objects.
      */
     @Generated
     @IsOptional
     @Selector("tagReaderSession:didDetectTags:")
-    default void tagReaderSessionDidDetectTags(NFCTagReaderSession session, NSArray<?> tags) {
+    default void tagReaderSessionDidDetectTags(@NotNull NFCTagReaderSession session, @NotNull NSArray<?> tags) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * tagReaderSession:didInvalidateWithError:
-     * <p>
+     * 
      * Gets called when a session becomes invalid. At this point the client is expected to discard
      * the returned session object.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param session The session object that is invalidated.
      * @param error   The error indicates the invalidation reason.
      */
     @Generated
     @Selector("tagReaderSession:didInvalidateWithError:")
-    void tagReaderSessionDidInvalidateWithError(NFCTagReaderSession session, NSError error);
+    void tagReaderSessionDidInvalidateWithError(@NotNull NFCTagReaderSession session, @NotNull NSError error);
 
     /**
      * tagReaderSessionDidBecomeActive:
-     * <p>
+     * 
      * Gets called when the NFC reader session has become active. RF is enabled and reader is scanning for tags.
      * The @link readerSession:didDetectTags: @link/ will be called when a tag is detected.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param session The session object in the active state.
      */
     @Generated
     @IsOptional
     @Selector("tagReaderSessionDidBecomeActive:")
-    default void tagReaderSessionDidBecomeActive(NFCTagReaderSession session) {
+    default void tagReaderSessionDidBecomeActive(@NotNull NFCTagReaderSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

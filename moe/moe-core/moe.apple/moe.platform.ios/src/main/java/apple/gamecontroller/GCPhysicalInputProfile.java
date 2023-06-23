@@ -24,14 +24,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.moe.natj.objc.ann.ObjCBlock;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A game controller profile representing physical buttons, thumbsticks, dpads, etc... on a controller.
- * <p>
+ * 
  * All controller profiles provide a base level of information about the controller they belong to.
- * <p>
+ * 
  * A profile maps the hardware notion of a controller into a logical controller. One that a developer can design for
  * and depend on, no matter the underlying hardware.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("GameController")
@@ -51,21 +56,36 @@ public class GCPhysicalInputProfile extends NSObject {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 14.0
+     */
+    @NotNull
     @Generated
     @Selector("allAxes")
     public native NSSet<? extends GCControllerAxisInput> allAxes();
 
+    /**
+     * API-Since: 14.0
+     */
+    @NotNull
     @Generated
     @Selector("allButtons")
     public native NSSet<? extends GCControllerButtonInput> allButtons();
 
+    /**
+     * API-Since: 14.0
+     */
+    @NotNull
     @Generated
     @Selector("allDpads")
     public native NSSet<? extends GCControllerDirectionPad> allDpads();
 
     /**
      * The following properties allow for dynamic querying of the input elements available on a profile.
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("allElements")
     public native NSSet<? extends GCControllerElement> allElements();
@@ -82,44 +102,58 @@ public class GCPhysicalInputProfile extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     */
+    @NotNull
     @Generated
     @Selector("axes")
     public native NSDictionary<String, ? extends GCControllerAxisInput> axes();
 
+    /**
+     * API-Since: 14.0
+     */
+    @NotNull
     @Generated
     @Selector("buttons")
     public native NSDictionary<String, ? extends GCControllerButtonInput> buttons();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Polls the state vector of the physical input input and saves it to a new and writable instance of
      * GCPhysicalInputProfile.
-     * <p>
+     * 
      * If your application is heavily multithreaded this may also be useful to guarantee atomicity of input handling as
      * a snapshot will not change based on user input once it is taken.
-     *
-     * @return A new physical input profile with the duplicated state vector of the current physical input
+     * 
      * @see snapshot
+     * @return A new physical input profile with the duplicated state vector of the current physical input
+     * 
+     *         API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("capture")
     public native GCPhysicalInputProfile capture();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,12 +168,19 @@ public class GCPhysicalInputProfile extends NSObject {
 
     /**
      * A profile keeps a reference to the device that this profile is mapping input from
+     * 
+     * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
     public native GCDevice device();
 
+    /**
+     * API-Since: 14.0
+     */
+    @NotNull
     @Generated
     @Selector("dpads")
     public native NSDictionary<String, ? extends GCControllerDirectionPad> dpads();
@@ -147,11 +188,14 @@ public class GCPhysicalInputProfile extends NSObject {
     /**
      * The following properties allow for runtime lookup of any input element on a profile, when provided with a valid
      * alias.
-     * <p>
+     * 
      * [@example] extendedGamepad.elements["Button A"] == extendedGamepad.buttonA // YES
      * [@example] extendedGamepad.dpads["Left Thumbstick"] == extendedGamepad.leftThumbstick // YES
      * [@example] extendedGamepad.dpads["Button B"] // returns nil, "Button B" is not a GCControllerDirectionPad
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("elements")
     public native NSDictionary<String, ? extends GCControllerElement> elements();
@@ -182,12 +226,15 @@ public class GCPhysicalInputProfile extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The last time elements of this profile were updated.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("lastEventTimestamp")
@@ -200,14 +247,17 @@ public class GCPhysicalInputProfile extends NSObject {
 
     /**
      * Profile elements can be accessed using keyed subscript notation, with a valid alias of its inputs.
-     * <p>
+     * 
      * [@example] extendedGamepad["Button A"] == extendedGamepad.buttonA // YES
      * [@example] microGamepad["Button X"] == microGamepad.buttonX // YES
      * [@note] Equivalent to -elements
+     * 
+     * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("objectForKeyedSubscript:")
-    public native GCControllerElement objectForKeyedSubscript(String key);
+    public native GCControllerElement objectForKeyedSubscript(@NotNull String key);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -220,14 +270,16 @@ public class GCPhysicalInputProfile extends NSObject {
     /**
      * Sets the state vector of the physical input profile to a copy of the passed in physical input profile's state
      * vector.
-     * <p>
+     * 
      * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
-     *
+     * 
      * @see GCController.snapshot
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("setStateFromPhysicalInput:")
-    public native void setStateFromPhysicalInput(GCPhysicalInputProfile physicalInput);
+    public native void setStateFromPhysicalInput(@NotNull GCPhysicalInputProfile physicalInput);
 
     @Generated
     @Selector("setVersion:")
@@ -242,14 +294,20 @@ public class GCPhysicalInputProfile extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 14.0
+     */
+    @NotNull
     @Generated
     @Selector("allTouchpads")
     public native NSSet<? extends GCControllerTouchpad> allTouchpads();
 
     /**
      * Whether the user has remapped their physical input controls for this profile at the system level.
-     * <p>
+     * 
      * On iOS and tvOS, users can remap their game controller inputs in Settings.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("hasRemappedElements")
@@ -257,41 +315,98 @@ public class GCPhysicalInputProfile extends NSObject {
 
     /**
      * Returns the primary alias of the GCControllerElement that a given physical input maps to.
-     * <p>
+     * 
      * If the user were to map a physical press of the A button of their game controller to the B button, then
      * -[GCPhysicalInputProfile mappedElementAliasForPhysicalInputName: GCInputButtonA] would return GCInputButtonB.
      * Note that mappings can change anytime your app is backgrounded, so make sure you update any relevant visuals when
      * returning to foreground.
-     * <p>
+     * 
      * [@returns] A GCInput string corresponding to the primary alias of the GCControllerElement that a given physical
      * button maps to, or nil if there is no mapping.
-     *
+     * 
+     * API-Since: 15.0
+     * 
      * @param inputName A GCInput string corresponding to the physical button you want the mapped element alias for.
      */
+    @NotNull
     @Generated
     @Selector("mappedElementAliasForPhysicalInputName:")
-    public native String mappedElementAliasForPhysicalInputName(String inputName);
+    public native String mappedElementAliasForPhysicalInputName(@NotNull String inputName);
 
     /**
      * Returns a set of GCInput strings corresponding to physical inputs that are mapped to a given GCControllerElement.
-     * <p>
+     * 
      * If the user mapped the physical press of the A button, the B button, and the X button to the B button, then
      * -[GCPhysicalInputProfile mappedPhysicalInputNamesForElementAlias: GCInputButtonB] would return [GCInputButtonA,
      * GCInputButtonB, GCInputButtonX].
      * Note that mappings can change anytime your app is backgrounded, so make sure you update any relevant visuals when
      * returning to foreground.
-     * <p>
+     * 
      * [@returns] A set of GCInput strings corresponding to physical inputs that are mapped to a given
      * GCControllerElement, or an empty set if there are no mappings.
-     *
+     * 
+     * API-Since: 15.0
+     * 
      * @param elementAlias A GCInput string corresponding to an alias of the GCControllerElement you want the physical
      *                     buttons for.
      */
+    @NotNull
     @Generated
     @Selector("mappedPhysicalInputNamesForElementAlias:")
-    public native NSSet<String> mappedPhysicalInputNamesForElementAlias(String elementAlias);
+    public native NSSet<String> mappedPhysicalInputNamesForElementAlias(@NotNull String elementAlias);
 
+    /**
+     * API-Since: 14.0
+     */
+    @NotNull
     @Generated
     @Selector("touchpads")
     public native NSDictionary<String, ? extends GCControllerTouchpad> touchpads();
+
+    /**
+     * Set this block if you want to be notified when a value on a element changed. If multiple elements have changed
+     * this block will be called
+     * for each element that changed.
+     * 
+     * @param profile this profile that is being used to map the raw input data into logical values on controller
+     *                elements such as the dpad or the buttons.
+     * @param element the element that has been modified.
+     * 
+     *                API-Since: 16.0
+     */
+    @Generated
+    @Selector("setValueDidChangeHandler:")
+    public native void setValueDidChangeHandler(
+            @Nullable @ObjCBlock(name = "call_setValueDidChangeHandler") Block_setValueDidChangeHandler value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setValueDidChangeHandler {
+        @Generated
+        void call_setValueDidChangeHandler(@NotNull GCPhysicalInputProfile arg0, @NotNull GCControllerElement arg1);
+    }
+
+    /**
+     * Set this block if you want to be notified when a value on a element changed. If multiple elements have changed
+     * this block will be called
+     * for each element that changed.
+     * 
+     * @param profile this profile that is being used to map the raw input data into logical values on controller
+     *                elements such as the dpad or the buttons.
+     * @param element the element that has been modified.
+     * 
+     *                API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("valueDidChangeHandler")
+    @ObjCBlock(name = "call_valueDidChangeHandler_ret")
+    public native Block_valueDidChangeHandler_ret valueDidChangeHandler();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_valueDidChangeHandler_ret {
+        @Generated
+        void call_valueDidChangeHandler_ret(@NotNull GCPhysicalInputProfile arg0, @NotNull GCControllerElement arg1);
+    }
 }

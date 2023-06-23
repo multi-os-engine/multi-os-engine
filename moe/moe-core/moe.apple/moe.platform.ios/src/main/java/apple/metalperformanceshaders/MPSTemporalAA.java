@@ -29,22 +29,26 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Reduces aliasing in an image by accumulating samples over multiple frames
- * <p>
+ * 
  * The color for the previous frame will be sampled using the provided motion vector
  * texture and blended with the current frame according to the blendFactor property. The colors
  * from the previous frame will be clamped to the color-space bounding box formed by the center
  * pixel's neighbors to avoid reprojection artifacts, and the motion vector texture will be
  * dilated to avoid aliased silhouette edges under motion.
- * <p>
+ * 
  * For the best result, the sample positions produced by the renderer should be jittered every
  * frame, ideally using a low discrepency sequence. This will ensure that different sample
  * positions along edges will be visited over time even if the camera is not moving. This will
  * also reduce aliasing due to textures and high-frequency shading.
- * <p>
+ * 
  * For reference, see "High-Quality Temporal Supersampling" by Karis.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -76,7 +80,7 @@ public class MPSTemporalAA extends MPSKernel implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * How much to blend the current frame with the previous frame during temporal antialiasing.
@@ -90,32 +94,38 @@ public class MPSTemporalAA extends MPSKernel implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:device:")
-    public native MPSTemporalAA copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSTemporalAA copyWithZoneDevice(@Nullable VoidPtr zone,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     @Generated
     @Selector("debugDescription")
@@ -127,19 +137,19 @@ public class MPSTemporalAA extends MPSKernel implements NSSecureCoding, NSCopyin
 
     /**
      * Encode temporal antialiasing a command buffer
-     * <p>
+     * 
      * The motion vector texture must be at least a two channel texture representing how
      * many texels each texel in the source image(s) have moved since the previous frame. The remaining
      * channels will be ignored if present. This texture may be nil, in which case the motion vector is
      * assumed to be zero, which is suitable for static images.
-     * <p>
+     * 
      * The depth texture must contain the depth values for directly visible geometry for the current
      * frame for each pixel. The first channel must store the depth value from zero to infinity.
      * The depth texture may be nil, but this will prevent motion vectors from being dilated and
      * may introduce aliasing along silhouette edges.
-     * <p>
+     * 
      * The destination texture should be used as the previous texture in the next frame.
-     *
+     * 
      * @param commandBuffer       Command buffer to encode into
      * @param sourceTexture       Current frame to denoise
      * @param previousTexture     Previous denoised frame to reproject into current
@@ -151,16 +161,16 @@ public class MPSTemporalAA extends MPSKernel implements NSSecureCoding, NSCopyin
     @Generated
     @Selector("encodeToCommandBuffer:sourceTexture:previousTexture:destinationTexture:motionVectorTexture:depthTexture:")
     public native void encodeToCommandBufferSourceTexturePreviousTextureDestinationTextureMotionVectorTextureDepthTexture(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture previousTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture motionVectorTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture depthTexture);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture previousTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture motionVectorTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture depthTexture);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -173,15 +183,16 @@ public class MPSTemporalAA extends MPSKernel implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSTemporalAA initWithCoder(NSCoder coder);
+    public native MPSTemporalAA initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSTemporalAA initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSTemporalAA initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSTemporalAA initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSTemporalAA initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -200,9 +211,10 @@ public class MPSTemporalAA extends MPSKernel implements NSSecureCoding, NSCopyin
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

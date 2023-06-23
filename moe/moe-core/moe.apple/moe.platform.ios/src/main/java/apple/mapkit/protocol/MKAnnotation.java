@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("MapKit")
@@ -42,6 +43,8 @@ public interface MKAnnotation {
 
     /**
      * Called as a result of dragging an annotation view.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @IsOptional
@@ -50,6 +53,7 @@ public interface MKAnnotation {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("subtitle")
@@ -60,6 +64,7 @@ public interface MKAnnotation {
     /**
      * Title and subtitle for use by selection UI.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("title")

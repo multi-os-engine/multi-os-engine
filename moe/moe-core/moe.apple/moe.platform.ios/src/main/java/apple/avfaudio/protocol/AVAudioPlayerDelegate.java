@@ -10,6 +10,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A protocol for delegates of AVAudioPlayer
@@ -22,12 +24,15 @@ public interface AVAudioPlayerDelegate {
     /**
      * audioPlayerBeginInterruption: is called when the audio session has been interrupted while the player was playing.
      * The player will have been paused.
+     * 
+     * API-Since: 2.2
+     * Deprecated-Since: 8.0
      */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("audioPlayerBeginInterruption:")
-    default void audioPlayerBeginInterruption(AVAudioPlayer player) {
+    default void audioPlayerBeginInterruption(@NotNull AVAudioPlayer player) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -37,7 +42,7 @@ public interface AVAudioPlayerDelegate {
     @Generated
     @IsOptional
     @Selector("audioPlayerDecodeErrorDidOccur:error:")
-    default void audioPlayerDecodeErrorDidOccurError(AVAudioPlayer player, NSError error) {
+    default void audioPlayerDecodeErrorDidOccurError(@NotNull AVAudioPlayer player, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -48,27 +53,34 @@ public interface AVAudioPlayerDelegate {
     @Generated
     @IsOptional
     @Selector("audioPlayerDidFinishPlaying:successfully:")
-    default void audioPlayerDidFinishPlayingSuccessfully(AVAudioPlayer player, boolean flag) {
+    default void audioPlayerDidFinishPlayingSuccessfully(@NotNull AVAudioPlayer player, boolean flag) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * audioPlayerEndInterruption: is called when the preferred method, audioPlayerEndInterruption:withFlags:, is not
      * implemented.
+     * 
+     * API-Since: 2.2
+     * Deprecated-Since: 6.0
      */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("audioPlayerEndInterruption:")
-    default void audioPlayerEndInterruption(AVAudioPlayer player) {
+    default void audioPlayerEndInterruption(@NotNull AVAudioPlayer player) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 6.0
+     */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("audioPlayerEndInterruption:withFlags:")
-    default void audioPlayerEndInterruptionWithFlags(AVAudioPlayer player, @NUInt long flags) {
+    default void audioPlayerEndInterruptionWithFlags(@NotNull AVAudioPlayer player, @NUInt long flags) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -76,12 +88,15 @@ public interface AVAudioPlayerDelegate {
      * audioPlayerEndInterruption:withOptions: is called when the audio session interruption has ended and this player
      * had been interrupted while playing.
      * Currently the only flag is AVAudioSessionInterruptionFlags_ShouldResume.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @IsOptional
     @Deprecated
     @Selector("audioPlayerEndInterruption:withOptions:")
-    default void audioPlayerEndInterruptionWithOptions(AVAudioPlayer player, @NUInt long flags) {
+    default void audioPlayerEndInterruptionWithOptions(@NotNull AVAudioPlayer player, @NUInt long flags) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

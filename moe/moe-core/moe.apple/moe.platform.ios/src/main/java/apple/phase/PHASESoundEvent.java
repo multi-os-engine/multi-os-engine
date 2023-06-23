@@ -26,11 +26,15 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] PHASESoundEvent
- * <p>
+ * 
  * A PHASESoundEvent is an object that represents a playable sound event in the PHASE system.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -62,22 +66,25 @@ public class PHASESoundEvent extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,40 +108,45 @@ public class PHASESoundEvent extends NSObject {
 
     /**
      * initWithEngine:assetIdentifier:error
-     * <p>
+     * 
      * Creates a new sound event instance
-     * <p>
+     * 
      * This will look up the asset in the asset registry and create the necessary objects to play the sound event
-     *
-     * @param engine          The PHASEEngine object that the sound event will be played by.
-     * @param assetIdentifier The identifier registered with the Asset Registry for the particular
+     * 
+     * @param engine
+     *                        The PHASEEngine object that the sound event will be played by.
+     * @param assetIdentifier
+     *                        The identifier registered with the Asset Registry for the particular
      *                        PHASESoundEventNodeAsset that this sound event will play.
      *                        If the asset identifier is not registered, this function will fail.
      */
     @Generated
     @Selector("initWithEngine:assetIdentifier:error:")
-    public native PHASESoundEvent initWithEngineAssetIdentifierError(PHASEEngine engine, String assetIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native PHASESoundEvent initWithEngineAssetIdentifierError(@NotNull PHASEEngine engine,
+            @NotNull String assetIdentifier, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * initWithEngine:assetIdentifier:mixerParameters:error
-     * <p>
+     * 
      * Creates a new sound event instance
-     * <p>
+     * 
      * This will look up the asset in the asset registry and create the necessary objects to play the sound event
-     *
-     * @param engine          The PHASEEngine object that the sound event will be played by.
-     * @param assetIdentifier The identifier registered with the Asset Registry for the particular
+     * 
+     * @param engine
+     *                        The PHASEEngine object that the sound event will be played by.
+     * @param assetIdentifier
+     *                        The identifier registered with the Asset Registry for the particular
      *                        PHASESoundEventNodeAsset that this sound instance will play.
      *                        If the asset identifier is not registered, this function will fail.
-     * @param mixerParameters A dictionary of PHASEMixerParameters objects with keys that match the identifiers of the
+     * @param mixerParameters
+     *                        A dictionary of PHASEMixerParameters objects with keys that match the identifiers of the
      *                        spatial mixers in the sound event
      */
     @Generated
     @Selector("initWithEngine:assetIdentifier:mixerParameters:error:")
-    public native PHASESoundEvent initWithEngineAssetIdentifierMixerParametersError(PHASEEngine engine,
-            String assetIdentifier, PHASEMixerParameters mixerParameters,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native PHASESoundEvent initWithEngineAssetIdentifierMixerParametersError(@NotNull PHASEEngine engine,
+            @NotNull String assetIdentifier, @NotNull PHASEMixerParameters mixerParameters,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -151,7 +163,7 @@ public class PHASESoundEvent extends NSObject {
 
     /**
      * [@property] indefinite
-     * <p>
+     * 
      * A boolean that tell if this sound event will run indefinitely, or finish executing on its own
      */
     @Generated
@@ -162,24 +174,27 @@ public class PHASESoundEvent extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] metaParameters
-     * <p>
+     * 
      * A Dictionary containing the MetaParameters associated with this sound event
      */
+    @NotNull
     @Generated
     @Selector("metaParameters")
     public native NSDictionary<String, ? extends PHASEMetaParameter> metaParameters();
 
     /**
      * [@property] mixNodes
-     * <p>
+     * 
      * A Dictionary containing the mix nodes associated with this sound event
      */
+    @NotNull
     @Generated
     @Selector("mixers")
     public native NSDictionary<String, ? extends PHASEMixer> mixers();
@@ -191,7 +206,7 @@ public class PHASESoundEvent extends NSObject {
 
     /**
      * pause
-     * <p>
+     * 
      * Pause the sound event.
      */
     @Generated
@@ -200,7 +215,7 @@ public class PHASESoundEvent extends NSObject {
 
     /**
      * [@property] prepareState
-     * <p>
+     * 
      * Sound Event's current preparation state
      */
     @Generated
@@ -210,21 +225,22 @@ public class PHASESoundEvent extends NSObject {
 
     /**
      * prepareWithCompletion
-     * <p>
+     * 
      * Prepare the sound event
-     * <p>
+     * 
      * This function notifies the engine to begin preparing a sound event, then returns immediately.
      * Once the sound event is prepared (or has failed to prepare), you will receive a callback via the completion.
      * If you call startWithCompletion() before receiving the callback, the sound event will start as soon as it's
      * prepared.
-     *
-     * @param handler The block that will be called when the PHASESoundEvent has finished preparing and is ready to
+     * 
+     * @param handler
+     *                The block that will be called when the PHASESoundEvent has finished preparing and is ready to
      *                start. Pass in nil for no handler.
      */
     @Generated
     @Selector("prepareWithCompletion:")
     public native void prepareWithCompletion(
-            @ObjCBlock(name = "call_prepareWithCompletion") Block_prepareWithCompletion handler);
+            @Nullable @ObjCBlock(name = "call_prepareWithCompletion") Block_prepareWithCompletion handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -235,16 +251,17 @@ public class PHASESoundEvent extends NSObject {
 
     /**
      * [@property] pushStreamNodes
-     * <p>
+     * 
      * A Dictionary containing the push stream nodes associated with this sound event, for pushing buffers to.
      */
+    @NotNull
     @Generated
     @Selector("pushStreamNodes")
     public native NSDictionary<String, ? extends PHASEPushStreamNode> pushStreamNodes();
 
     /**
      * [@property] renderingState
-     * <p>
+     * 
      * Sound Event's current rendering state
      */
     @Generated
@@ -262,7 +279,7 @@ public class PHASESoundEvent extends NSObject {
 
     /**
      * resume
-     * <p>
+     * 
      * Resume the sound event.
      */
     @Generated
@@ -271,9 +288,9 @@ public class PHASESoundEvent extends NSObject {
 
     /**
      * seekToTime:completion
-     * <p>
+     * 
      * Seeks all leaf nodes in a PHASESoundEvent to a specified time relative to the start of the sound event.
-     * <p>
+     * 
      * This function notifies the engine to seek the sound event, then returns immediately.
      * Once the sound event has seeked to the new offset (or has failed to seek), you will receive a callback via the
      * completion.
@@ -286,7 +303,7 @@ public class PHASESoundEvent extends NSObject {
     @Generated
     @Selector("seekToTime:completion:")
     public native void seekToTimeCompletion(double time,
-            @ObjCBlock(name = "call_seekToTimeCompletion") Block_seekToTimeCompletion handler);
+            @Nullable @ObjCBlock(name = "call_seekToTimeCompletion") Block_seekToTimeCompletion handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -301,20 +318,21 @@ public class PHASESoundEvent extends NSObject {
 
     /**
      * startWithCompletion
-     * <p>
+     * 
      * Start the sound event
-     * <p>
+     * 
      * This function notifies the engine to start the sound event, then returns immediately.
      * Once the sound event is playing (or has failed to start), you will receive a callback via the completion.
      * Playback will begin immediately if the sound event has been prepared; otherwise, it will start as soon as it is
      * finished preparing.
-     *
-     * @param handler The block that will be called when the sound event has stopped.
+     * 
+     * @param handler
+     *                The block that will be called when the sound event has stopped.
      */
     @Generated
     @Selector("startWithCompletion:")
     public native void startWithCompletion(
-            @ObjCBlock(name = "call_startWithCompletion") Block_startWithCompletion handler);
+            @Nullable @ObjCBlock(name = "call_startWithCompletion") Block_startWithCompletion handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -325,7 +343,7 @@ public class PHASESoundEvent extends NSObject {
 
     /**
      * stopAndInvalidate
-     * <p>
+     * 
      * stop and invalidate the sound event
      */
     @Generated

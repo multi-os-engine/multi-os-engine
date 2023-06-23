@@ -21,17 +21,29 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] CBPeripheralManagerConnectionLatency
- * <p>
+ * 
  * The latency of a peripheral-central connection controls how frequently messages can be exchanged.
- * <p>
+ * 
  * [@constant] CBPeripheralManagerConnectionLatencyLow Prioritizes rapid communication over battery life.
  * [@constant] CBPeripheralManagerConnectionLatencyMedium A balance between communication frequency and battery life.
  * [@constant] CBPeripheralManagerConnectionLatencyHigh Prioritizes extending battery life over rapid communication.
+ * 
+ * 
+ * API-Since: 6.0
  */
 @Generated
 public final class CBPeripheralManagerConnectionLatency {
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long Low = 0x0000000000000000L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long Medium = 0x0000000000000001L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long High = 0x0000000000000002L;
 
     @Generated

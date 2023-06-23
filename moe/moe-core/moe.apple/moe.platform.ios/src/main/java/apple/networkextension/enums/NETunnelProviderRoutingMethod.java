@@ -21,18 +21,24 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NETunnelProviderRoutingMethod
- * <p>
+ * 
  * Network traffic routing methods.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class NETunnelProviderRoutingMethod {
     /**
      * [@const] NETunnelProviderRoutingMethodDestinationIP Route network traffic to the tunnel based on destination IP
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long DestinationIP = 0x0000000000000001L;
     /**
      * [@const] NETunnelProviderRoutingMethodSourceApplication Route network traffic to the tunnel based on source
      * application
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long SourceApplication = 0x0000000000000002L;
 

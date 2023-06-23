@@ -24,7 +24,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("SafariServices")
 @Runtime(ObjCRuntime.class)
@@ -55,13 +60,13 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Indicates if SFSafariViewController should enable collapsing of the navigation bar and hiding of the bottom
      * toolbar
      * when the user scrolls web content.
-     * <p>
+     * 
      * The default value is YES.
      */
     @Generated
@@ -70,27 +75,31 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -134,9 +143,10 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,7 +165,7 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
      * Indicates if SFSafariViewController should enable collapsing of the navigation bar and hiding of the bottom
      * toolbar
      * when the user scrolls web content.
-     * <p>
+     * 
      * The default value is YES.
      */
     @Generated
@@ -186,10 +196,13 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     /**
      * An additional button to be shown in SFSafariViewController's toolbar. See @link
      * SFSafariViewControllerActivityButton @/link for more details.
-     * <p>
+     * 
      * This allows the user to access powerful functionality from your extension without needing to first show the
      * UIActivityViewController.
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("activityButton")
     public native SFSafariViewControllerActivityButton activityButton();
@@ -197,29 +210,36 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     /**
      * An additional button to be shown in SFSafariViewController's toolbar. See @link
      * SFSafariViewControllerActivityButton @/link for more details.
-     * <p>
+     * 
      * This allows the user to access powerful functionality from your extension without needing to first show the
      * UIActivityViewController.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setActivityButton:")
-    public native void setActivityButton(SFSafariViewControllerActivityButton value);
+    public native void setActivityButton(@Nullable SFSafariViewControllerActivityButton value);
 
     /**
      * An event attribution associated with a click that caused this SFSafariViewController to be opened.
-     * <p>
+     * 
      * This attribute is ignored if the SFSafariViewController initialURL has a scheme of 'http'.
+     * 
+     * API-Since: 15.2
      */
+    @Nullable
     @Generated
     @Selector("eventAttribution")
     public native UIEventAttribution eventAttribution();
 
     /**
      * An event attribution associated with a click that caused this SFSafariViewController to be opened.
-     * <p>
+     * 
      * This attribute is ignored if the SFSafariViewController initialURL has a scheme of 'http'.
+     * 
+     * API-Since: 15.2
      */
     @Generated
     @Selector("setEventAttribution:")
-    public native void setEventAttribution(UIEventAttribution value);
+    public native void setEventAttribution(@Nullable UIEventAttribution value);
 }

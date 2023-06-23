@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] MACaptionAppearanceDomain
- * <p>
+ * 
  * MACaptionAppearanceDomain is used to specify which domain of preferences to access.
- * <p>
+ * 
  * [@constant] kMACaptionAppearanceDomainUser
  * The user-defined preferences. This domain should be passed to retrieve settings that should be used to render
  * captions.
@@ -32,10 +32,18 @@ import org.moe.natj.general.ann.NInt;
  * render captions. For example, when rendering a glyph some caption render engines need to get the user-defined font
  * and the system-defined font to determeine the final pixel size to render a glyph. Most render engines will never need
  * to use this domain.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 public final class MACaptionAppearanceDomain {
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Default = 0x0000000000000000L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long User = 0x0000000000000001L;
 
     @Generated

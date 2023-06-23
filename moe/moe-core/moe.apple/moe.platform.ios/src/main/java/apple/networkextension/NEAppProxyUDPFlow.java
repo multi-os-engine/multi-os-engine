@@ -40,16 +40,20 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEAppProxyUDPFlow
- * <p>
+ * 
  * The NEAppProxyUDPFlow class declares the programmatic interface of an object that is used by NEAppProxyProvider
  * implementations to proxy the payload of UDP datagrams.
- * <p>
+ * 
  * NEAppProxyUDPFlow is part of NetworkExtension.framework.
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -81,22 +85,25 @@ public class NEAppProxyUDPFlow extends NEAppProxyFlow {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +138,10 @@ public class NEAppProxyUDPFlow extends NEAppProxyFlow {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,56 +175,63 @@ public class NEAppProxyUDPFlow extends NEAppProxyFlow {
 
     /**
      * [@property] localEndpoint
-     * <p>
+     * 
      * An NWEndpoint object containing the local endpoint of the flow's corresponding socket.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("localEndpoint")
     public native NWEndpoint localEndpoint();
 
     /**
      * readDatagramWithCompletionHandler:
-     * <p>
+     * 
      * Read a datagram from the flow.
-     *
+     * 
      * @param completionHandler A block that will be executed when datagrams have been read from the flow. The block
      *                          takes the datagrams that were read, the destination endpoints of the datagrams, and an
      *                          NSError. If an error occurred while reading then the error parameter will be non-nil. If
      *                          the datagrams and remoteEndpoints arrays are non-nill but
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("readDatagramsWithCompletionHandler:")
     public native void readDatagramsWithCompletionHandler(
-            @ObjCBlock(name = "call_readDatagramsWithCompletionHandler") Block_readDatagramsWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_readDatagramsWithCompletionHandler") Block_readDatagramsWithCompletionHandler completionHandler);
 
     /**
      * writeDatagram:sentByEndpoint:completionHandler:
-     * <p>
+     * 
      * Write a datagram to the flow.
-     *
+     * 
      * @param datagrams         An array of NSData objects containing the data to be written.
      * @param remoteEndpoints   The source endpoints of the datagrams.
      * @param completionHandler A block that will be executed when the datagrams have been written to the corresponding
      *                          socket's receive buffer.
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("writeDatagrams:sentByEndpoints:completionHandler:")
-    public native void writeDatagramsSentByEndpointsCompletionHandler(NSArray<? extends NSData> datagrams,
-            NSArray<? extends NWEndpoint> remoteEndpoints,
-            @ObjCBlock(name = "call_writeDatagramsSentByEndpointsCompletionHandler") Block_writeDatagramsSentByEndpointsCompletionHandler completionHandler);
+    public native void writeDatagramsSentByEndpointsCompletionHandler(@NotNull NSArray<? extends NSData> datagrams,
+            @NotNull NSArray<? extends NWEndpoint> remoteEndpoints,
+            @NotNull @ObjCBlock(name = "call_writeDatagramsSentByEndpointsCompletionHandler") Block_writeDatagramsSentByEndpointsCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_readDatagramsWithCompletionHandler {
         @Generated
-        void call_readDatagramsWithCompletionHandler(NSArray<? extends NSData> datagrams,
-                NSArray<? extends NWEndpoint> remoteEndpoints, NSError error);
+        void call_readDatagramsWithCompletionHandler(@Nullable NSArray<? extends NSData> datagrams,
+                @Nullable NSArray<? extends NWEndpoint> remoteEndpoints, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeDatagramsSentByEndpointsCompletionHandler {
         @Generated
-        void call_writeDatagramsSentByEndpointsCompletionHandler(NSError error);
+        void call_writeDatagramsSentByEndpointsCompletionHandler(@Nullable NSError error);
     }
 }

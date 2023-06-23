@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@c] CPMessageListItem is a special variant of a list item for use in a @c CPListTemplate.
@@ -30,16 +32,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * selects a @c CPMessageListItem in your list template. Instead, Siri will be invoked
  * using the parameters you specify in your message item and the user will continue a
  * message compose, read, or reply flow through Siri.
- * <p>
+ * 
  * There are two modes of operation for @c CPMessageListItem:
- * <p>
+ * 
  * To represent an existing conversation with one or more recipients, use the @c CPMessageListItem
  * initializer that accepts a conversation identifier. This identifier is not directly displayed
  * to the user; rather, it should be a value meaningful to your app to identify the conversation.
- * <p>
+ * 
  * To represent a contact or person entity, use the @c CPMessageListItem initializer that
  * accepts a full name and phone/email. When the user selects this item, Siri will perform
  * a message compose flow.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("CarPlay")
@@ -71,26 +75,30 @@ public class CPMessageListItem extends NSObject implements CPListTemplateItem {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @Nullable
     @Generated
     @Selector("conversationIdentifier")
     public native String conversationIdentifier();
@@ -103,6 +111,7 @@ public class CPMessageListItem extends NSObject implements CPListTemplateItem {
     @Selector("description")
     public static native String description_static();
 
+    @Nullable
     @Generated
     @Selector("detailText")
     public native String detailText();
@@ -118,10 +127,10 @@ public class CPMessageListItem extends NSObject implements CPListTemplateItem {
 
     /**
      * Initialize a @c CPMessageListItem for use in a @c CPListTemplate.
-     * <p>
+     * 
      * [@note] The maximum image size is CPMaximumMessageItemImageSize. If you supply a larger image,
      * it will be scaled down to this size.
-     *
+     * 
      * @param conversationIdentifier A value meaningful to your app to identify this conversation.
      *                               This identifier is not directly displayed to the user; rather, when the user
      *                               selects this list item,
@@ -136,15 +145,17 @@ public class CPMessageListItem extends NSObject implements CPListTemplateItem {
     @Generated
     @Selector("initWithConversationIdentifier:text:leadingConfiguration:trailingConfiguration:detailText:trailingText:")
     public native CPMessageListItem initWithConversationIdentifierTextLeadingConfigurationTrailingConfigurationDetailTextTrailingText(
-            String conversationIdentifier, String text, CPMessageListItemLeadingConfiguration leadingConfiguration,
-            CPMessageListItemTrailingConfiguration trailingConfiguration, String detailText, String trailingText);
+            @NotNull String conversationIdentifier, @NotNull String text,
+            @NotNull CPMessageListItemLeadingConfiguration leadingConfiguration,
+            @Nullable CPMessageListItemTrailingConfiguration trailingConfiguration, @Nullable String detailText,
+            @Nullable String trailingText);
 
     /**
      * Initialize a @c CPMessageListItem for use in a @c CPListTemplate.
-     * <p>
+     * 
      * [@note] The maximum image size is CPMaximumMessageItemImageSize. If you supply a larger image,
      * it will be scaled down to this size.
-     *
+     * 
      * @param fullName              The full name of the contact entity represented by this list item. This text
      *                              will be displayed as the main text label in the cell and will be spoken by Siri.
      * @param phoneOrEmailAddress   A phone or email address for this contact entity that can be used
@@ -157,8 +168,10 @@ public class CPMessageListItem extends NSObject implements CPListTemplateItem {
     @Generated
     @Selector("initWithFullName:phoneOrEmailAddress:leadingConfiguration:trailingConfiguration:detailText:trailingText:")
     public native CPMessageListItem initWithFullNamePhoneOrEmailAddressLeadingConfigurationTrailingConfigurationDetailTextTrailingText(
-            String fullName, String phoneOrEmailAddress, CPMessageListItemLeadingConfiguration leadingConfiguration,
-            CPMessageListItemTrailingConfiguration trailingConfiguration, String detailText, String trailingText);
+            @NotNull String fullName, @NotNull String phoneOrEmailAddress,
+            @NotNull CPMessageListItemLeadingConfiguration leadingConfiguration,
+            @Nullable CPMessageListItemTrailingConfiguration trailingConfiguration, @Nullable String detailText,
+            @Nullable String trailingText);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -177,10 +190,12 @@ public class CPMessageListItem extends NSObject implements CPListTemplateItem {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("leadingConfiguration")
     public native CPMessageListItemLeadingConfiguration leadingConfiguration();
@@ -190,6 +205,7 @@ public class CPMessageListItem extends NSObject implements CPListTemplateItem {
     @Selector("new")
     public static native CPMessageListItem new_objc();
 
+    @Nullable
     @Generated
     @Selector("phoneOrEmailAddress")
     public native String phoneOrEmailAddress();
@@ -204,19 +220,19 @@ public class CPMessageListItem extends NSObject implements CPListTemplateItem {
 
     @Generated
     @Selector("setConversationIdentifier:")
-    public native void setConversationIdentifier(String value);
+    public native void setConversationIdentifier(@Nullable String value);
 
     @Generated
     @Selector("setDetailText:")
-    public native void setDetailText(String value);
+    public native void setDetailText(@Nullable String value);
 
     @Generated
     @Selector("setLeadingConfiguration:")
-    public native void setLeadingConfiguration(CPMessageListItemLeadingConfiguration value);
+    public native void setLeadingConfiguration(@NotNull CPMessageListItemLeadingConfiguration value);
 
     @Generated
     @Selector("setPhoneOrEmailAddress:")
-    public native void setPhoneOrEmailAddress(String value);
+    public native void setPhoneOrEmailAddress(@Nullable String value);
 
     /**
      * To update the @c CPMessageListItem, assign to any of these properties. If displayed in a
@@ -224,19 +240,19 @@ public class CPMessageListItem extends NSObject implements CPListTemplateItem {
      */
     @Generated
     @Selector("setText:")
-    public native void setText(String value);
+    public native void setText(@Nullable String value);
 
     @Generated
     @Selector("setTrailingConfiguration:")
-    public native void setTrailingConfiguration(CPMessageListItemTrailingConfiguration value);
+    public native void setTrailingConfiguration(@Nullable CPMessageListItemTrailingConfiguration value);
 
     @Generated
     @Selector("setTrailingText:")
-    public native void setTrailingText(String value);
+    public native void setTrailingText(@Nullable String value);
 
     @Generated
     @Selector("setUserInfo:")
-    public native void setUserInfo(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setUserInfo(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
     @Selector("setVersion:")
@@ -246,18 +262,22 @@ public class CPMessageListItem extends NSObject implements CPListTemplateItem {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Nullable
     @Generated
     @Selector("text")
     public native String text();
 
+    @Nullable
     @Generated
     @Selector("trailingConfiguration")
     public native CPMessageListItemTrailingConfiguration trailingConfiguration();
 
+    @Nullable
     @Generated
     @Selector("trailingText")
     public native String trailingText();
 
+    @Nullable
     @Generated
     @Selector("userInfo")
     @MappedReturn(ObjCObjectMapper.class)

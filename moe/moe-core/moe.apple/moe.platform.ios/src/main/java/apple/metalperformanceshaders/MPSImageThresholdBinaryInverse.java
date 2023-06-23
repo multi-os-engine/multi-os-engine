@@ -41,16 +41,20 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImageThresholdBinaryInverse
- * <p>
+ * 
  * The MPSImageThresholdBinaryInverse filter applies a fixed-level threshold to each pixel in the image.
  * The threshold functions convert a single channel image to a binary image.
  * If the input image is not a single channel image, convert the inputimage to a single channel
  * luminance image using the linearGrayColorTransform and then apply the threshold.
  * The ThresholdBinaryInverse function is:
  * destinationPixelValue = sourcePixelValue > thresholdValue ? 0 : maximumValue
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -82,22 +86,25 @@ public class MPSImageThresholdBinaryInverse extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -132,9 +139,10 @@ public class MPSImageThresholdBinaryInverse extends MPSUnaryImageKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,11 +176,11 @@ public class MPSImageThresholdBinaryInverse extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImageThresholdBinaryInverse initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageThresholdBinaryInverse initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * initialize a MPSImageThresholdBinaryInverse filter
-     *
+     * 
      * @param device         The device the filter will run on
      * @param thresholdValue The threshold value to use
      * @param maximumValue   The maximum value to use
@@ -182,12 +190,12 @@ public class MPSImageThresholdBinaryInverse extends MPSUnaryImageKernel {
     @Generated
     @Selector("initWithDevice:thresholdValue:maximumValue:linearGrayColorTransform:")
     public native MPSImageThresholdBinaryInverse initWithDeviceThresholdValueMaximumValueLinearGrayColorTransform(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, float thresholdValue, float maximumValue,
-            ConstFloatPtr transform);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, float thresholdValue, float maximumValue,
+            @Nullable ConstFloatPtr transform);
 
     /**
      * [@property] maximumValue
-     * <p>
+     * 
      * The maximum value used to init the threshold filter
      */
     @Generated
@@ -196,7 +204,7 @@ public class MPSImageThresholdBinaryInverse extends MPSUnaryImageKernel {
 
     /**
      * [@property] thresholdValue
-     * <p>
+     * 
      * The threshold value used to init the threshold filter
      */
     @Generated
@@ -205,34 +213,37 @@ public class MPSImageThresholdBinaryInverse extends MPSUnaryImageKernel {
 
     /**
      * [@property] transform
-     * <p>
+     * 
      * The color transform used to init the threshold filter
      */
+    @NotNull
     @Generated
     @Selector("transform")
     public native ConstFloatPtr transform();
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSImageThresholdBinaryInverse initWithCoder(NSCoder aDecoder);
+    public native MPSImageThresholdBinaryInverse initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSImageThresholdBinaryInverse initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageThresholdBinaryInverse initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("supportsSecureCoding")

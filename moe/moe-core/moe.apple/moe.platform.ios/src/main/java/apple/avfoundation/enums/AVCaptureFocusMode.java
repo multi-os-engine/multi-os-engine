@@ -21,20 +21,31 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVCaptureFocusMode
- * <p>
+ * 
  * Constants indicating the mode of the focus on the receiver's device, if it has one.
- * <p>
+ * 
  * [@constant] AVCaptureFocusModeLocked
  * Indicates that the focus should be locked at the lens' current position.
  * [@constant] AVCaptureFocusModeAutoFocus
  * Indicates that the device should autofocus once and then change the focus mode to AVCaptureFocusModeLocked.
  * [@constant] AVCaptureFocusModeContinuousAutoFocus
  * Indicates that the device should automatically focus when needed.
+ * 
+ * API-Since: 4.0
  */
 @Generated
 public final class AVCaptureFocusMode {
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NInt public static final long Locked = 0x0000000000000000L;
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NInt public static final long AutoFocus = 0x0000000000000001L;
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NInt public static final long ContinuousAutoFocus = 0x0000000000000002L;
 
     @Generated

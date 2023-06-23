@@ -24,7 +24,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Speech")
 @Runtime(ObjCRuntime.class)
@@ -36,7 +40,8 @@ public interface SFSpeechRecognizerDelegate {
     @Generated
     @IsOptional
     @Selector("speechRecognizer:availabilityDidChange:")
-    default void speechRecognizerAvailabilityDidChange(SFSpeechRecognizer speechRecognizer, boolean available) {
+    default void speechRecognizerAvailabilityDidChange(@NotNull SFSpeechRecognizer speechRecognizer,
+            boolean available) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

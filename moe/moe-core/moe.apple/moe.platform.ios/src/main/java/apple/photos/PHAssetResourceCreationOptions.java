@@ -39,7 +39,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -70,22 +75,25 @@ public class PHAssetResourceCreationOptions extends NSObject implements NSCopyin
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,9 +128,10 @@ public class PHAssetResourceCreationOptions extends NSObject implements NSCopyin
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -150,11 +159,12 @@ public class PHAssetResourceCreationOptions extends NSObject implements NSCopyin
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("init")
@@ -163,7 +173,10 @@ public class PHAssetResourceCreationOptions extends NSObject implements NSCopyin
     /**
      * The filename for the resource. If not specified, one will be inferred from a fileURL if available, or else
      * generated.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("originalFilename")
     public native String originalFilename();
@@ -171,15 +184,19 @@ public class PHAssetResourceCreationOptions extends NSObject implements NSCopyin
     /**
      * The filename for the resource. If not specified, one will be inferred from a fileURL if available, or else
      * generated.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setOriginalFilename:")
-    public native void setOriginalFilename(String value);
+    public native void setOriginalFilename(@Nullable String value);
 
     /**
      * When enabled, the file passed to the creation request will be moved into the photo library without duplicating
      * the file data (the original file is removed if the asset is created successfully), otherwise a copy of the file
      * is created from the original. Defaults to NO. Attempting to move a file that is open or hardlinked will fail.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setShouldMoveFile:")
@@ -188,15 +205,19 @@ public class PHAssetResourceCreationOptions extends NSObject implements NSCopyin
     /**
      * The uniform type identifier for the resource. If not specified, one will be inferred from the
      * PHAssetResourceType.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setUniformTypeIdentifier:")
-    public native void setUniformTypeIdentifier(String value);
+    public native void setUniformTypeIdentifier(@Nullable String value);
 
     /**
      * When enabled, the file passed to the creation request will be moved into the photo library without duplicating
      * the file data (the original file is removed if the asset is created successfully), otherwise a copy of the file
      * is created from the original. Defaults to NO. Attempting to move a file that is open or hardlinked will fail.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("shouldMoveFile")
@@ -205,7 +226,10 @@ public class PHAssetResourceCreationOptions extends NSObject implements NSCopyin
     /**
      * The uniform type identifier for the resource. If not specified, one will be inferred from the
      * PHAssetResourceType.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("uniformTypeIdentifier")
     public native String uniformTypeIdentifier();

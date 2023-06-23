@@ -17,7 +17,6 @@ limitations under the License.
 package apple.photos;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
@@ -45,7 +44,13 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -76,22 +81,25 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +134,10 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -147,14 +156,17 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * delivery mode. Defaults to PHImageRequestOptionsDeliveryModeOpportunistic
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("deliveryMode")
@@ -168,6 +180,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     /**
      * if necessary will download the image from iCloud (client can monitor or cancel using progressHandler). Defaults
      * to NO (see start/stopCachingImagesForAssets)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isNetworkAccessAllowed")
@@ -176,6 +190,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     /**
      * if necessary will download the image from iCloud (client can monitor or cancel using progressHandler). Defaults
      * to NO (see start/stopCachingImagesForAssets)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setNetworkAccessAllowed:")
@@ -183,6 +199,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
 
     /**
      * return only a single result, blocking until available (or failure). Defaults to NO
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isSynchronous")
@@ -190,6 +208,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
 
     /**
      * return only a single result, blocking until available (or failure). Defaults to NO
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setSynchronous:")
@@ -198,6 +218,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     /**
      * specify crop rectangle in unit coordinates of the original image, such as a face. Defaults to CGRectZero (not
      * applicable)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("normalizedCropRect")
@@ -207,7 +229,10 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     /**
      * provide caller a way to be told how much progress has been made prior to delivering the data when it comes from
      * iCloud. Defaults to nil, shall be set by caller
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("progressHandler")
     @ObjCBlock(name = "call_progressHandler_ret")
@@ -216,6 +241,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     /**
      * resize mode. Does not apply when size is PHImageManagerMaximumSize. Defaults to
      * PHImageRequestOptionsResizeModeFast
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("resizeMode")
@@ -224,6 +251,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
 
     /**
      * delivery mode. Defaults to PHImageRequestOptionsDeliveryModeOpportunistic
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDeliveryMode:")
@@ -232,6 +261,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     /**
      * specify crop rectangle in unit coordinates of the original image, such as a face. Defaults to CGRectZero (not
      * applicable)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setNormalizedCropRect:")
@@ -240,14 +271,19 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     /**
      * provide caller a way to be told how much progress has been made prior to delivering the data when it comes from
      * iCloud. Defaults to nil, shall be set by caller
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setProgressHandler:")
-    public native void setProgressHandler(@ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);
+    public native void setProgressHandler(
+            @Nullable @ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);
 
     /**
      * resize mode. Does not apply when size is PHImageManagerMaximumSize. Defaults to
      * PHImageRequestOptionsResizeModeFast
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setResizeMode:")
@@ -255,6 +291,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
 
     /**
      * version
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setVersion:")
@@ -262,6 +300,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
 
     /**
      * version
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("version")
@@ -272,13 +312,15 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     @Generated
     public interface Block_progressHandler_ret {
         @Generated
-        void call_progressHandler_ret(double progress, NSError error, BoolPtr stop, NSDictionary<?, ?> info);
+        void call_progressHandler_ret(double progress, @Nullable NSError error, @NotNull BoolPtr stop,
+                @Nullable NSDictionary<?, ?> info);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setProgressHandler {
         @Generated
-        void call_setProgressHandler(double progress, NSError error, BoolPtr stop, NSDictionary<?, ?> info);
+        void call_setProgressHandler(double progress, @Nullable NSError error, @NotNull BoolPtr stop,
+                @Nullable NSDictionary<?, ?> info);
     }
 }

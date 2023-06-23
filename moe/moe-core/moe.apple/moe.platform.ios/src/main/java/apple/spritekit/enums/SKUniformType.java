@@ -19,16 +19,46 @@ package apple.spritekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class SKUniformType {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Float = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long FloatVector2 = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long FloatVector3 = 0x0000000000000003L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long FloatVector4 = 0x0000000000000004L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long FloatMatrix2 = 0x0000000000000005L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long FloatMatrix3 = 0x0000000000000006L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long FloatMatrix4 = 0x0000000000000007L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Texture = 0x0000000000000008L;
 
     @Generated

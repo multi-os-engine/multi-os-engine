@@ -41,10 +41,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNBox
- * <p>
+ * 
  * SCNBox represents a box with rectangular sides and optional chamfers.
  */
 @Generated
@@ -77,13 +79,13 @@ public class SCNBox extends SCNGeometry {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * boxWithWidth:height:length:chamferRadius:
-     * <p>
+     * 
      * Creates and returns a box with given width, height, length and chamfer radius.
-     *
+     * 
      * @param width         The width of the box.
      * @param height        The height of the box.
      * @param length        The length of the box.
@@ -96,18 +98,21 @@ public class SCNBox extends SCNGeometry {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,12 +131,12 @@ public class SCNBox extends SCNGeometry {
 
     @Generated
     @Selector("geometryWithMDLMesh:")
-    public static native SCNBox geometryWithMDLMesh(MDLMesh mdlMesh);
+    public static native SCNBox geometryWithMDLMesh(@NotNull MDLMesh mdlMesh);
 
     @Generated
     @Selector("geometryWithSources:elements:")
-    public static native SCNBox geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
-            NSArray<? extends SCNGeometryElement> elements);
+    public static native SCNBox geometryWithSourcesElements(@NotNull NSArray<? extends SCNGeometrySource> sources,
+            @Nullable NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
     @Selector("hash")
@@ -155,9 +160,10 @@ public class SCNBox extends SCNGeometry {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -191,9 +197,9 @@ public class SCNBox extends SCNGeometry {
 
     /**
      * [@property] chamferRadius
-     * <p>
+     * 
      * The chamfer radius. Animatable.
-     * <p>
+     * 
      * If the value is strictly less than 0, the geometry is empty. The default value is 0.
      */
     @Generated
@@ -203,9 +209,9 @@ public class SCNBox extends SCNGeometry {
 
     /**
      * [@property] chamferSegmentCount
-     * <p>
+     * 
      * The number of chamfer subdivisions. Animatable.
-     * <p>
+     * 
      * If the value is less than 1, the behavior is undefined. The default value is 5.
      */
     @Generated
@@ -215,9 +221,9 @@ public class SCNBox extends SCNGeometry {
 
     /**
      * [@property] height
-     * <p>
+     * 
      * The height of the box. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -227,9 +233,9 @@ public class SCNBox extends SCNGeometry {
 
     /**
      * [@property] heightSegmentCount
-     * <p>
+     * 
      * The number of subdivisions along the Y axis. Animatable.
-     * <p>
+     * 
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -243,13 +249,13 @@ public class SCNBox extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNBox initWithCoder(NSCoder coder);
+    public native SCNBox initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] length
-     * <p>
+     * 
      * The length of the box. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -259,9 +265,9 @@ public class SCNBox extends SCNGeometry {
 
     /**
      * [@property] lengthSegmentCount
-     * <p>
+     * 
      * The number of subdivisions along the Z axis. Animatable.
-     * <p>
+     * 
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -271,9 +277,9 @@ public class SCNBox extends SCNGeometry {
 
     /**
      * [@property] chamferRadius
-     * <p>
+     * 
      * The chamfer radius. Animatable.
-     * <p>
+     * 
      * If the value is strictly less than 0, the geometry is empty. The default value is 0.
      */
     @Generated
@@ -282,9 +288,9 @@ public class SCNBox extends SCNGeometry {
 
     /**
      * [@property] chamferSegmentCount
-     * <p>
+     * 
      * The number of chamfer subdivisions. Animatable.
-     * <p>
+     * 
      * If the value is less than 1, the behavior is undefined. The default value is 5.
      */
     @Generated
@@ -293,9 +299,9 @@ public class SCNBox extends SCNGeometry {
 
     /**
      * [@property] height
-     * <p>
+     * 
      * The height of the box. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -304,9 +310,9 @@ public class SCNBox extends SCNGeometry {
 
     /**
      * [@property] heightSegmentCount
-     * <p>
+     * 
      * The number of subdivisions along the Y axis. Animatable.
-     * <p>
+     * 
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -315,9 +321,9 @@ public class SCNBox extends SCNGeometry {
 
     /**
      * [@property] length
-     * <p>
+     * 
      * The length of the box. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -326,9 +332,9 @@ public class SCNBox extends SCNGeometry {
 
     /**
      * [@property] lengthSegmentCount
-     * <p>
+     * 
      * The number of subdivisions along the Z axis. Animatable.
-     * <p>
+     * 
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -337,9 +343,9 @@ public class SCNBox extends SCNGeometry {
 
     /**
      * [@property] width
-     * <p>
+     * 
      * The width of the box. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -348,9 +354,9 @@ public class SCNBox extends SCNGeometry {
 
     /**
      * [@property] widthSegmentCount
-     * <p>
+     * 
      * The number of subdivisions along the X axis. Animatable.
-     * <p>
+     * 
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -365,9 +371,9 @@ public class SCNBox extends SCNGeometry {
 
     /**
      * [@property] width
-     * <p>
+     * 
      * The width of the box. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -377,9 +383,9 @@ public class SCNBox extends SCNGeometry {
 
     /**
      * [@property] widthSegmentCount
-     * <p>
+     * 
      * The number of subdivisions along the X axis. Animatable.
-     * <p>
+     * 
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated

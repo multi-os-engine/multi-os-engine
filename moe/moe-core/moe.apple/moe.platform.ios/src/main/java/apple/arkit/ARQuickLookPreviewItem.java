@@ -24,7 +24,12 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -63,34 +68,38 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * An optional canonical web page URL for the 3D content that will be shared.
-     * <p>
+     * 
      * If this is supplied, the URL to the canonical web page is shared instead of the 3D content file.
      * For example, providing https://developer.apple.com/arkit/gallery/ as the canonical web page URL string will be
      * shared via the Share button. If the web page URL string is malformed or not provided, then AR Quick Look will
      * default to sharing the 3D content.
      */
+    @Nullable
     @Generated
     @Selector("canonicalWebPageURL")
     public native NSURL canonicalWebPageURL();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -114,25 +123,25 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
 
     /**
      * Creates an object representing the 3D content that will be previewed in AR Quick Look.
-     * <p>
+     * 
      * This object will be previewed in AR Quick Look using the default
      * behavior:
-     * <p>
+     * 
      * - Start in Object mode without camera passthrough
-     * <p>
+     * 
      * - Display the Share button for 3D content sharing
-     * <p>
+     * 
      * - Allow scaling content in both Object and AR mode
-     * <p>
+     * 
      * This is a promise to the ARQuickLookPreviewItem class that the URL points to a 3D content file. This class does
      * not deal with the file's existence or content, and leaves it up to QuickLook to handle and process the URL.
-     *
+     * 
      * @param url A file URL to 3D content file (e.g. usdz).
      * @return The preview object to display in AR Quick Look.
      */
     @Generated
     @Selector("initWithFileAtURL:")
-    public native ARQuickLookPreviewItem initWithFileAtURL(NSURL url);
+    public native ARQuickLookPreviewItem initWithFileAtURL(@NotNull NSURL url);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -151,20 +160,23 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native ARQuickLookPreviewItem new_objc();
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("previewItemTitle")
     public native String previewItemTitle();
 
+    @Nullable
     @Generated
     @Selector("previewItemURL")
     public native NSURL previewItemURL();
@@ -187,7 +199,7 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
 
     /**
      * An optional canonical web page URL for the 3D content that will be shared.
-     * <p>
+     * 
      * If this is supplied, the URL to the canonical web page is shared instead of the 3D content file.
      * For example, providing https://developer.apple.com/arkit/gallery/ as the canonical web page URL string will be
      * shared via the Share button. If the web page URL string is malformed or not provided, then AR Quick Look will
@@ -195,7 +207,7 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
      */
     @Generated
     @Selector("setCanonicalWebPageURL:")
-    public native void setCanonicalWebPageURL(NSURL value);
+    public native void setCanonicalWebPageURL(@Nullable NSURL value);
 
     @Generated
     @Selector("setVersion:")

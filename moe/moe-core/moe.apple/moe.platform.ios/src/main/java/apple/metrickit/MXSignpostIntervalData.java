@@ -28,20 +28,24 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MXSignpostIntervalData
- * <p>
+ * 
  * A class that encapsulates metrics associated with app specific signpost intervals.
- * <p>
+ * 
  * These metrics will be collected and aggregated if the associated signposts were emit using MXSignpost or
  * MXSignpostAnimation APIs
- * <p>
+ * 
  * To limit on-device overhead, the system will automatically limit the number of signposts (emitted using the MetricKit
  * log handle) processed.
- * <p>
+ * 
  * Avoid losing telemetry by limiting usage of signposts (emitted using the MetricKit log handle) to critical sections
  * of code.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetricKit")
@@ -73,58 +77,64 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] averageMemory
-     * <p>
+     * 
      * Average value of memory snapshots taken at beginning and end of MXSignpost intervals
-     * <p>
+     * 
      * This property is null when signposts with the associated signpostName and signpostCategory contain no interval
      * metric data.
      */
+    @Nullable
     @Generated
     @Selector("averageMemory")
     public native MXAverage<NSUnitInformationStorage> averageMemory();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] cumulativeCPUTime
-     * <p>
+     * 
      * Cumulative CPU time aggregated over the MXSignpost intervals.
-     * <p>
+     * 
      * This property is null when signposts with the associated signpostName and signpostCategory contain no interval
      * metric data.
      */
+    @Nullable
     @Generated
     @Selector("cumulativeCPUTime")
     public native NSMeasurement<NSUnitDuration> cumulativeCPUTime();
 
     /**
      * [@property] cumulativeLogicalWrites
-     * <p>
+     * 
      * Cumulative logical writes aggregated over the MXSignpost intervals.
-     * <p>
+     * 
      * This property is null when signposts with the associated signpostName and signpostCategory contain no interval
      * metric data.
      */
+    @Nullable
     @Generated
     @Selector("cumulativeLogicalWrites")
     public native NSMeasurement<NSUnitInformationStorage> cumulativeLogicalWrites();
@@ -139,7 +149,7 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -148,10 +158,11 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] histogrammedSignpostDuration
-     * <p>
+     * 
      * A histogram of signpost intervals durations associated with the given signposts with signpostName and
      * signpostCategory.
      */
+    @NotNull
     @Generated
     @Selector("histogrammedSignpostDuration")
     public native MXHistogram<NSUnitDuration> histogrammedSignpostDuration();
@@ -162,7 +173,7 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MXSignpostIntervalData initWithCoder(NSCoder coder);
+    public native MXSignpostIntervalData initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -181,9 +192,10 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -223,12 +235,15 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] cumulativeHitchTimeRatio
-     * <p>
+     * 
      * Cumulative hitch time ratio aggregated over the MXSignpostAnimation intervals.
-     * <p>
+     * 
      * This property is null when signposts with the associated signpostName and signpostCategory contain no interval
      * metric data.
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("cumulativeHitchTimeRatio")
     public native NSMeasurement<NSUnit> cumulativeHitchTimeRatio();

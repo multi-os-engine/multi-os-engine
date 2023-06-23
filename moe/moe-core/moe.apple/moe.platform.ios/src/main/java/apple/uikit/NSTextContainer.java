@@ -17,8 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -45,7 +43,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -76,22 +81,25 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +134,10 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,12 +167,15 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Default value : empty array An array of UIBezierPath representing the exclusion paths inside the receiver's
      * bounding rect.
+     * 
+     * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("exclusionPaths")
     public native NSArray<? extends UIBezierPath> exclusionPaths();
@@ -178,10 +190,12 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSTextContainer initWithCoder(NSCoder coder);
+    public native NSTextContainer initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initialization ***************************
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("initWithSize:")
@@ -194,6 +208,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
      * or -lineFragmentRectForProposedRect:atIndex:writingDirection:remainingRect: is overridden. It's recommended to
      * override this property when -lineFragmentRectForProposedRect:atIndex:writingDirection:remainingRect: is
      * overridden.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isSimpleRectangularTextContainer")
@@ -204,6 +220,7 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
      * Avoid assigning a layout manager directly through this property. Adding a text container to a layout manager
      * through -[NSLayoutManager addTextContainer:] will use the property for assigning the new layout manager.
      */
+    @Nullable
     @Generated
     @Selector("layoutManager")
     public native NSLayoutManager layoutManager();
@@ -216,6 +233,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     /**
      * Default value: NSLineBreakByWordWrapping The line break mode defines the behavior of the last line inside the
      * text container.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("lineBreakMode")
@@ -241,17 +260,21 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
      * visual horizontal line. The values passed into the method are either NSWritingDirectionLeftToRight or
      * NSWritingDirectionRightToLeft. This method can be overridden by subclasses for further text container region
      * customization.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("lineFragmentRectForProposedRect:atIndex:writingDirection:remainingRect:")
     @ByValue
     public native CGRect lineFragmentRectForProposedRectAtIndexWritingDirectionRemainingRect(
             @ByValue CGRect proposedRect, @NUInt long characterIndex, @NInt long baseWritingDirection,
-            CGRect remainingRect);
+            @Nullable CGRect remainingRect);
 
     /**
      * Default value: 0 (no limit) The maximum number of lines that can be stored in the receiver. This value is
      * utilized by NSLayoutManager for determining the maximum number of lines associated with the text container.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("maximumNumberOfLines")
@@ -263,18 +286,22 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
      * layoutManager with a new one leaving the rest of the web intact. All the NSTextContainers on the old
      * NSLayoutManager get transferred to the new one. This method deals with all the work of making sure the containers
      * don't get deallocated and removing the old layoutManager from the text storage and replacing it with the new one.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("replaceLayoutManager:")
-    public native void replaceLayoutManager(NSLayoutManager newLayoutManager);
+    public native void replaceLayoutManager(@NotNull NSLayoutManager newLayoutManager);
 
     /**
      * Default value : empty array An array of UIBezierPath representing the exclusion paths inside the receiver's
      * bounding rect.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setExclusionPaths:")
-    public native void setExclusionPaths(NSArray<? extends UIBezierPath> value);
+    public native void setExclusionPaths(@NotNull NSArray<? extends UIBezierPath> value);
 
     @Generated
     @Selector("setHeightTracksTextView:")
@@ -287,7 +314,7 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
      */
     @Generated
     @Selector("setLayoutManager:")
-    public native void setLayoutManager_unsafe(NSLayoutManager value);
+    public native void setLayoutManager_unsafe(@Nullable NSLayoutManager value);
 
     /**
      * Accessor for the NSLayoutManager object owning the receiver.
@@ -295,7 +322,7 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
      * through -[NSLayoutManager addTextContainer:] will use the property for assigning the new layout manager.
      */
     @Generated
-    public void setLayoutManager(NSLayoutManager value) {
+    public void setLayoutManager(@Nullable NSLayoutManager value) {
         Object __old = layoutManager();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -309,6 +336,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     /**
      * Default value: NSLineBreakByWordWrapping The line break mode defines the behavior of the last line inside the
      * text container.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setLineBreakMode:")
@@ -325,6 +354,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     /**
      * Default value: 0 (no limit) The maximum number of lines that can be stored in the receiver. This value is
      * utilized by NSLayoutManager for determining the maximum number of lines associated with the text container.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setMaximumNumberOfLines:")
@@ -333,6 +364,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     /**
      * Default value: CGSizeZero Defines the maximum size for the layout area returned from
      * -lineFragmentRectForProposedRect:writingDirection:remainingRect:. 0.0 and less means no limitation.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setSize:")
@@ -348,6 +381,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     /**
      * Default value: CGSizeZero Defines the maximum size for the layout area returned from
      * -lineFragmentRectForProposedRect:writingDirection:remainingRect:. 0.0 and less means no limitation.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("size")
@@ -373,7 +408,10 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
 
     /**
      * Returns NSTextLayoutManager owning the text container. When non-nil, -layoutManager should be nil.
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("textLayoutManager")
     public native NSTextLayoutManager textLayoutManager();

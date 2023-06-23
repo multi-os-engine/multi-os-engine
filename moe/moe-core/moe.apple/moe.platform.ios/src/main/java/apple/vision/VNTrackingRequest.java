@@ -23,11 +23,15 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A base class for all tracking requests.
- * <p>
+ * 
  * Since this class is not meant to be directly instantiated, no initializers are available.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -59,22 +63,25 @@ public class VNTrackingRequest extends VNImageBasedRequest {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,17 +106,18 @@ public class VNTrackingRequest extends VNImageBasedRequest {
     @Generated
     @Selector("initWithCompletionHandler:")
     public native VNTrackingRequest initWithCompletionHandler(
-            @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
 
     /**
      * [@property] property inputObservation
-     * <p>
+     * 
      * The observation object that defines a region to track. Providing an observation not returned from a tracker (e.g.
      * user-defined, or from a detector) begins a new tracker for the sequence. Providing an observation that was
      * returned from a tracker continues the use of that tracker, to track the region to the next frame. In general,
      * unless documented in the request's documentation, the rectangle must be defined in normalized coordinates (both
      * dimensions normalized to [0,1] with the origin at the lower-left corner).
      */
+    @NotNull
     @Generated
     @Selector("inputObservation")
     public native VNDetectedObjectObservation inputObservation();
@@ -129,7 +137,7 @@ public class VNTrackingRequest extends VNImageBasedRequest {
 
     /**
      * [@property] property lastFrame
-     * <p>
+     * 
      * This property allows marking the last frame for tracking using current tracker. If set to YES, the results for
      * this frame will be processed and returned and the current tracker will be released to the pool of available
      * trackers
@@ -142,9 +150,10 @@ public class VNTrackingRequest extends VNImageBasedRequest {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,7 +170,7 @@ public class VNTrackingRequest extends VNImageBasedRequest {
 
     /**
      * [@property] property inputObservation
-     * <p>
+     * 
      * The observation object that defines a region to track. Providing an observation not returned from a tracker (e.g.
      * user-defined, or from a detector) begins a new tracker for the sequence. Providing an observation that was
      * returned from a tracker continues the use of that tracker, to track the region to the next frame. In general,
@@ -170,11 +179,11 @@ public class VNTrackingRequest extends VNImageBasedRequest {
      */
     @Generated
     @Selector("setInputObservation:")
-    public native void setInputObservation(VNDetectedObjectObservation value);
+    public native void setInputObservation(@NotNull VNDetectedObjectObservation value);
 
     /**
      * [@property] property lastFrame
-     * <p>
+     * 
      * This property allows marking the last frame for tracking using current tracker. If set to YES, the results for
      * this frame will be processed and returned and the current tracker will be released to the pool of available
      * trackers
@@ -185,7 +194,7 @@ public class VNTrackingRequest extends VNImageBasedRequest {
 
     /**
      * [@property] property trackingLevel
-     * <p>
+     * 
      * Tracking level allows tuning tracking algorithm to prefer speed (VNRequestTrackingLevelFast) vs. tracking object
      * location accuracy (VNRequestTrackingLevelAccurate). This property has no effect on general purpose object tracker
      * (VNTrackObjectRequest) revision 2 (VNTrackObjectRequestRevision2)
@@ -204,7 +213,7 @@ public class VNTrackingRequest extends VNImageBasedRequest {
 
     /**
      * [@property] property trackingLevel
-     * <p>
+     * 
      * Tracking level allows tuning tracking algorithm to prefer speed (VNRequestTrackingLevelFast) vs. tracking object
      * location accuracy (VNRequestTrackingLevelAccurate). This property has no effect on general purpose object tracker
      * (VNTrackObjectRequest) revision 2 (VNTrackObjectRequestRevision2)
@@ -229,6 +238,7 @@ public class VNTrackingRequest extends VNImageBasedRequest {
     @NUInt
     public static native long defaultRevision();
 
+    @NotNull
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();

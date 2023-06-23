@@ -35,7 +35,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -66,22 +71,25 @@ public class NSUbiquitousKeyValueStore extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -90,6 +98,7 @@ public class NSUbiquitousKeyValueStore extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @NotNull
     @Generated
     @Selector("defaultStore")
     public static native NSUbiquitousKeyValueStore defaultStore();
@@ -120,9 +129,10 @@ public class NSUbiquitousKeyValueStore extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -150,29 +160,33 @@ public class NSUbiquitousKeyValueStore extends NSObject {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("arrayForKey:")
-    public native NSArray<?> arrayForKey(String aKey);
+    public native NSArray<?> arrayForKey(@NotNull String aKey);
 
     @Generated
     @Selector("boolForKey:")
-    public native boolean boolForKey(String aKey);
+    public native boolean boolForKey(@NotNull String aKey);
 
+    @Nullable
     @Generated
     @Selector("dataForKey:")
-    public native NSData dataForKey(String aKey);
+    public native NSData dataForKey(@NotNull String aKey);
 
+    @Nullable
     @Generated
     @Selector("dictionaryForKey:")
-    public native NSDictionary<String, ?> dictionaryForKey(String aKey);
+    public native NSDictionary<String, ?> dictionaryForKey(@NotNull String aKey);
 
+    @NotNull
     @Generated
     @Selector("dictionaryRepresentation")
     public native NSDictionary<String, ?> dictionaryRepresentation();
 
     @Generated
     @Selector("doubleForKey:")
-    public native double doubleForKey(String aKey);
+    public native double doubleForKey(@NotNull String aKey);
 
     @Generated
     @Selector("init")
@@ -180,52 +194,54 @@ public class NSUbiquitousKeyValueStore extends NSObject {
 
     @Generated
     @Selector("longLongForKey:")
-    public native long longLongForKey(String aKey);
+    public native long longLongForKey(@NotNull String aKey);
 
+    @Nullable
     @Generated
     @Selector("objectForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object objectForKey(String aKey);
+    public native Object objectForKey(@NotNull String aKey);
 
     @Generated
     @Selector("removeObjectForKey:")
-    public native void removeObjectForKey(String aKey);
+    public native void removeObjectForKey(@NotNull String aKey);
 
     @Generated
     @Selector("setArray:forKey:")
-    public native void setArrayForKey(NSArray<?> anArray, String aKey);
+    public native void setArrayForKey(@Nullable NSArray<?> anArray, @NotNull String aKey);
 
     @Generated
     @Selector("setBool:forKey:")
-    public native void setBoolForKey(boolean value, String aKey);
+    public native void setBoolForKey(boolean value, @NotNull String aKey);
 
     @Generated
     @Selector("setData:forKey:")
-    public native void setDataForKey(NSData aData, String aKey);
+    public native void setDataForKey(@Nullable NSData aData, @NotNull String aKey);
 
     @Generated
     @Selector("setDictionary:forKey:")
-    public native void setDictionaryForKey(NSDictionary<String, ?> aDictionary, String aKey);
+    public native void setDictionaryForKey(@Nullable NSDictionary<String, ?> aDictionary, @NotNull String aKey);
 
     @Generated
     @Selector("setDouble:forKey:")
-    public native void setDoubleForKey(double value, String aKey);
+    public native void setDoubleForKey(double value, @NotNull String aKey);
 
     @Generated
     @Selector("setLongLong:forKey:")
-    public native void setLongLongForKey(long value, String aKey);
+    public native void setLongLongForKey(long value, @NotNull String aKey);
 
     @Generated
     @Selector("setObject:forKey:")
-    public native void setObjectForKey(@Mapped(ObjCObjectMapper.class) Object anObject, String aKey);
+    public native void setObjectForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object anObject, @NotNull String aKey);
 
     @Generated
     @Selector("setString:forKey:")
-    public native void setStringForKey(String aString, String aKey);
+    public native void setStringForKey(@Nullable String aString, @NotNull String aKey);
 
+    @Nullable
     @Generated
     @Selector("stringForKey:")
-    public native String stringForKey(String aKey);
+    public native String stringForKey(@NotNull String aKey);
 
     @Generated
     @Selector("synchronize")

@@ -40,16 +40,20 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEAppProxyTCPFlow
- * <p>
+ * 
  * The NEAppProxyTCPFlow class declares the programmatic interface of an object that is used by NEAppProxyProvider
  * implementations to proxy the payload of TCP connections.
- * <p>
+ * 
  * NEAppProxyTCPFlow is part of NetworkExtension.framework
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -81,22 +85,25 @@ public class NEAppProxyTCPFlow extends NEAppProxyFlow {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +138,10 @@ public class NEAppProxyTCPFlow extends NEAppProxyFlow {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,57 +175,64 @@ public class NEAppProxyTCPFlow extends NEAppProxyFlow {
 
     /**
      * readDataWithCompletionHandler:
-     * <p>
+     * 
      * Read data from the flow.
-     *
+     * 
      * @param completionHandler A block that will be executed when some data is read from the flow. The block is passed
      *                          either the data that was read or a non-nil error if an error occurred. If data has a
      *                          length of 0 then no data can be subsequently read from the flow. The completion handler
      *                          is only called for the single read operation that was initiated by calling this method.
      *                          If the caller wants to read more data then it should call this method again to schedule
      *                          another read operation and another execution of the completion handler block.
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("readDataWithCompletionHandler:")
     public native void readDataWithCompletionHandler(
-            @ObjCBlock(name = "call_readDataWithCompletionHandler") Block_readDataWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_readDataWithCompletionHandler") Block_readDataWithCompletionHandler completionHandler);
 
     /**
      * [@property] remoteEndpoint
-     * <p>
+     * 
      * An NWEndpoint object containing information about the intended remote endpoint of the flow.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("remoteEndpoint")
     public native NWEndpoint remoteEndpoint();
 
     /**
      * writeData:completionHandler
-     * <p>
+     * 
      * Write data to the flow.
-     *
+     * 
      * @param data              The data to write.
      * @param completionHandler A block that will be executed when the data is written into the associated socket's
      *                          receive buffer. The caller should use this callback as an indication that it is possible
      *                          to write more data to the flow without using up excessive buffer memory. If an error
      *                          occurs while writing the data then a non-nil NSError object is passed to the block.
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("writeData:withCompletionHandler:")
-    public native void writeDataWithCompletionHandler(NSData data,
-            @ObjCBlock(name = "call_writeDataWithCompletionHandler") Block_writeDataWithCompletionHandler completionHandler);
+    public native void writeDataWithCompletionHandler(@NotNull NSData data,
+            @NotNull @ObjCBlock(name = "call_writeDataWithCompletionHandler") Block_writeDataWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_readDataWithCompletionHandler {
         @Generated
-        void call_readDataWithCompletionHandler(NSData data, NSError error);
+        void call_readDataWithCompletionHandler(@Nullable NSData data, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeDataWithCompletionHandler {
         @Generated
-        void call_writeDataWithCompletionHandler(NSError error);
+        void call_writeDataWithCompletionHandler(@Nullable NSError error);
     }
 }

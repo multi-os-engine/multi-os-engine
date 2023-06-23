@@ -29,35 +29,45 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPrintInteractionControllerDelegate")
 public interface UIPrintInteractionControllerDelegate {
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @IsOptional
     @Selector("printInteractionController:chooseCutterBehavior:")
     @NInt
-    default long printInteractionControllerChooseCutterBehavior(UIPrintInteractionController printInteractionController,
-            NSArray<?> availableBehaviors) {
+    default long printInteractionControllerChooseCutterBehavior(
+            @NotNull UIPrintInteractionController printInteractionController, @NotNull NSArray<?> availableBehaviors) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("printInteractionController:choosePaper:")
-    default UIPrintPaper printInteractionControllerChoosePaper(UIPrintInteractionController printInteractionController,
-            NSArray<? extends UIPrintPaper> paperList) {
+    default UIPrintPaper printInteractionControllerChoosePaper(
+            @NotNull UIPrintInteractionController printInteractionController,
+            @NotNull NSArray<? extends UIPrintPaper> paperList) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("printInteractionController:cutLengthForPaper:")
     @NFloat
-    default double printInteractionControllerCutLengthForPaper(UIPrintInteractionController printInteractionController,
-            UIPrintPaper paper) {
+    default double printInteractionControllerCutLengthForPaper(
+            @NotNull UIPrintInteractionController printInteractionController, @NotNull UIPrintPaper paper) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -65,14 +75,15 @@ public interface UIPrintInteractionControllerDelegate {
     @IsOptional
     @Selector("printInteractionControllerDidDismissPrinterOptions:")
     default void printInteractionControllerDidDismissPrinterOptions(
-            UIPrintInteractionController printInteractionController) {
+            @NotNull UIPrintInteractionController printInteractionController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("printInteractionControllerDidFinishJob:")
-    default void printInteractionControllerDidFinishJob(UIPrintInteractionController printInteractionController) {
+    default void printInteractionControllerDidFinishJob(
+            @NotNull UIPrintInteractionController printInteractionController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -80,15 +91,16 @@ public interface UIPrintInteractionControllerDelegate {
     @IsOptional
     @Selector("printInteractionControllerDidPresentPrinterOptions:")
     default void printInteractionControllerDidPresentPrinterOptions(
-            UIPrintInteractionController printInteractionController) {
+            @NotNull UIPrintInteractionController printInteractionController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("printInteractionControllerParentViewController:")
     default UIViewController printInteractionControllerParentViewController(
-            UIPrintInteractionController printInteractionController) {
+            @NotNull UIPrintInteractionController printInteractionController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -96,7 +108,7 @@ public interface UIPrintInteractionControllerDelegate {
     @IsOptional
     @Selector("printInteractionControllerWillDismissPrinterOptions:")
     default void printInteractionControllerWillDismissPrinterOptions(
-            UIPrintInteractionController printInteractionController) {
+            @NotNull UIPrintInteractionController printInteractionController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,14 +116,15 @@ public interface UIPrintInteractionControllerDelegate {
     @IsOptional
     @Selector("printInteractionControllerWillPresentPrinterOptions:")
     default void printInteractionControllerWillPresentPrinterOptions(
-            UIPrintInteractionController printInteractionController) {
+            @NotNull UIPrintInteractionController printInteractionController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("printInteractionControllerWillStartJob:")
-    default void printInteractionControllerWillStartJob(UIPrintInteractionController printInteractionController) {
+    default void printInteractionControllerWillStartJob(
+            @NotNull UIPrintInteractionController printInteractionController) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

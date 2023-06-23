@@ -42,7 +42,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -73,22 +78,25 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +131,10 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,6 +166,7 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("bookingDateComponents")
     public native NSDateComponents bookingDateComponents();
@@ -164,19 +174,22 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
     /**
      * unique identifier supplied by vendor to this booking
      */
+    @Nullable
     @Generated
     @Selector("bookingIdentifier")
     public native String bookingIdentifier();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * model object containing contact information
      */
+    @Nullable
     @Generated
     @Selector("guest")
     public native INRestaurantGuest guest();
@@ -184,6 +197,7 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
     /**
      * text captured in UI from user for special requests
      */
+    @Nullable
     @Generated
     @Selector("guestProvidedSpecialRequestText")
     public native String guestProvidedSpecialRequestText();
@@ -194,13 +208,14 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
 
     @Generated
     @Selector("initWithCoder:")
-    public native INBookRestaurantReservationIntent initWithCoder(NSCoder coder);
+    public native INBookRestaurantReservationIntent initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("partySize")
     @NUInt
     public native long partySize();
 
+    @NotNull
     @Generated
     @Selector("restaurant")
     public native INRestaurant restaurant();
@@ -208,34 +223,35 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
     /**
      * offer selected by user, if one exists
      */
+    @Nullable
     @Generated
     @Selector("selectedOffer")
     public native INRestaurantOffer selectedOffer();
 
     @Generated
     @Selector("setBookingDateComponents:")
-    public native void setBookingDateComponents(NSDateComponents value);
+    public native void setBookingDateComponents(@NotNull NSDateComponents value);
 
     /**
      * unique identifier supplied by vendor to this booking
      */
     @Generated
     @Selector("setBookingIdentifier:")
-    public native void setBookingIdentifier(String value);
+    public native void setBookingIdentifier(@Nullable String value);
 
     /**
      * model object containing contact information
      */
     @Generated
     @Selector("setGuest:")
-    public native void setGuest(INRestaurantGuest value);
+    public native void setGuest(@Nullable INRestaurantGuest value);
 
     /**
      * text captured in UI from user for special requests
      */
     @Generated
     @Selector("setGuestProvidedSpecialRequestText:")
-    public native void setGuestProvidedSpecialRequestText(String value);
+    public native void setGuestProvidedSpecialRequestText(@Nullable String value);
 
     @Generated
     @Selector("setPartySize:")
@@ -243,14 +259,14 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
 
     @Generated
     @Selector("setRestaurant:")
-    public native void setRestaurant(INRestaurant value);
+    public native void setRestaurant(@NotNull INRestaurant value);
 
     /**
      * offer selected by user, if one exists
      */
     @Generated
     @Selector("setSelectedOffer:")
-    public native void setSelectedOffer(INRestaurantOffer value);
+    public native void setSelectedOffer(@Nullable INRestaurantOffer value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -258,10 +274,13 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithRestaurant:bookingDateComponents:partySize:bookingIdentifier:guest:selectedOffer:guestProvidedSpecialRequestText:")
     public native INBookRestaurantReservationIntent initWithRestaurantBookingDateComponentsPartySizeBookingIdentifierGuestSelectedOfferGuestProvidedSpecialRequestText(
-            INRestaurant restaurant, NSDateComponents bookingDateComponents, @NUInt long partySize,
-            String bookingIdentifier, INRestaurantGuest guest, INRestaurantOffer selectedOffer,
-            String guestProvidedSpecialRequestText);
+            @NotNull INRestaurant restaurant, @NotNull NSDateComponents bookingDateComponents, @NUInt long partySize,
+            @Nullable String bookingIdentifier, @Nullable INRestaurantGuest guest,
+            @Nullable INRestaurantOffer selectedOffer, @Nullable String guestProvidedSpecialRequestText);
 }

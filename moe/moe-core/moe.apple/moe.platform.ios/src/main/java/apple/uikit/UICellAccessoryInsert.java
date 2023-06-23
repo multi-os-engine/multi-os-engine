@@ -24,9 +24,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An insert control (plus sign inside a circle) with default green color.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("UIKit")
@@ -49,6 +53,7 @@ public class UICellAccessoryInsert extends UICellAccessory {
     /**
      * An optional handler to call when the insert accessory is tapped. If nil, taps on the accessory are ignored.
      */
+    @Nullable
     @Generated
     @Selector("actionHandler")
     @ObjCBlock(name = "call_actionHandler_ret")
@@ -73,29 +78,33 @@ public class UICellAccessoryInsert extends UICellAccessory {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * The background color to apply to the accessory. Default value is nil, which uses the system default.
      */
+    @Nullable
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -119,7 +128,7 @@ public class UICellAccessoryInsert extends UICellAccessory {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UICellAccessoryInsert initWithCoder(NSCoder coder);
+    public native UICellAccessoryInsert initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -138,9 +147,10 @@ public class UICellAccessoryInsert extends UICellAccessory {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -160,7 +170,8 @@ public class UICellAccessoryInsert extends UICellAccessory {
      */
     @Generated
     @Selector("setActionHandler:")
-    public native void setActionHandler(@ObjCBlock(name = "call_setActionHandler") Block_setActionHandler value);
+    public native void setActionHandler(
+            @Nullable @ObjCBlock(name = "call_setActionHandler") Block_setActionHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -174,7 +185,7 @@ public class UICellAccessoryInsert extends UICellAccessory {
      */
     @Generated
     @Selector("setBackgroundColor:")
-    public native void setBackgroundColor(UIColor value);
+    public native void setBackgroundColor(@Nullable UIColor value);
 
     @Generated
     @Selector("setVersion:")

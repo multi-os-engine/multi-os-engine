@@ -38,7 +38,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -69,22 +74,25 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -119,15 +127,17 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native NSPointerFunctions new_objc();
 
+    @NotNull
     @Generated
     @Selector("pointerFunctionsWithOptions:")
     public static native NSPointerFunctions pointerFunctionsWithOptions(@NUInt long options);
@@ -153,12 +163,14 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    @Nullable
     @Generated
     @Selector("descriptionFunction")
     @FunctionPtr(name = "call_descriptionFunction_ret")
@@ -178,26 +190,38 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     @Generated
     @Selector("setDescriptionFunction:")
     public native void setDescriptionFunction(
-            @FunctionPtr(name = "call_setDescriptionFunction") Function_setDescriptionFunction value);
+            @Nullable @FunctionPtr(name = "call_setDescriptionFunction") Function_setDescriptionFunction value);
 
     @Generated
     @Selector("setSizeFunction:")
-    public native void setSizeFunction(@FunctionPtr(name = "call_setSizeFunction") Function_setSizeFunction value);
+    public native void setSizeFunction(
+            @Nullable @FunctionPtr(name = "call_setSizeFunction") Function_setSizeFunction value);
 
     /**
      * pointers should (not) be assigned using the GC strong write barrier
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Garbage collection no longer supported
      */
+    @Deprecated
     @Generated
     @Selector("setUsesStrongWriteBarrier:")
     public native void setUsesStrongWriteBarrier(boolean value);
 
     /**
      * pointers should (not) use GC weak read and write barriers
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Garbage collection no longer supported
      */
+    @Deprecated
     @Generated
     @Selector("setUsesWeakReadAndWriteBarriers:")
     public native void setUsesWeakReadAndWriteBarriers(boolean value);
 
+    @Nullable
     @Generated
     @Selector("sizeFunction")
     @FunctionPtr(name = "call_sizeFunction_ret")
@@ -205,14 +229,24 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
 
     /**
      * pointers should (not) be assigned using the GC strong write barrier
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Garbage collection no longer supported
      */
+    @Deprecated
     @Generated
     @Selector("usesStrongWriteBarrier")
     public native boolean usesStrongWriteBarrier();
 
     /**
      * pointers should (not) use GC weak read and write barriers
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Garbage collection no longer supported
      */
+    @Deprecated
     @Generated
     @Selector("usesWeakReadAndWriteBarriers")
     public native boolean usesWeakReadAndWriteBarriers();
@@ -220,17 +254,19 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Function_descriptionFunction_ret {
+        @Nullable
         @Generated
         @MappedReturn(ObjCStringMapper.class)
-        String call_descriptionFunction_ret(ConstVoidPtr arg0);
+        String call_descriptionFunction_ret(@NotNull ConstVoidPtr arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Function_setDescriptionFunction {
+        @Nullable
         @Generated
         @MappedReturn(ObjCStringMapper.class)
-        String call_setDescriptionFunction(ConstVoidPtr arg0);
+        String call_setDescriptionFunction(@NotNull ConstVoidPtr arg0);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -238,7 +274,7 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     public interface Function_setSizeFunction {
         @Generated
         @NUInt
-        long call_setSizeFunction(ConstVoidPtr arg0);
+        long call_setSizeFunction(@NotNull ConstVoidPtr arg0);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -246,9 +282,10 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     public interface Function_sizeFunction_ret {
         @Generated
         @NUInt
-        long call_sizeFunction_ret(ConstVoidPtr arg0);
+        long call_sizeFunction_ret(@NotNull ConstVoidPtr arg0);
     }
 
+    @Nullable
     @Generated
     @Selector("acquireFunction")
     @FunctionPtr(name = "call_acquireFunction_ret")
@@ -262,18 +299,20 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
         public interface Function_Function_acquireFunction_ret {
             @Generated
             @NUInt
-            long call_Function_acquireFunction_ret(ConstVoidPtr arg0);
+            long call_Function_acquireFunction_ret(@NotNull ConstVoidPtr arg0);
         }
 
+        @NotNull
         @Generated
-        VoidPtr call_acquireFunction_ret(ConstVoidPtr arg0,
-                @FunctionPtr(name = "call_Function_acquireFunction_ret") Function_Function_acquireFunction_ret arg1,
+        VoidPtr call_acquireFunction_ret(@NotNull ConstVoidPtr arg0,
+                @Nullable @FunctionPtr(name = "call_Function_acquireFunction_ret") Function_Function_acquireFunction_ret arg1,
                 boolean arg2);
     }
 
     /**
      * pointer personality functions
      */
+    @Nullable
     @Generated
     @Selector("hashFunction")
     @FunctionPtr(name = "call_hashFunction_ret")
@@ -287,15 +326,16 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
         public interface Function_Function_hashFunction_ret {
             @Generated
             @NUInt
-            long call_Function_hashFunction_ret(ConstVoidPtr arg0);
+            long call_Function_hashFunction_ret(@NotNull ConstVoidPtr arg0);
         }
 
         @Generated
         @NUInt
-        long call_hashFunction_ret(ConstVoidPtr arg0,
-                @FunctionPtr(name = "call_Function_hashFunction_ret") Function_Function_hashFunction_ret arg1);
+        long call_hashFunction_ret(@NotNull ConstVoidPtr arg0,
+                @Nullable @FunctionPtr(name = "call_Function_hashFunction_ret") Function_Function_hashFunction_ret arg1);
     }
 
+    @Nullable
     @Generated
     @Selector("isEqualFunction")
     @FunctionPtr(name = "call_isEqualFunction_ret")
@@ -309,17 +349,18 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
         public interface Function_Function_isEqualFunction_ret {
             @Generated
             @NUInt
-            long call_Function_isEqualFunction_ret(ConstVoidPtr arg0);
+            long call_Function_isEqualFunction_ret(@NotNull ConstVoidPtr arg0);
         }
 
         @Generated
-        boolean call_isEqualFunction_ret(ConstVoidPtr arg0, ConstVoidPtr arg1,
-                @FunctionPtr(name = "call_Function_isEqualFunction_ret") Function_Function_isEqualFunction_ret arg2);
+        boolean call_isEqualFunction_ret(@NotNull ConstVoidPtr arg0, @NotNull ConstVoidPtr arg1,
+                @Nullable @FunctionPtr(name = "call_Function_isEqualFunction_ret") Function_Function_isEqualFunction_ret arg2);
     }
 
     /**
      * custom memory configuration
      */
+    @Nullable
     @Generated
     @Selector("relinquishFunction")
     @FunctionPtr(name = "call_relinquishFunction_ret")
@@ -333,18 +374,18 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
         public interface Function_Function_relinquishFunction_ret {
             @Generated
             @NUInt
-            long call_Function_relinquishFunction_ret(ConstVoidPtr arg0);
+            long call_Function_relinquishFunction_ret(@NotNull ConstVoidPtr arg0);
         }
 
         @Generated
-        void call_relinquishFunction_ret(ConstVoidPtr arg0,
-                @FunctionPtr(name = "call_Function_relinquishFunction_ret") Function_Function_relinquishFunction_ret arg1);
+        void call_relinquishFunction_ret(@NotNull ConstVoidPtr arg0,
+                @Nullable @FunctionPtr(name = "call_Function_relinquishFunction_ret") Function_Function_relinquishFunction_ret arg1);
     }
 
     @Generated
     @Selector("setAcquireFunction:")
     public native void setAcquireFunction(
-            @FunctionPtr(name = "call_setAcquireFunction") Function_setAcquireFunction value);
+            @Nullable @FunctionPtr(name = "call_setAcquireFunction") Function_setAcquireFunction value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -354,12 +395,13 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
         public interface Function_Function_setAcquireFunction {
             @Generated
             @NUInt
-            long call_Function_setAcquireFunction(ConstVoidPtr arg0);
+            long call_Function_setAcquireFunction(@NotNull ConstVoidPtr arg0);
         }
 
+        @NotNull
         @Generated
-        VoidPtr call_setAcquireFunction(ConstVoidPtr arg0,
-                @FunctionPtr(name = "call_Function_setAcquireFunction") Function_Function_setAcquireFunction arg1,
+        VoidPtr call_setAcquireFunction(@NotNull ConstVoidPtr arg0,
+                @Nullable @FunctionPtr(name = "call_Function_setAcquireFunction") Function_Function_setAcquireFunction arg1,
                 boolean arg2);
     }
 
@@ -368,7 +410,8 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setHashFunction:")
-    public native void setHashFunction(@FunctionPtr(name = "call_setHashFunction") Function_setHashFunction value);
+    public native void setHashFunction(
+            @Nullable @FunctionPtr(name = "call_setHashFunction") Function_setHashFunction value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -378,19 +421,19 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
         public interface Function_Function_setHashFunction {
             @Generated
             @NUInt
-            long call_Function_setHashFunction(ConstVoidPtr arg0);
+            long call_Function_setHashFunction(@NotNull ConstVoidPtr arg0);
         }
 
         @Generated
         @NUInt
-        long call_setHashFunction(ConstVoidPtr arg0,
-                @FunctionPtr(name = "call_Function_setHashFunction") Function_Function_setHashFunction arg1);
+        long call_setHashFunction(@NotNull ConstVoidPtr arg0,
+                @Nullable @FunctionPtr(name = "call_Function_setHashFunction") Function_Function_setHashFunction arg1);
     }
 
     @Generated
     @Selector("setIsEqualFunction:")
     public native void setIsEqualFunction(
-            @FunctionPtr(name = "call_setIsEqualFunction") Function_setIsEqualFunction value);
+            @Nullable @FunctionPtr(name = "call_setIsEqualFunction") Function_setIsEqualFunction value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -400,12 +443,12 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
         public interface Function_Function_setIsEqualFunction {
             @Generated
             @NUInt
-            long call_Function_setIsEqualFunction(ConstVoidPtr arg0);
+            long call_Function_setIsEqualFunction(@NotNull ConstVoidPtr arg0);
         }
 
         @Generated
-        boolean call_setIsEqualFunction(ConstVoidPtr arg0, ConstVoidPtr arg1,
-                @FunctionPtr(name = "call_Function_setIsEqualFunction") Function_Function_setIsEqualFunction arg2);
+        boolean call_setIsEqualFunction(@NotNull ConstVoidPtr arg0, @NotNull ConstVoidPtr arg1,
+                @Nullable @FunctionPtr(name = "call_Function_setIsEqualFunction") Function_Function_setIsEqualFunction arg2);
     }
 
     /**
@@ -414,7 +457,7 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     @Generated
     @Selector("setRelinquishFunction:")
     public native void setRelinquishFunction(
-            @FunctionPtr(name = "call_setRelinquishFunction") Function_setRelinquishFunction value);
+            @Nullable @FunctionPtr(name = "call_setRelinquishFunction") Function_setRelinquishFunction value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -424,11 +467,11 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
         public interface Function_Function_setRelinquishFunction {
             @Generated
             @NUInt
-            long call_Function_setRelinquishFunction(ConstVoidPtr arg0);
+            long call_Function_setRelinquishFunction(@NotNull ConstVoidPtr arg0);
         }
 
         @Generated
-        void call_setRelinquishFunction(ConstVoidPtr arg0,
-                @FunctionPtr(name = "call_Function_setRelinquishFunction") Function_Function_setRelinquishFunction arg1);
+        void call_setRelinquishFunction(@NotNull ConstVoidPtr arg0,
+                @Nullable @FunctionPtr(name = "call_Function_setRelinquishFunction") Function_Function_setRelinquishFunction arg1);
     }
 }

@@ -24,6 +24,7 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ptr.ConstVoidPtr;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Structure()
@@ -45,7 +46,7 @@ public final class CTParagraphStyleSetting extends StructObject {
     }
 
     @Generated
-    public CTParagraphStyleSetting(int spec, @NUInt long valueSize, ConstVoidPtr value) {
+    public CTParagraphStyleSetting(int spec, @NUInt long valueSize, @NotNull ConstVoidPtr value) {
         super(CTParagraphStyleSetting.class);
         setSpec(spec);
         setValueSize(valueSize);
@@ -69,11 +70,12 @@ public final class CTParagraphStyleSetting extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setValueSize(@NUInt long value);
 
+    @NotNull
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native ConstVoidPtr value();
 
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void setValue(ConstVoidPtr value);
+    public native void setValue(@NotNull ConstVoidPtr value);
 }

@@ -11,7 +11,12 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -22,10 +27,11 @@ public interface NSTextContentStorageDelegate extends NSTextContentManagerDelega
      * textContentStorage uses the text paragraph instead of creating the standard NSTextParagraph with the attributed
      * substring in range. The attributed string for a custom text paragraph must have range.length.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("textContentStorage:textParagraphWithRange:")
-    default NSTextParagraph textContentStorageTextParagraphWithRange(NSTextContentStorage textContentStorage,
+    default NSTextParagraph textContentStorageTextParagraphWithRange(@NotNull NSTextContentStorage textContentStorage,
             @ByValue NSRange range) {
         throw new java.lang.UnsupportedOperationException();
     }

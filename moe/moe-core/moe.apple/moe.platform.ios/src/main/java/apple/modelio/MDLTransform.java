@@ -41,14 +41,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Concrete implementation of <MDLTransformComponent>.
  * For more complex transform components create a class that conforms to
  * <MDLTransformComponent>.
- * <p>
+ * 
  * Setting any of scale, translation, or rotation individually will
  * set the matrix property, and clear any timing information.
+ * 
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("ModelIO")
@@ -80,22 +85,25 @@ public class MDLTransform extends NSObject implements NSCopying, MDLTransformCom
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +138,10 @@ public class MDLTransform extends NSObject implements NSCopying, MDLTransformCom
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -160,21 +169,27 @@ public class MDLTransform extends NSObject implements NSCopying, MDLTransformCom
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * init
-     * <p>
+     * 
      * Initialize an MDLTransform's matrices with identity
      */
     @Generated
     @Selector("init")
     public native MDLTransform init();
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithIdentity")
     public native MDLTransform initWithIdentity();
@@ -182,13 +197,14 @@ public class MDLTransform extends NSObject implements NSCopying, MDLTransformCom
     @Generated
     @Selector("initWithTransformComponent:")
     public native MDLTransform initWithTransformComponent(
-            @Mapped(ObjCObjectMapper.class) MDLTransformComponent component);
+            @NotNull @Mapped(ObjCObjectMapper.class) MDLTransformComponent component);
 
     @Generated
     @Selector("initWithTransformComponent:resetsTransform:")
     public native MDLTransform initWithTransformComponentResetsTransform(
-            @Mapped(ObjCObjectMapper.class) MDLTransformComponent component, boolean resetsTransform);
+            @NotNull @Mapped(ObjCObjectMapper.class) MDLTransformComponent component, boolean resetsTransform);
 
+    @NotNull
     @Generated
     @Selector("keyTimes")
     public native NSArray<? extends NSNumber> keyTimes();

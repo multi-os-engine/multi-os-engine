@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A SpriteKit node that masks child nodes using another node's alpha component
@@ -77,29 +79,32 @@ public class SKCropNode extends SKNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -131,9 +136,10 @@ public class SKCropNode extends SKNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -146,21 +152,25 @@ public class SKCropNode extends SKNode {
 
     @Generated
     @Selector("nodeWithFileNamed:")
-    public static native SKCropNode nodeWithFileNamed(String filename);
+    public static native SKCropNode nodeWithFileNamed(@NotNull String filename);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodeBounds:")
-    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
+    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodePhysicsBodies:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodePhysicsBodies(
-            NSArray<? extends SKNode> nodes);
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromSpriteTextures:accuracy:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromSpriteTexturesAccuracy(
-            NSArray<? extends SKNode> sprites, float accuracy);
+            @NotNull NSArray<? extends SKNode> sprites, float accuracy);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -189,34 +199,35 @@ public class SKCropNode extends SKNode {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKCropNode initWithCoder(NSCoder aDecoder);
+    public native SKCropNode initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * SKNode to be used as the mask.
-     * <p>
+     * 
      * The SKNode supplied as the mask must not be a child of another node, but it may have children. Anywhere the
      * mask's output alpha component is less than 0.05 masks out that area for the SKCropNode's children. If the mask is
      * nil, nothing is masked out.
      */
+    @Nullable
     @Generated
     @Selector("maskNode")
     public native SKNode maskNode();
 
     /**
      * SKNode to be used as the mask.
-     * <p>
+     * 
      * The SKNode supplied as the mask must not be a child of another node, but it may have children. Anywhere the
      * mask's output alpha component is less than 0.05 masks out that area for the SKCropNode's children. If the mask is
      * nil, nothing is masked out.
      */
     @Generated
     @Selector("setMaskNode:")
-    public native void setMaskNode(SKNode value);
+    public native void setMaskNode(@Nullable SKNode value);
 
     @Generated
     @Selector("nodeWithFileNamed:securelyWithClasses:andError:")
-    public static native SKCropNode nodeWithFileNamedSecurelyWithClassesAndError(String filename,
-            NSSet<? extends Class> classes, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native SKCropNode nodeWithFileNamedSecurelyWithClassesAndError(@NotNull String filename,
+            @NotNull NSSet<? extends Class> classes, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("supportsSecureCoding")

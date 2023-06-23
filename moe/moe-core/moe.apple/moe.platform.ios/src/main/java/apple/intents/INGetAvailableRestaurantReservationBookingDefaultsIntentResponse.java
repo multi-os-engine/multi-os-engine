@@ -42,7 +42,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -73,22 +78,25 @@ public class INGetAvailableRestaurantReservationBookingDefaultsIntentResponse ex
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +131,10 @@ public class INGetAvailableRestaurantReservationBookingDefaultsIntentResponse ex
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,6 +174,7 @@ public class INGetAvailableRestaurantReservationBookingDefaultsIntentResponse ex
     /**
      * default booking time for an available bookings request
      */
+    @NotNull
     @Generated
     @Selector("defaultBookingDate")
     public native NSDate defaultBookingDate();
@@ -183,36 +193,41 @@ public class INGetAvailableRestaurantReservationBookingDefaultsIntentResponse ex
 
     @Generated
     @Selector("initWithCoder:")
-    public native INGetAvailableRestaurantReservationBookingDefaultsIntentResponse initWithCoder(NSCoder coder);
+    public native INGetAvailableRestaurantReservationBookingDefaultsIntentResponse initWithCoder(
+            @NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithDefaultPartySize:defaultBookingDate:code:userActivity:")
     public native INGetAvailableRestaurantReservationBookingDefaultsIntentResponse initWithDefaultPartySizeDefaultBookingDateCodeUserActivity(
-            @NUInt long defaultPartySize, NSDate defaultBookingDate, @NInt long code, NSUserActivity userActivity);
+            @NUInt long defaultPartySize, @NotNull NSDate defaultBookingDate, @NInt long code,
+            @Nullable NSUserActivity userActivity);
 
+    @Nullable
     @Generated
     @Selector("maximumPartySize")
     public native NSNumber maximumPartySize();
 
+    @Nullable
     @Generated
     @Selector("minimumPartySize")
     public native NSNumber minimumPartySize();
 
+    @NotNull
     @Generated
     @Selector("providerImage")
     public native INImage providerImage();
 
     @Generated
     @Selector("setMaximumPartySize:")
-    public native void setMaximumPartySize(NSNumber value);
+    public native void setMaximumPartySize(@Nullable NSNumber value);
 
     @Generated
     @Selector("setMinimumPartySize:")
-    public native void setMinimumPartySize(NSNumber value);
+    public native void setMinimumPartySize(@Nullable NSNumber value);
 
     @Generated
     @Selector("setProviderImage:")
-    public native void setProviderImage(INImage value);
+    public native void setProviderImage(@NotNull INImage value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

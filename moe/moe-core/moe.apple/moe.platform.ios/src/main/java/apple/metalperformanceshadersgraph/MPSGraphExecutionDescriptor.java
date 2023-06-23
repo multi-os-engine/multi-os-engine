@@ -21,11 +21,17 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.metal.protocol.MTLSharedEvent;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSGraphExecutionDescriptor
- * <p>
+ * 
  * A structure which consists of all the levers users can use to synchronize and schedule their graph execution
+ * 
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MetalPerformanceShadersGraph")
@@ -57,22 +63,25 @@ public class MPSGraphExecutionDescriptor extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -111,9 +120,10 @@ public class MPSGraphExecutionDescriptor extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -134,7 +144,7 @@ public class MPSGraphExecutionDescriptor extends NSObject {
 
     /**
      * [@property] waitUntilCompleted
-     * <p>
+     * 
      * waitUntilCompleted for the graph, default value is false
      */
     @Generated
@@ -152,10 +162,60 @@ public class MPSGraphExecutionDescriptor extends NSObject {
 
     /**
      * [@property] waitUntilCompleted
-     * <p>
+     * 
      * waitUntilCompleted for the graph, default value is false
      */
     @Generated
     @Selector("waitUntilCompleted")
     public native boolean waitUntilCompleted();
+
+    /**
+     * [@property] compilationDescriptor
+     * 
+     * compilationDescriptor for the graph, default value is nil
+     * 
+     * API-Since: 15.4
+     */
+    @Nullable
+    @Generated
+    @Selector("compilationDescriptor")
+    public native MPSGraphCompilationDescriptor compilationDescriptor();
+
+    /**
+     * [@property] compilationDescriptor
+     * 
+     * compilationDescriptor for the graph, default value is nil
+     * 
+     * API-Since: 15.4
+     */
+    @Generated
+    @Selector("setCompilationDescriptor:")
+    public native void setCompilationDescriptor(@Nullable MPSGraphCompilationDescriptor value);
+
+    /**
+     * Executable signals these shared events at execution stage and immediately proceeds
+     * 
+     * @param event          shared event to signal
+     * @param executionStage execution stage to signal event at
+     * @param value          value for shared event to wait on
+     * 
+     *                       API-Since: 16.0
+     */
+    @Generated
+    @Selector("signalEvent:atExecutionEvent:value:")
+    public native void signalEventAtExecutionEventValue(@NotNull @Mapped(ObjCObjectMapper.class) MTLSharedEvent event,
+            long executionStage, long value);
+
+    /**
+     * Executable waits on these shared events before scheduling execution on the HW, this does not include encoding
+     * which can still continue.
+     * 
+     * @param event shared event to wait on
+     * @param value value for shared event to wait on
+     * 
+     *              API-Since: 16.0
+     */
+    @Generated
+    @Selector("waitForEvent:value:")
+    public native void waitForEventValue(@NotNull @Mapped(ObjCObjectMapper.class) MTLSharedEvent event, long value);
 }

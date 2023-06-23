@@ -19,10 +19,22 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 public final class NSMachPortOptions {
+    /**
+     * API-Since: 2.0
+     */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 2.0
+     */
     @Generated @NUInt public static final long SendRight = 0x0000000000000001L;
+    /**
+     * API-Since: 2.0
+     */
     @Generated @NUInt public static final long ReceiveRight = 0x0000000000000002L;
 
     @Generated

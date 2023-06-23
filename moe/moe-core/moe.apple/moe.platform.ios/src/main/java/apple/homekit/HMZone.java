@@ -40,14 +40,18 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Used to describe a collection of HMRoom objects
- * <p>
+ * 
  * This class is used to group a collection of rooms.
  * This allows for association of a set of rooms into a group.
  * Eg. "Living Room" and "Kitchen" rooms can be grouped together
  * in the "Downstairs" zone.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HomeKit")
@@ -79,22 +83,25 @@ public class HMZone extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +136,10 @@ public class HMZone extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,19 +169,20 @@ public class HMZone extends NSObject {
 
     /**
      * Adds a room to a zone.
-     * <p>
+     * 
      * Both the room and the zone should be part of the home. A room can be added to multiple
      * zones, e.g., a room "Kitchen" can be added to "Downstairs" as well as "Outdoor" zones.
-     *
+     * 
      * @param room       Room to add to this zone.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
      */
     @Generated
     @Selector("addRoom:completionHandler:")
-    public native void addRoomCompletionHandler(HMRoom room,
-            @ObjCBlock(name = "call_addRoomCompletionHandler") Block_addRoomCompletionHandler completion);
+    public native void addRoomCompletionHandler(@NotNull HMRoom room,
+            @NotNull @ObjCBlock(name = "call_addRoomCompletionHandler") Block_addRoomCompletionHandler completion);
 
     @Generated
     @Selector("init")
@@ -182,68 +191,75 @@ public class HMZone extends NSObject {
     /**
      * Name of the zone.
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
 
     /**
      * Removes a room from the zone.
-     *
+     * 
      * @param room       Room to remove from this zone.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
      */
     @Generated
     @Selector("removeRoom:completionHandler:")
-    public native void removeRoomCompletionHandler(HMRoom room,
-            @ObjCBlock(name = "call_removeRoomCompletionHandler") Block_removeRoomCompletionHandler completion);
+    public native void removeRoomCompletionHandler(@NotNull HMRoom room,
+            @NotNull @ObjCBlock(name = "call_removeRoomCompletionHandler") Block_removeRoomCompletionHandler completion);
 
     /**
      * Array of HMRoom objects that correspond to the rooms contained in this zone.
      */
+    @NotNull
     @Generated
     @Selector("rooms")
     public native NSArray<? extends HMRoom> rooms();
 
     /**
      * A unique identifier for the zone.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
 
     /**
      * This method is used to change the name of the zone.
-     *
+     * 
      * @param name       New name for the zone.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
      */
     @Generated
     @Selector("updateName:completionHandler:")
-    public native void updateNameCompletionHandler(String name,
-            @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
+    public native void updateNameCompletionHandler(@NotNull String name,
+            @NotNull @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addRoomCompletionHandler {
         @Generated
-        void call_addRoomCompletionHandler(NSError error);
+        void call_addRoomCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeRoomCompletionHandler {
         @Generated
-        void call_removeRoomCompletionHandler(NSError error);
+        void call_removeRoomCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateNameCompletionHandler {
         @Generated
-        void call_updateNameCompletionHandler(NSError error);
+        void call_updateNameCompletionHandler(@Nullable NSError error);
     }
 }

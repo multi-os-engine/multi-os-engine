@@ -7,7 +7,11 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -15,8 +19,10 @@ import org.moe.natj.objc.ann.Selector;
 public interface PHPhotoLibraryAvailabilityObserver {
     /**
      * This notification is posted on a private queue.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("photoLibraryDidBecomeUnavailable:")
-    void photoLibraryDidBecomeUnavailable(PHPhotoLibrary photoLibrary);
+    void photoLibraryDidBecomeUnavailable(@NotNull PHPhotoLibrary photoLibrary);
 }

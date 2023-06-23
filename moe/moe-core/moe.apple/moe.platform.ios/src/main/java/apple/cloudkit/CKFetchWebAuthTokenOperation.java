@@ -39,11 +39,15 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CKFetchWebAuthTokenOperation
- * <p>
+ * 
  * This operation will fetch a web auth token given an API token obtained from the CloudKit Dashboard for your container
+ * 
+ * API-Since: 9.2
  */
 @Generated
 @Library("CloudKit")
@@ -75,22 +79,25 @@ public class CKFetchWebAuthTokenOperation extends CKDatabaseOperation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +132,10 @@ public class CKFetchWebAuthTokenOperation extends CKDatabaseOperation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,16 +166,18 @@ public class CKFetchWebAuthTokenOperation extends CKDatabaseOperation {
     /**
      * APIToken is expected to be set before you begin this operation.
      */
+    @Nullable
     @Generated
     @Selector("APIToken")
     public native String APIToken();
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
+    @Nullable
     @Generated
     @Selector("fetchWebAuthTokenCompletionBlock")
     @ObjCBlock(name = "call_fetchWebAuthTokenCompletionBlock_ret")
@@ -179,37 +189,37 @@ public class CKFetchWebAuthTokenOperation extends CKDatabaseOperation {
 
     @Generated
     @Selector("initWithAPIToken:")
-    public native CKFetchWebAuthTokenOperation initWithAPIToken(String APIToken);
+    public native CKFetchWebAuthTokenOperation initWithAPIToken(@NotNull String APIToken);
 
     /**
      * APIToken is expected to be set before you begin this operation.
      */
     @Generated
     @Selector("setAPIToken:")
-    public native void setAPIToken(String value);
+    public native void setAPIToken(@Nullable String value);
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
     @Selector("setFetchWebAuthTokenCompletionBlock:")
     public native void setFetchWebAuthTokenCompletionBlock(
-            @ObjCBlock(name = "call_setFetchWebAuthTokenCompletionBlock") Block_setFetchWebAuthTokenCompletionBlock value);
+            @Nullable @ObjCBlock(name = "call_setFetchWebAuthTokenCompletionBlock") Block_setFetchWebAuthTokenCompletionBlock value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchWebAuthTokenCompletionBlock_ret {
         @Generated
-        void call_fetchWebAuthTokenCompletionBlock_ret(String arg0, NSError arg1);
+        void call_fetchWebAuthTokenCompletionBlock_ret(@Nullable String arg0, @Nullable NSError arg1);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setFetchWebAuthTokenCompletionBlock {
         @Generated
-        void call_setFetchWebAuthTokenCompletionBlock(String arg0, NSError arg1);
+        void call_setFetchWebAuthTokenCompletionBlock(@Nullable String arg0, @Nullable NSError arg1);
     }
 }

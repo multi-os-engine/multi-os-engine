@@ -24,11 +24,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNAccelerationConstraint
- * <p>
+ * 
  * A SCNAccelerationConstraint caps the acceleration and velocity of a node
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("SceneKit")
@@ -46,7 +50,7 @@ public class SCNAccelerationConstraint extends SCNConstraint {
 
     /**
      * accelerationConstraint
-     * <p>
+     * 
      * Creates and returns a SCNAccelerationConstraint object.
      */
     @Generated
@@ -69,29 +73,32 @@ public class SCNAccelerationConstraint extends SCNConstraint {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] damping
-     * <p>
+     * 
      * Specifies the damping factor of the receiver. Optionally reduce the body's linear velocity each frame to simulate
      * fluid/air friction. Value should be zero or greater. Defaults to 0.1. Animatable.
      */
@@ -106,7 +113,7 @@ public class SCNAccelerationConstraint extends SCNConstraint {
 
     /**
      * [@property] decelerationDistance
-     * <p>
+     * 
      * Controls the distance at which the node should start decelerating. Defaults to 0. Animatable.
      */
     @Generated
@@ -129,7 +136,7 @@ public class SCNAccelerationConstraint extends SCNConstraint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNAccelerationConstraint initWithCoder(NSCoder coder);
+    public native SCNAccelerationConstraint initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -148,15 +155,16 @@ public class SCNAccelerationConstraint extends SCNConstraint {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] maximumLinearAcceleration
-     * <p>
+     * 
      * Controls the maximum linear acceleration. Defaults to MAXFLOAT. Animatable.
-     * <p>
+     * 
      * The maximum linear acceleration is in m.s^-2
      */
     @Generated
@@ -166,9 +174,9 @@ public class SCNAccelerationConstraint extends SCNConstraint {
 
     /**
      * [@property] maximumLinearVelocity
-     * <p>
+     * 
      * Controls the maximum linear velocity. Defaults to MAXFLOAT. Animatable.
-     * <p>
+     * 
      * The maximum linear velocity is in m.s
      */
     @Generated
@@ -191,7 +199,7 @@ public class SCNAccelerationConstraint extends SCNConstraint {
 
     /**
      * [@property] damping
-     * <p>
+     * 
      * Specifies the damping factor of the receiver. Optionally reduce the body's linear velocity each frame to simulate
      * fluid/air friction. Value should be zero or greater. Defaults to 0.1. Animatable.
      */
@@ -201,7 +209,7 @@ public class SCNAccelerationConstraint extends SCNConstraint {
 
     /**
      * [@property] decelerationDistance
-     * <p>
+     * 
      * Controls the distance at which the node should start decelerating. Defaults to 0. Animatable.
      */
     @Generated
@@ -210,9 +218,9 @@ public class SCNAccelerationConstraint extends SCNConstraint {
 
     /**
      * [@property] maximumLinearAcceleration
-     * <p>
+     * 
      * Controls the maximum linear acceleration. Defaults to MAXFLOAT. Animatable.
-     * <p>
+     * 
      * The maximum linear acceleration is in m.s^-2
      */
     @Generated
@@ -221,9 +229,9 @@ public class SCNAccelerationConstraint extends SCNConstraint {
 
     /**
      * [@property] maximumLinearVelocity
-     * <p>
+     * 
      * Controls the maximum linear velocity. Defaults to MAXFLOAT. Animatable.
-     * <p>
+     * 
      * The maximum linear velocity is in m.s
      */
     @Generated

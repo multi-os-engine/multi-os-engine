@@ -10,9 +10,12 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Defines a text droppable control.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("UIKit")
@@ -28,8 +31,9 @@ public interface UITextDroppable extends UITextInput, UITextPasteConfigurationSu
 
     @Generated
     @Selector("setTextDropDelegate:")
-    void setTextDropDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextDropDelegate value);
+    void setTextDropDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UITextDropDelegate value);
 
+    @Nullable
     @Generated
     @Selector("textDropDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -40,6 +44,7 @@ public interface UITextDroppable extends UITextInput, UITextPasteConfigurationSu
      * Use this to explicitly disable drop interactions on system text controls,
      * if desired.
      */
+    @Nullable
     @Generated
     @Selector("textDropInteraction")
     UIDropInteraction textDropInteraction();

@@ -20,29 +20,29 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] CTLineBreakMode
- * <p>
+ * 
  * These constants specify what happens when a line is too long for
  * its frame.
- * <p>
+ * 
  * [@constant] kCTLineBreakByWordWrapping
  * Wrapping occurs at word boundaries, unless the word itself doesn't
  * fit on a single line.
- * <p>
+ * 
  * [@constant] kCTLineBreakByCharWrapping
  * Wrapping occurs before the first character that doesn't fit.
- * <p>
+ * 
  * [@constant] kCTLineBreakByClipping
  * Lines are simply not drawn past the edge of the frame.
- * <p>
+ * 
  * [@constant] kCTLineBreakByTruncatingHead
  * Each line is displayed so that the end fits in the frame and the
  * missing text is indicated by some kind of ellipsis glyph.
- * <p>
+ * 
  * [@constant] kCTLineBreakByTruncatingTail
  * Each line is displayed so that the beginning fits in the
  * container and the missing text is indicated by some kind of
  * ellipsis glyph.
- * <p>
+ * 
  * [@constant] kCTLineBreakByTruncatingMiddle
  * Each line is displayed so that the beginning and end fit in the
  * container and the missing text is indicated by some kind of

@@ -23,48 +23,50 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSGRUDescriptor
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * The MPSGRUDescriptor specifies a GRU (Gated Recurrent Unit) block/layer descriptor.
  * The RNN layer initialized with a MPSGRUDescriptor transforms the input data (image or matrix),
  * and previous output with a set of filters, each producing one feature map in
  * the output data according to the Gated unit formulae detailed below.
  * The user may provide the GRU unit a single input or a sequence of inputs. The layer also supports
  * p-norm gating (Detailed in: https://arxiv.org/abs/1608.03639 ).
- * <p>
+ * 
  * Description of operation:
- * <p>
+ * 
  * Let x_j be the input data (at time index t of sequence,
  * j index containing quadruplet: batch index, x,y and feature index (x=y=0 for matrices)).
  * Let h0_j be the recurrent input (previous output) data from previous time step (at time index t-1 of sequence).
  * Let h_i be the proposed new output.
  * Let h1_i be the output data produced at this time step.
- * <p>
+ * 
  * Let Wz_ij, Uz_ij, be the input gate weights for input and recurrent input data respectively
  * Let bi_i be the bias for the input gate
- * <p>
+ * 
  * Let Wr_ij, Ur_ij be the recurrent gate weights for input and recurrent input data respectively
  * Let br_i be the bias for the recurrent gate
- * <p>
+ * 
  * Let Wh_ij, Uh_ij, Vh_ij, be the output gate weights for input, recurrent gate and input gate respectively
  * Let bh_i be the bias for the output gate
- * <p>
+ * 
  * Let gz(x), gr(x), gh(x) be the neuron activation function for the input, recurrent and output gates
  * Let p > 0 be a scalar variable (typicall p >= 1.0) that defines the p-norm gating norm value.
- * <p>
+ * 
  * Then the output of the Gated Recurrent Unit layer is computed as follows:
- * <p>
+ * 
  * z_i = gz( Wz_ij * x_j + Uz_ij * h0_j + bz_i )
  * r_i = gr( Wr_ij * x_j + Ur_ij * h0_j + br_i )
  * c_i = Uh_ij * (r_j h0_j) + Vh_ij * (z_j h0_j)
  * h_i = gh( Wh_ij * x_j + c_i + bh_i )
- * <p>
+ * 
  * h1_i = ( 1 - z_i ^ p)^(1/p) h_i + z_i h0_i
- * <p>
- * <p>
+ * 
+ * 
  * The '*' stands for convolution (see @ref MPSRNNImageInferenceLayer) or matrix-vector/matrix multiplication
  * (see @ref MPSRNNMatrixInferenceLayer).
  * Summation is over index j (except for the batch index), but there is no summation over
@@ -76,6 +78,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Uh = 0.
  * (The Minimal Gated Unit is detailed in: https://arxiv.org/abs/1603.09420 and there they call z_i the value of the
  * forget gate).
+ * 
+ * 
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -107,33 +113,39 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * Creates a GRU descriptor.
-     *
+     * 
      * @param inputFeatureChannels  The number of feature channels in the input image/matrix. Must be >= 1.
      * @param outputFeatureChannels The number of feature channels in the output image/matrix. Must be >= 1.
      * @return A valid MPSGRUDescriptor object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("createGRUDescriptorWithInputFeatureChannels:outputFeatureChannels:")
     public static native MPSGRUDescriptor createGRUDescriptorWithInputFeatureChannelsOutputFeatureChannels(
@@ -149,7 +161,7 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
 
     /**
      * [@property] flipOutputGates
-     * <p>
+     * 
      * If YES then the GRU-block output formula is changed to:
      * h1_i = ( 1 - z_i ^ p)^(1/p) h0_i + z_i h_i.
      * Defaults to NO.
@@ -160,7 +172,7 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
 
     /**
      * [@property] gatePnormValue
-     * <p>
+     * 
      * The p-norm gating norm value as specified by the GRU formulae. Defaults to 1.0f.
      */
     @Generated
@@ -178,10 +190,11 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
 
     /**
      * [@property] inputGateInputWeights
-     * <p>
+     * 
      * Contains weights 'Wz_ij', bias 'bz_i' and neuron 'gz' from the GRU formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("inputGateInputWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -189,10 +202,11 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
 
     /**
      * [@property] inputGateRecurrentWeights
-     * <p>
+     * 
      * Contains weights 'Uz_ij' from the GRU formula.
      * If nil then assumed zero weights. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("inputGateRecurrentWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -215,9 +229,10 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -226,10 +241,11 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
 
     /**
      * [@property] outputGateInputGateWeights
-     * <p>
+     * 
      * Contains weights 'Vh_ij' - can be used to implement the "Minimally Gated Unit".
      * If nil then assumed zero weights. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("outputGateInputGateWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -237,10 +253,11 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
 
     /**
      * [@property] outputGateInputWeights
-     * <p>
+     * 
      * Contains weights 'Wh_ij', bias 'bh_i' and neuron 'gh' from the GRU formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping).Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("outputGateInputWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -248,10 +265,11 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
 
     /**
      * [@property] outputGateRecurrentWeights
-     * <p>
+     * 
      * Contains weights 'Uh_ij' from the GRU formula.
      * If nil then assumed zero weights. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("outputGateRecurrentWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -259,10 +277,11 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
 
     /**
      * [@property] recurrentGateInputWeights
-     * <p>
+     * 
      * Contains weights 'Wr_ij', bias 'br_i' and neuron 'gr' from the GRU formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping).Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("recurrentGateInputWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -270,10 +289,11 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
 
     /**
      * [@property] recurrentGateRecurrentWeights
-     * <p>
+     * 
      * Contains weights 'Ur_ij' from the GRU formula.
      * If nil then assumed zero weights.Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("recurrentGateRecurrentWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -289,7 +309,7 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
 
     /**
      * [@property] flipOutputGates
-     * <p>
+     * 
      * If YES then the GRU-block output formula is changed to:
      * h1_i = ( 1 - z_i ^ p)^(1/p) h0_i + z_i h_i.
      * Defaults to NO.
@@ -300,7 +320,7 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
 
     /**
      * [@property] gatePnormValue
-     * <p>
+     * 
      * The p-norm gating norm value as specified by the GRU formulae. Defaults to 1.0f.
      */
     @Generated
@@ -309,74 +329,80 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
 
     /**
      * [@property] inputGateInputWeights
-     * <p>
+     * 
      * Contains weights 'Wz_ij', bias 'bz_i' and neuron 'gz' from the GRU formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
      */
     @Generated
     @Selector("setInputGateInputWeights:")
-    public native void setInputGateInputWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setInputGateInputWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] inputGateRecurrentWeights
-     * <p>
+     * 
      * Contains weights 'Uz_ij' from the GRU formula.
      * If nil then assumed zero weights. Defaults to nil.
      */
     @Generated
     @Selector("setInputGateRecurrentWeights:")
-    public native void setInputGateRecurrentWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setInputGateRecurrentWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] outputGateInputGateWeights
-     * <p>
+     * 
      * Contains weights 'Vh_ij' - can be used to implement the "Minimally Gated Unit".
      * If nil then assumed zero weights. Defaults to nil.
      */
     @Generated
     @Selector("setOutputGateInputGateWeights:")
-    public native void setOutputGateInputGateWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setOutputGateInputGateWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] outputGateInputWeights
-     * <p>
+     * 
      * Contains weights 'Wh_ij', bias 'bh_i' and neuron 'gh' from the GRU formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping).Defaults to nil.
      */
     @Generated
     @Selector("setOutputGateInputWeights:")
-    public native void setOutputGateInputWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setOutputGateInputWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] outputGateRecurrentWeights
-     * <p>
+     * 
      * Contains weights 'Uh_ij' from the GRU formula.
      * If nil then assumed zero weights. Defaults to nil.
      */
     @Generated
     @Selector("setOutputGateRecurrentWeights:")
-    public native void setOutputGateRecurrentWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setOutputGateRecurrentWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] recurrentGateInputWeights
-     * <p>
+     * 
      * Contains weights 'Wr_ij', bias 'br_i' and neuron 'gr' from the GRU formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping).Defaults to nil.
      */
     @Generated
     @Selector("setRecurrentGateInputWeights:")
-    public native void setRecurrentGateInputWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setRecurrentGateInputWeights(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] recurrentGateRecurrentWeights
-     * <p>
+     * 
      * Contains weights 'Ur_ij' from the GRU formula.
      * If nil then assumed zero weights.Defaults to nil.
      */
     @Generated
     @Selector("setRecurrentGateRecurrentWeights:")
     public native void setRecurrentGateRecurrentWeights(
-            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     @Generated
     @Selector("setVersion:")

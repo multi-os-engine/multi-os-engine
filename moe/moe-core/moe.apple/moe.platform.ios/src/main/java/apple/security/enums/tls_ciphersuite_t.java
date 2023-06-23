@@ -4,12 +4,12 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] tls_ciphersuite_t enumeration
- * <p>
+ * 
  * Enumerations for the set of supported TLS and DTLS ciphersuites.
- * <p>
+ * 
  * See https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-4
  * for ciphersuite codepoint allocations and reference RFCs.
- * <p>
+ * 
  * [@constant] tls_ciphersuite_RSA_WITH_3DES_EDE_CBC_SHA
  * [@constant] tls_ciphersuite_RSA_WITH_AES_128_CBC_SHA
  * [@constant] tls_ciphersuite_RSA_WITH_AES_256_CBC_SHA

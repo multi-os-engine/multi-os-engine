@@ -9,5 +9,9 @@ public final class AEAssessmentErrorCode {
     private AEAssessmentErrorCode() {
     }
 
-    @Generated @NInt public static final long AEAssessmentErrorUnknown = 0x0000000000000001L;
+    @Generated @NInt public static final long Unknown = 0x0000000000000001L;
+    /**
+     * API-Since: 16.0
+     */
+    @Generated @NInt public static final long UnsupportedPlatform = 0x0000000000000002L;
 }

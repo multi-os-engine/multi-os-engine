@@ -27,7 +27,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -58,31 +63,35 @@ public class UIMenuElement extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -94,7 +103,7 @@ public class UIMenuElement extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -104,6 +113,7 @@ public class UIMenuElement extends NSObject implements NSCopying, NSSecureCoding
     /**
      * Image to be displayed alongside the element's title.
      */
+    @Nullable
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -114,7 +124,7 @@ public class UIMenuElement extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIMenuElement initWithCoder(NSCoder coder);
+    public native UIMenuElement initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -133,9 +143,10 @@ public class UIMenuElement extends NSObject implements NSCopying, NSSecureCoding
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -171,6 +182,7 @@ public class UIMenuElement extends NSObject implements NSCopying, NSSecureCoding
     /**
      * The element's title.
      */
+    @NotNull
     @Generated
     @Selector("title")
     public native String title();
@@ -180,24 +192,30 @@ public class UIMenuElement extends NSObject implements NSCopying, NSSecureCoding
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("accessibilityIdentifier")
     public native String accessibilityIdentifier();
 
     @Generated
     @Selector("setAccessibilityIdentifier:")
-    public native void setAccessibilityIdentifier(String value);
+    public native void setAccessibilityIdentifier(@Nullable String value);
 
     /**
      * The element's subtitle.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setSubtitle:")
-    public native void setSubtitle(String value);
+    public native void setSubtitle(@Nullable String value);
 
     /**
      * The element's subtitle.
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("subtitle")
     public native String subtitle();

@@ -42,7 +42,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -71,13 +76,14 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native PKPaymentAuthorizationViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Determine whether this device can process payment requests.
@@ -100,38 +106,43 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
      */
     @Generated
     @Selector("canMakePaymentsUsingNetworks:")
-    public static native boolean canMakePaymentsUsingNetworks(NSArray<String> supportedNetworks);
+    public static native boolean canMakePaymentsUsingNetworks(@NotNull NSArray<String> supportedNetworks);
 
     /**
      * Determine whether this device can process payments using the specified networks and capabilities bitmask
      * See -canMakePaymentsUsingNetworks:
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("canMakePaymentsUsingNetworks:capabilities:")
-    public static native boolean canMakePaymentsUsingNetworksCapabilities(NSArray<String> supportedNetworks,
+    public static native boolean canMakePaymentsUsingNetworksCapabilities(@NotNull NSArray<String> supportedNetworks,
             @NUInt long capabilties);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -163,9 +174,10 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -196,6 +208,7 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
     /**
      * The view controller's delegate.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -207,12 +220,12 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native PKPaymentAuthorizationViewController initWithCoder(NSCoder coder);
+    public native PKPaymentAuthorizationViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native PKPaymentAuthorizationViewController initWithNibNameBundle(String nibNameOrNil,
-            NSBundle nibBundleOrNil);
+    public native PKPaymentAuthorizationViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * Initializes and returns a newly created view controller for the supplied payment.
@@ -221,7 +234,7 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
      */
     @Generated
     @Selector("initWithPaymentRequest:")
-    public native PKPaymentAuthorizationViewController initWithPaymentRequest(PKPaymentRequest request);
+    public native PKPaymentAuthorizationViewController initWithPaymentRequest(@NotNull PKPaymentRequest request);
 
     /**
      * The view controller's delegate.
@@ -229,13 +242,14 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) PKPaymentAuthorizationViewControllerDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) PKPaymentAuthorizationViewControllerDelegate value);
 
     /**
      * The view controller's delegate.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) PKPaymentAuthorizationViewControllerDelegate value) {
+    public void setDelegate(
+            @Nullable @Mapped(ObjCObjectMapper.class) PKPaymentAuthorizationViewControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

@@ -23,7 +23,12 @@ import org.moe.natj.general.ann.NInt;
 public final class UITableViewCellSeparatorStyle {
     @Generated @NInt public static final long None = 0x0000000000000000L;
     @Generated @NInt public static final long SingleLine = 0x0000000000000001L;
-    @Generated @NInt public static final long SingleLineEtched = 0x0000000000000002L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use UITableViewCellSeparatorStyleSingleLine for a single line separator.
+     */
+    @Deprecated @Generated @NInt public static final long SingleLineEtched = 0x0000000000000002L;
 
     @Generated
     private UITableViewCellSeparatorStyle() {

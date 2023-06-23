@@ -42,17 +42,21 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCaptureMetadataInput
- * <p>
+ * 
  * AVCaptureMetadataInput is a concrete subclass of AVCaptureInput that provides a way for clients to supply
  * AVMetadataItems to an AVCaptureSession.
- * <p>
+ * 
  * Instances of AVCaptureMetadataInput are input sources for AVCaptureSession that provide AVMetadataItems to an
  * AVCaptureSession. AVCaptureMetadataInputs present one and only one AVCaptureInputPort, which currently may only be
  * connected to an AVCaptureMovieFileOutput. The metadata supplied over the input port is provided by the client, and
  * must conform to a client-supplied CMFormatDescription. The AVMetadataItems are supplied in an AVTimedMetadataGroup.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("AVFoundation")
@@ -84,22 +88,25 @@ public class AVCaptureMetadataInput extends AVCaptureInput {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,29 +141,33 @@ public class AVCaptureMetadataInput extends AVCaptureInput {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * metadataInputWithFormatDescription:clock:
-     * <p>
+     * 
      * Returns an AVCaptureMetadataInput instance that allows a client to provide AVTimedMetadataGroups to an
      * AVCaptureSession.
-     * <p>
+     * 
      * This method returns an instance of AVCaptureMetadataInput that can be used to capture AVTimedMetadataGroups
      * supplied by the client to an AVCaptureSession.
-     *
-     * @param desc  A CMFormatDescription that defines the metadata to be supplied by the client. Throws an
+     * 
+     * @param desc
+     *              A CMFormatDescription that defines the metadata to be supplied by the client. Throws an
      *              NSInvalidArgumentException if NULL is passed.
-     * @param clock A CMClock that provided the timebase for the supplied samples. Throws an NSInvalidArgumentException
+     * @param clock
+     *              A CMClock that provided the timebase for the supplied samples. Throws an NSInvalidArgumentException
      *              if NULL is passed.
-     * @return An AVCaptureMetadataInput instance.
+     * @return
+     *         An AVCaptureMetadataInput instance.
      */
     @Generated
     @Selector("metadataInputWithFormatDescription:clock:")
-    public static native AVCaptureMetadataInput metadataInputWithFormatDescriptionClock(CMFormatDescriptionRef desc,
-            CMClockRef clock);
+    public static native AVCaptureMetadataInput metadataInputWithFormatDescriptionClock(
+            @NotNull CMFormatDescriptionRef desc, @NotNull CMClockRef clock);
 
     @Generated
     @Owned
@@ -186,21 +197,22 @@ public class AVCaptureMetadataInput extends AVCaptureInput {
 
     /**
      * appendTimedMetadataGroup:
-     * <p>
+     * 
      * Provides metadata to the AVCaptureSession.
-     * <p>
+     * 
      * The provided AVTimedMetadataGroup will be provided to the AVCaptureSession. The group's presentation timestamp is
      * expressed in the context of the clock supplied to the initializer. It is not required that the
      * AVTimedMetadataGroup have a duration; an empty AVTimedMetadataGroup can be supplied to denote a period of no
      * metadata.
-     *
-     * @param metadata An AVTimedMetadataGroup of metadata. Will throw an exception if nil. In order to denote a period
+     * 
+     * @param metadata
+     *                 An AVTimedMetadataGroup of metadata. Will throw an exception if nil. In order to denote a period
      *                 of no metadata, an empty AVTimedMetadataGroup should be passed.
      */
     @Generated
     @Selector("appendTimedMetadataGroup:error:")
-    public native boolean appendTimedMetadataGroupError(AVTimedMetadataGroup metadata,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean appendTimedMetadataGroupError(@NotNull AVTimedMetadataGroup metadata,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("init")
@@ -208,20 +220,24 @@ public class AVCaptureMetadataInput extends AVCaptureInput {
 
     /**
      * initWithFormatDescription:clock:
-     * <p>
+     * 
      * Creates an AVCaptureMetadataInput instance that allows a client to provide AVTimedMetadataGroups to an
      * AVCaptureSession.
-     * <p>
+     * 
      * This method creates an instance of AVCaptureMetadataInput that can be used to capture AVTimedMetadataGroups
      * supplied by the client to an AVCaptureSession.
-     *
-     * @param desc  A CMFormatDescription that defines the metadata to be supplied by the client. Throws
+     * 
+     * @param desc
+     *              A CMFormatDescription that defines the metadata to be supplied by the client. Throws
      *              NSInvalidArgumentException if NULL is passed.
-     * @param clock A CMClock that provided the timebase for the supplied samples. Throws NSInvalidArgumentException if
+     * @param clock
+     *              A CMClock that provided the timebase for the supplied samples. Throws NSInvalidArgumentException if
      *              NULL is passed.
-     * @return An AVCaptureMetadataInput instance, or nil, if the device could not be used for capture.
+     * @return
+     *         An AVCaptureMetadataInput instance, or nil, if the device could not be used for capture.
      */
     @Generated
     @Selector("initWithFormatDescription:clock:")
-    public native AVCaptureMetadataInput initWithFormatDescriptionClock(CMFormatDescriptionRef desc, CMClockRef clock);
+    public native AVCaptureMetadataInput initWithFormatDescriptionClock(@NotNull CMFormatDescriptionRef desc,
+            @NotNull CMClockRef clock);
 }

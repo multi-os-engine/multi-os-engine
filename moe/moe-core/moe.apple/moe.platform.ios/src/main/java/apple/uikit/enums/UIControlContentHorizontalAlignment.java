@@ -30,6 +30,12 @@ public final class UIControlContentHorizontalAlignment {
     private UIControlContentHorizontalAlignment() {
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long Leading = 0x0000000000000004L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long Trailing = 0x0000000000000005L;
 }

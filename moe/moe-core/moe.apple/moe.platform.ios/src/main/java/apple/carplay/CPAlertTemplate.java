@@ -23,10 +23,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@c] CPAlertTemplate represents a modal alert that must be dismissed with a button press
  * before the user may return to using the app.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CarPlay")
@@ -46,6 +50,7 @@ public class CPAlertTemplate extends CPTemplate {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    @NotNull
     @Generated
     @Selector("actions")
     public native NSArray<? extends CPAlertAction> actions();
@@ -62,22 +67,25 @@ public class CPAlertTemplate extends CPTemplate {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,21 +109,22 @@ public class CPAlertTemplate extends CPTemplate {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CPAlertTemplate initWithCoder(NSCoder coder);
+    public native CPAlertTemplate initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initialize a @c CPAlertTemplate by specifying a list of title variants and at least one action.
-     *
+     * 
      * @param titleVariants An array of strings, ordered longest to shortest. The template will display
      *                      the longest string that fits in the available space on the current size of the car screen,
      *                      dropping down to shorter strings as necessary.
+     * 
      * @param actions       An array of alert actions to display in this alert template. You must specify at
      *                      least one action.
      */
     @Generated
     @Selector("initWithTitleVariants:actions:")
-    public native CPAlertTemplate initWithTitleVariantsActions(NSArray<String> titleVariants,
-            NSArray<? extends CPAlertAction> actions);
+    public native CPAlertTemplate initWithTitleVariantsActions(@NotNull NSArray<String> titleVariants,
+            @NotNull NSArray<? extends CPAlertAction> actions);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -134,9 +143,10 @@ public class CPAlertTemplate extends CPTemplate {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -169,6 +179,7 @@ public class CPAlertTemplate extends CPTemplate {
         return supportsSecureCoding();
     }
 
+    @NotNull
     @Generated
     @Selector("titleVariants")
     public native NSArray<String> titleVariants();
@@ -182,6 +193,8 @@ public class CPAlertTemplate extends CPTemplate {
      * Maximum number of action buttons that may appear in any @c CPAlertTemplate.
      * If you add more than this number of buttons, only the most recently-added buttons
      * (up to this count) will be kept.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("maximumActionCount")

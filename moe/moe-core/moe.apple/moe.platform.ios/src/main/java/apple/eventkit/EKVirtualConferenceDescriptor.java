@@ -21,11 +21,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * EKVirtualConferenceDescriptor
- * <p>
+ * 
  * Describes a virtual conference.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("EventKit")
@@ -41,6 +45,7 @@ public class EKVirtualConferenceDescriptor extends NSObject {
         super(peer);
     }
 
+    @NotNull
     @Generated
     @Selector("URLDescriptors")
     public native NSArray<? extends EKVirtualConferenceURLDescriptor> URLDescriptors();
@@ -61,26 +66,30 @@ public class EKVirtualConferenceDescriptor extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @Nullable
     @Generated
     @Selector("conferenceDetails")
     public native String conferenceDetails();
@@ -104,9 +113,9 @@ public class EKVirtualConferenceDescriptor extends NSObject {
 
     /**
      * initWithTitle:URLDescriptors:conferenceDetails:
-     * <p>
+     * 
      * Initializes an instance of EKVirtualConferenceDescriptor.
-     *
+     * 
      * @param title             A user-readable title describing this virtual conference. This string
      *                          may be displayed in the UI. This string is optional and may be left nil.
      * @param URLDescriptors    An array of EKVirtualConferenceURLDescriptors, representing the various
@@ -120,8 +129,9 @@ public class EKVirtualConferenceDescriptor extends NSObject {
      */
     @Generated
     @Selector("initWithTitle:URLDescriptors:conferenceDetails:")
-    public native EKVirtualConferenceDescriptor initWithTitleURLDescriptorsConferenceDetails(String title,
-            NSArray<? extends EKVirtualConferenceURLDescriptor> URLDescriptors, String conferenceDetails);
+    public native EKVirtualConferenceDescriptor initWithTitleURLDescriptorsConferenceDetails(@Nullable String title,
+            @NotNull NSArray<? extends EKVirtualConferenceURLDescriptor> URLDescriptors,
+            @Nullable String conferenceDetails);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -140,9 +150,10 @@ public class EKVirtualConferenceDescriptor extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,6 +176,7 @@ public class EKVirtualConferenceDescriptor extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();

@@ -28,14 +28,17 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] MDLMeshBuffer
- * <p>
+ * 
  * Used by ModelIO to represent a buffer to be filled with vertex and
  * index data
- * <p>
+ * 
  * Supports deep copy of data by conforming to the NSCopying protocol
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("ModelIO")
@@ -44,12 +47,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MDLMeshBuffer extends NSCopying {
     /**
      * [@property] allocator
-     * <p>
+     * 
      * Allocator object used to create this buffer.
-     * <p>
+     * 
      * This allcoator used for copy and relayout operations (such as when
      * a new vertex descriptor is applied to a vertex buffer)
      */
+    @NotNull
     @Generated
     @Selector("allocator")
     @MappedReturn(ObjCObjectMapper.class)
@@ -57,22 +61,22 @@ public interface MDLMeshBuffer extends NSCopying {
 
     /**
      * fillData:offset:
-     * <p>
+     * 
      * Fills buffer with data at offset
-     * <p>
+     * 
      * Fills data.length bytes of data. Will not write beyond length of
      * this buffer.
-     *
+     * 
      * @param data   Data to fill buffer with
      * @param offset Byte offset in buffer to begin filling data
      */
     @Generated
     @Selector("fillData:offset:")
-    void fillDataOffset(NSData data, @NUInt long offset);
+    void fillDataOffset(@NotNull NSData data, @NUInt long offset);
 
     /**
      * [@property] length
-     * <p>
+     * 
      * Size in bytes of the buffer allocation
      */
     @Generated
@@ -82,24 +86,25 @@ public interface MDLMeshBuffer extends NSCopying {
 
     /**
      * map
-     * <p>
+     * 
      * CPU access to buffer's memory
-     * <p>
+     * 
      * The buffer will remain mapped as long as the returned MDLMeshBufferMap
      * object exists. Mapping a buffer may impose restrictions on a system.
      * For instance, if the implementing class maps an OpenGL buffer, that
      * buffer may be unavailable for rendering while mapped, and cause a
      * draw failure. Precautions must be taken in such cases.
-     *
+     * 
      * @return An MDLMeshBufferMap object to read or modify a buffer's memory
      */
+    @NotNull
     @Generated
     @Selector("map")
     MDLMeshBufferMap map();
 
     /**
      * [@property] type
-     * <p>
+     * 
      * the intended type of the buffer
      */
     @Generated
@@ -109,13 +114,14 @@ public interface MDLMeshBuffer extends NSCopying {
 
     /**
      * [@property] zone
-     * <p>
+     * 
      * Zone from which this buffer was created
-     * <p>
+     * 
      * This zone will be used for copy and relayout operations (such as
      * when a new vertex descriptor is applied to a vertex buffer). If
      * the default zone is used this will be nil.
      */
+    @NotNull
     @Generated
     @Selector("zone")
     @MappedReturn(ObjCObjectMapper.class)

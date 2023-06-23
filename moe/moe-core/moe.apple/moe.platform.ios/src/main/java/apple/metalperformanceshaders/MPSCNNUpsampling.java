@@ -23,22 +23,26 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNUpsampling
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * The MPSCNNUpsampling filter can be used to resample an existing MPSImage
  * using a different sampling frequency for the x and y dimensions with the purpose of
  * enlarging the size of an image.
- * <p>
+ * 
  * The number of output feature channels remains the same as the number of input feature
  * channels.
- * <p>
+ * 
  * The scaleFactor must be an integer value >= 1. The default value is 1.
  * If scaleFactor == 1, the filter acts as a copy kernel.
- * <p>
+ * 
  * Nearest and bilinear variants are supported.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -70,22 +74,25 @@ public class MPSCNNUpsampling extends MPSCNNKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -109,15 +116,16 @@ public class MPSCNNUpsampling extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNUpsampling initWithCoder(NSCoder aDecoder);
+    public native MPSCNNUpsampling initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNUpsampling initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNUpsampling initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNUpsampling initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNUpsampling initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -136,9 +144,10 @@ public class MPSCNNUpsampling extends MPSCNNKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,7 +164,7 @@ public class MPSCNNUpsampling extends MPSCNNKernel {
 
     /**
      * [@property] scaleFactorX
-     * <p>
+     * 
      * The upsampling scale factor for the x dimension. The default value is 1.
      */
     @Generated
@@ -164,7 +173,7 @@ public class MPSCNNUpsampling extends MPSCNNKernel {
 
     /**
      * [@property] scaleFactorY
-     * <p>
+     * 
      * The upsampling scale factor for the y dimension. The default value is 1.
      */
     @Generated
@@ -196,7 +205,7 @@ public class MPSCNNUpsampling extends MPSCNNKernel {
 
     /**
      * [@property] alignCorners
-     * <p>
+     * 
      * If YES, the centers of the 4 corner pixels of the input and output regions are aligned,
      * preserving the values at the corner pixels.
      * The default is NO.

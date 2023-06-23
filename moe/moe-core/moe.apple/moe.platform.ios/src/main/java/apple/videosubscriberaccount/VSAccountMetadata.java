@@ -39,9 +39,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A collection of information about a subscriber's account.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("VideoSubscriberAccount")
@@ -73,22 +77,25 @@ public class VSAccountMetadata extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +130,10 @@ public class VSAccountMetadata extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,6 +166,7 @@ public class VSAccountMetadata extends NSObject {
      * The value might be nil if your account metadata request did not specify any SAML attributes or if the user does
      * not have a valid authentication.
      */
+    @Nullable
     @Generated
     @Selector("SAMLAttributeQueryResponse")
     public native String SAMLAttributeQueryResponse();
@@ -166,6 +175,7 @@ public class VSAccountMetadata extends NSObject {
      * A value that uniquely identifies the account provider.
      * You may use this value to brand your app.
      */
+    @Nullable
     @Generated
     @Selector("accountProviderIdentifier")
     public native String accountProviderIdentifier();
@@ -174,7 +184,10 @@ public class VSAccountMetadata extends NSObject {
      * The response received from the account provider.
      * The value might be nil if your account metadata request did not specify any
      * attributes, or if the user does not have a valid authentication.
+     * 
+     * API-Since: 10.2
      */
+    @Nullable
     @Generated
     @Selector("accountProviderResponse")
     public native VSAccountProviderResponse accountProviderResponse();
@@ -183,6 +196,7 @@ public class VSAccountMetadata extends NSObject {
      * Specifies when the user might need to re-authenticate with the account provider.
      * The value might be nil if the user is not currently authenticated.
      */
+    @Nullable
     @Generated
     @Selector("authenticationExpirationDate")
     public native NSDate authenticationExpirationDate();
@@ -195,6 +209,7 @@ public class VSAccountMetadata extends NSObject {
      * An opaque blob of data that can be used to cryptographically verify that the
      * SAML AttributeQuery response actually came from the account provider.
      */
+    @Nullable
     @Generated
     @Selector("verificationData")
     public native NSData verificationData();

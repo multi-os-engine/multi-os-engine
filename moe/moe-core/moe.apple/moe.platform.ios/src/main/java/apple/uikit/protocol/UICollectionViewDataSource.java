@@ -29,48 +29,60 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UICollectionViewDataSource")
 public interface UICollectionViewDataSource {
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @IsOptional
     @Selector("collectionView:canMoveItemAtIndexPath:")
-    default boolean collectionViewCanMoveItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath) {
+    default boolean collectionViewCanMoveItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
      */
+    @NotNull
     @Generated
     @Selector("collectionView:cellForItemAtIndexPath:")
-    UICollectionViewCell collectionViewCellForItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+    UICollectionViewCell collectionViewCellForItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @IsOptional
     @Selector("collectionView:moveItemAtIndexPath:toIndexPath:")
-    default void collectionViewMoveItemAtIndexPathToIndexPath(UICollectionView collectionView,
-            NSIndexPath sourceIndexPath, NSIndexPath destinationIndexPath) {
+    default void collectionViewMoveItemAtIndexPathToIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath sourceIndexPath, @NotNull NSIndexPath destinationIndexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @Selector("collectionView:numberOfItemsInSection:")
     @NInt
-    long collectionViewNumberOfItemsInSection(UICollectionView collectionView, @NInt long section);
+    long collectionViewNumberOfItemsInSection(@NotNull UICollectionView collectionView, @NInt long section);
 
     /**
      * The view that is returned must be retrieved from a call to
      * -dequeueReusableSupplementaryViewOfKind:withReuseIdentifier:forIndexPath:
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("collectionView:viewForSupplementaryElementOfKind:atIndexPath:")
     default UICollectionReusableView collectionViewViewForSupplementaryElementOfKindAtIndexPath(
-            UICollectionView collectionView, String kind, NSIndexPath indexPath) {
+            @NotNull UICollectionView collectionView, @NotNull String kind, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,29 +90,35 @@ public interface UICollectionViewDataSource {
     @IsOptional
     @Selector("numberOfSectionsInCollectionView:")
     @NInt
-    default long numberOfSectionsInCollectionView(UICollectionView collectionView) {
+    default long numberOfSectionsInCollectionView(@NotNull UICollectionView collectionView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Returns the index path that corresponds to the given title / index. (e.g. "B",1)
      * Return an index path with a single index to indicate an entire section, instead of a specific item.
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("collectionView:indexPathForIndexTitle:atIndex:")
-    default NSIndexPath collectionViewIndexPathForIndexTitleAtIndex(UICollectionView collectionView, String title,
-            @NInt long index) {
+    default NSIndexPath collectionViewIndexPathForIndexTitleAtIndex(@NotNull UICollectionView collectionView,
+            @NotNull String title, @NInt long index) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Returns a list of index titles to display in the index view (e.g. ["A", "B", "C" ... "Z", "#"])
+     * 
+     * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("indexTitlesForCollectionView:")
-    default NSArray<String> indexTitlesForCollectionView(UICollectionView collectionView) {
+    default NSArray<String> indexTitlesForCollectionView(@NotNull UICollectionView collectionView) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

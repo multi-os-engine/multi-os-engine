@@ -8,5 +8,8 @@ public final class BNNSNormType {
     private BNNSNormType() {
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated public static final int BNNSL2Norm = 0x00000001;
 }

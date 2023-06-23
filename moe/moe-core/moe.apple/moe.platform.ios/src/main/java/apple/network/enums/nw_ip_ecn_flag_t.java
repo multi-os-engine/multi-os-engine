@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_ip_ecn_flag_t
- * <p>
+ * 
  * ECN flags marked in IP headers to indicate congestion.
  */
 @Generated

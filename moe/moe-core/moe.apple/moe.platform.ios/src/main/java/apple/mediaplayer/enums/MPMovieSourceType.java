@@ -19,16 +19,34 @@ package apple.mediaplayer.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 3.2
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Use AVPlayerViewController in AVKit
+ */
 @Deprecated
 @Generated
 public final class MPMovieSourceType {
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
+     */
     @Deprecated @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     /**
      * Local or progressively downloaded network content
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated @Generated @NInt public static final long File = 0x0000000000000001L;
     /**
      * Live or on-demand streaming content
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated @Generated @NInt public static final long Streaming = 0x0000000000000002L;
 

@@ -28,9 +28,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A SceneKit geometry representing a face.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("ARKit")
@@ -62,22 +66,25 @@ public class ARSCNFaceGeometry extends SCNGeometry {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -92,31 +99,33 @@ public class ARSCNFaceGeometry extends SCNGeometry {
 
     /**
      * Creates a new face geometry using a Metal device.
-     *
+     * 
      * @param device A Metal device.
      * @return A new face geometry.
      */
     @Generated
     @Selector("faceGeometryWithDevice:")
-    public static native ARSCNFaceGeometry faceGeometryWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public static native ARSCNFaceGeometry faceGeometryWithDevice(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     /**
      * Creates a new face geometry using a Metal device.
-     * <p>
+     * 
      * By default the regions between the eye lids as well as the region
      * between the lips are not covered by geometry. For using the face geometry as an
      * occlusion geometry set \p fillMesh to YES. This will fill
      * in additional geometry into the gaps between the eye lids as well as into the
      * gap between the lips.
-     *
+     * 
      * @param fillMesh Whether to fill in additional geometry into the
      *                 gaps between the eye lids as well as into the gap between the lips.
+     * 
      * @return A new face geometry.
      */
     @Generated
     @Selector("faceGeometryWithDevice:fillMesh:")
     public static native ARSCNFaceGeometry faceGeometryWithDeviceFillMesh(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, boolean fillMesh);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, boolean fillMesh);
 
     @Generated
     @Selector("geometry")
@@ -124,12 +133,13 @@ public class ARSCNFaceGeometry extends SCNGeometry {
 
     @Generated
     @Selector("geometryWithMDLMesh:")
-    public static native ARSCNFaceGeometry geometryWithMDLMesh(MDLMesh mdlMesh);
+    public static native ARSCNFaceGeometry geometryWithMDLMesh(@NotNull MDLMesh mdlMesh);
 
     @Generated
     @Selector("geometryWithSources:elements:")
-    public static native ARSCNFaceGeometry geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
-            NSArray<? extends SCNGeometryElement> elements);
+    public static native ARSCNFaceGeometry geometryWithSourcesElements(
+            @NotNull NSArray<? extends SCNGeometrySource> sources,
+            @Nullable NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
     @Selector("hash")
@@ -142,7 +152,7 @@ public class ARSCNFaceGeometry extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native ARSCNFaceGeometry initWithCoder(NSCoder coder);
+    public native ARSCNFaceGeometry initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -161,9 +171,10 @@ public class ARSCNFaceGeometry extends SCNGeometry {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -198,12 +209,12 @@ public class ARSCNFaceGeometry extends SCNGeometry {
 
     /**
      * Updates the geometry with the vertices of a face geometry.
-     *
+     * 
      * @param faceGeometry A face geometry.
      */
     @Generated
     @Selector("updateFromFaceGeometry:")
-    public native void updateFromFaceGeometry(ARFaceGeometry faceGeometry);
+    public native void updateFromFaceGeometry(@NotNull ARFaceGeometry faceGeometry);
 
     @Generated
     @Selector("version")

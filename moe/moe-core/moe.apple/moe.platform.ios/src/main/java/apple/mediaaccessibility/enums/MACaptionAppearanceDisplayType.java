@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] MACaptionAppearanceDisplayType
- * <p>
+ * 
  * MACaptionAppearanceDisplayType is used to specify the the type of captions that should be displayed
- * <p>
+ * 
  * [@constant] kMACaptionAppearanceDisplayTypeForcedOnly
  * Only forced captions for translation should be displayed.
  * [@constant] kMACaptionAppearanceDisplayTypeAutomatic
@@ -31,11 +31,22 @@ import org.moe.natj.general.ann.NInt;
  * displayed (if available).
  * [@constant] kMACaptionAppearanceDisplayTypeAlwaysOn
  * The best available captioning track should always be displayed, whether it be CC, SDH, or subtitles.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 public final class MACaptionAppearanceDisplayType {
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long ForcedOnly = 0x0000000000000000L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Automatic = 0x0000000000000001L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long AlwaysOn = 0x0000000000000002L;
 
     @Generated

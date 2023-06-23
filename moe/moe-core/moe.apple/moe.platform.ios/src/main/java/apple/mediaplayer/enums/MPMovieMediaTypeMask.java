@@ -22,12 +22,31 @@ import org.moe.natj.general.ann.NUInt;
 /**
  * -----------------------------------------------------------------------------
  * Movie Property Types
+ * 
+ * API-Since: 3.2
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Use AVPlayerViewController in AVKit
  */
 @Deprecated
 @Generated
 public final class MPMovieMediaTypeMask {
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
+     */
     @Deprecated @Generated @NUInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
+     */
     @Deprecated @Generated @NUInt public static final long Video = 0x0000000000000001L;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
+     */
     @Deprecated @Generated @NUInt public static final long Audio = 0x0000000000000002L;
 
     @Generated

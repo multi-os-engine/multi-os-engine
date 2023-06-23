@@ -24,6 +24,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -33,14 +34,14 @@ public interface UIDynamicAnimatorDelegate {
     @Generated
     @IsOptional
     @Selector("dynamicAnimatorDidPause:")
-    default void dynamicAnimatorDidPause(UIDynamicAnimator animator) {
+    default void dynamicAnimatorDidPause(@NotNull UIDynamicAnimator animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("dynamicAnimatorWillResume:")
-    default void dynamicAnimatorWillResume(UIDynamicAnimator animator) {
+    default void dynamicAnimatorWillResume(@NotNull UIDynamicAnimator animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

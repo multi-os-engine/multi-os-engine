@@ -27,9 +27,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A vertex buffer and optional index and mask buffer for a set of polygons
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -61,30 +65,34 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
-    public native MPSPolygonBuffer copyWithZone(VoidPtr zone);
+    public native MPSPolygonBuffer copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -96,7 +104,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -107,6 +115,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
      * Index buffer containing index data. Each index references a vertex in the vertex buffer.
      * May be nil.
      */
+    @Nullable
     @Generated
     @Selector("indexBuffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -131,7 +140,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSPolygonBuffer initWithCoder(NSCoder aDecoder);
+    public native MPSPolygonBuffer initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -150,14 +159,16 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Mask buffer containing one uint32_t mask per polygon. May be nil. Otherwise, the mask
      * type must be specified on the MPSRayIntersector with which it is used.
      */
+    @Nullable
     @Generated
     @Selector("maskBuffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -203,7 +214,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
      */
     @Generated
     @Selector("setIndexBuffer:")
-    public native void setIndexBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+    public native void setIndexBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
      * Offset, in bytes, into the index buffer. Defaults to 0 bytes. Must be aligned to a
@@ -220,7 +231,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
      */
     @Generated
     @Selector("setMaskBuffer:")
-    public native void setMaskBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+    public native void setMaskBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
      * Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
@@ -246,10 +257,10 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
      * that by default each vertex is aligned to the alignment of the vector_float3 type: 16 bytes.
      * This can be changed using the vertexStride property. A vertex buffer must be provided before
      * the acceleration structure is built.
-     * <p>
+     * 
      * When using triangle polygons, degenerate (zero or negative area) triangles are ignored
      * during acceleration structure construction. This can be used to pad triangle indices if needed.
-     * <p>
+     * 
      * Quadrilateral polygons are internally treated as two triangles. If the quadrilateral has
      * vertices v0, v1, v2, and v3, the two triangles will have vertices v0, v1, v2 and v0, v2, v3.
      * A quadrilateral may be used to represent a triangle by repeating the last vertex. If the first
@@ -259,7 +270,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
      */
     @Generated
     @Selector("setVertexBuffer:")
-    public native void setVertexBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+    public native void setVertexBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
      * Offset, in bytes, into the vertex buffer. Defaults to 0 bytes. Must be aligned to 4
@@ -293,10 +304,10 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
      * that by default each vertex is aligned to the alignment of the vector_float3 type: 16 bytes.
      * This can be changed using the vertexStride property. A vertex buffer must be provided before
      * the acceleration structure is built.
-     * <p>
+     * 
      * When using triangle polygons, degenerate (zero or negative area) triangles are ignored
      * during acceleration structure construction. This can be used to pad triangle indices if needed.
-     * <p>
+     * 
      * Quadrilateral polygons are internally treated as two triangles. If the quadrilateral has
      * vertices v0, v1, v2, and v3, the two triangles will have vertices v0, v1, v2 and v0, v2, v3.
      * A quadrilateral may be used to represent a triangle by repeating the last vertex. If the first
@@ -304,6 +315,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
      * can be used to pad quadrilateral indices if needed. All four vertices of a quadrilateral must
      * be coplanar and the quadrilateral must be convex.
      */
+    @Nullable
     @Generated
     @Selector("vertexBuffer")
     @MappedReturn(ObjCObjectMapper.class)

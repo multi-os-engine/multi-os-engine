@@ -39,7 +39,15 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ * Deprecated-Since: 12.0
+ * Deprecated-Message: GKGameSession is deprecated. Use GKPlayer for both real-time and turn-based matchmaking APIs.
+ */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -70,22 +78,25 @@ public class GKCloudPlayer extends GKBasePlayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -104,8 +115,8 @@ public class GKCloudPlayer extends GKBasePlayer {
      */
     @Generated
     @Selector("getCurrentSignedInPlayerForContainer:completionHandler:")
-    public static native void getCurrentSignedInPlayerForContainerCompletionHandler(String containerName,
-            @ObjCBlock(name = "call_getCurrentSignedInPlayerForContainerCompletionHandler") Block_getCurrentSignedInPlayerForContainerCompletionHandler handler);
+    public static native void getCurrentSignedInPlayerForContainerCompletionHandler(@Nullable String containerName,
+            @NotNull @ObjCBlock(name = "call_getCurrentSignedInPlayerForContainerCompletionHandler") Block_getCurrentSignedInPlayerForContainerCompletionHandler handler);
 
     @Generated
     @Selector("hash")
@@ -129,9 +140,10 @@ public class GKCloudPlayer extends GKBasePlayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,6 +179,7 @@ public class GKCloudPlayer extends GKBasePlayer {
     @Generated
     public interface Block_getCurrentSignedInPlayerForContainerCompletionHandler {
         @Generated
-        void call_getCurrentSignedInPlayerForContainerCompletionHandler(GKCloudPlayer player, NSError error);
+        void call_getCurrentSignedInPlayerForContainerCompletionHandler(@Nullable GKCloudPlayer player,
+                @Nullable NSError error);
     }
 }

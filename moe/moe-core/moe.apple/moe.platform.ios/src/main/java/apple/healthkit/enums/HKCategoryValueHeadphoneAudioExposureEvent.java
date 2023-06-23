@@ -5,10 +5,12 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HKCategoryValueHeadphoneAudioExposureEvent
- * <p>
+ * 
  * Specifies the kind of headphone exposure event associated with the sample.
  * [@constant] HKCategoryValueHeadphoneAudioExposureEventSevenDayLimit This constant defines headphone events associated
  * with the user being exposed to significant audio levels throught a seven-day period.
+ * 
+ * API-Since: 14.2
  */
 @Generated
 public final class HKCategoryValueHeadphoneAudioExposureEvent {
@@ -16,5 +18,8 @@ public final class HKCategoryValueHeadphoneAudioExposureEvent {
     private HKCategoryValueHeadphoneAudioExposureEvent() {
     }
 
+    /**
+     * API-Since: 14.2
+     */
     @Generated @NInt public static final long HKCategoryValueHeadphoneAudioExposureEventSevenDayLimit = 0x0000000000000001L;
 }

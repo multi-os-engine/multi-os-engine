@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] MLCDeviceType
- * <p>
+ * 
  * A device type for execution of a neural network.
  */
 @Generated
@@ -35,6 +35,8 @@ public final class MLCDeviceType {
      * will not select the Neural Engine device. In addition, this device can be used with inference graphs only. This
      * device cannot be used with a
      * training graph or an inference graph that shares layers with a training graph.
+     * 
+     * API-Since: 15.0
      */
     @Generated public static final int ANE = 0x00000003;
     /**

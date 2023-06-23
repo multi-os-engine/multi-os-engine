@@ -25,10 +25,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A description of a model containing input and output feature descriptions, optionally outputted features
  * with special meaning and metadata.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreML")
@@ -60,22 +64,25 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -100,6 +107,7 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
     /**
      * Description of the inputs to the model
      */
+    @NotNull
     @Generated
     @Selector("inputDescriptionsByName")
     public native NSDictionary<String, ? extends MLFeatureDescription> inputDescriptionsByName();
@@ -121,13 +129,15 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Optional metadata describing the model
      */
+    @NotNull
     @Generated
     @Selector("metadata")
     public native NSDictionary<String, ?> metadata();
@@ -140,6 +150,7 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
     /**
      * Description of the outputs from the model
      */
+    @NotNull
     @Generated
     @Selector("outputDescriptionsByName")
     public native NSDictionary<String, ? extends MLFeatureDescription> outputDescriptionsByName();
@@ -147,6 +158,7 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
     /**
      * Name of the primary target / predicted output feature in the output descriptions
      */
+    @Nullable
     @Generated
     @Selector("predictedFeatureName")
     public native String predictedFeatureName();
@@ -154,6 +166,7 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
     /**
      * Key for all predicted probabilities stored as a MLFeatureTypeDictionary in the output descriptions
      */
+    @Nullable
     @Generated
     @Selector("predictedProbabilitiesName")
     public native String predictedProbabilitiesName();
@@ -181,11 +194,11 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithCoder:")
-    public native MLModelDescription initWithCoder(NSCoder coder);
+    public native MLModelDescription initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Indicates if the model has to been configured for updation using model update API.
@@ -197,6 +210,7 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
     /**
      * Allows for access of each parameter as parameter description.
      */
+    @NotNull
     @Generated
     @Selector("parameterDescriptionsByKey")
     public native NSDictionary<? extends MLParameterKey, ? extends MLParameterDescription> parameterDescriptionsByKey();
@@ -214,24 +228,28 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
     /**
      * Allows for access of each training input as a feature description.
      */
+    @NotNull
     @Generated
     @Selector("trainingInputDescriptionsByName")
     public native NSDictionary<String, ? extends MLFeatureDescription> trainingInputDescriptionsByName();
 
     /**
      * Array to map a class index to the corresponding label, which is either Number or String.
-     * <p>
+     * 
      * The property is populated from the classLabels entry specified in the model's protobuf message. When the model is
      * a pipeline, which contains one or more sub models, the property value is calculated as follows.
-     * <p>
+     * 
      * 1. If the pipeline model's proto message specifies predictedFeatureName parameter, use classLabels property value
      * of the sub model with the output feature with the name.
-     * <p>
+     * 
      * 2. Otherwise, if the pipeline model has only one sub model with non-nil classLabels property, use the property
      * value.
-     * <p>
+     * 
      * 3. Otherwise, the property is nil.
+     * 
+     * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("classLabels")
     public native NSArray<?> classLabels();

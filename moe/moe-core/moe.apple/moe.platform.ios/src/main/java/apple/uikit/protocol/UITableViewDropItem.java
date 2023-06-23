@@ -1,6 +1,5 @@
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSIndexPath;
 import apple.uikit.UIDragItem;
 import org.moe.natj.general.ann.ByValue;
@@ -10,7 +9,13 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -19,6 +24,7 @@ public interface UITableViewDropItem {
     /**
      * Retrieve drop data from the dragItem's itemProvider.
      */
+    @NotNull
     @Generated
     @Selector("dragItem")
     UIDragItem dragItem();
@@ -39,6 +45,7 @@ public interface UITableViewDropItem {
      * This is useful for directly accessing the model object in your data source instead of using the item provider
      * to retrieve the data.
      */
+    @Nullable
     @Generated
     @Selector("sourceIndexPath")
     NSIndexPath sourceIndexPath();

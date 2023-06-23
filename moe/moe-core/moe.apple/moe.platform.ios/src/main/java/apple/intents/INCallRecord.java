@@ -28,7 +28,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -59,13 +64,14 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("callCapability")
     @NInt
     public native long callCapability();
 
+    @Nullable
     @Generated
     @Selector("callDuration")
     public native NSNumber callDuration();
@@ -75,34 +81,45 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
     @NInt
     public native long callRecordType();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 14.5
+     */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("caller")
     public native INPerson caller();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    @Nullable
     @Generated
     @Selector("dateCreated")
     public native NSDate dateCreated();
@@ -117,13 +134,14 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
 
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -134,13 +152,21 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("initWithCoder:")
-    public native INCallRecord initWithCoder(NSCoder coder);
+    public native INCallRecord initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 14.5
+     * Deprecated-Message: Replaced by
+     * -initWithIdentifier:dateCreated:callRecordType:callCapability:callDuration:unseen:participants:numberOfCalls:isCallerIdBlocked
+     */
+    @Deprecated
     @Generated
     @Selector("initWithIdentifier:dateCreated:caller:callRecordType:callCapability:callDuration:unseen:")
     public native INCallRecord initWithIdentifierDateCreatedCallerCallRecordTypeCallCapabilityCallDurationUnseen(
-            String identifier, NSDate dateCreated, INPerson caller, @NInt long callRecordType,
-            @NInt long callCapability, NSNumber callDuration, NSNumber unseen);
+            @NotNull String identifier, @Nullable NSDate dateCreated, @Nullable INPerson caller,
+            @NInt long callRecordType, @NInt long callCapability, @Nullable NSNumber callDuration,
+            @Nullable NSNumber unseen);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -159,9 +185,10 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -194,6 +221,7 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
         return supportsSecureCoding();
     }
 
+    @Nullable
     @Generated
     @Selector("unseen")
     public native NSNumber unseen();
@@ -203,12 +231,24 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 14.5
+     * Deprecated-Message: Replaced by
+     * -initWithIdentifier:dateCreated:callRecordType:callCapability:callDuration:unseen:participants:numberOfCalls:isCallerIdBlocked
+     */
+    @Deprecated
     @Generated
     @Selector("initWithIdentifier:dateCreated:caller:callRecordType:callCapability:callDuration:unseen:numberOfCalls:")
     public native INCallRecord initWithIdentifierDateCreatedCallerCallRecordTypeCallCapabilityCallDurationUnseenNumberOfCalls(
-            String identifier, NSDate dateCreated, INPerson caller, @NInt long callRecordType,
-            @NInt long callCapability, NSNumber callDuration, NSNumber unseen, NSNumber numberOfCalls);
+            @NotNull String identifier, @Nullable NSDate dateCreated, @Nullable INPerson caller,
+            @NInt long callRecordType, @NInt long callCapability, @Nullable NSNumber callDuration,
+            @Nullable NSNumber unseen, @Nullable NSNumber numberOfCalls);
 
+    /**
+     * API-Since: 13.0
+     */
+    @Nullable
     @Generated
     @Selector("numberOfCalls")
     public native NSNumber numberOfCalls();
@@ -216,26 +256,42 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
     @Generated
     @Selector("initWithIdentifier:dateCreated:callRecordType:callCapability:callDuration:unseen:")
     public native INCallRecord initWithIdentifierDateCreatedCallRecordTypeCallCapabilityCallDurationUnseen(
-            String identifier, NSDate dateCreated, @NInt long callRecordType, @NInt long callCapability,
-            NSNumber callDuration, NSNumber unseen);
+            @NotNull String identifier, @Nullable NSDate dateCreated, @NInt long callRecordType,
+            @NInt long callCapability, @Nullable NSNumber callDuration, @Nullable NSNumber unseen);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithIdentifier:dateCreated:callRecordType:callCapability:callDuration:unseen:numberOfCalls:")
     public native INCallRecord initWithIdentifierDateCreatedCallRecordTypeCallCapabilityCallDurationUnseenNumberOfCalls(
-            String identifier, NSDate dateCreated, @NInt long callRecordType, @NInt long callCapability,
-            NSNumber callDuration, NSNumber unseen, NSNumber numberOfCalls);
+            @NotNull String identifier, @Nullable NSDate dateCreated, @NInt long callRecordType,
+            @NInt long callCapability, @Nullable NSNumber callDuration, @Nullable NSNumber unseen,
+            @Nullable NSNumber numberOfCalls);
 
+    /**
+     * API-Since: 14.5
+     */
     @Generated
     @Selector("initWithIdentifier:dateCreated:callRecordType:callCapability:callDuration:unseen:participants:numberOfCalls:isCallerIdBlocked:")
     public native INCallRecord initWithIdentifierDateCreatedCallRecordTypeCallCapabilityCallDurationUnseenParticipantsNumberOfCallsIsCallerIdBlocked(
-            String identifier, NSDate dateCreated, @NInt long callRecordType, @NInt long callCapability,
-            NSNumber callDuration, NSNumber unseen, NSArray<? extends INPerson> participants, NSNumber numberOfCalls,
-            NSNumber isCallerIdBlocked);
+            @NotNull String identifier, @Nullable NSDate dateCreated, @NInt long callRecordType,
+            @NInt long callCapability, @Nullable NSNumber callDuration, @Nullable NSNumber unseen,
+            @Nullable NSArray<? extends INPerson> participants, @Nullable NSNumber numberOfCalls,
+            @Nullable NSNumber isCallerIdBlocked);
 
+    /**
+     * API-Since: 14.5
+     */
+    @Nullable
     @Generated
     @Selector("isCallerIdBlocked")
     public native NSNumber isCallerIdBlocked();
 
+    /**
+     * API-Since: 14.5
+     */
+    @Nullable
     @Generated
     @Selector("participants")
     public native NSArray<? extends INPerson> participants();

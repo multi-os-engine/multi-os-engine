@@ -48,6 +48,8 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @SuppressWarnings({ "rawtypes", "unchecked"
 })
@@ -80,22 +82,25 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -116,42 +121,45 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
     @Selector("dictionaryWithCapacity:")
     public static native <_KeyType, _ObjectType> NSMutableDictionary<?, ?> dictionaryWithCapacity(@NUInt long numItems);
 
+    @Nullable
     @Generated
     @Selector("dictionaryWithContentsOfFile:")
     public static native <_KeyType, _ObjectType> NSMutableDictionary<_KeyType, _ObjectType> dictionaryWithContentsOfFile(
-            String path);
+            @NotNull String path);
 
+    @Nullable
     @Generated
     @Selector("dictionaryWithContentsOfURL:")
     public static native <_KeyType, _ObjectType> NSMutableDictionary<_KeyType, _ObjectType> dictionaryWithContentsOfURL(
-            NSURL url);
+            @NotNull NSURL url);
 
     @Generated
     @Selector("dictionaryWithDictionary:")
     public static native <_KeyType, _ObjectType> NSMutableDictionary<?, ?> dictionaryWithDictionary(
-            NSDictionary<_KeyType, _ObjectType> dict);
+            @NotNull NSDictionary<_KeyType, _ObjectType> dict);
 
     @Generated
     @Selector("dictionaryWithObject:forKey:")
     public static native <_KeyType, _ObjectType> NSMutableDictionary<?, ?> dictionaryWithObjectForKey(
-            @Mapped(ObjCObjectMapper.class) _ObjectType object, @Mapped(ObjCObjectMapper.class) _KeyType key);
+            @NotNull @Mapped(ObjCObjectMapper.class) _ObjectType object,
+            @NotNull @Mapped(ObjCObjectMapper.class) _KeyType key);
 
     @Generated
     @Selector("dictionaryWithObjects:forKeys:")
     public static native <_KeyType, _ObjectType> NSMutableDictionary<?, ?> dictionaryWithObjectsForKeys(
-            NSArray<_ObjectType> objects, NSArray<_KeyType> keys);
+            @NotNull NSArray<_ObjectType> objects, @NotNull NSArray<_KeyType> keys);
 
     @Generated
     @Selector("dictionaryWithObjects:forKeys:count:")
     public static native <_KeyType, _ObjectType> NSMutableDictionary<?, ?> dictionaryWithObjectsForKeysCount(
-            @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<_KeyType> keys, @NUInt long cnt);
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_KeyType> keys, @NUInt long cnt);
 
     @Generated
     @Variadic()
     @Selector("dictionaryWithObjectsAndKeys:")
     public static native <_KeyType, _ObjectType> NSMutableDictionary<?, ?> dictionaryWithObjectsAndKeys(
-            @Mapped(ObjCObjectMapper.class) Object firstObject, Object... varargs);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object firstObject, Object... varargs);
 
     /**
      * Create a mutable dictionary which is optimized for dealing with a known set of keys.
@@ -159,11 +167,14 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
      * As with any dictionary, the keys must be copyable.
      * If keyset is nil, an exception is thrown.
      * If keyset is not an object returned by +sharedKeySetForKeys:, an exception is thrown.
+     * 
+     * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("dictionaryWithSharedKeySet:")
     public static native <_KeyType, _ObjectType> NSMutableDictionary<_KeyType, _ObjectType> dictionaryWithSharedKeySet(
-            @Mapped(ObjCObjectMapper.class) Object keyset);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object keyset);
 
     @Generated
     @Selector("hash")
@@ -187,9 +198,10 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -208,10 +220,11 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("sharedKeySetForKeys:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native <_KeyType, _ObjectType> Object sharedKeySetForKeys(NSArray<_KeyType> keys);
+    public static native <_KeyType, _ObjectType> Object sharedKeySetForKeys(@NotNull NSArray<_KeyType> keys);
 
     @Generated
     @Selector("superclass")
@@ -228,7 +241,7 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
 
     @Generated
     @Selector("addEntriesFromDictionary:")
-    public native void addEntriesFromDictionary(NSDictionary<_KeyType, _ObjectType> otherDictionary);
+    public native void addEntriesFromDictionary(@NotNull NSDictionary<_KeyType, _ObjectType> otherDictionary);
 
     @Generated
     @Selector("init")
@@ -240,41 +253,44 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMutableDictionary<?, ?> initWithCoder(NSCoder coder);
+    public native NSMutableDictionary<?, ?> initWithCoder(@NotNull NSCoder coder);
 
+    @Nullable
     @Generated
     @Selector("initWithContentsOfFile:")
-    public native NSMutableDictionary<_KeyType, _ObjectType> initWithContentsOfFile(String path);
+    public native NSMutableDictionary<_KeyType, _ObjectType> initWithContentsOfFile(@NotNull String path);
 
+    @Nullable
     @Generated
     @Selector("initWithContentsOfURL:")
-    public native NSMutableDictionary<_KeyType, _ObjectType> initWithContentsOfURL(NSURL url);
+    public native NSMutableDictionary<_KeyType, _ObjectType> initWithContentsOfURL(@NotNull NSURL url);
 
     @Generated
     @Selector("initWithDictionary:")
-    public native NSMutableDictionary<?, ?> initWithDictionary(NSDictionary<_KeyType, _ObjectType> otherDictionary);
+    public native NSMutableDictionary<?, ?> initWithDictionary(
+            @NotNull NSDictionary<_KeyType, _ObjectType> otherDictionary);
 
     @Generated
     @Selector("initWithDictionary:copyItems:")
     public native NSMutableDictionary<?, ?> initWithDictionaryCopyItems(
-            NSDictionary<_KeyType, _ObjectType> otherDictionary, boolean flag);
+            @NotNull NSDictionary<_KeyType, _ObjectType> otherDictionary, boolean flag);
 
     @Generated
     @Selector("initWithObjects:forKeys:")
-    public native NSMutableDictionary<?, ?> initWithObjectsForKeys(NSArray<_ObjectType> objects,
-            NSArray<_KeyType> keys);
+    public native NSMutableDictionary<?, ?> initWithObjectsForKeys(@NotNull NSArray<_ObjectType> objects,
+            @NotNull NSArray<_KeyType> keys);
 
     @Generated
     @Selector("initWithObjects:forKeys:count:")
     public native NSMutableDictionary<?, ?> initWithObjectsForKeysCount(
-            @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<_KeyType> keys, @NUInt long cnt);
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_KeyType> keys, @NUInt long cnt);
 
     @Generated
     @Variadic()
     @Selector("initWithObjectsAndKeys:")
-    public native NSMutableDictionary<?, ?> initWithObjectsAndKeys(@Mapped(ObjCObjectMapper.class) Object firstObject,
-            Object... varargs);
+    public native NSMutableDictionary<?, ?> initWithObjectsAndKeys(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object firstObject, Object... varargs);
 
     @Generated
     @Selector("removeAllObjects")
@@ -282,25 +298,28 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
 
     @Generated
     @Selector("removeObjectForKey:")
-    public native void removeObjectForKey(@Mapped(ObjCObjectMapper.class) _KeyType aKey);
+    public native void removeObjectForKey(@NotNull @Mapped(ObjCObjectMapper.class) _KeyType aKey);
 
     @Generated
     @Selector("removeObjectsForKeys:")
-    public native void removeObjectsForKeys(NSArray<_KeyType> keyArray);
+    public native void removeObjectsForKeys(@NotNull NSArray<_KeyType> keyArray);
 
     @Generated
     @Selector("setDictionary:")
-    public native void setDictionary(NSDictionary<_KeyType, _ObjectType> otherDictionary);
+    public native void setDictionary(@NotNull NSDictionary<_KeyType, _ObjectType> otherDictionary);
 
     @Generated
     @Selector("setObject:forKey:")
-    public native void setObjectForKey(@Mapped(ObjCObjectMapper.class) _ObjectType anObject,
-            @Mapped(ObjCObjectMapper.class) _KeyType aKey);
+    public native void setObjectForKey(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType anObject,
+            @NotNull @Mapped(ObjCObjectMapper.class) _KeyType aKey);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setObject:forKeyedSubscript:")
-    public native void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) _ObjectType obj,
-            @Mapped(ObjCObjectMapper.class) _KeyType key);
+    public native void setObjectForKeyedSubscript(@Nullable @Mapped(ObjCObjectMapper.class) _ObjectType obj,
+            @NotNull @Mapped(ObjCObjectMapper.class) _KeyType key);
 
     @Override
     public void clear() {
@@ -1020,14 +1039,16 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
         }
     }
 
+    @Nullable
     @Generated
     @Selector("dictionaryWithContentsOfURL:error:")
     public static native <_KeyType, _ObjectType> NSDictionary<String, _ObjectType> dictionaryWithContentsOfURLError(
-            NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull NSURL url, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    @Nullable
     @Generated
     @Selector("initWithContentsOfURL:error:")
-    public native NSDictionary<String, _ObjectType> initWithContentsOfURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSDictionary<String, _ObjectType> initWithContentsOfURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
 }

@@ -19,16 +19,35 @@ package apple.usernotifications.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 public final class UNNotificationPresentationOptions {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Badge = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Sound = 0x0000000000000002L;
-    @Generated @NUInt public static final long Alert = 0x0000000000000004L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 14.0
+     */
+    @Deprecated @Generated @NUInt public static final long Alert = 0x0000000000000004L;
 
     @Generated
     private UNNotificationPresentationOptions() {
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NUInt public static final long List = 0x0000000000000008L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NUInt public static final long Banner = 0x0000000000000010L;
 }

@@ -27,26 +27,30 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioEnvironmentNode
- * <p>
+ * 
  * Mixer node that simulates a 3D environment
- * <p>
+ * 
  * AVAudioEnvironmentNode is a mixer node that simulates a 3D audio environment. Any node that
  * conforms to the AVAudioMixing protocol (e.g. AVAudioPlayerNode) can act as a source in this
  * environment.
- * <p>
+ * 
  * The environment has an implicit "listener". By controlling the listener's position and
  * orientation, the application controls the way the user experiences the virtual world.
  * In addition, this node also defines properties for distance attenuation and reverberation
  * that help characterize the environment.
- * <p>
+ * 
  * It is important to note that AVAudio3DMixingSourceMode affects how inputs with different channel
  * configurations are rendered. By default, only inputs with a mono channel are spatialized.
- * <p>
+ * 
  * In order to set the environment node’s output to a multichannel format, use an AVAudioFormat
  * with a desired AudioChannelLayout.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -78,42 +82,46 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
 
     /**
      * [@property] applicableRenderingAlgorithms
-     * <p>
+     * 
      * Returns an array of AVAudio3DMixingRenderingAlgorithm values based on the current output format
-     * <p>
+     * 
      * AVAudioEnvironmentNode supports several rendering algorithms per input bus which are defined
      * in <AVFAudio/AVAudioMixing.h>.
-     * <p>
+     * 
      * Depending on the current output format of the environment node, this method returns
      * an immutable array of the applicable rendering algorithms. This is important when the
      * environment node has been configured to a multichannel output format because only a subset
      * of the available rendering algorithms are designed to render to all of the channels.
-     * <p>
+     * 
      * This information should be retrieved after a successful connection to the destination node
      * via the engine's connect method.
      */
+    @NotNull
     @Generated
     @Selector("applicableRenderingAlgorithms")
     public native NSArray<? extends NSNumber> applicableRenderingAlgorithms();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,15 +134,17 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
     @Selector("description")
     public static native String description_static();
 
+    @Nullable
     @Generated
     @Selector("destinationForMixer:bus:")
-    public native AVAudioMixingDestination destinationForMixerBus(AVAudioNode mixer, @NUInt long bus);
+    public native AVAudioMixingDestination destinationForMixerBus(@NotNull AVAudioNode mixer, @NUInt long bus);
 
     /**
      * [@property] distanceAttenuationParameters
-     * <p>
+     * 
      * The distance attenuation parameters for the environment
      */
+    @NotNull
     @Generated
     @Selector("distanceAttenuationParameters")
     public native AVAudioEnvironmentDistanceAttenuationParameters distanceAttenuationParameters();
@@ -165,15 +175,16 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] listenerAngularOrientation
-     * <p>
+     * 
      * The listener's orientation in the environment
-     * <p>
+     * 
      * Changing listenerAngularOrientation will result in a corresponding change in listenerVectorOrientation.
      * All angles are specified in degrees.
      * Default:
@@ -189,9 +200,9 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
 
     /**
      * [@property] listenerPosition
-     * <p>
+     * 
      * Sets the listener's position in the 3D environment
-     * <p>
+     * 
      * The coordinates are specified in meters.
      * Default:
      * The default position of the listener is at the origin.
@@ -206,9 +217,9 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
 
     /**
      * [@property] listenerVectorOrientation
-     * <p>
+     * 
      * The listener's orientation in the environment
-     * <p>
+     * 
      * Changing listenerVectorOrientation will result in a corresponding change in listenerAngularOrientation.
      * Default:
      * The default orientation is with the listener looking directly along the negative Z axis.
@@ -227,9 +238,9 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
 
     /**
      * [@property] nextAvailableInputBus
-     * <p>
+     * 
      * Find an unused input bus
-     * <p>
+     * 
      * This will find and return the first input bus to which no other node is connected.
      */
     @Generated
@@ -247,18 +258,20 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
 
     /**
      * [@property] outputType
-     * <p>
+     * 
      * Type of output hardware to be used with AVAudio3DMixingRenderingAlgorithmAuto
-     * <p>
+     * 
      * Output hardware cannot be automatically determined in Manual Rendering modes or for wired
      * output. This property can be used to override the output type if the correct type is known.
-     * <p>
+     * 
      * Selecting an output type that does not match the actual hardware can produce unexpected
      * results, especially with AVAudioEnvironmentOutputTypeBuiltInSpeakers. An app choosing
      * a value other than AVAudio3DMixingOutputTypeAuto should listen to route change
      * notifications and update the output type accordingly.
-     * <p>
+     * 
      * Default: AVAudio3DMixingOutputTypeAuto
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("outputType")
@@ -267,9 +280,9 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
 
     /**
      * [@property] outputVolume
-     * <p>
+     * 
      * The mixer's output volume.
-     * <p>
+     * 
      * This accesses the mixer's output volume (0.0-1.0, inclusive).
      */
     @Generated
@@ -313,18 +326,19 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
 
     /**
      * [@property] reverbParameters
-     * <p>
+     * 
      * The reverb parameters for the environment
      */
+    @NotNull
     @Generated
     @Selector("reverbParameters")
     public native AVAudioEnvironmentReverbParameters reverbParameters();
 
     /**
      * [@property] listenerAngularOrientation
-     * <p>
+     * 
      * The listener's orientation in the environment
-     * <p>
+     * 
      * Changing listenerAngularOrientation will result in a corresponding change in listenerVectorOrientation.
      * All angles are specified in degrees.
      * Default:
@@ -339,9 +353,9 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
 
     /**
      * [@property] listenerPosition
-     * <p>
+     * 
      * Sets the listener's position in the 3D environment
-     * <p>
+     * 
      * The coordinates are specified in meters.
      * Default:
      * The default position of the listener is at the origin.
@@ -355,9 +369,9 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
 
     /**
      * [@property] listenerVectorOrientation
-     * <p>
+     * 
      * The listener's orientation in the environment
-     * <p>
+     * 
      * Changing listenerVectorOrientation will result in a corresponding change in listenerAngularOrientation.
      * Default:
      * The default orientation is with the listener looking directly along the negative Z axis.
@@ -378,18 +392,20 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
 
     /**
      * [@property] outputType
-     * <p>
+     * 
      * Type of output hardware to be used with AVAudio3DMixingRenderingAlgorithmAuto
-     * <p>
+     * 
      * Output hardware cannot be automatically determined in Manual Rendering modes or for wired
      * output. This property can be used to override the output type if the correct type is known.
-     * <p>
+     * 
      * Selecting an output type that does not match the actual hardware can produce unexpected
      * results, especially with AVAudioEnvironmentOutputTypeBuiltInSpeakers. An app choosing
      * a value other than AVAudio3DMixingOutputTypeAuto should listen to route change
      * notifications and update the output type accordingly.
-     * <p>
+     * 
      * Default: AVAudio3DMixingOutputTypeAuto
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setOutputType:")
@@ -397,9 +413,9 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
 
     /**
      * [@property] outputVolume
-     * <p>
+     * 
      * The mixer's output volume.
-     * <p>
+     * 
      * This accesses the mixer's output volume (0.0-1.0, inclusive).
      */
     @Generated

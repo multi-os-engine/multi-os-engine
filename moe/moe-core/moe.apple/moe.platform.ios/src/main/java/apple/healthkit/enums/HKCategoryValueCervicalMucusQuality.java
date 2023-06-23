@@ -21,17 +21,34 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HKCategoryValueCervicalMucusQuality
- * <p>
+ * 
  * Set of values that may be used for HKCategorySamples with the HKCategoryTypeIdentifierCervicalMucusQuality type.
- * <p>
+ * 
  * These cervical mucus quality values are ordered from least-fertile (Dry) to most-fertile (EggWhite).
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class HKCategoryValueCervicalMucusQuality {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Dry = 0x0000000000000001L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Sticky = 0x0000000000000002L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Creamy = 0x0000000000000003L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Watery = 0x0000000000000004L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long EggWhite = 0x0000000000000005L;
 
     @Generated

@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * CLError
- * <p>
+ * 
  * Discussion:
  * Error returned as code to NSError from CoreLocation.
  */
@@ -108,4 +108,8 @@ public final class CLError {
      * Authorization request not presented to user
      */
     @Generated @NInt public static final long PromptDeclined = 0x0000000000000012L;
+    /**
+     * Historical Locations set up error
+     */
+    @Generated @NInt public static final long HistoricalLocationError = 0x0000000000000013L;
 }

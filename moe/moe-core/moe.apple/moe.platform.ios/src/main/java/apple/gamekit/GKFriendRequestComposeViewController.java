@@ -43,7 +43,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.2
+ * Deprecated-Since: 10.0
+ */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -72,35 +79,39 @@ public class GKFriendRequestComposeViewController extends UINavigationController
     @Selector("allocWithZone:")
     public static native GKFriendRequestComposeViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -132,9 +143,10 @@ public class GKFriendRequestComposeViewController extends UINavigationController
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Get the maximum number of recipients permitted
@@ -175,20 +187,33 @@ public class GKFriendRequestComposeViewController extends UINavigationController
      * If you don't specify at least one recipient before presenting the view, the recipients field will be made
      * firstResponder, to encourage the user to add some.
      * If you add more than maxNumberOfRecipients recipients, these methods will throw an exception.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("addRecipientPlayers:")
-    public native void addRecipientPlayers(NSArray<? extends GKPlayer> players);
+    public native void addRecipientPlayers(@NotNull NSArray<? extends GKPlayer> players);
 
     @Generated
     @Selector("addRecipientsWithEmailAddresses:")
-    public native void addRecipientsWithEmailAddresses(NSArray<String> emailAddresses);
+    public native void addRecipientsWithEmailAddresses(@NotNull NSArray<String> emailAddresses);
 
+    /**
+     * API-Since: 4.2
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: use addRecipientPlayers:
+     */
     @Generated
     @Deprecated
     @Selector("addRecipientsWithPlayerIDs:")
-    public native void addRecipientsWithPlayerIDs(NSArray<String> playerIDs);
+    public native void addRecipientsWithPlayerIDs(@NotNull NSArray<String> playerIDs);
 
+    /**
+     * API-Since: 4.2
+     * Deprecated-Since: 10.0
+     */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("composeViewDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -200,30 +225,41 @@ public class GKFriendRequestComposeViewController extends UINavigationController
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKFriendRequestComposeViewController initWithCoder(NSCoder coder);
+    public native GKFriendRequestComposeViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")
-    public native GKFriendRequestComposeViewController initWithNavigationBarClassToolbarClass(Class navigationBarClass,
-            Class toolbarClass);
+    public native GKFriendRequestComposeViewController initWithNavigationBarClassToolbarClass(
+            @Nullable Class navigationBarClass, @Nullable Class toolbarClass);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native GKFriendRequestComposeViewController initWithNibNameBundle(String nibNameOrNil,
-            NSBundle nibBundleOrNil);
+    public native GKFriendRequestComposeViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     @Generated
     @Selector("initWithRootViewController:")
-    public native GKFriendRequestComposeViewController initWithRootViewController(UIViewController rootViewController);
+    public native GKFriendRequestComposeViewController initWithRootViewController(
+            @NotNull UIViewController rootViewController);
 
+    /**
+     * API-Since: 4.2
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("setComposeViewDelegate:")
     public native void setComposeViewDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) GKFriendRequestComposeViewControllerDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) GKFriendRequestComposeViewControllerDelegate value);
 
+    /**
+     * API-Since: 4.2
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     public void setComposeViewDelegate(
-            @Mapped(ObjCObjectMapper.class) GKFriendRequestComposeViewControllerDelegate value) {
+            @Nullable @Mapped(ObjCObjectMapper.class) GKFriendRequestComposeViewControllerDelegate value) {
         Object __old = composeViewDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -239,5 +275,5 @@ public class GKFriendRequestComposeViewController extends UINavigationController
      */
     @Generated
     @Selector("setMessage:")
-    public native void setMessage(String message);
+    public native void setMessage(@Nullable String message);
 }

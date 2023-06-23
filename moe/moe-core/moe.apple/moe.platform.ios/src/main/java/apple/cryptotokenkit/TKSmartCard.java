@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents SmartCard inserted in the slot. Once the card is physically removed from the slot, the session object is
@@ -75,40 +77,41 @@ public class TKSmartCard extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Begins session with the card.
-     * <p>
+     * 
      * When session exists, other requests for sessions from other card objects to the same card are blocked. Session is
      * reference-counted, the same amount of 'end' calls must be done to really terminate the session. Note that
      * finishing session does not automatically mean that the card is disconnected; it only happens when another session
      * from different card object is requested.
-     *
+     * 
      * @param success Signals whether session was successfully started.
      * @param error   More information about error preventing the transaction to start
      */
     @Generated
     @Selector("beginSessionWithReply:")
     public native void beginSessionWithReply(
-            @ObjCBlock(name = "call_beginSessionWithReply") Block_beginSessionWithReply reply);
+            @NotNull @ObjCBlock(name = "call_beginSessionWithReply") Block_beginSessionWithReply reply);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_beginSessionWithReply {
         @Generated
-        void call_beginSessionWithReply(boolean success, NSError error);
+        void call_beginSessionWithReply(boolean success, @Nullable NSError error);
     }
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * CLA byte which will be used for sendIns: APDU transmits. Default value is 0x00.
@@ -117,10 +120,12 @@ public class TKSmartCard extends NSObject {
     @Selector("cla")
     public native byte cla();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,6 +134,7 @@ public class TKSmartCard extends NSObject {
      * User-specified context kept as long as the card is powered. Once the card is removed or another TKSmartCard
      * object opens session, this property is automatically set to nil.
      */
+    @Nullable
     @Generated
     @Selector("context")
     @MappedReturn(ObjCObjectMapper.class)
@@ -166,21 +172,22 @@ public class TKSmartCard extends NSObject {
 
     /**
      * Synchronous variant of session creation. Begins the session, executes given block and ends session.
-     *
+     * 
      * @param error Error receiving more information when transaction failed to start or block failed for some reason.
      * @param block Block to be executed when the session was successfully begun.
      * @return Returns YES if the session was successfully begun and block returned YES, otherwise NO.
      */
     @Generated
     @Selector("inSessionWithError:executeBlock:")
-    public native boolean inSessionWithErrorExecuteBlock(@ReferenceInfo(type = NSError.class) Ptr<NSError> error,
-            @ObjCBlock(name = "call_inSessionWithErrorExecuteBlock") Block_inSessionWithErrorExecuteBlock block);
+    public native boolean inSessionWithErrorExecuteBlock(
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error,
+            @NotNull @ObjCBlock(name = "call_inSessionWithErrorExecuteBlock") Block_inSessionWithErrorExecuteBlock block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_inSessionWithErrorExecuteBlock {
         @Generated
-        boolean call_inSessionWithErrorExecuteBlock(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+        boolean call_inSessionWithErrorExecuteBlock(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
     }
 
     @Generated
@@ -204,9 +211,10 @@ public class TKSmartCard extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -223,11 +231,11 @@ public class TKSmartCard extends NSObject {
 
     /**
      * Transmits APDU to the card and returns response.
-     * <p>
+     * 
      * Asynchronous high level variant of command for transmitting APDU to the card. Handles all ISO7816-4 APDU cases
      * translation to proper sequences according to used protocol. Consults useExtendedAPDU and useCommandChaining
      * properties and uses these modes whenever appropriate and beneficial for sending requested APDU request.
-     *
+     * 
      * @param ins         INS code of the APDU
      * @param p1          P1 code of the APDU
      * @param p2          P2 code of the APDU
@@ -242,23 +250,24 @@ public class TKSmartCard extends NSObject {
      */
     @Generated
     @Selector("sendIns:p1:p2:data:le:reply:")
-    public native void sendInsP1P2DataLeReply(byte ins, byte p1, byte p2, NSData requestData, NSNumber le,
-            @ObjCBlock(name = "call_sendInsP1P2DataLeReply") Block_sendInsP1P2DataLeReply reply);
+    public native void sendInsP1P2DataLeReply(byte ins, byte p1, byte p2, @Nullable NSData requestData,
+            @Nullable NSNumber le,
+            @NotNull @ObjCBlock(name = "call_sendInsP1P2DataLeReply") Block_sendInsP1P2DataLeReply reply);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sendInsP1P2DataLeReply {
         @Generated
-        void call_sendInsP1P2DataLeReply(NSData replyData, char sw, NSError error);
+        void call_sendInsP1P2DataLeReply(@Nullable NSData replyData, char sw, @Nullable NSError error);
     }
 
     /**
      * Transmits APDU to the card and returns response.
-     * <p>
+     * 
      * Synchronous high level variant of command for transmitting APDU to the card. Handles all ISO7816-4 APDU cases
      * translation to proper sequences according to used protocol. Should be used in block passed to -[TKSmartCard
      * inSessionWithError:executeBlock:] method.
-     *
+     * 
      * @param ins   INS code of the APDU
      * @param p1    P1 code of the APDU
      * @param p2    P2 code of the APDU
@@ -270,10 +279,12 @@ public class TKSmartCard extends NSObject {
      *              communication error, but card returned other SW code than 0x9000.
      * @return Returned data field, excluding SW status bytes. If an error occured, returns nil.
      */
+    @Nullable
     @Generated
     @Selector("sendIns:p1:p2:data:le:sw:error:")
-    public native NSData sendInsP1P2DataLeSwError(byte ins, byte p1, byte p2, NSData requestData, NSNumber le,
-            CharPtr sw, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSData sendInsP1P2DataLeSwError(byte ins, byte p1, byte p2, @Nullable NSData requestData,
+            @Nullable NSNumber le, @NotNull CharPtr sw,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Flag indicating whether card session should be considered as sensitive. Sensitive session always gets card after
@@ -307,7 +318,7 @@ public class TKSmartCard extends NSObject {
      */
     @Generated
     @Selector("setContext:")
-    public native void setContext(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setContext(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * Flag indicating whether card session should be considered as sensitive. Sensitive session always gets card after
@@ -344,6 +355,7 @@ public class TKSmartCard extends NSObject {
     /**
      * Slot in which is this card inserted.
      */
+    @NotNull
     @Generated
     @Selector("slot")
     public native TKSmartCardSlot slot();
@@ -354,21 +366,21 @@ public class TKSmartCard extends NSObject {
 
     /**
      * Transmits raw command to the card. This call is allowed only inside session.
-     *
+     * 
      * @param request Request part of APDU
      * @param reponse Response part of APDU, or nil if communication with the card failed
      * @param error   Error details when communication with the card failed
      */
     @Generated
     @Selector("transmitRequest:reply:")
-    public native void transmitRequestReply(NSData request,
-            @ObjCBlock(name = "call_transmitRequestReply") Block_transmitRequestReply reply);
+    public native void transmitRequestReply(@NotNull NSData request,
+            @NotNull @ObjCBlock(name = "call_transmitRequestReply") Block_transmitRequestReply reply);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_transmitRequestReply {
         @Generated
-        void call_transmitRequestReply(NSData response, NSError error);
+        void call_transmitRequestReply(@Nullable NSData response, @Nullable NSError error);
     }
 
     /**
@@ -393,7 +405,7 @@ public class TKSmartCard extends NSObject {
      * Creates a new user interaction object for secure PIN change using the SmartCard reader facilities (typically a HW
      * keypad).
      * [@note] This interaction is only allowed within a session.
-     *
+     * 
      * @param PINFormat            PIN format descriptor.
      * @param APDU                 Predefined APDU in which the SmartCard reader fills in the PIN(s).
      * @param currentPINByteOffset Offset in bytes within APDU data field to mark a location of a PIN block for filling
@@ -402,28 +414,35 @@ public class TKSmartCard extends NSObject {
      *                             in the new PIN.
      * @return A new user interaction object, or nil if this feature is not supported by the SmartCard reader. After the
      *         interaction has been successfully completed the operation result is available in the result properites.
+     * 
+     *         API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("userInteractionForSecurePINChangeWithPINFormat:APDU:currentPINByteOffset:newPINByteOffset:")
     public native TKSmartCardUserInteractionForSecurePINChange userInteractionForSecurePINChangeWithPINFormatAPDUCurrentPINByteOffsetNewPINByteOffset(
-            TKSmartCardPINFormat PINFormat, NSData APDU, @NInt long currentPINByteOffset, @NInt long newPINByteOffset);
+            @NotNull TKSmartCardPINFormat PINFormat, @NotNull NSData APDU, @NInt long currentPINByteOffset,
+            @NInt long newPINByteOffset);
 
     /**
      * Creates a new user interaction object for secure PIN verification using the SmartCard reader facilities
      * (typically a HW keypad).
      * [@note] This interaction is only allowed within a session.
-     *
+     * 
      * @param PINFormat     PIN format descriptor.
      * @param APDU          Predefined APDU in which the SmartCard reader fills in the PIN.
      * @param PINByteOffset Offset in bytes within APDU data field to mark a location of a PIN block for filling in the
      *                      entered PIN (currently unused, must be 0).
      * @return A new user interaction object, or nil if this feature is not supported by the SmartCard reader. After the
      *         interaction has been successfully completed the operation result is available in the result properites.
+     * 
+     *         API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("userInteractionForSecurePINVerificationWithPINFormat:APDU:PINByteOffset:")
     public native TKSmartCardUserInteractionForSecurePINVerification userInteractionForSecurePINVerificationWithPINFormatAPDUPINByteOffset(
-            TKSmartCardPINFormat PINFormat, NSData APDU, @NInt long PINByteOffset);
+            @NotNull TKSmartCardPINFormat PINFormat, @NotNull NSData APDU, @NInt long PINByteOffset);
 
     /**
      * Flag indicating whether card is valid, i.e. it was not removed from the reader. Use Key-Value-Observing to be

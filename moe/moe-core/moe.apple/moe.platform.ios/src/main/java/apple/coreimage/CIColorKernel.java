@@ -17,7 +17,6 @@ limitations under the License.
 package apple.coreimage;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
 import apple.foundation.NSError;
@@ -43,19 +42,24 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CIColorKernel is an object that encapsulates a Core Image Kernel Language
  * routine that processes only the color information in images.
- * <p>
+ * 
  * Color kernel functions are declared akin to this example:
  * kernel vec4 myColorKernel (__sample fore, __sample back, vec4 params)
- * <p>
+ * 
  * The function must take a __sample argument for each input image.
  * Additional arguments can be of type float, vec2, vec3, vec4, or __color.
  * The destination pixel location is obtained by calling destCoord().
  * The kernel should not call sample(), samplerCoord(), or samplerTransform().
  * The function must return a vec4 pixel color.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("CoreImage")
@@ -87,22 +91,25 @@ public class CIColorKernel extends CIKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -142,18 +149,27 @@ public class CIColorKernel extends CIKernel {
      * On iOS8 [CIColorKernel kernelWithString:] can return a CIKernel, CIColorKernel, or CIWarpKernel object.
      * On iOS9 [CIColorKernel kernelWithString:] will return a CIColorKernel object or nil.
      * On OS X [CIColorKernel kernelWithString:] will return a CIColorKernel object or nil.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Core Image Kernel Language API deprecated. (Define CI_SILENCE_GL_DEPRECATION to silence these
+     * warnings)
      */
+    @Deprecated
     @Generated
     @Selector("kernelWithString:")
-    public static native CIColorKernel kernelWithString(String string);
+    public static native CIColorKernel kernelWithString(@NotNull String string);
 
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("kernelsWithString:")
-    public static native NSArray<? extends CIKernel> kernelsWithString(String string);
+    public static native NSArray<? extends CIKernel> kernelsWithString(@NotNull String string);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -183,17 +199,18 @@ public class CIColorKernel extends CIKernel {
 
     /**
      * Apply the receiver CIColorKernel to produce a new CIImage object.
-     * <p>
+     * 
      * The 'extent' is the bounding box of all non-clear pixels produced by the kernel.
-     * <p>
+     * 
      * The 'args' is an array of parameters needed to describe the new image.
      * The object types of the items in the array correspond to the argument types of the
      * kernel function. For example, if the first argument in the kernel is a __sample,
      * then the first object in the array must be a CIImage.
      */
+    @Nullable
     @Generated
     @Selector("applyWithExtent:arguments:")
-    public native CIImage applyWithExtentArguments(@ByValue CGRect extent, NSArray<?> args);
+    public native CIImage applyWithExtentArguments(@ByValue CGRect extent, @Nullable NSArray<?> args);
 
     @Generated
     @Selector("init")
@@ -201,20 +218,23 @@ public class CIColorKernel extends CIKernel {
 
     @Generated
     @Selector("kernelWithFunctionName:fromMetalLibraryData:error:")
-    public static native CIColorKernel kernelWithFunctionNameFromMetalLibraryDataError(String name, NSData data,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native CIColorKernel kernelWithFunctionNameFromMetalLibraryDataError(@NotNull String name,
+            @NotNull NSData data, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("kernelWithFunctionName:fromMetalLibraryData:outputPixelFormat:error:")
-    public static native CIColorKernel kernelWithFunctionNameFromMetalLibraryDataOutputPixelFormatError(String name,
-            NSData data, int format, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native CIColorKernel kernelWithFunctionNameFromMetalLibraryDataOutputPixelFormatError(
+            @NotNull String name, @NotNull NSData data, int format,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    @NotNull
     @Generated
     @Selector("kernelNamesFromMetalLibraryData:")
-    public static native NSArray<String> kernelNamesFromMetalLibraryData(NSData data);
+    public static native NSArray<String> kernelNamesFromMetalLibraryData(@NotNull NSData data);
 
+    @Nullable
     @Generated
     @Selector("kernelsWithMetalString:error:")
-    public static native NSArray<? extends CIKernel> kernelsWithMetalStringError(String source,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSArray<? extends CIKernel> kernelsWithMetalStringError(@NotNull String source,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

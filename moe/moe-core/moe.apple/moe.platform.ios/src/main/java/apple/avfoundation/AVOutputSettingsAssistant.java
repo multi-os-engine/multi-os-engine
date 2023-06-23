@@ -41,24 +41,28 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVOutputSettingsAssistant
- * <p>
+ * 
  * A class, each instance of which specifies a set of parameters for configuring objects that use output settings
  * dictionaries, for example AVAssetWriter & AVAssetWriterInput, so that the resulting media file conforms to some
  * specific criteria
- * <p>
+ * 
  * Instances of AVOutputSettingsAssistant are typically created using a string constant representing a specific preset
  * configuration, such as AVOutputSettingsPreset1280x720. Once you have an instance, its properties can be used as a
  * guide for creating and configuring an AVAssetWriter object and one or more AVAssetWriterInput objects. If all the
  * suggested properties are respected, the resulting media file will conform to the criteria implied by the preset.
  * Alternatively, the properties of an instance can be used as a "base" configuration which can be customized to suit
  * your individual needs.
- * <p>
+ * 
  * The recommendations made by an instance get better as you tell it more about the format of your source data. For
  * example, if you set the sourceVideoFormat property, the recommendation made by the videoSettings property will ensure
  * that your video frames are not scaled up from a smaller size.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("AVFoundation")
@@ -90,38 +94,45 @@ public class AVOutputSettingsAssistant extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * availableOutputSettingsPresets
-     * <p>
+     * 
      * Returns the list of presets that can be used to create an instance of AVOutputSettingsAssistant
-     * <p>
+     * 
      * Each preset in the returned list can be passed in to +outputSettingsAssistantWithPreset: to create a new instance
      * of AVOutputSettingsAssistant.
-     * <p>
+     * 
      * On iOS, the returned array may be different between different device models.
-     *
-     * @return An NSArray of NSString objects, each of which is a preset identifier
+     * 
+     * API-Since: 7.0
+     * 
+     * @return
+     *         An NSArray of NSString objects, each of which is a preset identifier
      */
+    @NotNull
     @Generated
     @Selector("availableOutputSettingsPresets")
     public static native NSArray<String> availableOutputSettingsPresets();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -156,9 +167,10 @@ public class AVOutputSettingsAssistant extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,22 +179,24 @@ public class AVOutputSettingsAssistant extends NSObject {
 
     /**
      * outputSettingsAssistantWithPreset:
-     * <p>
+     * 
      * Returns an instance of AVOutputSettingsAssistant corresponding to the given preset
-     * <p>
+     * 
      * The properties of the returned object can be used as a guide for creating and configuring an AVAssetWriter object
      * and one or more AVAssetWriterInput objects. If all the suggested properties are respected in creating the
      * AVAssetWriter, the resulting media file will conform to the criteria implied by the preset.
-     * <p>
+     * 
      * Use +availableOutputSettingsPresets to get a list of presets identifiers that can be used with this method.
-     *
-     * @param presetIdentifier The string identifier, for example AVOutputSettingsPreset1280x720, for the desired preset
-     * @return An instance of AVOutputSettingsAssistant with properties corresponding to the given preset, or nil if
+     * 
+     * @param presetIdentifier
+     *                         The string identifier, for example AVOutputSettingsPreset1280x720, for the desired preset
+     * @return
+     *         An instance of AVOutputSettingsAssistant with properties corresponding to the given preset, or nil if
      *         there is no such available preset.
      */
     @Generated
     @Selector("outputSettingsAssistantWithPreset:")
-    public static native AVOutputSettingsAssistant outputSettingsAssistantWithPreset(String presetIdentifier);
+    public static native AVOutputSettingsAssistant outputSettingsAssistantWithPreset(@NotNull String presetIdentifier);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -207,12 +221,13 @@ public class AVOutputSettingsAssistant extends NSObject {
 
     /**
      * [@property] audioSettings
-     * <p>
+     * 
      * A dictionary of key/value pairs, as specified in AVAudioSettings.h, to be used when e.g. creating an instance of
      * AVAssetWriterInput
-     * <p>
+     * 
      * The value of this property may change as a result of setting a new value for the sourceAudioFormat property.
      */
+    @Nullable
     @Generated
     @Selector("audioSettings")
     public native NSDictionary<String, ?> audioSettings();
@@ -223,46 +238,47 @@ public class AVOutputSettingsAssistant extends NSObject {
 
     /**
      * [@property] outputFileType
-     * <p>
+     * 
      * A UTI indicating the type of file to be written, to be used when e.g. creating an instance of AVAssetWriter
-     * <p>
-     * Use UTTypeCopyPreferredTagWithClass / kUTTagClassFilenameExtension to get a suitable file extension for a given
-     * file type.
+     * 
+     * Use [[UTType typeWithIdentifier:outputFileType] preferredFilenameExtension] to get a suitable file extension for
+     * a given file type.
      */
+    @NotNull
     @Generated
     @Selector("outputFileType")
     public native String outputFileType();
 
     /**
      * [@property] sourceAudioFormat
-     * <p>
+     * 
      * A CMAudioFormatDescription object describing the format of you audio data
-     * <p>
+     * 
      * Setting this property will allow the receiver to make a more informed recommendation for the audio settings that
      * should be used. After setting this property, you should re-query the audioSettings property to get the new
      * recommendation. The default value is NULL, which means that the receiver does not know anything about the format
      * of your audio data.
-     * <p>
+     * 
      * If you set a non-NULL value for this property, and are using the receiver to initialize an AVAssetWriterInput,
      * the same format description should be used to initialize the AVAssetWriterInput, along with the dictionary from
      * the audioSettings property.
      */
     @Generated
     @Selector("setSourceAudioFormat:")
-    public native void setSourceAudioFormat(CMFormatDescriptionRef value);
+    public native void setSourceAudioFormat(@Nullable CMFormatDescriptionRef value);
 
     /**
      * [@property] sourceVideoAverageFrameDuration
-     * <p>
+     * 
      * A CMTime describing the average frame duration (reciprocal of average frame rate) of your video data
-     * <p>
+     * 
      * Setting this property will allow the receiver to make a more informed recommendation for the video settings that
      * should be used. After setting this property, you should re-query the videoSettings property to get the new
      * recommendation.
-     * <p>
+     * 
      * The default value is 1/30, which means that the receiver is assuming that your source video has an average frame
      * rate of 30fps.
-     * <p>
+     * 
      * It is an error to set this property to a value that is not positive or not numeric. See CMTIME_IS_NUMERIC.
      */
     @Generated
@@ -271,38 +287,40 @@ public class AVOutputSettingsAssistant extends NSObject {
 
     /**
      * [@property] sourceVideoFormat
-     * <p>
+     * 
      * A CMVideoFormatDescription object describing the format of your video data
-     * <p>
+     * 
      * Setting this property will allow the receiver to make a more informed recommendation for the video settings that
      * should be used. After setting this property, you should re-query the videoSettings property to get the new
      * recommendation. The default value is NULL, which means that the receiver does not know anything about the format
      * of your video data.
-     * <p>
+     * 
      * If you set a non-NULL value for this property, and are using the receiver to initialize an AVAssetWriterInput,
      * the same format description should be used to initialize the AVAssetWriterInput, along with the dictionary from
      * the videoSettings property.
      */
     @Generated
     @Selector("setSourceVideoFormat:")
-    public native void setSourceVideoFormat(CMFormatDescriptionRef value);
+    public native void setSourceVideoFormat(@Nullable CMFormatDescriptionRef value);
 
     /**
      * [@property] sourceVideoMinFrameDuration
-     * <p>
+     * 
      * A CMTime describing the minimum frame duration (reciprocal of the maximum frame rate) of your video data
-     * <p>
+     * 
      * Setting this property will allow the receiver to make a more informed recommendation for the video settings that
      * should be used. After setting this property, you should re-query the videoSettings property to get the new
      * recommendation.
-     * <p>
+     * 
      * If your source of video data is an instance of AVAssetReaderOutput, you can discover the minimum frame duration
      * of your source asset using the AVAssetTrack.minFrameDuration property.
-     * <p>
+     * 
      * The default value is 1/30, which means that the receiver is assuming that your source video has a maximum frame
      * rate of 30fps.
-     * <p>
+     * 
      * It is an error to set this property to a value that is not positive or not numeric. See CMTIME_IS_NUMERIC.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setSourceVideoMinFrameDuration:")
@@ -310,34 +328,35 @@ public class AVOutputSettingsAssistant extends NSObject {
 
     /**
      * [@property] sourceAudioFormat
-     * <p>
+     * 
      * A CMAudioFormatDescription object describing the format of you audio data
-     * <p>
+     * 
      * Setting this property will allow the receiver to make a more informed recommendation for the audio settings that
      * should be used. After setting this property, you should re-query the audioSettings property to get the new
      * recommendation. The default value is NULL, which means that the receiver does not know anything about the format
      * of your audio data.
-     * <p>
+     * 
      * If you set a non-NULL value for this property, and are using the receiver to initialize an AVAssetWriterInput,
      * the same format description should be used to initialize the AVAssetWriterInput, along with the dictionary from
      * the audioSettings property.
      */
+    @Nullable
     @Generated
     @Selector("sourceAudioFormat")
     public native CMFormatDescriptionRef sourceAudioFormat();
 
     /**
      * [@property] sourceVideoAverageFrameDuration
-     * <p>
+     * 
      * A CMTime describing the average frame duration (reciprocal of average frame rate) of your video data
-     * <p>
+     * 
      * Setting this property will allow the receiver to make a more informed recommendation for the video settings that
      * should be used. After setting this property, you should re-query the videoSettings property to get the new
      * recommendation.
-     * <p>
+     * 
      * The default value is 1/30, which means that the receiver is assuming that your source video has an average frame
      * rate of 30fps.
-     * <p>
+     * 
      * It is an error to set this property to a value that is not positive or not numeric. See CMTIME_IS_NUMERIC.
      */
     @Generated
@@ -347,38 +366,41 @@ public class AVOutputSettingsAssistant extends NSObject {
 
     /**
      * [@property] sourceVideoFormat
-     * <p>
+     * 
      * A CMVideoFormatDescription object describing the format of your video data
-     * <p>
+     * 
      * Setting this property will allow the receiver to make a more informed recommendation for the video settings that
      * should be used. After setting this property, you should re-query the videoSettings property to get the new
      * recommendation. The default value is NULL, which means that the receiver does not know anything about the format
      * of your video data.
-     * <p>
+     * 
      * If you set a non-NULL value for this property, and are using the receiver to initialize an AVAssetWriterInput,
      * the same format description should be used to initialize the AVAssetWriterInput, along with the dictionary from
      * the videoSettings property.
      */
+    @Nullable
     @Generated
     @Selector("sourceVideoFormat")
     public native CMFormatDescriptionRef sourceVideoFormat();
 
     /**
      * [@property] sourceVideoMinFrameDuration
-     * <p>
+     * 
      * A CMTime describing the minimum frame duration (reciprocal of the maximum frame rate) of your video data
-     * <p>
+     * 
      * Setting this property will allow the receiver to make a more informed recommendation for the video settings that
      * should be used. After setting this property, you should re-query the videoSettings property to get the new
      * recommendation.
-     * <p>
+     * 
      * If your source of video data is an instance of AVAssetReaderOutput, you can discover the minimum frame duration
      * of your source asset using the AVAssetTrack.minFrameDuration property.
-     * <p>
+     * 
      * The default value is 1/30, which means that the receiver is assuming that your source video has a maximum frame
      * rate of 30fps.
-     * <p>
+     * 
      * It is an error to set this property to a value that is not positive or not numeric. See CMTIME_IS_NUMERIC.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("sourceVideoMinFrameDuration")
@@ -387,12 +409,13 @@ public class AVOutputSettingsAssistant extends NSObject {
 
     /**
      * [@property] videoSettings
-     * <p>
+     * 
      * A dictionary of key/value pairs, as specified in AVVideoSettings.h, to be used when e.g. creating an instance of
      * AVAssetWriterInput
-     * <p>
+     * 
      * The value of this property may change as a result of setting a new value for the sourceVideoFormat property.
      */
+    @Nullable
     @Generated
     @Selector("videoSettings")
     public native NSDictionary<String, ?> videoSettings();

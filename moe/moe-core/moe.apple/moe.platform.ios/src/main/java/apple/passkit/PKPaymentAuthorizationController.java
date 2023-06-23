@@ -40,10 +40,14 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * PKPaymentAuthorizationController prompts the user to authorize a PKPaymentRequest, funding the
  * payment amount with a valid payment card.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("PassKit")
@@ -75,7 +79,7 @@ public class PKPaymentAuthorizationController extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Determine whether this device can process payment requests.
@@ -98,7 +102,7 @@ public class PKPaymentAuthorizationController extends NSObject {
      */
     @Generated
     @Selector("canMakePaymentsUsingNetworks:")
-    public static native boolean canMakePaymentsUsingNetworks(NSArray<String> supportedNetworks);
+    public static native boolean canMakePaymentsUsingNetworks(@NotNull NSArray<String> supportedNetworks);
 
     /**
      * Determine whether this device can process payments using the specified networks and capabilities bitmask
@@ -106,23 +110,26 @@ public class PKPaymentAuthorizationController extends NSObject {
      */
     @Generated
     @Selector("canMakePaymentsUsingNetworks:capabilities:")
-    public static native boolean canMakePaymentsUsingNetworksCapabilities(NSArray<String> supportedNetworks,
+    public static native boolean canMakePaymentsUsingNetworksCapabilities(@NotNull NSArray<String> supportedNetworks,
             @NUInt long capabilties);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -157,9 +164,10 @@ public class PKPaymentAuthorizationController extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -190,6 +198,7 @@ public class PKPaymentAuthorizationController extends NSObject {
     /**
      * The controller's delegate.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -202,7 +211,7 @@ public class PKPaymentAuthorizationController extends NSObject {
     @Generated
     @Selector("dismissWithCompletion:")
     public native void dismissWithCompletion(
-            @ObjCBlock(name = "call_dismissWithCompletion") Block_dismissWithCompletion completion);
+            @Nullable @ObjCBlock(name = "call_dismissWithCompletion") Block_dismissWithCompletion completion);
 
     @Generated
     @Selector("init")
@@ -213,7 +222,7 @@ public class PKPaymentAuthorizationController extends NSObject {
      */
     @Generated
     @Selector("initWithPaymentRequest:")
-    public native PKPaymentAuthorizationController initWithPaymentRequest(PKPaymentRequest request);
+    public native PKPaymentAuthorizationController initWithPaymentRequest(@NotNull PKPaymentRequest request);
 
     /**
      * Presents the Apple Pay UI modally over your app. You are responsible for dismissal
@@ -221,7 +230,7 @@ public class PKPaymentAuthorizationController extends NSObject {
     @Generated
     @Selector("presentWithCompletion:")
     public native void presentWithCompletion(
-            @ObjCBlock(name = "call_presentWithCompletion") Block_presentWithCompletion completion);
+            @Nullable @ObjCBlock(name = "call_presentWithCompletion") Block_presentWithCompletion completion);
 
     /**
      * The controller's delegate.
@@ -229,13 +238,13 @@ public class PKPaymentAuthorizationController extends NSObject {
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) PKPaymentAuthorizationControllerDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) PKPaymentAuthorizationControllerDelegate value);
 
     /**
      * The controller's delegate.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) PKPaymentAuthorizationControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) PKPaymentAuthorizationControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

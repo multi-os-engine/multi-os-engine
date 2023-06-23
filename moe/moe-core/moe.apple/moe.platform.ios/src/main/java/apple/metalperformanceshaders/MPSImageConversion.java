@@ -42,11 +42,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImageConversion
- * <p>
+ * 
  * The MPSImageConversion filter performs a conversion from source to destination
+ * 
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -78,22 +83,25 @@ public class MPSImageConversion extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,9 +136,10 @@ public class MPSImageConversion extends MPSUnaryImageKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -160,9 +169,9 @@ public class MPSImageConversion extends MPSUnaryImageKernel {
 
     /**
      * [@property] destinationAlpha
-     * <p>
+     * 
      * Premultiplication description for the destinationAlpha texture
-     * <p>
+     * 
      * Colorspace conversion operations produce non-premultiplied data.
      * Use this property to tag cases where premultiplied results are required.
      * If MPSPixelAlpha_AlphaIsOne is used, the alpha channel will be set to 1.
@@ -179,14 +188,14 @@ public class MPSImageConversion extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImageConversion initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageConversion initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Create a converter that can convert texture colorspace, alpha and texture format
-     * <p>
+     * 
      * Create a converter that can convert texture colorspace, alpha and MTLPixelFormat.
      * Optimized cases exist for NULL color space converter and no alpha conversion.
-     *
+     * 
      * @param device          The device the filter will run on
      * @param srcAlpha        The alpha encoding for the source texture
      * @param destAlpha       The alpha encoding for the destination texture
@@ -195,19 +204,20 @@ public class MPSImageConversion extends MPSUnaryImageKernel {
      *                        of color channels in the src colorspace. If NULL, use {0}.
      * @param conversionInfo  The colorspace conversion to use. May be NULL, indicating no
      *                        color space conversions need to be done.
+     * 
      * @return An initialized MPSImageConversion object.
      */
     @Generated
     @Selector("initWithDevice:srcAlpha:destAlpha:backgroundColor:conversionInfo:")
     public native MPSImageConversion initWithDeviceSrcAlphaDestAlphaBackgroundColorConversionInfo(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long srcAlpha, @NUInt long destAlpha,
-            NFloatPtr backgroundColor, CGColorConversionInfoRef conversionInfo);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long srcAlpha, @NUInt long destAlpha,
+            @Nullable NFloatPtr backgroundColor, @Nullable CGColorConversionInfoRef conversionInfo);
 
     /**
      * [@property] sourceAlpha
-     * <p>
+     * 
      * Premultiplication description for the source texture
-     * <p>
+     * 
      * Most colorspace conversion operations can not work directly on premultiplied data.
      * Use this property to tag premultiplied data so that the source texture can
      * be unpremultiplied prior to application of these transforms.
@@ -220,12 +230,12 @@ public class MPSImageConversion extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSImageConversion initWithCoder(NSCoder aDecoder);
+    public native MPSImageConversion initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSImageConversion initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageConversion initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("supportsSecureCoding")

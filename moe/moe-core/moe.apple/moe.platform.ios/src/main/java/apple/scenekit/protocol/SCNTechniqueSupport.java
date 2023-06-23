@@ -23,10 +23,11 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] SCNTechniqueSupport
- * <p>
+ * 
  * The SCNTechniqueSupport protocol describes an object that supports single or multi-pass techniques
  */
 @Generated
@@ -36,18 +37,19 @@ import org.moe.natj.objc.ann.Selector;
 public interface SCNTechniqueSupport {
     /**
      * [@property] technique
-     * <p>
+     * 
      * Specifies the technique of the receiver. Defaults to nil.
      */
     @Generated
     @Selector("setTechnique:")
-    void setTechnique(SCNTechnique value);
+    void setTechnique(@Nullable SCNTechnique value);
 
     /**
      * [@property] technique
-     * <p>
+     * 
      * Specifies the technique of the receiver. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("technique")
     SCNTechnique technique();

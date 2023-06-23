@@ -17,8 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGVector;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSNumber;
@@ -43,7 +41,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGVector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -74,22 +79,25 @@ public class UITouch extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +132,10 @@ public class UITouch extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,6 +167,8 @@ public class UITouch extends NSObject {
      * Altitude angle. Valid only for stylus touch types.
      * Zero radians indicates that the stylus is parallel to the screen surface,
      * while M_PI/2 radians indicates that it is normal to the screen surface.
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @Selector("altitudeAngle")
@@ -167,24 +178,30 @@ public class UITouch extends NSObject {
     /**
      * Azimuth angle. Valid only for stylus touch types. Zero radians points along the positive X axis.
      * Passing a nil for the view parameter will return the azimuth relative to the touch's window.
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @Selector("azimuthAngleInView:")
     @NFloat
-    public native double azimuthAngleInView(UIView view);
+    public native double azimuthAngleInView(@Nullable UIView view);
 
     /**
      * A unit vector that points in the direction of the azimuth angle. Valid only for stylus touch types.
      * Passing nil for the view parameter will return a unit vector relative to the touch's window.
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @Selector("azimuthUnitVectorInView:")
     @ByValue
-    public native CGVector azimuthUnitVectorInView(UIView view);
+    public native CGVector azimuthUnitVectorInView(@Nullable UIView view);
 
     /**
      * A set of properties that has estimated values
      * Only denoting properties that are currently estimated
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @Selector("estimatedProperties")
@@ -195,6 +212,8 @@ public class UITouch extends NSObject {
      * A set of properties that expect to have incoming updates in the future.
      * If no updates are expected for an estimated property the current value is our final estimate.
      * This happens e.g. for azimuth/altitude values when entering from the edges
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @Selector("estimatedPropertiesExpectingUpdates")
@@ -204,19 +223,28 @@ public class UITouch extends NSObject {
     /**
      * An index which allows you to correlate updates with the original touch.
      * Is only guaranteed non-nil if this UITouch expects or is an update.
+     * 
+     * API-Since: 9.1
      */
+    @Nullable
     @Generated
     @Selector("estimationUpdateIndex")
     public native NSNumber estimationUpdateIndex();
 
     /**
      * Force of the touch, where 1.0 represents the force of an average touch
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("force")
     @NFloat
     public native double force();
 
+    /**
+     * API-Since: 3.2
+     */
+    @Nullable
     @Generated
     @Selector("gestureRecognizers")
     public native NSArray<? extends UIGestureRecognizer> gestureRecognizers();
@@ -228,22 +256,27 @@ public class UITouch extends NSObject {
     @Generated
     @Selector("locationInNode:")
     @ByValue
-    public native CGPoint locationInNode(SKNode node);
+    public native CGPoint locationInNode(@NotNull SKNode node);
 
     @Generated
     @Selector("locationInView:")
     @ByValue
-    public native CGPoint locationInView(UIView view);
+    public native CGPoint locationInView(@Nullable UIView view);
 
     /**
      * majorRadius and majorRadiusTolerance are in points
      * The majorRadius will be accurate +/- the majorRadiusTolerance
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("majorRadius")
     @NFloat
     public native double majorRadius();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("majorRadiusTolerance")
     @NFloat
@@ -251,6 +284,8 @@ public class UITouch extends NSObject {
 
     /**
      * Maximum possible force with this input mechanism
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("maximumPossibleForce")
@@ -266,26 +301,31 @@ public class UITouch extends NSObject {
      * Use these methods to gain additional precision that may be available from touches.
      * Do not use precise locations for hit testing. A touch may hit test inside a view, yet have a precise location
      * that lies just outside.
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @Selector("preciseLocationInView:")
     @ByValue
-    public native CGPoint preciseLocationInView(UIView view);
+    public native CGPoint preciseLocationInView(@Nullable UIView view);
 
+    /**
+     * API-Since: 9.1
+     */
     @Generated
     @Selector("precisePreviousLocationInView:")
     @ByValue
-    public native CGPoint precisePreviousLocationInView(UIView view);
+    public native CGPoint precisePreviousLocationInView(@Nullable UIView view);
 
     @Generated
     @Selector("previousLocationInNode:")
     @ByValue
-    public native CGPoint previousLocationInNode(SKNode node);
+    public native CGPoint previousLocationInNode(@NotNull SKNode node);
 
     @Generated
     @Selector("previousLocationInView:")
     @ByValue
-    public native CGPoint previousLocationInView(UIView view);
+    public native CGPoint previousLocationInView(@Nullable UIView view);
 
     /**
      * touch down within a certain point within a certain amount of time
@@ -299,15 +339,20 @@ public class UITouch extends NSObject {
     @Selector("timestamp")
     public native double timestamp();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("type")
     @NInt
     public native long type();
 
+    @Nullable
     @Generated
     @Selector("view")
     public native UIView view();
 
+    @Nullable
     @Generated
     @Selector("window")
     public native UIWindow window();

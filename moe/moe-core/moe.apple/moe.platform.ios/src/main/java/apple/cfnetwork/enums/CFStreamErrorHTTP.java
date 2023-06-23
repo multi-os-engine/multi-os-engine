@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * CFStreamErrorHTTP
- * <p>
+ * 
  * Discussion:
  * Errors from the kCFStreamErrorDomainHTTP domain.
  */

@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVCaptureWhiteBalanceMode
- * <p>
+ * 
  * Constants indicating the mode of the white balance on the receiver's device, if it has adjustable white balance.
- * <p>
+ * 
  * [@constant] AVCaptureWhiteBalanceModeLocked
  * Indicates that the white balance should be locked at its current value.
  * [@constant] AVCaptureWhiteBalanceModeAutoWhiteBalance
@@ -31,11 +31,22 @@ import org.moe.natj.general.ann.NInt;
  * AVCaptureWhiteBalanceModeLocked.
  * [@constant] AVCaptureWhiteBalanceModeContinuousAutoWhiteBalance
  * Indicates that the device should automatically adjust white balance when needed.
+ * 
+ * API-Since: 4.0
  */
 @Generated
 public final class AVCaptureWhiteBalanceMode {
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NInt public static final long Locked = 0x0000000000000000L;
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NInt public static final long AutoWhiteBalance = 0x0000000000000001L;
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NInt public static final long ContinuousAutoWhiteBalance = 0x0000000000000002L;
 
     @Generated

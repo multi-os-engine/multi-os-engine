@@ -42,7 +42,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("UserNotifications")
 @Runtime(ObjCRuntime.class)
@@ -73,22 +78,25 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -100,6 +108,7 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
     /**
      * The default sound used for notifications.
      */
+    @NotNull
     @Generated
     @Selector("defaultSound")
     public static native UNNotificationSound defaultSound();
@@ -130,9 +139,10 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,7 +168,7 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
      */
     @Generated
     @Selector("soundNamed:")
-    public static native UNNotificationSound soundNamed(String name);
+    public static native UNNotificationSound soundNamed(@NotNull String name);
 
     @Generated
     @Selector("superclass")
@@ -173,15 +183,16 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -189,7 +200,7 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNNotificationSound initWithCoder(NSCoder coder);
+    public native UNNotificationSound initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -201,24 +212,33 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
      * The name of a sound file to be played for an critical alert. Critical alerts will bypass the mute switch and Do
      * Not Disturb. The sound file must be contained in the app’s bundle or in the Library/Sounds folder of the app’s
      * data container. If files exist in both locations then the file in the app’s data container will be preferred.
+     * 
+     * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Selector("criticalSoundNamed:")
-    public static native UNNotificationSound criticalSoundNamed(String name);
+    public static native UNNotificationSound criticalSoundNamed(@NotNull String name);
 
     /**
      * The name of a sound file to be played for an critical alert with a custom audio volume level. Critical alerts
      * will bypass the mute switch and Do Not Disturb. The sound file must be contained in the app’s bundle or in the
      * Library/Sounds folder of the app’s data container. If files exist in both locations then the file in the app’s
      * data container will be preferred. The audio volume is expected to be between 0.0f and 1.0f.
+     * 
+     * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Selector("criticalSoundNamed:withAudioVolume:")
-    public static native UNNotificationSound criticalSoundNamedWithAudioVolume(String name, float volume);
+    public static native UNNotificationSound criticalSoundNamedWithAudioVolume(@NotNull String name, float volume);
 
     /**
      * The default sound used for critical alerts. Critical alerts will bypass the mute switch and Do Not Disturb.
+     * 
+     * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Selector("defaultCriticalSound")
     public static native UNNotificationSound defaultCriticalSound();
@@ -226,7 +246,10 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
     /**
      * The default sound used for critical alerts with a custom audio volume level. Critical alerts will bypass the mute
      * switch and Do Not Disturb. The audio volume is expected to be between 0.0f and 1.0f.
+     * 
+     * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Selector("defaultCriticalSoundWithAudioVolume:")
     public static native UNNotificationSound defaultCriticalSoundWithAudioVolume(float volume);
@@ -237,7 +260,10 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
      * extension via -[UNNotificationContent contentByUpdatingWithProvider:error:] where the provider is an
      * INStartCallIntent with a destinationType of INCallDestinationTypeNormal. Please use CallKit instead of
      * UserNotifications for this use case when available.
+     * 
+     * API-Since: 15.2
      */
+    @NotNull
     @Generated
     @Selector("defaultRingtoneSound")
     public static native UNNotificationSound defaultRingtoneSound();
@@ -250,8 +276,11 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
      * must be created in the notification service extension via -[UNNotificationContent
      * contentByUpdatingWithProvider:error:] where the provider is an INStartCallIntent with a destinationType of
      * INCallDestinationTypeNormal. Please use CallKit instead of UserNotifications for this use case when available.
+     * 
+     * API-Since: 15.2
      */
+    @NotNull
     @Generated
     @Selector("ringtoneSoundNamed:")
-    public static native UNNotificationSound ringtoneSoundNamed(String name);
+    public static native UNNotificationSound ringtoneSoundNamed(@NotNull String name);
 }

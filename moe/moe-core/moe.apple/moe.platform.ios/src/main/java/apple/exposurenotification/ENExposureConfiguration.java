@@ -23,14 +23,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * ===========================================================================================================================
- * <p>
+ * 
  * Configuration parameters for exposure detection.
- * <p>
+ * 
  * Configuration parameters are used to calculate an exposure duration for each exposure using the following formula.
- * <p>
+ * 
  * exposureDuration =
  * ( ( immediateDuration * immediateDurationWeight ) +
  * ( nearDuration * nearDurationWeight ) +
@@ -38,6 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * ( otherDuration * otherDurationWeight ) )
  * * infectiousnessWeight )
  * * reportTypeWeight )
+ * 
+ * API-Since: 12.5
  */
 @Generated
 @Library("ExposureNotification")
@@ -69,10 +73,11 @@ public class ENExposureConfiguration extends NSObject {
 
     /**
      * Thresholds for calculating attenuationDurations. Defaults to [50, 70, 90].
-     * <p>
+     * 
      * Index |0 |1 |2
      * Variable |X |Y |Z
      */
+    @NotNull
     @Generated
     @Selector("attenuationDurationThresholds")
     public native NSArray<? extends NSNumber> attenuationDurationThresholds();
@@ -81,6 +86,7 @@ public class ENExposureConfiguration extends NSObject {
      * ---------------------------------------------------------------------------------------------------------------------------
      * Soon to be deprecated parameters. Use the parameters above instead.
      */
+    @NotNull
     @Generated
     @Selector("attenuationLevelValues")
     public native NSArray<? extends NSNumber> attenuationLevelValues();
@@ -91,32 +97,38 @@ public class ENExposureConfiguration extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("daysSinceLastExposureLevelValues")
     public native NSArray<? extends NSNumber> daysSinceLastExposureLevelValues();
 
     /**
      * Exclude exposures with daysSinceLastExposure > this value. Defaults to 0 (don't filter).
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("daysSinceLastExposureThreshold")
@@ -135,6 +147,7 @@ public class ENExposureConfiguration extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("durationLevelValues")
     public native NSArray<? extends NSNumber> durationLevelValues();
@@ -150,6 +163,8 @@ public class ENExposureConfiguration extends NSObject {
 
     /**
      * Weights to apply to durations at each proximity level based on attenuation. Range is 0-250%.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("immediateDurationWeight")
@@ -160,17 +175,25 @@ public class ENExposureConfiguration extends NSObject {
      * Key is a daysSinceOnsetOfSymptoms: -14 to 14. Value is an ENInfectiousness.
      * Defaults to ENInfectiousnessNone for days not specified.
      * If a value is set to ENInfectiousnessNone, diagnosis keys for it should be ignored.
+     * 
+     * API-Since: 12.5
      */
+    @Nullable
     @Generated
     @Selector("infectiousnessForDaysSinceOnsetOfSymptoms")
     public native NSDictionary<? extends NSNumber, ? extends NSNumber> infectiousnessForDaysSinceOnsetOfSymptoms();
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("infectiousnessHighWeight")
     public native double infectiousnessHighWeight();
 
     /**
      * Weights to apply for infectiousness. Range is 0-250%.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("infectiousnessStandardWeight")
@@ -197,14 +220,19 @@ public class ENExposureConfiguration extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("mediumDurationWeight")
     public native double mediumDurationWeight();
 
+    @Nullable
     @Generated
     @Selector("metadata")
     public native NSDictionary<?, ?> metadata();
@@ -221,6 +249,9 @@ public class ENExposureConfiguration extends NSObject {
     @Selector("minimumRiskScoreFullRange")
     public native double minimumRiskScoreFullRange();
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("nearDurationWeight")
     public native double nearDurationWeight();
@@ -230,16 +261,24 @@ public class ENExposureConfiguration extends NSObject {
     @Selector("new")
     public static native ENExposureConfiguration new_objc();
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("otherDurationWeight")
     public native double otherDurationWeight();
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("reportTypeConfirmedClinicalDiagnosisWeight")
     public native double reportTypeConfirmedClinicalDiagnosisWeight();
 
     /**
      * Weights to apply for each report type. Range is 0-250%.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("reportTypeConfirmedTestWeight")
@@ -248,15 +287,23 @@ public class ENExposureConfiguration extends NSObject {
     /**
      * Maps scenarios when Report Type is not present into one of the available report types.
      * If this is set to ENDiagnosisReportTypeUnknown, the key will be ignored if it does not contain a report type.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("reportTypeNoneMap")
     public native int reportTypeNoneMap();
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("reportTypeRecursiveWeight")
     public native double reportTypeRecursiveWeight();
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("reportTypeSelfReportedWeight")
     public native double reportTypeSelfReportedWeight();
@@ -271,13 +318,13 @@ public class ENExposureConfiguration extends NSObject {
 
     /**
      * Thresholds for calculating attenuationDurations. Defaults to [50, 70, 90].
-     * <p>
+     * 
      * Index |0 |1 |2
      * Variable |X |Y |Z
      */
     @Generated
     @Selector("setAttenuationDurationThresholds:")
-    public native void setAttenuationDurationThresholds(NSArray<? extends NSNumber> value);
+    public native void setAttenuationDurationThresholds(@NotNull NSArray<? extends NSNumber> value);
 
     /**
      * ---------------------------------------------------------------------------------------------------------------------------
@@ -285,7 +332,7 @@ public class ENExposureConfiguration extends NSObject {
      */
     @Generated
     @Selector("setAttenuationLevelValues:")
-    public native void setAttenuationLevelValues(NSArray<? extends NSNumber> value);
+    public native void setAttenuationLevelValues(@NotNull NSArray<? extends NSNumber> value);
 
     @Generated
     @Selector("setAttenuationWeight:")
@@ -293,10 +340,12 @@ public class ENExposureConfiguration extends NSObject {
 
     @Generated
     @Selector("setDaysSinceLastExposureLevelValues:")
-    public native void setDaysSinceLastExposureLevelValues(NSArray<? extends NSNumber> value);
+    public native void setDaysSinceLastExposureLevelValues(@NotNull NSArray<? extends NSNumber> value);
 
     /**
      * Exclude exposures with daysSinceLastExposure > this value. Defaults to 0 (don't filter).
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("setDaysSinceLastExposureThreshold:")
@@ -308,7 +357,7 @@ public class ENExposureConfiguration extends NSObject {
 
     @Generated
     @Selector("setDurationLevelValues:")
-    public native void setDurationLevelValues(NSArray<? extends NSNumber> value);
+    public native void setDurationLevelValues(@NotNull NSArray<? extends NSNumber> value);
 
     @Generated
     @Selector("setDurationWeight:")
@@ -316,6 +365,8 @@ public class ENExposureConfiguration extends NSObject {
 
     /**
      * Weights to apply to durations at each proximity level based on attenuation. Range is 0-250%.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("setImmediateDurationWeight:")
@@ -326,30 +377,40 @@ public class ENExposureConfiguration extends NSObject {
      * Key is a daysSinceOnsetOfSymptoms: -14 to 14. Value is an ENInfectiousness.
      * Defaults to ENInfectiousnessNone for days not specified.
      * If a value is set to ENInfectiousnessNone, diagnosis keys for it should be ignored.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("setInfectiousnessForDaysSinceOnsetOfSymptoms:")
     public native void setInfectiousnessForDaysSinceOnsetOfSymptoms(
-            NSDictionary<? extends NSNumber, ? extends NSNumber> value);
+            @Nullable NSDictionary<? extends NSNumber, ? extends NSNumber> value);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("setInfectiousnessHighWeight:")
     public native void setInfectiousnessHighWeight(double value);
 
     /**
      * Weights to apply for infectiousness. Range is 0-250%.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("setInfectiousnessStandardWeight:")
     public native void setInfectiousnessStandardWeight(double value);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("setMediumDurationWeight:")
     public native void setMediumDurationWeight(double value);
 
     @Generated
     @Selector("setMetadata:")
-    public native void setMetadata(NSDictionary<?, ?> value);
+    public native void setMetadata(@Nullable NSDictionary<?, ?> value);
 
     @Generated
     @Selector("setMinimumRiskScore:")
@@ -363,20 +424,31 @@ public class ENExposureConfiguration extends NSObject {
     @Selector("setMinimumRiskScoreFullRange:")
     public native void setMinimumRiskScoreFullRange(double value);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("setNearDurationWeight:")
     public native void setNearDurationWeight(double value);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("setOtherDurationWeight:")
     public native void setOtherDurationWeight(double value);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("setReportTypeConfirmedClinicalDiagnosisWeight:")
     public native void setReportTypeConfirmedClinicalDiagnosisWeight(double value);
 
     /**
      * Weights to apply for each report type. Range is 0-250%.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("setReportTypeConfirmedTestWeight:")
@@ -385,22 +457,30 @@ public class ENExposureConfiguration extends NSObject {
     /**
      * Maps scenarios when Report Type is not present into one of the available report types.
      * If this is set to ENDiagnosisReportTypeUnknown, the key will be ignored if it does not contain a report type.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("setReportTypeNoneMap:")
     public native void setReportTypeNoneMap(int value);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("setReportTypeRecursiveWeight:")
     public native void setReportTypeRecursiveWeight(double value);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("setReportTypeSelfReportedWeight:")
     public native void setReportTypeSelfReportedWeight(double value);
 
     @Generated
     @Selector("setTransmissionRiskLevelValues:")
-    public native void setTransmissionRiskLevelValues(NSArray<? extends NSNumber> value);
+    public native void setTransmissionRiskLevelValues(@NotNull NSArray<? extends NSNumber> value);
 
     @Generated
     @Selector("setTransmissionRiskWeight:")
@@ -414,6 +494,7 @@ public class ENExposureConfiguration extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("transmissionRiskLevelValues")
     public native NSArray<? extends NSNumber> transmissionRiskLevelValues();

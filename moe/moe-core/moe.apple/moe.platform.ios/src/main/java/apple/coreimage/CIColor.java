@@ -47,7 +47,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -78,37 +83,51 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Convenience constant CIColors in the sRGB colorspace.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("blackColor")
     public static native CIColor blackColor();
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @Selector("blueColor")
     public static native CIColor blueColor();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @Selector("clearColor")
     public static native CIColor clearColor();
@@ -118,7 +137,7 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("colorWithCGColor:")
-    public static native CIColor colorWithCGColor(CGColorRef c);
+    public static native CIColor colorWithCGColor(@NotNull CGColorRef c);
 
     @Generated
     @Selector("colorWithRed:green:blue:")
@@ -137,16 +156,21 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Create a new color object in a given colorspace.
      * Will return null if the colorspace is not kCGColorSpaceModelRGB.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("colorWithRed:green:blue:alpha:colorSpace:")
     public static native CIColor colorWithRedGreenBlueAlphaColorSpace(@NFloat double r, @NFloat double g,
-            @NFloat double b, @NFloat double a, CGColorSpaceRef colorSpace);
+            @NFloat double b, @NFloat double a, @NotNull CGColorSpaceRef colorSpace);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("colorWithRed:green:blue:colorSpace:")
     public static native CIColor colorWithRedGreenBlueColorSpace(@NFloat double r, @NFloat double g, @NFloat double b,
-            CGColorSpaceRef colorSpace);
+            @NotNull CGColorSpaceRef colorSpace);
 
     /**
      * Create a new color object, 'representation' should be a string in one of
@@ -154,8 +178,12 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("colorWithString:")
-    public static native CIColor colorWithString(String representation);
+    public static native CIColor colorWithString(@NotNull String representation);
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @Selector("cyanColor")
     public static native CIColor cyanColor();
@@ -168,10 +196,18 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @Selector("grayColor")
     public static native CIColor grayColor();
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @Selector("greenColor")
     public static native CIColor greenColor();
@@ -198,10 +234,15 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @Selector("magentaColor")
     public static native CIColor magentaColor();
@@ -211,6 +252,10 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("new")
     public static native CIColor new_objc();
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @Selector("redColor")
     public static native CIColor redColor();
@@ -240,10 +285,18 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @Selector("whiteColor")
     public static native CIColor whiteColor();
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @Selector("yellowColor")
     public static native CIColor yellowColor();
@@ -264,6 +317,7 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Return the color space object associated with the color.
      */
+    @NotNull
     @Generated
     @Selector("colorSpace")
     public native CGColorSpaceRef colorSpace();
@@ -271,19 +325,21 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Return the color components (including alpha).
      */
+    @NotNull
     @Generated
     @Selector("components")
     public native ConstNFloatPtr components();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("green")
@@ -299,16 +355,22 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("initWithCGColor:")
-    public native CIColor initWithCGColor(CGColorRef c);
+    public native CIColor initWithCGColor(@NotNull CGColorRef c);
 
     @Generated
     @Selector("initWithCoder:")
-    public native CIColor initWithCoder(NSCoder coder);
+    public native CIColor initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithColor:")
-    public native CIColor initWithColor(UIColor color);
+    public native CIColor initWithColor(@NotNull UIColor color);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithRed:green:blue:")
     public native CIColor initWithRedGreenBlue(@NFloat double r, @NFloat double g, @NFloat double b);
@@ -326,16 +388,21 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Initialize a new color object in a given colorspace.
      * Will return null if the colorspace is not kCGColorSpaceModelRGB.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithRed:green:blue:alpha:colorSpace:")
     public native CIColor initWithRedGreenBlueAlphaColorSpace(@NFloat double r, @NFloat double g, @NFloat double b,
-            @NFloat double a, CGColorSpaceRef colorSpace);
+            @NFloat double a, @NotNull CGColorSpaceRef colorSpace);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithRed:green:blue:colorSpace:")
     public native CIColor initWithRedGreenBlueColorSpace(@NFloat double r, @NFloat double g, @NFloat double b,
-            CGColorSpaceRef colorSpace);
+            @NotNull CGColorSpaceRef colorSpace);
 
     /**
      * Return the number of color components (including alpha).
@@ -359,6 +426,7 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
      * This property is not KVO-safe because it returns a new NSString each time.
      * The value of the NSString will be the same each time it is called.
      */
+    @NotNull
     @Generated
     @Selector("stringRepresentation")
     public native String stringRepresentation();

@@ -21,8 +21,17 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class dispatch_autorelease_frequency_t {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long DISPATCH_AUTORELEASE_FREQUENCY_INHERIT = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long DISPATCH_AUTORELEASE_FREQUENCY_WORK_ITEM = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long DISPATCH_AUTORELEASE_FREQUENCY_NEVER = 0x0000000000000002L;
 
     @Generated

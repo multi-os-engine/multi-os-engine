@@ -26,16 +26,20 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEAppPushManager
- * <p>
+ * 
  * The NEAppPushManager class declares a programmatic interface to configure NEAppPushProvider.
- * <p>
+ * 
  * NEAppPushManager declares methods and properties for configuring and managing life cycle of app push provider.
- * <p>
- * <p>
+ * 
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -67,22 +71,25 @@ public class NEAppPushManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -93,9 +100,10 @@ public class NEAppPushManager extends NSObject {
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * An instance of type NEAppPushDelegate that is required to receive incoming call informarion from the provider.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -129,8 +137,10 @@ public class NEAppPushManager extends NSObject {
 
     /**
      * [@property] active
-     * <p>
+     * 
      * If set to YES, it indicates the associated configuration is in use. Use KVO to watch for changes.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isActive")
@@ -138,9 +148,11 @@ public class NEAppPushManager extends NSObject {
 
     /**
      * [@property] enabled
-     * <p>
+     * 
      * Toggles the enabled status of the configuration. This property will be set to NO when the same app saves another
      * configuration that overlaps with this configuration.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isEnabled")
@@ -150,70 +162,81 @@ public class NEAppPushManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * loadAllFromPreferencesWithCompletionHandler:
-     * <p>
+     * 
      * This class method asynchronously reads all of the saved configurations and returns them as an array of
      * NEAppPushManager objects.
-     *
+     * 
      * @param completionHandler A block that takes an array of NEAppPushManager objects. The array passed to the block
      *                          may be empty if no configurations
      *                          were successfully read from the disk. The NSError object passed to this block will be
      *                          nil if the load operation succeeded, non-nil otherwise.
+     * 
+     *                          API-Since: 14.0
      */
     @Generated
     @Selector("loadAllFromPreferencesWithCompletionHandler:")
     public static native void loadAllFromPreferencesWithCompletionHandler(
-            @ObjCBlock(name = "call_loadAllFromPreferencesWithCompletionHandler") Block_loadAllFromPreferencesWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_loadAllFromPreferencesWithCompletionHandler") Block_loadAllFromPreferencesWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadAllFromPreferencesWithCompletionHandler {
         @Generated
-        void call_loadAllFromPreferencesWithCompletionHandler(NSArray<? extends NEAppPushManager> managers,
-                NSError error);
+        void call_loadAllFromPreferencesWithCompletionHandler(@Nullable NSArray<? extends NEAppPushManager> managers,
+                @Nullable NSError error);
     }
 
     /**
      * loadFromPreferencesWithCompletionHandler:
-     * <p>
+     * 
      * This method loads the saved configuration from the persistent store.
-     *
+     * 
      * @param completionHandler A block that will be called when the load operation is completed. The NSError object
      *                          passed to this block will be nil if the load operation succeeded, non-nil otherwise.
+     * 
+     *                          API-Since: 14.0
      */
     @Generated
     @Selector("loadFromPreferencesWithCompletionHandler:")
     public native void loadFromPreferencesWithCompletionHandler(
-            @ObjCBlock(name = "call_loadFromPreferencesWithCompletionHandler") Block_loadFromPreferencesWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_loadFromPreferencesWithCompletionHandler") Block_loadFromPreferencesWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadFromPreferencesWithCompletionHandler {
         @Generated
-        void call_loadFromPreferencesWithCompletionHandler(NSError error);
+        void call_loadFromPreferencesWithCompletionHandler(@Nullable NSError error);
     }
 
     /**
      * [@property] localizedDescription
-     * <p>
+     * 
      * A string containing a description of the app push manager.
+     * 
+     * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
 
     /**
      * [@property] matchSSIDs
-     * <p>
+     * 
      * An array of Wi-Fi SSID strings. If the SSID string of current Wi-Fi network matches with one of these strings
      * then the NEAppPushProvider
      * is started. The upper limit of number of SSIDs is 10.
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("matchSSIDs")
     public native NSArray<String> matchSSIDs();
@@ -225,43 +248,51 @@ public class NEAppPushManager extends NSObject {
 
     /**
      * [@property] providerBundleIdentifier
-     * <p>
+     * 
      * A string containing the bundle identifier of the NEAppPushProvider.
+     * 
+     * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("providerBundleIdentifier")
     public native String providerBundleIdentifier();
 
     /**
      * [@property] providerConfiguration
-     * <p>
+     * 
      * A dictionary containing vendor-specific key-value pairs, where the data type of values must be one of the data
      * types supported by property list. Values of user defined data
      * type are not supported. This dictionary is passed as-is to NEAppPushProvider when is it is started or notified
      * for other specified reasons.
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("providerConfiguration")
     public native NSDictionary<String, ?> providerConfiguration();
 
     /**
      * removeFromPreferencesWithCompletionHandler:
-     * <p>
+     * 
      * This method removes the configuration from the persistent store.
-     *
+     * 
      * @param completionHandler A block that will be called when the remove operation is completed. The NSError object
      *                          passed to this block will be nil if the remove operation succeeded, non-nil otherwise.
+     * 
+     *                          API-Since: 14.0
      */
     @Generated
     @Selector("removeFromPreferencesWithCompletionHandler:")
     public native void removeFromPreferencesWithCompletionHandler(
-            @ObjCBlock(name = "call_removeFromPreferencesWithCompletionHandler") Block_removeFromPreferencesWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_removeFromPreferencesWithCompletionHandler") Block_removeFromPreferencesWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeFromPreferencesWithCompletionHandler {
         @Generated
-        void call_removeFromPreferencesWithCompletionHandler(NSError error);
+        void call_removeFromPreferencesWithCompletionHandler(@Nullable NSError error);
     }
 
     @Generated
@@ -274,40 +305,42 @@ public class NEAppPushManager extends NSObject {
 
     /**
      * saveToPreferencesWithCompletionHandler:
-     * <p>
+     * 
      * This method saves the configuration in the persistent store.
-     *
+     * 
      * @param completionHandler A block that will be called when the save operation is completed. The NSError object
      *                          passed to this block will be nil if the save operation succeeded, non-nil otherwise.
+     * 
+     *                          API-Since: 14.0
      */
     @Generated
     @Selector("saveToPreferencesWithCompletionHandler:")
     public native void saveToPreferencesWithCompletionHandler(
-            @ObjCBlock(name = "call_saveToPreferencesWithCompletionHandler") Block_saveToPreferencesWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_saveToPreferencesWithCompletionHandler") Block_saveToPreferencesWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveToPreferencesWithCompletionHandler {
         @Generated
-        void call_saveToPreferencesWithCompletionHandler(NSError error);
+        void call_saveToPreferencesWithCompletionHandler(@Nullable NSError error);
     }
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * An instance of type NEAppPushDelegate that is required to receive incoming call informarion from the provider.
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NEAppPushDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) NEAppPushDelegate value);
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * An instance of type NEAppPushDelegate that is required to receive incoming call informarion from the provider.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) NEAppPushDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NEAppPushDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -320,9 +353,11 @@ public class NEAppPushManager extends NSObject {
 
     /**
      * [@property] enabled
-     * <p>
+     * 
      * Toggles the enabled status of the configuration. This property will be set to NO when the same app saves another
      * configuration that overlaps with this configuration.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setEnabled:")
@@ -330,44 +365,52 @@ public class NEAppPushManager extends NSObject {
 
     /**
      * [@property] localizedDescription
-     * <p>
+     * 
      * A string containing a description of the app push manager.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setLocalizedDescription:")
-    public native void setLocalizedDescription(String value);
+    public native void setLocalizedDescription(@Nullable String value);
 
     /**
      * [@property] matchSSIDs
-     * <p>
+     * 
      * An array of Wi-Fi SSID strings. If the SSID string of current Wi-Fi network matches with one of these strings
      * then the NEAppPushProvider
      * is started. The upper limit of number of SSIDs is 10.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setMatchSSIDs:")
-    public native void setMatchSSIDs(NSArray<String> value);
+    public native void setMatchSSIDs(@NotNull NSArray<String> value);
 
     /**
      * [@property] providerBundleIdentifier
-     * <p>
+     * 
      * A string containing the bundle identifier of the NEAppPushProvider.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setProviderBundleIdentifier:")
-    public native void setProviderBundleIdentifier(String value);
+    public native void setProviderBundleIdentifier(@Nullable String value);
 
     /**
      * [@property] providerConfiguration
-     * <p>
+     * 
      * A dictionary containing vendor-specific key-value pairs, where the data type of values must be one of the data
      * types supported by property list. Values of user defined data
      * type are not supported. This dictionary is passed as-is to NEAppPushProvider when is it is started or notified
      * for other specified reasons.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setProviderConfiguration:")
-    public native void setProviderConfiguration(NSDictionary<String, ?> value);
+    public native void setProviderConfiguration(@NotNull NSDictionary<String, ?> value);
 
     @Generated
     @Selector("setVersion:")
@@ -384,25 +427,30 @@ public class NEAppPushManager extends NSObject {
 
     /**
      * [@property] matchPrivateLTENetworks
-     * <p>
+     * 
      * An array of NEPrivateLTENetwork objects. If the properties of current private LTE network match with properties
      * of one of these NEPrivateLTENetwork objects then the
      * NEAppPushProvider is started. The upper limit of number of private LTE networks is 10. For private LTE networks
      * that are not band 48, the device must be supervised in order to perform the match
+     * 
+     * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("matchPrivateLTENetworks")
     public native NSArray<? extends NEPrivateLTENetwork> matchPrivateLTENetworks();
 
     /**
      * [@property] matchPrivateLTENetworks
-     * <p>
+     * 
      * An array of NEPrivateLTENetwork objects. If the properties of current private LTE network match with properties
      * of one of these NEPrivateLTENetwork objects then the
      * NEAppPushProvider is started. The upper limit of number of private LTE networks is 10. For private LTE networks
      * that are not band 48, the device must be supervised in order to perform the match
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMatchPrivateLTENetworks:")
-    public native void setMatchPrivateLTENetworks(NSArray<? extends NEPrivateLTENetwork> value);
+    public native void setMatchPrivateLTENetworks(@NotNull NSArray<? extends NEPrivateLTENetwork> value);
 }

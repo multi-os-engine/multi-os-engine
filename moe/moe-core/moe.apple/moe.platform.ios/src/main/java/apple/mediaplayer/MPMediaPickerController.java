@@ -42,10 +42,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPMediaPickerController is a UIViewController for visually selecting media items.
  * To display it, present it modally on an existing view controller.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("MediaPlayer")
@@ -75,35 +79,39 @@ public class MPMediaPickerController extends UIViewController {
     @Selector("allocWithZone:")
     public static native MPMediaPickerController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -135,9 +143,10 @@ public class MPMediaPickerController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -172,6 +181,7 @@ public class MPMediaPickerController extends UIViewController {
     @Selector("allowsPickingMultipleItems")
     public native boolean allowsPickingMultipleItems();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -183,7 +193,7 @@ public class MPMediaPickerController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPMediaPickerController initWithCoder(NSCoder coder);
+    public native MPMediaPickerController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithMediaTypes:")
@@ -191,7 +201,8 @@ public class MPMediaPickerController extends UIViewController {
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native MPMediaPickerController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native MPMediaPickerController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     @Generated
     @Selector("mediaTypes")
@@ -201,6 +212,7 @@ public class MPMediaPickerController extends UIViewController {
     /**
      * displays a prompt for the user above the navigation bar buttons
      */
+    @Nullable
     @Generated
     @Selector("prompt")
     public native String prompt();
@@ -214,10 +226,11 @@ public class MPMediaPickerController extends UIViewController {
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MPMediaPickerControllerDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) MPMediaPickerControllerDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) MPMediaPickerControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) MPMediaPickerControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -233,10 +246,12 @@ public class MPMediaPickerController extends UIViewController {
      */
     @Generated
     @Selector("setPrompt:")
-    public native void setPrompt(String value);
+    public native void setPrompt(@Nullable String value);
 
     /**
      * default is YES
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setShowsCloudItems:")
@@ -244,6 +259,8 @@ public class MPMediaPickerController extends UIViewController {
 
     /**
      * default is YES
+     * 
+     * API-Since: 9.2
      */
     @Generated
     @Selector("setShowsItemsWithProtectedAssets:")
@@ -251,6 +268,8 @@ public class MPMediaPickerController extends UIViewController {
 
     /**
      * default is YES
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("showsCloudItems")
@@ -258,6 +277,8 @@ public class MPMediaPickerController extends UIViewController {
 
     /**
      * default is YES
+     * 
+     * API-Since: 9.2
      */
     @Generated
     @Selector("showsItemsWithProtectedAssets")

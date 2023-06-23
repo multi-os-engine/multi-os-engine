@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Transactions are SceneKit's mechanism for batching multiple scene graph
@@ -89,13 +91,14 @@ public class SCNTransaction extends NSObject {
      * animations added to scene graph will have this value set as their
      * "timingFunction" property.
      */
+    @Nullable
     @Generated
     @Selector("animationTimingFunction")
     public static native CAMediaTimingFunction animationTimingFunction();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Begin a new transaction for the current thread; nests.
@@ -106,18 +109,21 @@ public class SCNTransaction extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,6 +141,7 @@ public class SCNTransaction extends NSObject {
      * the main thread) as soon as all animations subsequently added by
      * this transaction group have completed (or been removed).
      */
+    @Nullable
     @Generated
     @Selector("completionBlock")
     @ObjCBlock(name = "call_completionBlock_ret")
@@ -187,9 +194,10 @@ public class SCNTransaction extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Methods to lock and unlock the global lock.
@@ -228,7 +236,7 @@ public class SCNTransaction extends NSObject {
      */
     @Generated
     @Selector("setAnimationTimingFunction:")
-    public static native void setAnimationTimingFunction(CAMediaTimingFunction value);
+    public static native void setAnimationTimingFunction(@Nullable CAMediaTimingFunction value);
 
     /**
      * Accessors for the "completionBlock" per-thread transaction property.
@@ -239,7 +247,7 @@ public class SCNTransaction extends NSObject {
     @Generated
     @Selector("setCompletionBlock:")
     public static native void setCompletionBlock(
-            @ObjCBlock(name = "call_setCompletionBlock") Block_setCompletionBlock value);
+            @Nullable @ObjCBlock(name = "call_setCompletionBlock") Block_setCompletionBlock value);
 
     /**
      * Accessors for the "disableActions" per-thread transaction property.
@@ -252,7 +260,8 @@ public class SCNTransaction extends NSObject {
 
     @Generated
     @Selector("setValue:forKey:")
-    public static native void setValueForKey_static(@Mapped(ObjCObjectMapper.class) Object value, String key);
+    public static native void setValueForKey_static(@Nullable @Mapped(ObjCObjectMapper.class) Object value,
+            @NotNull String key);
 
     @Generated
     @Selector("setVersion:")
@@ -270,10 +279,11 @@ public class SCNTransaction extends NSObject {
      * Associate arbitrary keyed-data with the current transaction (i.e.
      * with the current thread).
      */
+    @Nullable
     @Generated
     @Selector("valueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object valueForKey_static(String key);
+    public static native Object valueForKey_static(@NotNull String key);
 
     @Generated
     @Selector("version")

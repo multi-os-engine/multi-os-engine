@@ -37,6 +37,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Notifications ***************
@@ -71,22 +73,25 @@ public class NSNotification extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,9 +126,10 @@ public class NSNotification extends NSObject implements NSCopying, NSCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -132,13 +138,13 @@ public class NSNotification extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("notificationWithName:object:")
-    public static native NSNotification notificationWithNameObject(String aName,
-            @Mapped(ObjCObjectMapper.class) Object anObject);
+    public static native NSNotification notificationWithNameObject(@NotNull String aName,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anObject);
 
     @Generated
     @Selector("notificationWithName:object:userInfo:")
-    public static native NSNotification notificationWithNameObjectUserInfo(String aName,
-            @Mapped(ObjCObjectMapper.class) Object anObject, NSDictionary<?, ?> aUserInfo);
+    public static native NSNotification notificationWithNameObjectUserInfo(@NotNull String aName,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anObject, @Nullable NSDictionary<?, ?> aUserInfo);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -161,15 +167,16 @@ public class NSNotification extends NSObject implements NSCopying, NSCoding {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * API_UNAVAILABLE(macos, ios, watchos, tvos)
@@ -180,22 +187,28 @@ public class NSNotification extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSNotification initWithCoder(NSCoder coder);
+    public native NSNotification initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("initWithName:object:userInfo:")
-    public native NSNotification initWithNameObjectUserInfo(String name, @Mapped(ObjCObjectMapper.class) Object object,
-            NSDictionary<?, ?> userInfo);
+    public native NSNotification initWithNameObjectUserInfo(@NotNull String name,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object object, @Nullable NSDictionary<?, ?> userInfo);
 
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
 
+    @Nullable
     @Generated
     @Selector("object")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object object();
 
+    @Nullable
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();

@@ -5,9 +5,9 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] AVAudioSpatializationFormats
- * <p>
+ * 
  * These constants can be used to specify values for allowedAudioSpatializationFormats.
- * <p>
+ * 
  * [@constant] AVAudioSpatializationFormatNone
  * Indicates that no audio spatialization is allowed.
  * [@constant] AVAudioSpatializationFormatMonoAndStereo

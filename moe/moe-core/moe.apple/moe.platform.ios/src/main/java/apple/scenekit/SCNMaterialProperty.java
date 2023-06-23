@@ -47,12 +47,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNMaterialProperty
- * <p>
+ * 
  * The contents of a SCNMaterial slot
- * <p>
+ * 
  * This can be used to specify the various properties of SCNMaterial slots such as diffuse, ambient, etc.
  */
 @Generated
@@ -85,22 +87,25 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,19 +140,20 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * materialPropertyWithContents:
-     * <p>
+     * 
      * Creates and initialize a property instance with the specified contents.
      */
     @Generated
     @Selector("materialPropertyWithContents:")
     public static native SCNMaterialProperty materialPropertyWithContents(
-            @Mapped(ObjCObjectMapper.class) Object contents);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object contents);
 
     @Generated
     @Owned
@@ -181,24 +187,34 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
+    public native void addAnimationForKey(@NotNull @Mapped(ObjCObjectMapper.class) SCNAnimation animation,
+            @Nullable String key);
 
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("animationForKey:")
-    public native CAAnimation animationForKey(String key);
+    public native CAAnimation animationForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("animationKeys")
     public native NSArray<String> animationKeys();
 
     /**
      * [@property] borderColor
-     * <p>
+     * 
      * Determines the receiver's border color (CGColorRef or UIColor). Animatable.
-     * <p>
+     * 
      * The border color is ignored on iOS and is always considered as clear color (0,0,0,0) when the texture has an
      * alpha channel and opaque back (0,0,0,1) otherwise.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Deprecated
      */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("borderColor")
     @MappedReturn(ObjCObjectMapper.class)
@@ -206,13 +222,13 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     /**
      * [@property] contents
-     * <p>
+     * 
      * Specifies the receiver's contents. This can be a color (NSColor, UIColor, CGColorRef), an image (NSImage,
      * UIImage, CGImageRef), a layer (CALayer), a path (NSString or NSURL), a SpriteKit scene (SKScene), a texture
      * (SKTexture, id<MTLTexture> or GLKTextureInfo), or a floating value between 0 and 1 (NSNumber) for metalness and
      * roughness properties. AVCaptureDevice is supported on iOS 11 and AVPlayer is supported on macOS 10.13, iOS 11 and
      * tvOS 11. Animatable when set to a color.
-     * <p>
+     * 
      * Setting the contents to an instance of SKTexture will automatically update the wrapS, wrapT, contentsTransform,
      * minification, magnification and mip filters according to the SKTexture settings.
      * When a cube map is expected (e.g. SCNMaterial.reflective, SCNScene.background, SCNScene.lightingEnvironment) you
@@ -223,6 +239,7 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
      * 4. A NSArray of 6 images. This array must contain images of the exact same dimensions, in the following order, in
      * a left-handed coordinate system: +X, -X, +Y, -Y, +Z, -Z (or Right, Left, Top, Bottom, Front, Back).
      */
+    @Nullable
     @Generated
     @Selector("contents")
     @MappedReturn(ObjCObjectMapper.class)
@@ -230,7 +247,7 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     /**
      * [@property] contentsTransform
-     * <p>
+     * 
      * Determines the receiver's contents transform. Animatable.
      */
     @Generated
@@ -240,7 +257,7 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -248,11 +265,11 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNMaterialProperty initWithCoder(NSCoder coder);
+    public native SCNMaterialProperty initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] intensity
-     * <p>
+     * 
      * Determines the receiver's intensity. This intensity is used to modulate the properties in several ways.
      * It dims the diffuse, specular and emission properties, it varies the bumpiness of the normal property and the
      * filter property is blended with white. Default value is 1.0. Animatable.
@@ -262,15 +279,16 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
     @NFloat
     public native double intensity();
 
+    @Deprecated
     @Generated
     @Selector("isAnimationForKeyPaused:")
-    public native boolean isAnimationForKeyPaused(String key);
+    public native boolean isAnimationForKeyPaused(@NotNull String key);
 
     /**
      * [@property] magnificationFilter
-     * <p>
+     * 
      * Specifies the filter type to use when rendering the the contents (specified in the `contents' property).
-     * <p>
+     * 
      * The magnification filter is used when to increase the size of image data. See above the list of available modes.
      * Defaults to SCNFilterModeLinear.
      */
@@ -281,9 +299,9 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     /**
      * [@property] mappingChannel
-     * <p>
+     * 
      * Determines the receiver's mapping channel. Defaults to 0.
-     * <p>
+     * 
      * Geometries potentially have multiple sources of texture coordinates. Every source has a unique mapping channel
      * index. The mapping channel allows to select which source of texture coordinates is used to map the content of the
      * receiver.
@@ -295,9 +313,9 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     /**
      * [@property] maxAnisotropy
-     * <p>
+     * 
      * Specifies the receiver's max anisotropy. Defaults to 1.0.
-     * <p>
+     * 
      * Anisotropic filtering reduces blur and preserves detail at extreme viewing angles.
      */
     @Generated
@@ -307,9 +325,9 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     /**
      * [@property] minificationFilter
-     * <p>
+     * 
      * Specifies the filter type to use when rendering the contents (specified in the `contents' property).
-     * <p>
+     * 
      * The minification filter is used when to reduce the size of image data. See above the list of available modes.
      * Defaults to SCNFilterModeLinear.
      */
@@ -320,9 +338,9 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     /**
      * [@property] mipFilter
-     * <p>
+     * 
      * Specifies the mipmap filter to use during minification.
-     * <p>
+     * 
      * Defaults to SCNFilterModeNearest starting macOS 10.12, iOS 10, tvOS 10 and watchOS 3. Defaults to
      * SCNFilterModeNone in previous versions.
      */
@@ -331,9 +349,10 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
     @NInt
     public native long mipFilter();
 
+    @Deprecated
     @Generated
     @Selector("pauseAnimationForKey:")
-    public native void pauseAnimationForKey(String key);
+    public native void pauseAnimationForKey(@NotNull String key);
 
     @Generated
     @Selector("removeAllAnimations")
@@ -341,37 +360,44 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     @Generated
     @Selector("removeAnimationForKey:")
-    public native void removeAnimationForKey(String key);
+    public native void removeAnimationForKey(@NotNull String key);
 
+    @Deprecated
     @Generated
     @Selector("removeAnimationForKey:fadeOutDuration:")
-    public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
+    public native void removeAnimationForKeyFadeOutDuration(@NotNull String key, @NFloat double duration);
 
+    @Deprecated
     @Generated
     @Selector("resumeAnimationForKey:")
-    public native void resumeAnimationForKey(String key);
+    public native void resumeAnimationForKey(@NotNull String key);
 
     /**
      * [@property] borderColor
-     * <p>
+     * 
      * Determines the receiver's border color (CGColorRef or UIColor). Animatable.
-     * <p>
+     * 
      * The border color is ignored on iOS and is always considered as clear color (0,0,0,0) when the texture has an
      * alpha channel and opaque back (0,0,0,1) otherwise.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Deprecated
      */
+    @Deprecated
     @Generated
     @Selector("setBorderColor:")
-    public native void setBorderColor(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setBorderColor(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * [@property] contents
-     * <p>
+     * 
      * Specifies the receiver's contents. This can be a color (NSColor, UIColor, CGColorRef), an image (NSImage,
      * UIImage, CGImageRef), a layer (CALayer), a path (NSString or NSURL), a SpriteKit scene (SKScene), a texture
      * (SKTexture, id<MTLTexture> or GLKTextureInfo), or a floating value between 0 and 1 (NSNumber) for metalness and
      * roughness properties. AVCaptureDevice is supported on iOS 11 and AVPlayer is supported on macOS 10.13, iOS 11 and
      * tvOS 11. Animatable when set to a color.
-     * <p>
+     * 
      * Setting the contents to an instance of SKTexture will automatically update the wrapS, wrapT, contentsTransform,
      * minification, magnification and mip filters according to the SKTexture settings.
      * When a cube map is expected (e.g. SCNMaterial.reflective, SCNScene.background, SCNScene.lightingEnvironment) you
@@ -384,11 +410,11 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
      */
     @Generated
     @Selector("setContents:")
-    public native void setContents(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setContents(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * [@property] contentsTransform
-     * <p>
+     * 
      * Determines the receiver's contents transform. Animatable.
      */
     @Generated
@@ -397,7 +423,7 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     /**
      * [@property] intensity
-     * <p>
+     * 
      * Determines the receiver's intensity. This intensity is used to modulate the properties in several ways.
      * It dims the diffuse, specular and emission properties, it varies the bumpiness of the normal property and the
      * filter property is blended with white. Default value is 1.0. Animatable.
@@ -408,9 +434,9 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     /**
      * [@property] magnificationFilter
-     * <p>
+     * 
      * Specifies the filter type to use when rendering the the contents (specified in the `contents' property).
-     * <p>
+     * 
      * The magnification filter is used when to increase the size of image data. See above the list of available modes.
      * Defaults to SCNFilterModeLinear.
      */
@@ -420,9 +446,9 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     /**
      * [@property] mappingChannel
-     * <p>
+     * 
      * Determines the receiver's mapping channel. Defaults to 0.
-     * <p>
+     * 
      * Geometries potentially have multiple sources of texture coordinates. Every source has a unique mapping channel
      * index. The mapping channel allows to select which source of texture coordinates is used to map the content of the
      * receiver.
@@ -433,9 +459,9 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     /**
      * [@property] maxAnisotropy
-     * <p>
+     * 
      * Specifies the receiver's max anisotropy. Defaults to 1.0.
-     * <p>
+     * 
      * Anisotropic filtering reduces blur and preserves detail at extreme viewing angles.
      */
     @Generated
@@ -444,9 +470,9 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     /**
      * [@property] minificationFilter
-     * <p>
+     * 
      * Specifies the filter type to use when rendering the contents (specified in the `contents' property).
-     * <p>
+     * 
      * The minification filter is used when to reduce the size of image data. See above the list of available modes.
      * Defaults to SCNFilterModeLinear.
      */
@@ -456,9 +482,9 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     /**
      * [@property] mipFilter
-     * <p>
+     * 
      * Specifies the mipmap filter to use during minification.
-     * <p>
+     * 
      * Defaults to SCNFilterModeNearest starting macOS 10.12, iOS 10, tvOS 10 and watchOS 3. Defaults to
      * SCNFilterModeNone in previous versions.
      */
@@ -466,13 +492,14 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
     @Selector("setMipFilter:")
     public native void setMipFilter(@NInt long value);
 
+    @Deprecated
     @Generated
     @Selector("setSpeed:forAnimationKey:")
-    public native void setSpeedForAnimationKey(@NFloat double speed, String key);
+    public native void setSpeedForAnimationKey(@NFloat double speed, @NotNull String key);
 
     /**
      * [@property] wrapS
-     * <p>
+     * 
      * Determines the receiver's wrap mode for the s texture coordinate. Defaults to SCNWrapModeClamp.
      */
     @Generated
@@ -481,7 +508,7 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     /**
      * [@property] wrapT
-     * <p>
+     * 
      * Determines the receiver's wrap mode for the t texture coordinate. Defaults to SCNWrapModeClamp.
      */
     @Generated
@@ -496,7 +523,7 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     /**
      * [@property] wrapS
-     * <p>
+     * 
      * Determines the receiver's wrap mode for the s texture coordinate. Defaults to SCNWrapModeClamp.
      */
     @Generated
@@ -506,7 +533,7 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     /**
      * [@property] wrapT
-     * <p>
+     * 
      * Determines the receiver's wrap mode for the t texture coordinate. Defaults to SCNWrapModeClamp.
      */
     @Generated
@@ -516,25 +543,28 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     @Generated
     @Selector("addAnimationPlayer:forKey:")
-    public native void addAnimationPlayerForKey(SCNAnimationPlayer player, String key);
+    public native void addAnimationPlayerForKey(@NotNull SCNAnimationPlayer player, @Nullable String key);
 
+    @Nullable
     @Generated
     @Selector("animationPlayerForKey:")
-    public native SCNAnimationPlayer animationPlayerForKey(String key);
+    public native SCNAnimationPlayer animationPlayerForKey(@NotNull String key);
 
     @Generated
     @Selector("removeAnimationForKey:blendOutDuration:")
-    public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
+    public native void removeAnimationForKeyBlendOutDuration(@NotNull String key, @NFloat double duration);
 
     /**
      * [@property] textureComponents
-     * <p>
+     * 
      * Specifies the texture components to sample in the shader. Defaults to SCNColorMaskRed for displacement property,
      * and to SCNColorMaskAll for other properties.
-     * <p>
+     * 
      * Use this property to when using a texture that combine multiple informations in the different texture components.
      * For example if you pack the roughness in red and metalness in blue etc... You can specify what component to use
      * from the texture for this given material property. This property is only supported by Metal renderers.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTextureComponents:")
@@ -542,13 +572,15 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     /**
      * [@property] textureComponents
-     * <p>
+     * 
      * Specifies the texture components to sample in the shader. Defaults to SCNColorMaskRed for displacement property,
      * and to SCNColorMaskAll for other properties.
-     * <p>
+     * 
      * Use this property to when using a texture that combine multiple informations in the different texture components.
      * For example if you pack the roughness in red and metalness in blue etc... You can specify what component to use
      * from the texture for this given material property. This property is only supported by Metal renderers.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("textureComponents")

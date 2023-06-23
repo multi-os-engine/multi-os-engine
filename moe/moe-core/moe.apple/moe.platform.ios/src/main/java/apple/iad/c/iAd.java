@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("iAd")
@@ -39,12 +40,18 @@ public final class iAd {
 
     /**
      * [@const] ADClientErrorDomain
-     * <p>
+     * 
      * Error domain for NSErrors passed to the completionHandler as a
      * result of calling:
-     * <p>
+     * 
      * • -[[ADClient SharedClient] requestAttributionDetailsWithBlock]
+     * 
+     * 
+     * API-Since: 7.1
+     * Deprecated-Since: 15.0
      */
+    @NotNull
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

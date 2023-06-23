@@ -37,9 +37,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A value object that encapsulates the response given by an account provider.
+ * 
+ * API-Since: 10.2
  */
 @Generated
 @Library("VideoSubscriberAccount")
@@ -71,22 +75,25 @@ public class VSAccountProviderResponse extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,9 +128,10 @@ public class VSAccountProviderResponse extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,6 +162,7 @@ public class VSAccountProviderResponse extends NSObject {
     /**
      * Identifies the protocol used in constructing this response.
      */
+    @NotNull
     @Generated
     @Selector("authenticationScheme")
     public native String authenticationScheme();
@@ -162,6 +171,7 @@ public class VSAccountProviderResponse extends NSObject {
      * The raw response from the provider.
      * May be nil if the response contained security-sensitive information.
      */
+    @Nullable
     @Generated
     @Selector("body")
     public native String body();
@@ -174,6 +184,7 @@ public class VSAccountProviderResponse extends NSObject {
      * The status code for this response.
      * May be nil if there is no meaningful value for this type of response.
      */
+    @Nullable
     @Generated
     @Selector("status")
     public native String status();

@@ -40,11 +40,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNSpatialNormalization
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * Specifies the spatial normalization filter.
  * The spatial normalization for a feature channel applies the filter over local regions which extend
  * spatially, but are in separate feature channels (i.e., they have shape 1 x kernelWidth x kernelHeight).
@@ -55,6 +57,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * It is the end-users responsibility to ensure that the combination of the
  * parameters delta and alpha does not result in a situation where the denominator
  * becomes zero - in such situations the resulting pixel-value is undefined.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -86,22 +90,25 @@ public class MPSCNNSpatialNormalization extends MPSCNNKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -136,9 +143,10 @@ public class MPSCNNSpatialNormalization extends MPSCNNKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,7 +176,7 @@ public class MPSCNNSpatialNormalization extends MPSCNNKernel {
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * The value of alpha. Default is 1.0. Must be non-negative.
      */
     @Generated
@@ -177,7 +185,7 @@ public class MPSCNNSpatialNormalization extends MPSCNNKernel {
 
     /**
      * [@property] beta
-     * <p>
+     * 
      * The value of beta. Default is 5.0
      */
     @Generated
@@ -186,7 +194,7 @@ public class MPSCNNSpatialNormalization extends MPSCNNKernel {
 
     /**
      * [@property] delta
-     * <p>
+     * 
      * The value of delta. Default is 1.0
      */
     @Generated
@@ -199,26 +207,27 @@ public class MPSCNNSpatialNormalization extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNSpatialNormalization initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNSpatialNormalization initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize a spatial normalization filter
-     *
+     * 
      * @param device       The device the filter will run on
      * @param kernelWidth  The width of the kernel
      * @param kernelHeight The height of the kernel
      * @return A valid MPSCNNSpatialNormalization object or nil, if failure.
-     *         <p>
+     * 
      *         NOTE: For now, kernelWidth must be equal to kernelHeight
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:")
     public native MPSCNNSpatialNormalization initWithDeviceKernelWidthKernelHeight(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth,
+            @NUInt long kernelHeight);
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * The value of alpha. Default is 1.0. Must be non-negative.
      */
     @Generated
@@ -227,7 +236,7 @@ public class MPSCNNSpatialNormalization extends MPSCNNKernel {
 
     /**
      * [@property] beta
-     * <p>
+     * 
      * The value of beta. Default is 5.0
      */
     @Generated
@@ -236,7 +245,7 @@ public class MPSCNNSpatialNormalization extends MPSCNNKernel {
 
     /**
      * [@property] delta
-     * <p>
+     * 
      * The value of delta. Default is 1.0
      */
     @Generated
@@ -245,25 +254,27 @@ public class MPSCNNSpatialNormalization extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNSpatialNormalization initWithCoder(NSCoder aDecoder);
+    public native MPSCNNSpatialNormalization initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNSpatialNormalization initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNSpatialNormalization initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("supportsSecureCoding")

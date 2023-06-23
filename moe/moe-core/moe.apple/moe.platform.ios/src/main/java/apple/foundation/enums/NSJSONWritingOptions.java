@@ -19,26 +19,38 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 public final class NSJSONWritingOptions {
     @Generated
     private NSJSONWritingOptions() {
     }
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NUInt public static final long PrettyPrinted = 0x0000000000000001L;
     /**
      * Sorts dictionary keys for output using [NSLocale systemLocale]. Keys are compared using NSNumericSearch. The
      * specific sorting method used is subject to change.
+     * 
+     * API-Since: 11.0
      */
     @Generated @NUInt public static final long SortedKeys = 0x0000000000000002L;
     /**
      * Sorts dictionary keys for output using [NSLocale systemLocale]. Keys are compared using NSNumericSearch. The
      * specific sorting method used is subject to change.
+     * 
+     * API-Since: 5.0
      */
     @Generated @NUInt public static final long FragmentsAllowed = 0x0000000000000004L;
     /**
      * Sorts dictionary keys for output using [NSLocale systemLocale]. Keys are compared using NSNumericSearch. The
      * specific sorting method used is subject to change.
+     * 
+     * API-Since: 13.0
      */
     @Generated @NUInt public static final long WithoutEscapingSlashes = 0x0000000000000008L;
 }

@@ -22,15 +22,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] PHASEGroupPreset
- * <p>
+ * 
  * A PHASEGroupPreset holds a collection of PHASEGroupPresetSetting objects and other parameters to be applied all at
  * once during playback.
- * <p>
+ * 
  * Initialize beforehand, and use activate or deactivate to switch to the new preset during playback.
  * Activating a preset will automatically deactivate the current one.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -52,7 +56,7 @@ public class PHASEGroupPreset extends NSObject {
 
     /**
      * activate
-     * <p>
+     * 
      * Activate this preset in the PHASEEngine object it was initialized with. The internal timeToTarget value is used.
      * The current preset will be deactivated automatically.
      */
@@ -62,14 +66,15 @@ public class PHASEGroupPreset extends NSObject {
 
     /**
      * activateWithTimeToTargetOverride
-     * <p>
+     * 
      * Activate this preset in the PHASEEngine object it was initialized with.
      * The current preset will be deactivated automatically.
      * [@note]
      * The timeToTargetOverride is scaled by unitsPerSecond internally, so can be provided at the client's native time
      * scale.
-     *
-     * @param timeToTargetOverride Override the timeToTarget value in the preset with this value.
+     * 
+     * @param timeToTargetOverride
+     *                             Override the timeToTarget value in the preset with this value.
      */
     @Generated
     @Selector("activateWithTimeToTargetOverride:")
@@ -87,29 +92,32 @@ public class PHASEGroupPreset extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * deactivate
-     * <p>
+     * 
      * Deactivate this preset and return the system to default unity values. The internal timeToReset value is used.
      */
     @Generated
@@ -118,13 +126,14 @@ public class PHASEGroupPreset extends NSObject {
 
     /**
      * deactivateWithTimeToResetOverride
-     * <p>
+     * 
      * Deactivate this preset and return the system to default unity values.
      * [@note]
      * The timeToResetOverride is scaled by unitsPerSecond internally, so can be provided at the client's native time
      * scale.
-     *
-     * @param timeToResetOverride Override the timeToReset value in the preset with this value.
+     * 
+     * @param timeToResetOverride
+     *                            Override the timeToReset value in the preset with this value.
      */
     @Generated
     @Selector("deactivateWithTimeToResetOverride:")
@@ -149,24 +158,29 @@ public class PHASEGroupPreset extends NSObject {
 
     /**
      * initWithEngine
-     * <p>
+     * 
      * Create a new PHASEGroupPreset object with a given PHASEEngine object.
      * [@note]
      * The timeToTarget and timeToReset are scaled by unitsPerSecond internally, so can be provided at the client's
      * native time scale.
-     *
-     * @param engine       The PHASEEngine object to register this preset with.
-     * @param settings     A dictionary containing PHASEGroupPresetSetting objects paired with PHASEGroup objects as
+     * 
+     * @param engine
+     *                     The PHASEEngine object to register this preset with.
+     * @param settings
+     *                     A dictionary containing PHASEGroupPresetSetting objects paired with PHASEGroup objects as
      *                     keys.
-     * @param timeToTarget The time interval that all group settings in this preset will take to gradually fade to the
+     * @param timeToTarget
+     *                     The time interval that all group settings in this preset will take to gradually fade to the
      *                     new value
-     * @param timeToReset  The time interval that all group settings in this preset will take to gradually fade to the
+     * @param timeToReset
+     *                     The time interval that all group settings in this preset will take to gradually fade to the
      *                     unity value
      */
     @Generated
     @Selector("initWithEngine:settings:timeToTarget:timeToReset:")
-    public native PHASEGroupPreset initWithEngineSettingsTimeToTargetTimeToReset(PHASEEngine engine,
-            NSDictionary<String, ? extends PHASEGroupPresetSetting> settings, double timeToTarget, double timeToReset);
+    public native PHASEGroupPreset initWithEngineSettingsTimeToTargetTimeToReset(@NotNull PHASEEngine engine,
+            @NotNull NSDictionary<String, ? extends PHASEGroupPresetSetting> settings, double timeToTarget,
+            double timeToReset);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -185,9 +199,10 @@ public class PHASEGroupPreset extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -208,9 +223,10 @@ public class PHASEGroupPreset extends NSObject {
 
     /**
      * [@property] settings
-     * <p>
+     * 
      * The collection of PHASEGroupPresetSetting objects to apply when this preset is activated.
      */
+    @NotNull
     @Generated
     @Selector("settings")
     public native NSDictionary<String, ? extends PHASEGroupPresetSetting> settings();
@@ -221,7 +237,7 @@ public class PHASEGroupPreset extends NSObject {
 
     /**
      * [@property] timeToReset
-     * <p>
+     * 
      * The time interval that all group settings in this preset will take to gradually fade to the unity value
      * [@note]
      * The timeToReset is scaled by unitsPerSecond internally, so can be provided at the client's native time scale.
@@ -232,7 +248,7 @@ public class PHASEGroupPreset extends NSObject {
 
     /**
      * [@property] timeToTarget
-     * <p>
+     * 
      * The time interval that all group settings in this preset will take to gradually fade to the new value
      * [@note]
      * The timeToTarget is scaled by unitsPerSecond internally, so can be provided at the client's native time scale.

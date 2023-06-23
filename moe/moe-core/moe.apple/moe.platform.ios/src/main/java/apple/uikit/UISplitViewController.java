@@ -42,7 +42,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 3.2
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -71,35 +76,39 @@ public class UISplitViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native UISplitViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -131,9 +140,10 @@ public class UISplitViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,6 +171,7 @@ public class UISplitViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -169,6 +180,8 @@ public class UISplitViewController extends UIViewController {
     /**
      * The actual current displayMode of the split view controller. This will never return
      * `UISplitViewControllerDisplayModeAutomatic`.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("displayMode")
@@ -182,7 +195,10 @@ public class UISplitViewController extends UIViewController {
      * PrimaryHidden, this will appear as a fullscreen button, for AllVisible or PrimaryOverlay it will appear as a Back
      * button, and when it won't cause any action it will become hidden.
      * Not supported for column-style UISplitViewController
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("displayModeButtonItem")
     public native UIBarButtonItem displayModeButtonItem();
@@ -193,14 +209,17 @@ public class UISplitViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UISplitViewController initWithCoder(NSCoder coder);
+    public native UISplitViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native UISplitViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native UISplitViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * Specifies whether the split view controller has collapsed its primary and secondary view controllers together
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isCollapsed")
@@ -208,6 +227,8 @@ public class UISplitViewController extends UIViewController {
 
     /**
      * default: UISplitViewControllerAutomaticDimension
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("maximumPrimaryColumnWidth")
@@ -216,6 +237,8 @@ public class UISplitViewController extends UIViewController {
 
     /**
      * default: UISplitViewControllerAutomaticDimension
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("minimumPrimaryColumnWidth")
@@ -226,6 +249,8 @@ public class UISplitViewController extends UIViewController {
      * An animatable property that controls how the primary view controller is hidden and displayed. A value of
      * `UISplitViewControllerDisplayModeAutomatic` specifies the default behavior split view controller, which on an
      * iPad, corresponds to an overlay mode in portrait and a side-by-side mode in landscape.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("preferredDisplayMode")
@@ -234,6 +259,8 @@ public class UISplitViewController extends UIViewController {
 
     /**
      * default: UISplitViewControllerAutomaticDimension
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("preferredPrimaryColumnWidthFraction")
@@ -242,6 +269,8 @@ public class UISplitViewController extends UIViewController {
 
     /**
      * If 'YES', hidden view can be presented and dismissed via a swipe gesture. Defaults to 'YES'.
+     * 
+     * API-Since: 5.1
      */
     @Generated
     @Selector("presentsWithGesture")
@@ -249,6 +278,8 @@ public class UISplitViewController extends UIViewController {
 
     /**
      * The current primary view controller's column width.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("primaryColumnWidth")
@@ -257,10 +288,11 @@ public class UISplitViewController extends UIViewController {
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UISplitViewControllerDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) UISplitViewControllerDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UISplitViewControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UISplitViewControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -273,6 +305,8 @@ public class UISplitViewController extends UIViewController {
 
     /**
      * default: UISplitViewControllerAutomaticDimension
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setMaximumPrimaryColumnWidth:")
@@ -280,6 +314,8 @@ public class UISplitViewController extends UIViewController {
 
     /**
      * default: UISplitViewControllerAutomaticDimension
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setMinimumPrimaryColumnWidth:")
@@ -289,6 +325,8 @@ public class UISplitViewController extends UIViewController {
      * An animatable property that controls how the primary view controller is hidden and displayed. A value of
      * `UISplitViewControllerDisplayModeAutomatic` specifies the default behavior split view controller, which on an
      * iPad, corresponds to an overlay mode in portrait and a side-by-side mode in landscape.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPreferredDisplayMode:")
@@ -296,6 +334,8 @@ public class UISplitViewController extends UIViewController {
 
     /**
      * default: UISplitViewControllerAutomaticDimension
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPreferredPrimaryColumnWidthFraction:")
@@ -303,6 +343,8 @@ public class UISplitViewController extends UIViewController {
 
     /**
      * If 'YES', hidden view can be presented and dismissed via a swipe gesture. Defaults to 'YES'.
+     * 
+     * API-Since: 5.1
      */
     @Generated
     @Selector("setPresentsWithGesture:")
@@ -313,7 +355,7 @@ public class UISplitViewController extends UIViewController {
      */
     @Generated
     @Selector("setViewControllers:")
-    public native void setViewControllers(NSArray<? extends UIViewController> value);
+    public native void setViewControllers(@NotNull NSArray<? extends UIViewController> value);
 
     /**
      * In a horizontally-regular environment this will set the detail view controller unless it provided an
@@ -321,30 +363,38 @@ public class UISplitViewController extends UIViewController {
      * environment the master view controller or detail view controller is sent the showViewController:sender: message.
      * If neither one of them provide an implementation for this method then it will fall back to a full screen
      * presentation.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("showDetailViewController:sender:")
-    public native void showDetailViewControllerSender(UIViewController vc,
-            @Mapped(ObjCObjectMapper.class) Object sender);
+    public native void showDetailViewControllerSender(@NotNull UIViewController vc,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object sender);
 
     /**
      * In a horizontally-regular environment this will set either the master or detail view controller depending on the
      * original target. In a compact environment this defaults to a full screen presentation. In general the master or
      * detail view controller will have implemented showViewController:sender: so this method would not be invoked.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("showViewController:sender:")
-    public native void showViewControllerSender(UIViewController vc, @Mapped(ObjCObjectMapper.class) Object sender);
+    public native void showViewControllerSender(@NotNull UIViewController vc,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object sender);
 
     /**
      * -setViewController:forColumn:/-viewControllerForColumn: recommended for column-style UISplitViewController
      */
+    @NotNull
     @Generated
     @Selector("viewControllers")
     public native NSArray<? extends UIViewController> viewControllers();
 
     /**
      * default: UISplitViewControllerPrimaryEdgeLeading
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("primaryEdge")
@@ -353,6 +403,8 @@ public class UISplitViewController extends UIViewController {
 
     /**
      * default: UISplitViewControllerPrimaryEdgeLeading
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPrimaryEdge:")
@@ -360,6 +412,8 @@ public class UISplitViewController extends UIViewController {
 
     /**
      * The background style of the primary view controller.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("primaryBackgroundStyle")
@@ -368,6 +422,8 @@ public class UISplitViewController extends UIViewController {
 
     /**
      * The background style of the primary view controller.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPrimaryBackgroundStyle:")
@@ -392,23 +448,34 @@ public class UISplitViewController extends UIViewController {
      * ignored for the Secondary column;
      * ignored when the column is already visible in the current displayMode;
      * otherwise animates to the nearest displayMode where the column is visible
-     * <p>
+     * 
      * If an animation is started due to -show/hideColumn:, the transitionCoordinator for the UISplitViewController is
      * available following the -show/hideColumn: message.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("hideColumn:")
     public native void hideColumn(@NInt long column);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithStyle:")
     public native UISplitViewController initWithStyle(@NInt long style);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("maximumSupplementaryColumnWidth")
     @NFloat
     public native double maximumSupplementaryColumnWidth();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("minimumSupplementaryColumnWidth")
     @NFloat
@@ -416,6 +483,8 @@ public class UISplitViewController extends UIViewController {
 
     /**
      * default: UISplitViewControllerAutomaticDimension
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("preferredPrimaryColumnWidth")
@@ -424,12 +493,17 @@ public class UISplitViewController extends UIViewController {
 
     /**
      * default Automatic, actual behavior will be determined by width buckets and view aspect ration
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("preferredSplitBehavior")
     @NInt
     public native long preferredSplitBehavior();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("preferredSupplementaryColumnWidth")
     @NFloat
@@ -438,22 +512,32 @@ public class UISplitViewController extends UIViewController {
     /**
      * Same as the "Primary" versions but applying to the Supplementary column for the triple-column style
      * UISplitViewController
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("preferredSupplementaryColumnWidthFraction")
     @NFloat
     public native double preferredSupplementaryColumnWidthFraction();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setMaximumSupplementaryColumnWidth:")
     public native void setMaximumSupplementaryColumnWidth(@NFloat double value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setMinimumSupplementaryColumnWidth:")
     public native void setMinimumSupplementaryColumnWidth(@NFloat double value);
 
     /**
      * default: UISplitViewControllerAutomaticDimension
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPreferredPrimaryColumnWidth:")
@@ -461,11 +545,16 @@ public class UISplitViewController extends UIViewController {
 
     /**
      * default Automatic, actual behavior will be determined by width buckets and view aspect ration
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPreferredSplitBehavior:")
     public native void setPreferredSplitBehavior(@NInt long value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setPreferredSupplementaryColumnWidth:")
     public native void setPreferredSupplementaryColumnWidth(@NFloat double value);
@@ -473,6 +562,8 @@ public class UISplitViewController extends UIViewController {
     /**
      * Same as the "Primary" versions but applying to the Supplementary column for the triple-column style
      * UISplitViewController
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPreferredSupplementaryColumnWidthFraction:")
@@ -480,6 +571,8 @@ public class UISplitViewController extends UIViewController {
 
     /**
      * Default NO. The secondary-only shortcut button is applicable only for UISplitViewControllerStyleTripleColumn
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setShowsSecondaryOnlyButton:")
@@ -487,22 +580,32 @@ public class UISplitViewController extends UIViewController {
 
     /**
      * If the vc is not a UINavigationController, one will be created, except for UISplitViewControllerColumnCompact.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setViewController:forColumn:")
-    public native void setViewControllerForColumn(UIViewController vc, @NInt long column);
+    public native void setViewControllerForColumn(@Nullable UIViewController vc, @NInt long column);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("showColumn:")
     public native void showColumn(@NInt long column);
 
     /**
      * Default NO. The secondary-only shortcut button is applicable only for UISplitViewControllerStyleTripleColumn
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("showsSecondaryOnlyButton")
     public native boolean showsSecondaryOnlyButton();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("splitBehavior")
     @NInt
@@ -510,23 +613,34 @@ public class UISplitViewController extends UIViewController {
 
     /**
      * For information only, will not be called from UIKit code
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("style")
     @NInt
     public native long style();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("supplementaryColumnWidth")
     @NFloat
     public native double supplementaryColumnWidth();
 
+    /**
+     * API-Since: 14.0
+     */
+    @Nullable
     @Generated
     @Selector("viewControllerForColumn:")
     public native UIViewController viewControllerForColumn(@NInt long column);
 
     /**
      * default: automatic
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("displayModeButtonVisibility")
@@ -535,6 +649,8 @@ public class UISplitViewController extends UIViewController {
 
     /**
      * default: automatic
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setDisplayModeButtonVisibility:")

@@ -25,9 +25,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An anchor representing an app clip code in the world.
+ * 
+ * API-Since: 14.3
  */
 @Generated
 @Library("ARKit")
@@ -59,22 +63,25 @@ public class ARAppClipCodeAnchor extends ARAnchor implements ARTrackable {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -98,11 +105,11 @@ public class ARAppClipCodeAnchor extends ARAnchor implements ARTrackable {
 
     @Generated
     @Selector("initWithAnchor:")
-    public native ARAppClipCodeAnchor initWithAnchor(ARAnchor anchor);
+    public native ARAppClipCodeAnchor initWithAnchor(@NotNull ARAnchor anchor);
 
     @Generated
     @Selector("initWithCoder:")
-    public native ARAppClipCodeAnchor initWithCoder(NSCoder coder);
+    public native ARAppClipCodeAnchor initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -125,9 +132,10 @@ public class ARAppClipCodeAnchor extends ARAnchor implements ARTrackable {
     @Selector("isTracked")
     public native boolean isTracked();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,6 +178,7 @@ public class ARAppClipCodeAnchor extends ARAnchor implements ARTrackable {
     /**
      * The URL encoded in this app clip code. Not nil only if urlDecodingState is .decoded.
      */
+    @Nullable
     @Generated
     @Selector("url")
     public native NSURL url();

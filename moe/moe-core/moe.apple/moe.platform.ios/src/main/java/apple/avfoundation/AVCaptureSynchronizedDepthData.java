@@ -21,13 +21,17 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCaptureSynchronizedDepthData
- * <p>
+ * 
  * An concrete subclass of AVCaptureSynchronizedData representing the data delivered by an AVCaptureDepthDataOutput.
- * <p>
+ * 
  * Depth data, like video, may be dropped if not serviced in a timely fashion.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("AVFoundation")
@@ -59,22 +63,25 @@ public class AVCaptureSynchronizedDepthData extends AVCaptureSynchronizedData {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -85,24 +92,25 @@ public class AVCaptureSynchronizedDepthData extends AVCaptureSynchronizedData {
 
     /**
      * [@property] depthData
-     * <p>
+     * 
      * An instance of AVDepthData.
-     * <p>
+     * 
      * If depthDataWasDropped is YES, the returned depthData was dropped before it could be delivered to you, and thus
      * this AVDepthData is a shell containing format information and calibration data, but no actual pixel map data.
      * This property is never nil. If a data output has no data to return, it is simply not present in the dictionary of
      * synchronized data returned by AVCaptureDataOutputSynchronizer's
      * -dataOutputSynchronizer:didOutputSynchronizedData: delegate callback.
      */
+    @NotNull
     @Generated
     @Selector("depthData")
     public native AVDepthData depthData();
 
     /**
      * [@property] depthDataWasDropped
-     * <p>
+     * 
      * YES if the depth data was dropped.
-     * <p>
+     * 
      * If YES, inspect -droppedReason for the reason.
      */
     @Generated
@@ -115,9 +123,9 @@ public class AVCaptureSynchronizedDepthData extends AVCaptureSynchronizedData {
 
     /**
      * [@property] droppedReason
-     * <p>
+     * 
      * If depthDataWasDropped is YES, the reason for the drop, otherwise AVCaptureOutputDataDroppedReasonNone.
-     * <p>
+     * 
      * AVCaptureOutputDataDroppedReasons are defined in AVCaptureOutputBase.h.
      */
     @Generated
@@ -151,9 +159,10 @@ public class AVCaptureSynchronizedDepthData extends AVCaptureSynchronizedData {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

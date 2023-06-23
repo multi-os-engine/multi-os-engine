@@ -26,12 +26,14 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MFMailComposeViewControllerDelegate
- * <p>
+ * 
  * Protocol for delegate callbacks to MFMailComposeViewController instances.
- * <p>
+ * 
  * This protocol must be implemented for delegates of MFMailComposeViewController instances. It will
  * be called at various times while the user is composing, sending, saving, or canceling email composition.
  */
@@ -42,13 +44,13 @@ import org.moe.natj.objc.ann.Selector;
 public interface MFMailComposeViewControllerDelegate {
     /**
      * mailComposeController:didFinishWithResult:error:
-     * <p>
+     * 
      * Delegate callback which is called upon user's completion of email composition.
-     * <p>
+     * 
      * This delegate callback will be called when the user completes the email composition. How the user chose
      * to complete this task will be given as one of the parameters to the callback. Upon this call, the client
      * should remove the view associated with the controller, typically by dismissing modally.
-     *
+     * 
      * @param controller The MFMailComposeViewController instance which is returning the result.
      * @param result     MFMailComposeResult indicating how the user chose to complete the composition process.
      * @param error      NSError indicating the failure reason if failure did occur. This will be <tt>nil</tt> if
@@ -57,8 +59,8 @@ public interface MFMailComposeViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("mailComposeController:didFinishWithResult:error:")
-    default void mailComposeControllerDidFinishWithResultError(MFMailComposeViewController controller,
-            @NInt long result, NSError error) {
+    default void mailComposeControllerDidFinishWithResultError(@NotNull MFMailComposeViewController controller,
+            @NInt long result, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

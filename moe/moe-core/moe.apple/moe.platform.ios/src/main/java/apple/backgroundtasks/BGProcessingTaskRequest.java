@@ -21,14 +21,18 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A request to launch your app to perform deferrable processing tasks.
- * <p>
+ * 
  * Schedule a processing task request to ask that the system launch your app when conditions are favorable for battery
  * life to handle deferrable, longer-running processing, such as syncing, database maintenance, or similar tasks. The
  * system will attempt to fulfill this request to the best of its ability within the next two days as long as the user
  * has used your app within the past week.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("BackgroundTasks")
@@ -60,22 +64,25 @@ public class BGProcessingTaskRequest extends BGTaskRequest {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,7 +106,7 @@ public class BGProcessingTaskRequest extends BGTaskRequest {
 
     @Generated
     @Selector("initWithIdentifier:")
-    public native BGProcessingTaskRequest initWithIdentifier(String identifier);
+    public native BGProcessingTaskRequest initWithIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -118,9 +125,10 @@ public class BGProcessingTaskRequest extends BGTaskRequest {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -130,7 +138,7 @@ public class BGProcessingTaskRequest extends BGTaskRequest {
     /**
      * Whether the background task represented by this request should only be done while the device is connected to
      * external power.
-     * <p>
+     * 
      * If this property is set to YES, the system will launch your app to fulfill this request only while the device is
      * connected to external power. Setting this to YES will also disable the CPU Monitor feature.
      * Specify YES if this task is resource intensive to minimize impact to battery life. Please note that, even if this
@@ -144,7 +152,7 @@ public class BGProcessingTaskRequest extends BGTaskRequest {
 
     /**
      * Whether the background task represented by this request requires network connectivity.
-     * <p>
+     * 
      * If this property is set to YES, the system will only launch your app to fulfill this request when the device has
      * a network connection. If this is set to NO, your app may not have network access.
      * The default value is NO.
@@ -164,7 +172,7 @@ public class BGProcessingTaskRequest extends BGTaskRequest {
     /**
      * Whether the background task represented by this request should only be done while the device is connected to
      * external power.
-     * <p>
+     * 
      * If this property is set to YES, the system will launch your app to fulfill this request only while the device is
      * connected to external power. Setting this to YES will also disable the CPU Monitor feature.
      * Specify YES if this task is resource intensive to minimize impact to battery life. Please note that, even if this
@@ -178,7 +186,7 @@ public class BGProcessingTaskRequest extends BGTaskRequest {
 
     /**
      * Whether the background task represented by this request requires network connectivity.
-     * <p>
+     * 
      * If this property is set to YES, the system will only launch your app to fulfill this request when the device has
      * a network connection. If this is set to NO, your app may not have network access.
      * The default value is NO.

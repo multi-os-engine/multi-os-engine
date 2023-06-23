@@ -26,11 +26,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MXAverage
- * <p>
+ * 
  * A class representing metric data that is averaged.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetricKit")
@@ -62,31 +66,35 @@ public class MXAverage<_UnitType> extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] averageMeasurement
-     * <p>
+     * 
      * An NSMeasurement that contains the average measurement.
      */
+    @NotNull
     @Generated
     @Selector("averageMeasurement")
     public native NSMeasurement<NSUnit> averageMeasurement();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,7 +109,7 @@ public class MXAverage<_UnitType> extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -114,7 +122,7 @@ public class MXAverage<_UnitType> extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MXAverage<?> initWithCoder(NSCoder coder);
+    public native MXAverage<?> initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -133,9 +141,10 @@ public class MXAverage<_UnitType> extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -152,9 +161,9 @@ public class MXAverage<_UnitType> extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] sampleCount
-     * <p>
+     * 
      * An NSInteger representation of the number of samples in the distribution used to formulate the average.
-     * <p>
+     * 
      * This value is negative if an unknown number of samples was used to compute the average.
      */
     @Generated
@@ -168,9 +177,9 @@ public class MXAverage<_UnitType> extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] standardDeviation
-     * <p>
+     * 
      * An double representation of the standard deviation of the distribution.
-     * <p>
+     * 
      * This value is negative an unknown number of samples was used to compute the standard deviation.
      */
     @Generated

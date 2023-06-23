@@ -17,8 +17,6 @@ limitations under the License.
 package apple.quartzcore;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -45,7 +43,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
@@ -76,22 +81,25 @@ public class CAEmitterLayer extends CALayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -100,15 +108,17 @@ public class CAEmitterLayer extends CALayer {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("defaultActionForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native CAAction defaultActionForKey(String event);
+    public static native CAAction defaultActionForKey(@NotNull String event);
 
+    @Nullable
     @Generated
     @Selector("defaultValueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultValueForKey(String key);
+    public static native Object defaultValueForKey(@NotNull String key);
 
     @Generated
     @Selector("description")
@@ -136,9 +146,10 @@ public class CAEmitterLayer extends CALayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Selector("layer")
@@ -146,7 +157,7 @@ public class CAEmitterLayer extends CALayer {
 
     @Generated
     @Selector("needsDisplayForKey:")
-    public static native boolean needsDisplayForKey(String key);
+    public static native boolean needsDisplayForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -187,6 +198,7 @@ public class CAEmitterLayer extends CALayer {
      * The array of emitter cells attached to the layer. Each object must
      * have the CAEmitterCell class.
      */
+    @Nullable
     @Generated
     @Selector("emitterCells")
     public native NSArray<? extends CAEmitterCell> emitterCells();
@@ -201,6 +213,7 @@ public class CAEmitterLayer extends CALayer {
      * shape. Current options are `points', `outline', `surface' and
      * `volume' (the default).
      */
+    @NotNull
     @Generated
     @Selector("emitterMode")
     public native String emitterMode();
@@ -218,6 +231,7 @@ public class CAEmitterLayer extends CALayer {
      * `point' (the default), `line', `rectangle', `circle', `cuboid' and
      * `sphere'.
      */
+    @NotNull
     @Generated
     @Selector("emitterShape")
     public native String emitterShape();
@@ -243,11 +257,11 @@ public class CAEmitterLayer extends CALayer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAEmitterLayer initWithCoder(NSCoder coder);
+    public native CAEmitterLayer initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
-    public native CAEmitterLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
+    public native CAEmitterLayer initWithLayer(@NotNull @Mapped(ObjCObjectMapper.class) Object layer);
 
     /**
      * The cell lifetime range is multiplied by this value when particles are
@@ -275,6 +289,7 @@ public class CAEmitterLayer extends CALayer {
      * `additive'. The first four use source-over compositing, the last
      * uses additive compositing.
      */
+    @NotNull
     @Generated
     @Selector("renderMode")
     public native String renderMode();
@@ -311,7 +326,7 @@ public class CAEmitterLayer extends CALayer {
      */
     @Generated
     @Selector("setEmitterCells:")
-    public native void setEmitterCells(NSArray<? extends CAEmitterCell> value);
+    public native void setEmitterCells(@Nullable NSArray<? extends CAEmitterCell> value);
 
     @Generated
     @Selector("setEmitterDepth:")
@@ -324,7 +339,7 @@ public class CAEmitterLayer extends CALayer {
      */
     @Generated
     @Selector("setEmitterMode:")
-    public native void setEmitterMode(String value);
+    public native void setEmitterMode(@NotNull String value);
 
     /**
      * The center of the emission shape. Defaults to (0, 0, 0). Animatable.
@@ -340,7 +355,7 @@ public class CAEmitterLayer extends CALayer {
      */
     @Generated
     @Selector("setEmitterShape:")
-    public native void setEmitterShape(String value);
+    public native void setEmitterShape(@NotNull String value);
 
     /**
      * The size of the emission shape. Defaults to (0, 0, 0). Animatable.
@@ -383,7 +398,7 @@ public class CAEmitterLayer extends CALayer {
      */
     @Generated
     @Selector("setRenderMode:")
-    public native void setRenderMode(String value);
+    public native void setRenderMode(@NotNull String value);
 
     /**
      * Multiplies the cell-defined particle scale. Defaults to one. Animatable.
@@ -445,5 +460,5 @@ public class CAEmitterLayer extends CALayer {
     @Generated
     @Selector("cornerCurveExpansionFactor:")
     @NFloat
-    public static native double cornerCurveExpansionFactor(String curve);
+    public static native double cornerCurveExpansionFactor(@NotNull String curve);
 }

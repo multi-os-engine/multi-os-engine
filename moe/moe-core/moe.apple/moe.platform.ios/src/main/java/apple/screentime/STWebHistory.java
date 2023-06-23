@@ -26,7 +26,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("ScreenTime")
 @Runtime(ObjCRuntime.class)
@@ -57,22 +62,25 @@ public class STWebHistory extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -87,7 +95,7 @@ public class STWebHistory extends NSObject {
 
     @Generated
     @Selector("deleteHistoryDuringInterval:")
-    public native void deleteHistoryDuringInterval(NSDateInterval interval);
+    public native void deleteHistoryDuringInterval(@NotNull NSDateInterval interval);
 
     /**
      * @param url The URL for which to delete Screen Time usage history. The full URL is used, i.e. the scheme, path, et
@@ -95,7 +103,7 @@ public class STWebHistory extends NSObject {
      */
     @Generated
     @Selector("deleteHistoryForURL:")
-    public native void deleteHistoryForURL(NSURL url);
+    public native void deleteHistoryForURL(@NotNull NSURL url);
 
     @Generated
     @Selector("description")
@@ -112,18 +120,18 @@ public class STWebHistory extends NSObject {
 
     /**
      * Creates a web history that will delete web usage for the given bundle identifier.
-     * <p>
+     * 
      * Using a bundle identifier other than @c NSBundle.mainBundle.bundleIdentifier is only supported for
      * web browsers that have been properly registered with Screen Time.
-     *
+     * 
      * @param bundleIdentifier Used to facilitate deletion of a parent web browser's history from one of its
      *                         helper processes or extensions.
      * @param error            Any error that occurred during initialization.
      */
     @Generated
     @Selector("initWithBundleIdentifier:error:")
-    public native STWebHistory initWithBundleIdentifierError(String bundleIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native STWebHistory initWithBundleIdentifierError(@NotNull String bundleIdentifier,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -142,9 +150,10 @@ public class STWebHistory extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

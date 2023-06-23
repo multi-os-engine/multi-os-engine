@@ -23,26 +23,30 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNSlice
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * Describes a slice operation
- * <p>
+ * 
  * The slice kernel is used to extract a slice from a source MPSImage. The extracted slice is copied
  * to a destination MPSImage. The offset and sourceFeatureChannelOffset specify the following:
  * - the (x, y) location in the source image
  * - the starting feature channel offset in the source image
- * <p>
+ * 
  * The clipRect specifies the starting (x, y) position in the destination image to copy the slice and
  * the size (width, height) in pixels of the slice. The featureChannelsInSlice specifies the number of
  * feature channels to be extracted from the source image for the slice. The featureChannels extracted
  * from the slice are copied to the destination MPSImage starting at feature channel offset 0.
- * <p>
+ * 
  * Some examples of slice operations can be found at:
  * http://mxnet.incubator.apache.org/api/python/ndarray.html?highlight=slice#mxnet.ndarray.slice
  * https://www.tensorflow.org/api_docs/python/tf/slice
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -74,22 +78,25 @@ public class MPSNNSlice extends MPSCNNKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -113,21 +120,22 @@ public class MPSNNSlice extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNSlice initWithCoder(NSCoder aDecoder);
+    public native MPSNNSlice initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNNSlice initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNSlice initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize a MPSNNSlice kernel
-     *
+     * 
      * @param device The device the filter will run on
      * @return A valid MPSNNSlice object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNNSlice initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNSlice initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -146,9 +154,10 @@ public class MPSNNSlice extends MPSCNNKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

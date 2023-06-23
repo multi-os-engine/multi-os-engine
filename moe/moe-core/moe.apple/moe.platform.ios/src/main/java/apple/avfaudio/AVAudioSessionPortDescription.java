@@ -24,9 +24,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Information about a port, a physical connector or audio device.
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("AVFAudio")
@@ -44,7 +48,10 @@ public class AVAudioSessionPortDescription extends NSObject {
 
     /**
      * A system-assigned unique identifier for the associated hardware port
+     * 
+     * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("UID")
     public native String UID();
@@ -65,33 +72,43 @@ public class AVAudioSessionPortDescription extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 6.0
+     */
+    @Nullable
     @Generated
     @Selector("channels")
     public native NSArray<? extends AVAudioSessionChannelDescription> channels();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * Will be nil if there are no selectable data sources.
+     * 
+     * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("dataSources")
     public native NSArray<? extends AVAudioSessionDataSourceDescription> dataSources();
@@ -107,12 +124,14 @@ public class AVAudioSessionPortDescription extends NSObject {
     /**
      * This property's value will be true if the associated hardware port has built-in
      * processing for two-way voice communication.
-     * <p>
+     * 
      * Applications that use their own proprietary voice processing algorithms should use this property
      * to decide when to disable processing. On the other hand, if using Apple's Voice Processing I/O
      * unit (subtype kAudioUnitSubType_VoiceProcessingIO), the system will automatically manage this
      * for the application. In particular, ports of type AVAudioSessionPortBluetoothHFP and
      * AVAudioSessionPortCarAudio often have hardware voice processing.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("hasHardwareVoiceCallProcessing")
@@ -143,12 +162,12 @@ public class AVAudioSessionPortDescription extends NSObject {
     /**
      * This property's value will be true if the port supports spatial audio playback and the feature is
      * enabled.
-     * <p>
+     * 
      * 'Now Playing' apps should also inform the system if they support multichannel audio content using
      * -setSupportsMultichannelContent:error: method. Apps may also register to receive the
      * AVAudioSessionSpatialPlaybackCapabilitiesChanged notification to detect changes in user preferences that
      * affect spatial audio playback.
-     * <p>
+     * 
      * This property is only relevant in the context of ports that have a small number of hardware channels
      * (typically 2), but have enhanced capabilities for rendering multi-channel content. Note that some port
      * types such as USB and HDMI may support multi-channel playback because they have hardware formats supporting
@@ -156,6 +175,8 @@ public class AVAudioSessionPortDescription extends NSObject {
      * rendering 5.1, 7.1, or other popular surround sound formats. Applications interested in utilizing multi-channel
      * formats should also query AVAudioSession's maximumOutputNumberOfChannels property and make use of
      * -setPreferredOutputNumberOfChannels:error: to set the preferred number of hardware channels.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isSpatialAudioEnabled")
@@ -165,9 +186,10 @@ public class AVAudioSessionPortDescription extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -176,11 +198,18 @@ public class AVAudioSessionPortDescription extends NSObject {
 
     /**
      * A descriptive name for the associated hardware port
+     * 
+     * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("portName")
     public native String portName();
 
+    /**
+     * API-Since: 6.0
+     */
+    @NotNull
     @Generated
     @Selector("portType")
     public native String portType();
@@ -188,7 +217,10 @@ public class AVAudioSessionPortDescription extends NSObject {
     /**
      * This property reflects the application's preferred data source for the Port. Will be nil if
      * there are no selectable data sources or if no preference has been set.
+     * 
+     * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("preferredDataSource")
     public native AVAudioSessionDataSourceDescription preferredDataSource();
@@ -204,7 +236,10 @@ public class AVAudioSessionPortDescription extends NSObject {
     /**
      * Will be nil if there are no selectable data sources. In all other cases, this property reflects
      * the currently selected data source.
+     * 
+     * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("selectedDataSource")
     public native AVAudioSessionDataSourceDescription selectedDataSource();
@@ -216,11 +251,13 @@ public class AVAudioSessionPortDescription extends NSObject {
      * likely result in a route reconfiguration. If the port is not part of the active route,
      * selecting a new data source will not result in an immediate route reconfiguration. Use
      * AVAudioSession's -setPreferredInput:error: method to activate the port.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setPreferredDataSource:error:")
-    public native boolean setPreferredDataSourceError(AVAudioSessionDataSourceDescription dataSource,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean setPreferredDataSourceError(@Nullable AVAudioSessionDataSourceDescription dataSource,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("setVersion:")

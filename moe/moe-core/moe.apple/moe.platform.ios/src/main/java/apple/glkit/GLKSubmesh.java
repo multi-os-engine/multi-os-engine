@@ -37,7 +37,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ * Deprecated-Since: 12.0
+ * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+ */
+@Deprecated
 @Generated
 @Library("GLKit")
 @Runtime(ObjCRuntime.class)
@@ -68,22 +76,25 @@ public class GLKSubmesh extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -118,9 +129,10 @@ public class GLKSubmesh extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -150,20 +162,21 @@ public class GLKSubmesh extends NSObject {
 
     /**
      * [@property] elementBuffer
-     * <p>
+     * 
      * Name of buffer object with index data
-     * <p>
+     * 
      * The buffer name to be used with DrawElements
      */
+    @NotNull
     @Generated
     @Selector("elementBuffer")
     public native GLKMeshBuffer elementBuffer();
 
     /**
      * [@property] elementCount
-     * <p>
+     * 
      * Number of elements (aka indicies) in the elementBuffer (aka indexBuffer)
-     * <p>
+     * 
      * This value should be used for the count parameter in glDrawElements
      */
     @Generated
@@ -176,20 +189,21 @@ public class GLKSubmesh extends NSObject {
 
     /**
      * [@property] mesh
-     * <p>
+     * 
      * Parent GLKit mesh containing vertex data of this object
-     * <p>
+     * 
      * Buffer of this parent mesh should be set in the encoder before a drawIndexedPrimitives call is made
      */
+    @Nullable
     @Generated
     @Selector("mesh")
     public native GLKMesh mesh();
 
     /**
      * [@property] mode
-     * <p>
+     * 
      * Primitive type mode value of data in the elementBuffer (aka indexBuffer)
-     * <p>
+     * 
      * This value should be used for the mode parameter in glDrawElements
      */
     @Generated
@@ -198,21 +212,22 @@ public class GLKSubmesh extends NSObject {
 
     /**
      * [@property] name
-     * <p>
+     * 
      * Name from the original MDLSubmesh object.
-     * <p>
+     * 
      * Although not directly used by this object, the application may use this to identify the submesh in it
      * renderer/scene/world.
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
 
     /**
      * [@property] type
-     * <p>
+     * 
      * Type of data in the elementBuffer (aka indexBuffer)
-     * <p>
+     * 
      * This value should be used for the type parameter of glDrawElements
      */
     @Generated

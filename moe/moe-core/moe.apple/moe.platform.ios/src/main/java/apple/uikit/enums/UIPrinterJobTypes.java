@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] UIPrinterJobTypes
- * <p>
+ * 
  * Job types supported by a printer.
- * <p>
+ * 
  * This enumeration provides the abstract job types
  * reported by the UIPrinter supportedJobTypes method.
  * [@constant] UIPrinterJobTypeUnknown Unknown printer support.
@@ -35,17 +35,46 @@ import org.moe.natj.general.ann.NInt;
  * [@constant] UIPrinterJobTypeRoll The printer supports printing documents or photos on continuous rolls.
  * [@constant] UIPrinterJobTypeLargeFormat The printer supports printing larger than ISO A3 size.
  * [@constant] UIPrinterJobTypePostcard The printer supports printing on postcards.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class UIPrinterJobTypes {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Document = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Envelope = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Label = 0x0000000000000004L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Photo = 0x0000000000000008L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Receipt = 0x0000000000000010L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Roll = 0x0000000000000020L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long LargeFormat = 0x0000000000000040L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Postcard = 0x0000000000000080L;
 
     @Generated

@@ -19,31 +19,46 @@ package apple.videosubscriberaccount.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 public final class VSErrorCode {
     /**
      * The user has not granted the app access to their subscription information.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long AccessNotGranted = 0x0000000000000000L;
     /**
      * The system does not currently support the user's subscription provider.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long UnsupportedProvider = 0x0000000000000001L;
     /**
      * The request was cancelled by the user.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long UserCancelled = 0x0000000000000002L;
     /**
      * The request failed, but a subsequent attempt might succeed.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long ServiceTemporarilyUnavailable = 0x0000000000000003L;
     /**
      * The user's subscription provider did not allow the request to proceed, e.g. because the subscription tier doesn't
      * include the resource, or interactive reauthentication is required, but the request does not allow interruption.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long ProviderRejected = 0x0000000000000004L;
     /**
      * The request's verification token was rejected by the user's subscription provider.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long InvalidVerificationToken = 0x0000000000000005L;
 
@@ -53,10 +68,14 @@ public final class VSErrorCode {
 
     /**
      * The system rejected the request.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Rejected = 0x0000000000000006L;
     /**
      * The TV Provider feature is not supported in the device's current region.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Unsupported = 0x0000000000000007L;
 }

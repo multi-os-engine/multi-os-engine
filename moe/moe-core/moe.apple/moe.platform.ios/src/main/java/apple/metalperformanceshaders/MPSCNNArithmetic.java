@@ -24,23 +24,25 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNArithmetic
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * The MPSCNNArithmetic filter takes two source images, a primary source image and a
  * secondary source image, and outputs a single destination image. It applies an
  * element-wise arithmetic operator to each pixel in a primary source image and a
  * corresponding pixel in a secondary source image over a specified region.
- * <p>
+ * 
  * The supported arithmetic operators are the following:
  * - Addition
  * - Subtraction
  * - Multiplication
  * - Division
  * - Comparison
- * <p>
+ * 
  * This filter takes additional parameters: primaryScale, secondaryScale, and bias. The default
  * value for primaryScale and secondaryScale is 1.0f. The default value for bias is 0.0f. This
  * filter applies primaryScale, secondaryScale, and bias to the primary source pixel (x) and
@@ -50,12 +52,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * - Multiplicaton: result = ((primaryScale * x) * (secondaryScale * y)) + bias
  * - Division: result = ((primaryScale * x) / (secondaryScale * y)) + bias
  * - Comparison: Unused.
- * <p>
+ * 
  * To clamp the result of an arithmetic operation, where
  * result = clamp(result, minimumValue, maximumValue),
  * set the minimumValue and maximumValue appropriately. The default value of minimumValue
  * is -FLT_MAX. The default value of maximumValue is FLT_MAX.
- * <p>
+ * 
  * This filter also takes the following additional parameters:
  * - primaryStrideInPixelsX, primaryStrideInPixelsY, primaryStrideInFeatureChannels
  * - secondaryStrideInPixelsX, secondaryStrideInPixelsY, secondaryStrideInFeatureChannels
@@ -63,11 +65,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * secondary source images. For example, setting all strides for the primary source image to 0
  * will result in the primarySource image being treated as a scalar value. The only supported
  * values are 0 or 1. The default value of these parameters is 1.
- * <p>
+ * 
  * The number of output feature channels remains the same as the number of input feature
  * channels.
- * <p>
+ * 
  * You must use one of the sub-classes of MPSImageArithmetic.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -99,7 +103,7 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("bias")
@@ -107,18 +111,21 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,10 +140,10 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
 
     /**
      * Encode call that operates on a state for later consumption by a gradient kernel in training
-     * <p>
+     * 
      * This is the older style of encode which reads the offset, doesn't change it,
      * and ignores the padding method.
-     *
+     * 
      * @param commandBuffer    The command buffer
      * @param primaryImage     A MPSImage to use as the source images for the filter.
      * @param secondaryImage   A MPSImage to use as the source images for the filter.
@@ -147,8 +154,9 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
     @Generated
     @Selector("encodeToCommandBuffer:primaryImage:secondaryImage:destinationState:destinationImage:")
     public native void encodeToCommandBufferPrimaryImageSecondaryImageDestinationStateDestinationImage(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage primaryImage,
-            MPSImage secondaryImage, MPSCNNArithmeticGradientState destinationState, MPSImage destinationImage);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage primaryImage,
+            @NotNull MPSImage secondaryImage, @NotNull MPSCNNArithmeticGradientState destinationState,
+            @NotNull MPSImage destinationImage);
 
     @Generated
     @Selector("hash")
@@ -161,15 +169,16 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNArithmetic initWithCoder(NSCoder aDecoder);
+    public native MPSCNNArithmetic initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNArithmetic initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNArithmetic initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNArithmetic initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNArithmetic initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -188,13 +197,14 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] maximumValue
-     * <p>
+     * 
      * maximumValue is used to clamp the result of an arithmetic operation:
      * result = clamp(result, minimumValue, maximumValue).
      * The default value of maximumValue is FLT_MAX.
@@ -205,7 +215,7 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
 
     /**
      * [@property] minimumValue
-     * <p>
+     * 
      * minimumValue is to clamp the result of an arithmetic operation:
      * result = clamp(result, minimumValue, maximumValue).
      * The default value of minimumValue is -FLT_MAX.
@@ -225,7 +235,7 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
 
     /**
      * [@property] primaryStrideInPixels
-     * <p>
+     * 
      * The primarySource stride in the feature channel dimension. The only supported values are 0 or 1.
      * The default value for each dimension is 1.
      */
@@ -248,7 +258,7 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
 
     /**
      * [@property] secondaryStrideInPixels
-     * <p>
+     * 
      * The secondarySource stride in the feature channel dimension. The only supported values are 0 or 1.
      * The default value for each dimension is 1.
      */
@@ -263,7 +273,7 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
 
     /**
      * [@property] maximumValue
-     * <p>
+     * 
      * maximumValue is used to clamp the result of an arithmetic operation:
      * result = clamp(result, minimumValue, maximumValue).
      * The default value of maximumValue is FLT_MAX.
@@ -274,7 +284,7 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
 
     /**
      * [@property] minimumValue
-     * <p>
+     * 
      * minimumValue is to clamp the result of an arithmetic operation:
      * result = clamp(result, minimumValue, maximumValue).
      * The default value of minimumValue is -FLT_MAX.
@@ -289,7 +299,7 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
 
     /**
      * [@property] primaryStrideInPixels
-     * <p>
+     * 
      * The primarySource stride in the feature channel dimension. The only supported values are 0 or 1.
      * The default value for each dimension is 1.
      */
@@ -303,7 +313,7 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
 
     /**
      * [@property] secondaryStrideInPixels
-     * <p>
+     * 
      * The secondarySource stride in the feature channel dimension. The only supported values are 0 or 1.
      * The default value for each dimension is 1.
      */

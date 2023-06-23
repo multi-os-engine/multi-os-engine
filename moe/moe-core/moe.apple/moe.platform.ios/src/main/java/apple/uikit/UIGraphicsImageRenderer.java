@@ -18,8 +18,6 @@ package apple.uikit;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGContextRef;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
 import apple.foundation.NSMethodSignature;
@@ -44,7 +42,14 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -75,22 +80,25 @@ public class UIGraphicsImageRenderer extends UIGraphicsRenderer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +133,10 @@ public class UIGraphicsImageRenderer extends UIGraphicsRenderer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,27 +164,31 @@ public class UIGraphicsImageRenderer extends UIGraphicsRenderer {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("JPEGDataWithCompressionQuality:actions:")
     public native NSData JPEGDataWithCompressionQualityActions(@NFloat double compressionQuality,
-            @ObjCBlock(name = "call_JPEGDataWithCompressionQualityActions") Block_JPEGDataWithCompressionQualityActions actions);
+            @NotNull @ObjCBlock(name = "call_JPEGDataWithCompressionQualityActions") Block_JPEGDataWithCompressionQualityActions actions);
 
     /**
      * These return compressed image data with the contents of the image drawn in the renderer block.
      */
+    @NotNull
     @Generated
     @Selector("PNGDataWithActions:")
     public native NSData PNGDataWithActions(
-            @ObjCBlock(name = "call_PNGDataWithActions") Block_PNGDataWithActions actions);
+            @NotNull @ObjCBlock(name = "call_PNGDataWithActions") Block_PNGDataWithActions actions);
 
     /**
      * Returns a UIImage rendered with the contents of the CGContext after the imageRenderBlock executes.
      * If the options provided to the renderer contain a rect with a zero width or height size, this will return an
      * empty UIImage.
      */
+    @NotNull
     @Generated
     @Selector("imageWithActions:")
-    public native UIImage imageWithActions(@ObjCBlock(name = "call_imageWithActions") Block_imageWithActions actions);
+    public native UIImage imageWithActions(
+            @NotNull @ObjCBlock(name = "call_imageWithActions") Block_imageWithActions actions);
 
     @Generated
     @Selector("init")
@@ -188,7 +201,7 @@ public class UIGraphicsImageRenderer extends UIGraphicsRenderer {
     @Generated
     @Selector("initWithBounds:format:")
     public native UIGraphicsImageRenderer initWithBoundsFormat(@ByValue CGRect bounds,
-            UIGraphicsImageRendererFormat format);
+            @NotNull UIGraphicsImageRendererFormat format);
 
     @Generated
     @Selector("initWithSize:")
@@ -197,38 +210,40 @@ public class UIGraphicsImageRenderer extends UIGraphicsRenderer {
     @Generated
     @Selector("initWithSize:format:")
     public native UIGraphicsImageRenderer initWithSizeFormat(@ByValue CGSize size,
-            UIGraphicsImageRendererFormat format);
+            @NotNull UIGraphicsImageRendererFormat format);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_JPEGDataWithCompressionQualityActions {
         @Generated
-        void call_JPEGDataWithCompressionQualityActions(UIGraphicsImageRendererContext rendererContext);
+        void call_JPEGDataWithCompressionQualityActions(@NotNull UIGraphicsImageRendererContext rendererContext);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_PNGDataWithActions {
         @Generated
-        void call_PNGDataWithActions(UIGraphicsImageRendererContext rendererContext);
+        void call_PNGDataWithActions(@NotNull UIGraphicsImageRendererContext rendererContext);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_imageWithActions {
         @Generated
-        void call_imageWithActions(UIGraphicsImageRendererContext rendererContext);
+        void call_imageWithActions(@NotNull UIGraphicsImageRendererContext rendererContext);
     }
 
+    @Nullable
     @Generated
     @Selector("contextWithFormat:")
-    public static native CGContextRef contextWithFormat(UIGraphicsRendererFormat format);
+    public static native CGContextRef contextWithFormat(@NotNull UIGraphicsRendererFormat format);
 
     @Generated
     @Selector("prepareCGContext:withRendererContext:")
-    public static native void prepareCGContextWithRendererContext(CGContextRef context,
-            UIGraphicsRendererContext rendererContext);
+    public static native void prepareCGContextWithRendererContext(@NotNull CGContextRef context,
+            @NotNull UIGraphicsRendererContext rendererContext);
 
+    @NotNull
     @Generated
     @Selector("rendererContextClass")
     public static native Class rendererContextClass();

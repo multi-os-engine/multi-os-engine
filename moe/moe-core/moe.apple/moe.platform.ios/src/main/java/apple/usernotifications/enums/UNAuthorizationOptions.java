@@ -19,20 +19,54 @@ package apple.usernotifications.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 public final class UNAuthorizationOptions {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Badge = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Sound = 0x0000000000000002L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Alert = 0x0000000000000004L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long CarPlay = 0x0000000000000008L;
 
     @Generated
     private UNAuthorizationOptions() {
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated @NUInt public static final long CriticalAlert = 0x0000000000000010L;
+    /**
+     * API-Since: 12.0
+     */
     @Generated @NUInt public static final long ProvidesAppNotificationSettings = 0x0000000000000020L;
+    /**
+     * API-Since: 12.0
+     */
     @Generated @NUInt public static final long Provisional = 0x0000000000000040L;
-    @Generated @NUInt public static final long Announcement = 0x0000000000000080L;
-    @Generated @NUInt public static final long TimeSensitive = 0x0000000000000100L;
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Announcement authorization is always included
+     */
+    @Deprecated @Generated @NUInt public static final long Announcement = 0x0000000000000080L;
+    /**
+     * API-Since: 15.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use time-sensitive entitlement
+     */
+    @Deprecated @Generated @NUInt public static final long TimeSensitive = 0x0000000000000100L;
 }

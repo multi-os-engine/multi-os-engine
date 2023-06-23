@@ -44,14 +44,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CMPedometerData
- * <p>
+ * 
  * Discussion:
  * A description of the user's pedestrian activity. At a minimum this
  * object contains a step count. On supported platforms it also contains
  * distance, flights of stairs, pace, and cadence.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("CoreMotion")
@@ -83,22 +87,25 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +140,10 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -169,109 +177,126 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
 
     /**
      * averageActivePace
-     * <p>
-     * <p>
+     * 
+     * 
      * Discussion:
-     * <p>
+     * 
      * For updates this returns the average active pace since
      * startPedometerUpdatesFromDate:withHandler:, in s/m (seconds per meter).
      * For historical queries this returns average active pace between startDate
      * and endDate. The average active pace omits the non-active time, giving
      * the average pace from when the user was moving. Value is nil if any of
      * the following are true:
-     * <p>
+     * 
      * (1) (For historical queries) this information is not available,
      * e.g. the user did not move between startDate and endDate;
      * (2) Unsupported platform.
+     * 
+     * 
+     * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("averageActivePace")
     public native NSNumber averageActivePace();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * currentCadence
-     * <p>
-     * <p>
+     * 
+     * 
      * Discussion:
      * For updates this returns the rate at which steps are taken, in steps per second.
      * Value is nil if any of the following are true:
-     * <p>
+     * 
      * (1) Information not yet available;
      * (2) Historical query;
      * (3) Unsupported platform.
+     * 
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("currentCadence")
     public native NSNumber currentCadence();
 
     /**
      * currentPace
-     * <p>
-     * <p>
+     * 
+     * 
      * Discussion:
      * For updates this returns the current pace, in s/m (seconds per meter).
      * Value is nil if any of the following are true:
-     * <p>
+     * 
      * (1) Information not yet available;
      * (2) Historical query;
      * (3) Unsupported platform.
+     * 
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("currentPace")
     public native NSNumber currentPace();
 
     /**
      * distance
-     * <p>
+     * 
      * Discussion:
      * Estimated distance in meters traveled by the user while walking and
      * running. Value is nil unsupported platforms.
      */
+    @Nullable
     @Generated
     @Selector("distance")
     public native NSNumber distance();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * endDate
-     * <p>
+     * 
      * Discussion:
      * The end time of the period for which the pedometer data is valid.
-     * <p>
+     * 
      * For updates this is the time for the most recent update. For historical
      * queries this is the end time requested.
      */
+    @NotNull
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
 
     /**
      * floorsAscended
-     * <p>
+     * 
      * Discussion:
      * Approximate number of floors ascended by way of stairs. Value is nil
      * on unsupported platforms.
      */
+    @Nullable
     @Generated
     @Selector("floorsAscended")
     public native NSNumber floorsAscended();
 
     /**
      * floorsDescended
-     * <p>
+     * 
      * Discussion:
      * Approximate number of floors descended by way of stairs. Value is nil
      * on unsupported platforms.
      */
+    @Nullable
     @Generated
     @Selector("floorsDescended")
     public native NSNumber floorsDescended();
@@ -282,26 +307,28 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("initWithCoder:")
-    public native CMPedometerData initWithCoder(NSCoder coder);
+    public native CMPedometerData initWithCoder(@NotNull NSCoder coder);
 
     /**
      * numberOfSteps
-     * <p>
+     * 
      * Discussion:
      * Number of steps taken by the user.
      */
+    @NotNull
     @Generated
     @Selector("numberOfSteps")
     public native NSNumber numberOfSteps();
 
     /**
      * startDate
-     * <p>
+     * 
      * Discussion:
      * The start time of the period for which the pedometer data is valid.
-     * <p>
+     * 
      * This is the start time requested for the session or historical query.
      */
+    @NotNull
     @Generated
     @Selector("startDate")
     public native NSDate startDate();

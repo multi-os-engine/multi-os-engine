@@ -21,13 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueOccupancyStatus
- * <p>
+ * 
  * [@constant] HMCharacteristicValueOccupancyStatusNotOccupied Occupancy is not detected.
  * [@constant] HMCharacteristicValueOccupancyStatusOccupied Occupancy is detected.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class HMCharacteristicValueOccupancyStatus {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long NotOccupied = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Occupied = 0x0000000000000001L;
 
     @Generated

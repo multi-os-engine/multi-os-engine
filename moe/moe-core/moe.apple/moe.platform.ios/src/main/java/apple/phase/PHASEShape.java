@@ -24,11 +24,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] PHASEShape
- * <p>
+ * 
  * The physical representation of an object within the simulated acoustic scene.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -60,31 +64,35 @@ public class PHASEShape extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -96,9 +104,10 @@ public class PHASEShape extends NSObject implements NSCopying {
 
     /**
      * [@property] elements
-     * <p>
+     * 
      * List of all the shape elements associated with this shape.
      */
+    @NotNull
     @Generated
     @Selector("elements")
     public native NSArray<? extends PHASEShapeElement> elements();
@@ -114,28 +123,31 @@ public class PHASEShape extends NSObject implements NSCopying {
 
     /**
      * initWithEngine:mesh
-     * <p>
+     * 
      * Initialize a shape from a mesh.
-     * <p>
+     * 
      * One PHASEShapeElement will be created for every submesh within the mesh.
      * [@note]
      * A single shape can be used to create multiple instances of sources and occluders.
      * For example, a client could create a single shape for a window, then create multiple occluders from it.
      * The same can be done with with sources.
-     *
-     * @param engine The engine this shape will be used with.
-     * @param mesh   A Model I/O mesh object.
-     * @return A new shape object
+     * 
+     * @param engine
+     *               The engine this shape will be used with.
+     * @param mesh
+     *               A Model I/O mesh object.
+     * @return
+     *         A new shape object
      */
     @Generated
     @Selector("initWithEngine:mesh:")
-    public native PHASEShape initWithEngineMesh(PHASEEngine engine, MDLMesh mesh);
+    public native PHASEShape initWithEngineMesh(@NotNull PHASEEngine engine, @NotNull MDLMesh mesh);
 
     /**
      * initWithEngine:mesh
-     * <p>
+     * 
      * Initialize a shape from an MDLMesh and a list of materials
-     * <p>
+     * 
      * The materials array cannot be empty and cannot contain nil entries, otherwise an exception is thrown.
      * If the number of submeshes within the mesh are less than or equal to the size of the material array, the material
      * will be assigned
@@ -144,16 +156,20 @@ public class PHASEShape extends NSObject implements NSCopying {
      * assigned to the element will be the index of the element modulo the number of materials. IE: given a mesh with 6
      * submeshes and an array
      * of 3 materials, the element at index 5 will be assigned the material at index: 5 % 3 = 2.
-     *
-     * @param engine    The engine this shape will be used with
-     * @param mesh      A Model I/O mesh object.
-     * @param materials An array of PHASEMaterial objects that overrides any acoustical materials within the mesh object
-     * @return A new shape object
+     * 
+     * @param engine
+     *                  The engine this shape will be used with
+     * @param mesh
+     *                  A Model I/O mesh object.
+     * @param materials
+     *                  An array of PHASEMaterial objects that overrides any acoustical materials within the mesh object
+     * @return
+     *         A new shape object
      */
     @Generated
     @Selector("initWithEngine:mesh:materials:")
-    public native PHASEShape initWithEngineMeshMaterials(PHASEEngine engine, MDLMesh mesh,
-            NSArray<? extends PHASEMaterial> materials);
+    public native PHASEShape initWithEngineMeshMaterials(@NotNull PHASEEngine engine, @NotNull MDLMesh mesh,
+            @NotNull NSArray<? extends PHASEMaterial> materials);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -172,9 +188,10 @@ public class PHASEShape extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

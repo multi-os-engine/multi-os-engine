@@ -42,12 +42,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVPictureInPictureController
- * <p>
+ * 
  * AVPictureInPictureController is a subclass of NSObject that can be used to present the contents of an AVPlayerLayer
  * or AVPlayerView floating on top of applications.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("AVKit")
@@ -79,22 +83,25 @@ public class AVPictureInPictureController extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +134,9 @@ public class AVPictureInPictureController extends NSObject {
 
     /**
      * isPictureInPictureSupported
-     * <p>
+     * 
      * Whether or not Picture in Picture is supported on the current device.
-     * <p>
+     * 
      * When NO, all initializers will return nil.
      */
     @Generated
@@ -140,9 +147,10 @@ public class AVPictureInPictureController extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -151,29 +159,33 @@ public class AVPictureInPictureController extends NSObject {
 
     /**
      * pictureInPictureButtonStartImageCompatibleWithTraitCollection:
-     * <p>
+     * 
      * System default Picture in Picture start template image for use in client's Picture in Picture button.
-     *
-     * @param traitCollection Traits that describe the image to retrieve, pass nil to use traits that describe the main
+     * 
+     * @param traitCollection
+     *                        Traits that describe the image to retrieve, pass nil to use traits that describe the main
      *                        screen.
      */
+    @NotNull
     @Generated
     @Selector("pictureInPictureButtonStartImageCompatibleWithTraitCollection:")
     public static native UIImage pictureInPictureButtonStartImageCompatibleWithTraitCollection(
-            UITraitCollection traitCollection);
+            @Nullable UITraitCollection traitCollection);
 
     /**
      * pictureInPictureButtonStopImageCompatibleWithTraitCollection:
-     * <p>
+     * 
      * System default Picture in Picture stop template image for use in client's Picture in Picture button.
-     *
-     * @param traitCollection Traits that describe the image to retrieve, pass nil to use traits that describe the main
+     * 
+     * @param traitCollection
+     *                        Traits that describe the image to retrieve, pass nil to use traits that describe the main
      *                        screen.
      */
+    @NotNull
     @Generated
     @Selector("pictureInPictureButtonStopImageCompatibleWithTraitCollection:")
     public static native UIImage pictureInPictureButtonStopImageCompatibleWithTraitCollection(
-            UITraitCollection traitCollection);
+            @Nullable UITraitCollection traitCollection);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -198,9 +210,10 @@ public class AVPictureInPictureController extends NSObject {
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The receiver's delegate.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -212,18 +225,19 @@ public class AVPictureInPictureController extends NSObject {
 
     /**
      * initWithPlayerLayer:
-     * <p>
+     * 
      * Initialize the picture in picture controller with a player layer.
-     *
-     * @param playerLayer The player layer from which to source the media content for the Picture in Picture controller.
+     * 
+     * @param playerLayer
+     *                    The player layer from which to source the media content for the Picture in Picture controller.
      */
     @Generated
     @Selector("initWithPlayerLayer:")
-    public native AVPictureInPictureController initWithPlayerLayer(AVPlayerLayer playerLayer);
+    public native AVPictureInPictureController initWithPlayerLayer(@NotNull AVPlayerLayer playerLayer);
 
     /**
      * [@property] pictureInPictureActive
-     * <p>
+     * 
      * Whether or not Picture in Picture is currently active.
      */
     @Generated
@@ -232,7 +246,7 @@ public class AVPictureInPictureController extends NSObject {
 
     /**
      * [@property] pictureInPicturePossible
-     * <p>
+     * 
      * Whether or not Picture in Picture is currently possible.
      */
     @Generated
@@ -241,7 +255,7 @@ public class AVPictureInPictureController extends NSObject {
 
     /**
      * [@property] pictureInPictureSuspended
-     * <p>
+     * 
      * Whether or not Picture in Picture is currently suspended.
      */
     @Generated
@@ -250,29 +264,31 @@ public class AVPictureInPictureController extends NSObject {
 
     /**
      * [@property] playerLayer
-     * <p>
+     * 
      * The receiver's player layer.
      */
+    @NotNull
     @Generated
     @Selector("playerLayer")
     public native AVPlayerLayer playerLayer();
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The receiver's delegate.
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVPictureInPictureControllerDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) AVPictureInPictureControllerDelegate value);
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The receiver's delegate.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) AVPictureInPictureControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) AVPictureInPictureControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -285,9 +301,9 @@ public class AVPictureInPictureController extends NSObject {
 
     /**
      * startPictureInPicture
-     * <p>
+     * 
      * Start Picture in Picture for the provided AVPlayerLayer if possible.
-     * <p>
+     * 
      * Receiver will call -pictureInPictureControllerWillStartPictureInPicture: if Picture in Picture is currently
      * possible and -pictureInPictureControllerDidStartPictureInPicture: after a successful start. If starting Picture
      * in Picture fails, -pictureInPictureControllerFailedToStartPictureInPicture:withError: is called on the delegate
@@ -303,10 +319,10 @@ public class AVPictureInPictureController extends NSObject {
 
     /**
      * stopPictureInPicture
-     * <p>
+     * 
      * Stop the local Picture in Picture if currently active. On tvOS, this can also stop Picture in Picture sessions
      * for other applications.
-     * <p>
+     * 
      * See startPictureInPicture for details.
      */
     @Generated
@@ -315,28 +331,36 @@ public class AVPictureInPictureController extends NSObject {
 
     /**
      * [@property] pictureInPictureButtonStartImage
-     * <p>
+     * 
      * System default Picture in Picture start template image for use in client's Picture in Picture button.
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("pictureInPictureButtonStartImage")
     public static native UIImage pictureInPictureButtonStartImage();
 
     /**
      * [@property] pictureInPictureButtonStopImage
-     * <p>
+     * 
      * System default Picture in Picture stop template image for use in client's Picture in Picture button.
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("pictureInPictureButtonStopImage")
     public static native UIImage pictureInPictureButtonStopImage();
 
     /**
      * [@property] requiresLinearPlayback
-     * <p>
+     * 
      * Disables certain user operations (fast forward, forward skip, and scrubbing).
-     * <p>
+     * 
      * This can be used to temporarily enforce playback of mandatory content (such as legalese or advertisements).
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("requiresLinearPlayback")
@@ -344,10 +368,12 @@ public class AVPictureInPictureController extends NSObject {
 
     /**
      * [@property] requiresLinearPlayback
-     * <p>
+     * 
      * Disables certain user operations (fast forward, forward skip, and scrubbing).
-     * <p>
+     * 
      * This can be used to temporarily enforce playback of mandatory content (such as legalese or advertisements).
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setRequiresLinearPlayback:")
@@ -355,11 +381,13 @@ public class AVPictureInPictureController extends NSObject {
 
     /**
      * [@property] canStartPictureInPictureAutomaticallyFromInline
-     * <p>
+     * 
      * Indicates whether Picture in Picture should be allowed to start automatically when transitioning to background
      * when the receiver’s content is embedded inline. Default is NO.
-     * <p>
+     * 
      * This property must only be set to YES for content intended to be the user's primary focus.
+     * 
+     * API-Since: 14.2
      */
     @Generated
     @Selector("canStartPictureInPictureAutomaticallyFromInline")
@@ -367,11 +395,13 @@ public class AVPictureInPictureController extends NSObject {
 
     /**
      * [@property] canStartPictureInPictureAutomaticallyFromInline
-     * <p>
+     * 
      * Indicates whether Picture in Picture should be allowed to start automatically when transitioning to background
      * when the receiver’s content is embedded inline. Default is NO.
-     * <p>
+     * 
      * This property must only be set to YES for content intended to be the user's primary focus.
+     * 
+     * API-Since: 14.2
      */
     @Generated
     @Selector("setCanStartPictureInPictureAutomaticallyFromInline:")
@@ -379,34 +409,42 @@ public class AVPictureInPictureController extends NSObject {
 
     /**
      * [@property] contentSource
-     * <p>
+     * 
      * The receiver's content source. Can be changed while Picture in Picture is active, but the new content source must
      * be ready for display (in the case of AVPlayerLayer, that means AVPlayerLayer.isReadyForDisplay must return YES),
      * otherwise Picture in Picture will stop.
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("contentSource")
     public native AVPictureInPictureControllerContentSource contentSource();
 
     /**
      * initWithContentSource:
-     * <p>
+     * 
      * Use this initializer for content that may be a sample buffer display layer or a player layer.
-     *
-     * @param contentSource The content source to be shown in Picture in Picture.
+     * 
+     * API-Since: 15.0
+     * 
+     * @param contentSource
+     *                      The content source to be shown in Picture in Picture.
      */
     @Generated
     @Selector("initWithContentSource:")
     public native AVPictureInPictureController initWithContentSource(
-            AVPictureInPictureControllerContentSource contentSource);
+            @NotNull AVPictureInPictureControllerContentSource contentSource);
 
     /**
      * invalidatePlaybackState
-     * <p>
+     * 
      * Informs Picture in Picture controller that it should request an updated playback state from its
      * sampleBufferPlaybackDelegate.
-     * <p>
+     * 
      * This should always be called whenever playback is paused or unpaused, or the underlying content duration changes.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("invalidatePlaybackState")
@@ -414,12 +452,14 @@ public class AVPictureInPictureController extends NSObject {
 
     /**
      * [@property] contentSource
-     * <p>
+     * 
      * The receiver's content source. Can be changed while Picture in Picture is active, but the new content source must
      * be ready for display (in the case of AVPlayerLayer, that means AVPlayerLayer.isReadyForDisplay must return YES),
      * otherwise Picture in Picture will stop.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setContentSource:")
-    public native void setContentSource(AVPictureInPictureControllerContentSource value);
+    public native void setContentSource(@Nullable AVPictureInPictureControllerContentSource value);
 }

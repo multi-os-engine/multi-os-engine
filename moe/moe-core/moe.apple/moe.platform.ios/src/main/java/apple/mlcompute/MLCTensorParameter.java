@@ -21,11 +21,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCTensorParameter
- * <p>
+ * 
  * A tensor parameter object. This is used to describe input tensors that are updated by the optimizer during training.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -57,22 +61,25 @@ public class MLCTensorParameter extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -113,16 +120,17 @@ public class MLCTensorParameter extends NSObject {
 
     /**
      * [@property] isUpdatable
-     * <p>
+     * 
      * Specifies whether this tensor parameter is updatable
      */
     @Generated
     @Selector("isUpdatable")
     public native boolean isUpdatable();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -131,25 +139,25 @@ public class MLCTensorParameter extends NSObject {
 
     /**
      * Create a tensor parameter
-     *
+     * 
      * @param tensor The unedrlying tensor
      * @return A new tensor parameter object
      */
     @Generated
     @Selector("parameterWithTensor:")
-    public static native MLCTensorParameter parameterWithTensor(MLCTensor tensor);
+    public static native MLCTensorParameter parameterWithTensor(@NotNull MLCTensor tensor);
 
     /**
      * Create a tensor parameter
-     *
+     * 
      * @param tensor        The unedrlying tensor
      * @param optimizerData The optimizer data needed for this input tensor
      * @return A new tensor parameter object
      */
     @Generated
     @Selector("parameterWithTensor:optimizerData:")
-    public static native MLCTensorParameter parameterWithTensorOptimizerData(MLCTensor tensor,
-            NSArray<? extends MLCTensorData> optimizerData);
+    public static native MLCTensorParameter parameterWithTensorOptimizerData(@NotNull MLCTensor tensor,
+            @Nullable NSArray<? extends MLCTensorData> optimizerData);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -161,7 +169,7 @@ public class MLCTensorParameter extends NSObject {
 
     /**
      * [@property] isUpdatable
-     * <p>
+     * 
      * Specifies whether this tensor parameter is updatable
      */
     @Generated
@@ -178,9 +186,10 @@ public class MLCTensorParameter extends NSObject {
 
     /**
      * [@property] tensor
-     * <p>
+     * 
      * The underlying tensor
      */
+    @NotNull
     @Generated
     @Selector("tensor")
     public native MLCTensor tensor();

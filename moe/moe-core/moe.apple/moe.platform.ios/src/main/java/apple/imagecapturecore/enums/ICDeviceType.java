@@ -6,10 +6,12 @@ import org.moe.natj.general.ann.NUInt;
 /**
  * ------------------------------------------------------------------------------------------------------------------------------
  * [@const] ICDeviceType
- * <p>
+ * 
  * Image Capture Device Types
  * [@constant] ICDeviceTypeCamera Camera device.
  * [@constant] ICDeviceTypeScanner Scanner device.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 public final class ICDeviceType {
@@ -17,6 +19,12 @@ public final class ICDeviceType {
     private ICDeviceType() {
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NUInt public static final long Camera = 0x0000000000000001L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NUInt public static final long Scanner = 0x0000000000000002L;
 }

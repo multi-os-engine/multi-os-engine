@@ -46,6 +46,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -77,11 +79,14 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * tracks changes to user's preferred calendar identifier
+     * 
+     * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @Selector("autoupdatingCurrentCalendar")
     public static native NSCalendar autoupdatingCurrentCalendar();
@@ -90,25 +95,31 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
      * This method returns a new autoreleased calendar object of the given type, specified by a calendar identifier
      * constant.
      * The calendar defaults to having the current locale and default time zone, for those properties.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("calendarWithIdentifier:")
-    public static native NSCalendar calendarWithIdentifier(String calendarIdentifierConstant);
+    public static native NSCalendar calendarWithIdentifier(@NotNull String calendarIdentifierConstant);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -116,6 +127,7 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * user's preferred calendar
      */
+    @NotNull
     @Generated
     @Selector("currentCalendar")
     public static native NSCalendar currentCalendar();
@@ -150,9 +162,10 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -184,14 +197,23 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("AMSymbol")
     public native String AMSymbol();
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("PMSymbol")
     public native String PMSymbol();
 
+    @NotNull
     @Generated
     @Selector("calendarIdentifier")
     public native String calendarIdentifier();
@@ -199,28 +221,35 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * This API compares the given dates down to the given unit, reporting them equal if they are the same in the given
      * unit and all larger units, otherwise either less than or greater than.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("compareDate:toDate:toUnitGranularity:")
     @NInt
-    public native long compareDateToDateToUnitGranularity(NSDate date1, NSDate date2, @NUInt long unit);
+    public native long compareDateToDateToUnitGranularity(@NotNull NSDate date1, @NotNull NSDate date2,
+            @NUInt long unit);
 
     /**
      * Get just one component's value.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("component:fromDate:")
     @NInt
-    public native long componentFromDate(@NUInt long unit, NSDate date);
+    public native long componentFromDate(@NUInt long unit, @NotNull NSDate date);
 
+    @NotNull
     @Generated
     @Selector("components:fromDate:")
-    public native NSDateComponents componentsFromDate(@NUInt long unitFlags, NSDate date);
+    public native NSDateComponents componentsFromDate(@NUInt long unitFlags, @NotNull NSDate date);
 
+    @NotNull
     @Generated
     @Selector("components:fromDate:toDate:options:")
-    public native NSDateComponents componentsFromDateToDateOptions(@NUInt long unitFlags, NSDate startingDate,
-            NSDate resultDate, @NUInt long opts);
+    public native NSDateComponents componentsFromDateToDateOptions(@NUInt long unitFlags, @NotNull NSDate startingDate,
+            @NotNull NSDate resultDate, @NUInt long opts);
 
     /**
      * This API returns the difference between two dates specified as date components.
@@ -232,11 +261,14 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
      * property is set, that is used rather than the receiving calendar, and if both the calendar and time zone are set,
      * the time zone property value overrides the time zone of the calendar property.
      * No options are currently defined; pass 0.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("components:fromDateComponents:toDateComponents:options:")
     public native NSDateComponents componentsFromDateComponentsToDateComponentsOptions(@NUInt long unitFlags,
-            NSDateComponents startingDateComp, NSDateComponents resultDateComp, @NUInt long options);
+            @NotNull NSDateComponents startingDateComp, @NotNull NSDateComponents resultDateComp, @NUInt long options);
 
     /**
      * This API returns all the date components of a date, as if in a given time zone (instead of the receiving
@@ -244,39 +276,50 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
      * The time zone overrides the time zone of the NSCalendar for the purposes of this calculation.
      * Note: if you want "date information in a given time zone" in order to display it, you should use NSDateFormatter
      * to format the date.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("componentsInTimeZone:fromDate:")
-    public native NSDateComponents componentsInTimeZoneFromDate(NSTimeZone timezone, NSDate date);
+    public native NSDateComponents componentsInTimeZoneFromDate(@NotNull NSTimeZone timezone, @NotNull NSDate date);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * This API returns YES if the date has all the matched components. Otherwise, it returns NO.
      * It is useful to test the return value of the -nextDateAfterDate:matchingUnit:value:options:, to find out if the
      * components were obeyed or if the method had to fudge the result value due to missing time.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("date:matchesComponents:")
-    public native boolean dateMatchesComponents(NSDate date, NSDateComponents components);
+    public native boolean dateMatchesComponents(@NotNull NSDate date, @NotNull NSDateComponents components);
 
+    @Nullable
     @Generated
     @Selector("dateByAddingComponents:toDate:options:")
-    public native NSDate dateByAddingComponentsToDateOptions(NSDateComponents comps, NSDate date, @NUInt long opts);
+    public native NSDate dateByAddingComponentsToDateOptions(@NotNull NSDateComponents comps, @NotNull NSDate date,
+            @NUInt long opts);
 
     /**
      * This API returns a new NSDate object representing the date calculated by adding an amount of a specific component
      * to a given date.
      * The NSCalendarWrapComponents option specifies if the component should be incremented and wrap around to zero/one
      * on overflow, and should not cause higher units to be incremented.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("dateByAddingUnit:value:toDate:options:")
-    public native NSDate dateByAddingUnitValueToDateOptions(@NUInt long unit, @NInt long value, NSDate date,
+    public native NSDate dateByAddingUnitValueToDateOptions(@NUInt long unit, @NInt long value, @NotNull NSDate date,
             @NUInt long options);
 
     /**
@@ -286,11 +329,14 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
      * the nominal target date).
      * The intent is to return a date on the same day as the original date argument. This may result in a date which is
      * earlier than the given date, of course.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("dateBySettingHour:minute:second:ofDate:options:")
     public native NSDate dateBySettingHourMinuteSecondOfDateOptions(@NInt long h, @NInt long m, @NInt long s,
-            NSDate date, @NUInt long opts);
+            @NotNull NSDate date, @NUInt long opts);
 
     /**
      * This API returns a new NSDate object representing the date calculated by setting a specific component to a given
@@ -310,20 +356,27 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
      * which the given date resides (which could be a forwards or backwards move, and not necessarily the nearest
      * Thursday). For forwards or backwards behavior, one can use the -nextDateAfterDate:matchingUnit:value:options:
      * method above.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("dateBySettingUnit:value:ofDate:options:")
-    public native NSDate dateBySettingUnitValueOfDateOptions(@NUInt long unit, @NInt long v, NSDate date,
+    public native NSDate dateBySettingUnitValueOfDateOptions(@NUInt long unit, @NInt long v, @NotNull NSDate date,
             @NUInt long opts);
 
+    @Nullable
     @Generated
     @Selector("dateFromComponents:")
-    public native NSDate dateFromComponents(NSDateComponents comps);
+    public native NSDate dateFromComponents(@NotNull NSDateComponents comps);
 
     /**
      * Create a date with given components.
      * Current era is assumed.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("dateWithEra:year:month:day:hour:minute:second:nanosecond:")
     public native NSDate dateWithEraYearMonthDayHourMinuteSecondNanosecond(@NInt long eraValue, @NInt long yearValue,
@@ -333,7 +386,10 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Create a date with given components.
      * Current era is assumed.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("dateWithEra:yearForWeekOfYear:weekOfYear:weekday:hour:minute:second:nanosecond:")
     public native NSDate dateWithEraYearForWeekOfYearWeekOfYearWeekdayHourMinuteSecondNanosecond(@NInt long eraValue,
@@ -342,7 +398,7 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * This method computes the dates which match (or most closely match) a given set of components, and calls the block
@@ -366,21 +422,21 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
      * If an exact match is not possible, and requested with the NSCalendarMatchStrictly option, nil is passed to the
      * block and the enumeration ends. (Logically, since an exact match searches indefinitely into the future, if no
      * match is found there's no point in continuing the enumeration.)
-     * <p>
+     * 
      * If the NSCalendarMatchStrictly option is NOT used, exactly one option from the set
      * {NSCalendarMatchPreviousTimePreservingSmallerUnits, NSCalendarMatchNextTimePreservingSmallerUnits,
      * NSCalendarMatchNextTime} must be specified, or an illegal argument exception will be thrown.
-     * <p>
+     * 
      * If the NSCalendarMatchPreviousTimePreservingSmallerUnits option is specified, and there is no matching time
      * before the end of the next instance of the next higher unit to the highest specified unit in the NSDateComponents
      * argument, the method will return the previous existing value of the missing unit and preserves the lower units'
      * values (e.g., no 2:37am results in 1:37am, if that exists).
-     * <p>
+     * 
      * If the NSCalendarMatchNextTimePreservingSmallerUnits option is specified, and there is no matching time before
      * the end of the next instance of the next higher unit to the highest specified unit in the NSDateComponents
      * argument, the method will return the next existing value of the missing unit and preserves the lower units'
      * values (e.g., no 2:37am results in 3:37am, if that exists).
-     * <p>
+     * 
      * If the NSCalendarMatchNextTime option is specified, and there is no matching time before the end of the next
      * instance of the next higher unit to the highest specified unit in the NSDateComponents argument, the method will
      * return the next existing time which exists (e.g., no 2:37am results in 3:00am, if that exists).
@@ -393,22 +449,27 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
      * If neither the NSCalendarMatchFirst or NSCalendarMatchLast option is specified, the default behavior is to act as
      * if NSCalendarMatchFirst was specified.
      * There is no option to return middle occurrences of more than two occurrences of a matching time, if such exist.
-     * <p>
+     * 
      * Result dates have an integer number of seconds (as if 0 was specified for the nanoseconds property of the
      * NSDateComponents matching parameter), unless a value was set in the nanoseconds property, in which case the
      * result date will have that number of nanoseconds (or as close as possible with floating point numbers).
      * The enumeration is stopped by setting *stop = YES in the block and return. It is not necessary to set *stop to NO
      * to keep the enumeration going.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("enumerateDatesStartingAfterDate:matchingComponents:options:usingBlock:")
-    public native void enumerateDatesStartingAfterDateMatchingComponentsOptionsUsingBlock(NSDate start,
-            NSDateComponents comps, @NUInt long opts,
-            @ObjCBlock(name = "call_enumerateDatesStartingAfterDateMatchingComponentsOptionsUsingBlock") Block_enumerateDatesStartingAfterDateMatchingComponentsOptionsUsingBlock block);
+    public native void enumerateDatesStartingAfterDateMatchingComponentsOptionsUsingBlock(@NotNull NSDate start,
+            @NotNull NSDateComponents comps, @NUInt long opts,
+            @NotNull @ObjCBlock(name = "call_enumerateDatesStartingAfterDateMatchingComponentsOptionsUsingBlock") Block_enumerateDatesStartingAfterDateMatchingComponentsOptionsUsingBlock block);
 
     /**
      * Methods to return component name strings localized to the calendar's locale
+     * 
+     * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @Selector("eraSymbols")
     public native NSArray<String> eraSymbols();
@@ -421,30 +482,38 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * This API is a convenience for getting era, year, month, and day of a given date.
      * Pass NULL for a NSInteger pointer parameter if you don't care about that value.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("getEra:year:month:day:fromDate:")
-    public native void getEraYearMonthDayFromDate(NIntPtr eraValuePointer, NIntPtr yearValuePointer,
-            NIntPtr monthValuePointer, NIntPtr dayValuePointer, NSDate date);
+    public native void getEraYearMonthDayFromDate(@Nullable NIntPtr eraValuePointer, @Nullable NIntPtr yearValuePointer,
+            @Nullable NIntPtr monthValuePointer, @Nullable NIntPtr dayValuePointer, @NotNull NSDate date);
 
     /**
      * This API is a convenience for getting era, year for week-of-year calculations, week of year, and weekday of a
      * given date.
      * Pass NULL for a NSInteger pointer parameter if you don't care about that value.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("getEra:yearForWeekOfYear:weekOfYear:weekday:fromDate:")
-    public native void getEraYearForWeekOfYearWeekOfYearWeekdayFromDate(NIntPtr eraValuePointer,
-            NIntPtr yearValuePointer, NIntPtr weekValuePointer, NIntPtr weekdayValuePointer, NSDate date);
+    public native void getEraYearForWeekOfYearWeekOfYearWeekdayFromDate(@Nullable NIntPtr eraValuePointer,
+            @Nullable NIntPtr yearValuePointer, @Nullable NIntPtr weekValuePointer,
+            @Nullable NIntPtr weekdayValuePointer, @NotNull NSDate date);
 
     /**
      * This API is a convenience for getting hour, minute, second, and nanoseconds of a given date.
      * Pass NULL for a NSInteger pointer parameter if you don't care about that value.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("getHour:minute:second:nanosecond:fromDate:")
-    public native void getHourMinuteSecondNanosecondFromDate(NIntPtr hourValuePointer, NIntPtr minuteValuePointer,
-            NIntPtr secondValuePointer, NIntPtr nanosecondValuePointer, NSDate date);
+    public native void getHourMinuteSecondNanosecondFromDate(@Nullable NIntPtr hourValuePointer,
+            @Nullable NIntPtr minuteValuePointer, @Nullable NIntPtr secondValuePointer,
+            @Nullable NIntPtr nanosecondValuePointer, @NotNull NSDate date);
 
     @Generated
     @Selector("init")
@@ -452,59 +521,77 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCalendarIdentifier:")
-    public native NSCalendar initWithCalendarIdentifier(String ident);
+    public native NSCalendar initWithCalendarIdentifier(@NotNull String ident);
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSCalendar initWithCoder(NSCoder coder);
+    public native NSCalendar initWithCoder(@NotNull NSCoder coder);
 
     /**
      * This API compares the given dates down to the given unit, reporting them equal if they are the same in the given
      * unit and all larger units.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isDate:equalToDate:toUnitGranularity:")
-    public native boolean isDateEqualToDateToUnitGranularity(NSDate date1, NSDate date2, @NUInt long unit);
+    public native boolean isDateEqualToDateToUnitGranularity(@NotNull NSDate date1, @NotNull NSDate date2,
+            @NUInt long unit);
 
     /**
      * This API compares the Days of the given dates, reporting them equal if they are in the same Day.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isDate:inSameDayAsDate:")
-    public native boolean isDateInSameDayAsDate(NSDate date1, NSDate date2);
+    public native boolean isDateInSameDayAsDate(@NotNull NSDate date1, @NotNull NSDate date2);
 
     /**
      * This API reports if the date is within "today".
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isDateInToday:")
-    public native boolean isDateInToday(NSDate date);
+    public native boolean isDateInToday(@NotNull NSDate date);
 
     /**
      * This API reports if the date is within "tomorrow".
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isDateInTomorrow:")
-    public native boolean isDateInTomorrow(NSDate date);
+    public native boolean isDateInTomorrow(@NotNull NSDate date);
 
     /**
      * This API reports if the date is within a weekend period, as defined by the calendar and calendar's locale.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isDateInWeekend:")
-    public native boolean isDateInWeekend(NSDate date);
+    public native boolean isDateInWeekend(@NotNull NSDate date);
 
     /**
      * This API reports if the date is within "yesterday".
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isDateInYesterday:")
-    public native boolean isDateInYesterday(NSDate date);
+    public native boolean isDateInYesterday(@NotNull NSDate date);
 
+    @Nullable
     @Generated
     @Selector("locale")
     public native NSLocale locale();
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("longEraSymbols")
     public native NSArray<String> longEraSymbols();
@@ -527,6 +614,10 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     @ByValue
     public native NSRange minimumRangeOfUnit(@NUInt long unit);
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("monthSymbols")
     public native NSArray<String> monthSymbols();
@@ -536,11 +627,14 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
      * The general semantics follow those of the -enumerateDatesStartingAfterDate:... method above.
      * To compute a sequence of results, use the -enumerateDatesStartingAfterDate:... method above, rather than looping
      * and calling this method with the previous loop iteration's result.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("nextDateAfterDate:matchingComponents:options:")
-    public native NSDate nextDateAfterDateMatchingComponentsOptions(NSDate date, NSDateComponents comps,
-            @NUInt long options);
+    public native NSDate nextDateAfterDateMatchingComponentsOptions(@NotNull NSDate date,
+            @NotNull NSDateComponents comps, @NUInt long options);
 
     /**
      * This API returns a new NSDate object representing the date found which matches the given hour, minute, and second
@@ -548,10 +642,13 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
      * The general semantics follow those of the -enumerateDatesStartingAfterDate:... method above.
      * To compute a sequence of results, use the -enumerateDatesStartingAfterDate:... method above, rather than looping
      * and calling this method with the previous loop iteration's result.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("nextDateAfterDate:matchingHour:minute:second:options:")
-    public native NSDate nextDateAfterDateMatchingHourMinuteSecondOptions(NSDate date, @NInt long hourValue,
+    public native NSDate nextDateAfterDateMatchingHourMinuteSecondOptions(@NotNull NSDate date, @NInt long hourValue,
             @NInt long minuteValue, @NInt long secondValue, @NUInt long options);
 
     /**
@@ -559,11 +656,14 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
      * The general semantics follow those of the -enumerateDatesStartingAfterDate:... method above.
      * To compute a sequence of results, use the -enumerateDatesStartingAfterDate:... method above, rather than looping
      * and calling this method with the previous loop iteration's result.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("nextDateAfterDate:matchingUnit:value:options:")
-    public native NSDate nextDateAfterDateMatchingUnitValueOptions(NSDate date, @NUInt long unit, @NInt long value,
-            @NUInt long options);
+    public native NSDate nextDateAfterDateMatchingUnitValueOptions(@NotNull NSDate date, @NUInt long unit,
+            @NInt long value, @NUInt long options);
 
     /**
      * Returns the range of the next weekend, via two by-reference parameters, which starts strictly after the given
@@ -572,17 +672,24 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
      * Returns NO if there are no such things as weekend in the calendar and its locale.
      * Note that a given entire Day within a calendar is not necessarily all in a weekend or not; weekends can start in
      * the middle of a Day in some calendars and locales.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("nextWeekendStartDate:interval:options:afterDate:")
     public native boolean nextWeekendStartDateIntervalOptionsAfterDate(
-            @ReferenceInfo(type = NSDate.class) Ptr<NSDate> datep, DoublePtr tip, @NUInt long options, NSDate date);
+            @Nullable @ReferenceInfo(type = NSDate.class) Ptr<NSDate> datep, @Nullable DoublePtr tip,
+            @NUInt long options, @NotNull NSDate date);
 
     @Generated
     @Selector("ordinalityOfUnit:inUnit:forDate:")
     @NUInt
-    public native long ordinalityOfUnitInUnitForDate(@NUInt long smaller, @NUInt long larger, NSDate date);
+    public native long ordinalityOfUnitInUnitForDate(@NUInt long smaller, @NUInt long larger, @NotNull NSDate date);
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("quarterSymbols")
     public native NSArray<String> quarterSymbols();
@@ -590,23 +697,30 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("rangeOfUnit:inUnit:forDate:")
     @ByValue
-    public native NSRange rangeOfUnitInUnitForDate(@NUInt long smaller, @NUInt long larger, NSDate date);
+    public native NSRange rangeOfUnitInUnitForDate(@NUInt long smaller, @NUInt long larger, @NotNull NSDate date);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("rangeOfUnit:startDate:interval:forDate:")
     public native boolean rangeOfUnitStartDateIntervalForDate(@NUInt long unit,
-            @ReferenceInfo(type = NSDate.class) Ptr<NSDate> datep, DoublePtr tip, NSDate date);
+            @Nullable @ReferenceInfo(type = NSDate.class) Ptr<NSDate> datep, @Nullable DoublePtr tip,
+            @NotNull NSDate date);
 
     /**
      * Find the range of the weekend around the given date, returned via two by-reference parameters.
      * Returns NO if the given date is not in a weekend.
      * Note that a given entire Day within a calendar is not necessarily all in a weekend or not; weekends can start in
      * the middle of a Day in some calendars and locales.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("rangeOfWeekendStartDate:interval:containingDate:")
     public native boolean rangeOfWeekendStartDateIntervalContainingDate(
-            @ReferenceInfo(type = NSDate.class) Ptr<NSDate> datep, DoublePtr tip, NSDate date);
+            @Nullable @ReferenceInfo(type = NSDate.class) Ptr<NSDate> datep, @Nullable DoublePtr tip,
+            @NotNull NSDate date);
 
     @Generated
     @Selector("setFirstWeekday:")
@@ -614,7 +728,7 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("setLocale:")
-    public native void setLocale(NSLocale value);
+    public native void setLocale(@Nullable NSLocale value);
 
     @Generated
     @Selector("setMinimumDaysInFirstWeek:")
@@ -622,40 +736,76 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("setTimeZone:")
-    public native void setTimeZone(NSTimeZone value);
+    public native void setTimeZone(@NotNull NSTimeZone value);
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("shortMonthSymbols")
     public native NSArray<String> shortMonthSymbols();
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("shortQuarterSymbols")
     public native NSArray<String> shortQuarterSymbols();
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("shortStandaloneMonthSymbols")
     public native NSArray<String> shortStandaloneMonthSymbols();
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("shortStandaloneQuarterSymbols")
     public native NSArray<String> shortStandaloneQuarterSymbols();
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("shortStandaloneWeekdaySymbols")
     public native NSArray<String> shortStandaloneWeekdaySymbols();
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("shortWeekdaySymbols")
     public native NSArray<String> shortWeekdaySymbols();
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("standaloneMonthSymbols")
     public native NSArray<String> standaloneMonthSymbols();
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("standaloneQuarterSymbols")
     public native NSArray<String> standaloneQuarterSymbols();
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("standaloneWeekdaySymbols")
     public native NSArray<String> standaloneWeekdaySymbols();
@@ -664,10 +814,13 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
      * This API returns the first moment date of a given date.
      * Pass in [NSDate date], for example, if you want the start of "today".
      * If there were two midnights, it returns the first. If there was none, it returns the first moment that did exist.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("startOfDayForDate:")
-    public native NSDate startOfDayForDate(NSDate date);
+    public native NSDate startOfDayForDate(@NotNull NSDate date);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -675,26 +828,47 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    @NotNull
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("veryShortMonthSymbols")
     public native NSArray<String> veryShortMonthSymbols();
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("veryShortStandaloneMonthSymbols")
     public native NSArray<String> veryShortStandaloneMonthSymbols();
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("veryShortStandaloneWeekdaySymbols")
     public native NSArray<String> veryShortStandaloneWeekdaySymbols();
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("veryShortWeekdaySymbols")
     public native NSArray<String> veryShortWeekdaySymbols();
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("weekdaySymbols")
     public native NSArray<String> weekdaySymbols();
@@ -703,7 +877,7 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     public interface Block_enumerateDatesStartingAfterDateMatchingComponentsOptionsUsingBlock {
         @Generated
-        void call_enumerateDatesStartingAfterDateMatchingComponentsOptionsUsingBlock(NSDate date, boolean exactMatch,
-                BoolPtr stop);
+        void call_enumerateDatesStartingAfterDateMatchingComponentsOptionsUsingBlock(@Nullable NSDate date,
+                boolean exactMatch, @NotNull BoolPtr stop);
     }
 }

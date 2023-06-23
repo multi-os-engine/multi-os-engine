@@ -17,10 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSIndexPath;
 import apple.foundation.NSMethodSignature;
@@ -49,7 +45,16 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -80,22 +85,25 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,23 +138,25 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Selector("layoutAttributesForCellWithIndexPath:")
-    public static native UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath(NSIndexPath indexPath);
+    public static native UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath(
+            @NotNull NSIndexPath indexPath);
 
     @Generated
     @Selector("layoutAttributesForDecorationViewOfKind:withIndexPath:")
     public static native UICollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKindWithIndexPath(
-            String decorationViewKind, NSIndexPath indexPath);
+            @NotNull String decorationViewKind, @NotNull NSIndexPath indexPath);
 
     @Generated
     @Selector("layoutAttributesForSupplementaryViewOfKind:withIndexPath:")
     public static native UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKindWithIndexPath(
-            String elementKind, NSIndexPath indexPath);
+            @NotNull String elementKind, @NotNull NSIndexPath indexPath);
 
     @Generated
     @Owned
@@ -189,6 +199,7 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @ByValue
     public native CGPoint center();
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("collisionBoundingPath")
@@ -200,17 +211,19 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @NUInt
     public native long collisionBoundsType();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("frame")
     @ByValue
     public native CGRect frame();
 
+    @NotNull
     @Generated
     @Selector("indexPath")
     public native NSIndexPath indexPath();
@@ -241,6 +254,7 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     /**
      * nil when representedElementCategory is UICollectionElementCategoryCell
      */
+    @Nullable
     @Generated
     @Selector("representedElementKind")
     public native String representedElementKind();
@@ -249,6 +263,9 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @Selector("setAlpha:")
     public native void setAlpha(@NFloat double value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setBounds:")
     public native void setBounds(@ByValue CGRect value);
@@ -263,7 +280,7 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
 
     @Generated
     @Selector("setIndexPath:")
-    public native void setIndexPath(NSIndexPath value);
+    public native void setIndexPath(@NotNull NSIndexPath value);
 
     @Generated
     @Selector("setSize:")

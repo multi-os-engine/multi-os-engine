@@ -1,6 +1,5 @@
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSIndexPath;
 import apple.uikit.UIDragItem;
@@ -16,7 +15,13 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -29,6 +34,7 @@ public interface UITableViewDropCoordinator {
      * This index path may be nil in some circumstances (e.g. when dragging over empty space where there are no cells),
      * and if it is nil, the proposal's intent will always be UITableViewDropIntentUnspecified.
      */
+    @Nullable
     @Generated
     @Selector("destinationIndexPath")
     NSIndexPath destinationIndexPath();
@@ -39,10 +45,12 @@ public interface UITableViewDropCoordinator {
      * The item will be animated with an aspect fit scale transform to fit inside the rect. Use a rect with zero size to
      * shrink the item to a single point.
      */
+    @NotNull
     @Generated
     @Selector("dropItem:intoRowAtIndexPath:rect:")
     @MappedReturn(ObjCObjectMapper.class)
-    UIDragAnimating dropItemIntoRowAtIndexPathRect(UIDragItem dragItem, NSIndexPath indexPath, @ByValue CGRect rect);
+    UIDragAnimating dropItemIntoRowAtIndexPathRect(@NotNull UIDragItem dragItem, @NotNull NSIndexPath indexPath,
+            @ByValue CGRect rect);
 
     /**
      * Animate the dragItem to an automatically inserted placeholder row.
@@ -50,11 +58,12 @@ public interface UITableViewDropCoordinator {
      * the placeholder context
      * method -commitInsertionWithDataSourceUpdates:
      */
+    @NotNull
     @Generated
     @Selector("dropItem:toPlaceholder:")
     @MappedReturn(ObjCObjectMapper.class)
-    UITableViewDropPlaceholderContext dropItemToPlaceholder(UIDragItem dragItem,
-            UITableViewDropPlaceholder placeholder);
+    UITableViewDropPlaceholderContext dropItemToPlaceholder(@NotNull UIDragItem dragItem,
+            @NotNull UITableViewDropPlaceholder placeholder);
 
     /**
      * Animate the dragItem to a row that you inserted at this index path.
@@ -63,23 +72,26 @@ public interface UITableViewDropCoordinator {
      * If desired, use the drop delegate method -tableView:dropPreviewParametersForRowAtIndexPath: to provide preview
      * parameters.
      */
+    @NotNull
     @Generated
     @Selector("dropItem:toRowAtIndexPath:")
     @MappedReturn(ObjCObjectMapper.class)
-    UIDragAnimating dropItemToRowAtIndexPath(UIDragItem dragItem, NSIndexPath indexPath);
+    UIDragAnimating dropItemToRowAtIndexPath(@NotNull UIDragItem dragItem, @NotNull NSIndexPath indexPath);
 
     /**
      * Animate the dragItem to a location specified by the UIDragPreviewTarget.
      * The -[UITableViewDropItem previewSize] may be helpful to compute an appropriate transform.
      */
+    @NotNull
     @Generated
     @Selector("dropItem:toTarget:")
     @MappedReturn(ObjCObjectMapper.class)
-    UIDragAnimating dropItemToTarget(UIDragItem dragItem, UIDragPreviewTarget target);
+    UIDragAnimating dropItemToTarget(@NotNull UIDragItem dragItem, @NotNull UIDragPreviewTarget target);
 
     /**
      * Ordered list of items available for this drop.
      */
+    @NotNull
     @Generated
     @Selector("items")
     NSArray<?> items();
@@ -87,6 +99,7 @@ public interface UITableViewDropCoordinator {
     /**
      * The current drop proposal at the time of the drop.
      */
+    @NotNull
     @Generated
     @Selector("proposal")
     UITableViewDropProposal proposal();
@@ -94,6 +107,7 @@ public interface UITableViewDropCoordinator {
     /**
      * The drop session.
      */
+    @NotNull
     @Generated
     @Selector("session")
     @MappedReturn(ObjCObjectMapper.class)

@@ -36,14 +36,18 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSURLProtocol
- * <p>
+ * 
  * NSURLProtocol is an abstract class which provides the
  * basic structure for performing protocol-specific loading of URL
  * data. Concrete subclasses handle the specifics associated with one
  * or more protocols or URL schemes.
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("Foundation")
@@ -75,46 +79,50 @@ public class NSURLProtocol extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * canInitWithRequest:
-     * <p>
+     * 
      * This method determines whether this protocol can handle
      * the given request.
-     * <p>
+     * 
      * A concrete subclass should inspect the given request and
      * determine whether or not the implementation can perform a load with
-     * that request. This is an abstract method. Sublasses must provide an
+     * that request. This is an abstract method. Subclasses must provide an
      * implementation.
-     *
+     * 
      * @param request A request to inspect.
      * @return YES if the protocol can handle the given request, NO if not.
      */
     @Generated
     @Selector("canInitWithRequest:")
-    public static native boolean canInitWithRequest(NSURLRequest request);
+    public static native boolean canInitWithRequest(@NotNull NSURLRequest request);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("canInitWithTask:")
-    public static native boolean canInitWithTask(NSURLSessionTask task);
+    public static native boolean canInitWithTask(@NotNull NSURLSessionTask task);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * canonicalRequestForRequest:
-     * <p>
+     * 
      * This method returns a canonical version of the given
      * request.
-     * <p>
+     * 
      * It is up to each concrete protocol implementation to
      * define what "canonical" means. However, a protocol should
      * guarantee that the same input request always yields the same
@@ -123,20 +131,23 @@ public class NSURLProtocol extends NSObject {
      * used to look up objects in the URL cache, a process which performs
      * equality checks between NSURLRequest objects.
      * <p>
-     * This is an abstract method; sublasses must provide an
+     * This is an abstract method; subclasses must provide an
      * implementation.
-     *
+     * 
      * @param request A request to make canonical.
      * @return The canonical form of the given request.
      */
+    @NotNull
     @Generated
     @Selector("canonicalRequestForRequest:")
-    public static native NSURLRequest canonicalRequestForRequest(NSURLRequest request);
+    public static native NSURLRequest canonicalRequestForRequest(@NotNull NSURLRequest request);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -171,9 +182,10 @@ public class NSURLProtocol extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -182,30 +194,31 @@ public class NSURLProtocol extends NSObject {
 
     /**
      * propertyForKey:inRequest:
-     * <p>
+     * 
      * Returns the property in the given request previously
      * stored with the given key.
-     * <p>
+     * 
      * The purpose of this method is to provide an interface
      * for protocol implementors to access protocol-specific information
      * associated with NSURLRequest objects.
-     *
+     * 
      * @param key     The string to use for the property lookup.
      * @param request The request to use for the property lookup.
      * @return The property stored with the given key, or nil if no property
      *         had previously been stored with the given key in the given request.
      */
+    @Nullable
     @Generated
     @Selector("propertyForKey:inRequest:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object propertyForKeyInRequest(String key, NSURLRequest request);
+    public static native Object propertyForKeyInRequest(@NotNull String key, @NotNull NSURLRequest request);
 
     /**
      * registerClass:
-     * <p>
+     * 
      * This method registers a protocol class, making it visible
      * to several other NSURLProtocol class methods.
-     * <p>
+     * 
      * When the URL loading system begins to load a request,
      * each protocol class that has been registered is consulted in turn to
      * see if it can be initialized with a given request. The first
@@ -220,7 +233,7 @@ public class NSURLProtocol extends NSObject {
      * <p>A similar design governs the process to create the canonical form
      * of a request with the <tt>+canonicalRequestForRequest:</tt> class
      * method.
-     *
+     * 
      * @param protocolClass the class to register.
      * @return YES if the protocol was registered successfully, NO if not.
      *         The only way that failure can occur is if the given class is not a
@@ -228,39 +241,39 @@ public class NSURLProtocol extends NSObject {
      */
     @Generated
     @Selector("registerClass:")
-    public static native boolean registerClass(Class protocolClass);
+    public static native boolean registerClass(@NotNull Class protocolClass);
 
     /**
      * removePropertyForKey:inRequest:
-     * <p>
+     * 
      * Remove any property stored under the given key
-     * <p>
+     * 
      * Like setProperty:forKey:inRequest: above, the purpose of this
      * method is to give protocol implementors the ability to store
      * protocol-specific information in an NSURLRequest
-     *
+     * 
      * @param key     The key whose value should be removed
      * @param request The request to be modified
      */
     @Generated
     @Selector("removePropertyForKey:inRequest:")
-    public static native void removePropertyForKeyInRequest(String key, NSMutableURLRequest request);
+    public static native void removePropertyForKeyInRequest(@NotNull String key, @NotNull NSMutableURLRequest request);
 
     /**
      * requestIsCacheEquivalent:toRequest:
-     * <p>
+     * 
      * Compares two requests for equivalence with regard to caching.
-     * <p>
-     * Requests are considered euqivalent for cache purposes
+     * 
+     * Requests are considered equivalent for cache purposes
      * if and only if they would be handled by the same protocol AND that
      * protocol declares them equivalent after performing
      * implementation-specific checks.
-     *
+     * 
      * @return YES if the two requests are cache-equivalent, NO otherwise.
      */
     @Generated
     @Selector("requestIsCacheEquivalent:toRequest:")
-    public static native boolean requestIsCacheEquivalentToRequest(NSURLRequest a, NSURLRequest b);
+    public static native boolean requestIsCacheEquivalentToRequest(@NotNull NSURLRequest a, @NotNull NSURLRequest b);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -272,22 +285,22 @@ public class NSURLProtocol extends NSObject {
 
     /**
      * setProperty:forKey:inRequest:
-     * <p>
+     * 
      * Stores the given property in the given request using the
      * given key.
-     * <p>
+     * 
      * The purpose of this method is to provide an interface
      * for protocol implementors to customize protocol-specific
      * information associated with NSMutableURLRequest objects.
-     *
+     * 
      * @param value   The property to store.
      * @param key     The string to use for the property storage.
      * @param request The request in which to store the property.
      */
     @Generated
     @Selector("setProperty:forKey:inRequest:")
-    public static native void setPropertyForKeyInRequest(@Mapped(ObjCObjectMapper.class) Object value, String key,
-            NSMutableURLRequest request);
+    public static native void setPropertyForKeyInRequest(@NotNull @Mapped(ObjCObjectMapper.class) Object value,
+            @NotNull String key, @NotNull NSMutableURLRequest request);
 
     @Generated
     @Selector("setVersion:")
@@ -299,17 +312,17 @@ public class NSURLProtocol extends NSObject {
 
     /**
      * unregisterClass:
-     * <p>
+     * 
      * This method unregisters a protocol.
-     * <p>
+     * 
      * After unregistration, a protocol class is no longer
      * consulted in calls to NSURLProtocol class methods.
-     *
+     * 
      * @param protocolClass The class to unregister.
      */
     @Generated
     @Selector("unregisterClass:")
-    public static native void unregisterClass(Class protocolClass);
+    public static native void unregisterClass(@NotNull Class protocolClass);
 
     @Generated
     @Selector("version")
@@ -318,18 +331,20 @@ public class NSURLProtocol extends NSObject {
 
     /**
      * Returns the NSCachedURLResponse of the receiver.
-     *
+     * 
      * @return The NSCachedURLResponse of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("cachedResponse")
     public native NSCachedURLResponse cachedResponse();
 
     /**
      * Returns the NSURLProtocolClient of the receiver.
-     *
+     * 
      * @return The NSURLProtocolClient of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("client")
     @MappedReturn(ObjCObjectMapper.class)
@@ -341,10 +356,10 @@ public class NSURLProtocol extends NSObject {
 
     /**
      * initWithRequest:cachedResponse:client:
-     * <p>
+     * 
      * Initializes an NSURLProtocol given request,
      * cached response, and client.
-     *
+     * 
      * @param request        The request to load.
      * @param cachedResponse A response that has been retrieved from the
      *                       cache for the given request. The protocol implementation should
@@ -356,28 +371,34 @@ public class NSURLProtocol extends NSObject {
      */
     @Generated
     @Selector("initWithRequest:cachedResponse:client:")
-    public native NSURLProtocol initWithRequestCachedResponseClient(NSURLRequest request,
-            NSCachedURLResponse cachedResponse, @Mapped(ObjCObjectMapper.class) NSURLProtocolClient client);
+    public native NSURLProtocol initWithRequestCachedResponseClient(@NotNull NSURLRequest request,
+            @Nullable NSCachedURLResponse cachedResponse,
+            @Nullable @Mapped(ObjCObjectMapper.class) NSURLProtocolClient client);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithTask:cachedResponse:client:")
-    public native NSURLProtocol initWithTaskCachedResponseClient(NSURLSessionTask task,
-            NSCachedURLResponse cachedResponse, @Mapped(ObjCObjectMapper.class) NSURLProtocolClient client);
+    public native NSURLProtocol initWithTaskCachedResponseClient(@NotNull NSURLSessionTask task,
+            @Nullable NSCachedURLResponse cachedResponse,
+            @Nullable @Mapped(ObjCObjectMapper.class) NSURLProtocolClient client);
 
     /**
      * Returns the NSURLRequest of the receiver.
-     *
+     * 
      * @return The NSURLRequest of the receiver.
      */
+    @NotNull
     @Generated
     @Selector("request")
     public native NSURLRequest request();
 
     /**
      * startLoading
-     * <p>
+     * 
      * Starts protocol-specific loading of a request.
-     * <p>
+     * 
      * When this method is called, the protocol implementation
      * should start loading a request.
      */
@@ -387,9 +408,9 @@ public class NSURLProtocol extends NSObject {
 
     /**
      * stopLoading
-     * <p>
+     * 
      * Stops protocol-specific loading of a request.
-     * <p>
+     * 
      * When this method is called, the protocol implementation
      * should end the work of loading a request. This could be in response
      * to a cancel operation, so protocol implementations must be able to
@@ -399,6 +420,10 @@ public class NSURLProtocol extends NSObject {
     @Selector("stopLoading")
     public native void stopLoading();
 
+    /**
+     * API-Since: 8.0
+     */
+    @Nullable
     @Generated
     @Selector("task")
     public native NSURLSessionTask task();

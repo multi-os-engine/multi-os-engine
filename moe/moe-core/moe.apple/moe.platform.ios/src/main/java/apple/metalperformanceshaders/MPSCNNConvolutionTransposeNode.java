@@ -22,9 +22,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A MPSNNFilterNode representing a MPSCNNConvolutionTranspose kernel
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -56,22 +60,25 @@ public class MPSCNNConvolutionTransposeNode extends MPSCNNConvolutionNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -95,8 +102,8 @@ public class MPSCNNConvolutionTransposeNode extends MPSCNNConvolutionNode {
 
     @Generated
     @Selector("initWithSource:weights:")
-    public native MPSCNNConvolutionTransposeNode initWithSourceWeights(MPSNNImageNode sourceNode,
-            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
+    public native MPSCNNConvolutionTransposeNode initWithSourceWeights(@NotNull MPSNNImageNode sourceNode,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -115,9 +122,10 @@ public class MPSCNNConvolutionTransposeNode extends MPSCNNConvolutionNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -126,8 +134,8 @@ public class MPSCNNConvolutionTransposeNode extends MPSCNNConvolutionNode {
 
     @Generated
     @Selector("nodeWithSource:weights:")
-    public static native MPSCNNConvolutionTransposeNode nodeWithSourceWeights(MPSNNImageNode sourceNode,
-            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
+    public static native MPSCNNConvolutionTransposeNode nodeWithSourceWeights(@NotNull MPSNNImageNode sourceNode,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -152,7 +160,7 @@ public class MPSCNNConvolutionTransposeNode extends MPSCNNConvolutionNode {
 
     /**
      * Init a node representing a MPSCNNConvolutionTransposeNode kernel
-     *
+     * 
      * @param sourceNode               The MPSNNImageNode representing the source MPSImage for the filter
      * @param convolutionGradientState When the convolution transpose is used to 'undo' an earlier convolution
      *                                 in the graph, it is generally desired that the output image be the same
@@ -163,16 +171,18 @@ public class MPSCNNConvolutionTransposeNode extends MPSCNNConvolutionNode {
      *                                 protocol. This object is provided by you to encapsulate storage for
      *                                 convolution weights and biases.
      * @return A new MPSNNFilter node for a MPSCNNConvolutionTransposeNode kernel.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithSource:convolutionGradientState:weights:")
     public native MPSCNNConvolutionTransposeNode initWithSourceConvolutionGradientStateWeights(
-            MPSNNImageNode sourceNode, MPSCNNConvolutionGradientStateNode convolutionGradientState,
-            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
+            @NotNull MPSNNImageNode sourceNode, @Nullable MPSCNNConvolutionGradientStateNode convolutionGradientState,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
 
     /**
      * Init an autoreleased not representing a MPSCNNConvolutionTransposeNode kernel
-     *
+     * 
      * @param sourceNode               The MPSNNImageNode representing the source MPSImage for the filter
      * @param convolutionGradientState When the convolution transpose is used to 'undo' an earlier convolution
      *                                 in the graph, it is generally desired that the output image be the same
@@ -183,10 +193,12 @@ public class MPSCNNConvolutionTransposeNode extends MPSCNNConvolutionNode {
      *                                 protocol. This object is provided by you to encapsulate storage for
      *                                 convolution weights and biases.
      * @return A new MPSNNFilter node for a MPSCNNConvolutionTransposeNode kernel.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("nodeWithSource:convolutionGradientState:weights:")
     public static native MPSCNNConvolutionTransposeNode nodeWithSourceConvolutionGradientStateWeights(
-            MPSNNImageNode sourceNode, MPSCNNConvolutionGradientStateNode convolutionGradientState,
-            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
+            @NotNull MPSNNImageNode sourceNode, @Nullable MPSCNNConvolutionGradientStateNode convolutionGradientState,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
 }

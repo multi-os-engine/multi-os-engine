@@ -39,16 +39,20 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEFilterManager
- * <p>
+ * 
  * The NEFilterManager class declares the programmatic interface for an object that manages content filtering
  * configurations.
- * <p>
+ * 
  * NEFilterManager declares methods and properties for configuring and controlling a filter.
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -80,22 +84,25 @@ public class NEFilterManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +137,10 @@ public class NEFilterManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -153,9 +161,12 @@ public class NEFilterManager extends NSObject {
 
     /**
      * sharedManager
-     *
+     * 
      * @return The singleton NEFilterManager object for the calling process.
+     * 
+     *         API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("sharedManager")
     public static native NEFilterManager sharedManager();
@@ -175,10 +186,12 @@ public class NEFilterManager extends NSObject {
 
     /**
      * [@property] enabled
-     * <p>
+     * 
      * Toggles the enabled status of the filter. On iOS, setting this property will disable filter configurations of
      * other apps, and this property will be set to NO when other filter configurations are enabled.
      * On macOS, up to 4 filter configurations of the same grade can be enabled simultaneously.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isEnabled")
@@ -186,10 +199,12 @@ public class NEFilterManager extends NSObject {
 
     /**
      * [@property] enabled
-     * <p>
+     * 
      * Toggles the enabled status of the filter. On iOS, setting this property will disable filter configurations of
      * other apps, and this property will be set to NO when other filter configurations are enabled.
      * On macOS, up to 4 filter configurations of the same grade can be enabled simultaneously.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setEnabled:")
@@ -197,99 +212,115 @@ public class NEFilterManager extends NSObject {
 
     /**
      * loadFromPreferencesWithCompletionHandler:
-     * <p>
+     * 
      * This function loads the current filter configuration from the caller's filter preferences.
-     *
+     * 
      * @param completionHandler A block that will be called when the load operation is completed. The NSError passed to
      *                          this block will be nil if the load operation succeeded, non-nil otherwise.
+     * 
+     *                          API-Since: 8.0
      */
     @Generated
     @Selector("loadFromPreferencesWithCompletionHandler:")
     public native void loadFromPreferencesWithCompletionHandler(
-            @ObjCBlock(name = "call_loadFromPreferencesWithCompletionHandler") Block_loadFromPreferencesWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_loadFromPreferencesWithCompletionHandler") Block_loadFromPreferencesWithCompletionHandler completionHandler);
 
     /**
      * [@property] localizedDescription
-     * <p>
+     * 
      * A string containing a description of the filter.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
 
     /**
      * [@property] providerConfiguration
-     * <p>
+     * 
      * An NEFilterProviderConfiguration object containing the provider-specific portion of the filter configuration.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("providerConfiguration")
     public native NEFilterProviderConfiguration providerConfiguration();
 
     /**
      * removeFromPreferencesWithCompletionHandler:
-     * <p>
+     * 
      * This function removes the filter configuration from the caller's filter preferences. If the filter is enabled,
      * the filter becomes disabled.
-     *
+     * 
      * @param completionHandler A block that will be called when the remove operation is completed. The NSError passed
      *                          to this block will be nil if the remove operation succeeded, non-nil otherwise.
+     * 
+     *                          API-Since: 8.0
      */
     @Generated
     @Selector("removeFromPreferencesWithCompletionHandler:")
     public native void removeFromPreferencesWithCompletionHandler(
-            @ObjCBlock(name = "call_removeFromPreferencesWithCompletionHandler") Block_removeFromPreferencesWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_removeFromPreferencesWithCompletionHandler") Block_removeFromPreferencesWithCompletionHandler completionHandler);
 
     /**
      * saveToPreferencesWithCompletionHandler:
-     * <p>
+     * 
      * This function saves the filter configuration in the caller's filter preferences. If the filter is enabled, it
      * will become active.
-     *
+     * 
      * @param completionHandler A block that will be called when the save operation is completed. The NSError passed to
      *                          this block will be nil if the save operation succeeded, non-nil otherwise.
+     * 
+     *                          API-Since: 8.0
      */
     @Generated
     @Selector("saveToPreferencesWithCompletionHandler:")
     public native void saveToPreferencesWithCompletionHandler(
-            @ObjCBlock(name = "call_saveToPreferencesWithCompletionHandler") Block_saveToPreferencesWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_saveToPreferencesWithCompletionHandler") Block_saveToPreferencesWithCompletionHandler completionHandler);
 
     /**
      * [@property] localizedDescription
-     * <p>
+     * 
      * A string containing a description of the filter.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setLocalizedDescription:")
-    public native void setLocalizedDescription(String value);
+    public native void setLocalizedDescription(@Nullable String value);
 
     /**
      * [@property] providerConfiguration
-     * <p>
+     * 
      * An NEFilterProviderConfiguration object containing the provider-specific portion of the filter configuration.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setProviderConfiguration:")
-    public native void setProviderConfiguration(NEFilterProviderConfiguration value);
+    public native void setProviderConfiguration(@Nullable NEFilterProviderConfiguration value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadFromPreferencesWithCompletionHandler {
         @Generated
-        void call_loadFromPreferencesWithCompletionHandler(NSError error);
+        void call_loadFromPreferencesWithCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeFromPreferencesWithCompletionHandler {
         @Generated
-        void call_removeFromPreferencesWithCompletionHandler(NSError error);
+        void call_removeFromPreferencesWithCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveToPreferencesWithCompletionHandler {
         @Generated
-        void call_saveToPreferencesWithCompletionHandler(NSError error);
+        void call_saveToPreferencesWithCompletionHandler(@Nullable NSError error);
     }
 }

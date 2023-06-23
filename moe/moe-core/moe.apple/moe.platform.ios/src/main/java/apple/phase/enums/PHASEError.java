@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] PHASEError
- * <p>
+ * 
  * General PHASE error codes
  */
 @Generated
@@ -14,5 +14,6 @@ public final class PHASEError {
     private PHASEError() {
     }
 
-    @Generated @NInt public static final long PHASEErrorInitializeFailed = 0x0000000050484561L;
+    @Generated @NInt public static final long InitializeFailed = 0x0000000050484561L;
+    @Generated @NInt public static final long InvalidObject = 0x0000000050484562L;
 }

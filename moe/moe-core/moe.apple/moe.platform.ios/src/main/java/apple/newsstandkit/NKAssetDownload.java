@@ -41,12 +41,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NKAssetDownload
- * <p>
+ * 
  * Represents a downloading asset for an issue.
- * <p>
+ * 
  * An NKIssue may have one or more assets that together form the structure
  * of the Newsstand issue. You generate a downloading asset by constructing
  * an NSURLRequest adding the request to the NKIssue using
@@ -54,7 +56,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * -[NKAssetDownload downloadWithDelegate:].
  * Upon download completion, you will need to put your uncompressed content
  * in the URL specified by -[NKIssue contentURL].
+ * 
+ * API-Since: 5.0
+ * Deprecated-Since: 13.0
+ * Deprecated-Message: Use the Remote Notifications Background Modes instead:
+ * https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_updates_to_your_app_silently
  */
+@Deprecated
 @Generated
 @Library("NewsstandKit")
 @Runtime(ObjCRuntime.class)
@@ -85,22 +93,25 @@ public class NKAssetDownload extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,9 +146,10 @@ public class NKAssetDownload extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,29 +179,32 @@ public class NKAssetDownload extends NSObject {
 
     /**
      * [@property] URLRequest
-     * <p>
+     * 
      * The NSURLRequest of the download
      */
+    @NotNull
     @Generated
     @Selector("URLRequest")
     public native NSURLRequest URLRequest();
 
     /**
      * downloadWithDelegate:
-     * <p>
+     * 
      * Begins downloading the asset with the specified delegate. Delegate
      * may not be nil.
      */
+    @NotNull
     @Generated
     @Selector("downloadWithDelegate:")
     public native NSURLConnection downloadWithDelegate(
-            @Mapped(ObjCObjectMapper.class) NSURLConnectionDownloadDelegate delegate);
+            @NotNull @Mapped(ObjCObjectMapper.class) NSURLConnectionDownloadDelegate delegate);
 
     /**
      * [@property] identifier
-     * <p>
+     * 
      * A unique identifier representing the asset.
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -201,15 +216,16 @@ public class NKAssetDownload extends NSObject {
     /**
      * back-pointer to the issue this asset is associated with
      */
+    @Nullable
     @Generated
     @Selector("issue")
     public native NKIssue issue();
 
     /**
      * [@property] userInfo
-     * <p>
+     * 
      * Application specific information that is saved with the asset. Can be nil.
-     * <p>
+     * 
      * You may add arbitrary key-value pairs to this dictionary. However, the keys
      * and values must be valid property-list types; if any are not, an exception is raised.
      * Using this property you can save download related information such as file name/paths,
@@ -218,19 +234,20 @@ public class NKAssetDownload extends NSObject {
      */
     @Generated
     @Selector("setUserInfo:")
-    public native void setUserInfo(NSDictionary<?, ?> value);
+    public native void setUserInfo(@Nullable NSDictionary<?, ?> value);
 
     /**
      * [@property] userInfo
-     * <p>
+     * 
      * Application specific information that is saved with the asset. Can be nil.
-     * <p>
+     * 
      * You may add arbitrary key-value pairs to this dictionary. However, the keys
      * and values must be valid property-list types; if any are not, an exception is raised.
      * Using this property you can save download related information such as file name/paths,
      * encoding mechanisms, custom identifiers, etc. However, performance concerns dictate
      * that you should make this content as minimal as possible.
      */
+    @Nullable
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();

@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A Camera node is a full fledged SKNode that can have actions and physics applied to it.
@@ -50,18 +52,20 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * is how you translate the camera's viewport. Applying a scale to the node would zoom
  * the viewport in or out etc. As an added benefit you can now rotate the viewport by
  * applying a zRotation to the camera node, just as you would with any other SKNode.
- * <p>
+ * 
  * The camera viewport is centered on the camera's position. It uses the scene's frame
  * and scale mode along with the node transforms to determine the size, origin and
  * rotation of the viewport.
- * <p>
+ * 
  * There are some convenience functions included for testing if nodes are contained
  * within the camera viewport. It can be used to determine if objects are no longer
  * visible on the display.
- * <p>
+ * 
  * In order to use a camera; set it on the scene that contains the camera.
- *
+ * 
  * @see SKScene.camera
+ * 
+ *      API-Since: 9.0
  */
 @Generated
 @Library("SpriteKit")
@@ -93,29 +97,32 @@ public class SKCameraNode extends SKNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -147,9 +154,10 @@ public class SKCameraNode extends SKNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,21 +170,25 @@ public class SKCameraNode extends SKNode {
 
     @Generated
     @Selector("nodeWithFileNamed:")
-    public static native SKCameraNode nodeWithFileNamed(String filename);
+    public static native SKCameraNode nodeWithFileNamed(@NotNull String filename);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodeBounds:")
-    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
+    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodePhysicsBodies:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodePhysicsBodies(
-            NSArray<? extends SKNode> nodes);
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromSpriteTextures:accuracy:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromSpriteTexturesAccuracy(
-            NSArray<? extends SKNode> sprites, float accuracy);
+            @NotNull NSArray<? extends SKNode> sprites, float accuracy);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -201,9 +213,10 @@ public class SKCameraNode extends SKNode {
 
     /**
      * Returns the set of nodes in the same scene as the camera that are contained within its viewport.
-     *
+     * 
      * @return the set of nodes contained
      */
+    @NotNull
     @Generated
     @Selector("containedNodeSet")
     public native NSSet<? extends SKNode> containedNodeSet();
@@ -212,12 +225,12 @@ public class SKCameraNode extends SKNode {
      * Checks if the node is contained inside the viewport of the camera.
      * The camera and node must both be in the same scene and presented on a view in order
      * to determine if the node is inside the camera viewport rectangle.
-     *
+     * 
      * @return YES if the node is inside the viewport. NO if node is nil or the node is outside the viewport.
      */
     @Generated
     @Selector("containsNode:")
-    public native boolean containsNode(SKNode node);
+    public native boolean containsNode(@NotNull SKNode node);
 
     @Generated
     @Selector("init")
@@ -225,12 +238,12 @@ public class SKCameraNode extends SKNode {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKCameraNode initWithCoder(NSCoder aDecoder);
+    public native SKCameraNode initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("nodeWithFileNamed:securelyWithClasses:andError:")
-    public static native SKCameraNode nodeWithFileNamedSecurelyWithClassesAndError(String filename,
-            NSSet<? extends Class> classes, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native SKCameraNode nodeWithFileNamedSecurelyWithClassesAndError(@NotNull String filename,
+            @NotNull NSSet<? extends Class> classes, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("supportsSecureCoding")

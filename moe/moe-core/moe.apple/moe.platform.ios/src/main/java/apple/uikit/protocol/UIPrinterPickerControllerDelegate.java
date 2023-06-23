@@ -26,6 +26,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -34,7 +36,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface UIPrinterPickerControllerDelegate {
     /**
      * printerPickerController:shouldShowPrinter:
-     * <p>
+     * 
      * Use to filter out specific printers from the printer picker.
      * Evaluate the UIPrinter object and returns YES if the printer should
      * be shown, NO otherwise.
@@ -46,51 +48,52 @@ public interface UIPrinterPickerControllerDelegate {
     @Generated
     @IsOptional
     @Selector("printerPickerController:shouldShowPrinter:")
-    default boolean printerPickerControllerShouldShowPrinter(UIPrinterPickerController printerPickerController,
-            UIPrinter printer) {
+    default boolean printerPickerControllerShouldShowPrinter(@NotNull UIPrinterPickerController printerPickerController,
+            @NotNull UIPrinter printer) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("printerPickerControllerDidDismiss:")
-    default void printerPickerControllerDidDismiss(UIPrinterPickerController printerPickerController) {
+    default void printerPickerControllerDidDismiss(@NotNull UIPrinterPickerController printerPickerController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("printerPickerControllerDidPresent:")
-    default void printerPickerControllerDidPresent(UIPrinterPickerController printerPickerController) {
+    default void printerPickerControllerDidPresent(@NotNull UIPrinterPickerController printerPickerController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("printerPickerControllerDidSelectPrinter:")
-    default void printerPickerControllerDidSelectPrinter(UIPrinterPickerController printerPickerController) {
+    default void printerPickerControllerDidSelectPrinter(@NotNull UIPrinterPickerController printerPickerController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("printerPickerControllerParentViewController:")
     default UIViewController printerPickerControllerParentViewController(
-            UIPrinterPickerController printerPickerController) {
+            @NotNull UIPrinterPickerController printerPickerController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("printerPickerControllerWillDismiss:")
-    default void printerPickerControllerWillDismiss(UIPrinterPickerController printerPickerController) {
+    default void printerPickerControllerWillDismiss(@NotNull UIPrinterPickerController printerPickerController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("printerPickerControllerWillPresent:")
-    default void printerPickerControllerWillPresent(UIPrinterPickerController printerPickerController) {
+    default void printerPickerControllerWillPresent(@NotNull UIPrinterPickerController printerPickerController) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

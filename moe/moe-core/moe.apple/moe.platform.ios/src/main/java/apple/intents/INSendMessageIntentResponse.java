@@ -40,7 +40,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -71,22 +76,25 @@ public class INSendMessageIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,9 +129,10 @@ public class INSendMessageIntentResponse extends INIntentResponse {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -175,11 +184,12 @@ public class INSendMessageIntentResponse extends INIntentResponse {
      */
     @Generated
     @Selector("initWithCode:userActivity:")
-    public native INSendMessageIntentResponse initWithCodeUserActivity(@NInt long code, NSUserActivity userActivity);
+    public native INSendMessageIntentResponse initWithCodeUserActivity(@NInt long code,
+            @Nullable NSUserActivity userActivity);
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSendMessageIntentResponse initWithCoder(NSCoder coder);
+    public native INSendMessageIntentResponse initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -187,11 +197,37 @@ public class INSendMessageIntentResponse extends INIntentResponse {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 16.0
+     */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("sentMessage")
     public native INMessage sentMessage();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 16.0
+     */
+    @Deprecated
     @Generated
     @Selector("setSentMessage:")
-    public native void setSentMessage(INMessage value);
+    public native void setSentMessage(@Nullable INMessage value);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("sentMessages")
+    public native NSArray<? extends INMessage> sentMessages();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setSentMessages:")
+    public native void setSentMessages(@Nullable NSArray<? extends INMessage> value);
 }

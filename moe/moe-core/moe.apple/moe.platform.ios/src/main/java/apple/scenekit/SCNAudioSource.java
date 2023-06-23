@@ -43,11 +43,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNAudioSource
- * <p>
+ * 
  * The SCNAudioSource class represents an audio source that can be added to a SCNNode.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("SceneKit")
@@ -79,31 +83,34 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * audioSourceNamed:
-     * <p>
+     * 
      * Convenience class initializer that caches audioSources.
      */
     @Generated
     @Selector("audioSourceNamed:")
-    public static native SCNAudioSource audioSourceNamed(String fileName);
+    public static native SCNAudioSource audioSourceNamed(@NotNull String fileName);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -138,9 +145,10 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -172,15 +180,16 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -188,34 +197,34 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNAudioSource initWithCoder(NSCoder coder);
+    public native SCNAudioSource initWithCoder(@NotNull NSCoder coder);
 
     /**
      * initWithFileNamed:
-     * <p>
+     * 
      * Convenience initializer that creates an AVAudioNode from the named audio asset in the main bundle.
      */
     @Generated
     @Selector("initWithFileNamed:")
-    public native SCNAudioSource initWithFileNamed(String name);
+    public native SCNAudioSource initWithFileNamed(@NotNull String name);
 
     /**
      * initWithURL:
-     * <p>
+     * 
      * Convenience initializer that creates an AVAudioNode from the URL that contain a audio asset.
      */
     @Generated
     @Selector("initWithURL:")
-    public native SCNAudioSource initWithURL(NSURL url);
+    public native SCNAudioSource initWithURL(@NotNull NSURL url);
 
     /**
      * [@property] positional
-     * <p>
+     * 
      * Marks the audio source as positional so that the audio mix considers relative position and velocity with regards
      * to the SCNSceneRenderer's current listener node. Defaults to YES.
-     * <p>
+     * 
      * shouldStream must be set to false in order to get positional audio (see shouldStream).
-     *
+     * 
      * @see SCNSceneRenderer audioListener.
      */
     @Generated
@@ -224,12 +233,12 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * [@property] positional
-     * <p>
+     * 
      * Marks the audio source as positional so that the audio mix considers relative position and velocity with regards
      * to the SCNSceneRenderer's current listener node. Defaults to YES.
-     * <p>
+     * 
      * shouldStream must be set to false in order to get positional audio (see shouldStream).
-     *
+     * 
      * @see SCNSceneRenderer audioListener.
      */
     @Generated
@@ -238,10 +247,10 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * load
-     * <p>
+     * 
      * Load and uncompress the audio source in memory. This method has no effect if "shouldStream" is set to YES or if
      * the audio source is already loaded.
-     * <p>
+     * 
      * This method let you preload your audio sources. If an audio source is not preloaded, it will be loaded anyway
      * when playing it.
      */
@@ -251,7 +260,7 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * [@property] loops
-     * <p>
+     * 
      * Specifies whether the audio source should loop or not. Defaults to NO.
      */
     @Generated
@@ -260,7 +269,7 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * [@property] rate
-     * <p>
+     * 
      * The default rate for this audio buffer. Default is 1.0 (original rate of the audio source).
      */
     @Generated
@@ -269,7 +278,7 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * [@property] reverbBlend
-     * <p>
+     * 
      * The default reverbBlend for this audio buffer. Default is 0.0 (no sound is sent to the reverb).
      */
     @Generated
@@ -278,7 +287,7 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * [@property] loops
-     * <p>
+     * 
      * Specifies whether the audio source should loop or not. Defaults to NO.
      */
     @Generated
@@ -287,7 +296,7 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * [@property] rate
-     * <p>
+     * 
      * The default rate for this audio buffer. Default is 1.0 (original rate of the audio source).
      */
     @Generated
@@ -296,7 +305,7 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * [@property] reverbBlend
-     * <p>
+     * 
      * The default reverbBlend for this audio buffer. Default is 0.0 (no sound is sent to the reverb).
      */
     @Generated
@@ -305,7 +314,7 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * [@property] shouldStream
-     * <p>
+     * 
      * Specifies whether the audio source should be streamed or not. Defaults to NO.
      */
     @Generated
@@ -314,7 +323,7 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * [@property] volume
-     * <p>
+     * 
      * The default volume for this audio buffer. Default is 1.0 (full volume).
      */
     @Generated
@@ -323,7 +332,7 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * [@property] shouldStream
-     * <p>
+     * 
      * Specifies whether the audio source should be streamed or not. Defaults to NO.
      */
     @Generated
@@ -338,7 +347,7 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * [@property] volume
-     * <p>
+     * 
      * The default volume for this audio buffer. Default is 1.0 (full volume).
      */
     @Generated

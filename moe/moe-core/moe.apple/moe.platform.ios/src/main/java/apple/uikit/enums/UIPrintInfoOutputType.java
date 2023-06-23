@@ -35,6 +35,8 @@ public final class UIPrintInfoOutputType {
     @Generated @NInt public static final long Grayscale = 0x0000000000000002L;
     /**
      * B&W only, best quality output for images
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long PhotoGrayscale = 0x0000000000000003L;
 

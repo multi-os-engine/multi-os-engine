@@ -26,7 +26,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("Accessibility")
 @Runtime(ObjCRuntime.class)
@@ -55,37 +60,42 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
     @Selector("allocWithZone:")
     public static native AXNumericDataAxisDescriptor allocWithZone(VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("attributedTitle")
     public native NSAttributedString attributedTitle();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -98,6 +108,7 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
     /**
      * The positions of any gridlines along this axis.
      */
+    @NotNull
     @Generated
     @Selector("gridlinePositions")
     public native NSArray<? extends NSNumber> gridlinePositions();
@@ -114,13 +125,14 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
     @Generated
     @Selector("initWithAttributedTitle:lowerBound:upperBound:gridlinePositions:valueDescriptionProvider:")
     public native AXNumericDataAxisDescriptor initWithAttributedTitleLowerBoundUpperBoundGridlinePositionsValueDescriptionProvider(
-            NSAttributedString attributedTitle, double lowerbound, double upperBound,
-            NSArray<? extends NSNumber> gridlinePositions,
-            @ObjCBlock(name = "call_initWithAttributedTitleLowerBoundUpperBoundGridlinePositionsValueDescriptionProvider") Block_initWithAttributedTitleLowerBoundUpperBoundGridlinePositionsValueDescriptionProvider valueDescriptionProvider);
+            @NotNull NSAttributedString attributedTitle, double lowerbound, double upperBound,
+            @Nullable NSArray<? extends NSNumber> gridlinePositions,
+            @NotNull @ObjCBlock(name = "call_initWithAttributedTitleLowerBoundUpperBoundGridlinePositionsValueDescriptionProvider") Block_initWithAttributedTitleLowerBoundUpperBoundGridlinePositionsValueDescriptionProvider valueDescriptionProvider);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithAttributedTitleLowerBoundUpperBoundGridlinePositionsValueDescriptionProvider {
+        @NotNull
         @Generated
         String call_initWithAttributedTitleLowerBoundUpperBoundGridlinePositionsValueDescriptionProvider(double arg0);
     }
@@ -128,12 +140,14 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
     @Generated
     @Selector("initWithTitle:lowerBound:upperBound:gridlinePositions:valueDescriptionProvider:")
     public native AXNumericDataAxisDescriptor initWithTitleLowerBoundUpperBoundGridlinePositionsValueDescriptionProvider(
-            String title, double lowerbound, double upperBound, NSArray<? extends NSNumber> gridlinePositions,
-            @ObjCBlock(name = "call_initWithTitleLowerBoundUpperBoundGridlinePositionsValueDescriptionProvider") Block_initWithTitleLowerBoundUpperBoundGridlinePositionsValueDescriptionProvider valueDescriptionProvider);
+            @NotNull String title, double lowerbound, double upperBound,
+            @Nullable NSArray<? extends NSNumber> gridlinePositions,
+            @NotNull @ObjCBlock(name = "call_initWithTitleLowerBoundUpperBoundGridlinePositionsValueDescriptionProvider") Block_initWithTitleLowerBoundUpperBoundGridlinePositionsValueDescriptionProvider valueDescriptionProvider);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithTitleLowerBoundUpperBoundGridlinePositionsValueDescriptionProvider {
+        @NotNull
         @Generated
         String call_initWithTitleLowerBoundUpperBoundGridlinePositionsValueDescriptionProvider(double arg0);
     }
@@ -155,9 +169,10 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The minimum displayable value for the axis.
@@ -190,14 +205,14 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
 
     @Generated
     @Selector("setAttributedTitle:")
-    public native void setAttributedTitle(NSAttributedString value);
+    public native void setAttributedTitle(@NotNull NSAttributedString value);
 
     /**
      * The positions of any gridlines along this axis.
      */
     @Generated
     @Selector("setGridlinePositions:")
-    public native void setGridlinePositions(NSArray<? extends NSNumber> value);
+    public native void setGridlinePositions(@NotNull NSArray<? extends NSNumber> value);
 
     /**
      * The minimum displayable value for the axis.
@@ -216,7 +231,7 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
 
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@NotNull String value);
 
     /**
      * The maximum displayable value for the axis.
@@ -232,11 +247,12 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
     @Generated
     @Selector("setValueDescriptionProvider:")
     public native void setValueDescriptionProvider(
-            @ObjCBlock(name = "call_setValueDescriptionProvider") Block_setValueDescriptionProvider value);
+            @NotNull @ObjCBlock(name = "call_setValueDescriptionProvider") Block_setValueDescriptionProvider value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setValueDescriptionProvider {
+        @NotNull
         @Generated
         String call_setValueDescriptionProvider(double arg0);
     }
@@ -249,6 +265,7 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("title")
     public native String title();
@@ -264,6 +281,7 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
      * Provides a value description to be spoken for a particular data value on this axis.
      * Use this to format data values to string representations that include units, dates, times, etc.
      */
+    @NotNull
     @Generated
     @Selector("valueDescriptionProvider")
     @ObjCBlock(name = "call_valueDescriptionProvider_ret")
@@ -272,6 +290,7 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_valueDescriptionProvider_ret {
+        @NotNull
         @Generated
         String call_valueDescriptionProvider_ret(double arg0);
     }

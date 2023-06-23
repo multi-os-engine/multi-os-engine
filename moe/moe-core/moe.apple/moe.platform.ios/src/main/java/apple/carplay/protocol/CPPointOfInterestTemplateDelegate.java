@@ -11,7 +11,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -23,7 +27,7 @@ public interface CPPointOfInterestTemplateDelegate {
      */
     @Generated
     @Selector("pointOfInterestTemplate:didChangeMapRegion:")
-    void pointOfInterestTemplateDidChangeMapRegion(CPPointOfInterestTemplate pointOfInterestTemplate,
+    void pointOfInterestTemplateDidChangeMapRegion(@NotNull CPPointOfInterestTemplate pointOfInterestTemplate,
             @ByValue MKCoordinateRegion region);
 
     /**
@@ -32,8 +36,8 @@ public interface CPPointOfInterestTemplateDelegate {
     @Generated
     @IsOptional
     @Selector("pointOfInterestTemplate:didSelectPointOfInterest:")
-    default void pointOfInterestTemplateDidSelectPointOfInterest(CPPointOfInterestTemplate pointOfInterestTemplate,
-            CPPointOfInterest pointOfInterest) {
+    default void pointOfInterestTemplateDidSelectPointOfInterest(
+            @NotNull CPPointOfInterestTemplate pointOfInterestTemplate, @NotNull CPPointOfInterest pointOfInterest) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

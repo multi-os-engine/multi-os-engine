@@ -38,24 +38,28 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAssetWriterInputGroup
- * <p>
+ * 
  * Associates tracks corresponding to inputs with each other in a mutually exclusive relationship.
- * <p>
+ * 
  * This class is used to associate tracks corresponding to multiple AVAssetWriterInputs as mutually exclusive to each
  * other for playback or other processing. For example, if you are creating an asset with multiple audio tracks using
  * different spoken languages, only one of which should be played at a time, group the inputs corresponding to those
  * tracks into a single instance of AVAssetWriterInputGroup and add the group to the AVAssetWriter via -[AVAssetWriter
  * addInputGroup:]. If the output format supports mutually exlusive relationships among tracks, the AVAssetWriter will
  * mark the tracks as mutually exclusive to each other.
- * <p>
+ * 
  * Note that because AVAssetWriterInputGroup is a subclass of AVMediaSelectionGroup, clients can examine the media
  * selection options that will be available on the output asset before the asset is written. Best results for examining
  * the options of the AVAssetWriterInputGroup will be obtained after associating the AVAssetWriterInputs of the AVAsset
  * as appropriate via -[AVAssetWriterInput addTrackAssociationWithTrackOfInput:type:] and by initializing each
  * AVAssetWriterInput with a source format hint, where appropriate.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("AVFoundation")
@@ -87,39 +91,45 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
 
     /**
      * assetWriterInputGroupWithInputs:defaultInput:
-     * <p>
+     * 
      * Creates an instance of AVAssetWriterInputGroup, for use with -[AVAssetWriter addInputGroup:].
-     *
-     * @param inputs       The collection of AVAssetWriterInputs to be grouped together.
-     * @param defaultInput The instance of AVAssetWriterInput in the group to designate as the default. When the input
+     * 
+     * @param inputs
+     *                     The collection of AVAssetWriterInputs to be grouped together.
+     * @param defaultInput
+     *                     The instance of AVAssetWriterInput in the group to designate as the default. When the input
      *                     group is added to an AVAssetWriter via -addInputGroup:, the value of
      *                     marksOutputTrackAsEnabled will automatically be set to YES for the default input and set to
      *                     NO for all of the other inputs in the group.
-     * @return An instance of AVAssetWriterInputGroup, for use with -[AVAssetWriter addInputGroup:].
+     * @return
+     *         An instance of AVAssetWriterInputGroup, for use with -[AVAssetWriter addInputGroup:].
      */
     @Generated
     @Selector("assetWriterInputGroupWithInputs:defaultInput:")
     public static native AVAssetWriterInputGroup assetWriterInputGroupWithInputsDefaultInput(
-            NSArray<? extends AVAssetWriterInput> inputs, AVAssetWriterInput defaultInput);
+            @NotNull NSArray<? extends AVAssetWriterInput> inputs, @Nullable AVAssetWriterInput defaultInput);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -154,39 +164,48 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("mediaSelectionOptionsFromArray:filteredAndSortedAccordingToPreferredLanguages:")
     public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayFilteredAndSortedAccordingToPreferredLanguages(
-            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSArray<String> preferredLanguages);
+            @NotNull NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions,
+            @NotNull NSArray<String> preferredLanguages);
 
+    @NotNull
     @Generated
     @Selector("mediaSelectionOptionsFromArray:withLocale:")
     public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayWithLocale(
-            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSLocale locale);
+            @NotNull NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, @NotNull NSLocale locale);
 
+    @NotNull
     @Generated
     @Selector("mediaSelectionOptionsFromArray:withMediaCharacteristics:")
     public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayWithMediaCharacteristics(
-            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSArray<String> mediaCharacteristics);
+            @NotNull NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions,
+            @NotNull NSArray<String> mediaCharacteristics);
 
+    @NotNull
     @Generated
     @Selector("mediaSelectionOptionsFromArray:withoutMediaCharacteristics:")
     public static native NSArray<? extends AVMediaSelectionOption> mediaSelectionOptionsFromArrayWithoutMediaCharacteristics(
-            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions, NSArray<String> mediaCharacteristics);
+            @NotNull NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions,
+            @NotNull NSArray<String> mediaCharacteristics);
 
     @Generated
     @Owned
     @Selector("new")
     public static native AVAssetWriterInputGroup new_objc();
 
+    @NotNull
     @Generated
     @Selector("playableMediaSelectionOptionsFromArray:")
     public static native NSArray<? extends AVMediaSelectionOption> playableMediaSelectionOptionsFromArray(
-            NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions);
+            @NotNull NSArray<? extends AVMediaSelectionOption> mediaSelectionOptions);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -211,11 +230,12 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
 
     /**
      * [@property] defaultInput
-     * <p>
+     * 
      * The input designated at the defaultInput of the receiver.
-     * <p>
+     * 
      * The value of this property is a concrete instance of AVAssetWriterInput.
      */
+    @Nullable
     @Generated
     @Selector("defaultInput")
     public native AVAssetWriterInput defaultInput();
@@ -226,28 +246,32 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
 
     /**
      * initWithInputs:defaultInput:
-     * <p>
+     * 
      * Creates an instance of AVAssetWriterInputGroup, for use with -[AVAssetWriter addInputGroup:].
-     *
-     * @param inputs       The collection of AVAssetWriterInputs to be grouped together.
-     * @param defaultInput The instance of AVAssetWriterInput in the group to designate as the default. When the input
+     * 
+     * @param inputs
+     *                     The collection of AVAssetWriterInputs to be grouped together.
+     * @param defaultInput
+     *                     The instance of AVAssetWriterInput in the group to designate as the default. When the input
      *                     group is added to an AVAssetWriter via -addInputGroup:, the value of
      *                     marksOutputTrackAsEnabled will automatically be set to YES for the default input and set to
      *                     NO for all of the other inputs in the group.
-     * @return An instance of AVAssetWriterInputGroup, for use with -[AVAssetWriter addInputGroup:].
+     * @return
+     *         An instance of AVAssetWriterInputGroup, for use with -[AVAssetWriter addInputGroup:].
      */
     @Generated
     @Selector("initWithInputs:defaultInput:")
-    public native AVAssetWriterInputGroup initWithInputsDefaultInput(NSArray<? extends AVAssetWriterInput> inputs,
-            AVAssetWriterInput defaultInput);
+    public native AVAssetWriterInputGroup initWithInputsDefaultInput(
+            @NotNull NSArray<? extends AVAssetWriterInput> inputs, @Nullable AVAssetWriterInput defaultInput);
 
     /**
      * [@property] inputs
-     * <p>
+     * 
      * The inputs grouped together by the receiver.
-     * <p>
+     * 
      * The value of this property is an NSArray containing concrete instances of AVAssetWriterInput.
      */
+    @NotNull
     @Generated
     @Selector("inputs")
     public native NSArray<? extends AVAssetWriterInput> inputs();

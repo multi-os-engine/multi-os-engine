@@ -25,7 +25,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -56,54 +61,60 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
 
     /**
      * assetVariantQualifierWithPredicate:
-     * <p>
+     * 
      * Returns a qualifer for a predicate.
-     *
-     * @param predicate The variant predicate.
+     * 
+     * @param predicate
+     *                  The variant predicate.
      */
     @Generated
     @Selector("assetVariantQualifierWithPredicate:")
-    public static native AVAssetVariantQualifier assetVariantQualifierWithPredicate(NSPredicate predicate);
+    public static native AVAssetVariantQualifier assetVariantQualifierWithPredicate(@NotNull NSPredicate predicate);
 
     /**
      * assetVariantQualifierWithVariant:
-     * <p>
+     * 
      * Returns a qualifer for a particular asset variant.
-     *
-     * @param variant A variant obtained from the -[AVAsset variants] or -[AVAssetDownloadConfiguration
+     * 
+     * @param variant
+     *                A variant obtained from the -[AVAsset variants] or -[AVAssetDownloadConfiguration
      *                playableVariants].
      */
     @Generated
     @Selector("assetVariantQualifierWithVariant:")
-    public static native AVAssetVariantQualifier assetVariantQualifierWithVariant(AVAssetVariant variant);
+    public static native AVAssetVariantQualifier assetVariantQualifierWithVariant(@NotNull AVAssetVariant variant);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -139,9 +150,10 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -150,34 +162,41 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
 
     /**
      * predicateForChannelCount:mediaSelectionOption:operatorType:
-     * <p>
+     * 
      * Creates a NSPredicate for audio channel count which can be used with other NSPredicates' to express variant
      * preferences.
-     *
-     * @param channelCount         The RHS value for the channel count in the predicate equation.
-     * @param mediaSelectionOption The audio media selection option under consideration.
-     * @param operatorType         The valid values are NSLessThanPredicateOperatorType,
+     * 
+     * @param channelCount
+     *                             The RHS value for the channel count in the predicate equation.
+     * @param mediaSelectionOption
+     *                             The audio media selection option under consideration.
+     * @param operatorType
+     *                             The valid values are NSLessThanPredicateOperatorType,
      *                             NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
      *                             NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
      *                             NSNotEqualToPredicateOperatorType.
      */
+    @NotNull
     @Generated
     @Selector("predicateForChannelCount:mediaSelectionOption:operatorType:")
     public static native NSPredicate predicateForChannelCountMediaSelectionOptionOperatorType(@NInt long channelCount,
-            AVMediaSelectionOption mediaSelectionOption, @NUInt long operatorType);
+            @NotNull AVMediaSelectionOption mediaSelectionOption, @NUInt long operatorType);
 
     /**
      * predicateForPresentationHeight:operatorType:
-     * <p>
+     * 
      * Creates a NSPredicate for presentation size height which can be used with other NSPredicates to express variant
      * preferences.
-     *
-     * @param height       The RHS value for the presentation size height in the predicate equation.
-     * @param operatorType The valid values are NSLessThanPredicateOperatorType,
+     * 
+     * @param height
+     *                     The RHS value for the presentation size height in the predicate equation.
+     * @param operatorType
+     *                     The valid values are NSLessThanPredicateOperatorType,
      *                     NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
      *                     NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
      *                     NSNotEqualToPredicateOperatorType.
      */
+    @NotNull
     @Generated
     @Selector("predicateForPresentationHeight:operatorType:")
     public static native NSPredicate predicateForPresentationHeightOperatorType(@NFloat double height,
@@ -185,16 +204,19 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
 
     /**
      * predicateForPresentationWidth:operatorType:
-     * <p>
+     * 
      * Creates a NSPredicate for presentation size width which can be used with other NSPredicates to express variant
      * preferences.
-     *
-     * @param width        The RHS value for the presentation size width in the predicate equation.
-     * @param operatorType The valid values are NSLessThanPredicateOperatorType,
+     * 
+     * @param width
+     *                     The RHS value for the presentation size width in the predicate equation.
+     * @param operatorType
+     *                     The valid values are NSLessThanPredicateOperatorType,
      *                     NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
      *                     NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
      *                     NSNotEqualToPredicateOperatorType.
      */
+    @NotNull
     @Generated
     @Selector("predicateForPresentationWidth:operatorType:")
     public static native NSPredicate predicateForPresentationWidthOperatorType(@NFloat double width,

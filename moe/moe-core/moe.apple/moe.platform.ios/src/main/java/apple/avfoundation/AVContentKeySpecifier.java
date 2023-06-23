@@ -23,7 +23,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.5
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -54,43 +59,50 @@ public class AVContentKeySpecifier extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * contentKeySpecifierForKeySystem:identifier:options:
-     * <p>
+     * 
      * Creates a new instance of AVContentKeySpecifier.
-     * <p>
+     * 
      * This method returns an AVContentKeySpecifier instance that represents a content key in a specific content key
      * system.
-     *
-     * @param keySystem            A valid key system for content keys.
-     * @param contentKeyIdentifier Container and protocol-specific key identifier.
-     * @param options              Additional information necessary to obtain the key, can be empty if none needed.
+     * 
+     * @param keySystem
+     *                             A valid key system for content keys.
+     * @param contentKeyIdentifier
+     *                             Container and protocol-specific key identifier.
+     * @param options
+     *                             Additional information necessary to obtain the key, can be empty if none needed.
      * @return A new AVContentKeySpecifier
      */
     @Generated
     @Selector("contentKeySpecifierForKeySystem:identifier:options:")
-    public static native AVContentKeySpecifier contentKeySpecifierForKeySystemIdentifierOptions(String keySystem,
-            @Mapped(ObjCObjectMapper.class) Object contentKeyIdentifier, NSDictionary<String, ?> options);
+    public static native AVContentKeySpecifier contentKeySpecifierForKeySystemIdentifierOptions(
+            @NotNull String keySystem, @NotNull @Mapped(ObjCObjectMapper.class) Object contentKeyIdentifier,
+            @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("debugDescription")
@@ -107,9 +119,10 @@ public class AVContentKeySpecifier extends NSObject {
 
     /**
      * [@property] identifier
-     * <p>
+     * 
      * Container and protocol-specific key identifier.
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     @MappedReturn(ObjCObjectMapper.class)
@@ -121,21 +134,25 @@ public class AVContentKeySpecifier extends NSObject {
 
     /**
      * initForKeySystem:identifier:options:
-     * <p>
+     * 
      * Initialize an instance of AVContentKeySpecifier.
-     * <p>
+     * 
      * This method returns an AVContentKeySpecifier instance that represents a content key in a specific content key
      * system.
-     *
-     * @param keySystem            A valid key system for content keys.
-     * @param contentKeyIdentifier Container and protocol-specific key identifier.
-     * @param options              Additional information necessary to obtain the key, can be empty if none needed.
+     * 
+     * @param keySystem
+     *                             A valid key system for content keys.
+     * @param contentKeyIdentifier
+     *                             Container and protocol-specific key identifier.
+     * @param options
+     *                             Additional information necessary to obtain the key, can be empty if none needed.
      * @return An instance of AVContentKeySpecifier
      */
     @Generated
     @Selector("initForKeySystem:identifier:options:")
-    public native AVContentKeySpecifier initForKeySystemIdentifierOptions(String keySystem,
-            @Mapped(ObjCObjectMapper.class) Object contentKeyIdentifier, NSDictionary<String, ?> options);
+    public native AVContentKeySpecifier initForKeySystemIdentifierOptions(@NotNull String keySystem,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object contentKeyIdentifier,
+            @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -154,15 +171,17 @@ public class AVContentKeySpecifier extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] keySystem
-     * <p>
+     * 
      * A valid key system for content keys.
      */
+    @NotNull
     @Generated
     @Selector("keySystem")
     public native String keySystem();
@@ -174,9 +193,10 @@ public class AVContentKeySpecifier extends NSObject {
 
     /**
      * [@property] options
-     * <p>
+     * 
      * Additional information necessary to obtain the key, can be empty if none needed.
      */
+    @NotNull
     @Generated
     @Selector("options")
     public native NSDictionary<String, ?> options();

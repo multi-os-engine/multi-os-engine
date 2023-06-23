@@ -45,12 +45,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An app can use an INInteraction to donate an action (represented as an intent) and its state to the system.
- * <p>
+ * 
  * The system may also launch the app with an NSUserActivity containing an INInteraction such that the app can perform
  * the action if it chooses.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("Intents")
@@ -82,22 +86,25 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -112,23 +119,23 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
     @Generated
     @Selector("deleteAllInteractionsWithCompletion:")
     public static native void deleteAllInteractionsWithCompletion(
-            @ObjCBlock(name = "call_deleteAllInteractionsWithCompletion") Block_deleteAllInteractionsWithCompletion completion);
+            @Nullable @ObjCBlock(name = "call_deleteAllInteractionsWithCompletion") Block_deleteAllInteractionsWithCompletion completion);
 
     /**
      * delete this app's interactions with the specified group identifier
      */
     @Generated
     @Selector("deleteInteractionsWithGroupIdentifier:completion:")
-    public static native void deleteInteractionsWithGroupIdentifierCompletion(String groupIdentifier,
-            @ObjCBlock(name = "call_deleteInteractionsWithGroupIdentifierCompletion") Block_deleteInteractionsWithGroupIdentifierCompletion completion);
+    public static native void deleteInteractionsWithGroupIdentifierCompletion(@NotNull String groupIdentifier,
+            @Nullable @ObjCBlock(name = "call_deleteInteractionsWithGroupIdentifierCompletion") Block_deleteInteractionsWithGroupIdentifierCompletion completion);
 
     /**
      * delete the interactions with the specified identifiers that were donated by this app
      */
     @Generated
     @Selector("deleteInteractionsWithIdentifiers:completion:")
-    public static native void deleteInteractionsWithIdentifiersCompletion(NSArray<String> identifiers,
-            @ObjCBlock(name = "call_deleteInteractionsWithIdentifiersCompletion") Block_deleteInteractionsWithIdentifiersCompletion completion);
+    public static native void deleteInteractionsWithIdentifiersCompletion(@NotNull NSArray<String> identifiers,
+            @Nullable @ObjCBlock(name = "call_deleteInteractionsWithIdentifiersCompletion") Block_deleteInteractionsWithIdentifiersCompletion completion);
 
     @Generated
     @Selector("description")
@@ -156,9 +163,10 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -190,16 +198,18 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * The time the interaction started/occurred and its duration. The app can override with their own timestamp but it
      * defaults to the time of creation of this interaction object
      */
+    @Nullable
     @Generated
     @Selector("dateInterval")
     public native NSDateInterval dateInterval();
@@ -218,15 +228,16 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
     @Generated
     @Selector("donateInteractionWithCompletion:")
     public native void donateInteractionWithCompletion(
-            @ObjCBlock(name = "call_donateInteractionWithCompletion") Block_donateInteractionWithCompletion completion);
+            @Nullable @ObjCBlock(name = "call_donateInteractionWithCompletion") Block_donateInteractionWithCompletion completion);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * A user-defined identifier for the interaction group, this is handy during deletion time
      */
+    @Nullable
     @Generated
     @Selector("groupIdentifier")
     public native String groupIdentifier();
@@ -235,6 +246,7 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
      * A unique identifier for the interaction. It defaults to a globally unique identifier.
      * The app can override with their own identifier that is unique in the app's domain
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -245,12 +257,13 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
 
     @Generated
     @Selector("initWithCoder:")
-    public native INInteraction initWithCoder(NSCoder coder);
+    public native INInteraction initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithIntent:response:")
-    public native INInteraction initWithIntentResponse(INIntent intent, INIntentResponse response);
+    public native INInteraction initWithIntentResponse(@NotNull INIntent intent, @Nullable INIntentResponse response);
 
+    @NotNull
     @Generated
     @Selector("intent")
     public native INIntent intent();
@@ -264,6 +277,7 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
     @NInt
     public native long intentHandlingStatus();
 
+    @Nullable
     @Generated
     @Selector("intentResponse")
     public native INIntentResponse intentResponse();
@@ -274,7 +288,7 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
      */
     @Generated
     @Selector("setDateInterval:")
-    public native void setDateInterval(NSDateInterval value);
+    public native void setDateInterval(@Nullable NSDateInterval value);
 
     /**
      * Indicates the direction of the interaction
@@ -288,7 +302,7 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
      */
     @Generated
     @Selector("setGroupIdentifier:")
-    public native void setGroupIdentifier(String value);
+    public native void setGroupIdentifier(@Nullable String value);
 
     /**
      * A unique identifier for the interaction. It defaults to a globally unique identifier.
@@ -296,7 +310,7 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
      */
     @Generated
     @Selector("setIdentifier:")
-    public native void setIdentifier(String value);
+    public native void setIdentifier(@NotNull String value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -308,32 +322,36 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
     @Generated
     public interface Block_deleteAllInteractionsWithCompletion {
         @Generated
-        void call_deleteAllInteractionsWithCompletion(NSError error);
+        void call_deleteAllInteractionsWithCompletion(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteInteractionsWithGroupIdentifierCompletion {
         @Generated
-        void call_deleteInteractionsWithGroupIdentifierCompletion(NSError error);
+        void call_deleteInteractionsWithGroupIdentifierCompletion(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteInteractionsWithIdentifiersCompletion {
         @Generated
-        void call_deleteInteractionsWithIdentifiersCompletion(NSError error);
+        void call_deleteInteractionsWithIdentifiersCompletion(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_donateInteractionWithCompletion {
         @Generated
-        void call_donateInteractionWithCompletion(NSError error);
+        void call_donateInteractionWithCompletion(@Nullable NSError error);
     }
 
+    /**
+     * API-Since: 11.0
+     */
+    @Nullable
     @Generated
     @Selector("parameterValueForParameter:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object parameterValueForParameter(INParameter parameter);
+    public native Object parameterValueForParameter(@NotNull INParameter parameter);
 }

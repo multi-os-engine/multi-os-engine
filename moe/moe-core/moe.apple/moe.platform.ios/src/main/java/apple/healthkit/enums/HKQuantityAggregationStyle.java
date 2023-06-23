@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HKQuantityAggregationStyle
- * <p>
+ * 
  * Describes how quantities can be aggregated over time.
- * <p>
+ * 
  * [@constant] HKQuantityAggregationStyleCumulative Samples may be summed over a time interval.
  * [@constant] HKQuantityAggregationStyleDiscreteArithmetic Samples may be averaged over a time interval using the
  * arithmetic mean
@@ -31,17 +31,36 @@ import org.moe.natj.general.ann.NInt;
  * temporally weighted integration function
  * [@constant] HKQuantityAggregationStyleDiscreteEquivalentContinuousLevel Samples may be combined over a time interval
  * by computing the equivalent continuous sound level; see IEC 61672-1
+ * 
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class HKQuantityAggregationStyle {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Cumulative = 0x0000000000000000L;
-    @Generated @NInt public static final long Discrete = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated @Generated @NInt public static final long Discrete = 0x0000000000000001L;
 
     @Generated
     private HKQuantityAggregationStyle() {
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long DiscreteArithmetic = 0x0000000000000001L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long DiscreteTemporallyWeighted = 0x0000000000000002L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long DiscreteEquivalentContinuousLevel = 0x0000000000000003L;
 }

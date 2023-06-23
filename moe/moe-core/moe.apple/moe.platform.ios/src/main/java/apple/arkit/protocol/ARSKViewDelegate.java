@@ -11,7 +11,12 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -19,7 +24,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface ARSKViewDelegate extends SKViewDelegate, ARSessionObserver {
     /**
      * Called when a new node has been mapped to the given anchor.
-     *
+     * 
      * @param view   The view that will render the scene.
      * @param node   The node that maps to the anchor.
      * @param anchor The added anchor.
@@ -27,13 +32,13 @@ public interface ARSKViewDelegate extends SKViewDelegate, ARSessionObserver {
     @Generated
     @IsOptional
     @Selector("view:didAddNode:forAnchor:")
-    default void viewDidAddNodeForAnchor(ARSKView view, SKNode node, ARAnchor anchor) {
+    default void viewDidAddNodeForAnchor(@NotNull ARSKView view, @NotNull SKNode node, @NotNull ARAnchor anchor) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Called when a mapped node has been removed from the scene graph for the given anchor.
-     *
+     * 
      * @param view   The view that will render the scene.
      * @param node   The node that was removed.
      * @param anchor The anchor that was removed.
@@ -41,13 +46,13 @@ public interface ARSKViewDelegate extends SKViewDelegate, ARSessionObserver {
     @Generated
     @IsOptional
     @Selector("view:didRemoveNode:forAnchor:")
-    default void viewDidRemoveNodeForAnchor(ARSKView view, SKNode node, ARAnchor anchor) {
+    default void viewDidRemoveNodeForAnchor(@NotNull ARSKView view, @NotNull SKNode node, @NotNull ARAnchor anchor) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Called when a node has been updated with data from the given anchor.
-     *
+     * 
      * @param view   The view that will render the scene.
      * @param node   The node that was updated.
      * @param anchor The anchor that was updated.
@@ -55,31 +60,32 @@ public interface ARSKViewDelegate extends SKViewDelegate, ARSessionObserver {
     @Generated
     @IsOptional
     @Selector("view:didUpdateNode:forAnchor:")
-    default void viewDidUpdateNodeForAnchor(ARSKView view, SKNode node, ARAnchor anchor) {
+    default void viewDidUpdateNodeForAnchor(@NotNull ARSKView view, @NotNull SKNode node, @NotNull ARAnchor anchor) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Implement this to provide a custom node for the given anchor.
-     * <p>
+     * 
      * This node will automatically be added to the scene graph.
      * If this method is not implemented, a node will be automatically created.
      * If nil is returned the anchor will be ignored.
-     *
+     * 
      * @param view   The view that will render the scene.
      * @param anchor The added anchor.
      * @return Node that will be mapped to the anchor or nil.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("view:nodeForAnchor:")
-    default SKNode viewNodeForAnchor(ARSKView view, ARAnchor anchor) {
+    default SKNode viewNodeForAnchor(@NotNull ARSKView view, @NotNull ARAnchor anchor) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Called when a node will be updated with data from the given anchor.
-     *
+     * 
      * @param view   The view that will render the scene.
      * @param node   The node that will be updated.
      * @param anchor The anchor that was updated.
@@ -87,7 +93,7 @@ public interface ARSKViewDelegate extends SKViewDelegate, ARSessionObserver {
     @Generated
     @IsOptional
     @Selector("view:willUpdateNode:forAnchor:")
-    default void viewWillUpdateNodeForAnchor(ARSKView view, SKNode node, ARAnchor anchor) {
+    default void viewWillUpdateNodeForAnchor(@NotNull ARSKView view, @NotNull SKNode node, @NotNull ARAnchor anchor) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

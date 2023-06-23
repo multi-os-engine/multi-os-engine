@@ -19,30 +19,45 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 public final class NSLineBreakMode {
     /**
      * Wrap at word boundaries, default
+     * 
+     * API-Since: 6.0
      */
     @Generated @NInt public static final long WordWrapping = 0x0000000000000000L;
     /**
      * Wrap at character boundaries
+     * 
+     * API-Since: 6.0
      */
     @Generated @NInt public static final long CharWrapping = 0x0000000000000001L;
     /**
      * Simply clip
+     * 
+     * API-Since: 6.0
      */
     @Generated @NInt public static final long Clipping = 0x0000000000000002L;
     /**
      * Truncate at head of line: "...wxyz"
+     * 
+     * API-Since: 6.0
      */
     @Generated @NInt public static final long TruncatingHead = 0x0000000000000003L;
     /**
      * Truncate at tail of line: "abcd..."
+     * 
+     * API-Since: 6.0
      */
     @Generated @NInt public static final long TruncatingTail = 0x0000000000000004L;
     /**
      * Truncate middle of line: "ab...yz"
+     * 
+     * API-Since: 6.0
      */
     @Generated @NInt public static final long TruncatingMiddle = 0x0000000000000005L;
 

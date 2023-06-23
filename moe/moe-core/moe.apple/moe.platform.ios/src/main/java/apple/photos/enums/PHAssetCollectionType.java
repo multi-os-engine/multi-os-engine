@@ -19,11 +19,25 @@ package apple.photos.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class PHAssetCollectionType {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Album = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long SmartAlbum = 0x0000000000000002L;
-    @Generated @NInt public static final long Moment = 0x0000000000000003L;
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Will be removed in a future release
+     */
+    @Deprecated @Generated @NInt public static final long Moment = 0x0000000000000003L;
 
     @Generated
     private PHAssetCollectionType() {

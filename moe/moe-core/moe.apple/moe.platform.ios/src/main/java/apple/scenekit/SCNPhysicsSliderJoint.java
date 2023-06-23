@@ -42,10 +42,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNPhysicsSliderJoint
- * <p>
+ * 
  * SCNPhysicsSliderJoint provides a linear sliding joint between two bodies.
  */
 @Generated
@@ -78,22 +80,25 @@ public class SCNPhysicsSliderJoint extends SCNPhysicsBehavior {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,8 +139,8 @@ public class SCNPhysicsSliderJoint extends SCNPhysicsBehavior {
      */
     @Generated
     @Selector("jointWithBody:axis:anchor:")
-    public static native SCNPhysicsSliderJoint jointWithBodyAxisAnchor(SCNPhysicsBody body, @ByValue SCNVector3 axis,
-            @ByValue SCNVector3 anchor);
+    public static native SCNPhysicsSliderJoint jointWithBodyAxisAnchor(@NotNull SCNPhysicsBody body,
+            @ByValue SCNVector3 axis, @ByValue SCNVector3 anchor);
 
     /**
      * Initializes and returns a physics slider joint.
@@ -143,13 +148,14 @@ public class SCNPhysicsSliderJoint extends SCNPhysicsBehavior {
      */
     @Generated
     @Selector("jointWithBodyA:axisA:anchorA:bodyB:axisB:anchorB:")
-    public static native SCNPhysicsSliderJoint jointWithBodyAAxisAAnchorABodyBAxisBAnchorB(SCNPhysicsBody bodyA,
-            @ByValue SCNVector3 axisA, @ByValue SCNVector3 anchorA, SCNPhysicsBody bodyB, @ByValue SCNVector3 axisB,
-            @ByValue SCNVector3 anchorB);
+    public static native SCNPhysicsSliderJoint jointWithBodyAAxisAAnchorABodyBAxisBAnchorB(
+            @NotNull SCNPhysicsBody bodyA, @ByValue SCNVector3 axisA, @ByValue SCNVector3 anchorA,
+            @NotNull SCNPhysicsBody bodyB, @ByValue SCNVector3 axisB, @ByValue SCNVector3 anchorB);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -216,6 +222,7 @@ public class SCNPhysicsSliderJoint extends SCNPhysicsBehavior {
     /**
      * the first body attached to the slider joint
      */
+    @NotNull
     @Generated
     @Selector("bodyA")
     public native SCNPhysicsBody bodyA();
@@ -223,6 +230,7 @@ public class SCNPhysicsSliderJoint extends SCNPhysicsBehavior {
     /**
      * the second body attached to the slider joint
      */
+    @Nullable
     @Generated
     @Selector("bodyB")
     public native SCNPhysicsBody bodyB();
@@ -233,7 +241,7 @@ public class SCNPhysicsSliderJoint extends SCNPhysicsBehavior {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsSliderJoint initWithCoder(NSCoder coder);
+    public native SCNPhysicsSliderJoint initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("maximumAngularLimit")

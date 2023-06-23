@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("CallKit")
@@ -39,26 +40,46 @@ public final class CallKit {
     private CallKit() {
     }
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CXErrorDomain();
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CXErrorDomainIncomingCall();
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CXErrorDomainRequestTransaction();
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CXErrorDomainCallDirectoryManager();
 
+    /**
+     * API-Since: 14.5
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

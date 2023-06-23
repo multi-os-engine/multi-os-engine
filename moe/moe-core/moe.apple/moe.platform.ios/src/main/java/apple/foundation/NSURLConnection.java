@@ -38,18 +38,20 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSURLConnection
- * <p>
+ * 
  * An NSURLConnection object provides support to perform
  * asynchronous loads of a URL request, providing data to a
  * client supplied delegate.
- * <p>
+ * 
  * The interface for NSURLConnection is very sparse, providing
  * only the controls to start and cancel asynchronous loads of a
  * URL request.<p>
- * <p>
+ * 
  * An NSURLConnection may be used for loading of resource data
  * directly to memory, in which case an
  * NSURLConnectionDataDelegate should be supplied, or for
@@ -58,12 +60,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * retained by the NSURLConnection until a terminal condition is
  * encountered. These two delegates are logically subclasses of
  * the base protocol, NSURLConnectionDelegate.<p>
- * <p>
+ * 
  * A terminal condition produced by the loader will result in a
  * connection:didFailWithError: in the case of an error, or
- * connectiondidFinishLoading: or connectionDidFinishDownloading:
+ * connectionDidFinishLoading: or connectionDidFinishDownloading:
  * delegate message.<p>
- * <p>
+ * 
  * The -cancel message hints to the loader that a resource load
  * should be abandoned but does not guarantee that more delegate
  * messages will not be delivered. If -cancel does cause the
@@ -71,25 +73,25 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * further messages. In general, a caller should be prepared for
  * -cancel to have no effect, and internally ignore any delegate
  * callbacks until the delegate is released.
- * <p>
+ * 
  * Scheduling of an NSURLConnection specifies the context in
  * which delegate callbacks will be made, but the actual IO may
  * occur on a separate thread and should be considered an
  * implementation detail.<p>
- * <p>
+ * 
  * When created, an NSURLConnection performs a deep-copy of the
  * NSURLRequest. This copy is available through the
  * -originalRequest method. As the connection performs the load,
  * this request may change as a result of protocol
  * canonicalization or due to following redirects.
  * -currentRequest can be used to retrieve this value.<p>
- * <p>
+ * 
  * An NSURLConnections created with the
  * +connectionWithRequest:delegate: or -initWithRequest:delegate:
  * methods are scheduled on the current runloop immediately, and
  * it is not necessary to send the -start message to begin the
  * resource load.<p>
- * <p>
+ * 
  * NSURLConnections created with
  * -initWithRequest:delegate:startImmediately: are not
  * automatically scheduled. Use -scheduleWithRunLoop:forMode: or
@@ -97,7 +99,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * callbacks, and -start to begin the load. If you do not
  * explicitly schedule the connection before -start, it will be
  * scheduled on the current runloop and mode automatically.<p>
- * <p>
+ * 
  * The NSURLConnectionSynchronousLoading category adds
  * +sendSynchronousRequest:returningResponse:error, which blocks
  * the current thread until the resource data is available or an
@@ -105,15 +107,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * applications main run loop may result in an unacceptably long
  * delay in a user interface and its use is strongly
  * discourage.<p>
- * <p>
+ * 
  * The NSURLConnectionQueuedLoading category implements
  * +sendAsynchronousRequest:queue:completionHandler, providing
  * similar simplicity but provides a mechanism where the current
  * runloop is not blocked.<p>
- * <p>
+ * 
  * Both of the immediate loading categories do not provide for
  * customization of resource load, and do not allow the caller to
  * respond to, e.g., authentication challenges.<p>
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("Foundation")
@@ -145,16 +149,16 @@ public class NSURLConnection extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * canHandleRequest:
-     * <p>
+     * 
      * Performs a "preflight" operation that performs
      * some speculative checks to see if a connection can
      * be initialized, and the associated I/O that is
      * started in the initializer methods can begin.
-     * <p>
+     * 
      * The result of this method is valid only as long as
      * no protocols are registered or unregistered, and
      * as long as the request is not mutated (if the
@@ -162,39 +166,50 @@ public class NSURLConnection extends NSObject {
      * prepared to handle failures even if they have
      * performed request preflighting by calling this
      * method.
-     *
-     * @param request The request to preflight.
+     * 
+     * @param
+     * request        The request to preflight.
+     * 
      * @return YES if it is likely that the given request can be used to
      *         initialize a connection and the associated I/O can be
      *         started, NO otherwise.
      */
     @Generated
     @Selector("canHandleRequest:")
-    public static native boolean canHandleRequest(NSURLRequest request);
+    public static native boolean canHandleRequest(@NotNull NSURLRequest request);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSession (see NSURLSession.h)
+     */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("connectionWithRequest:delegate:")
-    public static native NSURLConnection connectionWithRequestDelegate(NSURLRequest request,
-            @Mapped(ObjCObjectMapper.class) Object delegate);
+    public static native NSURLConnection connectionWithRequestDelegate(@NotNull NSURLRequest request,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object delegate);
 
     @Generated
     @Selector("debugDescription")
@@ -226,9 +241,10 @@ public class NSURLConnection extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -245,12 +261,12 @@ public class NSURLConnection extends NSObject {
 
     /**
      * sendAsynchronousRequest:queue:completionHandler:
-     * <p>
+     * 
      * Performs an asynchronous load of the given
      * request. When the request has completed or failed,
      * the block will be executed from the context of the
      * specified NSOperationQueue.
-     * <p>
+     * 
      * This is a convenience routine that allows for
      * asynchronous loading of a url-based resource. If
      * the resource load is successful, the data parameter
@@ -258,30 +274,39 @@ public class NSURLConnection extends NSObject {
      * the error parameter will be nil. If the resource
      * load fails, the data parameter will be nil and the
      * error will contain information about the failure.
-     *
-     * @param request The request to load. Note that the request is
+     * 
+     * @param
+     * request        The request to load. Note that the request is
      *                deep-copied as part of the initialization
      *                process. Changes made to the request argument after
      *                this method returns do not affect the request that
      *                is used for the loading process.
-     * @param queue   An NSOperationQueue upon which the handler block will
+     * 
+     * @param
+     * queue          An NSOperationQueue upon which the handler block will
      *                be dispatched.
-     * @param handler A block which receives the results of the resource load.
+     * 
+     * @param
+     * handler        A block which receives the results of the resource load.
+     * 
+     *                API-Since: 5.0
+     *                Deprecated-Since: 9.0
+     *                Deprecated-Message: Use [NSURLSession dataTaskWithRequest:completionHandler:] (see NSURLSession.h
      */
     @Generated
     @Deprecated
     @Selector("sendAsynchronousRequest:queue:completionHandler:")
-    public static native void sendAsynchronousRequestQueueCompletionHandler(NSURLRequest request,
-            NSOperationQueue queue,
-            @ObjCBlock(name = "call_sendAsynchronousRequestQueueCompletionHandler") Block_sendAsynchronousRequestQueueCompletionHandler handler);
+    public static native void sendAsynchronousRequestQueueCompletionHandler(@NotNull NSURLRequest request,
+            @NotNull NSOperationQueue queue,
+            @NotNull @ObjCBlock(name = "call_sendAsynchronousRequestQueueCompletionHandler") Block_sendAsynchronousRequestQueueCompletionHandler handler);
 
     /**
      * sendSynchronousRequest:returningResponse:error:
-     * <p>
+     * 
      * Performs a synchronous load of the given request,
      * returning an NSURLResponse in the given out
      * parameter.
-     * <p>
+     * 
      * A synchronous load for the given request is built on
      * top of the asynchronous loading code made available
      * by the class. The calling thread is blocked while
@@ -291,26 +316,37 @@ public class NSURLConnection extends NSObject {
      * configuration is necessary in the calling thread in
      * order to perform a synchronous load. For instance,
      * the calling thread need not be running its run loop.
-     *
-     * @param request  The request to load. Note that the request is
+     * 
+     * @param
+     * request         The request to load. Note that the request is
      *                 deep-copied as part of the initialization
      *                 process. Changes made to the request argument after
      *                 this method returns do not affect the request that is
      *                 used for the loading process.
-     * @param response An out parameter which is filled in with the
+     * 
+     * @param
+     * response        An out parameter which is filled in with the
      *                 response generated by performing the load.
-     * @param error    Out parameter (may be NULL) used if an error occurs
+     * 
+     * @param
+     * error           Out parameter (may be NULL) used if an error occurs
      *                 while processing the request. Will not be modified if the
      *                 load succeeds.
+     * 
      * @return The content of the URL resulting from performing the load,
      *         or nil if the load failed.
+     * 
+     *         API-Since: 2.0
+     *         Deprecated-Since: 9.0
+     *         Deprecated-Message: Use [NSURLSession dataTaskWithRequest:completionHandler:] (see NSURLSession.h
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("sendSynchronousRequest:returningResponse:error:")
-    public static native NSData sendSynchronousRequestReturningResponseError(NSURLRequest request,
-            @ReferenceInfo(type = NSURLResponse.class) Ptr<NSURLResponse> response,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSData sendSynchronousRequestReturningResponseError(@NotNull NSURLRequest request,
+            @Nullable @ReferenceInfo(type = NSURLResponse.class) Ptr<NSURLResponse> response,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("setVersion:")
@@ -329,6 +365,10 @@ public class NSURLConnection extends NSObject {
     @Selector("cancel")
     public native void cancel();
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("currentRequest")
     public native NSURLRequest currentRequest();
@@ -337,55 +377,87 @@ public class NSURLConnection extends NSObject {
     @Selector("init")
     public native NSURLConnection init();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSession (see NSURLSession.h)
+     */
     @Generated
     @Deprecated
     @Selector("initWithRequest:delegate:")
-    public native NSURLConnection initWithRequestDelegate(NSURLRequest request,
-            @Mapped(ObjCObjectMapper.class) Object delegate);
+    public native NSURLConnection initWithRequestDelegate(@NotNull NSURLRequest request,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object delegate);
 
     /**
      * Designated initializer
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSession (see NSURLSession.h)
      */
     @Generated
     @Deprecated
     @Selector("initWithRequest:delegate:startImmediately:")
-    public native NSURLConnection initWithRequestDelegateStartImmediately(NSURLRequest request,
-            @Mapped(ObjCObjectMapper.class) Object delegate, boolean startImmediately);
+    public native NSURLConnection initWithRequestDelegateStartImmediately(@NotNull NSURLRequest request,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object delegate, boolean startImmediately);
 
     /**
      * [@property] newsstandAssetDownload
-     * <p>
+     * 
      * A pointer to the asset download that this connection is associated with.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use Remote notifications Background Modes instead:
+     * https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_updates_to_your_app_silently
      */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("newsstandAssetDownload")
     public native NKAssetDownload newsstandAssetDownload();
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("originalRequest")
     public native NSURLRequest originalRequest();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("scheduleInRunLoop:forMode:")
-    public native void scheduleInRunLoopForMode(NSRunLoop aRunLoop, String mode);
+    public native void scheduleInRunLoopForMode(@NotNull NSRunLoop aRunLoop, @NotNull String mode);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setDelegateQueue:")
-    public native void setDelegateQueue(NSOperationQueue queue);
+    public native void setDelegateQueue(@Nullable NSOperationQueue queue);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("start")
     public native void start();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("unscheduleFromRunLoop:forMode:")
-    public native void unscheduleFromRunLoopForMode(NSRunLoop aRunLoop, String mode);
+    public native void unscheduleFromRunLoopForMode(@NotNull NSRunLoop aRunLoop, @NotNull String mode);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sendAsynchronousRequestQueueCompletionHandler {
         @Generated
-        void call_sendAsynchronousRequestQueueCompletionHandler(NSURLResponse response, NSData data,
-                NSError connectionError);
+        void call_sendAsynchronousRequestQueueCompletionHandler(@Nullable NSURLResponse response, @Nullable NSData data,
+                @Nullable NSError connectionError);
     }
 }

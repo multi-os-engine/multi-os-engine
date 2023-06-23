@@ -34,20 +34,31 @@ public final class NSDataReadingOptions {
     @Generated @NUInt public static final long DataReadingUncached = 0x0000000000000002L;
     /**
      * Hint to map the file in if possible. This takes precedence over NSDataReadingMappedIfSafe if both are given.
+     * 
+     * API-Since: 5.0
      */
     @Generated @NUInt public static final long DataReadingMappedAlways = 0x0000000000000008L;
     /**
      * Deprecated name for NSDataReadingMappedIfSafe
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
-    @Generated @NUInt public static final long DataReadingMapped = 0x0000000000000001L;
+    @Deprecated @Generated @NUInt public static final long DataReadingMapped = 0x0000000000000001L;
     /**
      * Deprecated name for NSDataReadingMapped
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
-    @Generated @NUInt public static final long MappedRead = 0x0000000000000001L;
+    @Deprecated @Generated @NUInt public static final long MappedRead = 0x0000000000000001L;
     /**
      * Deprecated name for NSDataReadingUncached
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
-    @Generated @NUInt public static final long UncachedRead = 0x0000000000000002L;
+    @Deprecated @Generated @NUInt public static final long UncachedRead = 0x0000000000000002L;
 
     @Generated
     private NSDataReadingOptions() {

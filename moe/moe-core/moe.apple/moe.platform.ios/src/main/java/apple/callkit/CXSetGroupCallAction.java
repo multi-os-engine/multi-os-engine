@@ -40,7 +40,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CallKit")
 @Runtime(ObjCRuntime.class)
@@ -71,22 +76,25 @@ public class CXSetGroupCallAction extends CXCallAction {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,9 +129,10 @@ public class CXSetGroupCallAction extends CXCallAction {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,10 +166,11 @@ public class CXSetGroupCallAction extends CXCallAction {
 
     /**
      * The UUID of another call to group with.
-     * <p>
+     * 
      * - If the call for this action's UUID is already in a group, it should leave that group if necessary.
      * - If nil, leave any group the call is currently in.
      */
+    @Nullable
     @Generated
     @Selector("callUUIDToGroupWith")
     public native NSUUID callUUIDToGroupWith();
@@ -171,25 +181,26 @@ public class CXSetGroupCallAction extends CXCallAction {
 
     @Generated
     @Selector("initWithCallUUID:")
-    public native CXSetGroupCallAction initWithCallUUID(NSUUID callUUID);
+    public native CXSetGroupCallAction initWithCallUUID(@NotNull NSUUID callUUID);
 
     @Generated
     @Selector("initWithCallUUID:callUUIDToGroupWith:")
-    public native CXSetGroupCallAction initWithCallUUIDCallUUIDToGroupWith(NSUUID callUUID, NSUUID callUUIDToGroupWith);
+    public native CXSetGroupCallAction initWithCallUUIDCallUUIDToGroupWith(@NotNull NSUUID callUUID,
+            @Nullable NSUUID callUUIDToGroupWith);
 
     @Generated
     @Selector("initWithCoder:")
-    public native CXSetGroupCallAction initWithCoder(NSCoder aDecoder);
+    public native CXSetGroupCallAction initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * The UUID of another call to group with.
-     * <p>
+     * 
      * - If the call for this action's UUID is already in a group, it should leave that group if necessary.
      * - If nil, leave any group the call is currently in.
      */
     @Generated
     @Selector("setCallUUIDToGroupWith:")
-    public native void setCallUUIDToGroupWith(NSUUID value);
+    public native void setCallUUIDToGroupWith(@Nullable NSUUID value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

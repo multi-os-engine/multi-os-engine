@@ -25,13 +25,17 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * EKVirtualConferenceProvider
- * <p>
+ * 
  * Provides virtual conferences to Calendar.
- * <p>
+ * 
  * Subclass this class in your extension and override the below two methods.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("EventKit")
@@ -63,26 +67,29 @@ public class EKVirtualConferenceProvider extends NSObject implements NSExtension
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("beginRequestWithExtensionContext:")
-    public native void beginRequestWithExtensionContext(NSExtensionContext context);
+    public native void beginRequestWithExtensionContext(@NotNull NSExtensionContext context);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -97,13 +104,13 @@ public class EKVirtualConferenceProvider extends NSObject implements NSExtension
 
     /**
      * fetchAvailableRoomTypesWithCompletionHandler:
-     * <p>
+     * 
      * Called to determine the available virtual conference room types that the user can add to a calendar event.
-     * <p>
+     * 
      * Your extension must override this method in order to present virtual conference options in Calendar's UI.
      * When your extension has finished determining what room types are available, call the completion handler with
      * an array of EKVirtualConferenceRoomTypeDescriptors. Most extensions will only need to provide one room type.
-     *
+     * 
      * @param completionHandler A block to call when your extension has finished retrieving available room types. If
      *                          your extension is unable to provide any room types at this time, call this block with
      *                          nil
@@ -115,26 +122,26 @@ public class EKVirtualConferenceProvider extends NSObject implements NSExtension
     @Generated
     @Selector("fetchAvailableRoomTypesWithCompletionHandler:")
     public native void fetchAvailableRoomTypesWithCompletionHandler(
-            @ObjCBlock(name = "call_fetchAvailableRoomTypesWithCompletionHandler") Block_fetchAvailableRoomTypesWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_fetchAvailableRoomTypesWithCompletionHandler") Block_fetchAvailableRoomTypesWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchAvailableRoomTypesWithCompletionHandler {
         @Generated
         void call_fetchAvailableRoomTypesWithCompletionHandler(
-                NSArray<? extends EKVirtualConferenceRoomTypeDescriptor> arg0, NSError arg1);
+                @Nullable NSArray<? extends EKVirtualConferenceRoomTypeDescriptor> arg0, @Nullable NSError arg1);
     }
 
     /**
      * fetchVirtualConferenceForIdentifier:completionHandler:
-     * <p>
+     * 
      * Called to fetch the specific virtual conference details to add to an event.
-     * <p>
+     * 
      * Your extension must override this method in order to add virtual conferences to calendar events.
      * When your extension has finished retrieving the requested virtual conference details, create an
      * EKVirtualConferenceDescriptor object containing the virtual conference details and call the completion handler
      * with the EKVirtualConferenceDescriptor object as the first argument.
-     *
+     * 
      * @param identifier        Represents the room type that the user chose. This is the same identifier that your
      *                          extension
      *                          chose for this EKVirtualConferenceRoomTypeDescriptor in an earlier call to
@@ -153,15 +160,15 @@ public class EKVirtualConferenceProvider extends NSObject implements NSExtension
      */
     @Generated
     @Selector("fetchVirtualConferenceForIdentifier:completionHandler:")
-    public native void fetchVirtualConferenceForIdentifierCompletionHandler(String identifier,
-            @ObjCBlock(name = "call_fetchVirtualConferenceForIdentifierCompletionHandler") Block_fetchVirtualConferenceForIdentifierCompletionHandler completionHandler);
+    public native void fetchVirtualConferenceForIdentifierCompletionHandler(@NotNull String identifier,
+            @NotNull @ObjCBlock(name = "call_fetchVirtualConferenceForIdentifierCompletionHandler") Block_fetchVirtualConferenceForIdentifierCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchVirtualConferenceForIdentifierCompletionHandler {
         @Generated
-        void call_fetchVirtualConferenceForIdentifierCompletionHandler(EKVirtualConferenceDescriptor arg0,
-                NSError arg1);
+        void call_fetchVirtualConferenceForIdentifierCompletionHandler(@Nullable EKVirtualConferenceDescriptor arg0,
+                @Nullable NSError arg1);
     }
 
     @Generated
@@ -190,9 +197,10 @@ public class EKVirtualConferenceProvider extends NSObject implements NSExtension
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

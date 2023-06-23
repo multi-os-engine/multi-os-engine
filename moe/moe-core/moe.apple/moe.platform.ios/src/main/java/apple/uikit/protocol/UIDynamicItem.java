@@ -16,9 +16,6 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.uikit.UIBezierPath;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
@@ -29,6 +26,10 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -48,7 +49,10 @@ public interface UIDynamicItem {
     /**
      * The path must represent a convex polygon with counter clockwise winding and no self intersection.
      * The point (0,0) in the path corresponds to the dynamic item's center.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("collisionBoundingPath")
@@ -59,6 +63,8 @@ public interface UIDynamicItem {
     /**
      * The collision type represents how the dynamics system will evaluate collisions with
      * respect to the dynamic item. defaults to UIDynamicItemCollisionBoundsTypeRectangle
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @IsOptional

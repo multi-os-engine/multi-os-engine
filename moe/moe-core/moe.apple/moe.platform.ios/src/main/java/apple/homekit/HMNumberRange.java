@@ -22,9 +22,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This class describes a range of numbers: [min, max]
+ * 
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("HomeKit")
@@ -56,22 +61,25 @@ public class HMNumberRange extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -110,13 +118,15 @@ public class HMNumberRange extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The maximum value of the range.
      */
+    @Nullable
     @Generated
     @Selector("maxValue")
     public native NSNumber maxValue();
@@ -124,6 +134,7 @@ public class HMNumberRange extends NSObject {
     /**
      * The minimum value of the range.
      */
+    @Nullable
     @Generated
     @Selector("minValue")
     public native NSNumber minValue();
@@ -135,31 +146,33 @@ public class HMNumberRange extends NSObject {
 
     /**
      * Initializes a new range of numbers. The minimum value is set to a small value.
-     *
+     * 
      * @param maxValue The maximum value of the range.
      */
     @Generated
     @Selector("numberRangeWithMaxValue:")
-    public static native HMNumberRange numberRangeWithMaxValue(NSNumber maxValue);
+    public static native HMNumberRange numberRangeWithMaxValue(@NotNull NSNumber maxValue);
 
     /**
      * Initializes a new range of numbers. The maximum value is set to a large value.
-     *
+     * 
      * @param minValue The minimum value of the range.
      */
     @Generated
     @Selector("numberRangeWithMinValue:")
-    public static native HMNumberRange numberRangeWithMinValue(NSNumber minValue);
+    public static native HMNumberRange numberRangeWithMinValue(@NotNull NSNumber minValue);
 
     /**
      * Initializes a new range of numbers
-     *
+     * 
      * @param minValue The minimum value of the range.
+     * 
      * @param maxValue The maximum value of the range.
      */
     @Generated
     @Selector("numberRangeWithMinValue:maxValue:")
-    public static native HMNumberRange numberRangeWithMinValueMaxValue(NSNumber minValue, NSNumber maxValue);
+    public static native HMNumberRange numberRangeWithMinValueMaxValue(@NotNull NSNumber minValue,
+            @NotNull NSNumber maxValue);
 
     @Generated
     @Selector("resolveClassMethod:")

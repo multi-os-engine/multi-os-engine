@@ -37,7 +37,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -68,22 +73,25 @@ public class INPersonResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -91,9 +99,11 @@ public class INPersonResolutionResult extends INIntentResolutionResult {
     /**
      * This resolution result is to ask Siri to confirm if this is the person with which the user wants to continue.
      */
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithPersonToConfirm:")
-    public static native INPersonResolutionResult confirmationRequiredWithPersonToConfirm(INPerson personToConfirm);
+    public static native INPersonResolutionResult confirmationRequiredWithPersonToConfirm(
+            @Nullable INPerson personToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -106,10 +116,11 @@ public class INPersonResolutionResult extends INIntentResolutionResult {
     /**
      * This resolution result is to ask Siri to disambiguate between the provided people.
      */
+    @NotNull
     @Generated
     @Selector("disambiguationWithPeopleToDisambiguate:")
     public static native INPersonResolutionResult disambiguationWithPeopleToDisambiguate(
-            NSArray<? extends INPerson> peopleToDisambiguate);
+            @NotNull NSArray<? extends INPerson> peopleToDisambiguate);
 
     @Generated
     @Selector("hash")
@@ -133,10 +144,12 @@ public class INPersonResolutionResult extends INIntentResolutionResult {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("needsValue")
     public static native INPersonResolutionResult needsValue();
@@ -146,6 +159,7 @@ public class INPersonResolutionResult extends INIntentResolutionResult {
     @Selector("new")
     public static native INPersonResolutionResult new_objc();
 
+    @NotNull
     @Generated
     @Selector("notRequired")
     public static native INPersonResolutionResult notRequired();
@@ -168,14 +182,16 @@ public class INPersonResolutionResult extends INIntentResolutionResult {
      * attributes of the INPerson. For example, an extension may add a nickname from the app.
      * Use +notRequired to continue with a 'nil' value.
      */
+    @NotNull
     @Generated
     @Selector("successWithResolvedPerson:")
-    public static native INPersonResolutionResult successWithResolvedPerson(INPerson resolvedPerson);
+    public static native INPersonResolutionResult successWithResolvedPerson(@NotNull INPerson resolvedPerson);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("unsupported")
     public static native INPersonResolutionResult unsupported();
@@ -189,11 +205,13 @@ public class INPersonResolutionResult extends INIntentResolutionResult {
     @Selector("init")
     public native INPersonResolutionResult init();
 
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
     public static native INPersonResolutionResult confirmationRequiredWithItemToConfirmForReason(
-            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
+    @NotNull
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INPersonResolutionResult unsupportedWithReason(@NInt long reason);

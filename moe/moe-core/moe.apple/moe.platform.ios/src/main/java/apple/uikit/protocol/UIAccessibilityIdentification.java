@@ -22,6 +22,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -31,7 +32,10 @@ public interface UIAccessibilityIdentification {
     /**
      * A string that identifies the user interface element.
      * default == nil
+     * 
+     * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("accessibilityIdentifier")
     String accessibilityIdentifier();
@@ -39,8 +43,10 @@ public interface UIAccessibilityIdentification {
     /**
      * A string that identifies the user interface element.
      * default == nil
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setAccessibilityIdentifier:")
-    void setAccessibilityIdentifier(String value);
+    void setAccessibilityIdentifier(@Nullable String value);
 }

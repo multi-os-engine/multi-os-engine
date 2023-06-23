@@ -9,7 +9,11 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
@@ -18,6 +22,7 @@ public interface ASAuthorizationPublicKeyCredentialDescriptor extends NSSecureCo
     /**
      * An identifier that uniquely identifies a specific credential.
      */
+    @NotNull
     @Generated
     @Selector("credentialID")
     NSData credentialID();
@@ -27,5 +32,5 @@ public interface ASAuthorizationPublicKeyCredentialDescriptor extends NSSecureCo
      */
     @Generated
     @Selector("setCredentialID:")
-    void setCredentialID(NSData value);
+    void setCredentialID(@NotNull NSData value);
 }

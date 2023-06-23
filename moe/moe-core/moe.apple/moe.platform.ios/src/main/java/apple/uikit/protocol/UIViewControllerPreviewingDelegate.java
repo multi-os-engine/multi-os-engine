@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGPoint;
 import apple.uikit.UIViewController;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
@@ -27,23 +26,40 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIViewControllerPreviewingDelegate")
 public interface UIViewControllerPreviewingDelegate {
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated
     @Generated
     @Selector("previewingContext:commitViewController:")
     void previewingContextCommitViewController(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerPreviewing previewingContext,
-            UIViewController viewControllerToCommit);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerPreviewing previewingContext,
+            @NotNull UIViewController viewControllerToCommit);
 
     /**
      * If you return nil, a preview presentation will not be performed
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
      */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("previewingContext:viewControllerForLocation:")
     UIViewController previewingContextViewControllerForLocation(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerPreviewing previewingContext, @ByValue CGPoint location);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerPreviewing previewingContext,
+            @ByValue CGPoint location);
 }

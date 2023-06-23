@@ -26,7 +26,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -57,22 +62,25 @@ public class INParameter extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -87,7 +95,7 @@ public class INParameter extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -97,7 +105,7 @@ public class INParameter extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("indexForSubKeyPath:")
     @NUInt
-    public native long indexForSubKeyPath(String subKeyPath);
+    public native long indexForSubKeyPath(@NotNull String subKeyPath);
 
     @Generated
     @Selector("init")
@@ -105,7 +113,7 @@ public class INParameter extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INParameter initWithCoder(NSCoder coder);
+    public native INParameter initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -122,29 +130,32 @@ public class INParameter extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("isEqualToParameter:")
-    public native boolean isEqualToParameter(INParameter parameter);
+    public native boolean isEqualToParameter(@NotNull INParameter parameter);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native INParameter new_objc();
 
+    @NotNull
     @Generated
     @Selector("parameterClass")
     public native Class parameterClass();
 
     @Generated
     @Selector("parameterForClass:keyPath:")
-    public static native INParameter parameterForClassKeyPath(Class aClass, String keyPath);
+    public static native INParameter parameterForClassKeyPath(@NotNull Class aClass, @NotNull String keyPath);
 
+    @NotNull
     @Generated
     @Selector("parameterKeyPath")
     public native String parameterKeyPath();
@@ -159,7 +170,7 @@ public class INParameter extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("setIndex:forSubKeyPath:")
-    public native void setIndexForSubKeyPath(@NUInt long index, String subKeyPath);
+    public native void setIndexForSubKeyPath(@NUInt long index, @NotNull String subKeyPath);
 
     @Generated
     @Selector("setVersion:")
@@ -184,9 +195,10 @@ public class INParameter extends NSObject implements NSSecureCoding, NSCopying {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 }

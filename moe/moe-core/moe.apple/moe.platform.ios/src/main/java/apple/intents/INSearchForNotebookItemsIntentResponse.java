@@ -24,7 +24,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -55,22 +60,25 @@ public class INSearchForNotebookItemsIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -109,11 +117,11 @@ public class INSearchForNotebookItemsIntentResponse extends INIntentResponse {
     @Generated
     @Selector("initWithCode:userActivity:")
     public native INSearchForNotebookItemsIntentResponse initWithCodeUserActivity(@NInt long code,
-            NSUserActivity userActivity);
+            @Nullable NSUserActivity userActivity);
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSearchForNotebookItemsIntentResponse initWithCoder(NSCoder coder);
+    public native INSearchForNotebookItemsIntentResponse initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -132,15 +140,17 @@ public class INSearchForNotebookItemsIntentResponse extends INIntentResponse {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native INSearchForNotebookItemsIntentResponse new_objc();
 
+    @Nullable
     @Generated
     @Selector("notes")
     public native NSArray<? extends INNote> notes();
@@ -155,7 +165,7 @@ public class INSearchForNotebookItemsIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("setNotes:")
-    public native void setNotes(NSArray<? extends INNote> value);
+    public native void setNotes(@Nullable NSArray<? extends INNote> value);
 
     @Generated
     @Selector("setSortType:")
@@ -163,11 +173,11 @@ public class INSearchForNotebookItemsIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("setTaskLists:")
-    public native void setTaskLists(NSArray<? extends INTaskList> value);
+    public native void setTaskLists(@Nullable NSArray<? extends INTaskList> value);
 
     @Generated
     @Selector("setTasks:")
-    public native void setTasks(NSArray<? extends INTask> value);
+    public native void setTasks(@Nullable NSArray<? extends INTask> value);
 
     @Generated
     @Selector("setVersion:")
@@ -192,10 +202,12 @@ public class INSearchForNotebookItemsIntentResponse extends INIntentResponse {
         return supportsSecureCoding();
     }
 
+    @Nullable
     @Generated
     @Selector("taskLists")
     public native NSArray<? extends INTaskList> taskLists();
 
+    @Nullable
     @Generated
     @Selector("tasks")
     public native NSArray<? extends INTask> tasks();

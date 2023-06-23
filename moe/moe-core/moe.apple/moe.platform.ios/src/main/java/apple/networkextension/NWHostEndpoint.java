@@ -39,12 +39,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NWHostEndpoint
- * <p>
+ * 
  * NWHostEndpoint is a subclass of NWEndpoint. It represents an endpoint backed by a
  * hostname and port. Note that a hostname string may be an IP or IPv6 address.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -76,22 +80,25 @@ public class NWHostEndpoint extends NWEndpoint {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,14 +113,16 @@ public class NWHostEndpoint extends NWEndpoint {
 
     /**
      * endpointWithHostname:port:
-     *
+     * 
      * @param hostname A string representation of the hostname or address, such as www.apple.com or 10.0.0.1.
      * @param port     A string containing the port on the host, such as 80.
      * @return An initialized NWHostEndpoint object.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("endpointWithHostname:port:")
-    public static native NWHostEndpoint endpointWithHostnamePort(String hostname, String port);
+    public static native NWHostEndpoint endpointWithHostnamePort(@NotNull String hostname, @NotNull String port);
 
     @Generated
     @Selector("hash")
@@ -137,9 +146,10 @@ public class NWHostEndpoint extends NWEndpoint {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -173,9 +183,12 @@ public class NWHostEndpoint extends NWEndpoint {
 
     /**
      * [@property] hostname
-     * <p>
+     * 
      * The endpoint's hostname.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("hostname")
     public native String hostname();
@@ -186,13 +199,16 @@ public class NWHostEndpoint extends NWEndpoint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NWHostEndpoint initWithCoder(NSCoder coder);
+    public native NWHostEndpoint initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] port
-     * <p>
+     * 
      * The endpoint's port.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("port")
     public native String port();

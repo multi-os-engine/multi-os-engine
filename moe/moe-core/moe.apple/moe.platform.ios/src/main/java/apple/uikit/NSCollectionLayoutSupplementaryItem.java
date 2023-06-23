@@ -23,7 +23,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -54,35 +59,40 @@ public class NSCollectionLayoutSupplementaryItem extends NSCollectionLayoutItem 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("containerAnchor")
     public native NSCollectionLayoutAnchor containerAnchor();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -92,6 +102,7 @@ public class NSCollectionLayoutSupplementaryItem extends NSCollectionLayoutItem 
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("elementKind")
     public native String elementKind();
@@ -122,23 +133,26 @@ public class NSCollectionLayoutSupplementaryItem extends NSCollectionLayoutItem 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @Nullable
     @Generated
     @Selector("itemAnchor")
     public native NSCollectionLayoutAnchor itemAnchor();
 
     @Generated
     @Selector("itemWithLayoutSize:")
-    public static native NSCollectionLayoutSupplementaryItem itemWithLayoutSize(NSCollectionLayoutSize layoutSize);
+    public static native NSCollectionLayoutSupplementaryItem itemWithLayoutSize(
+            @NotNull NSCollectionLayoutSize layoutSize);
 
     @Generated
     @Selector("itemWithLayoutSize:supplementaryItems:")
     public static native NSCollectionLayoutSupplementaryItem itemWithLayoutSizeSupplementaryItems(
-            NSCollectionLayoutSize layoutSize,
-            NSArray<? extends NSCollectionLayoutSupplementaryItem> supplementaryItems);
+            @NotNull NSCollectionLayoutSize layoutSize,
+            @NotNull NSArray<? extends NSCollectionLayoutSupplementaryItem> supplementaryItems);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,7 +184,7 @@ public class NSCollectionLayoutSupplementaryItem extends NSCollectionLayoutItem 
      * In this example, a supplementary is anchored to the top+trailing edge of a cell.
      * Supplementary items can be anchored to items (and groups, since a group is-a item)
      * Boundary supplementary items can be anchored to sections and the global layout
-     * <p>
+     * 
      * +-----+ +------------------------------------------+
      * |~~~~~| | edges: [.top,.trailing] |
      * +----------------------------+~~~~~|<------+ fractionalOffset: CGPoint(x:0.5,y:-0.5) |
@@ -181,13 +195,14 @@ public class NSCollectionLayoutSupplementaryItem extends NSCollectionLayoutItem 
      * | |
      * | |
      * +-------------------------------+
-     * <p>
+     * 
      * Container anchors are used to specify positioning of an item within the host geometry (e.g. item, group, section)
      */
     @Generated
     @Selector("supplementaryItemWithLayoutSize:elementKind:containerAnchor:")
     public static native NSCollectionLayoutSupplementaryItem supplementaryItemWithLayoutSizeElementKindContainerAnchor(
-            NSCollectionLayoutSize layoutSize, String elementKind, NSCollectionLayoutAnchor containerAnchor);
+            @NotNull NSCollectionLayoutSize layoutSize, @NotNull String elementKind,
+            @NotNull NSCollectionLayoutAnchor containerAnchor);
 
     /**
      * +----------------------------------------------------+
@@ -204,15 +219,15 @@ public class NSCollectionLayoutSupplementaryItem extends NSCollectionLayoutItem 
      * | |
      * | |
      * +-------------------------------+
-     * <p>
+     * 
      * Combine a container anchor with an item anchor for fine-grained positioning.
      * Optionally add an offset for additional refinement.
      */
     @Generated
     @Selector("supplementaryItemWithLayoutSize:elementKind:containerAnchor:itemAnchor:")
     public static native NSCollectionLayoutSupplementaryItem supplementaryItemWithLayoutSizeElementKindContainerAnchorItemAnchor(
-            NSCollectionLayoutSize layoutSize, String elementKind, NSCollectionLayoutAnchor containerAnchor,
-            NSCollectionLayoutAnchor itemAnchor);
+            @NotNull NSCollectionLayoutSize layoutSize, @NotNull String elementKind,
+            @NotNull NSCollectionLayoutAnchor containerAnchor, @NotNull NSCollectionLayoutAnchor itemAnchor);
 
     @Generated
     @Selector("version")

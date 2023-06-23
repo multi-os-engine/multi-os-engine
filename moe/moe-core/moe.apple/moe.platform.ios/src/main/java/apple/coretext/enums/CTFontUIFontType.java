@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] UI Type constants
- * <p>
+ * 
  * These constants represent the specific user interface purpose to specify for font creation.
- * <p>
+ * 
  * Use these constants with CTFontCreateUIFontForLanguage to indicate the intended user interface usage of the font
  * reference to be created.
  */
@@ -56,33 +56,173 @@ public final class CTFontUIFontType {
     @Generated public static final int UIFontPalette = 0x00000018;
     @Generated public static final int UIFontToolTip = 0x00000019;
     @Generated public static final int UIFontControlContent = 0x0000001A;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int NoFontType = 0xFFFFFFFF;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int UserFontType = 0x00000000;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int UserFixedPitchFontType = 0x00000001;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int SystemFontType = 0x00000002;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int EmphasizedSystemFontType = 0x00000003;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int SmallSystemFontType = 0x00000004;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int SmallEmphasizedSystemFontType = 0x00000005;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int MiniSystemFontType = 0x00000006;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int MiniEmphasizedSystemFontType = 0x00000007;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int ViewsFontType = 0x00000008;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int ApplicationFontType = 0x00000009;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int LabelFontType = 0x0000000A;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int MenuTitleFontType = 0x0000000B;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int MenuItemFontType = 0x0000000C;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int MenuItemMarkFontType = 0x0000000D;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int MenuItemCmdKeyFontType = 0x0000000E;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int WindowTitleFontType = 0x0000000F;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int PushButtonFontType = 0x00000010;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int UtilityWindowTitleFontType = 0x00000011;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int AlertHeaderFontType = 0x00000012;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int SystemDetailFontType = 0x00000013;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int EmphasizedSystemDetailFontType = 0x00000014;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int ToolbarFontType = 0x00000015;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int SmallToolbarFontType = 0x00000016;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int MessageFontType = 0x00000017;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int PaletteFontType = 0x00000018;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int ToolTipFontType = 0x00000019;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final int ControlContentFontType = 0x0000001A;
 
     @Generated

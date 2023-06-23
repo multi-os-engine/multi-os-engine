@@ -44,7 +44,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -73,35 +78,39 @@ public class UIInputViewController extends UIViewController implements UITextInp
     @Selector("allocWithZone:")
     public static native UIInputViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -133,9 +142,10 @@ public class UIInputViewController extends UIViewController implements UITextInp
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -176,10 +186,12 @@ public class UIInputViewController extends UIViewController implements UITextInp
      * Advance to nextInputMode when short tapping on the view.
      * Example: [KeyboardButton addTarget:self action:@selector(handleInputModeListFromView:withEvent:)
      * forControlEvents:UIControlEventAllTouchEvents].
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("handleInputModeListFromView:withEvent:")
-    public native void handleInputModeListFromViewWithEvent(UIView view, UIEvent event);
+    public native void handleInputModeListFromViewWithEvent(@NotNull UIView view, @NotNull UIEvent event);
 
     @Generated
     @Selector("init")
@@ -187,12 +199,14 @@ public class UIInputViewController extends UIViewController implements UITextInp
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIInputViewController initWithCoder(NSCoder coder);
+    public native UIInputViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native UIInputViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native UIInputViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
+    @Nullable
     @Generated
     @Selector("inputView")
     public native UIInputView inputView();
@@ -201,6 +215,7 @@ public class UIInputViewController extends UIViewController implements UITextInp
      * The primary language of the UIInputViewController. A BCP 47 language identifier such as en-US
      * If specified, this will supersede any PrimaryLanguage in the Info.plist.
      */
+    @Nullable
     @Generated
     @Selector("primaryLanguage")
     public native String primaryLanguage();
@@ -212,19 +227,19 @@ public class UIInputViewController extends UIViewController implements UITextInp
     @Generated
     @Selector("requestSupplementaryLexiconWithCompletion:")
     public native void requestSupplementaryLexiconWithCompletion(
-            @ObjCBlock(name = "call_requestSupplementaryLexiconWithCompletion") Block_requestSupplementaryLexiconWithCompletion completionHandler);
+            @NotNull @ObjCBlock(name = "call_requestSupplementaryLexiconWithCompletion") Block_requestSupplementaryLexiconWithCompletion completionHandler);
 
     @Generated
     @Selector("selectionDidChange:")
-    public native void selectionDidChange(@Mapped(ObjCObjectMapper.class) UITextInput textInput);
+    public native void selectionDidChange(@Nullable @Mapped(ObjCObjectMapper.class) UITextInput textInput);
 
     @Generated
     @Selector("selectionWillChange:")
-    public native void selectionWillChange(@Mapped(ObjCObjectMapper.class) UITextInput textInput);
+    public native void selectionWillChange(@Nullable @Mapped(ObjCObjectMapper.class) UITextInput textInput);
 
     @Generated
     @Selector("setInputView:")
-    public native void setInputView(UIInputView value);
+    public native void setInputView(@Nullable UIInputView value);
 
     /**
      * The primary language of the UIInputViewController. A BCP 47 language identifier such as en-US
@@ -232,12 +247,13 @@ public class UIInputViewController extends UIViewController implements UITextInp
      */
     @Generated
     @Selector("setPrimaryLanguage:")
-    public native void setPrimaryLanguage(String value);
+    public native void setPrimaryLanguage(@Nullable String value);
 
     @Generated
     @Selector("textDidChange:")
-    public native void textDidChange(@Mapped(ObjCObjectMapper.class) UITextInput textInput);
+    public native void textDidChange(@Nullable @Mapped(ObjCObjectMapper.class) UITextInput textInput);
 
+    @NotNull
     @Generated
     @Selector("textDocumentProxy")
     @MappedReturn(ObjCObjectMapper.class)
@@ -245,19 +261,25 @@ public class UIInputViewController extends UIViewController implements UITextInp
 
     @Generated
     @Selector("textWillChange:")
-    public native void textWillChange(@Mapped(ObjCObjectMapper.class) UITextInput textInput);
+    public native void textWillChange(@Nullable @Mapped(ObjCObjectMapper.class) UITextInput textInput);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestSupplementaryLexiconWithCompletion {
         @Generated
-        void call_requestSupplementaryLexiconWithCompletion(UILexicon arg0);
+        void call_requestSupplementaryLexiconWithCompletion(@NotNull UILexicon arg0);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("hasFullAccess")
     public native boolean hasFullAccess();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("needsInputModeSwitchKey")
     public native boolean needsInputModeSwitchKey();

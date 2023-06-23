@@ -39,7 +39,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("SafariServices")
 @Runtime(ObjCRuntime.class)
@@ -70,22 +75,25 @@ public class SFContentBlockerManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -98,10 +106,13 @@ public class SFContentBlockerManager extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("getStateOfContentBlockerWithIdentifier:completionHandler:")
-    public static native void getStateOfContentBlockerWithIdentifierCompletionHandler(String identifier,
-            @ObjCBlock(name = "call_getStateOfContentBlockerWithIdentifierCompletionHandler") Block_getStateOfContentBlockerWithIdentifierCompletionHandler completionHandler);
+    public static native void getStateOfContentBlockerWithIdentifierCompletionHandler(@NotNull String identifier,
+            @NotNull @ObjCBlock(name = "call_getStateOfContentBlockerWithIdentifierCompletionHandler") Block_getStateOfContentBlockerWithIdentifierCompletionHandler completionHandler);
 
     @Generated
     @Selector("hash")
@@ -125,9 +136,10 @@ public class SFContentBlockerManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -136,8 +148,8 @@ public class SFContentBlockerManager extends NSObject {
 
     @Generated
     @Selector("reloadContentBlockerWithIdentifier:completionHandler:")
-    public static native void reloadContentBlockerWithIdentifierCompletionHandler(String identifier,
-            @ObjCBlock(name = "call_reloadContentBlockerWithIdentifierCompletionHandler") Block_reloadContentBlockerWithIdentifierCompletionHandler completionHandler);
+    public static native void reloadContentBlockerWithIdentifierCompletionHandler(@NotNull String identifier,
+            @Nullable @ObjCBlock(name = "call_reloadContentBlockerWithIdentifierCompletionHandler") Block_reloadContentBlockerWithIdentifierCompletionHandler completionHandler);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -168,13 +180,14 @@ public class SFContentBlockerManager extends NSObject {
     @Generated
     public interface Block_getStateOfContentBlockerWithIdentifierCompletionHandler {
         @Generated
-        void call_getStateOfContentBlockerWithIdentifierCompletionHandler(SFContentBlockerState state, NSError error);
+        void call_getStateOfContentBlockerWithIdentifierCompletionHandler(@Nullable SFContentBlockerState state,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_reloadContentBlockerWithIdentifierCompletionHandler {
         @Generated
-        void call_reloadContentBlockerWithIdentifierCompletionHandler(NSError error);
+        void call_reloadContentBlockerWithIdentifierCompletionHandler(@Nullable NSError error);
     }
 }

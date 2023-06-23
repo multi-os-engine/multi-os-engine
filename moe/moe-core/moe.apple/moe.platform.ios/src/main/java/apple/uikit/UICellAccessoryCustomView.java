@@ -24,9 +24,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An accessory using a custom view.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("UIKit")
@@ -58,26 +62,30 @@ public class UICellAccessoryCustomView extends UICellAccessory {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("customView")
     public native UIView customView();
@@ -101,7 +109,7 @@ public class UICellAccessoryCustomView extends UICellAccessory {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UICellAccessoryCustomView initWithCoder(NSCoder coder);
+    public native UICellAccessoryCustomView initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Creates a new custom view accessory using the provided view and specified placement. The custom view must have
@@ -111,7 +119,8 @@ public class UICellAccessoryCustomView extends UICellAccessory {
      */
     @Generated
     @Selector("initWithCustomView:placement:")
-    public native UICellAccessoryCustomView initWithCustomViewPlacement(UIView customView, @NInt long placement);
+    public native UICellAccessoryCustomView initWithCustomViewPlacement(@NotNull UIView customView,
+            @NInt long placement);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -130,9 +139,10 @@ public class UICellAccessoryCustomView extends UICellAccessory {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Whether the current frame size of the view is preserved (YES), or whether it is sized during layout of
@@ -167,7 +177,7 @@ public class UICellAccessoryCustomView extends UICellAccessory {
     public interface Block_position_ret {
         @Generated
         @NUInt
-        long call_position_ret(NSArray<? extends UICellAccessory> accessories);
+        long call_position_ret(@NotNull NSArray<? extends UICellAccessory> accessories);
     }
 
     @Generated
@@ -200,7 +210,7 @@ public class UICellAccessoryCustomView extends UICellAccessory {
     public interface Block_setPosition {
         @Generated
         @NUInt
-        long call_setPosition(NSArray<? extends UICellAccessory> accessories);
+        long call_setPosition(@NotNull NSArray<? extends UICellAccessory> accessories);
     }
 
     @Generated

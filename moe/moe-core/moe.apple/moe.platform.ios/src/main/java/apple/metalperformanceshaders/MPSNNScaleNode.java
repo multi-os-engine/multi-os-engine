@@ -24,11 +24,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Abstract Node representing a image resampling operation
- * <p>
+ * 
  * Please make a MPSNNBilinearScale or MPSNNLanczosScale object instead
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -60,22 +64,25 @@ public class MPSNNScaleNode extends MPSNNFilterNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,25 +106,26 @@ public class MPSNNScaleNode extends MPSNNFilterNode {
 
     /**
      * init a node to convert a MPSImage to the desired size
-     *
+     * 
      * @param sourceNode A valid MPSNNImageNode
      * @param size       The size of the output image {width, height, depth}
      */
     @Generated
     @Selector("initWithSource:outputSize:")
-    public native MPSNNScaleNode initWithSourceOutputSize(MPSNNImageNode sourceNode, @ByValue MTLSize size);
+    public native MPSNNScaleNode initWithSourceOutputSize(@NotNull MPSNNImageNode sourceNode, @ByValue MTLSize size);
 
     /**
      * init a node to convert a MPSImage to the desired size for a region of interest
-     *
+     * 
      * @param sourceNode        A valid MPSNNImageNode
      * @param transformProvider If non-nil, a valid MPSImageTransformProvider that provides the region of interest
      * @param size              The size of the output image {width, height, depth}
      */
     @Generated
     @Selector("initWithSource:transformProvider:outputSize:")
-    public native MPSNNScaleNode initWithSourceTransformProviderOutputSize(MPSNNImageNode sourceNode,
-            @Mapped(ObjCObjectMapper.class) MPSImageTransformProvider transformProvider, @ByValue MTLSize size);
+    public native MPSNNScaleNode initWithSourceTransformProviderOutputSize(@NotNull MPSNNImageNode sourceNode,
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSImageTransformProvider transformProvider,
+            @ByValue MTLSize size);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -136,9 +144,10 @@ public class MPSNNScaleNode extends MPSNNFilterNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -147,25 +156,27 @@ public class MPSNNScaleNode extends MPSNNFilterNode {
 
     /**
      * create an autoreleased node to convert a MPSImage to the desired size
-     *
+     * 
      * @param sourceNode A valid MPSNNImageNode
      * @param size       The size of the output image {width, height, depth}
      */
     @Generated
     @Selector("nodeWithSource:outputSize:")
-    public static native MPSNNScaleNode nodeWithSourceOutputSize(MPSNNImageNode sourceNode, @ByValue MTLSize size);
+    public static native MPSNNScaleNode nodeWithSourceOutputSize(@NotNull MPSNNImageNode sourceNode,
+            @ByValue MTLSize size);
 
     /**
      * create an autoreleased node to convert a MPSImage to the desired size for a region of interest
-     *
+     * 
      * @param sourceNode        A valid MPSNNImageNode
      * @param transformProvider If non-nil, a valid MPSImageTransformProvider that provides the region of interest
      * @param size              The size of the output image {width, height, depth}
      */
     @Generated
     @Selector("nodeWithSource:transformProvider:outputSize:")
-    public static native MPSNNScaleNode nodeWithSourceTransformProviderOutputSize(MPSNNImageNode sourceNode,
-            @Mapped(ObjCObjectMapper.class) MPSImageTransformProvider transformProvider, @ByValue MTLSize size);
+    public static native MPSNNScaleNode nodeWithSourceTransformProviderOutputSize(@NotNull MPSNNImageNode sourceNode,
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSImageTransformProvider transformProvider,
+            @ByValue MTLSize size);
 
     @Generated
     @Selector("resolveClassMethod:")

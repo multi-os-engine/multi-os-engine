@@ -36,7 +36,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -55,6 +60,7 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    @NotNull
     @Generated
     @Selector("acreFeet")
     public static native NSUnitVolume acreFeet();
@@ -71,74 +77,90 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("baseUnit")
     public static native NSUnitVolume baseUnit();
 
+    @NotNull
     @Generated
     @Selector("bushels")
     public static native NSUnitVolume bushels();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("centiliters")
     public static native NSUnitVolume centiliters();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("cubicCentimeters")
     public static native NSUnitVolume cubicCentimeters();
 
+    @NotNull
     @Generated
     @Selector("cubicDecimeters")
     public static native NSUnitVolume cubicDecimeters();
 
+    @NotNull
     @Generated
     @Selector("cubicFeet")
     public static native NSUnitVolume cubicFeet();
 
+    @NotNull
     @Generated
     @Selector("cubicInches")
     public static native NSUnitVolume cubicInches();
 
+    @NotNull
     @Generated
     @Selector("cubicKilometers")
     public static native NSUnitVolume cubicKilometers();
 
+    @NotNull
     @Generated
     @Selector("cubicMeters")
     public static native NSUnitVolume cubicMeters();
 
+    @NotNull
     @Generated
     @Selector("cubicMiles")
     public static native NSUnitVolume cubicMiles();
 
+    @NotNull
     @Generated
     @Selector("cubicMillimeters")
     public static native NSUnitVolume cubicMillimeters();
 
+    @NotNull
     @Generated
     @Selector("cubicYards")
     public static native NSUnitVolume cubicYards();
 
+    @NotNull
     @Generated
     @Selector("cups")
     public static native NSUnitVolume cups();
@@ -147,6 +169,7 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @NotNull
     @Generated
     @Selector("deciliters")
     public static native NSUnitVolume deciliters();
@@ -155,10 +178,12 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("fluidOunces")
     public static native NSUnitVolume fluidOunces();
 
+    @NotNull
     @Generated
     @Selector("gallons")
     public static native NSUnitVolume gallons();
@@ -168,26 +193,32 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    @NotNull
     @Generated
     @Selector("imperialFluidOunces")
     public static native NSUnitVolume imperialFluidOunces();
 
+    @NotNull
     @Generated
     @Selector("imperialGallons")
     public static native NSUnitVolume imperialGallons();
 
+    @NotNull
     @Generated
     @Selector("imperialPints")
     public static native NSUnitVolume imperialPints();
 
+    @NotNull
     @Generated
     @Selector("imperialQuarts")
     public static native NSUnitVolume imperialQuarts();
 
+    @NotNull
     @Generated
     @Selector("imperialTablespoons")
     public static native NSUnitVolume imperialTablespoons();
 
+    @NotNull
     @Generated
     @Selector("imperialTeaspoons")
     public static native NSUnitVolume imperialTeaspoons();
@@ -209,14 +240,17 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("kiloliters")
     public static native NSUnitVolume kiloliters();
 
+    @NotNull
     @Generated
     @Selector("liters")
     public static native NSUnitVolume liters();
@@ -224,14 +258,17 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
     /**
      * Base unit - liters
      */
+    @NotNull
     @Generated
     @Selector("megaliters")
     public static native NSUnitVolume megaliters();
 
+    @NotNull
     @Generated
     @Selector("metricCups")
     public static native NSUnitVolume metricCups();
 
+    @NotNull
     @Generated
     @Selector("milliliters")
     public static native NSUnitVolume milliliters();
@@ -241,10 +278,12 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
     @Selector("new")
     public static native NSUnitVolume new_objc();
 
+    @NotNull
     @Generated
     @Selector("pints")
     public static native NSUnitVolume pints();
 
+    @NotNull
     @Generated
     @Selector("quarts")
     public static native NSUnitVolume quarts();
@@ -269,10 +308,12 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
+    @NotNull
     @Generated
     @Selector("tablespoons")
     public static native NSUnitVolume tablespoons();
 
+    @NotNull
     @Generated
     @Selector("teaspoons")
     public static native NSUnitVolume teaspoons();
@@ -284,7 +325,7 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -292,15 +333,15 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUnitVolume initWithCoder(NSCoder coder);
+    public native NSUnitVolume initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")
-    public native NSUnitVolume initWithSymbol(String symbol);
+    public native NSUnitVolume initWithSymbol(@NotNull String symbol);
 
     @Generated
     @Selector("initWithSymbol:converter:")
-    public native NSUnitVolume initWithSymbolConverter(String symbol, NSUnitConverter converter);
+    public native NSUnitVolume initWithSymbolConverter(@NotNull String symbol, @NotNull NSUnitConverter converter);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

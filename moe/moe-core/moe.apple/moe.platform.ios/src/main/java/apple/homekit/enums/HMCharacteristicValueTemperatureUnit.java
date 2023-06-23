@@ -21,13 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueTemperatureUnit
- * <p>
+ * 
  * [@constant] HMCharacteristicValueTemperatureUnitCelsius Celsius.
  * [@constant] HMCharacteristicValueTemperatureUnitFahrenheit Fahrenheit.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class HMCharacteristicValueTemperatureUnit {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Celsius = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Fahrenheit = 0x0000000000000001L;
 
     @Generated

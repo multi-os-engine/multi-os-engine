@@ -41,7 +41,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CallKit")
 @Runtime(ObjCRuntime.class)
@@ -72,22 +77,25 @@ public class CXStartCallAction extends CXCallAction {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,9 +130,10 @@ public class CXStartCallAction extends CXCallAction {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,6 +165,7 @@ public class CXStartCallAction extends CXCallAction {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("contactIdentifier")
     public native String contactIdentifier();
@@ -167,11 +177,12 @@ public class CXStartCallAction extends CXCallAction {
      */
     @Generated
     @Selector("fulfillWithDateStarted:")
-    public native void fulfillWithDateStarted(NSDate dateStarted);
+    public native void fulfillWithDateStarted(@NotNull NSDate dateStarted);
 
     /**
      * Handle for the party to call
      */
+    @NotNull
     @Generated
     @Selector("handle")
     public native CXHandle handle();
@@ -182,15 +193,15 @@ public class CXStartCallAction extends CXCallAction {
 
     @Generated
     @Selector("initWithCallUUID:")
-    public native CXStartCallAction initWithCallUUID(NSUUID callUUID);
+    public native CXStartCallAction initWithCallUUID(@NotNull NSUUID callUUID);
 
     @Generated
     @Selector("initWithCallUUID:handle:")
-    public native CXStartCallAction initWithCallUUIDHandle(NSUUID callUUID, CXHandle handle);
+    public native CXStartCallAction initWithCallUUIDHandle(@NotNull NSUUID callUUID, @NotNull CXHandle handle);
 
     @Generated
     @Selector("initWithCoder:")
-    public native CXStartCallAction initWithCoder(NSCoder aDecoder);
+    public native CXStartCallAction initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("isVideo")
@@ -202,14 +213,14 @@ public class CXStartCallAction extends CXCallAction {
 
     @Generated
     @Selector("setContactIdentifier:")
-    public native void setContactIdentifier(String value);
+    public native void setContactIdentifier(@Nullable String value);
 
     /**
      * Handle for the party to call
      */
     @Generated
     @Selector("setHandle:")
-    public native void setHandle(CXHandle value);
+    public native void setHandle(@NotNull CXHandle value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

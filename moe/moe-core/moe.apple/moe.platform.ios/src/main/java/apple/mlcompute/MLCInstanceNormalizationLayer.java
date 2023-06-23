@@ -21,11 +21,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCInstanceNormalizationLayer
- * <p>
+ * 
  * An instance normalization layer. For more information refer to https://pytorch.org/docs/stable/nn.html#instancenorm2d
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -57,40 +61,45 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] beta
-     * <p>
+     * 
      * The beta tensor
      */
+    @Nullable
     @Generated
     @Selector("beta")
     public native MLCTensor beta();
 
     /**
      * [@property] betaParameter
-     * <p>
+     * 
      * The beta tensor parameter used for optimizer update
      */
+    @Nullable
     @Generated
     @Selector("betaParameter")
     public native MLCTensorParameter betaParameter();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -105,7 +114,7 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] featureChannelCount
-     * <p>
+     * 
      * The number of feature channels
      */
     @Generated
@@ -115,18 +124,20 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] gamma
-     * <p>
+     * 
      * The gamma tensor
      */
+    @Nullable
     @Generated
     @Selector("gamma")
     public native MLCTensor gamma();
 
     /**
      * [@property] gammaParameter
-     * <p>
+     * 
      * The gamma tensor parameter used for optimizer update
      */
+    @Nullable
     @Generated
     @Selector("gammaParameter")
     public native MLCTensorParameter gammaParameter();
@@ -157,13 +168,14 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Create an instance normalization layer
-     *
+     * 
      * @param featureChannelCount The number of feature channels
      * @param beta                The beta tensor
      * @param gamma               The gamma tensor
@@ -173,11 +185,12 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
     @Generated
     @Selector("layerWithFeatureChannelCount:beta:gamma:varianceEpsilon:")
     public static native MLCInstanceNormalizationLayer layerWithFeatureChannelCountBetaGammaVarianceEpsilon(
-            @NUInt long featureChannelCount, MLCTensor beta, MLCTensor gamma, float varianceEpsilon);
+            @NUInt long featureChannelCount, @Nullable MLCTensor beta, @Nullable MLCTensor gamma,
+            float varianceEpsilon);
 
     /**
      * Create an instance normalization layer
-     *
+     * 
      * @param featureChannelCount The number of feature channels
      * @param beta                The beta tensor
      * @param gamma               The gamma tensor
@@ -188,11 +201,12 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
     @Generated
     @Selector("layerWithFeatureChannelCount:beta:gamma:varianceEpsilon:momentum:")
     public static native MLCInstanceNormalizationLayer layerWithFeatureChannelCountBetaGammaVarianceEpsilonMomentum(
-            @NUInt long featureChannelCount, MLCTensor beta, MLCTensor gamma, float varianceEpsilon, float momentum);
+            @NUInt long featureChannelCount, @Nullable MLCTensor beta, @Nullable MLCTensor gamma, float varianceEpsilon,
+            float momentum);
 
     /**
      * Create an instance normalization layer
-     *
+     * 
      * @param featureChannelCount The number of feature channels
      * @param mean                The running mean tensor
      * @param variance            The running variance tensor
@@ -201,27 +215,32 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
      * @param varianceEpsilon     The epslion value
      * @param momentum            The momentum value for the running mean and variance computation
      * @return A new instance normalization layer.
+     * 
+     *         API-Since: 14.5
      */
     @Generated
     @Selector("layerWithFeatureChannelCount:mean:variance:beta:gamma:varianceEpsilon:momentum:")
     public static native MLCInstanceNormalizationLayer layerWithFeatureChannelCountMeanVarianceBetaGammaVarianceEpsilonMomentum(
-            @NUInt long featureChannelCount, MLCTensor mean, MLCTensor variance, MLCTensor beta, MLCTensor gamma,
-            float varianceEpsilon, float momentum);
+            @NUInt long featureChannelCount, @NotNull MLCTensor mean, @NotNull MLCTensor variance,
+            @Nullable MLCTensor beta, @Nullable MLCTensor gamma, float varianceEpsilon, float momentum);
 
     /**
      * [@property] mean
-     * <p>
+     * 
      * The running mean tensor
+     * 
+     * API-Since: 14.5
      */
+    @Nullable
     @Generated
     @Selector("mean")
     public native MLCTensor mean();
 
     /**
      * [@property] momentum
-     * <p>
+     * 
      * The value used for the running mean and variance computation
-     * <p>
+     * 
      * The default is 0.99f.
      */
     @Generated
@@ -251,20 +270,23 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
 
     @Generated
     @Selector("supportsDataType:onDevice:")
-    public static native boolean supportsDataTypeOnDevice(int dataType, MLCDevice device);
+    public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
 
     /**
      * [@property] variance
-     * <p>
+     * 
      * The running variance tensor
+     * 
+     * API-Since: 14.5
      */
+    @Nullable
     @Generated
     @Selector("variance")
     public native MLCTensor variance();
 
     /**
      * [@property] varianceEpsilon
-     * <p>
+     * 
      * A value used for numerical stability
      */
     @Generated

@@ -39,7 +39,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -70,22 +75,25 @@ public class INTemperatureResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -94,10 +102,11 @@ public class INTemperatureResolutionResult extends INIntentResolutionResult {
      * This resolution result is to ask Siri to confirm if this is the temperature with which the user wants to
      * continue.
      */
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithTemperatureToConfirm:")
     public static native INTemperatureResolutionResult confirmationRequiredWithTemperatureToConfirm(
-            NSMeasurement<NSUnitTemperature> temperatureToConfirm);
+            @Nullable NSMeasurement<NSUnitTemperature> temperatureToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -110,10 +119,11 @@ public class INTemperatureResolutionResult extends INIntentResolutionResult {
     /**
      * This resolution result is to ask Siri to disambiguate between the provided temperatures.
      */
+    @NotNull
     @Generated
     @Selector("disambiguationWithTemperaturesToDisambiguate:")
     public static native INTemperatureResolutionResult disambiguationWithTemperaturesToDisambiguate(
-            NSArray<? extends NSMeasurement<NSUnitTemperature>> temperaturesToDisambiguate);
+            @NotNull NSArray<? extends NSMeasurement<NSUnitTemperature>> temperaturesToDisambiguate);
 
     @Generated
     @Selector("hash")
@@ -137,10 +147,12 @@ public class INTemperatureResolutionResult extends INIntentResolutionResult {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("needsValue")
     public static native INTemperatureResolutionResult needsValue();
@@ -150,6 +162,7 @@ public class INTemperatureResolutionResult extends INIntentResolutionResult {
     @Selector("new")
     public static native INTemperatureResolutionResult new_objc();
 
+    @NotNull
     @Generated
     @Selector("notRequired")
     public static native INTemperatureResolutionResult notRequired();
@@ -172,15 +185,17 @@ public class INTemperatureResolutionResult extends INIntentResolutionResult {
      * logic constraints to the temperature. For example, constraining it to a maximum or minimum value.
      * Use +notRequired to continue with a 'nil' value.
      */
+    @NotNull
     @Generated
     @Selector("successWithResolvedTemperature:")
     public static native INTemperatureResolutionResult successWithResolvedTemperature(
-            NSMeasurement<NSUnitTemperature> resolvedTemperature);
+            @NotNull NSMeasurement<NSUnitTemperature> resolvedTemperature);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("unsupported")
     public static native INTemperatureResolutionResult unsupported();
@@ -194,11 +209,13 @@ public class INTemperatureResolutionResult extends INIntentResolutionResult {
     @Selector("init")
     public native INTemperatureResolutionResult init();
 
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
     public static native INTemperatureResolutionResult confirmationRequiredWithItemToConfirmForReason(
-            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
+    @NotNull
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INTemperatureResolutionResult unsupportedWithReason(@NInt long reason);

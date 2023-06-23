@@ -41,7 +41,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -72,22 +77,25 @@ public class PHAssetResourceManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,6 +104,10 @@ public class PHAssetResourceManager extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("defaultManager")
     public static native PHAssetResourceManager defaultManager();
@@ -126,9 +138,10 @@ public class PHAssetResourceManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,6 +169,9 @@ public class PHAssetResourceManager extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("cancelDataRequest:")
     public native void cancelDataRequest(int requestID);
@@ -167,41 +183,45 @@ public class PHAssetResourceManager extends NSObject {
     /**
      * Handlers are called on an arbitrary serial queue. The lifetime of the data is not guaranteed beyond that of the
      * handler.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("requestDataForAssetResource:options:dataReceivedHandler:completionHandler:")
-    public native int requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler(PHAssetResource resource,
-            PHAssetResourceRequestOptions options,
-            @ObjCBlock(name = "call_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_2") Block_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_2 handler,
-            @ObjCBlock(name = "call_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_3") Block_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_3 completionHandler);
+    public native int requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler(
+            @NotNull PHAssetResource resource, @Nullable PHAssetResourceRequestOptions options,
+            @NotNull @ObjCBlock(name = "call_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_2") Block_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_2 handler,
+            @NotNull @ObjCBlock(name = "call_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_3") Block_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_3 completionHandler);
 
     /**
      * Handlers are called on an arbitrary serial queue.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("writeDataForAssetResource:toFile:options:completionHandler:")
-    public native void writeDataForAssetResourceToFileOptionsCompletionHandler(PHAssetResource resource, NSURL fileURL,
-            PHAssetResourceRequestOptions options,
-            @ObjCBlock(name = "call_writeDataForAssetResourceToFileOptionsCompletionHandler") Block_writeDataForAssetResourceToFileOptionsCompletionHandler completionHandler);
+    public native void writeDataForAssetResourceToFileOptionsCompletionHandler(@NotNull PHAssetResource resource,
+            @NotNull NSURL fileURL, @Nullable PHAssetResourceRequestOptions options,
+            @NotNull @ObjCBlock(name = "call_writeDataForAssetResourceToFileOptionsCompletionHandler") Block_writeDataForAssetResourceToFileOptionsCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_2 {
         @Generated
-        void call_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_2(NSData data);
+        void call_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_2(@NotNull NSData data);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_3 {
         @Generated
-        void call_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_3(NSError error);
+        void call_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_3(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeDataForAssetResourceToFileOptionsCompletionHandler {
         @Generated
-        void call_writeDataForAssetResourceToFileOptionsCompletionHandler(NSError error);
+        void call_writeDataForAssetResourceToFileOptionsCompletionHandler(@Nullable NSError error);
     }
 }

@@ -28,26 +28,30 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSMetadataQueryDelegate")
 public interface NSMetadataQueryDelegate {
+    @NotNull
     @Generated
     @IsOptional
     @Selector("metadataQuery:replacementObjectForResultObject:")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object metadataQueryReplacementObjectForResultObject(NSMetadataQuery query, NSMetadataItem result) {
+    default Object metadataQueryReplacementObjectForResultObject(@NotNull NSMetadataQuery query,
+            @NotNull NSMetadataItem result) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("metadataQuery:replacementValueForAttribute:value:")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object metadataQueryReplacementValueForAttributeValue(NSMetadataQuery query, String attrName,
-            @Mapped(ObjCObjectMapper.class) Object attrValue) {
+    default Object metadataQueryReplacementValueForAttributeValue(@NotNull NSMetadataQuery query,
+            @NotNull String attrName, @NotNull @Mapped(ObjCObjectMapper.class) Object attrValue) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

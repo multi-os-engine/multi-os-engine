@@ -1,7 +1,6 @@
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -29,7 +28,13 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -60,29 +65,33 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Supplementaries associated with the boundary edges of the section
      */
+    @NotNull
     @Generated
     @Selector("boundarySupplementaryItems")
     public native NSArray<? extends NSCollectionLayoutBoundarySupplementaryItem> boundarySupplementaryItems();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -92,11 +101,12 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     @ByValue
     public native NSDirectionalEdgeInsets contentInsets();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -105,6 +115,7 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     /**
      * decoration views anchored to the section's geometry (e.g. background decoration view)
      */
+    @NotNull
     @Generated
     @Selector("decorationItems")
     public native NSArray<? extends NSCollectionLayoutDecorationItem> decorationItems();
@@ -144,9 +155,10 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -171,7 +183,7 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
 
     @Generated
     @Selector("sectionWithGroup:")
-    public static native NSCollectionLayoutSection sectionWithGroup(NSCollectionLayoutGroup group);
+    public static native NSCollectionLayoutSection sectionWithGroup(@NotNull NSCollectionLayoutGroup group);
 
     /**
      * Supplementaries associated with the boundary edges of the section
@@ -179,7 +191,7 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     @Generated
     @Selector("setBoundarySupplementaryItems:")
     public native void setBoundarySupplementaryItems(
-            NSArray<? extends NSCollectionLayoutBoundarySupplementaryItem> value);
+            @NotNull NSArray<? extends NSCollectionLayoutBoundarySupplementaryItem> value);
 
     @Generated
     @Selector("setContentInsets:")
@@ -190,7 +202,7 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setDecorationItems:")
-    public native void setDecorationItems(NSArray<? extends NSCollectionLayoutDecorationItem> value);
+    public native void setDecorationItems(@NotNull NSArray<? extends NSCollectionLayoutDecorationItem> value);
 
     @Generated
     @Selector("setInterGroupSpacing:")
@@ -205,7 +217,11 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
 
     /**
      * by default, section supplementaries will follow any section-specific contentInsets
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 16.0
      */
+    @Deprecated
     @Generated
     @Selector("setSupplementariesFollowContentInsets:")
     public native void setSupplementariesFollowContentInsets(boolean value);
@@ -220,14 +236,14 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     @Generated
     @Selector("setVisibleItemsInvalidationHandler:")
     public native void setVisibleItemsInvalidationHandler(
-            @ObjCBlock(name = "call_setVisibleItemsInvalidationHandler") Block_setVisibleItemsInvalidationHandler value);
+            @Nullable @ObjCBlock(name = "call_setVisibleItemsInvalidationHandler") Block_setVisibleItemsInvalidationHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setVisibleItemsInvalidationHandler {
         @Generated
-        void call_setVisibleItemsInvalidationHandler(NSArray<?> visibleItems, @ByValue CGPoint contentOffset,
-                @Mapped(ObjCObjectMapper.class) Object layoutEnvironment);
+        void call_setVisibleItemsInvalidationHandler(@NotNull NSArray<?> visibleItems, @ByValue CGPoint contentOffset,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object layoutEnvironment);
     }
 
     @Generated
@@ -236,7 +252,11 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
 
     /**
      * by default, section supplementaries will follow any section-specific contentInsets
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 16.0
      */
+    @Deprecated
     @Generated
     @Selector("supplementariesFollowContentInsets")
     public native boolean supplementariesFollowContentInsets();
@@ -249,6 +269,7 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     /**
      * Called for each layout pass to allow modification of item properties right before they are displayed.
      */
+    @Nullable
     @Generated
     @Selector("visibleItemsInvalidationHandler")
     @ObjCBlock(name = "call_visibleItemsInvalidationHandler_ret")
@@ -258,12 +279,14 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     @Generated
     public interface Block_visibleItemsInvalidationHandler_ret {
         @Generated
-        void call_visibleItemsInvalidationHandler_ret(NSArray<?> visibleItems, @ByValue CGPoint contentOffset,
-                @Mapped(ObjCObjectMapper.class) Object layoutEnvironment);
+        void call_visibleItemsInvalidationHandler_ret(@NotNull NSArray<?> visibleItems, @ByValue CGPoint contentOffset,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object layoutEnvironment);
     }
 
     /**
      * default is UIContentInsetsReferenceAutomatic i.e. following the layout configuration's contentInsetsReference
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("contentInsetsReference")
@@ -273,17 +296,46 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     /**
      * Creates a list section using the specified configuration. You should pass the layoutEnvironment from inside the
      * UICollectionViewCompositionalLayoutSectionProvider.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("sectionWithListConfiguration:layoutEnvironment:")
     public static native NSCollectionLayoutSection sectionWithListConfigurationLayoutEnvironment(
-            UICollectionLayoutListConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) NSCollectionLayoutEnvironment layoutEnvironment);
+            @NotNull UICollectionLayoutListConfiguration configuration,
+            @NotNull @Mapped(ObjCObjectMapper.class) NSCollectionLayoutEnvironment layoutEnvironment);
 
     /**
      * default is UIContentInsetsReferenceAutomatic i.e. following the layout configuration's contentInsetsReference
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setContentInsetsReference:")
     public native void setContentInsetsReference(@NInt long value);
+
+    /**
+     * Specifies the content insets reference for boundary supplementaries in this section.
+     * The default value of this property is UIContentInsetsReference.automatic, which means that any insets specified
+     * on a @c NSCollectionLayoutBoundarySupplementaryItem
+     * will follow the layout configuration's @c contentInsetsReference.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setSupplementaryContentInsetsReference:")
+    public native void setSupplementaryContentInsetsReference(@NInt long value);
+
+    /**
+     * Specifies the content insets reference for boundary supplementaries in this section.
+     * The default value of this property is UIContentInsetsReference.automatic, which means that any insets specified
+     * on a @c NSCollectionLayoutBoundarySupplementaryItem
+     * will follow the layout configuration's @c contentInsetsReference.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("supplementaryContentInsetsReference")
+    @NInt
+    public native long supplementaryContentInsetsReference();
 }

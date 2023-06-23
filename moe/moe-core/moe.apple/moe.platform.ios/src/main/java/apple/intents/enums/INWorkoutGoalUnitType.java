@@ -19,18 +19,54 @@ package apple.intents.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 public final class INWorkoutGoalUnitType {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Inch = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Meter = 0x0000000000000002L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Foot = 0x0000000000000003L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Mile = 0x0000000000000004L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Yard = 0x0000000000000005L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Second = 0x0000000000000006L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Minute = 0x0000000000000007L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Hour = 0x0000000000000008L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Joule = 0x0000000000000009L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long KiloCalorie = 0x000000000000000AL;
 
     @Generated

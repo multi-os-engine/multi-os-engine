@@ -24,11 +24,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MIDICIProfileState
- * <p>
+ * 
  * Lists the enabled and disabled profiles for a MIDI channel or port on a device.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CoreMIDI")
@@ -60,22 +64,25 @@ public class MIDICIProfileState extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -88,17 +95,19 @@ public class MIDICIProfileState extends NSObject implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("disabledProfiles")
     public native NSArray<? extends MIDICIProfile> disabledProfiles();
 
+    @NotNull
     @Generated
     @Selector("enabledProfiles")
     public native NSArray<? extends MIDICIProfile> enabledProfiles();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -111,12 +120,17 @@ public class MIDICIProfileState extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MIDICIProfileState initWithCoder(NSCoder coder);
+    public native MIDICIProfileState initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 12.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithEnabledProfiles:disabledProfiles:")
-    public native MIDICIProfileState initWithEnabledProfilesDisabledProfiles(NSArray<? extends MIDICIProfile> enabled,
-            NSArray<? extends MIDICIProfile> disabled);
+    public native MIDICIProfileState initWithEnabledProfilesDisabledProfiles(
+            @NotNull NSArray<? extends MIDICIProfile> enabled, @NotNull NSArray<? extends MIDICIProfile> disabled);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -135,9 +149,10 @@ public class MIDICIProfileState extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -175,10 +190,13 @@ public class MIDICIProfileState extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithChannel:enabledProfiles:disabledProfiles:")
     public native MIDICIProfileState initWithChannelEnabledProfilesDisabledProfiles(byte midiChannelNum,
-            NSArray<? extends MIDICIProfile> enabled, NSArray<? extends MIDICIProfile> disabled);
+            @NotNull NSArray<? extends MIDICIProfile> enabled, @NotNull NSArray<? extends MIDICIProfile> disabled);
 
     @Generated
     @Selector("midiChannel")

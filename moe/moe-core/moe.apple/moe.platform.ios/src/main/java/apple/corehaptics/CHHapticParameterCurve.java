@@ -21,14 +21,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CHHapticParameterCurve
- * <p>
+ * 
  * A CHHapticParameterCurve is a set of CHHapticParameterCurveControlPoints which describe the control (inflection)
  * points
  * for the parameter values to be applied to the associated pattern.
- * <p>
+ * 
  * The CHHapticParameterCurve generates an interpolated value output which passed through each control point at its
  * associated relative time. These times will all be relative to the start time of the CHHapticParameterCurve within the
  * playing pattern.
@@ -63,26 +65,30 @@ public class CHHapticParameterCurve extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("controlPoints")
     public native NSArray<? extends CHHapticParameterCurveControlPoint> controlPoints();
@@ -106,20 +112,23 @@ public class CHHapticParameterCurve extends NSObject {
 
     /**
      * initWithParameterID:controlPoints:relativeTime
-     * <p>
+     * 
      * Initialize a CHHapticParameterCurve with a parameter ID, time, and an array of
      * CHHapticParameterCurveControlPoint.
-     *
-     * @param parameterID   The CHHapticDynamicParameterID for the desired parameter.
-     * @param controlPoints An array of CHHapticParameterCurveControlPoints.
-     * @param relativeTime  The time at which this parameter curve should start, relative to the start time of the
+     * 
+     * @param parameterID
+     *                      The CHHapticDynamicParameterID for the desired parameter.
+     * @param controlPoints
+     *                      An array of CHHapticParameterCurveControlPoints.
+     * @param relativeTime
+     *                      The time at which this parameter curve should start, relative to the start time of the
      *                      CHHapticPattern to which this
      *                      parameter curve belongs.
      */
     @Generated
     @Selector("initWithParameterID:controlPoints:relativeTime:")
-    public native CHHapticParameterCurve initWithParameterIDControlPointsRelativeTime(String parameterID,
-            NSArray<? extends CHHapticParameterCurveControlPoint> controlPoints, double relativeTime);
+    public native CHHapticParameterCurve initWithParameterIDControlPointsRelativeTime(@NotNull String parameterID,
+            @NotNull NSArray<? extends CHHapticParameterCurveControlPoint> controlPoints, double relativeTime);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -138,15 +147,17 @@ public class CHHapticParameterCurve extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native CHHapticParameterCurve new_objc();
 
+    @NotNull
     @Generated
     @Selector("parameterID")
     public native String parameterID();

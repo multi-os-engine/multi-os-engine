@@ -44,9 +44,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A trait collection encapsulates the system traits of an interface's environment.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("UIKit")
@@ -78,22 +82,25 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,9 +135,10 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,44 +165,65 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @Selector("traitCollectionWithDisplayGamut:")
     public static native UITraitCollection traitCollectionWithDisplayGamut(@NInt long displayGamut);
 
+    @NotNull
     @Generated
     @Selector("traitCollectionWithDisplayScale:")
     public static native UITraitCollection traitCollectionWithDisplayScale(@NFloat double scale);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("traitCollectionWithForceTouchCapability:")
     public static native UITraitCollection traitCollectionWithForceTouchCapability(@NInt long capability);
 
+    @NotNull
     @Generated
     @Selector("traitCollectionWithHorizontalSizeClass:")
     public static native UITraitCollection traitCollectionWithHorizontalSizeClass(@NInt long horizontalSizeClass);
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @Selector("traitCollectionWithLayoutDirection:")
     public static native UITraitCollection traitCollectionWithLayoutDirection(@NInt long layoutDirection);
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @Selector("traitCollectionWithPreferredContentSizeCategory:")
     public static native UITraitCollection traitCollectionWithPreferredContentSizeCategory(
-            String preferredContentSizeCategory);
+            @NotNull String preferredContentSizeCategory);
 
     /**
      * Returns a trait collection by merging the traits in `traitCollections`. The last trait along any given
      * axis (e.g. interface usage) will supersede any others.
      */
+    @NotNull
     @Generated
     @Selector("traitCollectionWithTraitsFromCollections:")
     public static native UITraitCollection traitCollectionWithTraitsFromCollections(
-            NSArray<? extends UITraitCollection> traitCollections);
+            @NotNull NSArray<? extends UITraitCollection> traitCollections);
 
+    @NotNull
     @Generated
     @Selector("traitCollectionWithUserInterfaceIdiom:")
     public static native UITraitCollection traitCollectionWithUserInterfaceIdiom(@NInt long idiom);
 
+    @NotNull
     @Generated
     @Selector("traitCollectionWithVerticalSizeClass:")
     public static native UITraitCollection traitCollectionWithVerticalSizeClass(@NInt long verticalSizeClass);
@@ -206,16 +235,19 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     @Generated
     @Selector("containsTraitsInCollection:")
-    public native boolean containsTraitsInCollection(UITraitCollection trait);
+    public native boolean containsTraitsInCollection(@Nullable UITraitCollection trait);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * unspecified: UIDisplayGamutUnspecified
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("displayGamut")
@@ -232,10 +264,12 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * unspecified: UIForceTouchCapabilityUnknown
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("forceTouchCapability")
@@ -256,10 +290,12 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     @Generated
     @Selector("initWithCoder:")
-    public native UITraitCollection initWithCoder(NSCoder coder);
+    public native UITraitCollection initWithCoder(@NotNull NSCoder coder);
 
     /**
      * unspecified: UITraitEnvironmentLayoutDirectionUnspecified
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("layoutDirection")
@@ -268,7 +304,10 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * unspecified: UIContentSizeCategoryUnspecified
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("preferredContentSizeCategory")
     public native String preferredContentSizeCategory();
@@ -297,6 +336,8 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * unspecified: UIAccessibilityContrastUnspecified
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("accessibilityContrast")
@@ -306,7 +347,10 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     /**
      * The current trait collection, used when resolving the appearance of dynamic UIColors and similar objects.
      * This is a thread-local property, so it may be changed on non-main threads without affecting the main thread.
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("currentTraitCollection")
     public static native UITraitCollection currentTraitCollection();
@@ -317,24 +361,32 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
      * If you need to be aware of when dynamic colors might change, override `traitCollectionDidChange` in your view or
      * view controller,
      * and use this method to compare `self.traitCollection` with `previousTraitCollection`.
-     * <p>
+     * 
      * Currently, a change in any of these traits could affect dynamic colors:
      * userInterfaceIdiom, userInterfaceStyle, displayGamut, accessibilityContrast, userInterfaceLevel
      * and more could be added in the future.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("hasDifferentColorAppearanceComparedToTraitCollection:")
-    public native boolean hasDifferentColorAppearanceComparedToTraitCollection(UITraitCollection traitCollection);
+    public native boolean hasDifferentColorAppearanceComparedToTraitCollection(
+            @Nullable UITraitCollection traitCollection);
 
     /**
      * Returns an image configuration compatible with this trait collection.
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("imageConfiguration")
     public native UIImageConfiguration imageConfiguration();
 
     /**
      * unspecified: UILegibilityWeightUnspecified
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("legibilityWeight")
@@ -346,11 +398,13 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
      * then restores `UITraitCollection.currentTraitCollection` to its original value.
      * Just like `currentTraitCollection`, this only affects the current thread, and may be used on non-main threads
      * without affecting the main thread.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("performAsCurrentTraitCollection:")
     public native void performAsCurrentTraitCollection(
-            @ObjCBlock(name = "call_performAsCurrentTraitCollection") Block_performAsCurrentTraitCollection actions);
+            @NotNull @ObjCBlock(name = "call_performAsCurrentTraitCollection") Block_performAsCurrentTraitCollection actions);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -362,29 +416,49 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     /**
      * The current trait collection, used when resolving the appearance of dynamic UIColors and similar objects.
      * This is a thread-local property, so it may be changed on non-main threads without affecting the main thread.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setCurrentTraitCollection:")
-    public static native void setCurrentTraitCollection(UITraitCollection value);
+    public static native void setCurrentTraitCollection(@NotNull UITraitCollection value);
 
+    /**
+     * API-Since: 13.0
+     */
+    @NotNull
     @Generated
     @Selector("traitCollectionWithAccessibilityContrast:")
     public static native UITraitCollection traitCollectionWithAccessibilityContrast(@NInt long accessibilityContrast);
 
+    /**
+     * API-Since: 13.0
+     */
+    @NotNull
     @Generated
     @Selector("traitCollectionWithLegibilityWeight:")
     public static native UITraitCollection traitCollectionWithLegibilityWeight(@NInt long legibilityWeight);
 
+    /**
+     * API-Since: 13.0
+     */
+    @NotNull
     @Generated
     @Selector("traitCollectionWithUserInterfaceLevel:")
     public static native UITraitCollection traitCollectionWithUserInterfaceLevel(@NInt long userInterfaceLevel);
 
+    /**
+     * API-Since: 12.0
+     */
+    @NotNull
     @Generated
     @Selector("traitCollectionWithUserInterfaceStyle:")
     public static native UITraitCollection traitCollectionWithUserInterfaceStyle(@NInt long userInterfaceStyle);
 
     /**
      * unspecified: UIUserInterfaceLevelUnspecified
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("userInterfaceLevel")
@@ -393,6 +467,8 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * unspecified: UIUserInterfaceStyleUnspecified
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("userInterfaceStyle")
@@ -401,6 +477,8 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * unspecified: UIUserInterfaceActiveAppearanceUnspecified
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("activeAppearance")
@@ -411,9 +489,23 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
      * This trait indicates whether the UI should have an 'active' appearance.
      * On macOS, this varies based on window activation state.
      * On other platforms, this is always .active.
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("traitCollectionWithActiveAppearance:")
     public static native UITraitCollection traitCollectionWithActiveAppearance(
             @NInt long userInterfaceActiveAppearance);
+
+    @Generated
+    @Selector("toolbarItemPresentationSize")
+    @NInt
+    public native long toolbarItemPresentationSize();
+
+    @NotNull
+    @Generated
+    @Selector("traitCollectionWithToolbarItemPresentationSize:")
+    public static native UITraitCollection traitCollectionWithToolbarItemPresentationSize(
+            @NInt long toolbarItemPresentationSize);
 }

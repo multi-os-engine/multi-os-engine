@@ -45,11 +45,15 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * HKHealthStore
- * <p>
+ * 
  * The HKHealthStore class provides an interface for accessing and storing the user's health data.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HealthKit")
@@ -81,22 +85,25 @@ public class HKHealthStore extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +136,9 @@ public class HKHealthStore extends NSObject {
 
     /**
      * isHealthDataAvailable
-     * <p>
+     * 
      * Returns YES if HealthKit is supported on the device.
-     * <p>
+     * 
      * HealthKit is not supported on all iOS devices. Using HKHealthStore APIs on devices which are not
      * supported will result in errors with the HKErrorHealthDataUnavailable code. Call isHealthDataAvailable
      * before attempting to use other parts of the framework.
@@ -144,9 +151,10 @@ public class HKHealthStore extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -176,136 +184,158 @@ public class HKHealthStore extends NSObject {
 
     /**
      * addSamples:toWorkout:completion:
-     * <p>
+     * 
      * Associates samples with a given workout.
-     * <p>
+     * 
      * This will associate the given samples with the given workout. These samples will then be returned by a
      * query that contains this workout as a predicate. If a sample is added that is not saved yet, then it will
      * be saved for you. Note that the sample will be saved without an HKDevice.
-     * <p>
+     * 
      * The workout provided must be one that has already been saved to HealthKit.
      */
     @Generated
     @Selector("addSamples:toWorkout:completion:")
-    public native void addSamplesToWorkoutCompletion(NSArray<? extends HKSample> samples, HKWorkout workout,
-            @ObjCBlock(name = "call_addSamplesToWorkoutCompletion") Block_addSamplesToWorkoutCompletion completion);
+    public native void addSamplesToWorkoutCompletion(@NotNull NSArray<? extends HKSample> samples,
+            @NotNull HKWorkout workout,
+            @NotNull @ObjCBlock(name = "call_addSamplesToWorkoutCompletion") Block_addSamplesToWorkoutCompletion completion);
 
     /**
      * authorizationStatusForType:
-     * <p>
+     * 
      * Returns the application's authorization status for the given object type.
      */
     @Generated
     @Selector("authorizationStatusForType:")
     @NInt
-    public native long authorizationStatusForType(HKObjectType type);
+    public native long authorizationStatusForType(@NotNull HKObjectType type);
 
     /**
      * biologicalSexWithError:
-     * <p>
+     * 
      * Returns an object encapsulating the user's biological sex.
-     * <p>
+     * 
      * Before calling this method, the application should request authorization to access objects with the
      * HKCharacteristicType identified by HKCharacteristicTypeIdentifierBiologicalSex.
      */
+    @Nullable
     @Generated
     @Selector("biologicalSexWithError:")
-    public native HKBiologicalSexObject biologicalSexWithError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native HKBiologicalSexObject biologicalSexWithError(
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * bloodTypeWithError:
-     * <p>
+     * 
      * Returns an object encapsulating the user's blood type.
-     * <p>
+     * 
      * Before calling this method, the application should request authorization to access objects with the
      * HKCharacteristicType identified by HKCharacteristicTypeIdentifierBloodType.
      */
+    @Nullable
     @Generated
     @Selector("bloodTypeWithError:")
-    public native HKBloodTypeObject bloodTypeWithError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native HKBloodTypeObject bloodTypeWithError(
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * dateOfBirthComponentsWithError:
-     * <p>
+     * 
      * Returns the user's date of birth in the Gregorian calendar.
-     * <p>
+     * 
      * Before calling this method, the application should request authorization to access objects with the
      * HKCharacteristicType identified by HKCharacteristicTypeIdentifierDateOfBirth.
+     * 
+     * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("dateOfBirthComponentsWithError:")
     public native NSDateComponents dateOfBirthComponentsWithError(
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("dateOfBirthWithError:")
-    public native NSDate dateOfBirthWithError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSDate dateOfBirthWithError(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * deleteObject:withCompletion:
-     * <p>
+     * 
      * Deletes a single HKObject from the HealthKit database.
-     * <p>
+     * 
      * See deleteObjects:withCompletion:.
      */
     @Generated
     @Selector("deleteObject:withCompletion:")
-    public native void deleteObjectWithCompletion(HKObject object,
-            @ObjCBlock(name = "call_deleteObjectWithCompletion") Block_deleteObjectWithCompletion completion);
+    public native void deleteObjectWithCompletion(@NotNull HKObject object,
+            @NotNull @ObjCBlock(name = "call_deleteObjectWithCompletion") Block_deleteObjectWithCompletion completion);
 
     /**
      * deleteObjects:withCompletion:
-     * <p>
+     * 
      * Deletes multiple HKObjects from the HealthKit database.
-     * <p>
+     * 
      * An application may only delete objects that it previously saved. This operation is performed
      * asynchronously and the completion will be executed on an arbitrary background queue.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("deleteObjects:withCompletion:")
-    public native void deleteObjectsWithCompletion(NSArray<? extends HKObject> objects,
-            @ObjCBlock(name = "call_deleteObjectsWithCompletion") Block_deleteObjectsWithCompletion completion);
+    public native void deleteObjectsWithCompletion(@NotNull NSArray<? extends HKObject> objects,
+            @NotNull @ObjCBlock(name = "call_deleteObjectsWithCompletion") Block_deleteObjectsWithCompletion completion);
 
     /**
      * deleteObjectsOfType:predicate:withCompletion:
-     * <p>
+     * 
      * Deletes all objects matching the given predicate from the HealthKit database.
-     * <p>
+     * 
      * An application may only delete objects that it previously saved. This operation is performed
      * asynchronously and the completion will be executed on an arbitrary background queue.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("deleteObjectsOfType:predicate:withCompletion:")
-    public native void deleteObjectsOfTypePredicateWithCompletion(HKObjectType objectType, NSPredicate predicate,
-            @ObjCBlock(name = "call_deleteObjectsOfTypePredicateWithCompletion") Block_deleteObjectsOfTypePredicateWithCompletion completion);
+    public native void deleteObjectsOfTypePredicateWithCompletion(@NotNull HKObjectType objectType,
+            @NotNull NSPredicate predicate,
+            @NotNull @ObjCBlock(name = "call_deleteObjectsOfTypePredicateWithCompletion") Block_deleteObjectsOfTypePredicateWithCompletion completion);
 
     @Generated
     @Selector("disableAllBackgroundDeliveryWithCompletion:")
     public native void disableAllBackgroundDeliveryWithCompletion(
-            @ObjCBlock(name = "call_disableAllBackgroundDeliveryWithCompletion") Block_disableAllBackgroundDeliveryWithCompletion completion);
+            @NotNull @ObjCBlock(name = "call_disableAllBackgroundDeliveryWithCompletion") Block_disableAllBackgroundDeliveryWithCompletion completion);
 
     @Generated
     @Selector("disableBackgroundDeliveryForType:withCompletion:")
-    public native void disableBackgroundDeliveryForTypeWithCompletion(HKObjectType type,
-            @ObjCBlock(name = "call_disableBackgroundDeliveryForTypeWithCompletion") Block_disableBackgroundDeliveryForTypeWithCompletion completion);
+    public native void disableBackgroundDeliveryForTypeWithCompletion(@NotNull HKObjectType type,
+            @NotNull @ObjCBlock(name = "call_disableBackgroundDeliveryForTypeWithCompletion") Block_disableBackgroundDeliveryForTypeWithCompletion completion);
 
     /**
      * earliestPermittedSampleDate
-     * <p>
+     * 
      * Samples prior to the earliestPermittedSampleDate cannot be saved or queried.
-     * <p>
+     * 
      * On some platforms, only samples with end dates newer than the value returned by earliestPermittedSampleDate
      * may be saved or retrieved.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("earliestPermittedSampleDate")
     public native NSDate earliestPermittedSampleDate();
 
     /**
      * enableBackgroundDeliveryForType:frequency:withCompletion:
-     * <p>
+     * 
      * This method enables activation of your app when data of the type is recorded at the cadence specified.
-     * <p>
+     * 
      * When an app has subscribed to a certain data type it will get activated at the cadence that is specified
      * with the frequency parameter. The app is still responsible for creating an HKObserverQuery to know which
      * data types have been updated and the corresponding fetch queries. Note that certain data types (such as
@@ -314,60 +344,66 @@ public class HKHealthStore extends NSObject {
      */
     @Generated
     @Selector("enableBackgroundDeliveryForType:frequency:withCompletion:")
-    public native void enableBackgroundDeliveryForTypeFrequencyWithCompletion(HKObjectType type, @NInt long frequency,
-            @ObjCBlock(name = "call_enableBackgroundDeliveryForTypeFrequencyWithCompletion") Block_enableBackgroundDeliveryForTypeFrequencyWithCompletion completion);
+    public native void enableBackgroundDeliveryForTypeFrequencyWithCompletion(@NotNull HKObjectType type,
+            @NInt long frequency,
+            @NotNull @ObjCBlock(name = "call_enableBackgroundDeliveryForTypeFrequencyWithCompletion") Block_enableBackgroundDeliveryForTypeFrequencyWithCompletion completion);
 
     /**
      * executeQuery:
-     * <p>
+     * 
      * Begins executing the given query.
-     * <p>
+     * 
      * After executing a query, the completion, update, and/or results handlers of that query will be invoked
      * asynchronously on an arbitrary background queue as results become available. Errors that prevent a
      * query from executing will be delivered to one of the query's handlers. Which handler the error will be
      * delivered to is defined by the HKQuery subclass.
-     * <p>
+     * 
      * Each HKQuery instance may only be executed once and calling this method with a currently executing query
      * or one that was previously executed will result in an exception.
-     * <p>
+     * 
      * If a query would retrieve objects with an HKObjectType property, then the application must request
      * authorization to access objects of that type before executing the query.
      */
     @Generated
     @Selector("executeQuery:")
-    public native void executeQuery(HKQuery query);
+    public native void executeQuery(@NotNull HKQuery query);
 
     /**
      * fitzpatrickSkinTypeWithError:
-     * <p>
+     * 
      * Returns an object encapsulating the user's Fitzpatrick skin type.
-     * <p>
+     * 
      * Before calling this method, the application should request authorization to access objects with the
      * HKCharacteristicType identified by HKCharacteristicTypeIdentifierFitzpatrickSkinType.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("fitzpatrickSkinTypeWithError:")
     public native HKFitzpatrickSkinTypeObject fitzpatrickSkinTypeWithError(
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * handleAuthorizationForExtensionWithCompletion:
-     * <p>
+     * 
      * Prompts the user to authorize the application for reading and saving objects.
-     * <p>
+     * 
      * When an app extension calls requestAuthorizationToShareTypes:readTypes:completion:, the parent application
      * is responsible for calling this method to prompt the user to authorize the app and its extensions for the
      * types that the extension requested access to.
-     * <p>
+     * 
      * The request is performed asynchronously and its completion will be executed on an arbitrary background
      * queue after the user has responded. The success parameter of the completion indicates whether prompting
      * the user, if necessary, completed successfully and was not cancelled by the user. It does NOT indicate
      * whether the application was granted authorization.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("handleAuthorizationForExtensionWithCompletion:")
     public native void handleAuthorizationForExtensionWithCompletion(
-            @ObjCBlock(name = "call_handleAuthorizationForExtensionWithCompletion") Block_handleAuthorizationForExtensionWithCompletion completion);
+            @NotNull @ObjCBlock(name = "call_handleAuthorizationForExtensionWithCompletion") Block_handleAuthorizationForExtensionWithCompletion completion);
 
     @Generated
     @Selector("init")
@@ -375,159 +411,173 @@ public class HKHealthStore extends NSObject {
 
     /**
      * preferredUnitsForQuantityTypes:completion:
-     * <p>
+     * 
      * Calls the completion with the preferred HKUnits for a given set of HKQuantityTypes.
-     * <p>
+     * 
      * A preferred unit is either the unit that the user has chosen in Health for displaying samples of the
      * given quantity type or the default unit for that type in the current locale of the device. To access the
      * user's preferences it is necessary to request read or share authorization for the set of HKQuantityTypes
      * provided. If neither read nor share authorization has been granted to the app, then the default unit for
      * the locale is provided.
-     * <p>
+     * 
      * An error will be returned when preferred units are inaccessible because protected health data is
      * unavailable or authorization status is not determined for one or more of the provided types.
-     * <p>
+     * 
      * The returned dictionary will map HKQuantityType to HKUnit.
+     * 
+     * API-Since: 8.2
      */
     @Generated
     @Selector("preferredUnitsForQuantityTypes:completion:")
-    public native void preferredUnitsForQuantityTypesCompletion(NSSet<? extends HKQuantityType> quantityTypes,
-            @ObjCBlock(name = "call_preferredUnitsForQuantityTypesCompletion") Block_preferredUnitsForQuantityTypesCompletion completion);
+    public native void preferredUnitsForQuantityTypesCompletion(@NotNull NSSet<? extends HKQuantityType> quantityTypes,
+            @NotNull @ObjCBlock(name = "call_preferredUnitsForQuantityTypesCompletion") Block_preferredUnitsForQuantityTypesCompletion completion);
 
     /**
      * requestAuthorizationToShareTypes:readTypes:completion:
-     * <p>
+     * 
      * Prompts the user to authorize the application for reading and saving objects of the given types.
-     * <p>
+     * 
      * Before attempting to execute queries or save objects, the application should first request authorization
      * from the user to read and share every type of object for which the application may require access.
-     * <p>
+     * 
      * The request is performed asynchronously and its completion will be executed on an arbitrary background
      * queue after the user has responded. If the user has already chosen whether to grant the application
      * access to all of the types provided, then the completion will be called without prompting the user.
      * The success parameter of the completion indicates whether prompting the user, if necessary, completed
      * successfully and was not cancelled by the user. It does NOT indicate whether the application was
      * granted authorization.
-     * <p>
+     * 
      * To customize the messages displayed on the authorization sheet, set the following keys in your app's
      * Info.plist file. Set the NSHealthShareUsageDescription key to customize the message for reading data.
      * Set the NSHealthUpdateUsageDescription key to customize the message for writing data.
      */
     @Generated
     @Selector("requestAuthorizationToShareTypes:readTypes:completion:")
-    public native void requestAuthorizationToShareTypesReadTypesCompletion(NSSet<? extends HKSampleType> typesToShare,
-            NSSet<? extends HKObjectType> typesToRead,
-            @ObjCBlock(name = "call_requestAuthorizationToShareTypesReadTypesCompletion") Block_requestAuthorizationToShareTypesReadTypesCompletion completion);
+    public native void requestAuthorizationToShareTypesReadTypesCompletion(
+            @Nullable NSSet<? extends HKSampleType> typesToShare, @Nullable NSSet<? extends HKObjectType> typesToRead,
+            @NotNull @ObjCBlock(name = "call_requestAuthorizationToShareTypesReadTypesCompletion") Block_requestAuthorizationToShareTypesReadTypesCompletion completion);
 
     /**
      * saveObject:withCompletion:
-     * <p>
+     * 
      * Saves an HKObject.
-     * <p>
+     * 
      * After an object is saved, on subsequent retrievals the sourceRevision property of the object will be set
      * to the HKSourceRevision representing the version of the application that saved it.
-     * <p>
+     * 
      * If the object has an HKObjectType property, then in order to save an object successfully the application
      * must first request authorization to share objects with that type. Saving an object with the same unique
      * identifier as another object that has already been saved will fail. When the application attempts to
      * save multiple objects, if any single object cannot be saved then none of the objects will be saved.
      * The operation will fail if the objects array contains samples with endDates that are older than the date
      * returned by earliestPermittedSampleDate.
-     * <p>
+     * 
      * This operation is performed asynchronously and the completion will be executed on an arbitrary
      * background queue.
      */
     @Generated
     @Selector("saveObject:withCompletion:")
-    public native void saveObjectWithCompletion(HKObject object,
-            @ObjCBlock(name = "call_saveObjectWithCompletion") Block_saveObjectWithCompletion completion);
+    public native void saveObjectWithCompletion(@NotNull HKObject object,
+            @NotNull @ObjCBlock(name = "call_saveObjectWithCompletion") Block_saveObjectWithCompletion completion);
 
     /**
      * saveObjects:withCompletion:
-     * <p>
+     * 
      * Saves an array of HKObjects.
-     * <p>
+     * 
      * See discussion of saveObject:withCompletion:.
      */
     @Generated
     @Selector("saveObjects:withCompletion:")
-    public native void saveObjectsWithCompletion(NSArray<? extends HKObject> objects,
-            @ObjCBlock(name = "call_saveObjectsWithCompletion") Block_saveObjectsWithCompletion completion);
+    public native void saveObjectsWithCompletion(@NotNull NSArray<? extends HKObject> objects,
+            @NotNull @ObjCBlock(name = "call_saveObjectsWithCompletion") Block_saveObjectsWithCompletion completion);
 
     /**
      * splitTotalEnergy:startDate:endDate:resultsHandler:
-     * <p>
+     * 
      * For the time period specified, this method calculates the resting and active energy parts of the total
      * energy provided.
-     * <p>
+     * 
      * This method uses the user's metrics like age, biological sex, body mass and height to determine
      * their basal metabolic rate. If the application does not have authorization to access these characteristics
      * or if the user has not entered their data then this method uses builtin default values.
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("splitTotalEnergy:startDate:endDate:resultsHandler:")
-    public native void splitTotalEnergyStartDateEndDateResultsHandler(HKQuantity totalEnergy, NSDate startDate,
-            NSDate endDate,
-            @ObjCBlock(name = "call_splitTotalEnergyStartDateEndDateResultsHandler") Block_splitTotalEnergyStartDateEndDateResultsHandler resultsHandler);
+    public native void splitTotalEnergyStartDateEndDateResultsHandler(@NotNull HKQuantity totalEnergy,
+            @NotNull NSDate startDate, @NotNull NSDate endDate,
+            @NotNull @ObjCBlock(name = "call_splitTotalEnergyStartDateEndDateResultsHandler") Block_splitTotalEnergyStartDateEndDateResultsHandler resultsHandler);
 
     /**
      * startWatchAppWithWorkoutConfiguration:completion:
-     * <p>
+     * 
      * Launches or wakes up the WatchKit app on the watch
-     * <p>
+     * 
      * This method will launch the WatchKit app corresponding to the calling iOS application on the currently
      * active Apple Watch. After launching, the handleWorkoutConfiguration: method on the WKExtensionDelegate
      * protocol will be called with the HKWorkoutConfiguration as a parameter. The receiving Watch app can use
      * this configuration object to create an HKWorkoutSession and start it with -startWorkoutSession:.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("startWatchAppWithWorkoutConfiguration:completion:")
-    public native void startWatchAppWithWorkoutConfigurationCompletion(HKWorkoutConfiguration workoutConfiguration,
-            @ObjCBlock(name = "call_startWatchAppWithWorkoutConfigurationCompletion") Block_startWatchAppWithWorkoutConfigurationCompletion completion);
+    public native void startWatchAppWithWorkoutConfigurationCompletion(
+            @NotNull HKWorkoutConfiguration workoutConfiguration,
+            @NotNull @ObjCBlock(name = "call_startWatchAppWithWorkoutConfigurationCompletion") Block_startWatchAppWithWorkoutConfigurationCompletion completion);
 
     /**
      * stopQuery:
-     * <p>
+     * 
      * Stops a query that is executing from continuing to run.
-     * <p>
+     * 
      * Calling this method will prevent the handlers of the query from being invoked in the future. If the
      * query is already stopped, this method does nothing.
      */
     @Generated
     @Selector("stopQuery:")
-    public native void stopQuery(HKQuery query);
+    public native void stopQuery(@NotNull HKQuery query);
 
     /**
      * wheelchairUseWithError:
-     * <p>
+     * 
      * Returns an object encapsulating the user's wheelchair use.
-     * <p>
+     * 
      * Before calling this method, the application should request authorization to access objects with the
      * HKCharacteristicType identified by HKCharacteristicTypeIdentifierWheelchairUse.
+     * 
+     * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("wheelchairUseWithError:")
-    public native HKWheelchairUseObject wheelchairUseWithError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native HKWheelchairUseObject wheelchairUseWithError(
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addSamplesToWorkoutCompletion {
         @Generated
-        void call_addSamplesToWorkoutCompletion(boolean success, NSError error);
+        void call_addSamplesToWorkoutCompletion(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteObjectWithCompletion {
         @Generated
-        void call_deleteObjectWithCompletion(boolean success, NSError error);
+        void call_deleteObjectWithCompletion(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteObjectsWithCompletion {
         @Generated
-        void call_deleteObjectsWithCompletion(boolean success, NSError error);
+        void call_deleteObjectsWithCompletion(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -535,35 +585,35 @@ public class HKHealthStore extends NSObject {
     public interface Block_deleteObjectsOfTypePredicateWithCompletion {
         @Generated
         void call_deleteObjectsOfTypePredicateWithCompletion(boolean success, @NUInt long deletedObjectCount,
-                NSError error);
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_disableAllBackgroundDeliveryWithCompletion {
         @Generated
-        void call_disableAllBackgroundDeliveryWithCompletion(boolean success, NSError error);
+        void call_disableAllBackgroundDeliveryWithCompletion(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_disableBackgroundDeliveryForTypeWithCompletion {
         @Generated
-        void call_disableBackgroundDeliveryForTypeWithCompletion(boolean success, NSError error);
+        void call_disableBackgroundDeliveryForTypeWithCompletion(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enableBackgroundDeliveryForTypeFrequencyWithCompletion {
         @Generated
-        void call_enableBackgroundDeliveryForTypeFrequencyWithCompletion(boolean success, NSError error);
+        void call_enableBackgroundDeliveryForTypeFrequencyWithCompletion(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleAuthorizationForExtensionWithCompletion {
         @Generated
-        void call_handleAuthorizationForExtensionWithCompletion(boolean success, NSError error);
+        void call_handleAuthorizationForExtensionWithCompletion(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -571,78 +621,83 @@ public class HKHealthStore extends NSObject {
     public interface Block_preferredUnitsForQuantityTypesCompletion {
         @Generated
         void call_preferredUnitsForQuantityTypesCompletion(
-                NSDictionary<? extends HKQuantityType, ? extends HKUnit> preferredUnits, NSError error);
+                @NotNull NSDictionary<? extends HKQuantityType, ? extends HKUnit> preferredUnits,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestAuthorizationToShareTypesReadTypesCompletion {
         @Generated
-        void call_requestAuthorizationToShareTypesReadTypesCompletion(boolean success, NSError error);
+        void call_requestAuthorizationToShareTypesReadTypesCompletion(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveObjectWithCompletion {
         @Generated
-        void call_saveObjectWithCompletion(boolean success, NSError error);
+        void call_saveObjectWithCompletion(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveObjectsWithCompletion {
         @Generated
-        void call_saveObjectsWithCompletion(boolean success, NSError error);
+        void call_saveObjectsWithCompletion(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_splitTotalEnergyStartDateEndDateResultsHandler {
         @Generated
-        void call_splitTotalEnergyStartDateEndDateResultsHandler(HKQuantity restingEnergy, HKQuantity activeEnergy,
-                NSError error);
+        void call_splitTotalEnergyStartDateEndDateResultsHandler(@Nullable HKQuantity restingEnergy,
+                @Nullable HKQuantity activeEnergy, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startWatchAppWithWorkoutConfigurationCompletion {
         @Generated
-        void call_startWatchAppWithWorkoutConfigurationCompletion(boolean success, NSError error);
+        void call_startWatchAppWithWorkoutConfigurationCompletion(boolean success, @Nullable NSError error);
     }
 
     /**
      * getRequestStatusForAuthorizationToShareTypes:readTypes:completion:
-     * <p>
+     * 
      * Determines whether requesting authorization for the given types is necessary.
-     * <p>
+     * 
      * Applications may call this method to determine whether the user would be prompted for authorization if
      * the same collections of types are passed to requestAuthorizationToShareTypes:readTypes:completion:.
      * This determination is performed asynchronously and its completion will be executed on an arbitrary
      * background queue.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("getRequestStatusForAuthorizationToShareTypes:readTypes:completion:")
     public native void getRequestStatusForAuthorizationToShareTypesReadTypesCompletion(
-            NSSet<? extends HKSampleType> typesToShare, NSSet<? extends HKObjectType> typesToRead,
-            @ObjCBlock(name = "call_getRequestStatusForAuthorizationToShareTypesReadTypesCompletion") Block_getRequestStatusForAuthorizationToShareTypesReadTypesCompletion completion);
+            @NotNull NSSet<? extends HKSampleType> typesToShare, @NotNull NSSet<? extends HKObjectType> typesToRead,
+            @NotNull @ObjCBlock(name = "call_getRequestStatusForAuthorizationToShareTypesReadTypesCompletion") Block_getRequestStatusForAuthorizationToShareTypesReadTypesCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getRequestStatusForAuthorizationToShareTypesReadTypesCompletion {
         @Generated
         void call_getRequestStatusForAuthorizationToShareTypesReadTypesCompletion(@NInt long requestStatus,
-                NSError error);
+                @Nullable NSError error);
     }
 
     /**
      * supportsHealthRecords
-     * <p>
+     * 
      * Returns YES if the Health Records feature is available.
-     * <p>
+     * 
      * The Health Records feature is not available in all regions but may be present in unsupported regions
      * if accounts have already been configured. This can change as accounts are modified during device
      * restore or synchronization.
      * Call supportsHealthRecords before attempting to request authorization for any clinical types.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("supportsHealthRecords")
@@ -650,35 +705,70 @@ public class HKHealthStore extends NSObject {
 
     /**
      * activityMoveModeWithError:
-     * <p>
+     * 
      * Returns an object encapsulating the user's activity move mode
-     * <p>
+     * 
      * Before calling this method, the application should request authorization to access objects with the
      * HKCharacteristicType identified by HKCharacteristicTypeIdentifierActivityMoveMode.
+     * 
+     * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("activityMoveModeWithError:")
     public native HKActivityMoveModeObject activityMoveModeWithError(
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * recalibrateEstimatesForSampleType:atDate:completion:
-     * <p>
+     * 
      * Recalibrates the prediction algorithm used for this sample type.
-     * <p>
+     * 
      * Check -[HKSampleType allowsRecalibrationForEstimates] to see if a given sample type is supported. Calling this
      * method results in first-party
      * estimation algorithms to recalibrate what data is used when generating values for HKSamples of this sampleType.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("recalibrateEstimatesForSampleType:atDate:completion:")
-    public native void recalibrateEstimatesForSampleTypeAtDateCompletion(HKSampleType sampleType, NSDate date,
-            @ObjCBlock(name = "call_recalibrateEstimatesForSampleTypeAtDateCompletion") Block_recalibrateEstimatesForSampleTypeAtDateCompletion completion);
+    public native void recalibrateEstimatesForSampleTypeAtDateCompletion(@NotNull HKSampleType sampleType,
+            @NotNull NSDate date,
+            @NotNull @ObjCBlock(name = "call_recalibrateEstimatesForSampleTypeAtDateCompletion") Block_recalibrateEstimatesForSampleTypeAtDateCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_recalibrateEstimatesForSampleTypeAtDateCompletion {
         @Generated
-        void call_recalibrateEstimatesForSampleTypeAtDateCompletion(boolean success, NSError error);
+        void call_recalibrateEstimatesForSampleTypeAtDateCompletion(boolean success, @Nullable NSError error);
+    }
+
+    /**
+     * requestPerObjectReadAuthorizationForType:predicate:completion:
+     * 
+     * For types that support per object authorization (like vision prescriptions), prompts the user to select
+     * the objects for which they want to grant your app access.
+     * 
+     * Before attempting to execute queries, the application should first request authorization from the user
+     * to read objects for which the application may require access.
+     * 
+     * The request is performed asynchronously, and its completion will be executed on an arbitrary background
+     * queue after the user has responded. The user will always be prompted to provide access to objects
+     * regardless of whether access had been previously provided. The user can choose to toggle each object's
+     * access with each prompt. The success parameter of the completion indicates whether prompting the user
+     * completed successfully and was not cancelled. It does NOT indicate whether the application was granted
+     * authorization.
+     */
+    @Generated
+    @Selector("requestPerObjectReadAuthorizationForType:predicate:completion:")
+    public native void requestPerObjectReadAuthorizationForTypePredicateCompletion(@NotNull HKObjectType objectType,
+            @Nullable NSPredicate predicate,
+            @NotNull @ObjCBlock(name = "call_requestPerObjectReadAuthorizationForTypePredicateCompletion") Block_requestPerObjectReadAuthorizationForTypePredicateCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestPerObjectReadAuthorizationForTypePredicateCompletion {
+        @Generated
+        void call_requestPerObjectReadAuthorizationForTypePredicateCompletion(boolean success, @Nullable NSError error);
     }
 }

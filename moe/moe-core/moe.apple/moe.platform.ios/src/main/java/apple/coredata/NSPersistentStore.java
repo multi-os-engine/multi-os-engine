@@ -42,7 +42,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -73,22 +78,25 @@ public class NSPersistentStore extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +131,10 @@ public class NSPersistentStore extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Get metadata from the persistent store at url. Must be overriden by subclasses.
@@ -133,16 +142,20 @@ public class NSPersistentStore extends NSObject {
      * should verify that the file contents are appropriate for the store type before
      * attempting to read from it. This method should never raise an exception.
      */
+    @Nullable
     @Generated
     @Selector("metadataForPersistentStoreWithURL:error:")
-    public static native NSDictionary<String, ?> metadataForPersistentStoreWithURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSDictionary<String, ?> metadataForPersistentStoreWithURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Returns the NSMigrationManager class optimized for this store class. Subclasses of NSPersistentStore can override
      * this to provide a custom migration manager subclass (eg to take advantage of store-specific functionality to
      * improve migration performance).
+     * 
+     * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("migrationManagerClass")
     public static native Class migrationManagerClass();
@@ -161,12 +174,12 @@ public class NSPersistentStore extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Set the medatada of the store at url to metadata. Must be overriden by subclasses.
+     * Set the metadata of the store at url to metadata. Must be overriden by subclasses.
      */
     @Generated
     @Selector("setMetadata:forPersistentStoreWithURL:error:")
-    public static native boolean setMetadataForPersistentStoreWithURLError(NSDictionary<String, ?> metadata, NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native boolean setMetadataForPersistentStoreWithURLError(@Nullable NSDictionary<String, ?> metadata,
+            @NotNull NSURL url, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("setVersion:")
@@ -181,6 +194,7 @@ public class NSPersistentStore extends NSObject {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -188,6 +202,7 @@ public class NSPersistentStore extends NSObject {
     /**
      * Which configuration does this store contain
      */
+    @NotNull
     @Generated
     @Selector("configurationName")
     public native String configurationName();
@@ -197,7 +212,7 @@ public class NSPersistentStore extends NSObject {
      */
     @Generated
     @Selector("didAddToPersistentStoreCoordinator:")
-    public native void didAddToPersistentStoreCoordinator(NSPersistentStoreCoordinator coordinator);
+    public native void didAddToPersistentStoreCoordinator(@NotNull NSPersistentStoreCoordinator coordinator);
 
     @Generated
     @Selector("identifier")
@@ -213,7 +228,8 @@ public class NSPersistentStore extends NSObject {
     @Generated
     @Selector("initWithPersistentStoreCoordinator:configurationName:URL:options:")
     public native NSPersistentStore initWithPersistentStoreCoordinatorConfigurationNameURLOptions(
-            NSPersistentStoreCoordinator root, String name, NSURL url, NSDictionary<?, ?> options);
+            @Nullable NSPersistentStoreCoordinator root, @Nullable String name, @NotNull NSURL url,
+            @Nullable NSDictionary<?, ?> options);
 
     /**
      * Do we know a priori the store is read only?
@@ -235,7 +251,7 @@ public class NSPersistentStore extends NSObject {
      */
     @Generated
     @Selector("loadMetadata:")
-    public native boolean loadMetadata(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean loadMetadata(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * includes store type and UUID
@@ -247,6 +263,7 @@ public class NSPersistentStore extends NSObject {
     /**
      * the options the store was initialized with
      */
+    @Nullable
     @Generated
     @Selector("options")
     public native NSDictionary<?, ?> options();
@@ -254,6 +271,7 @@ public class NSPersistentStore extends NSObject {
     /**
      * the bridge between the control & access layers.
      */
+    @Nullable
     @Generated
     @Selector("persistentStoreCoordinator")
     public native NSPersistentStoreCoordinator persistentStoreCoordinator();
@@ -271,11 +289,12 @@ public class NSPersistentStore extends NSObject {
 
     @Generated
     @Selector("setURL:")
-    public native void setURL(NSURL value);
+    public native void setURL(@Nullable NSURL value);
 
     /**
      * stores always know their type
      */
+    @NotNull
     @Generated
     @Selector("type")
     public native String type();
@@ -286,12 +305,15 @@ public class NSPersistentStore extends NSObject {
      */
     @Generated
     @Selector("willRemoveFromPersistentStoreCoordinator:")
-    public native void willRemoveFromPersistentStoreCoordinator(NSPersistentStoreCoordinator coordinator);
+    public native void willRemoveFromPersistentStoreCoordinator(@Nullable NSPersistentStoreCoordinator coordinator);
 
     /**
      * Return the Core Spotlight exporter if one exists for this store. The exporter
      * can be set as part of the store options when it is added to the coordinator.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("coreSpotlightExporter")
     public native NSCoreDataCoreSpotlightDelegate coreSpotlightExporter();

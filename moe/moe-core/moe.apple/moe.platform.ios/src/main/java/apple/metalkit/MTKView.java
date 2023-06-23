@@ -18,8 +18,6 @@ package apple.metalkit;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGContextRef;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -62,11 +60,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MTKView
- * <p>
+ * 
  * View for rendering metal content
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MetalKit")
@@ -90,7 +94,7 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
     @Selector("addKeyframeWithRelativeStartTime:relativeDuration:animations:")
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
-            @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
 
     @Generated
     @Owned
@@ -106,64 +110,70 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
     public static native void animateKeyframesWithDurationDelayOptionsAnimationsCompletion(double duration,
             double delay, @NUInt long options,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:animations:")
     public static native void animateWithDurationAnimations(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
 
     @Generated
     @Selector("animateWithDuration:animations:completion:")
     public static native void animateWithDurationAnimationsCompletion(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:options:animations:completion:")
     public static native void animateWithDurationDelayOptionsAnimationsCompletion(double duration, double delay,
             @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:")
     public static native void animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion(
             double duration, double delay, @NFloat double dampingRatio, @NFloat double velocity, @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
 
+    @NotNull
     @Generated
     @Selector("appearance")
     public static native MTKView appearance();
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:")
-    public static native MTKView appearanceForTraitCollection(UITraitCollection trait);
+    public static native MTKView appearanceForTraitCollection(@NotNull UITraitCollection trait);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    public static native MTKView appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native MTKView appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
-    public static native MTKView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes);
+    public static native MTKView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     public static native MTKView appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    public static native MTKView appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native MTKView appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes);
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -171,34 +181,39 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
-    public static native void beginAnimationsContext(String animationID, VoidPtr context);
+    public static native void beginAnimationsContext(@Nullable String animationID, @Nullable VoidPtr context);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -237,10 +252,12 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("layerClass")
     public static native Class layerClass();
@@ -253,14 +270,14 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")
     public static native void performSystemAnimationOnViewsOptionsAnimationsCompletion(@NUInt long animation,
-            NSArray<? extends UIView> views, @NUInt long options,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
+            @NotNull NSArray<? extends UIView> views, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("performWithoutAnimation:")
     public static native void performWithoutAnimation(
-            @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
+            @NotNull @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
 
     @Generated
     @Selector("requiresConstraintBasedLayout")
@@ -274,49 +291,61 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
-    public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
+    public static native void setAnimationDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
-    public static native void setAnimationDidStopSelector(SEL selector);
+    public static native void setAnimationDidStopSelector(@Nullable SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
-    public static native void setAnimationStartDate(NSDate startDate);
+    public static native void setAnimationStartDate(@NotNull NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
-    public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
+    public static native void setAnimationTransitionForViewCache(@NInt long transition, @NotNull UIView view,
+            boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
-    public static native void setAnimationWillStartSelector(SEL selector);
+    public static native void setAnimationWillStartSelector(@Nullable SEL selector);
 
     @Generated
     @Selector("setAnimationsEnabled:")
@@ -332,16 +361,16 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     @Generated
     @Selector("transitionFromView:toView:duration:options:completion:")
-    public static native void transitionFromViewToViewDurationOptionsCompletion(UIView fromView, UIView toView,
-            double duration, @NUInt long options,
-            @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
+    public static native void transitionFromViewToViewDurationOptionsCompletion(@NotNull UIView fromView,
+            @NotNull UIView toView, double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
 
     @Generated
     @Selector("transitionWithView:duration:options:animations:completion:")
-    public static native void transitionWithViewDurationOptionsAnimationsCompletion(UIView view, double duration,
-            @NUInt long options,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
+    public static native void transitionWithViewDurationOptionsAnimationsCompletion(@NotNull UIView view,
+            double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:")
@@ -359,58 +388,65 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("actionForLayer:forKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native CAAction actionForLayerForKey(CALayer layer, String event);
+    public native CAAction actionForLayerForKey(@NotNull CALayer layer, @NotNull String event);
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearance")
     public MTKView _appearance() {
         return appearance();
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    public MTKView _appearanceForTraitCollection(UITraitCollection trait) {
+    public MTKView _appearanceForTraitCollection(@NotNull UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    public MTKView _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public MTKView _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    public MTKView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
+    public MTKView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(@NotNull UITraitCollection trait,
+            @NotNull NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    public MTKView _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
-            Object... varargs) {
+    public MTKView _appearanceWhenContainedIn(
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public MTKView _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public MTKView _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
     /**
      * [@property] autoResizeDrawable
-     * <p>
+     * 
      * Controls whether to resize the drawable as the view changes size.
-     * <p>
+     * 
      * If true, the size of the currentDrawable's texture, depthStencilTexture, and multisampleColorTexture will
      * automatically resize as the view resizes. If false, these textures will take on the size of drawableSize and
      * drawableSize will not change. The default value is true.
@@ -421,9 +457,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] clearColor
-     * <p>
+     * 
      * The clear color value used to generate the currentRenderPassDescriptor
-     * <p>
+     * 
      * This defaults to (0.0, 0.0, 0.0, 1.0)
      */
     @Generated
@@ -433,9 +469,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] clearDepth
-     * <p>
+     * 
      * The clear depth value used to generate the currentRenderPassDescriptor
-     * <p>
+     * 
      * This defaults to 1.0
      */
     @Generated
@@ -444,9 +480,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] clearStencil
-     * <p>
+     * 
      * The clear stencil value used to generate currentRenderPassDescriptor
-     * <p>
+     * 
      * This defaults to 0
      */
     @Generated
@@ -455,7 +491,7 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] colorPixelFormat
-     * <p>
+     * 
      * The pixelFormat for the drawable's texture.
      */
     @Generated
@@ -465,11 +501,12 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] currentDrawable
-     * <p>
+     * 
      * The drawable to be used for the current frame.
-     * <p>
+     * 
      * currentDrawable is updated at the end -draw (i.e. after the delegate's drawInMTKView method is called)
      */
+    @Nullable
     @Generated
     @Selector("currentDrawable")
     @MappedReturn(ObjCObjectMapper.class)
@@ -477,22 +514,24 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] currentRenderPassDescriptor
-     * <p>
+     * 
      * A render pass descriptor generated from the currentDrawable's texture and the view's depth, stencil, and sample
      * buffers and clear values.
-     * <p>
+     * 
      * This is a convience property. The view does not use this descriptor and there is no requirement for an app to use
      * this descriptor.
      */
+    @Nullable
     @Generated
     @Selector("currentRenderPassDescriptor")
     public native MTLRenderPassDescriptor currentRenderPassDescriptor();
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The delegate handling common view operations
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -500,7 +539,7 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] depthStencilPixelFormat
-     * <p>
+     * 
      * The pixelFormat used to create depthStencilTexture
      */
     @Generated
@@ -510,12 +549,13 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] depthStencilTexture
-     * <p>
+     * 
      * A packed depth and stencil texture to be attached to a MTLRenderPassDescriptor
-     * <p>
+     * 
      * The view will generate the depth buffer using the specified depthPixelFormat. This will be nil if
      * depthStencilPixelFormat is MTLPixelFormatInvalid.
      */
+    @Nullable
     @Generated
     @Selector("depthStencilTexture")
     @MappedReturn(ObjCObjectMapper.class)
@@ -523,11 +563,12 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] device
-     * <p>
+     * 
      * The MTLDevice used to create Metal objects
-     * <p>
+     * 
      * This must be explicitly set by the application unless it was passed into the initializer. Defaults to nil
      */
+    @Nullable
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -536,14 +577,14 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
     @Generated
     @IsOptional
     @Selector("displayLayer:")
-    public native void displayLayer(CALayer layer);
+    public native void displayLayer(@NotNull CALayer layer);
 
     /**
      * draw
-     * <p>
+     * 
      * Manually ask the view to draw new contents. This causes the view to call either the drawInMTKView (delegate) or
      * drawRect (subclass) method.
-     * <p>
+     * 
      * Manually ask the view to draw new contents. This causes the view to call either the drawInMTKView (delegate) or
      * drawRect (subclass) method. This should be used when the view's paused proprety is set to true and
      * enableSetNeedsDisplay is set to false.
@@ -555,13 +596,13 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
     @Generated
     @IsOptional
     @Selector("drawLayer:inContext:")
-    public native void drawLayerInContext(CALayer layer, CGContextRef ctx);
+    public native void drawLayerInContext(@NotNull CALayer layer, @NotNull CGContextRef ctx);
 
     /**
      * [@property] drawableSize
-     * <p>
+     * 
      * The current size of drawable textures
-     * <p>
+     * 
      * The size currentDrawable's texture, depthStencilTexture, and multisampleColorTexture. If autoResizeDrawable is
      * true this value will be updated as the view's size changes. If autoResizeDrawable is false, this can be set to
      * fix the size of the drawable textures.
@@ -573,9 +614,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] enableSetNeedsDisplay
-     * <p>
+     * 
      * Controls whether the view responds to setNeedsDisplay.
-     * <p>
+     * 
      * If true, then the view behaves similarily to a UIView or NSView, responding to calls to setNeedsDisplay. When the
      * view has been marked for display, the view is automatically redisplayed on each pass through the application’s
      * event loop. Setting enableSetNeedsDisplay to true will also pause the MTKView's internal render loop and updates
@@ -587,13 +628,13 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] framebufferOnly
-     * <p>
+     * 
      * If the currentDrawable can be used for sampling or texture read operations
-     * <p>
+     * 
      * This defaults to YES. This property controls whether or not the returned drawables' MTLTextures may only be used
      * for framebuffer attachments (YES) or whether they may also be used for texture sampling and pixel read/write
      * operations (NO). A value of YES allows the CAMetalLayer to allocate the MTLTexture objects in ways that are
@@ -610,7 +651,7 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MTKView initWithCoder(NSCoder coder);
+    public native MTKView initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -618,22 +659,22 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * initWithFrame:device
-     * <p>
+     * 
      * Initalize the view with a frame and device
-     *
+     * 
      * @param frameRect The frame rectangle for the created view object.
      * @param device    The MTLDevice to be used by the view to create Metal objects
      */
     @Generated
     @Selector("initWithFrame:device:")
     public native MTKView initWithFrameDevice(@ByValue CGRect frameRect,
-            @Mapped(ObjCObjectMapper.class) MTLDevice device);
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     /**
      * [@property] paused
-     * <p>
+     * 
      * Controls whether the draw methods should countinue at preferredFramesPerSecond
-     * <p>
+     * 
      * If true, the delegate will receive drawInMTKView: messages or the subclass will receive drawRect: messages at a
      * rate of preferredFramesPerSecond based on an internal timer. The default value is false.
      */
@@ -643,9 +684,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] paused
-     * <p>
+     * 
      * Controls whether the draw methods should countinue at preferredFramesPerSecond
-     * <p>
+     * 
      * If true, the delegate will receive drawInMTKView: messages or the subclass will receive drawRect: messages at a
      * rate of preferredFramesPerSecond based on an internal timer. The default value is false.
      */
@@ -656,21 +697,22 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
     @Generated
     @IsOptional
     @Selector("layerWillDraw:")
-    public native void layerWillDraw(CALayer layer);
+    public native void layerWillDraw(@NotNull CALayer layer);
 
     @Generated
     @IsOptional
     @Selector("layoutSublayersOfLayer:")
-    public native void layoutSublayersOfLayer(CALayer layer);
+    public native void layoutSublayersOfLayer(@NotNull CALayer layer);
 
     /**
      * [@property] multisampleColorTexture
-     * <p>
+     * 
      * A multisample color texture that will be resolved into the currentDrawable's texture
-     * <p>
+     * 
      * The view will generate the multisample color buffer using the specified colorPixelFormat. This will be nil if
      * sampleCount is less than or equal to 1.
      */
+    @Nullable
     @Generated
     @Selector("multisampleColorTexture")
     @MappedReturn(ObjCObjectMapper.class)
@@ -678,9 +720,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] preferredFramesPerSecond
-     * <p>
+     * 
      * The rate you want the view to redraw its contents.
-     * <p>
+     * 
      * When your application sets its preferred frame rate, the view chooses a frame rate as close to that as possible
      * based on the capabilities of the screen the view is displayed on. The actual frame rate chosen is usually a
      * factor of the maximum refresh rate of the screen to provide a consistent frame rate. For example, if the maximum
@@ -696,9 +738,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] presentsWithTransaction
-     * <p>
+     * 
      * If the layer should be presented synchronously
-     * <p>
+     * 
      * Defaults to NO. When NO, changes to the layer's render buffer appear on-screen asynchronously to normal layer
      * updates. When YES, changes to the MTL content are sent to the screen via the standard CATransaction mechanisms.
      */
@@ -708,9 +750,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * releaseDrawables
-     * <p>
+     * 
      * Release the depthStencilTexture and multisampleColorTexture
-     * <p>
+     * 
      * Can be called by the app to release the textures in order to conserve memory when it goes into the background.
      * The view will recreate multisampleColorTexture or depthStencilTexture upon the next access of the respective
      * properties. Both multisampleColorTexture and depthStencilTexture will be recreated in the access to
@@ -722,9 +764,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] sampleCount
-     * <p>
+     * 
      * The sample count used to to create multisampleColorTexture
-     * <p>
+     * 
      * This defaults to 1. If sampleCount is greater than 1 a multisampled color texture will be created and the
      * currentDrawable's texture will be set as the resolve texture in the currentRenderPassDescriptor and the store
      * action will be set to MTLStoreActionMultisampleResolve
@@ -736,9 +778,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] autoResizeDrawable
-     * <p>
+     * 
      * Controls whether to resize the drawable as the view changes size.
-     * <p>
+     * 
      * If true, the size of the currentDrawable's texture, depthStencilTexture, and multisampleColorTexture will
      * automatically resize as the view resizes. If false, these textures will take on the size of drawableSize and
      * drawableSize will not change. The default value is true.
@@ -749,9 +791,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] clearColor
-     * <p>
+     * 
      * The clear color value used to generate the currentRenderPassDescriptor
-     * <p>
+     * 
      * This defaults to (0.0, 0.0, 0.0, 1.0)
      */
     @Generated
@@ -760,9 +802,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] clearDepth
-     * <p>
+     * 
      * The clear depth value used to generate the currentRenderPassDescriptor
-     * <p>
+     * 
      * This defaults to 1.0
      */
     @Generated
@@ -771,9 +813,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] clearStencil
-     * <p>
+     * 
      * The clear stencil value used to generate currentRenderPassDescriptor
-     * <p>
+     * 
      * This defaults to 0
      */
     @Generated
@@ -782,7 +824,7 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] colorPixelFormat
-     * <p>
+     * 
      * The pixelFormat for the drawable's texture.
      */
     @Generated
@@ -791,20 +833,20 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The delegate handling common view operations
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MTKViewDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) MTKViewDelegate value);
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The delegate handling common view operations
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) MTKViewDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) MTKViewDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -817,7 +859,7 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] depthStencilPixelFormat
-     * <p>
+     * 
      * The pixelFormat used to create depthStencilTexture
      */
     @Generated
@@ -826,20 +868,20 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] device
-     * <p>
+     * 
      * The MTLDevice used to create Metal objects
-     * <p>
+     * 
      * This must be explicitly set by the application unless it was passed into the initializer. Defaults to nil
      */
     @Generated
     @Selector("setDevice:")
-    public native void setDevice(@Mapped(ObjCObjectMapper.class) MTLDevice value);
+    public native void setDevice(@Nullable @Mapped(ObjCObjectMapper.class) MTLDevice value);
 
     /**
      * [@property] drawableSize
-     * <p>
+     * 
      * The current size of drawable textures
-     * <p>
+     * 
      * The size currentDrawable's texture, depthStencilTexture, and multisampleColorTexture. If autoResizeDrawable is
      * true this value will be updated as the view's size changes. If autoResizeDrawable is false, this can be set to
      * fix the size of the drawable textures.
@@ -850,9 +892,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] enableSetNeedsDisplay
-     * <p>
+     * 
      * Controls whether the view responds to setNeedsDisplay.
-     * <p>
+     * 
      * If true, then the view behaves similarily to a UIView or NSView, responding to calls to setNeedsDisplay. When the
      * view has been marked for display, the view is automatically redisplayed on each pass through the application’s
      * event loop. Setting enableSetNeedsDisplay to true will also pause the MTKView's internal render loop and updates
@@ -864,9 +906,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] framebufferOnly
-     * <p>
+     * 
      * If the currentDrawable can be used for sampling or texture read operations
-     * <p>
+     * 
      * This defaults to YES. This property controls whether or not the returned drawables' MTLTextures may only be used
      * for framebuffer attachments (YES) or whether they may also be used for texture sampling and pixel read/write
      * operations (NO). A value of YES allows the CAMetalLayer to allocate the MTLTexture objects in ways that are
@@ -879,9 +921,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] preferredFramesPerSecond
-     * <p>
+     * 
      * The rate you want the view to redraw its contents.
-     * <p>
+     * 
      * When your application sets its preferred frame rate, the view chooses a frame rate as close to that as possible
      * based on the capabilities of the screen the view is displayed on. The actual frame rate chosen is usually a
      * factor of the maximum refresh rate of the screen to provide a consistent frame rate. For example, if the maximum
@@ -896,9 +938,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] presentsWithTransaction
-     * <p>
+     * 
      * If the layer should be presented synchronously
-     * <p>
+     * 
      * Defaults to NO. When NO, changes to the layer's render buffer appear on-screen asynchronously to normal layer
      * updates. When YES, changes to the MTL content are sent to the screen via the standard CATransaction mechanisms.
      */
@@ -908,9 +950,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] sampleCount
-     * <p>
+     * 
      * The sample count used to to create multisampleColorTexture
-     * <p>
+     * 
      * This defaults to 1. If sampleCount is greater than 1 a multisampled color texture will be created and the
      * currentDrawable's texture will be set as the resolve texture in the currentRenderPassDescriptor and the store
      * action will be set to MTLStoreActionMultisampleResolve
@@ -921,13 +963,15 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] depthStencilAttachmentTextureUsage
-     * <p>
+     * 
      * The usage flags set on the depth attachment.
-     * <p>
+     * 
      * This property controls the texture usage flags set on the MTKView's depth-stencil attachment on creation. This
      * value defaults to MTLTextureUsageRenderTarget. The recommended value for most applications is
      * MTLTextureUsageRenderTarget. Changing this value re-creates the depth attachment, but any data currently in the
      * depth attachment will be lost.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("depthStencilAttachmentTextureUsage")
@@ -938,17 +982,19 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
     @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
-            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+            @NotNull @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
     /**
      * [@property] multisampleColorAttachmentTextureUsage
-     * <p>
+     * 
      * The texture usage flags for the multisample color attachment.
-     * <p>
+     * 
      * This property controls the texture usage flags set on the the multisample color attachment attachment. This value
      * defaults to MTLTextureUsageRenderTarget. The recommended value for most applications is
      * MTLTextureUsageRenderTarget. Changing this value re-creates the multisample color attachment, but any data
      * currently in the multisample color attachment will be lost.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("multisampleColorAttachmentTextureUsage")
@@ -957,12 +1003,15 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] preferredDevice
-     * <p>
+     * 
      * The preferred device is updated per-frame by the system in order to identify the most efficient GPU for
      * presentation (e.g. the one being used for compositing).
-     * <p>
+     * 
      * This value is determined by the underlying CAMetalLayer and this property is a convenience accessor for it.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("preferredDevice")
     @MappedReturn(ObjCObjectMapper.class)
@@ -970,9 +1019,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] preferredDrawableSize
-     * <p>
+     * 
      * The preferred drawable size reported by the backing NSView to match a NSView's native resolution.
-     * <p>
+     * 
      * this value can be observed via key-value observation to determine if the current native drawable size has
      * changed.
      */
@@ -983,13 +1032,15 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] depthStencilAttachmentTextureUsage
-     * <p>
+     * 
      * The usage flags set on the depth attachment.
-     * <p>
+     * 
      * This property controls the texture usage flags set on the MTKView's depth-stencil attachment on creation. This
      * value defaults to MTLTextureUsageRenderTarget. The recommended value for most applications is
      * MTLTextureUsageRenderTarget. Changing this value re-creates the depth attachment, but any data currently in the
      * depth attachment will be lost.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDepthStencilAttachmentTextureUsage:")
@@ -997,15 +1048,40 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     /**
      * [@property] multisampleColorAttachmentTextureUsage
-     * <p>
+     * 
      * The texture usage flags for the multisample color attachment.
-     * <p>
+     * 
      * This property controls the texture usage flags set on the the multisample color attachment attachment. This value
      * defaults to MTLTextureUsageRenderTarget. The recommended value for most applications is
      * MTLTextureUsageRenderTarget. Changing this value re-creates the multisample color attachment, but any data
      * currently in the multisample color attachment will be lost.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setMultisampleColorAttachmentTextureUsage:")
     public native void setMultisampleColorAttachmentTextureUsage(@NUInt long value);
+
+    /**
+     * [@property] depthStencilStorageMode
+     * 
+     * The storage mode for the depthStencilTexture. Defaults to MTLStorageModePrivate.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("depthStencilStorageMode")
+    @NUInt
+    public native long depthStencilStorageMode();
+
+    /**
+     * [@property] depthStencilStorageMode
+     * 
+     * The storage mode for the depthStencilTexture. Defaults to MTLStorageModePrivate.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setDepthStencilStorageMode:")
+    public native void setDepthStencilStorageMode(@NUInt long value);
 }

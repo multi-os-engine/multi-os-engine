@@ -9,10 +9,13 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@c] CPListTemplateItem describes common properties of list items that can be displayed
  * in a @c CPListTemplate.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("CarPlay")
@@ -24,11 +27,12 @@ public interface CPListTemplateItem {
      */
     @Generated
     @Selector("setUserInfo:")
-    void setUserInfo(@Mapped(ObjCObjectMapper.class) Object value);
+    void setUserInfo(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * The primary text shown in a cell displaying this list item.
      */
+    @Nullable
     @Generated
     @Selector("text")
     String text();
@@ -36,6 +40,7 @@ public interface CPListTemplateItem {
     /**
      * Any custom user info related to this item.
      */
+    @Nullable
     @Generated
     @Selector("userInfo")
     @MappedReturn(ObjCObjectMapper.class)
@@ -43,9 +48,11 @@ public interface CPListTemplateItem {
 
     /**
      * A Boolean value indicating whether the button is enabled.
-     * <p>
+     * 
      * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this
      * property is @c YES.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isEnabled")
@@ -53,9 +60,11 @@ public interface CPListTemplateItem {
 
     /**
      * A Boolean value indicating whether the button is enabled.
-     * <p>
+     * 
      * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this
      * property is @c YES.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setEnabled:")

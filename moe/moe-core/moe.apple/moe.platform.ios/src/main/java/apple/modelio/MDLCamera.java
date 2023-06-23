@@ -40,7 +40,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -71,26 +76,32 @@ public class MDLCamera extends MDLObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("cameraWithSCNCamera:")
-    public static native MDLCamera cameraWithSCNCamera(SCNCamera scnCamera);
+    public static native MDLCamera cameraWithSCNCamera(@NotNull SCNCamera scnCamera);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +136,10 @@ public class MDLCamera extends MDLObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -136,12 +148,12 @@ public class MDLCamera extends MDLObject {
 
     @Generated
     @Selector("objectWithSCNNode:")
-    public static native MDLCamera objectWithSCNNode(SCNNode scnNode);
+    public static native MDLCamera objectWithSCNNode(@NotNull SCNNode scnNode);
 
     @Generated
     @Selector("objectWithSCNNode:bufferAllocator:")
-    public static native MDLCamera objectWithSCNNodeBufferAllocator(SCNNode scnNode,
-            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+    public static native MDLCamera objectWithSCNNodeBufferAllocator(@NotNull SCNNode scnNode,
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -199,7 +211,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * The field of view, in degrees.
-     *
+     * 
      * @see focalLength
      */
     @Generated
@@ -215,7 +227,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Lens focal length in mm.
-     *
+     * 
      * @see fieldOfView
      */
     @Generated
@@ -255,7 +267,6 @@ public class MDLCamera extends MDLObject {
     public native float opticalVignetting();
 
     /**
-     *
      */
     @Generated
     @Selector("projection")
@@ -264,7 +275,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Sensor or film gate aperture aspect ratio, default is 1.5
-     *
+     * 
      * @see sensorVerticalAperture
      */
     @Generated
@@ -273,7 +284,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * vertical aperture of the sensor or film gate, default is 24mm
-     *
+     * 
      * @see sensorAspect
      */
     @Generated
@@ -314,7 +325,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * The field of view, in degrees.
-     *
+     * 
      * @see focalLength
      */
     @Generated
@@ -330,7 +341,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Lens focal length in mm.
-     *
+     * 
      * @see fieldOfView
      */
     @Generated
@@ -366,7 +377,6 @@ public class MDLCamera extends MDLObject {
     public native void setOpticalVignetting(float value);
 
     /**
-     *
      */
     @Generated
     @Selector("setProjection:")
@@ -374,7 +384,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Sensor or film gate aperture aspect ratio, default is 1.5
-     *
+     * 
      * @see sensorVerticalAperture
      */
     @Generated
@@ -383,7 +393,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * vertical aperture of the sensor or film gate, default is 24mm
-     *
+     * 
      * @see sensorAspect
      */
     @Generated

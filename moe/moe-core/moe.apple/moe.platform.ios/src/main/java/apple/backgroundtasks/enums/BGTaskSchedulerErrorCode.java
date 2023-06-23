@@ -12,6 +12,8 @@ import org.moe.natj.general.ann.NInt;
  * [@constant] BGTaskSchedulerErrorCodeNotPermitted The task request could not be submitted because the appropriate
  * background mode is not included in the UIBackgroundModes array, or its identifier was not present in the
  * BGTaskSchedulerPermittedIdentifiers array in the app's Info.plist.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 public final class BGTaskSchedulerErrorCode {
@@ -19,7 +21,16 @@ public final class BGTaskSchedulerErrorCode {
     private BGTaskSchedulerErrorCode() {
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long Unavailable = 0x0000000000000001L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long TooManyPendingTaskRequests = 0x0000000000000002L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long NotPermitted = 0x0000000000000003L;
 }

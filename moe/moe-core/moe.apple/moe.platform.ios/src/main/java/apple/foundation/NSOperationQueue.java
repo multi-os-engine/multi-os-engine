@@ -36,7 +36,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -67,26 +72,33 @@ public class NSOperationQueue extends NSObject implements NSProgressReporting {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 4.0
+     */
+    @Nullable
     @Generated
     @Selector("currentQueue")
     public static native NSOperationQueue currentQueue();
@@ -121,10 +133,15 @@ public class NSOperationQueue extends NSObject implements NSProgressReporting {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 4.0
+     */
+    @NotNull
     @Generated
     @Selector("mainQueue")
     public static native NSOperationQueue mainQueue();
@@ -157,16 +174,22 @@ public class NSOperationQueue extends NSObject implements NSProgressReporting {
 
     @Generated
     @Selector("addOperation:")
-    public native void addOperation(NSOperation op);
+    public native void addOperation(@NotNull NSOperation op);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("addOperationWithBlock:")
     public native void addOperationWithBlock(
-            @ObjCBlock(name = "call_addOperationWithBlock") Block_addOperationWithBlock block);
+            @NotNull @ObjCBlock(name = "call_addOperationWithBlock") Block_addOperationWithBlock block);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("addOperations:waitUntilFinished:")
-    public native void addOperationsWaitUntilFinished(NSArray<? extends NSOperation> ops, boolean wait_);
+    public native void addOperationsWaitUntilFinished(@NotNull NSArray<? extends NSOperation> ops, boolean wait_);
 
     @Generated
     @Selector("cancelAllOperations")
@@ -189,10 +212,19 @@ public class NSOperationQueue extends NSObject implements NSProgressReporting {
     @NInt
     public native long maxConcurrentOperationCount();
 
+    /**
+     * API-Since: 4.0
+     */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("operationCount")
     @NUInt
@@ -200,11 +232,21 @@ public class NSOperationQueue extends NSObject implements NSProgressReporting {
 
     /**
      * These two functions are inherently a race condition and should be avoided if possible
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: access to operations is inherently a race condition, it should not be used. For barrier style
+     * behaviors please use addBarrierBlock: instead
      */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("operations")
     public native NSArray<? extends NSOperation> operations();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("qualityOfService")
     @NInt
@@ -214,26 +256,36 @@ public class NSOperationQueue extends NSObject implements NSProgressReporting {
     @Selector("setMaxConcurrentOperationCount:")
     public native void setMaxConcurrentOperationCount(@NInt long value);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setQualityOfService:")
     public native void setQualityOfService(@NInt long value);
 
     /**
      * actually retain
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setUnderlyingQueue:")
-    public native void setUnderlyingQueue_unsafe(NSObject value);
+    public native void setUnderlyingQueue_unsafe(@Nullable NSObject value);
 
     /**
      * actually retain
+     * 
+     * API-Since: 8.0
      */
     @Generated
-    public void setUnderlyingQueue(NSObject value) {
+    public void setUnderlyingQueue(@Nullable NSObject value) {
         Object __old = underlyingQueue();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -246,7 +298,10 @@ public class NSOperationQueue extends NSObject implements NSProgressReporting {
 
     /**
      * actually retain
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("underlyingQueue")
     public native NSObject underlyingQueue();
@@ -264,18 +319,21 @@ public class NSOperationQueue extends NSObject implements NSProgressReporting {
 
     /**
      * addBarrierBlock:
-     * <p>
+     * 
      * The `addBarrierBlock:` method executes the block when the NSOperationQueue has finished all enqueued operations
      * and
      * prevents any subsequent operations to be executed until the barrier has been completed. This acts similarly to
      * the
      * `dispatch_barrier_async` function.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param barrier A block to execute
      */
     @Generated
     @Selector("addBarrierBlock:")
-    public native void addBarrierBlock(@ObjCBlock(name = "call_addBarrierBlock") Block_addBarrierBlock barrier);
+    public native void addBarrierBlock(
+            @NotNull @ObjCBlock(name = "call_addBarrierBlock") Block_addBarrierBlock barrier);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -284,6 +342,7 @@ public class NSOperationQueue extends NSObject implements NSProgressReporting {
         void call_addBarrierBlock();
     }
 
+    @NotNull
     @Generated
     @Selector("progress")
     public native NSProgress progress();

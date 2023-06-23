@@ -23,30 +23,34 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCaptureDataOutputSynchronizer
- * <p>
+ * 
  * AVCaptureDataOutputSynchronizer synchronizes the delivery of data from multiple capture data outputs
  * (AVCaptureVideoDataOutput, AVCaptureDepthDataOutput, AVCaptureMetadataOutput, AVCaptureAudioDataOutput) to a single
  * delegate callback.
- * <p>
+ * 
  * AVCaptureDataOutputSynchronizer is initialized with an array of data outputs (AVCaptureVideoDataOutput,
  * AVCaptureDepthDataOutput, AVCaptureMetadataOutput, or AVCaptureAudioDataOutput) from which you'd like to receive a
- * single, synchronized delegate callback. The first output in the array acts as the master data output and determines
- * when the synchronized callback is delivered. When data is received for the master data output, it is held until all
+ * single, synchronized delegate callback. The first output in the array acts as the primary data output and determines
+ * when the synchronized callback is delivered. When data is received for the primary data output, it is held until all
  * other data outputs have received data with an equal or later presentation time stamp, or it has been determined that
- * there is no data for a particular output at the master data output's pts. Once all other outputs are ready, a single
- * delegate callback is sent with all the data aligned with the master data output's data. Separate delegate callbacks
- * are sent for any other data received with presentation time stamps earlier than the next master data output time.
- * <p>
- * For instance, if you specify a video data output as your first (master) output and a metadata output for detected
+ * there is no data for a particular output at the primary data output's pts. Once all other outputs are ready, a single
+ * delegate callback is sent with all the data aligned with the primary data output's data. Separate delegate callbacks
+ * are sent for any other data received with presentation time stamps earlier than the next primary data output time.
+ * 
+ * For instance, if you specify a video data output as your first (primary) output and a metadata output for detected
  * faces as your second output, your data callback will not be called until there is face data ready for a video frame,
  * or it is assured that there is no face metadata for that particular video frame.
- * <p>
+ * 
  * Note that the AVCaptureDataOutputSynchronizer overrides each data output's -setSampleBufferDelegate:queue:,
  * -setDepthDataDelegate:queue:, or -setMetadataObjectsDelegate:queue: method call. -[AVCaptureVideoDataOutput
  * alwaysDiscardsLateVideoFrames] and -[AVCaptureDepthDataOutput alwaysDiscardsLateDepthData] properties are honored.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("AVFoundation")
@@ -78,31 +82,35 @@ public class AVCaptureDataOutputSynchronizer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] dataOutputs
-     * <p>
+     * 
      * The data outputs provided in the initializer method.
      */
+    @NotNull
     @Generated
     @Selector("dataOutputs")
     public native NSArray<? extends AVCaptureOutput> dataOutputs();
@@ -113,13 +121,14 @@ public class AVCaptureDataOutputSynchronizer extends NSObject {
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The receiver's delegate.
-     * <p>
+     * 
      * The value of this property is an object conforming to the AVCaptureDataOutputSynchronizerDelegate protocol that
      * will receive synchronized data output. The delegate is set using the -setDelegate:queue: method. This property is
      * key-value observable.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -127,11 +136,12 @@ public class AVCaptureDataOutputSynchronizer extends NSObject {
 
     /**
      * [@property] delegateCallbackQueue
-     * <p>
+     * 
      * The dispatch queue on which all AVCaptureDataOutputSynchronizerDelegate methods will be called.
-     * <p>
+     * 
      * The value of this property is a dispatch_queue_t. The queue is set using the -setDelegate:queue: method.
      */
+    @Nullable
     @Generated
     @Selector("delegateCallbackQueue")
     public native NSObject delegateCallbackQueue();
@@ -151,15 +161,18 @@ public class AVCaptureDataOutputSynchronizer extends NSObject {
 
     /**
      * initWithDataOutputs:
-     * <p>
+     * 
      * Instantiates an AVCaptureDataOutputSynchronizer from one or more capture data outputs.
-     *
-     * @param dataOutputs An array of capture data outputs where the first is the master.
-     * @return A newly initialized AVCaptureDataOutputSynchronizer instance.
+     * 
+     * @param dataOutputs
+     *                    An array of capture data outputs where the first is the primary output.
+     * @return
+     *         A newly initialized AVCaptureDataOutputSynchronizer instance.
      */
     @Generated
     @Selector("initWithDataOutputs:")
-    public native AVCaptureDataOutputSynchronizer initWithDataOutputs(NSArray<? extends AVCaptureOutput> dataOutputs);
+    public native AVCaptureDataOutputSynchronizer initWithDataOutputs(
+            @NotNull NSArray<? extends AVCaptureOutput> dataOutputs);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -178,9 +191,10 @@ public class AVCaptureDataOutputSynchronizer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -197,30 +211,32 @@ public class AVCaptureDataOutputSynchronizer extends NSObject {
 
     /**
      * setDelegate:queue:
-     * <p>
+     * 
      * Sets the receiver's delegate that will accept synchronized data and the dispatch queue on which the delegate will
      * be called.
-     * <p>
+     * 
      * AVCaptureDataOutputSynchronizer gathers data from its dataOutputs, and when it determines that all data has been
      * received for a given timestamp, it calls the specified delegate on the specified delegateCallbackQueue.
      * AVCaptureDataOutputSynchronizer overrides all the data outputs' delegates and callbacks. Data outputs under the
      * control of AVCaptureDataOutputSynchronizer do not fire delegate callbacks. Delegate callbacks are restored to
      * individual data outputs when you call this method with nil as your delegate and NULL as your
      * delegateCallbackQueue.
-     * <p>
+     * 
      * A serial dispatch queue must be used to guarantee that synchronized data will be delivered in order. The
      * delegateCallbackQueue parameter may not be NULL, except when setting the delegate to nil.
-     *
-     * @param delegate              An object conforming to the AVCaptureDataOutputSynchronizerDelegate protocol that
+     * 
+     * @param delegate
+     *                              An object conforming to the AVCaptureDataOutputSynchronizerDelegate protocol that
      *                              will receive synchronized data from the provided data outputs.
-     * @param delegateCallbackQueue A dispatch queue on which all AVCaptureDataOutputSynchronizerDelegate methods will
+     * @param delegateCallbackQueue
+     *                              A dispatch queue on which all AVCaptureDataOutputSynchronizerDelegate methods will
      *                              be called.
      */
     @Generated
     @Selector("setDelegate:queue:")
     public native void setDelegateQueue(
-            @Mapped(ObjCObjectMapper.class) AVCaptureDataOutputSynchronizerDelegate delegate,
-            NSObject delegateCallbackQueue);
+            @Nullable @Mapped(ObjCObjectMapper.class) AVCaptureDataOutputSynchronizerDelegate delegate,
+            @Nullable NSObject delegateCallbackQueue);
 
     @Generated
     @Selector("setVersion:")

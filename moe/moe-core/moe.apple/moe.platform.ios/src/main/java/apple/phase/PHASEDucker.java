@@ -21,11 +21,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] PHASEDucker
- * <p>
+ * 
  * A PHASEDucker is used to describe ducking behavior across different groups.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -47,7 +51,7 @@ public class PHASEDucker extends NSObject {
 
     /**
      * activate
-     * <p>
+     * 
      * Activates the ducker
      */
     @Generated
@@ -66,7 +70,7 @@ public class PHASEDucker extends NSObject {
 
     /**
      * [@property] attackCurve
-     * <p>
+     * 
      * The type of curve function to use during the attack phase of gain reduction.
      */
     @Generated
@@ -76,7 +80,7 @@ public class PHASEDucker extends NSObject {
 
     /**
      * [@property] attackTime
-     * <p>
+     * 
      * The time for the attenuation gain to ramp into effect.
      * [@note]
      * The attack time is scaled by unitsPerSecond internally, so can be provided at the client's native time scale.
@@ -87,29 +91,32 @@ public class PHASEDucker extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * deactivate
-     * <p>
+     * 
      * Deactivates the ducker
      */
     @Generated
@@ -126,7 +133,7 @@ public class PHASEDucker extends NSObject {
 
     /**
      * [@property] gain
-     * <p>
+     * 
      * Linear gain scalar.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
@@ -142,9 +149,10 @@ public class PHASEDucker extends NSObject {
 
     /**
      * [@property] identifier
-     * <p>
+     * 
      * The identifier that uniquely represents this ducker.
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -155,7 +163,7 @@ public class PHASEDucker extends NSObject {
 
     /**
      * initWithSourceGroups:targetGroups:attenuation:attackTime:releaseTime:
-     * <p>
+     * 
      * Whenever a generator node from any source group plays, all the generator nodes in the target groups will be
      * ducked by the given gain using the given attack and release times.
      * [@note]
@@ -166,28 +174,37 @@ public class PHASEDucker extends NSObject {
      * previously triggered.
      * Dealloc'ing a ducker will force the ducker into its release phase if it is actively ducking and remove it from
      * the system when it finishes.
-     *
-     * @param engine       The engine to register this ducker with.
-     * @param sourceGroups The source groups that will trigger the ducker when a sound in one of the source groups
+     * 
+     * @param engine
+     *                     The engine to register this ducker with.
+     * @param sourceGroups
+     *                     The source groups that will trigger the ducker when a sound in one of the source groups
      *                     starts playback.
-     * @param targetGroups The target groups that will be ducked when a sound in one of the source groups triggers the
+     * @param targetGroups
+     *                     The target groups that will be ducked when a sound in one of the source groups triggers the
      *                     ducker.
-     * @param gain         The linear gain scalar to apply when the ducker is engaged. 0 means full attenuation. 1 is no
+     * @param gain
+     *                     The linear gain scalar to apply when the ducker is engaged. 0 means full attenuation. 1 is no
      *                     attenuation. Values are clamped to the range [0, 1].
-     * @param attackTime   The time for the attenuation gain to ramp into effect.
+     * @param attackTime
+     *                     The time for the attenuation gain to ramp into effect.
      *                     This value is scaled by unitsPerSecond internally, so can be provided at the client's native
      *                     time scale.
-     * @param releaseTime  The time for the ducked sounds to ramp back to their original level.
+     * @param releaseTime
+     *                     The time for the ducked sounds to ramp back to their original level.
      *                     This value is scaled by unitsPerSecond internally, so can be provided at the client's native
      *                     time scale.
-     * @param attackCurve  The type of curve function to use during the attack phase of gain reduction.
-     * @param releaseCurve The type of curve function to use during the release phase of gain reduction.
+     * @param attackCurve
+     *                     The type of curve function to use during the attack phase of gain reduction.
+     * @param releaseCurve
+     *                     The type of curve function to use during the release phase of gain reduction.
      */
     @Generated
     @Selector("initWithEngine:sourceGroups:targetGroups:gain:attackTime:releaseTime:attackCurve:releaseCurve:")
     public native PHASEDucker initWithEngineSourceGroupsTargetGroupsGainAttackTimeReleaseTimeAttackCurveReleaseCurve(
-            PHASEEngine engine, NSSet<? extends PHASEGroup> sourceGroups, NSSet<? extends PHASEGroup> targetGroups,
-            double gain, double attackTime, double releaseTime, @NInt long attackCurve, @NInt long releaseCurve);
+            @NotNull PHASEEngine engine, @NotNull NSSet<? extends PHASEGroup> sourceGroups,
+            @NotNull NSSet<? extends PHASEGroup> targetGroups, double gain, double attackTime, double releaseTime,
+            @NInt long attackCurve, @NInt long releaseCurve);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -204,7 +221,7 @@ public class PHASEDucker extends NSObject {
 
     /**
      * [@property] active
-     * <p>
+     * 
      * YES if the ducker is active; otherwise, NO.
      */
     @Generated
@@ -215,9 +232,10 @@ public class PHASEDucker extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -226,7 +244,7 @@ public class PHASEDucker extends NSObject {
 
     /**
      * [@property] releaseCurve
-     * <p>
+     * 
      * The type of curve function to use during the release phase of gain reduction.
      */
     @Generated
@@ -236,7 +254,7 @@ public class PHASEDucker extends NSObject {
 
     /**
      * [@property] releaseTime
-     * <p>
+     * 
      * The time for the ducked sounds to ramp back to their original level.
      * [@note]
      * The release time is scaled by unitsPerSecond internally, so can be provided at the client's native time scale.
@@ -259,9 +277,10 @@ public class PHASEDucker extends NSObject {
 
     /**
      * [@property] sourceGroups
-     * <p>
+     * 
      * The source groups that will trigger the ducker when a sound in one of the source groups starts playback.
      */
+    @NotNull
     @Generated
     @Selector("sourceGroups")
     public native NSSet<? extends PHASEGroup> sourceGroups();
@@ -272,9 +291,10 @@ public class PHASEDucker extends NSObject {
 
     /**
      * [@property] targetGroups
-     * <p>
+     * 
      * The target groups that will be ducked when a sound in one of the source groups triggers the ducker.
      */
+    @NotNull
     @Generated
     @Selector("targetGroups")
     public native NSSet<? extends PHASEGroup> targetGroups();

@@ -18,10 +18,6 @@ package apple.spritekit;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGPathRef;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
-import apple.coregraphics.struct.CGVector;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -49,11 +45,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
+import apple.corefoundation.struct.CGVector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A SpriteKit physics body. These are the physical representations of your nodes. These specify the area and mass and
  * any collision masking needed.
- * <p>
+ * 
  * All bodies have zero, one or more shapes that define its area. A body with no shapes is ethereal and does not collide
  * with other bodies.
  */
@@ -87,29 +89,32 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Creates an compound body that is the union of the bodies used to create it.
      */
+    @NotNull
     @Generated
     @Selector("bodyWithBodies:")
-    public static native SKPhysicsBody bodyWithBodies(NSArray<? extends SKPhysicsBody> bodies);
+    public static native SKPhysicsBody bodyWithBodies(@NotNull NSArray<? extends SKPhysicsBody> bodies);
 
     /**
      * Creates a circle of radius r centered at the node's origin.
-     *
+     * 
      * @param r the radius in points
      */
+    @NotNull
     @Generated
     @Selector("bodyWithCircleOfRadius:")
     public static native SKPhysicsBody bodyWithCircleOfRadius(@NFloat double r);
 
     /**
      * Creates a circle of radius r centered at a point in the node's coordinate space.
-     *
+     * 
      * @param r the radius in points
      */
+    @NotNull
     @Generated
     @Selector("bodyWithCircleOfRadius:center:")
     public static native SKPhysicsBody bodyWithCircleOfRadiusCenter(@NFloat double r, @ByValue CGPoint center);
@@ -117,20 +122,22 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     /**
      * Creates an edge chain from a path. The path must have no self intersection. Edges have no volume and are intended
      * to be used to create static environments. Edges can collide with bodies of volume, but not with each other.
-     *
+     * 
      * @param path the path to use
      */
+    @NotNull
     @Generated
     @Selector("bodyWithEdgeChainFromPath:")
-    public static native SKPhysicsBody bodyWithEdgeChainFromPath(CGPathRef path);
+    public static native SKPhysicsBody bodyWithEdgeChainFromPath(@NotNull CGPathRef path);
 
     /**
      * Creates an edge from p1 to p2. Edges have no volume and are intended to be used to create static environments.
      * Edges can collide with bodies of volume, but not with each other.
-     *
+     * 
      * @param p1 start point
      * @param p2 end point
      */
+    @NotNull
     @Generated
     @Selector("bodyWithEdgeFromPoint:toPoint:")
     public static native SKPhysicsBody bodyWithEdgeFromPointToPoint(@ByValue CGPoint p1, @ByValue CGPoint p2);
@@ -139,19 +146,21 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
      * Creates an edge loop from a path. A loop is automatically created by joining the last point to the first. The
      * path must have no self intersection. Edges have no volume and are intended to be used to create static
      * environments. Edges can collide with body's of volume, but not with each other.
-     *
+     * 
      * @param path the path to use
      */
+    @NotNull
     @Generated
     @Selector("bodyWithEdgeLoopFromPath:")
-    public static native SKPhysicsBody bodyWithEdgeLoopFromPath(CGPathRef path);
+    public static native SKPhysicsBody bodyWithEdgeLoopFromPath(@NotNull CGPathRef path);
 
     /**
      * Creates an edge loop from a CGRect. Edges have no volume and are intended to be used to create static
      * environments. Edges can collide with body's of volume, but not with each other.
-     *
+     * 
      * @param rect the CGRect to use
      */
+    @NotNull
     @Generated
     @Selector("bodyWithEdgeLoopFromRect:")
     public static native SKPhysicsBody bodyWithEdgeLoopFromRect(@ByValue CGRect rect);
@@ -159,67 +168,79 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     /**
      * The path must represent a convex or concave polygon with counter clockwise winding and no self intersection.
      * Positions are relative to the node's origin.
-     *
+     * 
      * @param path the path to use
      */
+    @NotNull
     @Generated
     @Selector("bodyWithPolygonFromPath:")
-    public static native SKPhysicsBody bodyWithPolygonFromPath(CGPathRef path);
+    public static native SKPhysicsBody bodyWithPolygonFromPath(@NotNull CGPathRef path);
 
     /**
      * Creates a rectangle of the specified size centered at the node's origin.
-     *
+     * 
      * @param s the size in points
      */
+    @NotNull
     @Generated
     @Selector("bodyWithRectangleOfSize:")
     public static native SKPhysicsBody bodyWithRectangleOfSize(@ByValue CGSize s);
 
     /**
      * Creates a rectangle of the specified size centered at a point in the node's coordinate space.
-     *
+     * 
      * @param s the size in points
      */
+    @NotNull
     @Generated
     @Selector("bodyWithRectangleOfSize:center:")
     public static native SKPhysicsBody bodyWithRectangleOfSizeCenter(@ByValue CGSize s, @ByValue CGPoint center);
 
     /**
      * Creates a body from the alpha values in the supplied texture.
-     *
+     * 
      * @param texture        the texture to be interpreted
      * @param alphaThreshold the alpha value above which a pixel is interpreted as opaque
      * @param size           of the generated physics body
+     * 
+     *                       API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("bodyWithTexture:alphaThreshold:size:")
-    public static native SKPhysicsBody bodyWithTextureAlphaThresholdSize(SKTexture texture, float alphaThreshold,
-            @ByValue CGSize size);
+    public static native SKPhysicsBody bodyWithTextureAlphaThresholdSize(@NotNull SKTexture texture,
+            float alphaThreshold, @ByValue CGSize size);
 
     /**
      * Creates a body from the alpha values in the supplied texture.
-     *
+     * 
      * @param texture the texture to be interpreted
      * @param size    of the generated physics body
+     * 
+     *                API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("bodyWithTexture:size:")
-    public static native SKPhysicsBody bodyWithTextureSize(SKTexture texture, @ByValue CGSize size);
+    public static native SKPhysicsBody bodyWithTextureSize(@NotNull SKTexture texture, @ByValue CGSize size);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -254,9 +275,10 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -287,7 +309,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     /**
      * Bodies are affected by field forces such as gravity if this property is set and the field's category mask is set
      * appropriately. The default value is YES.
-     * <p>
+     * 
      * If this is set a force is applied to the object based on the mass. Set the field force vector in the scene to
      * modify the strength of the force.
      */
@@ -298,6 +320,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     /**
      * Returns an array of all SKPhysicsBodies currently in contact with this one
      */
+    @NotNull
     @Generated
     @Selector("allContactedBodies")
     public native NSArray<? extends SKPhysicsBody> allContactedBodies();
@@ -346,7 +369,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * The area of the body.
-     * <p>
+     * 
      * The unit is arbitrary, as long as the relative areas are consistent throughout the application.
      */
     @Generated
@@ -365,6 +388,8 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
      * Specifies the charge on the body. Charge determines the degree to which a body is affected by
      * electric and magnetic fields. Note that this is a unitless quantity, it is up to the developer to
      * set charge and field strength appropriately. Defaults to 0.0
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("charge")
@@ -387,15 +412,16 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     @Selector("contactTestBitMask")
     public native int contactTestBitMask();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * The density of the body.
-     * <p>
+     * 
      * The unit is arbitrary, as long as the relative densities are consistent throughout the application. Note that
      * density and mass are inherently related (they are directly proportional), so changing one also changes the other.
      * Both are provided so either can be used depending on what is more relevant to your usage.
@@ -407,11 +433,13 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Defines what logical 'categories' of fields this body responds to. Defaults to all bits set (all categories).
      * Can be forced off via affectedByGravity.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("fieldBitMask")
@@ -431,7 +459,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKPhysicsBody initWithCoder(NSCoder coder);
+    public native SKPhysicsBody initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("isDynamic")
@@ -463,6 +491,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     @Selector("setResting:")
     public native void setResting(boolean value);
 
+    @NotNull
     @Generated
     @Selector("joints")
     public native NSArray<? extends SKPhysicsJoint> joints();
@@ -482,7 +511,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * The mass of the body.
-     * <p>
+     * 
      * The unit is arbitrary, as long as the relative masses are consistent throughout the application. Note that
      * density and mass are inherently related (they are directly proportional), so changing one also changes the other.
      * Both are provided so either can be used depending on what is more relevant to your usage.
@@ -495,10 +524,14 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     /**
      * The representedObject this physicsBody is currently bound to, or nil if it is not.
      */
+    @Nullable
     @Generated
     @Selector("node")
     public native SKNode node();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("pinned")
     public native boolean pinned();
@@ -514,7 +547,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     /**
      * Bodies are affected by field forces such as gravity if this property is set and the field's category mask is set
      * appropriately. The default value is YES.
-     * <p>
+     * 
      * If this is set a force is applied to the object based on the mass. Set the field force vector in the scene to
      * modify the strength of the force.
      */
@@ -549,6 +582,8 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
      * Specifies the charge on the body. Charge determines the degree to which a body is affected by
      * electric and magnetic fields. Note that this is a unitless quantity, it is up to the developer to
      * set charge and field strength appropriately. Defaults to 0.0
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setCharge:")
@@ -572,7 +607,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * The density of the body.
-     * <p>
+     * 
      * The unit is arbitrary, as long as the relative densities are consistent throughout the application. Note that
      * density and mass are inherently related (they are directly proportional), so changing one also changes the other.
      * Both are provided so either can be used depending on what is more relevant to your usage.
@@ -584,6 +619,8 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     /**
      * Defines what logical 'categories' of fields this body responds to. Defaults to all bits set (all categories).
      * Can be forced off via affectedByGravity.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFieldBitMask:")
@@ -610,7 +647,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * The mass of the body.
-     * <p>
+     * 
      * The unit is arbitrary, as long as the relative masses are consistent throughout the application. Note that
      * density and mass are inherently related (they are directly proportional), so changing one also changes the other.
      * Both are provided so either can be used depending on what is more relevant to your usage.
@@ -619,6 +656,9 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     @Selector("setMass:")
     public native void setMass(@NFloat double value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setPinned:")
     public native void setPinned(boolean value);

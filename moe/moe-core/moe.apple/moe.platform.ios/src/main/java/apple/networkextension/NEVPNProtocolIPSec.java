@@ -40,14 +40,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEVPNProtocolIPSec
- * <p>
+ * 
  * The NEVPNProtocolIPSec class declares the programmatic interface of an object that manages the IPSec-specific portion
  * of a VPN configuration.
- * <p>
+ * 
  * Instances of this class use IKE version 1 for key negotiation.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -79,22 +83,25 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +136,10 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,10 +173,12 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
 
     /**
      * [@property] authenticationMethod
-     * <p>
+     * 
      * The method used to authenticate with the IPSec server. Note that if this property is set to
      * NEVPNIKEAuthenticationMethodNone, extended authentication will still be negotiated if useExtendedAuthentication
      * is set to YES.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("authenticationMethod")
@@ -181,32 +191,40 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEVPNProtocolIPSec initWithCoder(NSCoder coder);
+    public native NEVPNProtocolIPSec initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] localIdentifier
-     * <p>
+     * 
      * A string identifying the local IPSec endpoint for authentication purposes.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("localIdentifier")
     public native String localIdentifier();
 
     /**
      * [@property] remoteIdentifier
-     * <p>
+     * 
      * A string identifying the remote IPSec endpoint for authentication purposes.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("remoteIdentifier")
     public native String remoteIdentifier();
 
     /**
      * [@property] authenticationMethod
-     * <p>
+     * 
      * The method used to authenticate with the IPSec server. Note that if this property is set to
      * NEVPNIKEAuthenticationMethodNone, extended authentication will still be negotiated if useExtendedAuthentication
      * is set to YES.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setAuthenticationMethod:")
@@ -214,34 +232,40 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
 
     /**
      * [@property] localIdentifier
-     * <p>
+     * 
      * A string identifying the local IPSec endpoint for authentication purposes.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setLocalIdentifier:")
-    public native void setLocalIdentifier(String value);
+    public native void setLocalIdentifier(@Nullable String value);
 
     /**
      * [@property] remoteIdentifier
-     * <p>
+     * 
      * A string identifying the remote IPSec endpoint for authentication purposes.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setRemoteIdentifier:")
-    public native void setRemoteIdentifier(String value);
+    public native void setRemoteIdentifier(@Nullable String value);
 
     /**
      * [@property] sharedSecretReference
-     * <p>
+     * 
      * A persistent reference to a keychain item of class kSecClassGenericPassword containing the IKE shared secret.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setSharedSecretReference:")
-    public native void setSharedSecretReference(NSData value);
+    public native void setSharedSecretReference(@Nullable NSData value);
 
     /**
      * [@property] useExtendedAuthentication
-     * <p>
+     * 
      * A flag indicating if extended authentication will be negotiated. This authentication is in addition to the IKE
      * authentication used to authenticate the endpoints of the IKE session.
      * For IKE version 1, when this flag is set X-Auth authentication will be negotiated as part of the IKE session,
@@ -249,6 +273,8 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
      * For IKE version 2, when this flag is set EAP authentication will be negotiated as part of the IKE session, using
      * the username, password, and/or identity properties as the credential depending on which EAP method the server
      * requires.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setUseExtendedAuthentication:")
@@ -256,9 +282,12 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
 
     /**
      * [@property] sharedSecretReference
-     * <p>
+     * 
      * A persistent reference to a keychain item of class kSecClassGenericPassword containing the IKE shared secret.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("sharedSecretReference")
     public native NSData sharedSecretReference();
@@ -271,7 +300,7 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
 
     /**
      * [@property] useExtendedAuthentication
-     * <p>
+     * 
      * A flag indicating if extended authentication will be negotiated. This authentication is in addition to the IKE
      * authentication used to authenticate the endpoints of the IKE session.
      * For IKE version 1, when this flag is set X-Auth authentication will be negotiated as part of the IKE session,
@@ -279,6 +308,8 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
      * For IKE version 2, when this flag is set EAP authentication will be negotiated as part of the IKE session, using
      * the username, password, and/or identity properties as the credential depending on which EAP method the server
      * requires.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("useExtendedAuthentication")

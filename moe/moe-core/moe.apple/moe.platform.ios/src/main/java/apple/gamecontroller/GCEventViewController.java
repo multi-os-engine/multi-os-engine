@@ -40,7 +40,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("GameController")
 @Runtime(ObjCRuntime.class)
@@ -69,35 +74,39 @@ public class GCEventViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native GCEventViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -129,9 +138,10 @@ public class GCEventViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,19 +174,19 @@ public class GCEventViewController extends UIViewController {
      * the default behavior. By using a controller event view controller you get fine grained control
      * over whether the controller events go trough the UIEvent & UIResponder chain, or if they are
      * decoupled from the UI and all incoming data is served via GCController.
-     * <p>
+     * 
      * Defaults to NO - suppressing UIEvents from game controllers and presenting them via the GCController
      * API whilst this controller's view or any of it's subviews are the first responders. If you are not
      * using any UIView components or UIEvents in your application you should leave this as NO and process
      * your game controller events via the normal GCController API.
-     * <p>
+     * 
      * If set to YES the controller input will start flowing through UIEvent and the UIResponder
      * chain will be used. This gives you fine grained control over the event handling of the
      * controlled view and its subviews. You should stop using GCController instances and the corresponding
      * profiles if you no longer need to read input from them.
-     * <p>
+     * 
      * Note that unlike UIView.userInteractionEnabled this only controls the flow of game controller events.
-     *
+     * 
      * @see GCController
      * @see UIView.userInteractionEnabled
      */
@@ -190,30 +200,31 @@ public class GCEventViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GCEventViewController initWithCoder(NSCoder coder);
+    public native GCEventViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native GCEventViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native GCEventViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * Controllers can be used to control the general UIKit user interface and for many views that is
      * the default behavior. By using a controller event view controller you get fine grained control
      * over whether the controller events go trough the UIEvent & UIResponder chain, or if they are
      * decoupled from the UI and all incoming data is served via GCController.
-     * <p>
+     * 
      * Defaults to NO - suppressing UIEvents from game controllers and presenting them via the GCController
      * API whilst this controller's view or any of it's subviews are the first responders. If you are not
      * using any UIView components or UIEvents in your application you should leave this as NO and process
      * your game controller events via the normal GCController API.
-     * <p>
+     * 
      * If set to YES the controller input will start flowing through UIEvent and the UIResponder
      * chain will be used. This gives you fine grained control over the event handling of the
      * controlled view and its subviews. You should stop using GCController instances and the corresponding
      * profiles if you no longer need to read input from them.
-     * <p>
+     * 
      * Note that unlike UIView.userInteractionEnabled this only controls the flow of game controller events.
-     *
+     * 
      * @see GCController
      * @see UIView.userInteractionEnabled
      */

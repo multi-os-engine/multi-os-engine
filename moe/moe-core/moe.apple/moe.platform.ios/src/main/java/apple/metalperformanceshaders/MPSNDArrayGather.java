@@ -24,20 +24,25 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNDArrayGather
- * <p>
+ * 
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * Applies a gather operation along a given axis. The encoded primary source array
  * contains the data and the secondary array is a 1-D MPSNDArray containing the
  * indices.
- * <p>
+ * 
  * For each dimension other than axis
  * result[i] = source[i]; 0 <= i < array slice length along dimension
  * Along the specified axis
  * result[i] = source[indices[i]]; 0 <= i < number of indices
+ * 
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -69,11 +74,11 @@ public class MPSNDArrayGather extends MPSNDArrayBinaryKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] axis
-     * <p>
+     * 
      * The axis along which to apply the gather operation.
      * Defaults to zero.
      */
@@ -84,18 +89,21 @@ public class MPSNDArrayGather extends MPSNDArrayBinaryKernel {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -119,19 +127,20 @@ public class MPSNDArrayGather extends MPSNDArrayBinaryKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNDArrayGather initWithCoder(NSCoder aDecoder);
+    public native MPSNDArrayGather initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNDArrayGather initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNDArrayGather initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNDArrayGather initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNDArrayGather initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:sourceCount:")
-    public native MPSNDArrayGather initWithDeviceSourceCount(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+    public native MPSNDArrayGather initWithDeviceSourceCount(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
             @NUInt long count);
 
     @Generated
@@ -151,9 +160,10 @@ public class MPSNDArrayGather extends MPSNDArrayBinaryKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,7 +180,7 @@ public class MPSNDArrayGather extends MPSNDArrayBinaryKernel {
 
     /**
      * [@property] axis
-     * <p>
+     * 
      * The axis along which to apply the gather operation.
      * Defaults to zero.
      */

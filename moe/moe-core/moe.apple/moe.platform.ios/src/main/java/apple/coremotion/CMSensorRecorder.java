@@ -38,15 +38,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CMSensorRecorder
- * <p>
+ * 
  * Discussion:
  * CMSensorRecorder allows applications to record sensor data for periods
  * during which the application is not active. This data is then made
  * available for later access (up to 3 days) when the application
  * is run at a later time.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("CoreMotion")
@@ -78,22 +82,25 @@ public class CMSensorRecorder extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,7 +133,7 @@ public class CMSensorRecorder extends NSObject {
 
     /**
      * isAccelerometerRecordingAvailable
-     * <p>
+     * 
      * Discussion:
      * Determines whether accelerometer recording is available.
      */
@@ -136,10 +143,14 @@ public class CMSensorRecorder extends NSObject {
 
     /**
      * isAuthorizedForRecording
-     * <p>
+     * 
      * Discussion:
      * Determines whether the application is authorized for sensor recording.
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 11.0
      */
+    @Deprecated
     @Generated
     @Selector("isAuthorizedForRecording")
     public static native boolean isAuthorizedForRecording();
@@ -148,9 +159,10 @@ public class CMSensorRecorder extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -180,16 +192,17 @@ public class CMSensorRecorder extends NSObject {
 
     /**
      * accelerometerDataFromDate:ToDate:
-     * <p>
+     * 
      * Discussion:
      * Gives access to recorded accelerometer samples given a time range (fromDate, toDate].
      * A total duration of 12 hours of data can be requested at any one time. Data can be delayed
      * for up to 3 minutes before being available for retrieval. An instance of CMSensorDataList
      * should only be enumerated from a single thread.
      */
+    @Nullable
     @Generated
     @Selector("accelerometerDataFromDate:toDate:")
-    public native CMSensorDataList accelerometerDataFromDateToDate(NSDate fromDate, NSDate toDate);
+    public native CMSensorDataList accelerometerDataFromDateToDate(@NotNull NSDate fromDate, @NotNull NSDate toDate);
 
     @Generated
     @Selector("init")
@@ -197,7 +210,7 @@ public class CMSensorRecorder extends NSObject {
 
     /**
      * recordAccelerometerForDuration:
-     * <p>
+     * 
      * Discussion:
      * Starts recording accelerometer data for the duration given at 50hz. Data can be recorded
      * for up to 12 hours.
@@ -208,9 +221,11 @@ public class CMSensorRecorder extends NSObject {
 
     /**
      * authorizationStatus
-     * <p>
+     * 
      * Discussion:
      * Returns the current authorization status for sensor recording.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("authorizationStatus")

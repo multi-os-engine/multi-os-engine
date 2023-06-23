@@ -44,11 +44,15 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * RPBroadcastActivityViewController
- * <p>
+ * 
  * View controller that presents the user with a list of broadcast services installed on the device.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("ReplayKit")
@@ -78,35 +82,39 @@ public class RPBroadcastActivityViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native RPBroadcastActivityViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -138,23 +146,24 @@ public class RPBroadcastActivityViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Loads a RPBroadcastActivityViewController instance and returns it in the handler block.
-     * <p>
+     * 
      * The view controller will present the user with a list of broadcast services available on the device and allow the
      * user to set up a broadcast with the service through the service's UI.
-     * <p>
+     * 
      * The RPBroadcastActivityViewController can be presented using [UIViewController
      * presentViewController:animated:completion:] and should be dismissed when the delegate's
      * broadcastActivityViewController:didFinishWithBroadcastController:error: method is called. Note that on large
      * screen devices such as iPad, the default presentation style for view controllers is a popover. For an instance of
      * RPBroadcastActivityViewController to present properly on iPad, it needs to have its
      * popoverPresentationController's sourceRect and sourceView configured.
-     *
+     * 
      * @param broadcastActivityViewController The RPBroadcastActivityViewController which can be presented.
      * @param error                           Optional error in the RPRecordingErrorCode domain which is supplied in the
      *                                        event the view controller could not be loaded.
@@ -162,7 +171,7 @@ public class RPBroadcastActivityViewController extends UIViewController {
     @Generated
     @Selector("loadBroadcastActivityViewControllerWithHandler:")
     public static native void loadBroadcastActivityViewControllerWithHandler(
-            @ObjCBlock(name = "call_loadBroadcastActivityViewControllerWithHandler") Block_loadBroadcastActivityViewControllerWithHandler handler);
+            @NotNull @ObjCBlock(name = "call_loadBroadcastActivityViewControllerWithHandler") Block_loadBroadcastActivityViewControllerWithHandler handler);
 
     @Generated
     @Owned
@@ -193,6 +202,7 @@ public class RPBroadcastActivityViewController extends UIViewController {
     /**
      * Delegate that is notified when the activity view controller is complete.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -204,11 +214,12 @@ public class RPBroadcastActivityViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native RPBroadcastActivityViewController initWithCoder(NSCoder coder);
+    public native RPBroadcastActivityViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native RPBroadcastActivityViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native RPBroadcastActivityViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * Delegate that is notified when the activity view controller is complete.
@@ -216,13 +227,13 @@ public class RPBroadcastActivityViewController extends UIViewController {
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) RPBroadcastActivityViewControllerDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) RPBroadcastActivityViewControllerDelegate value);
 
     /**
      * Delegate that is notified when the activity view controller is complete.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) RPBroadcastActivityViewControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) RPBroadcastActivityViewControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -238,40 +249,42 @@ public class RPBroadcastActivityViewController extends UIViewController {
     public interface Block_loadBroadcastActivityViewControllerWithHandler {
         @Generated
         void call_loadBroadcastActivityViewControllerWithHandler(
-                RPBroadcastActivityViewController broadcastActivityViewController, NSError error);
+                @Nullable RPBroadcastActivityViewController broadcastActivityViewController, @Nullable NSError error);
     }
 
     /**
      * Loads a RPBroadcastActivityViewController instance and returns it in the handler block.
-     * <p>
+     * 
      * The view controller will present the user with a view that shows the preferred streaming extension service and
      * allow the user to set up a broadcast with the service through the service's UI.
-     * <p>
+     * 
      * The RPBroadcastActivityViewController can be presented using [UIViewController
      * presentViewController:animated:completion:] and should be dismissed when the delegate's
      * broadcastActivityViewController:didFinishWithBroadcastController:error: method is called. Note that on large
      * screen devices such as iPad, the default presentation style for view controllers is a popover. For an instance of
      * RPBroadcastActivityViewController to present properly on iPad, it needs to have its
      * popoverPresentationController's sourceRect and sourceView configured.
-     *
+     * 
      * @param preferredExtension              The extension bundle identifier for the preferred broadcast extension
      *                                        service
      * @param broadcastActivityViewController The RPBroadcastActivityViewController which can be presented, returns nil
      *                                        if ther eis no matching extension.
      * @param error                           Optional error in the RPRecordingErrorCode domain which is supplied in the
      *                                        event the view controller could not be loaded.
+     * 
+     *                                        API-Since: 11.0
      */
     @Generated
     @Selector("loadBroadcastActivityViewControllerWithPreferredExtension:handler:")
     public static native void loadBroadcastActivityViewControllerWithPreferredExtensionHandler(
-            String preferredExtension,
-            @ObjCBlock(name = "call_loadBroadcastActivityViewControllerWithPreferredExtensionHandler") Block_loadBroadcastActivityViewControllerWithPreferredExtensionHandler handler);
+            @Nullable String preferredExtension,
+            @NotNull @ObjCBlock(name = "call_loadBroadcastActivityViewControllerWithPreferredExtensionHandler") Block_loadBroadcastActivityViewControllerWithPreferredExtensionHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadBroadcastActivityViewControllerWithPreferredExtensionHandler {
         @Generated
         void call_loadBroadcastActivityViewControllerWithPreferredExtensionHandler(
-                RPBroadcastActivityViewController broadcastActivityViewController, NSError error);
+                @Nullable RPBroadcastActivityViewController broadcastActivityViewController, @Nullable NSError error);
     }
 }

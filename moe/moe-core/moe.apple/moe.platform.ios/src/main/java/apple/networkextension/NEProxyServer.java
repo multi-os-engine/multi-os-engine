@@ -42,13 +42,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEProxyServer
- * <p>
+ * 
  * The NEProxyServer class declares the programmatic interface for an object that contains settings for a proxy server.
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -80,22 +84,25 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +137,10 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,31 +174,37 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] address
-     * <p>
+     * 
      * The string representation of the proxy server IP address.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("address")
     public native String address();
 
     /**
      * [@property] authenticationRequired
-     * <p>
+     * 
      * A flag indicating if the server requires authentication credentials.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("authenticationRequired")
     public native boolean authenticationRequired();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -198,35 +212,42 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * initWithAddress:port:
-     * <p>
+     * 
      * This function initializes a newly-allocated NEProxyServer object
-     *
+     * 
      * @param address The string representation of the proxy server IP address.
      * @param port    The TCP port of the proxy server.
+     * 
+     *                API-Since: 9.0
      */
     @Generated
     @Selector("initWithAddress:port:")
-    public native NEProxyServer initWithAddressPort(String address, @NInt long port);
+    public native NEProxyServer initWithAddressPort(@NotNull String address, @NInt long port);
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEProxyServer initWithCoder(NSCoder coder);
+    public native NEProxyServer initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] password
-     * <p>
+     * 
      * The password portion of the authentication credential to use when communicating with the proxy server. This
      * property is only saved persistently if the username property is non-nil and non-empty and if the
      * authenticationRequired flag is set.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("password")
     public native String password();
 
     /**
      * [@property] port
-     * <p>
+     * 
      * The TCP port of the proxy server.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("port")
@@ -235,8 +256,10 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] authenticationRequired
-     * <p>
+     * 
      * A flag indicating if the server requires authentication credentials.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAuthenticationRequired:")
@@ -244,23 +267,27 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] password
-     * <p>
+     * 
      * The password portion of the authentication credential to use when communicating with the proxy server. This
      * property is only saved persistently if the username property is non-nil and non-empty and if the
      * authenticationRequired flag is set.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPassword:")
-    public native void setPassword(String value);
+    public native void setPassword(@Nullable String value);
 
     /**
      * [@property] username
-     * <p>
+     * 
      * The username portion of the authentication credential to use when communicating with the proxy server.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setUsername:")
-    public native void setUsername(String value);
+    public native void setUsername(@Nullable String value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -270,9 +297,12 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] username
-     * <p>
+     * 
      * The username portion of the authentication credential to use when communicating with the proxy server.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("username")
     public native String username();

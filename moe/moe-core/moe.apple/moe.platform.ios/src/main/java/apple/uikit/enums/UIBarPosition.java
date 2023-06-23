@@ -19,22 +19,34 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 public final class UIBarPosition {
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Any = 0x0000000000000000L;
     /**
      * The bar is at the bottom of its local context, and directional decoration draws accordingly (e.g., shadow above
      * the bar).
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long Bottom = 0x0000000000000001L;
     /**
      * The bar is at the top of its local context, and directional decoration draws accordingly (e.g., shadow below the
      * bar)
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long Top = 0x0000000000000002L;
     /**
      * The bar is at the top of the screen (as well as its local context), and its background extends upward—currently
      * only enough for the status bar.
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long TopAttached = 0x0000000000000003L;
 

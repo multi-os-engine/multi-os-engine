@@ -22,11 +22,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * TKCompactTLVRecord implements Compact-TLV encoding according to ISO7816-4
  * Tag is number in range <0..15> encoded as high 4 bits of initial byte, length is number in range <0..15>
  * encoded as low 4 bits of initial byte. Value immediatelly follows leading byte.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CryptoTokenKit")
@@ -58,22 +62,25 @@ public class TKCompactTLVRecord extends TKTLVRecord {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -97,14 +104,14 @@ public class TKCompactTLVRecord extends TKTLVRecord {
 
     /**
      * Creates TLV record with specified tag and value.
-     *
+     * 
      * @param tag   Tag value for the new record.
      * @param value Value for the new record.
      * @return Newly created TLV record.
      */
     @Generated
     @Selector("initWithTag:value:")
-    public native TKCompactTLVRecord initWithTagValue(byte tag, NSData value);
+    public native TKCompactTLVRecord initWithTagValue(byte tag, @NotNull NSData value);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -123,9 +130,10 @@ public class TKCompactTLVRecord extends TKTLVRecord {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -134,7 +142,7 @@ public class TKCompactTLVRecord extends TKTLVRecord {
 
     @Generated
     @Selector("recordFromData:")
-    public static native TKCompactTLVRecord recordFromData(NSData data);
+    public static native TKCompactTLVRecord recordFromData(@NotNull NSData data);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -144,9 +152,10 @@ public class TKCompactTLVRecord extends TKTLVRecord {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Nullable
     @Generated
     @Selector("sequenceOfRecordsFromData:")
-    public static native NSArray<? extends TKTLVRecord> sequenceOfRecordsFromData(NSData data);
+    public static native NSArray<? extends TKTLVRecord> sequenceOfRecordsFromData(@NotNull NSData data);
 
     @Generated
     @Selector("setVersion:")

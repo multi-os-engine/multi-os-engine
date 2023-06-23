@@ -43,6 +43,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The Minmax Strategist is a generic AI that selects a game model update for a given player that maximises
@@ -50,6 +52,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * to the player in question, extrapolating the potential moves opposing players may take, projecting out
  * maxLookAheadDepth number of turns. The selected update will result in the greatest potential gain, balanced
  * against the potential gain of other players.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -81,22 +85,25 @@ public class GKMinmaxStrategist extends NSObject implements GKStrategist {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +138,10 @@ public class GKMinmaxStrategist extends NSObject implements GKStrategist {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,6 +169,7 @@ public class GKMinmaxStrategist extends NSObject implements GKStrategist {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("bestMoveForActivePlayer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -171,11 +180,14 @@ public class GKMinmaxStrategist extends NSObject implements GKStrategist {
      * which move to use if there are one or more ties for the best. Returns nil if the player is invalid,
      * the player is not a part of the game model, or the player has no valid moves available.
      */
+    @Nullable
     @Generated
     @Selector("bestMoveForPlayer:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native GKGameModelUpdate bestMoveForPlayer(@Mapped(ObjCObjectMapper.class) GKGameModelPlayer player);
+    public native GKGameModelUpdate bestMoveForPlayer(
+            @NotNull @Mapped(ObjCObjectMapper.class) GKGameModelPlayer player);
 
+    @Nullable
     @Generated
     @Selector("gameModel")
     @MappedReturn(ObjCObjectMapper.class)
@@ -199,12 +211,14 @@ public class GKMinmaxStrategist extends NSObject implements GKStrategist {
      * bestMoveForPlayer and return the first best move. Returns nil if the player is invalid, the
      * player is not a part of the game model, or the player has no valid moves available.
      */
+    @Nullable
     @Generated
     @Selector("randomMoveForPlayer:fromNumberOfBestMoves:")
     @MappedReturn(ObjCObjectMapper.class)
     public native GKGameModelUpdate randomMoveForPlayerFromNumberOfBestMoves(
-            @Mapped(ObjCObjectMapper.class) GKGameModelPlayer player, @NInt long numMovesToConsider);
+            @NotNull @Mapped(ObjCObjectMapper.class) GKGameModelPlayer player, @NInt long numMovesToConsider);
 
+    @Nullable
     @Generated
     @Selector("randomSource")
     @MappedReturn(ObjCObjectMapper.class)
@@ -212,7 +226,7 @@ public class GKMinmaxStrategist extends NSObject implements GKStrategist {
 
     @Generated
     @Selector("setGameModel:")
-    public native void setGameModel(@Mapped(ObjCObjectMapper.class) GKGameModel value);
+    public native void setGameModel(@Nullable @Mapped(ObjCObjectMapper.class) GKGameModel value);
 
     /**
      * The maximum number of future turns that will be processed when searching for a move.
@@ -223,5 +237,5 @@ public class GKMinmaxStrategist extends NSObject implements GKStrategist {
 
     @Generated
     @Selector("setRandomSource:")
-    public native void setRandomSource(@Mapped(ObjCObjectMapper.class) GKRandom value);
+    public native void setRandomSource(@Nullable @Mapped(ObjCObjectMapper.class) GKRandom value);
 }

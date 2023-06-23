@@ -9,7 +9,13 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 12.0
+ * Deprecated-Since: 14.0
+ */
+@Deprecated
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -17,20 +23,24 @@ import org.moe.natj.objc.ann.Selector;
 public interface CPListTemplateDelegate {
     /**
      * The user has selected an item in the list template.
-     * <p>
+     * 
      * Your app has an opportunity to perform any necessary operations to prepare for completing
      * this item selection. The list template will display a spinner after a short delay.
-     * <p>
+     * 
      * You must call the completion block after your app has finished loading and updated its UI.
-     *
+     * 
      * @param listTemplate      The list template containing this item
      * @param item              The item selected by the user
      * @param completionHandler A completion block you must call after you have updated your UI.
+     * 
+     *                          API-Since: 12.0
+     *                          Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("listTemplate:didSelectListItem:completionHandler:")
-    void listTemplateDidSelectListItemCompletionHandler(CPListTemplate listTemplate, CPListItem item,
-            @ObjCBlock(name = "call_listTemplateDidSelectListItemCompletionHandler") Block_listTemplateDidSelectListItemCompletionHandler completionHandler);
+    void listTemplateDidSelectListItemCompletionHandler(@NotNull CPListTemplate listTemplate, @NotNull CPListItem item,
+            @NotNull @ObjCBlock(name = "call_listTemplateDidSelectListItemCompletionHandler") Block_listTemplateDidSelectListItemCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated

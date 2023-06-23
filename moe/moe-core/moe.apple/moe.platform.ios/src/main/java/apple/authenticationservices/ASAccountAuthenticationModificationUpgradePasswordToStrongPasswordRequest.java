@@ -22,7 +22,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
@@ -55,22 +60,25 @@ public class ASAccountAuthenticationModificationUpgradePasswordToStrongPasswordR
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -94,12 +102,12 @@ public class ASAccountAuthenticationModificationUpgradePasswordToStrongPasswordR
 
     /**
      * Creates a request for a strong password upgrade invoked within the extension's containing app.
-     * <p>
+     * 
      * In this flow, when the extension is invoked from within the containing app, the extension
      * will receive an empty password for the credential to upgrade. It should check that it is authorized to perform
      * the upgrade. The authorization check should ideally be done with information in userInfo, but may involve
      * communicating with a backend server or using a shared data container between the app and extension.
-     *
+     * 
      * @param user              The username for the account to upgrade.
      * @param serviceIdentifier The service identifier of the credential the user wishes to upgrade.
      * @param userInfo          A dictionary the app can use to pass information to the extension, most likely to help
@@ -108,7 +116,8 @@ public class ASAccountAuthenticationModificationUpgradePasswordToStrongPasswordR
     @Generated
     @Selector("initWithUser:serviceIdentifier:userInfo:")
     public native ASAccountAuthenticationModificationUpgradePasswordToStrongPasswordRequest initWithUserServiceIdentifierUserInfo(
-            String user, ASCredentialServiceIdentifier serviceIdentifier, NSDictionary<?, ?> userInfo);
+            @NotNull String user, @NotNull ASCredentialServiceIdentifier serviceIdentifier,
+            @Nullable NSDictionary<?, ?> userInfo);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -127,9 +136,10 @@ public class ASAccountAuthenticationModificationUpgradePasswordToStrongPasswordR
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -144,6 +154,7 @@ public class ASAccountAuthenticationModificationUpgradePasswordToStrongPasswordR
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @NotNull
     @Generated
     @Selector("serviceIdentifier")
     public native ASCredentialServiceIdentifier serviceIdentifier();
@@ -156,10 +167,12 @@ public class ASAccountAuthenticationModificationUpgradePasswordToStrongPasswordR
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("user")
     public native String user();
 
+    @Nullable
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();

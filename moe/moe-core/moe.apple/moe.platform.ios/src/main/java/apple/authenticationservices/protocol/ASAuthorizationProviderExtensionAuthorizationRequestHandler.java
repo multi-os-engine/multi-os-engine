@@ -8,7 +8,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
@@ -19,7 +23,7 @@ public interface ASAuthorizationProviderExtensionAuthorizationRequestHandler {
      */
     @Generated
     @Selector("beginAuthorizationWithRequest:")
-    void beginAuthorizationWithRequest(ASAuthorizationProviderExtensionAuthorizationRequest request);
+    void beginAuthorizationWithRequest(@NotNull ASAuthorizationProviderExtensionAuthorizationRequest request);
 
     /**
      * Called when the authorization was canceled by authorization service. It’s called on the main thread.
@@ -27,7 +31,7 @@ public interface ASAuthorizationProviderExtensionAuthorizationRequestHandler {
     @Generated
     @IsOptional
     @Selector("cancelAuthorizationWithRequest:")
-    default void cancelAuthorizationWithRequest(ASAuthorizationProviderExtensionAuthorizationRequest request) {
+    default void cancelAuthorizationWithRequest(@NotNull ASAuthorizationProviderExtensionAuthorizationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

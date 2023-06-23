@@ -31,12 +31,16 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An application that is long running should provide a CSSearchableIndexDelegate conforming object to handle
  * communication from the index.
  * Alternatively, an app can provide an extension whose request handler conforms to this protocol and the extension will
  * be called if the app isn't running.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("CoreSpotlight")
@@ -54,8 +58,8 @@ public interface CSSearchableIndexDelegate {
      */
     @Generated
     @Selector("searchableIndex:reindexAllSearchableItemsWithAcknowledgementHandler:")
-    void searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler(CSSearchableIndex searchableIndex,
-            @ObjCBlock(name = "call_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler") Block_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler acknowledgementHandler);
+    void searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler(@NotNull CSSearchableIndex searchableIndex,
+            @NotNull @ObjCBlock(name = "call_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler") Block_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler acknowledgementHandler);
 
     /**
      * The index requests that the delegate should reindex the searchable data with the provided identifiers.
@@ -68,14 +72,14 @@ public interface CSSearchableIndexDelegate {
      */
     @Generated
     @Selector("searchableIndex:reindexSearchableItemsWithIdentifiers:acknowledgementHandler:")
-    void searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler(CSSearchableIndex searchableIndex,
-            NSArray<String> identifiers,
-            @ObjCBlock(name = "call_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler") Block_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler acknowledgementHandler);
+    void searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler(
+            @NotNull CSSearchableIndex searchableIndex, @NotNull NSArray<String> identifiers,
+            @NotNull @ObjCBlock(name = "call_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler") Block_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler acknowledgementHandler);
 
     @Generated
     @IsOptional
     @Selector("searchableIndexDidFinishThrottle:")
-    default void searchableIndexDidFinishThrottle(CSSearchableIndex searchableIndex) {
+    default void searchableIndexDidFinishThrottle(@NotNull CSSearchableIndex searchableIndex) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -87,7 +91,7 @@ public interface CSSearchableIndexDelegate {
     @Generated
     @IsOptional
     @Selector("searchableIndexDidThrottle:")
-    default void searchableIndexDidThrottle(CSSearchableIndex searchableIndex) {
+    default void searchableIndexDidThrottle(@NotNull CSSearchableIndex searchableIndex) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -107,25 +111,32 @@ public interface CSSearchableIndexDelegate {
 
     /**
      * The developer may provided a NSData representation if type was specified in providerDataTypeIdentifiers property.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("dataForSearchableIndex:itemIdentifier:typeIdentifier:error:")
-    default NSData dataForSearchableIndexItemIdentifierTypeIdentifierError(CSSearchableIndex searchableIndex,
-            String itemIdentifier, String typeIdentifier, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
+    default NSData dataForSearchableIndexItemIdentifierTypeIdentifierError(@NotNull CSSearchableIndex searchableIndex,
+            @NotNull String itemIdentifier, @NotNull String typeIdentifier,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * The developer may provided a NSURL to file representation representation if type was specified from
      * providerDataTypeIdentifiers or providerInPlaceFileTypeIdentifiers property.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("fileURLForSearchableIndex:itemIdentifier:typeIdentifier:inPlace:error:")
-    default NSURL fileURLForSearchableIndexItemIdentifierTypeIdentifierInPlaceError(CSSearchableIndex searchableIndex,
-            String itemIdentifier, String typeIdentifier, boolean inPlace,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
+    default NSURL fileURLForSearchableIndexItemIdentifierTypeIdentifierInPlaceError(
+            @NotNull CSSearchableIndex searchableIndex, @NotNull String itemIdentifier, @NotNull String typeIdentifier,
+            boolean inPlace, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -24,6 +24,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 4.1
+ * Deprecated-Since: 7.0
+ * Deprecated-Message: Use GKGameCenterViewController instead
+ */
 @Deprecated
 @Generated
 @Library("GameKit")

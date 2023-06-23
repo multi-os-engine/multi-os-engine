@@ -22,6 +22,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("QuartzCore")
@@ -58,6 +59,7 @@ public interface CAMediaTiming {
      * are `backwards', `forwards', `both' and `removed'. Defaults to
      * `removed'.
      */
+    @NotNull
     @Generated
     @Selector("fillMode")
     String fillMode();
@@ -108,7 +110,7 @@ public interface CAMediaTiming {
      */
     @Generated
     @Selector("setFillMode:")
-    void setFillMode(String value);
+    void setFillMode(@NotNull String value);
 
     /**
      * The repeat count of the object. May be fractional. Defaults to 0.

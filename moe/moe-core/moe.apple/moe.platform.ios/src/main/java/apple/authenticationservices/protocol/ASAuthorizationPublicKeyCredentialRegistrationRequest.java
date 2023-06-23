@@ -9,7 +9,12 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
@@ -18,6 +23,7 @@ public interface ASAuthorizationPublicKeyCredentialRegistrationRequest extends N
     /**
      * A preference for the type of attestation that the authenticator should attempt to perform.
      */
+    @NotNull
     @Generated
     @Selector("attestationPreference")
     String attestationPreference();
@@ -25,6 +31,7 @@ public interface ASAuthorizationPublicKeyCredentialRegistrationRequest extends N
     /**
      * The challenge which can be used to verify the authenticator's attestation, if attestation is requested.
      */
+    @NotNull
     @Generated
     @Selector("challenge")
     NSData challenge();
@@ -32,6 +39,7 @@ public interface ASAuthorizationPublicKeyCredentialRegistrationRequest extends N
     /**
      * A high level human readable name to associate with a credential, which should only be used for display.
      */
+    @Nullable
     @Generated
     @Selector("displayName")
     String displayName();
@@ -40,6 +48,7 @@ public interface ASAuthorizationPublicKeyCredentialRegistrationRequest extends N
      * A human readable name to associate with a credential, which a user should be able to use to identify the
      * credential.
      */
+    @NotNull
     @Generated
     @Selector("name")
     String name();
@@ -47,6 +56,7 @@ public interface ASAuthorizationPublicKeyCredentialRegistrationRequest extends N
     /**
      * The Relying Party identifier used to scope this request.
      */
+    @NotNull
     @Generated
     @Selector("relyingPartyIdentifier")
     String relyingPartyIdentifier();
@@ -56,21 +66,21 @@ public interface ASAuthorizationPublicKeyCredentialRegistrationRequest extends N
      */
     @Generated
     @Selector("setAttestationPreference:")
-    void setAttestationPreference(String value);
+    void setAttestationPreference(@NotNull String value);
 
     /**
      * The challenge which can be used to verify the authenticator's attestation, if attestation is requested.
      */
     @Generated
     @Selector("setChallenge:")
-    void setChallenge(NSData value);
+    void setChallenge(@NotNull NSData value);
 
     /**
      * A high level human readable name to associate with a credential, which should only be used for display.
      */
     @Generated
     @Selector("setDisplayName:")
-    void setDisplayName(String value);
+    void setDisplayName(@Nullable String value);
 
     /**
      * A human readable name to associate with a credential, which a user should be able to use to identify the
@@ -78,7 +88,7 @@ public interface ASAuthorizationPublicKeyCredentialRegistrationRequest extends N
      */
     @Generated
     @Selector("setName:")
-    void setName(String value);
+    void setName(@NotNull String value);
 
     /**
      * An arbitrary byte sequence which will be stored alongside the credential and will be returned with the credential
@@ -87,7 +97,7 @@ public interface ASAuthorizationPublicKeyCredentialRegistrationRequest extends N
      */
     @Generated
     @Selector("setUserID:")
-    void setUserID(NSData value);
+    void setUserID(@NotNull NSData value);
 
     /**
      * A preference for whether the authenticator should attempt to verify that it is being used by its owner, such as
@@ -95,13 +105,14 @@ public interface ASAuthorizationPublicKeyCredentialRegistrationRequest extends N
      */
     @Generated
     @Selector("setUserVerificationPreference:")
-    void setUserVerificationPreference(String value);
+    void setUserVerificationPreference(@NotNull String value);
 
     /**
      * An arbitrary byte sequence which will be stored alongside the credential and will be returned with the credential
      * when authenticating with it in the future. May be used by a relying party to identify the user account this
      * credential is associated with.
      */
+    @NotNull
     @Generated
     @Selector("userID")
     NSData userID();
@@ -110,6 +121,7 @@ public interface ASAuthorizationPublicKeyCredentialRegistrationRequest extends N
      * A preference for whether the authenticator should attempt to verify that it is being used by its owner, such as
      * through a PIN or biometrics.
      */
+    @NotNull
     @Generated
     @Selector("userVerificationPreference")
     String userVerificationPreference();

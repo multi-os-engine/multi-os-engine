@@ -41,11 +41,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Formats a postal address.
- * <p>
+ * 
  * This formatter handles international formatting of a postal address.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -77,38 +81,42 @@ public class CNPostalAddressFormatter extends NSFormatter {
 
     /**
      * Formats the postal address returning an attributed string.
-     * <p>
+     * 
      * This behaves like +stringFromPostalAddress: except it returns an attributed string. Includes attribute keys
      * CNPostalAddressPropertyAttribute and CNPostalAddressLocalizedPropertyNameAttribute.
-     *
+     * 
      * @param postalAddress The postal address to be formatted.
      * @param style         The formatting style to be used for the postal address.
      * @param attributes    The default attributes to use. See NSFormatter for details.
      * @return The formatted postal address as an attributed string.
      */
+    @NotNull
     @Generated
     @Selector("attributedStringFromPostalAddress:style:withDefaultAttributes:")
     public static native NSAttributedString attributedStringFromPostalAddressStyleWithDefaultAttributes(
-            CNPostalAddress postalAddress, @NInt long style, NSDictionary<?, ?> attributes);
+            @NotNull CNPostalAddress postalAddress, @NInt long style, @NotNull NSDictionary<?, ?> attributes);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -143,9 +151,10 @@ public class CNPostalAddressFormatter extends NSFormatter {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,14 +175,15 @@ public class CNPostalAddressFormatter extends NSFormatter {
 
     /**
      * Formats the postal address.
-     *
+     * 
      * @param postalAddress The postal address to be formatted.
      * @param style         The formatting style to be used for the postal address.
      * @return The formatted postal address.
      */
+    @NotNull
     @Generated
     @Selector("stringFromPostalAddress:style:")
-    public static native String stringFromPostalAddressStyle(CNPostalAddress postalAddress, @NInt long style);
+    public static native String stringFromPostalAddressStyle(@NotNull CNPostalAddress postalAddress, @NInt long style);
 
     @Generated
     @Selector("superclass")
@@ -186,18 +196,19 @@ public class CNPostalAddressFormatter extends NSFormatter {
 
     /**
      * Formats the postal address returning an attributed string.
-     * <p>
+     * 
      * This behaves like +stringFromPostalAddress: except it returns an attributed string. Includes attribute keys
      * CNPostalAddressPropertyAttribute and CNPostalAddressLocalizedPropertyNameAttribute.
-     *
+     * 
      * @param postalAddress The postal address to be formatted.
      * @param attributes    The default attributes to use. See NSFormatter for details.
      * @return The formatted postal address as an attributed string.
      */
+    @NotNull
     @Generated
     @Selector("attributedStringFromPostalAddress:withDefaultAttributes:")
     public native NSAttributedString attributedStringFromPostalAddressWithDefaultAttributes(
-            CNPostalAddress postalAddress, NSDictionary<?, ?> attributes);
+            @NotNull CNPostalAddress postalAddress, @NotNull NSDictionary<?, ?> attributes);
 
     @Generated
     @Selector("init")
@@ -205,11 +216,11 @@ public class CNPostalAddressFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNPostalAddressFormatter initWithCoder(NSCoder coder);
+    public native CNPostalAddressFormatter initWithCoder(@NotNull NSCoder coder);
 
     /**
      * The style for a postal address formatter instance.
-     * <p>
+     * 
      * The default value is CNPostalAddressFormatterStyleMailingAddress.
      */
     @Generated
@@ -218,17 +229,18 @@ public class CNPostalAddressFormatter extends NSFormatter {
 
     /**
      * Formats the postal address.
-     *
+     * 
      * @param postalAddress The postal address to be formatted.
      * @return The formatted postal address.
      */
+    @NotNull
     @Generated
     @Selector("stringFromPostalAddress:")
-    public native String stringFromPostalAddress(CNPostalAddress postalAddress);
+    public native String stringFromPostalAddress(@NotNull CNPostalAddress postalAddress);
 
     /**
      * The style for a postal address formatter instance.
-     * <p>
+     * 
      * The default value is CNPostalAddressFormatterStyleMailingAddress.
      */
     @Generated

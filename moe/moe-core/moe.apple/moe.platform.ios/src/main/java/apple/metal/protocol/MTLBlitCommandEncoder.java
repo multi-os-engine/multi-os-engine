@@ -30,11 +30,14 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] MTLBlitCommandEncoder
- * <p>
+ * 
  * A command encoder that performs basic copies and blits between buffers and textures.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Metal")
@@ -43,129 +46,139 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
     /**
      * copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:
-     * <p>
+     * 
      * Copy an image from a buffer into a texture.
      */
     @Generated
     @Selector("copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:")
     void copyFromBufferSourceOffsetSourceBytesPerRowSourceBytesPerImageSourceSizeToTextureDestinationSliceDestinationLevelDestinationOrigin(
-            @Mapped(ObjCObjectMapper.class) MTLBuffer sourceBuffer, @NUInt long sourceOffset,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer sourceBuffer, @NUInt long sourceOffset,
             @NUInt long sourceBytesPerRow, @NUInt long sourceBytesPerImage, @ByValue MTLSize sourceSize,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture, @NUInt long destinationSlice,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture, @NUInt long destinationSlice,
             @NUInt long destinationLevel, @ByValue MTLOrigin destinationOrigin);
 
     /**
      * copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:options:
-     * <p>
+     * 
      * Copy an image from a buffer into a texture.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("copyFromBuffer:sourceOffset:sourceBytesPerRow:sourceBytesPerImage:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:options:")
     void copyFromBufferSourceOffsetSourceBytesPerRowSourceBytesPerImageSourceSizeToTextureDestinationSliceDestinationLevelDestinationOriginOptions(
-            @Mapped(ObjCObjectMapper.class) MTLBuffer sourceBuffer, @NUInt long sourceOffset,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer sourceBuffer, @NUInt long sourceOffset,
             @NUInt long sourceBytesPerRow, @NUInt long sourceBytesPerImage, @ByValue MTLSize sourceSize,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture, @NUInt long destinationSlice,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture, @NUInt long destinationSlice,
             @NUInt long destinationLevel, @ByValue MTLOrigin destinationOrigin, @NUInt long options);
 
     /**
      * copyFromBuffer:sourceOffset:toBuffer:destinationOffset:size:
-     * <p>
+     * 
      * Basic memory copy between buffers.
      */
     @Generated
     @Selector("copyFromBuffer:sourceOffset:toBuffer:destinationOffset:size:")
-    void copyFromBufferSourceOffsetToBufferDestinationOffsetSize(@Mapped(ObjCObjectMapper.class) MTLBuffer sourceBuffer,
-            @NUInt long sourceOffset, @Mapped(ObjCObjectMapper.class) MTLBuffer destinationBuffer,
-            @NUInt long destinationOffset, @NUInt long size);
+    void copyFromBufferSourceOffsetToBufferDestinationOffsetSize(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer sourceBuffer, @NUInt long sourceOffset,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer destinationBuffer, @NUInt long destinationOffset,
+            @NUInt long size);
 
     /**
      * copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:
-     * <p>
+     * 
      * Copy an image from a texture into a buffer.
      */
     @Generated
     @Selector("copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:")
     void copyFromTextureSourceSliceSourceLevelSourceOriginSourceSizeToBufferDestinationOffsetDestinationBytesPerRowDestinationBytesPerImage(
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture, @NUInt long sourceSlice, @NUInt long sourceLevel,
-            @ByValue MTLOrigin sourceOrigin, @ByValue MTLSize sourceSize,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer destinationBuffer, @NUInt long destinationOffset,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture, @NUInt long sourceSlice,
+            @NUInt long sourceLevel, @ByValue MTLOrigin sourceOrigin, @ByValue MTLSize sourceSize,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer destinationBuffer, @NUInt long destinationOffset,
             @NUInt long destinationBytesPerRow, @NUInt long destinationBytesPerImage);
 
     /**
      * copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:sourceOptions:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:options:
-     * <p>
+     * 
      * Copy an image from a texture into a buffer.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toBuffer:destinationOffset:destinationBytesPerRow:destinationBytesPerImage:options:")
     void copyFromTextureSourceSliceSourceLevelSourceOriginSourceSizeToBufferDestinationOffsetDestinationBytesPerRowDestinationBytesPerImageOptions(
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture, @NUInt long sourceSlice, @NUInt long sourceLevel,
-            @ByValue MTLOrigin sourceOrigin, @ByValue MTLSize sourceSize,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer destinationBuffer, @NUInt long destinationOffset,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture, @NUInt long sourceSlice,
+            @NUInt long sourceLevel, @ByValue MTLOrigin sourceOrigin, @ByValue MTLSize sourceSize,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer destinationBuffer, @NUInt long destinationOffset,
             @NUInt long destinationBytesPerRow, @NUInt long destinationBytesPerImage, @NUInt long options);
 
     /**
      * copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:
-     * <p>
+     * 
      * Copy a rectangle of pixels between textures.
      */
     @Generated
     @Selector("copyFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:")
     void copyFromTextureSourceSliceSourceLevelSourceOriginSourceSizeToTextureDestinationSliceDestinationLevelDestinationOrigin(
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture, @NUInt long sourceSlice, @NUInt long sourceLevel,
-            @ByValue MTLOrigin sourceOrigin, @ByValue MTLSize sourceSize,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture, @NUInt long destinationSlice,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture, @NUInt long sourceSlice,
+            @NUInt long sourceLevel, @ByValue MTLOrigin sourceOrigin, @ByValue MTLSize sourceSize,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture, @NUInt long destinationSlice,
             @NUInt long destinationLevel, @ByValue MTLOrigin destinationOrigin);
 
     /**
      * fillBuffer:range:value:
-     * <p>
+     * 
      * Fill a buffer with a fixed value in each byte.
      */
     @Generated
     @Selector("fillBuffer:range:value:")
-    void fillBufferRangeValue(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @ByValue NSRange range, byte value);
+    void fillBufferRangeValue(@NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @ByValue NSRange range,
+            byte value);
 
     /**
      * generateMipmapsForTexture:
-     * <p>
+     * 
      * Generate mipmaps for a texture from the base level up to the max level.
      */
     @Generated
     @Selector("generateMipmapsForTexture:")
-    void generateMipmapsForTexture(@Mapped(ObjCObjectMapper.class) MTLTexture texture);
+    void generateMipmapsForTexture(@NotNull @Mapped(ObjCObjectMapper.class) MTLTexture texture);
 
     /**
      * updateFence:
-     * <p>
+     * 
      * Update the fence to capture all GPU work so far enqueued by this encoder.
-     * <p>
+     * 
      * The fence is updated at kernel submission to maintain global order and prevent deadlock.
      * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of
      * an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("updateFence:")
-    void updateFence(@Mapped(ObjCObjectMapper.class) MTLFence fence);
+    void updateFence(@NotNull @Mapped(ObjCObjectMapper.class) MTLFence fence);
 
     /**
      * waitForFence:
-     * <p>
+     * 
      * Prevent further GPU work until the fence is reached.
-     * <p>
-     * The fence is evaluated at kernel submision to maintain global order and prevent deadlock.
+     * 
+     * The fence is evaluated at kernel submission to maintain global order and prevent deadlock.
      * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of
      * an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("waitForFence:")
-    void waitForFence(@Mapped(ObjCObjectMapper.class) MTLFence fence);
+    void waitForFence(@NotNull @Mapped(ObjCObjectMapper.class) MTLFence fence);
 
     /**
      * copyFromTexture:sourceSlice:sourceLevel:toTexture:destinationSlice:destinationLevel:sliceCount:levelCount:
-     * <p>
+     * 
      * Copy whole surfaces between textures.
-     * <p>
+     * 
      * Convenience function to copy sliceCount * levelCount whole surfaces between textures
      * The source and destination pixel format must be identical.
      * The source and destination sample count must be identical.
@@ -175,19 +188,21 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
      * The destinationTexture must have at least destinationLevel + levelCount mips
      * The sourceTexture must have at least sourceSlice + sliceCount array slices
      * The destinationTexture must have at least destinationSlice + sliceCount array slices
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("copyFromTexture:sourceSlice:sourceLevel:toTexture:destinationSlice:destinationLevel:sliceCount:levelCount:")
     void copyFromTextureSourceSliceSourceLevelToTextureDestinationSliceDestinationLevelSliceCountLevelCount(
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture, @NUInt long sourceSlice, @NUInt long sourceLevel,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture, @NUInt long destinationSlice,
-            @NUInt long destinationLevel, @NUInt long sliceCount, @NUInt long levelCount);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture, @NUInt long sourceSlice,
+            @NUInt long sourceLevel, @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
+            @NUInt long destinationSlice, @NUInt long destinationLevel, @NUInt long sliceCount, @NUInt long levelCount);
 
     /**
      * copyFromTexture:toTexture:
-     * <p>
+     * 
      * Copy as many whole surfaces as possible between textures.
-     * <p>
+     * 
      * Convenience function that calls
      * copyFromTexture:sourceSlice:sourceLevel:toTexture:destinationSlice:destinationLevel:sliceCount:levelCount:
      * The source and destination pixel format must be identical.
@@ -201,116 +216,140 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
      * destinationLevel)
      * sliceCount = min(sourceTexture.arrayLength, destinationTexture.arrayLength)
      * Then invokes the method above using the computed parameters.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("copyFromTexture:toTexture:")
-    void copyFromTextureToTexture(@Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture);
+    void copyFromTextureToTexture(@NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture);
 
     /**
      * copyIndirectCommandBuffer:source:sourceRange:destination:destinationIndex
-     * <p>
+     * 
      * copy a region of a buffer into a destination buffer starting at destinationIndex using the GPU
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("copyIndirectCommandBuffer:sourceRange:destination:destinationIndex:")
     void copyIndirectCommandBufferSourceRangeDestinationDestinationIndex(
-            @Mapped(ObjCObjectMapper.class) MTLIndirectCommandBuffer source, @ByValue NSRange sourceRange,
-            @Mapped(ObjCObjectMapper.class) MTLIndirectCommandBuffer destination, @NUInt long destinationIndex);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLIndirectCommandBuffer source, @ByValue NSRange sourceRange,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLIndirectCommandBuffer destination,
+            @NUInt long destinationIndex);
 
     /**
      * getTextureAccessCounters:region:mipLevel:slice:type:resetCounters:countersBuffer:countersBufferOffset
-     * <p>
+     * 
      * Copies tile access counters within specified region into provided buffer
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("getTextureAccessCounters:region:mipLevel:slice:resetCounters:countersBuffer:countersBufferOffset:")
     void getTextureAccessCountersRegionMipLevelSliceResetCountersCountersBufferCountersBufferOffset(
-            @Mapped(ObjCObjectMapper.class) MTLTexture texture, @ByValue MTLRegion region, @NUInt long mipLevel,
-            @NUInt long slice, boolean resetCounters, @Mapped(ObjCObjectMapper.class) MTLBuffer countersBuffer,
-            @NUInt long countersBufferOffset);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture texture, @ByValue MTLRegion region,
+            @NUInt long mipLevel, @NUInt long slice, boolean resetCounters,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer countersBuffer, @NUInt long countersBufferOffset);
 
     /**
      * optimizeContentsForCPUAccess:
-     * <p>
+     * 
      * Optimizes the texture data to ensure the best possible performance when accessing content on the CPU at the
      * expense of GPU-access performance.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("optimizeContentsForCPUAccess:")
-    void optimizeContentsForCPUAccess(@Mapped(ObjCObjectMapper.class) MTLTexture texture);
+    void optimizeContentsForCPUAccess(@NotNull @Mapped(ObjCObjectMapper.class) MTLTexture texture);
 
     /**
      * optimizeContentsForCPUAccess:slice:level:
-     * <p>
+     * 
      * Optimizes a subset of the texture data to ensure the best possible performance when accessing content on the CPU
      * at the expense of GPU-access performance.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("optimizeContentsForCPUAccess:slice:level:")
-    void optimizeContentsForCPUAccessSliceLevel(@Mapped(ObjCObjectMapper.class) MTLTexture texture, @NUInt long slice,
-            @NUInt long level);
+    void optimizeContentsForCPUAccessSliceLevel(@NotNull @Mapped(ObjCObjectMapper.class) MTLTexture texture,
+            @NUInt long slice, @NUInt long level);
 
     /**
      * optimizeContentsForGPUAccess:
-     * <p>
+     * 
      * Optimizes the texture data to ensure the best possible performance when accessing content on the GPU at the
      * expense of CPU-access performance.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("optimizeContentsForGPUAccess:")
-    void optimizeContentsForGPUAccess(@Mapped(ObjCObjectMapper.class) MTLTexture texture);
+    void optimizeContentsForGPUAccess(@NotNull @Mapped(ObjCObjectMapper.class) MTLTexture texture);
 
     /**
      * optimizeContentsForGPUAccess:slice:level:
-     * <p>
+     * 
      * Optimizes a subset of the texture data to ensure the best possible performance when accessing content on the GPU
      * at the expense of CPU-access performance.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("optimizeContentsForGPUAccess:slice:level:")
-    void optimizeContentsForGPUAccessSliceLevel(@Mapped(ObjCObjectMapper.class) MTLTexture texture, @NUInt long slice,
-            @NUInt long level);
+    void optimizeContentsForGPUAccessSliceLevel(@NotNull @Mapped(ObjCObjectMapper.class) MTLTexture texture,
+            @NUInt long slice, @NUInt long level);
 
     /**
      * optimizeIndirectCommandBuffer:withRange:
-     * <p>
+     * 
      * Optimizes a subset of the texture data to ensure the best possible performance when accessing content on the CPU
      * at the expense of GPU-access performance.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("optimizeIndirectCommandBuffer:withRange:")
     void optimizeIndirectCommandBufferWithRange(
-            @Mapped(ObjCObjectMapper.class) MTLIndirectCommandBuffer indirectCommandBuffer, @ByValue NSRange range);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLIndirectCommandBuffer indirectCommandBuffer,
+            @ByValue NSRange range);
 
     /**
      * resetCommandsInBuffer:withRange:
-     * <p>
+     * 
      * reset commands in a indirect command buffer using the GPU
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("resetCommandsInBuffer:withRange:")
-    void resetCommandsInBufferWithRange(@Mapped(ObjCObjectMapper.class) MTLIndirectCommandBuffer buffer,
+    void resetCommandsInBufferWithRange(@NotNull @Mapped(ObjCObjectMapper.class) MTLIndirectCommandBuffer buffer,
             @ByValue NSRange range);
 
     /**
      * resetTextureAccessCounters:region:mipLevel:slice:type:
-     * <p>
+     * 
      * Resets tile access counters within specified region
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("resetTextureAccessCounters:region:mipLevel:slice:")
-    void resetTextureAccessCountersRegionMipLevelSlice(@Mapped(ObjCObjectMapper.class) MTLTexture texture,
+    void resetTextureAccessCountersRegionMipLevelSlice(@NotNull @Mapped(ObjCObjectMapper.class) MTLTexture texture,
             @ByValue MTLRegion region, @NUInt long mipLevel, @NUInt long slice);
 
     /**
      * resolveCounters:inRange:destinationBuffer:destinationOffset:
-     * <p>
+     * 
      * Resolve the counters from the raw buffer to a processed buffer.
-     * <p>
+     * 
      * Samples that encountered an error during resolve will be set to
      * MTLCounterErrorValue.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param sampleBuffer      The sample buffer to resolve.
      * @param range             The range of indices to resolve.
      * @param destinationBuffer The buffer to resolve values into.
@@ -320,18 +359,20 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("resolveCounters:inRange:destinationBuffer:destinationOffset:")
     void resolveCountersInRangeDestinationBufferDestinationOffset(
-            @Mapped(ObjCObjectMapper.class) MTLCounterSampleBuffer sampleBuffer, @ByValue NSRange range,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer destinationBuffer, @NUInt long destinationOffset);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCounterSampleBuffer sampleBuffer, @ByValue NSRange range,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer destinationBuffer, @NUInt long destinationOffset);
 
     /**
      * sampleCountersInBuffer:atSampleIndex:withBarrier:
-     * <p>
+     * 
      * Sample hardware counters at this point in the blit encoder and
      * store the counter sample into the sample buffer at the specified index.
-     * <p>
+     * 
      * On devices where MTLCounterSamplingPointAtBlitBoundary is unsupported,
      * this method is not available and will generate an error if called.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param sampleBuffer The sample buffer to sample into
      * @param sampleIndex  The index into the counter buffer to write the sample.
      * @param barrier      Insert a barrier before taking the sample. Passing
@@ -346,6 +387,6 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("sampleCountersInBuffer:atSampleIndex:withBarrier:")
     void sampleCountersInBufferAtSampleIndexWithBarrier(
-            @Mapped(ObjCObjectMapper.class) MTLCounterSampleBuffer sampleBuffer, @NUInt long sampleIndex,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCounterSampleBuffer sampleBuffer, @NUInt long sampleIndex,
             boolean barrier);
 }

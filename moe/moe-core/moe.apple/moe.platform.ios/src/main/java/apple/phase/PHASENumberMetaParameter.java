@@ -21,11 +21,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] PHASENumberMetaParameter
- * <p>
+ * 
  * An object that represents an active numeric metaparameter in the system
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -57,22 +61,25 @@ public class PHASENumberMetaParameter extends PHASEMetaParameter {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -87,11 +94,13 @@ public class PHASENumberMetaParameter extends PHASEMetaParameter {
 
     /**
      * fadeToValue
-     * <p>
+     * 
      * Fades to a new value over an interval of time
-     *
-     * @param value    The new destination value to fade to
-     * @param duration The length of time it takes to arrive at the destination value
+     * 
+     * @param value
+     *                 The new destination value to fade to
+     * @param duration
+     *                 The length of time it takes to arrive at the destination value
      */
     @Generated
     @Selector("fadeToValue:duration:")
@@ -123,13 +132,14 @@ public class PHASENumberMetaParameter extends PHASEMetaParameter {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] maximum
-     * <p>
+     * 
      * The maximum value this metaparameter can be set to
      */
     @Generated
@@ -138,7 +148,7 @@ public class PHASENumberMetaParameter extends PHASEMetaParameter {
 
     /**
      * [@property] minimum
-     * <p>
+     * 
      * The minimum value this metaparameter can be set to
      */
     @Generated

@@ -19,20 +19,52 @@ package apple.passkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 8.0
+ * Deprecated-Since: 11.0
+ * Deprecated-Message: Use PKContactField and -requiredShippingContactFields / -requiredBillingContactFields
+ */
+@Deprecated
 @Generated
 public final class PKAddressField {
     /**
      * No address fields required.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use PKContactField and -requiredShippingContactFields / -requiredBillingContactFields
      */
-    @Generated @NUInt public static final long None = 0x0000000000000000L;
+    @Deprecated @Generated @NUInt public static final long None = 0x0000000000000000L;
     /**
      * Full street address including name, street, city, state/province, postal code, country.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use PKContactField and -requiredShippingContactFields / -requiredBillingContactFields
      */
-    @Generated @NUInt public static final long PostalAddress = 0x0000000000000001L;
-    @Generated @NUInt public static final long Phone = 0x0000000000000002L;
-    @Generated @NUInt public static final long Email = 0x0000000000000004L;
+    @Deprecated @Generated @NUInt public static final long PostalAddress = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use PKContactField and -requiredShippingContactFields / -requiredBillingContactFields
+     */
+    @Deprecated @Generated @NUInt public static final long Phone = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use PKContactField and -requiredShippingContactFields / -requiredBillingContactFields
+     */
+    @Deprecated @Generated @NUInt public static final long Email = 0x0000000000000004L;
+    /**
+     * API-Since: 8.3
+     */
     @Generated @NUInt public static final long Name = 0x0000000000000008L;
-    @Generated @NUInt public static final long All = 0x000000000000000FL;
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use PKContactField and -requiredShippingContactFields / -requiredBillingContactFields
+     */
+    @Deprecated @Generated @NUInt public static final long All = 0x000000000000000FL;
 
     @Generated
     private PKAddressField() {

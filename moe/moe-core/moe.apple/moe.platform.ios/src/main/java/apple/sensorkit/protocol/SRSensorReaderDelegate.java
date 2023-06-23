@@ -14,7 +14,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("SensorKit")
 @Runtime(ObjCRuntime.class)
@@ -26,7 +30,8 @@ public interface SRSensorReaderDelegate {
     @Generated
     @IsOptional
     @Selector("sensorReader:didChangeAuthorizationStatus:")
-    default void sensorReaderDidChangeAuthorizationStatus(SRSensorReader reader, @NInt long authorizationStatus) {
+    default void sensorReaderDidChangeAuthorizationStatus(@NotNull SRSensorReader reader,
+            @NInt long authorizationStatus) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -36,43 +41,46 @@ public interface SRSensorReaderDelegate {
     @Generated
     @IsOptional
     @Selector("sensorReader:didCompleteFetch:")
-    default void sensorReaderDidCompleteFetch(SRSensorReader reader, SRFetchRequest fetchRequest) {
+    default void sensorReaderDidCompleteFetch(@NotNull SRSensorReader reader, @NotNull SRFetchRequest fetchRequest) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("sensorReader:didFetchDevices:")
-    default void sensorReaderDidFetchDevices(SRSensorReader reader, NSArray<? extends SRDevice> devices) {
+    default void sensorReaderDidFetchDevices(@NotNull SRSensorReader reader,
+            @NotNull NSArray<? extends SRDevice> devices) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("sensorReader:fetchDevicesDidFailWithError:")
-    default void sensorReaderFetchDevicesDidFailWithError(SRSensorReader reader, NSError error) {
+    default void sensorReaderFetchDevicesDidFailWithError(@NotNull SRSensorReader reader, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Invoked when a sample has been fetched
-     * <p>
+     * 
      * [@description] This callback can be called multiple times
      * when there are multiple results.
-     * <p>
+     * 
      * [@note] The fetchResult is not valid after the callback is complete. If the caller needs
      * to access the result at a later time, it must be copied not merely retained
-     *
+     * 
      * @param fetchRequest The request corresponding to the this result
      * @param result       One result of the fetch. The caller is expected to
      *                     know what type of sample is returned.
-     * @return The delegate should return YES if the fetch should continue, NO if the fetch should stop
+     * 
+     * @return
+     *         The delegate should return YES if the fetch should continue, NO if the fetch should stop
      */
     @Generated
     @IsOptional
     @Selector("sensorReader:fetchingRequest:didFetchResult:")
-    default boolean sensorReaderFetchingRequestDidFetchResult(SRSensorReader reader, SRFetchRequest fetchRequest,
-            SRFetchResult<?> result) {
+    default boolean sensorReaderFetchingRequestDidFetchResult(@NotNull SRSensorReader reader,
+            @NotNull SRFetchRequest fetchRequest, @NotNull SRFetchResult<?> result) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -82,8 +90,8 @@ public interface SRSensorReaderDelegate {
     @Generated
     @IsOptional
     @Selector("sensorReader:fetchingRequest:failedWithError:")
-    default void sensorReaderFetchingRequestFailedWithError(SRSensorReader reader, SRFetchRequest fetchRequest,
-            NSError error) {
+    default void sensorReaderFetchingRequestFailedWithError(@NotNull SRSensorReader reader,
+            @NotNull SRFetchRequest fetchRequest, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -93,7 +101,7 @@ public interface SRSensorReaderDelegate {
     @Generated
     @IsOptional
     @Selector("sensorReader:startRecordingFailedWithError:")
-    default void sensorReaderStartRecordingFailedWithError(SRSensorReader reader, NSError error) {
+    default void sensorReaderStartRecordingFailedWithError(@NotNull SRSensorReader reader, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -103,7 +111,7 @@ public interface SRSensorReaderDelegate {
     @Generated
     @IsOptional
     @Selector("sensorReader:stopRecordingFailedWithError:")
-    default void sensorReaderStopRecordingFailedWithError(SRSensorReader reader, NSError error) {
+    default void sensorReaderStopRecordingFailedWithError(@NotNull SRSensorReader reader, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -114,7 +122,7 @@ public interface SRSensorReaderDelegate {
     @Generated
     @IsOptional
     @Selector("sensorReaderDidStopRecording:")
-    default void sensorReaderDidStopRecording(SRSensorReader reader) {
+    default void sensorReaderDidStopRecording(@NotNull SRSensorReader reader) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -125,7 +133,7 @@ public interface SRSensorReaderDelegate {
     @Generated
     @IsOptional
     @Selector("sensorReaderWillStartRecording:")
-    default void sensorReaderWillStartRecording(SRSensorReader reader) {
+    default void sensorReaderWillStartRecording(@NotNull SRSensorReader reader) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

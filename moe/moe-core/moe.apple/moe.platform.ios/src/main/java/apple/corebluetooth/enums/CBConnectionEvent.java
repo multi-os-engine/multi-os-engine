@@ -5,9 +5,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] CBConnectionEvent
- * <p>
+ * 
  * Represents the connection state of a peer.
- * <p>
+ * 
  * [@constant] CBConnectionEventPeerDisconnected Peer is disconnected.
  * [@constant] CBConnectionEventPeerConnected Peer is connected.
  */

@@ -34,7 +34,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CallKit")
 @Runtime(ObjCRuntime.class)
@@ -46,72 +50,72 @@ public interface CXProviderDelegate {
     @Generated
     @IsOptional
     @Selector("provider:didActivateAudioSession:")
-    default void providerDidActivateAudioSession(CXProvider provider, AVAudioSession audioSession) {
+    default void providerDidActivateAudioSession(@NotNull CXProvider provider, @NotNull AVAudioSession audioSession) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("provider:didDeactivateAudioSession:")
-    default void providerDidDeactivateAudioSession(CXProvider provider, AVAudioSession audioSession) {
+    default void providerDidDeactivateAudioSession(@NotNull CXProvider provider, @NotNull AVAudioSession audioSession) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Called whenever a new transaction should be executed. Return whether or not the transaction was handled:
-     * <p>
+     * 
      * - NO: the transaction was not handled indicating that the perform*CallAction methods should be called
      * sequentially for each action in the transaction
      * - YES: the transaction was handled and the perform*CallAction methods should not be called sequentially
-     * <p>
+     * 
      * If the method is not implemented, NO is assumed.
      */
     @Generated
     @IsOptional
     @Selector("provider:executeTransaction:")
-    default boolean providerExecuteTransaction(CXProvider provider, CXTransaction transaction) {
+    default boolean providerExecuteTransaction(@NotNull CXProvider provider, @NotNull CXTransaction transaction) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("provider:performAnswerCallAction:")
-    default void providerPerformAnswerCallAction(CXProvider provider, CXAnswerCallAction action) {
+    default void providerPerformAnswerCallAction(@NotNull CXProvider provider, @NotNull CXAnswerCallAction action) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("provider:performEndCallAction:")
-    default void providerPerformEndCallAction(CXProvider provider, CXEndCallAction action) {
+    default void providerPerformEndCallAction(@NotNull CXProvider provider, @NotNull CXEndCallAction action) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("provider:performPlayDTMFCallAction:")
-    default void providerPerformPlayDTMFCallAction(CXProvider provider, CXPlayDTMFCallAction action) {
+    default void providerPerformPlayDTMFCallAction(@NotNull CXProvider provider, @NotNull CXPlayDTMFCallAction action) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("provider:performSetGroupCallAction:")
-    default void providerPerformSetGroupCallAction(CXProvider provider, CXSetGroupCallAction action) {
+    default void providerPerformSetGroupCallAction(@NotNull CXProvider provider, @NotNull CXSetGroupCallAction action) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("provider:performSetHeldCallAction:")
-    default void providerPerformSetHeldCallAction(CXProvider provider, CXSetHeldCallAction action) {
+    default void providerPerformSetHeldCallAction(@NotNull CXProvider provider, @NotNull CXSetHeldCallAction action) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("provider:performSetMutedCallAction:")
-    default void providerPerformSetMutedCallAction(CXProvider provider, CXSetMutedCallAction action) {
+    default void providerPerformSetMutedCallAction(@NotNull CXProvider provider, @NotNull CXSetMutedCallAction action) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -122,7 +126,7 @@ public interface CXProviderDelegate {
     @Generated
     @IsOptional
     @Selector("provider:performStartCallAction:")
-    default void providerPerformStartCallAction(CXProvider provider, CXStartCallAction action) {
+    default void providerPerformStartCallAction(@NotNull CXProvider provider, @NotNull CXStartCallAction action) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -134,7 +138,7 @@ public interface CXProviderDelegate {
     @Generated
     @IsOptional
     @Selector("provider:timedOutPerformingAction:")
-    default void providerTimedOutPerformingAction(CXProvider provider, CXAction action) {
+    default void providerTimedOutPerformingAction(@NotNull CXProvider provider, @NotNull CXAction action) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -144,7 +148,7 @@ public interface CXProviderDelegate {
     @Generated
     @IsOptional
     @Selector("providerDidBegin:")
-    default void providerDidBegin(CXProvider provider) {
+    default void providerDidBegin(@NotNull CXProvider provider) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -155,5 +159,5 @@ public interface CXProviderDelegate {
      */
     @Generated
     @Selector("providerDidReset:")
-    void providerDidReset(CXProvider provider);
+    void providerDidReset(@NotNull CXProvider provider);
 }

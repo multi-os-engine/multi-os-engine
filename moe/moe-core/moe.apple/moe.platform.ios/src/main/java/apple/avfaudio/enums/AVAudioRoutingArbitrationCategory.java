@@ -5,9 +5,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] AVAudioRoutingArbitrationCategory
- * <p>
+ * 
  * The category describes the general type of audio that the app plans to use.
- * <p>
+ * 
  * Provides context to the operating system about the type of audio an application intends to use. The system uses this
  * information
  * when arbitrating between Apple products that want to take ownership of Bluetooth audio routes.

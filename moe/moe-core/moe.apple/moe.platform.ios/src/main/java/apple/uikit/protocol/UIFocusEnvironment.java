@@ -29,10 +29,14 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Objects conforming to UIFocusEnvironment influence and respond to focus behavior within a specific area of the screen
  * that they control.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("UIKit")
@@ -45,8 +49,8 @@ public interface UIFocusEnvironment {
      */
     @Generated
     @Selector("didUpdateFocusInContext:withAnimationCoordinator:")
-    void didUpdateFocusInContextWithAnimationCoordinator(UIFocusUpdateContext context,
-            UIFocusAnimationCoordinator coordinator);
+    void didUpdateFocusInContextWithAnimationCoordinator(@NotNull UIFocusUpdateContext context,
+            @NotNull UIFocusAnimationCoordinator coordinator);
 
     /**
      * The preferred focus environments define where to search for the default focused item in an environment, such as
@@ -56,10 +60,17 @@ public interface UIFocusEnvironment {
      * Preferred focus environments can include focusable and non-focusable items, in addition to non-item environments.
      * Returning an empty array is equivalent to returning an array containing only 'self'.
      */
+    @NotNull
     @Generated
     @Selector("preferredFocusEnvironments")
     NSArray<?> preferredFocusEnvironments();
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 10.0
+     */
+    @Nullable
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("preferredFocusedView")
@@ -84,7 +95,7 @@ public interface UIFocusEnvironment {
      */
     @Generated
     @Selector("shouldUpdateFocusInContext:")
-    boolean shouldUpdateFocusInContext(UIFocusUpdateContext context);
+    boolean shouldUpdateFocusInContext(@NotNull UIFocusUpdateContext context);
 
     /**
      * Forces focus to be updated immediately. If there is an environment that has requested a focus update via
@@ -99,7 +110,10 @@ public interface UIFocusEnvironment {
 
     /**
      * The container of any child focus items in this focus environment, or nil if no container exists.
+     * 
+     * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("focusItemContainer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -109,7 +123,10 @@ public interface UIFocusEnvironment {
      * The parent focus environment of this environment, or nil if no parent exists.
      * NOTE: If you implement this method, you must return a non-nil value for parent focus environment, otherwise your
      * focus environment will not participate in focus interactions.
+     * 
+     * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("parentFocusEnvironment")
     @MappedReturn(ObjCObjectMapper.class)
@@ -118,7 +135,10 @@ public interface UIFocusEnvironment {
     /**
      * The identifier of the focus group that this view belongs to. If this is nil, subviews inherit their superview's
      * focus group.
+     * 
+     * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("focusGroupIdentifier")

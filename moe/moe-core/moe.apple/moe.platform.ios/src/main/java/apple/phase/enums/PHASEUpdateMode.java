@@ -5,9 +5,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] PHASEUpdateMode
- * <p>
+ * 
  * Update mode for the engine.
- * <p>
+ * 
  * The engine update mode determines the rate at which the engine consumes client commands, performs internal updates,
  * and calls any registered handlers.
  * All API calls to the engine are queued until the engine updates.

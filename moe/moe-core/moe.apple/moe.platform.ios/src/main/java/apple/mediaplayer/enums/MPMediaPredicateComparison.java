@@ -23,10 +23,18 @@ import org.moe.natj.general.ann.NInt;
  * ------------------------------------------------------------------------
  * MPMediaPropertyPredicate allows filtering based on a specific property value of an item or collection.
  * See MPMediaItem.h and MPMediaPlaylist.h for a list of properties.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 public final class MPMediaPredicateComparison {
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long EqualTo = 0x0000000000000000L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long Contains = 0x0000000000000001L;
 
     @Generated

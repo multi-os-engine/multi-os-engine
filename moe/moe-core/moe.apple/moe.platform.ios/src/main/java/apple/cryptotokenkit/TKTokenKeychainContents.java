@@ -24,10 +24,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Contains TKTokenKeychainItem instances (keys and certificates) which represent keychain state (i.e. set of items) of
  * specific token.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CryptoTokenKit")
@@ -59,31 +63,36 @@ public class TKTokenKeychainContents extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Returns certificate with specified objectID. Fills error with TKTokenErrorCodeObjectNotFound if no such
      * certificate exists.
      */
+    @Nullable
     @Generated
     @Selector("certificateForObjectID:error:")
     public native TKTokenKeychainCertificate certificateForObjectIDError(
-            @Mapped(ObjCObjectMapper.class) Object objectID, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object objectID,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,12 +108,12 @@ public class TKTokenKeychainContents extends NSObject {
     /**
      * Fills keychain with the set of specified items. All items belonging to token are first removed from the keychain
      * and then the keychain is populated with new items.
-     *
+     * 
      * @param items New items to be stored into the keychain.
      */
     @Generated
     @Selector("fillWithItems:")
-    public native void fillWithItems(NSArray<? extends TKTokenKeychainItem> items);
+    public native void fillWithItems(@NotNull NSArray<? extends TKTokenKeychainItem> items);
 
     @Generated
     @Selector("hash")
@@ -135,6 +144,7 @@ public class TKTokenKeychainContents extends NSObject {
     /**
      * All items related to this token in the keychain.
      */
+    @NotNull
     @Generated
     @Selector("items")
     public native NSArray<? extends TKTokenKeychainItem> items();
@@ -142,14 +152,16 @@ public class TKTokenKeychainContents extends NSObject {
     /**
      * Returns key with specified objectID. Fills error with TKTokenErrorCodeObjectNotFound if no such key exists.
      */
+    @Nullable
     @Generated
     @Selector("keyForObjectID:error:")
-    public native TKTokenKeychainKey keyForObjectIDError(@Mapped(ObjCObjectMapper.class) Object objectID,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native TKTokenKeychainKey keyForObjectIDError(@NotNull @Mapped(ObjCObjectMapper.class) Object objectID,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

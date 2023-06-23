@@ -23,14 +23,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNCompare
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * Specifies the elementwise comparison operator.
  * For each pixel in the primary source image (x) and each pixel in a secondary source image (y),
  * it applies the following function: result = (abs(x-y)) <= threshold
+ * 
+ * API-Since: 12.1
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -62,29 +66,32 @@ public class MPSNNCompare extends MPSCNNArithmetic {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] comparisonType
-     * <p>
+     * 
      * The comparison type to use
      */
     @Generated
@@ -111,21 +118,22 @@ public class MPSNNCompare extends MPSCNNArithmetic {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNCompare initWithCoder(NSCoder aDecoder);
+    public native MPSNNCompare initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNNCompare initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNCompare initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize the comparison operator
-     *
+     * 
      * @param device The device the filter will run on.
      * @return A valid MPSNNCompare object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNNCompare initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNCompare initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -144,9 +152,10 @@ public class MPSNNCompare extends MPSCNNArithmetic {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,7 +172,7 @@ public class MPSNNCompare extends MPSCNNArithmetic {
 
     /**
      * [@property] comparisonType
-     * <p>
+     * 
      * The comparison type to use
      */
     @Generated
@@ -172,7 +181,7 @@ public class MPSNNCompare extends MPSCNNArithmetic {
 
     /**
      * [@property] threshold
-     * <p>
+     * 
      * The threshold to use when comparing for equality. Two values will
      * be considered to be equal if the absolute value of their difference
      * is less than, or equal, to the specified threshold:
@@ -202,7 +211,7 @@ public class MPSNNCompare extends MPSCNNArithmetic {
 
     /**
      * [@property] threshold
-     * <p>
+     * 
      * The threshold to use when comparing for equality. Two values will
      * be considered to be equal if the absolute value of their difference
      * is less than, or equal, to the specified threshold:

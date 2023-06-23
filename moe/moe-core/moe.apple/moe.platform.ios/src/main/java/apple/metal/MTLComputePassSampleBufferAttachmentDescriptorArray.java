@@ -21,7 +21,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -52,22 +57,25 @@ public class MTLComputePassSampleBufferAttachmentDescriptorArray extends NSObjec
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,9 +114,10 @@ public class MTLComputePassSampleBufferAttachmentDescriptorArray extends NSObjec
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -118,6 +127,7 @@ public class MTLComputePassSampleBufferAttachmentDescriptorArray extends NSObjec
     /**
      * Individual attachment state access
      */
+    @NotNull
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native MTLComputePassSampleBufferAttachmentDescriptor objectAtIndexedSubscript(@NUInt long attachmentIndex);
@@ -132,11 +142,11 @@ public class MTLComputePassSampleBufferAttachmentDescriptorArray extends NSObjec
 
     /**
      * This always uses 'copy' semantics. It is safe to set the attachment state at any legal index to nil, which resets
-     * that attachment descriptor state to default vaules.
+     * that attachment descriptor state to default values.
      */
     @Generated
     @Selector("setObject:atIndexedSubscript:")
-    public native void setObjectAtIndexedSubscript(MTLComputePassSampleBufferAttachmentDescriptor attachment,
+    public native void setObjectAtIndexedSubscript(@Nullable MTLComputePassSampleBufferAttachmentDescriptor attachment,
             @NUInt long attachmentIndex);
 
     @Generated

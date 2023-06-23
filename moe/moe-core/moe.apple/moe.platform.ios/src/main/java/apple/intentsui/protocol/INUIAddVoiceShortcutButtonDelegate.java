@@ -9,7 +9,11 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("IntentsUI")
 @Runtime(ObjCRuntime.class)
@@ -18,12 +22,12 @@ public interface INUIAddVoiceShortcutButtonDelegate {
     @Generated
     @Selector("presentAddVoiceShortcutViewController:forAddVoiceShortcutButton:")
     void presentAddVoiceShortcutViewControllerForAddVoiceShortcutButton(
-            INUIAddVoiceShortcutViewController addVoiceShortcutViewController,
-            INUIAddVoiceShortcutButton addVoiceShortcutButton);
+            @NotNull INUIAddVoiceShortcutViewController addVoiceShortcutViewController,
+            @NotNull INUIAddVoiceShortcutButton addVoiceShortcutButton);
 
     @Generated
     @Selector("presentEditVoiceShortcutViewController:forAddVoiceShortcutButton:")
     void presentEditVoiceShortcutViewControllerForAddVoiceShortcutButton(
-            INUIEditVoiceShortcutViewController editVoiceShortcutViewController,
-            INUIAddVoiceShortcutButton addVoiceShortcutButton);
+            @NotNull INUIEditVoiceShortcutViewController editVoiceShortcutViewController,
+            @NotNull INUIAddVoiceShortcutButton addVoiceShortcutButton);
 }

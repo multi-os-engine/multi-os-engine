@@ -25,14 +25,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MXLocationActivityMetric
- * <p>
+ * 
  * An MXMetric subclass that encapsulates location metrics
- * <p>
+ * 
  * The metrics contained in this class describe properties of location activity. See MXAppRunTimeMetric for time spent
  * performing location activities.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetricKit")
@@ -64,88 +68,97 @@ public class MXLocationActivityMetric extends MXMetric {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] cumulativeBestAccuracyForNavigationTime
-     * <p>
+     * 
      * Cumulative time spent acquiring location at kCLLocationAccuracyBestForNavigation.
-     * <p>
+     * 
      * Dimensioned as NSUnitDuration.
      */
+    @NotNull
     @Generated
     @Selector("cumulativeBestAccuracyForNavigationTime")
     public native NSMeasurement<NSUnitDuration> cumulativeBestAccuracyForNavigationTime();
 
     /**
      * [@property] cumulativeBestAccuracyTime
-     * <p>
+     * 
      * Cumulative time spent acquiring location at kCLLocationAccuracyBest.
-     * <p>
+     * 
      * Dimensioned as NSUnitDuration.
      */
+    @NotNull
     @Generated
     @Selector("cumulativeBestAccuracyTime")
     public native NSMeasurement<NSUnitDuration> cumulativeBestAccuracyTime();
 
     /**
      * [@property] cumulativeHundredMetersAccuracyTime
-     * <p>
+     * 
      * Cumulative time spent acquiring location at kCLLocationAccuracyHundredMeters.
-     * <p>
+     * 
      * Dimensioned as NSUnitDuration.
      */
+    @NotNull
     @Generated
     @Selector("cumulativeHundredMetersAccuracyTime")
     public native NSMeasurement<NSUnitDuration> cumulativeHundredMetersAccuracyTime();
 
     /**
      * [@property] cumulativeKilometerAccuracyTime
-     * <p>
+     * 
      * Cumulative time spent acquiring location at kCLLocationAccuracyKilometer.
-     * <p>
+     * 
      * Dimensioned as NSUnitDuration.
      */
+    @NotNull
     @Generated
     @Selector("cumulativeKilometerAccuracyTime")
     public native NSMeasurement<NSUnitDuration> cumulativeKilometerAccuracyTime();
 
     /**
      * [@property] cumulativeNearestTenMetersAccuracyTime
-     * <p>
+     * 
      * Cumulative time spent acquiring location at kCLLocationAccuracyNearestTenMeters.
-     * <p>
+     * 
      * Dimensioned as NSUnitDuration.
      */
+    @NotNull
     @Generated
     @Selector("cumulativeNearestTenMetersAccuracyTime")
     public native NSMeasurement<NSUnitDuration> cumulativeNearestTenMetersAccuracyTime();
 
     /**
      * [@property] cumulativeThreeKilometersAccuracyTime
-     * <p>
+     * 
      * Cumulative time spent acquiring location at kCLLocationAccuracyThreeKilometers.
-     * <p>
+     * 
      * Dimensioned as NSUnitDuration.
      */
+    @NotNull
     @Generated
     @Selector("cumulativeThreeKilometersAccuracyTime")
     public native NSMeasurement<NSUnitDuration> cumulativeThreeKilometersAccuracyTime();
@@ -169,7 +182,7 @@ public class MXLocationActivityMetric extends MXMetric {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MXLocationActivityMetric initWithCoder(NSCoder coder);
+    public native MXLocationActivityMetric initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -188,9 +201,10 @@ public class MXLocationActivityMetric extends MXMetric {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

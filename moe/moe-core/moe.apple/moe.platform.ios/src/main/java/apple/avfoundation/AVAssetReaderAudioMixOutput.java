@@ -38,15 +38,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAssetReaderAudioMixOutput
- * <p>
+ * 
  * AVAssetReaderAudioMixOutput is a concrete subclass of AVAssetReaderOutput that defines an interface for reading audio
  * samples that result from mixing the audio from one or more AVAssetTracks of an AVAssetReader's AVAsset.
- * <p>
+ * 
  * Clients can read the audio data mixed from one or more asset tracks by adding an instance of
  * AVAssetReaderAudioMixOutput to an AVAssetReader using the -[AVAssetReader addOutput:] method.
+ * 
+ * API-Since: 4.1
  */
 @Generated
 @Library("AVFoundation")
@@ -78,52 +82,58 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
 
     /**
      * assetReaderAudioMixOutputWithAudioTracks:audioSettings:
-     * <p>
+     * 
      * Returns an instance of AVAssetReaderAudioMixOutput for reading mixed audio from the specified audio tracks, with
      * optional audio settings.
-     * <p>
+     * 
      * Each track must be one of the tracks owned by the target AVAssetReader's asset and must be of media type
      * AVMediaTypeAudio.
-     * <p>
+     * 
      * For non-nil values of audioSettings, the audio settings dictionary must contain values for keys in
      * AVAudioSettings.h (linear PCM only). Initialization will fail if the audio settings cannot be used with the
      * specified tracks. AVSampleRateConverterAudioQualityKey is not supported.
-     * <p>
+     * 
      * A value of nil for audioSettings configures the output to return samples in a convenient uncompressed format,
      * with sample rate and other properties determined according to the properties of the specified audio tracks as
      * well as other considerations that may vary according to device capabilities, operating system version, and other
      * factors. Therefore if you wish to perform any processing on the output, you must examine the
      * CMAudioFormatDescription of the CMSampleBuffers that are provided in order to ensure that your processing is
      * appropriately configured for the output format.
-     *
-     * @param tracks        An NSArray of AVAssetTrack objects from which the created object should read sample buffers
+     * 
+     * @param tracks
+     *                      An NSArray of AVAssetTrack objects from which the created object should read sample buffers
      *                      to be mixed.
-     * @param audioSettings An NSDictionary of audio settings to be used for audio output.
-     * @return An instance of AVAssetReaderAudioMixOutput.
+     * @param audioSettings
+     *                      An NSDictionary of audio settings to be used for audio output.
+     * @return
+     *         An instance of AVAssetReaderAudioMixOutput.
      */
     @Generated
     @Selector("assetReaderAudioMixOutputWithAudioTracks:audioSettings:")
     public static native AVAssetReaderAudioMixOutput assetReaderAudioMixOutputWithAudioTracksAudioSettings(
-            NSArray<? extends AVAssetTrack> audioTracks, NSDictionary<String, ?> audioSettings);
+            @NotNull NSArray<? extends AVAssetTrack> audioTracks, @Nullable NSDictionary<String, ?> audioSettings);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -158,9 +168,10 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -190,53 +201,63 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
 
     /**
      * [@property] audioMix
-     * <p>
+     * 
      * The audio mix used by the receiver.
-     * <p>
+     * 
      * The value of this property is an AVAudioMix that can be used to specify how the volume of audio samples read from
      * each source track will change over the timeline of the source asset.
-     * <p>
-     * This property cannot be set after reading has started.
+     * 
+     * This property throws an exception for any of the following reasons:
+     * - an audio mix is set after reading has started (the asset reader has progressed beyond
+     * AVAssetReaderStatusUnknown)
+     * - setting an audio mix containing a track that was not used to create the receiver
+     * - an audio mix is set containing an invalid audio time pitch algorithm
      */
+    @Nullable
     @Generated
     @Selector("audioMix")
     public native AVAudioMix audioMix();
 
     /**
      * [@property] audioSettings
-     * <p>
+     * 
      * The audio settings used by the receiver.
-     * <p>
+     * 
      * The value of this property is an NSDictionary that contains values for keys from AVAudioSettings.h (linear PCM
      * only). A value of nil indicates that the receiver will return audio samples in a convenient uncompressed format,
      * with sample rate and other properties determined according to the properties of the receiver's audio tracks.
      */
+    @Nullable
     @Generated
     @Selector("audioSettings")
     public native NSDictionary<String, ?> audioSettings();
 
     /**
      * [@property] audioTimePitchAlgorithm
-     * <p>
+     * 
      * Indicates the processing algorithm used to manage audio pitch for scaled audio edits.
-     * <p>
+     * 
      * Constants for various time pitch algorithms, e.g. AVAudioTimePitchAlgorithmSpectral, are defined in
      * AVAudioProcessingSettings.h. An NSInvalidArgumentException will be raised if this property is set to a value
      * other than the constants defined in that file.
-     * <p>
+     * 
      * The default value is AVAudioTimePitchAlgorithmSpectral.
+     * 
+     * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("audioTimePitchAlgorithm")
     public native String audioTimePitchAlgorithm();
 
     /**
      * [@property] audioTracks
-     * <p>
+     * 
      * The tracks from which the receiver reads mixed audio.
-     * <p>
+     * 
      * The value of this property is an NSArray of AVAssetTracks owned by the target AVAssetReader's asset.
      */
+    @NotNull
     @Generated
     @Selector("audioTracks")
     public native NSArray<? extends AVAssetTrack> audioTracks();
@@ -247,60 +268,75 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
 
     /**
      * initWithAudioTracks:audioSettings:
-     * <p>
+     * 
      * Creates an instance of AVAssetReaderAudioMixOutput for reading mixed audio from the specified audio tracks, with
      * optional audio settings.
-     * <p>
+     * 
      * Each track must be one of the tracks owned by the target AVAssetReader's asset and must be of media type
      * AVMediaTypeAudio.
-     * <p>
+     * 
      * For non-nil values of audioSettings, the audio settings dictionary must contain values for keys in
      * AVAudioSettings.h (linear PCM only). Initialization will fail if the audio settings cannot be used with the
      * specified tracks. AVSampleRateConverterAudioQualityKey is not supported.
-     * <p>
+     * 
      * A value of nil for audioSettings configures the output to return samples in a convenient uncompressed format,
      * with sample rate and other properties determined according to the properties of the specified audio tracks as
      * well as other considerations that may vary according to device capabilities, operating system version, and other
      * factors. Therefore if you wish to perform any processing on the output, you must examine the
      * CMAudioFormatDescription of the CMSampleBuffers that are provided in order to ensure that your processing is
      * appropriately configured for the output format.
-     *
-     * @param tracks        An NSArray of AVAssetTrack objects from which the created object should read sample buffers
+     * 
+     * This method throws an exception for any of the following reasons:
+     * - an audio track does not have media type AVMediaTypeAudio
+     * - an audio track belongs to a different AVAsset
+     * - the audio settings contains an AVSampleRateConverterAudioQualityKey
+     * - the output would be compressed
+     * 
+     * @param tracks
+     *                      An NSArray of AVAssetTrack objects from which the created object should read sample buffers
      *                      to be mixed.
-     * @param audioSettings An NSDictionary of audio settings to be used for audio output.
-     * @return An instance of AVAssetReaderAudioMixOutput.
+     * @param audioSettings
+     *                      An NSDictionary of audio settings to be used for audio output.
+     * @return
+     *         An instance of AVAssetReaderAudioMixOutput.
      */
     @Generated
     @Selector("initWithAudioTracks:audioSettings:")
     public native AVAssetReaderAudioMixOutput initWithAudioTracksAudioSettings(
-            NSArray<? extends AVAssetTrack> audioTracks, NSDictionary<String, ?> audioSettings);
+            @NotNull NSArray<? extends AVAssetTrack> audioTracks, @Nullable NSDictionary<String, ?> audioSettings);
 
     /**
      * [@property] audioMix
-     * <p>
+     * 
      * The audio mix used by the receiver.
-     * <p>
+     * 
      * The value of this property is an AVAudioMix that can be used to specify how the volume of audio samples read from
      * each source track will change over the timeline of the source asset.
-     * <p>
-     * This property cannot be set after reading has started.
+     * 
+     * This property throws an exception for any of the following reasons:
+     * - an audio mix is set after reading has started (the asset reader has progressed beyond
+     * AVAssetReaderStatusUnknown)
+     * - setting an audio mix containing a track that was not used to create the receiver
+     * - an audio mix is set containing an invalid audio time pitch algorithm
      */
     @Generated
     @Selector("setAudioMix:")
-    public native void setAudioMix(AVAudioMix value);
+    public native void setAudioMix(@Nullable AVAudioMix value);
 
     /**
      * [@property] audioTimePitchAlgorithm
-     * <p>
+     * 
      * Indicates the processing algorithm used to manage audio pitch for scaled audio edits.
-     * <p>
+     * 
      * Constants for various time pitch algorithms, e.g. AVAudioTimePitchAlgorithmSpectral, are defined in
      * AVAudioProcessingSettings.h. An NSInvalidArgumentException will be raised if this property is set to a value
      * other than the constants defined in that file.
-     * <p>
+     * 
      * The default value is AVAudioTimePitchAlgorithmSpectral.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setAudioTimePitchAlgorithm:")
-    public native void setAudioTimePitchAlgorithm(String value);
+    public native void setAudioTimePitchAlgorithm(@NotNull String value);
 }

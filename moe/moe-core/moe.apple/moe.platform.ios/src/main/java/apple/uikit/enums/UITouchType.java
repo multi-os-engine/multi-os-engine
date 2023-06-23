@@ -19,18 +19,27 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 public final class UITouchType {
     /**
      * A direct touch from a finger (on a screen)
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Direct = 0x0000000000000000L;
     /**
      * An indirect touch (not a screen)
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Indirect = 0x0000000000000001L;
     /**
      * A touch from a stylus (deprecated name, use pencil)
+     * 
+     * API-Since: 9.1
      */
     @Generated @NInt public static final long Stylus = 0x0000000000000002L;
 
@@ -40,11 +49,15 @@ public final class UITouchType {
 
     /**
      * Add pencil name variant
+     * 
+     * API-Since: 9.1
      */
     @Generated @NInt public static final long Pencil = 0x0000000000000002L;
     /**
      * A touch representing a button-based, indirect input device describing the input sequence from button press to
      * button release
+     * 
+     * API-Since: 13.4
      */
     @Generated @NInt public static final long IndirectPointer = 0x0000000000000003L;
 }

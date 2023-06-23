@@ -29,6 +29,8 @@ import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -58,14 +60,16 @@ public final class SCPreferencesContext extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setVersion(@NInt long value);
 
+    @Nullable
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native VoidPtr info();
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setInfo(VoidPtr value);
+    public native void setInfo(@Nullable VoidPtr value);
 
+    @Nullable
     @Generated
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_retain")
@@ -73,8 +77,9 @@ public final class SCPreferencesContext extends StructObject {
 
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void setRetain(@FunctionPtr(name = "call_retain") Function_retain value);
+    public native void setRetain(@Nullable @FunctionPtr(name = "call_retain") Function_retain value);
 
+    @Nullable
     @Generated
     @StructureField(order = 3, isGetter = true)
     @FunctionPtr(name = "call_release")
@@ -82,8 +87,9 @@ public final class SCPreferencesContext extends StructObject {
 
     @Generated
     @StructureField(order = 3, isGetter = false)
-    public native void setRelease(@FunctionPtr(name = "call_release") Function_release value);
+    public native void setRelease(@Nullable @FunctionPtr(name = "call_release") Function_release value);
 
+    @Nullable
     @Generated
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_copyDescription")
@@ -91,26 +97,29 @@ public final class SCPreferencesContext extends StructObject {
 
     @Generated
     @StructureField(order = 4, isGetter = false)
-    public native void setCopyDescription(@FunctionPtr(name = "call_copyDescription") Function_copyDescription value);
+    public native void setCopyDescription(
+            @Nullable @FunctionPtr(name = "call_copyDescription") Function_copyDescription value);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_retain {
+        @NotNull
         @Generated
-        ConstVoidPtr call_retain(ConstVoidPtr arg0);
+        ConstVoidPtr call_retain(@NotNull ConstVoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_release {
         @Generated
-        void call_release(ConstVoidPtr arg0);
+        void call_release(@NotNull ConstVoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_copyDescription {
+        @NotNull
         @Generated
-        CFStringRef call_copyDescription(ConstVoidPtr arg0);
+        CFStringRef call_copyDescription(@NotNull ConstVoidPtr arg0);
     }
 }

@@ -38,7 +38,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -69,22 +74,25 @@ public class PHCollectionList extends PHCollection {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,49 +109,74 @@ public class PHCollectionList extends PHCollection {
      * A PHAssetCollectionTypeMoment will be contained by a PHCollectionListSubtypeMomentListCluster and a
      * PHCollectionListSubtypeMomentListYear
      * Non-moment PHAssetCollections will only be contained by a single collection list
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("fetchCollectionListsContainingCollection:options:")
     public static native PHFetchResult<? extends PHCollectionList> fetchCollectionListsContainingCollectionOptions(
-            PHCollection collection, PHFetchOptions options);
+            @NotNull PHCollection collection, @Nullable PHFetchOptions options);
 
     /**
      * Fetch collection lists of a single type matching the provided local identifiers (type is inferred from the local
      * identifiers)
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("fetchCollectionListsWithLocalIdentifiers:options:")
     public static native PHFetchResult<? extends PHCollectionList> fetchCollectionListsWithLocalIdentifiersOptions(
-            NSArray<String> identifiers, PHFetchOptions options);
+            @NotNull NSArray<String> identifiers, @Nullable PHFetchOptions options);
 
     /**
      * Fetch asset collections of a single type and subtype provided (use PHCollectionListSubtypeAny to match all
      * subtypes)
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("fetchCollectionListsWithType:subtype:options:")
     public static native PHFetchResult<? extends PHCollectionList> fetchCollectionListsWithTypeSubtypeOptions(
-            @NInt long collectionListType, @NInt long subtype, PHFetchOptions options);
+            @NInt long collectionListType, @NInt long subtype, @Nullable PHFetchOptions options);
 
+    @NotNull
     @Generated
     @Selector("fetchCollectionsInCollectionList:options:")
     public static native PHFetchResult<? extends PHCollection> fetchCollectionsInCollectionListOptions(
-            PHCollectionList collectionList, PHFetchOptions options);
+            @NotNull PHCollectionList collectionList, @Nullable PHFetchOptions options);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Will be removed in a future release
+     */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("fetchMomentListsWithSubtype:containingMoment:options:")
     public static native PHFetchResult<? extends PHCollectionList> fetchMomentListsWithSubtypeContainingMomentOptions(
-            @NInt long momentListSubtype, PHAssetCollection moment, PHFetchOptions options);
+            @NInt long momentListSubtype, @NotNull PHAssetCollection moment, @Nullable PHFetchOptions options);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Will be removed in a future release
+     */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("fetchMomentListsWithSubtype:options:")
     public static native PHFetchResult<? extends PHCollectionList> fetchMomentListsWithSubtypeOptions(
-            @NInt long momentListSubtype, PHFetchOptions options);
+            @NInt long momentListSubtype, @Nullable PHFetchOptions options);
 
+    @NotNull
     @Generated
     @Selector("fetchTopLevelUserCollectionsWithOptions:")
     public static native PHFetchResult<? extends PHCollection> fetchTopLevelUserCollectionsWithOptions(
-            PHFetchOptions options);
+            @Nullable PHFetchOptions options);
 
     @Generated
     @Selector("hash")
@@ -167,9 +200,10 @@ public class PHCollectionList extends PHCollection {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -194,32 +228,49 @@ public class PHCollectionList extends PHCollection {
 
     /**
      * These collection lists are only in-memory and are not persisted to disk
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("transientCollectionListWithCollections:title:")
     public static native PHCollectionList transientCollectionListWithCollectionsTitle(
-            NSArray<? extends PHCollection> collections, String title);
+            @NotNull NSArray<? extends PHCollection> collections, @Nullable String title);
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @Selector("transientCollectionListWithCollectionsFetchResult:title:")
     public static native PHCollectionList transientCollectionListWithCollectionsFetchResultTitle(
-            PHFetchResult<? extends PHCollection> fetchResult, String title);
+            @NotNull PHFetchResult<? extends PHCollection> fetchResult, @Nullable String title);
 
     @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("collectionListSubtype")
     @NInt
     public native long collectionListSubtype();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("collectionListType")
     @NInt
     public native long collectionListType();
 
+    /**
+     * API-Since: 8.0
+     */
+    @Nullable
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
@@ -228,10 +279,18 @@ public class PHCollectionList extends PHCollection {
     @Selector("init")
     public native PHCollectionList init();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @Selector("localizedLocationNames")
     public native NSArray<String> localizedLocationNames();
 
+    /**
+     * API-Since: 8.0
+     */
+    @Nullable
     @Generated
     @Selector("startDate")
     public native NSDate startDate();

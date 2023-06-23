@@ -38,16 +38,21 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An NSLayoutAnchor represents an edge or dimension of a layout item. Its concrete subclasses allow concise creation of
  * constraints. The idea is that instead of invoking +[NSLayoutConstraint constraintWithItem: attribute: relatedBy:
  * toItem: attribute: multiplier: constant:] directly, you can instead do something like this:
- * <p>
+ * 
  * [myView.topAnchor constraintEqualToAnchor:otherView.topAnchor constant:10];
- * <p>
+ * 
  * The -constraint* methods are available in multiple flavors to support use of different relations and omission of
  * unused options.
+ * 
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("UIKit")
@@ -79,22 +84,25 @@ public class NSLayoutAnchor<_AnchorType> extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +137,10 @@ public class NSLayoutAnchor<_AnchorType> extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,35 +171,41 @@ public class NSLayoutAnchor<_AnchorType> extends NSObject {
     /**
      * These methods return an inactive constraint of the form thisAnchor = otherAnchor.
      */
+    @NotNull
     @Generated
     @Selector("constraintEqualToAnchor:")
-    public native NSLayoutConstraint constraintEqualToAnchor(NSLayoutAnchor<_AnchorType> anchor);
+    public native NSLayoutConstraint constraintEqualToAnchor(@NotNull NSLayoutAnchor<_AnchorType> anchor);
 
     /**
      * These methods return an inactive constraint of the form thisAnchor = otherAnchor + constant.
      */
+    @NotNull
     @Generated
     @Selector("constraintEqualToAnchor:constant:")
-    public native NSLayoutConstraint constraintEqualToAnchorConstant(NSLayoutAnchor<_AnchorType> anchor,
+    public native NSLayoutConstraint constraintEqualToAnchorConstant(@NotNull NSLayoutAnchor<_AnchorType> anchor,
             @NFloat double c);
 
+    @NotNull
     @Generated
     @Selector("constraintGreaterThanOrEqualToAnchor:")
-    public native NSLayoutConstraint constraintGreaterThanOrEqualToAnchor(NSLayoutAnchor<_AnchorType> anchor);
+    public native NSLayoutConstraint constraintGreaterThanOrEqualToAnchor(@NotNull NSLayoutAnchor<_AnchorType> anchor);
 
+    @NotNull
     @Generated
     @Selector("constraintGreaterThanOrEqualToAnchor:constant:")
-    public native NSLayoutConstraint constraintGreaterThanOrEqualToAnchorConstant(NSLayoutAnchor<_AnchorType> anchor,
-            @NFloat double c);
+    public native NSLayoutConstraint constraintGreaterThanOrEqualToAnchorConstant(
+            @NotNull NSLayoutAnchor<_AnchorType> anchor, @NFloat double c);
 
+    @NotNull
     @Generated
     @Selector("constraintLessThanOrEqualToAnchor:")
-    public native NSLayoutConstraint constraintLessThanOrEqualToAnchor(NSLayoutAnchor<_AnchorType> anchor);
+    public native NSLayoutConstraint constraintLessThanOrEqualToAnchor(@NotNull NSLayoutAnchor<_AnchorType> anchor);
 
+    @NotNull
     @Generated
     @Selector("constraintLessThanOrEqualToAnchor:constant:")
-    public native NSLayoutConstraint constraintLessThanOrEqualToAnchorConstant(NSLayoutAnchor<_AnchorType> anchor,
-            @NFloat double c);
+    public native NSLayoutConstraint constraintLessThanOrEqualToAnchorConstant(
+            @NotNull NSLayoutAnchor<_AnchorType> anchor, @NFloat double c);
 
     @Generated
     @Selector("init")

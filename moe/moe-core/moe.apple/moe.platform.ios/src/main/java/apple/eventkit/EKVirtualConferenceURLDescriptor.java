@@ -22,11 +22,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * EKVirtualConferenceURLDescriptor
- * <p>
+ * 
  * Describes a URL that can be used to join a virtual conference.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("EventKit")
@@ -42,6 +46,7 @@ public class EKVirtualConferenceURLDescriptor extends NSObject {
         super(peer);
     }
 
+    @NotNull
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -62,22 +67,25 @@ public class EKVirtualConferenceURLDescriptor extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,9 +109,9 @@ public class EKVirtualConferenceURLDescriptor extends NSObject {
 
     /**
      * initWithTitle:URL:
-     * <p>
+     * 
      * Initializes an instance of EKVirtualConferenceURLDescriptor.
-     *
+     * 
      * @param title A user-readable title describing this URL. This string may be displayed
      *              in the UI. This string is optional and may be left nil. If your virtual
      *              conference only has one way to join it, then you can probably leave this
@@ -114,7 +122,7 @@ public class EKVirtualConferenceURLDescriptor extends NSObject {
      */
     @Generated
     @Selector("initWithTitle:URL:")
-    public native EKVirtualConferenceURLDescriptor initWithTitleURL(String title, NSURL URL);
+    public native EKVirtualConferenceURLDescriptor initWithTitleURL(@Nullable String title, @NotNull NSURL URL);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -133,9 +141,10 @@ public class EKVirtualConferenceURLDescriptor extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,6 +167,7 @@ public class EKVirtualConferenceURLDescriptor extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();

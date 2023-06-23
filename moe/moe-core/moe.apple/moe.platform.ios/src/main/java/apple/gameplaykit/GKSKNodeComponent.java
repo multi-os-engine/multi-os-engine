@@ -42,9 +42,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A component that encapsulates a SpriteKit node.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -76,22 +80,25 @@ public class GKSKNodeComponent extends GKComponent implements GKAgentDelegate {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,13 +106,13 @@ public class GKSKNodeComponent extends GKComponent implements GKAgentDelegate {
     /**
      * Creates a component that encapsulate the given SpriteKit node. When the component is
      * added to an entity, the SKNode's entity property will be set.
-     *
+     * 
      * @param node Node to associate with the component.
      * @see SKNode.entity
      */
     @Generated
     @Selector("componentWithNode:")
-    public static native GKSKNodeComponent componentWithNode(SKNode node);
+    public static native GKSKNodeComponent componentWithNode(@NotNull SKNode node);
 
     @Generated
     @Selector("debugDescription")
@@ -137,9 +144,10 @@ public class GKSKNodeComponent extends GKComponent implements GKAgentDelegate {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,12 +178,12 @@ public class GKSKNodeComponent extends GKComponent implements GKAgentDelegate {
     @Generated
     @IsOptional
     @Selector("agentDidUpdate:")
-    public native void agentDidUpdate(GKAgent agent);
+    public native void agentDidUpdate(@NotNull GKAgent agent);
 
     @Generated
     @IsOptional
     @Selector("agentWillUpdate:")
-    public native void agentWillUpdate(GKAgent agent);
+    public native void agentWillUpdate(@NotNull GKAgent agent);
 
     @Generated
     @Selector("init")
@@ -183,22 +191,23 @@ public class GKSKNodeComponent extends GKComponent implements GKAgentDelegate {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKSKNodeComponent initWithCoder(NSCoder coder);
+    public native GKSKNodeComponent initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initializes component to encapsulate the given SpriteKit node. When the component is
      * added to an entity, the SKNode's entity property will be set.
-     *
+     * 
      * @param node Node to associate with the component.
      * @see SKNode.entity
      */
     @Generated
     @Selector("initWithNode:")
-    public native GKSKNodeComponent initWithNode(SKNode node);
+    public native GKSKNodeComponent initWithNode(@NotNull SKNode node);
 
     /**
      * The SpriteKit node this component encapsulates.
      */
+    @NotNull
     @Generated
     @Selector("node")
     public native SKNode node();
@@ -208,7 +217,7 @@ public class GKSKNodeComponent extends GKComponent implements GKAgentDelegate {
      */
     @Generated
     @Selector("setNode:")
-    public native void setNode(SKNode value);
+    public native void setNode(@NotNull SKNode value);
 
     @Generated
     @Selector("supportsSecureCoding")

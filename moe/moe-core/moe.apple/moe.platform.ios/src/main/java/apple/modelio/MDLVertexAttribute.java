@@ -39,11 +39,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MDLVertexAttribute
- * <p>
+ * 
  * Structure with properties of a vertex attribute
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("ModelIO")
@@ -75,22 +79,25 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +132,10 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,7 +165,7 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
 
     /**
      * [@property] bufferIndex
-     * <p>
+     * 
      * index of the buffer in mesh's vertexBuffer array in which this
      * attribute resides
      */
@@ -166,17 +174,18 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
     @NUInt
     public native long bufferIndex();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] format
-     * <p>
+     * 
      * Format (including number of components) of the attribute
-     * <p>
+     * 
      * If the value is MDLVertexFormatInvalid. Other values of this
      * object will be ignored when setting the MDLVertexDescriptor object
      * in a Mesh. The initial value is MDLVertexFormatInvalid.
@@ -192,27 +201,28 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
 
     /**
      * initWithName:format:offset:bufferIndex
-     * <p>
+     * 
      * Initialize attribute object with all properties
      */
     @Generated
     @Selector("initWithName:format:offset:bufferIndex:")
-    public native MDLVertexAttribute initWithNameFormatOffsetBufferIndex(String name, @NUInt long format,
+    public native MDLVertexAttribute initWithNameFormatOffsetBufferIndex(@NotNull String name, @NUInt long format,
             @NUInt long offset, @NUInt long bufferIndex);
 
     /**
      * [@property] name
-     * <p>
+     * 
      * Identifying name of the attribute derived from model file, or one of
      * the predefined MDLVertexAttribute strings
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
 
     /**
      * [@property] offset
-     * <p>
+     * 
      * offset in bytes of the attrbute in each element of the vertex buffer
      */
     @Generated
@@ -222,7 +232,7 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
 
     /**
      * [@property] bufferIndex
-     * <p>
+     * 
      * index of the buffer in mesh's vertexBuffer array in which this
      * attribute resides
      */
@@ -232,9 +242,9 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
 
     /**
      * [@property] format
-     * <p>
+     * 
      * Format (including number of components) of the attribute
-     * <p>
+     * 
      * If the value is MDLVertexFormatInvalid. Other values of this
      * object will be ignored when setting the MDLVertexDescriptor object
      * in a Mesh. The initial value is MDLVertexFormatInvalid.
@@ -245,17 +255,17 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
 
     /**
      * [@property] name
-     * <p>
+     * 
      * Identifying name of the attribute derived from model file, or one of
      * the predefined MDLVertexAttribute strings
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@NotNull String value);
 
     /**
      * [@property] offset
-     * <p>
+     * 
      * offset in bytes of the attrbute in each element of the vertex buffer
      */
     @Generated
@@ -264,9 +274,9 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
 
     /**
      * [@property] time
-     * <p>
+     * 
      * the time the attribute is intended for.
-     * <p>
+     * 
      * morph targets would store their times here
      */
     @Generated
@@ -275,9 +285,9 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
 
     /**
      * [@property] time
-     * <p>
+     * 
      * the time the attribute is intended for.
-     * <p>
+     * 
      * morph targets would store their times here
      */
     @Generated

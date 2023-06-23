@@ -38,7 +38,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -69,22 +74,25 @@ public class PKPaymentMethod extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -119,9 +127,10 @@ public class PKPaymentMethod extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -153,6 +162,7 @@ public class PKPaymentMethod extends NSObject {
      * A string describing the instrument that's suitable for display
      * This property will be nil prior to the user authorizing the payment
      */
+    @Nullable
     @Generated
     @Selector("displayName")
     public native String displayName();
@@ -165,13 +175,20 @@ public class PKPaymentMethod extends NSObject {
      * The payment network that backs the instrument. Suitable for display.
      * This property will be nil prior to the user authorizing the payment
      */
+    @Nullable
     @Generated
     @Selector("network")
     public native String network();
 
     /**
      * The payment pass - will only be provided if your app is entitled to view the pass in question
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use -[PKPass secureElementPass] instead
      */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("paymentPass")
     public native PKPaymentPass paymentPass();
@@ -186,11 +203,18 @@ public class PKPaymentMethod extends NSObject {
 
     /**
      * A partially redacted billing address. Only available if no shipping address info was requested.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("billingAddress")
     public native CNContact billingAddress();
 
+    /**
+     * API-Since: 13.4
+     */
+    @Nullable
     @Generated
     @Selector("secureElementPass")
     public native PKSecureElementPass secureElementPass();

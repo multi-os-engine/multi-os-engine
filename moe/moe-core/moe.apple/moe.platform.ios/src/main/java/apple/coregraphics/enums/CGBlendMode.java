@@ -20,12 +20,12 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * Blend modes.
- * <p>
+ * 
  * The blend modes from kCGBlendModeNormal to kCGBlendModeLuminosity are
  * supported in Mac OS X 10.4 and later. The Porter-Duff blend modes (from
  * kCGBlendModeClear to kCGBlendModePlusLighter) are supported in Mac OS X
  * 10.5 and later. The names of the Porter-Duff blend modes are historical.
- * <p>
+ * 
  * Note that the Porter-Duff blend modes are not necessarily supported in
  * every context. In particular, they are only guaranteed to work in
  * bitmap-based contexts, such as those created by CGBitmapContextCreate. It

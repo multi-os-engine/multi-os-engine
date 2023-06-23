@@ -41,10 +41,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CBPeripheralManager
- * <p>
+ * 
  * The <code>CBPeripheralManager</code> class is an abstraction of the Peripheral and Broadcaster GAP roles, and the
  * GATT Server
  * role. Its primary function is to allow you to manage published services within the GATT database, and to advertise
@@ -64,6 +66,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * to you by calling {@link startAdvertising:}. Like the GATT database, advertisement is managed at the system level and
  * shared by all
  * applications. This means that even if you aren't advertising at the moment, someone else might be!
+ * 
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -95,15 +100,21 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * authorizationStatus
-     * <p>
+     * 
      * This method does not prompt the user for access. You can use it to detect restricted access and simply hide UI
      * instead of
      * prompting for access.
-     *
+     * 
      * @return The current authorization status for sharing data while backgrounded. For the constants returned, see
      *         {@link CBPeripheralManagerAuthorizationStatus}.
+     * 
      * @see CBPeripheralManagerAuthorizationStatus
+     * 
+     *      API-Since: 7.0
+     *      Deprecated-Since: 13.0
+     *      Deprecated-Message: Use CBManagerAuthorization instead
      */
+    @Deprecated
     @Generated
     @Selector("authorizationStatus")
     @NInt
@@ -111,22 +122,25 @@ public class CBPeripheralManager extends CBManager {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -161,9 +175,10 @@ public class CBPeripheralManager extends CBManager {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -193,23 +208,25 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * addService:
-     * <p>
+     * 
      * Publishes a service and its associated characteristic(s) to the local database. If the service contains included
      * services,
      * they must be published first.
-     *
+     * 
      * @param service A GATT service.
+     * 
      * @see peripheralManager:didAddService:error:
      */
     @Generated
     @Selector("addService:")
-    public native void addService(CBMutableService service);
+    public native void addService(@NotNull CBMutableService service);
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The delegate object that will receive peripheral events.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -221,39 +238,43 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * initWithDelegate:queue:
-     * <p>
+     * 
      * The initialization call. The events of the peripheral role will be dispatched on the provided queue.
      * If <i>nil</i>, the main queue will be used.
-     *
+     * 
      * @param delegate The delegate that will receive peripheral role events.
      * @param queue    The dispatch queue on which the events will be dispatched.
      */
     @Generated
     @Selector("initWithDelegate:queue:")
     public native CBPeripheralManager initWithDelegateQueue(
-            @Mapped(ObjCObjectMapper.class) CBPeripheralManagerDelegate delegate, NSObject queue);
+            @Nullable @Mapped(ObjCObjectMapper.class) CBPeripheralManagerDelegate delegate, @Nullable NSObject queue);
 
     /**
      * initWithDelegate:queue:options:
-     * <p>
+     * 
      * The initialization call. The events of the peripheral role will be dispatched on the provided queue.
      * If <i>nil</i>, the main queue will be used.
-     *
+     * 
      * @param delegate The delegate that will receive peripheral role events.
      * @param queue    The dispatch queue on which the events will be dispatched.
      * @param options  An optional dictionary specifying options for the manager.
+     * 
      * @see CBPeripheralManagerOptionShowPowerAlertKey
      * @see CBPeripheralManagerOptionRestoreIdentifierKey
+     * 
+     * 
+     *      API-Since: 7.0
      */
     @Generated
     @Selector("initWithDelegate:queue:options:")
     public native CBPeripheralManager initWithDelegateQueueOptions(
-            @Mapped(ObjCObjectMapper.class) CBPeripheralManagerDelegate delegate, NSObject queue,
-            NSDictionary<String, ?> options);
+            @Nullable @Mapped(ObjCObjectMapper.class) CBPeripheralManagerDelegate delegate, @Nullable NSObject queue,
+            @Nullable NSDictionary<String, ?> options);
 
     /**
      * [@property] isAdvertising
-     * <p>
+     * 
      * Whether or not the peripheral is currently advertising data.
      */
     @Generated
@@ -262,7 +283,7 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * removeAllServices
-     * <p>
+     * 
      * Removes all published services from the local database.
      */
     @Generated
@@ -271,48 +292,49 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * removeService:
-     * <p>
+     * 
      * Removes a published service from the local database. If the service is included by other service(s), they must be
      * removed
      * first.
-     *
+     * 
      * @param service A GATT service.
      */
     @Generated
     @Selector("removeService:")
-    public native void removeService(CBMutableService service);
+    public native void removeService(@NotNull CBMutableService service);
 
     /**
      * respondToRequest:withResult:
-     * <p>
+     * 
      * Used to respond to request(s) received via the @link peripheralManager:didReceiveReadRequest: @/link or
      * [@link] peripheralManager:didReceiveWriteRequests: @/link delegate methods.
-     *
+     * 
      * @param request The original request that was received from the central.
      * @param result  The result of attempting to fulfill <i>request</i>.
+     * 
      * @see peripheralManager:didReceiveReadRequest:
      * @see peripheralManager:didReceiveWriteRequests:
      */
     @Generated
     @Selector("respondToRequest:withResult:")
-    public native void respondToRequestWithResult(CBATTRequest request, @NInt long result);
+    public native void respondToRequestWithResult(@NotNull CBATTRequest request, @NInt long result);
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The delegate object that will receive peripheral events.
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CBPeripheralManagerDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) CBPeripheralManagerDelegate value);
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The delegate object that will receive peripheral events.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) CBPeripheralManagerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CBPeripheralManagerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -325,24 +347,25 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * setDesiredConnectionLatency:forCentral:
-     * <p>
+     * 
      * Sets the desired connection latency for an existing connection to <i>central</i>. Connection latency changes are
      * not guaranteed, so the
      * resultant latency may vary. If a desired latency is not set, the latency chosen by <i>central</i> at the time of
      * connection establishment
      * will be used. Typically, it is not necessary to change the latency.
-     *
+     * 
      * @param latency The desired connection latency.
      * @param central A connected central.
+     * 
      * @see CBPeripheralManagerConnectionLatency
      */
     @Generated
     @Selector("setDesiredConnectionLatency:forCentral:")
-    public native void setDesiredConnectionLatencyForCentral(@NInt long latency, CBCentral central);
+    public native void setDesiredConnectionLatencyForCentral(@NInt long latency, @NotNull CBCentral central);
 
     /**
      * startAdvertising:
-     * <p>
+     * 
      * Starts advertising. Supported advertising data types are <code>CBAdvertisementDataLocalNameKey</code>
      * and <code>CBAdvertisementDataServiceUUIDsKey</code>.
      * When in the foreground, an application can utilize up to 28 bytes of space in the initial advertisement data for
@@ -360,18 +383,19 @@ public class CBPeripheralManager extends CBManager {
      * "overflow" area. However, applications that have not specified the "bluetooth-peripheral" background mode will
      * not be able
      * to advertise anything while in the background.
-     *
+     * 
      * @param advertisementData An optional dictionary containing the data to be advertised.
+     * 
      * @see peripheralManagerDidStartAdvertising:error:
      * @see CBAdvertisementData.h
      */
     @Generated
     @Selector("startAdvertising:")
-    public native void startAdvertising(NSDictionary<String, ?> advertisementData);
+    public native void startAdvertising(@Nullable NSDictionary<String, ?> advertisementData);
 
     /**
      * stopAdvertising
-     * <p>
+     * 
      * Stops advertising.
      */
     @Generated
@@ -380,41 +404,46 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * updateValue:forCharacteristic:onSubscribedCentrals:
-     * <p>
+     * 
      * Sends an updated characteristic value to one or more centrals, via a notification or indication. If <i>value</i>
      * exceeds
      * {@link maximumUpdateValueLength}, it will be truncated to fit.
-     *
+     * 
      * @param value          The value to be sent via a notification/indication.
      * @param characteristic The characteristic whose value has changed.
      * @param centrals       A list of <code>CBCentral</code> objects to receive the update. Note that centrals which
      *                       have not subscribed to
      *                       <i>characteristic</i> will be ignored. If <i>nil</i>, all centrals that are subscribed to
      *                       <i>characteristic</i> will be updated.
+     * 
      * @return <i>YES</i> if the update could be sent, or <i>NO</i> if the underlying transmit queue is full. If
      *         <i>NO</i> was returned,
      *         the delegate method @link peripheralManagerIsReadyToUpdateSubscribers: @/link will be called once space
      *         has become
      *         available, and the update should be re-sent if so desired.
-     * @see maximumUpdateValueLength
+     * 
      * @see peripheralManager:central:didSubscribeToCharacteristic:
      * @see peripheralManager:central:didUnsubscribeFromCharacteristic:
      * @see peripheralManagerIsReadyToUpdateSubscribers:
+     * @see maximumUpdateValueLength
      */
     @Generated
     @Selector("updateValue:forCharacteristic:onSubscribedCentrals:")
-    public native boolean updateValueForCharacteristicOnSubscribedCentrals(NSData value,
-            CBMutableCharacteristic characteristic, NSArray<? extends CBCentral> centrals);
+    public native boolean updateValueForCharacteristicOnSubscribedCentrals(@NotNull NSData value,
+            @NotNull CBMutableCharacteristic characteristic, @Nullable NSArray<? extends CBCentral> centrals);
 
     /**
      * publishL2CAPChannelWithEncryption:
-     * <p>
+     * 
      * Create a listener for incoming L2CAP Channel connections. The system will determine an unused PSM at the time of
      * publishing, which will be returned
      * with @link peripheralManager:didPublishL2CAPChannel:error: @/link. L2CAP Channels are not discoverable by
      * themselves, so it is the application's
      * responsibility to handle PSM discovery on the client.
-     *
+     * 
+     * 
+     * API-Since: 11.0
+     * 
      * @param encryptionRequired YES if the service requires the link to be encrypted before a stream can be
      *                           established. NO if the service can be used over
      *                           an unsecured link.
@@ -425,11 +454,14 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * unpublishL2CAPChannel:
-     * <p>
+     * 
      * Removes a published service from the local system. No new connections for this PSM will be accepted, and any
      * existing L2CAP channels
      * using this PSM will be closed.
-     *
+     * 
+     * 
+     * API-Since: 11.0
+     * 
      * @param PSM The service PSM to be removed from the system.
      */
     @Generated

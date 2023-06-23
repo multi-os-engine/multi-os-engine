@@ -23,7 +23,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -40,9 +45,10 @@ public class AVMediaDataStorage extends NSObject {
 
     /**
      * URL
-     * <p>
+     * 
      * The URL from which the receiver was initialized; may be nil.
      */
+    @Nullable
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -63,22 +69,25 @@ public class AVMediaDataStorage extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,18 +111,20 @@ public class AVMediaDataStorage extends NSObject {
 
     /**
      * initWithURL:options:
-     * <p>
+     * 
      * Creates an AVMediaDataStorage object associated with a file URL.
-     *
-     * @param URL     An NSURL object that specifies a file where sample data that is added to a movie or track should
+     * 
+     * @param URL
+     *                An NSURL object that specifies a file where sample data that is added to a movie or track should
      *                be written.
-     * @param options An NSDictionary object that contains keys for specifying options for the initialization of the
+     * @param options
+     *                An NSDictionary object that contains keys for specifying options for the initialization of the
      *                AVMediaDataStorage object. Currently no keys are defined.
      * @return An AVMediaDataStorage object
      */
     @Generated
     @Selector("initWithURL:options:")
-    public native AVMediaDataStorage initWithURLOptions(NSURL URL, NSDictionary<String, ?> options);
+    public native AVMediaDataStorage initWithURLOptions(@NotNull NSURL URL, @Nullable NSDictionary<String, ?> options);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -132,9 +143,10 @@ public class AVMediaDataStorage extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

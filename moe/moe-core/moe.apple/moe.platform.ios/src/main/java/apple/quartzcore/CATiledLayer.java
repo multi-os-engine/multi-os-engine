@@ -17,7 +17,6 @@ limitations under the License.
 package apple.quartzcore;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -44,7 +43,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
@@ -75,22 +80,25 @@ public class CATiledLayer extends CALayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,15 +107,17 @@ public class CATiledLayer extends CALayer {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("defaultActionForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native CAAction defaultActionForKey(String event);
+    public static native CAAction defaultActionForKey(@NotNull String event);
 
+    @Nullable
     @Generated
     @Selector("defaultValueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultValueForKey(String key);
+    public static native Object defaultValueForKey(@NotNull String key);
 
     @Generated
     @Selector("description")
@@ -144,9 +154,10 @@ public class CATiledLayer extends CALayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Selector("layer")
@@ -154,7 +165,7 @@ public class CATiledLayer extends CALayer {
 
     @Generated
     @Selector("needsDisplayForKey:")
-    public static native boolean needsDisplayForKey(String key);
+    public static native boolean needsDisplayForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -188,11 +199,11 @@ public class CATiledLayer extends CALayer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CATiledLayer initWithCoder(NSCoder coder);
+    public native CATiledLayer initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
-    public native CATiledLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
+    public native CATiledLayer initWithLayer(@NotNull @Mapped(ObjCObjectMapper.class) Object layer);
 
     /**
      * The number of levels of detail maintained by this layer. Defaults to
@@ -274,5 +285,5 @@ public class CATiledLayer extends CALayer {
     @Generated
     @Selector("cornerCurveExpansionFactor:")
     @NFloat
-    public static native double cornerCurveExpansionFactor(String curve);
+    public static native double cornerCurveExpansionFactor(@NotNull String curve);
 }

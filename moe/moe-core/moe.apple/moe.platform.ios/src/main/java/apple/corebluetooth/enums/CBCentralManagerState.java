@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] CBCentralManagerState
- * <p>
+ * 
  * Represents the current state of a CBCentralManager.
- * <p>
+ * 
  * [@constant] CBCentralManagerStateUnknown State unknown, update imminent.
  * [@constant] CBCentralManagerStateResetting The connection with the system service was momentarily lost, update
  * imminent.
@@ -33,15 +33,51 @@ import org.moe.natj.general.ann.NInt;
  * Central/Client role.
  * [@constant] CBCentralManagerStatePoweredOff Bluetooth is currently powered off.
  * [@constant] CBCentralManagerStatePoweredOn Bluetooth is currently powered on and available to use.
+ * 
+ * 
+ * API-Since: 5.0
+ * Deprecated-Since: 10.0
+ * Deprecated-Message: Use CBManagerState instead
  */
+@Deprecated
 @Generated
 public final class CBCentralManagerState {
-    @Generated @NInt public static final long Unknown = 0x0000000000000000L;
-    @Generated @NInt public static final long Resetting = 0x0000000000000001L;
-    @Generated @NInt public static final long Unsupported = 0x0000000000000002L;
-    @Generated @NInt public static final long Unauthorized = 0x0000000000000003L;
-    @Generated @NInt public static final long PoweredOff = 0x0000000000000004L;
-    @Generated @NInt public static final long PoweredOn = 0x0000000000000005L;
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use CBManagerState instead
+     */
+    @Deprecated @Generated @NInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use CBManagerState instead
+     */
+    @Deprecated @Generated @NInt public static final long Resetting = 0x0000000000000001L;
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use CBManagerState instead
+     */
+    @Deprecated @Generated @NInt public static final long Unsupported = 0x0000000000000002L;
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use CBManagerState instead
+     */
+    @Deprecated @Generated @NInt public static final long Unauthorized = 0x0000000000000003L;
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use CBManagerState instead
+     */
+    @Deprecated @Generated @NInt public static final long PoweredOff = 0x0000000000000004L;
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use CBManagerState instead
+     */
+    @Deprecated @Generated @NInt public static final long PoweredOn = 0x0000000000000005L;
 
     @Generated
     private CBCentralManagerState() {

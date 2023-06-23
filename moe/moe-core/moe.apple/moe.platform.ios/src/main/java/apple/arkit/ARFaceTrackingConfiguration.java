@@ -21,16 +21,21 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.avfoundation.AVCaptureDevice;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A configuration for running face tracking.
- * <p>
+ * 
  * Face tracking uses the front facing camera to track the face in 3D providing details on the topology and expression
  * of the face.
  * A detected face will be added to the session as an ARFaceAnchor object which contains information about head pose,
  * mesh, eye pose, and blend shape
  * coefficients. If light estimation is enabled the detected face will be treated as a light probe and used to estimate
  * the direction of incoming light.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("ARKit")
@@ -62,22 +67,25 @@ public class ARFaceTrackingConfiguration extends ARConfiguration {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,9 +128,10 @@ public class ARFaceTrackingConfiguration extends ARConfiguration {
     @Selector("isSupported")
     public static native boolean isSupported();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -152,9 +161,11 @@ public class ARFaceTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enable or disable World Tracking. Disabled by default.
-     * <p>
+     * 
      * When enabled, ARSession uses the back facing camera to track the device's orientation and position in the world.
      * The camera transform and the ARFaceAnchor transform will be in the world coordinate space.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isWorldTrackingEnabled")
@@ -162,11 +173,13 @@ public class ARFaceTrackingConfiguration extends ARConfiguration {
 
     /**
      * Maximum number of faces to track simultaneously.
-     * <p>
+     * 
      * Setting the maximum number of tracked faces will limit the number of faces that can be tracked in a given frame.
      * If more than the maximum is visible, only the faces already being tracked will continue to track until tracking
      * is lost or another face is removed.
      * Default value is one.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("maximumNumberOfTrackedFaces")
@@ -175,11 +188,13 @@ public class ARFaceTrackingConfiguration extends ARConfiguration {
 
     /**
      * Maximum number of faces to track simultaneously.
-     * <p>
+     * 
      * Setting the maximum number of tracked faces will limit the number of faces that can be tracked in a given frame.
      * If more than the maximum is visible, only the faces already being tracked will continue to track until tracking
      * is lost or another face is removed.
      * Default value is one.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setMaximumNumberOfTrackedFaces:")
@@ -187,9 +202,11 @@ public class ARFaceTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enable or disable World Tracking. Disabled by default.
-     * <p>
+     * 
      * When enabled, ARSession uses the back facing camera to track the device's orientation and position in the world.
      * The camera transform and the ARFaceAnchor transform will be in the world coordinate space.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setWorldTrackingEnabled:")
@@ -197,12 +214,15 @@ public class ARFaceTrackingConfiguration extends ARConfiguration {
 
     /**
      * Maximum number of faces which can be tracked simultaneously.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("supportedNumberOfTrackedFaces")
     @NInt
     public static native long supportedNumberOfTrackedFaces();
 
+    @NotNull
     @Generated
     @Selector("supportedVideoFormats")
     public static native NSArray<? extends ARVideoFormat> supportedVideoFormats();
@@ -213,8 +233,25 @@ public class ARFaceTrackingConfiguration extends ARConfiguration {
 
     /**
      * Indicates whether world tracking can be enabled on this device.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("supportsWorldTracking")
     public static native boolean supportsWorldTracking();
+
+    @Nullable
+    @Generated
+    @Selector("configurableCaptureDeviceForPrimaryCamera")
+    public static native AVCaptureDevice configurableCaptureDeviceForPrimaryCamera();
+
+    @Nullable
+    @Generated
+    @Selector("recommendedVideoFormatFor4KResolution")
+    public static native ARVideoFormat recommendedVideoFormatFor4KResolution();
+
+    @Nullable
+    @Generated
+    @Selector("recommendedVideoFormatForHighResolutionFrameCapturing")
+    public static native ARVideoFormat recommendedVideoFormatForHighResolutionFrameCapturing();
 }

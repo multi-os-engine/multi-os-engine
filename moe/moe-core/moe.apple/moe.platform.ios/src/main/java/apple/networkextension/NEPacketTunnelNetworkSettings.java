@@ -40,17 +40,21 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEPacketTunnelNetworkSettings
- * <p>
+ * 
  * The NEPacketTunnelNetworkSettings class declares the programmatic interface for an object that contains IP network
  * settings.
- * <p>
+ * 
  * NEPacketTunnelNetworkSettings is used by NEPacketTunnelProviders to communicate the desired IP network settings for
  * the packet tunnel to the framework. The framework takes care of applying the contained settings to the system.
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -82,22 +86,25 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -132,9 +139,10 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,28 +176,37 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
 
     /**
      * [@property] IPv4Settings
-     * <p>
+     * 
      * An NEIPv4Settings object that contains the desired tunnel IPv4 settings.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("IPv4Settings")
     public native NEIPv4Settings IPv4Settings();
 
     /**
      * [@property] IPv6Settings
-     * <p>
+     * 
      * An NEIPv6Settings object that contains the desired tunnel IPv6 settings.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("IPv6Settings")
     public native NEIPv6Settings IPv6Settings();
 
     /**
      * [@property] MTU
-     * <p>
+     * 
      * An NSNumber object containing the Maximum Transmission Unit (MTU) size in bytes to assign to the TUN interface.
      * If this property is set, the tunnelOverheadBytes property is ignored.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("MTU")
     public native NSNumber MTU();
@@ -200,50 +217,58 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEPacketTunnelNetworkSettings initWithCoder(NSCoder coder);
+    public native NEPacketTunnelNetworkSettings initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithTunnelRemoteAddress:")
-    public native NEPacketTunnelNetworkSettings initWithTunnelRemoteAddress(String address);
+    public native NEPacketTunnelNetworkSettings initWithTunnelRemoteAddress(@NotNull String address);
 
     /**
      * [@property] IPv4Settings
-     * <p>
+     * 
      * An NEIPv4Settings object that contains the desired tunnel IPv4 settings.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setIPv4Settings:")
-    public native void setIPv4Settings(NEIPv4Settings value);
+    public native void setIPv4Settings(@Nullable NEIPv4Settings value);
 
     /**
      * [@property] IPv6Settings
-     * <p>
+     * 
      * An NEIPv6Settings object that contains the desired tunnel IPv6 settings.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setIPv6Settings:")
-    public native void setIPv6Settings(NEIPv6Settings value);
+    public native void setIPv6Settings(@Nullable NEIPv6Settings value);
 
     /**
      * [@property] MTU
-     * <p>
+     * 
      * An NSNumber object containing the Maximum Transmission Unit (MTU) size in bytes to assign to the TUN interface.
      * If this property is set, the tunnelOverheadBytes property is ignored.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMTU:")
-    public native void setMTU(NSNumber value);
+    public native void setMTU(@Nullable NSNumber value);
 
     /**
      * [@property] tunnelOverheadBytes
-     * <p>
+     * 
      * An NSNumber object containing the number of bytes of overhead appended to each outbound packet through the
      * tunnel. The MTU for the TUN interface is computed by subtracting this value from the MTU of the primary physical
      * interface.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setTunnelOverheadBytes:")
-    public native void setTunnelOverheadBytes(NSNumber value);
+    public native void setTunnelOverheadBytes(@Nullable NSNumber value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -253,11 +278,14 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
 
     /**
      * [@property] tunnelOverheadBytes
-     * <p>
+     * 
      * An NSNumber object containing the number of bytes of overhead appended to each outbound packet through the
      * tunnel. The MTU for the TUN interface is computed by subtracting this value from the MTU of the primary physical
      * interface.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("tunnelOverheadBytes")
     public native NSNumber tunnelOverheadBytes();

@@ -5,9 +5,11 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueUsageState
- * <p>
+ * 
  * [@constant] HMCharacteristicValueUsageStateNotInUse Not in use.
  * [@constant] HMCharacteristicValueUsageStateInUse Currently in use.
+ * 
+ * API-Since: 11.2
  */
 @Generated
 public final class HMCharacteristicValueUsageState {
@@ -15,6 +17,12 @@ public final class HMCharacteristicValueUsageState {
     private HMCharacteristicValueUsageState() {
     }
 
+    /**
+     * API-Since: 11.2
+     */
     @Generated @NInt public static final long NotInUse = 0x0000000000000000L;
+    /**
+     * API-Since: 11.2
+     */
     @Generated @NInt public static final long InUse = 0x0000000000000001L;
 }

@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("ExternalAccessory")
@@ -37,6 +38,7 @@ public final class ExternalAccessory {
     private ExternalAccessory() {
     }
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -44,12 +46,19 @@ public final class ExternalAccessory {
 
     /**
      * EAAccessoryManager Notifications
+     * 
+     * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String EAAccessoryDidConnectNotification();
 
+    /**
+     * API-Since: 3.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -57,7 +66,10 @@ public final class ExternalAccessory {
 
     /**
      * EAAccessory
+     * 
+     * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -65,7 +77,10 @@ public final class ExternalAccessory {
 
     /**
      * EAAccessory
+     * 
+     * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

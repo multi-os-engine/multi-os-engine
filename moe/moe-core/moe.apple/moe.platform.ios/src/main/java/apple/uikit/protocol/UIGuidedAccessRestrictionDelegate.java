@@ -25,13 +25,17 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * UIGuidedAccessRestrictionDelegate
- * <p>
+ * 
  * Implement on the application delegate to present the user with additional Guided Access restrictions.
- * <p>
+ * 
  * The initial state of all Guided Access restrictions is UIGuidedAccessRestrictionStateAllow.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("UIKit")
@@ -41,10 +45,11 @@ public interface UIGuidedAccessRestrictionDelegate {
     /**
      * Returns a localized string that gives additional detail about the restriction associated with the identifier.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("detailTextForGuidedAccessRestrictionWithIdentifier:")
-    default String detailTextForGuidedAccessRestrictionWithIdentifier(String restrictionIdentifier) {
+    default String detailTextForGuidedAccessRestrictionWithIdentifier(@NotNull String restrictionIdentifier) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -53,6 +58,7 @@ public interface UIGuidedAccessRestrictionDelegate {
      * Each restriction identifier must be unique string.
      * For example: com.MyCompany.MyApp.SomeRestrictionIdentifier
      */
+    @Nullable
     @Generated
     @Selector("guidedAccessRestrictionIdentifiers")
     NSArray<String> guidedAccessRestrictionIdentifiers();
@@ -62,13 +68,14 @@ public interface UIGuidedAccessRestrictionDelegate {
      */
     @Generated
     @Selector("guidedAccessRestrictionWithIdentifier:didChangeState:")
-    void guidedAccessRestrictionWithIdentifierDidChangeState(String restrictionIdentifier,
+    void guidedAccessRestrictionWithIdentifierDidChangeState(@NotNull String restrictionIdentifier,
             @NInt long newRestrictionState);
 
     /**
      * Returns a localized string that describes the restriction associated with the identifier.
      */
+    @Nullable
     @Generated
     @Selector("textForGuidedAccessRestrictionWithIdentifier:")
-    String textForGuidedAccessRestrictionWithIdentifier(String restrictionIdentifier);
+    String textForGuidedAccessRestrictionWithIdentifier(@NotNull String restrictionIdentifier);
 }

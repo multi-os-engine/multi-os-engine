@@ -19,24 +19,35 @@ package apple.spritekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 public final class SKSceneScaleMode {
     /**
      * Scale the SKScene to fill the entire SKView.
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long Fill = 0x0000000000000000L;
     /**
      * Scale the SKScene to fill the SKView while preserving the scene's aspect ratio. Some cropping may occur if the
      * view has a different aspect ratio.
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long AspectFill = 0x0000000000000001L;
     /**
      * Scale the SKScene to fit within the SKView while preserving the scene's aspect ratio. Some letterboxing may occur
      * if the view has a different aspect ratio.
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long AspectFit = 0x0000000000000002L;
     /**
      * Modify the SKScene's actual size to exactly match the SKView.
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long ResizeFill = 0x0000000000000003L;
 

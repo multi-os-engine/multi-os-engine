@@ -19,10 +19,22 @@ package apple.photos.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class PHImageContentMode {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long AspectFit = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long AspectFill = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Default = 0x0000000000000000L;
 
     @Generated

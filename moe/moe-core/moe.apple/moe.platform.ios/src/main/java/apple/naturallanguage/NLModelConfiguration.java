@@ -27,11 +27,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NLModelConfiguration is a class representing the metadata about a model, including specifying whether it is a
  * sequence or classifier model, what language it is intended to support, and what revision of the model training was
  * used to produce the model.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("NaturalLanguage")
@@ -63,32 +67,39 @@ public class NLModelConfiguration extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("currentRevisionForType:")
     @NUInt
@@ -104,7 +115,7 @@ public class NLModelConfiguration extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -117,7 +128,7 @@ public class NLModelConfiguration extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("initWithCoder:")
-    public native NLModelConfiguration initWithCoder(NSCoder coder);
+    public native NLModelConfiguration initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -136,14 +147,18 @@ public class NLModelConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Most models will be trained to support tagging for a specific language, specified using a standard language
      * abbreviation.
+     * 
+     * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("language")
     public native String language();
@@ -168,6 +183,8 @@ public class NLModelConfiguration extends NSObject implements NSCopying, NSSecur
      * revisions for backward compatibility. A given revision will be supported for a number of system versions, but not
      * indefinitely, and the set of supported revisions can be used to determine whether a given revision is still
      * supported. Attempting to use a model from a revision that is no longer supported will fail with a suitable error.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("revision")
@@ -182,6 +199,10 @@ public class NLModelConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 12.0
+     */
+    @NotNull
     @Generated
     @Selector("supportedRevisionsForType:")
     public static native NSIndexSet supportedRevisionsForType(@NInt long type);
@@ -196,6 +217,9 @@ public class NLModelConfiguration extends NSObject implements NSCopying, NSSecur
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("type")
     @NInt

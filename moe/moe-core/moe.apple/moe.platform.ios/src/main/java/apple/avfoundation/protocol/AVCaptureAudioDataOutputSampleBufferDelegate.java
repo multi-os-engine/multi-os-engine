@@ -26,11 +26,14 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] AVCaptureAudioDataOutputSampleBufferDelegate
- * <p>
+ * 
  * Defines an interface for delegates of AVCaptureAudioDataOutput to receive captured audio sample buffers.
+ * 
+ * API-Since: 4.0
  */
 @Generated
 @Library("AVFoundation")
@@ -39,28 +42,31 @@ import org.moe.natj.objc.ann.Selector;
 public interface AVCaptureAudioDataOutputSampleBufferDelegate {
     /**
      * captureOutput:didOutputSampleBuffer:fromConnection:
-     * <p>
+     * 
      * Called whenever an AVCaptureAudioDataOutput instance outputs a new audio sample buffer.
-     * <p>
+     * 
      * Delegates receive this message whenever the output captures and outputs new audio samples, decoding or
      * re-encoding as specified by the audioSettings property. Delegates can use the provided sample buffer in
      * conjunction with other APIs for further processing. This method will be called on the dispatch queue specified by
      * the output's sampleBufferCallbackQueue property. This method is called periodically, so it must be efficient to
      * prevent capture performance problems, including dropped audio samples.
-     * <p>
+     * 
      * Clients that need to reference the CMSampleBuffer object outside of the scope of this method must CFRetain it and
      * then CFRelease it when they are finished with it.
-     *
-     * @param output       The AVCaptureAudioDataOutput instance that output the samples.
-     * @param sampleBuffer A CMSampleBuffer object containing the audio samples and additional information about them,
+     * 
+     * @param output
+     *                     The AVCaptureAudioDataOutput instance that output the samples.
+     * @param sampleBuffer
+     *                     A CMSampleBuffer object containing the audio samples and additional information about them,
      *                     such as their format and presentation time.
-     * @param connection   The AVCaptureConnection from which the audio was received.
+     * @param connection
+     *                     The AVCaptureConnection from which the audio was received.
      */
     @Generated
     @IsOptional
     @Selector("captureOutput:didOutputSampleBuffer:fromConnection:")
-    default void captureOutputDidOutputSampleBufferFromConnection(AVCaptureOutput output,
-            CMSampleBufferRef sampleBuffer, AVCaptureConnection connection) {
+    default void captureOutputDidOutputSampleBufferFromConnection(@NotNull AVCaptureOutput output,
+            @NotNull CMSampleBufferRef sampleBuffer, @NotNull AVCaptureConnection connection) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -1,7 +1,6 @@
 package apple.webkit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSNumber;
@@ -26,7 +25,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
@@ -49,8 +54,10 @@ public class WKSnapshotConfiguration extends NSObject implements NSCopying {
      * A Boolean value that specifies whether the snapshot should be taken after recent
      * changes have been incorporated. The value NO will capture the screen in its current state,
      * which might not include recent changes.
-     * <p>
+     * 
      * The default value is YES.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("afterScreenUpdates")
@@ -68,31 +75,35 @@ public class WKSnapshotConfiguration extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -128,9 +139,10 @@ public class WKSnapshotConfiguration extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -139,7 +151,7 @@ public class WKSnapshotConfiguration extends NSObject implements NSCopying {
 
     /**
      * The rect to snapshot in view coordinates.
-     * <p>
+     * 
      * This rect should be contained within WKWebView's bounds. If the rect is set to the
      * null rect, the view's bounds will be used. The initial value is the null rect.
      */
@@ -160,8 +172,10 @@ public class WKSnapshotConfiguration extends NSObject implements NSCopying {
      * A Boolean value that specifies whether the snapshot should be taken after recent
      * changes have been incorporated. The value NO will capture the screen in its current state,
      * which might not include recent changes.
-     * <p>
+     * 
      * The default value is YES.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAfterScreenUpdates:")
@@ -169,7 +183,7 @@ public class WKSnapshotConfiguration extends NSObject implements NSCopying {
 
     /**
      * The rect to snapshot in view coordinates.
-     * <p>
+     * 
      * This rect should be contained within WKWebView's bounds. If the rect is set to the
      * null rect, the view's bounds will be used. The initial value is the null rect.
      */
@@ -180,13 +194,13 @@ public class WKSnapshotConfiguration extends NSObject implements NSCopying {
     /**
      * Specify a custom width to control the size of image you get back. The height will be
      * computed to maintain the aspect ratio established by rect.
-     * <p>
+     * 
      * snapshotWidth represents the width in points. If the snapshotWidth is nil, rect's
      * width will be used.
      */
     @Generated
     @Selector("setSnapshotWidth:")
-    public native void setSnapshotWidth(NSNumber value);
+    public native void setSnapshotWidth(@Nullable NSNumber value);
 
     @Generated
     @Selector("setVersion:")
@@ -195,10 +209,11 @@ public class WKSnapshotConfiguration extends NSObject implements NSCopying {
     /**
      * Specify a custom width to control the size of image you get back. The height will be
      * computed to maintain the aspect ratio established by rect.
-     * <p>
+     * 
      * snapshotWidth represents the width in points. If the snapshotWidth is nil, rect's
      * width will be used.
      */
+    @Nullable
     @Generated
     @Selector("snapshotWidth")
     public native NSNumber snapshotWidth();

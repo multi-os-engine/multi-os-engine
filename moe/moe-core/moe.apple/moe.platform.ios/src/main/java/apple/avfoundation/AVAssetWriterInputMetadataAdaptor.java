@@ -37,12 +37,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAssetWriterInputMetadataAdaptor
- * <p>
+ * 
  * Defines an interface for writing metadata, packaged as instances of AVTimedMetadataGroup, to a single
  * AVAssetWriterInput object.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFoundation")
@@ -74,48 +78,54 @@ public class AVAssetWriterInputMetadataAdaptor extends NSObject {
 
     /**
      * assetWriterInputMetadataAdaptorWithAssetWriterInput:
-     * <p>
+     * 
      * Creates a new timed metadata group adaptor to receive instances of AVTimedMetadataGroup for writing to the output
      * file.
-     * <p>
+     * 
      * The instance of AVAssetWriterInput passed in to this method must have been created with a format hint indicating
      * all possible combinations of identifier (or, alternatively, key and keySpace), dataType, and extendedLanguageTag
      * that will be appended to the metadata adaptor. It is an error to append metadata items not represented in the
      * input's format hint.
-     * <p>
-     * It is an error to initialize an instance of AVAssetWriterInputMetadataAdaptor with an asset writer input that is
-     * already attached to another instance of AVAssetWriterInputMetadataAdaptor. It is also an error to initialize an
-     * instance of AVAssetWriterInputMetadataAdaptor with an asset writer input whose asset writer has progressed beyond
-     * AVAssetWriterStatusUnknown.
-     *
-     * @param input An instance of AVAssetWriterInput to which the receiver should append groups of timed metadata. Only
+     * 
+     * This method throws an exception for any of the following reasons:
+     * - input is already attached to another instance of AVAssetWriterInputMetadataAdaptor
+     * - input's asset writer has already started writing (progressed beyond AVAssetWriterStatusUnknown)
+     * - input's asset writer does not carry a source format hint
+     * - input's source format hint media subtype is not kCMMetadataFormatType_Boxed
+     * 
+     * @param input
+     *              An instance of AVAssetWriterInput to which the receiver should append groups of timed metadata. Only
      *              asset writer inputs that accept media data of type AVMediaTypeMetadata can be used to initialize a
      *              timed metadata group adaptor.
-     * @return An instance of AVAssetWriterInputMetadataAdaptor.
+     * @return
+     *         An instance of AVAssetWriterInputMetadataAdaptor.
      */
     @Generated
     @Selector("assetWriterInputMetadataAdaptorWithAssetWriterInput:")
     public static native AVAssetWriterInputMetadataAdaptor assetWriterInputMetadataAdaptorWithAssetWriterInput(
-            AVAssetWriterInput input);
+            @NotNull AVAssetWriterInput input);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -150,9 +160,10 @@ public class AVAssetWriterInputMetadataAdaptor extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -182,32 +193,38 @@ public class AVAssetWriterInputMetadataAdaptor extends NSObject {
 
     /**
      * appendTimedMetadataGroup:
-     * <p>
+     * 
      * Appends a timed metadata group to the receiver.
-     * <p>
+     * 
      * The receiver will retain the AVTimedMetadataGroup until it is done with it, and then release it.
-     * <p>
+     * 
      * The timing of the metadata items in the output asset will correspond to the timeRange of the
      * AVTimedMetadataGroup, regardless of the values of the time and duration properties of the individual items.
-     * <p>
+     * 
      * Before calling this method, you must ensure that the input that underlies the receiver is attached to an
      * AVAssetWriter via a prior call to -addInput: and that -startWriting has been called on the asset writer. It is an
      * error to invoke this method before starting a session (via -[AVAssetWriter startSessionAtSourceTime:]) or after
      * ending a session (via -[AVAssetWriter endSessionAtSourceTime:]).
-     *
-     * @param timedMetadataGroup The AVTimedMetadataGroup to be appended.
-     * @return A BOOL value indicating success of appending the timed metadata group. If a result of NO is returned,
+     * 
+     * This method throws an exception if the attached asset writer input has not been added to an asset writer or
+     * -startWriting has not been called on that asset writer.
+     * 
+     * @param timedMetadataGroup
+     *                           The AVTimedMetadataGroup to be appended.
+     * @return
+     *         A BOOL value indicating success of appending the timed metadata group. If a result of NO is returned,
      *         AVAssetWriter.error will contain more information about why apending the timed metadata group failed.
      */
     @Generated
     @Selector("appendTimedMetadataGroup:")
-    public native boolean appendTimedMetadataGroup(AVTimedMetadataGroup timedMetadataGroup);
+    public native boolean appendTimedMetadataGroup(@NotNull AVTimedMetadataGroup timedMetadataGroup);
 
     /**
      * [@property] assetWriterInput
-     * <p>
+     * 
      * The asset writer input to which the receiver should append timed metadata groups.
      */
+    @NotNull
     @Generated
     @Selector("assetWriterInput")
     public native AVAssetWriterInput assetWriterInput();
@@ -218,26 +235,29 @@ public class AVAssetWriterInputMetadataAdaptor extends NSObject {
 
     /**
      * initWithAssetWriterInput:
-     * <p>
+     * 
      * Creates a new timed metadator group adaptor to receive instances of AVTimedMetadataGroup for writing to the
      * output file.
-     * <p>
+     * 
      * The instance of AVAssetWriterInput passed in to this method must have been created with a format hint indicating
      * all possible combinations of identifier (or, alternatively, key and keySpace), dataType, and extendedLanguageTag
      * that will be appended to the metadata adaptor. It is an error to append metadata items not represented in the
      * input's format hint. For help creating a suitable format hint, see -[AVTimedMetadataGroup copyFormatDescription].
-     * <p>
-     * It is an error to initialize an instance of AVAssetWriterInputMetadataAdaptor with an asset writer input that is
-     * already attached to another instance of AVAssetWriterInputMetadataAdaptor. It is also an error to initialize an
-     * instance of AVAssetWriterInputMetadataAdaptor with an asset writer input whose asset writer has progressed beyond
-     * AVAssetWriterStatusUnknown.
-     *
-     * @param input An instance of AVAssetWriterInput to which the receiver should append groups of timed metadata. Only
+     * 
+     * This method throws an exception for any of the following reasons:
+     * - input is already attached to another instance of AVAssetWriterInputMetadataAdaptor
+     * - input's asset writer has already started writing (progressed beyond AVAssetWriterStatusUnknown)
+     * - input's asset writer does not carry a source format hint
+     * - input's source format hint media subtype is not kCMMetadataFormatType_Boxed
+     * 
+     * @param input
+     *              An instance of AVAssetWriterInput to which the receiver should append groups of timed metadata. Only
      *              asset writer inputs that accept media data of type AVMediaTypeMetadata can be used to initialize a
      *              timed metadata group adaptor.
-     * @return An instance of AVAssetWriterInputMetadataAdaptor.
+     * @return
+     *         An instance of AVAssetWriterInputMetadataAdaptor.
      */
     @Generated
     @Selector("initWithAssetWriterInput:")
-    public native AVAssetWriterInputMetadataAdaptor initWithAssetWriterInput(AVAssetWriterInput input);
+    public native AVAssetWriterInputMetadataAdaptor initWithAssetWriterInput(@NotNull AVAssetWriterInput input);
 }

@@ -8,6 +8,12 @@ public final class BNNSInterpolationMethod {
     private BNNSInterpolationMethod() {
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated public static final int BNNSInterpolationMethodNearest = 0x00000000;
+    /**
+     * API-Since: 14.0
+     */
     @Generated public static final int BNNSInterpolationMethodLinear = 0x00000001;
 }

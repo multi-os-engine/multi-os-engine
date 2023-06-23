@@ -39,18 +39,24 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The GKPeerPickerController class manages the system-supplied user interface for choosing peers to connect with for
  * multiplayer games. The class manages the actual user interactions with the views and reports the results of those
  * interactions to your delegate object.
- * <p>
+ * 
  * Because the GKPeerPickerController class handles all of the user interactions, all you have to do is tell it which
  * GKSession selected peers should be connected to, tell it to start, and then wait to receive a delegate callback when
  * the picker finished connecting peers or cancels.
- * <p>
+ * 
  * You must provide a delegate that conforms to the GKPeerPickerControllerDelegate protocol in order to use this class.
  * After the user interface starts, this class notifies your delegate of the user’s actions.
+ * 
+ * API-Since: 3.0
+ * Deprecated-Since: 7.0
+ * Deprecated-Message: Use MCBrowserViewController from the MultipeerConnectivity framework
  */
 @Deprecated
 @Generated
@@ -83,22 +89,25 @@ public class GKPeerPickerController extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +142,10 @@ public class GKPeerPickerController extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,7 +176,7 @@ public class GKPeerPickerController extends NSObject {
     /**
      * An integer bit mask that determines what connection types are supported by the application, and displays
      * system-supplied UI as appropriate.
-     * <p>
+     * 
      * This mask can be specified by combining, using the C bitwise OR operator, any of the options described in
      * GKPickerConnectionType. If not set, the default supported type is GKPickerConnectionTypeNearby. If multiple
      * connection types are supported, system-supplied UI will be presented to allow the user to select a connection
@@ -182,7 +192,11 @@ public class GKPeerPickerController extends NSObject {
     /**
      * The delegate receives notifications when the user interacts with the picker interface. If this property is nil,
      * the picker is dismissed immediately if you try to show it.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("delegate")
@@ -207,7 +221,7 @@ public class GKPeerPickerController extends NSObject {
     /**
      * An integer bit mask that determines what connection types are supported by the application, and displays
      * system-supplied UI as appropriate.
-     * <p>
+     * 
      * This mask can be specified by combining, using the C bitwise OR operator, any of the options described in
      * GKPickerConnectionType. If not set, the default supported type is GKPickerConnectionTypeNearby. If multiple
      * connection types are supported, system-supplied UI will be presented to allow the user to select a connection
@@ -222,19 +236,26 @@ public class GKPeerPickerController extends NSObject {
     /**
      * The delegate receives notifications when the user interacts with the picker interface. If this property is nil,
      * the picker is dismissed immediately if you try to show it.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
     @Deprecated
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) GKPeerPickerControllerDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) GKPeerPickerControllerDelegate value);
 
     /**
      * The delegate receives notifications when the user interacts with the picker interface. If this property is nil,
      * the picker is dismissed immediately if you try to show it.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
     @Deprecated
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) GKPeerPickerControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) GKPeerPickerControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

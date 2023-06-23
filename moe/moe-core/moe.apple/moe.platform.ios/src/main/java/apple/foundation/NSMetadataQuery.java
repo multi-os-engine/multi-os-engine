@@ -38,7 +38,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -69,22 +74,25 @@ public class NSMetadataQuery extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -119,9 +127,10 @@ public class NSMetadataQuery extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -149,6 +158,7 @@ public class NSMetadataQuery extends NSObject {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -165,23 +175,31 @@ public class NSMetadataQuery extends NSObject {
     @Selector("enableUpdates")
     public native void enableUpdates();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("enumerateResultsUsingBlock:")
     public native void enumerateResultsUsingBlock(
-            @ObjCBlock(name = "call_enumerateResultsUsingBlock") Block_enumerateResultsUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateResultsUsingBlock") Block_enumerateResultsUsingBlock block);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("enumerateResultsWithOptions:usingBlock:")
     public native void enumerateResultsWithOptionsUsingBlock(@NUInt long opts,
-            @ObjCBlock(name = "call_enumerateResultsWithOptionsUsingBlock") Block_enumerateResultsWithOptionsUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateResultsWithOptionsUsingBlock") Block_enumerateResultsWithOptionsUsingBlock block);
 
     /**
      * array of NSMetadataQueryResultGroups, for first grouping attribute
      */
+    @NotNull
     @Generated
     @Selector("groupedResults")
     public native NSArray<? extends NSMetadataQueryResultGroup> groupedResults();
 
+    @Nullable
     @Generated
     @Selector("groupingAttributes")
     public native NSArray<String> groupingAttributes();
@@ -189,7 +207,7 @@ public class NSMetadataQuery extends NSObject {
     @Generated
     @Selector("indexOfResult:")
     @NUInt
-    public native long indexOfResult(@Mapped(ObjCObjectMapper.class) Object result);
+    public native long indexOfResult(@NotNull @Mapped(ObjCObjectMapper.class) Object result);
 
     @Generated
     @Selector("init")
@@ -214,15 +232,20 @@ public class NSMetadataQuery extends NSObject {
     /**
      * items can be a mixture of NSMetadataItem, NSURL objects (file URLs only)
      * and/or string paths; the getter returns the same mixture as was set
+     * 
+     * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("operationQueue")
     public native NSOperationQueue operationQueue();
 
+    @Nullable
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();
 
+    @NotNull
     @Generated
     @Selector("resultAtIndex:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -239,6 +262,7 @@ public class NSMetadataQuery extends NSObject {
     /**
      * this is for K-V Bindings, and causes side-effects on the query
      */
+    @NotNull
     @Generated
     @Selector("results")
     public native NSArray<?> results();
@@ -248,21 +272,25 @@ public class NSMetadataQuery extends NSObject {
      * paths and/or the special string constants below, which specifies the
      * locations to which the search is limited; an empty array means no
      * limits, which is the default state.
+     * 
+     * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("searchItems")
     public native NSArray<?> searchItems();
 
+    @NotNull
     @Generated
     @Selector("searchScopes")
     public native NSArray<?> searchScopes();
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSMetadataQueryDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) NSMetadataQueryDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) NSMetadataQueryDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSMetadataQueryDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -275,7 +303,7 @@ public class NSMetadataQuery extends NSObject {
 
     @Generated
     @Selector("setGroupingAttributes:")
-    public native void setGroupingAttributes(NSArray<String> value);
+    public native void setGroupingAttributes(@Nullable NSArray<String> value);
 
     @Generated
     @Selector("setNotificationBatchingInterval:")
@@ -284,37 +312,42 @@ public class NSMetadataQuery extends NSObject {
     /**
      * items can be a mixture of NSMetadataItem, NSURL objects (file URLs only)
      * and/or string paths; the getter returns the same mixture as was set
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setOperationQueue:")
-    public native void setOperationQueue(NSOperationQueue value);
+    public native void setOperationQueue(@Nullable NSOperationQueue value);
 
     @Generated
     @Selector("setPredicate:")
-    public native void setPredicate(NSPredicate value);
+    public native void setPredicate(@Nullable NSPredicate value);
 
     /**
      * scopes is an NSArray of NSURL objects (file URLs only) and/or string
      * paths and/or the special string constants below, which specifies the
      * locations to which the search is limited; an empty array means no
      * limits, which is the default state.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setSearchItems:")
-    public native void setSearchItems(NSArray<?> value);
+    public native void setSearchItems(@Nullable NSArray<?> value);
 
     @Generated
     @Selector("setSearchScopes:")
-    public native void setSearchScopes(NSArray<?> value);
+    public native void setSearchScopes(@NotNull NSArray<?> value);
 
     @Generated
     @Selector("setSortDescriptors:")
-    public native void setSortDescriptors(NSArray<? extends NSSortDescriptor> value);
+    public native void setSortDescriptors(@NotNull NSArray<? extends NSSortDescriptor> value);
 
     @Generated
     @Selector("setValueListAttributes:")
-    public native void setValueListAttributes(NSArray<String> value);
+    public native void setValueListAttributes(@NotNull NSArray<String> value);
 
+    @NotNull
     @Generated
     @Selector("sortDescriptors")
     public native NSArray<? extends NSSortDescriptor> sortDescriptors();
@@ -330,6 +363,7 @@ public class NSMetadataQuery extends NSObject {
     @Selector("stopQuery")
     public native void stopQuery();
 
+    @NotNull
     @Generated
     @Selector("valueListAttributes")
     public native NSArray<String> valueListAttributes();
@@ -337,28 +371,30 @@ public class NSMetadataQuery extends NSObject {
     /**
      * values are arrays of NSMetadataQueryAttributeValueTuple
      */
+    @NotNull
     @Generated
     @Selector("valueLists")
     public native NSDictionary<String, ? extends NSArray<? extends NSMetadataQueryAttributeValueTuple>> valueLists();
 
+    @Nullable
     @Generated
     @Selector("valueOfAttribute:forResultAtIndex:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object valueOfAttributeForResultAtIndex(String attrName, @NUInt long idx);
+    public native Object valueOfAttributeForResultAtIndex(@NotNull String attrName, @NUInt long idx);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateResultsUsingBlock {
         @Generated
-        void call_enumerateResultsUsingBlock(@Mapped(ObjCObjectMapper.class) Object result, @NUInt long idx,
-                BoolPtr stop);
+        void call_enumerateResultsUsingBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object result, @NUInt long idx,
+                @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateResultsWithOptionsUsingBlock {
         @Generated
-        void call_enumerateResultsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object result, @NUInt long idx,
-                BoolPtr stop);
+        void call_enumerateResultsWithOptionsUsingBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object result,
+                @NUInt long idx, @NotNull BoolPtr stop);
     }
 }

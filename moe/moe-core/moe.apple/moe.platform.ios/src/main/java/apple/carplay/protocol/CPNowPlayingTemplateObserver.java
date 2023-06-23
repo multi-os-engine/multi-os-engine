@@ -8,7 +8,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -21,7 +25,7 @@ public interface CPNowPlayingTemplateObserver {
     @Generated
     @IsOptional
     @Selector("nowPlayingTemplateAlbumArtistButtonTapped:")
-    default void nowPlayingTemplateAlbumArtistButtonTapped(CPNowPlayingTemplate nowPlayingTemplate) {
+    default void nowPlayingTemplateAlbumArtistButtonTapped(@NotNull CPNowPlayingTemplate nowPlayingTemplate) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -32,7 +36,7 @@ public interface CPNowPlayingTemplateObserver {
     @Generated
     @IsOptional
     @Selector("nowPlayingTemplateUpNextButtonTapped:")
-    default void nowPlayingTemplateUpNextButtonTapped(CPNowPlayingTemplate nowPlayingTemplate) {
+    default void nowPlayingTemplateUpNextButtonTapped(@NotNull CPNowPlayingTemplate nowPlayingTemplate) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

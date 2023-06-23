@@ -25,6 +25,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("MediaPlayer")
@@ -38,21 +39,42 @@ public final class MediaPlayer {
     private MediaPlayer() {
     }
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 11.3
+     * Deprecated-Message: Use MPVolumeView to present volume controls.
+     */
+    @Deprecated
     @Generated
     @CFunction
     public static native void MPVolumeSettingsAlertShow();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 11.3
+     * Deprecated-Message: Use MPVolumeView to present volume controls.
+     */
+    @Deprecated
     @Generated
     @CFunction
     public static native void MPVolumeSettingsAlertHide();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 11.3
+     * Deprecated-Message: Use MPVolumeView to present volume controls.
+     */
+    @Deprecated
     @Generated
     @CFunction
     public static native boolean MPVolumeSettingsAlertIsVisible();
 
     /**
      * filterable
+     * 
+     * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -60,7 +82,10 @@ public final class MediaPlayer {
 
     /**
      * filterable
+     * 
+     * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -68,7 +93,10 @@ public final class MediaPlayer {
 
     /**
      * filterable
+     * 
+     * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -76,12 +104,19 @@ public final class MediaPlayer {
 
     /**
      * filterable
+     * 
+     * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyTitle();
 
+    /**
+     * API-Since: 3.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -89,7 +124,10 @@ public final class MediaPlayer {
 
     /**
      * filterable
+     * 
+     * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -97,7 +135,10 @@ public final class MediaPlayer {
 
     /**
      * filterable
+     * 
+     * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -105,7 +146,10 @@ public final class MediaPlayer {
 
     /**
      * filterable
+     * 
+     * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -113,7 +157,10 @@ public final class MediaPlayer {
 
     /**
      * filterable
+     * 
+     * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -121,7 +168,10 @@ public final class MediaPlayer {
 
     /**
      * filterable
+     * 
+     * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -129,7 +179,10 @@ public final class MediaPlayer {
 
     /**
      * filterable
+     * 
+     * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -137,7 +190,10 @@ public final class MediaPlayer {
 
     /**
      * filterable
+     * 
+     * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -145,7 +201,10 @@ public final class MediaPlayer {
 
     /**
      * filterable
+     * 
+     * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -153,47 +212,82 @@ public final class MediaPlayer {
 
     /**
      * filterable
+     * 
+     * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyComposerPersistentID();
 
+    /**
+     * API-Since: 3.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyPlaybackDuration();
 
+    /**
+     * API-Since: 3.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyAlbumTrackNumber();
 
+    /**
+     * API-Since: 3.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyAlbumTrackCount();
 
+    /**
+     * API-Since: 3.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyDiscNumber();
 
+    /**
+     * API-Since: 3.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyDiscCount();
 
+    /**
+     * API-Since: 3.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyArtwork();
 
+    /**
+     * API-Since: 7.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyIsExplicit();
 
+    /**
+     * API-Since: 3.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -201,27 +295,46 @@ public final class MediaPlayer {
 
     /**
      * filterable
+     * 
+     * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyIsCompilation();
 
+    /**
+     * API-Since: 4.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyReleaseDate();
 
+    /**
+     * API-Since: 4.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyBeatsPerMinute();
 
+    /**
+     * API-Since: 4.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyComments();
 
+    /**
+     * API-Since: 4.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -229,7 +342,10 @@ public final class MediaPlayer {
 
     /**
      * filterable
+     * 
+     * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -237,7 +353,10 @@ public final class MediaPlayer {
 
     /**
      * filterable
+     * 
+     * API-Since: 9.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -245,7 +364,10 @@ public final class MediaPlayer {
 
     /**
      * filterable
+     * 
+     * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -253,7 +375,10 @@ public final class MediaPlayer {
 
     /**
      * filterable
+     * 
+     * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -261,37 +386,64 @@ public final class MediaPlayer {
 
     /**
      * filterable
+     * 
+     * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyPlayCount();
 
+    /**
+     * API-Since: 3.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertySkipCount();
 
+    /**
+     * API-Since: 3.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyRating();
 
+    /**
+     * API-Since: 3.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyLastPlayedDate();
 
+    /**
+     * API-Since: 4.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyUserGrouping();
 
+    /**
+     * API-Since: 6.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyBookmarkTime();
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -301,6 +453,7 @@ public final class MediaPlayer {
      * Any items or playlists which were previously cached should be re-evaluated from queries when
      * MPMediaLibraryDidChangeNotification is posted.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -309,6 +462,7 @@ public final class MediaPlayer {
     /**
      * filterable
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -317,6 +471,7 @@ public final class MediaPlayer {
     /**
      * filterable
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -325,6 +480,7 @@ public final class MediaPlayer {
     /**
      * filterable
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -335,16 +491,25 @@ public final class MediaPlayer {
      * to the generate the playlist.
      * Returns nil for playlists without MPMediaPlaylistAttributeGenius set.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaPlaylistPropertySeedItems();
 
+    /**
+     * API-Since: 9.3
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaPlaylistPropertyDescriptionText();
 
+    /**
+     * API-Since: 9.3
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -353,6 +518,10 @@ public final class MediaPlayer {
     /**
      * Posted when the prepared state changes of an object conforming to the MPMediaPlayback protocol changes.
      * This supersedes MPMoviePlayerContentPreloadDidFinishNotification.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit.
      */
     @Deprecated
     @Generated
@@ -362,6 +531,10 @@ public final class MediaPlayer {
 
     /**
      * Posted when the scaling mode changes.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -371,6 +544,10 @@ public final class MediaPlayer {
 
     /**
      * Posted when movie playback ends or a user exits playback.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -380,6 +557,10 @@ public final class MediaPlayer {
 
     /**
      * NSNumber (MPMovieFinishReason)
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -389,6 +570,10 @@ public final class MediaPlayer {
 
     /**
      * Posted when the playback state changes, either programatically or by the user.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -398,6 +583,10 @@ public final class MediaPlayer {
 
     /**
      * Posted when the network load state changes.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -407,6 +596,10 @@ public final class MediaPlayer {
 
     /**
      * Posted when the currently playing movie changes.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -416,6 +609,10 @@ public final class MediaPlayer {
 
     /**
      * Posted when the movie player enters or exits fullscreen mode.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -423,18 +620,33 @@ public final class MediaPlayer {
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerWillEnterFullscreenNotification();
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
+     */
     @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerDidEnterFullscreenNotification();
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
+     */
     @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerWillExitFullscreenNotification();
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
+     */
     @Deprecated
     @Generated
     @CVariable()
@@ -443,6 +655,10 @@ public final class MediaPlayer {
 
     /**
      * NSNumber of double (NSTimeInterval)
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -452,6 +668,10 @@ public final class MediaPlayer {
 
     /**
      * NSNumber of NSUInteger (UIViewAnimationCurve)
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -461,6 +681,10 @@ public final class MediaPlayer {
 
     /**
      * Posted when the movie player begins or ends playing video via AirPlay.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -470,6 +694,10 @@ public final class MediaPlayer {
 
     /**
      * Posted when the ready for display state changes.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit.
      */
     @Deprecated
     @Generated
@@ -480,6 +708,10 @@ public final class MediaPlayer {
     /**
      * Calling -prepareToPlay on the movie player will begin determining movie properties asynchronously.
      * These notifications are posted when the associated movie property becomes available.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -489,6 +721,10 @@ public final class MediaPlayer {
 
     /**
      * Posted if the movieSourceType is MPMovieSourceTypeUnknown when preparing for playback.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -496,12 +732,22 @@ public final class MediaPlayer {
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMovieSourceTypeAvailableNotification();
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
+     */
     @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMovieDurationAvailableNotification();
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
+     */
     @Deprecated
     @Generated
     @CVariable()
@@ -510,6 +756,10 @@ public final class MediaPlayer {
 
     /**
      * Posted when each thumbnail image request is completed.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -519,6 +769,10 @@ public final class MediaPlayer {
 
     /**
      * UIImage, may be nil if an error occurred.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -528,6 +782,10 @@ public final class MediaPlayer {
 
     /**
      * NSNumber (double)
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -537,6 +795,10 @@ public final class MediaPlayer {
 
     /**
      * NSError
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -546,6 +808,10 @@ public final class MediaPlayer {
 
     /**
      * Posted when new timed metadata arrives.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVFoundation.
      */
     @Deprecated
     @Generated
@@ -555,6 +821,10 @@ public final class MediaPlayer {
 
     /**
      * NSDictionary of the most recent MPTimedMetadata objects.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVFoundation.
      */
     @Deprecated
     @Generated
@@ -564,6 +834,10 @@ public final class MediaPlayer {
 
     /**
      * NSString
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVFoundation.
      */
     @Deprecated
     @Generated
@@ -573,6 +847,10 @@ public final class MediaPlayer {
 
     /**
      * NSString
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVFoundation.
      */
     @Deprecated
     @Generated
@@ -582,6 +860,10 @@ public final class MediaPlayer {
 
     /**
      * NSString
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVFoundation.
      */
     @Deprecated
     @Generated
@@ -591,6 +873,10 @@ public final class MediaPlayer {
 
     /**
      * NSString
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVFoundation.
      */
     @Deprecated
     @Generated
@@ -600,6 +886,10 @@ public final class MediaPlayer {
 
     /**
      * NSString (ISO 639-2)
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVFoundation.
      */
     @Deprecated
     @Generated
@@ -609,7 +899,10 @@ public final class MediaPlayer {
 
     /**
      * Posted when the playback state changes, either programatically or by the user.
+     * 
+     * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -617,7 +910,10 @@ public final class MediaPlayer {
 
     /**
      * Posted when the currently playing media item changes.
+     * 
+     * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -625,7 +921,10 @@ public final class MediaPlayer {
 
     /**
      * Posted when the current volume changes.
+     * 
+     * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -633,7 +932,13 @@ public final class MediaPlayer {
 
     /**
      * Posted when the wirelessRoutesAvailable property changes.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use AVRouteDetectorMultipleRoutesDetectedDidChangeNotification instead.
      */
+    @NotNull
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -641,12 +946,22 @@ public final class MediaPlayer {
 
     /**
      * Posted when the wirelessRouteActive property changes.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use AVPlayer.externalPlaybackActive KVO instead.
      */
+    @NotNull
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPVolumeViewWirelessRouteActiveDidChangeNotification();
 
+    /**
+     * API-Since: 9.3
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -654,7 +969,10 @@ public final class MediaPlayer {
 
     /**
      * NSNumber (double)
+     * 
+     * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -662,7 +980,10 @@ public final class MediaPlayer {
 
     /**
      * NSNumber (double)
+     * 
+     * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -670,7 +991,10 @@ public final class MediaPlayer {
 
     /**
      * NSNumber (double)
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -678,7 +1002,10 @@ public final class MediaPlayer {
 
     /**
      * NSNumber (NSUInteger)
+     * 
+     * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -686,7 +1013,10 @@ public final class MediaPlayer {
 
     /**
      * NSNumber (NSUInteger)
+     * 
+     * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -694,7 +1024,10 @@ public final class MediaPlayer {
 
     /**
      * NSNumber (NSUInteger)
+     * 
+     * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -702,7 +1035,10 @@ public final class MediaPlayer {
 
     /**
      * NSNumber (NSUInteger)
+     * 
+     * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -710,7 +1046,10 @@ public final class MediaPlayer {
 
     /**
      * NSNumber (BOOL)
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -718,7 +1057,10 @@ public final class MediaPlayer {
 
     /**
      * NSArrayRef of MPNowPlayingInfoLanguageOptionGroup
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -726,7 +1068,10 @@ public final class MediaPlayer {
 
     /**
      * NSArray of MPNowPlayingInfoLanguageOption
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -734,7 +1079,10 @@ public final class MediaPlayer {
 
     /**
      * NSString
+     * 
+     * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -742,7 +1090,10 @@ public final class MediaPlayer {
 
     /**
      * NSString
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -750,7 +1101,10 @@ public final class MediaPlayer {
 
     /**
      * NSString
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -758,7 +1112,10 @@ public final class MediaPlayer {
 
     /**
      * NSNumber (float)
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -766,7 +1123,10 @@ public final class MediaPlayer {
 
     /**
      * NSNumber (MPNowPlayingInfoMediaType)
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -776,52 +1136,91 @@ public final class MediaPlayer {
      * Common values used to to populate MPNowPlayingInfoLanguageOption's
      * characteristics property.
      * See the AVMediaSelectionOption documentation about Media Characteristics for more details.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPLanguageOptionCharacteristicIsMainProgramContent();
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPLanguageOptionCharacteristicIsAuxiliaryContent();
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPLanguageOptionCharacteristicContainsOnlyForcedSubtitles();
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPLanguageOptionCharacteristicTranscribesSpokenDialog();
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPLanguageOptionCharacteristicDescribesMusicAndSound();
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPLanguageOptionCharacteristicEasyToRead();
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPLanguageOptionCharacteristicDescribesVideo();
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPLanguageOptionCharacteristicLanguageTranslation();
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPLanguageOptionCharacteristicDubbedTranslation();
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -829,7 +1228,10 @@ public final class MediaPlayer {
 
     /**
      * Matches the id used by MPMusicPlayerController to enqueue store tracks
+     * 
+     * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -837,7 +1239,10 @@ public final class MediaPlayer {
 
     /**
      * Posted when the queue changes
+     * 
+     * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -845,7 +1250,10 @@ public final class MediaPlayer {
 
     /**
      * NSString
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -853,7 +1261,10 @@ public final class MediaPlayer {
 
     /**
      * NSURL
+     * 
+     * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -861,7 +1272,10 @@ public final class MediaPlayer {
 
     /**
      * NSDate
+     * 
+     * API-Since: 11.1
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -869,14 +1283,43 @@ public final class MediaPlayer {
 
     /**
      * filterable
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaPlaylistPropertyCloudGlobalID();
 
+    /**
+     * API-Since: 14.5
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMediaItemPropertyIsPreorder();
+
+    /**
+     * NSArray of MPAdTimeRange
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MPNowPlayingInfoPropertyAdTimeRanges();
+
+    /**
+     * NSNumber (double)
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MPNowPlayingInfoPropertyCreditsStartTime();
 }

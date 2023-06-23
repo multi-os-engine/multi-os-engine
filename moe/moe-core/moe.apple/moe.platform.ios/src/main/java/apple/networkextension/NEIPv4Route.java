@@ -42,13 +42,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEIPv4Route
- * <p>
+ * 
  * The NEIPv4Route class declares the programmatic interface for an object that contains settings for an IPv4 route.
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -80,22 +84,25 @@ public class NEIPv4Route extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,9 +113,12 @@ public class NEIPv4Route extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * defaultRoute
-     *
+     * 
      * @return A route object that represents the IPv4 default route.
+     * 
+     *         API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("defaultRoute")
     public static native NEIPv4Route defaultRoute();
@@ -139,9 +149,10 @@ public class NEIPv4Route extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -173,41 +184,51 @@ public class NEIPv4Route extends NSObject implements NSSecureCoding, NSCopying {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] destinationAddress
-     * <p>
+     * 
      * An IPv4 address represented as a dotted decimal string.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("destinationAddress")
     public native String destinationAddress();
 
     /**
      * [@property] destinationSubnetMask
-     * <p>
+     * 
      * An IPv4 subnet mask represented as a dotted decimal string. This mask in combination with the destinationAddress
      * property is used to determine the destination network of the route.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("destinationSubnetMask")
     public native String destinationSubnetMask();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] gatewayAddress
-     * <p>
+     * 
      * The IPv4 address of the route's gateway. If this property is nil then the route's gateway will be set to the
      * tunnel's virtual interface.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("gatewayAddress")
     public native String gatewayAddress();
@@ -218,30 +239,34 @@ public class NEIPv4Route extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEIPv4Route initWithCoder(NSCoder coder);
+    public native NEIPv4Route initWithCoder(@NotNull NSCoder coder);
 
     /**
      * initWithDestinationAddress:subnetMask:
-     * <p>
+     * 
      * Initialize a newly-allocated NEIPv4Route.
-     *
+     * 
      * @param address    The IPv4 address of the destination network.
      * @param subnetMask The subnet mask of the destination network.
      * @return The initialized NEIPv4Route.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("initWithDestinationAddress:subnetMask:")
-    public native NEIPv4Route initWithDestinationAddressSubnetMask(String address, String subnetMask);
+    public native NEIPv4Route initWithDestinationAddressSubnetMask(@NotNull String address, @NotNull String subnetMask);
 
     /**
      * [@property] gatewayAddress
-     * <p>
+     * 
      * The IPv4 address of the route's gateway. If this property is nil then the route's gateway will be set to the
      * tunnel's virtual interface.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setGatewayAddress:")
-    public native void setGatewayAddress(String value);
+    public native void setGatewayAddress(@Nullable String value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

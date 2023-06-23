@@ -22,11 +22,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] PHASEPushStreamNodeDefinition
- * <p>
+ * 
  * An object for defining a push stream sound event node when building a sound event.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -58,22 +62,25 @@ public class PHASEPushStreamNodeDefinition extends PHASEGeneratorNodeDefinition 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -88,9 +95,10 @@ public class PHASEPushStreamNodeDefinition extends PHASEGeneratorNodeDefinition 
 
     /**
      * [@property] format
-     * <p>
+     * 
      * The readonly property that returns the AVAudioFormat that this stream was initialized with
      */
+    @NotNull
     @Generated
     @Selector("format")
     public native AVAudioFormat format();
@@ -106,34 +114,41 @@ public class PHASEPushStreamNodeDefinition extends PHASEGeneratorNodeDefinition 
 
     /**
      * initWithMixerDefinition:format
-     * <p>
+     * 
      * Create a push stream node definition
-     *
-     * @param mixerDefinition The mixer definition this stream will be assigned to
-     * @param format          The AVAudioFormat object that will define the attributes of the audio this node will
+     * 
+     * @param mixerDefinition
+     *                        The mixer definition this stream will be assigned to
+     * @param format
+     *                        The AVAudioFormat object that will define the attributes of the audio this node will
      *                        accept.
-     * @return A new PHASEPushStreamNodeDefinition object
+     * @return
+     *         A new PHASEPushStreamNodeDefinition object
      */
     @Generated
     @Selector("initWithMixerDefinition:format:")
-    public native PHASEPushStreamNodeDefinition initWithMixerDefinitionFormat(PHASEMixerDefinition mixerDefinition,
-            AVAudioFormat format);
+    public native PHASEPushStreamNodeDefinition initWithMixerDefinitionFormat(
+            @NotNull PHASEMixerDefinition mixerDefinition, @NotNull AVAudioFormat format);
 
     /**
      * initWithMixerDefinition:format:identifier
-     * <p>
+     * 
      * Create a push stream node definition
-     *
-     * @param mixerDefinition The mixer definition this stream will be assigned to
-     * @param format          The AVAudioFormat object that will define the attributes of the audio this node will
+     * 
+     * @param mixerDefinition
+     *                        The mixer definition this stream will be assigned to
+     * @param format
+     *                        The AVAudioFormat object that will define the attributes of the audio this node will
      *                        accept.
-     * @param identifier      An optional custom identifier to give to this object
-     * @return A new PHASEPushStreamNodeDefinition object
+     * @param identifier
+     *                        An optional custom identifier to give to this object
+     * @return
+     *         A new PHASEPushStreamNodeDefinition object
      */
     @Generated
     @Selector("initWithMixerDefinition:format:identifier:")
     public native PHASEPushStreamNodeDefinition initWithMixerDefinitionFormatIdentifier(
-            PHASEMixerDefinition mixerDefinition, AVAudioFormat format, String identifier);
+            @NotNull PHASEMixerDefinition mixerDefinition, @NotNull AVAudioFormat format, @NotNull String identifier);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -152,9 +167,10 @@ public class PHASEPushStreamNodeDefinition extends PHASEGeneratorNodeDefinition 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,9 +179,9 @@ public class PHASEPushStreamNodeDefinition extends PHASEGeneratorNodeDefinition 
 
     /**
      * [@property] normalize
-     * <p>
+     * 
      * Determines whether or not the engine should normalize the stream. The default value is NO.
-     * <p>
+     * 
      * In general, client's are advised to normalize the input. Normalization is required to properly calibrate the
      * output level.
      * If you set this value to NO, it's advised that you do custom normalization of the audio data prior to passing the
@@ -185,9 +201,9 @@ public class PHASEPushStreamNodeDefinition extends PHASEGeneratorNodeDefinition 
 
     /**
      * [@property] normalize
-     * <p>
+     * 
      * Determines whether or not the engine should normalize the stream. The default value is NO.
-     * <p>
+     * 
      * In general, client's are advised to normalize the input. Normalization is required to properly calibrate the
      * output level.
      * If you set this value to NO, it's advised that you do custom normalization of the audio data prior to passing the

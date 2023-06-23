@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] MLCSoftmaxOperation
- * <p>
+ * 
  * A softmax operation.
  */
 @Generated

@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] PHASEPlaybackMode
- * <p>
+ * 
  * Playback mode.
  * [@constant] PHASEPlaybackModeOneShot
  * Play the sound asset once, then stop.

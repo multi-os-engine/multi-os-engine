@@ -17,8 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSData;
@@ -55,7 +53,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 2.0
+ * Deprecated-Since: 12.0
+ * Deprecated-Message: No longer supported; please adopt WKWebView.
+ */
+@Deprecated
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -78,7 +86,7 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("addKeyframeWithRelativeStartTime:relativeDuration:animations:")
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
-            @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
 
     @Generated
     @Owned
@@ -94,64 +102,70 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
     public static native void animateKeyframesWithDurationDelayOptionsAnimationsCompletion(double duration,
             double delay, @NUInt long options,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:animations:")
     public static native void animateWithDurationAnimations(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
 
     @Generated
     @Selector("animateWithDuration:animations:completion:")
     public static native void animateWithDurationAnimationsCompletion(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:options:animations:completion:")
     public static native void animateWithDurationDelayOptionsAnimationsCompletion(double duration, double delay,
             @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:")
     public static native void animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion(
             double duration, double delay, @NFloat double dampingRatio, @NFloat double velocity, @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
 
+    @NotNull
     @Generated
     @Selector("appearance")
     public static native UIWebView appearance();
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:")
-    public static native UIWebView appearanceForTraitCollection(UITraitCollection trait);
+    public static native UIWebView appearanceForTraitCollection(@NotNull UITraitCollection trait);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    public static native UIWebView appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native UIWebView appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     public static native UIWebView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            UITraitCollection trait, NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     public static native UIWebView appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    public static native UIWebView appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native UIWebView appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes);
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -159,34 +173,39 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
-    public static native void beginAnimationsContext(String animationID, VoidPtr context);
+    public static native void beginAnimationsContext(@Nullable String animationID, @Nullable VoidPtr context);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -225,10 +244,12 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("layerClass")
     public static native Class layerClass();
@@ -241,14 +262,14 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")
     public static native void performSystemAnimationOnViewsOptionsAnimationsCompletion(@NUInt long animation,
-            NSArray<? extends UIView> views, @NUInt long options,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
+            @NotNull NSArray<? extends UIView> views, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("performWithoutAnimation:")
     public static native void performWithoutAnimation(
-            @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
+            @NotNull @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
 
     @Generated
     @Selector("requiresConstraintBasedLayout")
@@ -262,49 +283,61 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
-    public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
+    public static native void setAnimationDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
-    public static native void setAnimationDidStopSelector(SEL selector);
+    public static native void setAnimationDidStopSelector(@Nullable SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
-    public static native void setAnimationStartDate(NSDate startDate);
+    public static native void setAnimationStartDate(@NotNull NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
-    public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
+    public static native void setAnimationTransitionForViewCache(@NInt long transition, @NotNull UIView view,
+            boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
-    public static native void setAnimationWillStartSelector(SEL selector);
+    public static native void setAnimationWillStartSelector(@Nullable SEL selector);
 
     @Generated
     @Selector("setAnimationsEnabled:")
@@ -320,16 +353,16 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
 
     @Generated
     @Selector("transitionFromView:toView:duration:options:completion:")
-    public static native void transitionFromViewToViewDurationOptionsCompletion(UIView fromView, UIView toView,
-            double duration, @NUInt long options,
-            @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
+    public static native void transitionFromViewToViewDurationOptionsCompletion(@NotNull UIView fromView,
+            @NotNull UIView toView, double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
 
     @Generated
     @Selector("transitionWithView:duration:options:animations:completion:")
-    public static native void transitionWithViewDurationOptionsAnimationsCompletion(UIView view, double duration,
-            @NUInt long options,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
+    public static native void transitionWithViewDurationOptionsAnimationsCompletion(@NotNull UIView view,
+            double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:")
@@ -349,6 +382,8 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
 
     /**
      * iPhone Safari defaults to NO. iPad Safari defaults to YES
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("allowsInlineMediaPlayback")
@@ -356,53 +391,64 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
 
     /**
      * default is NO
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("allowsLinkPreview")
     public native boolean allowsLinkPreview();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("allowsPictureInPictureMediaPlayback")
     public native boolean allowsPictureInPictureMediaPlayback();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearance")
     public UIWebView _appearance() {
         return appearance();
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    public UIWebView _appearanceForTraitCollection(UITraitCollection trait) {
+    public UIWebView _appearanceForTraitCollection(@NotNull UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    public UIWebView _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public UIWebView _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    public UIWebView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
+    public UIWebView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(@NotNull UITraitCollection trait,
+            @NotNull NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    public UIWebView _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
-            Object... varargs) {
+    public UIWebView _appearanceWhenContainedIn(
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public UIWebView _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public UIWebView _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -414,16 +460,24 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("canGoForward")
     public native boolean canGoForward();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("dataDetectorTypes")
     @NUInt
     public native long dataDetectorTypes();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIWebViewDelegate delegate();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
+     */
     @Generated
     @Deprecated
     @Selector("detectsPhoneNumbers")
@@ -431,8 +485,11 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("gapBetweenPages")
     @NFloat
@@ -452,7 +509,7 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIWebView initWithCoder(NSCoder coder);
+    public native UIWebView initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -464,6 +521,8 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
 
     /**
      * default is YES
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("keyboardDisplayRequiresUserAction")
@@ -471,19 +530,21 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
 
     @Generated
     @Selector("loadData:MIMEType:textEncodingName:baseURL:")
-    public native void loadDataMIMETypeTextEncodingNameBaseURL(NSData data, String MIMEType, String textEncodingName,
-            NSURL baseURL);
+    public native void loadDataMIMETypeTextEncodingNameBaseURL(@NotNull NSData data, @NotNull String MIMEType,
+            @NotNull String textEncodingName, @NotNull NSURL baseURL);
 
     @Generated
     @Selector("loadHTMLString:baseURL:")
-    public native void loadHTMLStringBaseURL(String string, NSURL baseURL);
+    public native void loadHTMLStringBaseURL(@NotNull String string, @Nullable NSURL baseURL);
 
     @Generated
     @Selector("loadRequest:")
-    public native void loadRequest(NSURLRequest request);
+    public native void loadRequest(@NotNull NSURLRequest request);
 
     /**
      * iPhone and iPad Safari both default to YES
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("mediaPlaybackAllowsAirPlay")
@@ -491,26 +552,40 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
 
     /**
      * iPhone and iPad Safari both default to YES
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("mediaPlaybackRequiresUserAction")
     public native boolean mediaPlaybackRequiresUserAction();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("pageCount")
     @NUInt
     public native long pageCount();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("pageLength")
     @NFloat
     public native double pageLength();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("paginationBreakingMode")
     @NInt
     public native long paginationBreakingMode();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("paginationMode")
     @NInt
@@ -520,6 +595,7 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("reload")
     public native void reload();
 
+    @Nullable
     @Generated
     @Selector("request")
     public native NSURLRequest request();
@@ -528,6 +604,10 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("scalesPageToFit")
     public native boolean scalesPageToFit();
 
+    /**
+     * API-Since: 5.0
+     */
+    @NotNull
     @Generated
     @Selector("scrollView")
     public native UIScrollView scrollView();
@@ -535,67 +615,69 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Generated
     @IsOptional
     @Selector("scrollViewDidEndDecelerating:")
-    public native void scrollViewDidEndDecelerating(UIScrollView scrollView);
+    public native void scrollViewDidEndDecelerating(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewDidEndDragging:willDecelerate:")
-    public native void scrollViewDidEndDraggingWillDecelerate(UIScrollView scrollView, boolean decelerate);
+    public native void scrollViewDidEndDraggingWillDecelerate(@NotNull UIScrollView scrollView, boolean decelerate);
 
     @Generated
     @IsOptional
     @Selector("scrollViewDidEndScrollingAnimation:")
-    public native void scrollViewDidEndScrollingAnimation(UIScrollView scrollView);
+    public native void scrollViewDidEndScrollingAnimation(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewDidEndZooming:withView:atScale:")
-    public native void scrollViewDidEndZoomingWithViewAtScale(UIScrollView scrollView, UIView view,
+    public native void scrollViewDidEndZoomingWithViewAtScale(@NotNull UIScrollView scrollView, @Nullable UIView view,
             @NFloat double scale);
 
     @Generated
     @IsOptional
     @Selector("scrollViewDidScroll:")
-    public native void scrollViewDidScroll(UIScrollView scrollView);
+    public native void scrollViewDidScroll(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewDidScrollToTop:")
-    public native void scrollViewDidScrollToTop(UIScrollView scrollView);
+    public native void scrollViewDidScrollToTop(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewDidZoom:")
-    public native void scrollViewDidZoom(UIScrollView scrollView);
+    public native void scrollViewDidZoom(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewShouldScrollToTop:")
-    public native boolean scrollViewShouldScrollToTop(UIScrollView scrollView);
+    public native boolean scrollViewShouldScrollToTop(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewWillBeginDecelerating:")
-    public native void scrollViewWillBeginDecelerating(UIScrollView scrollView);
+    public native void scrollViewWillBeginDecelerating(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewWillBeginDragging:")
-    public native void scrollViewWillBeginDragging(UIScrollView scrollView);
+    public native void scrollViewWillBeginDragging(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewWillBeginZooming:withView:")
-    public native void scrollViewWillBeginZoomingWithView(UIScrollView scrollView, UIView view);
+    public native void scrollViewWillBeginZoomingWithView(@NotNull UIScrollView scrollView, @Nullable UIView view);
 
     @Generated
     @IsOptional
     @Selector("scrollViewWillEndDragging:withVelocity:targetContentOffset:")
-    public native void scrollViewWillEndDraggingWithVelocityTargetContentOffset(UIScrollView scrollView,
-            @ByValue CGPoint velocity, CGPoint targetContentOffset);
+    public native void scrollViewWillEndDraggingWithVelocityTargetContentOffset(@NotNull UIScrollView scrollView,
+            @ByValue CGPoint velocity, @NotNull CGPoint targetContentOffset);
 
     /**
      * iPhone Safari defaults to NO. iPad Safari defaults to YES
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setAllowsInlineMediaPlayback:")
@@ -603,25 +685,33 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
 
     /**
      * default is NO
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAllowsLinkPreview:")
     public native void setAllowsLinkPreview(boolean value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setAllowsPictureInPictureMediaPlayback:")
     public native void setAllowsPictureInPictureMediaPlayback(boolean value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setDataDetectorTypes:")
     public native void setDataDetectorTypes(@NUInt long value);
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIWebViewDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UIWebViewDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIWebViewDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIWebViewDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -632,17 +722,26 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
         }
     }
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
+     */
     @Generated
     @Deprecated
     @Selector("setDetectsPhoneNumbers:")
     public native void setDetectsPhoneNumbers(boolean value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setGapBetweenPages:")
     public native void setGapBetweenPages(@NFloat double value);
 
     /**
      * default is YES
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setKeyboardDisplayRequiresUserAction:")
@@ -650,6 +749,8 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
 
     /**
      * iPhone and iPad Safari both default to YES
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setMediaPlaybackAllowsAirPlay:")
@@ -657,19 +758,30 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
 
     /**
      * iPhone and iPad Safari both default to YES
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setMediaPlaybackRequiresUserAction:")
     public native void setMediaPlaybackRequiresUserAction(boolean value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setPageLength:")
     public native void setPageLength(@NFloat double value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setPaginationBreakingMode:")
     public native void setPaginationBreakingMode(@NInt long value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setPaginationMode:")
     public native void setPaginationMode(@NInt long value);
@@ -680,6 +792,8 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
 
     /**
      * iPhone and iPad Safari both default to NO
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setSuppressesIncrementalRendering:")
@@ -689,30 +803,34 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("stopLoading")
     public native void stopLoading();
 
+    @Nullable
     @Generated
     @Selector("stringByEvaluatingJavaScriptFromString:")
-    public native String stringByEvaluatingJavaScriptFromString(String script);
+    public native String stringByEvaluatingJavaScriptFromString(@NotNull String script);
 
     /**
      * iPhone and iPad Safari both default to NO
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("suppressesIncrementalRendering")
     public native boolean suppressesIncrementalRendering();
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("viewForZoomingInScrollView:")
-    public native UIView viewForZoomingInScrollView(UIScrollView scrollView);
+    public native UIView viewForZoomingInScrollView(@NotNull UIScrollView scrollView);
 
     @Generated
     @IsOptional
     @Selector("scrollViewDidChangeAdjustedContentInset:")
-    public native void scrollViewDidChangeAdjustedContentInset(UIScrollView scrollView);
+    public native void scrollViewDidChangeAdjustedContentInset(@NotNull UIScrollView scrollView);
 
     @Generated
     @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
-            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+            @NotNull @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

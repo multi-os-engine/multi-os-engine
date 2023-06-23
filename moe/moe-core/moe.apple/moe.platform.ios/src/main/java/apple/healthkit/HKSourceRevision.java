@@ -44,11 +44,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * HKSourceRevision
- * <p>
+ * 
  * Represents a specific revision of an HKSource.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("HealthKit")
@@ -80,22 +84,25 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +137,10 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,15 +167,16 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -175,22 +184,23 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKSourceRevision initWithCoder(NSCoder coder);
+    public native HKSourceRevision initWithCoder(@NotNull NSCoder coder);
 
     /**
      * initWithSource:version:
-     * <p>
+     * 
      * Initializes a new HKSourceRevision with the given source and version.
      */
     @Generated
     @Selector("initWithSource:version:")
-    public native HKSourceRevision initWithSourceVersion(HKSource source, String version);
+    public native HKSourceRevision initWithSourceVersion(@NotNull HKSource source, @Nullable String version);
 
     /**
      * [@property] source
-     * <p>
+     * 
      * The HKSource of the receiver.
      */
+    @NotNull
     @Generated
     @Selector("source")
     public native HKSource source();
@@ -203,33 +213,39 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
 
     /**
      * [@property] version
-     * <p>
+     * 
      * The version of the source property.
-     * <p>
+     * 
      * This value is taken from the CFBundleVersion of the source. May be nil for older data.
      */
+    @Nullable
     @Generated
     @Selector("version")
     public native String version();
 
     /**
      * initWithSource:version:productType:operatingSystemVersion:
-     * <p>
+     * 
      * Initializes a new HKSourceRevision with the given source, version, product type, and operating system
      * version.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithSource:version:productType:operatingSystemVersion:")
-    public native HKSourceRevision initWithSourceVersionProductTypeOperatingSystemVersion(HKSource source,
-            String version, String productType, @ByValue NSOperatingSystemVersion operatingSystemVersion);
+    public native HKSourceRevision initWithSourceVersionProductTypeOperatingSystemVersion(@NotNull HKSource source,
+            @Nullable String version, @Nullable String productType,
+            @ByValue NSOperatingSystemVersion operatingSystemVersion);
 
     /**
      * [@property] operatingSystemVersion
-     * <p>
+     * 
      * Represents the operating system version of the device running HealthKit when the object was created.
-     * <p>
+     * 
      * iOS versions after 8.0 but prior to 8.2 are saved as 8.0, and iOS version after 8.2 but prior to 9.0
      * are saved as 8.2.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("operatingSystemVersion")
@@ -238,11 +254,14 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
 
     /**
      * [@property] productType
-     * <p>
+     * 
      * Represents the product type of the device running HealthKit when the object was created.
-     * <p>
+     * 
      * This value may be nil for older data, which indicates an unknown product type.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("productType")
     public native String productType();

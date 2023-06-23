@@ -21,36 +21,50 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NWUDPSessionState
- * <p>
+ * 
  * UDP session state values
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class NWUDPSessionState {
     /**
      * [@constant] NWUDPSessionStateInvalid The session is in an invalid or uninitialized state.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Invalid = 0x0000000000000000L;
     /**
      * [@constant] NWUDPSessionStateWaiting The session is waiting for better conditions before
      * attempting to make the session ready.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Waiting = 0x0000000000000001L;
     /**
      * [@constant] NWUDPSessionStatePreparing The endpoint is being resolved
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Preparing = 0x0000000000000002L;
     /**
      * [@constant] NWUDPSessionStateReady The session is ready for reading and writing data
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Ready = 0x0000000000000003L;
     /**
      * [@constant] NWUDPSessionStateFailed None of the currently resolved endpoints can be used
      * at this time, either due to problems with the path or the client rejecting the
      * endpoints.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Failed = 0x0000000000000004L;
     /**
      * [@constant] NWUDPSessionStateCancelled The session has been cancelled by the client
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Cancelled = 0x0000000000000005L;
 

@@ -30,7 +30,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -61,31 +66,35 @@ public class INLodgingReservation extends INReservation implements NSCopying, NS
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -97,7 +106,7 @@ public class INLodgingReservation extends INReservation implements NSCopying, NS
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -110,15 +119,16 @@ public class INLodgingReservation extends INReservation implements NSCopying, NS
 
     @Generated
     @Selector("initWithCoder:")
-    public native INLodgingReservation initWithCoder(NSCoder coder);
+    public native INLodgingReservation initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithItemReference:reservationNumber:bookingTime:reservationStatus:reservationHolderName:actions:lodgingBusinessLocation:reservationDuration:numberOfAdults:numberOfChildren:")
     public native INLodgingReservation initWithItemReferenceReservationNumberBookingTimeReservationStatusReservationHolderNameActionsLodgingBusinessLocationReservationDurationNumberOfAdultsNumberOfChildren(
-            INSpeakableString itemReference, String reservationNumber, NSDate bookingTime, @NInt long reservationStatus,
-            String reservationHolderName, NSArray<? extends INReservationAction> actions,
-            CLPlacemark lodgingBusinessLocation, INDateComponentsRange reservationDuration, NSNumber numberOfAdults,
-            NSNumber numberOfChildren);
+            @NotNull INSpeakableString itemReference, @Nullable String reservationNumber, @Nullable NSDate bookingTime,
+            @NInt long reservationStatus, @Nullable String reservationHolderName,
+            @Nullable NSArray<? extends INReservationAction> actions, @NotNull CLPlacemark lodgingBusinessLocation,
+            @NotNull INDateComponentsRange reservationDuration, @Nullable NSNumber numberOfAdults,
+            @Nullable NSNumber numberOfChildren);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -137,10 +147,12 @@ public class INLodgingReservation extends INReservation implements NSCopying, NS
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("lodgingBusinessLocation")
     public native CLPlacemark lodgingBusinessLocation();
@@ -150,14 +162,17 @@ public class INLodgingReservation extends INReservation implements NSCopying, NS
     @Selector("new")
     public static native INLodgingReservation new_objc();
 
+    @Nullable
     @Generated
     @Selector("numberOfAdults")
     public native NSNumber numberOfAdults();
 
+    @Nullable
     @Generated
     @Selector("numberOfChildren")
     public native NSNumber numberOfChildren();
 
+    @NotNull
     @Generated
     @Selector("reservationDuration")
     public native INDateComponentsRange reservationDuration();
@@ -193,11 +208,15 @@ public class INLodgingReservation extends INReservation implements NSCopying, NS
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithItemReference:reservationNumber:bookingTime:reservationStatus:reservationHolderName:actions:URL:lodgingBusinessLocation:reservationDuration:numberOfAdults:numberOfChildren:")
     public native INLodgingReservation initWithItemReferenceReservationNumberBookingTimeReservationStatusReservationHolderNameActionsURLLodgingBusinessLocationReservationDurationNumberOfAdultsNumberOfChildren(
-            INSpeakableString itemReference, String reservationNumber, NSDate bookingTime, @NInt long reservationStatus,
-            String reservationHolderName, NSArray<? extends INReservationAction> actions, NSURL URL,
-            CLPlacemark lodgingBusinessLocation, INDateComponentsRange reservationDuration, NSNumber numberOfAdults,
-            NSNumber numberOfChildren);
+            @NotNull INSpeakableString itemReference, @Nullable String reservationNumber, @Nullable NSDate bookingTime,
+            @NInt long reservationStatus, @Nullable String reservationHolderName,
+            @Nullable NSArray<? extends INReservationAction> actions, @Nullable NSURL URL,
+            @NotNull CLPlacemark lodgingBusinessLocation, @NotNull INDateComponentsRange reservationDuration,
+            @Nullable NSNumber numberOfAdults, @Nullable NSNumber numberOfChildren);
 }

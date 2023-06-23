@@ -19,14 +19,28 @@ package apple.mediaplayer.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 public final class MPMusicRepeatMode {
     /**
      * the user's preference for repeat mode
+     * 
+     * API-Since: 3.0
      */
     @Generated @NInt public static final long Default = 0x0000000000000000L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long None = 0x0000000000000001L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long One = 0x0000000000000002L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long All = 0x0000000000000003L;
 
     @Generated

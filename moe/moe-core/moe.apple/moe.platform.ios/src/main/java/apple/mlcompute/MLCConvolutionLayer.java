@@ -21,11 +21,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCConvolutionLayer
- * <p>
+ * 
  * A convolution layer
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -57,40 +61,45 @@ public class MLCConvolutionLayer extends MLCLayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] biases
-     * <p>
+     * 
      * The bias tensor used by the convolution layer
      */
+    @Nullable
     @Generated
     @Selector("biases")
     public native MLCTensor biases();
 
     /**
      * [@property] biasesParameter
-     * <p>
+     * 
      * The bias tensor parameter used for optimizer update
      */
+    @Nullable
     @Generated
     @Selector("biasesParameter")
     public native MLCTensorParameter biasesParameter();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -105,9 +114,10 @@ public class MLCConvolutionLayer extends MLCLayer {
 
     /**
      * [@property] descriptor
-     * <p>
+     * 
      * The convolution descriptor
      */
+    @NotNull
     @Generated
     @Selector("descriptor")
     public native MLCConvolutionDescriptor descriptor();
@@ -138,13 +148,14 @@ public class MLCConvolutionLayer extends MLCLayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Create a convolution layer
-     *
+     * 
      * @param weights    The weights tensor
      * @param biases     The bias tensor
      * @param descriptor The convolution descriptor
@@ -152,8 +163,8 @@ public class MLCConvolutionLayer extends MLCLayer {
      */
     @Generated
     @Selector("layerWithWeights:biases:descriptor:")
-    public static native MLCConvolutionLayer layerWithWeightsBiasesDescriptor(MLCTensor weights, MLCTensor biases,
-            MLCConvolutionDescriptor descriptor);
+    public static native MLCConvolutionLayer layerWithWeightsBiasesDescriptor(@NotNull MLCTensor weights,
+            @Nullable MLCTensor biases, @NotNull MLCConvolutionDescriptor descriptor);
 
     @Generated
     @Owned
@@ -178,7 +189,7 @@ public class MLCConvolutionLayer extends MLCLayer {
 
     @Generated
     @Selector("supportsDataType:onDevice:")
-    public static native boolean supportsDataTypeOnDevice(int dataType, MLCDevice device);
+    public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
 
     @Generated
     @Selector("version")
@@ -187,18 +198,20 @@ public class MLCConvolutionLayer extends MLCLayer {
 
     /**
      * [@property] weights
-     * <p>
+     * 
      * The weights tensor used by the convolution layer
      */
+    @NotNull
     @Generated
     @Selector("weights")
     public native MLCTensor weights();
 
     /**
      * [@property] weightsParameter
-     * <p>
+     * 
      * The weights tensor parameter used for optimizer update
      */
+    @NotNull
     @Generated
     @Selector("weightsParameter")
     public native MLCTensorParameter weightsParameter();

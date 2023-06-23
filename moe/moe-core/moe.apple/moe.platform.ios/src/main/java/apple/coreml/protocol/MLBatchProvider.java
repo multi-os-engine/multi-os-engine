@@ -9,9 +9,12 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol for accessing a collection of feature providers
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CoreML")
@@ -29,6 +32,7 @@ public interface MLBatchProvider {
     /**
      * Indexed access to collection
      */
+    @NotNull
     @Generated
     @Selector("featuresAtIndex:")
     @MappedReturn(ObjCObjectMapper.class)

@@ -23,7 +23,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.4
+ */
 @Generated
 @Library("AutomaticAssessmentConfiguration")
 @Runtime(ObjCRuntime.class)
@@ -52,38 +57,65 @@ public class AEAssessmentConfiguration extends NSObject implements NSCopying {
     @Selector("allocWithZone:")
     public static native AEAssessmentConfiguration allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("allowsAccessibilitySpeech")
     public native boolean allowsAccessibilitySpeech();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("allowsActivityContinuation")
     public native boolean allowsActivityContinuation();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("allowsContinuousPathKeyboard")
     public native boolean allowsContinuousPathKeyboard();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("allowsDictation")
     public native boolean allowsDictation();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("allowsKeyboardShortcuts")
     public native boolean allowsKeyboardShortcuts();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("allowsPasswordAutoFill")
     public native boolean allowsPasswordAutoFill();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("allowsPredictiveKeyboard")
     public native boolean allowsPredictiveKeyboard();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("allowsSpellCheck")
     public native boolean allowsSpellCheck();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("autocorrectMode")
     @NUInt
@@ -91,31 +123,35 @@ public class AEAssessmentConfiguration extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -151,9 +187,10 @@ public class AEAssessmentConfiguration extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,38 +205,65 @@ public class AEAssessmentConfiguration extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setAllowsAccessibilitySpeech:")
     public native void setAllowsAccessibilitySpeech(boolean value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setAllowsActivityContinuation:")
     public native void setAllowsActivityContinuation(boolean value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setAllowsContinuousPathKeyboard:")
     public native void setAllowsContinuousPathKeyboard(boolean value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setAllowsDictation:")
     public native void setAllowsDictation(boolean value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setAllowsKeyboardShortcuts:")
     public native void setAllowsKeyboardShortcuts(boolean value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setAllowsPasswordAutoFill:")
     public native void setAllowsPasswordAutoFill(boolean value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setAllowsPredictiveKeyboard:")
     public native void setAllowsPredictiveKeyboard(boolean value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setAllowsSpellCheck:")
     public native void setAllowsSpellCheck(boolean value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setAutocorrectMode:")
     public native void setAutocorrectMode(@NUInt long value);

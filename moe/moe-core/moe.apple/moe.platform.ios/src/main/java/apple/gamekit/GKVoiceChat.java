@@ -38,9 +38,13 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * GKVoiceChat represents an instance of a named voice communications channel
+ * 
+ * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -72,22 +76,25 @@ public class GKVoiceChat extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +133,10 @@ public class GKVoiceChat extends NSObject {
     @Selector("isVoIPAllowed")
     public static native boolean isVoIPAllowed();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -177,24 +185,40 @@ public class GKVoiceChat extends NSObject {
     /**
      * name the chat was created with
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
 
     /**
      * This property is obsolete. **
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: use players
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("playerIDs")
     public native NSArray<String> playerIDs();
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: use setPlayerVoiceChatStateDidChangeHandler:
+     */
+    @NotNull
     @Generated
     @Deprecated
     @Selector("playerStateUpdateHandler")
     @ObjCBlock(name = "call_playerStateUpdateHandler_ret")
     public native Block_playerStateUpdateHandler_ret playerStateUpdateHandler();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @Selector("playerVoiceChatStateDidChangeHandler")
     @ObjCBlock(name = "call_playerVoiceChatStateDidChangeHandler_ret")
@@ -202,36 +226,53 @@ public class GKVoiceChat extends NSObject {
 
     /**
      * array of GKPlayer *
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("players")
     public native NSArray<? extends GKPlayer> players();
 
     /**
      * This method is obsolete. It will never be invoked and its implementation does nothing**
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, use setPlayer:muted:
      */
     @Generated
     @Deprecated
     @Selector("setMute:forPlayer:")
-    public native void setMuteForPlayer(boolean isMuted, String playerID);
+    public native void setMuteForPlayer(boolean isMuted, @NotNull String playerID);
 
     /**
      * stop receiving audio from the chat
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPlayer:muted:")
-    public native void setPlayerMuted(GKPlayer player, boolean isMuted);
+    public native void setPlayerMuted(@NotNull GKPlayer player, boolean isMuted);
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: use setPlayerVoiceChatStateDidChangeHandler:
+     */
     @Generated
     @Deprecated
     @Selector("setPlayerStateUpdateHandler:")
     public native void setPlayerStateUpdateHandler(
-            @ObjCBlock(name = "call_setPlayerStateUpdateHandler") Block_setPlayerStateUpdateHandler value);
+            @NotNull @ObjCBlock(name = "call_setPlayerStateUpdateHandler") Block_setPlayerStateUpdateHandler value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setPlayerVoiceChatStateDidChangeHandler:")
     public native void setPlayerVoiceChatStateDidChangeHandler(
-            @ObjCBlock(name = "call_setPlayerVoiceChatStateDidChangeHandler") Block_setPlayerVoiceChatStateDidChangeHandler value);
+            @NotNull @ObjCBlock(name = "call_setPlayerVoiceChatStateDidChangeHandler") Block_setPlayerVoiceChatStateDidChangeHandler value);
 
     /**
      * default 1.0 (max is 1.0, min is 0.0)
@@ -262,27 +303,27 @@ public class GKVoiceChat extends NSObject {
     @Generated
     public interface Block_playerStateUpdateHandler_ret {
         @Generated
-        void call_playerStateUpdateHandler_ret(String arg0, @NInt long arg1);
+        void call_playerStateUpdateHandler_ret(@NotNull String arg0, @NInt long arg1);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_playerVoiceChatStateDidChangeHandler_ret {
         @Generated
-        void call_playerVoiceChatStateDidChangeHandler_ret(GKPlayer arg0, @NInt long arg1);
+        void call_playerVoiceChatStateDidChangeHandler_ret(@NotNull GKPlayer arg0, @NInt long arg1);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setPlayerStateUpdateHandler {
         @Generated
-        void call_setPlayerStateUpdateHandler(String arg0, @NInt long arg1);
+        void call_setPlayerStateUpdateHandler(@NotNull String arg0, @NInt long arg1);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setPlayerVoiceChatStateDidChangeHandler {
         @Generated
-        void call_setPlayerVoiceChatStateDidChangeHandler(GKPlayer arg0, @NInt long arg1);
+        void call_setPlayerVoiceChatStateDidChangeHandler(@NotNull GKPlayer arg0, @NInt long arg1);
     }
 }

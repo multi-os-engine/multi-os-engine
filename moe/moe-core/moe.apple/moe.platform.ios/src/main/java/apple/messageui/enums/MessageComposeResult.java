@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] MessageComposeResult
- * <p>
+ * 
  * Composition result sent to the delegate upon user completion.
- * <p>
+ * 
  * This result will inform the client of the user's message composition action. If the
  * user cancels the composition, <tt>MessageComposeResultCancelled</tt> will be sent to the delegate.
  * Typically <tt>MessageComposeResultSent</tt> will be sent, but <tt>MessageComposeResultFailed</tt> will
@@ -32,11 +32,22 @@ import org.moe.natj.general.ann.NInt;
  * [@constant] MessageComposeResultCancelled User canceled the composition.
  * [@constant] MessageComposeResultSent User successfully sent/queued the message.
  * [@constant] MessageComposeResultFailed User's attempt to save or send was unsuccessful.
+ * 
+ * API-Since: 4.0
  */
 @Generated
 public final class MessageComposeResult {
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NInt public static final long Cancelled = 0x0000000000000000L;
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NInt public static final long Sent = 0x0000000000000001L;
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NInt public static final long Failed = 0x0000000000000002L;
 
     @Generated

@@ -39,9 +39,13 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a camera stream.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("HomeKit")
@@ -73,22 +77,25 @@ public class HMCameraStream extends HMCameraSource {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +130,10 @@ public class HMCameraStream extends HMCameraSource {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,17 +175,23 @@ public class HMCameraStream extends HMCameraSource {
 
     /**
      * Sets the audio stream setting.
-     *
+     * 
      * @param audioStreamSetting New audio stream setting.
+     * 
+     * 
+     *                           API-Since: 10.0
+     *                           Deprecated-Since: 10.0
      */
+    @Deprecated
     @Generated
     @Selector("setAudioStreamSetting:")
     public native void setAudioStreamSetting(@NUInt long audioStreamSetting);
 
     /**
      * Updates the settings of the audio stream.
-     *
+     * 
      * @param audioStreamSetting New audio stream setting. Bidirectional audio is not allowed on TVOS.
+     * 
      * @param completion         Block that is invoked once the request is processed.
      *                           The NSError provides more information on the status of the request, error
      *                           will be nil on success.
@@ -185,12 +199,12 @@ public class HMCameraStream extends HMCameraSource {
     @Generated
     @Selector("updateAudioStreamSetting:completionHandler:")
     public native void updateAudioStreamSettingCompletionHandler(@NUInt long audioStreamSetting,
-            @ObjCBlock(name = "call_updateAudioStreamSettingCompletionHandler") Block_updateAudioStreamSettingCompletionHandler completion);
+            @NotNull @ObjCBlock(name = "call_updateAudioStreamSettingCompletionHandler") Block_updateAudioStreamSettingCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateAudioStreamSettingCompletionHandler {
         @Generated
-        void call_updateAudioStreamSettingCompletionHandler(NSError error);
+        void call_updateAudioStreamSettingCompletionHandler(@Nullable NSError error);
     }
 }

@@ -29,16 +29,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Reduces noise in images rendered with Monte Carlo ray tracing methods
- * <p>
+ * 
  * This filter uses temporal reprojection to accumulate samples over time, followed by
  * an edge-avoiding blur to smooth out the noise. It uses depth and surface normal textures to
  * detect edges in the image(s) to be denoised. The filter also computes an estimate of the
  * luminance variance of the accumulated samples for each pixel to reject neighboring pixels whose
  * luminance is too dissimilar while blurring.
- * <p>
+ * 
  * This filter requires noise-free depth and normal textures, so it is not compatible with
  * stochastic visibility effects such as depth of field, motion blur, or pixel subsampling. These
  * effects need to be applied as a post-process instead. Furthermore, because the depth and normal
@@ -47,7 +49,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * as a temporal lag for changes in luminance such as moving shadows. However, the filter is
  * relatively fast as it is intended for realtime use. Slower but higher quality filters are
  * available in the literature.
- * <p>
+ * 
  * This filter can process up to two images simultaneously assuming they share the same depth and
  * normal textures. This is typically faster than processing the two images independently because
  * memory bandwidth spent fetching depth and normal values and ALU time spent computing various
@@ -56,7 +58,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * optimized for processing single-channel images for effects such as shadows and ambient
  * occlusion. Denoising these images can be much faster than denoising a full RGB image, so it may
  * be useful to separate out these terms and denoise them specifically.
- * <p>
+ * 
  * This filter operates in three stages: temporal reprojection, variance estimation, and finally a
  * series of edge-avoiding bilateral blurs. The temporal reprojection stage accepts the image to
  * be denoised for the current frame and the denoised image from the previous frame, the depth and
@@ -66,22 +68,22 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * current frame. If so, the previous frame is blended with the current frame. This stage also
  * accumulates the first and second moments of the sample luminance which is used to compute the
  * luminance variance in the next stage.
- * <p>
+ * 
  * The variance estimation stage computes an estimate of the variance of the luminance of the
  * accumulated samples for each pixel. This stage may fall back to a spatial estimate if not enough
  * samples have been accumulated. The luminance variance is used in the final stage to reject
  * outlying neighboring pixels while blurring to avoid blurring across luminance discontinuities
  * such as shadow boundaries.
- * <p>
+ * 
  * The final stage performs consecutive edge-avoiding bilateral blurs to smooth out noise in the
  * image. The blurs are dilated with increasing power of two step distances starting from 1,
  * which cheaply approximates a very large radius bilateral blur. Each iteration blurs both the
  * input image and the variance image as variance is reduced after each iteration. It is
  * recommended that the output of the first iteration be used as the input to the next frame's
  * reprojection stage to further reduce noise.
- * <p>
+ * 
  * Tips:
- * <p>
+ * 
  * - It may be helpful to further divide out texture details such as surface albedo before
  * denoising to avoid blurring texture detail and to preserve any careful texture filtering that
  * may have been performed. The albedo can be reapplied after denoising.
@@ -99,9 +101,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * around geometric discontinuities. These can be partially hidden at the cost of potentially
  * increased noise by reducing the bilateral blur's sigma value slightly after each iteration.
  * - Use lower precision pixel formats if possible to reduce memory bandwidth.
- * <p>
+ * 
  * Refer to "Spatiotemporal Variance-Guided Filtering: Real-Time Reconstruction for Path-Traced
  * Global Illumination" for more information.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -133,7 +137,7 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * The radius of the bilateral filter. Defaults to 2 resulting in a 5x5 filter.
@@ -153,13 +157,14 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * The number of channels to filter in the source image. Must be at least one and at most
@@ -179,24 +184,29 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     @NUInt
     public native long channelCount2();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:device:")
-    public native MPSSVGF copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSSVGF copyWithZoneDevice(@Nullable VoidPtr zone,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     @Generated
     @Selector("debugDescription")
@@ -217,27 +227,27 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
 
     /**
      * Encode bilateral filter into a command buffer
-     * <p>
+     * 
      * Performs an edge avoiding blur with radius given by the bilateraFilterRadius
      * property with sampling weighted by a Gaussian filter with sigma given by the bilteralFilterSigma
      * property. Normal and depth values from neighboring pixels will be compared with depth and normal
      * values of the center pixel to determine if they are similar enough to include in the blur. These
      * values are weighted by the depthWeight, normalWeight, and luminanceWeight properties.
-     * <p>
+     * 
      * Before the variance values are used for luminance weighting, the variance is prefiltered with a
      * small Gaussian blur with radius given by the variancePrefilterRadius property and sigma given by
      * the variancePrefilterSigma property.
-     * <p>
+     * 
      * This kernel should be run multiple times with a step distance of pow(2, i), starting with i = 0.
      * It is recommended that the output of the first iteration be used as the image to be reprojected
      * in the next frame. Then several more iterations should be run to compute the denoised image for
      * the current frame. 5 total iterations is reasonable.
-     * <p>
+     * 
      * The bilateral filter can operate on two sets of source and destination textures simultaneously
      * to share costs such as loading depth and normal values from memory, computing various weights,
      * etc. The second set of textures may be nil. The two images are assumed to share the same normal
      * and depth values.
-     * <p>
+     * 
      * The number of channels to filter in the source image(s) are given by the channelCount and
      * channelCount2 properties. Furthermore, the luminance variance is packed into the final channel
      * of the source image(s) to reduce the number of texture sample instructions required. The
@@ -247,13 +257,13 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * source images and set to zero when writing to destination images. The source image should be
      * produced by either the variance estimation kernel or a previous iteration of the bilateral
      * filter.
-     * <p>
+     * 
      * The depth/normal texture must contain the depth and normal values for directly visible geometry
      * for the current frame for each pixel. These values are packed into a four channel texture to
      * reduce the number of texture sampling instructions required to load them. The first channel must
      * store the depth value from zero to infinity. The normals must be stored in the last three
      * channels as the three signed X, Y, and z components each between negative one and one.
-     *
+     * 
      * @param commandBuffer      Command buffer to encode into
      * @param stepDistance       Number of pixels to skip between samples
      * @param sourceTexture      Source packed color and variance texture
@@ -263,34 +273,34 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("encodeBilateralFilterToCommandBuffer:stepDistance:sourceTexture:destinationTexture:depthNormalTexture:")
     public native void encodeBilateralFilterToCommandBufferStepDistanceSourceTextureDestinationTextureDepthNormalTexture(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NUInt long stepDistance,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NUInt long stepDistance,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture);
 
     /**
      * Encode bilateral filter into a command buffer
-     * <p>
+     * 
      * Performs an edge avoiding blur with radius given by the bilateraFilterRadius
      * property with sampling weighted by a Gaussian filter with sigma given by the bilteralFilterSigma
      * property. Normal and depth values from neighboring pixels will be compared with depth and normal
      * values of the center pixel to determine if they are similar enough to include in the blur. These
      * values are weighted by the depthWeight, normalWeight, and luminanceWeight properties.
-     * <p>
+     * 
      * Before the variance values are used for luminance weighting, the variance is prefiltered with a
      * small Gaussian blur with radius given by the variancePrefilterRadius property and sigma given by
      * the variancePrefilterSigma property.
-     * <p>
+     * 
      * This kernel should be run multiple times with a step distance of pow(2, i), starting with i = 0.
      * It is recommended that the output of the first iteration be used as the image to be reprojected
      * in the next frame. Then several more iterations should be run to compute the denoised image for
      * the current frame. 5 total iterations is reasonable.
-     * <p>
+     * 
      * The bilateral filter can operate on two sets of source and destination textures simultaneously
      * to share costs such as loading depth and normal values from memory, computing various weights,
      * etc. The second set of textures may be nil. The two images are assumed to share the same normal
      * and depth values.
-     * <p>
+     * 
      * The number of channels to filter in the source image(s) are given by the channelCount and
      * channelCount2 properties. Furthermore, the luminance variance is packed into the final channel
      * of the source image(s) to reduce the number of texture sample instructions required. The
@@ -300,13 +310,13 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * source images and set to zero when writing to destination images. The source image should be
      * produced by either the variance estimation kernel or a previous iteration of the bilateral
      * filter.
-     * <p>
+     * 
      * The depth/normal texture must contain the depth and normal values for directly visible geometry
      * for the current frame for each pixel. These values are packed into a four channel texture to
      * reduce the number of texture sampling instructions required to load them. The first channel must
      * store the depth value from zero to infinity. The normals must be stored in the last three
      * channels as the three signed X, Y, and z components each between negative one and one.
-     *
+     * 
      * @param commandBuffer       Command buffer to encode into
      * @param stepDistance        Number of pixels to skip between samples
      * @param sourceTexture       Source packed color and variance texture
@@ -318,64 +328,64 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("encodeBilateralFilterToCommandBuffer:stepDistance:sourceTexture:destinationTexture:sourceTexture2:destinationTexture2:depthNormalTexture:")
     public native void encodeBilateralFilterToCommandBufferStepDistanceSourceTextureDestinationTextureSourceTexture2DestinationTexture2DepthNormalTexture(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NUInt long stepDistance,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture2,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture2,
-            @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NUInt long stepDistance,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture2,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture2,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture);
 
     /**
      * Encode reprojection into a command buffer
-     * <p>
+     * 
      * Normal and depth values from the previous frame will be compared with normal and
      * depth values from the current frame to determine if they are similar enough to reproject into
      * the current frame. These values are weighted by the depthWeight and normalWeight properties.
      * If the combined weight exceeds the reprojectionThreshold property's value, the previous frame
      * will be blended with the current frame according to the temporalWeighting and
      * temporalReprojectionBlendFactor properties.
-     * <p>
+     * 
      * The reprojection kernel can operate on two sets of source and destination textures
      * simultaneously to share costs such as loading depth and normal values from memory, computing
      * various weights, etc. The second set of textures may be nil. The two images are assumed to share
      * the same depth and normal values.
-     * <p>
+     * 
      * The number of channels in the source image(s), previous frame's image(s), and destination
      * image(s) are given by the channelCount and channelCount2 properties. These images must have at
      * least as many channels as given by these properties. Channels beyond the required number are
      * ignored when reading from source images and set to zero when writing to the destination images,
      * except the alpha channel which will be set to one if present. The previous frame's image will
      * be ignored on the first frame.
-     * <p>
+     * 
      * The source and destination luminance moments textures must be at least two-channel textures,
      * which will be set to the accumulated first and second moments of luminance. Channels beyond the
      * first two will be ignored when reading from the previous frame's texture and set to zero when
      * writing to the destination texture. The previous frame's luminance moments will be ignored on
      * the first frame.
-     * <p>
+     * 
      * The frame count textures track the number of accumulated frames and must be at least R32Uint
      * textures. The remaining channels will be ignored when reading from the source texture and set to
      * zero when writing to the destination texture, if present. The previous frame count texture must
      * be cleared to zero on the first frame or to reset the accumulated images to the current frame's
      * image.
-     * <p>
+     * 
      * The motion vector texture must be at least a two channel texture representing how many texels
      * each texel in the source image(s) have moved since the previous frame. The remaining channels
      * will be ignored if present. This texture may be nil, in which case the motion vector is assumed
      * to be zero, which is suitable for static images.
-     * <p>
+     * 
      * The depth/normal texture must contain the depth and normal values for directly visible geometry
      * for the current frame for each pixel. These values are packed into a four channel texture to
      * reduce the number of texture sampling instructions required to load them. The first channel must
      * store the depth value from zero to infinity. The normals must be stored in the last three
      * channels as the three signed X, Y, and z components each between negative one and one.
      * The depth and normal values are not required if the motion vector texture is nil.
-     * <p>
+     * 
      * The destination texture, destination luminance moments texture, and destination frame count
      * texture are used by subsequent stages of the denoising filter. The destination frame count
      * texture is also used as the source frame count texture the reprojection kernel in the next
      * frame.
-     *
+     * 
      * @param commandBuffer                      Command buffer to encode into
      * @param sourceTexture                      Current frame to denoise
      * @param previousTexture                    Previous denoised frame to reproject into current
@@ -394,69 +404,69 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("encodeReprojectionToCommandBuffer:sourceTexture:previousTexture:destinationTexture:previousLuminanceMomentsTexture:destinationLuminanceMomentsTexture:previousFrameCountTexture:destinationFrameCountTexture:motionVectorTexture:depthNormalTexture:previousDepthNormalTexture:")
     public native void encodeReprojectionToCommandBufferSourceTexturePreviousTextureDestinationTexturePreviousLuminanceMomentsTextureDestinationLuminanceMomentsTexturePreviousFrameCountTextureDestinationFrameCountTextureMotionVectorTextureDepthNormalTexturePreviousDepthNormalTexture(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture previousTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture previousLuminanceMomentsTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationLuminanceMomentsTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture previousFrameCountTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationFrameCountTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture motionVectorTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture previousDepthNormalTexture);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture previousTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture previousLuminanceMomentsTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationLuminanceMomentsTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture previousFrameCountTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationFrameCountTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture motionVectorTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture previousDepthNormalTexture);
 
     /**
      * Encode reprojection into a command buffer
-     * <p>
+     * 
      * Normal and depth values from the previous frame will be compared with normal and
      * depth values from the current frame to determine if they are similar enough to reproject into
      * the current frame. These values are weighted by the depthWeight and normalWeight properties.
      * If the combined weight exceeds the reprojectionThreshold property's value, the previous frame
      * will be blended with the current frame according to the temporalWeighting and
      * temporalReprojectionBlendFactor properties.
-     * <p>
+     * 
      * The reprojection kernel can operate on two sets of source and destination textures
      * simultaneously to share costs such as loading depth and normal values from memory, computing
      * various weights, etc. The second set of textures may be nil. The two images are assumed to share
      * the same depth and normal values.
-     * <p>
+     * 
      * The number of channels in the source image(s), previous frame's image(s), and destination
      * image(s) are given by the channelCount and channelCount2 properties. These images must have at
      * least as many channels as given by these properties. Channels beyond the required number are
      * ignored when reading from source images and set to zero when writing to the destination images,
      * except the alpha channel which will be set to one if present. The previous frame's image will
      * be ignored on the first frame.
-     * <p>
+     * 
      * The source and destination luminance moments textures must be at least two-channel textures,
      * which will be set to the accumulated first and second moments of luminance. Channels beyond the
      * first two will be ignored when reading from the previous frame's texture and set to zero when
      * writing to the destination texture. The previous frame's luminance moments will be ignored on
      * the first frame.
-     * <p>
+     * 
      * The frame count textures track the number of accumulated frames and must be at least R32Uint
      * textures. The remaining channels will be ignored when reading from the source texture and set to
      * zero when writing to the destination texture, if present. The previous frame count texture must
      * be cleared to zero on the first frame or to reset the accumulated images to the current frame's
      * image.
-     * <p>
+     * 
      * The motion vector texture must be at least a two channel texture representing how many texels
      * each texel in the source image(s) have moved since the previous frame. The remaining channels
      * will be ignored if present. This texture may be nil, in which case the motion vector is assumed
      * to be zero, which is suitable for static images.
-     * <p>
+     * 
      * The depth/normal texture must contain the depth and normal values for directly visible geometry
      * for the current frame for each pixel. These values are packed into a four channel texture to
      * reduce the number of texture sampling instructions required to load them. The first channel must
      * store the depth value from zero to infinity. The normals must be stored in the last three
      * channels as the three signed X, Y, and z components each between negative one and one.
      * The depth and normal values are not required if the motion vector texture is nil.
-     * <p>
+     * 
      * The destination texture, destination luminance moments texture, and destination frame count
      * texture are used by subsequent stages of the denoising filter. The destination frame count
      * texture is also used as the source frame count texture the reprojection kernel in the next
      * frame.
-     *
+     * 
      * @param commandBuffer                       Command buffer to encode into
      * @param sourceTexture                       Current frame to denoise
      * @param previousTexture                     Previous denoised frame to reproject into current
@@ -480,26 +490,26 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("encodeReprojectionToCommandBuffer:sourceTexture:previousTexture:destinationTexture:previousLuminanceMomentsTexture:destinationLuminanceMomentsTexture:sourceTexture2:previousTexture2:destinationTexture2:previousLuminanceMomentsTexture2:destinationLuminanceMomentsTexture2:previousFrameCountTexture:destinationFrameCountTexture:motionVectorTexture:depthNormalTexture:previousDepthNormalTexture:")
     public native void encodeReprojectionToCommandBufferSourceTexturePreviousTextureDestinationTexturePreviousLuminanceMomentsTextureDestinationLuminanceMomentsTextureSourceTexture2PreviousTexture2DestinationTexture2PreviousLuminanceMomentsTexture2DestinationLuminanceMomentsTexture2PreviousFrameCountTextureDestinationFrameCountTextureMotionVectorTextureDepthNormalTexturePreviousDepthNormalTexture(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture previousTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture previousLuminanceMomentsTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationLuminanceMomentsTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture2,
-            @Mapped(ObjCObjectMapper.class) MTLTexture previousTexture2,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture2,
-            @Mapped(ObjCObjectMapper.class) MTLTexture previousLuminanceMomentsTexture2,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationLuminanceMomentsTexture2,
-            @Mapped(ObjCObjectMapper.class) MTLTexture previousFrameCountTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationFrameCountTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture motionVectorTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture previousDepthNormalTexture);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture previousTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture previousLuminanceMomentsTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationLuminanceMomentsTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture2,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture previousTexture2,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture2,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture previousLuminanceMomentsTexture2,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture destinationLuminanceMomentsTexture2,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture previousFrameCountTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationFrameCountTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture motionVectorTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture previousDepthNormalTexture);
 
     /**
      * Encode variance estimation into a command buffer
-     * <p>
+     * 
      * Variance is computed from the accumulated first and second luminance moments. If the
      * number of accumulated frames is below the minimumFramesForVarianceEstimation property, the
      * luminance variance will be computed using a spatial estimate instead. The spatial estimate is
@@ -509,15 +519,15 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * compared with depth and normal values of the center pixel to determine if they are similar
      * enough to include in the spatial blur. These values are weighted by the depthWeight and
      * normalWeight properties.
-     * <p>
+     * 
      * The variance kernel can operate on two sets of source and destination textures
      * simultaneously to share costs such as loading depth and normal values from memory, computing
      * various weights, etc. The second set of textures may be nil. The two images are assumed to share
      * the same depth and normal values.
-     * <p>
+     * 
      * The reprojected source texture, luminance moments texture and frame count texture are computed
      * by the reprojection kernel.
-     * <p>
+     * 
      * The computed variance will be stored in the last channel of the destination image, while the
      * source image will be copied into the previous channels, to reduce the number of texture sample
      * instructured required by the bilateral filter in the final stage of the denoising kernel. The
@@ -526,7 +536,7 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * channelCount2 + 1 channels and the source image(s) must have at least channelCount and
      * channelCount2 channels. Channels beyond the required number are ignored when reading from
      * source textures and set to zero when writing to destination textures.
-     * <p>
+     * 
      * The depth/normal texture must contain the depth and normal values for directly visible geometry
      * for the current frame for each pixel. These values are packed into a four channel texture to
      * reduce the number of texture sampling instructions required to load them. The first channel must
@@ -535,7 +545,7 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * If the minimumFramesForVarianceEstimation property is less than or equal to one, variance will
      * be estimated directly from the accumulated luminance moments so the depth/normal texture may be
      * nil.
-     *
+     * 
      * @param commandBuffer           Command buffer to encode into
      * @param sourceTexture           Current reprojected frame to denoise
      * @param luminanceMomentsTexture Luminance moments texture
@@ -546,16 +556,16 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("encodeVarianceEstimationToCommandBuffer:sourceTexture:luminanceMomentsTexture:destinationTexture:frameCountTexture:depthNormalTexture:")
     public native void encodeVarianceEstimationToCommandBufferSourceTextureLuminanceMomentsTextureDestinationTextureFrameCountTextureDepthNormalTexture(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture luminanceMomentsTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture frameCountTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture luminanceMomentsTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture frameCountTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture);
 
     /**
      * Encode variance estimation into a command buffer
-     * <p>
+     * 
      * Variance is computed from the accumulated first and second luminance moments. If the
      * number of accumulated frames is below the minimumFramesForVarianceEstimation property, the
      * luminance variance will be computed using a spatial estimate instead. The spatial estimate is
@@ -565,15 +575,15 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * compared with depth and normal values of the center pixel to determine if they are similar
      * enough to include in the spatial blur. These values are weighted by the depthWeight and
      * normalWeight properties.
-     * <p>
+     * 
      * The variance kernel can operate on two sets of source and destination textures
      * simultaneously to share costs such as loading depth and normal values from memory, computing
      * various weights, etc. The second set of textures may be nil. The two images are assumed to share
      * the same depth and normal values.
-     * <p>
+     * 
      * The reprojected source texture, luminance moments texture and frame count texture are computed
      * by the reprojection kernel.
-     * <p>
+     * 
      * The computed variance will be stored in the last channel of the destination image, while the
      * source image will be copied into the previous channels, to reduce the number of texture sample
      * instructured required by the bilateral filter in the final stage of the denoising kernel. The
@@ -582,7 +592,7 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * channelCount2 + 1 channels and the source image(s) must have at least channelCount and
      * channelCount2 channels. Channels beyond the required number are ignored when reading from
      * source textures and set to zero when writing to destination textures.
-     * <p>
+     * 
      * The depth/normal texture must contain the depth and normal values for directly visible geometry
      * for the current frame for each pixel. These values are packed into a four channel texture to
      * reduce the number of texture sampling instructions required to load them. The first channel must
@@ -591,7 +601,7 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
      * If the minimumFramesForVarianceEstimation property is less than or equal to one, variance will
      * be estimated directly from the accumulated luminance moments so the depth/normal texture may be
      * nil.
-     *
+     * 
      * @param commandBuffer            Command buffer to encode into
      * @param sourceTexture            Current reprojected frame to denoise
      * @param luminanceMomentsTexture  Luminance moments texture
@@ -605,19 +615,19 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("encodeVarianceEstimationToCommandBuffer:sourceTexture:luminanceMomentsTexture:destinationTexture:sourceTexture2:luminanceMomentsTexture2:destinationTexture2:frameCountTexture:depthNormalTexture:")
     public native void encodeVarianceEstimationToCommandBufferSourceTextureLuminanceMomentsTextureDestinationTextureSourceTexture2LuminanceMomentsTexture2DestinationTexture2FrameCountTextureDepthNormalTexture(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture luminanceMomentsTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture2,
-            @Mapped(ObjCObjectMapper.class) MTLTexture luminanceMomentsTexture2,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture2,
-            @Mapped(ObjCObjectMapper.class) MTLTexture frameCountTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture luminanceMomentsTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture2,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture luminanceMomentsTexture2,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture2,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture frameCountTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -630,15 +640,16 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSSVGF initWithCoder(NSCoder coder);
+    public native MPSSVGF initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSSVGF initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSSVGF initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSSVGF initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSSVGF initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -657,9 +668,10 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Controls how samples' luminance values are compared during bilateral filtering. The final

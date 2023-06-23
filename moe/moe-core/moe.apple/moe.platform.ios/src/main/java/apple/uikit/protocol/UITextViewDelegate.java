@@ -29,6 +29,13 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.foundation.NSArray;
+import apple.uikit.UIMenu;
+import apple.uikit.UIMenuElement;
+import org.moe.natj.general.ann.Mapped;
+import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -38,39 +45,55 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("textView:shouldChangeTextInRange:replacementText:")
-    default boolean textViewShouldChangeTextInRangeReplacementText(UITextView textView, @ByValue NSRange range,
-            String text) {
+    default boolean textViewShouldChangeTextInRangeReplacementText(@NotNull UITextView textView, @ByValue NSRange range,
+            @NotNull String text) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithTextAttachment:inRange:")
-    default boolean textViewShouldInteractWithTextAttachmentInRange(UITextView textView,
-            NSTextAttachment textAttachment, @ByValue NSRange characterRange) {
+    default boolean textViewShouldInteractWithTextAttachmentInRange(@NotNull UITextView textView,
+            @NotNull NSTextAttachment textAttachment, @ByValue NSRange characterRange) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithTextAttachment:inRange:interaction:")
-    default boolean textViewShouldInteractWithTextAttachmentInRangeInteraction(UITextView textView,
-            NSTextAttachment textAttachment, @ByValue NSRange characterRange, @NInt long interaction) {
+    default boolean textViewShouldInteractWithTextAttachmentInRangeInteraction(@NotNull UITextView textView,
+            @NotNull NSTextAttachment textAttachment, @ByValue NSRange characterRange, @NInt long interaction) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithURL:inRange:")
-    default boolean textViewShouldInteractWithURLInRange(UITextView textView, NSURL URL,
+    default boolean textViewShouldInteractWithURLInRange(@NotNull UITextView textView, @NotNull NSURL URL,
             @ByValue NSRange characterRange) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithURL:inRange:interaction:")
-    default boolean textViewShouldInteractWithURLInRangeInteraction(UITextView textView, NSURL URL,
+    default boolean textViewShouldInteractWithURLInRangeInteraction(@NotNull UITextView textView, @NotNull NSURL URL,
             @ByValue NSRange characterRange, @NInt long interaction) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -78,42 +101,95 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("textViewDidBeginEditing:")
-    default void textViewDidBeginEditing(UITextView textView) {
+    default void textViewDidBeginEditing(@NotNull UITextView textView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("textViewDidChange:")
-    default void textViewDidChange(UITextView textView) {
+    default void textViewDidChange(@NotNull UITextView textView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("textViewDidChangeSelection:")
-    default void textViewDidChangeSelection(UITextView textView) {
+    default void textViewDidChangeSelection(@NotNull UITextView textView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("textViewDidEndEditing:")
-    default void textViewDidEndEditing(UITextView textView) {
+    default void textViewDidEndEditing(@NotNull UITextView textView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("textViewShouldBeginEditing:")
-    default boolean textViewShouldBeginEditing(UITextView textView) {
+    default boolean textViewShouldBeginEditing(@NotNull UITextView textView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("textViewShouldEndEditing:")
-    default boolean textViewShouldEndEditing(UITextView textView) {
+    default boolean textViewShouldEndEditing(@NotNull UITextView textView) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Asks the delegate for the menu to be shown for the specified text range.
+     * 
+     * @param textView         The text view requesting the menu.
+     * @param range            The text range for which the menu is presented for.
+     * @param suggestedActions The actions and commands that the system suggests.
+     * 
+     * @return Return a UIMenu describing the desired menu hierarchy. Return @c nil to present the default system menu.
+     * 
+     *         API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @IsOptional
+    @Selector("textView:editMenuForTextInRange:suggestedActions:")
+    default UIMenu textViewEditMenuForTextInRangeSuggestedActions(@NotNull UITextView textView, @ByValue NSRange range,
+            @NotNull NSArray<? extends UIMenuElement> suggestedActions) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called when the text view is about to dismiss the edit menu.
+     * 
+     * @param textView The text view displaying the menu.
+     * @param animator Dismissal animator. Add animations to this object to run them alongside the dismissal transition.
+     * 
+     *                 API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("textView:willDismissEditMenuWithAnimator:")
+    default void textViewWillDismissEditMenuWithAnimator(@NotNull UITextView textView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called when the text view is about to present the edit menu.
+     * 
+     * @param textView The text view displaying the menu.
+     * @param animator Appearance animator. Add animations to this object to run them alongside the appearance
+     *                 transition.
+     * 
+     *                 API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("textView:willPresentEditMenuWithAnimator:")
+    default void textViewWillPresentEditMenuWithAnimator(@NotNull UITextView textView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -45,7 +45,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -77,7 +82,11 @@ public class PHPhotoLibrary extends NSObject {
     /**
      * Deprecated and replaced by authorizationStatusForAccessLevel:, will return \c PHAuthorizationStatusAuthorized if
      * the user has chosen limited photo library access
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("authorizationStatus")
     @NInt
@@ -85,22 +94,25 @@ public class PHPhotoLibrary extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,19 +147,25 @@ public class PHPhotoLibrary extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native PHPhotoLibrary new_objc();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("requestAuthorization:")
     public static native void requestAuthorization(
-            @ObjCBlock(name = "call_requestAuthorization") Block_requestAuthorization handler);
+            @NotNull @ObjCBlock(name = "call_requestAuthorization") Block_requestAuthorization handler);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -161,6 +179,10 @@ public class PHPhotoLibrary extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @Selector("sharedPhotoLibrary")
     public static native PHPhotoLibrary sharedPhotoLibrary();
@@ -181,26 +203,39 @@ public class PHPhotoLibrary extends NSObject {
     /**
      * handlers are invoked on an arbitrary serial queue
      * Nesting change requests will throw an exception
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("performChanges:completionHandler:")
     public native void performChangesCompletionHandler(
-            @ObjCBlock(name = "call_performChangesCompletionHandler_0") Block_performChangesCompletionHandler_0 changeBlock,
-            @ObjCBlock(name = "call_performChangesCompletionHandler_1") Block_performChangesCompletionHandler_1 completionHandler);
+            @NotNull @ObjCBlock(name = "call_performChangesCompletionHandler_0") Block_performChangesCompletionHandler_0 changeBlock,
+            @Nullable @ObjCBlock(name = "call_performChangesCompletionHandler_1") Block_performChangesCompletionHandler_1 completionHandler);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("performChangesAndWait:error:")
     public native boolean performChangesAndWaitError(
-            @ObjCBlock(name = "call_performChangesAndWaitError") Block_performChangesAndWaitError changeBlock,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull @ObjCBlock(name = "call_performChangesAndWaitError") Block_performChangesAndWaitError changeBlock,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("registerChangeObserver:")
-    public native void registerChangeObserver(@Mapped(ObjCObjectMapper.class) PHPhotoLibraryChangeObserver observer);
+    public native void registerChangeObserver(
+            @NotNull @Mapped(ObjCObjectMapper.class) PHPhotoLibraryChangeObserver observer);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("unregisterChangeObserver:")
-    public native void unregisterChangeObserver(@Mapped(ObjCObjectMapper.class) PHPhotoLibraryChangeObserver observer);
+    public native void unregisterChangeObserver(
+            @NotNull @Mapped(ObjCObjectMapper.class) PHPhotoLibraryChangeObserver observer);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -213,7 +248,7 @@ public class PHPhotoLibrary extends NSObject {
     @Generated
     public interface Block_performChangesCompletionHandler_1 {
         @Generated
-        void call_performChangesCompletionHandler_1(boolean success, NSError error);
+        void call_performChangesCompletionHandler_1(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -230,22 +265,34 @@ public class PHPhotoLibrary extends NSObject {
         void call_requestAuthorization(@NInt long status);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("registerAvailabilityObserver:")
     public native void registerAvailabilityObserver(
-            @Mapped(ObjCObjectMapper.class) PHPhotoLibraryAvailabilityObserver observer);
+            @NotNull @Mapped(ObjCObjectMapper.class) PHPhotoLibraryAvailabilityObserver observer);
 
+    /**
+     * API-Since: 13.0
+     */
+    @Nullable
     @Generated
     @Selector("unavailabilityReason")
     public native NSError unavailabilityReason();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("unregisterAvailabilityObserver:")
     public native void unregisterAvailabilityObserver(
-            @Mapped(ObjCObjectMapper.class) PHPhotoLibraryAvailabilityObserver observer);
+            @NotNull @Mapped(ObjCObjectMapper.class) PHPhotoLibraryAvailabilityObserver observer);
 
     /**
      * Replaces \c +authorizationStatus to support add-only/read-write access level status
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("authorizationStatusForAccessLevel:")
@@ -255,26 +302,31 @@ public class PHPhotoLibrary extends NSObject {
     /**
      * Prompt the user to update their limited library selection by presenting the limited library image picker when the
      * user has opted into limited library access mode (see \c PHAuthorizationStatusLimited )
-     * <p>
+     * 
      * Use this API when the user has enabled limited photo library access to present the limited library picker and
      * give the user a way to update their selection. If the user has not enabled limited library access mode for this
      * application, then this method will do nothing. This should be used when disabling the automatic limited library
      * alert prompt (by adding \c PHPhotoLibraryPreventAutomaticLimitedAccessAlert = \c YES to the application's
      * Info.plist).
-     * <p>
+     * 
      * Any changes applied to the limited library selection by the user will trigger a \c PHPhotoLibraryChangeObserver
      * update that can be used to observe the changes to the selection.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param controller The view controller that is used to present the limited library picker.
      */
     @Generated
     @Selector("presentLimitedLibraryPickerFromViewController:")
-    public native void presentLimitedLibraryPickerFromViewController(UIViewController controller);
+    public native void presentLimitedLibraryPickerFromViewController(@NotNull UIViewController controller);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("requestAuthorizationForAccessLevel:handler:")
     public static native void requestAuthorizationForAccessLevelHandler(@NInt long accessLevel,
-            @ObjCBlock(name = "call_requestAuthorizationForAccessLevelHandler") Block_requestAuthorizationForAccessLevelHandler handler);
+            @NotNull @ObjCBlock(name = "call_requestAuthorizationForAccessLevelHandler") Block_requestAuthorizationForAccessLevelHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -286,63 +338,89 @@ public class PHPhotoLibrary extends NSObject {
     /**
      * Returns a dictionary that maps each local identifier from the provided array to a PLCloudIdentifierMapping result
      * containing the cloud identifier found for that local identifier
-     * <p>
+     * 
      * This method can be very expensive so they should be used sparingly for batch lookup of all needed identifiers.
      * Clients should work in terms of local identifiers and call these methods only once after loading from and before
      * saving to persistent storage. If the attempt to lookup a cloud identifier for a given local identifier fails, the
      * error parameter will indicate the reason.
-     *
+     * 
      * @param localIdentifiers The array of \c NSString instances whose cloud identifiers are to being requested.
+     * 
+     *                         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("cloudIdentifierMappingsForLocalIdentifiers:")
     public native NSDictionary<String, ? extends PHCloudIdentifierMapping> cloudIdentifierMappingsForLocalIdentifiers(
-            NSArray<String> localIdentifiers);
+            @NotNull NSArray<String> localIdentifiers);
 
     /**
      * Returns a dictionary that maps each cloud identifier from the provided array to a PLLocalIdentifierMapping result
      * containing the local identifier found for that cloud identifier.
-     * <p>
+     * 
      * This method can be very expensive so they should be used sparingly for batch lookup of all needed identifiers.
      * Clients should work in terms of local identifiers and call these methods only once after loading from and before
      * saving to persistent storage. If the attempt to lookup a local identifier for a given cloud identifier fails, the
      * error parameter will indicate the reason.
-     *
+     * 
      * @param cloudIdentifiers The array of \c PHCloudIdentifier instances whose local identifiers are to being
      *                         requested.
+     * 
+     *                         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("localIdentifierMappingsForCloudIdentifiers:")
     public native NSDictionary<? extends PHCloudIdentifier, ? extends PHLocalIdentifierMapping> localIdentifierMappingsForCloudIdentifiers(
-            NSArray<? extends PHCloudIdentifier> cloudIdentifiers);
+            @NotNull NSArray<? extends PHCloudIdentifier> cloudIdentifiers);
 
     /**
      * Prompt the user to update their limited library selection by presenting the limited library image picker when the
      * user has opted into limited library access mode (see \c PHAuthorizationStatusLimited )
-     * <p>
+     * 
      * Use this API when the user has enabled limited photo library access to present the limited library picker and
      * give the user a way to update their selection. If the user has not enabled limited library access mode for this
      * application, then this method will do nothing. This should be used when disabling the automatic limited library
      * alert prompt (by adding \c PHPhotoLibraryPreventAutomaticLimitedAccessAlert = \c YES to the application's
      * Info.plist).
-     * <p>
+     * 
      * In addition to being provided the new asset local identifiers in the callback any changes applied to the limited
      * library selection by the user will trigger a \c PHPhotoLibraryChangeObserver update that can be used to observe
      * the changes to the selection.
-     *
+     * 
+     * API-Since: 15.0
+     * 
      * @param controller        The view controller that is used to present the limited library picker.
      * @param completionHandler The block that will be called upon the user finishing their selection. Only newly
      *                          selected assets will be provided to the block.
      */
     @Generated
     @Selector("presentLimitedLibraryPickerFromViewController:completionHandler:")
-    public native void presentLimitedLibraryPickerFromViewControllerCompletionHandler(UIViewController controller,
-            @ObjCBlock(name = "call_presentLimitedLibraryPickerFromViewControllerCompletionHandler") Block_presentLimitedLibraryPickerFromViewControllerCompletionHandler completionHandler);
+    public native void presentLimitedLibraryPickerFromViewControllerCompletionHandler(
+            @NotNull UIViewController controller,
+            @NotNull @ObjCBlock(name = "call_presentLimitedLibraryPickerFromViewControllerCompletionHandler") Block_presentLimitedLibraryPickerFromViewControllerCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_presentLimitedLibraryPickerFromViewControllerCompletionHandler {
         @Generated
-        void call_presentLimitedLibraryPickerFromViewControllerCompletionHandler(NSArray<String> arg0);
+        void call_presentLimitedLibraryPickerFromViewControllerCompletionHandler(@NotNull NSArray<String> arg0);
     }
+
+    /**
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @Selector("currentChangeToken")
+    public native PHPersistentChangeToken currentChangeToken();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("fetchPersistentChangesSinceToken:error:")
+    public native PHPersistentChangeFetchResult fetchPersistentChangesSinceTokenError(
+            @NotNull PHPersistentChangeToken token, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

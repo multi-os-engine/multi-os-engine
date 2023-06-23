@@ -26,6 +26,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("Foundation")
@@ -37,40 +38,50 @@ public interface NSFileManagerDelegate {
      * Returning YES from this method will allow the copy to happen. Returning NO from this method causes the item in
      * question to be skipped. If the item skipped was a directory, no children of that directory will be copied, nor
      * will the delegate be notified of those children.
-     * <p>
+     * 
      * If the delegate does not implement this method, the NSFileManager instance acts as if this method returned YES.
      */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldCopyItemAtPath:toPath:")
-    default boolean fileManagerShouldCopyItemAtPathToPath(NSFileManager fileManager, String srcPath, String dstPath) {
+    default boolean fileManagerShouldCopyItemAtPathToPath(@NotNull NSFileManager fileManager, @NotNull String srcPath,
+            @NotNull String dstPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldCopyItemAtURL:toURL:")
-    default boolean fileManagerShouldCopyItemAtURLToURL(NSFileManager fileManager, NSURL srcURL, NSURL dstURL) {
+    default boolean fileManagerShouldCopyItemAtURLToURL(@NotNull NSFileManager fileManager, @NotNull NSURL srcURL,
+            @NotNull NSURL dstURL) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * fileManager:shouldLinkItemAtPath:toPath: acts as the other "should" methods, but this applies to the file manager
      * creating hard links to the files in question.
-     * <p>
+     * 
      * If the delegate does not implement this method, the NSFileManager instance acts as if this method returned YES.
      */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldLinkItemAtPath:toPath:")
-    default boolean fileManagerShouldLinkItemAtPathToPath(NSFileManager fileManager, String srcPath, String dstPath) {
+    default boolean fileManagerShouldLinkItemAtPathToPath(@NotNull NSFileManager fileManager, @NotNull String srcPath,
+            @NotNull String dstPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldLinkItemAtURL:toURL:")
-    default boolean fileManagerShouldLinkItemAtURLToURL(NSFileManager fileManager, NSURL srcURL, NSURL dstURL) {
+    default boolean fileManagerShouldLinkItemAtURLToURL(@NotNull NSFileManager fileManager, @NotNull NSURL srcURL,
+            @NotNull NSURL dstURL) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,20 +90,25 @@ public interface NSFileManagerDelegate {
      * path. If the source path and the destination path are not on the same device, a copy is performed to the
      * destination path and the original is removed. If the copy does not succeed, an error is returned and the
      * incomplete copy is removed, leaving the original in place.
-     * <p>
+     * 
      * If the delegate does not implement this method, the NSFileManager instance acts as if this method returned YES.
      */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldMoveItemAtPath:toPath:")
-    default boolean fileManagerShouldMoveItemAtPathToPath(NSFileManager fileManager, String srcPath, String dstPath) {
+    default boolean fileManagerShouldMoveItemAtPathToPath(@NotNull NSFileManager fileManager, @NotNull String srcPath,
+            @NotNull String dstPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldMoveItemAtURL:toURL:")
-    default boolean fileManagerShouldMoveItemAtURLToURL(NSFileManager fileManager, NSURL srcURL, NSURL dstURL) {
+    default boolean fileManagerShouldMoveItemAtURLToURL(@NotNull NSFileManager fileManager, @NotNull NSURL srcURL,
+            @NotNull NSURL dstURL) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -102,22 +118,25 @@ public interface NSFileManagerDelegate {
      * problem. The source path and destination paths are also provided. If this method returns YES, the NSFileManager
      * instance will continue as if the error had not occurred. If this method returns NO, the NSFileManager instance
      * will stop copying, return NO from copyItemAtPath:toPath:error: and the error will be provied there.
-     * <p>
+     * 
      * If the delegate does not implement this method, the NSFileManager instance acts as if this method returned NO.
      */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:copyingItemAtPath:toPath:")
-    default boolean fileManagerShouldProceedAfterErrorCopyingItemAtPathToPath(NSFileManager fileManager, NSError error,
-            String srcPath, String dstPath) {
+    default boolean fileManagerShouldProceedAfterErrorCopyingItemAtPathToPath(@NotNull NSFileManager fileManager,
+            @NotNull NSError error, @NotNull String srcPath, @NotNull String dstPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:copyingItemAtURL:toURL:")
-    default boolean fileManagerShouldProceedAfterErrorCopyingItemAtURLToURL(NSFileManager fileManager, NSError error,
-            NSURL srcURL, NSURL dstURL) {
+    default boolean fileManagerShouldProceedAfterErrorCopyingItemAtURLToURL(@NotNull NSFileManager fileManager,
+            @NotNull NSError error, @NotNull NSURL srcURL, @NotNull NSURL dstURL) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -126,22 +145,25 @@ public interface NSFileManagerDelegate {
      * error which occurred in linking srcPath to dstPath. If the delegate returns YES from this method, the linking
      * will continue. If the delegate returns NO from this method, the linking operation will stop and the error will be
      * returned via linkItemAtPath:toPath:error:.
-     * <p>
+     * 
      * If the delegate does not implement this method, the NSFileManager instance acts as if this method returned NO.
      */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:linkingItemAtPath:toPath:")
-    default boolean fileManagerShouldProceedAfterErrorLinkingItemAtPathToPath(NSFileManager fileManager, NSError error,
-            String srcPath, String dstPath) {
+    default boolean fileManagerShouldProceedAfterErrorLinkingItemAtPathToPath(@NotNull NSFileManager fileManager,
+            @NotNull NSError error, @NotNull String srcPath, @NotNull String dstPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:linkingItemAtURL:toURL:")
-    default boolean fileManagerShouldProceedAfterErrorLinkingItemAtURLToURL(NSFileManager fileManager, NSError error,
-            NSURL srcURL, NSURL dstURL) {
+    default boolean fileManagerShouldProceedAfterErrorLinkingItemAtURLToURL(@NotNull NSFileManager fileManager,
+            @NotNull NSError error, @NotNull NSURL srcURL, @NotNull NSURL dstURL) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -149,22 +171,25 @@ public interface NSFileManagerDelegate {
      * fileManager:shouldProceedAfterError:movingItemAtPath:toPath: functions much like
      * fileManager:shouldProceedAfterError:copyingItemAtPath:toPath: above. The delegate has the opportunity to remedy
      * the error condition and allow the move to continue.
-     * <p>
+     * 
      * If the delegate does not implement this method, the NSFileManager instance acts as if this method returned NO.
      */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:movingItemAtPath:toPath:")
-    default boolean fileManagerShouldProceedAfterErrorMovingItemAtPathToPath(NSFileManager fileManager, NSError error,
-            String srcPath, String dstPath) {
+    default boolean fileManagerShouldProceedAfterErrorMovingItemAtPathToPath(@NotNull NSFileManager fileManager,
+            @NotNull NSError error, @NotNull String srcPath, @NotNull String dstPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:movingItemAtURL:toURL:")
-    default boolean fileManagerShouldProceedAfterErrorMovingItemAtURLToURL(NSFileManager fileManager, NSError error,
-            NSURL srcURL, NSURL dstURL) {
+    default boolean fileManagerShouldProceedAfterErrorMovingItemAtURLToURL(@NotNull NSFileManager fileManager,
+            @NotNull NSError error, @NotNull NSURL srcURL, @NotNull NSURL dstURL) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -173,22 +198,25 @@ public interface NSFileManagerDelegate {
      * which occurred in removing the item at the path provided. If the delegate returns YES from this method, the
      * removal operation will continue. If the delegate returns NO from this method, the removal operation will stop and
      * the error will be returned via linkItemAtPath:toPath:error:.
-     * <p>
+     * 
      * If the delegate does not implement this method, the NSFileManager instance acts as if this method returned NO.
      */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:removingItemAtPath:")
-    default boolean fileManagerShouldProceedAfterErrorRemovingItemAtPath(NSFileManager fileManager, NSError error,
-            String path) {
+    default boolean fileManagerShouldProceedAfterErrorRemovingItemAtPath(@NotNull NSFileManager fileManager,
+            @NotNull NSError error, @NotNull String path) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:removingItemAtURL:")
-    default boolean fileManagerShouldProceedAfterErrorRemovingItemAtURL(NSFileManager fileManager, NSError error,
-            NSURL URL) {
+    default boolean fileManagerShouldProceedAfterErrorRemovingItemAtURL(@NotNull NSFileManager fileManager,
+            @NotNull NSError error, @NotNull NSURL URL) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -197,20 +225,23 @@ public interface NSFileManagerDelegate {
      * delegate returns YES from this method, the NSFileManager instance will attempt to remove the item. If the
      * delegate returns NO from this method, the remove skips the item. If the item is a directory, no children of that
      * item will be visited.
-     * <p>
+     * 
      * If the delegate does not implement this method, the NSFileManager instance acts as if this method returned YES.
      */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldRemoveItemAtPath:")
-    default boolean fileManagerShouldRemoveItemAtPath(NSFileManager fileManager, String path) {
+    default boolean fileManagerShouldRemoveItemAtPath(@NotNull NSFileManager fileManager, @NotNull String path) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("fileManager:shouldRemoveItemAtURL:")
-    default boolean fileManagerShouldRemoveItemAtURL(NSFileManager fileManager, NSURL URL) {
+    default boolean fileManagerShouldRemoveItemAtURL(@NotNull NSFileManager fileManager, @NotNull NSURL URL) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

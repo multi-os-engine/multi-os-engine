@@ -1,6 +1,5 @@
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
@@ -11,10 +10,14 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Objects conforming to UIFocusItemContainer are responsible for providing which focus items they
  * contain and where they are.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("UIKit")
@@ -31,6 +34,7 @@ public interface UIFocusItemContainer {
      * You may also choose to implement your own object that conforms to UICoordinateSpace, if that is the most natural
      * solution for your architecture.
      */
+    @NotNull
     @Generated
     @Selector("coordinateSpace")
     @MappedReturn(ObjCObjectMapper.class)
@@ -39,7 +43,11 @@ public interface UIFocusItemContainer {
     /**
      * Returns an array of all focus items within this container that intersect with the provided rect. `rect` is
      * expressed in `coordinateSpace`.
+     * Note: starting in iOS & tvOS 16.0, UIView will return its subviews from this method. If you override this method
+     * in a UIView subclass, it will be your responsibility to call super and merge your array of custom focus items
+     * with UIView's default focus items.
      */
+    @NotNull
     @Generated
     @Selector("focusItemsInRect:")
     NSArray<?> focusItemsInRect(@ByValue CGRect rect);

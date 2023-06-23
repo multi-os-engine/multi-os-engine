@@ -22,10 +22,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A VSSubscription instance describes the extent to which a subscriber has
  * access to content.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("VideoSubscriberAccount")
@@ -47,7 +51,7 @@ public class VSSubscription extends NSObject {
 
     /**
      * Describes the level of access the subscriber has to your catalog of content.
-     * <p>
+     * 
      * It is an error to provide a subscription with an unknown access level as
      * the current subscription. Instead, choose the access level that describes
      * the content that the subscriber can play.
@@ -69,22 +73,25 @@ public class VSSubscription extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,18 +106,18 @@ public class VSSubscription extends NSObject {
 
     /**
      * After this point in time, the subscription will be considered inactive.
-     * <p>
+     * 
      * If the current subscription becomes inactive, the system will behave as
      * though the user is not subscribed at all, i.e. as though the registration
      * center's current subscription had been set to nil.
-     * <p>
+     * 
      * Defaults to distantFuture.
-     * <p>
+     * 
      * Providing a value is useful in a limited number of scenarios, e.g. when the
      * a subscriber decides not to renew their subscription, you should provide an
      * expiration date that corresponds to the point in time when the final billing
      * cycle will end.
-     * <p>
+     * 
      * This might also be useful if the subscription only grants access to content
      * that is time-limited, e.g. a single season of games for a sports league.
      */
@@ -144,9 +151,10 @@ public class VSSubscription extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,7 +171,7 @@ public class VSSubscription extends NSObject {
 
     /**
      * Describes the level of access the subscriber has to your catalog of content.
-     * <p>
+     * 
      * It is an error to provide a subscription with an unknown access level as
      * the current subscription. Instead, choose the access level that describes
      * the content that the subscriber can play.
@@ -174,18 +182,18 @@ public class VSSubscription extends NSObject {
 
     /**
      * After this point in time, the subscription will be considered inactive.
-     * <p>
+     * 
      * If the current subscription becomes inactive, the system will behave as
      * though the user is not subscribed at all, i.e. as though the registration
      * center's current subscription had been set to nil.
-     * <p>
+     * 
      * Defaults to distantFuture.
-     * <p>
+     * 
      * Providing a value is useful in a limited number of scenarios, e.g. when the
      * a subscriber decides not to renew their subscription, you should provide an
      * expiration date that corresponds to the point in time when the final billing
      * cycle will end.
-     * <p>
+     * 
      * This might also be useful if the subscription only grants access to content
      * that is time-limited, e.g. a single season of games for a sports league.
      */
@@ -195,7 +203,7 @@ public class VSSubscription extends NSObject {
 
     /**
      * Identifies a subset of content from your catalog that subscriber can play.
-     * <p>
+     * 
      * Only provide values that are used in your availability feed's tier restrictions.
      */
     @Generated
@@ -212,7 +220,7 @@ public class VSSubscription extends NSObject {
 
     /**
      * Identifies a subset of content from your catalog that subscriber can play.
-     * <p>
+     * 
      * Only provide values that are used in your availability feed's tier restrictions.
      */
     @Generated
@@ -228,7 +236,10 @@ public class VSSubscription extends NSObject {
      * Identifies the billing group associated with the subscription. May be used,
      * for example, to restrict content availability based on the proximity of the
      * billing address to a specific venue.
+     * 
+     * API-Since: 11.3
      */
+    @Nullable
     @Generated
     @Selector("billingIdentifier")
     public native String billingIdentifier();
@@ -237,8 +248,10 @@ public class VSSubscription extends NSObject {
      * Identifies the billing group associated with the subscription. May be used,
      * for example, to restrict content availability based on the proximity of the
      * billing address to a specific venue.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setBillingIdentifier:")
-    public native void setBillingIdentifier(String value);
+    public native void setBillingIdentifier(@Nullable String value);
 }

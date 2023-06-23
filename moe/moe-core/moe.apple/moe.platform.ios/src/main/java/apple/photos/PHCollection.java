@@ -37,7 +37,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -68,22 +73,25 @@ public class PHCollection extends PHObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,15 +104,23 @@ public class PHCollection extends PHObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @Selector("fetchCollectionsInCollectionList:options:")
     public static native PHFetchResult<? extends PHCollection> fetchCollectionsInCollectionListOptions(
-            PHCollectionList collectionList, PHFetchOptions options);
+            @NotNull PHCollectionList collectionList, @Nullable PHFetchOptions options);
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @Selector("fetchTopLevelUserCollectionsWithOptions:")
     public static native PHFetchResult<? extends PHCollection> fetchTopLevelUserCollectionsWithOptions(
-            PHFetchOptions options);
+            @Nullable PHFetchOptions options);
 
     @Generated
     @Selector("hash")
@@ -128,9 +144,10 @@ public class PHCollection extends PHObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,14 +175,23 @@ public class PHCollection extends PHObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("canContainAssets")
     public native boolean canContainAssets();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("canContainCollections")
     public native boolean canContainCollections();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("canPerformEditOperation:")
     public native boolean canPerformEditOperation(@NInt long anOperation);
@@ -174,6 +200,10 @@ public class PHCollection extends PHObject {
     @Selector("init")
     public native PHCollection init();
 
+    /**
+     * API-Since: 8.0
+     */
+    @Nullable
     @Generated
     @Selector("localizedTitle")
     public native String localizedTitle();

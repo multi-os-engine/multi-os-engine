@@ -24,7 +24,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
@@ -55,41 +60,44 @@ public class ASCredentialProviderExtensionContext extends NSExtensionContext {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Cancels the request.
-     * <p>
+     * 
      * The extension should call this method when the user cancels the action or a failure occurs.
-     *
+     * 
      * @param error error's domain should be ASExtensionErrorDomain and the code should be a value of type
      *              ASExtensionErrorCode.
      */
     @Generated
     @Selector("cancelRequestWithError:")
-    public native void cancelRequestWithError(NSError error);
+    public native void cancelRequestWithError(@NotNull NSError error);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * Complete the request to configure the extension.
-     * <p>
+     * 
      * Calling this method will eventually dismiss the associated view controller.
      */
     @Generated
@@ -98,9 +106,9 @@ public class ASCredentialProviderExtensionContext extends NSExtensionContext {
 
     /**
      * Complete the request by providing the user selected credential.
-     * <p>
+     * 
      * Calling this method will eventually dismiss the associated view controller.
-     *
+     * 
      * @param credential        the credential that the user has selected.
      * @param completionHandler optionally contains any work which the extension may need to perform after the request
      *                          has been completed,
@@ -110,8 +118,8 @@ public class ASCredentialProviderExtensionContext extends NSExtensionContext {
      */
     @Generated
     @Selector("completeRequestWithSelectedCredential:completionHandler:")
-    public native void completeRequestWithSelectedCredentialCompletionHandler(ASPasswordCredential credential,
-            @ObjCBlock(name = "call_completeRequestWithSelectedCredentialCompletionHandler") Block_completeRequestWithSelectedCredentialCompletionHandler completionHandler);
+    public native void completeRequestWithSelectedCredentialCompletionHandler(@NotNull ASPasswordCredential credential,
+            @Nullable @ObjCBlock(name = "call_completeRequestWithSelectedCredentialCompletionHandler") Block_completeRequestWithSelectedCredentialCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -154,9 +162,10 @@ public class ASCredentialProviderExtensionContext extends NSExtensionContext {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

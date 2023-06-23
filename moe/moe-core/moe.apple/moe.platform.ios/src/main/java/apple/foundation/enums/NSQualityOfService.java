@@ -19,12 +19,30 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class NSQualityOfService {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long UserInteractive = 0x0000000000000021L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long UserInitiated = 0x0000000000000019L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Utility = 0x0000000000000011L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Background = 0x0000000000000009L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Default = 0xFFFFFFFFFFFFFFFFL;
 
     @Generated

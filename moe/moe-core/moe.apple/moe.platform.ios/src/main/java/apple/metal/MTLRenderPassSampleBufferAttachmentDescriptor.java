@@ -24,7 +24,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -55,31 +60,35 @@ public class MTLRenderPassSampleBufferAttachmentDescriptor extends NSObject impl
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -91,13 +100,15 @@ public class MTLRenderPassSampleBufferAttachmentDescriptor extends NSObject impl
 
     /**
      * [@property] endOfFragmentSampleIndex
-     * <p>
+     * 
      * The sample index to use to store the sample taken at the end of
      * fragment processing. Setting the value to MTLCounterDontSample will cause
      * this sample to be omitted.
-     * <p>
+     * 
      * On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
      * this sample index is invalid and must be set to MTLCounterDontSample or creation of a render pass will fail.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("endOfFragmentSampleIndex")
@@ -106,13 +117,15 @@ public class MTLRenderPassSampleBufferAttachmentDescriptor extends NSObject impl
 
     /**
      * [@property] endOfVertexSampleIndex
-     * <p>
+     * 
      * The sample index to use to store the sample taken at the end of
      * vertex processing. Setting the value to MTLCounterDontSample will cause
      * this sample to be omitted.
-     * <p>
+     * 
      * On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
      * this sample index is invalid and must be set to MTLCounterDontSample or creation of a render pass will fail.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("endOfVertexSampleIndex")
@@ -145,9 +158,10 @@ public class MTLRenderPassSampleBufferAttachmentDescriptor extends NSObject impl
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,13 +178,16 @@ public class MTLRenderPassSampleBufferAttachmentDescriptor extends NSObject impl
 
     /**
      * [@property] sampleBuffer
-     * <p>
+     * 
      * The sample buffer to store samples for the render-pass defined samples.
      * If sampleBuffer is non-nil, the sample indices will be used to store samples into
      * the sample buffer. If no sample buffer is provided, no samples will be taken.
      * If any of the sample indices are specified as MTLCounterDontSample, no sample
      * will be taken for that action.
+     * 
+     * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("sampleBuffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -178,13 +195,15 @@ public class MTLRenderPassSampleBufferAttachmentDescriptor extends NSObject impl
 
     /**
      * [@property] endOfFragmentSampleIndex
-     * <p>
+     * 
      * The sample index to use to store the sample taken at the end of
      * fragment processing. Setting the value to MTLCounterDontSample will cause
      * this sample to be omitted.
-     * <p>
+     * 
      * On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
      * this sample index is invalid and must be set to MTLCounterDontSample or creation of a render pass will fail.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setEndOfFragmentSampleIndex:")
@@ -192,13 +211,15 @@ public class MTLRenderPassSampleBufferAttachmentDescriptor extends NSObject impl
 
     /**
      * [@property] endOfVertexSampleIndex
-     * <p>
+     * 
      * The sample index to use to store the sample taken at the end of
      * vertex processing. Setting the value to MTLCounterDontSample will cause
      * this sample to be omitted.
-     * <p>
+     * 
      * On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
      * this sample index is invalid and must be set to MTLCounterDontSample or creation of a render pass will fail.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setEndOfVertexSampleIndex:")
@@ -206,26 +227,30 @@ public class MTLRenderPassSampleBufferAttachmentDescriptor extends NSObject impl
 
     /**
      * [@property] sampleBuffer
-     * <p>
+     * 
      * The sample buffer to store samples for the render-pass defined samples.
      * If sampleBuffer is non-nil, the sample indices will be used to store samples into
      * the sample buffer. If no sample buffer is provided, no samples will be taken.
      * If any of the sample indices are specified as MTLCounterDontSample, no sample
      * will be taken for that action.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setSampleBuffer:")
-    public native void setSampleBuffer(@Mapped(ObjCObjectMapper.class) MTLCounterSampleBuffer value);
+    public native void setSampleBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLCounterSampleBuffer value);
 
     /**
      * [@property] startOfFragmentSampleIndex
-     * <p>
+     * 
      * The sample index to use to store the sample taken at the start of
      * fragment processing. Setting the value to MTLCounterDontSample will cause
      * this sample to be omitted.
-     * <p>
+     * 
      * On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
      * this sample index is invalid and must be set to MTLCounterDontSample or creation of a render pass will fail.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setStartOfFragmentSampleIndex:")
@@ -233,13 +258,15 @@ public class MTLRenderPassSampleBufferAttachmentDescriptor extends NSObject impl
 
     /**
      * [@property] startOfVertexSampleIndex
-     * <p>
+     * 
      * The sample index to use to store the sample taken at the start of
      * vertex processing. Setting the value to MTLCounterDontSample will cause
      * this sample to be omitted.
-     * <p>
+     * 
      * On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
      * this sample index is invalid and must be set to MTLCounterDontSample or creation of a render pass will fail.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setStartOfVertexSampleIndex:")
@@ -251,13 +278,15 @@ public class MTLRenderPassSampleBufferAttachmentDescriptor extends NSObject impl
 
     /**
      * [@property] startOfFragmentSampleIndex
-     * <p>
+     * 
      * The sample index to use to store the sample taken at the start of
      * fragment processing. Setting the value to MTLCounterDontSample will cause
      * this sample to be omitted.
-     * <p>
+     * 
      * On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
      * this sample index is invalid and must be set to MTLCounterDontSample or creation of a render pass will fail.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("startOfFragmentSampleIndex")
@@ -266,13 +295,15 @@ public class MTLRenderPassSampleBufferAttachmentDescriptor extends NSObject impl
 
     /**
      * [@property] startOfVertexSampleIndex
-     * <p>
+     * 
      * The sample index to use to store the sample taken at the start of
      * vertex processing. Setting the value to MTLCounterDontSample will cause
      * this sample to be omitted.
-     * <p>
+     * 
      * On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
      * this sample index is invalid and must be set to MTLCounterDontSample or creation of a render pass will fail.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("startOfVertexSampleIndex")

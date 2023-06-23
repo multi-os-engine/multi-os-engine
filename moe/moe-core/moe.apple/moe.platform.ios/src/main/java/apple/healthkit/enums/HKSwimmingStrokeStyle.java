@@ -21,19 +21,44 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HKSwimmingStrokeStyle
- * <p>
+ * 
  * Represents a style of stroke used during a swimming workout.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class HKSwimmingStrokeStyle {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Mixed = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Freestyle = 0x0000000000000002L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Backstroke = 0x0000000000000003L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Breaststroke = 0x0000000000000004L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Butterfly = 0x0000000000000005L;
 
     @Generated
     private HKSwimmingStrokeStyle() {
     }
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated @NInt public static final long Kickboard = 0x0000000000000006L;
 }

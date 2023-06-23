@@ -19,18 +19,27 @@ package apple.usernotifications.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 public final class UNNotificationSetting {
     /**
      * The application does not support this notification type
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long NotSupported = 0x0000000000000000L;
     /**
      * The notification setting is turned off.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Disabled = 0x0000000000000001L;
     /**
      * The notification setting is turned on.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Enabled = 0x0000000000000002L;
 

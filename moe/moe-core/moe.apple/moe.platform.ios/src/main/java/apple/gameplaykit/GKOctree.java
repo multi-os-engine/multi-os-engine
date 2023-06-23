@@ -37,10 +37,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A tree data structure where each level has 8 children that subdivide a given space into the eight octants.
  * Stores arbitrary NSObject elements via points and boxes.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -72,22 +76,25 @@ public class GKOctree<_ElementType> extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,9 +129,10 @@ public class GKOctree<_ElementType> extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -160,23 +168,23 @@ public class GKOctree<_ElementType> extends NSObject {
      * Removes the given NSObject from this octree
      * Note that this is an exhaustive search and is can be slow for larger trees.
      * Cache the relevant GKOctreeNode and use removeElement:WithNode: for better performance.
-     *
+     * 
      * @param element the element to be removed
      * @return returns YES if the data was removed, NO otherwise
      */
     @Generated
     @Selector("removeElement:")
-    public native boolean removeElement(NSObject element);
+    public native boolean removeElement(@NotNull NSObject element);
 
     /**
      * Removes the given NSObject from the given node
      * Note that this is not an exhaustive search and is faster than removeData:
-     *
+     * 
      * @param element the element to be removed
      * @param node    the node in which this data resides
      * @return returns YES if the element was removed, NO otherwise
      */
     @Generated
     @Selector("removeElement:withNode:")
-    public native boolean removeElementWithNode(NSObject element, GKOctreeNode node);
+    public native boolean removeElementWithNode(@NotNull NSObject element, @NotNull GKOctreeNode node);
 }

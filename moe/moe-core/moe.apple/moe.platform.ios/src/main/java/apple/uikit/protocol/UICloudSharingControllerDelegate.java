@@ -26,6 +26,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -34,46 +36,50 @@ import org.moe.natj.objc.ann.Selector;
 public interface UICloudSharingControllerDelegate {
     @Generated
     @Selector("cloudSharingController:failedToSaveShareWithError:")
-    void cloudSharingControllerFailedToSaveShareWithError(UICloudSharingController csc, NSError error);
+    void cloudSharingControllerFailedToSaveShareWithError(@NotNull UICloudSharingController csc,
+            @NotNull NSError error);
 
     @Generated
     @IsOptional
     @Selector("cloudSharingControllerDidSaveShare:")
-    default void cloudSharingControllerDidSaveShare(UICloudSharingController csc) {
+    default void cloudSharingControllerDidSaveShare(@NotNull UICloudSharingController csc) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("cloudSharingControllerDidStopSharing:")
-    default void cloudSharingControllerDidStopSharing(UICloudSharingController csc) {
+    default void cloudSharingControllerDidStopSharing(@NotNull UICloudSharingController csc) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * corresponds to CKShareThumbnailImageDataKey on the expected share
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("itemThumbnailDataForCloudSharingController:")
-    default NSData itemThumbnailDataForCloudSharingController(UICloudSharingController csc) {
+    default NSData itemThumbnailDataForCloudSharingController(@NotNull UICloudSharingController csc) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * corresponds to CKShareTitleKey on the expected share
      */
+    @Nullable
     @Generated
     @Selector("itemTitleForCloudSharingController:")
-    String itemTitleForCloudSharingController(UICloudSharingController csc);
+    String itemTitleForCloudSharingController(@NotNull UICloudSharingController csc);
 
     /**
      * corresponds to CKShareTypeKey on the expected share
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("itemTypeForCloudSharingController:")
-    default String itemTypeForCloudSharingController(UICloudSharingController csc) {
+    default String itemTypeForCloudSharingController(@NotNull UICloudSharingController csc) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

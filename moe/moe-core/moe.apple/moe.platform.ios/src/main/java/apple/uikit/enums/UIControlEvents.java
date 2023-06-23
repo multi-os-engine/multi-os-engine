@@ -42,6 +42,8 @@ public final class UIControlEvents {
     @Generated @NUInt public static final long ValueChanged = 0x0000000000001000L;
     /**
      * semantic action: for buttons, etc.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NUInt public static final long PrimaryActionTriggered = 0x0000000000002000L;
     /**
@@ -78,6 +80,8 @@ public final class UIControlEvents {
 
     /**
      * triggered when the menu gesture fires but before the menu presents
+     * 
+     * API-Since: 14.0
      */
     @Generated @NUInt public static final long MenuActionTriggered = 0x0000000000004000L;
 }

@@ -21,12 +21,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * TKSmartCardTokenSession represents token session based on SmartCard token.
- * <p>
+ * 
  * When implementing SmartCard token extension, subclass TKSmartCardTokenSession and implement TKTokenSessionDelegate on
  * it. Use #token property to get access and send APDUs to the underlying SmartCard.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CryptoTokenKit")
@@ -58,22 +62,25 @@ public class TKSmartCardTokenSession extends TKTokenSession {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -97,7 +104,7 @@ public class TKSmartCardTokenSession extends TKTokenSession {
 
     @Generated
     @Selector("initWithToken:")
-    public native TKSmartCardTokenSession initWithToken(TKToken token);
+    public native TKSmartCardTokenSession initWithToken(@NotNull TKToken token);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -116,9 +123,10 @@ public class TKSmartCardTokenSession extends TKTokenSession {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -139,18 +147,19 @@ public class TKSmartCardTokenSession extends TKTokenSession {
 
     /**
      * contains TKSmartCard instance with active exclusive session and SmartCard application selected.
-     * <p>
+     * 
      * This property can be accessed only when handling one of the methods of TKTokenSessionDelegate protocol. If
      * associated token has set AID property, then the returned card has opened exclusive session to the card and the
      * application is already selected. Therefore there is no need to call -[TKSmartCard beginSessionWithReply:]) on
      * returned SmartCard instance in such case and system will take care of terminating session when current token
      * request servicing is finished, -[TKSmartCard endSession] must not be called either.
-     * <p>
+     * 
      * You can store any kind of context state information representing state of the card into smartCard.context
      * property. This property will be automatically set to nil if the card is reset or accessed by different
      * TKSmartCard instance (possibly in another process). Checking TKSmartCard.context property for previously stored
      * value can be used to avoid potentially costly restoring of SmartCard state before performing the operation.
      */
+    @NotNull
     @Generated
     @Selector("smartCard")
     public native TKSmartCard smartCard();

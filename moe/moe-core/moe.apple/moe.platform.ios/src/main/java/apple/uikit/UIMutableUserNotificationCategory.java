@@ -39,7 +39,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ * Deprecated-Since: 10.0
+ * Deprecated-Message: Use UserNotifications Framework's UNNotificationCategory
+ */
+@Deprecated
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -70,22 +78,25 @@ public class UIMutableUserNotificationCategory extends UIUserNotificationCategor
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,9 +131,10 @@ public class UIMutableUserNotificationCategory extends UIUserNotificationCategor
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,6 +169,7 @@ public class UIMutableUserNotificationCategory extends UIUserNotificationCategor
     /**
      * The category identifier passed in a UILocalNotification or a remote notification payload
      */
+    @Nullable
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -167,21 +180,22 @@ public class UIMutableUserNotificationCategory extends UIUserNotificationCategor
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIMutableUserNotificationCategory initWithCoder(NSCoder coder);
+    public native UIMutableUserNotificationCategory initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Sets the UIUserNotificationActions in the order to be displayed for the specified context
      */
     @Generated
     @Selector("setActions:forContext:")
-    public native void setActionsForContext(NSArray<? extends UIUserNotificationAction> actions, @NUInt long context);
+    public native void setActionsForContext(@Nullable NSArray<? extends UIUserNotificationAction> actions,
+            @NUInt long context);
 
     /**
      * The category identifier passed in a UILocalNotification or a remote notification payload
      */
     @Generated
     @Selector("setIdentifier:")
-    public native void setIdentifier(String value);
+    public native void setIdentifier(@Nullable String value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

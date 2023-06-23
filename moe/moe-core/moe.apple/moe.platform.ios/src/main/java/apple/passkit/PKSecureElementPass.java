@@ -25,7 +25,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.4
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -56,22 +61,25 @@ public class PKSecureElementPass extends PKPass {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -84,14 +92,17 @@ public class PKSecureElementPass extends PKPass {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("deviceAccountIdentifier")
     public native String deviceAccountIdentifier();
 
+    @NotNull
     @Generated
     @Selector("deviceAccountNumberSuffix")
     public native String deviceAccountNumberSuffix();
 
+    @Nullable
     @Generated
     @Selector("devicePassIdentifier")
     public native String devicePassIdentifier();
@@ -107,8 +118,8 @@ public class PKSecureElementPass extends PKPass {
 
     @Generated
     @Selector("initWithData:error:")
-    public native PKSecureElementPass initWithDataError(NSData data,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native PKSecureElementPass initWithDataError(@NotNull NSData data,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -127,15 +138,17 @@ public class PKSecureElementPass extends PKPass {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native PKSecureElementPass new_objc();
 
+    @Nullable
     @Generated
     @Selector("pairedTerminalIdentifier")
     public native String pairedTerminalIdentifier();
@@ -145,10 +158,12 @@ public class PKSecureElementPass extends PKPass {
     @NInt
     public native long passActivationState();
 
+    @NotNull
     @Generated
     @Selector("primaryAccountIdentifier")
     public native String primaryAccountIdentifier();
 
+    @NotNull
     @Generated
     @Selector("primaryAccountNumberSuffix")
     public native String primaryAccountNumberSuffix();

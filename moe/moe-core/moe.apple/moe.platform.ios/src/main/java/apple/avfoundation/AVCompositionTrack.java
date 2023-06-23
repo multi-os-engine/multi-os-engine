@@ -39,7 +39,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -70,22 +75,25 @@ public class AVCompositionTrack extends AVAssetTrack {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,9 +128,10 @@ public class AVCompositionTrack extends AVAssetTrack {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,48 +165,76 @@ public class AVCompositionTrack extends AVAssetTrack {
 
     /**
      * [@property] segments
-     * <p>
+     * 
      * Provides read-only access to the array of track segments, each an instance of AVCompositionTrackSegment.
-     * <p>
+     * 
      * Note that timeMapping.target.start of the first AVCompositionTrackSegment must be kCMTimeZero, and the
      * timeMapping.target.start of each subsequent AVCompositionTrackSegment must equal CMTimeRangeGetEnd(the previous
      * AVCompositionTrackSegment's timeMapping.target).
      * Use -validateTrackSegments:error: to perform a test to ensure that an array of AVCompositionTrackSegments
      * conforms to this rule.
      */
+    @NotNull
     @Generated
     @Selector("segments")
     public native NSArray<? extends AVCompositionTrackSegment> segments();
 
     /**
      * segmentForTrackTime:
-     * <p>
+     * 
      * Supplies the AVCompositionTrackSegment from the segments array with a target timeRange that either contains the
      * specified track time or is the closest to it among the target timeRanges of the track's segments.
-     * <p>
+     * 
      * If the trackTime does not map to a sample presentation time (e.g. it's outside the track's timeRange), the
      * segment closest in time to the specified trackTime is returned.
-     *
-     * @param trackTime The trackTime for which an AVCompositionTrackSegment is requested.
+     * 
+     * @param trackTime
+     *                  The trackTime for which an AVCompositionTrackSegment is requested.
      * @return An AVCompositionTrackSegment.
      */
+    @Nullable
     @Generated
     @Selector("segmentForTrackTime:")
     public native AVCompositionTrackSegment segmentForTrackTime(@ByValue CMTime trackTime);
 
     /**
      * [@property] formatDescriptionReplacements
-     * <p>
+     * 
      * An array of AVCompositionTrackFormatDescriptionReplacement objects indicating original format descriptions and
      * their replacements.
-     * <p>
+     * 
      * The value of this property is an array of AVCompositionTrackFormatDescriptionReplacement objects, each of which
      * specifies an original format description together with its replacement format description (as specified by a
      * previous call to -replaceFormatDescription:withFormatDescription:). Only format descriptions that are to be
      * replaced will occur as the originalFormatDescription elements in the
      * AVCompositionTrackFormatDescriptionReplacement objects in this array.
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("formatDescriptionReplacements")
     public native NSArray<? extends AVCompositionTrackFormatDescriptionReplacement> formatDescriptionReplacements();
+
+    /**
+     * API-Since: 7.0
+     */
+    @NotNull
+    @Generated
+    @Selector("associatedTracksOfType:")
+    public native NSArray<? extends AVAssetTrack> associatedTracksOfType(@NotNull String trackAssociationType);
+
+    @Generated
+    @Selector("hasMediaCharacteristic:")
+    public native boolean hasMediaCharacteristic(@NotNull String mediaCharacteristic);
+
+    @NotNull
+    @Generated
+    @Selector("metadataForFormat:")
+    public native NSArray<? extends AVMetadataItem> metadataForFormat(@NotNull String format);
+
+    @Generated
+    @Selector("samplePresentationTimeForTrackTime:")
+    @ByValue
+    public native CMTime samplePresentationTimeForTrackTime(@ByValue CMTime trackTime);
 }

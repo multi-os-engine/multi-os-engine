@@ -21,13 +21,17 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAssetVariant
- * <p>
+ * 
  * An AVAssetVariant represents a bit rate variant.
  * Each asset contains a collection of variants that represent a combination of audio, video, text, closed captions, and
  * subtitles for a particular bit rate.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("AVFoundation")
@@ -59,20 +63,21 @@ public class AVAssetVariant extends NSObject {
 
     /**
      * [@property] audioAttributes
-     * <p>
+     * 
      * Provides variant's audio rendition attributes. If no audio attributes are declared, it will be nil.
      */
+    @Nullable
     @Generated
     @Selector("audioAttributes")
     public native AVAssetVariantAudioAttributes audioAttributes();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] averageBitRate
-     * <p>
+     * 
      * If it is not declared, the value will be negative.
      */
     @Generated
@@ -81,18 +86,21 @@ public class AVAssetVariant extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +139,10 @@ public class AVAssetVariant extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -142,7 +151,7 @@ public class AVAssetVariant extends NSObject {
 
     /**
      * [@property] peakBitRate
-     * <p>
+     * 
      * If it is not declared, the value will be negative.
      */
     @Generated
@@ -172,9 +181,10 @@ public class AVAssetVariant extends NSObject {
 
     /**
      * [@property] videoAttributes
-     * <p>
+     * 
      * Provides variant's video rendition attributes. If no video attributes are declared, it will be nil.
      */
+    @Nullable
     @Generated
     @Selector("videoAttributes")
     public native AVAssetVariantVideoAttributes videoAttributes();

@@ -34,7 +34,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -42,9 +47,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLLibrary {
     /**
      * [@property] device
-     * <p>
+     * 
      * The device this resource was created against. This resource can only be used with this device.
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -52,154 +58,179 @@ public interface MTLLibrary {
 
     /**
      * [@property] functionNames
-     * <p>
+     * 
      * The array contains NSString objects, with the name of each function in library.
      */
+    @NotNull
     @Generated
     @Selector("functionNames")
     NSArray<String> functionNames();
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();
 
     /**
      * newFunctionWithName
-     * <p>
+     * 
      * Returns a pointer to a function object, return nil if the function is not found in the library.
      */
+    @Nullable
     @Generated
     @Selector("newFunctionWithName:")
     @MappedReturn(ObjCObjectMapper.class)
-    MTLFunction newFunctionWithName(String functionName);
+    MTLFunction newFunctionWithName(@NotNull String functionName);
 
     /**
      * newFunctionWithName:constantValues:completionHandler:
-     * <p>
+     * 
      * Returns a pointer to a function object obtained by applying the constant values to the named function.
-     * <p>
+     * 
      * This method is asynchronous since it is will call the compiler.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("newFunctionWithName:constantValues:completionHandler:")
-    void newFunctionWithNameConstantValuesCompletionHandler(String name, MTLFunctionConstantValues constantValues,
-            @ObjCBlock(name = "call_newFunctionWithNameConstantValuesCompletionHandler") Block_newFunctionWithNameConstantValuesCompletionHandler completionHandler);
+    void newFunctionWithNameConstantValuesCompletionHandler(@NotNull String name,
+            @NotNull MTLFunctionConstantValues constantValues,
+            @NotNull @ObjCBlock(name = "call_newFunctionWithNameConstantValuesCompletionHandler") Block_newFunctionWithNameConstantValuesCompletionHandler completionHandler);
 
     /**
      * newFunctionWithName:constantValues:error:
-     * <p>
+     * 
      * Returns a pointer to a function object obtained by applying the constant values to the named function.
-     * <p>
+     * 
      * This method will call the compiler. Use newFunctionWithName:constantValues:completionHandler: to
      * avoid waiting on the compiler.
+     * 
+     * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("newFunctionWithName:constantValues:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    MTLFunction newFunctionWithNameConstantValuesError(String name, MTLFunctionConstantValues constantValues,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    MTLFunction newFunctionWithNameConstantValuesError(@NotNull String name,
+            @NotNull MTLFunctionConstantValues constantValues,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
     @Generated
     @Selector("setLabel:")
-    void setLabel(String value);
+    void setLabel(@Nullable String value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_newFunctionWithNameConstantValuesCompletionHandler {
         @Generated
-        void call_newFunctionWithNameConstantValuesCompletionHandler(@Mapped(ObjCObjectMapper.class) Object function,
-                NSError error);
+        void call_newFunctionWithNameConstantValuesCompletionHandler(
+                @Nullable @Mapped(ObjCObjectMapper.class) Object function, @Nullable NSError error);
     }
 
     /**
      * [@property] installName
-     * <p>
+     * 
      * The installName provided when this MTLLibrary was created.
-     * <p>
+     * 
      * Always nil if the type of the library is not MTLLibraryTypeDynamic.
-     *
+     * 
      * @see MTLCompileOptions
+     * 
+     *      API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("installName")
     String installName();
 
     /**
      * newFunctionWithDescriptor:completionHandler:
-     * <p>
+     * 
      * Create a new MTLFunction object asynchronously.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("newFunctionWithDescriptor:completionHandler:")
-    void newFunctionWithDescriptorCompletionHandler(MTLFunctionDescriptor descriptor,
-            @ObjCBlock(name = "call_newFunctionWithDescriptorCompletionHandler") Block_newFunctionWithDescriptorCompletionHandler completionHandler);
+    void newFunctionWithDescriptorCompletionHandler(@NotNull MTLFunctionDescriptor descriptor,
+            @NotNull @ObjCBlock(name = "call_newFunctionWithDescriptorCompletionHandler") Block_newFunctionWithDescriptorCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_newFunctionWithDescriptorCompletionHandler {
         @Generated
-        void call_newFunctionWithDescriptorCompletionHandler(@Mapped(ObjCObjectMapper.class) Object function,
-                NSError error);
+        void call_newFunctionWithDescriptorCompletionHandler(@Nullable @Mapped(ObjCObjectMapper.class) Object function,
+                @Nullable NSError error);
     }
 
     /**
      * newFunctionWithDescriptor:error:
-     * <p>
+     * 
      * Create a new MTLFunction object synchronously.
+     * 
+     * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("newFunctionWithDescriptor:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    MTLFunction newFunctionWithDescriptorError(MTLFunctionDescriptor descriptor,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    MTLFunction newFunctionWithDescriptorError(@NotNull MTLFunctionDescriptor descriptor,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * newIntersectionFunctionWithDescriptor:completionHandler:
-     * <p>
+     * 
      * Create a new MTLFunction object asynchronously.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("newIntersectionFunctionWithDescriptor:completionHandler:")
-    void newIntersectionFunctionWithDescriptorCompletionHandler(MTLIntersectionFunctionDescriptor descriptor,
-            @ObjCBlock(name = "call_newIntersectionFunctionWithDescriptorCompletionHandler") Block_newIntersectionFunctionWithDescriptorCompletionHandler completionHandler);
+    void newIntersectionFunctionWithDescriptorCompletionHandler(@NotNull MTLIntersectionFunctionDescriptor descriptor,
+            @NotNull @ObjCBlock(name = "call_newIntersectionFunctionWithDescriptorCompletionHandler") Block_newIntersectionFunctionWithDescriptorCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_newIntersectionFunctionWithDescriptorCompletionHandler {
         @Generated
         void call_newIntersectionFunctionWithDescriptorCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object function, NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) Object function, @Nullable NSError error);
     }
 
     /**
      * newIntersectionFunctionWithDescriptor:error:
-     * <p>
+     * 
      * Create a new MTLFunction object synchronously.
+     * 
+     * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("newIntersectionFunctionWithDescriptor:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    MTLFunction newIntersectionFunctionWithDescriptorError(MTLIntersectionFunctionDescriptor descriptor,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    MTLFunction newIntersectionFunctionWithDescriptorError(@NotNull MTLIntersectionFunctionDescriptor descriptor,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * [@property] type
-     * <p>
+     * 
      * The library type provided when this MTLLibrary was created.
      * Libraries with MTLLibraryTypeExecutable can be used to obtain MTLFunction from.
      * Libraries with MTLLibraryTypeDynamic can be used to resolve external references in other MTLLibrary from.
-     *
+     * 
      * @see MTLCompileOptions
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("type")

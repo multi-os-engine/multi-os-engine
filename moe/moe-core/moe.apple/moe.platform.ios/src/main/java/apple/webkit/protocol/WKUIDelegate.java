@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A class conforming to the WKUIDelegate protocol provides methods for
@@ -51,25 +53,30 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface WKUIDelegate {
     /**
      * Allows your app to pop to the view controller it created.
-     *
+     * 
      * @param webView                  The web view invoking the delegate method.
      * @param previewingViewController The view controller that is being popped.
+     * 
+     *                                 API-Since: 10.0
+     *                                 Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("webView:commitPreviewingViewController:")
-    default void webViewCommitPreviewingViewController(WKWebView webView, UIViewController previewingViewController) {
+    default void webViewCommitPreviewingViewController(@NotNull WKWebView webView,
+            @NotNull UIViewController previewingViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Creates a new web view.
-     * <p>
+     * 
      * The web view returned must be created with the specified configuration. WebKit will load the request in the
      * returned web view.
-     * <p>
+     * 
      * If you do not implement this method, the web view will cancel the navigation.
-     *
+     * 
      * @param webView          The web view invoking the delegate method.
      * @param configuration    The configuration to use when creating the new web
      *                         view. This configuration is a copy of webView.configuration.
@@ -78,26 +85,30 @@ public interface WKUIDelegate {
      * @param windowFeatures   Window features requested by the webpage.
      * @return A new web view or nil.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("webView:createWebViewWithConfiguration:forNavigationAction:windowFeatures:")
-    default WKWebView webViewCreateWebViewWithConfigurationForNavigationActionWindowFeatures(WKWebView webView,
-            WKWebViewConfiguration configuration, WKNavigationAction navigationAction,
-            WKWindowFeatures windowFeatures) {
+    default WKWebView webViewCreateWebViewWithConfigurationForNavigationActionWindowFeatures(@NotNull WKWebView webView,
+            @NotNull WKWebViewConfiguration configuration, @NotNull WKNavigationAction navigationAction,
+            @NotNull WKWindowFeatures windowFeatures) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Allows your app to provide a custom view controller to show when the given element is peeked.
-     * <p>
+     * 
      * Returning a view controller will result in that view controller being displayed as a peek preview.
      * To use the defaultActions, your app is responsible for returning whichever of those actions it wants in your
      * view controller's implementation of -previewActionItems.
-     * <p>
+     * 
      * Returning nil will result in WebKit's default preview behavior. webView:commitPreviewingViewController: will only
      * be invoked
      * if a non-nil view controller was returned.
-     *
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
+     * 
      * @param webView        The web view invoking the delegate method.
      * @param elementInfo    The elementInfo for the element the user is peeking.
      * @param defaultActions An array of the actions that WebKit would use as previewActionItems for this element by
@@ -105,24 +116,26 @@ public interface WKUIDelegate {
      *                       have not been
      *                       implemented, or if this delegate method returns nil.
      */
+    @Nullable
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("webView:previewingViewControllerForElement:defaultActions:")
-    default UIViewController webViewPreviewingViewControllerForElementDefaultActions(WKWebView webView,
-            WKPreviewElementInfo elementInfo, NSArray<?> previewActions) {
+    default UIViewController webViewPreviewingViewControllerForElementDefaultActions(@NotNull WKWebView webView,
+            @NotNull WKPreviewElementInfo elementInfo, @NotNull NSArray<?> previewActions) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Displays a JavaScript alert panel.
-     * <p>
+     * 
      * For user security, your app should call attention to the fact
      * that a specific website controls the content in this panel. A simple forumla
      * for identifying the controlling website is frame.request.URL.host.
      * The panel should have a single OK button.
-     * <p>
+     * 
      * If you do not implement this method, the web view will behave as if the user selected the OK button.
-     *
+     * 
      * @param webView           The web view invoking the delegate method.
      * @param message           The message to display.
      * @param frame             Information about the frame whose JavaScript initiated this
@@ -133,22 +146,22 @@ public interface WKUIDelegate {
     @Generated
     @IsOptional
     @Selector("webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:completionHandler:")
-    default void webViewRunJavaScriptAlertPanelWithMessageInitiatedByFrameCompletionHandler(WKWebView webView,
-            String message, WKFrameInfo frame,
-            @ObjCBlock(name = "call_webViewRunJavaScriptAlertPanelWithMessageInitiatedByFrameCompletionHandler") Block_webViewRunJavaScriptAlertPanelWithMessageInitiatedByFrameCompletionHandler completionHandler) {
+    default void webViewRunJavaScriptAlertPanelWithMessageInitiatedByFrameCompletionHandler(@NotNull WKWebView webView,
+            @NotNull String message, @NotNull WKFrameInfo frame,
+            @NotNull @ObjCBlock(name = "call_webViewRunJavaScriptAlertPanelWithMessageInitiatedByFrameCompletionHandler") Block_webViewRunJavaScriptAlertPanelWithMessageInitiatedByFrameCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Displays a JavaScript confirm panel.
-     * <p>
+     * 
      * For user security, your app should call attention to the fact
      * that a specific website controls the content in this panel. A simple forumla
      * for identifying the controlling website is frame.request.URL.host.
      * The panel should have two buttons, such as OK and Cancel.
-     * <p>
+     * 
      * If you do not implement this method, the web view will behave as if the user selected the Cancel button.
-     *
+     * 
      * @param webView           The web view invoking the delegate method.
      * @param message           The message to display.
      * @param frame             Information about the frame whose JavaScript initiated this call.
@@ -159,23 +172,23 @@ public interface WKUIDelegate {
     @Generated
     @IsOptional
     @Selector("webView:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:completionHandler:")
-    default void webViewRunJavaScriptConfirmPanelWithMessageInitiatedByFrameCompletionHandler(WKWebView webView,
-            String message, WKFrameInfo frame,
-            @ObjCBlock(name = "call_webViewRunJavaScriptConfirmPanelWithMessageInitiatedByFrameCompletionHandler") Block_webViewRunJavaScriptConfirmPanelWithMessageInitiatedByFrameCompletionHandler completionHandler) {
+    default void webViewRunJavaScriptConfirmPanelWithMessageInitiatedByFrameCompletionHandler(
+            @NotNull WKWebView webView, @NotNull String message, @NotNull WKFrameInfo frame,
+            @NotNull @ObjCBlock(name = "call_webViewRunJavaScriptConfirmPanelWithMessageInitiatedByFrameCompletionHandler") Block_webViewRunJavaScriptConfirmPanelWithMessageInitiatedByFrameCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Displays a JavaScript text input panel.
-     * <p>
+     * 
      * For user security, your app should call attention to the fact
      * that a specific website controls the content in this panel. A simple forumla
      * for identifying the controlling website is frame.request.URL.host.
      * The panel should have two buttons, such as OK and Cancel, and a field in
      * which to enter text.
-     * <p>
+     * 
      * If you do not implement this method, the web view will behave as if the user selected the Cancel button.
-     *
+     * 
      * @param webView           The web view invoking the delegate method.
      * @param prompt            The prompt to display.
      * @param defaultText       The initial text to display in the text entry field.
@@ -188,43 +201,50 @@ public interface WKUIDelegate {
     @IsOptional
     @Selector("webView:runJavaScriptTextInputPanelWithPrompt:defaultText:initiatedByFrame:completionHandler:")
     default void webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler(
-            WKWebView webView, String prompt, String defaultText, WKFrameInfo frame,
-            @ObjCBlock(name = "call_webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler") Block_webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler completionHandler) {
+            @NotNull WKWebView webView, @NotNull String prompt, @Nullable String defaultText,
+            @NotNull WKFrameInfo frame,
+            @NotNull @ObjCBlock(name = "call_webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler") Block_webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Allows your app to determine whether or not the given element should show a preview.
-     * <p>
+     * 
      * To disable previews entirely for the given element, return NO. Returning NO will prevent
      * webView:previewingViewControllerForElement:defaultActions: and webView:commitPreviewingViewController:
      * from being invoked.
-     * <p>
+     * 
      * This method will only be invoked for elements that have default preview in WebKit, which is
      * limited to links. In the future, it could be invoked for additional elements.
-     *
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
+     * 
      * @param webView     The web view invoking the delegate method.
      * @param elementInfo The elementInfo for the element the user has started touching.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("webView:shouldPreviewElement:")
-    default boolean webViewShouldPreviewElement(WKWebView webView, WKPreviewElementInfo elementInfo) {
+    default boolean webViewShouldPreviewElement(@NotNull WKWebView webView, @NotNull WKPreviewElementInfo elementInfo) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Notifies your app that the DOM window object's close() method completed successfully.
-     * <p>
+     * 
      * Your app should remove the web view from the view hierarchy and update
      * the UI as needed, such as by closing the containing browser tab or window.
-     *
+     * 
+     * API-Since: 9.0
+     * 
      * @param webView The web view invoking the delegate method.
      */
     @Generated
     @IsOptional
     @Selector("webViewDidClose:")
-    default void webViewDidClose(WKWebView webView) {
+    default void webViewDidClose(@NotNull WKWebView webView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -247,25 +267,27 @@ public interface WKUIDelegate {
     public interface Block_webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler {
         @Generated
         void call_webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler(
-                String result);
+                @Nullable String result);
     }
 
     /**
      * Called when a context menu interaction begins.
-     *
+     * 
      * @param webView           The web view invoking the delegate method.
      * @param elementInfo       The elementInfo for the element the user is touching.
      * @param completionHandler A completion handler to call once a it has been decided whether or not to show a context
      *                          menu.
      *                          Pass a valid UIContextMenuConfiguration to show a context menu, or pass nil to not show
      *                          a context menu.
+     * 
+     *                          API-Since: 13.0
      */
     @Generated
     @IsOptional
     @Selector("webView:contextMenuConfigurationForElement:completionHandler:")
-    default void webViewContextMenuConfigurationForElementCompletionHandler(WKWebView webView,
-            WKContextMenuElementInfo elementInfo,
-            @ObjCBlock(name = "call_webViewContextMenuConfigurationForElementCompletionHandler") Block_webViewContextMenuConfigurationForElementCompletionHandler completionHandler) {
+    default void webViewContextMenuConfigurationForElementCompletionHandler(@NotNull WKWebView webView,
+            @NotNull WKContextMenuElementInfo elementInfo,
+            @NotNull @ObjCBlock(name = "call_webViewContextMenuConfigurationForElementCompletionHandler") Block_webViewContextMenuConfigurationForElementCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -273,19 +295,23 @@ public interface WKUIDelegate {
     @Generated
     public interface Block_webViewContextMenuConfigurationForElementCompletionHandler {
         @Generated
-        void call_webViewContextMenuConfigurationForElementCompletionHandler(UIContextMenuConfiguration configuration);
+        void call_webViewContextMenuConfigurationForElementCompletionHandler(
+                @Nullable UIContextMenuConfiguration configuration);
     }
 
     /**
      * Called when the context menu ends, either by being dismissed or when a menu action is taken.
-     *
+     * 
      * @param webView     The web view invoking the delegate method.
      * @param elementInfo The elementInfo for the element the user is touching.
+     * 
+     *                    API-Since: 13.0
      */
     @Generated
     @IsOptional
     @Selector("webView:contextMenuDidEndForElement:")
-    default void webViewContextMenuDidEndForElement(WKWebView webView, WKContextMenuElementInfo elementInfo) {
+    default void webViewContextMenuDidEndForElement(@NotNull WKWebView webView,
+            @NotNull WKContextMenuElementInfo elementInfo) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -293,47 +319,54 @@ public interface WKUIDelegate {
      * Called when the context menu configured by the UIContextMenuConfiguration from
      * webView:contextMenuConfigurationForElement:completionHandler: is committed. That is, when
      * the user has selected the view provided in the UIContextMenuContentPreviewProvider.
-     *
+     * 
      * @param webView     The web view invoking the delegate method.
      * @param elementInfo The elementInfo for the element the user is touching.
      * @param animator    The animator to use for the commit animation.
+     * 
+     *                    API-Since: 13.0
      */
     @Generated
     @IsOptional
     @Selector("webView:contextMenuForElement:willCommitWithAnimator:")
-    default void webViewContextMenuForElementWillCommitWithAnimator(WKWebView webView,
-            WKContextMenuElementInfo elementInfo,
-            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator) {
+    default void webViewContextMenuForElementWillCommitWithAnimator(@NotNull WKWebView webView,
+            @NotNull WKContextMenuElementInfo elementInfo,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Called when the context menu will be presented.
-     *
+     * 
      * @param webView     The web view invoking the delegate method.
      * @param elementInfo The elementInfo for the element the user is touching.
+     * 
+     *                    API-Since: 13.0
      */
     @Generated
     @IsOptional
     @Selector("webView:contextMenuWillPresentForElement:")
-    default void webViewContextMenuWillPresentForElement(WKWebView webView, WKContextMenuElementInfo elementInfo) {
+    default void webViewContextMenuWillPresentForElement(@NotNull WKWebView webView,
+            @NotNull WKContextMenuElementInfo elementInfo) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Allows your app to determine whether or not the given security origin should have access to the device's
      * orientation and motion.
-     *
+     * 
      * @param securityOrigin  The security origin which requested access to the device's orientation and motion.
      * @param frame           The frame that initiated the request.
      * @param decisionHandler The decision handler to call once the app has made its decision.
+     * 
+     *                        API-Since: 15.0
      */
     @Generated
     @IsOptional
     @Selector("webView:requestDeviceOrientationAndMotionPermissionForOrigin:initiatedByFrame:decisionHandler:")
     default void webViewRequestDeviceOrientationAndMotionPermissionForOriginInitiatedByFrameDecisionHandler(
-            WKWebView webView, WKSecurityOrigin origin, WKFrameInfo frame,
-            @ObjCBlock(name = "call_webViewRequestDeviceOrientationAndMotionPermissionForOriginInitiatedByFrameDecisionHandler") Block_webViewRequestDeviceOrientationAndMotionPermissionForOriginInitiatedByFrameDecisionHandler decisionHandler) {
+            @NotNull WKWebView webView, @NotNull WKSecurityOrigin origin, @NotNull WKFrameInfo frame,
+            @NotNull @ObjCBlock(name = "call_webViewRequestDeviceOrientationAndMotionPermissionForOriginInitiatedByFrameDecisionHandler") Block_webViewRequestDeviceOrientationAndMotionPermissionForOriginInitiatedByFrameDecisionHandler decisionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -347,9 +380,11 @@ public interface WKUIDelegate {
 
     /**
      * A delegate to request permission for microphone audio and camera video access.
-     * <p>
+     * 
      * If not implemented, the result is the same as calling the decisionHandler with WKPermissionDecisionPrompt.
-     *
+     * 
+     * API-Since: 15.0
+     * 
      * @param webView         The web view invoking the delegate method.
      * @param origin          The origin of the page.
      * @param frame           Information about the frame whose JavaScript initiated this call.
@@ -359,9 +394,9 @@ public interface WKUIDelegate {
     @Generated
     @IsOptional
     @Selector("webView:requestMediaCapturePermissionForOrigin:initiatedByFrame:type:decisionHandler:")
-    default void webViewRequestMediaCapturePermissionForOriginInitiatedByFrameTypeDecisionHandler(WKWebView webView,
-            WKSecurityOrigin origin, WKFrameInfo frame, @NInt long type,
-            @ObjCBlock(name = "call_webViewRequestMediaCapturePermissionForOriginInitiatedByFrameTypeDecisionHandler") Block_webViewRequestMediaCapturePermissionForOriginInitiatedByFrameTypeDecisionHandler decisionHandler) {
+    default void webViewRequestMediaCapturePermissionForOriginInitiatedByFrameTypeDecisionHandler(
+            @NotNull WKWebView webView, @NotNull WKSecurityOrigin origin, @NotNull WKFrameInfo frame, @NInt long type,
+            @NotNull @ObjCBlock(name = "call_webViewRequestMediaCapturePermissionForOriginInitiatedByFrameTypeDecisionHandler") Block_webViewRequestMediaCapturePermissionForOriginInitiatedByFrameTypeDecisionHandler decisionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -370,5 +405,35 @@ public interface WKUIDelegate {
     public interface Block_webViewRequestMediaCapturePermissionForOriginInitiatedByFrameTypeDecisionHandler {
         @Generated
         void call_webViewRequestMediaCapturePermissionForOriginInitiatedByFrameTypeDecisionHandler(@NInt long decision);
+    }
+
+    /**
+     * Displays a Lockdown Mode warning panel.
+     * 
+     * The panel should have a single OK button.
+     * 
+     * If you do not implement this method, the web view will display the default Lockdown Mode message.
+     * 
+     * API-Since: 13.0
+     * 
+     * @param webView           The web view invoking the delegate method.
+     * @param message           The message WebKit would display if this delegate were not invoked.
+     * @param completionHandler The completion handler you must invoke to resume after the first use message is
+     *                          displayed.
+     */
+    @Generated
+    @IsOptional
+    @Selector("webView:showLockdownModeFirstUseMessage:completionHandler:")
+    default void webViewShowLockdownModeFirstUseMessageCompletionHandler(@NotNull WKWebView webView,
+            @NotNull String message,
+            @NotNull @ObjCBlock(name = "call_webViewShowLockdownModeFirstUseMessageCompletionHandler") Block_webViewShowLockdownModeFirstUseMessageCompletionHandler completionHandler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_webViewShowLockdownModeFirstUseMessageCompletionHandler {
+        @Generated
+        void call_webViewShowLockdownModeFirstUseMessageCompletionHandler(@NInt long arg0);
     }
 }

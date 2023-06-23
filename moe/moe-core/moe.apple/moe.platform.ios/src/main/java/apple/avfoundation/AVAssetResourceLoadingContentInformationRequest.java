@@ -38,7 +38,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -69,22 +74,25 @@ public class AVAssetResourceLoadingContentInformationRequest extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -119,9 +127,10 @@ public class AVAssetResourceLoadingContentInformationRequest extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -151,9 +160,9 @@ public class AVAssetResourceLoadingContentInformationRequest extends NSObject {
 
     /**
      * [@property] contentLength
-     * <p>
+     * 
      * Indicates the length of the requested resource, in bytes.
-     * <p>
+     * 
      * Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you
      * should set the value of this property to the number of bytes contained by the requested resource.
      */
@@ -163,12 +172,13 @@ public class AVAssetResourceLoadingContentInformationRequest extends NSObject {
 
     /**
      * [@property] contentType
-     * <p>
+     * 
      * A UTI that indicates the type of data contained by the requested resource.
-     * <p>
+     * 
      * Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you
      * should set the value of this property to a UTI indicating the type of data contained by the requested resource.
      */
+    @Nullable
     @Generated
     @Selector("contentType")
     public native String contentType();
@@ -179,10 +189,10 @@ public class AVAssetResourceLoadingContentInformationRequest extends NSObject {
 
     /**
      * [@property] byteRangeAccessSupported
-     * <p>
+     * 
      * Indicates whether random access to arbitrary ranges of bytes of the resource is supported. Such support also
      * allows portions of the resource to be requested more than once.
-     * <p>
+     * 
      * Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you
      * should set the value of this property to YES if you support random access to arbitrary ranges of bytes of the
      * resource. If you do not set this property to YES for resources that must be loaded incrementally, loading of the
@@ -194,10 +204,10 @@ public class AVAssetResourceLoadingContentInformationRequest extends NSObject {
 
     /**
      * [@property] byteRangeAccessSupported
-     * <p>
+     * 
      * Indicates whether random access to arbitrary ranges of bytes of the resource is supported. Such support also
      * allows portions of the resource to be requested more than once.
-     * <p>
+     * 
      * Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you
      * should set the value of this property to YES if you support random access to arbitrary ranges of bytes of the
      * resource. If you do not set this property to YES for resources that must be loaded incrementally, loading of the
@@ -209,25 +219,28 @@ public class AVAssetResourceLoadingContentInformationRequest extends NSObject {
 
     /**
      * [@property] renewalDate
-     * <p>
+     * 
      * For resources that expire, the date at which a new AVAssetResourceLoadingRequest will be issued for a renewal of
      * this resource, if the media system still requires it.
-     * <p>
+     * 
      * Before you finish loading an AVAssetResourceLoadingRequest, if the resource is prone to expiry you should set the
      * value of this property to the date at which a renewal should be triggered. This value should be set sufficiently
      * early enough to allow an AVAssetResourceRenewalRequest, delivered to your delegate via
      * -resourceLoader:shouldWaitForRenewalOfRequestedResource:, to finish before the actual expiry time. Otherwise
      * media playback may fail.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("renewalDate")
     public native NSDate renewalDate();
 
     /**
      * [@property] contentLength
-     * <p>
+     * 
      * Indicates the length of the requested resource, in bytes.
-     * <p>
+     * 
      * Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you
      * should set the value of this property to the number of bytes contained by the requested resource.
      */
@@ -237,41 +250,78 @@ public class AVAssetResourceLoadingContentInformationRequest extends NSObject {
 
     /**
      * [@property] contentType
-     * <p>
+     * 
      * A UTI that indicates the type of data contained by the requested resource.
-     * <p>
+     * 
      * Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you
      * should set the value of this property to a UTI indicating the type of data contained by the requested resource.
      */
     @Generated
     @Selector("setContentType:")
-    public native void setContentType(String value);
+    public native void setContentType(@Nullable String value);
 
     /**
      * [@property] renewalDate
-     * <p>
+     * 
      * For resources that expire, the date at which a new AVAssetResourceLoadingRequest will be issued for a renewal of
      * this resource, if the media system still requires it.
-     * <p>
+     * 
      * Before you finish loading an AVAssetResourceLoadingRequest, if the resource is prone to expiry you should set the
      * value of this property to the date at which a renewal should be triggered. This value should be set sufficiently
      * early enough to allow an AVAssetResourceRenewalRequest, delivered to your delegate via
      * -resourceLoader:shouldWaitForRenewalOfRequestedResource:, to finish before the actual expiry time. Otherwise
      * media playback may fail.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setRenewalDate:")
-    public native void setRenewalDate(NSDate value);
+    public native void setRenewalDate(@Nullable NSDate value);
 
     /**
      * [@property] allowedContentTypes
-     * <p>
+     * 
      * An array showing the types of data which will be accepted as a valid response for the requested resource.
-     * <p>
+     * 
      * If allowedContentTypes is nonnil and the contentType property is not in allowedContentTypes, an exception will be
      * raised.
+     * 
+     * API-Since: 11.2
      */
+    @Nullable
     @Generated
     @Selector("allowedContentTypes")
     public native NSArray<String> allowedContentTypes();
+
+    /**
+     * [@property] entireLengthAvailableOnDemand
+     * 
+     * Indicates whether asset data loading can expect data to be produced immediately.
+     * 
+     * Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you may
+     * set this property to YES to indicate that all asset data can be produced immediately, e.g., because the data is
+     * fully cached, or because the custom URL scheme ultimately refers to files on local storage. This allows
+     * significant data flow optimizations. For backward compatibility, this property defaults to NO.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("isEntireLengthAvailableOnDemand")
+    public native boolean isEntireLengthAvailableOnDemand();
+
+    /**
+     * [@property] entireLengthAvailableOnDemand
+     * 
+     * Indicates whether asset data loading can expect data to be produced immediately.
+     * 
+     * Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you may
+     * set this property to YES to indicate that all asset data can be produced immediately, e.g., because the data is
+     * fully cached, or because the custom URL scheme ultimately refers to files on local storage. This allows
+     * significant data flow optimizations. For backward compatibility, this property defaults to NO.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setEntireLengthAvailableOnDemand:")
+    public native void setEntireLengthAvailableOnDemand(boolean value);
 }

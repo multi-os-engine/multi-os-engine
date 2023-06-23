@@ -24,7 +24,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -55,22 +60,25 @@ public class CPInformationRatingItem extends CPInformationItem {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -94,11 +102,11 @@ public class CPInformationRatingItem extends CPInformationItem {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CPInformationRatingItem initWithCoder(NSCoder coder);
+    public native CPInformationRatingItem initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initializes a new item to be used with @c CPInformationTemplate.
-     *
+     * 
      * @param rating        A number incremented by 0.5 intervals between 0 and maximumRating that will be styled by the
      *                      template as the rating of the item.
      * @param maximumRating A whole number between 1 - 5 that will be styled by the template as the maximum rating of
@@ -108,12 +116,12 @@ public class CPInformationRatingItem extends CPInformationItem {
      */
     @Generated
     @Selector("initWithRating:maximumRating:title:detail:")
-    public native CPInformationRatingItem initWithRatingMaximumRatingTitleDetail(NSNumber rating,
-            NSNumber maximumRating, String title, String detail);
+    public native CPInformationRatingItem initWithRatingMaximumRatingTitleDetail(@Nullable NSNumber rating,
+            @Nullable NSNumber maximumRating, @Nullable String title, @Nullable String detail);
 
     @Generated
     @Selector("initWithTitle:detail:")
-    public native CPInformationRatingItem initWithTitleDetail(String title, String detail);
+    public native CPInformationRatingItem initWithTitleDetail(@Nullable String title, @Nullable String detail);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -132,10 +140,12 @@ public class CPInformationRatingItem extends CPInformationItem {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("maximumRating")
     public native NSNumber maximumRating();
@@ -145,6 +155,7 @@ public class CPInformationRatingItem extends CPInformationItem {
     @Selector("new")
     public static native CPInformationRatingItem new_objc();
 
+    @Nullable
     @Generated
     @Selector("rating")
     public native NSNumber rating();

@@ -38,18 +38,26 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NKLibrary
- * <p>
+ * 
  * Represents the library of Newsstand issues
- * <p>
+ * 
  * This is the library of Newsstand issues. Upon launch, one can
  * get the issues in the Newsstand library and determine any outstanding
  * downloading assets. To reconnect with any outstanding background
  * download of content, you will be required to call
  * -[NKAssetDownload downloadWithDelegate:].
+ * 
+ * API-Since: 5.0
+ * Deprecated-Since: 13.0
+ * Deprecated-Message: Use the Remote Notifications Background Modes instead:
+ * https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_updates_to_your_app_silently
  */
+@Deprecated
 @Generated
 @Library("NewsstandKit")
 @Runtime(ObjCRuntime.class)
@@ -80,22 +88,25 @@ public class NKLibrary extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +141,10 @@ public class NKLibrary extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -153,9 +165,10 @@ public class NKLibrary extends NSObject {
 
     /**
      * sharedLibrary
-     * <p>
+     * 
      * The application's shared Newsstand Content Library
      */
+    @Nullable
     @Generated
     @Selector("sharedLibrary")
     public static native NKLibrary sharedLibrary();
@@ -171,31 +184,34 @@ public class NKLibrary extends NSObject {
 
     /**
      * addIssueWithName:date:
-     * <p>
+     * 
      * Add a new issue to the Newsstand Content Library.
      */
+    @NotNull
     @Generated
     @Selector("addIssueWithName:date:")
-    public native NKIssue addIssueWithNameDate(String name, NSDate date);
+    public native NKIssue addIssueWithNameDate(@NotNull String name, @NotNull NSDate date);
 
     /**
      * [@property] currentlyReadingIssue
-     * <p>
+     * 
      * The issue that is currently being read by the user. Clients should
      * set this property to the currently read issue to prevent data
      * from being purged when under disk pressure.
      */
+    @Nullable
     @Generated
     @Selector("currentlyReadingIssue")
     public native NKIssue currentlyReadingIssue();
 
     /**
      * [@property] downloadingAssets
-     * <p>
+     * 
      * The assets that are currently being downloaded in this
      * Newsstand library. The issue that this asset is associated with
      * can be determined from the asset itself.
      */
+    @NotNull
     @Generated
     @Selector("downloadingAssets")
     public native NSArray<? extends NKAssetDownload> downloadingAssets();
@@ -206,39 +222,41 @@ public class NKLibrary extends NSObject {
 
     /**
      * issueWithName:
-     * <p>
+     * 
      * Return the issue identified by the given name if it exists.
      */
+    @Nullable
     @Generated
     @Selector("issueWithName:")
-    public native NKIssue issueWithName(String name);
+    public native NKIssue issueWithName(@NotNull String name);
 
     /**
      * [@property] issues
-     * <p>
+     * 
      * The Newsstand issues in the library
      */
+    @NotNull
     @Generated
     @Selector("issues")
     public native NSArray<? extends NKIssue> issues();
 
     /**
      * removeIssue:
-     * <p>
+     * 
      * Remove the issue from the library
      */
     @Generated
     @Selector("removeIssue:")
-    public native void removeIssue(NKIssue issue);
+    public native void removeIssue(@NotNull NKIssue issue);
 
     /**
      * [@property] currentlyReadingIssue
-     * <p>
+     * 
      * The issue that is currently being read by the user. Clients should
      * set this property to the currently read issue to prevent data
      * from being purged when under disk pressure.
      */
     @Generated
     @Selector("setCurrentlyReadingIssue:")
-    public native void setCurrentlyReadingIssue(NKIssue value);
+    public native void setCurrentlyReadingIssue(@Nullable NKIssue value);
 }

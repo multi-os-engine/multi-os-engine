@@ -62,9 +62,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function] JSEvaluateScript
-     * <p>
+     * 
      * Evaluates a string of JavaScript.
-     *
+     * 
      * @param ctx                The execution context to use.
      * @param script             A JSString containing the script to evaluate.
      * @param thisObject         The object to use as "this," or NULL to use the global object as "this."
@@ -85,9 +85,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function] JSCheckScriptSyntax
-     * <p>
+     * 
      * Checks for syntax errors in a string of JavaScript.
-     *
+     * 
      * @param ctx                The execution context to use.
      * @param script             A JSString containing the script to check for syntax errors.
      * @param sourceURL          A JSString containing a URL for the script's source file. This is only used when
@@ -107,18 +107,18 @@ public final class JavaScriptCore {
 
     /**
      * [@function] JSGarbageCollect
-     * <p>
+     * 
      * Performs a JavaScript garbage collection.
-     * <p>
+     * 
      * JavaScript values that are on the machine stack, in a register,
      * protected by JSValueProtect, set as the global object of an execution context,
      * or reachable from any such value will not be collected.
-     * <p>
+     * 
      * During JavaScript execution, you are not required to call this function; the
      * JavaScript engine will garbage collect as needed. JavaScript values created
      * within a context group are automatically destroyed when the last reference
      * to the context group is released.
-     *
+     * 
      * @param ctx The execution context to use.
      */
     @Generated
@@ -127,9 +127,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Returns a JavaScript value's type.
-     *
+     * 
      * @param ctx   The execution context to use.
      * @param value The JSValue whose type you want to obtain.
      * @return A value of type JSType that identifies value's type.
@@ -140,9 +140,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Tests whether a JavaScript value's type is the undefined type.
-     *
+     * 
      * @param ctx   The execution context to use.
      * @param value The JSValue to test.
      * @return true if value's type is the undefined type, otherwise false.
@@ -153,9 +153,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Tests whether a JavaScript value's type is the null type.
-     *
+     * 
      * @param ctx   The execution context to use.
      * @param value The JSValue to test.
      * @return true if value's type is the null type, otherwise false.
@@ -166,9 +166,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Tests whether a JavaScript value's type is the boolean type.
-     *
+     * 
      * @param ctx   The execution context to use.
      * @param value The JSValue to test.
      * @return true if value's type is the boolean type, otherwise false.
@@ -179,9 +179,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Tests whether a JavaScript value's type is the number type.
-     *
+     * 
      * @param ctx   The execution context to use.
      * @param value The JSValue to test.
      * @return true if value's type is the number type, otherwise false.
@@ -192,9 +192,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Tests whether a JavaScript value's type is the string type.
-     *
+     * 
      * @param ctx   The execution context to use.
      * @param value The JSValue to test.
      * @return true if value's type is the string type, otherwise false.
@@ -205,9 +205,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Tests whether a JavaScript value's type is the object type.
-     *
+     * 
      * @param ctx   The execution context to use.
      * @param value The JSValue to test.
      * @return true if value's type is the object type, otherwise false.
@@ -218,9 +218,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Tests whether a JavaScript value is an object with a given class in its class chain.
-     *
+     * 
      * @param ctx     The execution context to use.
      * @param value   The JSValue to test.
      * @param jsClass The JSClass to test against.
@@ -232,12 +232,14 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Tests whether a JavaScript value is an array.
-     *
+     * 
      * @param ctx   The execution context to use.
      * @param value The JSValue to test.
      * @return true if value is an array, otherwise false.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @CFunction
@@ -245,12 +247,14 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Tests whether a JavaScript value is a date.
-     *
+     * 
      * @param ctx   The execution context to use.
      * @param value The JSValue to test.
      * @return true if value is a date, otherwise false.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @CFunction
@@ -258,15 +262,17 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Returns a JavaScript value's Typed Array type.
-     *
+     * 
      * @param ctx       The execution context to use.
      * @param value     The JSValue whose Typed Array type to return.
      * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
      *                  to store an exception.
      * @return A value of type JSTypedArrayType that identifies value's Typed Array type, or kJSTypedArrayTypeNone if
      *         the value is not a Typed Array object.
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @CFunction
@@ -274,9 +280,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Tests whether two JavaScript values are equal, as compared by the JS == operator.
-     *
+     * 
      * @param ctx       The execution context to use.
      * @param a         The first value to test.
      * @param b         The second value to test.
@@ -291,9 +297,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Tests whether two JavaScript values are strict equal, as compared by the JS === operator.
-     *
+     * 
      * @param ctx The execution context to use.
      * @param a   The first value to test.
      * @param b   The second value to test.
@@ -305,10 +311,10 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Tests whether a JavaScript value is an object constructed by a given constructor, as compared by the JS
      * instanceof operator.
-     *
+     * 
      * @param ctx         The execution context to use.
      * @param value       The JSValue to test.
      * @param constructor The constructor to test against.
@@ -324,9 +330,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript value of the undefined type.
-     *
+     * 
      * @param ctx The execution context to use.
      * @return The unique undefined value.
      */
@@ -336,9 +342,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript value of the null type.
-     *
+     * 
      * @param ctx The execution context to use.
      * @return The unique null value.
      */
@@ -348,9 +354,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript value of the boolean type.
-     *
+     * 
      * @param ctx     The execution context to use.
      * @param boolean The bool to assign to the newly created JSValue.
      * @return A JSValue of the boolean type, representing the value of boolean.
@@ -361,9 +367,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript value of the number type.
-     *
+     * 
      * @param ctx    The execution context to use.
      * @param number The double to assign to the newly created JSValue.
      * @return A JSValue of the number type, representing the value of number.
@@ -374,9 +380,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript value of the string type.
-     *
+     * 
      * @param ctx    The execution context to use.
      * @param string The JSString to assign to the newly created JSValue. The
      *               newly created JSValue retains string, and releases it upon garbage collection.
@@ -388,12 +394,14 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript value from a JSON formatted string.
-     *
+     * 
      * @param ctx    The execution context to use.
      * @param string The JSString containing the JSON string to be parsed.
      * @return A JSValue containing the parsed value, or NULL if the input is invalid.
+     * 
+     *         API-Since: 7.0
      */
     @Generated
     @CFunction
@@ -401,9 +409,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript string containing the JSON serialized representation of a JS value.
-     *
+     * 
      * @param ctx       The execution context to use.
      * @param value     The value to serialize.
      * @param indent    The number of spaces to indent when nesting. If 0, the resulting JSON will not contains
@@ -411,6 +419,8 @@ public final class JavaScriptCore {
      * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
      *                  to store an exception.
      * @return A JSString with the result of serialization, or NULL if an exception is thrown.
+     * 
+     *         API-Since: 7.0
      */
     @Generated
     @CFunction
@@ -419,9 +429,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Converts a JavaScript value to boolean and returns the resulting boolean.
-     *
+     * 
      * @param ctx   The execution context to use.
      * @param value The JSValue to convert.
      * @return The boolean result of conversion.
@@ -432,9 +442,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Converts a JavaScript value to number and returns the resulting number.
-     *
+     * 
      * @param ctx       The execution context to use.
      * @param value     The JSValue to convert.
      * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
@@ -447,9 +457,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Converts a JavaScript value to string and copies the result into a JavaScript string.
-     *
+     * 
      * @param ctx       The execution context to use.
      * @param value     The JSValue to convert.
      * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
@@ -463,9 +473,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Converts a JavaScript value to object and returns the resulting object.
-     *
+     * 
      * @param ctx       The execution context to use.
      * @param value     The JSValue to convert.
      * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
@@ -479,15 +489,15 @@ public final class JavaScriptCore {
     /**
      * Garbage collection
      * [@function]
-     * <p>
+     * 
      * Protects a JavaScript value from garbage collection.
-     * <p>
+     * 
      * Use this method when you want to store a JSValue in a global or on the heap, where the garbage collector will not
      * be able to discover your reference to it.
-     * <p>
+     * 
      * A value may be protected multiple times and must be unprotected an equal number of times before becoming eligible
      * for garbage collection.
-     *
+     * 
      * @param ctx   The execution context to use.
      * @param value The JSValue to protect.
      */
@@ -497,12 +507,12 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Unprotects a JavaScript value from garbage collection.
-     * <p>
+     * 
      * A value may be protected multiple times and must be unprotected an
      * equal number of times before becoming eligible for garbage collection.
-     *
+     * 
      * @param ctx   The execution context to use.
      * @param value The JSValue to unprotect.
      */
@@ -512,9 +522,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript class suitable for use with JSObjectMake.
-     *
+     * 
      * @param definition A JSClassDefinition that defines the class.
      * @return A JSClass with the given definition. Ownership follows the Create Rule.
      */
@@ -525,9 +535,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Retains a JavaScript class.
-     *
+     * 
      * @param jsClass The JSClass to retain.
      * @return A JSClass that is the same as jsClass.
      */
@@ -537,9 +547,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Releases a JavaScript class.
-     *
+     * 
      * @param jsClass The JSClass to release.
      */
     @Generated
@@ -548,15 +558,15 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript object.
-     * <p>
+     * 
      * The default object class does not allocate storage for private data, so you must provide a non-NULL jsClass to
      * JSObjectMake if you want your object to be able to store private data.
-     * <p>
+     * 
      * data is set on the created object before the intialize methods in its class chain are called. This enables the
      * initialize methods to retrieve and manipulate data through JSObjectGetPrivate.
-     *
+     * 
      * @param ctx     The execution context to use.
      * @param jsClass The JSClass to assign to the object. Pass NULL to use the default object class.
      * @param data    A void* to set as the object's private data. Pass NULL to specify no private data.
@@ -568,9 +578,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Convenience method for creating a JavaScript function with a given callback as its implementation.
-     *
+     * 
      * @param ctx            The execution context to use.
      * @param name           A JSString containing the function's name. This will be used when converting the function
      *                       to string. Pass NULL to create an anonymous function.
@@ -584,13 +594,13 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Convenience method for creating a JavaScript constructor.
-     * <p>
+     * 
      * The default object constructor takes no arguments and constructs an object of class jsClass with no private data.
      * If the constructor is inherited via JS subclassing and the value returned from callAsConstructor was created with
      * jsClass, then the returned object will have it's prototype overridden to the derived class's prototype.
-     *
+     * 
      * @param ctx               The execution context to use.
      * @param jsClass           A JSClass that is the class your constructor will assign to the objects its constructs.
      *                          jsClass will be used to set the constructor's .prototype property, and to evaluate
@@ -606,13 +616,15 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript Array object.
-     * <p>
+     * 
      * The behavior of this function does not exactly match the behavior of the built-in Array constructor.
      * Specifically, if one argument
      * is supplied, this function returns an array with one element.
-     *
+     * 
+     * API-Since: 7.0
+     * 
      * @param ctx           The execution context to use.
      * @param argumentCount An integer count of the number of arguments in arguments.
      * @param arguments     A JSValue array of data to populate the Array with. Pass NULL if argumentCount is 0.
@@ -627,9 +639,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript Date object, as if by invoking the built-in Date constructor.
-     *
+     * 
      * @param ctx           The execution context to use.
      * @param argumentCount An integer count of the number of arguments in arguments.
      * @param arguments     A JSValue array of arguments to pass to the Date Constructor. Pass NULL if argumentCount is
@@ -637,6 +649,8 @@ public final class JavaScriptCore {
      * @param exception     A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not
      *                      care to store an exception.
      * @return A JSObject that is a Date.
+     * 
+     *         API-Since: 7.0
      */
     @Generated
     @CFunction
@@ -645,9 +659,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript Error object, as if by invoking the built-in Error constructor.
-     *
+     * 
      * @param ctx           The execution context to use.
      * @param argumentCount An integer count of the number of arguments in arguments.
      * @param arguments     A JSValue array of arguments to pass to the Error Constructor. Pass NULL if argumentCount is
@@ -655,6 +669,8 @@ public final class JavaScriptCore {
      * @param exception     A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not
      *                      care to store an exception.
      * @return A JSObject that is an Error.
+     * 
+     *         API-Since: 7.0
      */
     @Generated
     @CFunction
@@ -663,9 +679,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript RegExp object, as if by invoking the built-in RegExp constructor.
-     *
+     * 
      * @param ctx           The execution context to use.
      * @param argumentCount An integer count of the number of arguments in arguments.
      * @param arguments     A JSValue array of arguments to pass to the RegExp Constructor. Pass NULL if argumentCount
@@ -673,6 +689,8 @@ public final class JavaScriptCore {
      * @param exception     A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not
      *                      care to store an exception.
      * @return A JSObject that is a RegExp.
+     * 
+     *         API-Since: 7.0
      */
     @Generated
     @CFunction
@@ -681,12 +699,12 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a function with a given script as its body.
-     * <p>
+     * 
      * Use this method when you want to execute a script repeatedly, to avoid the cost of re-parsing the script before
      * each execution.
-     *
+     * 
      * @param ctx                The execution context to use.
      * @param name               A JSString containing the function's name. This will be used when converting the
      *                           function to string. Pass NULL to create an anonymous function.
@@ -713,9 +731,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Gets an object's prototype.
-     *
+     * 
      * @param ctx    The execution context to use.
      * @param object A JSObject whose prototype you want to get.
      * @return A JSValue that is the object's prototype.
@@ -726,9 +744,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Sets an object's prototype.
-     *
+     * 
      * @param ctx    The execution context to use.
      * @param object The JSObject whose prototype you want to set.
      * @param value  A JSValue to set as the object's prototype.
@@ -739,9 +757,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Tests whether an object has a given property.
-     *
+     * 
      * @param object       The JSObject to test.
      * @param propertyName A JSString containing the property's name.
      * @return true if the object has a property whose name matches propertyName, otherwise false.
@@ -752,9 +770,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Gets a property from an object.
-     *
+     * 
      * @param ctx          The execution context to use.
      * @param object       The JSObject whose property you want to get.
      * @param propertyName A JSString containing the property's name.
@@ -769,9 +787,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Sets a property on an object.
-     *
+     * 
      * @param ctx          The execution context to use.
      * @param object       The JSObject whose property you want to set.
      * @param propertyName A JSString containing the property's name.
@@ -787,9 +805,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Deletes a property from an object.
-     *
+     * 
      * @param ctx          The execution context to use.
      * @param object       The JSObject whose property you want to delete.
      * @param propertyName A JSString containing the property's name.
@@ -805,12 +823,12 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Gets a property from an object by numeric index.
-     * <p>
+     * 
      * Calling JSObjectGetPropertyAtIndex is equivalent to calling JSObjectGetProperty with a string containing
      * propertyIndex, but JSObjectGetPropertyAtIndex provides optimized access to numeric properties.
-     *
+     * 
      * @param ctx           The execution context to use.
      * @param object        The JSObject whose property you want to get.
      * @param propertyIndex An integer value that is the property's name.
@@ -825,12 +843,12 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Sets a property on an object by numeric index.
-     * <p>
+     * 
      * Calling JSObjectSetPropertyAtIndex is equivalent to calling JSObjectSetProperty with a string containing
      * propertyIndex, but JSObjectSetPropertyAtIndex provides optimized access to numeric properties.
-     *
+     * 
      * @param ctx           The execution context to use.
      * @param object        The JSObject whose property you want to set.
      * @param propertyIndex The property's name as a number.
@@ -845,9 +863,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Gets an object's private data.
-     *
+     * 
      * @param object A JSObject whose private data you want to get.
      * @return A void* that is the object's private data, if the object has private data, otherwise NULL.
      */
@@ -857,12 +875,12 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Sets a pointer to private data on an object.
-     * <p>
+     * 
      * The default object class does not allocate storage for private data. Only objects created with a non-NULL JSClass
      * can store private data.
-     *
+     * 
      * @param object The JSObject whose private data you want to set.
      * @param data   A void* to set as the object's private data.
      * @return true if object can store private data, otherwise false.
@@ -873,9 +891,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Tests whether an object can be called as a function.
-     *
+     * 
      * @param ctx    The execution context to use.
      * @param object The JSObject to test.
      * @return true if the object can be called as a function, otherwise false.
@@ -886,9 +904,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Calls an object as a function.
-     *
+     * 
      * @param ctx           The execution context to use.
      * @param object        The JSObject to call as a function.
      * @param thisObject    The object to use as "this," or NULL to use the global object as "this."
@@ -906,9 +924,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Tests whether an object can be called as a constructor.
-     *
+     * 
      * @param ctx    The execution context to use.
      * @param object The JSObject to test.
      * @return true if the object can be called as a constructor, otherwise false.
@@ -919,9 +937,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Calls an object as a constructor.
-     *
+     * 
      * @param ctx           The execution context to use.
      * @param object        The JSObject to call as a constructor.
      * @param argumentCount An integer count of the number of arguments in arguments.
@@ -938,9 +956,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Gets the names of an object's enumerable properties.
-     *
+     * 
      * @param ctx    The execution context to use.
      * @param object The object whose property names you want to get.
      * @return A JSPropertyNameArray containing the names object's enumerable properties. Ownership follows the Create
@@ -952,9 +970,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Retains a JavaScript property name array.
-     *
+     * 
      * @param array The JSPropertyNameArray to retain.
      * @return A JSPropertyNameArray that is the same as array.
      */
@@ -964,9 +982,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Releases a JavaScript property name array.
-     *
+     * 
      * @param array The JSPropetyNameArray to release.
      */
     @Generated
@@ -975,9 +993,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Gets a count of the number of items in a JavaScript property name array.
-     *
+     * 
      * @param array The array from which to retrieve the count.
      * @return An integer count of the number of names in array.
      */
@@ -988,9 +1006,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Gets a property name at a given index in a JavaScript property name array.
-     *
+     * 
      * @param array The array from which to retrieve the property name.
      * @param index The index of the property name to retrieve.
      * @return A JSStringRef containing the property name.
@@ -1001,9 +1019,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Adds a property name to a JavaScript property name accumulator.
-     *
+     * 
      * @param accumulator  The accumulator object to which to add the property name.
      * @param propertyName The property name to add.
      */
@@ -1014,21 +1032,23 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript context group.
-     * <p>
+     * 
      * A JSContextGroup associates JavaScript contexts with one another.
      * Contexts in the same group may share and exchange JavaScript objects. Sharing and/or exchanging
      * JavaScript objects between contexts in different groups will produce undefined behavior.
      * When objects from the same context group are used in multiple threads, explicit
      * synchronization is required.
-     * <p>
+     * 
      * A JSContextGroup may need to run deferred tasks on a run loop, such as garbage collection
      * or resolving WebAssembly compilations. By default, calling JSContextGroupCreate will use
      * the run loop of the thread it was called on. Currently, there is no API to change a
      * JSContextGroup's run loop once it has been created.
-     *
+     * 
      * @return The created JSContextGroup.
+     * 
+     *         API-Since: 7.0
      */
     @Generated
     @CFunction
@@ -1036,11 +1056,13 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Retains a JavaScript context group.
-     *
+     * 
      * @param group The JSContextGroup to retain.
      * @return A JSContextGroup that is the same as group.
+     * 
+     *         API-Since: 7.0
      */
     @Generated
     @CFunction
@@ -1048,10 +1070,12 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Releases a JavaScript context group.
-     *
+     * 
      * @param group The JSContextGroup to release.
+     * 
+     *              API-Since: 7.0
      */
     @Generated
     @CFunction
@@ -1059,19 +1083,21 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a global JavaScript execution context.
-     * <p>
+     * 
      * JSGlobalContextCreate allocates a global object and populates it with all the
      * built-in JavaScript objects, such as Object, Function, String, and Array.
-     * <p>
+     * 
      * In WebKit version 4.0 and later, the context is created in a unique context group.
      * Therefore, scripts may execute in it concurrently with scripts executing in other contexts.
      * However, you may not use values created in the context in other contexts.
-     *
+     * 
      * @param globalObjectClass The class to use when creating the global object. Pass
      *                          NULL to use the default object class.
      * @return A JSGlobalContext with a global object of class globalObjectClass.
+     * 
+     *         API-Since: 7.0
      */
     @Generated
     @CFunction
@@ -1079,18 +1105,20 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a global JavaScript execution context in the context group provided.
-     * <p>
+     * 
      * JSGlobalContextCreateInGroup allocates a global object and populates it with
      * all the built-in JavaScript objects, such as Object, Function, String, and Array.
-     *
+     * 
      * @param globalObjectClass The class to use when creating the global object. Pass
      *                          NULL to use the default object class.
      * @param group             The context group to use. The created global context retains the group.
      *                          Pass NULL to create a unique group for the context.
      * @return A JSGlobalContext with a global object of class globalObjectClass and a context
      *         group equal to group.
+     * 
+     *         API-Since: 7.0
      */
     @Generated
     @CFunction
@@ -1099,9 +1127,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Retains a global JavaScript execution context.
-     *
+     * 
      * @param ctx The JSGlobalContext to retain.
      * @return A JSGlobalContext that is the same as ctx.
      */
@@ -1111,9 +1139,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Releases a global JavaScript execution context.
-     *
+     * 
      * @param ctx The JSGlobalContext to release.
      */
     @Generated
@@ -1122,9 +1150,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Gets the global object of a JavaScript execution context.
-     *
+     * 
      * @param ctx The JSContext whose global object you want to get.
      * @return ctx's global object.
      */
@@ -1134,11 +1162,13 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Gets the context group to which a JavaScript execution context belongs.
-     *
+     * 
      * @param ctx The JSContext whose group you want to get.
      * @return ctx's group.
+     * 
+     *         API-Since: 7.0
      */
     @Generated
     @CFunction
@@ -1146,11 +1176,13 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Gets the global context of a JavaScript execution context.
-     *
+     * 
      * @param ctx The JSContext whose global context you want to get.
      * @return ctx's global context.
+     * 
+     *         API-Since: 7.0
      */
     @Generated
     @CFunction
@@ -1158,12 +1190,14 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Gets a copy of the name of a context.
-     * <p>
+     * 
      * A JSGlobalContext's name is exposed for remote debugging to make it
      * easier to identify the context you would like to attach to.
-     *
+     * 
+     * API-Since: 8.0
+     * 
      * @param ctx The JSGlobalContext whose name you want to get.
      * @return The name for ctx.
      */
@@ -1173,11 +1207,13 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Sets the remote debugging name for a context.
-     *
+     * 
      * @param ctx  The JSGlobalContext that you want to name.
      * @param name The remote debugging name to set on ctx.
+     * 
+     *             API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -1185,9 +1221,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript string from a buffer of Unicode characters.
-     *
+     * 
      * @param chars    The buffer of Unicode characters to copy into the new JSString.
      * @param numChars The number of characters to copy from the buffer pointed to by chars.
      * @return A JSString containing chars. Ownership follows the Create Rule.
@@ -1198,9 +1234,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript string from a null-terminated UTF8 string.
-     *
+     * 
      * @param string The null-terminated UTF8 string to copy into the new JSString.
      * @return A JSString containing string. Ownership follows the Create Rule.
      */
@@ -1211,9 +1247,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Retains a JavaScript string.
-     *
+     * 
      * @param string The JSString to retain.
      * @return A JSString that is the same as string.
      */
@@ -1223,9 +1259,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Releases a JavaScript string.
-     *
+     * 
      * @param string The JSString to release.
      */
     @Generated
@@ -1234,9 +1270,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Returns the number of Unicode characters in a JavaScript string.
-     *
+     * 
      * @param string The JSString whose length (in Unicode characters) you want to know.
      * @return The number of Unicode characters stored in string.
      */
@@ -1247,10 +1283,10 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Returns a pointer to the Unicode character buffer that
      * serves as the backing store for a JavaScript string.
-     *
+     * 
      * @param string The JSString whose backing store you want to access.
      * @return A pointer to the Unicode character buffer that serves as string's
      *         backing store, which will be deallocated when string is deallocated.
@@ -1261,10 +1297,10 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Returns the maximum number of bytes a JavaScript string will
      * take up if converted into a null-terminated UTF8 string.
-     *
+     * 
      * @param string The JSString whose maximum converted size (in bytes) you
      *               want to know.
      * @return The maximum number of bytes that could be required to convert string into a
@@ -1278,10 +1314,10 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Converts a JavaScript string into a null-terminated UTF8 string,
      * and copies the result into an external byte buffer.
-     *
+     * 
      * @param string     The source JSString.
      * @param buffer     The destination byte buffer into which to copy a null-terminated
      *                   UTF8 representation of string. On return, buffer contains a UTF8 string
@@ -1298,9 +1334,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Tests whether two JavaScript strings match.
-     *
+     * 
      * @param a The first JSString to test.
      * @param b The second JSString to test.
      * @return true if the two strings match, otherwise false.
@@ -1311,9 +1347,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Tests whether a JavaScript string matches a null-terminated UTF8 string.
-     *
+     * 
      * @param a The JSString to test.
      * @param b The null-terminated UTF8 string to test.
      * @return true if the two strings match, otherwise false.
@@ -1325,9 +1361,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript Typed Array object with the given number of elements.
-     *
+     * 
      * @param ctx       The execution context to use.
      * @param arrayType A value identifying the type of array to create. If arrayType is kJSTypedArrayTypeNone or
      *                  kJSTypedArrayTypeArrayBuffer then NULL will be returned.
@@ -1335,6 +1371,8 @@ public final class JavaScriptCore {
      * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
      *                  to store an exception.
      * @return A JSObjectRef that is a Typed Array with all elements set to zero or NULL if there was an error.
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @CFunction
@@ -1343,11 +1381,13 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript Typed Array object from an existing pointer.
-     * <p>
+     * 
      * If an exception is thrown during this function the bytesDeallocator will always be called.
-     *
+     * 
+     * API-Since: 10.0
+     * 
      * @param ctx                The execution context to use.
      * @param arrayType          A value identifying the type of array to create. If arrayType is kJSTypedArrayTypeNone
      *                           or kJSTypedArrayTypeArrayBuffer then NULL will be returned.
@@ -1370,9 +1410,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript Typed Array object from an existing JavaScript Array Buffer object.
-     *
+     * 
      * @param ctx       The execution context to use.
      * @param arrayType A value identifying the type of array to create. If arrayType is kJSTypedArrayTypeNone or
      *                  kJSTypedArrayTypeArrayBuffer then NULL will be returned.
@@ -1382,6 +1422,8 @@ public final class JavaScriptCore {
      *                  to store an exception.
      * @return A JSObjectRef that is a Typed Array or NULL if there was an error. The backing store of the Typed Array
      *         will be buffer.
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @CFunction
@@ -1390,10 +1432,10 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript Typed Array object from an existing JavaScript Array Buffer object with the given offset and
      * length.
-     *
+     * 
      * @param ctx        The execution context to use.
      * @param arrayType  A value identifying the type of array to create. If arrayType is kJSTypedArrayTypeNone or
      *                   kJSTypedArrayTypeArrayBuffer then NULL will be returned.
@@ -1406,6 +1448,8 @@ public final class JavaScriptCore {
      *                   to store an exception.
      * @return A JSObjectRef that is a Typed Array or NULL if there was an error. The backing store of the Typed Array
      *         will be buffer.
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @CFunction
@@ -1414,12 +1458,14 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Returns a temporary pointer to the backing store of a JavaScript Typed Array object.
-     * <p>
+     * 
      * The pointer returned by this function is temporary and is not guaranteed to remain valid across JavaScriptCore
      * API calls.
-     *
+     * 
+     * API-Since: 10.0
+     * 
      * @param ctx       The execution context to use.
      * @param object    The Typed Array object whose backing store pointer to return.
      * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
@@ -1434,14 +1480,16 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Returns the length of a JavaScript Typed Array object.
-     *
+     * 
      * @param ctx       The execution context to use.
      * @param object    The Typed Array object whose length to return.
      * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
      *                  to store an exception.
      * @return The length of the Typed Array object or 0 if the object is not a Typed Array object.
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @CFunction
@@ -1451,14 +1499,16 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Returns the byte length of a JavaScript Typed Array object.
-     *
+     * 
      * @param ctx       The execution context to use.
      * @param object    The Typed Array object whose byte length to return.
      * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
      *                  to store an exception.
      * @return The byte length of the Typed Array object or 0 if the object is not a Typed Array object.
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @CFunction
@@ -1468,14 +1518,16 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Returns the byte offset of a JavaScript Typed Array object.
-     *
+     * 
      * @param ctx       The execution context to use.
      * @param object    The Typed Array object whose byte offset to return.
      * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
      *                  to store an exception.
      * @return The byte offset of the Typed Array object or 0 if the object is not a Typed Array object.
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @CFunction
@@ -1485,15 +1537,17 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Returns the JavaScript Array Buffer object that is used as the backing of a JavaScript Typed Array object.
-     *
+     * 
      * @param ctx       The execution context to use.
      * @param object    The JSObjectRef whose Typed Array type data pointer to obtain.
      * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
      *                  to store an exception.
      * @return A JSObjectRef with a JSTypedArrayType of kJSTypedArrayTypeArrayBuffer or NULL if object is not a Typed
      *         Array.
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @CFunction
@@ -1502,11 +1556,13 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript Array Buffer object from an existing pointer.
-     * <p>
+     * 
      * If an exception is thrown during this function the bytesDeallocator will always be called.
-     *
+     * 
+     * API-Since: 10.0
+     * 
      * @param ctx                The execution context to use.
      * @param bytes              A pointer to the byte buffer to be used as the backing store of the Typed Array object.
      * @param byteLength         The number of bytes pointed to by the parameter bytes.
@@ -1527,12 +1583,14 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Returns a pointer to the data buffer that serves as the backing store for a JavaScript Typed Array object.
-     * <p>
+     * 
      * The pointer returned by this function is temporary and is not guaranteed to remain valid across JavaScriptCore
      * API calls.
-     *
+     * 
+     * API-Since: 10.0
+     * 
      * @param object    The Array Buffer object whose internal backing store pointer to return.
      * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
      *                  to store an exception.
@@ -1546,14 +1604,16 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Returns the number of bytes in a JavaScript data object.
-     *
+     * 
      * @param ctx       The execution context to use.
      * @param object    The JS Arary Buffer object whose length in bytes to return.
      * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
      *                  to store an exception.
      * @return The number of bytes stored in the data object.
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @CFunction
@@ -1563,12 +1623,12 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript string from a CFString.
-     * <p>
+     * 
      * This function is optimized to take advantage of cases when
      * CFStringGetCharactersPtr returns a valid pointer.
-     *
+     * 
      * @param string The CFString to copy into the new JSString.
      * @return A JSString containing string. Ownership follows the Create Rule.
      */
@@ -1578,9 +1638,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a CFString from a JavaScript string.
-     *
+     * 
      * @param alloc  The alloc parameter to pass to CFStringCreate.
      * @param string The JSString to copy into the new CFString.
      * @return A CFString containing string. Ownership follows the Create Rule.
@@ -1591,12 +1651,12 @@ public final class JavaScriptCore {
 
     /**
      * [@const] kJSClassDefinitionEmpty
-     * <p>
+     * 
      * A JSClassDefinition structure of the current version, filled with NULL pointers and having no attributes.
-     * <p>
+     * 
      * Use this constant as a convenience when creating class definitions. For example, to create a class definition
      * with only a finalize method:
-     * <p>
+     * 
      * JSClassDefinition definition = kJSClassDefinitionEmpty;
      * definition.finalize = Finalize;
      */
@@ -1607,11 +1667,11 @@ public final class JavaScriptCore {
 
     /**
      * [@group] Property Descriptor Constants
-     * <p>
+     * 
      * These keys may assist in creating a property descriptor for use with the
      * defineProperty method on JSValue.
      * Property descriptors must fit one of three descriptions:
-     * <p>
+     * 
      * Data Descriptor:
      * - A descriptor containing one or both of the keys <code>value</code> and <code>writable</code>,
      * and optionally containing one or both of the keys <code>enumerable</code> and
@@ -1619,7 +1679,7 @@ public final class JavaScriptCore {
      * <code>set</code> key.
      * A data descriptor may be used to create or modify the attributes of a
      * data property on an object (replacing any existing accessor property).
-     * <p>
+     * 
      * Accessor Descriptor:
      * - A descriptor containing one or both of the keys <code>get</code> and <code>set</code>, and
      * optionally containing one or both of the keys <code>enumerable</code> and
@@ -1627,7 +1687,7 @@ public final class JavaScriptCore {
      * or <code>writable</code> key.
      * An accessor descriptor may be used to create or modify the attributes of
      * an accessor property on an object (replacing any existing data property).
-     * <p>
+     * 
      * Generic Descriptor:
      * - A descriptor containing one or both of the keys <code>enumerable</code> and
      * <code>configurable</code>. A generic descriptor may not contain any of the keys
@@ -1715,12 +1775,14 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Tests whether a JavaScript value's type is the symbol type.
-     *
+     * 
      * @param ctx   The execution context to use.
      * @param value The JSValue to test.
      * @return true if value's type is the symbol type, otherwise false.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @CFunction
@@ -1728,12 +1790,14 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript value of the symbol type.
-     *
+     * 
      * @param ctx         The execution context to use.
      * @param description A description of the newly created symbol value.
      * @return A unique JSValue of the symbol type, whose description matches the one provided.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @CFunction
@@ -1741,9 +1805,9 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Creates a JavaScript promise object by invoking the provided executor.
-     *
+     * 
      * @param ctx       The execution context to use.
      * @param resolve   A pointer to a JSObjectRef in which to store the resolve function for the new promise. Pass NULL
      *                  if you do not care to store the resolve callback.
@@ -1752,6 +1816,8 @@ public final class JavaScriptCore {
      * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
      *                  to store an exception.
      * @return A JSObject that is a promise or NULL if an exception occurred.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @CFunction
@@ -1760,11 +1826,13 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Tests whether an object has a given property using a JSValueRef as the property key.
-     * <p>
+     * 
      * This function is the same as performing "propertyKey in object" from JavaScript.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param object      The JSObject to test.
      * @param propertyKey A JSValueRef containing the property key to use when looking up the property.
      * @param exception   A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
@@ -1778,11 +1846,13 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Gets a property from an object using a JSValueRef as the property key.
-     * <p>
+     * 
      * This function is the same as performing "object[propertyKey]" from JavaScript.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param ctx         The execution context to use.
      * @param object      The JSObject whose property you want to get.
      * @param propertyKey A JSValueRef containing the property key to use when looking up the property.
@@ -1797,11 +1867,13 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Sets a property on an object using a JSValueRef as the property key.
-     * <p>
+     * 
      * This function is the same as performing "object[propertyKey] = value" from JavaScript.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param ctx         The execution context to use.
      * @param object      The JSObject whose property you want to set.
      * @param propertyKey A JSValueRef containing the property key to use when looking up the property.
@@ -1817,11 +1889,13 @@ public final class JavaScriptCore {
 
     /**
      * [@function]
-     * <p>
+     * 
      * Deletes a property from an object using a JSValueRef as the property key.
-     * <p>
+     * 
      * This function is the same as performing "delete object[propertyKey]" from JavaScript.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param ctx         The execution context to use.
      * @param object      The JSObject whose property you want to delete.
      * @param propertyKey A JSValueRef containing the property key to use when looking up the property.
@@ -1834,4 +1908,6 @@ public final class JavaScriptCore {
     @CFunction
     public static native boolean JSObjectDeletePropertyForKey(JSContextRef ctx, JSObjectRef object,
             JSValueRef propertyKey, Ptr<JSValueRef> exception);
+
+    @Generated public static final double JSC_OBJC_API_ENABLED = 1.0;
 }

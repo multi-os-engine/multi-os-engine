@@ -21,30 +21,55 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLFunctionType
- * <p>
+ * 
  * An identifier for a top-level Metal function.
- * <p>
+ * 
  * Each location in the API where a program is used requires a function written for that specific usage.
- * <p>
+ * 
  * [@constant] MTLFunctionTypeVertex
  * A vertex shader, usable for a MTLRenderPipelineState.
- * <p>
+ * 
  * [@constant] MTLFunctionTypeFragment
  * A fragment shader, usable for a MTLRenderPipelineState.
- * <p>
+ * 
  * [@constant] MTLFunctionTypeKernel
  * A compute kernel, usable to create a MTLComputePipelineState.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class MTLFunctionType {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Vertex = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Fragment = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Kernel = 0x0000000000000003L;
 
     @Generated
     private MTLFunctionType() {
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NUInt public static final long Visible = 0x0000000000000005L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NUInt public static final long Intersection = 0x0000000000000006L;
+    /**
+     * API-Since: 16.0
+     */
+    @Generated @NUInt public static final long Mesh = 0x0000000000000007L;
+    /**
+     * API-Since: 16.0
+     */
+    @Generated @NUInt public static final long Object = 0x0000000000000008L;
 }

@@ -41,10 +41,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNPlane
- * <p>
+ * 
  * SCNPlane represents a rectangle with controllable width and height. The plane has one visible side.
  */
 @Generated
@@ -77,22 +79,25 @@ public class SCNPlane extends SCNGeometry {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -111,12 +116,12 @@ public class SCNPlane extends SCNGeometry {
 
     @Generated
     @Selector("geometryWithMDLMesh:")
-    public static native SCNPlane geometryWithMDLMesh(MDLMesh mdlMesh);
+    public static native SCNPlane geometryWithMDLMesh(@NotNull MDLMesh mdlMesh);
 
     @Generated
     @Selector("geometryWithSources:elements:")
-    public static native SCNPlane geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
-            NSArray<? extends SCNGeometryElement> elements);
+    public static native SCNPlane geometryWithSourcesElements(@NotNull NSArray<? extends SCNGeometrySource> sources,
+            @Nullable NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
     @Selector("hash")
@@ -140,9 +145,10 @@ public class SCNPlane extends SCNGeometry {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -151,9 +157,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * planeWithWidth:height:
-     * <p>
+     * 
      * Creates and returns a plane with given width and height.
-     *
+     * 
      * @param width  The width of the plane.
      * @param height The height of the plane.
      */
@@ -188,9 +194,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * [@property] cornerRadius
-     * <p>
+     * 
      * The corner radius. Animatable.
-     * <p>
+     * 
      * If the value is strictly less than 0, the geometry is empty. The default value is 0.
      */
     @Generated
@@ -200,9 +206,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * [@property] cornerSegmentCount
-     * <p>
+     * 
      * The number of subdivisions for the rounded corners. Animatable.
-     * <p>
+     * 
      * If the value is less than 1, the behavior is undefined. The default value is 10.
      */
     @Generated
@@ -212,9 +218,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * [@property] height
-     * <p>
+     * 
      * The plane extent along the Y axis. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -224,9 +230,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * [@property] heightSegmentCount
-     * <p>
+     * 
      * The number of subdivisions along the Y axis. The default value is 1. Animatable.
-     * <p>
+     * 
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -240,13 +246,13 @@ public class SCNPlane extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPlane initWithCoder(NSCoder coder);
+    public native SCNPlane initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] cornerRadius
-     * <p>
+     * 
      * The corner radius. Animatable.
-     * <p>
+     * 
      * If the value is strictly less than 0, the geometry is empty. The default value is 0.
      */
     @Generated
@@ -255,9 +261,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * [@property] cornerSegmentCount
-     * <p>
+     * 
      * The number of subdivisions for the rounded corners. Animatable.
-     * <p>
+     * 
      * If the value is less than 1, the behavior is undefined. The default value is 10.
      */
     @Generated
@@ -266,9 +272,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * [@property] height
-     * <p>
+     * 
      * The plane extent along the Y axis. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -277,9 +283,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * [@property] heightSegmentCount
-     * <p>
+     * 
      * The number of subdivisions along the Y axis. The default value is 1. Animatable.
-     * <p>
+     * 
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -288,9 +294,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * [@property] width
-     * <p>
+     * 
      * The plane extent along the X axis. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -299,9 +305,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * [@property] widthSegmentCount
-     * <p>
+     * 
      * The number of subdivisions along the X axis. Animatable.
-     * <p>
+     * 
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -316,9 +322,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * [@property] width
-     * <p>
+     * 
      * The plane extent along the X axis. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -328,9 +334,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * [@property] widthSegmentCount
-     * <p>
+     * 
      * The number of subdivisions along the X axis. Animatable.
-     * <p>
+     * 
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated

@@ -40,17 +40,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MCNearbyServiceBrowser
- * <p>
+ * 
  * MCNearbyServiceBrowser looks for nearby peers, and connects them to
  * sessions.
- * <p>
+ * 
  * To create the MCNearbyServiceBrowser object and start browsing for
  * nearby peers, a new MCPeerID should be created to represent the local
  * peer, and a service type needs to be specified.
- * <p>
+ * 
  * The serviceType parameter is a short text string used to describe the
  * app's networking protocol. It should be in the same format as a
  * Bonjour service type: up to 15 characters long and valid characters
@@ -59,17 +61,20 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * example, a text chat app made by ABC company could use the service type
  * "abc-txtchat". For more detailed information about service type
  * restrictions, see RFC 6335, Section 5.1.
- * <p>
+ * 
  * A delegate that conforms to the MCNearbyServiceBrowserDelegate
  * protocol must also be provided. The delegate is notified when nearby
  * peers are found and lost. No assumption should be made as to which queue
  * the callbacks are called on.
- * <p>
+ * 
  * MCNearbyAdvertiser must be initialized with an MCPeerID object and a
  * valid service type.
- * <p>
+ * 
  * See Bonjour APIs https://developer.apple.com/bonjour/ for more
  * information about service types.
+ * 
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("MultipeerConnectivity")
@@ -101,22 +106,25 @@ public class MCNearbyServiceBrowser extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -151,9 +159,10 @@ public class MCNearbyServiceBrowser extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -181,6 +190,7 @@ public class MCNearbyServiceBrowser extends NSObject {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -192,42 +202,46 @@ public class MCNearbyServiceBrowser extends NSObject {
 
     @Generated
     @Selector("initWithPeer:serviceType:")
-    public native MCNearbyServiceBrowser initWithPeerServiceType(MCPeerID myPeerID, String serviceType);
+    public native MCNearbyServiceBrowser initWithPeerServiceType(@NotNull MCPeerID myPeerID,
+            @NotNull String serviceType);
 
     /**
      * The method -invitePeer:toSession:withContext:timeout: sends an
      * invitation to a peer, and when the peer accepts the invitation, adds
      * the peer to the specified session.
-     * <p>
+     * 
      * The invited peer will receive a -advertiser:
      * didReceiveInvitationFromPeer:withContext:invitationHandler: callback.
      * The context is passed through to the invited peer. It can be used to
      * describe the session or pass some additional identification
      * information to the invitee.
-     * <p>
+     * 
      * The timeout parameter is seconds and should be a positive value. If a
      * timeout of <=0 is specified, a default value of 30 seconds will be
      * used instead.
      */
     @Generated
     @Selector("invitePeer:toSession:withContext:timeout:")
-    public native void invitePeerToSessionWithContextTimeout(MCPeerID peerID, MCSession session, NSData context,
-            double timeout);
+    public native void invitePeerToSessionWithContextTimeout(@NotNull MCPeerID peerID, @NotNull MCSession session,
+            @Nullable NSData context, double timeout);
 
+    @NotNull
     @Generated
     @Selector("myPeerID")
     public native MCPeerID myPeerID();
 
+    @NotNull
     @Generated
     @Selector("serviceType")
     public native String serviceType();
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MCNearbyServiceBrowserDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) MCNearbyServiceBrowserDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) MCNearbyServiceBrowserDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) MCNearbyServiceBrowserDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

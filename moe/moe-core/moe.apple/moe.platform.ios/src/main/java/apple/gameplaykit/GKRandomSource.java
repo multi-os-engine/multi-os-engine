@@ -43,18 +43,22 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A concrete random source that can generate random numbers. The implementation details are up to the system and
  * if a particular algorithm is needed then use one of the provided subclasses.
- * <p>
+ * 
  * For certain specialized applications a shared system source may be needed and for those instances there is
  * a wrapped interface over arc4random_*, accessible via +[GKRandomSource sharedRandom].
- *
+ * 
  * @see GKARC4RandomSource
  * @see GKLinearCongruentialRandomSource
  * @see GKMersenneTwisterRandomSource
  * @see GKRandomSource.systemRandom
+ * 
+ *      API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -86,22 +90,25 @@ public class GKRandomSource extends NSObject implements GKRandom, NSSecureCoding
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -136,9 +143,10 @@ public class GKRandomSource extends NSObject implements GKRandom, NSSecureCoding
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,9 +170,10 @@ public class GKRandomSource extends NSObject implements GKRandom, NSSecureCoding
      * Using this instance modifies the outcome of future calls to the arc4random family of C calls. It is
      * also affected by calls to the C apis and should not be used for sources that are intended to
      * be deterministic.
-     * <p>
+     * 
      * Note that while it may seem semantically similar to a GKARC4RandomSource, this is not a drop in replacement.
      */
+    @NotNull
     @Generated
     @Selector("sharedRandom")
     public static native GKRandomSource sharedRandom();
@@ -185,23 +194,25 @@ public class GKRandomSource extends NSObject implements GKRandom, NSSecureCoding
     /**
      * Returns a shuffled instance of the given array. The objects in the array are shuffled based on a Fisher-Yates
      * shuffle.
-     * <p>
+     * 
      * Any random, be it custom, source or a distribution, that can provide a number with an upper bound of at least the
      * array.count is suitable for this shuffle.
      */
+    @NotNull
     @Generated
     @Selector("arrayByShufflingObjectsInArray:")
-    public native NSArray<?> arrayByShufflingObjectsInArray(NSArray<?> array);
+    public native NSArray<?> arrayByShufflingObjectsInArray(@NotNull NSArray<?> array);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Creates a new random source initialized using bits from an entropy source like SecRandomCopyBytes.
@@ -210,7 +221,7 @@ public class GKRandomSource extends NSObject implements GKRandom, NSSecureCoding
      * details are not specified. Use a subclass with a specific algorithm implementation guaranteed if your application
      * requires
      * very stringent random source charateristics.
-     *
+     * 
      * @see GKARC4RandomSource
      * @see GKLinearCongruentialRandomSource
      * @see GKMersenneTwisterRandomSource
@@ -221,7 +232,7 @@ public class GKRandomSource extends NSObject implements GKRandom, NSSecureCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKRandomSource initWithCoder(NSCoder aDecoder);
+    public native GKRandomSource initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("nextBool")

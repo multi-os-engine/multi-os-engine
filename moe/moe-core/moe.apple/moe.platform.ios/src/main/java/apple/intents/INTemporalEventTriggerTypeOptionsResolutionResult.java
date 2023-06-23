@@ -21,7 +21,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -52,34 +57,39 @@ public class INTemporalEventTriggerTypeOptionsResolutionResult extends INIntentR
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
     public static native INTemporalEventTriggerTypeOptionsResolutionResult confirmationRequiredWithItemToConfirmForReason(
-            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     /**
      * This resolution result is to ask Siri to confirm if this is the value with which the user wants to continue.
      */
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithTemporalEventTriggerTypeOptionsToConfirm:")
     public static native INTemporalEventTriggerTypeOptionsResolutionResult confirmationRequiredWithTemporalEventTriggerTypeOptionsToConfirm(
@@ -119,10 +129,12 @@ public class INTemporalEventTriggerTypeOptionsResolutionResult extends INIntentR
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("needsValue")
     public static native INTemporalEventTriggerTypeOptionsResolutionResult needsValue();
@@ -132,6 +144,7 @@ public class INTemporalEventTriggerTypeOptionsResolutionResult extends INIntentR
     @Selector("new")
     public static native INTemporalEventTriggerTypeOptionsResolutionResult new_objc();
 
+    @NotNull
     @Generated
     @Selector("notRequired")
     public static native INTemporalEventTriggerTypeOptionsResolutionResult notRequired();
@@ -154,6 +167,7 @@ public class INTemporalEventTriggerTypeOptionsResolutionResult extends INIntentR
      * INTemporalEventTriggerTypeOptions. This allows app extensions to apply business logic constraints.
      * Use +notRequired to continue with a 'nil' value.
      */
+    @NotNull
     @Generated
     @Selector("successWithResolvedTemporalEventTriggerTypeOptions:")
     public static native INTemporalEventTriggerTypeOptionsResolutionResult successWithResolvedTemporalEventTriggerTypeOptions(
@@ -163,10 +177,12 @@ public class INTemporalEventTriggerTypeOptionsResolutionResult extends INIntentR
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("unsupported")
     public static native INTemporalEventTriggerTypeOptionsResolutionResult unsupported();
 
+    @NotNull
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INTemporalEventTriggerTypeOptionsResolutionResult unsupportedWithReason(@NInt long reason);

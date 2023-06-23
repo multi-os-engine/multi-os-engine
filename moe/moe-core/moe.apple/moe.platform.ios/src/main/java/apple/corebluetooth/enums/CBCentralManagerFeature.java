@@ -5,9 +5,9 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] CBCentralManagerFeature
- * <p>
+ * 
  * The set of device specific features.
- * <p>
+ * 
  * [@constant] CBCentralManagerFeatureExtendedScanAndConnect The hardware supports extended scans and enhanced
  * connection creation
  */
@@ -17,5 +17,8 @@ public final class CBCentralManagerFeature {
     private CBCentralManagerFeature() {
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NUInt public static final long CBCentralManagerFeatureExtendedScanAndConnect = 0x0000000000000001L;
 }

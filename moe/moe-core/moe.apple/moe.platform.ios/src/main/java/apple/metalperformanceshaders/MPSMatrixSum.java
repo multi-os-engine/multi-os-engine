@@ -27,31 +27,35 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSMatrixSum
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * MPSMatrixSum performs a pointwise summation of N MPSMatrix
  * objects and applies an optional bias term and neuron activation
  * function.
- * <p>
+ * 
  * MPSMatrix A = empty matrix;
  * for (i = 0; i < N; ++i)
  * A += alpha[i]*B[i];
- * <p>
+ * 
  * if (bias)
  * A += broadcast(bias);
- * <p>
+ * 
  * if (neuron)
  * A = applyNeuron(A);
- * <p>
+ * 
  * Where B is the array of MPSMatrix objects, A is the destination
  * MPSMatrix, alpha is an array of scalar values, bias is a vector
  * which is broadcast and accumulated across each row of the intermediate
  * result, and applyNeuron is a neuron activation function.
- * <p>
+ * 
  * Each matrix in the array may have an independent origin.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -83,22 +87,25 @@ public class MPSMatrixSum extends MPSKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,7 +136,7 @@ public class MPSMatrixSum extends MPSKernel {
 
     /**
      * Encode the operations to the command buffer
-     *
+     * 
      * @param buffer         The command buffer in which to encode the operation.
      * @param sourceMatrices A list of matrices from which the matrix data is read.
      * @param resultMatrix   The result matrix.
@@ -144,8 +151,9 @@ public class MPSMatrixSum extends MPSKernel {
     @Generated
     @Selector("encodeToCommandBuffer:sourceMatrices:resultMatrix:scaleVector:offsetVector:biasVector:startIndex:")
     public native void encodeToCommandBufferSourceMatricesResultMatrixScaleVectorOffsetVectorBiasVectorStartIndex(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer buffer, NSArray<? extends MPSMatrix> sourceMatrices,
-            MPSMatrix resultMatrix, MPSVector scaleVector, MPSVector offsetVector, MPSVector biasVector,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer buffer,
+            @NotNull NSArray<? extends MPSMatrix> sourceMatrices, @NotNull MPSMatrix resultMatrix,
+            @Nullable MPSVector scaleVector, @Nullable MPSVector offsetVector, @Nullable MPSVector biasVector,
             @NUInt long startIndex);
 
     @Generated
@@ -159,28 +167,29 @@ public class MPSMatrixSum extends MPSKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSMatrixSum initWithCoder(NSCoder aDecoder);
+    public native MPSMatrixSum initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSMatrixSum kernel.
      * @param device   The MTLDevice on which to make the MPSMatrixSum object.
      * @return A new MPSMatrixSum object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSMatrixSum initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixSum initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSMatrixSum initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixSum initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize a MPSMatrixSum kernel.
-     *
+     * 
      * @param device    The device on which to initialize the kernel.
      * @param count     The number of matrices to be summed.
      * @param rows      The number of rows to use in the input matrices.
@@ -190,8 +199,9 @@ public class MPSMatrixSum extends MPSKernel {
      */
     @Generated
     @Selector("initWithDevice:count:rows:columns:transpose:")
-    public native MPSMatrixSum initWithDeviceCountRowsColumnsTranspose(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @NUInt long count, @NUInt long rows, @NUInt long columns, boolean transpose);
+    public native MPSMatrixSum initWithDeviceCountRowsColumnsTranspose(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long count, @NUInt long rows,
+            @NUInt long columns, boolean transpose);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -210,9 +220,10 @@ public class MPSMatrixSum extends MPSKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Neuron parameter A.
@@ -257,7 +268,7 @@ public class MPSMatrixSum extends MPSKernel {
 
     /**
      * [@property] resultMatrixOrigin
-     * <p>
+     * 
      * The origin, relative to [0, 0] in the result matrix, at which to
      * start writing results. This property is modifiable and defaults
      * to [0, 0] at initialization time. If a different origin is desired
@@ -278,7 +289,7 @@ public class MPSMatrixSum extends MPSKernel {
 
     /**
      * Specifies a neuron activation function to be used.
-     * <p>
+     * 
      * This method can be used to add a neuron activation funtion of given type with
      * associated scalar parameters A, B, and C that are shared across all output values.
      * Note that this method can only be used to specify neurons which are specified by three (or fewer)
@@ -286,7 +297,7 @@ public class MPSMatrixSum extends MPSKernel {
      * this method for neuron activation functions like MPSCNNNeuronTypePReLU,
      * which require per-channel parameter values. An MPSMatrixSum kernel is initialized
      * with a default neuron function of MPSCNNNeuronTypeNone.
-     *
+     * 
      * @param neuronType Type of neuron activation function. For full list see MPSCNNNeuronType.h
      * @param parameterA parameterA of neuron activation that is shared across all output values.
      * @param parameterB parameterB of neuron activation that is shared across all output values.
@@ -299,7 +310,7 @@ public class MPSMatrixSum extends MPSKernel {
 
     /**
      * [@property] resultMatrixOrigin
-     * <p>
+     * 
      * The origin, relative to [0, 0] in the result matrix, at which to
      * start writing results. This property is modifiable and defaults
      * to [0, 0] at initialization time. If a different origin is desired

@@ -25,11 +25,15 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLCommandQueue
- * <p>
+ * 
  * A serial queue of command buffers to be executed by the device.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Metal")
@@ -38,10 +42,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLCommandQueue {
     /**
      * commandBuffer
-     * <p>
+     * 
      * Returns a new autoreleased command buffer used to encode work into this queue that
      * maintains strong references to resources used within the command buffer.
      */
+    @Nullable
     @Generated
     @Selector("commandBuffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -49,10 +54,11 @@ public interface MTLCommandQueue {
 
     /**
      * commandBufferWithUnretainedReferences
-     * <p>
+     * 
      * Returns a new autoreleased command buffer used to encode work into this queue that
      * does not maintain strong references to resources used within the command buffer.
      */
+    @Nullable
     @Generated
     @Selector("commandBufferWithUnretainedReferences")
     @MappedReturn(ObjCObjectMapper.class)
@@ -61,6 +67,7 @@ public interface MTLCommandQueue {
     /**
      * The device this queue will submit to
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -68,9 +75,14 @@ public interface MTLCommandQueue {
 
     /**
      * insertDebugCaptureBoundary
-     * <p>
+     * 
      * Inform Xcode about when debug capture should start and stop.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use MTLCaptureScope instead
      */
+    @Deprecated
     @Generated
     @Selector("insertDebugCaptureBoundary")
     void insertDebugCaptureBoundary();
@@ -78,6 +90,7 @@ public interface MTLCommandQueue {
     /**
      * A string to help identify this object
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();
@@ -87,17 +100,20 @@ public interface MTLCommandQueue {
      */
     @Generated
     @Selector("setLabel:")
-    void setLabel(String value);
+    void setLabel(@Nullable String value);
 
     /**
      * commandBufferWithDescriptor
-     * <p>
+     * 
      * Returns a new autoreleased command buffer used to encode work into this queue.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param descriptor The requested properties of the command buffer.
      */
+    @Nullable
     @Generated
     @Selector("commandBufferWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
-    MTLCommandBuffer commandBufferWithDescriptor(MTLCommandBufferDescriptor descriptor);
+    MTLCommandBuffer commandBufferWithDescriptor(@NotNull MTLCommandBufferDescriptor descriptor);
 }

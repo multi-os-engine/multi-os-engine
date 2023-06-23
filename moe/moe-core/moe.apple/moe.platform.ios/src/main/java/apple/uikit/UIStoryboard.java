@@ -40,7 +40,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -71,22 +76,25 @@ public class UIStoryboard extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,9 +129,10 @@ public class UIStoryboard extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -142,9 +151,11 @@ public class UIStoryboard extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("storyboardWithName:bundle:")
-    public static native UIStoryboard storyboardWithNameBundle(String name, NSBundle storyboardBundleOrNil);
+    public static native UIStoryboard storyboardWithNameBundle(@NotNull String name,
+            @Nullable NSBundle storyboardBundleOrNil);
 
     @Generated
     @Selector("superclass")
@@ -159,35 +170,47 @@ public class UIStoryboard extends NSObject {
     @Selector("init")
     public native UIStoryboard init();
 
+    @Nullable
     @Generated
     @Selector("instantiateInitialViewController")
     public native UIViewController instantiateInitialViewController();
 
+    @NotNull
     @Generated
     @Selector("instantiateViewControllerWithIdentifier:")
-    public native UIViewController instantiateViewControllerWithIdentifier(String identifier);
+    public native UIViewController instantiateViewControllerWithIdentifier(@NotNull String identifier);
 
+    /**
+     * API-Since: 13.0
+     */
+    @Nullable
     @Generated
     @Selector("instantiateInitialViewControllerWithCreator:")
     public native UIViewController instantiateInitialViewControllerWithCreator(
-            @ObjCBlock(name = "call_instantiateInitialViewControllerWithCreator") Block_instantiateInitialViewControllerWithCreator block);
+            @Nullable @ObjCBlock(name = "call_instantiateInitialViewControllerWithCreator") Block_instantiateInitialViewControllerWithCreator block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_instantiateInitialViewControllerWithCreator {
+        @Nullable
         @Generated
-        UIViewController call_instantiateInitialViewControllerWithCreator(NSCoder coder);
+        UIViewController call_instantiateInitialViewControllerWithCreator(@NotNull NSCoder coder);
     }
 
+    /**
+     * API-Since: 13.0
+     */
+    @NotNull
     @Generated
     @Selector("instantiateViewControllerWithIdentifier:creator:")
-    public native UIViewController instantiateViewControllerWithIdentifierCreator(String identifier,
-            @ObjCBlock(name = "call_instantiateViewControllerWithIdentifierCreator") Block_instantiateViewControllerWithIdentifierCreator block);
+    public native UIViewController instantiateViewControllerWithIdentifierCreator(@NotNull String identifier,
+            @Nullable @ObjCBlock(name = "call_instantiateViewControllerWithIdentifierCreator") Block_instantiateViewControllerWithIdentifierCreator block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_instantiateViewControllerWithIdentifierCreator {
+        @Nullable
         @Generated
-        UIViewController call_instantiateViewControllerWithIdentifierCreator(NSCoder coder);
+        UIViewController call_instantiateViewControllerWithIdentifierCreator(@NotNull NSCoder coder);
     }
 }

@@ -23,9 +23,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A class to specify list of supported model update metrics.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreML")
@@ -57,22 +61,25 @@ public class MLMetricKey extends MLKey {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -88,6 +95,7 @@ public class MLMetricKey extends MLKey {
     /**
      * Int64 metric indicating the index of the epoch
      */
+    @NotNull
     @Generated
     @Selector("epochIndex")
     public static native MLMetricKey epochIndex();
@@ -103,7 +111,7 @@ public class MLMetricKey extends MLKey {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MLMetricKey initWithCoder(NSCoder coder);
+    public native MLMetricKey initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -122,13 +130,15 @@ public class MLMetricKey extends MLKey {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Float metric indicating the current loss
      */
+    @NotNull
     @Generated
     @Selector("lossValue")
     public static native MLMetricKey lossValue();
@@ -136,6 +146,7 @@ public class MLMetricKey extends MLKey {
     /**
      * Int64 metric indicating the index of mini batches in the current epoch
      */
+    @NotNull
     @Generated
     @Selector("miniBatchIndex")
     public static native MLMetricKey miniBatchIndex();

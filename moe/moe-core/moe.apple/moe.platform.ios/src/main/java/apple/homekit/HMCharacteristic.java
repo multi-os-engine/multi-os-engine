@@ -42,9 +42,13 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Represent a characteristic on a service of an accessory.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HomeKit")
@@ -76,22 +80,25 @@ public class HMCharacteristic extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +133,10 @@ public class HMCharacteristic extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,15 +167,17 @@ public class HMCharacteristic extends NSObject {
     /**
      * The type of the characteristic, e.g. HMCharacteristicTypePowerState.
      */
+    @NotNull
     @Generated
     @Selector("characteristicType")
     public native String characteristicType();
 
     /**
      * Enables/disables notifications or indications for the value of a specified characteristic.
-     *
+     * 
      * @param enable     A Boolean value indicating whether you wish to receive notifications or
      *                   indications whenever the characteristic’s value changes.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -175,7 +185,7 @@ public class HMCharacteristic extends NSObject {
     @Generated
     @Selector("enableNotification:completionHandler:")
     public native void enableNotificationCompletionHandler(boolean enable,
-            @ObjCBlock(name = "call_enableNotificationCompletionHandler") Block_enableNotificationCompletionHandler completion);
+            @NotNull @ObjCBlock(name = "call_enableNotificationCompletionHandler") Block_enableNotificationCompletionHandler completion);
 
     @Generated
     @Selector("init")
@@ -183,7 +193,7 @@ public class HMCharacteristic extends NSObject {
 
     /**
      * Specifies whether the characteristic has been enabled to send notifications.
-     * <p>
+     * 
      * This property is reset to NO if the reachability of the accessory is NO.
      */
     @Generated
@@ -192,7 +202,10 @@ public class HMCharacteristic extends NSObject {
 
     /**
      * The localized description of the characteristic.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
@@ -200,16 +213,18 @@ public class HMCharacteristic extends NSObject {
     /**
      * Meta data associated with the characteristic.
      */
+    @Nullable
     @Generated
     @Selector("metadata")
     public native HMCharacteristicMetadata metadata();
 
     /**
      * Array that describes the properties of the characteristic.
-     * <p>
+     * 
      * This value corresponds to the properties associated with this characteristic.
      * The contents of the array are one or more HMCharacteristicProperty constants.
      */
+    @NotNull
     @Generated
     @Selector("properties")
     public native NSArray<String> properties();
@@ -217,7 +232,7 @@ public class HMCharacteristic extends NSObject {
     /**
      * Reads the value of the characteristic. The updated value can be read from the 'value' property of the
      * characteristic.
-     *
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -225,41 +240,47 @@ public class HMCharacteristic extends NSObject {
     @Generated
     @Selector("readValueWithCompletionHandler:")
     public native void readValueWithCompletionHandler(
-            @ObjCBlock(name = "call_readValueWithCompletionHandler") Block_readValueWithCompletionHandler completion);
+            @NotNull @ObjCBlock(name = "call_readValueWithCompletionHandler") Block_readValueWithCompletionHandler completion);
 
     /**
      * Service that contains this characteristic.
      */
+    @Nullable
     @Generated
     @Selector("service")
     public native HMService service();
 
     /**
      * A unique identifier for the characteristic.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
 
     /**
      * Sets/clears authorization data used when writing to the characteristic.
-     *
+     * 
      * @param data       New authorization data to use. Specify nil to remove authorization data.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
      */
     @Generated
     @Selector("updateAuthorizationData:completionHandler:")
-    public native void updateAuthorizationDataCompletionHandler(NSData data,
-            @ObjCBlock(name = "call_updateAuthorizationDataCompletionHandler") Block_updateAuthorizationDataCompletionHandler completion);
+    public native void updateAuthorizationDataCompletionHandler(@Nullable NSData data,
+            @NotNull @ObjCBlock(name = "call_updateAuthorizationDataCompletionHandler") Block_updateAuthorizationDataCompletionHandler completion);
 
     /**
      * The value of the characteristic.
-     * <p>
+     * 
      * The value is a cached value that may have been updated as a result of prior
      * interaction with the accessory.
      */
+    @Nullable
     @Generated
     @Selector("value")
     @MappedReturn(ObjCObjectMapper.class)
@@ -267,47 +288,48 @@ public class HMCharacteristic extends NSObject {
 
     /**
      * Modifies the value of the characteristic.
-     * <p>
+     * 
      * The value being written is validated against the metadata, format and permissions.
      * The value written may be bounded by metadata for characteristics with int and
      * float format. If validation fails, the error provided to the completion handler
      * indicates the type of failure.
-     *
+     * 
      * @param value      The value to be written.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
      */
     @Generated
     @Selector("writeValue:completionHandler:")
-    public native void writeValueCompletionHandler(@Mapped(ObjCObjectMapper.class) Object value,
-            @ObjCBlock(name = "call_writeValueCompletionHandler") Block_writeValueCompletionHandler completion);
+    public native void writeValueCompletionHandler(@Nullable @Mapped(ObjCObjectMapper.class) Object value,
+            @NotNull @ObjCBlock(name = "call_writeValueCompletionHandler") Block_writeValueCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enableNotificationCompletionHandler {
         @Generated
-        void call_enableNotificationCompletionHandler(NSError error);
+        void call_enableNotificationCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_readValueWithCompletionHandler {
         @Generated
-        void call_readValueWithCompletionHandler(NSError error);
+        void call_readValueWithCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateAuthorizationDataCompletionHandler {
         @Generated
-        void call_updateAuthorizationDataCompletionHandler(NSError error);
+        void call_updateAuthorizationDataCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeValueCompletionHandler {
         @Generated
-        void call_writeValueCompletionHandler(NSError error);
+        void call_writeValueCompletionHandler(@Nullable NSError error);
     }
 }

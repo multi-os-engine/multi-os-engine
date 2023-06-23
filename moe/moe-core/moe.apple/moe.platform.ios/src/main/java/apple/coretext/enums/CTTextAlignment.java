@@ -20,22 +20,22 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] CTTextAlignment
- * <p>
+ * 
  * These constants specify text alignment.
- * <p>
+ * 
  * [@constant] kCTTextAlignmentLeft
  * Text is visually left-aligned.
- * <p>
+ * 
  * [@constant] kCTTextAlignmentRight
  * Text is visually right-aligned.
- * <p>
+ * 
  * [@constant] kCTTextAlignmentCenter
  * Text is visually center-aligned.
- * <p>
+ * 
  * [@constant] kCTTextAlignmentJustified
  * Text is fully justified. The last line in a paragraph is
  * naturally aligned.
- * <p>
+ * 
  * [@constant] kCTTextAlignmentNatural
  * Use the natural alignment of the text's script.
  */
@@ -46,10 +46,35 @@ public final class CTTextAlignment {
     @Generated public static final byte TextAlignmentCenter = 2;
     @Generated public static final byte TextAlignmentJustified = 3;
     @Generated public static final byte TextAlignmentNatural = 4;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final byte LeftTextAlignment = 0;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final byte RightTextAlignment = 1;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final byte CenterTextAlignment = 2;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final byte JustifiedTextAlignment = 3;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Deprecated
+     */
     @Deprecated @Generated public static final byte NaturalTextAlignment = 4;
 
     @Generated

@@ -1,8 +1,6 @@
 package apple.vision;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -26,12 +24,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * VNRecognizedTextObservation
  * [@superclass] VNDetectedObjectObservation
- * <p>
+ * 
  * VNRecognizedTextObservation Describes a text area detected and recognized by the VNRecognizeTextRequest request.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Vision")
@@ -63,22 +67,25 @@ public class VNRecognizedTextObservation extends VNRectangleObservation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,7 +109,7 @@ public class VNRecognizedTextObservation extends VNRectangleObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNRecognizedTextObservation initWithCoder(NSCoder coder);
+    public native VNRecognizedTextObservation initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -121,9 +128,10 @@ public class VNRecognizedTextObservation extends VNRectangleObservation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -173,10 +181,11 @@ public class VNRecognizedTextObservation extends VNRectangleObservation {
 
     /**
      * Returns the top N candidates sorted by decreasing confidence score
-     * <p>
+     * 
      * This will return no more than N but can be less than N candidates. The maximum number of candidates returned
      * cannot exceed 10 candidates.
      */
+    @NotNull
     @Generated
     @Selector("topCandidates:")
     public native NSArray<? extends VNRecognizedText> topCandidates(@NUInt long maxCandidateCount);

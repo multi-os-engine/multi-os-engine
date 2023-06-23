@@ -21,18 +21,32 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLPipelineOption
- * <p>
+ * 
  * Controls the creation of the pipeline
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class MTLPipelineOption {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long ArgumentInfo = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long BufferTypeInfo = 0x0000000000000002L;
 
     @Generated
     private MTLPipelineOption() {
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NUInt public static final long FailOnBinaryArchiveMiss = 0x0000000000000004L;
 }

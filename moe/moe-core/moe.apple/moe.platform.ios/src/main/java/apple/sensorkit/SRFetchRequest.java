@@ -21,7 +21,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("SensorKit")
 @Runtime(ObjCRuntime.class)
@@ -52,22 +57,25 @@ public class SRFetchRequest extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -82,20 +90,21 @@ public class SRFetchRequest extends NSObject {
 
     /**
      * Fetch data generated on this device
-     * <p>
+     * 
      * If this is not specified, the current device will be used.
      */
+    @NotNull
     @Generated
     @Selector("device")
     public native SRDevice device();
 
     /**
      * Fetch data starting after this time.
-     * <p>
+     * 
      * This value must be specified for a valid request to be performed.
      * If it is not specified, this will result in a SRErrorInvalidRequest error in the
      * -sensorReader:fetchingRequest:failedWithError: SRSensorReaderDelegate callback.
-     * <p>
+     * 
      * The time range for fetching will be exclusive of start time and inclusive of end time:
      * (start, end] . An SRSensorReader can use this to continue fetching a stream of
      * data based on the last sample timestamp they have read.
@@ -130,9 +139,10 @@ public class SRFetchRequest extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -149,20 +159,20 @@ public class SRFetchRequest extends NSObject {
 
     /**
      * Fetch data generated on this device
-     * <p>
+     * 
      * If this is not specified, the current device will be used.
      */
     @Generated
     @Selector("setDevice:")
-    public native void setDevice(SRDevice value);
+    public native void setDevice(@NotNull SRDevice value);
 
     /**
      * Fetch data starting after this time.
-     * <p>
+     * 
      * This value must be specified for a valid request to be performed.
      * If it is not specified, this will result in a SRErrorInvalidRequest error in the
      * -sensorReader:fetchingRequest:failedWithError: SRSensorReaderDelegate callback.
-     * <p>
+     * 
      * The time range for fetching will be exclusive of start time and inclusive of end time:
      * (start, end] . An SRSensorReader can use this to continue fetching a stream of
      * data based on the last sample timestamp they have read.
@@ -173,7 +183,7 @@ public class SRFetchRequest extends NSObject {
 
     /**
      * Fetch data ending at this time.
-     * <p>
+     * 
      * This value must be specified for a valid request to be performed.
      * If it is not specified, this will result in a SRErrorInvalidRequest error in the
      * -sensorReader:fetchingRequest:failedWithError: SRSensorReaderDelegate callback.
@@ -192,7 +202,7 @@ public class SRFetchRequest extends NSObject {
 
     /**
      * Fetch data ending at this time.
-     * <p>
+     * 
      * This value must be specified for a valid request to be performed.
      * If it is not specified, this will result in a SRErrorInvalidRequest error in the
      * -sensorReader:fetchingRequest:failedWithError: SRSensorReaderDelegate callback.

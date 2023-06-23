@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_path_unsatisfied_reason_t
- * <p>
+ * 
  * A network path unsatisfied reason may indicate the reason the path is currently unsatisfied for some conditions.
  */
 @Generated

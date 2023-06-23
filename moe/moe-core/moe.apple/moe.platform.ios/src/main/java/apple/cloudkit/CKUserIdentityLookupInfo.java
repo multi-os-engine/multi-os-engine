@@ -42,7 +42,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -73,22 +78,25 @@ public class CKUserIdentityLookupInfo extends NSObject implements NSSecureCoding
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,23 +131,28 @@ public class CKUserIdentityLookupInfo extends NSObject implements NSSecureCoding
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("lookupInfosWithEmails:")
-    public static native NSArray<? extends CKUserIdentityLookupInfo> lookupInfosWithEmails(NSArray<String> emails);
+    public static native NSArray<? extends CKUserIdentityLookupInfo> lookupInfosWithEmails(
+            @NotNull NSArray<String> emails);
 
+    @NotNull
     @Generated
     @Selector("lookupInfosWithPhoneNumbers:")
     public static native NSArray<? extends CKUserIdentityLookupInfo> lookupInfosWithPhoneNumbers(
-            NSArray<String> phoneNumbers);
+            @NotNull NSArray<String> phoneNumbers);
 
+    @NotNull
     @Generated
     @Selector("lookupInfosWithRecordIDs:")
     public static native NSArray<? extends CKUserIdentityLookupInfo> lookupInfosWithRecordIDs(
-            NSArray<? extends CKRecordID> recordIDs);
+            @NotNull NSArray<? extends CKRecordID> recordIDs);
 
     @Generated
     @Owned
@@ -171,19 +184,21 @@ public class CKUserIdentityLookupInfo extends NSObject implements NSSecureCoding
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    @Nullable
     @Generated
     @Selector("emailAddress")
     public native String emailAddress();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -191,20 +206,21 @@ public class CKUserIdentityLookupInfo extends NSObject implements NSSecureCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKUserIdentityLookupInfo initWithCoder(NSCoder coder);
+    public native CKUserIdentityLookupInfo initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithEmailAddress:")
-    public native CKUserIdentityLookupInfo initWithEmailAddress(String emailAddress);
+    public native CKUserIdentityLookupInfo initWithEmailAddress(@NotNull String emailAddress);
 
     @Generated
     @Selector("initWithPhoneNumber:")
-    public native CKUserIdentityLookupInfo initWithPhoneNumber(String phoneNumber);
+    public native CKUserIdentityLookupInfo initWithPhoneNumber(@NotNull String phoneNumber);
 
     @Generated
     @Selector("initWithUserRecordID:")
-    public native CKUserIdentityLookupInfo initWithUserRecordID(CKRecordID userRecordID);
+    public native CKUserIdentityLookupInfo initWithUserRecordID(@NotNull CKRecordID userRecordID);
 
+    @Nullable
     @Generated
     @Selector("phoneNumber")
     public native String phoneNumber();
@@ -215,6 +231,7 @@ public class CKUserIdentityLookupInfo extends NSObject implements NSSecureCoding
         return supportsSecureCoding();
     }
 
+    @Nullable
     @Generated
     @Selector("userRecordID")
     public native CKRecordID userRecordID();

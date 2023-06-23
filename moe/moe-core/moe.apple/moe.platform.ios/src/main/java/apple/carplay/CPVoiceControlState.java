@@ -25,13 +25,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@c] CPVoiceControlState encapsulates the title variants and image(s) for a single voice control
  * state, like listening, loading, or recognized.
- * <p>
+ * 
  * Your app may initialize the voice control template with one or more states, and
  * you may call @c activateVoiceControlState: to switch between states you've defined.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CarPlay")
@@ -63,22 +67,25 @@ public class CPVoiceControlState extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -93,17 +100,19 @@ public class CPVoiceControlState extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
 
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
 
+    @Nullable
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -114,11 +123,11 @@ public class CPVoiceControlState extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CPVoiceControlState initWithCoder(NSCoder coder);
+    public native CPVoiceControlState initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initialize a voice control state with a title and image.
-     *
+     * 
      * @param identifier    A custom identifier you can use to identify this voice control state. You'll also
      *                      switch to this state by specifying this identifier.
      * @param titleVariants An array of title variants. The Voice Control template will select the longest
@@ -131,8 +140,8 @@ public class CPVoiceControlState extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("initWithIdentifier:titleVariants:image:repeats:")
-    public native CPVoiceControlState initWithIdentifierTitleVariantsImageRepeats(String identifier,
-            NSArray<String> titleVariants, UIImage image, boolean repeats);
+    public native CPVoiceControlState initWithIdentifierTitleVariantsImageRepeats(@NotNull String identifier,
+            @Nullable NSArray<String> titleVariants, @Nullable UIImage image, boolean repeats);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -151,9 +160,10 @@ public class CPVoiceControlState extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -190,6 +200,7 @@ public class CPVoiceControlState extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    @Nullable
     @Generated
     @Selector("titleVariants")
     public native NSArray<String> titleVariants();

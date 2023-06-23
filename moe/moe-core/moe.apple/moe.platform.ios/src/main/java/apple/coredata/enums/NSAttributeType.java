@@ -39,12 +39,23 @@ public final class NSAttributeType {
     @Generated @NUInt public static final long NSBooleanAttributeType = 0x0000000000000320L;
     @Generated @NUInt public static final long NSDateAttributeType = 0x0000000000000384L;
     @Generated @NUInt public static final long NSBinaryDataAttributeType = 0x00000000000003E8L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NUInt public static final long NSUUIDAttributeType = 0x000000000000044CL;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NUInt public static final long NSURIAttributeType = 0x00000000000004B0L;
     /**
      * If your attribute is of NSTransformableAttributeType, the attributeValueClassName must be set or attribute value
      * class must implement NSCopying.
+     * 
+     * API-Since: 3.0
      */
     @Generated @NUInt public static final long NSTransformableAttributeType = 0x0000000000000708L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NUInt public static final long NSObjectIDAttributeType = 0x00000000000007D0L;
 }

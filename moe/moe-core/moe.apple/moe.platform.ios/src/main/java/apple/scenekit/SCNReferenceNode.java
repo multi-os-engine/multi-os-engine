@@ -43,11 +43,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNReferenceNode
- * <p>
+ * 
  * Node that references an external file.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("SceneKit")
@@ -79,22 +83,25 @@ public class SCNReferenceNode extends SCNNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +136,10 @@ public class SCNReferenceNode extends SCNNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -142,22 +150,23 @@ public class SCNReferenceNode extends SCNNode {
     @Selector("node")
     public static native SCNReferenceNode node();
 
+    @NotNull
     @Generated
     @Selector("nodeWithGeometry:")
-    public static native SCNNode nodeWithGeometry(SCNGeometry geometry);
+    public static native SCNNode nodeWithGeometry(@Nullable SCNGeometry geometry);
 
     @Generated
     @Selector("nodeWithMDLObject:")
-    public static native SCNReferenceNode nodeWithMDLObject(MDLObject mdlObject);
+    public static native SCNReferenceNode nodeWithMDLObject(@NotNull MDLObject mdlObject);
 
     /**
      * referenceNodeWithURL:
-     * <p>
+     * 
      * Creates a reference node with a url.
      */
     @Generated
     @Selector("referenceNodeWithURL:")
-    public static native SCNReferenceNode referenceNodeWithURL(NSURL referenceURL);
+    public static native SCNReferenceNode referenceNodeWithURL(@NotNull NSURL referenceURL);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -190,25 +199,25 @@ public class SCNReferenceNode extends SCNNode {
 
     /**
      * initWithCoder:
-     * <p>
+     * 
      * Support coding and decoding via NSKeyedArchiver.
      */
     @Generated
     @Selector("initWithCoder:")
-    public native SCNReferenceNode initWithCoder(NSCoder aDecoder);
+    public native SCNReferenceNode initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * initWithURL:
-     * <p>
+     * 
      * Creates a reference node with a url.
      */
     @Generated
     @Selector("initWithURL:")
-    public native SCNReferenceNode initWithURL(NSURL referenceURL);
+    public native SCNReferenceNode initWithURL(@NotNull NSURL referenceURL);
 
     /**
      * [@property] loaded
-     * <p>
+     * 
      * Indicates whether the referenced URL has been loaded.
      */
     @Generated
@@ -217,7 +226,7 @@ public class SCNReferenceNode extends SCNNode {
 
     /**
      * load
-     * <p>
+     * 
      * Force the reference to be loaded if it hasn't been loaded already. The resolved nodes will be added
      * as child nodes of the receiver.
      */
@@ -227,7 +236,7 @@ public class SCNReferenceNode extends SCNNode {
 
     /**
      * [@property] loadingPolicy
-     * <p>
+     * 
      * Specifies when to load the reference. see SCNReferenceLoadingPolicy above. Defaults to
      * SCNReferenceLoadingPolicyImmediately.
      */
@@ -238,16 +247,17 @@ public class SCNReferenceNode extends SCNNode {
 
     /**
      * [@property] referenceURL
-     * <p>
+     * 
      * Specifies the url to resolve.
      */
+    @NotNull
     @Generated
     @Selector("referenceURL")
     public native NSURL referenceURL();
 
     /**
      * [@property] loadingPolicy
-     * <p>
+     * 
      * Specifies when to load the reference. see SCNReferenceLoadingPolicy above. Defaults to
      * SCNReferenceLoadingPolicyImmediately.
      */
@@ -257,12 +267,12 @@ public class SCNReferenceNode extends SCNNode {
 
     /**
      * [@property] referenceURL
-     * <p>
+     * 
      * Specifies the url to resolve.
      */
     @Generated
     @Selector("setReferenceURL:")
-    public native void setReferenceURL(NSURL value);
+    public native void setReferenceURL(@NotNull NSURL value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -272,7 +282,7 @@ public class SCNReferenceNode extends SCNNode {
 
     /**
      * unload
-     * <p>
+     * 
      * Remove the child nodes and mark as unloaded.
      */
     @Generated

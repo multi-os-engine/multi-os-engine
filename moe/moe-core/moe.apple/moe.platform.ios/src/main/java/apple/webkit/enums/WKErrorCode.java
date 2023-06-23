@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] WKErrorCode
- * <p>
+ * 
  * Constants used by NSError to indicate errors in the WebKit domain.
  * [@constant] WKErrorUnknown Indicates that an unknown error occurred.
  * [@constant] WKErrorWebContentProcessTerminated Indicates that the Web Content process was terminated.
@@ -40,26 +40,82 @@ import org.moe.natj.general.ann.NInt;
  * restriction.
  * [@constant] WKErrorJavaScriptAppBoundDomain Indicates that JavaScript execution failed due to an app-bound domain
  * restriction.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class WKErrorCode {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Unknown = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long WebContentProcessTerminated = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long WebViewInvalidated = 0x0000000000000003L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long JavaScriptExceptionOccurred = 0x0000000000000004L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long JavaScriptResultTypeIsUnsupported = 0x0000000000000005L;
 
     @Generated
     private WKErrorCode() {
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long ContentRuleListStoreCompileFailed = 0x0000000000000006L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long ContentRuleListStoreLookUpFailed = 0x0000000000000007L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long ContentRuleListStoreRemoveFailed = 0x0000000000000008L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long ContentRuleListStoreVersionMismatch = 0x0000000000000009L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long AttributedStringContentFailedToLoad = 0x000000000000000AL;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long AttributedStringContentLoadTimedOut = 0x000000000000000BL;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long JavaScriptInvalidFrameTarget = 0x000000000000000CL;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long NavigationAppBoundDomain = 0x000000000000000DL;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long JavaScriptAppBoundDomain = 0x000000000000000EL;
+    /**
+     * API-Since: 16.0
+     */
+    @Generated @NInt public static final long DuplicateCredential = 0x000000000000000FL;
+    /**
+     * API-Since: 16.0
+     */
+    @Generated @NInt public static final long MalformedCredential = 0x0000000000000010L;
+    /**
+     * API-Since: 16.0
+     */
+    @Generated @NInt public static final long CredentialNotFound = 0x0000000000000011L;
 }

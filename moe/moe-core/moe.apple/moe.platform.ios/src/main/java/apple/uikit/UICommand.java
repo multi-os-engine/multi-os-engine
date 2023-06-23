@@ -24,15 +24,21 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.uikit.protocol.UIMenuLeaf;
+import apple.uikit.protocol.UIPopoverPresentationControllerSourceItem;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents an action to take.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UICommand extends UIMenuElement {
+public class UICommand extends UIMenuElement implements UIMenuLeaf {
     static {
         NatJ.register();
     }
@@ -49,6 +55,7 @@ public class UICommand extends UIMenuElement {
     /**
      * Action to take on choosing this command.
      */
+    @NotNull
     @Generated
     @Selector("action")
     public native SEL action();
@@ -66,6 +73,7 @@ public class UICommand extends UIMenuElement {
     /**
      * Alternates that differ in modifier flags, if any.
      */
+    @NotNull
     @Generated
     @Selector("alternates")
     public native NSArray<? extends UICommandAlternate> alternates();
@@ -80,29 +88,32 @@ public class UICommand extends UIMenuElement {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * Initializes a keyless command.
-     *
+     * 
      * @param title        Short display title. This should be localized.
      * @param image        Image that can appear next to this command, if needed.
      * @param action       Action to take on choosing this command.
@@ -111,12 +122,13 @@ public class UICommand extends UIMenuElement {
      */
     @Generated
     @Selector("commandWithTitle:image:action:propertyList:")
-    public static native UICommand commandWithTitleImageActionPropertyList(String title, UIImage image, SEL action,
-            @Mapped(ObjCObjectMapper.class) Object propertyList);
+    public static native UICommand commandWithTitleImageActionPropertyList(@NotNull String title,
+            @Nullable UIImage image, @NotNull SEL action,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object propertyList);
 
     /**
      * Initializes a keyless command with alternates.
-     *
+     * 
      * @param title        Short display title. This should be localized.
      * @param image        Image that can appear next to this command, if needed.
      * @param action       Action to take on choosing this command.
@@ -126,9 +138,9 @@ public class UICommand extends UIMenuElement {
      */
     @Generated
     @Selector("commandWithTitle:image:action:propertyList:alternates:")
-    public static native UICommand commandWithTitleImageActionPropertyListAlternates(String title, UIImage image,
-            SEL action, @Mapped(ObjCObjectMapper.class) Object propertyList,
-            NSArray<? extends UICommandAlternate> alternates);
+    public static native UICommand commandWithTitleImageActionPropertyListAlternates(@NotNull String title,
+            @Nullable UIImage image, @NotNull SEL action, @Nullable @Mapped(ObjCObjectMapper.class) Object propertyList,
+            @NotNull NSArray<? extends UICommandAlternate> alternates);
 
     @Generated
     @Selector("debugDescription")
@@ -141,6 +153,7 @@ public class UICommand extends UIMenuElement {
     /**
      * Elaborated title, if any.
      */
+    @Nullable
     @Generated
     @Selector("discoverabilityTitle")
     public native String discoverabilityTitle();
@@ -153,6 +166,7 @@ public class UICommand extends UIMenuElement {
     /**
      * Image that can appear next to this command
      */
+    @Nullable
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -163,7 +177,7 @@ public class UICommand extends UIMenuElement {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UICommand initWithCoder(NSCoder coder);
+    public native UICommand initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -182,9 +196,10 @@ public class UICommand extends UIMenuElement {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -194,6 +209,7 @@ public class UICommand extends UIMenuElement {
     /**
      * Property list object to distinguish commands, if needed.
      */
+    @Nullable
     @Generated
     @Selector("propertyList")
     @MappedReturn(ObjCObjectMapper.class)
@@ -219,14 +235,14 @@ public class UICommand extends UIMenuElement {
      */
     @Generated
     @Selector("setDiscoverabilityTitle:")
-    public native void setDiscoverabilityTitle(String value);
+    public native void setDiscoverabilityTitle(@Nullable String value);
 
     /**
      * Image that can appear next to this command
      */
     @Generated
     @Selector("setImage:")
-    public native void setImage(UIImage value);
+    public native void setImage(@Nullable UIImage value);
 
     /**
      * State that can appear next to the command.
@@ -240,7 +256,7 @@ public class UICommand extends UIMenuElement {
      */
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@NotNull String value);
 
     @Generated
     @Selector("setVersion:")
@@ -271,6 +287,7 @@ public class UICommand extends UIMenuElement {
     /**
      * Short display title.
      */
+    @NotNull
     @Generated
     @Selector("title")
     public native String title();
@@ -279,4 +296,21 @@ public class UICommand extends UIMenuElement {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("performWithSender:target:")
+    public native void performWithSenderTarget(@Nullable @Mapped(ObjCObjectMapper.class) Object sender,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object target);
+
+    @Nullable
+    @Generated
+    @Selector("presentationSourceItem")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UIPopoverPresentationControllerSourceItem presentationSourceItem();
+
+    @Nullable
+    @Generated
+    @Selector("sender")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object sender();
 }

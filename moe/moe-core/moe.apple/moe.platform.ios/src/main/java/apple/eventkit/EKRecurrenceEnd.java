@@ -43,26 +43,30 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * EKRecurrenceEnd
- * <p>
+ * 
  * Class which represents when a recurrence should end.
- * <p>
+ * 
  * EKRecurrenceEnd is an attribute of EKRecurrenceRule that defines how long
  * the recurrence is scheduled to repeat. The recurrence can be defined either
  * with an NSUInteger that indicates the total number times it repeats, or with
  * an NSDate, after which it no longer repeats. An event which is set to never
  * end should have its EKRecurrenceEnd set to nil.
- * <p>
+ * 
  * If the end of the pattern is defines with an NSDate, the client must pass a
  * valid NSDate, nil cannot be passed. If the end of the pattern is defined as
  * terms of a number of occurrences, the occurrenceCount passed to the initializer
  * must be positive, it cannot be 0. If the client attempts to initialize a
  * EKRecurrenceEnd with a nil NSDate or OccurrenceCount of 0, an exception is raised.
- * <p>
+ * 
  * A EKRecurrenceEnd initialized with an end date will return 0 for occurrenceCount.
  * One initialized with a number of occurrences will return nil for its endDate.
+ * 
+ * API-Since: 4.0
  */
 @Generated
 @Library("EventKit")
@@ -94,22 +98,25 @@ public class EKRecurrenceEnd extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -144,9 +151,10 @@ public class EKRecurrenceEnd extends NSObject implements NSCopying, NSSecureCodi
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,16 +163,16 @@ public class EKRecurrenceEnd extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * recurrenceEndWithEndDate:
-     * <p>
+     * 
      * Creates an autoreleased recurrence end with a specific end date.
      */
     @Generated
     @Selector("recurrenceEndWithEndDate:")
-    public static native EKRecurrenceEnd recurrenceEndWithEndDate(NSDate endDate);
+    public static native EKRecurrenceEnd recurrenceEndWithEndDate(@NotNull NSDate endDate);
 
     /**
      * recurrenceEndWithOccurrenceCount:
-     * <p>
+     * 
      * Creates an autoreleased recurrence end with a maximum occurrence count.
      */
     @Generated
@@ -192,17 +200,19 @@ public class EKRecurrenceEnd extends NSObject implements NSCopying, NSSecureCodi
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] endDate
-     * <p>
+     * 
      * The end date of this recurrence, or nil if it's count-based.
      */
+    @Nullable
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
@@ -213,7 +223,7 @@ public class EKRecurrenceEnd extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * [@property] occurrenceCount
-     * <p>
+     * 
      * The maximum occurrence count, or 0 if it's date-based.
      */
     @Generated
@@ -223,11 +233,11 @@ public class EKRecurrenceEnd extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithCoder:")
-    public native EKRecurrenceEnd initWithCoder(NSCoder coder);
+    public native EKRecurrenceEnd initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("supportsSecureCoding")

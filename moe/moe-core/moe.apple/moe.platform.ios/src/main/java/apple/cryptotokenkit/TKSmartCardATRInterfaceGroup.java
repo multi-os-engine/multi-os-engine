@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents single interface-bytes group of ATR.
@@ -43,6 +45,7 @@ public class TKSmartCardATRInterfaceGroup extends NSObject {
     /**
      * TA interface byte of ATR group, or nil if TA is not present.
      */
+    @Nullable
     @Generated
     @Selector("TA")
     public native NSNumber TA();
@@ -50,6 +53,7 @@ public class TKSmartCardATRInterfaceGroup extends NSObject {
     /**
      * TB interface byte of ATR group, or nil if TB is not present.
      */
+    @Nullable
     @Generated
     @Selector("TB")
     public native NSNumber TB();
@@ -57,6 +61,7 @@ public class TKSmartCardATRInterfaceGroup extends NSObject {
     /**
      * TC interface byte of ATR group, or nil if TC is not present.
      */
+    @Nullable
     @Generated
     @Selector("TC")
     public native NSNumber TC();
@@ -77,22 +82,25 @@ public class TKSmartCardATRInterfaceGroup extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +139,10 @@ public class TKSmartCardATRInterfaceGroup extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -143,6 +152,7 @@ public class TKSmartCardATRInterfaceGroup extends NSObject {
     /**
      * Protocol number for this group. First group (global) has protocol unassigned, contains nil.
      */
+    @Nullable
     @Generated
     @Selector("protocol")
     public native NSNumber protocol();

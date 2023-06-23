@@ -19,18 +19,30 @@ package apple.corefoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 public final class CFURLBookmarkCreationOptions {
     /**
      * creates bookmark data with "less" information, which may be smaller but still be able to resolve in certain ways
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long MinimalBookmarkMask = 0x0000000000000200L;
     /**
      * include the properties required by CFURLWriteBookmarkDataToFile() in the bookmark data created
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long SuitableForBookmarkFile = 0x0000000000000400L;
     /**
      * deprecated
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: kCFURLBookmarkCreationPreferFileIDResolutionMask does nothing and has no effect on bookmark
+     * resolution
      */
     @Deprecated @Generated @NUInt public static final long PreferFileIDResolutionMask = 0x0000000000000100L;
 
@@ -42,6 +54,8 @@ public final class CFURLBookmarkCreationOptions {
      * Disable automatic embedding of an implicit security scope. The resolving process will not be able gain access to
      * the resource by security scope, either implicitly or explicitly, through the returned URL. Not applicable to
      * security-scoped bookmarks.
+     * 
+     * API-Since: 5.0
      */
     @Generated @NUInt public static final long WithoutImplicitSecurityScope = 0x0000000020000000L;
 }

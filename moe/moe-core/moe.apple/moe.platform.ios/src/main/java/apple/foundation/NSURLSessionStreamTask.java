@@ -35,6 +35,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An NSURLSessionStreamTask provides an interface to perform reads
@@ -42,21 +44,23 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * may be explicitly created from an NSURLSession, or created as a
  * result of the appropriate disposition response to a
  * -URLSession:dataTask:didReceiveResponse: delegate message.
- * <p>
+ * 
  * NSURLSessionStreamTask can be used to perform asynchronous reads
- * and writes. Reads and writes are enquened and executed serially,
+ * and writes. Reads and writes are enqueued and executed serially,
  * with the completion handler being invoked on the sessions delegate
- * queuee. If an error occurs, or the task is canceled, all
+ * queue. If an error occurs, or the task is canceled, all
  * outstanding read and write calls will have their completion
  * handlers invoked with an appropriate error.
- * <p>
+ * 
  * It is also possible to create NSInputStream and NSOutputStream
  * instances from an NSURLSessionTask by sending
- * -captureStreams to the task. All outstanding read and writess are
+ * -captureStreams to the task. All outstanding reads and writes are
  * completed before the streams are created. Once the streams are
  * delivered to the session delegate, the task is considered complete
- * and will receive no more messsages. These streams are
+ * and will receive no more messages. These streams are
  * disassociated from the underlying session.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("Foundation")
@@ -88,22 +92,25 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -138,10 +145,18 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Please use -[NSURLSession streamTaskWithHostName:port:] or other NSURLSession methods to
+     * create instances
+     */
+    @Deprecated
     @Generated
     @Owned
     @Selector("new")
@@ -200,6 +215,13 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
     @Selector("closeWrite")
     public native void closeWrite();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Please use -[NSURLSession streamTaskWithHostName:port:] or other NSURLSession methods to
+     * create instances
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native NSURLSessionStreamTask init();
@@ -214,10 +236,10 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
     @Selector("readDataOfMinLength:maxLength:timeout:completionHandler:")
     public native void readDataOfMinLengthMaxLengthTimeoutCompletionHandler(@NUInt long minBytes, @NUInt long maxBytes,
             double timeout,
-            @ObjCBlock(name = "call_readDataOfMinLengthMaxLengthTimeoutCompletionHandler") Block_readDataOfMinLengthMaxLengthTimeoutCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_readDataOfMinLengthMaxLengthTimeoutCompletionHandler") Block_readDataOfMinLengthMaxLengthTimeoutCompletionHandler completionHandler);
 
     /**
-     * Begin encrypted handshake. The hanshake begins after all pending
+     * Begin encrypted handshake. The handshake begins after all pending
      * IO has completed. TLS authentication callbacks are sent to the
      * session's -URLSession:task:didReceiveChallenge:completionHandler:
      */
@@ -228,9 +250,14 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
     /**
      * Cleanly close a secure connection after all pending secure IO has
      * completed.
-     * <p>
+     * 
      * [@warning] This API is non-functional.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: TLS cannot be disabled once it is enabled
      */
+    @Deprecated
     @Generated
     @Selector("stopSecureConnection")
     public native void stopSecureConnection();
@@ -244,20 +271,21 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
      */
     @Generated
     @Selector("writeData:timeout:completionHandler:")
-    public native void writeDataTimeoutCompletionHandler(NSData data, double timeout,
-            @ObjCBlock(name = "call_writeDataTimeoutCompletionHandler") Block_writeDataTimeoutCompletionHandler completionHandler);
+    public native void writeDataTimeoutCompletionHandler(@NotNull NSData data, double timeout,
+            @NotNull @ObjCBlock(name = "call_writeDataTimeoutCompletionHandler") Block_writeDataTimeoutCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_readDataOfMinLengthMaxLengthTimeoutCompletionHandler {
         @Generated
-        void call_readDataOfMinLengthMaxLengthTimeoutCompletionHandler(NSData data, boolean atEOF, NSError error);
+        void call_readDataOfMinLengthMaxLengthTimeoutCompletionHandler(@Nullable NSData data, boolean atEOF,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeDataTimeoutCompletionHandler {
         @Generated
-        void call_writeDataTimeoutCompletionHandler(NSError error);
+        void call_writeDataTimeoutCompletionHandler(@Nullable NSError error);
     }
 }

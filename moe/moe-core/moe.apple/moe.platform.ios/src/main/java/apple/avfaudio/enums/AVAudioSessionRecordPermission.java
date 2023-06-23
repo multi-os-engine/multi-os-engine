@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] AVAudioSessionRecordPermission
- * <p>
+ * 
  * These are the values returned by recordPermission.
  * [@var] AVAudioSessionRecordPermissionUndetermined
  * The user has not yet been asked for permission.
@@ -13,7 +13,7 @@ import org.moe.natj.general.ann.NUInt;
  * The user has been asked and has denied permission.
  * [@var] AVAudioSessionRecordPermissionGranted
  * The user has been asked and has granted permission.
- * <p>
+ * 
  * Introduced: ios(8.0), watchos(4.0)
  */
 @Generated

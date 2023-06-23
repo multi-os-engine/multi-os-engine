@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_txt_record_find_key_t
- * <p>
+ * 
  * An enumeration of possible find results when trying to find a key-value
  * pair in the TXT record object.
  */

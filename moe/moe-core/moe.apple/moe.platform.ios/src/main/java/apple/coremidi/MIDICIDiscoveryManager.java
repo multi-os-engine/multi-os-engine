@@ -22,15 +22,19 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MIDICIDiscoveryManager
- * <p>
+ * 
  * Singleton object that performs system-wide MIDI Capability Inquiry discovery
- * <p>
+ * 
  * MIDICIDiscoveryManager is used to retrieve information about nodes in the MIDI subsystem
  * that are MIDI-CI capable. Only MIDI destinations discovered via this API can be used to
  * create MIDICISessions.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("CoreMIDI")
@@ -62,22 +66,25 @@ public class MIDICIDiscoveryManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -93,13 +100,13 @@ public class MIDICIDiscoveryManager extends NSObject {
     @Generated
     @Selector("discoverWithHandler:")
     public native void discoverWithHandler(
-            @ObjCBlock(name = "call_discoverWithHandler") Block_discoverWithHandler completedHandler);
+            @NotNull @ObjCBlock(name = "call_discoverWithHandler") Block_discoverWithHandler completedHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_discoverWithHandler {
         @Generated
-        void call_discoverWithHandler(NSArray<? extends MIDICIDiscoveredNode> discoveredNodes);
+        void call_discoverWithHandler(@NotNull NSArray<? extends MIDICIDiscoveredNode> discoveredNodes);
     }
 
     @Generated
@@ -128,9 +135,10 @@ public class MIDICIDiscoveryManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -149,6 +157,7 @@ public class MIDICIDiscoveryManager extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("sharedInstance")
     public static native MIDICIDiscoveryManager sharedInstance();

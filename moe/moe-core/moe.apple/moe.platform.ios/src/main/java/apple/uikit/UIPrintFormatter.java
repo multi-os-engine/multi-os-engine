@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -43,7 +42,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.2
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -74,22 +79,25 @@ public class UIPrintFormatter extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +132,10 @@ public class UIPrintFormatter extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,16 +163,22 @@ public class UIPrintFormatter extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 4.2
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("contentInsets")
     @ByValue
     public native UIEdgeInsets contentInsets();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * override point to add custom drawing
@@ -212,6 +227,7 @@ public class UIPrintFormatter extends NSObject implements NSCopying {
     /**
      * default is nil. set when formatter added to a print page renderer
      */
+    @Nullable
     @Generated
     @Selector("printPageRenderer")
     public native UIPrintPageRenderer printPageRenderer();
@@ -228,6 +244,11 @@ public class UIPrintFormatter extends NSObject implements NSCopying {
     @Selector("removeFromPrintPageRenderer")
     public native void removeFromPrintPageRenderer();
 
+    /**
+     * API-Since: 4.2
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("setContentInsets:")
     public native void setContentInsets(@ByValue UIEdgeInsets value);
@@ -268,4 +289,14 @@ public class UIPrintFormatter extends NSObject implements NSCopying {
     @Selector("startPage")
     @NInt
     public native long startPage();
+
+    /**
+     * override point to decide if the drawing and page count calculation for each UIPrintFormatter are required to be
+     * called on the main thread; the default value is YES.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("requiresMainThread")
+    public native boolean requiresMainThread();
 }

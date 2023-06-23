@@ -17,8 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -48,7 +46,14 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -80,22 +85,25 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +138,10 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -172,16 +181,20 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
     @NInt
     public native long adaptivePresentationStyle();
 
+    /**
+     * API-Since: 8.3
+     */
     @Generated
     @Selector("adaptivePresentationStyleForTraitCollection:")
     @NInt
-    public native long adaptivePresentationStyleForTraitCollection(UITraitCollection traitCollection);
+    public native long adaptivePresentationStyleForTraitCollection(@NotNull UITraitCollection traitCollection);
 
     /**
      * The view in which a presentation occurs. It is an ancestor of both the presenting and presented view controller's
      * views.
      * This view is being passed to the animation controller.
      */
+    @Nullable
     @Generated
     @Selector("containerView")
     public native UIView containerView();
@@ -194,6 +207,7 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
     @Selector("containerViewWillLayoutSubviews")
     public native void containerViewWillLayoutSubviews();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -201,8 +215,8 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
 
     @Generated
     @Selector("didUpdateFocusInContext:withAnimationCoordinator:")
-    public native void didUpdateFocusInContextWithAnimationCoordinator(UIFocusUpdateContext context,
-            UIFocusAnimationCoordinator coordinator);
+    public native void didUpdateFocusInContextWithAnimationCoordinator(@NotNull UIFocusUpdateContext context,
+            @NotNull UIFocusAnimationCoordinator coordinator);
 
     @Generated
     @Selector("dismissalTransitionDidEnd:")
@@ -228,11 +242,12 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
     @Generated
     @Selector("initWithPresentedViewController:presentingViewController:")
     public native UIPresentationController initWithPresentedViewControllerPresentingViewController(
-            UIViewController presentedViewController, UIViewController presentingViewController);
+            @NotNull UIViewController presentedViewController, @Nullable UIViewController presentingViewController);
 
     /**
      * Modifies the trait collection for the presentation controller.
      */
+    @Nullable
     @Generated
     @Selector("overrideTraitCollection")
     public native UITraitCollection overrideTraitCollection();
@@ -245,12 +260,15 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
     @Generated
     @Selector("preferredContentSizeDidChangeForChildContentContainer:")
     public native void preferredContentSizeDidChangeForChildContentContainer(
-            @Mapped(ObjCObjectMapper.class) UIContentContainer container);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIContentContainer container);
 
+    @NotNull
     @Generated
     @Selector("preferredFocusEnvironments")
     public native NSArray<?> preferredFocusEnvironments();
 
+    @Nullable
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("preferredFocusedView")
@@ -275,24 +293,27 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
      * or a presented view controller's view itself.
      * (Default: presented view controller's view)
      */
+    @Nullable
     @Generated
     @Selector("presentedView")
     public native UIView presentedView();
 
+    @NotNull
     @Generated
     @Selector("presentedViewController")
     public native UIViewController presentedViewController();
 
+    @NotNull
     @Generated
     @Selector("presentingViewController")
     public native UIViewController presentingViewController();
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -312,7 +333,7 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
      */
     @Generated
     @Selector("setOverrideTraitCollection:")
-    public native void setOverrideTraitCollection(UITraitCollection value);
+    public native void setOverrideTraitCollection(@Nullable UITraitCollection value);
 
     /**
      * By default each new presentation is full screen.
@@ -335,26 +356,27 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
 
     @Generated
     @Selector("shouldUpdateFocusInContext:")
-    public native boolean shouldUpdateFocusInContext(UIFocusUpdateContext context);
+    public native boolean shouldUpdateFocusInContext(@NotNull UIFocusUpdateContext context);
 
     @Generated
     @Selector("sizeForChildContentContainer:withParentContainerSize:")
     @ByValue
     public native CGSize sizeForChildContentContainerWithParentContainerSize(
-            @Mapped(ObjCObjectMapper.class) UIContentContainer container, @ByValue CGSize parentSize);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIContentContainer container, @ByValue CGSize parentSize);
 
     @Generated
     @Selector("systemLayoutFittingSizeDidChangeForChildContentContainer:")
     public native void systemLayoutFittingSizeDidChangeForChildContentContainer(
-            @Mapped(ObjCObjectMapper.class) UIContentContainer container);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIContentContainer container);
 
+    @NotNull
     @Generated
     @Selector("traitCollection")
     public native UITraitCollection traitCollection();
 
     @Generated
     @Selector("traitCollectionDidChange:")
-    public native void traitCollectionDidChange(UITraitCollection previousTraitCollection);
+    public native void traitCollectionDidChange(@Nullable UITraitCollection previousTraitCollection);
 
     @Generated
     @Selector("updateFocusIfNeeded")
@@ -363,23 +385,27 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
     @Generated
     @Selector("viewWillTransitionToSize:withTransitionCoordinator:")
     public native void viewWillTransitionToSizeWithTransitionCoordinator(@ByValue CGSize size,
-            @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator);
 
     @Generated
     @Selector("willTransitionToTraitCollection:withTransitionCoordinator:")
-    public native void willTransitionToTraitCollectionWithTransitionCoordinator(UITraitCollection newCollection,
-            @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator);
+    public native void willTransitionToTraitCollectionWithTransitionCoordinator(
+            @NotNull UITraitCollection newCollection,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator);
 
+    @Nullable
     @Generated
     @Selector("focusItemContainer")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIFocusItemContainer focusItemContainer();
 
+    @Nullable
     @Generated
     @Selector("parentFocusEnvironment")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIFocusEnvironment parentFocusEnvironment();
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("focusGroupIdentifier")

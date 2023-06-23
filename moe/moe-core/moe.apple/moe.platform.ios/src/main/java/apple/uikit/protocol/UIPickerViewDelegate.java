@@ -28,6 +28,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -36,19 +38,23 @@ import org.moe.natj.objc.ann.Selector;
 public interface UIPickerViewDelegate {
     /**
      * attributed title is favored if both methods are implemented
+     * 
+     * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("pickerView:attributedTitleForRow:forComponent:")
-    default NSAttributedString pickerViewAttributedTitleForRowForComponent(UIPickerView pickerView, @NInt long row,
-            @NInt long component) {
+    default NSAttributedString pickerViewAttributedTitleForRowForComponent(@NotNull UIPickerView pickerView,
+            @NInt long row, @NInt long component) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("pickerView:didSelectRow:inComponent:")
-    default void pickerViewDidSelectRowInComponent(UIPickerView pickerView, @NInt long row, @NInt long component) {
+    default void pickerViewDidSelectRowInComponent(@NotNull UIPickerView pickerView, @NInt long row,
+            @NInt long component) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -56,7 +62,7 @@ public interface UIPickerViewDelegate {
     @IsOptional
     @Selector("pickerView:rowHeightForComponent:")
     @NFloat
-    default double pickerViewRowHeightForComponent(UIPickerView pickerView, @NInt long component) {
+    default double pickerViewRowHeightForComponent(@NotNull UIPickerView pickerView, @NInt long component) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -66,18 +72,21 @@ public interface UIPickerViewDelegate {
      * for the view versions, we cache any hidden and thus unused views and pass them back for reuse.
      * If you return back a different object, the old one will be released. the view will be centered in the row rect
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("pickerView:titleForRow:forComponent:")
-    default String pickerViewTitleForRowForComponent(UIPickerView pickerView, @NInt long row, @NInt long component) {
+    default String pickerViewTitleForRowForComponent(@NotNull UIPickerView pickerView, @NInt long row,
+            @NInt long component) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("pickerView:viewForRow:forComponent:reusingView:")
-    default UIView pickerViewViewForRowForComponentReusingView(UIPickerView pickerView, @NInt long row,
-            @NInt long component, UIView view) {
+    default UIView pickerViewViewForRowForComponentReusingView(@NotNull UIPickerView pickerView, @NInt long row,
+            @NInt long component, @Nullable UIView view) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -88,7 +97,7 @@ public interface UIPickerViewDelegate {
     @IsOptional
     @Selector("pickerView:widthForComponent:")
     @NFloat
-    default double pickerViewWidthForComponent(UIPickerView pickerView, @NInt long component) {
+    default double pickerViewWidthForComponent(@NotNull UIPickerView pickerView, @NInt long component) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

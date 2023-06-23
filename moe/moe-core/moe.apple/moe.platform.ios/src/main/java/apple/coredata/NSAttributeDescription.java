@@ -40,9 +40,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Attributes represent individual values like strings, numbers, dates, etc.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("CoreData")
@@ -74,22 +78,25 @@ public class NSAttributeDescription extends NSPropertyDescription {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +131,10 @@ public class NSAttributeDescription extends NSPropertyDescription {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,6 +162,9 @@ public class NSAttributeDescription extends NSPropertyDescription {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("allowsExternalBinaryDataStorage")
     public native boolean allowsExternalBinaryDataStorage();
@@ -167,6 +178,7 @@ public class NSAttributeDescription extends NSPropertyDescription {
     @NUInt
     public native long attributeType();
 
+    @Nullable
     @Generated
     @Selector("attributeValueClassName")
     public native String attributeValueClassName();
@@ -174,6 +186,7 @@ public class NSAttributeDescription extends NSPropertyDescription {
     /**
      * value is retained and not copied
      */
+    @Nullable
     @Generated
     @Selector("defaultValue")
     @MappedReturn(ObjCObjectMapper.class)
@@ -185,8 +198,11 @@ public class NSAttributeDescription extends NSPropertyDescription {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSAttributeDescription initWithCoder(NSCoder coder);
+    public native NSAttributeDescription initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setAllowsExternalBinaryDataStorage:")
     public native void setAllowsExternalBinaryDataStorage(boolean value);
@@ -201,29 +217,34 @@ public class NSAttributeDescription extends NSPropertyDescription {
 
     @Generated
     @Selector("setAttributeValueClassName:")
-    public native void setAttributeValueClassName(String value);
+    public native void setAttributeValueClassName(@Nullable String value);
 
     /**
      * value is retained and not copied
      */
     @Generated
     @Selector("setDefaultValue:")
-    public native void setDefaultValue(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setDefaultValue(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * The name of the transformer used to convert a NSTransformedAttributeType. The transformer must output NSData from
      * transformValue and allow reverse transformation. If this value is not set, or set to nil, Core Data will default
      * to using a transformer which uses NSCoding to archive/unarchive the attribute value.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setValueTransformerName:")
-    public native void setValueTransformerName(String value);
+    public native void setValueTransformerName(@Nullable String value);
 
     /**
      * The name of the transformer used to convert a NSTransformedAttributeType. The transformer must output NSData from
      * transformValue and allow reverse transformation. If this value is not set, or set to nil, Core Data will default
      * to using a transformer which uses NSCoding to archive/unarchive the attribute value.
+     * 
+     * API-Since: 3.0
      */
+    @Nullable
     @Generated
     @Selector("valueTransformerName")
     public native String valueTransformerName();
@@ -231,13 +252,18 @@ public class NSAttributeDescription extends NSPropertyDescription {
     /**
      * Returns the version hash for the attribute. This value includes the versionHash information from the
      * NSPropertyDescription superclass, and the attribute type.
+     * 
+     * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("versionHash")
     public native NSData versionHash();
 
     /**
      * Indicates if the value of the attribute should be captured on delete when Persistent History is enabled
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("preservesValueInHistoryOnDeletion")
@@ -245,6 +271,8 @@ public class NSAttributeDescription extends NSPropertyDescription {
 
     /**
      * Indicates if the value of the attribute should be captured on delete when Persistent History is enabled
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPreservesValueInHistoryOnDeletion:")
@@ -252,15 +280,17 @@ public class NSAttributeDescription extends NSPropertyDescription {
 
     /**
      * This property can be set to enable encryption-at-rest on data stored in CloudKit servers.
-     * <p>
+     * 
      * There are several restrictions on how clients can use this property:
      * 1. Attributes to be encrypted must be new additions to the CloudKit schema. Attributes that already exist in the
      * production schema cannot be changed to support encryption.
      * 2. Attributes cannot (ever) change their encryption state in the CloudKit schema. Once something is encrypted (or
      * not) it will forever be so.
-     * <p>
+     * 
      * Note: This property does not affect the data in the persistent store. Local file encryption should continue to be
      * managed by using NSFileProtection and other standard platform security mechanisms.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("allowsCloudEncryption")
@@ -268,15 +298,17 @@ public class NSAttributeDescription extends NSPropertyDescription {
 
     /**
      * This property can be set to enable encryption-at-rest on data stored in CloudKit servers.
-     * <p>
+     * 
      * There are several restrictions on how clients can use this property:
      * 1. Attributes to be encrypted must be new additions to the CloudKit schema. Attributes that already exist in the
      * production schema cannot be changed to support encryption.
      * 2. Attributes cannot (ever) change their encryption state in the CloudKit schema. Once something is encrypted (or
      * not) it will forever be so.
-     * <p>
+     * 
      * Note: This property does not affect the data in the persistent store. Local file encryption should continue to be
      * managed by using NSFileProtection and other standard platform security mechanisms.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAllowsCloudEncryption:")

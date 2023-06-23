@@ -41,7 +41,7 @@ public final class CGImageAlphaInfo {
      */
     @Generated public static final int First = 0x00000004;
     /**
-     * For example, RBGX.
+     * For example, RGBX.
      */
     @Generated public static final int NoneSkipLast = 0x00000005;
     /**

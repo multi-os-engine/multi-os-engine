@@ -6,7 +6,7 @@ import org.moe.natj.general.ann.NInt;
 /**
  * This file defines a table of standardized key codes, called "HID usages" used by USB keyboards to identify individual
  * keys.
- * <p>
+ * 
  * A general note on Usages and languages: Due to the variation of keyboards from language to language, it is not
  * feasible
  * to specify exact key mappings for every language. Where this list is not specific for a key function in a language,
@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.NInt;
  * American and German keyboards. This continues to be the existing practice in the industry, in order to minimize the
  * number of
  * changes to the electronics to accommodate other languages.
- * <p>
+ * 
  * The following constants are from the USB 'HID Usage Tables' specification, revision 1.1rc3.
  */
 @Generated

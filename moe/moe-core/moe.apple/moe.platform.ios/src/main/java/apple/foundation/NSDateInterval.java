@@ -38,7 +38,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -69,22 +74,25 @@ public class NSDateInterval extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -119,9 +127,10 @@ public class NSDateInterval extends NSObject implements NSCopying, NSSecureCodin
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,31 +170,32 @@ public class NSDateInterval extends NSObject implements NSCopying, NSSecureCodin
      * a. |-----|
      * b. |-----|
      * [a compare:b] would return NSOrderedAscending because a's startDate is earlier in time than b's start date.
-     * <p>
+     * 
      * In the event that the start dates are equal, the compare method will attempt to order by duration.
      * e.g.
      * Given intervals c and d
      * c. |-----|
      * d. |---|
      * [c compare:d] would result in NSOrderedDescending because c is longer than d.
-     * <p>
+     * 
      * If both the start dates and the durations are equal, then the intervals are considered equal and NSOrderedSame is
      * returned as the result.
      */
     @Generated
     @Selector("compare:")
     @NInt
-    public native long compare(NSDateInterval dateInterval);
+    public native long compare(@NotNull NSDateInterval dateInterval);
 
     @Generated
     @Selector("containsDate:")
-    public native boolean containsDate(NSDate date);
+    public native boolean containsDate(@NotNull NSDate date);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("duration")
@@ -193,8 +203,9 @@ public class NSDateInterval extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    @NotNull
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
@@ -209,43 +220,45 @@ public class NSDateInterval extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSDateInterval initWithCoder(NSCoder coder);
+    public native NSDateInterval initWithCoder(@NotNull NSCoder coder);
 
     /**
      * This method will throw an exception if the duration is less than 0.
      */
     @Generated
     @Selector("initWithStartDate:duration:")
-    public native NSDateInterval initWithStartDateDuration(NSDate startDate, double duration);
+    public native NSDateInterval initWithStartDateDuration(@NotNull NSDate startDate, double duration);
 
     /**
      * This method will throw an exception if the end date comes before the start date.
      */
     @Generated
     @Selector("initWithStartDate:endDate:")
-    public native NSDateInterval initWithStartDateEndDate(NSDate startDate, NSDate endDate);
+    public native NSDateInterval initWithStartDateEndDate(@NotNull NSDate startDate, @NotNull NSDate endDate);
 
     /**
      * This method returns an NSDateInterval object that represents the interval where the given date interval and the
      * current instance intersect. In the event that there is no intersection, the method returns nil.
      */
+    @Nullable
     @Generated
     @Selector("intersectionWithDateInterval:")
-    public native NSDateInterval intersectionWithDateInterval(NSDateInterval dateInterval);
+    public native NSDateInterval intersectionWithDateInterval(@NotNull NSDateInterval dateInterval);
 
     @Generated
     @Selector("intersectsDateInterval:")
-    public native boolean intersectsDateInterval(NSDateInterval dateInterval);
+    public native boolean intersectsDateInterval(@NotNull NSDateInterval dateInterval);
 
     @Generated
     @Selector("isEqualToDateInterval:")
-    public native boolean isEqualToDateInterval(NSDateInterval dateInterval);
+    public native boolean isEqualToDateInterval(@NotNull NSDateInterval dateInterval);
 
     /**
      * NSDateInterval represents a closed date interval in the form of [startDate, endDate]. It is possible for the
      * start and end dates to be the same with a duration of 0. NSDateInterval does not support reverse intervals i.e.
      * intervals where the duration is less than 0 and the end date occurs earlier in time than the start date.
      */
+    @NotNull
     @Generated
     @Selector("startDate")
     public native NSDate startDate();

@@ -25,6 +25,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("CloudKit")
@@ -40,12 +41,21 @@ public final class CloudKit {
 
     /**
      * Stand-in for the current user's ID; most often used in RecordZoneID->ownerName
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CKCurrentUserDefaultName();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     */
+    @NotNull
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -53,14 +63,21 @@ public final class CloudKit {
 
     /**
      * This local notification is posted when there has been any change to the logged in iCloud account.
-     * <p>
+     * 
      * On receipt, an updated account status should be obtained by calling @c accountStatusWithCompletionHandler:
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CKAccountChangedNotification();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -68,10 +85,13 @@ public final class CloudKit {
 
     /**
      * When a CKErrorPartialFailure happens this key will be set in the error's userInfo dictionary.
-     * <p>
+     * 
      * The value of this key will be a dictionary, and the values will be errors for individual items with the keys
      * being the item IDs that failed.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -82,17 +102,28 @@ public final class CloudKit {
      * CKErrorServerRecordChanged error will be returned and it will contain versions of the record in its userInfo
      * dictionary. Apply your custom conflict resolution logic to the server record under @c CKServerRecordKey and
      * attempt a save of that record.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CKRecordChangedErrorAncestorRecordKey();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CKRecordChangedErrorServerRecordKey();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -103,7 +134,10 @@ public final class CloudKit {
      * seconds after which the client may retry the request. For example, this key will be on @c
      * CKErrorServiceUnavailable, @c CKErrorRequestRateLimited, and other errors for which the recommended resolution is
      * to retry after a delay.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -111,7 +145,10 @@ public final class CloudKit {
 
     /**
      * Use this constant for the recordType parameter when fetching User Records.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -119,22 +156,37 @@ public final class CloudKit {
 
     /**
      * Use these keys in queries to match on the record's parent or share reference
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CKRecordParentKey();
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CKRecordShareKey();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CKRecordZoneDefaultName();
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -142,7 +194,10 @@ public final class CloudKit {
 
     /**
      * Value is a string. Example for a recipe sharing app: "Pot Roast"
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -150,7 +205,10 @@ public final class CloudKit {
 
     /**
      * Value is a data blob suitable to pass into @code -[NSImage imageWithData:] or -[UIImage imageWithData:] @endcode
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -158,7 +216,10 @@ public final class CloudKit {
 
     /**
      * Value is a string representing a UTI. Example for a recipe sharing app: "com.mycompany.recipe"
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -168,6 +229,8 @@ public final class CloudKit {
      * Query operations have a dynamically defined maximum number of results. If the results of a query exceed this max,
      * your completion block will invoked with a cursor.
      * Issue a new query with that cursor to fetch the next batch of results.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -177,7 +240,10 @@ public final class CloudKit {
     /**
      * On error CKErrorZoneNotFound, the userInfo dictionary may contain a NSNumber instance that specifies a boolean
      * value representing if the error is caused by the user having reset all encrypted data for their account
+     * 
+     * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -186,7 +252,10 @@ public final class CloudKit {
     /**
      * A zone-wide CKShare always uses the record name @c CKRecordNameZoneWideShare.
      * You can use this to fetch the @c CKShare record for the zone with a @c CKFetchRecordsOperation.
+     * 
+     * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

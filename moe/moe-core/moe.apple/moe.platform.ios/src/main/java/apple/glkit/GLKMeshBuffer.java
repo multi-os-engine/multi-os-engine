@@ -42,15 +42,22 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * GLKMeshBuffer
- * <p>
+ * 
  * Mesh buffers created when needs to allocate memory to back vertex or index data
- * <p>
+ * 
  * Memory backing these buffer are OpenGL buffers. Model I/O will load index and vertex data from from a model asset
  * directly in to the OpenGL buffer object.
+ * 
+ * API-Since: 9.0
+ * Deprecated-Since: 12.0
+ * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
  */
+@Deprecated
 @Generated
 @Library("GLKit")
 @Runtime(ObjCRuntime.class)
@@ -81,22 +88,25 @@ public class GLKMeshBuffer extends NSObject implements MDLMeshBuffer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +141,10 @@ public class GLKMeshBuffer extends NSObject implements MDLMeshBuffer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,25 +172,27 @@ public class GLKMeshBuffer extends NSObject implements MDLMeshBuffer {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("allocator")
     public native GLKMeshBufferAllocator allocator();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("fillData:offset:")
-    public native void fillDataOffset(NSData data, @NUInt long offset);
+    public native void fillDataOffset(@NotNull NSData data, @NUInt long offset);
 
     /**
      * [@property] glBufferName
-     * <p>
+     * 
      * glBufferName for buffer object backing vertex/index data
-     * <p>
+     * 
      * Many GLKMeshBuffers may reference the same OpenGL buffer object, but each with its own offset. (i.e. Many
      * GLKMeshBuffers may be suballocated from a single OpenGL buffer object)
      */
@@ -196,13 +209,14 @@ public class GLKMeshBuffer extends NSObject implements MDLMeshBuffer {
     @NUInt
     public native long length();
 
+    @NotNull
     @Generated
     @Selector("map")
     public native MDLMeshBufferMap map();
 
     /**
      * [@property] offset
-     * <p>
+     * 
      * Byte offset of the data within the OpenGL buffer
      */
     @Generated
@@ -215,6 +229,7 @@ public class GLKMeshBuffer extends NSObject implements MDLMeshBuffer {
     @NUInt
     public native long type();
 
+    @Nullable
     @Generated
     @Selector("zone")
     @MappedReturn(ObjCObjectMapper.class)

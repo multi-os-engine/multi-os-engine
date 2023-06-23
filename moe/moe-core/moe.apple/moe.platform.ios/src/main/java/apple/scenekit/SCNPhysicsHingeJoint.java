@@ -41,10 +41,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNPhysicsHingeJoint
- * <p>
+ * 
  * SCNPhysicsHingeJoint makes two bodies to move like they are connected by a hinge. It is for example suitable for
  * doors, chains...
  */
@@ -78,22 +80,25 @@ public class SCNPhysicsHingeJoint extends SCNPhysicsBehavior {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,8 +140,8 @@ public class SCNPhysicsHingeJoint extends SCNPhysicsBehavior {
      */
     @Generated
     @Selector("jointWithBody:axis:anchor:")
-    public static native SCNPhysicsHingeJoint jointWithBodyAxisAnchor(SCNPhysicsBody body, @ByValue SCNVector3 axis,
-            @ByValue SCNVector3 anchor);
+    public static native SCNPhysicsHingeJoint jointWithBodyAxisAnchor(@NotNull SCNPhysicsBody body,
+            @ByValue SCNVector3 axis, @ByValue SCNVector3 anchor);
 
     /**
      * Initializes and returns a physics hinge joint.
@@ -145,13 +150,14 @@ public class SCNPhysicsHingeJoint extends SCNPhysicsBehavior {
      */
     @Generated
     @Selector("jointWithBodyA:axisA:anchorA:bodyB:axisB:anchorB:")
-    public static native SCNPhysicsHingeJoint jointWithBodyAAxisAAnchorABodyBAxisBAnchorB(SCNPhysicsBody bodyA,
-            @ByValue SCNVector3 axisA, @ByValue SCNVector3 anchorA, SCNPhysicsBody bodyB, @ByValue SCNVector3 axisB,
-            @ByValue SCNVector3 anchorB);
+    public static native SCNPhysicsHingeJoint jointWithBodyAAxisAAnchorABodyBAxisBAnchorB(@NotNull SCNPhysicsBody bodyA,
+            @ByValue SCNVector3 axisA, @ByValue SCNVector3 anchorA, @NotNull SCNPhysicsBody bodyB,
+            @ByValue SCNVector3 axisB, @ByValue SCNVector3 anchorB);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -218,6 +224,7 @@ public class SCNPhysicsHingeJoint extends SCNPhysicsBehavior {
     /**
      * the first body constrained by the hinge
      */
+    @NotNull
     @Generated
     @Selector("bodyA")
     public native SCNPhysicsBody bodyA();
@@ -225,6 +232,7 @@ public class SCNPhysicsHingeJoint extends SCNPhysicsBehavior {
     /**
      * the second body attached to the hinge.
      */
+    @Nullable
     @Generated
     @Selector("bodyB")
     public native SCNPhysicsBody bodyB();
@@ -235,7 +243,7 @@ public class SCNPhysicsHingeJoint extends SCNPhysicsBehavior {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsHingeJoint initWithCoder(NSCoder coder);
+    public native SCNPhysicsHingeJoint initWithCoder(@NotNull NSCoder coder);
 
     /**
      * the anchor point on which bodyA is attached

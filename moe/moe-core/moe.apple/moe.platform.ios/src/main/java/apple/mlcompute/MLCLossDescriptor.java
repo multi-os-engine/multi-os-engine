@@ -23,11 +23,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCLossDescriptor
- * <p>
+ * 
  * The MLCLossDescriptor specifies a loss filter descriptor.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -59,23 +63,24 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * [@property] numberOfClasses
-     * <p>
+     * 
      * The number of classes parameter. The default value is 1.
-     * <p>
+     * 
      * This parameter is valid only for the loss function MLCLossTypeSoftmaxCrossEntropy.
      */
     @Generated
@@ -83,19 +88,22 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
     @NUInt
     public native long classCount();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -103,9 +111,9 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] delta
-     * <p>
+     * 
      * The delta parameter. The default value is 1.0f.
-     * <p>
+     * 
      * This parameter is valid only for the loss function MLCLossTypeHuber.
      */
     @Generated
@@ -118,7 +126,7 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a loss descriptor object
-     *
+     * 
      * @param lossType      The loss function.
      * @param reductionType The reduction operation
      * @return A new MLCLossDescriptor object
@@ -129,7 +137,7 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a loss descriptor object
-     *
+     * 
      * @param lossType      The loss function.
      * @param reductionType The reduction operation
      * @param weight        The scale factor to apply to each element of a result.
@@ -142,7 +150,7 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a loss descriptor object
-     *
+     * 
      * @param lossType       The loss function.
      * @param reductionType  The reduction operation
      * @param weight         The scale factor to apply to each element of a result.
@@ -157,7 +165,7 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a loss descriptor object
-     *
+     * 
      * @param lossType       The loss function.
      * @param reductionType  The reduction operation
      * @param weight         The scale factor to apply to each element of a result.
@@ -175,9 +183,9 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] epsilon
-     * <p>
+     * 
      * The epsilon parameter. The default value is 1e-7.
-     * <p>
+     * 
      * This parameter is valid only for the loss function MLCLossTypeLog.
      */
     @Generated
@@ -210,15 +218,16 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] labelSmoothing
-     * <p>
+     * 
      * The label smoothing parameter. The default value is 0.0.
-     * <p>
+     * 
      * This parameter is valid only for the loss functions of the following type(s):
      * MLCLossTypeSoftmaxCrossEntropy and MLCLossTypeSigmoidCrossEntropy.
      */
@@ -228,7 +237,7 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] lossType
-     * <p>
+     * 
      * Specifies the loss function.
      */
     @Generated
@@ -242,7 +251,7 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] reductionType
-     * <p>
+     * 
      * The reduction operation performed by the loss function.
      */
     @Generated
@@ -272,7 +281,7 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] weight
-     * <p>
+     * 
      * The scale factor to apply to each element of a result. The default value is 1.0.
      */
     @Generated

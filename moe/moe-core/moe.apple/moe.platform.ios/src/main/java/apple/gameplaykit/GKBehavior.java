@@ -45,10 +45,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A collection of GKGoals or GKBehaviors with weights that can be applied to a GKAgent
  * The sub-goals or sub-behaviors are summed to produce a total force to be applied to an agent
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -80,29 +84,29 @@ public class GKBehavior extends NSObject implements NSFastEnumeration, NSCopying
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Creates a behavior with a single goal and weight
      */
     @Generated
     @Selector("behaviorWithGoal:weight:")
-    public static native GKBehavior behaviorWithGoalWeight(GKGoal goal, float weight);
+    public static native GKBehavior behaviorWithGoalWeight(@NotNull GKGoal goal, float weight);
 
     /**
      * Creates a behavior with an array of goals. All weights are set to 1.0f
      */
     @Generated
     @Selector("behaviorWithGoals:")
-    public static native GKBehavior behaviorWithGoals(NSArray<? extends GKGoal> goals);
+    public static native GKBehavior behaviorWithGoals(@NotNull NSArray<? extends GKGoal> goals);
 
     /**
      * Creates a behavior with two associated arrays of goals and weights
      */
     @Generated
     @Selector("behaviorWithGoals:andWeights:")
-    public static native GKBehavior behaviorWithGoalsAndWeights(NSArray<? extends GKGoal> goals,
-            NSArray<? extends NSNumber> weights);
+    public static native GKBehavior behaviorWithGoalsAndWeights(@NotNull NSArray<? extends GKGoal> goals,
+            @NotNull NSArray<? extends NSNumber> weights);
 
     /**
      * Creates a behavior with a dictionary of goal/weight pairs
@@ -110,22 +114,25 @@ public class GKBehavior extends NSObject implements NSFastEnumeration, NSCopying
     @Generated
     @Selector("behaviorWithWeightedGoals:")
     public static native GKBehavior behaviorWithWeightedGoals(
-            NSDictionary<? extends GKGoal, ? extends NSNumber> weightedGoals);
+            @NotNull NSDictionary<? extends GKGoal, ? extends NSNumber> weightedGoals);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -160,9 +167,10 @@ public class GKBehavior extends NSObject implements NSFastEnumeration, NSCopying
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -190,17 +198,18 @@ public class GKBehavior extends NSObject implements NSFastEnumeration, NSCopying
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
+    public native long countByEnumeratingWithStateObjectsCount(@NotNull VoidPtr state,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
     /**
      * The number of GKGoals in this behavior
@@ -217,6 +226,7 @@ public class GKBehavior extends NSObject implements NSFastEnumeration, NSCopying
     /**
      * Supports getting goals via a [int] subscript.
      */
+    @NotNull
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native GKGoal objectAtIndexedSubscript(@NUInt long idx);
@@ -224,9 +234,10 @@ public class GKBehavior extends NSObject implements NSFastEnumeration, NSCopying
     /**
      * Supports getting a weight via a [goal] subscript.
      */
+    @Nullable
     @Generated
     @Selector("objectForKeyedSubscript:")
-    public native NSNumber objectForKeyedSubscript(GKGoal goal);
+    public native NSNumber objectForKeyedSubscript(@NotNull GKGoal goal);
 
     /**
      * Removes all the goals on the behavior.
@@ -237,37 +248,37 @@ public class GKBehavior extends NSObject implements NSFastEnumeration, NSCopying
 
     /**
      * Remove the indicated goal from this behavior.
-     *
+     * 
      * @param goal the goal to be removed
      */
     @Generated
     @Selector("removeGoal:")
-    public native void removeGoal(GKGoal goal);
+    public native void removeGoal(@NotNull GKGoal goal);
 
     /**
      * Supports setting a weight via a [goal] subscript.
      */
     @Generated
     @Selector("setObject:forKeyedSubscript:")
-    public native void setObjectForKeyedSubscript(NSNumber weight, GKGoal goal);
+    public native void setObjectForKeyedSubscript(@NotNull NSNumber weight, @NotNull GKGoal goal);
 
     /**
      * Adds a new goal or changes the weight of the existing goal in this behavior.
      * If the goal does not exist in this behavior, it is added.
-     *
+     * 
      * @param weight the weight for this goal
      * @param goal   the goal who's weight to change
      */
     @Generated
     @Selector("setWeight:forGoal:")
-    public native void setWeightForGoal(float weight, GKGoal goal);
+    public native void setWeightForGoal(float weight, @NotNull GKGoal goal);
 
     /**
      * Gets the current weight for a given goal.
-     *
+     * 
      * @return the weight of the goal, or 0 if there is no such goal on this behavior
      */
     @Generated
     @Selector("weightForGoal:")
-    public native float weightForGoal(GKGoal goal);
+    public native float weightForGoal(@NotNull GKGoal goal);
 }

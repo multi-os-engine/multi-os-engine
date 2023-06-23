@@ -25,17 +25,19 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImageCanny
- * <p>
+ * 
  * The MPSImageCanny implements the Canny edge detection algorithm.
  * When the color model of the source and destination textures match, the
  * filter is applied to each channel seperately. If the destination is monochrome
  * but source multichannel, the source will be converted to grayscale using the
  * linear gray color transform vector (v).
  * Luminance = v[0] * pixel.x + v[1] * pixel.y + v[2] * pixel.z;
- * <p>
+ * 
  * The canny edge detection algorithm consists of 5 steps:
  * 1. Blur the source image using a Gaussian blur with a sigma parameter
  * 2. Use horizontal and vertical Sobel filters to find a gradient magnitude and
@@ -61,6 +63,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * A pixel can be connected through any of its 8 neighbors. Any pixel marked
  * as a true edge is output with a high value, and all others are considered
  * background and output with a low value.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -92,33 +96,37 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] colorTransform
-     * <p>
+     * 
      * Returns a pointer to the array of three floats used to convert RGBA, RGB or RG images
      * to the destination format when the destination is monochrome.
      * Value is readonly and user should not modify or free.
      */
+    @NotNull
     @Generated
     @Selector("colorTransform")
     public native ConstFloatPtr colorTransform();
@@ -138,7 +146,7 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
 
     /**
      * [@property] highThreshold
-     * <p>
+     * 
      * Read-write value used to set the high threshold for double thresholding, value is normalized.
      * Default is 0.4
      */
@@ -152,40 +160,41 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSImageCanny initWithCoder(NSCoder aDecoder);
+    public native MPSImageCanny initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSImageCanny initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageCanny initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize a Canny filter on a given device using the default color
      * transform and default sigma value for Gaussian blur.
      * Default transform: BT.601/JPEG {0.299f, 0.587f, 0.114f}
      * Default sigma: sqrt(2)
-     * <p>
+     * 
      * For non-default parameters, use
      * -initWithDevice:linearGrayColorTransform:sigma:
-     *
+     * 
      * @param device The device the filter will run on
      * @return A valid object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImageCanny initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageCanny initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize a Canny filter on a given device with a non-default color transform and
@@ -204,7 +213,7 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
      * ceil (sqrt(-log(0.01)*2)*sigma) ~ ceil(3.7*sigma)
      * [@endcode]
      * as rough estimate of filter width
-     *
+     * 
      * @param device    The device the filter will run on
      * @param transform Array of three floats describing the rgb to gray scale color transform.
      * @param sigma     The standard deviation of gaussian blur filter.
@@ -214,7 +223,7 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
     @Generated
     @Selector("initWithDevice:linearToGrayScaleTransform:sigma:")
     public native MPSImageCanny initWithDeviceLinearToGrayScaleTransformSigma(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, ConstFloatPtr transform, float sigma);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull ConstFloatPtr transform, float sigma);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -233,13 +242,14 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] lowThreshold
-     * <p>
+     * 
      * Read-write value used to set the low threshold for double thresholding, value is normalized.
      * Default is 0.2
      */
@@ -262,7 +272,7 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
 
     /**
      * [@property] highThreshold
-     * <p>
+     * 
      * Read-write value used to set the high threshold for double thresholding, value is normalized.
      * Default is 0.4
      */
@@ -272,7 +282,7 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
 
     /**
      * [@property] lowThreshold
-     * <p>
+     * 
      * Read-write value used to set the low threshold for double thresholding, value is normalized.
      * Default is 0.2
      */
@@ -282,7 +292,7 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
 
     /**
      * [@property] useFastMode
-     * <p>
+     * 
      * Read-write value used to change algorithm to an approximation of the true Canny Edge detection Algorithm.
      * When true, a limit is placed on how far a single strong edge can extend. The result will be similar to a true
      * output
@@ -302,7 +312,7 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
 
     /**
      * [@property] sigma
-     * <p>
+     * 
      * Read-only sigma value used in performing Gaussian blur of the image
      */
     @Generated
@@ -325,7 +335,7 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
 
     /**
      * [@property] useFastMode
-     * <p>
+     * 
      * Read-write value used to change algorithm to an approximation of the true Canny Edge detection Algorithm.
      * When true, a limit is placed on how far a single strong edge can extend. The result will be similar to a true
      * output

@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("NetworkExtension")
@@ -39,7 +40,10 @@ public final class NetworkExtension {
 
     /**
      * [@const] NEAppProxyErrorDomain The NEAppProxyFlow error domain
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -47,7 +51,10 @@ public final class NetworkExtension {
 
     /**
      * [@const] NETunnelProviderErrorDomain The tunnel provider error domain
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -55,7 +62,10 @@ public final class NetworkExtension {
 
     /**
      * [@const] NEVPNErrorDomain The VPN error domain
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -64,7 +74,10 @@ public final class NetworkExtension {
     /**
      * [@const] NEVPNConfigurationChangeNotification Name of the NSNotification that is posted when the VPN
      * configuration changes.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -72,7 +85,10 @@ public final class NetworkExtension {
 
     /**
      * Key for RemediationURL
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -80,7 +96,10 @@ public final class NetworkExtension {
 
     /**
      * Key for Remediation button text
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -88,7 +107,10 @@ public final class NetworkExtension {
 
     /**
      * [@const] NEFilterErrorDomain The filter error domain
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -97,7 +119,10 @@ public final class NetworkExtension {
     /**
      * [@const] NEFilterConfigurationDidChangeNotification Name of the NSNotification that is posted when the filter
      * configuration changes.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -105,17 +130,20 @@ public final class NetworkExtension {
 
     /**
      * [@const] kNEHotspotHelperOptionDisplayName
-     * <p>
+     * 
      * The string displayed in Wi-Fi Settings for a network handled by
      * the application.
-     * <p>
+     * 
      * This key specifies the display name for the application, if an alternate
      * name is desired. If this property is not specified, the application's
      * name is used.
-     * <p>
+     * 
      * This name appears in Settings -> Wi-Fi underneath the Wi-Fi network
      * name if the helper indicated that it was able to handle the network.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -123,7 +151,10 @@ public final class NetworkExtension {
 
     /**
      * [@const] NEVPNStatusDidChangeNotification Name of the NSNotification that is posted when the VPN status changes.
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -133,7 +164,10 @@ public final class NetworkExtension {
      * [@const] NEVPNConnectionStartOptionUsername Specify this key in the options dictionary passed to
      * startVPNTunnelWithOptions:returningError: to override the username saved in the configuration. The value is a
      * string
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -143,7 +177,10 @@ public final class NetworkExtension {
      * [@const] NEVPNConnectionStartOptionPassword Specify this key in the options dictionary passed to
      * startVPNTunnelWithOptions:returningError: to override the password saved in the configuration. The value is a
      * string
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -151,7 +188,10 @@ public final class NetworkExtension {
 
     /**
      * [@const] NEDNSProxyManagerErrorDomain The DNS proxy error domain
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -160,7 +200,10 @@ public final class NetworkExtension {
     /**
      * [@const] NEDNSProxyConfigurationDidChangeNotification Name of the NSNotification that is posted when the DNS
      * proxy configuration changes.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -168,7 +211,10 @@ public final class NetworkExtension {
 
     /**
      * [@const] NEHotspotConfigurationErrorDomain The Hotspot Configuration error domain
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -176,7 +222,10 @@ public final class NetworkExtension {
 
     /**
      * [@const] NEDNSSettingsManagerErrorDomain The DNS settings error domain
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -185,7 +234,10 @@ public final class NetworkExtension {
     /**
      * [@const] NEDNSSettingsConfigurationDidChangeNotification Name of the NSNotification that is posted when the DNS
      * settings configuration changes.
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -193,9 +245,23 @@ public final class NetworkExtension {
 
     /**
      * [@const] NEAppPushErrorDomain The app push manager error domain
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NEAppPushErrorDomain();
+
+    /**
+     * [@const] NEVPNConnectionErrorDomain The VPN connection error domain
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NEVPNConnectionErrorDomain();
 }

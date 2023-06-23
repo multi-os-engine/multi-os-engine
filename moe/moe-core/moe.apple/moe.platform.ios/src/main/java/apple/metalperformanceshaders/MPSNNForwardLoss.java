@@ -24,17 +24,21 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNForwardLoss
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * The MPSNNForwardLoss filter specifies a version of the loss filter which separates the forward
  * computation from the gradient computation. In order to compute gradients for the loss filter
  * use @ref MPSNNLossGradient filter and in order to start the gradient computation of an arbitrary
  * image use the @ref MPSNNInitialGradient filter.
  * NOTE: This filter does not support non-default offset or cliprects and setting them to other
  * than default values will result in undefined results.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -66,22 +70,25 @@ public class MPSNNForwardLoss extends MPSCNNKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -113,30 +120,31 @@ public class MPSNNForwardLoss extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNForwardLoss initWithCoder(NSCoder aDecoder);
+    public native MPSNNForwardLoss initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * <NSSecureCoding> support
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNNForwardLoss initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNForwardLoss initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNNForwardLoss initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNForwardLoss initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize the loss forward pass filter with a loss descriptor.
-     *
+     * 
      * @param device         The device the filter will run on.
      * @param lossDescriptor The loss descriptor.
      * @return A valid MPSNNForwardLoss object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:lossDescriptor:")
-    public native MPSNNForwardLoss initWithDeviceLossDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MPSCNNLossDescriptor lossDescriptor);
+    public native MPSNNForwardLoss initWithDeviceLossDescriptor(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSCNNLossDescriptor lossDescriptor);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -155,9 +163,10 @@ public class MPSNNForwardLoss extends MPSCNNKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Selector("labelSmoothing")
@@ -241,6 +250,9 @@ public class MPSNNForwardLoss extends MPSCNNKernel {
     @Selector("weight")
     public native float weight();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("reduceAcrossBatch")
     public native boolean reduceAcrossBatch();

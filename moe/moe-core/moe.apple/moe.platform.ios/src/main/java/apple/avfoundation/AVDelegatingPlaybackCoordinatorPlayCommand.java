@@ -23,11 +23,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVDelegatingPlaybackCoordinatorPlayCommand
- * <p>
+ * 
  * A playback command requesting playback with specific timing.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("AVFoundation")
@@ -59,22 +63,25 @@ public class AVDelegatingPlaybackCoordinatorPlayCommand extends AVDelegatingPlay
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -94,7 +101,7 @@ public class AVDelegatingPlaybackCoordinatorPlayCommand extends AVDelegatingPlay
 
     /**
      * [@property] hostClockTime
-     * <p>
+     * 
      * This is the host clock time (see CMClockGetHostTimeClock()) defining when playback should start (or should have
      * started) at the given itemTime.
      */
@@ -126,9 +133,9 @@ public class AVDelegatingPlaybackCoordinatorPlayCommand extends AVDelegatingPlay
 
     /**
      * [@property] itemTime
-     * <p>
+     * 
      * The itemTime that playback should begin at.
-     * <p>
+     * 
      * The receiver of this command should verify that data is loaded for the requested time and potentially begin
      * loading it before beginning playback.
      * It is not important to load data for time exactly. If data "similar" to time is already loaded, it is acceptable
@@ -144,9 +151,10 @@ public class AVDelegatingPlaybackCoordinatorPlayCommand extends AVDelegatingPlay
     @ByValue
     public native CMTime itemTime();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,7 +163,7 @@ public class AVDelegatingPlaybackCoordinatorPlayCommand extends AVDelegatingPlay
 
     /**
      * [@property] rate
-     * <p>
+     * 
      * Playback rate. Will always be non-zero.
      */
     @Generated

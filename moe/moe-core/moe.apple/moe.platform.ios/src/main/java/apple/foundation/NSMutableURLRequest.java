@@ -36,13 +36,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSMutableURLRequest
- * <p>
+ * 
  * An NSMutableURLRequest object represents a mutable URL load
  * request in a manner independent of protocol and URL scheme.
- * <p>
+ * 
  * This specialization of NSURLRequest is provided to aid
  * developers who may find it more convenient to mutate a single request
  * object for a series of URL loads instead of creating an immutable
@@ -65,6 +67,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * NSMutableHTTPURLRequest category on NSMutableURLRequest is an
  * example.
  * </ul>
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("Foundation")
@@ -96,22 +100,25 @@ public class NSMutableURLRequest extends NSURLRequest {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -146,9 +153,10 @@ public class NSMutableURLRequest extends NSURLRequest {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,11 +165,11 @@ public class NSMutableURLRequest extends NSURLRequest {
 
     @Generated
     @Selector("requestWithURL:")
-    public static native NSMutableURLRequest requestWithURL(NSURL URL);
+    public static native NSMutableURLRequest requestWithURL(@NotNull NSURL URL);
 
     @Generated
     @Selector("requestWithURL:cachePolicy:timeoutInterval:")
-    public static native NSMutableURLRequest requestWithURLCachePolicyTimeoutInterval(NSURL URL,
+    public static native NSMutableURLRequest requestWithURLCachePolicyTimeoutInterval(@NotNull NSURL URL,
             @NUInt long cachePolicy, double timeoutInterval);
 
     @Generated
@@ -191,23 +199,25 @@ public class NSMutableURLRequest extends NSURLRequest {
 
     /**
      * Sets the request body data of the receiver.
-     * <p>
+     * 
      * This data is sent as the message body of the request, as
      * in done in an HTTP POST request.
      */
+    @Nullable
     @Generated
     @Selector("HTTPBody")
     public native NSData HTTPBody();
 
     /**
      * Sets the request body to be the contents of the given stream.
-     * <p>
+     * 
      * The provided stream should be unopened; the request will take
      * over the stream's delegate. The entire stream's contents will be
      * transmitted as the HTTP body of the request. Note that the body stream
      * and the body data (set by setHTTPBody:, above) are mutually exclusive
      * - setting one will clear the other.
      */
+    @Nullable
     @Generated
     @Selector("HTTPBodyStream")
     public native NSInputStream HTTPBodyStream();
@@ -215,6 +225,7 @@ public class NSMutableURLRequest extends NSURLRequest {
     /**
      * Sets the HTTP request method of the receiver.
      */
+    @NotNull
     @Generated
     @Selector("HTTPMethod")
     public native String HTTPMethod();
@@ -223,7 +234,7 @@ public class NSMutableURLRequest extends NSURLRequest {
      * Decide whether default cookie handling will happen for
      * this request (YES if cookies should be sent with and set for this request;
      * otherwise NO).
-     * <p>
+     * 
      * The default is YES - in other words, cookies are sent from and
      * stored to the cookie manager by default.
      * NOTE: In releases prior to 10.3, this value is ignored
@@ -236,7 +247,7 @@ public class NSMutableURLRequest extends NSURLRequest {
      * Sets whether the request should not wait for the previous response
      * before transmitting (YES if the receiver should transmit before the previous response is
      * received. NO to wait for the previous response before transmitting)
-     * <p>
+     * 
      * Calling this method with a YES value does not guarantee HTTP
      * pipelining behavior. This method may have no effect if an HTTP proxy is
      * configured, or if the HTTP request uses an unsafe request method (e.g., POST
@@ -248,6 +259,8 @@ public class NSMutableURLRequest extends NSURLRequest {
      * some servers report themselves as being HTTP 1.1 but do not support
      * pipelining (disconnecting, sending resources misordered, omitting part of
      * a resource, etc.).
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("HTTPShouldUsePipelining")
@@ -256,16 +269,17 @@ public class NSMutableURLRequest extends NSURLRequest {
     /**
      * The URL of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
     /**
      * addValue:forHTTPHeaderField:
-     * <p>
+     * 
      * Adds an HTTP header field in the current header
      * dictionary.
-     * <p>
+     * 
      * This method provides a way to add values to header
      * fields incrementally. If a value was previously set for the given
      * header field, the given value is appended to the previously-existing
@@ -273,18 +287,18 @@ public class NSMutableURLRequest extends NSURLRequest {
      * is added by the implementation, and should not be added to the given
      * value by the caller. Note that, in keeping with the HTTP RFC, HTTP
      * header field names are case-insensitive.
-     *
+     * 
      * @param value the header field value.
      * @param field the header field name (case-insensitive).
      */
     @Generated
     @Selector("addValue:forHTTPHeaderField:")
-    public native void addValueForHTTPHeaderField(String value, String field);
+    public native void addValueForHTTPHeaderField(@NotNull String value, @NotNull String field);
 
     /**
      * Sets the HTTP header fields of the receiver to the given
      * dictionary.
-     * <p>
+     * 
      * This method replaces all header fields that may have
      * existed before this method call.
      * <p>Since HTTP header fields must be string values, each object and
@@ -293,6 +307,7 @@ public class NSMutableURLRequest extends NSURLRequest {
      * the key or value for a key-value pair answers NO when sent this
      * message, the key-value pair is skipped.
      */
+    @Nullable
     @Generated
     @Selector("allHTTPHeaderFields")
     public native NSDictionary<String, String> allHTTPHeaderFields();
@@ -300,9 +315,11 @@ public class NSMutableURLRequest extends NSURLRequest {
     /**
      * sets whether a connection created with this request is allowed to use
      * the built in cellular radios (if present).
-     * <p>
+     * 
      * NO if the receiver should not be allowed to use the built in
      * cellular radios to satisfy the request, YES otherwise. The default is YES.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("allowsCellularAccess")
@@ -310,13 +327,15 @@ public class NSMutableURLRequest extends NSURLRequest {
 
     /**
      * bindToHotspotHelperCommand:
-     * <p>
+     * 
      * Binds the NSMutableURLRequest to the network interface associated with
      * the NEHotspotHelperCommand object.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("bindToHotspotHelperCommand:")
-    public native void bindToHotspotHelperCommand(NEHotspotHelperCommand command);
+    public native void bindToHotspotHelperCommand(@NotNull NEHotspotHelperCommand command);
 
     /**
      * The cache policy of the receiver.
@@ -332,20 +351,20 @@ public class NSMutableURLRequest extends NSURLRequest {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMutableURLRequest initWithCoder(NSCoder coder);
+    public native NSMutableURLRequest initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithURL:")
-    public native NSMutableURLRequest initWithURL(NSURL URL);
+    public native NSMutableURLRequest initWithURL(@NotNull NSURL URL);
 
     @Generated
     @Selector("initWithURL:cachePolicy:timeoutInterval:")
-    public native NSMutableURLRequest initWithURLCachePolicyTimeoutInterval(NSURL URL, @NUInt long cachePolicy,
+    public native NSMutableURLRequest initWithURLCachePolicyTimeoutInterval(@NotNull NSURL URL, @NUInt long cachePolicy,
             double timeoutInterval);
 
     /**
      * Sets the main document URL
-     * <p>
+     * 
      * The caller should pass the URL for an appropriate main
      * document, if known. For example, when loading a web page, the URL
      * of the main html document for the top-level frame should be
@@ -354,15 +373,18 @@ public class NSMutableURLRequest extends NSURLRequest {
      * as a sub-resource of a user-specified URL, and possibly other things
      * in the future.
      */
+    @Nullable
     @Generated
     @Selector("mainDocumentURL")
     public native NSURL mainDocumentURL();
 
     /**
      * Sets the NSURLRequestNetworkServiceType to associate with this request
-     * <p>
+     * 
      * This method is used to provide the network layers with a hint as to the purpose
      * of the request. Most clients should not need to use this method.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("networkServiceType")
@@ -372,7 +394,7 @@ public class NSMutableURLRequest extends NSURLRequest {
     /**
      * Sets the HTTP header fields of the receiver to the given
      * dictionary.
-     * <p>
+     * 
      * This method replaces all header fields that may have
      * existed before this method call.
      * <p>Since HTTP header fields must be string values, each object and
@@ -383,14 +405,16 @@ public class NSMutableURLRequest extends NSURLRequest {
      */
     @Generated
     @Selector("setAllHTTPHeaderFields:")
-    public native void setAllHTTPHeaderFields(NSDictionary<String, String> value);
+    public native void setAllHTTPHeaderFields(@Nullable NSDictionary<String, String> value);
 
     /**
      * sets whether a connection created with this request is allowed to use
      * the built in cellular radios (if present).
-     * <p>
+     * 
      * NO if the receiver should not be allowed to use the built in
      * cellular radios to satisfy the request, YES otherwise. The default is YES.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setAllowsCellularAccess:")
@@ -405,17 +429,17 @@ public class NSMutableURLRequest extends NSURLRequest {
 
     /**
      * Sets the request body data of the receiver.
-     * <p>
+     * 
      * This data is sent as the message body of the request, as
      * in done in an HTTP POST request.
      */
     @Generated
     @Selector("setHTTPBody:")
-    public native void setHTTPBody(NSData value);
+    public native void setHTTPBody(@Nullable NSData value);
 
     /**
      * Sets the request body to be the contents of the given stream.
-     * <p>
+     * 
      * The provided stream should be unopened; the request will take
      * over the stream's delegate. The entire stream's contents will be
      * transmitted as the HTTP body of the request. Note that the body stream
@@ -424,20 +448,20 @@ public class NSMutableURLRequest extends NSURLRequest {
      */
     @Generated
     @Selector("setHTTPBodyStream:")
-    public native void setHTTPBodyStream(NSInputStream value);
+    public native void setHTTPBodyStream(@Nullable NSInputStream value);
 
     /**
      * Sets the HTTP request method of the receiver.
      */
     @Generated
     @Selector("setHTTPMethod:")
-    public native void setHTTPMethod(String value);
+    public native void setHTTPMethod(@NotNull String value);
 
     /**
      * Decide whether default cookie handling will happen for
      * this request (YES if cookies should be sent with and set for this request;
      * otherwise NO).
-     * <p>
+     * 
      * The default is YES - in other words, cookies are sent from and
      * stored to the cookie manager by default.
      * NOTE: In releases prior to 10.3, this value is ignored
@@ -450,7 +474,7 @@ public class NSMutableURLRequest extends NSURLRequest {
      * Sets whether the request should not wait for the previous response
      * before transmitting (YES if the receiver should transmit before the previous response is
      * received. NO to wait for the previous response before transmitting)
-     * <p>
+     * 
      * Calling this method with a YES value does not guarantee HTTP
      * pipelining behavior. This method may have no effect if an HTTP proxy is
      * configured, or if the HTTP request uses an unsafe request method (e.g., POST
@@ -462,6 +486,8 @@ public class NSMutableURLRequest extends NSURLRequest {
      * some servers report themselves as being HTTP 1.1 but do not support
      * pipelining (disconnecting, sending resources misordered, omitting part of
      * a resource, etc.).
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setHTTPShouldUsePipelining:")
@@ -469,7 +495,7 @@ public class NSMutableURLRequest extends NSURLRequest {
 
     /**
      * Sets the main document URL
-     * <p>
+     * 
      * The caller should pass the URL for an appropriate main
      * document, if known. For example, when loading a web page, the URL
      * of the main html document for the top-level frame should be
@@ -480,13 +506,15 @@ public class NSMutableURLRequest extends NSURLRequest {
      */
     @Generated
     @Selector("setMainDocumentURL:")
-    public native void setMainDocumentURL(NSURL value);
+    public native void setMainDocumentURL(@Nullable NSURL value);
 
     /**
      * Sets the NSURLRequestNetworkServiceType to associate with this request
-     * <p>
+     * 
      * This method is used to provide the network layers with a hint as to the purpose
      * of the request. Most clients should not need to use this method.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setNetworkServiceType:")
@@ -494,7 +522,7 @@ public class NSMutableURLRequest extends NSURLRequest {
 
     /**
      * Sets the timeout interval of the receiver.
-     * <p>
+     * 
      * The timeout interval specifies the limit on the idle
      * interval allotted to a request in the process of loading. The "idle
      * interval" is defined as the period of time that has passed since the
@@ -515,24 +543,24 @@ public class NSMutableURLRequest extends NSURLRequest {
      */
     @Generated
     @Selector("setURL:")
-    public native void setURL(NSURL value);
+    public native void setURL(@Nullable NSURL value);
 
     /**
      * setValue:forHTTPHeaderField:
-     * <p>
+     * 
      * Sets the value of the given HTTP header field.
-     * <p>
+     * 
      * If a value was previously set for the given header
      * field, that value is replaced with the given value. Note that, in
      * keeping with the HTTP RFC, HTTP header field names are
      * case-insensitive.
-     *
+     * 
      * @param value the header field value.
      * @param field the header field name (case-insensitive).
      */
     @Generated
     @Selector("setValue:forHTTPHeaderField:")
-    public native void setValueForHTTPHeaderField(String value, String field);
+    public native void setValueForHTTPHeaderField(@Nullable String value, @NotNull String field);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -542,7 +570,7 @@ public class NSMutableURLRequest extends NSURLRequest {
 
     /**
      * Sets the timeout interval of the receiver.
-     * <p>
+     * 
      * The timeout interval specifies the limit on the idle
      * interval allotted to a request in the process of loading. The "idle
      * interval" is defined as the period of time that has passed since the
@@ -561,9 +589,11 @@ public class NSMutableURLRequest extends NSURLRequest {
     /**
      * sets whether a connection created with this request is allowed to use
      * network interfaces which have been marked as constrained.
-     * <p>
+     * 
      * NO if the receiver should not be allowed to use an interface marked as constrained to
-     * satify the request, YES otherwise.
+     * satisfy the request, YES otherwise.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("allowsConstrainedNetworkAccess")
@@ -572,9 +602,11 @@ public class NSMutableURLRequest extends NSURLRequest {
     /**
      * sets whether a connection created with this request is allowed to use
      * network interfaces which have been marked as expensive.
-     * <p>
+     * 
      * NO if the receiver should not be allowed to use an interface marked as expensive to
-     * satify the request, YES otherwise.
+     * satisfy the request, YES otherwise.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("allowsExpensiveNetworkAccess")
@@ -583,9 +615,11 @@ public class NSMutableURLRequest extends NSURLRequest {
     /**
      * sets whether a connection created with this request is allowed to use
      * network interfaces which have been marked as constrained.
-     * <p>
+     * 
      * NO if the receiver should not be allowed to use an interface marked as constrained to
-     * satify the request, YES otherwise.
+     * satisfy the request, YES otherwise.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAllowsConstrainedNetworkAccess:")
@@ -594,9 +628,11 @@ public class NSMutableURLRequest extends NSURLRequest {
     /**
      * sets whether a connection created with this request is allowed to use
      * network interfaces which have been marked as expensive.
-     * <p>
+     * 
      * NO if the receiver should not be allowed to use an interface marked as expensive to
-     * satify the request, YES otherwise.
+     * satisfy the request, YES otherwise.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAllowsExpensiveNetworkAccess:")
@@ -605,9 +641,11 @@ public class NSMutableURLRequest extends NSURLRequest {
     /**
      * returns whether we assume that server supports HTTP/3. Enables QUIC
      * racing without HTTP/3 service discovery.
-     *
+     * 
      * @return YES if server endpoint is known to support HTTP/3. Defaults to NO.
      *         The default may be YES in a future OS update.
+     * 
+     *         API-Since: 14.5
      */
     @Generated
     @Selector("assumesHTTP3Capable")
@@ -615,9 +653,11 @@ public class NSMutableURLRequest extends NSURLRequest {
 
     /**
      * Sets the NSURLRequestAttribution to associate with this request.
-     * <p>
+     * 
      * Set to NSURLRequestAttributionUser if the URL was specified by the
      * user. Defaults to NSURLRequestAttributionDeveloper.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("attribution")
@@ -627,9 +667,11 @@ public class NSMutableURLRequest extends NSURLRequest {
     /**
      * returns whether we assume that server supports HTTP/3. Enables QUIC
      * racing without HTTP/3 service discovery.
-     *
+     * 
      * @return YES if server endpoint is known to support HTTP/3. Defaults to NO.
      *         The default may be YES in a future OS update.
+     * 
+     *         API-Since: 14.5
      */
     @Generated
     @Selector("setAssumesHTTP3Capable:")
@@ -637,11 +679,37 @@ public class NSMutableURLRequest extends NSURLRequest {
 
     /**
      * Sets the NSURLRequestAttribution to associate with this request.
-     * <p>
+     * 
      * Set to NSURLRequestAttributionUser if the URL was specified by the
      * user. Defaults to NSURLRequestAttributionDeveloper.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAttribution:")
     public native void setAttribution(@NUInt long value);
+
+    /**
+     * sets whether a request is required to do DNSSEC validation during DNS lookup.
+     * 
+     * YES, if the DNS lookup for this request should require DNSSEC validation,
+     * No otherwise. Defaults to NO.
+     * 
+     * API-Since: 16.1
+     */
+    @Generated
+    @Selector("requiresDNSSECValidation")
+    public native boolean requiresDNSSECValidation();
+
+    /**
+     * sets whether a request is required to do DNSSEC validation during DNS lookup.
+     * 
+     * YES, if the DNS lookup for this request should require DNSSEC validation,
+     * No otherwise. Defaults to NO.
+     * 
+     * API-Since: 16.1
+     */
+    @Generated
+    @Selector("setRequiresDNSSECValidation:")
+    public native void setRequiresDNSSECValidation(boolean value);
 }

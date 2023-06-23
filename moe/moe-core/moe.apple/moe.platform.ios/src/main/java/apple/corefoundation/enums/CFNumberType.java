@@ -79,10 +79,14 @@ public final class CFNumberType {
     @Generated @NInt public static final long CFIndexType = 0x000000000000000EL;
     /**
      * Other
+     * 
+     * API-Since: 2.0
      */
     @Generated @NInt public static final long NSIntegerType = 0x000000000000000FL;
     /**
      * Other
+     * 
+     * API-Since: 2.0
      */
     @Generated @NInt public static final long CGFloatType = 0x0000000000000010L;
     /**

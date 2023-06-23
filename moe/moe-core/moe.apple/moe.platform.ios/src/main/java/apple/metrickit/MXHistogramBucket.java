@@ -26,15 +26,19 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MXHistogramBucket
- * <p>
+ * 
  * A class that represents a bucket within an MXHistogram
- * <p>
+ * 
  * Histogram buckets are sorted in ascending order.
- * <p>
+ * 
  * Histogram bucket start and end values are exclusive.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetricKit")
@@ -66,11 +70,11 @@ public class MXHistogramBucket<_UnitType> extends NSObject implements NSSecureCo
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] bucketCount
-     * <p>
+     * 
      * An NSUInteger representing the number of samples in this histogram bucket.
      */
     @Generated
@@ -80,36 +84,41 @@ public class MXHistogramBucket<_UnitType> extends NSObject implements NSSecureCo
 
     /**
      * [@property] bucketEnd
-     * <p>
+     * 
      * An NSMeasurement representing the end of a histogram bucket.
      */
+    @NotNull
     @Generated
     @Selector("bucketEnd")
     public native NSMeasurement<NSUnit> bucketEnd();
 
     /**
      * [@property] bucketStart
-     * <p>
+     * 
      * An NSMeasurement representing the start of a histogram bucket.
      */
+    @NotNull
     @Generated
     @Selector("bucketStart")
     public native NSMeasurement<NSUnit> bucketStart();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,7 +133,7 @@ public class MXHistogramBucket<_UnitType> extends NSObject implements NSSecureCo
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -137,7 +146,7 @@ public class MXHistogramBucket<_UnitType> extends NSObject implements NSSecureCo
 
     @Generated
     @Selector("initWithCoder:")
-    public native MXHistogramBucket<?> initWithCoder(NSCoder coder);
+    public native MXHistogramBucket<?> initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -156,9 +165,10 @@ public class MXHistogramBucket<_UnitType> extends NSObject implements NSSecureCo
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

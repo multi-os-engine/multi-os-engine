@@ -21,12 +21,26 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * NSItemProvider-related error codes
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class NSItemProviderErrorCode {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long UnknownError = 0xFFFFFFFFFFFFFFFFL;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long ItemUnavailableError = 0xFFFFFFFFFFFFFC18L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long UnexpectedValueClassError = 0xFFFFFFFFFFFFFBB4L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long UnavailableCoercionError = 0xFFFFFFFFFFFFFB50L;
 
     @Generated

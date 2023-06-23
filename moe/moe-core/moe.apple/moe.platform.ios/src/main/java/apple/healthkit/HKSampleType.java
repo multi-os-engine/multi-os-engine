@@ -39,11 +39,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * HKSampleType
- * <p>
+ * 
  * Represents a type of HKSample.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HealthKit")
@@ -63,6 +67,7 @@ public class HKSampleType extends HKObjectType {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    @NotNull
     @Generated
     @Selector("activitySummaryType")
     public static native HKActivitySummaryType activitySummaryType();
@@ -79,37 +84,43 @@ public class HKSampleType extends HKObjectType {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @Nullable
     @Generated
     @Selector("categoryTypeForIdentifier:")
-    public static native HKCategoryType categoryTypeForIdentifier(String identifier);
+    public static native HKCategoryType categoryTypeForIdentifier(@NotNull String identifier);
 
+    @Nullable
     @Generated
     @Selector("characteristicTypeForIdentifier:")
-    public static native HKCharacteristicType characteristicTypeForIdentifier(String identifier);
+    public static native HKCharacteristicType characteristicTypeForIdentifier(@NotNull String identifier);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @Nullable
     @Generated
     @Selector("correlationTypeForIdentifier:")
-    public static native HKCorrelationType correlationTypeForIdentifier(String identifier);
+    public static native HKCorrelationType correlationTypeForIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -119,9 +130,10 @@ public class HKSampleType extends HKObjectType {
     @Selector("description")
     public static native String description_static();
 
+    @Nullable
     @Generated
     @Selector("documentTypeForIdentifier:")
-    public static native HKDocumentType documentTypeForIdentifier(String identifier);
+    public static native HKDocumentType documentTypeForIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("hash")
@@ -145,18 +157,20 @@ public class HKSampleType extends HKObjectType {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native HKSampleType new_objc();
 
+    @Nullable
     @Generated
     @Selector("quantityTypeForIdentifier:")
-    public static native HKQuantityType quantityTypeForIdentifier(String identifier);
+    public static native HKQuantityType quantityTypeForIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -183,6 +197,7 @@ public class HKSampleType extends HKObjectType {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("workoutType")
     public static native HKWorkoutType workoutType();
@@ -193,7 +208,7 @@ public class HKSampleType extends HKObjectType {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKSampleType initWithCoder(NSCoder coder);
+    public native HKSampleType initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -201,22 +216,27 @@ public class HKSampleType extends HKObjectType {
         return supportsSecureCoding();
     }
 
+    @Nullable
     @Generated
     @Selector("seriesTypeForIdentifier:")
-    public static native HKSeriesType seriesTypeForIdentifier(String identifier);
+    public static native HKSeriesType seriesTypeForIdentifier(@NotNull String identifier);
 
+    @NotNull
     @Generated
     @Selector("audiogramSampleType")
     public static native HKAudiogramSampleType audiogramSampleType();
 
+    @Nullable
     @Generated
     @Selector("clinicalTypeForIdentifier:")
-    public static native HKClinicalType clinicalTypeForIdentifier(String identifier);
+    public static native HKClinicalType clinicalTypeForIdentifier(@NotNull String identifier);
 
     /**
      * [@property] isMaximumDurationRestricted
-     * <p>
+     * 
      * Returns YES if the start and end date for samples of this type are restricted by a maximum duration.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isMaximumDurationRestricted")
@@ -224,8 +244,10 @@ public class HKSampleType extends HKObjectType {
 
     /**
      * [@property] isMinimumDurationRestricted
-     * <p>
+     * 
      * Returns YES if the start and end date for samples of this type are restricted by a minimum duration.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isMinimumDurationRestricted")
@@ -233,11 +255,13 @@ public class HKSampleType extends HKObjectType {
 
     /**
      * [@property] maximumAllowedDuration
-     * <p>
+     * 
      * When the duration is restricted for samples of this type, returns the maximum duration allowed,
      * calculated as the difference between end and start dates.
-     * <p>
+     * 
      * Throws an exception if there is no maximum restriction on duration for samples of this type.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("maximumAllowedDuration")
@@ -245,28 +269,38 @@ public class HKSampleType extends HKObjectType {
 
     /**
      * [@property] minimumAllowedDuration
-     * <p>
+     * 
      * When the duration is restricted for samples of this type, returns the minimum duration allowed,
      * calculated as the difference between end and start dates.
-     * <p>
+     * 
      * Throws an exception if there is no minimum restriction on duration for samples of this type.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("minimumAllowedDuration")
     public native double minimumAllowedDuration();
 
+    @NotNull
     @Generated
     @Selector("electrocardiogramType")
     public static native HKElectrocardiogramType electrocardiogramType();
 
     /**
      * [@property] allowsRecalibrationForEstimates
-     * <p>
+     * 
      * Returns YES if first-party samples of this type are produced using a prediction algorithm, and that algorithm
      * supports recalibration. To recalibrate the
      * estimates for a sample type, see -[HKHealthStore recalibrateEstimatesForSampleType:atDate:completion:]
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("allowsRecalibrationForEstimates")
     public native boolean allowsRecalibrationForEstimates();
+
+    @NotNull
+    @Generated
+    @Selector("visionPrescriptionType")
+    public static native HKPrescriptionType visionPrescriptionType();
 }

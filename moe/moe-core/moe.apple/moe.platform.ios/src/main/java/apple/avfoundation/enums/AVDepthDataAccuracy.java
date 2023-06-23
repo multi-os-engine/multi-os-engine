@@ -5,15 +5,15 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVDepthDataAccuracy
- * <p>
+ * 
  * Constants indicating the accuracy of the units expressed by depth data map values.
- * <p>
+ * 
  * [@constant] AVDepthDataAccuracyRelative
  * Values within the depth data map are usable for foreground / background separation, but are not absolutely accurate
  * in the physical world.
  * [@constant] AVDepthDataAccuracyAbsolute
  * Values within the depth map are absolutely accurate within the physical world.
- * <p>
+ * 
  * The accuracy of a depth data map is highly dependent on the camera calibration data used to generate it. If the
  * camera's focal length cannot be precisely determined at the time of capture, scaling error in the z (depth) plane
  * will be introduced. If the camera's optical center can't be precisely determined at capture time, principal point
@@ -23,6 +23,8 @@ import org.moe.natj.general.ann.NInt;
  * values are farther away than smaller depth values), but do not accurately convey real world distance. Disparity maps
  * with relative accuracy may still be used to reliably determine the difference in disparity between two points in the
  * same map.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 public final class AVDepthDataAccuracy {
@@ -30,6 +32,12 @@ public final class AVDepthDataAccuracy {
     private AVDepthDataAccuracy() {
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long Relative = 0x0000000000000000L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long Absolute = 0x0000000000000001L;
 }

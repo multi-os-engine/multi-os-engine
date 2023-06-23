@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -37,7 +39,7 @@ public interface UIViewImplicitlyAnimating extends UIViewAnimating {
     @Generated
     @IsOptional
     @Selector("addAnimations:")
-    default void addAnimations(@ObjCBlock(name = "call_addAnimations") Block_addAnimations animation) {
+    default void addAnimations(@NotNull @ObjCBlock(name = "call_addAnimations") Block_addAnimations animation) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -45,7 +47,7 @@ public interface UIViewImplicitlyAnimating extends UIViewAnimating {
     @IsOptional
     @Selector("addAnimations:delayFactor:")
     default void addAnimationsDelayFactor(
-            @ObjCBlock(name = "call_addAnimationsDelayFactor") Block_addAnimationsDelayFactor animation,
+            @NotNull @ObjCBlock(name = "call_addAnimationsDelayFactor") Block_addAnimationsDelayFactor animation,
             @NFloat double delayFactor) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -53,7 +55,7 @@ public interface UIViewImplicitlyAnimating extends UIViewAnimating {
     @Generated
     @IsOptional
     @Selector("addCompletion:")
-    default void addCompletion(@ObjCBlock(name = "call_addCompletion") Block_addCompletion completion) {
+    default void addCompletion(@NotNull @ObjCBlock(name = "call_addCompletion") Block_addCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -61,7 +63,7 @@ public interface UIViewImplicitlyAnimating extends UIViewAnimating {
     @IsOptional
     @Selector("continueAnimationWithTimingParameters:durationFactor:")
     default void continueAnimationWithTimingParametersDurationFactor(
-            @Mapped(ObjCObjectMapper.class) UITimingCurveProvider parameters, @NFloat double durationFactor) {
+            @Nullable @Mapped(ObjCObjectMapper.class) UITimingCurveProvider parameters, @NFloat double durationFactor) {
         throw new java.lang.UnsupportedOperationException();
     }
 

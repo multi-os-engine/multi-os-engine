@@ -19,10 +19,22 @@ package apple.passkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 8.3
+ */
 @Generated
 public final class PKPaymentButtonStyle {
+    /**
+     * API-Since: 8.3
+     */
     @Generated @NInt public static final long White = 0x0000000000000000L;
+    /**
+     * API-Since: 8.3
+     */
     @Generated @NInt public static final long WhiteOutline = 0x0000000000000001L;
+    /**
+     * API-Since: 8.3
+     */
     @Generated @NInt public static final long Black = 0x0000000000000002L;
 
     @Generated
@@ -31,6 +43,8 @@ public final class PKPaymentButtonStyle {
 
     /**
      * Automatically switches appearance based on the user interface style
+     * 
+     * API-Since: 14.0
      */
     @Generated @NInt public static final long Automatic = 0x0000000000000003L;
 }

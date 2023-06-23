@@ -19,7 +19,6 @@ package apple.avkit;
 import apple.NSObject;
 import apple.avfoundation.AVPlayer;
 import apple.avkit.protocol.AVPlayerViewControllerDelegate;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSCoder;
@@ -47,12 +46,17 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVPlayerViewController
- * <p>
+ * 
  * AVPlayerViewController is a subclass of UIViewController that can be used to display the visual content of an
  * AVPlayer object and the standard playback controls.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVKit")
@@ -82,35 +86,39 @@ public class AVPlayerViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native AVPlayerViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -142,9 +150,10 @@ public class AVPlayerViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -174,8 +183,10 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property] allowsPictureInPicturePlayback
-     * <p>
+     * 
      * Whether or not the receiver allows Picture in Picture playback. Default is YES.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("allowsPictureInPicturePlayback")
@@ -183,18 +194,22 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property] contentOverlayView
-     * <p>
+     * 
      * Use the content overlay view to add additional custom views between the video content and the controls.
      */
+    @Nullable
     @Generated
     @Selector("contentOverlayView")
     public native UIView contentOverlayView();
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The receiver's delegate.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -206,15 +221,16 @@ public class AVPlayerViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVPlayerViewController initWithCoder(NSCoder coder);
+    public native AVPlayerViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native AVPlayerViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native AVPlayerViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * [@property] readyForDisplay
-     * <p>
+     * 
      * Boolean indicating that the first video frame has been made ready for display for the current item of the
      * associated AVPlayer.
      */
@@ -224,17 +240,20 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property] player
-     * <p>
+     * 
      * The player from which to source the media content for the view controller.
      */
+    @Nullable
     @Generated
     @Selector("player")
     public native AVPlayer player();
 
     /**
      * [@property] allowsPictureInPicturePlayback
-     * <p>
+     * 
      * Whether or not the receiver allows Picture in Picture playback. Default is YES.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAllowsPictureInPicturePlayback:")
@@ -242,20 +261,25 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The receiver's delegate.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVPlayerViewControllerDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) AVPlayerViewControllerDelegate value);
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The receiver's delegate.
+     * 
+     * API-Since: 9.0
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) AVPlayerViewControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) AVPlayerViewControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -268,18 +292,18 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property] player
-     * <p>
+     * 
      * The player from which to source the media content for the view controller.
      */
     @Generated
     @Selector("setPlayer:")
-    public native void setPlayer(AVPlayer value);
+    public native void setPlayer(@Nullable AVPlayer value);
 
     /**
      * [@property] showsPlaybackControls
-     * <p>
+     * 
      * Whether or not the receiver shows playback controls. Default is YES.
-     * <p>
+     * 
      * Clients can set this property to NO when they don't want to have any playback controls on top of the visual
      * content (e.g. for a game splash screen).
      */
@@ -289,8 +313,10 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property] updatesNowPlayingInfoCenter
-     * <p>
+     * 
      * Whether or not the now playing info center should be updated. Default is YES.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setUpdatesNowPlayingInfoCenter:")
@@ -298,21 +324,21 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property] videoGravity
-     * <p>
+     * 
      * A string defining how the video is displayed within an AVPlayerLayer bounds rect.
-     * <p>
+     * 
      * Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill and AVLayerVideoGravityResize.
      * AVLayerVideoGravityResizeAspect is default.
      */
     @Generated
     @Selector("setVideoGravity:")
-    public native void setVideoGravity(String value);
+    public native void setVideoGravity(@NotNull String value);
 
     /**
      * [@property] showsPlaybackControls
-     * <p>
+     * 
      * Whether or not the receiver shows playback controls. Default is YES.
-     * <p>
+     * 
      * Clients can set this property to NO when they don't want to have any playback controls on top of the visual
      * content (e.g. for a game splash screen).
      */
@@ -322,8 +348,10 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property] updatesNowPlayingInfoCenter
-     * <p>
+     * 
      * Whether or not the now playing info center should be updated. Default is YES.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("updatesNowPlayingInfoCenter")
@@ -331,7 +359,7 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property] videoBounds
-     * <p>
+     * 
      * The current size and position of the video image as displayed within the receiver's view's bounds.
      */
     @Generated
@@ -341,22 +369,25 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property] videoGravity
-     * <p>
+     * 
      * A string defining how the video is displayed within an AVPlayerLayer bounds rect.
-     * <p>
+     * 
      * Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill and AVLayerVideoGravityResize.
      * AVLayerVideoGravityResizeAspect is default.
      */
+    @NotNull
     @Generated
     @Selector("videoGravity")
     public native String videoGravity();
 
     /**
      * [@property] entersFullScreenWhenPlaybackBegins
-     * <p>
+     * 
      * Whether or not the receiver automatically enters full screen when the play button is tapped. Default is NO.
-     * <p>
+     * 
      * If YES, the receiver will show a user interface tailored to this behavior.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("entersFullScreenWhenPlaybackBegins")
@@ -364,11 +395,13 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property] exitsFullScreenWhenPlaybackEnds
-     * <p>
+     * 
      * Whether or not the receiver automatically exits full screen when playback ends. Default is NO.
-     * <p>
+     * 
      * If multiple player items have been enqueued, the receiver exits fullscreen once no more items are remaining in
      * the queue.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("exitsFullScreenWhenPlaybackEnds")
@@ -376,10 +409,12 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property] entersFullScreenWhenPlaybackBegins
-     * <p>
+     * 
      * Whether or not the receiver automatically enters full screen when the play button is tapped. Default is NO.
-     * <p>
+     * 
      * If YES, the receiver will show a user interface tailored to this behavior.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setEntersFullScreenWhenPlaybackBegins:")
@@ -387,11 +422,13 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property] exitsFullScreenWhenPlaybackEnds
-     * <p>
+     * 
      * Whether or not the receiver automatically exits full screen when playback ends. Default is NO.
-     * <p>
+     * 
      * If multiple player items have been enqueued, the receiver exits fullscreen once no more items are remaining in
      * the queue.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setExitsFullScreenWhenPlaybackEnds:")
@@ -399,32 +436,39 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property] pixelBufferAttributes
-     * <p>
+     * 
      * The client requirements for the visual output during playback.
-     * <p>
+     * 
      * Pixel buffer attribute keys are defined in <CoreVideo/CVPixelBuffer.h>
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("pixelBufferAttributes")
     public native NSDictionary<String, ?> pixelBufferAttributes();
 
     /**
      * [@property] pixelBufferAttributes
-     * <p>
+     * 
      * The client requirements for the visual output during playback.
-     * <p>
+     * 
      * Pixel buffer attribute keys are defined in <CoreVideo/CVPixelBuffer.h>
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPixelBufferAttributes:")
-    public native void setPixelBufferAttributes(NSDictionary<String, ?> value);
+    public native void setPixelBufferAttributes(@Nullable NSDictionary<String, ?> value);
 
     /**
      * [@property] requiresLinearPlayback
-     * <p>
+     * 
      * Disables certain user operations (fast forward, forward skip, and scrubbing).
-     * <p>
+     * 
      * This can be used to enforce playback of mandatory content (such as legalese or advertisements).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("requiresLinearPlayback")
@@ -432,10 +476,12 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property] requiresLinearPlayback
-     * <p>
+     * 
      * Disables certain user operations (fast forward, forward skip, and scrubbing).
-     * <p>
+     * 
      * This can be used to enforce playback of mandatory content (such as legalese or advertisements).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRequiresLinearPlayback:")
@@ -443,9 +489,11 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property] showsTimecodes
-     * <p>
+     * 
      * Controls whether timecodes can be displayed in the playback UI when playing media with embedded timecodes.
      * Default NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setShowsTimecodes:")
@@ -453,9 +501,11 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property] showsTimecodes
-     * <p>
+     * 
      * Controls whether timecodes can be displayed in the playback UI when playing media with embedded timecodes.
      * Default NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("showsTimecodes")
@@ -463,11 +513,13 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property] canStartPictureInPictureAutomaticallyFromInline
-     * <p>
+     * 
      * Indicates whether Picture in Picture should be allowed to start automatically when transitioning to background
      * when the receiver’s content is embedded inline. Default is NO.
-     * <p>
+     * 
      * This property must only be set to YES for content intended to be the user's primary focus.
+     * 
+     * API-Since: 14.2
      */
     @Generated
     @Selector("canStartPictureInPictureAutomaticallyFromInline")
@@ -475,13 +527,108 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property] canStartPictureInPictureAutomaticallyFromInline
-     * <p>
+     * 
      * Indicates whether Picture in Picture should be allowed to start automatically when transitioning to background
      * when the receiver’s content is embedded inline. Default is NO.
-     * <p>
+     * 
      * This property must only be set to YES for content intended to be the user's primary focus.
+     * 
+     * API-Since: 14.2
      */
     @Generated
     @Selector("setCanStartPictureInPictureAutomaticallyFromInline:")
     public native void setCanStartPictureInPictureAutomaticallyFromInline(boolean value);
+
+    /**
+     * [@property] allowsVideoFrameAnalysis
+     * 
+     * When set to YES, the AVPlayerViewController will try to find objects, text and people while the media is paused.
+     * When an object is found, the user will be able to interact with it using long press to present a context menu.
+     * Default is YES.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("allowsVideoFrameAnalysis")
+    public native boolean allowsVideoFrameAnalysis();
+
+    /**
+     * [@property] selectSpeed
+     * 
+     * Sets the input AVPlaybackSpeed as the selected speed.
+     * 
+     * Calls to selectSpeed with AVPlaybackSpeeds not contained within the speeds property array will be ignored.
+     * 
+     * API-Since: 16.0
+     * 
+     * @param speed
+     *              The playback speed to select.
+     */
+    @Generated
+    @Selector("selectSpeed:")
+    public native void selectSpeed(@NotNull AVPlaybackSpeed speed);
+
+    /**
+     * [@property] selectedSpeed
+     * 
+     * The currently selected playback speed.
+     * 
+     * Changes to the associated AVPlayer's defaultRate will be reflected in this property and vice versa. If the
+     * associated AVPlayer's defaultRate is set to a value that does not match a speed in the speeds list property, the
+     * selected speed will be nil.
+     * 
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("selectedSpeed")
+    public native AVPlaybackSpeed selectedSpeed();
+
+    /**
+     * [@property] allowsVideoFrameAnalysis
+     * 
+     * When set to YES, the AVPlayerViewController will try to find objects, text and people while the media is paused.
+     * When an object is found, the user will be able to interact with it using long press to present a context menu.
+     * Default is YES.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setAllowsVideoFrameAnalysis:")
+    public native void setAllowsVideoFrameAnalysis(boolean value);
+
+    /**
+     * [@property] speeds
+     * 
+     * A list of user selectable playback speeds to be shown in the playback speed control.
+     * 
+     * By default this property will be set to the systemDefaultSpeeds class property. Setting this property to an empty
+     * list will hide the playback speed selection UI.
+     * 
+     * To set the currently selected playback speed programmatically, either set the defaultRate on the AVPlayer
+     * associated with this view controller or use the selectSpeed method on AVPlayerViewController.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setSpeeds:")
+    public native void setSpeeds(@NotNull NSArray<? extends AVPlaybackSpeed> value);
+
+    /**
+     * [@property] speeds
+     * 
+     * A list of user selectable playback speeds to be shown in the playback speed control.
+     * 
+     * By default this property will be set to the systemDefaultSpeeds class property. Setting this property to an empty
+     * list will hide the playback speed selection UI.
+     * 
+     * To set the currently selected playback speed programmatically, either set the defaultRate on the AVPlayer
+     * associated with this view controller or use the selectSpeed method on AVPlayerViewController.
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @Selector("speeds")
+    public native NSArray<? extends AVPlaybackSpeed> speeds();
 }

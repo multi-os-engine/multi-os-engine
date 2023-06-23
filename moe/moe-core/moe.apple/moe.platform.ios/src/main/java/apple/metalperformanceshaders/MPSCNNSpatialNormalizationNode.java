@@ -21,15 +21,17 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Node representing MPSCNNSpatialNormalization
- * <p>
+ * 
  * For each feature channel, the function computes the sum of squares of X inside each rectangle, N2(i,j).
  * It then divides each element of X as follows:
  * Y(i,j) = X(i,j) / (delta + alpha/(kw*kh) * N2(i,j))^beta,
  * where kw and kh are the kernelWidth and the kernelHeight.
- * <p>
+ * 
  * [@code]
  * Defaults:
  * alpha = 1.0f
@@ -37,6 +39,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * delta = 1.0f
  * kernelHeight = kernelWidth = kernelSize
  * [@endcode]
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -68,22 +72,25 @@ public class MPSCNNSpatialNormalizationNode extends MPSCNNNormalizationNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -107,11 +114,11 @@ public class MPSCNNSpatialNormalizationNode extends MPSCNNNormalizationNode {
 
     @Generated
     @Selector("initWithSource:")
-    public native MPSCNNSpatialNormalizationNode initWithSource(MPSNNImageNode sourceNode);
+    public native MPSCNNSpatialNormalizationNode initWithSource(@NotNull MPSNNImageNode sourceNode);
 
     @Generated
     @Selector("initWithSource:kernelSize:")
-    public native MPSCNNSpatialNormalizationNode initWithSourceKernelSize(MPSNNImageNode sourceNode,
+    public native MPSCNNSpatialNormalizationNode initWithSourceKernelSize(@NotNull MPSNNImageNode sourceNode,
             @NUInt long kernelSize);
 
     @Generated
@@ -141,9 +148,10 @@ public class MPSCNNSpatialNormalizationNode extends MPSCNNNormalizationNode {
     @NUInt
     public native long kernelWidth();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -152,11 +160,11 @@ public class MPSCNNSpatialNormalizationNode extends MPSCNNNormalizationNode {
 
     @Generated
     @Selector("nodeWithSource:")
-    public static native MPSCNNSpatialNormalizationNode nodeWithSource(MPSNNImageNode sourceNode);
+    public static native MPSCNNSpatialNormalizationNode nodeWithSource(@NotNull MPSNNImageNode sourceNode);
 
     @Generated
     @Selector("nodeWithSource:kernelSize:")
-    public static native MPSCNNSpatialNormalizationNode nodeWithSourceKernelSize(MPSNNImageNode sourceNode,
+    public static native MPSCNNSpatialNormalizationNode nodeWithSourceKernelSize(@NotNull MPSNNImageNode sourceNode,
             @NUInt long kernelSize);
 
     @Generated

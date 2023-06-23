@@ -37,26 +37,30 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAssetReaderSampleReferenceOutput
- * <p>
+ * 
  * AVAssetReaderSampleReferenceOutput is a concrete subclass of AVAssetReaderOutput that defines an interface for
  * reading sample references from a single AVAssetTrack of an AVAssetReader's AVAsset.
- * <p>
+ * 
  * Clients can extract information about the location (file URL and offset) of samples in a track by adding an instance
  * of AVAssetReaderSampleReferenceOutput to an AVAssetReader using the -[AVAssetReader addOutput:] method. No actual
  * sample data can be extracted using this class. The location of the sample data is described by the
  * kCMSampleBufferAttachmentKey_SampleReferenceURL and kCMSampleBufferAttachmentKey_SampleReferenceByteOffset
  * attachments on the extracted sample buffers. More information about sample buffers describing sample references can
  * be found in the CMSampleBuffer documentation.
- * <p>
+ * 
  * Sample buffers extracted using this class can also be appended to an AVAssetWriterInput to create movie tracks that
  * are not self-contained and reference data in the original file instead. Currently, only instances of AVAssetWriter
  * configured to write files of type AVFileTypeQuickTimeMovie can be used to write tracks that are not self-contained.
- * <p>
+ * 
  * Since no sample data is ever returned by instances of AVAssetReaderSampleReferenceOutput, the value of the
  * alwaysCopiesSampleData property is ignored.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFoundation")
@@ -88,38 +92,43 @@ public class AVAssetReaderSampleReferenceOutput extends AVAssetReaderOutput {
 
     /**
      * assetReaderSampleReferenceOutputWithTrack:
-     * <p>
+     * 
      * Returns an instance of AVAssetReaderSampleReferenceOutput for supplying sample references.
-     * <p>
+     * 
      * The track must be one of the tracks contained by the target AVAssetReader's asset.
-     *
-     * @param track The AVAssetTrack for which the resulting AVAssetReaderSampleReferenceOutput should provide sample
+     * 
+     * @param track
+     *              The AVAssetTrack for which the resulting AVAssetReaderSampleReferenceOutput should provide sample
      *              references.
-     * @return An instance of AVAssetReaderSampleReferenceOutput.
+     * @return
+     *         An instance of AVAssetReaderSampleReferenceOutput.
      */
     @Generated
     @Selector("assetReaderSampleReferenceOutputWithTrack:")
     public static native AVAssetReaderSampleReferenceOutput assetReaderSampleReferenceOutputWithTrack(
-            AVAssetTrack track);
+            @NotNull AVAssetTrack track);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -154,9 +163,10 @@ public class AVAssetReaderSampleReferenceOutput extends AVAssetReaderOutput {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -190,26 +200,29 @@ public class AVAssetReaderSampleReferenceOutput extends AVAssetReaderOutput {
 
     /**
      * initWithTrack:
-     * <p>
+     * 
      * Returns an instance of AVAssetReaderSampleReferenceOutput for supplying sample references.
-     * <p>
+     * 
      * The track must be one of the tracks contained by the target AVAssetReader's asset.
-     *
-     * @param track The AVAssetTrack for which the resulting AVAssetReaderSampleReferenceOutput should provide sample
+     * 
+     * @param track
+     *              The AVAssetTrack for which the resulting AVAssetReaderSampleReferenceOutput should provide sample
      *              references.
-     * @return An instance of AVAssetReaderTrackOutput.
+     * @return
+     *         An instance of AVAssetReaderTrackOutput.
      */
     @Generated
     @Selector("initWithTrack:")
-    public native AVAssetReaderSampleReferenceOutput initWithTrack(AVAssetTrack track);
+    public native AVAssetReaderSampleReferenceOutput initWithTrack(@NotNull AVAssetTrack track);
 
     /**
      * [@property] track
-     * <p>
+     * 
      * The track from which the receiver extracts sample references.
-     * <p>
+     * 
      * The value of this property is an AVAssetTrack owned by the target AVAssetReader's asset.
      */
+    @NotNull
     @Generated
     @Selector("track")
     public native AVAssetTrack track();

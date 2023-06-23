@@ -25,23 +25,30 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SKRequestDelegate")
 public interface SKRequestDelegate {
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("request:didFailWithError:")
-    default void requestDidFailWithError(SKRequest request, NSError error) {
+    default void requestDidFailWithError(@NotNull SKRequest request, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("requestDidFinish:")
-    default void requestDidFinish(SKRequest request) {
+    default void requestDidFinish(@NotNull SKRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

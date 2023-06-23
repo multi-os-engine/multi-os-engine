@@ -27,16 +27,20 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNCropAndResizeBilinear
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * The MPSNNCropAndResizeBilinear filter resizes the source image using bilinear interpolation to
  * a destination whose dimensions are given by resizeWidth and resizeHeight
- * <p>
+ * 
  * The number of output feature channels remains the same as the number of input feature
  * channels.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -68,22 +72,25 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -107,29 +114,29 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNCropAndResizeBilinear initWithCoder(NSCoder aDecoder);
+    public native MPSNNCropAndResizeBilinear initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSNNCropAndResizeBilinear
      * @param device   The MTLDevice on which to make the MPSNNCropAndResizeBilinear
      * @return A new MPSNNResizeBilinear object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNNCropAndResizeBilinear initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNCropAndResizeBilinear initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNNCropAndResizeBilinear initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNCropAndResizeBilinear initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize the crop and resize bilinear filter.
-     *
+     * 
      * @param device          The device the filter will run on.
      * @param resizeWidth     The destination resize width in pixels
      * @param resizeHeight    The destination resize height in pixels
@@ -141,9 +148,9 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
     @Generated
     @Selector("initWithDevice:resizeWidth:resizeHeight:numberOfRegions:regions:")
     public native MPSNNCropAndResizeBilinear initWithDeviceResizeWidthResizeHeightNumberOfRegionsRegions(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long resizeWidth, @NUInt long resizeHeight,
-            @NUInt long numberOfRegions,
-            @UncertainArgument("Options: reference, array Fallback: reference") MPSRegion regions);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long resizeWidth,
+            @NUInt long resizeHeight, @NUInt long numberOfRegions,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MPSRegion regions);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -162,9 +169,10 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -173,7 +181,7 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
 
     /**
      * [@property] numberOfRegions
-     * <p>
+     * 
      * the number of bounding box i.e. regions to resize.
      */
     @Generated
@@ -183,13 +191,14 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
 
     /**
      * [@property] regions
-     * <p>
+     * 
      * This is a pointer to "numberOfRegions" boxes which specify the locations in the
      * source image to use for each box/region to perform the resize operation.
      * The coordinates specified are normalized values. A normalized region outside the
      * [0, 1] range is allowed, in which case we use extrapolation_value to extrapolate
      * the input image values.
      */
+    @NotNull
     @Generated
     @Selector("regions")
     @UncertainReturn("Options: reference, array Fallback: reference")
@@ -197,7 +206,7 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
 
     /**
      * [@property] resizeHeight
-     * <p>
+     * 
      * The resize height.
      */
     @Generated
@@ -207,7 +216,7 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
 
     /**
      * [@property] resizeWidth
-     * <p>
+     * 
      * The resize width.
      */
     @Generated

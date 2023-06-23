@@ -20,28 +20,90 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * Error codes
+ * 
+ * API-Since: 5.0
  */
 @Generated
 public final class GLKTextureLoaderError {
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int FileOrURLNotFound = 0x00000000;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int InvalidNSData = 0x00000001;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int InvalidCGImage = 0x00000002;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int UnknownPathType = 0x00000003;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int UnknownFileType = 0x00000004;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int PVRAtlasUnsupported = 0x00000005;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int CubeMapInvalidNumFiles = 0x00000006;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int CompressedTextureUpload = 0x00000007;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int UncompressedTextureUpload = 0x00000008;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int UnsupportedCubeMapDimensions = 0x00000009;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int UnsupportedBitDepth = 0x0000000A;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int UnsupportedPVRFormat = 0x0000000B;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int DataPreprocessingFailure = 0x0000000C;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int MipmapUnsupported = 0x0000000D;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int UnsupportedOrientation = 0x0000000E;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int ReorientationFailure = 0x0000000F;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int AlphaPremultiplicationFailure = 0x00000010;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int InvalidEAGLContext = 0x00000011;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int IncompatibleFormatSRGB = 0x00000012;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int UnsupportedTextureTarget = 0x00000013;
 
     @Generated

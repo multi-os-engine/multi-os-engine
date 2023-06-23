@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] CTFontManagerScope
- * <p>
+ * 
  * Scope for font registration. A uses session refers to a login session in macOS, and the current booted session in
  * iOS.
  * [@constant] kCTFontManagerScopeNone
@@ -39,11 +39,17 @@ import org.moe.natj.general.ann.Generated;
 public final class CTFontManagerScope {
     @Generated public static final int None = 0x00000000;
     @Generated public static final int Process = 0x00000001;
+    /**
+     * API-Since: 13.0
+     */
     @Generated public static final int User = 0x00000002;
 
     @Generated
     private CTFontManagerScope() {
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated public static final int Persistent = 0x00000002;
 }

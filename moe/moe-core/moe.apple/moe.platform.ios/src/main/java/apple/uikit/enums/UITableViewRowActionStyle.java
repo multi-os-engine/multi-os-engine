@@ -19,11 +19,32 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 8.0
+ * Deprecated-Since: 13.0
+ * Deprecated-Message: Use UIContextualAction and related APIs instead.
+ */
+@Deprecated
 @Generated
 public final class UITableViewRowActionStyle {
-    @Generated @NInt public static final long Default = 0x0000000000000000L;
-    @Generated @NInt public static final long Destructive = 0x0000000000000000L;
-    @Generated @NInt public static final long Normal = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use UIContextualAction and related APIs instead.
+     */
+    @Deprecated @Generated @NInt public static final long Default = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use UIContextualAction and related APIs instead.
+     */
+    @Deprecated @Generated @NInt public static final long Destructive = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use UIContextualAction and related APIs instead.
+     */
+    @Deprecated @Generated @NInt public static final long Normal = 0x0000000000000001L;
 
     @Generated
     private UITableViewRowActionStyle() {

@@ -26,26 +26,28 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNBinaryConvolution
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * The MPSCNNBinaryConvolution specifies a convolution with binary weights and an input image using binary
  * approximations.
  * The MPSCNNBinaryConvolution optionally first binarizes the input image and then convolves the result with a set of
  * binary-valued filters, each producing one feature map in the output image (which is a normal image)
- * <p>
+ * 
  * The output is computed as follows:
- * <p>
+ * 
  * out[i, x, y, c] = ( sum_{dx,dy,f} in[i,x+dx, y+dy, f] x B[c,dx,dy,f] )
  * * scale[c] * beta[i,x,y] + bias[c], where
- * <p>
+ * 
  * the sum over dx,dy is over the spatial filter kernel window defined by 'kernelWidth' and 'KernelHeight',
  * sum over 'f' is over the input feature channel indices within group, 'B' contains the binary weights, interpreted as
  * {-1,1} or { 0, 1 } and scale[c] is the 'outputScaleTerms' array and bias is the 'outputBiasTerms' array. Above 'i' is
  * the image index in batch the sum over input channels 'f' runs through the group indices.
- * <p>
+ * 
  * The convolution operator 'x' is defined by MPSCNNBinaryConvolutionType passed in at initialization time of the filter
  * (@see initWithDevice).
  * In case 'type' = MPSCNNBinaryConvolutionTypeBinaryWeights, the input image is not binarized at all
@@ -65,13 +67,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * assumed to lie in { 0, 1 } interval and hence no more implicit scaling takes place.
  * This means that for a dot-product of two 32-bit words the result is:
  * r = popcount(x & y) = { 0, ..., 31, 32 }.
- * <p>
+ * 
  * The input data can be pre-offset and scaled by providing the 'inputBiasTerms' and 'inputScaleTerms' parameters for
  * the
  * initialization functions and this can be used for example to accomplish batch normalization of the data. The scaling
  * of
  * input values happens before possible beta-image computation.
- * <p>
+ * 
  * The parameter 'beta' above is an optional image which is used to compute scaling factors for each spatial position
  * and image index.
  * For the XNOR-Net based networks this is computed as follows: beta[i,x,y] = sum_{dx,dy} A[i, x+dx, y+dy] / (kx * ky),
@@ -81,10 +83,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * number of input channels in the input image. Parameter 'beta' is not passed as input and to enable beta-scaling the
  * user can
  * provide 'MPSCNNBinaryConvolutionFlagsUseBetaScaling' in the flags parameter in the initialization functions.
- * <p>
+ * 
  * Finally the normal activation neuron is applied and the result is written to the output image.
- * <p>
+ * 
  * NOTE: MPSCNNBinaryConvolution does not currently support groups > 1.
+ * 
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -116,22 +121,25 @@ public class MPSCNNBinaryConvolution extends MPSCNNKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -155,33 +163,33 @@ public class MPSCNNBinaryConvolution extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNBinaryConvolution initWithCoder(NSCoder aDecoder);
+    public native MPSCNNBinaryConvolution initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNBinaryConvolution initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNBinaryConvolution initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNBinaryConvolution initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNBinaryConvolution initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initializes a binary convolution kernel with binary weights as well as both pre and post scaling terms.
-     *
+     * 
      * @param device           The MTLDevice on which this MPSCNNBinaryConvolution filter will be used
      * @param convolutionData  A pointer to a object that conforms to the MPSCNNConvolutionDataSource protocol.
      *                         The MPSCNNConvolutionDataSource protocol declares the methods that an
@@ -223,19 +231,21 @@ public class MPSCNNBinaryConvolution extends MPSCNNKernel {
      *                         function returns.
      * @param type             What kind of binarization strategy is to be used.
      * @param flags            See documentation above and documentation of MPSCNNBinaryConvolutionFlags.
+     * 
      * @return A valid MPSCNNBinaryConvolution object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:convolutionData:outputBiasTerms:outputScaleTerms:inputBiasTerms:inputScaleTerms:type:flags:")
     public native MPSCNNBinaryConvolution initWithDeviceConvolutionDataOutputBiasTermsOutputScaleTermsInputBiasTermsInputScaleTermsTypeFlags(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource convolutionData, ConstFloatPtr outputBiasTerms,
-            ConstFloatPtr outputScaleTerms, ConstFloatPtr inputBiasTerms, ConstFloatPtr inputScaleTerms,
-            @NUInt long type, @NUInt long flags);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource convolutionData,
+            @Nullable ConstFloatPtr outputBiasTerms, @Nullable ConstFloatPtr outputScaleTerms,
+            @Nullable ConstFloatPtr inputBiasTerms, @Nullable ConstFloatPtr inputScaleTerms, @NUInt long type,
+            @NUInt long flags);
 
     /**
      * Initializes a binary convolution kernel with binary weights and a single scaling term.
-     *
+     * 
      * @param device          The MTLDevice on which this MPSCNNBinaryConvolution filter will be used
      * @param convolutionData A pointer to a object that conforms to the MPSCNNConvolutionDataSource protocol.
      *                        The MPSCNNConvolutionDataSource protocol declares the methods that an
@@ -255,13 +265,14 @@ public class MPSCNNBinaryConvolution extends MPSCNNKernel {
      * @param scaleValue      A floating point value used to scale the entire convolution.
      * @param type            What kind of binarization strategy is to be used.
      * @param flags           See documentation above and documentation of MPSCNNBinaryConvolutionFlags.
+     * 
      * @return A valid MPSCNNBinaryConvolution object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:convolutionData:scaleValue:type:flags:")
     public native MPSCNNBinaryConvolution initWithDeviceConvolutionDataScaleValueTypeFlags(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource convolutionData, float scaleValue,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource convolutionData, float scaleValue,
             @NUInt long type, @NUInt long flags);
 
     @Generated
@@ -286,9 +297,10 @@ public class MPSCNNBinaryConvolution extends MPSCNNKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -297,7 +309,7 @@ public class MPSCNNBinaryConvolution extends MPSCNNKernel {
 
     /**
      * [@property] outputFeatureChannels
-     * <p>
+     * 
      * The number of feature channels per pixel in the output image.
      */
     @Generated

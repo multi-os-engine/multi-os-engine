@@ -19,12 +19,38 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 8.0
+ * Deprecated-Since: 14.0
+ * Deprecated-Message: Use appropriate initializers instead
+ */
+@Deprecated
 @Generated
 public final class UIDocumentPickerMode {
-    @Generated @NUInt public static final long Import = 0x0000000000000000L;
-    @Generated @NUInt public static final long Open = 0x0000000000000001L;
-    @Generated @NUInt public static final long ExportToService = 0x0000000000000002L;
-    @Generated @NUInt public static final long MoveToService = 0x0000000000000003L;
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use appropriate initializers instead
+     */
+    @Deprecated @Generated @NUInt public static final long Import = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use appropriate initializers instead
+     */
+    @Deprecated @Generated @NUInt public static final long Open = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use appropriate initializers instead
+     */
+    @Deprecated @Generated @NUInt public static final long ExportToService = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use appropriate initializers instead
+     */
+    @Deprecated @Generated @NUInt public static final long MoveToService = 0x0000000000000003L;
 
     @Generated
     private UIDocumentPickerMode() {

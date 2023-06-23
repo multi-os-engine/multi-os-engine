@@ -39,10 +39,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * UIFocusUpdateContexts provide information relevant to a specific focus update from one view to another. They are
  * ephemeral objects that are usually discarded after the update is finished.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("UIKit")
@@ -74,22 +78,25 @@ public class UIFocusUpdateContext extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +131,10 @@ public class UIFocusUpdateContext extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -169,7 +177,10 @@ public class UIFocusUpdateContext extends NSObject {
     /**
      * The item that is focused after the update, i.e. where focus is updating to. May be nil if no item is being
      * focused, meaning focus is being lost.
+     * 
+     * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("nextFocusedItem")
     @MappedReturn(ObjCObjectMapper.class)
@@ -180,6 +191,7 @@ public class UIFocusUpdateContext extends NSObject {
      * If nextFocusedItem is not a view, this returns that item's containing view, otherwise they are equal.
      * NOTE: This property will be deprecated in a future release. Use nextFocusedItem instead.
      */
+    @Nullable
     @Generated
     @Selector("nextFocusedView")
     public native UIView nextFocusedView();
@@ -187,7 +199,10 @@ public class UIFocusUpdateContext extends NSObject {
     /**
      * The item that was focused before the update, i.e. where focus is updating from. May be nil if no item was
      * focused, such as when focus is initially set.
+     * 
+     * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("previouslyFocusedItem")
     @MappedReturn(ObjCObjectMapper.class)
@@ -199,6 +214,7 @@ public class UIFocusUpdateContext extends NSObject {
      * If previouslyFocusedItem is not a view, this returns that item's containing view, otherwise they are equal.
      * NOTE: This property will be deprecated in a future release. Use previouslyFocusedItem instead.
      */
+    @Nullable
     @Generated
     @Selector("previouslyFocusedView")
     public native UIView previouslyFocusedView();

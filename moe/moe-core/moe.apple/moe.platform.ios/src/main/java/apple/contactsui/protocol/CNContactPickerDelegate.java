@@ -27,7 +27,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("ContactsUI")
 @Runtime(ObjCRuntime.class)
@@ -35,55 +39,56 @@ import org.moe.natj.objc.ann.Selector;
 public interface CNContactPickerDelegate {
     /**
      * Singular delegate methods.
-     * <p>
+     * 
      * These delegate methods will be invoked when the user selects a single contact or property.
      */
     @Generated
     @IsOptional
     @Selector("contactPicker:didSelectContact:")
-    default void contactPickerDidSelectContact(CNContactPickerViewController picker, CNContact contact) {
+    default void contactPickerDidSelectContact(@NotNull CNContactPickerViewController picker,
+            @NotNull CNContact contact) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("contactPicker:didSelectContactProperties:")
-    default void contactPickerDidSelectContactProperties(CNContactPickerViewController picker,
-            NSArray<? extends CNContactProperty> contactProperties) {
+    default void contactPickerDidSelectContactProperties(@NotNull CNContactPickerViewController picker,
+            @NotNull NSArray<? extends CNContactProperty> contactProperties) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("contactPicker:didSelectContactProperty:")
-    default void contactPickerDidSelectContactProperty(CNContactPickerViewController picker,
-            CNContactProperty contactProperty) {
+    default void contactPickerDidSelectContactProperty(@NotNull CNContactPickerViewController picker,
+            @NotNull CNContactProperty contactProperty) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Plural delegate methods.
-     * <p>
+     * 
      * These delegate methods will be invoked when the user is done selecting multiple contacts or properties.
      * Implementing one of these methods will configure the picker for multi-selection.
      */
     @Generated
     @IsOptional
     @Selector("contactPicker:didSelectContacts:")
-    default void contactPickerDidSelectContacts(CNContactPickerViewController picker,
-            NSArray<? extends CNContact> contacts) {
+    default void contactPickerDidSelectContacts(@NotNull CNContactPickerViewController picker,
+            @NotNull NSArray<? extends CNContact> contacts) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Invoked when the picker is closed.
-     * <p>
+     * 
      * The picker will be dismissed automatically after a contact or property is picked.
      */
     @Generated
     @IsOptional
     @Selector("contactPickerDidCancel:")
-    default void contactPickerDidCancel(CNContactPickerViewController picker) {
+    default void contactPickerDidCancel(@NotNull CNContactPickerViewController picker) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -17,8 +17,6 @@ limitations under the License.
 package apple.mapkit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -52,7 +50,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -75,7 +80,7 @@ public class MKAnnotationView extends UIView {
     @Selector("addKeyframeWithRelativeStartTime:relativeDuration:animations:")
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
-            @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
 
     @Generated
     @Owned
@@ -91,64 +96,71 @@ public class MKAnnotationView extends UIView {
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
     public static native void animateKeyframesWithDurationDelayOptionsAnimationsCompletion(double duration,
             double delay, @NUInt long options,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:animations:")
     public static native void animateWithDurationAnimations(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
 
     @Generated
     @Selector("animateWithDuration:animations:completion:")
     public static native void animateWithDurationAnimationsCompletion(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:options:animations:completion:")
     public static native void animateWithDurationDelayOptionsAnimationsCompletion(double duration, double delay,
             @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:")
     public static native void animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion(
             double duration, double delay, @NFloat double dampingRatio, @NFloat double velocity, @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
 
+    @NotNull
     @Generated
     @Selector("appearance")
     public static native MKAnnotationView appearance();
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:")
-    public static native MKAnnotationView appearanceForTraitCollection(UITraitCollection trait);
+    public static native MKAnnotationView appearanceForTraitCollection(@NotNull UITraitCollection trait);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    public static native MKAnnotationView appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native MKAnnotationView appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     public static native MKAnnotationView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            UITraitCollection trait, NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     public static native MKAnnotationView appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    public static native MKAnnotationView appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native MKAnnotationView appearanceWhenContainedInInstancesOfClasses(
+            @NotNull NSArray<?> containerTypes);
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -156,34 +168,39 @@ public class MKAnnotationView extends UIView {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
-    public static native void beginAnimationsContext(String animationID, VoidPtr context);
+    public static native void beginAnimationsContext(@Nullable String animationID, @Nullable VoidPtr context);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -222,10 +239,12 @@ public class MKAnnotationView extends UIView {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("layerClass")
     public static native Class layerClass();
@@ -238,14 +257,14 @@ public class MKAnnotationView extends UIView {
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")
     public static native void performSystemAnimationOnViewsOptionsAnimationsCompletion(@NUInt long animation,
-            NSArray<? extends UIView> views, @NUInt long options,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
+            @NotNull NSArray<? extends UIView> views, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("performWithoutAnimation:")
     public static native void performWithoutAnimation(
-            @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
+            @NotNull @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
 
     @Generated
     @Selector("requiresConstraintBasedLayout")
@@ -259,49 +278,61 @@ public class MKAnnotationView extends UIView {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
-    public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
+    public static native void setAnimationDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
-    public static native void setAnimationDidStopSelector(SEL selector);
+    public static native void setAnimationDidStopSelector(@Nullable SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
-    public static native void setAnimationStartDate(NSDate startDate);
+    public static native void setAnimationStartDate(@NotNull NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
-    public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
+    public static native void setAnimationTransitionForViewCache(@NInt long transition, @NotNull UIView view,
+            boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
-    public static native void setAnimationWillStartSelector(SEL selector);
+    public static native void setAnimationWillStartSelector(@Nullable SEL selector);
 
     @Generated
     @Selector("setAnimationsEnabled:")
@@ -317,16 +348,16 @@ public class MKAnnotationView extends UIView {
 
     @Generated
     @Selector("transitionFromView:toView:duration:options:completion:")
-    public static native void transitionFromViewToViewDurationOptionsCompletion(UIView fromView, UIView toView,
-            double duration, @NUInt long options,
-            @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
+    public static native void transitionFromViewToViewDurationOptionsCompletion(@NotNull UIView fromView,
+            @NotNull UIView toView, double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
 
     @Generated
     @Selector("transitionWithView:duration:options:animations:completion:")
-    public static native void transitionWithViewDurationOptionsAnimationsCompletion(UIView view, double duration,
-            @NUInt long options,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
+    public static native void transitionWithViewDurationOptionsAnimationsCompletion(@NotNull UIView view,
+            double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:")
@@ -344,49 +375,56 @@ public class MKAnnotationView extends UIView {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("annotation")
     @MappedReturn(ObjCObjectMapper.class)
     public native MKAnnotation annotation();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearance")
     public MKAnnotationView _appearance() {
         return appearance();
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    public MKAnnotationView _appearanceForTraitCollection(UITraitCollection trait) {
+    public MKAnnotationView _appearanceForTraitCollection(@NotNull UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    public MKAnnotationView _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public MKAnnotationView _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    public MKAnnotationView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
+    public MKAnnotationView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     public MKAnnotationView _appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public MKAnnotationView _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public MKAnnotationView _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -416,6 +454,10 @@ public class MKAnnotationView extends UIView {
     @ByValue
     public native CGPoint centerOffset();
 
+    /**
+     * API-Since: 9.0
+     */
+    @Nullable
     @Generated
     @Selector("detailCalloutAccessoryView")
     public native UIView detailCalloutAccessoryView();
@@ -423,12 +465,15 @@ public class MKAnnotationView extends UIView {
     /**
      * Automatically set to MKAnnotationViewDragStateStarting, Canceling, and Ending when necessary.
      * Implementer is responsible for transitioning to Dragging and None states as appropriate.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("dragState")
     @NUInt
     public native long dragState();
 
+    @Nullable
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -440,11 +485,11 @@ public class MKAnnotationView extends UIView {
     @Generated
     @Selector("initWithAnnotation:reuseIdentifier:")
     public native MKAnnotationView initWithAnnotationReuseIdentifier(
-            @Mapped(ObjCObjectMapper.class) MKAnnotation annotation, String reuseIdentifier);
+            @Nullable @Mapped(ObjCObjectMapper.class) MKAnnotation annotation, @Nullable String reuseIdentifier);
 
     @Generated
     @Selector("initWithCoder:")
-    public native MKAnnotationView initWithCoder(NSCoder aDecoder);
+    public native MKAnnotationView initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -453,6 +498,8 @@ public class MKAnnotationView extends UIView {
     /**
      * If YES and the underlying id<MKAnnotation> responds to setCoordinate:,
      * the user will be able to drag this annotation view around the map.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isDraggable")
@@ -461,6 +508,8 @@ public class MKAnnotationView extends UIView {
     /**
      * If YES and the underlying id<MKAnnotation> responds to setCoordinate:,
      * the user will be able to drag this annotation view around the map.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setDraggable:")
@@ -508,6 +557,7 @@ public class MKAnnotationView extends UIView {
     @Selector("setSelected:")
     public native void setSelected(boolean value);
 
+    @Nullable
     @Generated
     @Selector("leftCalloutAccessoryView")
     public native UIView leftCalloutAccessoryView();
@@ -519,17 +569,19 @@ public class MKAnnotationView extends UIView {
     @Selector("prepareForReuse")
     public native void prepareForReuse();
 
+    @Nullable
     @Generated
     @Selector("reuseIdentifier")
     public native String reuseIdentifier();
 
+    @Nullable
     @Generated
     @Selector("rightCalloutAccessoryView")
     public native UIView rightCalloutAccessoryView();
 
     @Generated
     @Selector("setAnnotation:")
-    public native void setAnnotation(@Mapped(ObjCObjectMapper.class) MKAnnotation value);
+    public native void setAnnotation(@Nullable @Mapped(ObjCObjectMapper.class) MKAnnotation value);
 
     /**
      * calloutOffset is the offset in screen points from the top-middle of the annotation view, where the anchor of the
@@ -555,13 +607,18 @@ public class MKAnnotationView extends UIView {
     @Selector("setCenterOffset:")
     public native void setCenterOffset(@ByValue CGPoint value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setDetailCalloutAccessoryView:")
-    public native void setDetailCalloutAccessoryView(UIView value);
+    public native void setDetailCalloutAccessoryView(@Nullable UIView value);
 
     /**
      * Automatically set to MKAnnotationViewDragStateStarting, Canceling, and Ending when necessary.
      * Implementer is responsible for transitioning to Dragging and None states as appropriate.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setDragState:")
@@ -569,6 +626,8 @@ public class MKAnnotationView extends UIView {
 
     /**
      * Developers targeting iOS 4.2 and after must use setDragState:animated: instead of setDragState:.
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("setDragState:animated:")
@@ -576,15 +635,15 @@ public class MKAnnotationView extends UIView {
 
     @Generated
     @Selector("setImage:")
-    public native void setImage(UIImage value);
+    public native void setImage(@Nullable UIImage value);
 
     @Generated
     @Selector("setLeftCalloutAccessoryView:")
-    public native void setLeftCalloutAccessoryView(UIView value);
+    public native void setLeftCalloutAccessoryView(@Nullable UIView value);
 
     @Generated
     @Selector("setRightCalloutAccessoryView:")
-    public native void setRightCalloutAccessoryView(UIView value);
+    public native void setRightCalloutAccessoryView(@Nullable UIView value);
 
     @Generated
     @Selector("setSelected:animated:")
@@ -592,20 +651,28 @@ public class MKAnnotationView extends UIView {
 
     /**
      * If non-nil this is the annotation view this view is clustered into.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("clusterAnnotationView")
     public native MKAnnotationView clusterAnnotationView();
 
     /**
      * Annotation views with equal non-nil identifiers can cluster together.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("clusteringIdentifier")
     public native String clusteringIdentifier();
 
     /**
      * Default collision mode is rectangle.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("collisionMode")
@@ -614,24 +681,33 @@ public class MKAnnotationView extends UIView {
 
     /**
      * Default is MKFeatureDisplayPriorityRequired, other values opts into collision occlusion by priority.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("displayPriority")
     public native float displayPriority();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("prepareForDisplay")
     public native void prepareForDisplay();
 
     /**
      * Annotation views with equal non-nil identifiers can cluster together.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setClusteringIdentifier:")
-    public native void setClusteringIdentifier(String value);
+    public native void setClusteringIdentifier(@Nullable String value);
 
     /**
      * Default collision mode is rectangle.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCollisionMode:")
@@ -639,6 +715,8 @@ public class MKAnnotationView extends UIView {
 
     /**
      * Default is MKFeatureDisplayPriorityRequired, other values opts into collision occlusion by priority.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDisplayPriority:")
@@ -648,20 +726,32 @@ public class MKAnnotationView extends UIView {
     @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
-            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+            @NotNull @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("selectedZPriority")
     public native float selectedZPriority();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setSelectedZPriority:")
     public native void setSelectedZPriority(float value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setZPriority:")
     public native void setZPriority(float value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("zPriority")
     public native float zPriority();

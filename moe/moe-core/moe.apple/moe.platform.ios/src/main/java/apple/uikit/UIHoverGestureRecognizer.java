@@ -22,6 +22,9 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.moe.natj.general.ann.NFloat;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * UIHoverGestureRecognizer
@@ -31,9 +34,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Note: While buttons are pressed any currently active hover gesture recognizers
  * are effectively paused (letting other gesture recognizers work) until all
  * mouse buttons have been released.
- * <p>
+ * 
  * On iOS, this gesture recognizer doesn't recognize anything and is effectively
  * a no-op.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("UIKit")
@@ -65,22 +70,25 @@ public class UIHoverGestureRecognizer extends UIGestureRecognizer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -104,12 +112,12 @@ public class UIHoverGestureRecognizer extends UIGestureRecognizer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIHoverGestureRecognizer initWithCoder(NSCoder coder);
+    public native UIHoverGestureRecognizer initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithTarget:action:")
-    public native UIHoverGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target,
-            SEL action);
+    public native UIHoverGestureRecognizer initWithTargetAction(@Nullable @Mapped(ObjCObjectMapper.class) Object target,
+            @Nullable SEL action);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -128,9 +136,10 @@ public class UIHoverGestureRecognizer extends UIGestureRecognizer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,4 +166,17 @@ public class UIHoverGestureRecognizer extends UIGestureRecognizer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * The normalized distance from the screen of the hovering device. This value will be 1 at the maximum distance
+     * from the screen and will approach 0 as the device gets closer to the screen. Will always return 0 for devices
+     * that
+     * don't support z offset.
+     * 
+     * API-Since: 16.1
+     */
+    @Generated
+    @Selector("zOffset")
+    @NFloat
+    public native double zOffset();
 }

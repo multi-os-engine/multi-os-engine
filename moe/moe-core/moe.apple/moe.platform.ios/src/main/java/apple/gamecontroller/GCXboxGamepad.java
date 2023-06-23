@@ -21,11 +21,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The GCXboxGamepad profile represents any supported Xbox controller.
- *
+ * 
  * @see GCExtendedGamepad
+ * 
+ *      API-Since: 14.0
  */
 @Generated
 @Library("GameController")
@@ -57,22 +61,25 @@ public class GCXboxGamepad extends GCExtendedGamepad {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -111,9 +118,10 @@ public class GCXboxGamepad extends GCExtendedGamepad {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -122,27 +130,31 @@ public class GCXboxGamepad extends GCExtendedGamepad {
 
     /**
      * Some Xbox controller variants can support up to four additional buttons.
-     * <p>
+     * 
      * [@example] The standard Bluetooth-enabled Xbox Wireless Controller does not have paddle buttons
      * [@example] The Xbox Elite Wireless Controller has four extra digital buttons.
-     * <p>
+     * 
      * [@note] The four extra digital buttons on the Xbox Elite Wireless Controller are only directly addressable when
      * the controller
      * is on its default mapping profile. Otherwise, the paddle buttons are directly bound to other inputs on the
      * controller.
      */
+    @Nullable
     @Generated
     @Selector("paddleButton1")
     public native GCControllerButtonInput paddleButton1();
 
+    @Nullable
     @Generated
     @Selector("paddleButton2")
     public native GCControllerButtonInput paddleButton2();
 
+    @Nullable
     @Generated
     @Selector("paddleButton3")
     public native GCControllerButtonInput paddleButton3();
 
+    @Nullable
     @Generated
     @Selector("paddleButton4")
     public native GCControllerButtonInput paddleButton4();
@@ -170,16 +182,19 @@ public class GCXboxGamepad extends GCExtendedGamepad {
 
     /**
      * Some Xbox controller variants feature a Share button.
-     * <p>
+     * 
      * [@example] The Bluetooth-enabled Xbox Wireless Controller introduced with the Xbox Series X and Xbox Series S in
      * 2020
      * has a Share button.
-     * <p>
+     * 
      * [@note] The Share button is reserved by the system for screenshot and video recording gestures. If you wish to
      * disable these
      * gestures in your app and take control of the Share button, set buttonShare.preferredSystemGestureState to
      * GCSystemGestureStateDisabled.
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("buttonShare")
     public native GCControllerButtonInput buttonShare();

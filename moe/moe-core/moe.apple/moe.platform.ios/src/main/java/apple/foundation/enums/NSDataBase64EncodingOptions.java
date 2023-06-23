@@ -21,27 +21,37 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * Base 64 Options ***************
+ * 
+ * API-Since: 7.0
  */
 @Generated
 public final class NSDataBase64EncodingOptions {
     /**
      * Use zero or one of the following to control the maximum line length after which a line ending is inserted. No
      * line endings are inserted by default.
+     * 
+     * API-Since: 7.0
      */
     @Generated @NUInt public static final long Encoding64CharacterLineLength = 0x0000000000000001L;
     /**
      * Use zero or one of the following to control the maximum line length after which a line ending is inserted. No
      * line endings are inserted by default.
+     * 
+     * API-Since: 7.0
      */
     @Generated @NUInt public static final long Encoding76CharacterLineLength = 0x0000000000000002L;
     /**
      * Use zero or more of the following to specify which kind of line ending is inserted. The default line ending is CR
      * LF.
+     * 
+     * API-Since: 7.0
      */
     @Generated @NUInt public static final long EncodingEndLineWithCarriageReturn = 0x0000000000000010L;
     /**
      * Use zero or more of the following to specify which kind of line ending is inserted. The default line ending is CR
      * LF.
+     * 
+     * API-Since: 7.0
      */
     @Generated @NUInt public static final long EncodingEndLineWithLineFeed = 0x0000000000000020L;
 

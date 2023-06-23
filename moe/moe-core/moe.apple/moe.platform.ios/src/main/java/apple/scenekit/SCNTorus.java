@@ -41,10 +41,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNTorus
- * <p>
+ * 
  * SCNTorus represents a torus with controllable ring radius and pipe radius.
  */
 @Generated
@@ -77,22 +79,25 @@ public class SCNTorus extends SCNGeometry {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -111,12 +116,12 @@ public class SCNTorus extends SCNGeometry {
 
     @Generated
     @Selector("geometryWithMDLMesh:")
-    public static native SCNTorus geometryWithMDLMesh(MDLMesh mdlMesh);
+    public static native SCNTorus geometryWithMDLMesh(@NotNull MDLMesh mdlMesh);
 
     @Generated
     @Selector("geometryWithSources:elements:")
-    public static native SCNTorus geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
-            NSArray<? extends SCNGeometryElement> elements);
+    public static native SCNTorus geometryWithSourcesElements(@NotNull NSArray<? extends SCNGeometrySource> sources,
+            @Nullable NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
     @Selector("hash")
@@ -140,9 +145,10 @@ public class SCNTorus extends SCNGeometry {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -171,9 +177,9 @@ public class SCNTorus extends SCNGeometry {
 
     /**
      * torusWithRingRadius:pipeRadius:
-     * <p>
+     * 
      * Creates and returns a torus with given ring radius and pipe radius.
-     *
+     * 
      * @param ringRadius The radius of the ring.
      * @param pipeRadius The radius of the pipe.
      */
@@ -192,13 +198,13 @@ public class SCNTorus extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNTorus initWithCoder(NSCoder coder);
+    public native SCNTorus initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] pipeRadius
-     * <p>
+     * 
      * The radius of the torus pipe. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 0.25.
      */
     @Generated
@@ -208,9 +214,9 @@ public class SCNTorus extends SCNGeometry {
 
     /**
      * [@property] pipeSegmentCount
-     * <p>
+     * 
      * The number of subdivisions of the pipe. Animatable.
-     * <p>
+     * 
      * If the value is less than 3, the behavior is undefined. The default value is 24.
      */
     @Generated
@@ -220,9 +226,9 @@ public class SCNTorus extends SCNGeometry {
 
     /**
      * [@property] ringRadius
-     * <p>
+     * 
      * The radius of the torus ring. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
      */
     @Generated
@@ -232,9 +238,9 @@ public class SCNTorus extends SCNGeometry {
 
     /**
      * [@property] ringSegmentCount
-     * <p>
+     * 
      * The number of subdivisions of the ring. Animatable.
-     * <p>
+     * 
      * If the value is less than 3, the behavior is undefined. The default value is 48.
      */
     @Generated
@@ -244,9 +250,9 @@ public class SCNTorus extends SCNGeometry {
 
     /**
      * [@property] pipeRadius
-     * <p>
+     * 
      * The radius of the torus pipe. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 0.25.
      */
     @Generated
@@ -255,9 +261,9 @@ public class SCNTorus extends SCNGeometry {
 
     /**
      * [@property] pipeSegmentCount
-     * <p>
+     * 
      * The number of subdivisions of the pipe. Animatable.
-     * <p>
+     * 
      * If the value is less than 3, the behavior is undefined. The default value is 24.
      */
     @Generated
@@ -266,9 +272,9 @@ public class SCNTorus extends SCNGeometry {
 
     /**
      * [@property] ringRadius
-     * <p>
+     * 
      * The radius of the torus ring. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
      */
     @Generated
@@ -277,9 +283,9 @@ public class SCNTorus extends SCNGeometry {
 
     /**
      * [@property] ringSegmentCount
-     * <p>
+     * 
      * The number of subdivisions of the ring. Animatable.
-     * <p>
+     * 
      * If the value is less than 3, the behavior is undefined. The default value is 48.
      */
     @Generated

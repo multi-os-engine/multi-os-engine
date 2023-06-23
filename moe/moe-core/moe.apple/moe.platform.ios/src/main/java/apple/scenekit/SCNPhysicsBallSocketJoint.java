@@ -41,10 +41,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNPhysicsBallSocketJoint
- * <p>
+ * 
  * SCNPhysicsBallSocketJoint makes two bodies to move like they are connected by a ball-and-socket joint (i.e it allows
  * rotations around all axes).
  */
@@ -78,22 +80,25 @@ public class SCNPhysicsBallSocketJoint extends SCNPhysicsBehavior {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,7 +139,8 @@ public class SCNPhysicsBallSocketJoint extends SCNPhysicsBehavior {
      */
     @Generated
     @Selector("jointWithBody:anchor:")
-    public static native SCNPhysicsBallSocketJoint jointWithBodyAnchor(SCNPhysicsBody body, @ByValue SCNVector3 anchor);
+    public static native SCNPhysicsBallSocketJoint jointWithBodyAnchor(@NotNull SCNPhysicsBody body,
+            @ByValue SCNVector3 anchor);
 
     /**
      * Initializes and returns a physics ball-and-socket joint.
@@ -142,12 +148,13 @@ public class SCNPhysicsBallSocketJoint extends SCNPhysicsBehavior {
      */
     @Generated
     @Selector("jointWithBodyA:anchorA:bodyB:anchorB:")
-    public static native SCNPhysicsBallSocketJoint jointWithBodyAAnchorABodyBAnchorB(SCNPhysicsBody bodyA,
-            @ByValue SCNVector3 anchorA, SCNPhysicsBody bodyB, @ByValue SCNVector3 anchorB);
+    public static native SCNPhysicsBallSocketJoint jointWithBodyAAnchorABodyBAnchorB(@NotNull SCNPhysicsBody bodyA,
+            @ByValue SCNVector3 anchorA, @NotNull SCNPhysicsBody bodyB, @ByValue SCNVector3 anchorB);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -198,6 +205,7 @@ public class SCNPhysicsBallSocketJoint extends SCNPhysicsBehavior {
     /**
      * the first body attached to the ball-and-socket joint
      */
+    @NotNull
     @Generated
     @Selector("bodyA")
     public native SCNPhysicsBody bodyA();
@@ -205,6 +213,7 @@ public class SCNPhysicsBallSocketJoint extends SCNPhysicsBehavior {
     /**
      * the second body attached to the ball-and-socket joint
      */
+    @Nullable
     @Generated
     @Selector("bodyB")
     public native SCNPhysicsBody bodyB();
@@ -215,7 +224,7 @@ public class SCNPhysicsBallSocketJoint extends SCNPhysicsBehavior {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsBallSocketJoint initWithCoder(NSCoder coder);
+    public native SCNPhysicsBallSocketJoint initWithCoder(@NotNull NSCoder coder);
 
     /**
      * the attach point of bodyA

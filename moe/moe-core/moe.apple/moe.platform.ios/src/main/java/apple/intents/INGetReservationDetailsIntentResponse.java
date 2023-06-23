@@ -24,7 +24,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -55,22 +60,25 @@ public class INGetReservationDetailsIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -107,11 +115,11 @@ public class INGetReservationDetailsIntentResponse extends INIntentResponse {
     @Generated
     @Selector("initWithCode:userActivity:")
     public native INGetReservationDetailsIntentResponse initWithCodeUserActivity(@NInt long code,
-            NSUserActivity userActivity);
+            @Nullable NSUserActivity userActivity);
 
     @Generated
     @Selector("initWithCoder:")
-    public native INGetReservationDetailsIntentResponse initWithCoder(NSCoder coder);
+    public native INGetReservationDetailsIntentResponse initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -130,15 +138,17 @@ public class INGetReservationDetailsIntentResponse extends INIntentResponse {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native INGetReservationDetailsIntentResponse new_objc();
 
+    @Nullable
     @Generated
     @Selector("reservations")
     public native NSArray<? extends INReservation> reservations();
@@ -153,7 +163,7 @@ public class INGetReservationDetailsIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("setReservations:")
-    public native void setReservations(NSArray<? extends INReservation> value);
+    public native void setReservations(@Nullable NSArray<? extends INReservation> value);
 
     @Generated
     @Selector("setVersion:")

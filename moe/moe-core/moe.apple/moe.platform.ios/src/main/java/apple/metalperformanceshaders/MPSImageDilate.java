@@ -41,10 +41,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImageDilate
- * <p>
+ * 
  * The MPSImageDilate finds the maximum pixel value in a rectangular region centered around each pixel in the
  * source image. It is like the MPSImageAreaMax, except that the intensity at each position is calculated relative
  * to a different value before determining which is the maximum pixel value, allowing for shaped, non-rectangular
@@ -59,8 +61,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * [@endcode]
  * A filter that contains all zeros and is identical to a MPSImageAreaMax filter. The center filter element
  * is assumed to be 0 to avoid causing a general darkening of the image.
- * <p>
+ * 
  * The edgeMode property is assumed to always be MPSImageEdgeModeClamp for this filter.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -92,22 +96,25 @@ public class MPSImageDilate extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -142,9 +149,10 @@ public class MPSImageDilate extends MPSUnaryImageKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -178,11 +186,11 @@ public class MPSImageDilate extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImageDilate initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageDilate initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Init a object with kernel height, width and weight values.
-     * <p>
+     * 
      * Each dilate shape probe defines a 3D surface of values.
      * These are arranged in order left to right, then top to bottom
      * in a 1D array. (values[kernelWidth*y+x] = probe[y][x])
@@ -190,7 +198,7 @@ public class MPSImageDilate extends MPSUnaryImageKernel {
      * pixel tending towards 0 and edges towards 1. However, any numerical
      * value is allowed. Calculations are subject to the usual floating-point
      * rounding error.
-     *
+     * 
      * @param device       The device the filter will run on
      * @param kernelWidth  The width of the kernel. Must be an odd number.
      * @param kernelHeight The height of the kernel. Must be an odd number.
@@ -202,12 +210,12 @@ public class MPSImageDilate extends MPSUnaryImageKernel {
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:values:")
     public native MPSImageDilate initWithDeviceKernelWidthKernelHeightValues(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight,
-            ConstFloatPtr values);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth,
+            @NUInt long kernelHeight, @NotNull ConstFloatPtr values);
 
     /**
      * [@property] kernelHeight
-     * <p>
+     * 
      * The height of the filter window. Must be an odd number.
      */
     @Generated
@@ -217,7 +225,7 @@ public class MPSImageDilate extends MPSUnaryImageKernel {
 
     /**
      * [@property] kernelWidth
-     * <p>
+     * 
      * The width of the filter window. Must be an odd number.
      */
     @Generated
@@ -227,24 +235,27 @@ public class MPSImageDilate extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSImageDilate initWithCoder(NSCoder aDecoder);
+    public native MPSImageDilate initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSImageDilate initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageDilate initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("supportsSecureCoding")

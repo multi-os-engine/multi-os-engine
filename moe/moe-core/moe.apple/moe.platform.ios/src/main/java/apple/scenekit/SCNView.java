@@ -19,8 +19,6 @@ package apple.scenekit;
 import apple.NSObject;
 import apple.avfaudio.AVAudioEngine;
 import apple.avfaudio.AVAudioEnvironmentNode;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -65,10 +63,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNView
- * <p>
+ * 
  * A SCNView is a subclass of NSView that can display a SCNScene
  */
 @Generated
@@ -93,7 +95,7 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("addKeyframeWithRelativeStartTime:relativeDuration:animations:")
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
-            @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
 
     @Generated
     @Owned
@@ -109,64 +111,70 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
     public static native void animateKeyframesWithDurationDelayOptionsAnimationsCompletion(double duration,
             double delay, @NUInt long options,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:animations:")
     public static native void animateWithDurationAnimations(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
 
     @Generated
     @Selector("animateWithDuration:animations:completion:")
     public static native void animateWithDurationAnimationsCompletion(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:options:animations:completion:")
     public static native void animateWithDurationDelayOptionsAnimationsCompletion(double duration, double delay,
             @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:")
     public static native void animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion(
             double duration, double delay, @NFloat double dampingRatio, @NFloat double velocity, @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
 
+    @NotNull
     @Generated
     @Selector("appearance")
     public static native SCNView appearance();
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:")
-    public static native SCNView appearanceForTraitCollection(UITraitCollection trait);
+    public static native SCNView appearanceForTraitCollection(@NotNull UITraitCollection trait);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    public static native SCNView appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native SCNView appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
-    public static native SCNView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes);
+    public static native SCNView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     public static native SCNView appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    public static native SCNView appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native SCNView appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes);
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -174,34 +182,39 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
-    public static native void beginAnimationsContext(String animationID, VoidPtr context);
+    public static native void beginAnimationsContext(@Nullable String animationID, @Nullable VoidPtr context);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -240,10 +253,12 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("layerClass")
     public static native Class layerClass();
@@ -256,14 +271,14 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")
     public static native void performSystemAnimationOnViewsOptionsAnimationsCompletion(@NUInt long animation,
-            NSArray<? extends UIView> views, @NUInt long options,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
+            @NotNull NSArray<? extends UIView> views, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("performWithoutAnimation:")
     public static native void performWithoutAnimation(
-            @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
+            @NotNull @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
 
     @Generated
     @Selector("requiresConstraintBasedLayout")
@@ -277,49 +292,61 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
-    public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
+    public static native void setAnimationDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
-    public static native void setAnimationDidStopSelector(SEL selector);
+    public static native void setAnimationDidStopSelector(@Nullable SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
-    public static native void setAnimationStartDate(NSDate startDate);
+    public static native void setAnimationStartDate(@NotNull NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
-    public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
+    public static native void setAnimationTransitionForViewCache(@NInt long transition, @NotNull UIView view,
+            boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
-    public static native void setAnimationWillStartSelector(SEL selector);
+    public static native void setAnimationWillStartSelector(@Nullable SEL selector);
 
     @Generated
     @Selector("setAnimationsEnabled:")
@@ -335,16 +362,16 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     @Generated
     @Selector("transitionFromView:toView:duration:options:completion:")
-    public static native void transitionFromViewToViewDurationOptionsCompletion(UIView fromView, UIView toView,
-            double duration, @NUInt long options,
-            @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
+    public static native void transitionFromViewToViewDurationOptionsCompletion(@NotNull UIView fromView,
+            @NotNull UIView toView, double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
 
     @Generated
     @Selector("transitionWithView:duration:options:animations:completion:")
-    public static native void transitionWithViewDurationOptionsAnimationsCompletion(UIView view, double duration,
-            @NUInt long options,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
+    public static native void transitionWithViewDurationOptionsAnimationsCompletion(@NotNull UIView view,
+            double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:")
@@ -364,21 +391,21 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     /**
      * [@property] allowsCameraControl
-     * <p>
+     * 
      * A Boolean value that determines whether the user can manipulate the point of view used to render the scene.
-     * <p>
-     * When set to YES, a defaultCameraController is created and the view will handle UI events to pilot it so the user
-     * can manipulate the current point of view with the mouse or the trackpad. The scene graph and existing cameras
-     * won't be modified by this action. The default value of this property is NO.
-     * Note that the default event handling provided by the view may not suite your needs. You may want to implement you
-     * own evnet handler.
+     * 
+     * When set to YES, a `defaultCameraController` is created and the view will handle UI events to pilot it so the
+     * user can manipulate the current point of view with the mouse or the trackpad. The scene graph and existing
+     * cameras won't be modified by this action. The default value of this property is NO.
+     * Note that the default event handling provided by the view may not suit your needs. You may want to implement your
+     * own event handler.
      * The built-in camera controller let you:
-     * - pan with 1 finger to rotate the camera around the scene.
-     * - pan with 2 fingers to translate the camera on its local X,Y plan.
-     * - pan with 3 fingers vertically to move the the camera forward/backward.
-     * - double tap to switch to the next camera in the scene.
-     * - rotate with two fingers to roll the camera (rotation on the Z axis).
-     * - pinch to zoom-in / zoom-out (change the fov of the camera).
+     * - pan with 1 finger to rotate the camera around the scene
+     * - pan with 2 fingers to translate the camera on its local X,Y plan
+     * - pan with 3 fingers vertically to move the the camera forward/backward
+     * - double tap to switch to the next camera in the scene
+     * - rotate with two fingers to roll the camera (rotation around the Z axis)
+     * - pinch to zoom-in / zoom-out (change the field of view of the camera)
      */
     @Generated
     @Selector("allowsCameraControl")
@@ -386,7 +413,7 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     /**
      * [@property] antialiasingMode
-     * <p>
+     * 
      * Defaults to SCNAntialiasingModeMultisampling4X on macOS and SCNAntialiasingModeNone on iOS.
      */
     @Generated
@@ -394,55 +421,64 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @NUInt
     public native long antialiasingMode();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearance")
     public SCNView _appearance() {
         return appearance();
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    public SCNView _appearanceForTraitCollection(UITraitCollection trait) {
+    public SCNView _appearanceForTraitCollection(@NotNull UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    public SCNView _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public SCNView _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    public SCNView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
+    public SCNView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(@NotNull UITraitCollection trait,
+            @NotNull NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    public SCNView _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
-            Object... varargs) {
+    public SCNView _appearanceWhenContainedIn(
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public SCNView _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public SCNView _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    @NotNull
     @Generated
     @Selector("audioEngine")
     public native AVAudioEngine audioEngine();
 
+    @NotNull
     @Generated
     @Selector("audioEnvironmentNode")
     public native AVAudioEnvironmentNode audioEnvironmentNode();
 
+    @Nullable
     @Generated
     @Selector("audioListener")
     public native SCNNode audioListener();
@@ -456,15 +492,18 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @NUInt
     public native long colorPixelFormat();
 
+    @Nullable
     @Generated
     @Selector("commandQueue")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLCommandQueue commandQueue();
 
+    @Nullable
     @Generated
     @Selector("context")
     public native VoidPtr context();
 
+    @Nullable
     @Generated
     @Selector("currentRenderCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)
@@ -475,6 +514,7 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @NUInt
     public native long debugOptions();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -485,6 +525,7 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @NUInt
     public native long depthPixelFormat();
 
+    @Nullable
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -492,15 +533,23 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     /**
      * SCN_GL_DEPRECATED(ios(8.0, 12.0), tvos(9.0, 12.0));
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGL API deprecated, please use Metal instead. (Define SCN_SILENCE_GL_DEPRECATION to
+     * silence these warnings)
      */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("eaglContext")
     public native EAGLContext eaglContext();
 
+    @NotNull
     @Generated
     @Selector("hitTest:options:")
     public native NSArray<? extends SCNHitTestResult> hitTestOptions(@ByValue CGPoint point,
-            NSDictionary<String, ?> options);
+            @Nullable NSDictionary<String, ?> options);
 
     @Generated
     @Selector("init")
@@ -508,7 +557,7 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNView initWithCoder(NSCoder coder);
+    public native SCNView initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -516,15 +565,15 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     /**
      * initWithFrame:options:
-     * <p>
+     * 
      * Initializes and returns a newly allocated SCNView object with a specified frame rectangle.
-     *
+     * 
      * @param frame   The frame rectangle for the created view object.
      * @param options An optional dictionary. See "View initialization options" above.
      */
     @Generated
     @Selector("initWithFrame:options:")
-    public native SCNView initWithFrameOptions(@ByValue CGRect frame, NSDictionary<String, ?> options);
+    public native SCNView initWithFrameOptions(@ByValue CGRect frame, @Nullable NSDictionary<String, ?> options);
 
     @Generated
     @Selector("isJitteringEnabled")
@@ -536,7 +585,7 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     @Generated
     @Selector("isNodeInsideFrustum:withPointOfView:")
-    public native boolean isNodeInsideFrustumWithPointOfView(SCNNode node, SCNNode pointOfView);
+    public native boolean isNodeInsideFrustumWithPointOfView(@NotNull SCNNode node, @NotNull SCNNode pointOfView);
 
     @Generated
     @Selector("isPlaying")
@@ -550,49 +599,52 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("loops")
     public native boolean loops();
 
+    @NotNull
     @Generated
     @Selector("nodesInsideFrustumWithPointOfView:")
-    public native NSArray<? extends SCNNode> nodesInsideFrustumWithPointOfView(SCNNode pointOfView);
+    public native NSArray<? extends SCNNode> nodesInsideFrustumWithPointOfView(@NotNull SCNNode pointOfView);
 
+    @Nullable
     @Generated
     @Selector("overlaySKScene")
     public native SKScene overlaySKScene();
 
     /**
      * pause:
-     * <p>
+     * 
      * This action method pauses the scene playback.
-     * <p>
+     * 
      * This method does not do anything if the scene is already paused.
-     *
+     * 
      * @param sender The object (such as a button or menu item) sending the message to pause the scene.
      */
     @Generated
     @Selector("pause:")
-    public native void pause(@Mapped(ObjCObjectMapper.class) Object sender);
+    public native void pause(@Nullable @Mapped(ObjCObjectMapper.class) Object sender);
 
     /**
      * play:
-     * <p>
+     * 
      * This action method begins playing the scene at its current location.
-     * <p>
+     * 
      * This method does not do anything if the scene is already playing.
-     *
+     * 
      * @param sender The object (such as a button or menu item) sending the message to play the scene.
      */
     @Generated
     @Selector("play:")
-    public native void play(@Mapped(ObjCObjectMapper.class) Object sender);
+    public native void play(@Nullable @Mapped(ObjCObjectMapper.class) Object sender);
 
+    @Nullable
     @Generated
     @Selector("pointOfView")
     public native SCNNode pointOfView();
 
     /**
      * [@property] preferredFramesPerSecond
-     * <p>
+     * 
      * The rate you want the view to redraw its contents.
-     * <p>
+     * 
      * When your application sets its preferred frame rate, the view chooses a frame rate as close to that as possible
      * based on the capabilities of the screen the view is displayed on. The actual frame rate chosen is usually a
      * factor of the maximum refresh rate of the screen to provide a consistent frame rate. For example, if the maximum
@@ -608,19 +660,19 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     @Generated
     @Selector("prepareObject:shouldAbortBlock:")
-    public native boolean prepareObjectShouldAbortBlock(@Mapped(ObjCObjectMapper.class) Object object,
-            @ObjCBlock(name = "call_prepareObjectShouldAbortBlock") SCNSceneRenderer.Block_prepareObjectShouldAbortBlock block);
+    public native boolean prepareObjectShouldAbortBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object object,
+            @Nullable @ObjCBlock(name = "call_prepareObjectShouldAbortBlock") SCNSceneRenderer.Block_prepareObjectShouldAbortBlock block);
 
     @Generated
     @Selector("prepareObjects:withCompletionHandler:")
-    public native void prepareObjectsWithCompletionHandler(NSArray<?> objects,
-            @ObjCBlock(name = "call_prepareObjectsWithCompletionHandler") SCNSceneRenderer.Block_prepareObjectsWithCompletionHandler completionHandler);
+    public native void prepareObjectsWithCompletionHandler(@NotNull NSArray<?> objects,
+            @Nullable @ObjCBlock(name = "call_prepareObjectsWithCompletionHandler") SCNSceneRenderer.Block_prepareObjectsWithCompletionHandler completionHandler);
 
     @Generated
     @Selector("presentScene:withTransition:incomingPointOfView:completionHandler:")
-    public native void presentSceneWithTransitionIncomingPointOfViewCompletionHandler(SCNScene scene,
-            SKTransition transition, SCNNode pointOfView,
-            @ObjCBlock(name = "call_presentSceneWithTransitionIncomingPointOfViewCompletionHandler") SCNSceneRenderer.Block_presentSceneWithTransitionIncomingPointOfViewCompletionHandler completionHandler);
+    public native void presentSceneWithTransitionIncomingPointOfViewCompletionHandler(@NotNull SCNScene scene,
+            @NotNull SKTransition transition, @Nullable SCNNode pointOfView,
+            @Nullable @ObjCBlock(name = "call_presentSceneWithTransitionIncomingPointOfViewCompletionHandler") SCNSceneRenderer.Block_presentSceneWithTransitionIncomingPointOfViewCompletionHandler completionHandler);
 
     @Generated
     @Selector("projectPoint:")
@@ -632,6 +684,7 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @NUInt
     public native long renderingAPI();
 
+    @Nullable
     @Generated
     @Selector("scene")
     public native SCNScene scene();
@@ -642,21 +695,21 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     /**
      * [@property] allowsCameraControl
-     * <p>
+     * 
      * A Boolean value that determines whether the user can manipulate the point of view used to render the scene.
-     * <p>
-     * When set to YES, a defaultCameraController is created and the view will handle UI events to pilot it so the user
-     * can manipulate the current point of view with the mouse or the trackpad. The scene graph and existing cameras
-     * won't be modified by this action. The default value of this property is NO.
-     * Note that the default event handling provided by the view may not suite your needs. You may want to implement you
-     * own evnet handler.
+     * 
+     * When set to YES, a `defaultCameraController` is created and the view will handle UI events to pilot it so the
+     * user can manipulate the current point of view with the mouse or the trackpad. The scene graph and existing
+     * cameras won't be modified by this action. The default value of this property is NO.
+     * Note that the default event handling provided by the view may not suit your needs. You may want to implement your
+     * own event handler.
      * The built-in camera controller let you:
-     * - pan with 1 finger to rotate the camera around the scene.
-     * - pan with 2 fingers to translate the camera on its local X,Y plan.
-     * - pan with 3 fingers vertically to move the the camera forward/backward.
-     * - double tap to switch to the next camera in the scene.
-     * - rotate with two fingers to roll the camera (rotation on the Z axis).
-     * - pinch to zoom-in / zoom-out (change the fov of the camera).
+     * - pan with 1 finger to rotate the camera around the scene
+     * - pan with 2 fingers to translate the camera on its local X,Y plan
+     * - pan with 3 fingers vertically to move the the camera forward/backward
+     * - double tap to switch to the next camera in the scene
+     * - rotate with two fingers to roll the camera (rotation around the Z axis)
+     * - pinch to zoom-in / zoom-out (change the field of view of the camera)
      */
     @Generated
     @Selector("setAllowsCameraControl:")
@@ -664,7 +717,7 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     /**
      * [@property] antialiasingMode
-     * <p>
+     * 
      * Defaults to SCNAntialiasingModeMultisampling4X on macOS and SCNAntialiasingModeNone on iOS.
      */
     @Generated
@@ -673,7 +726,7 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     @Generated
     @Selector("setAudioListener:")
-    public native void setAudioListener(SCNNode value);
+    public native void setAudioListener(@Nullable SCNNode value);
 
     @Generated
     @Selector("setAutoenablesDefaultLighting:")
@@ -685,10 +738,10 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -701,10 +754,16 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     /**
      * SCN_GL_DEPRECATED(ios(8.0, 12.0), tvos(9.0, 12.0));
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGL API deprecated, please use Metal instead. (Define SCN_SILENCE_GL_DEPRECATION to
+     * silence these warnings)
      */
+    @Deprecated
     @Generated
     @Selector("setEaglContext:")
-    public native void setEaglContext(EAGLContext value);
+    public native void setEaglContext(@Nullable EAGLContext value);
 
     @Generated
     @Selector("setLoops:")
@@ -712,17 +771,17 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     @Generated
     @Selector("setOverlaySKScene:")
-    public native void setOverlaySKScene(SKScene value);
+    public native void setOverlaySKScene(@Nullable SKScene value);
 
     @Generated
     @Selector("setPointOfView:")
-    public native void setPointOfView(SCNNode value);
+    public native void setPointOfView(@Nullable SCNNode value);
 
     /**
      * [@property] preferredFramesPerSecond
-     * <p>
+     * 
      * The rate you want the view to redraw its contents.
-     * <p>
+     * 
      * When your application sets its preferred frame rate, the view chooses a frame rate as close to that as possible
      * based on the capabilities of the screen the view is displayed on. The actual frame rate chosen is usually a
      * factor of the maximum refresh rate of the screen to provide a consistent frame rate. For example, if the maximum
@@ -737,7 +796,7 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     @Generated
     @Selector("setScene:")
-    public native void setScene(SCNScene value);
+    public native void setScene(@Nullable SCNScene value);
 
     @Generated
     @Selector("setSceneTime:")
@@ -749,7 +808,7 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     @Generated
     @Selector("setTechnique:")
-    public native void setTechnique(SCNTechnique value);
+    public native void setTechnique(@Nullable SCNTechnique value);
 
     @Generated
     @Selector("showsStatistics")
@@ -757,11 +816,12 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     /**
      * [@property] snapshot
-     * <p>
+     * 
      * Draws the contents of the view and returns them as a new image object
-     * <p>
+     * 
      * This method is thread-safe and may be called at any time.
      */
+    @NotNull
     @Generated
     @Selector("snapshot")
     public native UIImage snapshot();
@@ -773,15 +833,16 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     /**
      * stop:
-     * <p>
+     * 
      * This action method stops the scene playback and resets the current time to the start time of the scene.
-     *
+     * 
      * @param sender The object (such as a button or menu item) sending the message to stop playing the scene.
      */
     @Generated
     @Selector("stop:")
-    public native void stop(@Mapped(ObjCObjectMapper.class) Object sender);
+    public native void stop(@Nullable @Mapped(ObjCObjectMapper.class) Object sender);
 
+    @Nullable
     @Generated
     @Selector("technique")
     public native SCNTechnique technique();
@@ -793,11 +854,14 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     /**
      * [@property] cameraControlConfiguration
-     * <p>
+     * 
      * An object describing the current configuration of the event handler which pilot the default camera controller.
-     * <p>
+     * 
      * This object will be used to configure the event handler when allowCameraControl is set to YES.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("cameraControlConfiguration")
     @MappedReturn(ObjCObjectMapper.class)
@@ -805,17 +869,20 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     /**
      * [@property] defaultCameraController
-     * <p>
+     * 
      * Returns the default SCNCameraController used to drive the current point of view when allowCameraController is set
      * to YES.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("defaultCameraController")
     public native SCNCameraController defaultCameraController();
 
     /**
      * [@property] rendersContinuously
-     * <p>
+     * 
      * When set to YES, the view continously redraw at the display link frame rate. When set to NO the view will only
      * redraw when something change or animates in the receiver's scene. Defaults to NO.
      */
@@ -825,7 +892,7 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
 
     /**
      * [@property] rendersContinuously
-     * <p>
+     * 
      * When set to YES, the view continously redraw at the display link frame rate. When set to NO the view will only
      * redraw when something change or animates in the receiver's scene. Defaults to NO.
      */
@@ -846,7 +913,7 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
-            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+            @NotNull @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
     @Generated
     @Selector("setTemporalAntialiasingEnabled:")
@@ -860,6 +927,7 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("usesReverseZ")
     public native boolean usesReverseZ();
 
+    @NotNull
     @Generated
     @Selector("currentRenderPassDescriptor")
     public native MTLRenderPassDescriptor currentRenderPassDescriptor();

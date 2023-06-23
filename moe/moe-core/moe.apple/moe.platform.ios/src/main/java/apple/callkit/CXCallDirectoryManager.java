@@ -39,7 +39,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CallKit")
 @Runtime(ObjCRuntime.class)
@@ -70,22 +75,25 @@ public class CXCallDirectoryManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,9 +128,10 @@ public class CXCallDirectoryManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -141,6 +150,7 @@ public class CXCallDirectoryManager extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("sharedInstance")
     public static native CXCallDirectoryManager sharedInstance();
@@ -156,8 +166,8 @@ public class CXCallDirectoryManager extends NSObject {
 
     @Generated
     @Selector("getEnabledStatusForExtensionWithIdentifier:completionHandler:")
-    public native void getEnabledStatusForExtensionWithIdentifierCompletionHandler(String identifier,
-            @ObjCBlock(name = "call_getEnabledStatusForExtensionWithIdentifierCompletionHandler") Block_getEnabledStatusForExtensionWithIdentifierCompletionHandler completion);
+    public native void getEnabledStatusForExtensionWithIdentifierCompletionHandler(@NotNull String identifier,
+            @NotNull @ObjCBlock(name = "call_getEnabledStatusForExtensionWithIdentifierCompletionHandler") Block_getEnabledStatusForExtensionWithIdentifierCompletionHandler completion);
 
     @Generated
     @Selector("init")
@@ -165,32 +175,36 @@ public class CXCallDirectoryManager extends NSObject {
 
     @Generated
     @Selector("reloadExtensionWithIdentifier:completionHandler:")
-    public native void reloadExtensionWithIdentifierCompletionHandler(String identifier,
-            @ObjCBlock(name = "call_reloadExtensionWithIdentifierCompletionHandler") Block_reloadExtensionWithIdentifierCompletionHandler completion);
+    public native void reloadExtensionWithIdentifierCompletionHandler(@NotNull String identifier,
+            @Nullable @ObjCBlock(name = "call_reloadExtensionWithIdentifierCompletionHandler") Block_reloadExtensionWithIdentifierCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getEnabledStatusForExtensionWithIdentifierCompletionHandler {
         @Generated
-        void call_getEnabledStatusForExtensionWithIdentifierCompletionHandler(@NInt long enabledStatus, NSError error);
+        void call_getEnabledStatusForExtensionWithIdentifierCompletionHandler(@NInt long enabledStatus,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_reloadExtensionWithIdentifierCompletionHandler {
         @Generated
-        void call_reloadExtensionWithIdentifierCompletionHandler(NSError error);
+        void call_reloadExtensionWithIdentifierCompletionHandler(@Nullable NSError error);
     }
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("openSettingsWithCompletionHandler:")
     public native void openSettingsWithCompletionHandler(
-            @ObjCBlock(name = "call_openSettingsWithCompletionHandler") Block_openSettingsWithCompletionHandler completion);
+            @Nullable @ObjCBlock(name = "call_openSettingsWithCompletionHandler") Block_openSettingsWithCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_openSettingsWithCompletionHandler {
         @Generated
-        void call_openSettingsWithCompletionHandler(NSError error);
+        void call_openSettingsWithCompletionHandler(@Nullable NSError error);
     }
 }

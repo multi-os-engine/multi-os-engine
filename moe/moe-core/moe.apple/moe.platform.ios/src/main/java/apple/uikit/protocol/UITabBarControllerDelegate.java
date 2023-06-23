@@ -31,84 +31,111 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITabBarControllerDelegate")
 public interface UITabBarControllerDelegate {
+    /**
+     * API-Since: 7.0
+     */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("tabBarController:animationControllerForTransitionFromViewController:toViewController:")
     @MappedReturn(ObjCObjectMapper.class)
     default UIViewControllerAnimatedTransitioning tabBarControllerAnimationControllerForTransitionFromViewControllerToViewController(
-            UITabBarController tabBarController, UIViewController fromVC, UIViewController toVC) {
+            @NotNull UITabBarController tabBarController, @NotNull UIViewController fromVC,
+            @NotNull UIViewController toVC) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("tabBarController:didEndCustomizingViewControllers:changed:")
-    default void tabBarControllerDidEndCustomizingViewControllersChanged(UITabBarController tabBarController,
-            NSArray<? extends UIViewController> viewControllers, boolean changed) {
+    default void tabBarControllerDidEndCustomizingViewControllersChanged(@NotNull UITabBarController tabBarController,
+            @NotNull NSArray<? extends UIViewController> viewControllers, boolean changed) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("tabBarController:didSelectViewController:")
-    default void tabBarControllerDidSelectViewController(UITabBarController tabBarController,
-            UIViewController viewController) {
+    default void tabBarControllerDidSelectViewController(@NotNull UITabBarController tabBarController,
+            @NotNull UIViewController viewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("tabBarController:interactionControllerForAnimationController:")
     @MappedReturn(ObjCObjectMapper.class)
     default UIViewControllerInteractiveTransitioning tabBarControllerInteractionControllerForAnimationController(
-            UITabBarController tabBarController,
-            @Mapped(ObjCObjectMapper.class) UIViewControllerAnimatedTransitioning animationController) {
+            @NotNull UITabBarController tabBarController,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerAnimatedTransitioning animationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("tabBarController:shouldSelectViewController:")
-    default boolean tabBarControllerShouldSelectViewController(UITabBarController tabBarController,
-            UIViewController viewController) {
+    default boolean tabBarControllerShouldSelectViewController(@NotNull UITabBarController tabBarController,
+            @NotNull UIViewController viewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("tabBarController:willBeginCustomizingViewControllers:")
-    default void tabBarControllerWillBeginCustomizingViewControllers(UITabBarController tabBarController,
-            NSArray<? extends UIViewController> viewControllers) {
+    default void tabBarControllerWillBeginCustomizingViewControllers(@NotNull UITabBarController tabBarController,
+            @NotNull NSArray<? extends UIViewController> viewControllers) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("tabBarController:willEndCustomizingViewControllers:changed:")
-    default void tabBarControllerWillEndCustomizingViewControllersChanged(UITabBarController tabBarController,
-            NSArray<? extends UIViewController> viewControllers, boolean changed) {
+    default void tabBarControllerWillEndCustomizingViewControllersChanged(@NotNull UITabBarController tabBarController,
+            @NotNull NSArray<? extends UIViewController> viewControllers, boolean changed) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("tabBarControllerPreferredInterfaceOrientationForPresentation:")
     @NInt
-    default long tabBarControllerPreferredInterfaceOrientationForPresentation(UITabBarController tabBarController) {
+    default long tabBarControllerPreferredInterfaceOrientationForPresentation(
+            @NotNull UITabBarController tabBarController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("tabBarControllerSupportedInterfaceOrientations:")
     @NUInt
-    default long tabBarControllerSupportedInterfaceOrientations(UITabBarController tabBarController) {
+    default long tabBarControllerSupportedInterfaceOrientations(@NotNull UITabBarController tabBarController) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

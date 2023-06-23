@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("MediaPlayer")
@@ -37,15 +38,15 @@ public interface MPMediaPickerControllerDelegate {
     @Generated
     @IsOptional
     @Selector("mediaPicker:didPickMediaItems:")
-    default void mediaPickerDidPickMediaItems(MPMediaPickerController mediaPicker,
-            MPMediaItemCollection mediaItemCollection) {
+    default void mediaPickerDidPickMediaItems(@NotNull MPMediaPickerController mediaPicker,
+            @NotNull MPMediaItemCollection mediaItemCollection) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("mediaPickerDidCancel:")
-    default void mediaPickerDidCancel(MPMediaPickerController mediaPicker) {
+    default void mediaPickerDidCancel(@NotNull MPMediaPickerController mediaPicker) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

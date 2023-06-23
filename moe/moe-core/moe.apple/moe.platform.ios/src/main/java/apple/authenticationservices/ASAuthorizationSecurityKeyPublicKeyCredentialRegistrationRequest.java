@@ -26,7 +26,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
@@ -56,46 +61,53 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest ex
     @Selector("allocWithZone:")
     public static native ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest allocWithZone(VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("attestationPreference")
     public native String attestationPreference();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("challenge")
     public native NSData challenge();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * A list of parameters for the new credential which are supported by the Relying Party. The authenticator should
      * choose from these parameters when creating the credential.
      */
+    @NotNull
     @Generated
     @Selector("credentialParameters")
     public native NSArray<? extends ASAuthorizationPublicKeyCredentialParameters> credentialParameters();
@@ -108,19 +120,21 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest ex
     @Selector("description")
     public static native String description_static();
 
+    @Nullable
     @Generated
     @Selector("displayName")
     public native String displayName();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * A list of descriptors indicating credentials which must not already exist on the authenticator. If a credential
      * already exists on the authenticator which matches one or more of these descriptors, a new credential will not be
      * created and authentication will fail.
      */
+    @NotNull
     @Generated
     @Selector("excludedCredentials")
     public native NSArray<? extends ASAuthorizationSecurityKeyPublicKeyCredentialDescriptor> excludedCredentials();
@@ -136,7 +150,8 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest ex
 
     @Generated
     @Selector("initWithCoder:")
-    public native ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest initWithCoder(NSCoder coder);
+    public native ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest initWithCoder(
+            @NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -155,10 +170,12 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest ex
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -168,6 +185,7 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest ex
     @Selector("new")
     public static native ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest new_objc();
 
+    @NotNull
     @Generated
     @Selector("relyingPartyIdentifier")
     public native String relyingPartyIdentifier();
@@ -175,6 +193,7 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest ex
     /**
      * A preference whether the authenticator should store the private key of the newly created credential.
      */
+    @NotNull
     @Generated
     @Selector("residentKeyPreference")
     public native String residentKeyPreference();
@@ -189,11 +208,11 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest ex
 
     @Generated
     @Selector("setAttestationPreference:")
-    public native void setAttestationPreference(String value);
+    public native void setAttestationPreference(@NotNull String value);
 
     @Generated
     @Selector("setChallenge:")
-    public native void setChallenge(NSData value);
+    public native void setChallenge(@NotNull NSData value);
 
     /**
      * A list of parameters for the new credential which are supported by the Relying Party. The authenticator should
@@ -201,11 +220,12 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest ex
      */
     @Generated
     @Selector("setCredentialParameters:")
-    public native void setCredentialParameters(NSArray<? extends ASAuthorizationPublicKeyCredentialParameters> value);
+    public native void setCredentialParameters(
+            @NotNull NSArray<? extends ASAuthorizationPublicKeyCredentialParameters> value);
 
     @Generated
     @Selector("setDisplayName:")
-    public native void setDisplayName(String value);
+    public native void setDisplayName(@Nullable String value);
 
     /**
      * A list of descriptors indicating credentials which must not already exist on the authenticator. If a credential
@@ -215,26 +235,26 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest ex
     @Generated
     @Selector("setExcludedCredentials:")
     public native void setExcludedCredentials(
-            NSArray<? extends ASAuthorizationSecurityKeyPublicKeyCredentialDescriptor> value);
+            @NotNull NSArray<? extends ASAuthorizationSecurityKeyPublicKeyCredentialDescriptor> value);
 
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@NotNull String value);
 
     /**
      * A preference whether the authenticator should store the private key of the newly created credential.
      */
     @Generated
     @Selector("setResidentKeyPreference:")
-    public native void setResidentKeyPreference(String value);
+    public native void setResidentKeyPreference(@NotNull String value);
 
     @Generated
     @Selector("setUserID:")
-    public native void setUserID(NSData value);
+    public native void setUserID(@NotNull NSData value);
 
     @Generated
     @Selector("setUserVerificationPreference:")
-    public native void setUserVerificationPreference(String value);
+    public native void setUserVerificationPreference(@NotNull String value);
 
     @Generated
     @Selector("setVersion:")
@@ -254,10 +274,12 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest ex
         return supportsSecureCoding();
     }
 
+    @NotNull
     @Generated
     @Selector("userID")
     public native NSData userID();
 
+    @NotNull
     @Generated
     @Selector("userVerificationPreference")
     public native String userVerificationPreference();

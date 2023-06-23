@@ -44,10 +44,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNPhysicsShape
- * <p>
+ * 
  * SCNPhysicsShape represents the shape of a physics body.
  */
 @Generated
@@ -80,22 +82,25 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +135,10 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,8 +162,8 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
      */
     @Generated
     @Selector("shapeWithGeometry:options:")
-    public static native SCNPhysicsShape shapeWithGeometryOptions(SCNGeometry geometry,
-            NSDictionary<String, ?> options);
+    public static native SCNPhysicsShape shapeWithGeometryOptions(@NotNull SCNGeometry geometry,
+            @Nullable NSDictionary<String, ?> options);
 
     /**
      * Creates an instance of a physics shape based on a node hierachy. The hierarchy must contain geometries at some
@@ -165,7 +171,8 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
      */
     @Generated
     @Selector("shapeWithNode:options:")
-    public static native SCNPhysicsShape shapeWithNodeOptions(SCNNode node, NSDictionary<String, ?> options);
+    public static native SCNPhysicsShape shapeWithNodeOptions(@NotNull SCNNode node,
+            @Nullable NSDictionary<String, ?> options);
 
     /**
      * Creates an instance of a physics shape based on several sub shapes, associated with transforms. The transforms
@@ -173,8 +180,8 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
      */
     @Generated
     @Selector("shapeWithShapes:transforms:")
-    public static native SCNPhysicsShape shapeWithShapesTransforms(NSArray<? extends SCNPhysicsShape> shapes,
-            NSArray<? extends NSValue> transforms);
+    public static native SCNPhysicsShape shapeWithShapesTransforms(@NotNull NSArray<? extends SCNPhysicsShape> shapes,
+            @Nullable NSArray<? extends NSValue> transforms);
 
     @Generated
     @Selector("superclass")
@@ -189,15 +196,16 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -205,11 +213,14 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsShape initWithCoder(NSCoder coder);
+    public native SCNPhysicsShape initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Returns the options requested at init time
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("options")
     public native NSDictionary<String, ?> options();
@@ -217,7 +228,10 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
     /**
      * Returns the object from which this physics shape was created. It can be an SCNGeometry*, an SCNNode* or in
      * NSArray* of subshapes.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("sourceObject")
     @MappedReturn(ObjCObjectMapper.class)
@@ -232,7 +246,10 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
     /**
      * If the physics shape was created from an array of sub shapes, transforms contains the associated transforms as
      * SCNMatrix4 wrapped in NSValue.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("transforms")
     public native NSArray<? extends NSValue> transforms();

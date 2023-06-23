@@ -43,10 +43,14 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This class represents an event that is evaluated based on entry to and/or
  * exit from a Region
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("HomeKit")
@@ -78,22 +82,25 @@ public class HMLocationEvent extends HMEvent implements NSCopying, NSMutableCopy
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,9 +135,10 @@ public class HMLocationEvent extends HMEvent implements NSCopying, NSMutableCopy
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,55 +172,65 @@ public class HMLocationEvent extends HMEvent implements NSCopying, NSMutableCopy
 
     /**
      * Initializes a new location event object
-     *
+     * 
      * @param region - Region with at least one property of notifyOnEntry or notifyOnExit set to TRUE.
+     * 
      * @return Instance object representing the location event.
      */
     @Generated
     @Selector("initWithRegion:")
-    public native HMLocationEvent initWithRegion(CLRegion region);
+    public native HMLocationEvent initWithRegion(@NotNull CLRegion region);
 
     /**
      * Region on which events are triggered based on the properties notifyOnEntry and notifyOnExit.
      * This property will be nil when an application is not authorized for location services.
      */
+    @Nullable
     @Generated
     @Selector("region")
     public native CLRegion region();
 
     /**
      * Updates the region
-     *
+     * 
      * @param region     - New region with at least one property of notifyOnEntry or notifyOnExit set to TRUE.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
+     * 
+     *                   API-Since: 9.0
+     *                   Deprecated-Since: 11.0
+     *                   Deprecated-Message: No longer supported.
      */
+    @Deprecated
     @Generated
     @Selector("updateRegion:completionHandler:")
-    public native void updateRegionCompletionHandler(CLRegion region,
-            @ObjCBlock(name = "call_updateRegionCompletionHandler") Block_updateRegionCompletionHandler completion);
+    public native void updateRegionCompletionHandler(@NotNull CLRegion region,
+            @NotNull @ObjCBlock(name = "call_updateRegionCompletionHandler") Block_updateRegionCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateRegionCompletionHandler {
         @Generated
-        void call_updateRegionCompletionHandler(NSError error);
+        void call_updateRegionCompletionHandler(@Nullable NSError error);
     }
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("isSupportedForHome:")
-    public static native boolean isSupportedForHome(HMHome home);
+    public static native boolean isSupportedForHome(@NotNull HMHome home);
 
+    @NotNull
     @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 }

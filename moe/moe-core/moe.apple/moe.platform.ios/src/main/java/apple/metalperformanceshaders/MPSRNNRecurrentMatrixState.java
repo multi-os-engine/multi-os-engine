@@ -25,12 +25,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSRNNRecurrentMatrixState
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * This class holds all the data that is passed from one sequence iteration of the matrix-based RNN layer to the next.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -62,22 +66,25 @@ public class MPSRNNRecurrentMatrixState extends MPSState {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -92,20 +99,22 @@ public class MPSRNNRecurrentMatrixState extends MPSState {
 
     /**
      * Access the stored memory cell matrix data (if present).
-     *
+     * 
      * @param layerIndex Index of the layer whose to get - belongs to { 0, 1,...,@see numberOfLayers - 1 }
      * @return For valid layerIndex the memory cell image matrix, otherwise nil.
      */
+    @Nullable
     @Generated
     @Selector("getMemoryCellMatrixForLayerIndex:")
     public native MPSMatrix getMemoryCellMatrixForLayerIndex(@NUInt long layerIndex);
 
     /**
      * Access the stored recurrent matrix data.
-     *
+     * 
      * @param layerIndex Index of the layer whose to get - belongs to { 0, 1,...,@see numberOfLayers - 1 }
      * @return For valid layerIndex the recurrent output matrix data, otherwise nil.
      */
+    @Nullable
     @Generated
     @Selector("getRecurrentOutputMatrixForLayerIndex:")
     public native MPSMatrix getRecurrentOutputMatrixForLayerIndex(@NUInt long layerIndex);
@@ -136,9 +145,10 @@ public class MPSRNNRecurrentMatrixState extends MPSState {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,44 +178,50 @@ public class MPSRNNRecurrentMatrixState extends MPSState {
 
     @Generated
     @Selector("initWithDevice:bufferSize:")
-    public native MPSRNNRecurrentMatrixState initWithDeviceBufferSize(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @NUInt long bufferSize);
+    public native MPSRNNRecurrentMatrixState initWithDeviceBufferSize(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long bufferSize);
 
     @Generated
     @Selector("initWithDevice:resourceList:")
     public native MPSRNNRecurrentMatrixState initWithDeviceResourceList(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, MPSStateResourceList resourceList);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSStateResourceList resourceList);
 
     @Generated
     @Selector("initWithDevice:textureDescriptor:")
     public native MPSRNNRecurrentMatrixState initWithDeviceTextureDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, MTLTextureDescriptor descriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MTLTextureDescriptor descriptor);
 
     @Generated
     @Selector("initWithResource:")
-    public native MPSRNNRecurrentMatrixState initWithResource(@Mapped(ObjCObjectMapper.class) MTLResource resource);
+    public native MPSRNNRecurrentMatrixState initWithResource(
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLResource resource);
 
     @Generated
     @Selector("initWithResources:")
-    public native MPSRNNRecurrentMatrixState initWithResources(NSArray<?> resources);
+    public native MPSRNNRecurrentMatrixState initWithResources(@Nullable NSArray<?> resources);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:")
     public static native MPSRNNRecurrentMatrixState temporaryStateWithCommandBuffer(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:bufferSize:")
     public static native MPSRNNRecurrentMatrixState temporaryStateWithCommandBufferBufferSize(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:resourceList:")
     public static native MPSRNNRecurrentMatrixState temporaryStateWithCommandBufferResourceList(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSStateResourceList resourceList);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSStateResourceList resourceList);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:textureDescriptor:")
     public static native MPSRNNRecurrentMatrixState temporaryStateWithCommandBufferTextureDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MTLTextureDescriptor descriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NotNull MTLTextureDescriptor descriptor);
 }

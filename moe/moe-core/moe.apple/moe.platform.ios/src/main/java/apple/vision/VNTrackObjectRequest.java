@@ -24,14 +24,18 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * VNTrackObjectRequest tracks an object in a sequence of images.
- * <p>
+ * 
  * The VNTrackObjectRequest is a general purpose object tracker. This tracker is used when the tracked entity does not
  * have a special tracker, like VNTrackRectangleRequest. The VNTrackObjectRequest is initialized with
  * VNDetectedObjectObservation that contains bounding box for the object of interest. This tracker is processed using
  * one of the [VNSequenceRequestHandler performRequests:...] methods.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -63,22 +67,25 @@ public class VNTrackObjectRequest extends VNTrackingRequest {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -103,34 +110,36 @@ public class VNTrackObjectRequest extends VNTrackingRequest {
     @Generated
     @Selector("initWithCompletionHandler:")
     public native VNTrackObjectRequest initWithCompletionHandler(
-            @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
 
     /**
      * Create a new request with detected object observation.
-     *
+     * 
      * @param observation Detected object observation with bounding box info.
      */
     @Generated
     @Selector("initWithDetectedObjectObservation:")
-    public native VNTrackObjectRequest initWithDetectedObjectObservation(VNDetectedObjectObservation observation);
+    public native VNTrackObjectRequest initWithDetectedObjectObservation(
+            @NotNull VNDetectedObjectObservation observation);
 
     /**
      * Create a new request with detected object observation.
-     *
+     * 
      * @param observation       Detected object observation with bounding box info.
      * @param completionHandler The block that is invoked when the request has been performed.
      */
     @Generated
     @Selector("initWithDetectedObjectObservation:completionHandler:")
     public native VNTrackObjectRequest initWithDetectedObjectObservationCompletionHandler(
-            VNDetectedObjectObservation observation,
-            @ObjCBlock(name = "call_initWithDetectedObjectObservationCompletionHandler") Block_initWithDetectedObjectObservationCompletionHandler completionHandler);
+            @NotNull VNDetectedObjectObservation observation,
+            @Nullable @ObjCBlock(name = "call_initWithDetectedObjectObservationCompletionHandler") Block_initWithDetectedObjectObservationCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithDetectedObjectObservationCompletionHandler {
         @Generated
-        void call_initWithDetectedObjectObservationCompletionHandler(VNRequest request, NSError error);
+        void call_initWithDetectedObjectObservationCompletionHandler(@NotNull VNRequest request,
+                @Nullable NSError error);
     }
 
     @Generated
@@ -150,9 +159,10 @@ public class VNTrackObjectRequest extends VNTrackingRequest {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -190,6 +200,7 @@ public class VNTrackObjectRequest extends VNTrackingRequest {
     @NUInt
     public static native long defaultRevision();
 
+    @NotNull
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();

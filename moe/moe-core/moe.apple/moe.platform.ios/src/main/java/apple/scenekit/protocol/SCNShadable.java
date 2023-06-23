@@ -29,10 +29,12 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] SCNShadable
- * <p>
+ * 
  * The SCNShadable protocol defines an object that is rendered with shaders.
  */
 @Generated
@@ -42,49 +44,50 @@ import org.moe.natj.objc.ann.Selector;
 public interface SCNShadable {
     /**
      * handleBindingOfSymbol:usingBlock:
-     * <p>
+     * 
      * Sets the block to call at render time to bind the value for the specified symbol of the receiver's SCNProgram.
      * This method has no effect for symbols declared in shader modifiers.
-     * <p>
+     * 
      * This method can only be used with OpenGL and OpenGLES based programs.
-     *
+     * 
      * @param symbol The name of the symbol to bind a value for.
      * @param block  The block to call to bind the specified symbol.
      */
     @Generated
     @IsOptional
     @Selector("handleBindingOfSymbol:usingBlock:")
-    default void handleBindingOfSymbolUsingBlock(String symbol,
-            @ObjCBlock(name = "call_handleBindingOfSymbolUsingBlock") Block_handleBindingOfSymbolUsingBlock block) {
+    default void handleBindingOfSymbolUsingBlock(@NotNull String symbol,
+            @Nullable @ObjCBlock(name = "call_handleBindingOfSymbolUsingBlock") Block_handleBindingOfSymbolUsingBlock block) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * handleUnbindingOfSymbol:usingBlock:
-     * <p>
+     * 
      * Sets the block to call at render time to unbind the value for the specified symbol of the receiver's SCNProgram.
      * This method has no effect for symbols declared in shader modifiers.
-     * <p>
+     * 
      * This method can only be used with OpenGL and OpenGLES based programs.
-     *
+     * 
      * @param symbol The name of the symbol to unbind.
      * @param block  The block to call to unbind the specified symbol.
      */
     @Generated
     @IsOptional
     @Selector("handleUnbindingOfSymbol:usingBlock:")
-    default void handleUnbindingOfSymbolUsingBlock(String symbol,
-            @ObjCBlock(name = "call_handleUnbindingOfSymbolUsingBlock") Block_handleUnbindingOfSymbolUsingBlock block) {
+    default void handleUnbindingOfSymbolUsingBlock(@NotNull String symbol,
+            @Nullable @ObjCBlock(name = "call_handleUnbindingOfSymbolUsingBlock") Block_handleUnbindingOfSymbolUsingBlock block) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * [@property] program
-     * <p>
+     * 
      * Specifies a custom program used to render the receiver.
-     * <p>
+     * 
      * When a program is set, it overrides all the rendering parameters such as material settings and shaderModifiers.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("program")
@@ -94,41 +97,41 @@ public interface SCNShadable {
 
     /**
      * [@property] program
-     * <p>
+     * 
      * Specifies a custom program used to render the receiver.
-     * <p>
+     * 
      * When a program is set, it overrides all the rendering parameters such as material settings and shaderModifiers.
      */
     @Generated
     @IsOptional
     @Selector("setProgram:")
-    default void setProgram(SCNProgram value) {
+    default void setProgram(@Nullable SCNProgram value) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * [@property] shaderModifiers
-     * <p>
+     * 
      * Dictionary of shader modifiers snippets, targeting entry points. The valid keys are the entry points described in
      * the "Shader Modifier Entry Point" constants. The values are the code snippets formatted as described below.
-     * <p>
+     * 
      * Shader modifiers allow you to inject shader code in the standard shaders of SceneKit. This injection is allowed
      * in few controlled entry points, allowing specific kind of tasks in specific context. Each modifier can operate on
      * specific structures along with access to global uniforms, that could be the standard SceneKit uniforms or its own
      * declared uniforms.
-     * <p>
+     * 
      * Shader modifiers can be used to tweak SceneKit rendering by adding custom code at the following entry points:
      * 1. vertex (SCNShaderModifierEntryPointGeometry)
      * 2. surface (SCNShaderModifierEntryPointSurface)
      * 3. lighting (SCNShaderModifierEntryPointLightingModel)
      * 4. fragment (SCNShaderModifierEntryPointFragment)
      * See below for a detailed explanation of these entry points and the context they provide.
-     * <p>
+     * 
      * Shader modifiers can be written in either GLSL or the Metal Shading Language. Metal shaders won't run on iOS 8
      * and macOS 10.10 or earlier.
-     * <p>
+     * 
      * The structure of a shader modifier is:
-     * <p>
+     * 
      * GLSL
      * | uniform float myGrayAmount = 3.0; // Custom GLSL uniforms declarations are of the form `[uniform type
      * uniformName [= defaultValue]]`
@@ -145,7 +148,7 @@ public interface SCNShadable {
      * | // the shader modifier code snippet itself
      * | vec3 myColor = myGrayAmount;
      * | _output.color.rgb += myColor;
-     * <p>
+     * 
      * Metal Shading Language
      * | #pragma arguments
      * | float myGrayAmount; // Custom Metal uniforms declarations require a #pragma and are of the form `[type name]`
@@ -163,39 +166,39 @@ public interface SCNShadable {
      * | // the shader modifier code snippet itself
      * | float3 myColor = myGrayAmount;
      * | _output.color.rgb += myColor;
-     * <p>
+     * 
      * The `#pragma body` directive
      * Is only needed if you declared functions that must not be included in the shader code itself.
-     * <p>
+     * 
      * The `#pragma transparent` directive
      * Forces the rendering to be blended using the following equation:
      * _output.color.rgb + (1 - _output.color.a) * dst.rgb;
      * where `dst` represents the current fragment color. The rgb components must be premultiplied.
-     * <p>
+     * 
      * The `#pragma opaque` directive
      * Forces the rendering to be opaque. It then ignores the alpha component of the fragment.
-     * <p>
+     * 
      * When using Metal, you can also transfer varying values from the vertex shader (geometry shader modifier) to the
      * fragment shader (surface and/or fragment shader modifier):
      * 1. Start by declaring the varying values in at least one of the shader modifiers:
-     * <p>
+     * 
      * Metal Shading Language
      * | #pragma varyings
      * | half3 myVec;
-     * <p>
+     * 
      * 2. Then write the varying values from the vertex shader (geometry shader modifier):
-     * <p>
+     * 
      * Metal Shading Language
      * | #pragma body
      * | out.myVec = _geometry.normal.xyz * 0.5h + 0.5h;
-     * <p>
+     * 
      * 3. Finally read the varying values from the fragment shader (surface and/or fragment shader modifier):
-     * <p>
+     * 
      * Metal Shading Language
      * | _output.color.rgb = saturate(in.myVec);
-     * <p>
+     * 
      * SceneKit declares the following built-in uniforms:
-     * <p>
+     * 
      * GLSL | Metal Shading Language |
      * --------------------------------------------┼-------------------------------------------------------┤
      * float u_time | float scn_frame.time | The current time, in seconds
@@ -219,23 +222,23 @@ public interface SCNShadable {
      * u_boundingBox[0].xyz and u_boundingBox[1].xyz being respectively the minimum and maximum corner of the box.
      * mat2x3 u_worldBoundingBox; | float2x3 scn_node.worldBoundingBox | The bounding box of the current geometry, in
      * world space.
-     * <p>
+     * 
      * When writing shaders using the Metal Shading Language a complete description of the type of the scn_frame
      * variable (SCNSceneBuffer) can be found in the <SceneKit/scn_metal> header file.
      * The type of the scn_node variable is generated at compile time and there's no corresponding header file in the
      * framework.
-     * <p>
+     * 
      * In addition to these built-in uniforms, it is possible to use custom uniforms:
-     * <p>
+     * 
      * The SCNGeometry and SCNMaterial classes are key-value coding compliant classes, which means that you can set
      * values for arbitrary keys. Even if the key `myAmplitude` is not a declared property of the class, you can still
      * set a value for it.
      * Declaring a `myAmplitude` uniform in the shader modifier makes SceneKit observe the reveiver's `myAmplitude` key.
      * Any change to that key will make SceneKit bind the uniform with the new value.
-     * <p>
+     * 
      * The following GLSL and Metal Shading Language types (and their Objective-C counterparts) can be used to declare
      * (and bind) custom uniforms:
-     * <p>
+     * 
      * GLSL | Metal Shading Language | Objective-C |
      * ------------┼------------------------┼---------------------------------------┤
      * int | int | NSNumber, NSInteger, int |
@@ -249,46 +252,46 @@ public interface SCNShadable {
      * - | device const T* | MTLBuffer | Feature introduced in macOS 10.13, iOS 11.0 and tvOS 11.0
      * - | struct {...} | NSData | The entire struct can be set using NSData but it is also possible to set individual
      * members using the member's name as a key and a value compatible with the member's type
-     * <p>
+     * 
      * Common scalar types wrapped into a NSValue are also supported.
-     * <p>
+     * 
      * The following prefixes are reserved by SceneKit and should not be used in custom names:
      * 1. u_
      * 2. a_
      * 3. v_
-     * <p>
+     * 
      * Custom uniforms can be animated using explicit animations.
      */
     @Generated
     @IsOptional
     @Selector("setShaderModifiers:")
-    default void setShaderModifiers(NSDictionary<String, String> value) {
+    default void setShaderModifiers(@Nullable NSDictionary<String, String> value) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * [@property] shaderModifiers
-     * <p>
+     * 
      * Dictionary of shader modifiers snippets, targeting entry points. The valid keys are the entry points described in
      * the "Shader Modifier Entry Point" constants. The values are the code snippets formatted as described below.
-     * <p>
+     * 
      * Shader modifiers allow you to inject shader code in the standard shaders of SceneKit. This injection is allowed
      * in few controlled entry points, allowing specific kind of tasks in specific context. Each modifier can operate on
      * specific structures along with access to global uniforms, that could be the standard SceneKit uniforms or its own
      * declared uniforms.
-     * <p>
+     * 
      * Shader modifiers can be used to tweak SceneKit rendering by adding custom code at the following entry points:
      * 1. vertex (SCNShaderModifierEntryPointGeometry)
      * 2. surface (SCNShaderModifierEntryPointSurface)
      * 3. lighting (SCNShaderModifierEntryPointLightingModel)
      * 4. fragment (SCNShaderModifierEntryPointFragment)
      * See below for a detailed explanation of these entry points and the context they provide.
-     * <p>
+     * 
      * Shader modifiers can be written in either GLSL or the Metal Shading Language. Metal shaders won't run on iOS 8
      * and macOS 10.10 or earlier.
-     * <p>
+     * 
      * The structure of a shader modifier is:
-     * <p>
+     * 
      * GLSL
      * | uniform float myGrayAmount = 3.0; // Custom GLSL uniforms declarations are of the form `[uniform type
      * uniformName [= defaultValue]]`
@@ -305,7 +308,7 @@ public interface SCNShadable {
      * | // the shader modifier code snippet itself
      * | vec3 myColor = myGrayAmount;
      * | _output.color.rgb += myColor;
-     * <p>
+     * 
      * Metal Shading Language
      * | #pragma arguments
      * | float myGrayAmount; // Custom Metal uniforms declarations require a #pragma and are of the form `[type name]`
@@ -323,39 +326,39 @@ public interface SCNShadable {
      * | // the shader modifier code snippet itself
      * | float3 myColor = myGrayAmount;
      * | _output.color.rgb += myColor;
-     * <p>
+     * 
      * The `#pragma body` directive
      * Is only needed if you declared functions that must not be included in the shader code itself.
-     * <p>
+     * 
      * The `#pragma transparent` directive
      * Forces the rendering to be blended using the following equation:
      * _output.color.rgb + (1 - _output.color.a) * dst.rgb;
      * where `dst` represents the current fragment color. The rgb components must be premultiplied.
-     * <p>
+     * 
      * The `#pragma opaque` directive
      * Forces the rendering to be opaque. It then ignores the alpha component of the fragment.
-     * <p>
+     * 
      * When using Metal, you can also transfer varying values from the vertex shader (geometry shader modifier) to the
      * fragment shader (surface and/or fragment shader modifier):
      * 1. Start by declaring the varying values in at least one of the shader modifiers:
-     * <p>
+     * 
      * Metal Shading Language
      * | #pragma varyings
      * | half3 myVec;
-     * <p>
+     * 
      * 2. Then write the varying values from the vertex shader (geometry shader modifier):
-     * <p>
+     * 
      * Metal Shading Language
      * | #pragma body
      * | out.myVec = _geometry.normal.xyz * 0.5h + 0.5h;
-     * <p>
+     * 
      * 3. Finally read the varying values from the fragment shader (surface and/or fragment shader modifier):
-     * <p>
+     * 
      * Metal Shading Language
      * | _output.color.rgb = saturate(in.myVec);
-     * <p>
+     * 
      * SceneKit declares the following built-in uniforms:
-     * <p>
+     * 
      * GLSL | Metal Shading Language |
      * --------------------------------------------┼-------------------------------------------------------┤
      * float u_time | float scn_frame.time | The current time, in seconds
@@ -379,23 +382,23 @@ public interface SCNShadable {
      * u_boundingBox[0].xyz and u_boundingBox[1].xyz being respectively the minimum and maximum corner of the box.
      * mat2x3 u_worldBoundingBox; | float2x3 scn_node.worldBoundingBox | The bounding box of the current geometry, in
      * world space.
-     * <p>
+     * 
      * When writing shaders using the Metal Shading Language a complete description of the type of the scn_frame
      * variable (SCNSceneBuffer) can be found in the <SceneKit/scn_metal> header file.
      * The type of the scn_node variable is generated at compile time and there's no corresponding header file in the
      * framework.
-     * <p>
+     * 
      * In addition to these built-in uniforms, it is possible to use custom uniforms:
-     * <p>
+     * 
      * The SCNGeometry and SCNMaterial classes are key-value coding compliant classes, which means that you can set
      * values for arbitrary keys. Even if the key `myAmplitude` is not a declared property of the class, you can still
      * set a value for it.
      * Declaring a `myAmplitude` uniform in the shader modifier makes SceneKit observe the reveiver's `myAmplitude` key.
      * Any change to that key will make SceneKit bind the uniform with the new value.
-     * <p>
+     * 
      * The following GLSL and Metal Shading Language types (and their Objective-C counterparts) can be used to declare
      * (and bind) custom uniforms:
-     * <p>
+     * 
      * GLSL | Metal Shading Language | Objective-C |
      * ------------┼------------------------┼---------------------------------------┤
      * int | int | NSNumber, NSInteger, int |
@@ -409,16 +412,17 @@ public interface SCNShadable {
      * - | device const T* | MTLBuffer | Feature introduced in macOS 10.13, iOS 11.0 and tvOS 11.0
      * - | struct {...} | NSData | The entire struct can be set using NSData but it is also possible to set individual
      * members using the member's name as a key and a value compatible with the member's type
-     * <p>
+     * 
      * Common scalar types wrapped into a NSValue are also supported.
-     * <p>
+     * 
      * The following prefixes are reserved by SceneKit and should not be used in custom names:
      * 1. u_
      * 2. a_
      * 3. v_
-     * <p>
+     * 
      * Custom uniforms can be animated using explicit animations.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("shaderModifiers")
@@ -430,27 +434,30 @@ public interface SCNShadable {
     @Generated
     public interface Block_handleBindingOfSymbolUsingBlock {
         @Generated
-        void call_handleBindingOfSymbolUsingBlock(int programID, int location, SCNNode renderedNode,
-                SCNRenderer renderer);
+        void call_handleBindingOfSymbolUsingBlock(int programID, int location, @Nullable SCNNode renderedNode,
+                @NotNull SCNRenderer renderer);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleUnbindingOfSymbolUsingBlock {
         @Generated
-        void call_handleUnbindingOfSymbolUsingBlock(int programID, int location, SCNNode renderedNode,
-                SCNRenderer renderer);
+        void call_handleUnbindingOfSymbolUsingBlock(int programID, int location, @Nullable SCNNode renderedNode,
+                @NotNull SCNRenderer renderer);
     }
 
     /**
      * [@property] minimumLanguageVersion
-     * <p>
+     * 
      * The minimum language version required to interpret the shadable source code (wrapped MTLLanguageVersion).
      * Defaults to nil.
-     * <p>
+     * 
      * By default SceneKit does not use the most recent language version in order to reduce compilation times. If set to
      * nil the shadable source code is assumed to compile with any language version greater than or equal to Metal 2.0.
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("minimumLanguageVersion")
@@ -460,17 +467,19 @@ public interface SCNShadable {
 
     /**
      * [@property] minimumLanguageVersion
-     * <p>
+     * 
      * The minimum language version required to interpret the shadable source code (wrapped MTLLanguageVersion).
      * Defaults to nil.
-     * <p>
+     * 
      * By default SceneKit does not use the most recent language version in order to reduce compilation times. If set to
      * nil the shadable source code is assumed to compile with any language version greater than or equal to Metal 2.0.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @IsOptional
     @Selector("setMinimumLanguageVersion:")
-    default void setMinimumLanguageVersion(NSNumber value) {
+    default void setMinimumLanguageVersion(@Nullable NSNumber value) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -40,7 +40,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -71,22 +76,25 @@ public class NSMergePolicy extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,6 +107,10 @@ public class NSMergePolicy extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @Selector("errorMergePolicy")
     public static native NSMergePolicy errorMergePolicy();
@@ -125,14 +137,23 @@ public class NSMergePolicy extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @Selector("mergeByPropertyObjectTrumpMergePolicy")
     public static native NSMergePolicy mergeByPropertyObjectTrumpMergePolicy();
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @Selector("mergeByPropertyStoreTrumpMergePolicy")
     public static native NSMergePolicy mergeByPropertyStoreTrumpMergePolicy();
@@ -142,6 +163,10 @@ public class NSMergePolicy extends NSObject {
     @Selector("new")
     public static native NSMergePolicy new_objc();
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @Selector("overwriteMergePolicy")
     public static native NSMergePolicy overwriteMergePolicy();
@@ -154,6 +179,10 @@ public class NSMergePolicy extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @Selector("rollbackMergePolicy")
     public static native NSMergePolicy rollbackMergePolicy();
@@ -201,17 +230,19 @@ public class NSMergePolicy extends NSObject {
      */
     @Generated
     @Selector("resolveConflicts:error:")
-    public native boolean resolveConflictsError(NSArray<?> list,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean resolveConflictsError(@NotNull NSArray<?> list,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Resolve uniqueness constraint violations for the list of failures.
      * Will be called after -resolveOptimisticLockingVersionConflicts:error:
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("resolveConstraintConflicts:error:")
-    public native boolean resolveConstraintConflictsError(NSArray<? extends NSConstraintConflict> list,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean resolveConstraintConflictsError(@NotNull NSArray<? extends NSConstraintConflict> list,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Resolve optimistic locking failures for the list of failures. In a subclass, you are strongly encouraged to
@@ -220,9 +251,12 @@ public class NSMergePolicy extends NSObject {
      * relationships is very challenging and
      * any mistakes will cause permanent data corruption in the form of dangling foreign keys.
      * Will be called before -resolveConstraintConflicts:error:
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("resolveOptimisticLockingVersionConflicts:error:")
-    public native boolean resolveOptimisticLockingVersionConflictsError(NSArray<? extends NSMergeConflict> list,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean resolveOptimisticLockingVersionConflictsError(
+            @NotNull NSArray<? extends NSMergeConflict> list,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

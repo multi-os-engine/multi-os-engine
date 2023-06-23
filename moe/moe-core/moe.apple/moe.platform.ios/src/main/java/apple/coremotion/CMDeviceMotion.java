@@ -43,13 +43,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CMDeviceMotion
- * <p>
+ * 
  * Discussion:
  * A CMDeviceMotion object contains basic information about the device's
  * motion.
+ * 
+ * API-Since: 4.0
  */
 @Generated
 @Library("CoreMotion")
@@ -81,22 +85,25 @@ public class CMDeviceMotion extends CMLogItem {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +138,10 @@ public class CMDeviceMotion extends CMLogItem {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,17 +175,18 @@ public class CMDeviceMotion extends CMLogItem {
 
     /**
      * attitude
-     * <p>
+     * 
      * Discussion:
      * Returns the attitude of the device.
      */
+    @NotNull
     @Generated
     @Selector("attitude")
     public native CMAttitude attitude();
 
     /**
      * gravity
-     * <p>
+     * 
      * Discussion:
      * Returns the gravity vector expressed in the device's reference frame. Note
      * that the total acceleration of the device is equal to gravity plus
@@ -194,16 +203,18 @@ public class CMDeviceMotion extends CMLogItem {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CMDeviceMotion initWithCoder(NSCoder coder);
+    public native CMDeviceMotion initWithCoder(@NotNull NSCoder coder);
 
     /**
      * magneticField
-     * <p>
+     * 
      * Discussion:
      * Returns the magnetic field vector with respect to the device for devices with a magnetometer.
      * Note that this is the total magnetic field in the device's vicinity without device
      * bias (Earth's magnetic field plus surrounding fields, without device bias),
      * unlike CMMagnetometerData magneticField.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("magneticField")
@@ -212,7 +223,7 @@ public class CMDeviceMotion extends CMLogItem {
 
     /**
      * rotationRate
-     * <p>
+     * 
      * Discussion:
      * Returns the rotation rate of the device for devices with a gyro.
      */
@@ -229,7 +240,7 @@ public class CMDeviceMotion extends CMLogItem {
 
     /**
      * userAcceleration
-     * <p>
+     * 
      * Discussion:
      * Returns the acceleration that the user is giving to the device. Note
      * that the total acceleration of the device is equal to gravity plus
@@ -242,11 +253,14 @@ public class CMDeviceMotion extends CMLogItem {
 
     /**
      * heading
-     * <p>
+     * 
      * Discussion:
      * Returns heading angle in the range [0,360) degrees with respect to the CMAttitude reference frame. A negative
      * value is returned
      * for CMAttitudeReferenceFrameXArbitraryZVertical and CMAttitudeReferenceFrameXArbitraryCorrectedZVertical.
+     * 
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("heading")
@@ -254,9 +268,12 @@ public class CMDeviceMotion extends CMLogItem {
 
     /**
      * sensorLocation
-     * <p>
+     * 
      * Discussion:
      * Returns the location of the sensors used to compute the device motion data.
+     * 
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("sensorLocation")

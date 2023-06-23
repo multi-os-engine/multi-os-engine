@@ -42,13 +42,18 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSNumber;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Represent an accessory in the home.
- * <p>
+ * 
  * This class represents an accessory in the home. There is a one to
  * one relationship between a physical accessory and an object of this
  * class. An accessory is composed of one or more services.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HomeKit")
@@ -80,22 +85,25 @@ public class HMAccessory extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +138,10 @@ public class HMAccessory extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,18 +171,24 @@ public class HMAccessory extends NSObject {
 
     /**
      * Returns array of camera profiles implemented by the accessory.
-     * <p>
+     * 
      * An accessory can contain one or more cameras. Each camera is represented as a
      * an HMCameraProfile object. If the accessory does not contain a camera, this property
      * will be nil.
+     * 
+     * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("cameraProfiles")
     public native NSArray<? extends HMCameraProfile> cameraProfiles();
 
     /**
      * Category information for the accessory.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("category")
     public native HMAccessoryCategory category();
@@ -181,6 +196,7 @@ public class HMAccessory extends NSObject {
     /**
      * Delegate object that receives updates on the state of the accessory.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -188,9 +204,14 @@ public class HMAccessory extends NSObject {
 
     /**
      * A unique identifier for the accessory.
-     * <p>
+     * 
      * Use uniqueIdentifier to obtain the identifier for this object.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: No longer supported.
      */
+    @NotNull
     @Generated
     @Deprecated
     @Selector("identifier")
@@ -199,10 +220,15 @@ public class HMAccessory extends NSObject {
     /**
      * If this accessory is a bridge, this property is an array of NSUUID objects that,
      * each of which represents the 'uniqueIdentifier' of the accessory vended by the bridge.
-     * <p>
+     * 
      * Use uniqueIdentifiersForBridgedAccessories to obtain the identifiers for the
      * bridged accessories.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: No longer supported.
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("identifiersForBridgedAccessories")
@@ -210,7 +236,7 @@ public class HMAccessory extends NSObject {
 
     /**
      * This method is used to have an accessory identify itself.
-     *
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -218,7 +244,7 @@ public class HMAccessory extends NSObject {
     @Generated
     @Selector("identifyWithCompletionHandler:")
     public native void identifyWithCompletionHandler(
-            @ObjCBlock(name = "call_identifyWithCompletionHandler") Block_identifyWithCompletionHandler completion);
+            @NotNull @ObjCBlock(name = "call_identifyWithCompletionHandler") Block_identifyWithCompletionHandler completion);
 
     @Generated
     @Selector("init")
@@ -250,10 +276,11 @@ public class HMAccessory extends NSObject {
 
     /**
      * The name of the accessory.
-     * <p>
+     * 
      * Returns the accessory's name that is associated with HomeKit. The initial value is the name
      * provided by the accessory information service of the accessory.
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -261,6 +288,7 @@ public class HMAccessory extends NSObject {
     /**
      * Room containing the accessory.
      */
+    @Nullable
     @Generated
     @Selector("room")
     public native HMRoom room();
@@ -268,6 +296,7 @@ public class HMAccessory extends NSObject {
     /**
      * Array of HMService objects that represent all the services provided by the accessory.
      */
+    @NotNull
     @Generated
     @Selector("services")
     public native NSArray<? extends HMService> services();
@@ -277,13 +306,13 @@ public class HMAccessory extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) HMAccessoryDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) HMAccessoryDelegate value);
 
     /**
      * Delegate object that receives updates on the state of the accessory.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) HMAccessoryDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) HMAccessoryDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -296,7 +325,10 @@ public class HMAccessory extends NSObject {
 
     /**
      * A unique identifier for the accessory.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
@@ -304,7 +336,7 @@ public class HMAccessory extends NSObject {
     /**
      * If this accessory is a bridge, this property is an array of NSUUID objects that,
      * each of which represents the 'uniqueIdentifier' of the accessory vended by the bridge.
-     * <p>
+     * 
      * An accessory can be standalone, a bridge, or hosted behind a bridge.
      * - A standalone accessory would have its 'bridged' property set to FALSE and
      * its 'uniqueIdentifiersForBridgedAccessories' property set to nil.
@@ -312,72 +344,100 @@ public class HMAccessory extends NSObject {
      * but have a non-empty 'uniqueIdentifiersForBridgedAccessories' property.
      * - An accessory behind a bridge would have its 'bridged' property set to TRUE and
      * its 'uniqueIdentifiersForBridgedAccessories' property set to nil.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("uniqueIdentifiersForBridgedAccessories")
     public native NSArray<? extends NSUUID> uniqueIdentifiersForBridgedAccessories();
 
     /**
      * This method is used to change the name of the accessory.
-     * <p>
+     * 
      * The new name is stored in HomeKit and not on the accessory.
-     *
+     * 
      * @param name       New name for the accessory.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
      */
     @Generated
     @Selector("updateName:completionHandler:")
-    public native void updateNameCompletionHandler(String name,
-            @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
+    public native void updateNameCompletionHandler(@NotNull String name,
+            @NotNull @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_identifyWithCompletionHandler {
         @Generated
-        void call_identifyWithCompletionHandler(NSError error);
+        void call_identifyWithCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateNameCompletionHandler {
         @Generated
-        void call_updateNameCompletionHandler(NSError error);
+        void call_updateNameCompletionHandler(@Nullable NSError error);
     }
 
     /**
      * Accessory's firmware version.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("firmwareVersion")
     public native String firmwareVersion();
 
     /**
      * Manufacturer of the accessory.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("manufacturer")
     public native String manufacturer();
 
     /**
      * Model of the accessory.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("model")
     public native String model();
 
     /**
      * Accessory profiles of the receiver.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("profiles")
     public native NSArray<? extends HMAccessoryProfile> profiles();
 
     /**
      * Indicates if the accessory supports the identify action.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("supportsIdentify")
     public native boolean supportsIdentify();
+
+    /**
+     * The node identifier used to identify the device on Apple’s Matter fabric.
+     * 
+     * API-Since: 16.1
+     */
+    @Nullable
+    @Generated
+    @Selector("matterNodeID")
+    public native NSNumber matterNodeID();
 }

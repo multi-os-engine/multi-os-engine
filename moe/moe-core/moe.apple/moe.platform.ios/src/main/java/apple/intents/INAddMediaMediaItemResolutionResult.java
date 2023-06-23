@@ -21,7 +21,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -52,35 +57,40 @@ public class INAddMediaMediaItemResolutionResult extends INMediaItemResolutionRe
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
     public static native INAddMediaMediaItemResolutionResult confirmationRequiredWithItemToConfirmForReason(
-            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithMediaItemToConfirm:")
     public static native INAddMediaMediaItemResolutionResult confirmationRequiredWithMediaItemToConfirm(
-            INMediaItem mediaItemToConfirm);
+            @Nullable INMediaItem mediaItemToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -90,10 +100,11 @@ public class INAddMediaMediaItemResolutionResult extends INMediaItemResolutionRe
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("disambiguationWithMediaItemsToDisambiguate:")
     public static native INAddMediaMediaItemResolutionResult disambiguationWithMediaItemsToDisambiguate(
-            NSArray<? extends INMediaItem> mediaItemsToDisambiguate);
+            @NotNull NSArray<? extends INMediaItem> mediaItemsToDisambiguate);
 
     @Generated
     @Selector("hash")
@@ -107,7 +118,7 @@ public class INAddMediaMediaItemResolutionResult extends INMediaItemResolutionRe
     @Generated
     @Selector("initWithMediaItemResolutionResult:")
     public native INAddMediaMediaItemResolutionResult initWithMediaItemResolutionResult(
-            INMediaItemResolutionResult mediaItemResolutionResult);
+            @NotNull INMediaItemResolutionResult mediaItemResolutionResult);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -126,10 +137,12 @@ public class INAddMediaMediaItemResolutionResult extends INMediaItemResolutionRe
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("needsValue")
     public static native INAddMediaMediaItemResolutionResult needsValue();
@@ -139,6 +152,7 @@ public class INAddMediaMediaItemResolutionResult extends INMediaItemResolutionRe
     @Selector("new")
     public static native INAddMediaMediaItemResolutionResult new_objc();
 
+    @NotNull
     @Generated
     @Selector("notRequired")
     public static native INAddMediaMediaItemResolutionResult notRequired();
@@ -155,31 +169,36 @@ public class INAddMediaMediaItemResolutionResult extends INMediaItemResolutionRe
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("successWithResolvedMediaItem:")
     public static native INAddMediaMediaItemResolutionResult successWithResolvedMediaItem(
-            INMediaItem resolvedMediaItem);
+            @NotNull INMediaItem resolvedMediaItem);
 
     /**
      * Convenience method to return multiple success resolution results for an array of INMediaItems
      */
+    @NotNull
     @Generated
     @Selector("successesWithResolvedMediaItems:")
     public static native NSArray<? extends INAddMediaMediaItemResolutionResult> successesWithResolvedMediaItems(
-            NSArray<? extends INMediaItem> resolvedMediaItems);
+            @NotNull NSArray<? extends INMediaItem> resolvedMediaItems);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("unsupported")
     public static native INAddMediaMediaItemResolutionResult unsupported();
 
+    @NotNull
     @Generated
     @Selector("unsupportedForReason:")
     public static native INAddMediaMediaItemResolutionResult unsupportedForReason(@NInt long reason);
 
+    @NotNull
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INAddMediaMediaItemResolutionResult unsupportedWithReason(@NInt long reason);

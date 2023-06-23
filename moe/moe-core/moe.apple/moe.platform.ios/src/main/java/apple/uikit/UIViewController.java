@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSCoder;
@@ -63,7 +62,13 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -94,39 +99,43 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     public static native UIViewController allocWithZone(VoidPtr zone);
 
     /**
-     * call this method when your return value from shouldAutorotateToInterfaceOrientation: changes
-     * if the current interface orientation does not match the current device orientation, a rotation may occur provided
-     * all relevant view controllers now return YES from shouldAutorotateToInterfaceOrientation:
+     * API-Since: 5.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Please use instance method `setNeedsUpdateOfSupportedInterfaceOrientations`.
      */
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -158,9 +167,10 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -192,14 +202,19 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * If the child controller has a different parent controller, it will first be removed from its current parent
      * by calling removeFromParentViewController. If this method is overridden then the super implementation must
      * be called.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("addChildViewController:")
-    public native void addChildViewController(UIViewController childController);
+    public native void addChildViewController(@NotNull UIViewController childController);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("addKeyCommand:")
-    public native void addKeyCommand(UIKeyCommand keyCommand);
+    public native void addKeyCommand(@NotNull UIKeyCommand keyCommand);
 
     /**
      * Returns a subset of the receiver's childViewControllers in the order they should be searched for an unwind
@@ -212,11 +227,14 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * receive the deprecated method instead of this method.
      * To affect this view controller's eligibility as an unwind destination, override
      * -canPerformUnwindSegueAction:fromViewController:sender: instead.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("allowedChildViewControllersForUnwindingFromSource:")
     public native NSArray<? extends UIViewController> allowedChildViewControllersForUnwindingFromSource(
-            UIStoryboardUnwindSegueSource source);
+            @NotNull UIStoryboardUnwindSegueSource source);
 
     @Generated
     @Selector("applicationFinishedRestoringState")
@@ -224,7 +242,12 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Defaults to YES
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use UIScrollView's contentInsetAdjustmentBehavior instead
      */
+    @Deprecated
     @Generated
     @Selector("automaticallyAdjustsScrollViewInsets")
     public native boolean automaticallyAdjustsScrollViewInsets();
@@ -237,6 +260,9 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * viewWillDisappear:
      * viewDidDisappear: willRotateToInterfaceOrientation:duration:
      * willAnimateRotationToInterfaceOrientation:duration: didRotateFromInterfaceOrientation:
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
      */
     @Generated
     @Deprecated
@@ -249,6 +275,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * should be used instead. This will ensure that descendent child controllers appearance methods will be
      * invoked. It also enables more complex custom transitions to be implemented since the appearance callbacks are
      * now tied to the final matching invocation of endAppearanceTransition.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("beginAppearanceTransition:animated:")
@@ -256,17 +284,29 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     @Generated
     @Selector("beginRequestWithExtensionContext:")
-    public native void beginRequestWithExtensionContext(NSExtensionContext context);
+    public native void beginRequestWithExtensionContext(@NotNull NSExtensionContext context);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use view.safeAreaLayoutGuide.bottomAnchor instead of bottomLayoutGuide.topAnchor
+     */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("bottomLayoutGuide")
     @MappedReturn(ObjCObjectMapper.class)
     public native UILayoutSupport bottomLayoutGuide();
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated
     @Generated
     @Selector("canPerformUnwindSegueAction:fromViewController:withSender:")
-    public native boolean canPerformUnwindSegueActionFromViewControllerWithSender(SEL action,
-            UIViewController fromViewController, @Mapped(ObjCObjectMapper.class) Object sender);
+    public native boolean canPerformUnwindSegueActionFromViewControllerWithSender(@NotNull SEL action,
+            @NotNull UIViewController fromViewController, @NotNull @Mapped(ObjCObjectMapper.class) Object sender);
 
     /**
      * Returns the child view controller that contains the provided segue source.
@@ -275,11 +315,19 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * determine the order of the returned array's contents.
      * Do not try to re-implement or override this method; it takes special care to handle situations such as unwinding
      * from a modally-presented view controller.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("childViewControllerContainingSegueSource:")
-    public native UIViewController childViewControllerContainingSegueSource(UIStoryboardUnwindSegueSource source);
+    public native UIViewController childViewControllerContainingSegueSource(
+            @NotNull UIStoryboardUnwindSegueSource source);
 
+    /**
+     * API-Since: 7.0
+     */
+    @Nullable
     @Generated
     @Selector("childViewControllerForStatusBarHidden")
     public native UIViewController childViewControllerForStatusBarHidden();
@@ -288,14 +336,20 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * Override to return a child view controller or nil. If non-nil, that view controller's status bar appearance
      * attributes will be used. If nil, self is used. Whenever the return values from these methods change,
      * -setNeedsStatusBarAppearanceUpdate should be called.
+     * 
+     * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("childViewControllerForStatusBarStyle")
     public native UIViewController childViewControllerForStatusBarStyle();
 
     /**
      * An array of children view controllers. This array does not include any presented view controllers.
+     * 
+     * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @Selector("childViewControllers")
     public native NSArray<? extends UIViewController> childViewControllers();
@@ -304,15 +358,20 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * Called on the primary view controller when a split view controller is collapsing its children for a transition to
      * a compact-width size class, if its delegate does not provide overridden behavior. The default implementation
      * simply shows the primary (the secondary controller disappears.)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("collapseSecondaryViewController:forSplitViewController:")
-    public native void collapseSecondaryViewControllerForSplitViewController(UIViewController secondaryViewController,
-            UISplitViewController splitViewController);
+    public native void collapseSecondaryViewControllerForSplitViewController(
+            @NotNull UIViewController secondaryViewController, @NotNull UISplitViewController splitViewController);
 
     /**
      * contentSizeForViewInPopover allows you to set the size of the content from within the view controller. This
      * property is read/write, and you should generally not override it.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -322,12 +381,14 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     @Generated
     @Selector("decodeRestorableStateWithCoder:")
-    public native void decodeRestorableStateWithCoder(NSCoder coder);
+    public native void decodeRestorableStateWithCoder(@NotNull NSCoder coder);
 
     /**
      * Determines which parent view controller's view should be presented over for presentations of type
      * UIModalPresentationCurrentContext. If no ancestor view controller has this flag set, then the presenter
      * will be the root view controller.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("definesPresentationContext")
@@ -335,15 +396,21 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * The rotating header and footer views are offscreen.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 5.0
      */
     @Generated
     @Deprecated
     @Selector("didAnimateFirstHalfOfRotationToInterfaceOrientation:")
     public native void didAnimateFirstHalfOfRotationToInterfaceOrientation(@NInt long toInterfaceOrientation);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("didMoveToParentViewController:")
-    public native void didMoveToParentViewController(UIViewController parent);
+    public native void didMoveToParentViewController(@Nullable UIViewController parent);
 
     /**
      * Called when the parent application receives a memory warning. On iOS 6.0 it will no longer clear the view by
@@ -353,6 +420,10 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     @Selector("didReceiveMemoryWarning")
     public native void didReceiveMemoryWarning();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     */
     @Generated
     @Deprecated
     @Selector("didRotateFromInterfaceOrientation:")
@@ -360,12 +431,14 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     @Generated
     @Selector("didUpdateFocusInContext:withAnimationCoordinator:")
-    public native void didUpdateFocusInContextWithAnimationCoordinator(UIFocusUpdateContext context,
-            UIFocusAnimationCoordinator coordinator);
+    public native void didUpdateFocusInContextWithAnimationCoordinator(@NotNull UIFocusUpdateContext context,
+            @NotNull UIFocusAnimationCoordinator coordinator);
 
     /**
      * Presentation modes may keep the keyboard visible when not required. Default implementation affects
      * UIModalPresentationFormSheet visibility.
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @Selector("disablesAutomaticKeyboardDismissal")
@@ -374,12 +447,20 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * Dismiss the current modal child. Uses a vertical sheet transition if animated. This method has been replaced by
      * dismissViewControllerAnimated:completion:
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 6.0
      */
     @Generated
     @Deprecated
     @Selector("dismissModalViewControllerAnimated:")
     public native void dismissModalViewControllerAnimated(boolean animated);
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit.
+     */
     @Generated
     @Deprecated
     @Selector("dismissMoviePlayerViewControllerAnimated")
@@ -388,14 +469,18 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * The completion handler, if provided, will be invoked after the dismissed controller's viewDidDisappear: callback
      * is invoked.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("dismissViewControllerAnimated:completion:")
     public native void dismissViewControllerAnimatedCompletion(boolean flag,
-            @ObjCBlock(name = "call_dismissViewControllerAnimatedCompletion") Block_dismissViewControllerAnimatedCompletion completion);
+            @Nullable @ObjCBlock(name = "call_dismissViewControllerAnimatedCompletion") Block_dismissViewControllerAnimatedCompletion completion);
 
     /**
      * Defaults to UIRectEdgeAll
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("edgesForExtendedLayout")
@@ -406,24 +491,30 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * Return an Edit|Done button that can be used as a navigation item's custom view. Default action toggles the
      * editing state with animation.
      */
+    @NotNull
     @Generated
     @Selector("editButtonItem")
     public native UIBarButtonItem editButtonItem();
 
     @Generated
     @Selector("encodeRestorableStateWithCoder:")
-    public native void encodeRestorableStateWithCoder(NSCoder coder);
+    public native void encodeRestorableStateWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("endAppearanceTransition")
     public native void endAppearanceTransition();
 
     /**
      * Defaults to NO, but bars are translucent by default on 7_0.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("extendedLayoutIncludesOpaqueBars")
@@ -432,7 +523,10 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * Returns the extension context. Also acts as a convenience method for a view controller to check if it
      * participating in an extension request.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("extensionContext")
     public native NSExtensionContext extensionContext();
@@ -451,7 +545,7 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIViewController initWithCoder(NSCoder coder);
+    public native UIViewController initWithCoder(@NotNull NSCoder coder);
 
     /**
      * The designated initializer. If you subclass UIViewController, you must call the super implementation of this
@@ -464,14 +558,22 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      */
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native UIViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native UIViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     */
     @Generated
     @Deprecated
     @Selector("interfaceOrientation")
     @NInt
     public native long interfaceOrientation();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("isBeingDismissed")
     public native boolean isBeingDismissed();
@@ -481,6 +583,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * presented, dismissed, or added or removed as a child view controller. For example, a view controller can
      * check if it is disappearing because it was dismissed or popped by asking itself in its viewWillDisappear:
      * method by checking the expression ([self isBeingDismissed] || [self isMovingFromParentViewController]).
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("isBeingPresented")
@@ -498,7 +602,11 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * modalInPopover is set on the view controller when you wish to force the popover hosting the view controller into
      * modal behavior. When this is active, the popover will ignore events outside of its bounds until this is set to
      * NO.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("isModalInPopover")
     public native boolean isModalInPopover();
@@ -507,19 +615,32 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * modalInPopover is set on the view controller when you wish to force the popover hosting the view controller into
      * modal behavior. When this is active, the popover will ignore events outside of its bounds until this is set to
      * NO.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("setModalInPopover:")
     public native void setModalInPopover(boolean value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("isMovingFromParentViewController")
     public native boolean isMovingFromParentViewController();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("isMovingToParentViewController")
     public native boolean isMovingToParentViewController();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("isViewLoaded")
     public native boolean isViewLoaded();
@@ -534,6 +655,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Loads the view controller's view if it has not already been set.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("loadViewIfNeeded")
@@ -542,6 +665,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * This controls whether this view controller takes over control of the status bar's appearance when presented
      * non-full screen on another view controller. Defaults to NO.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("modalPresentationCapturesStatusBarAppearance")
@@ -557,6 +682,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * system-provided view controllers.
      * Defaults to UIModalPresentationAutomatic on iOS starting in iOS 13.0, and UIModalPresentationFullScreen on
      * previous versions. Defaults to UIModalPresentationFullScreen on all other platforms.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("modalPresentationStyle")
@@ -567,6 +694,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * Defines the transition style that will be used for this view controller when it is presented modally. Set
      * this property on the view controller to be presented, not the presenter. Defaults to
      * UIModalTransitionStyleCoverVertical.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("modalTransitionStyle")
@@ -575,7 +704,11 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * This property has been replaced by presentedViewController.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 6.0
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("modalViewController")
@@ -584,6 +717,7 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * If this view controller has been pushed onto a navigation controller, return it.
      */
+    @Nullable
     @Generated
     @Selector("navigationController")
     public native UINavigationController navigationController();
@@ -591,6 +725,7 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * Created on-demand so that a view controller may customize its navigation appearance.
      */
+    @NotNull
     @Generated
     @Selector("navigationItem")
     public native UINavigationItem navigationItem();
@@ -598,6 +733,7 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * The bundle from which to load the nib.
      */
+    @Nullable
     @Generated
     @Selector("nibBundle")
     public native NSBundle nibBundle();
@@ -605,34 +741,49 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * The name of the nib to be loaded to instantiate the view.
      */
+    @Nullable
     @Generated
     @Selector("nibName")
     public native String nibName();
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("objectRestorationClass")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIObjectRestoration objectRestorationClass();
 
+    /**
+     * API-Since: 8.0
+     */
+    @Nullable
     @Generated
     @Selector("overrideTraitCollectionForChildViewController:")
-    public native UITraitCollection overrideTraitCollectionForChildViewController(UIViewController childViewController);
+    public native UITraitCollection overrideTraitCollectionForChildViewController(
+            @NotNull UIViewController childViewController);
 
     /**
      * If this view controller is a child of a containing view controller (e.g. a navigation controller or tab bar
      * controller,) this is the containing view controller. Note that as of 5.0 this no longer will return the
      * presenting view controller.
      */
+    @Nullable
     @Generated
     @Selector("parentViewController")
     public native UIViewController parentViewController();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("performSegueWithIdentifier:sender:")
-    public native void performSegueWithIdentifierSender(String identifier,
-            @Mapped(ObjCObjectMapper.class) Object sender);
+    public native void performSegueWithIdentifierSender(@NotNull String identifier,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object sender);
 
+    /**
+     * API-Since: 8.0
+     */
+    @Nullable
     @Generated
     @Selector("popoverPresentationController")
     public native UIPopoverPresentationController popoverPresentationController();
@@ -645,12 +796,15 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     @Generated
     @Selector("preferredContentSizeDidChangeForChildContentContainer:")
     public native void preferredContentSizeDidChangeForChildContentContainer(
-            @Mapped(ObjCObjectMapper.class) UIContentContainer container);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIContentContainer container);
 
+    @NotNull
     @Generated
     @Selector("preferredFocusEnvironments")
     public native NSArray<?> preferredFocusEnvironments();
 
+    @Nullable
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("preferredFocusedView")
@@ -658,6 +812,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Returns interface orientation masks.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("preferredInterfaceOrientationForPresentation")
@@ -666,6 +822,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Defaults to UIStatusBarStyleDefault
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("preferredStatusBarStyle")
@@ -674,6 +832,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Defaults to UIStatusBarAnimationFade
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("preferredStatusBarUpdateAnimation")
@@ -682,24 +842,39 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Defaults to NO
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("prefersStatusBarHidden")
     public native boolean prefersStatusBarHidden();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("prepareForSegue:sender:")
-    public native void prepareForSegueSender(UIStoryboardSegue segue, @Mapped(ObjCObjectMapper.class) Object sender);
+    public native void prepareForSegueSender(@NotNull UIStoryboardSegue segue,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object sender);
 
     /**
      * Display another view controller as a modal child. Uses a vertical sheet transition if animated.This method has
      * been replaced by presentViewController:animated:completion:
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 6.0
      */
     @Generated
     @Deprecated
     @Selector("presentModalViewController:animated:")
-    public native void presentModalViewControllerAnimated(UIViewController modalViewController, boolean animated);
+    public native void presentModalViewControllerAnimated(@NotNull UIViewController modalViewController,
+            boolean animated);
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit.
+     */
     @Generated
     @Deprecated
     @Selector("presentMoviePlayerViewControllerAnimated:")
@@ -709,30 +884,50 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * The next two methods are replacements for presentModalViewController:animated and
      * dismissModalViewControllerAnimated: The completion handler, if provided, will be invoked after the presented
      * controllers viewDidAppear: callback is invoked.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("presentViewController:animated:completion:")
-    public native void presentViewControllerAnimatedCompletion(UIViewController viewControllerToPresent, boolean flag,
-            @ObjCBlock(name = "call_presentViewControllerAnimatedCompletion") Block_presentViewControllerAnimatedCompletion completion);
+    public native void presentViewControllerAnimatedCompletion(@NotNull UIViewController viewControllerToPresent,
+            boolean flag,
+            @Nullable @ObjCBlock(name = "call_presentViewControllerAnimatedCompletion") Block_presentViewControllerAnimatedCompletion completion);
 
+    /**
+     * API-Since: 8.0
+     */
+    @Nullable
     @Generated
     @Selector("presentationController")
     public native UIPresentationController presentationController();
 
     /**
      * The view controller that was presented by this view controller or its nearest ancestor.
+     * 
+     * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("presentedViewController")
     public native UIViewController presentedViewController();
 
     /**
      * The view controller that presented this view controller (or its farthest ancestor.)
+     * 
+     * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("presentingViewController")
     public native UIViewController presentingViewController();
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: UIViewControllerPreviewing is deprecated. Please use UIContextMenuInteraction.
+     */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("previewActionItems")
     public native NSArray<?> previewActionItems();
@@ -740,6 +935,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * A controller that defines the presentation context can also specify the modal transition style if this property
      * is true.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("providesPresentationContextTransitionStyle")
@@ -747,34 +944,54 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Registers a view controller to participate with 3D Touch preview (peek) and commit (pop).
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
      */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("registerForPreviewingWithDelegate:sourceView:")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIViewControllerPreviewing registerForPreviewingWithDelegateSourceView(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerPreviewingDelegate delegate, UIView sourceView);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerPreviewingDelegate delegate,
+            @NotNull UIView sourceView);
 
     /**
      * Removes the the receiver from its parent's children controllers array. If this method is overridden then
      * the super implementation must be called.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("removeFromParentViewController")
     public native void removeFromParentViewController();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("removeKeyCommand:")
-    public native void removeKeyCommand(UIKeyCommand keyCommand);
+    public native void removeKeyCommand(@NotNull UIKeyCommand keyCommand);
 
+    /**
+     * API-Since: 6.0
+     */
+    @Nullable
     @Generated
     @Selector("restorationClass")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIViewControllerRestoration restorationClass();
 
+    /**
+     * API-Since: 6.0
+     */
+    @Nullable
     @Generated
     @Selector("restorationIdentifier")
     public native String restorationIdentifier();
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("restorationParent")
@@ -785,6 +1002,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * If YES, when this view controller becomes visible and focusable, focus will be automatically restored to the item
      * that was last focused. For example, when an item in this view controller is focused, and then another view
      * controller is presented and dismissed, the original item will become focused again. Defaults to YES.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("restoresFocusAfterTransition")
@@ -792,7 +1011,12 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Must be in the view hierarchy. Default returns nil.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Footer views are animated along with the rest of the view hierarchy
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("rotatingFooterView")
@@ -800,12 +1024,22 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Must be in the view hierarchy. Default returns nil.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Header views are animated along with the rest of the view hierarchy
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("rotatingHeaderView")
     public native UIView rotatingHeaderView();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("searchDisplayController")
@@ -824,26 +1058,39 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * Applications targeting iOS 9 or later should not override this method. Custom container view controllers should
      * instead override -unwindForSegue:towardsViewController: to modify their local state as part of a UIKit-generated
      * incremental unwind segue.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 9.0
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("segueForUnwindingToViewController:fromViewController:identifier:")
     public native UIStoryboardSegue segueForUnwindingToViewControllerFromViewControllerIdentifier(
-            UIViewController toViewController, UIViewController fromViewController, String identifier);
+            @NotNull UIViewController toViewController, @NotNull UIViewController fromViewController,
+            @Nullable String identifier);
 
     /**
      * Called on the primary view controller when a split view controller is separating its children for a transition to
      * a regular-width size class, if its delegate does not provide overridden behavior. The default implementation
      * restores the previous secondary controller.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("separateSecondaryViewControllerForSplitViewController:")
     public native UIViewController separateSecondaryViewControllerForSplitViewController(
-            UISplitViewController splitViewController);
+            @NotNull UISplitViewController splitViewController);
 
     /**
      * Defaults to YES
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use UIScrollView's contentInsetAdjustmentBehavior instead
      */
+    @Deprecated
     @Generated
     @Selector("setAutomaticallyAdjustsScrollViewInsets:")
     public native void setAutomaticallyAdjustsScrollViewInsets(boolean value);
@@ -851,6 +1098,9 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * contentSizeForViewInPopover allows you to set the size of the content from within the view controller. This
      * property is read/write, and you should generally not override it.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -861,6 +1111,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * Determines which parent view controller's view should be presented over for presentations of type
      * UIModalPresentationCurrentContext. If no ancestor view controller has this flag set, then the presenter
      * will be the root view controller.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setDefinesPresentationContext:")
@@ -868,6 +1120,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Defaults to UIRectEdgeAll
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setEdgesForExtendedLayout:")
@@ -882,6 +1136,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Defaults to NO, but bars are translucent by default on 7_0.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setExtendedLayoutIncludesOpaqueBars:")
@@ -898,6 +1154,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * This controls whether this view controller takes over control of the status bar's appearance when presented
      * non-full screen on another view controller. Defaults to NO.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setModalPresentationCapturesStatusBarAppearance:")
@@ -913,6 +1171,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * system-provided view controllers.
      * Defaults to UIModalPresentationAutomatic on iOS starting in iOS 13.0, and UIModalPresentationFullScreen on
      * previous versions. Defaults to UIModalPresentationFullScreen on all other platforms.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setModalPresentationStyle:")
@@ -922,6 +1182,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * Defines the transition style that will be used for this view controller when it is presented modally. Set
      * this property on the view controller to be presented, not the presenter. Defaults to
      * UIModalTransitionStyleCoverVertical.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setModalTransitionStyle:")
@@ -935,6 +1197,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * This should be called whenever the return values for the view controller's status bar attributes have changed. If
      * it is called from within an animation block, the changes will be animated along with the rest of the animation
      * block.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setNeedsStatusBarAppearanceUpdate")
@@ -942,14 +1206,18 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Call to modify the trait collection for child view controllers.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setOverrideTraitCollection:forChildViewController:")
-    public native void setOverrideTraitCollectionForChildViewController(UITraitCollection collection,
-            UIViewController childViewController);
+    public native void setOverrideTraitCollectionForChildViewController(@Nullable UITraitCollection collection,
+            @NotNull UIViewController childViewController);
 
     /**
      * The preferredContentSize is used for any container laying out a child view controller.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setPreferredContentSize:")
@@ -958,17 +1226,26 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * A controller that defines the presentation context can also specify the modal transition style if this property
      * is true.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setProvidesPresentationContextTransitionStyle:")
     public native void setProvidesPresentationContextTransitionStyle(boolean value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setRestorationClass:")
-    public native void setRestorationClass_unsafe(@Mapped(ObjCObjectMapper.class) UIViewControllerRestoration value);
+    public native void setRestorationClass_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) UIViewControllerRestoration value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
-    public void setRestorationClass(@Mapped(ObjCObjectMapper.class) UIViewControllerRestoration value) {
+    public void setRestorationClass(@Nullable @Mapped(ObjCObjectMapper.class) UIViewControllerRestoration value) {
         Object __old = restorationClass();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -979,14 +1256,19 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
         }
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setRestorationIdentifier:")
-    public native void setRestorationIdentifier(String value);
+    public native void setRestorationIdentifier(@Nullable String value);
 
     /**
      * If YES, when this view controller becomes visible and focusable, focus will be automatically restored to the item
      * that was last focused. For example, when an item in this view controller is focused, and then another view
      * controller is presented and dismissed, the original item will become focused again. Defaults to YES.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setRestoresFocusAfterTransition:")
@@ -1004,23 +1286,37 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      */
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@Nullable String value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setToolbarItems:")
-    public native void setToolbarItems(NSArray<? extends UIBarButtonItem> value);
+    public native void setToolbarItems(@Nullable NSArray<? extends UIBarButtonItem> value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setToolbarItems:animated:")
-    public native void setToolbarItemsAnimated(NSArray<? extends UIBarButtonItem> toolbarItems, boolean animated);
+    public native void setToolbarItemsAnimated(@Nullable NSArray<? extends UIBarButtonItem> toolbarItems,
+            boolean animated);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setTransitioningDelegate:")
     public native void setTransitioningDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerTransitioningDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIViewControllerTransitioningDelegate value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
-    public void setTransitioningDelegate(@Mapped(ObjCObjectMapper.class) UIViewControllerTransitioningDelegate value) {
+    public void setTransitioningDelegate(
+            @Nullable @Mapped(ObjCObjectMapper.class) UIViewControllerTransitioningDelegate value) {
         Object __old = transitioningDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -1041,16 +1337,27 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Deprecated in 7_0, Replaced by the following:
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
     @Selector("setWantsFullScreenLayout:")
     public native void setWantsFullScreenLayout(boolean value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("shouldAutomaticallyForwardAppearanceMethods")
     public native boolean shouldAutomaticallyForwardAppearanceMethods();
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Manually forward viewWillTransitionToSize:withTransitionCoordinator: if necessary
+     */
     @Generated
     @Deprecated
     @Selector("shouldAutomaticallyForwardRotationMethods")
@@ -1058,13 +1365,22 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * New Autorotation support.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Update supported interface orientations and call
+     * setNeedsUpdateOfSupportedInterfaceOrientations to indicate a change.
      */
+    @Deprecated
     @Generated
     @Selector("shouldAutorotate")
     public native boolean shouldAutorotate();
 
     /**
      * Applications should use supportedInterfaceOrientations and/or shouldAutorotate.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 6.0
      */
     @Generated
     @Deprecated
@@ -1074,53 +1390,68 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * Invoked immediately prior to initiating a segue. Return NO to prevent the segue from firing. The default
      * implementation returns YES. This method is not invoked when -performSegueWithIdentifier:sender: is used.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("shouldPerformSegueWithIdentifier:sender:")
-    public native boolean shouldPerformSegueWithIdentifierSender(String identifier,
-            @Mapped(ObjCObjectMapper.class) Object sender);
+    public native boolean shouldPerformSegueWithIdentifierSender(@NotNull String identifier,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object sender);
 
     @Generated
     @Selector("shouldUpdateFocusInContext:")
-    public native boolean shouldUpdateFocusInContext(UIFocusUpdateContext context);
+    public native boolean shouldUpdateFocusInContext(@NotNull UIFocusUpdateContext context);
 
     /**
      * This method will show a view controller within the semantic "detail" UI associated with the current size-class
      * environment. It's implementation calls `[self targetViewControllerForAction:sender:]` first and redirects
      * accordingly if the return value is not `self`, otherwise it will present the vc.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("showDetailViewController:sender:")
-    public native void showDetailViewControllerSender(UIViewController vc,
-            @Mapped(ObjCObjectMapper.class) Object sender);
+    public native void showDetailViewControllerSender(@NotNull UIViewController vc,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object sender);
 
     /**
      * This method will show a view controller appropriately for the current size-class environment. It's implementation
      * calls
      * `[self targetViewControllerForAction:sender:]` first and redirects accordingly if the return value is not `self`,
      * otherwise it will present the vc.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("showViewController:sender:")
-    public native void showViewControllerSender(UIViewController vc, @Mapped(ObjCObjectMapper.class) Object sender);
+    public native void showViewControllerSender(@NotNull UIViewController vc,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object sender);
 
     @Generated
     @Selector("sizeForChildContentContainer:withParentContainerSize:")
     @ByValue
     public native CGSize sizeForChildContentContainerWithParentContainerSize(
-            @Mapped(ObjCObjectMapper.class) UIContentContainer container, @ByValue CGSize parentSize);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIContentContainer container, @ByValue CGSize parentSize);
 
     /**
      * If the view controller has a split view controller as its ancestor, return it. Returns nil otherwise.
      */
+    @Nullable
     @Generated
     @Selector("splitViewController")
     public native UISplitViewController splitViewController();
 
+    /**
+     * API-Since: 5.0
+     */
+    @Nullable
     @Generated
     @Selector("storyboard")
     public native UIStoryboard storyboard();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("supportedInterfaceOrientations")
     @NUInt
@@ -1129,11 +1460,12 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     @Generated
     @Selector("systemLayoutFittingSizeDidChangeForChildContentContainer:")
     public native void systemLayoutFittingSizeDidChangeForChildContentContainer(
-            @Mapped(ObjCObjectMapper.class) UIContentContainer container);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIContentContainer container);
 
     /**
      * If the view controller has a tab bar controller as its ancestor, return it. Returns nil otherwise.
      */
+    @Nullable
     @Generated
     @Selector("tabBarController")
     public native UITabBarController tabBarController();
@@ -1149,38 +1481,53 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * This method returns either itself or the nearest ancestor that can perform the given action and, if applicable,
      * has overridden UIViewController's default implementation of the action method. View controllers can return NO
      * from canPerformAction:withSender: to opt out of being a target for a given action.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("targetViewControllerForAction:sender:")
-    public native UIViewController targetViewControllerForActionSender(SEL action,
-            @Mapped(ObjCObjectMapper.class) Object sender);
+    public native UIViewController targetViewControllerForActionSender(@NotNull SEL action,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object sender);
 
     /**
      * Localized title for use by a parent controller.
      */
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();
 
+    /**
+     * API-Since: 3.0
+     */
+    @Nullable
     @Generated
     @Selector("toolbarItems")
     public native NSArray<? extends UIBarButtonItem> toolbarItems();
 
     /**
      * These objects may be used as layout items in the NSLayoutConstraint API
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use view.safeAreaLayoutGuide.topAnchor instead of topLayoutGuide.bottomAnchor
      */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("topLayoutGuide")
     @MappedReturn(ObjCObjectMapper.class)
     public native UILayoutSupport topLayoutGuide();
 
+    @NotNull
     @Generated
     @Selector("traitCollection")
     public native UITraitCollection traitCollection();
 
     @Generated
     @Selector("traitCollectionDidChange:")
-    public native void traitCollectionDidChange(UITraitCollection previousTraitCollection);
+    public native void traitCollectionDidChange(@Nullable UITraitCollection previousTraitCollection);
 
     /**
      * The default implementation will return a transition coordinator if called during
@@ -1189,7 +1536,10 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * appropriate transition coordinator to return, otherwise it should call
      * super. Only custom container view controllers should ever need to override
      * this method.
+     * 
+     * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("transitionCoordinator")
     @MappedReturn(ObjCObjectMapper.class)
@@ -1207,35 +1557,48 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * should not be a subclass of an iOS container view controller. Note also that it is possible to use the
      * UIView APIs directly. If they are used it is important to ensure that the toViewController's view is added
      * to the visible view hierarchy while the fromViewController's view is removed.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("transitionFromViewController:toViewController:duration:options:animations:completion:")
     public native void transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion(
-            UIViewController fromViewController, UIViewController toViewController, double duration,
+            @NotNull UIViewController fromViewController, @NotNull UIViewController toViewController, double duration,
             @NUInt long options,
-            @ObjCBlock(name = "call_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_4") Block_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_4 animations,
-            @ObjCBlock(name = "call_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_5") Block_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_5 completion);
+            @Nullable @ObjCBlock(name = "call_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_4") Block_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_4 animations,
+            @Nullable @ObjCBlock(name = "call_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_5") Block_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_5 completion);
 
+    /**
+     * API-Since: 7.0
+     */
+    @Nullable
     @Generated
     @Selector("transitioningDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIViewControllerTransitioningDelegate transitioningDelegate();
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated
     @Generated
     @Selector("unregisterForPreviewingWithContext:")
     public native void unregisterForPreviewingWithContext(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerPreviewing previewing);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerPreviewing previewing);
 
     /**
      * Custom container view controllers should override this method to modify themselves as part of an ongoing unwind
      * segue. The subsequentVC is the parent, child, or presented view controller closest to the receiver in the
      * direction of the segue's destinationViewController. For example, UINavigationController's implementation of this
      * method will pop any necessary view controllers to reveal the subsequentVC.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("unwindForSegue:towardsViewController:")
-    public native void unwindForSegueTowardsViewController(UIStoryboardSegue unwindSegue,
-            UIViewController subsequentVC);
+    public native void unwindForSegueTowardsViewController(@NotNull UIStoryboardSegue unwindSegue,
+            @NotNull UIViewController subsequentVC);
 
     @Generated
     @Selector("updateFocusIfNeeded")
@@ -1249,6 +1612,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * You may override this method in a UIViewController subclass for updating custom
      * constraints instead of subclassing your view and overriding -[UIView updateConstraints].
      * Overrides must call super or send -updateConstraints to the view.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("updateViewConstraints")
@@ -1270,12 +1635,16 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * Applications targeting iOS 9 or later should not override this method. Applications can instead override
      * -allowedChildViewControllersForUnwindingFromSource: to guide UIKit’s search for a descendant view controller that
      * returns YES from -canPerformUnwindSegueAction:fromViewController:sender:.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 9.0
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("viewControllerForUnwindSegueAction:fromViewController:withSender:")
-    public native UIViewController viewControllerForUnwindSegueActionFromViewControllerWithSender(SEL action,
-            UIViewController fromViewController, @Mapped(ObjCObjectMapper.class) Object sender);
+    public native UIViewController viewControllerForUnwindSegueActionFromViewControllerWithSender(@NotNull SEL action,
+            @NotNull UIViewController fromViewController, @Nullable @Mapped(ObjCObjectMapper.class) Object sender);
 
     /**
      * Called when the view has been fully transitioned onto the screen. Default does nothing
@@ -1294,6 +1663,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * Called just after the view controller's view's layoutSubviews method is invoked. Subclasses can implement as
      * necessary. The default is a no-op.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("viewDidLayoutSubviews")
@@ -1310,6 +1681,9 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * Called after the view controller's view is released and set to nil. For example, a memory warning which causes
      * the view to be purged. Not invoked as a result of -dealloc.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 6.0
      */
     @Generated
     @Deprecated
@@ -1318,7 +1692,10 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Returns the view controller's view if loaded, nil if not.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("viewIfLoaded")
     public native UIView viewIfLoaded();
@@ -1340,6 +1717,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * Called just before the view controller's view's layoutSubviews method is invoked. Subclasses can implement as
      * necessary. The default is a no-op.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("viewWillLayoutSubviews")
@@ -1348,8 +1727,12 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     @Generated
     @Selector("viewWillTransitionToSize:withTransitionCoordinator:")
     public native void viewWillTransitionToSizeWithTransitionCoordinator(@ByValue CGSize size,
-            @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
+     */
     @Generated
     @Deprecated
     @Selector("viewWillUnload")
@@ -1357,18 +1740,30 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Deprecated in 7_0, Replaced by the following:
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
     @Selector("wantsFullScreenLayout")
     public native boolean wantsFullScreenLayout();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 5.0
+     */
     @Generated
     @Deprecated
     @Selector("willAnimateFirstHalfOfRotationToInterfaceOrientation:duration:")
     public native void willAnimateFirstHalfOfRotationToInterfaceOrientationDuration(@NInt long toInterfaceOrientation,
             double duration);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Implement viewWillTransitionToSize:withTransitionCoordinator: instead
+     */
     @Generated
     @Deprecated
     @Selector("willAnimateRotationToInterfaceOrientation:duration:")
@@ -1377,6 +1772,9 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * A this point, our view orientation is set to the new orientation.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 5.0
      */
     @Generated
     @Deprecated
@@ -1389,7 +1787,7 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * controllers. If they are overridden, the overrides should ensure to call the super. The parent argument in
      * both of these methods is nil when a child is being removed from its parent; otherwise it is equal to the new
      * parent view controller.
-     * <p>
+     * 
      * addChildViewController: will call [child willMoveToParentViewController:self] before adding the
      * child. However, it will not call didMoveToParentViewController:. It is expected that a container view
      * controller subclass will make this call after a transition to the new child has completed or, in the
@@ -1400,13 +1798,19 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * transition which will add the new child's view into the view hierarchy of its parent, and finally will call
      * didMoveToParentViewController:. Similarly, subclasses will typically define a method that removes a child in
      * the reverse manner by first calling [child willMoveToParentViewController:nil].
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("willMoveToParentViewController:")
-    public native void willMoveToParentViewController(UIViewController parent);
+    public native void willMoveToParentViewController(@Nullable UIViewController parent);
 
     /**
      * Notifies when rotation begins, reaches halfway point and ends.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Implement viewWillTransitionToSize:withTransitionCoordinator: instead
      */
     @Generated
     @Deprecated
@@ -1415,8 +1819,9 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     @Generated
     @Selector("willTransitionToTraitCollection:withTransitionCoordinator:")
-    public native void willTransitionToTraitCollectionWithTransitionCoordinator(UITraitCollection newCollection,
-            @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator);
+    public native void willTransitionToTraitCollectionWithTransitionCoordinator(
+            @NotNull UITraitCollection newCollection,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -1449,6 +1854,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * Custom container UIViewController subclasses can use this property to add to the overlay
      * that UIViewController calculates for the safeAreaInsets for contained view controllers.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("additionalSafeAreaInsets")
@@ -1459,7 +1866,10 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * Override to return a child view controller or nil. If non-nil, that view controller's home indicator auto-hiding
      * will be used. If nil, self is used. Whenever the return value changes, -setNeedsHomeIndicatorAutoHiddenUpdate
      * should be called.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("childViewControllerForHomeIndicatorAutoHidden")
     public native UIViewController childViewControllerForHomeIndicatorAutoHidden();
@@ -1468,7 +1878,10 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * Override to return a child view controller or nil. If non-nil, that view controller's screen edges deferring
      * system gestures will be used. If nil, self is used. Whenever the return value changes,
      * -setNeedsScreenEdgesDeferringSystemGesturesUpdate should be called.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("childViewControllerForScreenEdgesDeferringSystemGestures")
     public native UIViewController childViewControllerForScreenEdgesDeferringSystemGestures();
@@ -1476,6 +1889,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * Controls the application's preferred screen edges deferring system gestures when this view controller is shown.
      * Default is UIRectEdgeNone.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("preferredScreenEdgesDeferringSystemGestures")
@@ -1484,6 +1899,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Controls the application's preferred home indicator auto-hiding when this view controller is shown.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("prefersHomeIndicatorAutoHidden")
@@ -1492,6 +1909,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * Custom container UIViewController subclasses can use this property to add to the overlay
      * that UIViewController calculates for the safeAreaInsets for contained view controllers.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAdditionalSafeAreaInsets:")
@@ -1500,6 +1919,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * This should be called whenever the return values for the view controller's home indicator auto-hiding have
      * changed.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setNeedsUpdateOfHomeIndicatorAutoHidden")
@@ -1508,6 +1929,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * This should be called whenever the return values for the view controller's screen edges deferring system gestures
      * have changed.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setNeedsUpdateOfScreenEdgesDeferringSystemGestures")
@@ -1517,6 +1940,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * Default YES. The return value of the view's layoutMargins and directionalLayoutMargins properties will have
      * values no smaller than the systemMinimumLayoutMargins. Set to NO for full customizability of the view's
      * layoutMargins.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setViewRespectsSystemMinimumLayoutMargins:")
@@ -1526,12 +1951,17 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * Minimum layoutMargins for the view determined by the view controller from context and hardware information.
      * The view controller's view will respect these minimums unless viewRespectsSystemMinimumLayoutMargins
      * (which defaults to YES) is set to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("systemMinimumLayoutMargins")
     @ByValue
     public native NSDirectionalEdgeInsets systemMinimumLayoutMargins();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("viewLayoutMarginsDidChange")
     public native void viewLayoutMarginsDidChange();
@@ -1540,11 +1970,16 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * Default YES. The return value of the view's layoutMargins and directionalLayoutMargins properties will have
      * values no smaller than the systemMinimumLayoutMargins. Set to NO for full customizability of the view's
      * layoutMargins.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("viewRespectsSystemMinimumLayoutMargins")
     public native boolean viewRespectsSystemMinimumLayoutMargins();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("viewSafeAreaInsetsDidChange")
     public native void viewSafeAreaInsetsDidChange();
@@ -1552,12 +1987,15 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * View controllers will receive this message during segue unwinding. The default implementation returns the result
      * of -respondsToSelector: - controllers can override this to perform any ancillary checks, if necessary.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("canPerformUnwindSegueAction:fromViewController:sender:")
-    public native boolean canPerformUnwindSegueActionFromViewControllerSender(SEL action,
-            UIViewController fromViewController, @Mapped(ObjCObjectMapper.class) Object sender);
+    public native boolean canPerformUnwindSegueActionFromViewControllerSender(@NotNull SEL action,
+            @NotNull UIViewController fromViewController, @Nullable @Mapped(ObjCObjectMapper.class) Object sender);
 
+    @Nullable
     @Generated
     @Selector("focusItemContainer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -1567,6 +2005,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * modalInPresentation is set on the view controller when you wish to force the presentation hosting the view
      * controller into modal behavior. When this is active, the presentation will prevent interactive dismiss and ignore
      * events outside of the presented view controller's bounds until this is set to NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isModalInPresentation")
@@ -1574,12 +2014,15 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Defaults to UIUserInterfaceStyleUnspecified
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("overrideUserInterfaceStyle")
     @NInt
     public native long overrideUserInterfaceStyle();
 
+    @Nullable
     @Generated
     @Selector("parentFocusEnvironment")
     @MappedReturn(ObjCObjectMapper.class)
@@ -1587,9 +2030,11 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Determines whether the receiver continues to respond to actions while it is presenting a view controller modally.
-     * <p>
+     * 
      * Defaults to YES. You can change the default return value by providing a value for
      * UIViewControllerPerformsActionsWhilePresentingModally in your Info.plist file.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("performsActionsWhilePresentingModally")
@@ -1599,6 +2044,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * modalInPresentation is set on the view controller when you wish to force the presentation hosting the view
      * controller into modal behavior. When this is active, the presentation will prevent interactive dismiss and ignore
      * events outside of the presented view controller's bounds until this is set to NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setModalInPresentation:")
@@ -1606,6 +2053,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Defaults to UIUserInterfaceStyleUnspecified
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setOverrideUserInterfaceStyle:")
@@ -1615,11 +2064,15 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * Override to return a child view controller or nil. If non-nil, that view controller's preferred pointer lock
      * value will be used. If nil, self is used. Whenever the return value changes,
      * setNeedsUpdateOfPrefersPointerLocked() should be called.
+     * 
+     * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("childViewControllerForPointerLock")
     public native UIViewController childViewControllerForPointerLock();
 
+    @Nullable
     @Generated
     @Selector("focusGroupIdentifier")
     public native String focusGroupIdentifier();
@@ -1628,6 +2081,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * Whether the pointer should be locked to a given scene when this view controller is shown.
      * The default is NO. This preference may or may not be honored.
      * See UIPointerLockState.locked for the current pointer lock state as determined by the system.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("prefersPointerLocked")
@@ -1635,6 +2090,8 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * This should be called whenever the view controller's preferred pointer lock value has changed.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setNeedsUpdateOfPrefersPointerLocked")
@@ -1642,7 +2099,10 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * Subclass overrides will be called when available
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("contentScrollViewForEdge:")
     public native UIScrollView contentScrollViewForEdge(@NUInt long edge);
@@ -1652,26 +2112,77 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * UITabBarController, or both will observe the UIScrollView instance in the
      * `contentScrollView` parameter to determine the background blur for the bars and to
      * update contentInset adjustments for the scroll view.
-     * <p>
+     * 
      * When contentScrollView is nil for an edge, UIKit uses a heuristic to search for
      * a UIScrollView to track. If none is found, the relevant bar will be transparent unless
      * otherwise customized with the `scrollEdgeAppearance` APIs.
      * Aggregate values (e.g., NSDirectionalRectEdgeAll) are accepted in the `edge` parameter;
      * NSDirectionalRectEdgeLeading and Trailing are ignored on iOS 15.0
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setContentScrollView:forEdge:")
-    public native void setContentScrollViewForEdge(UIScrollView scrollView, @NUInt long edge);
+    public native void setContentScrollViewForEdge(@Nullable UIScrollView scrollView, @NUInt long edge);
 
     /**
      * The identifier of the focus group that this view controller belongs to. If this is nil, the view controller
      * inherits the focus group of its parent focus environment.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setFocusGroupIdentifier:")
-    public native void setFocusGroupIdentifier(String value);
+    public native void setFocusGroupIdentifier(@Nullable String value);
 
+    /**
+     * API-Since: 15.0
+     */
+    @Nullable
     @Generated
     @Selector("sheetPresentationController")
     public native UISheetPresentationController sheetPresentationController();
+
+    /**
+     * Gets the presentation controller managing this view controller. If the original presentation controller has
+     * adapted, this returns the adaptive presentation controller. If this view controller has not yet been presented,
+     * this property returns nil.
+     * 
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("activePresentationController")
+    public native UIPresentationController activePresentationController();
+
+    /**
+     * The base name for tracking user interactions as activities hosted by this view controller.
+     * 
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("interactionActivityTrackingBaseName")
+    public native String interactionActivityTrackingBaseName();
+
+    /**
+     * The base name for tracking user interactions as activities hosted by this view controller.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setInteractionActivityTrackingBaseName:")
+    public native void setInteractionActivityTrackingBaseName(@Nullable String value);
+
+    /**
+     * Notifies the view controller that a change occurred that affects supported interface orientations or the
+     * preferred interface orientation for presentation.
+     * By default, this will animate any changes to orientation. To perform a non-animated update, call within `[UIView
+     * performWithoutAnimation:]`.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setNeedsUpdateOfSupportedInterfaceOrientations")
+    public native void setNeedsUpdateOfSupportedInterfaceOrientations();
 }

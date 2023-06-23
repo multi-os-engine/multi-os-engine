@@ -39,9 +39,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A collection of GKGraphNodes that are governed by a 2D Cartesian grid
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -73,22 +77,25 @@ public class GKGridGraph<_NodeType> extends GKGraph {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -103,7 +110,7 @@ public class GKGridGraph<_NodeType> extends GKGraph {
 
     @Generated
     @Selector("graphWithNodes:")
-    public static native GKGridGraph<?> graphWithNodes(NSArray<? extends GKGraphNode> nodes);
+    public static native GKGridGraph<?> graphWithNodes(@NotNull NSArray<? extends GKGraphNode> nodes);
 
     @Generated
     @Selector("hash")
@@ -127,9 +134,10 @@ public class GKGridGraph<_NodeType> extends GKGraph {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -160,6 +168,7 @@ public class GKGridGraph<_NodeType> extends GKGraph {
     /**
      * Returns the class of the specified generic index
      */
+    @NotNull
     @Generated
     @Selector("classForGenericArgumentAtIndex:")
     public native Class classForGenericArgumentAtIndex(@NUInt long index);
@@ -167,12 +176,12 @@ public class GKGridGraph<_NodeType> extends GKGraph {
     /**
      * Connects the given GKGridGraphNode to this graph by connecting it to it's adjacent nodes on the grid
      * Input node must have coordinates within the rectangle specified by minCoordinates and maxCoordinates
-     *
+     * 
      * @param node the node to be connected
      */
     @Generated
     @Selector("connectNodeToAdjacentNodes:")
-    public native void connectNodeToAdjacentNodes(GKGridGraphNode node);
+    public native void connectNodeToAdjacentNodes(@NotNull GKGridGraphNode node);
 
     /**
      * Returns YES if this grid is also connected via it's diagonal directions rather than only it's cardinal directions
@@ -203,11 +212,11 @@ public class GKGridGraph<_NodeType> extends GKGraph {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKGridGraph<?> initWithCoder(NSCoder coder);
+    public native GKGridGraph<?> initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNodes:")
-    public native GKGridGraph<?> initWithNodes(NSArray<? extends GKGraphNode> nodes);
+    public native GKGridGraph<?> initWithNodes(@NotNull NSArray<? extends GKGraphNode> nodes);
 
     @Generated
     @Selector("supportsSecureCoding")

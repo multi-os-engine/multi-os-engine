@@ -41,10 +41,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImageGaussianPyramid
- * <p>
+ * 
  * A Gaussian image pyramid is constructed as follows:
  * The mipmap level zero is the source of the operation and is left untouched and
  * the subsequent mipmap levels are constructed from it recursively:
@@ -62,13 +64,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * k = w w^T, where w = [ (1/4 - a/2), 1/4, a, 1/4, (1/4 - a/2) ]^T
  * [@endcode]
  * or the user can provide a completely custom kernel.
- * <p>
+ * 
  * This procedure is continued until every mipmap level present in the image texture are
  * filled with the pyramid levels.
- * <p>
+ * 
  * In case of the Gaussian pyramid the user must run the operation in-place using:
  * [@ref] MPSUnaryImageKernel::encodeToCommandBuffer:inPlaceTexture:fallbackCopyAllocator:,
  * where the fallback allocator is ignored.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -100,22 +104,25 @@ public class MPSImageGaussianPyramid extends MPSImagePyramid {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -150,9 +157,10 @@ public class MPSImageGaussianPyramid extends MPSImagePyramid {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -186,27 +194,27 @@ public class MPSImageGaussianPyramid extends MPSImagePyramid {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImageGaussianPyramid initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageGaussianPyramid initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:centerWeight:")
-    public native MPSImageGaussianPyramid initWithDeviceCenterWeight(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            float centerWeight);
+    public native MPSImageGaussianPyramid initWithDeviceCenterWeight(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, float centerWeight);
 
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:weights:")
     public native MPSImageGaussianPyramid initWithDeviceKernelWidthKernelHeightWeights(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight,
-            ConstFloatPtr kernelWeights);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth,
+            @NUInt long kernelHeight, @NotNull ConstFloatPtr kernelWeights);
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSImageGaussianPyramid initWithCoder(NSCoder aDecoder);
+    public native MPSImageGaussianPyramid initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSImageGaussianPyramid initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageGaussianPyramid initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("supportsSecureCoding")

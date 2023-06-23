@@ -24,7 +24,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -53,37 +58,44 @@ public class SKArcadeService extends NSObject {
     @Selector("allocWithZone:")
     public static native SKArcadeService allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("arcadeSubscriptionStatusWithNonce:resultHandler:")
     public static native void arcadeSubscriptionStatusWithNonceResultHandler(long nonce,
-            @ObjCBlock(name = "call_arcadeSubscriptionStatusWithNonceResultHandler") Block_arcadeSubscriptionStatusWithNonceResultHandler resultHandler);
+            @NotNull @ObjCBlock(name = "call_arcadeSubscriptionStatusWithNonceResultHandler") Block_arcadeSubscriptionStatusWithNonceResultHandler resultHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_arcadeSubscriptionStatusWithNonceResultHandler {
         @Generated
-        void call_arcadeSubscriptionStatusWithNonceResultHandler(NSData subscriptionStatus,
-                int subscriptionStatusLength, NSData cmacOfNonce, int cmacOfNonceLength, NSError error);
+        void call_arcadeSubscriptionStatusWithNonceResultHandler(@Nullable NSData subscriptionStatus,
+                int subscriptionStatusLength, @Nullable NSData cmacOfNonce, int cmacOfNonceLength,
+                @Nullable NSError error);
     }
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,29 +134,36 @@ public class SKArcadeService extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native SKArcadeService new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("registerArcadeAppWithRandomFromLib:randomFromLibLength:resultHandler:")
-    public static native void registerArcadeAppWithRandomFromLibRandomFromLibLengthResultHandler(NSData randomFromLib,
-            int randomFromLibLength,
-            @ObjCBlock(name = "call_registerArcadeAppWithRandomFromLibRandomFromLibLengthResultHandler") Block_registerArcadeAppWithRandomFromLibRandomFromLibLengthResultHandler resultHandler);
+    public static native void registerArcadeAppWithRandomFromLibRandomFromLibLengthResultHandler(
+            @NotNull NSData randomFromLib, int randomFromLibLength,
+            @NotNull @ObjCBlock(name = "call_registerArcadeAppWithRandomFromLibRandomFromLibLengthResultHandler") Block_registerArcadeAppWithRandomFromLibRandomFromLibLengthResultHandler resultHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_registerArcadeAppWithRandomFromLibRandomFromLibLengthResultHandler {
         @Generated
-        void call_registerArcadeAppWithRandomFromLibRandomFromLibLengthResultHandler(NSData randomFromFP,
-                int randomFromFPLength, NSData cmacOfAppPID, int cmacOfAppPIDLength, NSError error);
+        void call_registerArcadeAppWithRandomFromLibRandomFromLibLengthResultHandler(@Nullable NSData randomFromFP,
+                int randomFromFPLength, @Nullable NSData cmacOfAppPID, int cmacOfAppPIDLength, @Nullable NSError error);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("repairArcadeApp")
     public static native void repairArcadeApp();

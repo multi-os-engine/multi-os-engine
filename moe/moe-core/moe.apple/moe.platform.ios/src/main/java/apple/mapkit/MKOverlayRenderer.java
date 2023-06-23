@@ -18,8 +18,6 @@ package apple.mapkit;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGContextRef;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -46,7 +44,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -77,22 +82,25 @@ public class MKOverlayRenderer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +135,10 @@ public class MKOverlayRenderer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -182,7 +191,7 @@ public class MKOverlayRenderer extends NSObject {
     @Generated
     @Selector("drawMapRect:zoomScale:inContext:")
     public native void drawMapRectZoomScaleInContext(@ByValue MKMapRect mapRect, @NFloat double zoomScale,
-            CGContextRef context);
+            @NotNull CGContextRef context);
 
     @Generated
     @Selector("init")
@@ -190,7 +199,7 @@ public class MKOverlayRenderer extends NSObject {
 
     @Generated
     @Selector("initWithOverlay:")
-    public native MKOverlayRenderer initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
+    public native MKOverlayRenderer initWithOverlay(@NotNull @Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 
     @Generated
     @Selector("mapPointForPoint:")
@@ -202,6 +211,7 @@ public class MKOverlayRenderer extends NSObject {
     @ByValue
     public native MKMapRect mapRectForRect(@ByValue CGRect rect);
 
+    @NotNull
     @Generated
     @Selector("overlay")
     @MappedReturn(ObjCObjectMapper.class)
@@ -235,4 +245,18 @@ public class MKOverlayRenderer extends NSObject {
     @Generated
     @Selector("setNeedsDisplayInMapRect:zoomScale:")
     public native void setNeedsDisplayInMapRectZoomScale(@ByValue MKMapRect mapRect, @NFloat double zoomScale);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("blendMode")
+    public native int blendMode();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setBlendMode:")
+    public native void setBlendMode(int value);
 }

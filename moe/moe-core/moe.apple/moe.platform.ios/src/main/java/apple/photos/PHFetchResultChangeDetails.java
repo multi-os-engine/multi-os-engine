@@ -39,7 +39,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -70,31 +75,36 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Provides a "diff" between 2 PHFetchResult objects.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("changeDetailsFromFetchResult:toFetchResult:changedObjects:")
     public static native <_ObjectType> PHFetchResultChangeDetails<?> changeDetailsFromFetchResultToFetchResultChangedObjects(
-            PHFetchResult<? extends PHObject> fromResult, PHFetchResult<? extends PHObject> toResult,
-            NSArray<? extends PHObject> changedObjects);
+            @NotNull PHFetchResult<? extends PHObject> fromResult, @NotNull PHFetchResult<? extends PHObject> toResult,
+            @NotNull NSArray<? extends PHObject> changedObjects);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +139,10 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,11 +173,18 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
     /**
      * The indexes of the updated items, relative to the 'after' state of the fetch result
      * returns nil if hasIncrementalChanges is NO
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("changedIndexes")
     public native NSIndexSet changedIndexes();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @Selector("changedObjects")
     public native NSArray<? extends PHObject> changedObjects();
@@ -174,15 +192,20 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
     /**
      * Enumerates the indexes of the moved items, relative to the 'before' state of the fetch result after applying the
      * removedIndexes and insertedIndexes
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("enumerateMovesWithBlock:")
     public native void enumerateMovesWithBlock(
-            @ObjCBlock(name = "call_enumerateMovesWithBlock") Block_enumerateMovesWithBlock handler);
+            @NotNull @ObjCBlock(name = "call_enumerateMovesWithBlock") Block_enumerateMovesWithBlock handler);
 
     /**
      * fetch result with the state of the fetched objects after this change
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("fetchResultAfterChanges")
     public native PHFetchResult<? extends PHObject> fetchResultAfterChanges();
@@ -190,7 +213,10 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
     /**
      * fetch result with the state of the fetched objects before this change (returns the fetch result passed in to
      * changeDetailsForFetchResult:)
+     * 
+     * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("fetchResultBeforeChanges")
     public native PHFetchResult<? extends PHObject> fetchResultBeforeChanges();
@@ -199,6 +225,8 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
      * YES if the changes to this fetch result are described by the removed/inserted/changed details.
      * NO indicates that the scope of changes were too large and UI clients should do a full reload, incremental changes
      * could not be provided
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("hasIncrementalChanges")
@@ -207,6 +235,8 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
     /**
      * YES if there are moved items
      * returns NO if hasIncrementalChanges is NO
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("hasMoves")
@@ -220,11 +250,18 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
      * The indexes of the inserted items, relative to the 'before' state of the fetch result after applying the
      * removedIndexes
      * returns nil if hasIncrementalChanges is NO
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("insertedIndexes")
     public native NSIndexSet insertedIndexes();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @Selector("insertedObjects")
     public native NSArray<? extends PHObject> insertedObjects();
@@ -232,11 +269,18 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
     /**
      * The indexes of the removed items, relative to the 'before' state of the fetch result
      * returns nil if hasIncrementalChanges is NO
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("removedIndexes")
     public native NSIndexSet removedIndexes();
 
+    /**
+     * API-Since: 8.0
+     */
+    @NotNull
     @Generated
     @Selector("removedObjects")
     public native NSArray<? extends PHObject> removedObjects();

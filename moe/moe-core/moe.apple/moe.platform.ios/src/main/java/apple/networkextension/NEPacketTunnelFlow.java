@@ -40,16 +40,20 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEPacketTunnelFlow
- * <p>
+ * 
  * The NEPacketTunnelFlow class declares the programmatic interface of an object that is used by NEPacketTunnelProvider
  * implementations to tunnel IP packets.
- * <p>
+ * 
  * NEPacketTunnelFlow is part of NetworkExtension.framework
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -81,22 +85,25 @@ public class NEPacketTunnelFlow extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +138,10 @@ public class NEPacketTunnelFlow extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,70 +175,78 @@ public class NEPacketTunnelFlow extends NSObject {
 
     /**
      * readPacketObjectsWithCompletionHandler:
-     * <p>
+     * 
      * Read available IP packets from the flow.
-     *
+     * 
      * @param completionHandler A block that will be executed to handle the packets. This block takes an array of
      *                          NEPacket objects. If after handling the packets the caller wants to read more packets
      *                          then the caller must call this method again.
+     * 
+     *                          API-Since: 10.0
      */
     @Generated
     @Selector("readPacketObjectsWithCompletionHandler:")
     public native void readPacketObjectsWithCompletionHandler(
-            @ObjCBlock(name = "call_readPacketObjectsWithCompletionHandler") Block_readPacketObjectsWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_readPacketObjectsWithCompletionHandler") Block_readPacketObjectsWithCompletionHandler completionHandler);
 
     /**
      * readPacketsWithCompletionHandler:
-     * <p>
+     * 
      * Read available IP packets from the flow.
-     *
+     * 
      * @param completionHandler A block that will be executed to handle the packets. This block takes an array of NSData
      *                          objects and an array of NSNumber objects. The NSData and NSNumber in corresponding
      *                          indicies in the array represent one packet. If after handling the packets the caller
      *                          wants to read more packets then the caller must call this method again.
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("readPacketsWithCompletionHandler:")
     public native void readPacketsWithCompletionHandler(
-            @ObjCBlock(name = "call_readPacketsWithCompletionHandler") Block_readPacketsWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_readPacketsWithCompletionHandler") Block_readPacketsWithCompletionHandler completionHandler);
 
     /**
      * writePacketObjects:
-     * <p>
+     * 
      * Write multiple IP packets to the flow.
-     *
+     * 
      * @param packets An array of NEPacket objects, each containing packet data and protocol family to be written.
+     * 
+     *                API-Since: 10.0
      */
     @Generated
     @Selector("writePacketObjects:")
-    public native boolean writePacketObjects(NSArray<? extends NEPacket> packets);
+    public native boolean writePacketObjects(@NotNull NSArray<? extends NEPacket> packets);
 
     /**
      * writePackets:completionHandler:
-     * <p>
+     * 
      * Write multiple IP packets to the flow.
-     *
+     * 
      * @param packets   An array of NSData objects, each containing packet data to be written.
      * @param protocols An array of NSNumber objects. Each number contains the protocol of the packet in the
      *                  corresponding index in the packets array.
+     * 
+     *                  API-Since: 9.0
      */
     @Generated
     @Selector("writePackets:withProtocols:")
-    public native boolean writePacketsWithProtocols(NSArray<? extends NSData> packets,
-            NSArray<? extends NSNumber> protocols);
+    public native boolean writePacketsWithProtocols(@NotNull NSArray<? extends NSData> packets,
+            @NotNull NSArray<? extends NSNumber> protocols);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_readPacketObjectsWithCompletionHandler {
         @Generated
-        void call_readPacketObjectsWithCompletionHandler(NSArray<? extends NEPacket> packets);
+        void call_readPacketObjectsWithCompletionHandler(@NotNull NSArray<? extends NEPacket> packets);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_readPacketsWithCompletionHandler {
         @Generated
-        void call_readPacketsWithCompletionHandler(NSArray<? extends NSData> packets,
-                NSArray<? extends NSNumber> protocols);
+        void call_readPacketsWithCompletionHandler(@NotNull NSArray<? extends NSData> packets,
+                @NotNull NSArray<? extends NSNumber> protocols);
     }
 }

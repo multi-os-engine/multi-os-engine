@@ -17,8 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGVector;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -44,7 +42,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGVector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -75,22 +80,25 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,17 +114,20 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
     /**
      * A fixed attachment fuses two dynamic items together at a reference point.
      * Fixed attachments are useful for creating complex shapes that can be broken apart later.
-     *
+     * 
      * @param item1 The first of two dynamic items connected by the attachment behavior.
      * @param item2 The second of two dynamic items connected by the attachment behavior.
      * @param point The point for which each item will be attached. The anchor point will be converted to each items
      *              local coordinate system.
+     * 
+     *              API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("fixedAttachmentWithItem:attachedToItem:attachmentAnchor:")
     public static native UIAttachmentBehavior fixedAttachmentWithItemAttachedToItemAttachmentAnchor(
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @Mapped(ObjCObjectMapper.class) UIDynamicItem item2,
-            @ByValue CGPoint point);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item1,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item2, @ByValue CGPoint point);
 
     @Generated
     @Selector("hash")
@@ -140,13 +151,14 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * A limit attachment imposes a maximum distance between two dynamic items, as if they were connected by a rope.
-     *
+     * 
      * @param item1   The first of two dynamic items connected by the attachment behavior.
      * @param offset1 The point, within the dynamic item and described as an offset from its center point, for the
      *                attachment behavior.
@@ -154,12 +166,15 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
      * @param offset2 The point, within the dynamic item and described as an offset from its center point, for the
      *                attachment behavior.
      * @see length
+     * 
+     *      API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("limitAttachmentWithItem:offsetFromCenter:attachedToItem:offsetFromCenter:")
     public static native UIAttachmentBehavior limitAttachmentWithItemOffsetFromCenterAttachedToItemOffsetFromCenter(
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @ByValue UIOffset offset1,
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item2, @ByValue UIOffset offset2);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @ByValue UIOffset offset1,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item2, @ByValue UIOffset offset2);
 
     @Generated
     @Owned
@@ -169,18 +184,21 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
     /**
      * A pin attachment allows two dynamic items to independently rotate around the anchor point as if pinned together.
      * You can configure how far the two objects may rotate and the resistance to rotation
-     *
+     * 
      * @param item1 The first of two dynamic items connected by the attachment behavior.
      * @param item2 The second of two dynamic items connected by the attachment behavior.
      * @param point The point for which each item will be attached. The anchor point will be converted to each items
      *              local coordinate system
      * @see frictionTorque, resistance to rotation
+     * 
+     *      API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("pinAttachmentWithItem:attachedToItem:attachmentAnchor:")
     public static native UIAttachmentBehavior pinAttachmentWithItemAttachedToItemAttachmentAnchor(
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @Mapped(ObjCObjectMapper.class) UIDynamicItem item2,
-            @ByValue CGPoint point);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item1,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item2, @ByValue CGPoint point);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -198,7 +216,7 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
      * A sliding attachment allows for relative translation of two items along a specified axis with respect to the
      * anchor point. A sliding
      * attachment prevents all relative rotation of the dynamic items.
-     *
+     * 
      * @param item1 The first of two dynamic items connected by the attachment behavior.
      * @param item2 The second of two dynamic items connected by the attachment behavior.
      * @param point The point for which each item will be attached. The anchor point will be converted to each items
@@ -206,28 +224,36 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
      * @param axis  Axis of allowed relative translation between local anchor point. Must be a unit vector.
      * @see attachmentRange, Represents the slidable range of the attachment with respect to the anchor point along the
      *      specified axis, this range must include 0
+     * 
+     *      API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("slidingAttachmentWithItem:attachedToItem:attachmentAnchor:axisOfTranslation:")
     public static native UIAttachmentBehavior slidingAttachmentWithItemAttachedToItemAttachmentAnchorAxisOfTranslation(
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @Mapped(ObjCObjectMapper.class) UIDynamicItem item2,
-            @ByValue CGPoint point, @ByValue CGVector axis);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item1,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item2, @ByValue CGPoint point,
+            @ByValue CGVector axis);
 
     /**
      * A sliding attachment allows for translation of the item along a specified axis with respect to the anchor point.
      * A sliding
      * attachment prevents all relative rotation of the dynamic items.
-     *
+     * 
      * @param item1 The dynamic item connected by the attachment behavior.
      * @param point The point for the item will be anchored by the attachment.
      * @param axis  Axis of allowed translation for the item. Must be a unit vector.
      * @see attachmentRange, Represents the slidable range of the attachment with respect to the anchor point along the
      *      specified axis, this range must include 0
+     * 
+     *      API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("slidingAttachmentWithItem:attachmentAnchor:axisOfTranslation:")
     public static native UIAttachmentBehavior slidingAttachmentWithItemAttachmentAnchorAxisOfTranslation(
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item, @ByValue CGPoint point, @ByValue CGVector axis);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item, @ByValue CGPoint point,
+            @ByValue CGVector axis);
 
     @Generated
     @Selector("superclass")
@@ -250,6 +276,8 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
 
     /**
      * default is UIFloatRangeInfinite
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("attachmentRange")
@@ -274,6 +302,8 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
 
     /**
      * default is 0.0
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("frictionTorque")
@@ -286,25 +316,28 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
 
     @Generated
     @Selector("initWithItem:attachedToAnchor:")
-    public native UIAttachmentBehavior initWithItemAttachedToAnchor(@Mapped(ObjCObjectMapper.class) UIDynamicItem item,
-            @ByValue CGPoint point);
+    public native UIAttachmentBehavior initWithItemAttachedToAnchor(
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item, @ByValue CGPoint point);
 
     @Generated
     @Selector("initWithItem:attachedToItem:")
-    public native UIAttachmentBehavior initWithItemAttachedToItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item1,
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item2);
+    public native UIAttachmentBehavior initWithItemAttachedToItem(
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item1,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item2);
 
     @Generated
     @Selector("initWithItem:offsetFromCenter:attachedToAnchor:")
     public native UIAttachmentBehavior initWithItemOffsetFromCenterAttachedToAnchor(
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item, @ByValue UIOffset offset, @ByValue CGPoint point);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item, @ByValue UIOffset offset,
+            @ByValue CGPoint point);
 
     @Generated
     @Selector("initWithItem:offsetFromCenter:attachedToItem:offsetFromCenter:")
     public native UIAttachmentBehavior initWithItemOffsetFromCenterAttachedToItemOffsetFromCenter(
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @ByValue UIOffset offset1,
-            @Mapped(ObjCObjectMapper.class) UIDynamicItem item2, @ByValue UIOffset offset2);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @ByValue UIOffset offset1,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item2, @ByValue UIOffset offset2);
 
+    @NotNull
     @Generated
     @Selector("items")
     public native NSArray<?> items();
@@ -320,6 +353,8 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
 
     /**
      * default is UIFloatRangeInfinite
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAttachmentRange:")
@@ -341,6 +376,8 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
 
     /**
      * default is 0.0
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setFrictionTorque:")

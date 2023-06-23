@@ -11,12 +11,15 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] NFCTag
- * <p>
+ * 
  * A NFC / RFID tag object conforms to this protocol. The NFCReaderSession returns an instance of this type when a tag
  * is detected.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreNFC")
@@ -25,9 +28,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface NFCTag extends NSSecureCoding, NSCopying {
     /**
      * [@property] asNFCFeliCaTag
-     * <p>
+     * 
      * Returns nil if tag does not conform to NFCFeliCaTag.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("asNFCFeliCaTag")
     @MappedReturn(ObjCObjectMapper.class)
@@ -35,9 +41,12 @@ public interface NFCTag extends NSSecureCoding, NSCopying {
 
     /**
      * asNFCISO15693Tag
-     *
+     * 
      * @return Returns self if it conforms to the NFCISO15693Tag protocol; else returns nil.
+     * 
+     *         API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("asNFCISO15693Tag")
     @MappedReturn(ObjCObjectMapper.class)
@@ -45,9 +54,12 @@ public interface NFCTag extends NSSecureCoding, NSCopying {
 
     /**
      * asNFCISO7816Tag
-     *
+     * 
      * @return Returns self if it conforms to the NFCISO7816Tag protocol; else returns nil.
+     * 
+     *         API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("asNFCISO7816Tag")
     @MappedReturn(ObjCObjectMapper.class)
@@ -55,9 +67,12 @@ public interface NFCTag extends NSSecureCoding, NSCopying {
 
     /**
      * [@property] asNFCMiFareTag
-     * <p>
+     * 
      * Returns nil if tag does not conform to NFCMiFareTag.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("asNFCMiFareTag")
     @MappedReturn(ObjCObjectMapper.class)
@@ -65,9 +80,11 @@ public interface NFCTag extends NSSecureCoding, NSCopying {
 
     /**
      * [@property] available:
-     * <p>
+     * 
      * Check whether a detected tag is available.
-     *
+     * 
+     * API-Since: 11.0
+     * 
      * @return <i>YES</i> if tag is available in the current reader session. A tag remove from the RF field will become
      *         unavailable. Tag in disconnected state will return NO.
      */
@@ -77,9 +94,12 @@ public interface NFCTag extends NSSecureCoding, NSCopying {
 
     /**
      * [@property] session
-     * <p>
+     * 
      * Session that provides this tag.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("session")
     @MappedReturn(ObjCObjectMapper.class)
@@ -87,8 +107,10 @@ public interface NFCTag extends NSSecureCoding, NSCopying {
 
     /**
      * [@property] type
-     * <p>
+     * 
      * See @link CNFCTagType @link/
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("type")

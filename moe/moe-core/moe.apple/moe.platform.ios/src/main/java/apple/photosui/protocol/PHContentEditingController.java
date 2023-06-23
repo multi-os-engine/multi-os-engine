@@ -27,9 +27,13 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Protocol to which the principal view controller of the extension must conform.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("PhotosUI")
@@ -38,14 +42,18 @@ import org.moe.natj.objc.ann.Selector;
 public interface PHContentEditingController {
     /**
      * Query whether the receiver can handle (i.e. can decode and render) the given adjustment data.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("canHandleAdjustmentData:")
-    boolean canHandleAdjustmentData(PHAdjustmentData adjustmentData);
+    boolean canHandleAdjustmentData(@NotNull PHAdjustmentData adjustmentData);
 
     /**
      * Called if the user cancels the editing session. (Can be called while the receiver is producing the editing
      * output.)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("cancelContentEditing")
@@ -56,33 +64,35 @@ public interface PHContentEditingController {
      * further. Also, it should create the editing output and call the completion handler. The completion handler
      * returns after the output has been consumed, so it is safe to perform clean up after it returns. The completion
      * handler can (and should best) be called on a background queue.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("finishContentEditingWithCompletionHandler:")
     void finishContentEditingWithCompletionHandler(
-            @ObjCBlock(name = "call_finishContentEditingWithCompletionHandler") Block_finishContentEditingWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_finishContentEditingWithCompletionHandler") Block_finishContentEditingWithCompletionHandler completionHandler);
 
     /**
      * Returns whether the user should be prompted when canceling the editing session.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("shouldShowCancelConfirmation")
     boolean shouldShowCancelConfirmation();
 
     /**
-     * Provides the input for the editing session. The placeholder image represents the current version of the asset
-     * (with adjustments baked in), and can be used as UI placeholder, in case rendering the adjustments from the input
-     * cannot be done in a timely fashion.
+     * API-Since: 8.0
      */
     @Generated
     @Selector("startContentEditingWithInput:placeholderImage:")
-    void startContentEditingWithInputPlaceholderImage(PHContentEditingInput contentEditingInput,
-            UIImage placeholderImage);
+    void startContentEditingWithInputPlaceholderImage(@NotNull PHContentEditingInput contentEditingInput,
+            @NotNull UIImage placeholderImage);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_finishContentEditingWithCompletionHandler {
         @Generated
-        void call_finishContentEditingWithCompletionHandler(PHContentEditingOutput arg0);
+        void call_finishContentEditingWithCompletionHandler(@Nullable PHContentEditingOutput arg0);
     }
 }

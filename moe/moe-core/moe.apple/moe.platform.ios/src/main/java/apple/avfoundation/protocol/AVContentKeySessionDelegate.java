@@ -14,7 +14,11 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 10.3
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -23,66 +27,77 @@ public interface AVContentKeySessionDelegate {
     @Generated
     @IsOptional
     @Selector("contentKeySession:contentKeyRequest:didFailWithError:")
-    default void contentKeySessionContentKeyRequestDidFailWithError(AVContentKeySession session,
-            AVContentKeyRequest keyRequest, NSError err) {
+    default void contentKeySessionContentKeyRequestDidFailWithError(@NotNull AVContentKeySession session,
+            @NotNull AVContentKeyRequest keyRequest, @NotNull NSError err) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @Selector("contentKeySession:didProvideContentKeyRequest:")
-    void contentKeySessionDidProvideContentKeyRequest(AVContentKeySession session, AVContentKeyRequest keyRequest);
+    void contentKeySessionDidProvideContentKeyRequest(@NotNull AVContentKeySession session,
+            @NotNull AVContentKeyRequest keyRequest);
 
     @Generated
     @IsOptional
     @Selector("contentKeySession:didProvidePersistableContentKeyRequest:")
-    default void contentKeySessionDidProvidePersistableContentKeyRequest(AVContentKeySession session,
-            AVPersistableContentKeyRequest keyRequest) {
+    default void contentKeySessionDidProvidePersistableContentKeyRequest(@NotNull AVContentKeySession session,
+            @NotNull AVPersistableContentKeyRequest keyRequest) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("contentKeySession:didProvideRenewingContentKeyRequest:")
-    default void contentKeySessionDidProvideRenewingContentKeyRequest(AVContentKeySession session,
-            AVContentKeyRequest keyRequest) {
+    default void contentKeySessionDidProvideRenewingContentKeyRequest(@NotNull AVContentKeySession session,
+            @NotNull AVContentKeyRequest keyRequest) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("contentKeySession:didUpdatePersistableContentKey:forContentKeyIdentifier:")
-    default void contentKeySessionDidUpdatePersistableContentKeyForContentKeyIdentifier(AVContentKeySession session,
-            NSData persistableContentKey, @Mapped(ObjCObjectMapper.class) Object keyIdentifier) {
+    default void contentKeySessionDidUpdatePersistableContentKeyForContentKeyIdentifier(
+            @NotNull AVContentKeySession session, @NotNull NSData persistableContentKey,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object keyIdentifier) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("contentKeySession:shouldRetryContentKeyRequest:reason:")
-    default boolean contentKeySessionShouldRetryContentKeyRequestReason(AVContentKeySession session,
-            AVContentKeyRequest keyRequest, String retryReason) {
+    default boolean contentKeySessionShouldRetryContentKeyRequestReason(@NotNull AVContentKeySession session,
+            @NotNull AVContentKeyRequest keyRequest, @NotNull String retryReason) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("contentKeySessionContentProtectionSessionIdentifierDidChange:")
-    default void contentKeySessionContentProtectionSessionIdentifierDidChange(AVContentKeySession session) {
+    default void contentKeySessionContentProtectionSessionIdentifierDidChange(@NotNull AVContentKeySession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @IsOptional
     @Selector("contentKeySession:contentKeyRequestDidSucceed:")
-    default void contentKeySessionContentKeyRequestDidSucceed(AVContentKeySession session,
-            AVContentKeyRequest keyRequest) {
+    default void contentKeySessionContentKeyRequestDidSucceed(@NotNull AVContentKeySession session,
+            @NotNull AVContentKeyRequest keyRequest) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @IsOptional
     @Selector("contentKeySessionDidGenerateExpiredSessionReport:")
-    default void contentKeySessionDidGenerateExpiredSessionReport(AVContentKeySession session) {
+    default void contentKeySessionDidGenerateExpiredSessionReport(@NotNull AVContentKeySession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

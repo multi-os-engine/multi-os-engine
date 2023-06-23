@@ -63,6 +63,8 @@ public final class NSSearchPathDirectory {
     @Generated @NUInt public static final long CoreServiceDirectory = 0x000000000000000AL;
     /**
      * location of autosaved documents (Documents/Autosaved)
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long AutosavedInformationDirectory = 0x000000000000000BL;
     /**
@@ -79,38 +81,56 @@ public final class NSSearchPathDirectory {
     @Generated @NUInt public static final long ApplicationSupportDirectory = 0x000000000000000EL;
     /**
      * location of the user's "Downloads" directory
+     * 
+     * API-Since: 2.0
      */
     @Generated @NUInt public static final long DownloadsDirectory = 0x000000000000000FL;
     /**
      * input methods (Library/Input Methods)
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long InputMethodsDirectory = 0x0000000000000010L;
     /**
      * location of user's Movies directory (~/Movies)
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long MoviesDirectory = 0x0000000000000011L;
     /**
      * location of user's Music directory (~/Music)
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long MusicDirectory = 0x0000000000000012L;
     /**
      * location of user's Pictures directory (~/Pictures)
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long PicturesDirectory = 0x0000000000000013L;
     /**
      * location of system's PPDs directory (Library/Printers/PPDs)
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long PrinterDescriptionDirectory = 0x0000000000000014L;
     /**
      * location of user's Public sharing directory (~/Public)
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long SharedPublicDirectory = 0x0000000000000015L;
     /**
      * location of the PreferencePanes directory for use with System Preferences (Library/PreferencePanes)
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long PreferencePanesDirectory = 0x0000000000000016L;
     /**
      * For use with NSFileManager's URLForDirectory:inDomain:appropriateForURL:create:error:
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long ItemReplacementDirectory = 0x0000000000000063L;
     /**
@@ -128,6 +148,8 @@ public final class NSSearchPathDirectory {
 
     /**
      * location of Trash directory
+     * 
+     * API-Since: 11.0
      */
     @Generated @NUInt public static final long TrashDirectory = 0x0000000000000066L;
 }

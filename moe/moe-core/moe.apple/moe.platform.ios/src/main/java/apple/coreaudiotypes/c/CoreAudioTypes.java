@@ -31,4 +31,7 @@ public final class CoreAudioTypes {
      * in listings of supported formats. It will never appear in a current format.
      */
     @Generated public static final double kAudioStreamAnyRate = 0.0;
+    @Generated public static final double COREAUDIOTYPES_VERSION = 2.021113E7;
+    @Generated public static final double CA_PREFER_FIXED_POINT = 1.0;
+    @Generated public static final double kAudioUnitSampleFractionBits = 24.0;
 }

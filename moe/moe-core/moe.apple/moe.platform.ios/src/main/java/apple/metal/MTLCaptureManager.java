@@ -28,7 +28,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -59,22 +64,25 @@ public class MTLCaptureManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -88,6 +96,7 @@ public class MTLCaptureManager extends NSObject {
      * to presentDrawable:, presentDrawable:atTime:, presentDrawable:afterMinimumDuration: in MTLCommandBuffer or
      * present:, present:atTime:, present:afterMinimumDuration: in MTLDrawable.
      */
+    @Nullable
     @Generated
     @Selector("defaultCaptureScope")
     @MappedReturn(ObjCObjectMapper.class)
@@ -130,9 +139,10 @@ public class MTLCaptureManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -142,19 +152,21 @@ public class MTLCaptureManager extends NSObject {
     /**
      * Creates a new capture scope for the given command queue
      */
+    @NotNull
     @Generated
     @Selector("newCaptureScopeWithCommandQueue:")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLCaptureScope newCaptureScopeWithCommandQueue(
-            @Mapped(ObjCObjectMapper.class) MTLCommandQueue commandQueue);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandQueue commandQueue);
 
     /**
      * Creates a new capture scope for the given capture device
      */
+    @NotNull
     @Generated
     @Selector("newCaptureScopeWithDevice:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native MTLCaptureScope newCaptureScopeWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MTLCaptureScope newCaptureScopeWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -171,7 +183,7 @@ public class MTLCaptureManager extends NSObject {
      */
     @Generated
     @Selector("setDefaultCaptureScope:")
-    public native void setDefaultCaptureScope(@Mapped(ObjCObjectMapper.class) MTLCaptureScope value);
+    public native void setDefaultCaptureScope(@Nullable @Mapped(ObjCObjectMapper.class) MTLCaptureScope value);
 
     @Generated
     @Selector("setVersion:")
@@ -183,6 +195,7 @@ public class MTLCaptureManager extends NSObject {
      * When a capture has been completed, it will be displayed in Xcode and the application will be paused.
      * [@remarks] only MTLCommandBuffers created after starting a capture and committed before stopping it are captured.
      */
+    @NotNull
     @Generated
     @Selector("sharedCaptureManager")
     public static native MTLCaptureManager sharedCaptureManager();
@@ -190,26 +203,42 @@ public class MTLCaptureManager extends NSObject {
     /**
      * Starts capturing, for the given command queue, command buffers that are created after invoking this method and
      * committed before invoking -[stopCapture] or clicking Xcode’s stop capture button.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use startCaptureWithDescriptor:error: instead
      */
+    @Deprecated
     @Generated
     @Selector("startCaptureWithCommandQueue:")
-    public native void startCaptureWithCommandQueue(@Mapped(ObjCObjectMapper.class) MTLCommandQueue commandQueue);
+    public native void startCaptureWithCommandQueue(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandQueue commandQueue);
 
     /**
      * Starts capturing, for all queues of the given device, new MTLCommandBuffer's until -[stopCapture] or Xcode’s stop
      * capture button is pressed
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use startCaptureWithDescriptor:error: instead
      */
+    @Deprecated
     @Generated
     @Selector("startCaptureWithDevice:")
-    public native void startCaptureWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native void startCaptureWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     /**
      * Start a capture with the given scope: from the scope's begin until its end, restricting the capture to the
      * scope's device(s) and, if selected, the scope's command queue
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use startCaptureWithDescriptor:error: instead
      */
+    @Deprecated
     @Generated
     @Selector("startCaptureWithScope:")
-    public native void startCaptureWithScope(@Mapped(ObjCObjectMapper.class) MTLCaptureScope captureScope);
+    public native void startCaptureWithScope(@NotNull @Mapped(ObjCObjectMapper.class) MTLCaptureScope captureScope);
 
     /**
      * Stops a capture started from startCaptureWithDevice:/startCaptureWithCommandQueue:/startCaptureWithScope: or from
@@ -231,18 +260,22 @@ public class MTLCaptureManager extends NSObject {
     /**
      * Start capturing until stopCapture is called.
      * [@remarks] Only MTLCommandBuffer​s created after starting and committed before stopping it are captured.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param descriptor MTLCaptureDescriptor specifies the parameters.
      * @param error      Optional error output to check why a capture could not be started.
      * @return true if the capture was successfully started, otherwise false.
      */
     @Generated
     @Selector("startCaptureWithDescriptor:error:")
-    public native boolean startCaptureWithDescriptorError(MTLCaptureDescriptor descriptor,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean startCaptureWithDescriptorError(@NotNull MTLCaptureDescriptor descriptor,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Checks if a given capture destination is supported.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("supportsDestination:")

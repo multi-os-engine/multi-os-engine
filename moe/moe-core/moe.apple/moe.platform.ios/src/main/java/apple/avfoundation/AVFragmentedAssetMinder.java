@@ -21,7 +21,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -42,14 +47,18 @@ public class AVFragmentedAssetMinder extends NSObject {
 
     /**
      * addFragmentedAsset:
-     * <p>
+     * 
      * Adds a fragmented asset to the array of assets being minded.
-     *
-     * @param asset The fragmented asset to add to the minder.
+     * 
+     * This method throws an exception if the asset is not a supported type (AVFragmentedAsset, AVFragmentedMovie), or
+     * if the asset is already being minded by another fragment minder.
+     * 
+     * @param asset
+     *              The fragmented asset to add to the minder.
      */
     @Generated
     @Selector("addFragmentedAsset:")
-    public native void addFragmentedAsset(AVAsset asset);
+    public native void addFragmentedAsset(@NotNull AVAsset asset);
 
     @Generated
     @Owned
@@ -63,31 +72,35 @@ public class AVFragmentedAssetMinder extends NSObject {
 
     /**
      * [@property] assets
-     * <p>
+     * 
      * An NSArray of the AVFragmentedAsset objects being minded.
      */
+    @NotNull
     @Generated
     @Selector("assets")
     public native NSArray<? extends AVAsset> assets();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,17 +115,19 @@ public class AVFragmentedAssetMinder extends NSObject {
 
     /**
      * fragmentedAssetMinderWithAsset:mindingInterval:
-     * <p>
+     * 
      * Creates an AVFragmentedAssetMinder, adds the specified asset to it, and sets the mindingInterval to the specified
      * value.
-     *
-     * @param asset           An instance of AVFragmentedAsset to add to the AVFragmentedAssetMinder
-     * @param mindingInterval The initial minding interval of the AVFragmentedAssetMinder.
+     * 
+     * @param asset
+     *                        An instance of AVFragmentedAsset to add to the AVFragmentedAssetMinder
+     * @param mindingInterval
+     *                        The initial minding interval of the AVFragmentedAssetMinder.
      * @return A new instance of AVFragmentedAssetMinder.
      */
     @Generated
     @Selector("fragmentedAssetMinderWithAsset:mindingInterval:")
-    public static native AVFragmentedAssetMinder fragmentedAssetMinderWithAssetMindingInterval(AVAsset asset,
+    public static native AVFragmentedAssetMinder fragmentedAssetMinderWithAssetMindingInterval(@NotNull AVAsset asset,
             double mindingInterval);
 
     @Generated
@@ -126,17 +141,19 @@ public class AVFragmentedAssetMinder extends NSObject {
 
     /**
      * initWithAsset:mindingInterval:
-     * <p>
+     * 
      * Creates an AVFragmentedAssetMinder, adds the specified asset to it, and sets the mindingInterval to the specified
      * value.
-     *
-     * @param asset           An instance of AVFragmentedAsset to add to the AVFragmentedAssetMinder
-     * @param mindingInterval The initial minding interval of the AVFragmentedAssetMinder.
+     * 
+     * @param asset
+     *                        An instance of AVFragmentedAsset to add to the AVFragmentedAssetMinder
+     * @param mindingInterval
+     *                        The initial minding interval of the AVFragmentedAssetMinder.
      * @return A new instance of AVFragmentedAssetMinder.
      */
     @Generated
     @Selector("initWithAsset:mindingInterval:")
-    public native AVFragmentedAssetMinder initWithAssetMindingInterval(AVAsset asset, double mindingInterval);
+    public native AVFragmentedAssetMinder initWithAssetMindingInterval(@NotNull AVAsset asset, double mindingInterval);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -155,15 +172,18 @@ public class AVFragmentedAssetMinder extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] mindingInterval
-     * <p>
+     * 
      * An NSTimeInterval indicating how often a check for additional fragments should be performed. The default interval
      * is 10.0.
+     * 
+     * This property throws an excepion if a value is set less than one millisecond (0.001) in duration.
      */
     @Generated
     @Selector("mindingInterval")
@@ -176,14 +196,17 @@ public class AVFragmentedAssetMinder extends NSObject {
 
     /**
      * removeFragmentedAsset:
-     * <p>
+     * 
      * Removes a fragmented asset from the array of assets being minded.
-     *
-     * @param asset The fragmented asset to remove from the minder.
+     * 
+     * This method throws an exception if the asset is not a supported type (AVFragmentedAsset, AVFragmentedMovie).
+     * 
+     * @param asset
+     *              The fragmented asset to remove from the minder.
      */
     @Generated
     @Selector("removeFragmentedAsset:")
-    public native void removeFragmentedAsset(AVAsset asset);
+    public native void removeFragmentedAsset(@NotNull AVAsset asset);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -195,9 +218,11 @@ public class AVFragmentedAssetMinder extends NSObject {
 
     /**
      * [@property] mindingInterval
-     * <p>
+     * 
      * An NSTimeInterval indicating how often a check for additional fragments should be performed. The default interval
      * is 10.0.
+     * 
+     * This property throws an excepion if a value is set less than one millisecond (0.001) in duration.
      */
     @Generated
     @Selector("setMindingInterval:")

@@ -37,12 +37,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEHotspotHelperResponse
- * <p>
+ * 
  * The HotspotHelper creates an NEHotspotHelperResponse object to provide
  * the results of running the corresponding NEHotspotHelperCommand.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -74,22 +78,25 @@ public class NEHotspotHelperResponse extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +131,10 @@ public class NEHotspotHelperResponse extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,10 +164,12 @@ public class NEHotspotHelperResponse extends NSObject {
 
     /**
      * deliver
-     * <p>
+     * 
      * Delivers the response to the command.
-     * <p>
+     * 
      * Deliver the NEHotspotHelperResponse to the HotspotHelper infrastructure.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("deliver")
@@ -171,30 +181,34 @@ public class NEHotspotHelperResponse extends NSObject {
 
     /**
      * setNetwork
-     * <p>
+     * 
      * Set the network that conveys the confidence level.
-     * <p>
+     * 
      * Provide the annotated NEHotspotNetwork object in the response to the
      * kNEHotspotHelperCommandTypeEvaluate command. The helper sets the
      * confidence in the network object to indicate its ability to handle
      * the current network.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setNetwork:")
-    public native void setNetwork(NEHotspotNetwork network);
+    public native void setNetwork(@NotNull NEHotspotNetwork network);
 
     /**
      * setNetworkList
-     * <p>
+     * 
      * Set the list of handled networks.
-     * <p>
+     * 
      * Provide an NSArray of annotated NEHotspotNetwork objects in response
      * to the kNEHotspotHelperCommandTypeFilterScanList command.
      * The helper provides the list of network objects that it is capable of
      * handling with at least low confidence. Networks that it has no
      * confidence in handling should not be specified.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setNetworkList:")
-    public native void setNetworkList(NSArray<? extends NEHotspotNetwork> networkList);
+    public native void setNetworkList(@NotNull NSArray<? extends NEHotspotNetwork> networkList);
 }

@@ -24,18 +24,20 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNPoolingMaxGradient
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * Specifies the filter for computing the gradient of the max pooling filter.
  * The operation backpropagates a gradient vector using chain rule.
- * <p>
+ * 
  * Dilated Max pooling forward pass is defined as:
- * <p>
+ * 
  * out(x) = max_{dx \in Window(x)} in(s*x+D*dx), where
- * <p>
+ * 
  * the pooling window definition 'Window(x)' follows MPSCNNPooling specification,
  * 's' is the pixel stride and in() is the source input image and D is the dilation factor.
  * For MPSCNNPoolingMaxGradient the dilationRate 'D' is one. NOTE: For even-sized pooling
@@ -43,15 +45,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * around s*x with non-even windows leaning towards top-left corner. For example if
  * kernel width = 2, dilation rate = 3, then the pooling considers positions '-2' and '+1'
  * relative to the pooling window center 's*x'.
- * <p>
+ * 
  * Hence the partial derivative of the output value wrt. to the input value needed in the
  * gradient backpropagation in MPSCNNPoolingGradient is:
- * <p>
+ * 
  * d out(x)/d in(y) = delta_{x_m, y}, where
- * <p>
+ * 
  * delta_{x,y} is the Kronecker delta symbol (see MPSCNNPoolingAverageGradient) and x_m
  * is the index of the maximum value in the corresponding pooling window.
- * <p>
+ * 
  * In practice this means that the gradient value for the destination image at pixel 'x' is
  * the sum over these contributions coming from all pooling windows that contribute
  * to the max pooling computation in the forward pass, multiplied by the input
@@ -59,11 +61,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * multiple maximal values within a single pooling window one of them is picked for the
  * gradient and this decision is implementation specific, which means that it can vary
  * between different architectures and even between different filter parameters.
- * <p>
+ * 
  * Note: The gradient max pooling needs the secondary input image in order to compute
  * the indices of maximal values for each pooling window, but this means redundant computations.
  * Later we may add encode calls to MPSCNNPoolingMax that produce a state that contains the
  * coordinates of the maximal values to be consumed by the gradient filters.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -95,22 +99,25 @@ public class MPSCNNPoolingMaxGradient extends MPSCNNPoolingGradient {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,34 +141,35 @@ public class MPSCNNPoolingMaxGradient extends MPSCNNPoolingGradient {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNPoolingMaxGradient initWithCoder(NSCoder aDecoder);
+    public native MPSCNNPoolingMaxGradient initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPoolingMaxGradient
      * @param device   The MTLDevice on which to make the MPSCNNPoolingMaxGradient
      * @return A new MPSCNNPoolingMaxGradient object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNPoolingMaxGradient initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNPoolingMaxGradient initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNPoolingMaxGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNPoolingMaxGradient initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:")
     public native MPSCNNPoolingMaxGradient initWithDeviceKernelWidthKernelHeight(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth,
+            @NUInt long kernelHeight);
 
     /**
      * Initialize a gradient max pooling filter
-     *
+     * 
      * @param device          The device the filter will run on
      * @param kernelWidth     The width of the kernel. Can be an odd or even value.
      * @param kernelHeight    The height of the kernel. Can be an odd or even value.
@@ -172,8 +180,8 @@ public class MPSCNNPoolingMaxGradient extends MPSCNNPoolingGradient {
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:")
     public native MPSCNNPoolingMaxGradient initWithDeviceKernelWidthKernelHeightStrideInPixelsXStrideInPixelsY(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight,
-            @NUInt long strideInPixelsX, @NUInt long strideInPixelsY);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth,
+            @NUInt long kernelHeight, @NUInt long strideInPixelsX, @NUInt long strideInPixelsY);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -192,9 +200,10 @@ public class MPSCNNPoolingMaxGradient extends MPSCNNPoolingGradient {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

@@ -24,7 +24,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.5
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -55,31 +60,35 @@ public class UIEventAttribution extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -91,9 +100,10 @@ public class UIEventAttribution extends NSObject implements NSCopying {
 
     /**
      * The destination URL of an attribution. For example, the link opened when an advertisement is tapped.
-     * <p>
+     * 
      * This field corresponds to `attributed_on_site` in the subsequent attribution report.
      */
+    @NotNull
     @Generated
     @Selector("destinationURL")
     public native NSURL destinationURL();
@@ -109,21 +119,23 @@ public class UIEventAttribution extends NSObject implements NSCopying {
 
     /**
      * Create a `UIEventAttribution` object.
-     *
+     * 
      * @param sourceIdentifier  An identifier associated with the attribution.
      * @param destinationURL    The destination URL of the attribution.
      * @param sourceDescription A high-level description of the content to be attributed. Pass in an empty string if no
      *                          description is available.
      * @param purchaser         The name of the party that purchased the content to be attributed. Pass in an empty
      *                          string if no name is available.
+     * 
      * @return An instance of `UIEventAttribution` with the specified values for each field.
-     *         <p>
+     * 
      *         The `sourceDescription` and `purchaser` fields may be truncated by the system if they are too long.
      */
     @Generated
     @Selector("initWithSourceIdentifier:destinationURL:sourceDescription:purchaser:")
     public native UIEventAttribution initWithSourceIdentifierDestinationURLSourceDescriptionPurchaser(
-            byte sourceIdentifier, NSURL destinationURL, String sourceDescription, String purchaser);
+            byte sourceIdentifier, @NotNull NSURL destinationURL, @NotNull String sourceDescription,
+            @NotNull String purchaser);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -142,9 +154,10 @@ public class UIEventAttribution extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,9 +167,10 @@ public class UIEventAttribution extends NSObject implements NSCopying {
     /**
      * The name of the party that purchased the content to be attributed. For example, this could be the name of the
      * party that purchased the placement of an advertisement.
-     * <p>
+     * 
      * The system may truncate this field if it is too long.
      */
+    @NotNull
     @Generated
     @Selector("purchaser")
     public native String purchaser();
@@ -165,9 +179,10 @@ public class UIEventAttribution extends NSObject implements NSCopying {
      * The URL to which the attribution report will be sent. You do not provide this field at creation time. Instead,
      * you must define the URL
      * as a string in your app's Info.plist under the `NSAdvertisingAttributionReportEndpoint` key.
-     * <p>
+     * 
      * This field corresponds to `source_site` in the subsequent attribution report.
      */
+    @Nullable
     @Generated
     @Selector("reportEndpoint")
     public native NSURL reportEndpoint();
@@ -187,9 +202,10 @@ public class UIEventAttribution extends NSObject implements NSCopying {
     /**
      * A high-level description of the source of the attribution. For example, this could be a description of the
      * content of an advertisement a user taps on.
-     * <p>
+     * 
      * The system may truncate this field if it is too long.
      */
+    @NotNull
     @Generated
     @Selector("sourceDescription")
     public native String sourceDescription();
@@ -197,7 +213,7 @@ public class UIEventAttribution extends NSObject implements NSCopying {
     /**
      * An identifier that is associated with the source of the attribution. For example, you may choose to use this as a
      * campaign identifier to measure the effectiveness of different advertisement campaigns.
-     * <p>
+     * 
      * This field corresponds to `source_id` in the subsequent attribution report.
      */
     @Generated

@@ -43,6 +43,8 @@ public final class NSDateComponentsFormatterUnitsStyle {
     @Generated @NInt public static final long SpellOut = 0x0000000000000004L;
     /**
      * "1hr 10min" - Brief is shorter than Short (e.g. in English, it removes the comma)
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Brief = 0x0000000000000005L;
 

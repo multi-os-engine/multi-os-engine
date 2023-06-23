@@ -38,11 +38,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CBCharacteristic
- * <p>
+ * 
  * Represents a service's characteristic.
+ * 
+ * 
+ * API-Since: 5.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -74,22 +79,25 @@ public class CBCharacteristic extends CBAttribute {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +132,10 @@ public class CBCharacteristic extends CBAttribute {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,9 +165,10 @@ public class CBCharacteristic extends CBAttribute {
 
     /**
      * [@property] descriptors
-     * <p>
+     * 
      * A list of the CBDescriptors that have so far been discovered in this characteristic.
      */
+    @Nullable
     @Generated
     @Selector("descriptors")
     public native NSArray<? extends CBDescriptor> descriptors();
@@ -169,8 +179,12 @@ public class CBCharacteristic extends CBAttribute {
 
     /**
      * [@property] isBroadcasted
-     * <p>
+     * 
      * Whether the characteristic is currently broadcasted or not.
+     * 
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @Deprecated
@@ -179,7 +193,7 @@ public class CBCharacteristic extends CBAttribute {
 
     /**
      * [@property] isNotifying
-     * <p>
+     * 
      * Whether the characteristic is currently notifying or not.
      */
     @Generated
@@ -188,7 +202,7 @@ public class CBCharacteristic extends CBAttribute {
 
     /**
      * [@property] properties
-     * <p>
+     * 
      * The properties of the characteristic.
      */
     @Generated
@@ -198,18 +212,20 @@ public class CBCharacteristic extends CBAttribute {
 
     /**
      * [@property] service
-     * <p>
+     * 
      * A back-pointer to the service this characteristic belongs to.
      */
+    @Nullable
     @Generated
     @Selector("service")
     public native CBService service();
 
     /**
      * [@property] value
-     * <p>
+     * 
      * The value of the characteristic.
      */
+    @Nullable
     @Generated
     @Selector("value")
     public native NSData value();

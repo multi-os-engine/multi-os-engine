@@ -17,7 +17,6 @@ limitations under the License.
 package apple.coreimage.protocol;
 
 import apple.coregraphics.opaque.IOSurfaceRef;
-import apple.coregraphics.struct.CGRect;
 import apple.corevideo.opaque.CVBufferRef;
 import apple.metal.protocol.MTLCommandBuffer;
 import apple.metal.protocol.MTLTexture;
@@ -32,7 +31,13 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -41,6 +46,7 @@ public interface CIImageProcessorOutput {
     /**
      * The base address of the output buffer that the processor block can write output pixels to.
      */
+    @NotNull
     @Generated
     @Selector("baseAddress")
     VoidPtr baseAddress();
@@ -63,6 +69,7 @@ public interface CIImageProcessorOutput {
     /**
      * Returns a MTLCommandBuffer that can be used for encoding commands (if rendering using Metal).
      */
+    @Nullable
     @Generated
     @Selector("metalCommandBuffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -71,6 +78,7 @@ public interface CIImageProcessorOutput {
     /**
      * A MTLTexture object that can be bound as output (if processing using Metal).
      */
+    @Nullable
     @Generated
     @Selector("metalTexture")
     @MappedReturn(ObjCObjectMapper.class)
@@ -79,6 +87,7 @@ public interface CIImageProcessorOutput {
     /**
      * A output CVPixelBuffer that the processor block can write to.
      */
+    @Nullable
     @Generated
     @Selector("pixelBuffer")
     CVBufferRef pixelBuffer();
@@ -94,7 +103,18 @@ public interface CIImageProcessorOutput {
     /**
      * An output IOSurface that the processor block can write to.
      */
+    @NotNull
     @Generated
     @Selector("surface")
     IOSurfaceRef surface();
+
+    /**
+     * A 64-bit digest that uniquely descibes the contents of the output of a processor.
+     * This digest will change if the graph up to and including the output of the processor changes in any way.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("digest")
+    long digest();
 }

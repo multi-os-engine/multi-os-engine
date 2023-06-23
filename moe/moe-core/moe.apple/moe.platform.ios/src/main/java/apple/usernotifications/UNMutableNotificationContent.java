@@ -41,7 +41,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("UserNotifications")
 @Runtime(ObjCRuntime.class)
@@ -72,22 +77,25 @@ public class UNMutableNotificationContent extends UNNotificationContent {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,9 +130,10 @@ public class UNMutableNotificationContent extends UNNotificationContent {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,6 +168,7 @@ public class UNMutableNotificationContent extends UNNotificationContent {
     /**
      * Optional array of attachments.
      */
+    @NotNull
     @Generated
     @Selector("attachments")
     public native NSArray<? extends UNNotificationAttachment> attachments();
@@ -166,6 +176,7 @@ public class UNMutableNotificationContent extends UNNotificationContent {
     /**
      * The application badge number. nil means no change. 0 to hide.
      */
+    @Nullable
     @Generated
     @Selector("badge")
     public native NSNumber badge();
@@ -174,6 +185,7 @@ public class UNMutableNotificationContent extends UNNotificationContent {
      * The body of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a
      * string that will be localized at the time that the notification is presented.
      */
+    @NotNull
     @Generated
     @Selector("body")
     public native String body();
@@ -182,6 +194,7 @@ public class UNMutableNotificationContent extends UNNotificationContent {
      * The identifier for a registered UNNotificationCategory that will be used to determine the appropriate actions to
      * display for the notification.
      */
+    @NotNull
     @Generated
     @Selector("categoryIdentifier")
     public native String categoryIdentifier();
@@ -192,11 +205,12 @@ public class UNMutableNotificationContent extends UNNotificationContent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNMutableNotificationContent initWithCoder(NSCoder coder);
+    public native UNMutableNotificationContent initWithCoder(@NotNull NSCoder coder);
 
     /**
      * The launch image that will be used when the app is opened from the notification.
      */
+    @NotNull
     @Generated
     @Selector("launchImageName")
     public native String launchImageName();
@@ -206,14 +220,14 @@ public class UNMutableNotificationContent extends UNNotificationContent {
      */
     @Generated
     @Selector("setAttachments:")
-    public native void setAttachments(NSArray<? extends UNNotificationAttachment> value);
+    public native void setAttachments(@NotNull NSArray<? extends UNNotificationAttachment> value);
 
     /**
      * The application badge number. nil means no change. 0 to hide.
      */
     @Generated
     @Selector("setBadge:")
-    public native void setBadge(NSNumber value);
+    public native void setBadge(@Nullable NSNumber value);
 
     /**
      * The body of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a
@@ -221,7 +235,7 @@ public class UNMutableNotificationContent extends UNNotificationContent {
      */
     @Generated
     @Selector("setBody:")
-    public native void setBody(String value);
+    public native void setBody(@NotNull String value);
 
     /**
      * The identifier for a registered UNNotificationCategory that will be used to determine the appropriate actions to
@@ -229,21 +243,21 @@ public class UNMutableNotificationContent extends UNNotificationContent {
      */
     @Generated
     @Selector("setCategoryIdentifier:")
-    public native void setCategoryIdentifier(String value);
+    public native void setCategoryIdentifier(@NotNull String value);
 
     /**
      * The launch image that will be used when the app is opened from the notification.
      */
     @Generated
     @Selector("setLaunchImageName:")
-    public native void setLaunchImageName(String value);
+    public native void setLaunchImageName(@NotNull String value);
 
     /**
      * The sound that will be played for the notification.
      */
     @Generated
     @Selector("setSound:")
-    public native void setSound(UNNotificationSound value);
+    public native void setSound(@Nullable UNNotificationSound value);
 
     /**
      * The subtitle of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a
@@ -251,7 +265,7 @@ public class UNMutableNotificationContent extends UNNotificationContent {
      */
     @Generated
     @Selector("setSubtitle:")
-    public native void setSubtitle(String value);
+    public native void setSubtitle(@NotNull String value);
 
     /**
      * The unique identifier for the thread or conversation related to this notification request. It will be used to
@@ -259,7 +273,7 @@ public class UNMutableNotificationContent extends UNNotificationContent {
      */
     @Generated
     @Selector("setThreadIdentifier:")
-    public native void setThreadIdentifier(String value);
+    public native void setThreadIdentifier(@NotNull String value);
 
     /**
      * The title of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a
@@ -267,7 +281,7 @@ public class UNMutableNotificationContent extends UNNotificationContent {
      */
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@NotNull String value);
 
     /**
      * Apps can set the userInfo for locally scheduled notification requests. The contents of the push payload will be
@@ -275,11 +289,12 @@ public class UNMutableNotificationContent extends UNNotificationContent {
      */
     @Generated
     @Selector("setUserInfo:")
-    public native void setUserInfo(NSDictionary<?, ?> value);
+    public native void setUserInfo(@NotNull NSDictionary<?, ?> value);
 
     /**
      * The sound that will be played for the notification.
      */
+    @Nullable
     @Generated
     @Selector("sound")
     public native UNNotificationSound sound();
@@ -288,6 +303,7 @@ public class UNMutableNotificationContent extends UNNotificationContent {
      * The subtitle of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a
      * string that will be localized at the time that the notification is presented.
      */
+    @NotNull
     @Generated
     @Selector("subtitle")
     public native String subtitle();
@@ -302,6 +318,7 @@ public class UNMutableNotificationContent extends UNNotificationContent {
      * The unique identifier for the thread or conversation related to this notification request. It will be used to
      * visually group notifications together.
      */
+    @NotNull
     @Generated
     @Selector("threadIdentifier")
     public native String threadIdentifier();
@@ -310,6 +327,7 @@ public class UNMutableNotificationContent extends UNNotificationContent {
      * The title of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a
      * string that will be localized at the time that the notification is presented.
      */
+    @NotNull
     @Generated
     @Selector("title")
     public native String title();
@@ -318,37 +336,56 @@ public class UNMutableNotificationContent extends UNNotificationContent {
      * Apps can set the userInfo for locally scheduled notification requests. The contents of the push payload will be
      * set as the userInfo for remote notifications.
      */
+    @NotNull
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();
 
     /**
      * The argument to be inserted in the summary for this notification.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: summaryArgument is ignored
      */
+    @Deprecated
     @Generated
     @Selector("setSummaryArgument:")
-    public native void setSummaryArgument(String value);
+    public native void setSummaryArgument(@NotNull String value);
 
     /**
      * A number that indicates how many items in the summary are represented in the summary.
      * For example if a podcast app sends one notification for 3 new episodes in a show,
      * the argument should be the name of the show and the count should be 3.
      * Default is 1 and cannot be 0.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: summaryArgumentCount is ignored
      */
+    @Deprecated
     @Generated
     @Selector("setSummaryArgumentCount:")
     public native void setSummaryArgumentCount(@NUInt long value);
 
     /**
      * default nil
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTargetContentIdentifier:")
-    public native void setTargetContentIdentifier(String value);
+    public native void setTargetContentIdentifier(@Nullable String value);
 
     /**
      * The argument to be inserted in the summary for this notification.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: summaryArgument is ignored
      */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("summaryArgument")
     public native String summaryArgument();
@@ -358,7 +395,12 @@ public class UNMutableNotificationContent extends UNNotificationContent {
      * For example if a podcast app sends one notification for 3 new episodes in a show,
      * the argument should be the name of the show and the count should be 3.
      * Default is 1 and cannot be 0.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: summaryArgumentCount is ignored
      */
+    @Deprecated
     @Generated
     @Selector("summaryArgumentCount")
     @NUInt
@@ -366,13 +408,18 @@ public class UNMutableNotificationContent extends UNNotificationContent {
 
     /**
      * default nil
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("targetContentIdentifier")
     public native String targetContentIdentifier();
 
     /**
      * The interruption level determines the degree of interruption associated with the notification
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("interruptionLevel")
@@ -382,6 +429,8 @@ public class UNMutableNotificationContent extends UNNotificationContent {
     /**
      * Relevance score determines the sorting for the notification across app notifications. The expected range is
      * between 0.0f and 1.0f.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("relevanceScore")
@@ -389,6 +438,8 @@ public class UNMutableNotificationContent extends UNNotificationContent {
 
     /**
      * The interruption level determines the degree of interruption associated with the notification
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setInterruptionLevel:")
@@ -397,8 +448,29 @@ public class UNMutableNotificationContent extends UNNotificationContent {
     /**
      * Relevance score determines the sorting for the notification across app notifications. The expected range is
      * between 0.0f and 1.0f.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setRelevanceScore:")
     public native void setRelevanceScore(double value);
+
+    /**
+     * default nil
+     * 
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("filterCriteria")
+    public native String filterCriteria();
+
+    /**
+     * default nil
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setFilterCriteria:")
+    public native void setFilterCriteria(@Nullable String value);
 }

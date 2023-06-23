@@ -31,22 +31,32 @@ public final class UIDataDetectorTypes {
     @Generated @NUInt public static final long Link = 0x0000000000000002L;
     /**
      * Street address detection
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long Address = 0x0000000000000004L;
     /**
      * Event detection
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long CalendarEvent = 0x0000000000000008L;
     /**
      * Shipment tracking number detection
+     * 
+     * API-Since: 10.0
      */
     @Generated @NUInt public static final long ShipmentTrackingNumber = 0x0000000000000010L;
     /**
      * Flight number detection
+     * 
+     * API-Since: 10.0
      */
     @Generated @NUInt public static final long FlightNumber = 0x0000000000000020L;
     /**
      * Information users may want to look up
+     * 
+     * API-Since: 10.0
      */
     @Generated @NUInt public static final long LookupSuggestion = 0x0000000000000040L;
     /**
@@ -63,4 +73,17 @@ public final class UIDataDetectorTypes {
     @Generated
     private UIDataDetectorTypes() {
     }
+
+    /**
+     * Money amounts
+     * 
+     * API-Since: 16.0
+     */
+    @Generated @NUInt public static final long Money = 0x0000000000000080L;
+    /**
+     * Physical values (length, temperatures, etc...)
+     * 
+     * API-Since: 16.0
+     */
+    @Generated @NUInt public static final long PhysicalValue = 0x0000000000000100L;
 }

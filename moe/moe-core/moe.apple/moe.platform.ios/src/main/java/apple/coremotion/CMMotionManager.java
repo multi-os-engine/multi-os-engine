@@ -40,12 +40,16 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CMMotionManager
- * <p>
+ * 
  * Discussion:
  * The CMMotionManager object is your entry point to the motion service.
+ * 
+ * API-Since: 4.0
  */
 @Generated
 @Library("CoreMotion")
@@ -77,13 +81,15 @@ public class CMMotionManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * availableAttitudeReferenceFrames
-     * <p>
+     * 
      * Discussion:
      * Returns a bitmask specifying the available attitude reference frames on the device.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("availableAttitudeReferenceFrames")
@@ -92,18 +98,21 @@ public class CMMotionManager extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -138,9 +147,10 @@ public class CMMotionManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,17 +180,18 @@ public class CMMotionManager extends NSObject {
 
     /**
      * accelerometerData
-     * <p>
+     * 
      * Discussion:
      * Returns the latest sample of accelerometer data, or nil if none is available.
      */
+    @Nullable
     @Generated
     @Selector("accelerometerData")
     public native CMAccelerometerData accelerometerData();
 
     /**
      * accelerometerUpdateInterval
-     * <p>
+     * 
      * Discussion:
      * The interval at which to deliver accelerometer data to the specified
      * handler once startAccelerometerUpdatesToQueue:withHandler: is called.
@@ -197,12 +208,15 @@ public class CMMotionManager extends NSObject {
 
     /**
      * attitudeReferenceFrame
-     * <p>
+     * 
      * Discussion:
      * If device motion is active, returns the reference frame currently in-use.
      * If device motion is not active, returns the default attitude reference frame
      * for the device. If device motion is not available on the device, the value
      * is undefined.
+     * 
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("attitudeReferenceFrame")
@@ -211,17 +225,18 @@ public class CMMotionManager extends NSObject {
 
     /**
      * deviceMotion
-     * <p>
+     * 
      * Discussion:
      * Returns the latest sample of device motion data, or nil if none is available.
      */
+    @Nullable
     @Generated
     @Selector("deviceMotion")
     public native CMDeviceMotion deviceMotion();
 
     /**
      * deviceMotionUpdateInterval
-     * <p>
+     * 
      * Discussion:
      * The interval at which to deliver device motion data to the specified
      * handler once startDeviceMotionUpdatesToQueue:withHandler: is called.
@@ -238,17 +253,18 @@ public class CMMotionManager extends NSObject {
 
     /**
      * gyroData
-     * <p>
+     * 
      * Discussion:
      * Returns the latest sample of gyro data, or nil if none is available.
      */
+    @Nullable
     @Generated
     @Selector("gyroData")
     public native CMGyroData gyroData();
 
     /**
      * gyroUpdateInterval
-     * <p>
+     * 
      * Discussion:
      * The interval at which to deliver gyro data to the specified
      * handler once startGyroUpdatesToQueue:withHandler: is called.
@@ -269,7 +285,7 @@ public class CMMotionManager extends NSObject {
 
     /**
      * accelerometerActive
-     * <p>
+     * 
      * Discussion:
      * Determines whether the CMMotionManager is currently providing
      * accelerometer updates.
@@ -280,7 +296,7 @@ public class CMMotionManager extends NSObject {
 
     /**
      * accelerometerAvailable
-     * <p>
+     * 
      * Discussion:
      * Determines whether accelerometer is available.
      */
@@ -290,7 +306,7 @@ public class CMMotionManager extends NSObject {
 
     /**
      * deviceMotionActive
-     * <p>
+     * 
      * Discussion:
      * Determines whether the CMMotionManager is currently providing device
      * motion updates.
@@ -301,7 +317,7 @@ public class CMMotionManager extends NSObject {
 
     /**
      * deviceMotionAvailable
-     * <p>
+     * 
      * Discussion:
      * Determines whether device motion is available using any available attitude reference frame.
      */
@@ -311,7 +327,7 @@ public class CMMotionManager extends NSObject {
 
     /**
      * gyroActive
-     * <p>
+     * 
      * Discussion:
      * Determines whether the CMMotionManager is currently providing gyro updates.
      */
@@ -321,7 +337,7 @@ public class CMMotionManager extends NSObject {
 
     /**
      * gyroAvailable
-     * <p>
+     * 
      * Discussion:
      * Determines whether gyro is available.
      */
@@ -331,9 +347,11 @@ public class CMMotionManager extends NSObject {
 
     /**
      * magnetometerActive
-     * <p>
+     * 
      * Discussion:
      * Determines whether the CMMotionManager is currently providing magnetometer updates.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("isMagnetometerActive")
@@ -341,9 +359,11 @@ public class CMMotionManager extends NSObject {
 
     /**
      * magnetometerAvailable
-     * <p>
+     * 
      * Discussion:
      * Determines whether magetometer is available.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("isMagnetometerAvailable")
@@ -351,17 +371,20 @@ public class CMMotionManager extends NSObject {
 
     /**
      * magnetometerData
-     * <p>
+     * 
      * Discussion:
      * Returns the latest sample of magnetometer data, or nil if none is available.
+     * 
+     * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("magnetometerData")
     public native CMMagnetometerData magnetometerData();
 
     /**
      * magnetometerUpdateInterval
-     * <p>
+     * 
      * Discussion:
      * The interval at which to deliver magnetometer data to the specified
      * handler once startMagnetometerUpdatesToQueue:withHandler: is called.
@@ -371,6 +394,8 @@ public class CMMotionManager extends NSObject {
      * interval of magnetometer data, an application should always check the
      * timestamps on the delivered CMMagnetometerData instances to determine the
      * true update interval.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("magnetometerUpdateInterval")
@@ -378,7 +403,7 @@ public class CMMotionManager extends NSObject {
 
     /**
      * accelerometerUpdateInterval
-     * <p>
+     * 
      * Discussion:
      * The interval at which to deliver accelerometer data to the specified
      * handler once startAccelerometerUpdatesToQueue:withHandler: is called.
@@ -395,7 +420,7 @@ public class CMMotionManager extends NSObject {
 
     /**
      * deviceMotionUpdateInterval
-     * <p>
+     * 
      * Discussion:
      * The interval at which to deliver device motion data to the specified
      * handler once startDeviceMotionUpdatesToQueue:withHandler: is called.
@@ -412,7 +437,7 @@ public class CMMotionManager extends NSObject {
 
     /**
      * gyroUpdateInterval
-     * <p>
+     * 
      * Discussion:
      * The interval at which to deliver gyro data to the specified
      * handler once startGyroUpdatesToQueue:withHandler: is called.
@@ -429,7 +454,7 @@ public class CMMotionManager extends NSObject {
 
     /**
      * magnetometerUpdateInterval
-     * <p>
+     * 
      * Discussion:
      * The interval at which to deliver magnetometer data to the specified
      * handler once startMagnetometerUpdatesToQueue:withHandler: is called.
@@ -439,6 +464,8 @@ public class CMMotionManager extends NSObject {
      * interval of magnetometer data, an application should always check the
      * timestamps on the delivered CMMagnetometerData instances to determine the
      * true update interval.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setMagnetometerUpdateInterval:")
@@ -446,12 +473,14 @@ public class CMMotionManager extends NSObject {
 
     /**
      * showsDeviceMovementDisplay
-     * <p>
+     * 
      * Discussion:
      * When the device requires movement, showsDeviceMovementDisplay indicates if the system device
      * movement display should be shown. Note that when device requires movement,
      * CMErrorDeviceRequiresMovement is reported once via CMDeviceMotionHandler. By default,
      * showsDeviceMovementDisplay is NO.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setShowsDeviceMovementDisplay:")
@@ -459,12 +488,14 @@ public class CMMotionManager extends NSObject {
 
     /**
      * showsDeviceMovementDisplay
-     * <p>
+     * 
      * Discussion:
      * When the device requires movement, showsDeviceMovementDisplay indicates if the system device
      * movement display should be shown. Note that when device requires movement,
      * CMErrorDeviceRequiresMovement is reported once via CMDeviceMotionHandler. By default,
      * showsDeviceMovementDisplay is NO.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("showsDeviceMovementDisplay")
@@ -472,7 +503,7 @@ public class CMMotionManager extends NSObject {
 
     /**
      * startAccelerometerUpdates
-     * <p>
+     * 
      * Discussion:
      * Starts accelerometer updates with no handler. To receive the latest accelerometer data
      * when desired, examine the accelerometerData property.
@@ -483,7 +514,7 @@ public class CMMotionManager extends NSObject {
 
     /**
      * startAccelerometerUpdatesToQueue:withHandler:
-     * <p>
+     * 
      * Discussion:
      * Starts accelerometer updates, providing data to the given handler through the given queue.
      * Note that when the updates are stopped, all operations in the
@@ -491,12 +522,12 @@ public class CMMotionManager extends NSObject {
      */
     @Generated
     @Selector("startAccelerometerUpdatesToQueue:withHandler:")
-    public native void startAccelerometerUpdatesToQueueWithHandler(NSOperationQueue queue,
-            @ObjCBlock(name = "call_startAccelerometerUpdatesToQueueWithHandler") Block_startAccelerometerUpdatesToQueueWithHandler handler);
+    public native void startAccelerometerUpdatesToQueueWithHandler(@NotNull NSOperationQueue queue,
+            @NotNull @ObjCBlock(name = "call_startAccelerometerUpdatesToQueueWithHandler") Block_startAccelerometerUpdatesToQueueWithHandler handler);
 
     /**
      * startDeviceMotionUpdates
-     * <p>
+     * 
      * Discussion:
      * Starts device motion updates with no handler. To receive the latest device motion data
      * when desired, examine the deviceMotion property. Uses the default reference frame for
@@ -508,7 +539,7 @@ public class CMMotionManager extends NSObject {
 
     /**
      * startDeviceMotionUpdatesToQueue:withHandler:
-     * <p>
+     * 
      * Discussion:
      * Starts device motion updates, providing data to the given handler through the given queue.
      * Uses the default reference frame for the device. Examine CMMotionManager's
@@ -516,16 +547,19 @@ public class CMMotionManager extends NSObject {
      */
     @Generated
     @Selector("startDeviceMotionUpdatesToQueue:withHandler:")
-    public native void startDeviceMotionUpdatesToQueueWithHandler(NSOperationQueue queue,
-            @ObjCBlock(name = "call_startDeviceMotionUpdatesToQueueWithHandler") Block_startDeviceMotionUpdatesToQueueWithHandler handler);
+    public native void startDeviceMotionUpdatesToQueueWithHandler(@NotNull NSOperationQueue queue,
+            @NotNull @ObjCBlock(name = "call_startDeviceMotionUpdatesToQueueWithHandler") Block_startDeviceMotionUpdatesToQueueWithHandler handler);
 
     /**
      * startDeviceMotionUpdatesUsingReferenceFrame:
-     * <p>
+     * 
      * Discussion:
      * Starts device motion updates with no handler. To receive the latest device motion data
      * when desired, examine the deviceMotion property. The specified frame will be used as
      * reference for the attitude estimates.
+     * 
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("startDeviceMotionUpdatesUsingReferenceFrame:")
@@ -533,20 +567,23 @@ public class CMMotionManager extends NSObject {
 
     /**
      * startDeviceMotionUpdatesUsingReferenceFrame:toQueue:withHandler
-     * <p>
+     * 
      * Discussion:
      * Starts device motion updates, providing data to the given handler through the given queue.
      * The specified frame will be used as reference for the attitude estimates.
+     * 
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("startDeviceMotionUpdatesUsingReferenceFrame:toQueue:withHandler:")
     public native void startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler(@NUInt long referenceFrame,
-            NSOperationQueue queue,
-            @ObjCBlock(name = "call_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler") Block_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler handler);
+            @NotNull NSOperationQueue queue,
+            @NotNull @ObjCBlock(name = "call_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler") Block_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler handler);
 
     /**
      * startGyroUpdates
-     * <p>
+     * 
      * Discussion:
      * Starts gyro updates with no handler. To receive the latest gyro data
      * when desired, examine the gyroData property.
@@ -565,15 +602,17 @@ public class CMMotionManager extends NSObject {
      */
     @Generated
     @Selector("startGyroUpdatesToQueue:withHandler:")
-    public native void startGyroUpdatesToQueueWithHandler(NSOperationQueue queue,
-            @ObjCBlock(name = "call_startGyroUpdatesToQueueWithHandler") Block_startGyroUpdatesToQueueWithHandler handler);
+    public native void startGyroUpdatesToQueueWithHandler(@NotNull NSOperationQueue queue,
+            @NotNull @ObjCBlock(name = "call_startGyroUpdatesToQueueWithHandler") Block_startGyroUpdatesToQueueWithHandler handler);
 
     /**
      * startMagnetometerUpdates
-     * <p>
+     * 
      * Discussion:
      * Starts magnetometer updates with no handler. To receive the latest magnetometer data
      * when desired, examine the magnetometerData property.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("startMagnetometerUpdates")
@@ -581,18 +620,20 @@ public class CMMotionManager extends NSObject {
 
     /**
      * startMagnetometerUpdatesToQueue:withHandler:
-     * <p>
+     * 
      * Discussion:
      * Starts magnetometer updates, providing data to the given handler through the given queue.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("startMagnetometerUpdatesToQueue:withHandler:")
-    public native void startMagnetometerUpdatesToQueueWithHandler(NSOperationQueue queue,
-            @ObjCBlock(name = "call_startMagnetometerUpdatesToQueueWithHandler") Block_startMagnetometerUpdatesToQueueWithHandler handler);
+    public native void startMagnetometerUpdatesToQueueWithHandler(@NotNull NSOperationQueue queue,
+            @NotNull @ObjCBlock(name = "call_startMagnetometerUpdatesToQueueWithHandler") Block_startMagnetometerUpdatesToQueueWithHandler handler);
 
     /**
      * stopAccelerometerUpdates
-     * <p>
+     * 
      * Discussion:
      * Stop accelerometer updates.
      */
@@ -602,7 +643,7 @@ public class CMMotionManager extends NSObject {
 
     /**
      * stopDeviceMotionUpdates
-     * <p>
+     * 
      * Discussion:
      * Stops device motion updates.
      */
@@ -612,7 +653,7 @@ public class CMMotionManager extends NSObject {
 
     /**
      * stopGyroUpdates
-     * <p>
+     * 
      * Discussion:
      * Stops gyro updates.
      */
@@ -622,9 +663,11 @@ public class CMMotionManager extends NSObject {
 
     /**
      * stopMagnetometerUpdates
-     * <p>
+     * 
      * Discussion:
      * Stops magnetometer updates.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("stopMagnetometerUpdates")
@@ -634,34 +677,37 @@ public class CMMotionManager extends NSObject {
     @Generated
     public interface Block_startAccelerometerUpdatesToQueueWithHandler {
         @Generated
-        void call_startAccelerometerUpdatesToQueueWithHandler(CMAccelerometerData accelerometerData, NSError error);
+        void call_startAccelerometerUpdatesToQueueWithHandler(@Nullable CMAccelerometerData accelerometerData,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startDeviceMotionUpdatesToQueueWithHandler {
         @Generated
-        void call_startDeviceMotionUpdatesToQueueWithHandler(CMDeviceMotion motion, NSError error);
+        void call_startDeviceMotionUpdatesToQueueWithHandler(@Nullable CMDeviceMotion motion, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler {
         @Generated
-        void call_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler(CMDeviceMotion motion, NSError error);
+        void call_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler(@Nullable CMDeviceMotion motion,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startGyroUpdatesToQueueWithHandler {
         @Generated
-        void call_startGyroUpdatesToQueueWithHandler(CMGyroData gyroData, NSError error);
+        void call_startGyroUpdatesToQueueWithHandler(@Nullable CMGyroData gyroData, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startMagnetometerUpdatesToQueueWithHandler {
         @Generated
-        void call_startMagnetometerUpdatesToQueueWithHandler(CMMagnetometerData magnetometerData, NSError error);
+        void call_startMagnetometerUpdatesToQueueWithHandler(@Nullable CMMagnetometerData magnetometerData,
+                @Nullable NSError error);
     }
 }

@@ -13,7 +13,12 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -26,8 +31,8 @@ public interface UITableViewDropDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:canHandleDropSession:")
-    default boolean tableViewCanHandleDropSession(UITableView tableView,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default boolean tableViewCanHandleDropSession(@NotNull UITableView tableView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -35,11 +40,12 @@ public interface UITableViewDropDelegate {
      * Allows customization of the preview used when dropping to a newly inserted row.
      * If not implemented or if nil is returned, the entire cell will be used for the preview.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("tableView:dropPreviewParametersForRowAtIndexPath:")
-    default UIDragPreviewParameters tableViewDropPreviewParametersForRowAtIndexPath(UITableView tableView,
-            NSIndexPath indexPath) {
+    default UIDragPreviewParameters tableViewDropPreviewParametersForRowAtIndexPath(@NotNull UITableView tableView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -49,8 +55,8 @@ public interface UITableViewDropDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:dropSessionDidEnd:")
-    default void tableViewDropSessionDidEnd(UITableView tableView,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default void tableViewDropSessionDidEnd(@NotNull UITableView tableView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -60,8 +66,8 @@ public interface UITableViewDropDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:dropSessionDidEnter:")
-    default void tableViewDropSessionDidEnter(UITableView tableView,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default void tableViewDropSessionDidEnter(@NotNull UITableView tableView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -71,8 +77,8 @@ public interface UITableViewDropDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:dropSessionDidExit:")
-    default void tableViewDropSessionDidExit(UITableView tableView,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
+    default void tableViewDropSessionDidExit(@NotNull UITableView tableView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -86,11 +92,13 @@ public interface UITableViewDropDelegate {
      * Note that in some cases your proposal may not be allowed and the system will enforce a different proposal.
      * You may perform your own hit testing via -[session locationInView:]
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("tableView:dropSessionDidUpdate:withDestinationIndexPath:")
-    default UITableViewDropProposal tableViewDropSessionDidUpdateWithDestinationIndexPath(UITableView tableView,
-            @Mapped(ObjCObjectMapper.class) UIDropSession session, NSIndexPath destinationIndexPath) {
+    default UITableViewDropProposal tableViewDropSessionDidUpdateWithDestinationIndexPath(
+            @NotNull UITableView tableView, @NotNull @Mapped(ObjCObjectMapper.class) UIDropSession session,
+            @Nullable NSIndexPath destinationIndexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -105,6 +113,6 @@ public interface UITableViewDropDelegate {
      */
     @Generated
     @Selector("tableView:performDropWithCoordinator:")
-    void tableViewPerformDropWithCoordinator(UITableView tableView,
-            @Mapped(ObjCObjectMapper.class) UITableViewDropCoordinator coordinator);
+    void tableViewPerformDropWithCoordinator(@NotNull UITableView tableView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UITableViewDropCoordinator coordinator);
 }

@@ -29,6 +29,7 @@ import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -51,8 +52,8 @@ public final class BNNSFilterParameters extends StructObject {
 
     @Generated
     public BNNSFilterParameters(int flags, @NUInt long n_threads,
-            @FunctionPtr(name = "call_alloc_memory") Function_alloc_memory alloc_memory,
-            @FunctionPtr(name = "call_free_memory") Function_free_memory free_memory) {
+            @FunctionPtr(name = "call_alloc_memory") @Nullable Function_alloc_memory alloc_memory,
+            @FunctionPtr(name = "call_free_memory") @Nullable Function_free_memory free_memory) {
         super(BNNSFilterParameters.class);
         setFlags(flags);
         setN_threads(n_threads);
@@ -77,6 +78,7 @@ public final class BNNSFilterParameters extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setN_threads(@NUInt long value);
 
+    @Nullable
     @Generated
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_alloc_memory")
@@ -84,8 +86,9 @@ public final class BNNSFilterParameters extends StructObject {
 
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void setAlloc_memory(@FunctionPtr(name = "call_alloc_memory") Function_alloc_memory value);
+    public native void setAlloc_memory(@Nullable @FunctionPtr(name = "call_alloc_memory") Function_alloc_memory value);
 
+    @Nullable
     @Generated
     @StructureField(order = 3, isGetter = true)
     @FunctionPtr(name = "call_free_memory")
@@ -93,14 +96,14 @@ public final class BNNSFilterParameters extends StructObject {
 
     @Generated
     @StructureField(order = 3, isGetter = false)
-    public native void setFree_memory(@FunctionPtr(name = "call_free_memory") Function_free_memory value);
+    public native void setFree_memory(@Nullable @FunctionPtr(name = "call_free_memory") Function_free_memory value);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_alloc_memory {
         @Generated
-        int call_alloc_memory(@ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg0, @NUInt long arg1,
-                @NUInt long arg2);
+        int call_alloc_memory(@Nullable @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg0,
+                @NUInt long arg1, @NUInt long arg2);
     }
 
     @Runtime(CRuntime.class)

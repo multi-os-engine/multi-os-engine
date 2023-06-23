@@ -42,7 +42,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -74,22 +79,25 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,10 +132,12 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("mapTableWithKeyOptions:valueOptions:")
     public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> mapTableWithKeyOptionsValueOptions(
@@ -150,10 +160,18 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 6.0
+     */
+    @NotNull
     @Generated
     @Selector("strongToStrongObjectsMapTable")
     public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> strongToStrongObjectsMapTable();
 
+    /**
+     * API-Since: 6.0
+     */
+    @NotNull
     @Generated
     @Selector("strongToWeakObjectsMapTable")
     public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> strongToWeakObjectsMapTable();
@@ -169,23 +187,30 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
 
     /**
      * entries are not necessarily purged right away when the weak key is reclaimed
+     * 
+     * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("weakToStrongObjectsMapTable")
     public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> weakToStrongObjectsMapTable();
 
     /**
      * entries are not necessarily purged right away when the weak key or object is reclaimed
+     * 
+     * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("weakToWeakObjectsMapTable")
     public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> weakToWeakObjectsMapTable();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("count")
@@ -195,19 +220,20 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
+    public native long countByEnumeratingWithStateObjectsCount(@NotNull VoidPtr state,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
     /**
      * create a dictionary of contents
      */
+    @NotNull
     @Generated
     @Selector("dictionaryRepresentation")
     public native NSDictionary<_KeyType, _ObjectType> dictionaryRepresentation();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -215,7 +241,7 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMapTable<?, ?> initWithCoder(NSCoder coder);
+    public native NSMapTable<?, ?> initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithKeyOptions:valueOptions:capacity:")
@@ -225,8 +251,10 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
     @Generated
     @Selector("initWithKeyPointerFunctions:valuePointerFunctions:capacity:")
     public native NSMapTable<?, ?> initWithKeyPointerFunctionsValuePointerFunctionsCapacity(
-            NSPointerFunctions keyFunctions, NSPointerFunctions valueFunctions, @NUInt long initialCapacity);
+            @NotNull NSPointerFunctions keyFunctions, @NotNull NSPointerFunctions valueFunctions,
+            @NUInt long initialCapacity);
 
+    @NotNull
     @Generated
     @Selector("keyEnumerator")
     public native NSEnumerator<_KeyType> keyEnumerator();
@@ -235,18 +263,21 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
      * return an NSPointerFunctions object reflecting the functions in use. This is a new autoreleased object that can
      * be subsequently modified and/or used directly in the creation of other pointer "collections".
      */
+    @NotNull
     @Generated
     @Selector("keyPointerFunctions")
     public native NSPointerFunctions keyPointerFunctions();
 
+    @Nullable
     @Generated
     @Selector("objectEnumerator")
     public native NSEnumerator<_ObjectType> objectEnumerator();
 
+    @Nullable
     @Generated
     @Selector("objectForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native _ObjectType objectForKey(@Mapped(ObjCObjectMapper.class) _KeyType aKey);
+    public native _ObjectType objectForKey(@Nullable @Mapped(ObjCObjectMapper.class) _KeyType aKey);
 
     @Generated
     @Selector("removeAllObjects")
@@ -254,16 +285,17 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
 
     @Generated
     @Selector("removeObjectForKey:")
-    public native void removeObjectForKey(@Mapped(ObjCObjectMapper.class) _KeyType aKey);
+    public native void removeObjectForKey(@Nullable @Mapped(ObjCObjectMapper.class) _KeyType aKey);
 
     /**
      * add/replace value (CFDictionarySetValue, NSMapInsert)
      */
     @Generated
     @Selector("setObject:forKey:")
-    public native void setObjectForKey(@Mapped(ObjCObjectMapper.class) _ObjectType anObject,
-            @Mapped(ObjCObjectMapper.class) _KeyType aKey);
+    public native void setObjectForKey(@Nullable @Mapped(ObjCObjectMapper.class) _ObjectType anObject,
+            @Nullable @Mapped(ObjCObjectMapper.class) _KeyType aKey);
 
+    @NotNull
     @Generated
     @Selector("valuePointerFunctions")
     public native NSPointerFunctions valuePointerFunctions();

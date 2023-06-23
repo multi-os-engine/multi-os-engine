@@ -43,7 +43,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -72,35 +77,39 @@ public class UIDocumentPickerViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native UIDocumentPickerViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -132,9 +141,10 @@ public class UIDocumentPickerViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,11 +172,18 @@ public class UIDocumentPickerViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIDocumentPickerDelegate delegate();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use appropriate initializers instead
+     */
+    @Deprecated
     @Generated
     @Selector("documentPickerMode")
     @NUInt
@@ -178,35 +195,44 @@ public class UIDocumentPickerViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIDocumentPickerViewController initWithCoder(NSCoder coder);
+    public native UIDocumentPickerViewController initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initializes the picker instance for selecting a document in a remote location. The valid modes are Import and
      * Open.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("initWithDocumentTypes:inMode:")
-    public native UIDocumentPickerViewController initWithDocumentTypesInMode(NSArray<String> allowedUTIs,
+    public native UIDocumentPickerViewController initWithDocumentTypesInMode(@NotNull NSArray<String> allowedUTIs,
             @NUInt long mode);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native UIDocumentPickerViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native UIDocumentPickerViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * Initializes the picker for exporting a local file to an external location. The valid modes are Export and Move.
      * The new location will be returned using `didPickDocumentAtURL:`.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("initWithURL:inMode:")
-    public native UIDocumentPickerViewController initWithURLInMode(NSURL url, @NUInt long mode);
+    public native UIDocumentPickerViewController initWithURLInMode(@NotNull NSURL url, @NUInt long mode);
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIDocumentPickerDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UIDocumentPickerDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIDocumentPickerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIDocumentPickerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -217,6 +243,9 @@ public class UIDocumentPickerViewController extends UIViewController {
         }
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("allowsMultipleSelection")
     public native boolean allowsMultipleSelection();
@@ -224,31 +253,46 @@ public class UIDocumentPickerViewController extends UIViewController {
     /**
      * Initializes the picker for exporting local files to an external location. The valid modes are Export and Move.
      * The new locations will be returned using `didPickDocumentAtURLs:`.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("initWithURLs:inMode:")
-    public native UIDocumentPickerViewController initWithURLsInMode(NSArray<? extends NSURL> urls, @NUInt long mode);
+    public native UIDocumentPickerViewController initWithURLsInMode(@NotNull NSArray<? extends NSURL> urls,
+            @NUInt long mode);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setAllowsMultipleSelection:")
     public native void setAllowsMultipleSelection(boolean value);
 
     /**
      * Picker will try to display this URL when presented
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("directoryURL")
     public native NSURL directoryURL();
 
     /**
      * Picker will try to display this URL when presented
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDirectoryURL:")
-    public native void setDirectoryURL(NSURL value);
+    public native void setDirectoryURL(@Nullable NSURL value);
 
     /**
      * Force the display of supported file extensions (default: NO).
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setShouldShowFileExtensions:")
@@ -256,6 +300,8 @@ public class UIDocumentPickerViewController extends UIViewController {
 
     /**
      * Force the display of supported file extensions (default: NO).
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("shouldShowFileExtensions")
@@ -264,40 +310,49 @@ public class UIDocumentPickerViewController extends UIViewController {
     /**
      * Initializes the picker for exporting local documents to an external location. The new locations will be returned
      * using `didPickDocumentAtURLs:`. The original document will be moved to the destination.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initForExportingURLs:")
-    public native UIDocumentPickerViewController initForExportingURLs(NSArray<? extends NSURL> urls);
+    public native UIDocumentPickerViewController initForExportingURLs(@NotNull NSArray<? extends NSURL> urls);
 
     /**
      * Initializes the picker for exporting local documents to an external location. The new locations will be returned
      * using `didPickDocumentAtURLs:`.
-     *
+     * 
      * @param asCopy if true, a copy will be exported to the destination, otherwise the original document will be moved
      *               to the destination. For performance reasons and to avoid copies, we recommend you set `asCopy` to
      *               false.
+     * 
+     *               API-Since: 14.0
      */
     @Generated
     @Selector("initForExportingURLs:asCopy:")
-    public native UIDocumentPickerViewController initForExportingURLsAsCopy(NSArray<? extends NSURL> urls,
+    public native UIDocumentPickerViewController initForExportingURLsAsCopy(@NotNull NSArray<? extends NSURL> urls,
             boolean asCopy);
 
     /**
      * Initializes the picker instance for selecting a document in a remote location, giving you access to the original
      * document.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initForOpeningContentTypes:")
-    public native UIDocumentPickerViewController initForOpeningContentTypes(NSArray<? extends UTType> contentTypes);
+    public native UIDocumentPickerViewController initForOpeningContentTypes(
+            @NotNull NSArray<? extends UTType> contentTypes);
 
     /**
      * Initializes the picker instance for selecting a document in a remote location.
-     *
+     * 
      * @param asCopy if true, the picker will give you access to a local copy of the document, otherwise you will have
      *               access to the original document
+     * 
+     *               API-Since: 14.0
      */
     @Generated
     @Selector("initForOpeningContentTypes:asCopy:")
     public native UIDocumentPickerViewController initForOpeningContentTypesAsCopy(
-            NSArray<? extends UTType> contentTypes, boolean asCopy);
+            @NotNull NSArray<? extends UTType> contentTypes, boolean asCopy);
 }

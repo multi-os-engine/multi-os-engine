@@ -43,7 +43,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -74,22 +79,25 @@ public class INRestaurant extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +132,10 @@ public class INRestaurant extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,15 +167,16 @@ public class INRestaurant extends NSObject implements NSSecureCoding, NSCopying 
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -174,17 +184,19 @@ public class INRestaurant extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRestaurant initWithCoder(NSCoder coder);
+    public native INRestaurant initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithLocation:name:vendorIdentifier:restaurantIdentifier:")
-    public native INRestaurant initWithLocationNameVendorIdentifierRestaurantIdentifier(CLLocation location,
-            String name, String vendorIdentifier, String restaurantIdentifier);
+    public native INRestaurant initWithLocationNameVendorIdentifierRestaurantIdentifier(@NotNull CLLocation location,
+            @NotNull String name, @NotNull String vendorIdentifier, @NotNull String restaurantIdentifier);
 
+    @NotNull
     @Generated
     @Selector("location")
     public native CLLocation location();
 
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -193,17 +205,18 @@ public class INRestaurant extends NSObject implements NSSecureCoding, NSCopying 
      * vendor specific restaurant identifier. should match what Maps is ingesting through its data pipeline for the
      * vendor.
      */
+    @NotNull
     @Generated
     @Selector("restaurantIdentifier")
     public native String restaurantIdentifier();
 
     @Generated
     @Selector("setLocation:")
-    public native void setLocation(CLLocation value);
+    public native void setLocation(@NotNull CLLocation value);
 
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@NotNull String value);
 
     /**
      * vendor specific restaurant identifier. should match what Maps is ingesting through its data pipeline for the
@@ -211,14 +224,14 @@ public class INRestaurant extends NSObject implements NSSecureCoding, NSCopying 
      */
     @Generated
     @Selector("setRestaurantIdentifier:")
-    public native void setRestaurantIdentifier(String value);
+    public native void setRestaurantIdentifier(@NotNull String value);
 
     /**
      * provider's vendor identifier
      */
     @Generated
     @Selector("setVendorIdentifier:")
-    public native void setVendorIdentifier(String value);
+    public native void setVendorIdentifier(@NotNull String value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -229,6 +242,7 @@ public class INRestaurant extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * provider's vendor identifier
      */
+    @NotNull
     @Generated
     @Selector("vendorIdentifier")
     public native String vendorIdentifier();

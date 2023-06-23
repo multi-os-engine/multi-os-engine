@@ -21,13 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueBatteryStatus
- * <p>
+ * 
  * [@constant] HMCharacteristicValueBatteryStatusNormal Battery level is normal.
  * [@constant] HMCharacteristicValueBatteryStatusLow Battery level is low.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class HMCharacteristicValueBatteryStatus {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Normal = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Low = 0x0000000000000001L;
 
     @Generated

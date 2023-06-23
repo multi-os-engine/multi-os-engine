@@ -22,11 +22,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] PHASEMetaParameter
- * <p>
+ * 
  * A generic object that represents an active metaparameter in the system
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -58,22 +62,25 @@ public class PHASEMetaParameter extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -93,9 +100,10 @@ public class PHASEMetaParameter extends NSObject {
 
     /**
      * [@property] identifier
-     * <p>
+     * 
      * The identifier that uniquely represents this metaparameter.
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -121,9 +129,10 @@ public class PHASEMetaParameter extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -140,12 +149,12 @@ public class PHASEMetaParameter extends NSObject {
 
     /**
      * [@property] value
-     * <p>
+     * 
      * The value of this metaparameter
      */
     @Generated
     @Selector("setValue:")
-    public native void setValue(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setValue(@NotNull @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
     @Selector("setVersion:")
@@ -157,9 +166,10 @@ public class PHASEMetaParameter extends NSObject {
 
     /**
      * [@property] value
-     * <p>
+     * 
      * The value of this metaparameter
      */
+    @NotNull
     @Generated
     @Selector("value")
     @MappedReturn(ObjCObjectMapper.class)

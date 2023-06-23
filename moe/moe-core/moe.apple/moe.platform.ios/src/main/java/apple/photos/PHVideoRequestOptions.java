@@ -41,7 +41,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -72,22 +77,25 @@ public class PHVideoRequestOptions extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,9 +130,10 @@ public class PHVideoRequestOptions extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -143,6 +152,9 @@ public class PHVideoRequestOptions extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("deliveryMode")
     @NInt
@@ -152,31 +164,54 @@ public class PHVideoRequestOptions extends NSObject {
     @Selector("init")
     public native PHVideoRequestOptions init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("isNetworkAccessAllowed")
     public native boolean isNetworkAccessAllowed();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setNetworkAccessAllowed:")
     public native void setNetworkAccessAllowed(boolean value);
 
+    /**
+     * API-Since: 8.0
+     */
+    @Nullable
     @Generated
     @Selector("progressHandler")
     @ObjCBlock(name = "call_progressHandler_ret")
     public native Block_progressHandler_ret progressHandler();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setDeliveryMode:")
     public native void setDeliveryMode(@NInt long value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setProgressHandler:")
-    public native void setProgressHandler(@ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);
+    public native void setProgressHandler(
+            @Nullable @ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setVersion:")
     public native void setVersion(@NInt long value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("version")
     @NInt
@@ -186,13 +221,15 @@ public class PHVideoRequestOptions extends NSObject {
     @Generated
     public interface Block_progressHandler_ret {
         @Generated
-        void call_progressHandler_ret(double progress, NSError error, BoolPtr stop, NSDictionary<?, ?> info);
+        void call_progressHandler_ret(double progress, @Nullable NSError error, @NotNull BoolPtr stop,
+                @Nullable NSDictionary<?, ?> info);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setProgressHandler {
         @Generated
-        void call_setProgressHandler(double progress, NSError error, BoolPtr stop, NSDictionary<?, ?> info);
+        void call_setProgressHandler(double progress, @Nullable NSError error, @NotNull BoolPtr stop,
+                @Nullable NSDictionary<?, ?> info);
     }
 }

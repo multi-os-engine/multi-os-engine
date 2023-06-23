@@ -39,7 +39,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -70,22 +75,25 @@ public class AVPlayerItemOutput extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,9 +128,10 @@ public class AVPlayerItemOutput extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,17 +165,18 @@ public class AVPlayerItemOutput extends NSObject {
 
     /**
      * itemTimeForHostTime:
-     * <p>
+     * 
      * Convert a host time, expressed in seconds, to item time.
-     * <p>
+     * 
      * Converts a host time value (for example a CADisplayLink timestamp, or the value returned by CACurrentMediaTime())
      * to the equivalent time on the item's timebase.
-     * <p>
+     * 
      * Note: The Core Animation CADisplayLink timestamp property expresses the most recent, or previous, screen refresh
      * time. You need to increment this timestamp by the CADisplayLink's duration property to find the next appropriate
      * item time.
-     *
-     * @param hostTimeInSeconds The timestamp value to convert to item time.
+     * 
+     * @param hostTimeInSeconds
+     *                          The timestamp value to convert to item time.
      * @return The equivalent item time.
      */
     @Generated
@@ -176,14 +186,15 @@ public class AVPlayerItemOutput extends NSObject {
 
     /**
      * itemTimeForMachAbsoluteTime:
-     * <p>
+     * 
      * Convenience method to convert a Mach host time to item time.
-     * <p>
+     * 
      * Converts Mach host time to the equivalent time on the item's timebase.
      * mach_absolute_time() returns time awake since boot in system-specific rational units that can be queried by
      * calling mach_timebase_info().
-     *
-     * @param machAbsoluteTime The Mach host time to convert to item time.
+     * 
+     * @param machAbsoluteTime
+     *                         The Mach host time to convert to item time.
      * @return The equivalent item time.
      */
     @Generated
@@ -193,20 +204,22 @@ public class AVPlayerItemOutput extends NSObject {
 
     /**
      * [@property] suppressesPlayerRendering
-     * <p>
+     * 
      * Indicates whether the output, when added to an AVPlayerItem, will be used in addition to normal rendering of
      * media data by the player or instead of normal rendering.
-     * <p>
+     * 
      * The default value is NO, indicating that the output will be used in addition to normal rendering. If you want to
      * render the media data provided by the output yourself instead of allowing it to be rendered as in normally would
      * be by AVPlayer, set suppressesPlayerRendering to YES.
-     * <p>
+     * 
      * Whenever any output is added to an AVPlayerItem that has suppressesPlayerRendering set to YES, the media data
      * supplied to the output will not be rendered by AVPlayer. Other media data associated with the item but not
      * provided to such an output is not affected. For example, if an output of class AVPlayerItemVideoOutput with a
      * value of YES for suppressesPlayerRendering is added to an AVPlayerItem, video media for that item will not be
      * rendered by the AVPlayer, while audio media, subtitle media, and other kinds of media, if present, will be
      * rendered.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setSuppressesPlayerRendering:")
@@ -214,20 +227,22 @@ public class AVPlayerItemOutput extends NSObject {
 
     /**
      * [@property] suppressesPlayerRendering
-     * <p>
+     * 
      * Indicates whether the output, when added to an AVPlayerItem, will be used in addition to normal rendering of
      * media data by the player or instead of normal rendering.
-     * <p>
+     * 
      * The default value is NO, indicating that the output will be used in addition to normal rendering. If you want to
      * render the media data provided by the output yourself instead of allowing it to be rendered as in normally would
      * be by AVPlayer, set suppressesPlayerRendering to YES.
-     * <p>
+     * 
      * Whenever any output is added to an AVPlayerItem that has suppressesPlayerRendering set to YES, the media data
      * supplied to the output will not be rendered by AVPlayer. Other media data associated with the item but not
      * provided to such an output is not affected. For example, if an output of class AVPlayerItemVideoOutput with a
      * value of YES for suppressesPlayerRendering is added to an AVPlayerItem, video media for that item will not be
      * rendered by the AVPlayer, while audio media, subtitle media, and other kinds of media, if present, will be
      * rendered.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("suppressesPlayerRendering")

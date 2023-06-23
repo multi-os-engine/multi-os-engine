@@ -24,7 +24,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -55,31 +60,35 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Specifies a custom group with client-specified frames.
@@ -88,18 +97,20 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
      * The coordinate space for returned frames should be {0,0} relative to this group's geometry.
      * Custom groups can be nested arbitrarily inside other groups.
      */
+    @NotNull
     @Generated
     @Selector("customGroupWithLayoutSize:itemProvider:")
     public static native NSCollectionLayoutGroup customGroupWithLayoutSizeItemProvider(
-            NSCollectionLayoutSize layoutSize,
-            @ObjCBlock(name = "call_customGroupWithLayoutSizeItemProvider") Block_customGroupWithLayoutSizeItemProvider itemProvider);
+            @NotNull NSCollectionLayoutSize layoutSize,
+            @NotNull @ObjCBlock(name = "call_customGroupWithLayoutSizeItemProvider") Block_customGroupWithLayoutSizeItemProvider itemProvider);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_customGroupWithLayoutSizeItemProvider {
+        @NotNull
         @Generated
         NSArray<? extends NSCollectionLayoutGroupCustomItem> call_customGroupWithLayoutSizeItemProvider(
-                @Mapped(ObjCObjectMapper.class) Object layoutEnvironment);
+                @NotNull @Mapped(ObjCObjectMapper.class) Object layoutEnvironment);
     }
 
     @Generated
@@ -118,31 +129,27 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
     /**
      * Specifies a group that will have N items equally sized along the horizontal axis. use interItemSpacing to insert
      * space between items
-     * <p>
-     * +------+--+------+--+------+
-     * |~~~~~~| |~~~~~~| |~~~~~~|
-     * |~~~~~~| |~~~~~~| |~~~~~~|
-     * |~~~~~~| |~~~~~~| |~~~~~~|
-     * +------+--+------+--+------+
-     * ^ ^
-     * | |
-     * +-----------------------+
-     * | Inter Item Spacing |
-     * +-----------------------+
+     * Forces the width dimension of the subitem to .fractionalWidth(1.0/count).
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 16.0
      */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("horizontalGroupWithLayoutSize:subitem:count:")
     public static native NSCollectionLayoutGroup horizontalGroupWithLayoutSizeSubitemCount(
-            NSCollectionLayoutSize layoutSize, NSCollectionLayoutItem subitem, @NInt long count);
+            @NotNull NSCollectionLayoutSize layoutSize, @NotNull NSCollectionLayoutItem subitem, @NInt long count);
 
     /**
      * Specifies a group that will repeat items until available horizontal space is exhausted.
      * note: any remaining space after laying out items can be apportioned among flexible interItemSpacing definitions
      */
+    @NotNull
     @Generated
     @Selector("horizontalGroupWithLayoutSize:subitems:")
     public static native NSCollectionLayoutGroup horizontalGroupWithLayoutSizeSubitems(
-            NSCollectionLayoutSize layoutSize, NSArray<? extends NSCollectionLayoutItem> subitems);
+            @NotNull NSCollectionLayoutSize layoutSize, @NotNull NSArray<? extends NSCollectionLayoutItem> subitems);
 
     @Generated
     @Selector("init")
@@ -164,6 +171,7 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
     /**
      * Supplies additional spacing between items along the layout axis of the group
      */
+    @Nullable
     @Generated
     @Selector("interItemSpacing")
     public native NSCollectionLayoutSpacing interItemSpacing();
@@ -174,16 +182,18 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
 
     @Generated
     @Selector("itemWithLayoutSize:")
-    public static native NSCollectionLayoutGroup itemWithLayoutSize(NSCollectionLayoutSize layoutSize);
+    public static native NSCollectionLayoutGroup itemWithLayoutSize(@NotNull NSCollectionLayoutSize layoutSize);
 
     @Generated
     @Selector("itemWithLayoutSize:supplementaryItems:")
-    public static native NSCollectionLayoutGroup itemWithLayoutSizeSupplementaryItems(NSCollectionLayoutSize layoutSize,
-            NSArray<? extends NSCollectionLayoutSupplementaryItem> supplementaryItems);
+    public static native NSCollectionLayoutGroup itemWithLayoutSizeSupplementaryItems(
+            @NotNull NSCollectionLayoutSize layoutSize,
+            @NotNull NSArray<? extends NSCollectionLayoutSupplementaryItem> supplementaryItems);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -203,19 +213,20 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
      */
     @Generated
     @Selector("setInterItemSpacing:")
-    public native void setInterItemSpacing(NSCollectionLayoutSpacing value);
+    public native void setInterItemSpacing(@Nullable NSCollectionLayoutSpacing value);
 
     /**
      * Supplementary items are "anchored" to the group's geometry.
      */
     @Generated
     @Selector("setSupplementaryItems:")
-    public native void setSupplementaryItems(NSArray<? extends NSCollectionLayoutSupplementaryItem> value);
+    public native void setSupplementaryItems(@NotNull NSArray<? extends NSCollectionLayoutSupplementaryItem> value);
 
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("subitems")
     public native NSArray<? extends NSCollectionLayoutItem> subitems();
@@ -227,6 +238,7 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
     /**
      * Supplementary items are "anchored" to the group's geometry.
      */
+    @NotNull
     @Generated
     @Selector("supplementaryItems")
     public native NSArray<? extends NSCollectionLayoutSupplementaryItem> supplementaryItems();
@@ -239,42 +251,65 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
     /**
      * Specifies a group that will have N items equally sized along the vertical axis. use interItemSpacing to insert
      * space between items
-     * +------+
-     * |~~~~~~|
-     * |~~~~~~|
-     * |~~~~~~|
-     * +------+
-     * | |<--+
-     * +------+ |
-     * |~~~~~~| | +-----------------------+
-     * |~~~~~~| +----| Inter Item Spacing |
-     * |~~~~~~| | +-----------------------+
-     * +------+ |
-     * | |<--+
-     * +------+
-     * |~~~~~~|
-     * |~~~~~~|
-     * |~~~~~~|
-     * +------+
+     * Forces the height dimension of the subitem to .fractionalHeight(1.0/count).
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 16.0
      */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("verticalGroupWithLayoutSize:subitem:count:")
     public static native NSCollectionLayoutGroup verticalGroupWithLayoutSizeSubitemCount(
-            NSCollectionLayoutSize layoutSize, NSCollectionLayoutItem subitem, @NInt long count);
+            @NotNull NSCollectionLayoutSize layoutSize, @NotNull NSCollectionLayoutItem subitem, @NInt long count);
 
     /**
      * Specifies a group that will repeat items until available vertical space is exhausted.
      * note: any remaining space after laying out items can be apportioned among flexible interItemSpacing definitions
      */
+    @NotNull
     @Generated
     @Selector("verticalGroupWithLayoutSize:subitems:")
-    public static native NSCollectionLayoutGroup verticalGroupWithLayoutSizeSubitems(NSCollectionLayoutSize layoutSize,
-            NSArray<? extends NSCollectionLayoutItem> subitems);
+    public static native NSCollectionLayoutGroup verticalGroupWithLayoutSizeSubitems(
+            @NotNull NSCollectionLayoutSize layoutSize, @NotNull NSArray<? extends NSCollectionLayoutItem> subitems);
 
     /**
      * for visual debugging; will print an ASCII art rendering to console
      */
+    @NotNull
     @Generated
     @Selector("visualDescription")
     public native String visualDescription();
+
+    /**
+     * Specifies a group that will horizontally repeat its subitem a fixed number of times.
+     * 
+     * @param layoutSize The group's size.
+     * @param subitem    The subitem to repeat. It is the caller's responsibility to ensure that the group's @c
+     *                   layoutSize can fit @c count repetitions of this item.
+     * @param count      The number of times to repeat the passed in subitem.
+     * 
+     *                   API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @Selector("horizontalGroupWithLayoutSize:repeatingSubitem:count:")
+    public static native NSCollectionLayoutGroup horizontalGroupWithLayoutSizeRepeatingSubitemCount(
+            @NotNull NSCollectionLayoutSize layoutSize, @NotNull NSCollectionLayoutItem subitem, @NInt long count);
+
+    /**
+     * Specifies a group that will vertically repeat its subitem a fixed number of times.
+     * 
+     * @param layoutSize The group's size.
+     * @param subitem    The subitem to repeat. It is the caller's responsibility to ensure that the group's @c
+     *                   layoutSize can fit @c count repetitions of this item.
+     * @param count      The number of times to repeat the passed in subitem.
+     * 
+     *                   API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @Selector("verticalGroupWithLayoutSize:repeatingSubitem:count:")
+    public static native NSCollectionLayoutGroup verticalGroupWithLayoutSizeRepeatingSubitemCount(
+            @NotNull NSCollectionLayoutSize layoutSize, @NotNull NSCollectionLayoutItem subitem, @NInt long count);
 }

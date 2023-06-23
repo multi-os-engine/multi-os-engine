@@ -24,6 +24,7 @@ import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("AddressBookUI")
@@ -39,5 +40,6 @@ public interface ABPersonViewControllerDelegate {
     @Generated
     @Selector("personViewController:shouldPerformDefaultActionForPerson:property:identifier:")
     boolean personViewControllerShouldPerformDefaultActionForPersonPropertyIdentifier(
-            ABPersonViewController personViewController, ConstVoidPtr person, int property, int identifier);
+            @NotNull ABPersonViewController personViewController, @NotNull ConstVoidPtr person, int property,
+            int identifier);
 }

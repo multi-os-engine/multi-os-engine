@@ -25,8 +25,25 @@ public final class VNErrorCode {
     @Generated @NInt public static final long InvalidImage = 0x000000000000000DL;
     @Generated @NInt public static final long InvalidArgument = 0x000000000000000EL;
     @Generated @NInt public static final long InvalidModel = 0x000000000000000FL;
+    /**
+     * API-Since: 12.0
+     */
     @Generated @NInt public static final long UnsupportedRevision = 0x0000000000000010L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long DataUnavailable = 0x0000000000000011L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long TimeStampNotFound = 0x0000000000000012L;
+    /**
+     * API-Since: 15.0
+     */
     @Generated @NInt public static final long UnsupportedRequest = 0x0000000000000013L;
+    @Generated @NInt public static final long TuriCoreErrorCode = 0xFFFFFFFFFFFFFFFFL;
+    /**
+     * API-Since: 16.0
+     */
+    @Generated @NInt public static final long Timeout = 0x0000000000000014L;
 }

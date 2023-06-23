@@ -26,14 +26,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
- * A picker that manages the system interfaces for choosing assets from the user's photos library and delivers the
- * results of those interactions to a delegate.
- * <p>
- * \c PHPickerViewController is intended to be used as-is and does not support subclassing. The view hierarchy for the
- * picker is private and must not be modified. A picker can only be presented once and should not be used for multiple
- * sessions.
+ * API-Since: 14.0
  */
 @Generated
 @Library("PhotosUI")
@@ -63,39 +60,46 @@ public class PHPickerViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native PHPickerViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     /**
      * The configuration passed in during initialization.
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("configuration")
     public native PHPickerConfiguration configuration();
@@ -106,7 +110,10 @@ public class PHPickerViewController extends UIViewController {
 
     /**
      * The delegate to be notified.
+     * 
+     * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -127,18 +134,21 @@ public class PHPickerViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native PHPickerViewController initWithCoder(NSCoder coder);
+    public native PHPickerViewController initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initializes a new picker with the \c configuration the picker should use.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithConfiguration:")
-    public native PHPickerViewController initWithConfiguration(PHPickerConfiguration configuration);
+    public native PHPickerViewController initWithConfiguration(@NotNull PHPickerConfiguration configuration);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native PHPickerViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native PHPickerViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -157,9 +167,10 @@ public class PHPickerViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -176,16 +187,21 @@ public class PHPickerViewController extends UIViewController {
 
     /**
      * The delegate to be notified.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) PHPickerViewControllerDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) PHPickerViewControllerDelegate value);
 
     /**
      * The delegate to be notified.
+     * 
+     * API-Since: 14.0
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) PHPickerViewControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) PHPickerViewControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -208,4 +224,29 @@ public class PHPickerViewController extends UIViewController {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Deselects selected assets in the picker.
+     * 
+     * Does nothing if asset identifiers are invalid or not selected, or \c photoLibrary is not specified in the
+     * configuration.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("deselectAssetsWithIdentifiers:")
+    public native void deselectAssetsWithIdentifiers(@NotNull NSArray<String> identifiers);
+
+    /**
+     * Reorders selected assets in the picker. A \c nil \c afterIdentifier means moving to the front.
+     * 
+     * Does nothing if asset identifiers are invalid or not selected, or \c photoLibrary is not specified in the
+     * configuration.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("moveAssetWithIdentifier:afterAssetWithIdentifier:")
+    public native void moveAssetWithIdentifierAfterAssetWithIdentifier(@NotNull String identifier,
+            @Nullable String afterIdentifier);
 }

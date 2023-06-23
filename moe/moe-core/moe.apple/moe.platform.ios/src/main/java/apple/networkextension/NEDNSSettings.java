@@ -42,11 +42,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEDNSSettings
- * <p>
+ * 
  * The NEDNSSettings class declares the programmatic interface for an object that contains DNS settings.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -78,22 +82,25 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,9 +135,10 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,24 +170,28 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] domainName
-     * <p>
+     * 
      * A string containing the DNS domain.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("domainName")
     public native String domainName();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -187,34 +199,41 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEDNSSettings initWithCoder(NSCoder coder);
+    public native NEDNSSettings initWithCoder(@NotNull NSCoder coder);
 
     /**
      * initWithServers:
-     * <p>
+     * 
      * Initialize a newly-allocated NEDNSSettings object.
-     *
+     * 
      * @param servers An array of DNS server IP address strings.
+     * 
+     *                API-Since: 9.0
      */
     @Generated
     @Selector("initWithServers:")
-    public native NEDNSSettings initWithServers(NSArray<String> servers);
+    public native NEDNSSettings initWithServers(@NotNull NSArray<String> servers);
 
     /**
      * [@property] matchDomains
-     * <p>
+     * 
      * An array of strings containing domain strings. If this property is non-nil, the DNS settings will only be used to
      * resolve host names within the specified domains.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("matchDomains")
     public native NSArray<String> matchDomains();
 
     /**
      * [@property] matchDomainsNoSearch
-     * <p>
+     * 
      * A boolean indicating if the match domains should be appended to the search domain list. Default is NO (match
      * domains will be appended to the search domain list).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("matchDomainsNoSearch")
@@ -222,46 +241,58 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] searchDomains
-     * <p>
+     * 
      * An array of DNS server search domain strings.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("searchDomains")
     public native NSArray<String> searchDomains();
 
     /**
      * [@property] servers
-     * <p>
+     * 
      * An array of DNS server address strings.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("servers")
     public native NSArray<String> servers();
 
     /**
      * [@property] domainName
-     * <p>
+     * 
      * A string containing the DNS domain.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setDomainName:")
-    public native void setDomainName(String value);
+    public native void setDomainName(@Nullable String value);
 
     /**
      * [@property] matchDomains
-     * <p>
+     * 
      * An array of strings containing domain strings. If this property is non-nil, the DNS settings will only be used to
      * resolve host names within the specified domains.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMatchDomains:")
-    public native void setMatchDomains(NSArray<String> value);
+    public native void setMatchDomains(@Nullable NSArray<String> value);
 
     /**
      * [@property] matchDomainsNoSearch
-     * <p>
+     * 
      * A boolean indicating if the match domains should be appended to the search domain list. Default is NO (match
      * domains will be appended to the search domain list).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMatchDomainsNoSearch:")
@@ -269,12 +300,14 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] searchDomains
-     * <p>
+     * 
      * An array of DNS server search domain strings.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setSearchDomains:")
-    public native void setSearchDomains(NSArray<String> value);
+    public native void setSearchDomains(@Nullable NSArray<String> value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -284,8 +317,10 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] dnsProtocol
-     * <p>
+     * 
      * The DNS protocol used by the settings.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("dnsProtocol")

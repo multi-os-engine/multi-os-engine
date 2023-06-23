@@ -25,9 +25,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Information about one of potentially multiple data sources associated with a port.
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("AVFAudio")
@@ -59,36 +63,45 @@ public class AVAudioSessionDataSourceDescription extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * System-assigned ID for the data source.
+     * 
+     * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("dataSourceID")
     public native NSNumber dataSourceID();
 
     /**
      * Human-readable name for the data source.
+     * 
+     * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("dataSourceName")
     public native String dataSourceName();
@@ -127,14 +140,18 @@ public class AVAudioSessionDataSourceDescription extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Describes the general location of a data source. Will be nil for data sources for which the
      * location is not known.
+     * 
+     * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("location")
     public native String location();
@@ -147,7 +164,10 @@ public class AVAudioSessionDataSourceDescription extends NSObject {
     /**
      * Describes the orientation of a data source. Will be nil for data sources for which the
      * orientation is not known.
+     * 
+     * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("orientation")
     public native String orientation();
@@ -155,7 +175,10 @@ public class AVAudioSessionDataSourceDescription extends NSObject {
     /**
      * Describes the preferred polar pattern. Will be nil for data sources that have no selectable
      * patterns or if no preference has been set.
+     * 
+     * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("preferredPolarPattern")
     public native String preferredPolarPattern();
@@ -171,7 +194,10 @@ public class AVAudioSessionDataSourceDescription extends NSObject {
     /**
      * Describes the currently selected polar pattern. Will be nil for data sources that have no
      * selectable patterns.
+     * 
+     * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("selectedPolarPattern")
     public native String selectedPolarPattern();
@@ -179,7 +205,7 @@ public class AVAudioSessionDataSourceDescription extends NSObject {
     /**
      * Select the desired polar pattern from the set of available patterns. Setting a nil value
      * will clear the preference.
-     * <p>
+     * 
      * [@note] If the owning port and data source are part of the active audio route, changing the polar
      * pattern will likely result in a route reconfiguration. If the owning port and data source are
      * not part of the active route, selecting a polar pattern will not result in an immediate route
@@ -187,11 +213,13 @@ public class AVAudioSessionDataSourceDescription extends NSObject {
      * setPreferredDataSource:error: to active the data source on the port.
      * You must call setPreferredInputOrientation:error: on the AVAudioSession if you chose the
      * AVAudioSessionPolarPatternStereo polar pattern.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setPreferredPolarPattern:error:")
-    public native boolean setPreferredPolarPatternError(String pattern,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean setPreferredPolarPatternError(@Nullable String pattern,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("setVersion:")
@@ -204,7 +232,10 @@ public class AVAudioSessionDataSourceDescription extends NSObject {
     /**
      * Array of one or more AVAudioSessionPolarPatterns describing the supported polar patterns for a
      * data source. Will be nil for data sources that have no selectable patterns.
+     * 
+     * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("supportedPolarPatterns")
     public native NSArray<String> supportedPolarPatterns();

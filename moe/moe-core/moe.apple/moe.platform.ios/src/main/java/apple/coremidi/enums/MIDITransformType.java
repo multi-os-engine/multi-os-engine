@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] MIDITransformType
- * <p>
+ * 
  * Values specifying a type of MIDI transformation, as found in the transform member of MIDITransform.
- * <p>
+ * 
  * [@constant] kMIDITransform_None
  * no transformation (param unused)
  * [@constant] kMIDITransform_FilterOut

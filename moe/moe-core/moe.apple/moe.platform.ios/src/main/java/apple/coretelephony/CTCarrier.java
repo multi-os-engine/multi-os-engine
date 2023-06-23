@@ -37,7 +37,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.0
+ * Deprecated-Since: 16.0
+ * Deprecated-Message: Deprecated with no replacement
+ */
+@Deprecated
 @Generated
 @Library("CoreTelephony")
 @Runtime(ObjCRuntime.class)
@@ -68,22 +76,25 @@ public class CTCarrier extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -118,9 +129,10 @@ public class CTCarrier extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -150,21 +162,32 @@ public class CTCarrier extends NSObject {
 
     /**
      * allowsVOIP
-     * <p>
+     * 
      * Discussion:
      * A BOOL value that is YES if this carrier allows VOIP calls to be
      * made on its network, NO otherwise.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Deprecated; returns YES at some point in the future
      */
+    @Deprecated
     @Generated
     @Selector("allowsVOIP")
     public native boolean allowsVOIP();
 
     /**
      * carrierName
-     * <p>
+     * 
      * Discussion:
      * An NSString containing the name of the subscriber's cellular service provider.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Deprecated; returns '--' at some point in the future
      */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("carrierName")
     public native String carrierName();
@@ -175,34 +198,52 @@ public class CTCarrier extends NSObject {
 
     /**
      * isoCountryCode
-     * <p>
+     * 
      * Discussion:
      * Returns an NSString object that contains country code for
      * the subscriber's cellular service provider, represented as an ISO 3166-1
      * country code string
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Deprecated; returns '--' at some point in the future
      */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("isoCountryCode")
     public native String isoCountryCode();
 
     /**
      * mobileCountryCode
-     * <p>
+     * 
      * Discussion:
      * An NSString containing the mobile country code for the subscriber's
      * cellular service provider, in its numeric representation
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Deprecated; returns '65535' at some point in the future
      */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("mobileCountryCode")
     public native String mobileCountryCode();
 
     /**
      * mobileNetworkCode
-     * <p>
+     * 
      * Discussion:
      * An NSString containing the mobile network code for the subscriber's
      * cellular service provider, in its numeric representation
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Deprecated; returns '65535' at some point in the future
      */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("mobileNetworkCode")
     public native String mobileNetworkCode();

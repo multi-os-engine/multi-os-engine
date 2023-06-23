@@ -40,17 +40,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MCAdvertiserAssistant
- * <p>
+ * 
  * MCAdvertiserAssistant is a convenience class that handles advertising,
  * presents incoming invitations to the user and handles user's responses.
- * <p>
+ * 
  * To create the MCAdvertiserAssistant object a new MCPeerID should be
  * created to represent the local peer, and a service type needs to be
  * specified.
- * <p>
+ * 
  * The serviceType parameter is a short text string used to describe the
  * app's networking protocol. It should be in the same format as a
  * Bonjour service type: up to 15 characters long and valid characters
@@ -58,19 +60,22 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * that distinguishes itself from unrelated services is recommended;
  * for example, a text chat app made by ABC company could use the service
  * type "abc-txtchat".
- * <p>
+ * 
  * The discoveryInfo parameter is a dictionary of string key/value pairs
  * that will be advertised for browsers to see. Both keys and values must
  * be NSString objects. The content of discoveryInfo will be advertised
  * within Bonjour TXT records, and keeping the dictionary small is good
  * for keeping network traffic low.
- * <p>
+ * 
  * A delegate that conforms to the MCAdvertiserAssistantDelegate protocol
  * must be provided. No assumption should be made as to which queue the
  * callbacks are called on.
- * <p>
+ * 
  * See Bonjour APIs https://developer.apple.com/bonjour/ for more
  * information about service types.
+ * 
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("MultipeerConnectivity")
@@ -102,22 +107,25 @@ public class MCAdvertiserAssistant extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -152,9 +160,10 @@ public class MCAdvertiserAssistant extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -182,11 +191,13 @@ public class MCAdvertiserAssistant extends NSObject {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native MCAdvertiserAssistantDelegate delegate();
 
+    @Nullable
     @Generated
     @Selector("discoveryInfo")
     public native NSDictionary<String, String> discoveryInfo();
@@ -197,23 +208,26 @@ public class MCAdvertiserAssistant extends NSObject {
 
     @Generated
     @Selector("initWithServiceType:discoveryInfo:session:")
-    public native MCAdvertiserAssistant initWithServiceTypeDiscoveryInfoSession(String serviceType,
-            NSDictionary<String, String> info, MCSession session);
+    public native MCAdvertiserAssistant initWithServiceTypeDiscoveryInfoSession(@NotNull String serviceType,
+            @Nullable NSDictionary<String, String> info, @NotNull MCSession session);
 
+    @NotNull
     @Generated
     @Selector("serviceType")
     public native String serviceType();
 
+    @NotNull
     @Generated
     @Selector("session")
     public native MCSession session();
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MCAdvertiserAssistantDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) MCAdvertiserAssistantDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) MCAdvertiserAssistantDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) MCAdvertiserAssistantDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

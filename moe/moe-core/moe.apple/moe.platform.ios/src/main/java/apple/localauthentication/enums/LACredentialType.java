@@ -19,6 +19,9 @@ package apple.localauthentication.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 public final class LACredentialType {
     @Generated
@@ -27,23 +30,27 @@ public final class LACredentialType {
 
     /**
      * Password provided by application
-     * <p>
+     * 
      * If not set, LocalAuthentication will ask for the password when necessary. It will use
      * its own user interface depending on the evaluated policy or ACL.
      * Applications can provide the password using the setCredential method. In such case,
      * LocalAuthentication will not show password entry user interface.
      * When entered from the LocalAuthentication user interface, the password is stored as
      * UTF-8 encoded string.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long ApplicationPassword = 0x0000000000000000L;
     /**
      * Smart card PIN provided by application
-     * <p>
+     * 
      * If not set, LocalAuthentication will ask users for the smart card PIN when necessary.
      * Applications can provide the PIN using setCredential method. In such case,
      * LocalAuthentication will not show the smart card PIN user interface.
      * When entered from the LocalAuthentication user interface, the PIN is stored as
      * UTF-8 encoded string.
+     * 
+     * API-Since: 13.4
      */
     @Generated @NInt public static final long SmartCardPIN = 0xFFFFFFFFFFFFFFFDL;
 }

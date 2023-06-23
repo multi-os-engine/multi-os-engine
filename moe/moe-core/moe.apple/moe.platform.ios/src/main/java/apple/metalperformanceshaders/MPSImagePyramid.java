@@ -41,23 +41,25 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImagePyramid
- * <p>
+ * 
  * The MPSImagePyramid is a base class for creating different kinds of pyramid images
- * <p>
+ * 
  * Currently supported pyramid-types are:
  * [@ref] MPSImageGaussianPyramid
- * <p>
+ * 
  * The Gaussian image pyramid kernel is enqueued as a in-place operation using
  * [@ref] MPSUnaryImageKernel::encodeToCommandBuffer:inPlaceTexture:fallbackCopyAllocator:
  * and all mipmap levels after level=1, present in the provided image are filled using
  * the provided filtering kernel. The fallbackCopyAllocator parameter is not used.
- * <p>
+ * 
  * The Gaussian image pyramid filter ignores @ref clipRect and @ref offset and fills
  * the entire mipmap levels.
- * <p>
+ * 
  * [@note] Make sure your texture type is compatible with mipmapping and supports texture views
  * (see @ref MTLTextureUsagePixelFormatView).
  * [@note] Recall the size of the nth mipmap level:
@@ -66,6 +68,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * h_n = max(1, floor(h_0 / 2^n)),
  * [@endcode]
  * where w_0, h_0 are the zeroth level width and height. ie the image dimensions themselves.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -97,22 +101,25 @@ public class MPSImagePyramid extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -147,9 +154,10 @@ public class MPSImagePyramid extends MPSUnaryImageKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -183,49 +191,52 @@ public class MPSImagePyramid extends MPSUnaryImageKernel {
 
     /**
      * Initialize a downwards 5-tap image pyramid with the default filter kernel and device
-     * <p>
+     * 
      * The filter kernel is the outer product of w = [ 1/16, 1/4, 3/8, 1/4, 1/16 ]^T, with itself
-     *
+     * 
      * @param device The device the filter will run on
+     * 
      * @return A valid object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImagePyramid initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImagePyramid initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize a downwards 5-tap image pyramid with a central weight parameter and device
-     *
+     * 
      * @param device       The device the filter will run on
      * @param centerWeight Defines form of the filter-kernel through the outer product ww^T, where
      *                     w = [ (1/4 - a/2), 1/4, a, 1/4, (1/4 - a/2) ]^T and 'a' is centerWeight.
+     * 
      * @return A valid object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:centerWeight:")
-    public native MPSImagePyramid initWithDeviceCenterWeight(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+    public native MPSImagePyramid initWithDeviceCenterWeight(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
             float centerWeight);
 
     /**
      * Initialize a downwards n-tap pyramid with a custom filter kernel and device
-     *
+     * 
      * @param device        The device the filter will run on
      * @param kernelWidth   The width of the filtering kernel. See @ref MPSImageConvolution.
      * @param kernelHeight  The height of the filtering kernel. See @ref MPSImageConvolution.
      * @param kernelWeights A pointer to an array of kernelWidth * kernelHeight values to be
      *                      used as the kernel.
      *                      These are in row major order. See @ref MPSImageConvolution.
+     * 
      * @return A valid object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:weights:")
     public native MPSImagePyramid initWithDeviceKernelWidthKernelHeightWeights(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight,
-            ConstFloatPtr kernelWeights);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth,
+            @NUInt long kernelHeight, @NotNull ConstFloatPtr kernelWeights);
 
     /**
      * [@property] kernelHeight
-     * <p>
+     * 
      * The height of the filter window. Must be an odd number.
      */
     @Generated
@@ -235,7 +246,7 @@ public class MPSImagePyramid extends MPSUnaryImageKernel {
 
     /**
      * [@property] kernelWidth
-     * <p>
+     * 
      * The width of the filter window. Must be an odd number.
      */
     @Generated
@@ -245,20 +256,23 @@ public class MPSImagePyramid extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSImagePyramid initWithCoder(NSCoder aDecoder);
+    public native MPSImagePyramid initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPooling
      * @param device   The MTLDevice on which to make the MPSCNNPooling
      * @return A new MPSCNNPooling object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSImagePyramid initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImagePyramid initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("supportsSecureCoding")

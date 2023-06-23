@@ -13,6 +13,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("Accessibility")
@@ -28,35 +29,55 @@ public final class Accessibility {
 
     /**
      * Returns a localized description of the CGColorRef for use in accessibility attributes.
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
-    public static native String AXNameFromColor(CGColorRef color);
+    public static native String AXNameFromColor(@NotNull CGColorRef color);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CFunction
     @NUInt
     public static native long AXMFiHearingDeviceStreamingEar();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CFunction
     public static native boolean AXSupportsBidirectionalAXMFiHearingDeviceStreaming();
 
     /**
      * Returns the CoreBluetooth UUIDs of the hearing device CBPeripherals. This requires that the value of the
-     * "hearing.aid.app" entitlement match the manufacturer of the CBPeripherals. For bimodal hearing devices the
-     * entitlement should be an array of the manufacturers.
+     * "com.apple.developer.hearing-aid-app" entitlement match the manufacturer of the CBPeripherals. For bimodal
+     * hearing devices the entitlement should be an array of the manufacturers.
+     * 
+     * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSArray<? extends NSUUID> AXMFiHearingDevicePairedUUIDs();
 
+    /**
+     * API-Since: 15.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AXMFiHearingDeviceStreamingEarDidChangeNotification();
 
+    /**
+     * API-Since: 15.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

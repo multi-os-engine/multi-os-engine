@@ -28,9 +28,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An LPLinkMetadata object contains metadata about a URL.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("LinkPresentation")
@@ -50,6 +54,7 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
      * The URL that metadata was retrieved from.
      * This takes server-side redirects into account.
      */
+    @Nullable
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -70,31 +75,35 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -106,7 +115,7 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -117,6 +126,7 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
      * An item provider which will return data corresponding to a representative
      * icon for the URL.
      */
+    @Nullable
     @Generated
     @Selector("iconProvider")
     public native NSItemProvider iconProvider();
@@ -125,6 +135,7 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
      * An item provider which will return data corresponding to a representative
      * image for the URL.
      */
+    @Nullable
     @Generated
     @Selector("imageProvider")
     public native NSItemProvider imageProvider();
@@ -135,7 +146,7 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("initWithCoder:")
-    public native LPLinkMetadata initWithCoder(NSCoder coder);
+    public native LPLinkMetadata initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -154,9 +165,10 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,16 +178,18 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
     /**
      * The original URL that metadata was requested from.
      */
+    @Nullable
     @Generated
     @Selector("originalURL")
     public native NSURL originalURL();
 
     /**
      * A remote URL corresponding to a representative video for the URL.
-     * <p>
+     * 
      * This may point to to a remote video file that AVFoundation can stream,
      * or to a YouTube video URL.
      */
+    @Nullable
     @Generated
     @Selector("remoteVideoURL")
     public native NSURL remoteVideoURL();
@@ -194,7 +208,7 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
      */
     @Generated
     @Selector("setIconProvider:")
-    public native void setIconProvider(NSItemProvider value);
+    public native void setIconProvider(@Nullable NSItemProvider value);
 
     /**
      * An item provider which will return data corresponding to a representative
@@ -202,31 +216,31 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
      */
     @Generated
     @Selector("setImageProvider:")
-    public native void setImageProvider(NSItemProvider value);
+    public native void setImageProvider(@Nullable NSItemProvider value);
 
     /**
      * The original URL that metadata was requested from.
      */
     @Generated
     @Selector("setOriginalURL:")
-    public native void setOriginalURL(NSURL value);
+    public native void setOriginalURL(@Nullable NSURL value);
 
     /**
      * A remote URL corresponding to a representative video for the URL.
-     * <p>
+     * 
      * This may point to to a remote video file that AVFoundation can stream,
      * or to a YouTube video URL.
      */
     @Generated
     @Selector("setRemoteVideoURL:")
-    public native void setRemoteVideoURL(NSURL value);
+    public native void setRemoteVideoURL(@Nullable NSURL value);
 
     /**
      * A title for the URL.
      */
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@Nullable String value);
 
     /**
      * The URL that metadata was retrieved from.
@@ -234,7 +248,7 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
      */
     @Generated
     @Selector("setURL:")
-    public native void setURL(NSURL value);
+    public native void setURL(@Nullable NSURL value);
 
     @Generated
     @Selector("setVersion:")
@@ -246,7 +260,7 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
      */
     @Generated
     @Selector("setVideoProvider:")
-    public native void setVideoProvider(NSItemProvider value);
+    public native void setVideoProvider(@Nullable NSItemProvider value);
 
     @Generated
     @Selector("superclass")
@@ -265,6 +279,7 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
     /**
      * A title for the URL.
      */
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();
@@ -278,6 +293,7 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
      * An item provider which will return data corresponding to a representative
      * video for the URL that AVFoundation can play.
      */
+    @Nullable
     @Generated
     @Selector("videoProvider")
     public native NSItemProvider videoProvider();

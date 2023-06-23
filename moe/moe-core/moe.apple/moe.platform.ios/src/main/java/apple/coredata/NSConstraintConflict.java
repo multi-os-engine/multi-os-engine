@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Used to report merge conflicts which include uniqueness constraint violations. Optimistic locking failures will be
@@ -47,6 +49,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * although if an entity hierarchy has a constraint which is extended in subentities, all constraint violations for that
  * constraint
  * will be collapsed into a single report.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("CoreData")
@@ -78,22 +82,25 @@ public class NSConstraintConflict extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,9 +135,10 @@ public class NSConstraintConflict extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,6 +169,7 @@ public class NSConstraintConflict extends NSObject {
     /**
      * The objects in violation of the constraint. May contain one (in the case of a db level conflict) or more objects.
      */
+    @NotNull
     @Generated
     @Selector("conflictingObjects")
     public native NSArray<? extends NSManagedObject> conflictingObjects();
@@ -169,6 +178,7 @@ public class NSConstraintConflict extends NSObject {
      * The original property values of objects in violation of the constraint. Will contain as many objects as there are
      * conflictingObjects. If an object was unchanged, its snapshot will instead be -[NSNull null].
      */
+    @NotNull
     @Generated
     @Selector("conflictingSnapshots")
     public native NSArray<? extends NSDictionary<?, ?>> conflictingSnapshots();
@@ -176,6 +186,7 @@ public class NSConstraintConflict extends NSObject {
     /**
      * The constraint which has been violated.
      */
+    @NotNull
     @Generated
     @Selector("constraint")
     public native NSArray<String> constraint();
@@ -184,6 +195,7 @@ public class NSConstraintConflict extends NSObject {
      * The values which the conflictingObjects had when this conflict was created. May no longer match the values of any
      * conflicted object if something else resolved the conflict.
      */
+    @NotNull
     @Generated
     @Selector("constraintValues")
     public native NSDictionary<String, ?> constraintValues();
@@ -191,6 +203,7 @@ public class NSConstraintConflict extends NSObject {
     /**
      * Object whose DB row is using constraint values. May be null if this is a context-level violation.
      */
+    @Nullable
     @Generated
     @Selector("databaseObject")
     public native NSManagedObject databaseObject();
@@ -198,6 +211,7 @@ public class NSConstraintConflict extends NSObject {
     /**
      * DB row already using constraint values. May be null if this is a context-level violation.
      */
+    @Nullable
     @Generated
     @Selector("databaseSnapshot")
     public native NSDictionary<String, ?> databaseSnapshot();
@@ -208,15 +222,15 @@ public class NSConstraintConflict extends NSObject {
 
     /**
      * There are two situations in which a constraint conflict may occur:
-     * <p>
+     * 
      * 1. Between multiple objects being saved in a single managed object context. In this case, the conflict
      * will have a nil database object/snapshot, and multiple conflicting objects/snapshots representing
      * the state of the objects when they were first faulted or inserted into the context.
-     * <p>
+     * 
      * 2. Between a single object being saved in a managed object context and the external store. In this case, the
      * constraint conflict will have a database object, the current row snapshot for the database object, plus a
      * a single conflicting object and its snapshot from when it was first faulted or inserted.
-     * <p>
+     * 
      * Snapshot dictionaries include values for all attributes and to-one relationships, but not to-many relationships.
      * Relationship values are NSManagedObjectID references. to-many relationships must be pulled from the persistent
      * store as needed.
@@ -224,6 +238,7 @@ public class NSConstraintConflict extends NSObject {
     @Generated
     @Selector("initWithConstraint:databaseObject:databaseSnapshot:conflictingObjects:conflictingSnapshots:")
     public native NSConstraintConflict initWithConstraintDatabaseObjectDatabaseSnapshotConflictingObjectsConflictingSnapshots(
-            NSArray<String> contraint, NSManagedObject databaseObject, NSDictionary<?, ?> databaseSnapshot,
-            NSArray<? extends NSManagedObject> conflictingObjects, NSArray<?> conflictingSnapshots);
+            @NotNull NSArray<String> contraint, @Nullable NSManagedObject databaseObject,
+            @Nullable NSDictionary<?, ?> databaseSnapshot,
+            @NotNull NSArray<? extends NSManagedObject> conflictingObjects, @NotNull NSArray<?> conflictingSnapshots);
 }

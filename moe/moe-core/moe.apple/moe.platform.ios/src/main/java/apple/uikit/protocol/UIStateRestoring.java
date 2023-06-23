@@ -26,10 +26,12 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Conform to this protocol if you want your objects to participate in state restoration.
- * <p>
+ * 
  * To participate in state restoration, the function registerObjectForStateRestoration must
  * be called for the object.
  */
@@ -54,7 +56,7 @@ public interface UIStateRestoring {
     @Generated
     @IsOptional
     @Selector("decodeRestorableStateWithCoder:")
-    default void decodeRestorableStateWithCoder(NSCoder coder) {
+    default void decodeRestorableStateWithCoder(@NotNull NSCoder coder) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -66,7 +68,7 @@ public interface UIStateRestoring {
     @Generated
     @IsOptional
     @Selector("encodeRestorableStateWithCoder:")
-    default void encodeRestorableStateWithCoder(NSCoder coder) {
+    default void encodeRestorableStateWithCoder(@NotNull NSCoder coder) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -74,6 +76,7 @@ public interface UIStateRestoring {
      * The restoration class specifies a class which is consulted during restoration to find/create
      * the object, rather than trying to look it up implicitly
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("objectRestorationClass")
@@ -87,6 +90,7 @@ public interface UIStateRestoring {
      * disambiguate it from other objects that might be using the same identifier. The parent
      * must be a restorable object or a view controller, else it will be ignored.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("restorationParent")

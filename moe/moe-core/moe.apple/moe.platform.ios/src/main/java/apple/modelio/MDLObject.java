@@ -45,14 +45,18 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MDLObject
- * <p>
+ * 
  * Base class for object in a ModelIO asset hierarchy
- * <p>
+ * 
  * Includes transformation and bounds info, links to parent and
  * children in the hierachy
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("ModelIO")
@@ -84,22 +88,25 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,23 +141,30 @@ public class MDLObject extends NSObject implements MDLNamed {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native MDLObject new_objc();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("objectWithSCNNode:")
-    public static native MDLObject objectWithSCNNode(SCNNode scnNode);
+    public static native MDLObject objectWithSCNNode(@NotNull SCNNode scnNode);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("objectWithSCNNode:bufferAllocator:")
-    public static native MDLObject objectWithSCNNodeBufferAllocator(SCNNode scnNode,
-            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+    public static native MDLObject objectWithSCNNodeBufferAllocator(@NotNull SCNNode scnNode,
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -175,45 +189,50 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * addChild:
-     * <p>
+     * 
      * Short hand for adding a child to the current container component and
      * setting the parent to this object.
-     * <p>
+     * 
      * It will create a default container if none exists. If children are
      * explicitly disallowed for an object, then add a container component
      * that throws on addition.
-     *
+     * 
      * @see MDLObjectContainer
      */
     @Generated
     @Selector("addChild:")
-    public native void addChild(MDLObject child);
+    public native void addChild(@NotNull MDLObject child);
 
     /**
      * [@property] children
-     * <p>
+     * 
      * Short hand property for the MDLObjectContainerComponent.
-     * <p>
-     * The default value is nil
-     *
+     * 
+     * The default value is an empty MDLObjectContainer
+     * 
      * @see MDLObjectContainerComponent
      */
+    @NotNull
     @Generated
     @Selector("children")
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLObjectContainerComponent children();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("enumerateChildObjectsOfClass:root:usingBlock:stopPointer:")
-    public native void enumerateChildObjectsOfClassRootUsingBlockStopPointer(Class objectClass, MDLObject root,
-            @ObjCBlock(name = "call_enumerateChildObjectsOfClassRootUsingBlockStopPointer") Block_enumerateChildObjectsOfClassRootUsingBlockStopPointer block,
-            BoolPtr stopPointer);
+    public native void enumerateChildObjectsOfClassRootUsingBlockStopPointer(@NotNull Class objectClass,
+            @NotNull MDLObject root,
+            @NotNull @ObjCBlock(name = "call_enumerateChildObjectsOfClassRootUsingBlockStopPointer") Block_enumerateChildObjectsOfClassRootUsingBlockStopPointer block,
+            @NotNull BoolPtr stopPointer);
 
     /**
      * [@property] hidden
-     * <p>
+     * 
      * Visibility of the node
-     * <p>
+     * 
      * default is NO
      */
     @Generated
@@ -226,9 +245,9 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] instance
-     * <p>
+     * 
      * Instance object
-     * <p>
+     * 
      * nil, unless this object refers to original data to be instanced. The
      * original data object can be any MDLObject that does not have a parent.
      * If an MDLAsset has been created from a data file, any original objects
@@ -239,10 +258,12 @@ public class MDLObject extends NSObject implements MDLNamed {
      * the various items making up the chair would be found in the original
      * object.
      */
+    @Nullable
     @Generated
     @Selector("instance")
     public native MDLObject instance();
 
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -250,55 +271,58 @@ public class MDLObject extends NSObject implements MDLNamed {
     /**
      * Return the object at the specified path, or nil if none exists there
      */
+    @NotNull
     @Generated
     @Selector("objectAtPath:")
-    public native MDLObject objectAtPath(String path);
+    public native MDLObject objectAtPath(@NotNull String path);
 
     /**
      * [@property] parent
-     * <p>
+     * 
      * Parent object. Nil if no parent.
-     * <p>
+     * 
      * Set to nil when you remove this from an object container inside the
      * parent object.
      */
+    @Nullable
     @Generated
     @Selector("parent")
     public native MDLObject parent();
 
     /**
      * [@property] path
-     * <p>
+     * 
      * a string representing a path to the object
-     * <p>
+     * 
      * a path is of the form /path/to/object where the path is formed by
      * concatenating the names of the objects up the parent chain.
      * Requesting a path will force any unnamed objects to became uniquely
      * named. Any characters outside of [A-Z][a-z][0-9][:-_.] will be
      * forced to underscore.
      */
+    @NotNull
     @Generated
     @Selector("path")
     public native String path();
 
     /**
      * [@property] children
-     * <p>
+     * 
      * Short hand property for the MDLObjectContainerComponent.
-     * <p>
-     * The default value is nil
-     *
+     * 
+     * The default value is an empty MDLObjectContainer
+     * 
      * @see MDLObjectContainerComponent
      */
     @Generated
     @Selector("setChildren:")
-    public native void setChildren(@Mapped(ObjCObjectMapper.class) MDLObjectContainerComponent value);
+    public native void setChildren(@NotNull @Mapped(ObjCObjectMapper.class) MDLObjectContainerComponent value);
 
     /**
      * [@property] hidden
-     * <p>
+     * 
      * Visibility of the node
-     * <p>
+     * 
      * default is NO
      */
     @Generated
@@ -307,9 +331,9 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] instance
-     * <p>
+     * 
      * Instance object
-     * <p>
+     * 
      * nil, unless this object refers to original data to be instanced. The
      * original data object can be any MDLObject that does not have a parent.
      * If an MDLAsset has been created from a data file, any original objects
@@ -322,34 +346,34 @@ public class MDLObject extends NSObject implements MDLNamed {
      */
     @Generated
     @Selector("setInstance:")
-    public native void setInstance(MDLObject value);
+    public native void setInstance(@Nullable MDLObject value);
 
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@NotNull String value);
 
     /**
      * [@property] parent
-     * <p>
+     * 
      * Parent object. Nil if no parent.
-     * <p>
+     * 
      * Set to nil when you remove this from an object container inside the
      * parent object.
      */
     @Generated
     @Selector("setParent:")
-    public native void setParent_unsafe(MDLObject value);
+    public native void setParent_unsafe(@Nullable MDLObject value);
 
     /**
      * [@property] parent
-     * <p>
+     * 
      * Parent object. Nil if no parent.
-     * <p>
+     * 
      * Set to nil when you remove this from an object container inside the
      * parent object.
      */
     @Generated
-    public void setParent(MDLObject value) {
+    public void setParent(@Nullable MDLObject value) {
         Object __old = parent();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -362,26 +386,27 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] transform
-     * <p>
+     * 
      * Short hand property for the MDLTransformComponent.
-     * <p>
+     * 
      * The default value is nil
-     *
+     * 
      * @see MDLTransformComponent
      */
     @Generated
     @Selector("setTransform:")
-    public native void setTransform(@Mapped(ObjCObjectMapper.class) MDLTransformComponent value);
+    public native void setTransform(@Nullable @Mapped(ObjCObjectMapper.class) MDLTransformComponent value);
 
     /**
      * [@property] transform
-     * <p>
+     * 
      * Short hand property for the MDLTransformComponent.
-     * <p>
+     * 
      * The default value is nil
-     *
+     * 
      * @see MDLTransformComponent
      */
+    @Nullable
     @Generated
     @Selector("transform")
     @MappedReturn(ObjCObjectMapper.class)
@@ -391,14 +416,16 @@ public class MDLObject extends NSObject implements MDLNamed {
     @Generated
     public interface Block_enumerateChildObjectsOfClassRootUsingBlockStopPointer {
         @Generated
-        void call_enumerateChildObjectsOfClassRootUsingBlockStopPointer(MDLObject object, BoolPtr stop);
+        void call_enumerateChildObjectsOfClassRootUsingBlockStopPointer(@NotNull MDLObject object,
+                @NotNull BoolPtr stop);
     }
 
     /**
      * [@property] components
-     * <p>
+     * 
      * Allows applications to introspect the components on the objects.
      */
+    @NotNull
     @Generated
     @Selector("components")
     public native NSArray<?> components();

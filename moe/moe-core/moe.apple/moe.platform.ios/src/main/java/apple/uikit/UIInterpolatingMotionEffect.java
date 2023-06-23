@@ -39,13 +39,17 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This motion effect maps movement of a particular type (e.g. left/right tilt) to an
  * interpolated output between two relative values provided by the client. Uses Core
  * Animation's implementation of interpolation for all the standard types.
- * <p>
+ * 
  * `keyPath` should be expressed relative to the effect's target view.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("UIKit")
@@ -77,22 +81,25 @@ public class UIInterpolatingMotionEffect extends UIMotionEffect {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +134,10 @@ public class UIInterpolatingMotionEffect extends UIMotionEffect {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,21 +171,24 @@ public class UIInterpolatingMotionEffect extends UIMotionEffect {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIInterpolatingMotionEffect initWithCoder(NSCoder coder);
+    public native UIInterpolatingMotionEffect initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithKeyPath:type:")
-    public native UIInterpolatingMotionEffect initWithKeyPathType(String keyPath, @NInt long type);
+    public native UIInterpolatingMotionEffect initWithKeyPathType(@NotNull String keyPath, @NInt long type);
 
+    @NotNull
     @Generated
     @Selector("keyPath")
     public native String keyPath();
 
+    @Nullable
     @Generated
     @Selector("maximumRelativeValue")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object maximumRelativeValue();
 
+    @Nullable
     @Generated
     @Selector("minimumRelativeValue")
     @MappedReturn(ObjCObjectMapper.class)
@@ -185,11 +196,11 @@ public class UIInterpolatingMotionEffect extends UIMotionEffect {
 
     @Generated
     @Selector("setMaximumRelativeValue:")
-    public native void setMaximumRelativeValue(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setMaximumRelativeValue(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
     @Selector("setMinimumRelativeValue:")
-    public native void setMinimumRelativeValue(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setMinimumRelativeValue(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
     @Selector("type")

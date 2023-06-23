@@ -39,7 +39,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -70,22 +75,25 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,9 +128,10 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -152,13 +161,14 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of lookup infos
      * to errors keyed off of @c CKPartialErrorsByItemIDKey. These errors are repeats of those sent back in previous @c
      * perShareParticipantCompletionBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
+    @Nullable
     @Generated
     @Selector("fetchShareParticipantsCompletionBlock")
     @ObjCBlock(name = "call_fetchShareParticipantsCompletionBlock_ret")
@@ -171,11 +181,11 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
     @Generated
     @Selector("initWithUserIdentityLookupInfos:")
     public native CKFetchShareParticipantsOperation initWithUserIdentityLookupInfos(
-            NSArray<? extends CKUserIdentityLookupInfo> userIdentityLookupInfos);
+            @NotNull NSArray<? extends CKUserIdentityLookupInfo> userIdentityLookupInfos);
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of lookup infos
      * to errors keyed off of @c CKPartialErrorsByItemIDKey. These errors are repeats of those sent back in previous @c
@@ -185,34 +195,46 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
     @Generated
     @Selector("setFetchShareParticipantsCompletionBlock:")
     public native void setFetchShareParticipantsCompletionBlock(
-            @ObjCBlock(name = "call_setFetchShareParticipantsCompletionBlock") Block_setFetchShareParticipantsCompletionBlock value);
+            @Nullable @ObjCBlock(name = "call_setFetchShareParticipantsCompletionBlock") Block_setFetchShareParticipantsCompletionBlock value);
 
     /**
      * Called once for each share participant created from a submitted user identity lookup info.
-     * <p>
+     * 
      * If the replacement callback @c perShareParticipantCompletionBlock is set, this callback block is ignored.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use perShareParticipantCompletionBlock instead, which surfaces per-share-participant errors
      */
+    @Deprecated
     @Generated
     @Selector("setShareParticipantFetchedBlock:")
     public native void setShareParticipantFetchedBlock(
-            @ObjCBlock(name = "call_setShareParticipantFetchedBlock") Block_setShareParticipantFetchedBlock value);
+            @Nullable @ObjCBlock(name = "call_setShareParticipantFetchedBlock") Block_setShareParticipantFetchedBlock value);
 
     @Generated
     @Selector("setUserIdentityLookupInfos:")
-    public native void setUserIdentityLookupInfos(NSArray<? extends CKUserIdentityLookupInfo> value);
+    public native void setUserIdentityLookupInfos(@Nullable NSArray<? extends CKUserIdentityLookupInfo> value);
 
     /**
      * Called once for each share participant created from a submitted user identity lookup info.
-     * <p>
+     * 
      * If the replacement callback @c perShareParticipantCompletionBlock is set, this callback block is ignored.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use perShareParticipantCompletionBlock instead, which surfaces per-share-participant errors
      */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("shareParticipantFetchedBlock")
     @ObjCBlock(name = "call_shareParticipantFetchedBlock_ret")
     public native Block_shareParticipantFetchedBlock_ret shareParticipantFetchedBlock();
 
+    @Nullable
     @Generated
     @Selector("userIdentityLookupInfos")
     public native NSArray<? extends CKUserIdentityLookupInfo> userIdentityLookupInfos();
@@ -221,35 +243,36 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
     @Generated
     public interface Block_fetchShareParticipantsCompletionBlock_ret {
         @Generated
-        void call_fetchShareParticipantsCompletionBlock_ret(NSError arg0);
+        void call_fetchShareParticipantsCompletionBlock_ret(@Nullable NSError arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setFetchShareParticipantsCompletionBlock {
         @Generated
-        void call_setFetchShareParticipantsCompletionBlock(NSError arg0);
+        void call_setFetchShareParticipantsCompletionBlock(@Nullable NSError arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setShareParticipantFetchedBlock {
         @Generated
-        void call_setShareParticipantFetchedBlock(CKShareParticipant arg0);
+        void call_setShareParticipantFetchedBlock(@NotNull CKShareParticipant arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_shareParticipantFetchedBlock_ret {
         @Generated
-        void call_shareParticipantFetchedBlock_ret(CKShareParticipant arg0);
+        void call_shareParticipantFetchedBlock_ret(@NotNull CKShareParticipant arg0);
     }
 
     /**
      * Called once for each lookup info.
-     * <p>
+     * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
+    @Nullable
     @Generated
     @Selector("perShareParticipantCompletionBlock")
     @ObjCBlock(name = "call_perShareParticipantCompletionBlock_ret")
@@ -259,25 +282,25 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
     @Generated
     public interface Block_perShareParticipantCompletionBlock_ret {
         @Generated
-        void call_perShareParticipantCompletionBlock_ret(CKUserIdentityLookupInfo arg0, CKShareParticipant arg1,
-                NSError arg2);
+        void call_perShareParticipantCompletionBlock_ret(@NotNull CKUserIdentityLookupInfo arg0,
+                @Nullable CKShareParticipant arg1, @Nullable NSError arg2);
     }
 
     /**
      * Called once for each lookup info.
-     * <p>
+     * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
     @Selector("setPerShareParticipantCompletionBlock:")
     public native void setPerShareParticipantCompletionBlock(
-            @ObjCBlock(name = "call_setPerShareParticipantCompletionBlock") Block_setPerShareParticipantCompletionBlock value);
+            @Nullable @ObjCBlock(name = "call_setPerShareParticipantCompletionBlock") Block_setPerShareParticipantCompletionBlock value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setPerShareParticipantCompletionBlock {
         @Generated
-        void call_setPerShareParticipantCompletionBlock(CKUserIdentityLookupInfo arg0, CKShareParticipant arg1,
-                NSError arg2);
+        void call_setPerShareParticipantCompletionBlock(@NotNull CKUserIdentityLookupInfo arg0,
+                @Nullable CKShareParticipant arg1, @Nullable NSError arg2);
     }
 }

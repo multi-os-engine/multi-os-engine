@@ -23,7 +23,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -54,22 +59,25 @@ public class SKProductStorePromotionController extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -78,6 +86,10 @@ public class SKProductStorePromotionController extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 11.0
+     */
+    @NotNull
     @Generated
     @Selector("defaultController")
     public static native SKProductStorePromotionController defaultController();
@@ -86,30 +98,36 @@ public class SKProductStorePromotionController extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("fetchStorePromotionOrderWithCompletionHandler:")
     public native void fetchStorePromotionOrderWithCompletionHandler(
-            @ObjCBlock(name = "call_fetchStorePromotionOrderWithCompletionHandler") Block_fetchStorePromotionOrderWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_fetchStorePromotionOrderWithCompletionHandler") Block_fetchStorePromotionOrderWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchStorePromotionOrderWithCompletionHandler {
         @Generated
-        void call_fetchStorePromotionOrderWithCompletionHandler(NSArray<? extends SKProduct> promotionOrder,
-                NSError error);
+        void call_fetchStorePromotionOrderWithCompletionHandler(@NotNull NSArray<? extends SKProduct> promotionOrder,
+                @Nullable NSError error);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("fetchStorePromotionVisibilityForProduct:completionHandler:")
-    public native void fetchStorePromotionVisibilityForProductCompletionHandler(SKProduct product,
-            @ObjCBlock(name = "call_fetchStorePromotionVisibilityForProductCompletionHandler") Block_fetchStorePromotionVisibilityForProductCompletionHandler completionHandler);
+    public native void fetchStorePromotionVisibilityForProductCompletionHandler(@NotNull SKProduct product,
+            @Nullable @ObjCBlock(name = "call_fetchStorePromotionVisibilityForProductCompletionHandler") Block_fetchStorePromotionVisibilityForProductCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchStorePromotionVisibilityForProductCompletionHandler {
         @Generated
         void call_fetchStorePromotionVisibilityForProductCompletionHandler(@NInt long storePromotionVisibility,
-                NSError error);
+                @Nullable NSError error);
     }
 
     @Generated
@@ -138,9 +156,10 @@ public class SKProductStorePromotionController extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,29 +182,35 @@ public class SKProductStorePromotionController extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("updateStorePromotionOrder:completionHandler:")
-    public native void updateStorePromotionOrderCompletionHandler(NSArray<? extends SKProduct> promotionOrder,
-            @ObjCBlock(name = "call_updateStorePromotionOrderCompletionHandler") Block_updateStorePromotionOrderCompletionHandler completionHandler);
+    public native void updateStorePromotionOrderCompletionHandler(@NotNull NSArray<? extends SKProduct> promotionOrder,
+            @Nullable @ObjCBlock(name = "call_updateStorePromotionOrderCompletionHandler") Block_updateStorePromotionOrderCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateStorePromotionOrderCompletionHandler {
         @Generated
-        void call_updateStorePromotionOrderCompletionHandler(NSError error);
+        void call_updateStorePromotionOrderCompletionHandler(@Nullable NSError error);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("updateStorePromotionVisibility:forProduct:completionHandler:")
     public native void updateStorePromotionVisibilityForProductCompletionHandler(@NInt long promotionVisibility,
-            SKProduct product,
-            @ObjCBlock(name = "call_updateStorePromotionVisibilityForProductCompletionHandler") Block_updateStorePromotionVisibilityForProductCompletionHandler completionHandler);
+            @NotNull SKProduct product,
+            @Nullable @ObjCBlock(name = "call_updateStorePromotionVisibilityForProductCompletionHandler") Block_updateStorePromotionVisibilityForProductCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateStorePromotionVisibilityForProductCompletionHandler {
         @Generated
-        void call_updateStorePromotionVisibilityForProductCompletionHandler(NSError error);
+        void call_updateStorePromotionVisibilityForProductCompletionHandler(@Nullable NSError error);
     }
 
     @Generated

@@ -17,7 +17,6 @@ limitations under the License.
 package apple.scenekit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -46,10 +45,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNText
- * <p>
+ * 
  * SCNText represents a block of text that has been extruded
  */
 @Generated
@@ -82,22 +84,25 @@ public class SCNText extends SCNGeometry {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -116,12 +121,12 @@ public class SCNText extends SCNGeometry {
 
     @Generated
     @Selector("geometryWithMDLMesh:")
-    public static native SCNText geometryWithMDLMesh(MDLMesh mdlMesh);
+    public static native SCNText geometryWithMDLMesh(@NotNull MDLMesh mdlMesh);
 
     @Generated
     @Selector("geometryWithSources:elements:")
-    public static native SCNText geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
-            NSArray<? extends SCNGeometryElement> elements);
+    public static native SCNText geometryWithSourcesElements(@NotNull NSArray<? extends SCNGeometrySource> sources,
+            @Nullable NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
     @Selector("hash")
@@ -145,9 +150,10 @@ public class SCNText extends SCNGeometry {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -176,15 +182,15 @@ public class SCNText extends SCNGeometry {
 
     /**
      * textWithString:extrusionDepth:
-     * <p>
+     * 
      * Creates and returns a 3D representation of given text with given extrusion depth.
-     *
+     * 
      * @param string         The text to be represented.
      * @param extrusionDepth The extrusion depth.
      */
     @Generated
     @Selector("textWithString:extrusionDepth:")
-    public static native SCNText textWithStringExtrusionDepth(@Mapped(ObjCObjectMapper.class) Object string,
+    public static native SCNText textWithStringExtrusionDepth(@Nullable @Mapped(ObjCObjectMapper.class) Object string,
             @NFloat double extrusionDepth);
 
     @Generated
@@ -194,34 +200,36 @@ public class SCNText extends SCNGeometry {
 
     /**
      * [@property] alignmentMode
-     * <p>
+     * 
      * Determines how individual lines of text are horizontally aligned within the bounds.
-     * <p>
+     * 
      * For the text to be aligned you first need to set its bounds, otherwise the text is not aligned. The default value
      * is kCAAlignmentNatural. See alignments in CATextLayer.h.
      */
+    @NotNull
     @Generated
     @Selector("alignmentMode")
     public native String alignmentMode();
 
     /**
      * [@property] chamferProfile
-     * <p>
+     * 
      * Describes the profile used to when "chamferRadius" is not nil. When "chamferProfile" is nil we fallback on a path
      * representing a quadrant.
-     * <p>
+     * 
      * The profile should be a 2D curve beginning at (0,1) and ending at (1,0). The "flatness" property is also used to
      * flatten this path. The default value is nil.
      */
+    @Nullable
     @Generated
     @Selector("chamferProfile")
     public native UIBezierPath chamferProfile();
 
     /**
      * [@property] chamferRadius
-     * <p>
+     * 
      * The chamfer radius. Animatable.
-     * <p>
+     * 
      * Values are clamped to the range [0, extrusionDepth / 2]. The actual chamfer radius might be different to the one
      * here specified: large values are clipped to a per-glyph max value. The default value is 0.
      */
@@ -232,9 +240,9 @@ public class SCNText extends SCNGeometry {
 
     /**
      * [@property] containerFrame
-     * <p>
+     * 
      * A container within which the text may be wrapped or truncated.
-     * <p>
+     * 
      * The text will start at the top-left corner of the rect. You need to set this property for text truncation or
      * alignment to work. Getting this property when it has never been set returns CGRectZero.
      */
@@ -245,9 +253,9 @@ public class SCNText extends SCNGeometry {
 
     /**
      * [@property] extrusionDepth
-     * <p>
+     * 
      * The extrusion depth. Animatable.
-     * <p>
+     * 
      * If the value is 0, we get a mono-sided, 2D version of the text.
      */
     @Generated
@@ -257,9 +265,9 @@ public class SCNText extends SCNGeometry {
 
     /**
      * [@property] flatness
-     * <p>
+     * 
      * Specifies the accuracy (or smoothness) with which fonts are rendered.
-     * <p>
+     * 
      * Smaller numbers give smoother curves at the expense of more computation and heavier geometries in terms of
      * vertices. The default value is 1.0, which yields smooth curves.
      */
@@ -270,9 +278,9 @@ public class SCNText extends SCNGeometry {
 
     /**
      * [@property] font
-     * <p>
+     * 
      * The font used to represent the text.
-     * <p>
+     * 
      * The font property is only used when the string property is not an NSAttributedString. Defaults to Helvetica 36
      * point.
      */
@@ -286,13 +294,13 @@ public class SCNText extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNText initWithCoder(NSCoder coder);
+    public native SCNText initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] wrapped
-     * <p>
+     * 
      * Determines whether the text is wrapped to fit within the bounds.
-     * <p>
+     * 
      * For the text to be wrapped you first need to set its bounds, otherwise the text is not wrapped. The default value
      * is NO.
      */
@@ -302,9 +310,9 @@ public class SCNText extends SCNGeometry {
 
     /**
      * [@property] wrapped
-     * <p>
+     * 
      * Determines whether the text is wrapped to fit within the bounds.
-     * <p>
+     * 
      * For the text to be wrapped you first need to set its bounds, otherwise the text is not wrapped. The default value
      * is NO.
      */
@@ -314,34 +322,34 @@ public class SCNText extends SCNGeometry {
 
     /**
      * [@property] alignmentMode
-     * <p>
+     * 
      * Determines how individual lines of text are horizontally aligned within the bounds.
-     * <p>
+     * 
      * For the text to be aligned you first need to set its bounds, otherwise the text is not aligned. The default value
      * is kCAAlignmentNatural. See alignments in CATextLayer.h.
      */
     @Generated
     @Selector("setAlignmentMode:")
-    public native void setAlignmentMode(String value);
+    public native void setAlignmentMode(@NotNull String value);
 
     /**
      * [@property] chamferProfile
-     * <p>
+     * 
      * Describes the profile used to when "chamferRadius" is not nil. When "chamferProfile" is nil we fallback on a path
      * representing a quadrant.
-     * <p>
+     * 
      * The profile should be a 2D curve beginning at (0,1) and ending at (1,0). The "flatness" property is also used to
      * flatten this path. The default value is nil.
      */
     @Generated
     @Selector("setChamferProfile:")
-    public native void setChamferProfile(UIBezierPath value);
+    public native void setChamferProfile(@Nullable UIBezierPath value);
 
     /**
      * [@property] chamferRadius
-     * <p>
+     * 
      * The chamfer radius. Animatable.
-     * <p>
+     * 
      * Values are clamped to the range [0, extrusionDepth / 2]. The actual chamfer radius might be different to the one
      * here specified: large values are clipped to a per-glyph max value. The default value is 0.
      */
@@ -351,9 +359,9 @@ public class SCNText extends SCNGeometry {
 
     /**
      * [@property] containerFrame
-     * <p>
+     * 
      * A container within which the text may be wrapped or truncated.
-     * <p>
+     * 
      * The text will start at the top-left corner of the rect. You need to set this property for text truncation or
      * alignment to work. Getting this property when it has never been set returns CGRectZero.
      */
@@ -363,9 +371,9 @@ public class SCNText extends SCNGeometry {
 
     /**
      * [@property] extrusionDepth
-     * <p>
+     * 
      * The extrusion depth. Animatable.
-     * <p>
+     * 
      * If the value is 0, we get a mono-sided, 2D version of the text.
      */
     @Generated
@@ -374,9 +382,9 @@ public class SCNText extends SCNGeometry {
 
     /**
      * [@property] flatness
-     * <p>
+     * 
      * Specifies the accuracy (or smoothness) with which fonts are rendered.
-     * <p>
+     * 
      * Smaller numbers give smoother curves at the expense of more computation and heavier geometries in terms of
      * vertices. The default value is 1.0, which yields smooth curves.
      */
@@ -386,9 +394,9 @@ public class SCNText extends SCNGeometry {
 
     /**
      * [@property] font
-     * <p>
+     * 
      * The font used to represent the text.
-     * <p>
+     * 
      * The font property is only used when the string property is not an NSAttributedString. Defaults to Helvetica 36
      * point.
      */
@@ -398,34 +406,35 @@ public class SCNText extends SCNGeometry {
 
     /**
      * [@property] string
-     * <p>
+     * 
      * The text to be represented. The text must be an instance of NSString or NSAttributedString.
-     * <p>
+     * 
      * The default value is nil.
      */
     @Generated
     @Selector("setString:")
-    public native void setString(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setString(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * [@property] truncationMode
-     * <p>
+     * 
      * Describes how the text is truncated to fit within the bounds.
-     * <p>
+     * 
      * For the text to be truncated you first need to set its bounds, otherwise the text is not truncated. The default
      * value is kCATruncationNone. See truncation modes in CATextLayer.h.
      */
     @Generated
     @Selector("setTruncationMode:")
-    public native void setTruncationMode(String value);
+    public native void setTruncationMode(@NotNull String value);
 
     /**
      * [@property] string
-     * <p>
+     * 
      * The text to be represented. The text must be an instance of NSString or NSAttributedString.
-     * <p>
+     * 
      * The default value is nil.
      */
+    @Nullable
     @Generated
     @Selector("string")
     @MappedReturn(ObjCObjectMapper.class)
@@ -439,12 +448,13 @@ public class SCNText extends SCNGeometry {
 
     /**
      * [@property] truncationMode
-     * <p>
+     * 
      * Describes how the text is truncated to fit within the bounds.
-     * <p>
+     * 
      * For the text to be truncated you first need to set its bounds, otherwise the text is not truncated. The default
      * value is kCATruncationNone. See truncation modes in CATextLayer.h.
      */
+    @NotNull
     @Generated
     @Selector("truncationMode")
     public native String truncationMode();

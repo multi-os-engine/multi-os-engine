@@ -26,8 +26,9 @@ tasks.classes.dependsOn ':ext_natj_ios'
 tasks.classes.dependsOn ':ext_natj_api'
 
 dependencies {
-    compile files(rootProject.external.natj.jar)
+    implementation files(rootProject.external.natj.jar)
     compileOnly project(':moe.apple:moe.core.java')
+    compileOnly 'org.jetbrains:annotations:23.0.0'
 }
 
 javadoc {
@@ -36,14 +37,14 @@ javadoc {
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
-    baseName 'moe-ios'
-    classifier 'javadoc'
+    archiveBaseName = 'moe-ios'
+    archiveClassifier = 'javadoc'
     from javadoc.destinationDir
 }
 
 task sourceJar(type: Jar) {
-    baseName 'moe-ios'
-    classifier 'sources'
+    archiveBaseName = 'moe-ios'
+    archiveClassifier = 'sources'
     from sourceSets.main.allSource
     from(rootProject.external.natj.sources) {
         include '**/*.java'
@@ -51,8 +52,8 @@ task sourceJar(type: Jar) {
 }
 
 jar {
-    baseName 'moe-ios'
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    archiveBaseName = 'moe-ios'
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
 }
 
 artifacts {
@@ -63,6 +64,7 @@ artifacts {
 spotless {
     java {
         target("src/main/java/apple/**")
+        removeUnusedImports()
         eclipse().configFile('Eclipse_Adjusted_NatJGen.xml')
     }
 }

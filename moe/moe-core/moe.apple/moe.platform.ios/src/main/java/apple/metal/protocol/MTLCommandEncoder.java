@@ -24,11 +24,15 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLCommandEncoder
- * <p>
+ * 
  * MTLCommandEncoder is the common interface for objects that write commands into MTLCommandBuffers.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Metal")
@@ -37,9 +41,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLCommandEncoder {
     /**
      * [@property] device
-     * <p>
+     * 
      * The device this resource was created against.
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -47,7 +52,7 @@ public interface MTLCommandEncoder {
 
     /**
      * endEncoding
-     * <p>
+     * 
      * Declare that all command generation from this encoder is complete, and detach from the MTLCommandBuffer.
      */
     @Generated
@@ -56,26 +61,27 @@ public interface MTLCommandEncoder {
 
     /**
      * insertDebugSignpost:
-     * <p>
+     * 
      * Inserts a debug string into the command buffer. This does not change any API behavior, but can be useful when
      * debugging.
      */
     @Generated
     @Selector("insertDebugSignpost:")
-    void insertDebugSignpost(String string);
+    void insertDebugSignpost(@NotNull String string);
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();
 
     /**
      * popDebugGroup
-     * <p>
+     * 
      * Pop the latest named string off of the stack.
      */
     @Generated
@@ -84,19 +90,19 @@ public interface MTLCommandEncoder {
 
     /**
      * pushDebugGroup:
-     * <p>
+     * 
      * Push a new named string onto a stack of string labels.
      */
     @Generated
     @Selector("pushDebugGroup:")
-    void pushDebugGroup(String string);
+    void pushDebugGroup(@NotNull String string);
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
     @Generated
     @Selector("setLabel:")
-    void setLabel(String value);
+    void setLabel(@Nullable String value);
 }

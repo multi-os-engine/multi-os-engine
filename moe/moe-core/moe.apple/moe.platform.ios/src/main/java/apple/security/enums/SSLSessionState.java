@@ -25,24 +25,39 @@ import org.moe.natj.general.ann.Generated;
 public final class SSLSessionState {
     /**
      * no I/O performed yet
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
      */
-    @Generated public static final int Idle = 0x00000000;
+    @Deprecated @Generated public static final int Idle = 0x00000000;
     /**
      * SSL handshake in progress
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
      */
-    @Generated public static final int Handshake = 0x00000001;
+    @Deprecated @Generated public static final int Handshake = 0x00000001;
     /**
      * Handshake complete, ready for normal I/O
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
      */
-    @Generated public static final int Connected = 0x00000002;
+    @Deprecated @Generated public static final int Connected = 0x00000002;
     /**
      * connection closed normally
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
      */
-    @Generated public static final int Closed = 0x00000003;
+    @Deprecated @Generated public static final int Closed = 0x00000003;
     /**
      * connection aborted
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
      */
-    @Generated public static final int Aborted = 0x00000004;
+    @Deprecated @Generated public static final int Aborted = 0x00000004;
 
     @Generated
     private SSLSessionState() {

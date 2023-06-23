@@ -12,6 +12,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("MetalPerformanceShaders")
@@ -20,32 +22,33 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MPSHeapProvider {
     /**
      * Return a heap of the size indicated
-     * <p>
+     * 
      * The heap may be larger than requested.
      * id <MTLDevice> implements this method.
-     *
+     * 
      * @param descriptor A descriptor for the new heap
      * @return A new heap of size at least descriptor.size. If nil is returned, MPS
      *         will use the MPS internal heap cache instead to satisfy the allocation.
      */
+    @Nullable
     @Generated
     @Selector("newHeapWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
-    MTLHeap newHeapWithDescriptor(MTLHeapDescriptor descriptor);
+    MTLHeap newHeapWithDescriptor(@NotNull MTLHeapDescriptor descriptor);
 
     /**
      * Retire a heap
-     * <p>
+     * 
      * When MPS is done with the heap, this is called to return the heap to the heap provider
      * MPS will release the heap after this is called.
-     *
+     * 
      * @param heap    The heap to be retired
      * @param seconds A hint for how long to cache the heap before retiring it. See MPSSetHeapCacheDuration().
      */
     @Generated
     @IsOptional
     @Selector("retireHeap:cacheDelay:")
-    default void retireHeapCacheDelay(@Mapped(ObjCObjectMapper.class) MTLHeap heap, double seconds) {
+    default void retireHeapCacheDelay(@NotNull @Mapped(ObjCObjectMapper.class) MTLHeap heap, double seconds) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -45,14 +45,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEFilterBrowserFlow
- * <p>
+ * 
  * The NEFilterBrowserFlow class declares the programmatic interface of an object that represents a flow of network data
  * to be filtered, which is originated from NEFilterSource.
- * <p>
+ * 
  * NEFilterBrowserFlow is part of NetworkExtension.framework
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -84,22 +88,25 @@ public class NEFilterBrowserFlow extends NEFilterFlow implements NSSecureCoding,
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,9 +141,10 @@ public class NEFilterBrowserFlow extends NEFilterFlow implements NSSecureCoding,
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,15 +176,16 @@ public class NEFilterBrowserFlow extends NEFilterFlow implements NSSecureCoding,
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -184,33 +193,42 @@ public class NEFilterBrowserFlow extends NEFilterFlow implements NSSecureCoding,
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEFilterBrowserFlow initWithCoder(NSCoder coder);
+    public native NEFilterBrowserFlow initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] parentURL
-     * <p>
+     * 
      * The parent URL for the current flow which is created to load the sub frames because the flow with the parent URL
      * was allowed. Will be nil if the parent flow does not exist.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("parentURL")
     public native NSURL parentURL();
 
     /**
      * [@property] request
-     * <p>
+     * 
      * The NSURLRequest of the flow. This property is always nil for the control providers.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("request")
     public native NSURLRequest request();
 
     /**
      * [@property] response
-     * <p>
+     * 
      * The NSURLResponse of the flow. This will be nil until the request is sent to the server and the response headers
      * are received. And this property is always nil for the control providers.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("response")
     public native NSURLResponse response();

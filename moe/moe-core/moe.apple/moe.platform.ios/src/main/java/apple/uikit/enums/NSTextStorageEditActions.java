@@ -19,9 +19,18 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 public final class NSTextStorageEditActions {
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NUInt public static final long Attributes = 0x0000000000000001L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NUInt public static final long Characters = 0x0000000000000002L;
 
     @Generated

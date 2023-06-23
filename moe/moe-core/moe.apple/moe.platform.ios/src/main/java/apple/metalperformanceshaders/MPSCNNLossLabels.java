@@ -27,15 +27,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNLossLabels
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * The MPSCNNLossLabels is used to hold the per-element weights buffer
  * used by both MPSCNNLoss forward filter and MPSNNLossGradient backward filter.
  * The MPSCNNLoss forward filter populates the MPSCNNLossLabels object
  * and the MPSNNLossGradient backward filter consumes the state object.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -67,22 +71,25 @@ public class MPSCNNLossLabels extends MPSState {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,19 +113,19 @@ public class MPSCNNLossLabels extends MPSState {
 
     @Generated
     @Selector("initWithDevice:bufferSize:")
-    public native MPSCNNLossLabels initWithDeviceBufferSize(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+    public native MPSCNNLossLabels initWithDeviceBufferSize(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
             @NUInt long bufferSize);
 
     /**
      * Set labels (aka targets, ground truth) for the MPSCNNLossLabels object.
-     * <p>
+     * 
      * The labels and weights data are copied into internal storage. The computed loss can either be a
      * scalar value (in batch mode, a single value per image in a batch) or it
      * can be one value per feature channel. Thus, the size of the loss image
      * must either match the size of the input source image or be {1, 1, 1},
      * which results in a scalar value. In this convinience initializer, the
      * assumed size of the loss image is {1, 1, 1}.
-     *
+     * 
      * @param device           Device the state resources will be created on.
      * @param labelsDescriptor Describes the labels data. This includes:
      *                         - The per-element labels data. The data must be in floating point format.
@@ -129,15 +136,16 @@ public class MPSCNNLossLabels extends MPSState {
      */
     @Generated
     @Selector("initWithDevice:labelsDescriptor:")
-    public native MPSCNNLossLabels initWithDeviceLabelsDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MPSCNNLossDataDescriptor labelsDescriptor);
+    public native MPSCNNLossLabels initWithDeviceLabelsDescriptor(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull MPSCNNLossDataDescriptor labelsDescriptor);
 
     /**
      * Set labels (aka targets, ground truth) and weights for the MPSCNNLossLabels object.
      * Weights are optional.
-     * <p>
+     * 
      * The labels and weights data are copied into internal storage.
-     *
+     * 
      * @param device            Device the state resources will be created on.
      * @param lossImageSize     The size of the resulting loss image: { width, height, featureChannels }.
      *                          The computed loss can either be a scalar value (in batch mode, a single
@@ -162,16 +170,16 @@ public class MPSCNNLossLabels extends MPSState {
     @Generated
     @Selector("initWithDevice:lossImageSize:labelsDescriptor:weightsDescriptor:")
     public native MPSCNNLossLabels initWithDeviceLossImageSizeLabelsDescriptorWeightsDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @ByValue MTLSize lossImageSize,
-            MPSCNNLossDataDescriptor labelsDescriptor, MPSCNNLossDataDescriptor weightsDescriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @ByValue MTLSize lossImageSize,
+            @NotNull MPSCNNLossDataDescriptor labelsDescriptor, @Nullable MPSCNNLossDataDescriptor weightsDescriptor);
 
     /**
      * Set labels (aka targets, ground truth) and weights for the MPSCNNLossLabels object.
      * Weights are optional.
-     * <p>
+     * 
      * The labels and weights images are retained - it is the users responsibility to make sure that they contain
      * the right data when the loss filter is run on the device.
-     *
+     * 
      * @param device        Device the state resources will be created on.
      * @param lossImageSize The size of the resulting loss image: { width, height, featureChannels }.
      *                      The computed loss can either be a scalar value (in batch mode, a single
@@ -182,30 +190,32 @@ public class MPSCNNLossLabels extends MPSState {
      * @param weightsImage  Describes the weights data.
      *                      This parameter is optional. If you are using a single weight, please use the
      *                      weight property of the MPSCNNLossDescriptor object.
+     * 
+     *                      API-Since: 13.0
      */
     @Generated
     @Selector("initWithDevice:lossImageSize:labelsImage:weightsImage:")
     public native MPSCNNLossLabels initWithDeviceLossImageSizeLabelsImageWeightsImage(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @ByValue MTLSize lossImageSize, MPSImage labelsImage,
-            MPSImage weightsImage);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @ByValue MTLSize lossImageSize,
+            @NotNull MPSImage labelsImage, @Nullable MPSImage weightsImage);
 
     @Generated
     @Selector("initWithDevice:resourceList:")
-    public native MPSCNNLossLabels initWithDeviceResourceList(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MPSStateResourceList resourceList);
+    public native MPSCNNLossLabels initWithDeviceResourceList(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull MPSStateResourceList resourceList);
 
     @Generated
     @Selector("initWithDevice:textureDescriptor:")
-    public native MPSCNNLossLabels initWithDeviceTextureDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MTLTextureDescriptor descriptor);
+    public native MPSCNNLossLabels initWithDeviceTextureDescriptor(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MTLTextureDescriptor descriptor);
 
     @Generated
     @Selector("initWithResource:")
-    public native MPSCNNLossLabels initWithResource(@Mapped(ObjCObjectMapper.class) MTLResource resource);
+    public native MPSCNNLossLabels initWithResource(@Nullable @Mapped(ObjCObjectMapper.class) MTLResource resource);
 
     @Generated
     @Selector("initWithResources:")
-    public native MPSCNNLossLabels initWithResources(NSArray<?> resources);
+    public native MPSCNNLossLabels initWithResources(@Nullable NSArray<?> resources);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -224,35 +234,38 @@ public class MPSCNNLossLabels extends MPSState {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Labels image accessor method.
-     *
+     * 
      * @return An autoreleased MPSImage object, containing the labels data.
      *         The labels data is populated in the -initWithDevice call.
-     *         <p>
+     * 
      *         In order to guarantee that the image is correctly synchronized for CPU side access,
      *         it is the application's responsibility to call the [gradientState synchronizeOnCommandBuffer:]
      *         method before accessing the data in the image.
      */
+    @NotNull
     @Generated
     @Selector("labelsImage")
     public native MPSImage labelsImage();
 
     /**
      * Loss image accessor method.
-     *
+     * 
      * @return An autoreleased MPSImage object, containing the loss data.
      *         The loss data is populated in the -encode call, thus the contents
      *         are undefined until you -encode the filter.
-     *         <p>
+     * 
      *         In order to guarantee that the image is correctly synchronized for CPU side access,
      *         it is the application's responsibility to call the [gradientState synchronizeOnCommandBuffer:]
      *         method before accessing the data in the image.
      */
+    @NotNull
     @Generated
     @Selector("lossImage")
     public native MPSImage lossImage();
@@ -278,25 +291,30 @@ public class MPSCNNLossLabels extends MPSState {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:")
     public static native MPSCNNLossLabels temporaryStateWithCommandBuffer(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:bufferSize:")
     public static native MPSCNNLossLabels temporaryStateWithCommandBufferBufferSize(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:resourceList:")
     public static native MPSCNNLossLabels temporaryStateWithCommandBufferResourceList(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSStateResourceList resourceList);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSStateResourceList resourceList);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:textureDescriptor:")
     public static native MPSCNNLossLabels temporaryStateWithCommandBufferTextureDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MTLTextureDescriptor descriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NotNull MTLTextureDescriptor descriptor);
 
     @Generated
     @Selector("version")
@@ -305,14 +323,15 @@ public class MPSCNNLossLabels extends MPSState {
 
     /**
      * Weights image accessor method.
-     *
+     * 
      * @return An autoreleased MPSImage object, containing the weights data.
      *         The weights data is populated in the -initWithDevice call.
-     *         <p>
+     * 
      *         In order to guarantee that the image is correctly synchronized for CPU side access,
      *         it is the application's responsibility to call the [gradientState synchronizeOnCommandBuffer:]
      *         method before accessing the data in the image.
      */
+    @NotNull
     @Generated
     @Selector("weightsImage")
     public native MPSImage weightsImage();

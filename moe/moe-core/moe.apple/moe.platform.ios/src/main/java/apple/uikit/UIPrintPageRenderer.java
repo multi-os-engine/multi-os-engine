@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -41,7 +40,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.2
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -72,22 +77,25 @@ public class UIPrintPageRenderer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,9 +130,10 @@ public class UIPrintPageRenderer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,7 +163,8 @@ public class UIPrintPageRenderer extends NSObject {
 
     @Generated
     @Selector("addPrintFormatter:startingAtPageAtIndex:")
-    public native void addPrintFormatterStartingAtPageAtIndex(UIPrintFormatter formatter, @NInt long pageIndex);
+    public native void addPrintFormatterStartingAtPageAtIndex(@NotNull UIPrintFormatter formatter,
+            @NInt long pageIndex);
 
     /**
      * override point. default does nothing
@@ -189,7 +199,7 @@ public class UIPrintPageRenderer extends NSObject {
      */
     @Generated
     @Selector("drawPrintFormatter:forPageAtIndex:")
-    public native void drawPrintFormatterForPageAtIndex(UIPrintFormatter printFormatter, @NInt long pageIndex);
+    public native void drawPrintFormatterForPageAtIndex(@NotNull UIPrintFormatter printFormatter, @NInt long pageIndex);
 
     /**
      * bottom of contentRect from printableRect
@@ -234,10 +244,12 @@ public class UIPrintPageRenderer extends NSObject {
     @Selector("prepareForDrawingPages:")
     public native void prepareForDrawingPages(@ByValue NSRange range);
 
+    @Nullable
     @Generated
     @Selector("printFormatters")
     public native NSArray<? extends UIPrintFormatter> printFormatters();
 
+    @Nullable
     @Generated
     @Selector("printFormattersForPageAtIndex:")
     public native NSArray<? extends UIPrintFormatter> printFormattersForPageAtIndex(@NInt long pageIndex);
@@ -266,7 +278,7 @@ public class UIPrintPageRenderer extends NSObject {
 
     @Generated
     @Selector("setPrintFormatters:")
-    public native void setPrintFormatters(NSArray<? extends UIPrintFormatter> value);
+    public native void setPrintFormatters(@Nullable NSArray<? extends UIPrintFormatter> value);
 
     /**
      * If the print sheet is unresponsive or sluggish due to the time is takes you to fully render a page,
@@ -276,6 +288,8 @@ public class UIPrintPageRenderer extends NSObject {
      * need to override this method.
      * Return value is the quality you current actually used for the rendering.
      * Returns UIPrintRenderingQualityBest by default.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("currentRenderingQualityForRequestedRenderingQuality:")

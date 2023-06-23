@@ -23,9 +23,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Descriptor for triangle geometry
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Metal")
@@ -57,22 +61,25 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -97,6 +104,7 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
     /**
      * Optional index buffer containing references to vertices in the vertex buffer. May be nil.
      */
+    @Nullable
     @Generated
     @Selector("indexBuffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -140,9 +148,10 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,7 +171,7 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
      */
     @Generated
     @Selector("setIndexBuffer:")
-    public native void setIndexBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+    public native void setIndexBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
      * Index buffer offset. Must be a multiple of the index data type size and must be aligned to both
@@ -191,12 +200,12 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * Vertex buffer containing triangle vertices. Each vertex must consist of three 32-bit floats
-     * encoding X, Y, and Z position. Must not be nil.
+     * Vertex buffer containing triangle vertices. Each vertex position must be formatted
+     * according to the vertex format. Must not be nil.
      */
     @Generated
     @Selector("setVertexBuffer:")
-    public native void setVertexBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+    public native void setVertexBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
      * Vertex buffer offset. Must be a multiple of the vertex stride and must be aligned to the
@@ -207,8 +216,10 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
     public native void setVertexBufferOffset(@NUInt long value);
 
     /**
-     * Stride, in bytes, between vertices in the vertex buffer. Must be at least 12 bytes and must be a
-     * multiple of 4 bytes. Defaults to 12 bytes.
+     * Stride, in bytes, between vertices in the vertex buffer. Must be a multiple of the vertex format data type size
+     * and must be aligned to
+     * the vertex format data type's alignment. Defaults to 0, which will result in a stride of the vertex format data
+     * size.
      */
     @Generated
     @Selector("setVertexStride:")
@@ -232,9 +243,10 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
     public static native long version_static();
 
     /**
-     * Vertex buffer containing triangle vertices. Each vertex must consist of three 32-bit floats
-     * encoding X, Y, and Z position. Must not be nil.
+     * Vertex buffer containing triangle vertices. Each vertex position must be formatted
+     * according to the vertex format. Must not be nil.
      */
+    @Nullable
     @Generated
     @Selector("vertexBuffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -250,11 +262,77 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
     public native long vertexBufferOffset();
 
     /**
-     * Stride, in bytes, between vertices in the vertex buffer. Must be at least 12 bytes and must be a
-     * multiple of 4 bytes. Defaults to 12 bytes.
+     * Stride, in bytes, between vertices in the vertex buffer. Must be a multiple of the vertex format data type size
+     * and must be aligned to
+     * the vertex format data type's alignment. Defaults to 0, which will result in a stride of the vertex format data
+     * size.
      */
     @Generated
     @Selector("vertexStride")
     @NUInt
     public native long vertexStride();
+
+    /**
+     * Buffer containing packed float4x3 transformation matrix. Transform is applied to the vertex data when building
+     * the acceleration structure. Input vertex buffers are not modified.
+     * When set to nil, transformation matrix is not applied to vertex data.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setTransformationMatrixBuffer:")
+    public native void setTransformationMatrixBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
+
+    /**
+     * Transformation matrix buffer offset. Must be a multiple of 4 bytes. Defaults to 0.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setTransformationMatrixBufferOffset:")
+    public native void setTransformationMatrixBufferOffset(@NUInt long value);
+
+    /**
+     * Format type of the vertex buffer.
+     * Defaults to MTLAttributeFormatFloat3 (packed).
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setVertexFormat:")
+    public native void setVertexFormat(@NUInt long value);
+
+    /**
+     * Buffer containing packed float4x3 transformation matrix. Transform is applied to the vertex data when building
+     * the acceleration structure. Input vertex buffers are not modified.
+     * When set to nil, transformation matrix is not applied to vertex data.
+     * 
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("transformationMatrixBuffer")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLBuffer transformationMatrixBuffer();
+
+    /**
+     * Transformation matrix buffer offset. Must be a multiple of 4 bytes. Defaults to 0.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("transformationMatrixBufferOffset")
+    @NUInt
+    public native long transformationMatrixBufferOffset();
+
+    /**
+     * Format type of the vertex buffer.
+     * Defaults to MTLAttributeFormatFloat3 (packed).
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("vertexFormat")
+    @NUInt
+    public native long vertexFormat();
 }

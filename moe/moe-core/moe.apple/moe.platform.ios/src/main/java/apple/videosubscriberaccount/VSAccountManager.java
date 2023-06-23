@@ -42,9 +42,13 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A VSAccountManager instance coordinates access to a subscriber's account.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("VideoSubscriberAccount")
@@ -76,22 +80,25 @@ public class VSAccountManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +133,10 @@ public class VSAccountManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,7 +166,7 @@ public class VSAccountManager extends NSObject {
 
     /**
      * Determine the state of the application's access to the user's subscription information.
-     *
+     * 
      * @param options           The only currently supported option key is VSCheckAccessOptionPrompt.
      * @param completionHandler A block to be called when the request finishes. It will always be called exactly once.
      *                          It may be called before the method call returns. It may be called on any queue.
@@ -168,8 +176,8 @@ public class VSAccountManager extends NSObject {
      */
     @Generated
     @Selector("checkAccessStatusWithOptions:completionHandler:")
-    public native void checkAccessStatusWithOptionsCompletionHandler(NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_checkAccessStatusWithOptionsCompletionHandler") Block_checkAccessStatusWithOptionsCompletionHandler completionHandler);
+    public native void checkAccessStatusWithOptionsCompletionHandler(@NotNull NSDictionary<String, ?> options,
+            @NotNull @ObjCBlock(name = "call_checkAccessStatusWithOptionsCompletionHandler") Block_checkAccessStatusWithOptionsCompletionHandler completionHandler);
 
     /**
      * An object that can help the account manager by presenting and dismissing view controllers when needed, and
@@ -177,6 +185,7 @@ public class VSAccountManager extends NSObject {
      * Some requests may fail if a delegate is not provided. For example, an account metadata request may require a
      * delegate if it allows interruption.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -186,7 +195,7 @@ public class VSAccountManager extends NSObject {
      * Begins requesting information about the subscriber's account.
      * [@returns] A result object that may be used to cancel the in-flight request. Cancellation is advisory, and does
      * not guarantee that the request will finish immediately.
-     *
+     * 
      * @param request           This identifies what specific information the app wants to know.
      * @param completionHandler A block to be called when the request finishes. It will always be called exactly once.
      *                          It may be called before the method call returns. It may be called on any queue.
@@ -195,11 +204,12 @@ public class VSAccountManager extends NSObject {
      * @param error             If the request did not finish successfully, this will contain an error describing the
      *                          result of the operation.
      */
+    @NotNull
     @Generated
     @Selector("enqueueAccountMetadataRequest:completionHandler:")
     public native VSAccountManagerResult enqueueAccountMetadataRequestCompletionHandler(
-            VSAccountMetadataRequest request,
-            @ObjCBlock(name = "call_enqueueAccountMetadataRequestCompletionHandler") Block_enqueueAccountMetadataRequestCompletionHandler completionHandler);
+            @NotNull VSAccountMetadataRequest request,
+            @NotNull @ObjCBlock(name = "call_enqueueAccountMetadataRequestCompletionHandler") Block_enqueueAccountMetadataRequestCompletionHandler completionHandler);
 
     @Generated
     @Selector("init")
@@ -213,7 +223,7 @@ public class VSAccountManager extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) VSAccountManagerDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) VSAccountManagerDelegate value);
 
     /**
      * An object that can help the account manager by presenting and dismissing view controllers when needed, and
@@ -222,7 +232,7 @@ public class VSAccountManager extends NSObject {
      * delegate if it allows interruption.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) VSAccountManagerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) VSAccountManagerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -237,13 +247,14 @@ public class VSAccountManager extends NSObject {
     @Generated
     public interface Block_checkAccessStatusWithOptionsCompletionHandler {
         @Generated
-        void call_checkAccessStatusWithOptionsCompletionHandler(@NInt long accessStatus, NSError error);
+        void call_checkAccessStatusWithOptionsCompletionHandler(@NInt long accessStatus, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enqueueAccountMetadataRequestCompletionHandler {
         @Generated
-        void call_enqueueAccountMetadataRequestCompletionHandler(VSAccountMetadata metadata, NSError error);
+        void call_enqueueAccountMetadataRequestCompletionHandler(@Nullable VSAccountMetadata metadata,
+                @Nullable NSError error);
     }
 }

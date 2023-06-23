@@ -6,7 +6,11 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -16,6 +20,7 @@ public interface MDLTransformOp {
     @Selector("IsInverseOp")
     boolean IsInverseOp();
 
+    @NotNull
     @Generated
     @Selector("name")
     String name();

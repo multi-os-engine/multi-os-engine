@@ -41,10 +41,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MKReverseGeocoder is now deprecated.
  * Use CLGeocoder in CoreLocation instead.
+ * 
+ * API-Since: 3.0
+ * Deprecated-Since: 5.0
  */
 @Deprecated
 @Generated
@@ -77,22 +82,25 @@ public class MKReverseGeocoder extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +135,10 @@ public class MKReverseGeocoder extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,17 +166,29 @@ public class MKReverseGeocoder extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 5.0
+     */
     @Generated
     @Deprecated
     @Selector("cancel")
     public native void cancel();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 5.0
+     */
     @Generated
     @Deprecated
     @Selector("coordinate")
     @ByValue
     public native CLLocationCoordinate2D coordinate();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 5.0
+     */
     @Generated
     @Deprecated
     @Selector("delegate")
@@ -178,26 +199,46 @@ public class MKReverseGeocoder extends NSObject {
     @Selector("init")
     public native MKReverseGeocoder init();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 5.0
+     */
     @Generated
     @Deprecated
     @Selector("initWithCoordinate:")
     public native MKReverseGeocoder initWithCoordinate(@ByValue CLLocationCoordinate2D coordinate);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 5.0
+     */
     @Generated
     @Deprecated
     @Selector("isQuerying")
     public native boolean isQuerying();
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 5.0
+     */
     @Generated
     @Deprecated
     @Selector("placemark")
     public native MKPlacemark placemark();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 5.0
+     */
     @Generated
     @Deprecated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MKReverseGeocoderDelegate value);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 5.0
+     */
     @Generated
     @Deprecated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) MKReverseGeocoderDelegate value) {
@@ -213,6 +254,9 @@ public class MKReverseGeocoder extends NSObject {
 
     /**
      * A MKReverseGeocoder object should only be started once.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 5.0
      */
     @Generated
     @Deprecated

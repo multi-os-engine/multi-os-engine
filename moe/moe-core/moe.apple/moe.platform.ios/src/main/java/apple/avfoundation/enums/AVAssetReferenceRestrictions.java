@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] AVAssetReferenceRestrictions
- * <p>
+ * 
  * These constants can be passed in to AVURLAssetReferenceRestrictionsKey to control the resolution of references to
  * external media data.
- * <p>
+ * 
  * [@constant] AVAssetReferenceRestrictionForbidNone
  * Indicates that all types of references should be followed.
  * [@constant] AVAssetReferenceRestrictionForbidRemoteReferenceToLocal

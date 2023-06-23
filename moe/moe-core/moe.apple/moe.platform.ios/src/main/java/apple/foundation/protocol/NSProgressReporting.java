@@ -23,6 +23,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * If your class supports reporting progress, then you can adopt the NSProgressReporting protocol. Objects that adopt
@@ -35,6 +36,7 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSProgressReporting")
 public interface NSProgressReporting {
+    @NotNull
     @Generated
     @Selector("progress")
     NSProgress progress();

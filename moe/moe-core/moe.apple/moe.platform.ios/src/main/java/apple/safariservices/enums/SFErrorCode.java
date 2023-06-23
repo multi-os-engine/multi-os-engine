@@ -19,10 +19,22 @@ package apple.safariservices.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 public final class SFErrorCode {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long NoExtensionFound = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long NoAttachmentFound = 0x0000000000000002L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long LoadingInterrupted = 0x0000000000000003L;
 
     @Generated

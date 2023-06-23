@@ -25,14 +25,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVSpeechSynthesisVoice
- * <p>
+ * 
  * AVSpeechSynthesisVoice encapsulates the attributes of the voice used to synthesize speech on the system.
- * <p>
+ * 
  * Retrieve a voice by specifying the language code your text should be spoken in, or by using voiceWithIdentifier
  * for a known voice identifier.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("AVFAudio")
@@ -68,33 +72,40 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
      * The data provided by AVSpeechSynthesizerBufferCallback will be in this specified format when using this voice.
      * The AVAudioCommonFormat and interleaved properties can be determined by properties within the settings
      * dictionary.
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("audioFileSettings")
     public native NSDictionary<String, ?> audioFileSettings();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("currentLanguageCode")
     public static native String currentLanguageCode();
@@ -109,8 +120,11 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("gender")
     @NInt
@@ -121,6 +135,10 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -131,7 +149,7 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVSpeechSynthesisVoice initWithCoder(NSCoder coder);
+    public native AVSpeechSynthesisVoice initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -150,14 +168,20 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("language")
     public native String language();
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -167,6 +191,9 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
     @Selector("new")
     public static native AVSpeechSynthesisVoice new_objc();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("quality")
     @NInt
@@ -184,6 +211,7 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("speechVoices")
     public static native NSArray<? extends AVSpeechSynthesisVoice> speechVoices();
@@ -209,33 +237,39 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
 
     /**
      * voiceWithIdentifier:
-     * <p>
+     * 
      * Retrieve a voice by its identifier.
-     * <p>
+     * 
      * Passing in an invalid identifier will return nil.
      * Returns nil if the identifier is valid, but the voice is not available on device (i.e. not yet downloaded by the
      * user).
-     *
-     * @param identifier A unique identifier for a voice.
+     * 
+     * API-Since: 9.0
+     * 
+     * @param identifier
+     *                   A unique identifier for a voice.
      */
+    @Nullable
     @Generated
     @Selector("voiceWithIdentifier:")
-    public static native AVSpeechSynthesisVoice voiceWithIdentifier(String identifier);
+    public static native AVSpeechSynthesisVoice voiceWithIdentifier(@NotNull String identifier);
 
     /**
      * voiceWithLanguage:
-     * <p>
+     * 
      * Use a BCP-47 language tag to specify the desired language and region.
-     * <p>
+     * 
      * The default is the system's region and language.
      * Passing in nil will return the default voice.
      * Passing in an invalid languageCode will return nil.
      * Will return enhanced quality voice if available, default quality otherwise.
      * Examples: en-US (U.S. English), fr-CA (French Canadian)
-     *
-     * @param languageCode Specifies the BCP-47 language tag that represents the voice.
+     * 
+     * @param languageCode
+     *                     Specifies the BCP-47 language tag that represents the voice.
      */
+    @Nullable
     @Generated
     @Selector("voiceWithLanguage:")
-    public static native AVSpeechSynthesisVoice voiceWithLanguage(String languageCode);
+    public static native AVSpeechSynthesisVoice voiceWithLanguage(@Nullable String languageCode);
 }

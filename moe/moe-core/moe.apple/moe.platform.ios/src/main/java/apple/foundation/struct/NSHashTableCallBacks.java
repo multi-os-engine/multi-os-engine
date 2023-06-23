@@ -15,6 +15,8 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -35,6 +37,7 @@ public final class NSHashTableCallBacks extends StructObject {
         super(peer);
     }
 
+    @Nullable
     @Generated
     @StructureField(order = 0, isGetter = true)
     @FunctionPtr(name = "call_hash")
@@ -45,13 +48,14 @@ public final class NSHashTableCallBacks extends StructObject {
     public interface Function_hash {
         @Generated
         @NUInt
-        long call_hash(NSHashTable<?> arg0, ConstVoidPtr arg1);
+        long call_hash(@NotNull NSHashTable<?> arg0, @NotNull ConstVoidPtr arg1);
     }
 
     @Generated
     @StructureField(order = 0, isGetter = false)
-    public native void setHash(@FunctionPtr(name = "call_hash") Function_hash value);
+    public native void setHash(@Nullable @FunctionPtr(name = "call_hash") Function_hash value);
 
+    @Nullable
     @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_isEqual")
@@ -61,13 +65,14 @@ public final class NSHashTableCallBacks extends StructObject {
     @Generated
     public interface Function_isEqual {
         @Generated
-        boolean call_isEqual(NSHashTable<?> arg0, ConstVoidPtr arg1, ConstVoidPtr arg2);
+        boolean call_isEqual(@NotNull NSHashTable<?> arg0, @NotNull ConstVoidPtr arg1, @NotNull ConstVoidPtr arg2);
     }
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setIsEqual(@FunctionPtr(name = "call_isEqual") Function_isEqual value);
+    public native void setIsEqual(@Nullable @FunctionPtr(name = "call_isEqual") Function_isEqual value);
 
+    @Nullable
     @Generated
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_retain")
@@ -77,13 +82,14 @@ public final class NSHashTableCallBacks extends StructObject {
     @Generated
     public interface Function_retain {
         @Generated
-        void call_retain(NSHashTable<?> arg0, ConstVoidPtr arg1);
+        void call_retain(@NotNull NSHashTable<?> arg0, @NotNull ConstVoidPtr arg1);
     }
 
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void setRetain(@FunctionPtr(name = "call_retain") Function_retain value);
+    public native void setRetain(@Nullable @FunctionPtr(name = "call_retain") Function_retain value);
 
+    @Nullable
     @Generated
     @StructureField(order = 3, isGetter = true)
     @FunctionPtr(name = "call_release")
@@ -93,13 +99,14 @@ public final class NSHashTableCallBacks extends StructObject {
     @Generated
     public interface Function_release {
         @Generated
-        void call_release(NSHashTable<?> arg0, VoidPtr arg1);
+        void call_release(@NotNull NSHashTable<?> arg0, @NotNull VoidPtr arg1);
     }
 
     @Generated
     @StructureField(order = 3, isGetter = false)
-    public native void setRelease(@FunctionPtr(name = "call_release") Function_release value);
+    public native void setRelease(@Nullable @FunctionPtr(name = "call_release") Function_release value);
 
+    @Nullable
     @Generated
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_describe")
@@ -108,12 +115,13 @@ public final class NSHashTableCallBacks extends StructObject {
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_describe {
+        @Nullable
         @Generated
         @MappedReturn(ObjCStringMapper.class)
-        String call_describe(NSHashTable<?> arg0, ConstVoidPtr arg1);
+        String call_describe(@NotNull NSHashTable<?> arg0, @NotNull ConstVoidPtr arg1);
     }
 
     @Generated
     @StructureField(order = 4, isGetter = false)
-    public native void setDescribe(@FunctionPtr(name = "call_describe") Function_describe value);
+    public native void setDescribe(@Nullable @FunctionPtr(name = "call_describe") Function_describe value);
 }

@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEHotspotHelperCommandType
- * <p>
+ * 
  * The type of the NEHotspotHelperCommand object.
  * [@const] kNEHotspotHelperCommandTypeNone Placeholder for the null command.
  * [@const] kNEHotspotHelperCommandTypeFilterScanList Filter the Wi-Fi scan list.
@@ -30,15 +30,38 @@ import org.moe.natj.general.ann.NInt;
  * [@const] kNEHotspotHelperCommandTypePresentUI Present user interface.
  * [@const] kNEHotspotHelperCommandTypeMaintain Maintain the network.
  * [@const] kNEHotspotHelperCommandTypeLogoff Logoff the network.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class NEHotspotHelperCommandType {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long FilterScanList = 0x0000000000000001L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Evaluate = 0x0000000000000002L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Authenticate = 0x0000000000000003L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long PresentUI = 0x0000000000000004L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Maintain = 0x0000000000000005L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Logoff = 0x0000000000000006L;
 
     @Generated

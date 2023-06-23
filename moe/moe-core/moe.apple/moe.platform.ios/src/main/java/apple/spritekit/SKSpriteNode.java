@@ -17,9 +17,6 @@ limitations under the License.
 package apple.spritekit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
@@ -51,11 +48,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A Sprite is a textured 2D node. It can be placed, rotated, scaled and animated like any other node except it draws a
  * textured rectangle specified by the bounds and anchor point.
- * <p>
+ * 
  * Sprites are used to define quad primitives with color and/or textures applied to them.
  * See <a href="http://en.wikipedia.org/wiki/Sprite_(computer_graphics)">wiki</a> for a definition of a Sprite.
  */
@@ -89,29 +91,32 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -143,9 +148,10 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,21 +164,25 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
 
     @Generated
     @Selector("nodeWithFileNamed:")
-    public static native SKSpriteNode nodeWithFileNamed(String filename);
+    public static native SKSpriteNode nodeWithFileNamed(@NotNull String filename);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodeBounds:")
-    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
+    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodePhysicsBodies:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodePhysicsBodies(
-            NSArray<? extends SKNode> nodes);
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromSpriteTextures:accuracy:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromSpriteTexturesAccuracy(
-            NSArray<? extends SKNode> sprites, float accuracy);
+            @NotNull NSArray<? extends SKNode> sprites, float accuracy);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -188,13 +198,13 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
 
     /**
      * Create a sprite with a color and the specified bounds.
-     *
+     * 
      * @param color the color to use for tinting the sprite.
      * @param size  the size of the sprite in points
      */
     @Generated
     @Selector("spriteNodeWithColor:size:")
-    public static native SKSpriteNode spriteNodeWithColorSize(UIColor color, @ByValue CGSize size);
+    public static native SKSpriteNode spriteNodeWithColorSize(@NotNull UIColor color, @ByValue CGSize size);
 
     /**
      * Create a sprite with an image from your app bundle (An SKTexture is created for the image and set on the sprite.
@@ -203,39 +213,41 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
      * width and half the height.
      * Thus the sprite has the texture centered about the position. If you wish to have the texture anchored at a
      * different offset set the anchorPoint to another pair of values in the interval from 0.0 up to and including 1.0.
-     *
+     * 
      * @param name is the name of an image file stored in the app bundle.
      */
     @Generated
     @Selector("spriteNodeWithImageNamed:")
-    public static native SKSpriteNode spriteNodeWithImageNamed(String name);
+    public static native SKSpriteNode spriteNodeWithImageNamed(@NotNull String name);
 
     @Generated
     @Selector("spriteNodeWithImageNamed:normalMapped:")
-    public static native SKSpriteNode spriteNodeWithImageNamedNormalMapped(String name, boolean generateNormalMap);
+    public static native SKSpriteNode spriteNodeWithImageNamedNormalMapped(@NotNull String name,
+            boolean generateNormalMap);
 
     /**
      * Create a sprite with an SKTexture and set its size to the SKTexture's pixel width/height.
-     *
+     * 
      * @param texture the texture to reference for size and content
      */
     @Generated
     @Selector("spriteNodeWithTexture:")
-    public static native SKSpriteNode spriteNodeWithTexture(SKTexture texture);
+    public static native SKSpriteNode spriteNodeWithTexture(@Nullable SKTexture texture);
 
     @Generated
     @Selector("spriteNodeWithTexture:normalMap:")
-    public static native SKSpriteNode spriteNodeWithTextureNormalMap(SKTexture texture, SKTexture normalMap);
+    public static native SKSpriteNode spriteNodeWithTextureNormalMap(@Nullable SKTexture texture,
+            @Nullable SKTexture normalMap);
 
     /**
      * Create a sprite with an SKTexture and the specified size.
-     *
+     * 
      * @param texture the texture to reference for size and content
      * @param size    the size of the sprite in points
      */
     @Generated
     @Selector("spriteNodeWithTexture:size:")
-    public static native SKSpriteNode spriteNodeWithTextureSize(SKTexture texture, @ByValue CGSize size);
+    public static native SKSpriteNode spriteNodeWithTextureSize(@Nullable SKTexture texture, @ByValue CGSize size);
 
     @Generated
     @Selector("superclass")
@@ -258,14 +270,17 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
     /**
      * Optional dictionary of SKAttributeValues
      * Attributes can be used with custom SKShaders.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("attributeValues")
     public native NSDictionary<String, ? extends SKAttributeValue> attributeValues();
 
     /**
      * Sets the blend mode to use when composing the sprite with the final framebuffer.
-     *
+     * 
      * @see SKNode.SKBlendMode
      */
     @Generated
@@ -287,6 +302,7 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
     /**
      * Base color for the sprite (If no texture is present, the color still is drawn)
      */
+    @NotNull
     @Generated
     @Selector("color")
     public native UIColor color();
@@ -310,17 +326,17 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
      */
     @Generated
     @Selector("initWithCoder:")
-    public native SKSpriteNode initWithCoder(NSCoder aDecoder);
+    public native SKSpriteNode initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * Initialize a sprite with a color and the specified bounds.
-     *
+     * 
      * @param color the color to use for tinting the sprite.
      * @param size  the size of the sprite in points
      */
     @Generated
     @Selector("initWithColor:size:")
-    public native SKSpriteNode initWithColorSize(UIColor color, @ByValue CGSize size);
+    public native SKSpriteNode initWithColorSize(@NotNull UIColor color, @ByValue CGSize size);
 
     /**
      * Initialize a sprite with an image from your app bundle (An SKTexture is created for the image and set on the
@@ -329,41 +345,44 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
      * width and half the height.
      * Thus the sprite has the texture centered about the position. If you wish to have the texture anchored at a
      * different offset set the anchorPoint to another pair of values in the interval from 0.0 up to and including 1.0.
-     *
+     * 
      * @param name the name or path of the image to load.
      */
     @Generated
     @Selector("initWithImageNamed:")
-    public native SKSpriteNode initWithImageNamed(String name);
+    public native SKSpriteNode initWithImageNamed(@NotNull String name);
 
     /**
      * Initialize a sprite with an SKTexture and set its size to the SKTexture's width/height.
-     *
+     * 
      * @param texture the texture to reference for size and content
      */
     @Generated
     @Selector("initWithTexture:")
-    public native SKSpriteNode initWithTexture(SKTexture texture);
+    public native SKSpriteNode initWithTexture(@Nullable SKTexture texture);
 
     /**
      * Designated Initializer
      * Initialize a sprite with a color and the specified bounds.
-     *
+     * 
      * @param texture the texture to use (can be nil for colored sprite)
      * @param color   the color to use for tinting the sprite.
      * @param size    the size of the sprite in points
      */
     @Generated
     @Selector("initWithTexture:color:size:")
-    public native SKSpriteNode initWithTextureColorSize(SKTexture texture, UIColor color, @ByValue CGSize size);
+    public native SKSpriteNode initWithTextureColorSize(@Nullable SKTexture texture, @NotNull UIColor color,
+            @ByValue CGSize size);
 
     /**
      * Bitmask to indicate being lit by a set of lights using overlapping lighting categories.
-     * <p>
+     * 
      * A light whose category is set to a value that masks to non-zero using this mask will
      * apply light to this sprite.
-     * <p>
+     * 
      * When used together with a normal texture, complex lighting effects can be used.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("lightingBitMask")
@@ -371,18 +390,23 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
 
     /**
      * Texture to use for generating normals that lights use to light this sprite.
-     * <p>
+     * 
      * This will only be used if the sprite is lit by at least one light.
-     *
+     * 
      * @see SKLightNode
      * @see lightingBitMask
+     * 
+     *      API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("normalTexture")
     public native SKTexture normalTexture();
 
     /**
      * Adjust the sprite's xScale & yScale to achieve the desired size (in parent's coordinate space)
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("scaleToSize:")
@@ -399,14 +423,16 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
     /**
      * Optional dictionary of SKAttributeValues
      * Attributes can be used with custom SKShaders.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setAttributeValues:")
-    public native void setAttributeValues(NSDictionary<String, ? extends SKAttributeValue> value);
+    public native void setAttributeValues(@NotNull NSDictionary<String, ? extends SKAttributeValue> value);
 
     /**
      * Sets the blend mode to use when composing the sprite with the final framebuffer.
-     *
+     * 
      * @see SKNode.SKBlendMode
      */
     @Generated
@@ -428,7 +454,7 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
      */
     @Generated
     @Selector("setColor:")
-    public native void setColor(UIColor value);
+    public native void setColor(@NotNull UIColor value);
 
     /**
      * Controls the blending between the texture and the sprite's color. The valid interval of values is from 0.0 up to
@@ -441,11 +467,13 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
 
     /**
      * Bitmask to indicate being lit by a set of lights using overlapping lighting categories.
-     * <p>
+     * 
      * A light whose category is set to a value that masks to non-zero using this mask will
      * apply light to this sprite.
-     * <p>
+     * 
      * When used together with a normal texture, complex lighting effects can be used.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setLightingBitMask:")
@@ -453,24 +481,35 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
 
     /**
      * Texture to use for generating normals that lights use to light this sprite.
-     * <p>
+     * 
      * This will only be used if the sprite is lit by at least one light.
-     *
+     * 
      * @see SKLightNode
      * @see lightingBitMask
+     * 
+     *      API-Since: 8.0
      */
     @Generated
     @Selector("setNormalTexture:")
-    public native void setNormalTexture(SKTexture value);
+    public native void setNormalTexture(@Nullable SKTexture value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setShader:")
-    public native void setShader(SKShader value);
+    public native void setShader(@Nullable SKShader value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setShadowCastBitMask:")
     public native void setShadowCastBitMask(int value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setShadowedBitMask:")
     public native void setShadowedBitMask(int value);
@@ -491,24 +530,37 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
      */
     @Generated
     @Selector("setTexture:")
-    public native void setTexture(SKTexture value);
+    public native void setTexture(@Nullable SKTexture value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setValue:forAttributeNamed:")
-    public native void setValueForAttributeNamed(SKAttributeValue value, String key);
+    public native void setValueForAttributeNamed(@NotNull SKAttributeValue value, @NotNull String key);
 
     @Generated
     @Selector("setWarpGeometry:")
-    public native void setWarpGeometry(SKWarpGeometry value);
+    public native void setWarpGeometry(@Nullable SKWarpGeometry value);
 
+    /**
+     * API-Since: 8.0
+     */
+    @Nullable
     @Generated
     @Selector("shader")
     public native SKShader shader();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("shadowCastBitMask")
     public native int shadowCastBitMask();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("shadowedBitMask")
     public native int shadowedBitMask();
@@ -529,22 +581,28 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
     /**
      * Texture to be drawn (is stretched to fill the sprite)
      */
+    @Nullable
     @Generated
     @Selector("texture")
     public native SKTexture texture();
 
+    /**
+     * API-Since: 10.0
+     */
+    @Nullable
     @Generated
     @Selector("valueForAttributeNamed:")
-    public native SKAttributeValue valueForAttributeNamed(String key);
+    public native SKAttributeValue valueForAttributeNamed(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("warpGeometry")
     public native SKWarpGeometry warpGeometry();
 
     @Generated
     @Selector("nodeWithFileNamed:securelyWithClasses:andError:")
-    public static native SKSpriteNode nodeWithFileNamedSecurelyWithClassesAndError(String filename,
-            NSSet<? extends Class> classes, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native SKSpriteNode nodeWithFileNamedSecurelyWithClassesAndError(@NotNull String filename,
+            @NotNull NSSet<? extends Class> classes, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("supportsSecureCoding")

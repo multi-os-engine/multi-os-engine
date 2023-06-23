@@ -21,13 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueCarbonMonoxideDetectionStatus
- * <p>
+ * 
  * [@constant] HMCharacteristicValueCarbonMonoxideDetectionStatusNotDetected Carbon monoxide is not detected.
  * [@constant] HMCharacteristicValueCarbonMonoxideDetectionStatusDetected Carbon monoxide is detected.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class HMCharacteristicValueCarbonMonoxideDetectionStatus {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long NotDetected = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Detected = 0x0000000000000001L;
 
     @Generated

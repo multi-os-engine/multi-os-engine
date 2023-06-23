@@ -43,11 +43,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MTLRenderPassDescriptor
- * <p>
+ * 
  * MTLRenderPassDescriptor represents a collection of attachments to be used to create a concrete render command encoder
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Metal")
@@ -79,22 +83,25 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +136,10 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -140,9 +148,10 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
 
     /**
      * renderPassDescriptor
-     * <p>
+     * 
      * Create an autoreleased default frame buffer descriptor
      */
+    @NotNull
     @Generated
     @Selector("renderPassDescriptor")
     public static native MTLRenderPassDescriptor renderPassDescriptor();
@@ -168,15 +177,17 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("colorAttachments")
     public native MTLRenderPassColorAttachmentDescriptorArray colorAttachments();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("depthAttachment")
@@ -196,12 +207,12 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] visibilityResultBuffer:
-     * <p>
+     * 
      * Buffer into which samples passing the depth and stencil tests are counted.
      */
     @Generated
     @Selector("setVisibilityResultBuffer:")
-    public native void setVisibilityResultBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+    public native void setVisibilityResultBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     @Generated
     @Selector("stencilAttachment")
@@ -209,9 +220,10 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] visibilityResultBuffer:
-     * <p>
+     * 
      * Buffer into which samples passing the depth and stencil tests are counted.
      */
+    @Nullable
     @Generated
     @Selector("visibilityResultBuffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -219,8 +231,10 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] defaultRasterSampleCount:
-     * <p>
+     * 
      * The raster sample count for the render pass when no attachments are given.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("defaultRasterSampleCount")
@@ -229,26 +243,30 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
 
     /**
      * getSamplePositions:count:
-     * <p>
+     * 
      * Retrieve the previously configured custom sample positions. The positions input array will only be modified when
      * count specifies a length sufficient for the number of previously configured positions.
-     *
+     * 
      * @param positions The destination array for custom sample position data.
      * @param count     Specifies the length of the positions array, which must be large enough to hold all configured
      *                  sample positions.
      * @return The number of previously configured custom sample positions.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("getSamplePositions:count:")
     @NUInt
     public native long getSamplePositionsCount(
-            @UncertainArgument("Options: reference, array Fallback: reference") MTLSamplePosition positions,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") MTLSamplePosition positions,
             @NUInt long count);
 
     /**
      * [@property] imageblockSampleLength:
-     * <p>
+     * 
      * The per sample size in bytes of the largest explicit imageblock layout in the renderPass.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("imageblockSampleLength")
@@ -257,10 +275,12 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] renderTargetHeight:
-     * <p>
+     * 
      * The height in pixels to constrain the render target to.
-     * <p>
+     * 
      * Defaults to 0. If non-zero the value must be smaller than or equal to the minimum height of all attachments.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("renderTargetHeight")
@@ -269,10 +289,12 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] renderTargetWidth:
-     * <p>
+     * 
      * The width in pixels to constrain the render target to.
-     * <p>
+     * 
      * Defaults to 0. If non-zero the value must be smaller than or equal to the minimum width of all attachments.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("renderTargetWidth")
@@ -281,8 +303,10 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] defaultRasterSampleCount:
-     * <p>
+     * 
      * The raster sample count for the render pass when no attachments are given.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDefaultRasterSampleCount:")
@@ -290,8 +314,10 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] imageblockSampleLength:
-     * <p>
+     * 
      * The per sample size in bytes of the largest explicit imageblock layout in the renderPass.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setImageblockSampleLength:")
@@ -299,10 +325,12 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] renderTargetHeight:
-     * <p>
+     * 
      * The height in pixels to constrain the render target to.
-     * <p>
+     * 
      * Defaults to 0. If non-zero the value must be smaller than or equal to the minimum height of all attachments.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRenderTargetHeight:")
@@ -310,10 +338,12 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] renderTargetWidth:
-     * <p>
+     * 
      * The width in pixels to constrain the render target to.
-     * <p>
+     * 
      * Defaults to 0. If non-zero the value must be smaller than or equal to the minimum width of all attachments.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRenderTargetWidth:")
@@ -321,23 +351,27 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
 
     /**
      * setSamplePositions:count:
-     * <p>
+     * 
      * Configure the custom sample positions, to be used in MSAA rendering (i.e. when sample count > 1).
-     *
+     * 
      * @param positions The source array for custom sample position data.
      * @param count     Specifies the length of the positions array, and must be a valid sample count or 0 (to disable
      *                  custom sample positions).
+     * 
+     *                  API-Since: 11.0
      */
     @Generated
     @Selector("setSamplePositions:count:")
     public native void setSamplePositionsCount(
-            @UncertainArgument("Options: reference, array Fallback: reference") MTLSamplePosition positions,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") MTLSamplePosition positions,
             @NUInt long count);
 
     /**
      * [@property] threadgroupMemoryLength:
-     * <p>
+     * 
      * The per tile size in bytes of the persistent threadgroup memory allocation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setThreadgroupMemoryLength:")
@@ -345,9 +379,12 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] tileHeight:
-     * <p>
+     * 
      * The height in pixels of the tile.
-     * [@discssion] Defaults to 0. Zero means Metal chooses a height that fits within the local memory.
+     * 
+     * Defaults to 0. Zero means Metal chooses a height that fits within the local memory.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTileHeight:")
@@ -355,9 +392,12 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] tileWidth:
-     * <p>
+     * 
      * The width in pixels of the tile.
-     * [@discssion] Defaults to 0. Zero means Metal chooses a width that fits within the local memory.
+     * 
+     * Defaults to 0. Zero means Metal chooses a width that fits within the local memory.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTileWidth:")
@@ -365,8 +405,10 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] threadgroupMemoryLength:
-     * <p>
+     * 
      * The per tile size in bytes of the persistent threadgroup memory allocation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("threadgroupMemoryLength")
@@ -375,9 +417,12 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] tileHeight:
-     * <p>
+     * 
      * The height in pixels of the tile.
-     * [@discssion] Defaults to 0. Zero means Metal chooses a height that fits within the local memory.
+     * 
+     * Defaults to 0. Zero means Metal chooses a height that fits within the local memory.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("tileHeight")
@@ -386,9 +431,12 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] tileWidth:
-     * <p>
+     * 
      * The width in pixels of the tile.
-     * [@discssion] Defaults to 0. Zero means Metal chooses a width that fits within the local memory.
+     * 
+     * Defaults to 0. Zero means Metal chooses a width that fits within the local memory.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("tileWidth")
@@ -397,13 +445,16 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] rasterizationRateMap
-     * <p>
+     * 
      * The variable rasterization rate map to use when rendering this pass, or nil to not use variable rasterization
      * rate.
-     * <p>
+     * 
      * The default value is nil. Enabling variable rasterization rate allows for decreasing the rasterization rate in
      * unimportant regions of screen space.
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("rasterizationRateMap")
     @MappedReturn(ObjCObjectMapper.class)
@@ -411,8 +462,10 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] renderTargetArrayLength:
-     * <p>
+     * 
      * The number of active layers
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("renderTargetArrayLength")
@@ -421,21 +474,25 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] rasterizationRateMap
-     * <p>
+     * 
      * The variable rasterization rate map to use when rendering this pass, or nil to not use variable rasterization
      * rate.
-     * <p>
+     * 
      * The default value is nil. Enabling variable rasterization rate allows for decreasing the rasterization rate in
      * unimportant regions of screen space.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setRasterizationRateMap:")
-    public native void setRasterizationRateMap(@Mapped(ObjCObjectMapper.class) MTLRasterizationRateMap value);
+    public native void setRasterizationRateMap(@Nullable @Mapped(ObjCObjectMapper.class) MTLRasterizationRateMap value);
 
     /**
      * [@property] renderTargetArrayLength:
-     * <p>
+     * 
      * The number of active layers
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setRenderTargetArrayLength:")
@@ -443,9 +500,12 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] sampleBufferAttachments
-     * <p>
+     * 
      * An array of sample buffers and associated sample indices.
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("sampleBufferAttachments")
     public native MTLRenderPassSampleBufferAttachmentDescriptorArray sampleBufferAttachments();

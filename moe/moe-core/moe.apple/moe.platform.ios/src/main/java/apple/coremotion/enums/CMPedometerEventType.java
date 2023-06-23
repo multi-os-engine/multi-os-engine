@@ -21,13 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * CMPedometerEventType
- * <p>
+ * 
  * Discussion:
  * Events describing the transitions of pedestrian activity.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class CMPedometerEventType {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Pause = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Resume = 0x0000000000000001L;
 
     @Generated

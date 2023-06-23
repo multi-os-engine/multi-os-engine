@@ -24,7 +24,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
@@ -55,22 +60,25 @@ public class ASAuthorizationAppleIDProvider extends NSObject implements ASAuthor
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -79,6 +87,7 @@ public class ASAuthorizationAppleIDProvider extends NSObject implements ASAuthor
      * This method initializes and returns an instance of @see ASAuthorizationAppleIDRequest to be serviced by @see
      * ASAuthorizationController.
      */
+    @NotNull
     @Generated
     @Selector("createRequest")
     public native ASAuthorizationAppleIDRequest createRequest();
@@ -95,21 +104,21 @@ public class ASAuthorizationAppleIDProvider extends NSObject implements ASAuthor
      * This method can be used to get the current state of an opaque user ID previously given.
      * [@note] If credentialState is @see ASAuthorizationAppleIDProviderCredentialNotFound, an error will also be passed
      * in the completion block.
-     *
+     * 
      * @param userID     Opaque user identifier that will be checked for state.
      * @param completion A completion block that will return one of 3 possible states @see
      *                   ASAuthorizationAppleIDProviderCredentialState.
      */
     @Generated
     @Selector("getCredentialStateForUserID:completion:")
-    public native void getCredentialStateForUserIDCompletion(String userID,
-            @ObjCBlock(name = "call_getCredentialStateForUserIDCompletion") Block_getCredentialStateForUserIDCompletion completion);
+    public native void getCredentialStateForUserIDCompletion(@NotNull String userID,
+            @NotNull @ObjCBlock(name = "call_getCredentialStateForUserIDCompletion") Block_getCredentialStateForUserIDCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getCredentialStateForUserIDCompletion {
         @Generated
-        void call_getCredentialStateForUserIDCompletion(@NInt long credentialState, NSError error);
+        void call_getCredentialStateForUserIDCompletion(@NInt long credentialState, @Nullable NSError error);
     }
 
     @Generated
@@ -138,9 +147,10 @@ public class ASAuthorizationAppleIDProvider extends NSObject implements ASAuthor
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

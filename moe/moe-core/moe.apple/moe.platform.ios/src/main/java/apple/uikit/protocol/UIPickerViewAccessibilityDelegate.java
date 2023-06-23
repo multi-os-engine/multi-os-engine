@@ -27,6 +27,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Optionally implement the following methods in a UIPickerView delegate
@@ -38,24 +40,30 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPickerViewAccessibilityDelegate")
 public interface UIPickerViewAccessibilityDelegate extends UIPickerViewDelegate {
+    @Nullable
     @Generated
     @IsOptional
     @Selector("pickerView:accessibilityHintForComponent:")
-    default String pickerViewAccessibilityHintForComponent(UIPickerView pickerView, @NInt long component) {
+    default String pickerViewAccessibilityHintForComponent(@NotNull UIPickerView pickerView, @NInt long component) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("pickerView:accessibilityLabelForComponent:")
-    default String pickerViewAccessibilityLabelForComponent(UIPickerView pickerView, @NInt long component) {
+    default String pickerViewAccessibilityLabelForComponent(@NotNull UIPickerView pickerView, @NInt long component) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("pickerView:accessibilityAttributedHintForComponent:")
-    default NSAttributedString pickerViewAccessibilityAttributedHintForComponent(UIPickerView pickerView,
+    default NSAttributedString pickerViewAccessibilityAttributedHintForComponent(@NotNull UIPickerView pickerView,
             @NInt long component) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -63,27 +71,38 @@ public interface UIPickerViewAccessibilityDelegate extends UIPickerViewDelegate 
     /**
      * If an object adopting this protocol responds to these methods, the system will try sending them before sending
      * their non-attributed versions.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("pickerView:accessibilityAttributedLabelForComponent:")
-    default NSAttributedString pickerViewAccessibilityAttributedLabelForComponent(UIPickerView pickerView,
+    default NSAttributedString pickerViewAccessibilityAttributedLabelForComponent(@NotNull UIPickerView pickerView,
             @NInt long component) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("pickerView:accessibilityAttributedUserInputLabelsForComponent:")
     default NSArray<? extends NSAttributedString> pickerViewAccessibilityAttributedUserInputLabelsForComponent(
-            UIPickerView pickerView, @NInt long component) {
+            @NotNull UIPickerView pickerView, @NInt long component) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("pickerView:accessibilityUserInputLabelsForComponent:")
-    default NSArray<String> pickerViewAccessibilityUserInputLabelsForComponent(UIPickerView pickerView,
+    default NSArray<String> pickerViewAccessibilityUserInputLabelsForComponent(@NotNull UIPickerView pickerView,
             @NInt long component) {
         throw new java.lang.UnsupportedOperationException();
     }

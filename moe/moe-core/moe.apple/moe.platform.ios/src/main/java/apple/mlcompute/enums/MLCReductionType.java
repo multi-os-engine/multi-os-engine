@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] MLCReductionType
- * <p>
+ * 
  * A reduction operation type.
  */
 @Generated
@@ -43,14 +43,20 @@ public final class MLCReductionType {
     @Generated public static final int ArgMin = 0x00000006;
     /**
      * The L1norm reduction.
+     * 
+     * API-Since: 14.5
      */
     @Generated public static final int L1Norm = 0x00000007;
     /**
      * Any(X) = X_0 || X_1 || ... X_n
+     * 
+     * API-Since: 14.5
      */
     @Generated public static final int Any = 0x00000008;
     /**
      * Alf(X) = X_0 && X_1 && ... X_n
+     * 
+     * API-Since: 14.5
      */
     @Generated public static final int All = 0x00000009;
     /**

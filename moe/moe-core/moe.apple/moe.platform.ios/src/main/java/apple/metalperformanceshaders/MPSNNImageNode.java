@@ -24,19 +24,23 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNImageNode
- * <p>
+ * 
  * A placeholder node denoting the position of a MPSImage in a graph
- * <p>
+ * 
  * MPS neural network graphs are made up of filter nodes connected by
  * image (or state) nodes. An image node is produced by one filter but
  * may be consumed by more than one filter.
- * <p>
+ * 
  * Most image nodes will be created by MPS and made available through
  * MPSNNFilterNode.resultImage. Image nodes that are not created by MPS
  * (i.e. "the graph inputs") must be created by you.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -68,22 +72,25 @@ public class MPSNNImageNode extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -98,12 +105,12 @@ public class MPSNNImageNode extends NSObject {
 
     /**
      * Tag a image node for view later
-     * <p>
+     * 
      * Most image nodes are private to the graph. These alias memory heavily and
      * consequently generally have invalid state when the graph exits. When
      * exportFromGraph = YES, the image is preserved and made available through
      * the [MPSNNGraph encode... intermediateImages:... list.
-     * <p>
+     * 
      * CAUTION: exporting an image from a graph prevents MPS from
      * recycling memory. It will nearly always cause the
      * amount of memory used by the graph to increase by the size
@@ -111,7 +118,7 @@ public class MPSNNImageNode extends NSObject {
      * regression accordingly. This feature should generally
      * be used only when the node is needed as an input for
      * further work and recomputing it is prohibitively costly.
-     * <p>
+     * 
      * Default: NO
      */
     @Generated
@@ -120,16 +127,17 @@ public class MPSNNImageNode extends NSObject {
 
     /**
      * Create a autoreleased MPSNNImageNode with exportFromGraph = YES.
-     * <p>
+     * 
      * Note: image is still temporary. See MPSNNImageNode.imageAllocator parameter.
      */
+    @NotNull
     @Generated
     @Selector("exportedNodeWithHandle:")
-    public static native MPSNNImageNode exportedNodeWithHandle(NSObject handle);
+    public static native MPSNNImageNode exportedNodeWithHandle(@Nullable NSObject handle);
 
     /**
      * The preferred precision for the image
-     * <p>
+     * 
      * Default: MPSImageFeatureChannelFormatNone, meaning MPS should pick a format
      * Typically, this is 16-bit floating-point.
      */
@@ -140,9 +148,10 @@ public class MPSNNImageNode extends NSObject {
 
     /**
      * MPS resource identifier
-     * <p>
+     * 
      * See MPSHandle protocol description. Default: nil
      */
+    @Nullable
     @Generated
     @Selector("handle")
     @MappedReturn(ObjCObjectMapper.class)
@@ -155,10 +164,11 @@ public class MPSNNImageNode extends NSObject {
 
     /**
      * Configurability for image allocation
-     * <p>
+     * 
      * Allows you to influence how the image is allocated
      * Default: MPSTemporaryImage.defaultAllocator
      */
+    @NotNull
     @Generated
     @Selector("imageAllocator")
     @MappedReturn(ObjCObjectMapper.class)
@@ -170,7 +180,7 @@ public class MPSNNImageNode extends NSObject {
 
     @Generated
     @Selector("initWithHandle:")
-    public native MPSNNImageNode initWithHandle(NSObject handle);
+    public native MPSNNImageNode initWithHandle(@Nullable NSObject handle);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -189,9 +199,10 @@ public class MPSNNImageNode extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -200,7 +211,7 @@ public class MPSNNImageNode extends NSObject {
 
     @Generated
     @Selector("nodeWithHandle:")
-    public static native MPSNNImageNode nodeWithHandle(NSObject handle);
+    public static native MPSNNImageNode nodeWithHandle(@Nullable NSObject handle);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -212,12 +223,12 @@ public class MPSNNImageNode extends NSObject {
 
     /**
      * Tag a image node for view later
-     * <p>
+     * 
      * Most image nodes are private to the graph. These alias memory heavily and
      * consequently generally have invalid state when the graph exits. When
      * exportFromGraph = YES, the image is preserved and made available through
      * the [MPSNNGraph encode... intermediateImages:... list.
-     * <p>
+     * 
      * CAUTION: exporting an image from a graph prevents MPS from
      * recycling memory. It will nearly always cause the
      * amount of memory used by the graph to increase by the size
@@ -225,7 +236,7 @@ public class MPSNNImageNode extends NSObject {
      * regression accordingly. This feature should generally
      * be used only when the node is needed as an input for
      * further work and recomputing it is prohibitively costly.
-     * <p>
+     * 
      * Default: NO
      */
     @Generated
@@ -234,7 +245,7 @@ public class MPSNNImageNode extends NSObject {
 
     /**
      * The preferred precision for the image
-     * <p>
+     * 
      * Default: MPSImageFeatureChannelFormatNone, meaning MPS should pick a format
      * Typically, this is 16-bit floating-point.
      */
@@ -244,22 +255,22 @@ public class MPSNNImageNode extends NSObject {
 
     /**
      * MPS resource identifier
-     * <p>
+     * 
      * See MPSHandle protocol description. Default: nil
      */
     @Generated
     @Selector("setHandle:")
-    public native void setHandle(@Mapped(ObjCObjectMapper.class) MPSHandle value);
+    public native void setHandle(@Nullable @Mapped(ObjCObjectMapper.class) MPSHandle value);
 
     /**
      * Configurability for image allocation
-     * <p>
+     * 
      * Allows you to influence how the image is allocated
      * Default: MPSTemporaryImage.defaultAllocator
      */
     @Generated
     @Selector("setImageAllocator:")
-    public native void setImageAllocator(@Mapped(ObjCObjectMapper.class) MPSImageAllocator value);
+    public native void setImageAllocator(@NotNull @Mapped(ObjCObjectMapper.class) MPSImageAllocator value);
 
     @Generated
     @Selector("setVersion:")
@@ -276,7 +287,7 @@ public class MPSNNImageNode extends NSObject {
 
     /**
      * Stop training graph automatic creation at this node.
-     * <p>
+     * 
      * An inference graph of MPSNNFilterNodes, MPSNNStateNodes and MPSNNImageNodes can be automatically
      * converted to a training graph using -[MPSNNFilterNode trainingGraphWithSourceGradient:nodeHandler:].
      * Sometimes, an inference graph may contain extra nodes at start to do operations like resampling or range
@@ -284,6 +295,8 @@ public class MPSNNImageNode extends NSObject {
      * nodes from being included in the training graph, set <undesired node>.resultImage.stopGradient = YES.
      * This will prevent gradient propagation beyond this MPSNNImageNode.
      * Default: NO
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setStopGradient:")
@@ -291,8 +304,10 @@ public class MPSNNImageNode extends NSObject {
 
     /**
      * Set to true to cause the resource to be synchronized with the CPU
-     * <p>
+     * 
      * It is not needed on iOS/tvOS devices, where it does nothing.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setSynchronizeResource:")
@@ -300,7 +315,7 @@ public class MPSNNImageNode extends NSObject {
 
     /**
      * Stop training graph automatic creation at this node.
-     * <p>
+     * 
      * An inference graph of MPSNNFilterNodes, MPSNNStateNodes and MPSNNImageNodes can be automatically
      * converted to a training graph using -[MPSNNFilterNode trainingGraphWithSourceGradient:nodeHandler:].
      * Sometimes, an inference graph may contain extra nodes at start to do operations like resampling or range
@@ -308,6 +323,8 @@ public class MPSNNImageNode extends NSObject {
      * nodes from being included in the training graph, set <undesired node>.resultImage.stopGradient = YES.
      * This will prevent gradient propagation beyond this MPSNNImageNode.
      * Default: NO
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("stopGradient")
@@ -315,8 +332,10 @@ public class MPSNNImageNode extends NSObject {
 
     /**
      * Set to true to cause the resource to be synchronized with the CPU
-     * <p>
+     * 
      * It is not needed on iOS/tvOS devices, where it does nothing.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("synchronizeResource")

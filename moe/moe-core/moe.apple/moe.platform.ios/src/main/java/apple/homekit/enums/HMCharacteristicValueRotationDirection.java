@@ -21,13 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueRotationDirection
- * <p>
+ * 
  * [@constant] HMCharacteristicValueRotationDirectionClockwise Clockwise.
  * [@constant] HMCharacteristicValueRotationDirectionCounterClockwise Counter-clockwise.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class HMCharacteristicValueRotationDirection {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Clockwise = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long CounterClockwise = 0x0000000000000001L;
 
     @Generated

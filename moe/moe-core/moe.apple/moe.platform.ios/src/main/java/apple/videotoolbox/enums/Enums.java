@@ -46,6 +46,9 @@ public final class Enums {
     @Generated public static final int kVTVideoDecoderMalfunctionErr = 0xFFFFCD91;
     @Generated public static final int kVTVideoEncoderMalfunctionErr = 0xFFFFCD90;
     @Generated public static final int kVTVideoDecoderNotAvailableNowErr = 0xFFFFCD8F;
+    /**
+     * deprecated
+     */
     @Generated public static final int kVTImageRotationNotSupportedErr = 0xFFFFCD8E;
     @Generated public static final int kVTVideoEncoderNotAvailableNowErr = 0xFFFFCD8D;
     @Generated public static final int kVTFormatDescriptionChangeNotSupportedErr = 0xFFFFCD8C;
@@ -74,4 +77,6 @@ public final class Enums {
     @Generated public static final int kVTVideoEncoderNeedsRosettaErr = 0xFFFFBAE3;
     @Generated public static final int kVTVideoDecoderReferenceMissingErr = 0xFFFFBAE2;
     @Generated public static final int kVTVideoDecoderCallbackMessagingErr = 0xFFFFBAE1;
+    @Generated public static final int kVTPixelRotationNotSupportedErr = 0xFFFFCD8E;
+    @Generated public static final int kVTVideoDecoderUnknownErr = 0xFFFFBAE0;
 }

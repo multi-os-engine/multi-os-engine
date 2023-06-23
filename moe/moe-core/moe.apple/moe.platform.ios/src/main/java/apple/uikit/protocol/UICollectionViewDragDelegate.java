@@ -1,6 +1,5 @@
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSIndexPath;
 import apple.uikit.UICollectionView;
@@ -16,7 +15,13 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -27,11 +32,12 @@ public interface UICollectionViewDragDelegate {
      * view.
      * If not implemented or if nil is returned, the entire cell will be used for the preview.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("collectionView:dragPreviewParametersForItemAtIndexPath:")
     default UIDragPreviewParameters collectionViewDragPreviewParametersForItemAtIndexPath(
-            UICollectionView collectionView, NSIndexPath indexPath) {
+            @NotNull UICollectionView collectionView, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -42,8 +48,8 @@ public interface UICollectionViewDragDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:dragSessionAllowsMoveOperation:")
-    default boolean collectionViewDragSessionAllowsMoveOperation(UICollectionView collectionView,
-            @Mapped(ObjCObjectMapper.class) UIDragSession session) {
+    default boolean collectionViewDragSessionAllowsMoveOperation(@NotNull UICollectionView collectionView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -53,8 +59,8 @@ public interface UICollectionViewDragDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:dragSessionDidEnd:")
-    default void collectionViewDragSessionDidEnd(UICollectionView collectionView,
-            @Mapped(ObjCObjectMapper.class) UIDragSession session) {
+    default void collectionViewDragSessionDidEnd(@NotNull UICollectionView collectionView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -66,8 +72,8 @@ public interface UICollectionViewDragDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:dragSessionIsRestrictedToDraggingApplication:")
-    default boolean collectionViewDragSessionIsRestrictedToDraggingApplication(UICollectionView collectionView,
-            @Mapped(ObjCObjectMapper.class) UIDragSession session) {
+    default boolean collectionViewDragSessionIsRestrictedToDraggingApplication(@NotNull UICollectionView collectionView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,8 +84,8 @@ public interface UICollectionViewDragDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:dragSessionWillBegin:")
-    default void collectionViewDragSessionWillBegin(UICollectionView collectionView,
-            @Mapped(ObjCObjectMapper.class) UIDragSession session) {
+    default void collectionViewDragSessionWillBegin(@NotNull UICollectionView collectionView,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -90,12 +96,13 @@ public interface UICollectionViewDragDelegate {
      * If not implemented, or if an empty array is returned, no items will be added to the drag and the gesture
      * will be handled normally.
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("collectionView:itemsForAddingToDragSession:atIndexPath:point:")
     default NSArray<? extends UIDragItem> collectionViewItemsForAddingToDragSessionAtIndexPathPoint(
-            UICollectionView collectionView, @Mapped(ObjCObjectMapper.class) UIDragSession session,
-            NSIndexPath indexPath, @ByValue CGPoint point) {
+            @NotNull UICollectionView collectionView, @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession session,
+            @NotNull NSIndexPath indexPath, @ByValue CGPoint point) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -103,8 +110,10 @@ public interface UICollectionViewDragDelegate {
      * Provide items to begin a drag associated with a given indexPath.
      * If an empty array is returned a drag session will not begin.
      */
+    @NotNull
     @Generated
     @Selector("collectionView:itemsForBeginningDragSession:atIndexPath:")
-    NSArray<? extends UIDragItem> collectionViewItemsForBeginningDragSessionAtIndexPath(UICollectionView collectionView,
-            @Mapped(ObjCObjectMapper.class) UIDragSession session, NSIndexPath indexPath);
+    NSArray<? extends UIDragItem> collectionViewItemsForBeginningDragSessionAtIndexPath(
+            @NotNull UICollectionView collectionView, @NotNull @Mapped(ObjCObjectMapper.class) UIDragSession session,
+            @NotNull NSIndexPath indexPath);
 }

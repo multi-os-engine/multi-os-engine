@@ -28,13 +28,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CLBeaconIdentityConstraint
- * <p>
+ * 
  * Discussion:
  * A constraint that describes the identity caracteristics of a beacon.
- * <p>
+ * 
  * A beacon identity is defined by UUID, major and minor values.
  * UUID must be specified. If only UUID is specified, the major and
  * minor values will be wildcarded and any beacons with the same
@@ -42,6 +44,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * major value are specified, the minor value will be wildcarded
  * and any beacons with the same UUID and major value will satisfy
  * the constraint.
+ * 
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreLocation")
@@ -59,10 +64,11 @@ public class CLBeaconIdentityConstraint extends NSObject implements NSCopying, N
 
     /**
      * UUID
-     * <p>
+     * 
      * Discussion:
      * UUID associated with the beacon.
      */
+    @NotNull
     @Generated
     @Selector("UUID")
     public native NSUUID UUID();
@@ -83,31 +89,35 @@ public class CLBeaconIdentityConstraint extends NSObject implements NSCopying, N
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -119,7 +129,7 @@ public class CLBeaconIdentityConstraint extends NSObject implements NSCopying, N
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -132,40 +142,40 @@ public class CLBeaconIdentityConstraint extends NSObject implements NSCopying, N
 
     @Generated
     @Selector("initWithCoder:")
-    public native CLBeaconIdentityConstraint initWithCoder(NSCoder coder);
+    public native CLBeaconIdentityConstraint initWithCoder(@NotNull NSCoder coder);
 
     /**
      * initWithUUID:
-     * <p>
+     * 
      * Discussion:
      * Initialize a beacon identity constraint with a UUID. Major and
      * minor values will be wildcarded.
      */
     @Generated
     @Selector("initWithUUID:")
-    public native CLBeaconIdentityConstraint initWithUUID(NSUUID uuid);
+    public native CLBeaconIdentityConstraint initWithUUID(@NotNull NSUUID uuid);
 
     /**
      * initWithUUID:major:
-     * <p>
+     * 
      * Discussion:
      * Initialize a beacon identity constraint with a UUID and major
      * value. Minor value will be wildcarded.
      */
     @Generated
     @Selector("initWithUUID:major:")
-    public native CLBeaconIdentityConstraint initWithUUIDMajor(NSUUID uuid, char major);
+    public native CLBeaconIdentityConstraint initWithUUIDMajor(@NotNull NSUUID uuid, char major);
 
     /**
      * initWithUUID:major:minor:
-     * <p>
+     * 
      * Discussion:
      * Initialize a beacon identity constraint with a UUID, major, and
      * minor values.
      */
     @Generated
     @Selector("initWithUUID:major:minor:")
-    public native CLBeaconIdentityConstraint initWithUUIDMajorMinor(NSUUID uuid, char major, char minor);
+    public native CLBeaconIdentityConstraint initWithUUIDMajorMinor(@NotNull NSUUID uuid, char major, char minor);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -184,26 +194,29 @@ public class CLBeaconIdentityConstraint extends NSObject implements NSCopying, N
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * major
-     * <p>
+     * 
      * Discussion:
      * Most significant value associated with the beacon.
      */
+    @Nullable
     @Generated
     @Selector("major")
     public native NSNumber major();
 
     /**
      * minor
-     * <p>
+     * 
      * Discussion:
      * Least significant value associated with the beacon.
      */
+    @Nullable
     @Generated
     @Selector("minor")
     public native NSNumber minor();

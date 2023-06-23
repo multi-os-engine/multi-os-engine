@@ -42,7 +42,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -73,22 +78,25 @@ public class INRestaurantReservationUserBooking extends INRestaurantReservationB
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +131,10 @@ public class INRestaurantReservationUserBooking extends INRestaurantReservationB
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,23 +170,27 @@ public class INRestaurantReservationUserBooking extends INRestaurantReservationB
      * a string representing restaurant specific information related to the reservation: things like late policies,
      * parking instructions, or specials
      */
+    @Nullable
     @Generated
     @Selector("advisementText")
     public native String advisementText();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * date indicating when the status was updated to its current value
      */
+    @NotNull
     @Generated
     @Selector("dateStatusModified")
     public native NSDate dateStatusModified();
 
+    @NotNull
     @Generated
     @Selector("guest")
     public native INRestaurantGuest guest();
@@ -185,6 +198,7 @@ public class INRestaurantReservationUserBooking extends INRestaurantReservationB
     /**
      * any user-specified special request text submitted with the reservation
      */
+    @Nullable
     @Generated
     @Selector("guestProvidedSpecialRequestText")
     public native String guestProvidedSpecialRequestText();
@@ -195,22 +209,25 @@ public class INRestaurantReservationUserBooking extends INRestaurantReservationB
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRestaurantReservationUserBooking initWithCoder(NSCoder coder);
+    public native INRestaurantReservationUserBooking initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithRestaurant:bookingDate:partySize:bookingIdentifier:")
     public native INRestaurantReservationUserBooking initWithRestaurantBookingDatePartySizeBookingIdentifier(
-            INRestaurant restaurant, NSDate bookingDate, @NUInt long partySize, String bookingIdentifier);
+            @NotNull INRestaurant restaurant, @NotNull NSDate bookingDate, @NUInt long partySize,
+            @NotNull String bookingIdentifier);
 
     @Generated
     @Selector("initWithRestaurant:bookingDate:partySize:bookingIdentifier:guest:status:dateStatusModified:")
     public native INRestaurantReservationUserBooking initWithRestaurantBookingDatePartySizeBookingIdentifierGuestStatusDateStatusModified(
-            INRestaurant restaurant, NSDate bookingDate, @NUInt long partySize, String bookingIdentifier,
-            INRestaurantGuest guest, @NUInt long status, NSDate dateStatusModified);
+            @NotNull INRestaurant restaurant, @NotNull NSDate bookingDate, @NUInt long partySize,
+            @NotNull String bookingIdentifier, @NotNull INRestaurantGuest guest, @NUInt long status,
+            @NotNull NSDate dateStatusModified);
 
     /**
      * an offer, if any, attached to the booking
      */
+    @Nullable
     @Generated
     @Selector("selectedOffer")
     public native INRestaurantOffer selectedOffer();
@@ -221,32 +238,32 @@ public class INRestaurantReservationUserBooking extends INRestaurantReservationB
      */
     @Generated
     @Selector("setAdvisementText:")
-    public native void setAdvisementText(String value);
+    public native void setAdvisementText(@Nullable String value);
 
     /**
      * date indicating when the status was updated to its current value
      */
     @Generated
     @Selector("setDateStatusModified:")
-    public native void setDateStatusModified(NSDate value);
+    public native void setDateStatusModified(@NotNull NSDate value);
 
     @Generated
     @Selector("setGuest:")
-    public native void setGuest(INRestaurantGuest value);
+    public native void setGuest(@NotNull INRestaurantGuest value);
 
     /**
      * any user-specified special request text submitted with the reservation
      */
     @Generated
     @Selector("setGuestProvidedSpecialRequestText:")
-    public native void setGuestProvidedSpecialRequestText(String value);
+    public native void setGuestProvidedSpecialRequestText(@Nullable String value);
 
     /**
      * an offer, if any, attached to the booking
      */
     @Generated
     @Selector("setSelectedOffer:")
-    public native void setSelectedOffer(INRestaurantOffer value);
+    public native void setSelectedOffer(@Nullable INRestaurantOffer value);
 
     /**
      * an enum indicating whether a booking was denied, pending, or confirmed

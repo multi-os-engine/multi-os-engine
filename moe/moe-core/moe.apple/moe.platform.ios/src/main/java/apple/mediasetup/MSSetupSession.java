@@ -26,7 +26,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("MediaSetup")
 @Runtime(ObjCRuntime.class)
@@ -48,6 +53,7 @@ public class MSSetupSession extends NSObject {
     /**
      * The account used to initialize the session
      */
+    @NotNull
     @Generated
     @Selector("account")
     public native MSServiceAccount account();
@@ -64,22 +70,25 @@ public class MSSetupSession extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,7 +115,7 @@ public class MSSetupSession extends NSObject {
      */
     @Generated
     @Selector("initWithServiceAccount:")
-    public native MSSetupSession initWithServiceAccount(MSServiceAccount serviceAccount);
+    public native MSSetupSession initWithServiceAccount(@NotNull MSServiceAccount serviceAccount);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -125,9 +134,10 @@ public class MSSetupSession extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -137,6 +147,7 @@ public class MSSetupSession extends NSObject {
     /**
      * A context to provide the session with anchor for presentation. See MSAuthenticationPresentationContext protocol
      */
+    @Nullable
     @Generated
     @Selector("presentationContext")
     @MappedReturn(ObjCObjectMapper.class)
@@ -156,13 +167,14 @@ public class MSSetupSession extends NSObject {
     @Generated
     @Selector("setPresentationContext:")
     public native void setPresentationContext_unsafe(
-            @Mapped(ObjCObjectMapper.class) MSAuthenticationPresentationContext value);
+            @Nullable @Mapped(ObjCObjectMapper.class) MSAuthenticationPresentationContext value);
 
     /**
      * A context to provide the session with anchor for presentation. See MSAuthenticationPresentationContext protocol
      */
     @Generated
-    public void setPresentationContext(@Mapped(ObjCObjectMapper.class) MSAuthenticationPresentationContext value) {
+    public void setPresentationContext(
+            @Nullable @Mapped(ObjCObjectMapper.class) MSAuthenticationPresentationContext value) {
         Object __old = presentationContext();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -182,7 +194,7 @@ public class MSSetupSession extends NSObject {
      */
     @Generated
     @Selector("startWithError:")
-    public native boolean startWithError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean startWithError(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("superclass")

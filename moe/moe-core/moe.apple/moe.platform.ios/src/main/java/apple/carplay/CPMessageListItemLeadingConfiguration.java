@@ -22,10 +22,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@c] CPMessageListItemLeadingConfiguration encapsulates the configuration options for
  * the leading side of your message list cell.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("CarPlay")
@@ -57,22 +61,25 @@ public class CPMessageListItemLeadingConfiguration extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -97,28 +104,28 @@ public class CPMessageListItemLeadingConfiguration extends NSObject {
     /**
      * To properly size your list images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
-     *
+     * 
      * @param leadingItem  An optional glyph displayed on the leading side of the cell.
      * @param leadingImage An optional image displayed on the leading side of the cell.
      * @param unread       Whether this conversation is unread. If unread, the list item
      *                     will render with an unread indicator and tapping this item will read the conversation. If
      *                     read,
      *                     no unread indicator will be displayed and tapping this item will compose a new message.
-     *                     <p>
+     * 
      *                     When providing an image, your app should provide a @c UIImage that is display-ready. If
      *                     necessary for the image, provide
      *                     light and dark styles by using an asset from your asset catalog, prepared with light and dark
      *                     styles
      *                     or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      *                     both styles.
-     *                     <p>
+     * 
      *                     UIImageAsset is used to combine multiple UIImages with different trait collections into a
      *                     single UIImage.
      */
     @Generated
     @Selector("initWithLeadingItem:leadingImage:unread:")
     public native CPMessageListItemLeadingConfiguration initWithLeadingItemLeadingImageUnread(@NInt long leadingItem,
-            UIImage leadingImage, boolean unread);
+            @Nullable UIImage leadingImage, boolean unread);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -141,10 +148,12 @@ public class CPMessageListItemLeadingConfiguration extends NSObject {
     @Selector("isUnread")
     public native boolean isUnread();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("leadingImage")
     public native UIImage leadingImage();

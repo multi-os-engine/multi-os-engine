@@ -24,11 +24,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NFCISO7816APDU
- * <p>
+ * 
  * ISO7816 Application Data Unit (APDU).
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreNFC")
@@ -60,35 +64,42 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] data Data field; nil if data field is absent
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("data")
     public native NSData data();
@@ -103,6 +114,8 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
 
     /**
      * [@property] expectedResponseLength Expected response length (Le). -1 means no response data field is expected.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("expectedResponseLength")
@@ -120,22 +133,27 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
 
     /**
      * initWithData:
-     *
+     * 
      * @param data Data buffer containing the full APDU.
+     * 
      * @return nil if input data does not contain a valid APDU.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithData:")
-    public native NFCISO7816APDU initWithData(NSData data);
+    public native NFCISO7816APDU initWithData(@NotNull NSData data);
 
     /**
      * initWithInstructionClass:instructionCode:p1Parameter:p2Parameter:data:expectedResponseLength:
-     * <p>
+     * 
      * Generates an ISO7816 APDU object. The Lc value is generated base on the size of the data object; possible value
      * ranges from
      * 1 to 65535 inclusively. Use @link -initWithData: @link/ in cases where a finer control on the APDU format is
      * required.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param instructionClass       Instruction class (CLA) byte
      * @param instructionCode        Instruction code (INS) byte
      * @param p1Parameter            P1 parameter byte
@@ -151,7 +169,7 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
     @Generated
     @Selector("initWithInstructionClass:instructionCode:p1Parameter:p2Parameter:data:expectedResponseLength:")
     public native NFCISO7816APDU initWithInstructionClassInstructionCodeP1ParameterP2ParameterDataExpectedResponseLength(
-            byte instructionClass, byte instructionCode, byte p1Parameter, byte p2Parameter, NSData data,
+            byte instructionClass, byte instructionCode, byte p1Parameter, byte p2Parameter, @NotNull NSData data,
             @NInt long expectedResponseLength);
 
     @Generated
@@ -169,6 +187,8 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
 
     /**
      * [@property] instructionClass Class (CLA) byte.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("instructionClass")
@@ -176,6 +196,8 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
 
     /**
      * [@property] instructionCode Instruction (INS) byte.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("instructionCode")
@@ -185,9 +207,10 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -196,6 +219,8 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
 
     /**
      * [@property] p1Parameter P1 parameter.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("p1Parameter")
@@ -203,6 +228,8 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
 
     /**
      * [@property] p2Parameter P2 parameter.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("p2Parameter")

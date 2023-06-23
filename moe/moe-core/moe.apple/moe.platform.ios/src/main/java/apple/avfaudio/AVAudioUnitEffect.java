@@ -24,19 +24,24 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioUnitEffect
- * <p>
+ * 
  * an AVAudioUnit that processes audio in real-time
- * <p>
+ * 
  * An AVAudioUnitEffect represents an audio unit of type kAudioUnitType_Effect,
  * kAudioUnitType_MusicEffect, kAudioUnitType_Panner, kAudioUnitType_RemoteEffect or
  * kAudioUnitType_RemoteMusicEffect.
- * <p>
+ * 
  * These effects run in real-time and process some x number of audio input
  * samples to produce x number of audio output samples. A delay unit is an
  * example of an effect unit.
+ * 
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -68,11 +73,11 @@ public class AVAudioUnitEffect extends AVAudioUnit {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] bypass
-     * <p>
+     * 
      * Bypass state of the audio unit.
      */
     @Generated
@@ -81,18 +86,21 @@ public class AVAudioUnitEffect extends AVAudioUnit {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -116,17 +124,18 @@ public class AVAudioUnitEffect extends AVAudioUnit {
 
     /**
      * initWithAudioComponentDescription:
-     * <p>
+     * 
      * Create an AVAudioUnitEffect object.
-     * <p>
+     * 
      * The componentType must be one of these types
      * kAudioUnitType_Effect
      * kAudioUnitType_MusicEffect
      * kAudioUnitType_Panner
      * kAudioUnitType_RemoteEffect
      * kAudioUnitType_RemoteMusicEffect
-     *
-     * @param audioComponentDescription AudioComponentDescription of the audio unit to be instantiated.
+     * 
+     * @param audioComponentDescription
+     *                                  AudioComponentDescription of the audio unit to be instantiated.
      */
     @Generated
     @Selector("initWithAudioComponentDescription:")
@@ -150,15 +159,16 @@ public class AVAudioUnitEffect extends AVAudioUnit {
     @Selector("instantiateWithComponentDescription:options:completionHandler:")
     public static native void instantiateWithComponentDescriptionOptionsCompletionHandler(
             @ByValue AudioComponentDescription audioComponentDescription, int options,
-            @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") AVAudioUnit.Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") AVAudioUnit.Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -175,7 +185,7 @@ public class AVAudioUnitEffect extends AVAudioUnit {
 
     /**
      * [@property] bypass
-     * <p>
+     * 
      * Bypass state of the audio unit.
      */
     @Generated

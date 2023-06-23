@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] AudioFileFlags
- * <p>
+ * 
  * These are flags that can be used with the CreateURL API call
  * [@constant] kAudioFileFlags_EraseFile
  * If set, then the CreateURL call will erase the contents of an existing file

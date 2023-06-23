@@ -25,12 +25,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This class provides some pre-rolled padding policies for common tasks
- * <p>
+ * 
  * You are, of course, welcome to write your own class that conforms to
  * The MPSNNPadding protocol and use that instead.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -62,22 +66,25 @@ public class MPSNNDefaultPadding extends NSObject implements MPSNNPadding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -90,16 +97,17 @@ public class MPSNNDefaultPadding extends NSObject implements MPSNNPadding {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("destinationImageDescriptorForSourceImages:sourceStates:forKernel:suggestedDescriptor:")
     public native MPSImageDescriptor destinationImageDescriptorForSourceImagesSourceStatesForKernelSuggestedDescriptor(
-            NSArray<? extends MPSImage> sourceImages, NSArray<? extends MPSState> sourceStates, MPSKernel kernel,
-            MPSImageDescriptor inDescriptor);
+            @NotNull NSArray<? extends MPSImage> sourceImages, @Nullable NSArray<? extends MPSState> sourceStates,
+            @NotNull MPSKernel kernel, @NotNull MPSImageDescriptor inDescriptor);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -112,7 +120,7 @@ public class MPSNNDefaultPadding extends NSObject implements MPSNNPadding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNDefaultPadding initWithCoder(NSCoder coder);
+    public native MPSNNDefaultPadding initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -131,10 +139,12 @@ public class MPSNNDefaultPadding extends NSObject implements MPSNNPadding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("label")
     public native String label();
@@ -146,6 +156,8 @@ public class MPSNNDefaultPadding extends NSObject implements MPSNNPadding {
 
     /**
      * same size centering mode
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("paddingForTensorflowAveragePooling")
@@ -158,10 +170,10 @@ public class MPSNNDefaultPadding extends NSObject implements MPSNNPadding {
 
     /**
      * Fetch a well known object that implements a non-custom padding method
-     * <p>
+     * 
      * For custom padding methods, you will need to implement an object that conforms
      * to the full MPSNNPadding protocol, including NSSecureCoding.
-     *
+     * 
      * @param method A MPSNNPaddingMethod
      * @return An object that implements <MPSNNPadding> for use with MPSNNGraphNodes.
      */
@@ -200,6 +212,7 @@ public class MPSNNDefaultPadding extends NSObject implements MPSNNPadding {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("inverse")
@@ -207,6 +220,8 @@ public class MPSNNDefaultPadding extends NSObject implements MPSNNPadding {
 
     /**
      * Typical pooling padding policy for valid only mode
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("paddingForTensorflowAveragePoolingValidOnly")

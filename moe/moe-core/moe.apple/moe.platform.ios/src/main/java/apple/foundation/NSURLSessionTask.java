@@ -38,10 +38,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSURLSessionTask - a cancelable object that refers to the lifetime
  * of processing a given request.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("Foundation")
@@ -73,22 +77,25 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,10 +130,17 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Not supported
+     */
+    @Deprecated
     @Generated
     @Owned
     @Selector("new")
@@ -164,11 +178,12 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
     @Selector("cancel")
     public native void cancel();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * number of byte bytes we expect to receive, usually derived from the Content-Length header of an HTTP response.
@@ -201,18 +216,26 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
     /**
      * may differ from originalRequest due to http server redirection
      */
+    @Nullable
     @Generated
     @Selector("currentRequest")
     public native NSURLRequest currentRequest();
 
     /**
      * The error, if any, delivered via -URLSession:task:didCompleteWithError:
-     * This property will be nil in the event that no error occured.
+     * This property will be nil in the event that no error occurred.
      */
+    @Nullable
     @Generated
     @Selector("error")
     public native NSError error();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Not supported
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native NSURLSessionTask init();
@@ -220,6 +243,7 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
     /**
      * may be nil if this is a stream task
      */
+    @Nullable
     @Generated
     @Selector("originalRequest")
     public native NSURLRequest originalRequest();
@@ -228,16 +252,18 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
      * Sets a scaling factor for the priority of the task. The scaling factor is a
      * value between 0.0 and 1.0 (inclusive), where 0.0 is considered the lowest
      * priority and 1.0 is considered the highest.
-     * <p>
+     * 
      * The priority is a hint and not a hard requirement of task performance. The
      * priority of a task may be changed using this API at any time, but not all
      * protocols support this; in these cases, the last priority that took effect
      * will be used.
-     * <p>
+     * 
      * If no priority is specified, the task will operate with the default priority
      * as defined by the constant NSURLSessionTaskPriorityDefault. Two additional
      * priority levels are provided: NSURLSessionTaskPriorityLow and
      * NSURLSessionTaskPriorityHigh, but use is not restricted to these.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("priority")
@@ -246,6 +272,7 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
     /**
      * may be nil if no response has been received
      */
+    @Nullable
     @Generated
     @Selector("response")
     public native NSURLResponse response();
@@ -258,16 +285,18 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
      * Sets a scaling factor for the priority of the task. The scaling factor is a
      * value between 0.0 and 1.0 (inclusive), where 0.0 is considered the lowest
      * priority and 1.0 is considered the highest.
-     * <p>
+     * 
      * The priority is a hint and not a hard requirement of task performance. The
      * priority of a task may be changed using this API at any time, but not all
      * protocols support this; in these cases, the last priority that took effect
      * will be used.
-     * <p>
+     * 
      * If no priority is specified, the task will operate with the default priority
      * as defined by the constant NSURLSessionTaskPriorityDefault. Two additional
      * priority levels are provided: NSURLSessionTaskPriorityLow and
      * NSURLSessionTaskPriorityHigh, but use is not restricted to these.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPriority:")
@@ -279,7 +308,7 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
      */
     @Generated
     @Selector("setTaskDescription:")
-    public native void setTaskDescription(String value);
+    public native void setTaskDescription(@Nullable String value);
 
     /**
      * The current state of the task within the session.
@@ -306,6 +335,7 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
      * The taskDescription property is available for the developer to
      * provide a descriptive label for the task.
      */
+    @Nullable
     @Generated
     @Selector("taskDescription")
     public native String taskDescription();
@@ -318,6 +348,9 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
     @NUInt
     public native long taskIdentifier();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("countOfBytesClientExpectsToReceive")
     public native long countOfBytesClientExpectsToReceive();
@@ -326,6 +359,8 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
      * The number of bytes that the client expects (a best-guess upper-bound) will
      * be sent and received by this task. These values are used by system scheduling
      * policy. If unspecified, NSURLSessionTransferSizeUnknown is used.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("countOfBytesClientExpectsToSend")
@@ -334,18 +369,25 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
     /**
      * Start the network load for this task no earlier than the specified date. If
      * not specified, no start delay is used.
-     * <p>
+     * 
      * Only applies to tasks created from background NSURLSession instances; has no
      * effect for tasks created from other session types.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("earliestBeginDate")
     public native NSDate earliestBeginDate();
 
+    @NotNull
     @Generated
     @Selector("progress")
     public native NSProgress progress();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setCountOfBytesClientExpectsToReceive:")
     public native void setCountOfBytesClientExpectsToReceive(long value);
@@ -354,6 +396,8 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
      * The number of bytes that the client expects (a best-guess upper-bound) will
      * be sent and received by this task. These values are used by system scheduling
      * policy. If unspecified, NSURLSessionTransferSizeUnknown is used.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCountOfBytesClientExpectsToSend:")
@@ -362,23 +406,28 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
     /**
      * Start the network load for this task no earlier than the specified date. If
      * not specified, no start delay is used.
-     * <p>
+     * 
      * Only applies to tasks created from background NSURLSession instances; has no
      * effect for tasks created from other session types.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setEarliestBeginDate:")
-    public native void setEarliestBeginDate(NSDate value);
+    public native void setEarliestBeginDate(@Nullable NSDate value);
 
     /**
      * Sets a task-specific delegate. Methods not implemented on this delegate will
      * still be forwarded to the session delegate.
-     * <p>
+     * 
      * Cannot be modified after task resumes. Not supported on background session.
-     * <p>
+     * 
      * Delegate is strongly referenced until the task completes, after which it is
      * reset to `nil`.
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -390,9 +439,11 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
      * until it is complete. Indicating that incremental delivery is not desired may
      * improve task performance. For example, if a response cannot be decoded until
      * the entire content is received, set this property to false.
-     * <p>
+     * 
      * Defaults to true unless this task is created with completion-handler based
      * convenience methods, or if it is a download task.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("prefersIncrementalDelivery")
@@ -401,15 +452,17 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
     /**
      * Sets a task-specific delegate. Methods not implemented on this delegate will
      * still be forwarded to the session delegate.
-     * <p>
+     * 
      * Cannot be modified after task resumes. Not supported on background session.
-     * <p>
+     * 
      * Delegate is strongly referenced until the task completes, after which it is
      * reset to `nil`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate(@Mapped(ObjCObjectMapper.class) NSURLSessionTaskDelegate value);
+    public native void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSURLSessionTaskDelegate value);
 
     /**
      * Provides a hint indicating if incremental delivery of a partial response body
@@ -417,9 +470,11 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
      * until it is complete. Indicating that incremental delivery is not desired may
      * improve task performance. For example, if a response cannot be decoded until
      * the entire content is received, set this property to false.
-     * <p>
+     * 
      * Defaults to true unless this task is created with completion-handler based
      * convenience methods, or if it is a download task.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setPrefersIncrementalDelivery:")

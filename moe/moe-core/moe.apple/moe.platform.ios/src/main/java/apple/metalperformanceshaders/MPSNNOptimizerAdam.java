@@ -25,31 +25,36 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNOptimizerAdam
- * <p>
+ * 
  * The MPSNNOptimizerAdam performs an Adam Update
- * <p>
+ * 
  * Initialization time
  * m[0] = 0 (Initialize initial 1st moment vector aka momentum, user is responsible for this)
  * v[0] = 0 (Initialize initial 2nd moment vector aka velocity, user is responsible for this)
  * t = 0 (Initialize timestep)
- * <p>
+ * 
  * https://arxiv.org/abs/1412.6980
- * <p>
+ * 
  * At update time:
  * t = t + 1
  * lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
- * <p>
+ * 
  * m[t] = beta1 * m[t-1] + (1 - beta1) * g
  * v[t] = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
  * variable = variable - lr[t] * m[t] / (sqrt(v[t]) + epsilon)
- * <p>
+ * 
  * where,
  * g is gradient of error wrt variable
  * v[t] is velocity
  * m[t] is momentum
+ * 
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -81,13 +86,13 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] beta1
-     * <p>
+     * 
      * The beta1 at which we update values
-     * <p>
+     * 
      * Default value is 0.9
      */
     @Generated
@@ -96,9 +101,9 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
 
     /**
      * [@property] beta2
-     * <p>
+     * 
      * The beta2 at which we update values
-     * <p>
+     * 
      * Default value is 0.999
      */
     @Generated
@@ -107,18 +112,21 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,17 +141,20 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
 
     /**
      * Encode an AMSGrad variant of MPSNNOptimizerAdam object to a command buffer to perform out of place update
-     * <p>
+     * 
      * The following operations would be applied
      * At update time:
      * t = t + 1
      * lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
-     * <p>
+     * 
      * m[t] = beta1 * m[t-1] + (1 - beta1) * g
      * v[t] = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
      * maxVel[t] = max(maxVel[t-1],v[t])
      * variable = variable - lr[t] * m[t] / (sqrt(maxVel[t]) + epsilon)
-     *
+     * 
+     * 
+     * API-Since: 13.0
+     * 
      * @param commandBuffer                   A valid MTLCommandBuffer to receive the encoded kernel.
      * @param batchNormalizationGradientState A valid MPSCNNBatchNormalizationState object which specifies the input
      *                                        state with gradients for this update.
@@ -172,24 +183,26 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:batchNormalizationGradientState:batchNormalizationSourceState:inputMomentumVectors:inputVelocityVectors:maximumVelocityVectors:resultState:")
     public native void encodeToCommandBufferBatchNormalizationGradientStateBatchNormalizationSourceStateInputMomentumVectorsInputVelocityVectorsMaximumVelocityVectorsResultState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNBatchNormalizationState batchNormalizationGradientState,
-            MPSCNNBatchNormalizationState batchNormalizationSourceState,
-            NSArray<? extends MPSVector> inputMomentumVectors, NSArray<? extends MPSVector> inputVelocityVectors,
-            NSArray<? extends MPSVector> maximumVelocityVectors, MPSCNNNormalizationGammaAndBetaState resultState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNBatchNormalizationState batchNormalizationGradientState,
+            @NotNull MPSCNNBatchNormalizationState batchNormalizationSourceState,
+            @NotNull NSArray<? extends MPSVector> inputMomentumVectors,
+            @NotNull NSArray<? extends MPSVector> inputVelocityVectors,
+            @Nullable NSArray<? extends MPSVector> maximumVelocityVectors,
+            @NotNull MPSCNNNormalizationGammaAndBetaState resultState);
 
     /**
      * Encode an MPSNNOptimizerAdam object to a command buffer to perform out of place update
-     * <p>
+     * 
      * The following operations would be applied
-     * <p>
+     * 
      * t = t + 1
      * lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
-     * <p>
+     * 
      * m[t] = beta1 * m[t-1] + (1 - beta1) * g
      * v[t] = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
      * variable = variable - lr[t] * m[t] / (sqrt(v[t]) + epsilon)
-     *
+     * 
      * @param commandBuffer                   A valid MTLCommandBuffer to receive the encoded kernel.
      * @param batchNormalizationGradientState A valid MPSCNNBatchNormalizationState object which specifies the input
      *                                        state with gradients for this update.
@@ -212,25 +225,28 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:batchNormalizationGradientState:batchNormalizationSourceState:inputMomentumVectors:inputVelocityVectors:resultState:")
     public native void encodeToCommandBufferBatchNormalizationGradientStateBatchNormalizationSourceStateInputMomentumVectorsInputVelocityVectorsResultState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNBatchNormalizationState batchNormalizationGradientState,
-            MPSCNNBatchNormalizationState batchNormalizationSourceState,
-            NSArray<? extends MPSVector> inputMomentumVectors, NSArray<? extends MPSVector> inputVelocityVectors,
-            MPSCNNNormalizationGammaAndBetaState resultState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNBatchNormalizationState batchNormalizationGradientState,
+            @NotNull MPSCNNBatchNormalizationState batchNormalizationSourceState,
+            @Nullable NSArray<? extends MPSVector> inputMomentumVectors,
+            @Nullable NSArray<? extends MPSVector> inputVelocityVectors,
+            @NotNull MPSCNNNormalizationGammaAndBetaState resultState);
 
     /**
      * Encode an AMSGrad variant of MPSNNOptimizerAdam object to a command buffer to perform out of place update
-     * <p>
+     * 
      * The following operations would be applied
      * At update time:
      * t = t + 1
      * lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
-     * <p>
+     * 
      * m[t] = beta1 * m[t-1] + (1 - beta1) * g
      * v[t] = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
      * maxVel[t] = max(maxVel[t-1],v[t])
      * variable = variable - lr[t] * m[t] / (sqrt(maxVel[t]) + epsilon)
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param commandBuffer           A valid MTLCommandBuffer to receive the encoded kernel.
      * @param batchNormalizationState A valid MPSCNNBatchNormalizationState object which specifies the input state with
      *                                gradients and original gamma/beta for this update.
@@ -254,23 +270,25 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:batchNormalizationState:inputMomentumVectors:inputVelocityVectors:maximumVelocityVectors:resultState:")
     public native void encodeToCommandBufferBatchNormalizationStateInputMomentumVectorsInputVelocityVectorsMaximumVelocityVectorsResultState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNBatchNormalizationState batchNormalizationState, NSArray<? extends MPSVector> inputMomentumVectors,
-            NSArray<? extends MPSVector> inputVelocityVectors, NSArray<? extends MPSVector> maximumVelocityVectors,
-            MPSCNNNormalizationGammaAndBetaState resultState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNBatchNormalizationState batchNormalizationState,
+            @NotNull NSArray<? extends MPSVector> inputMomentumVectors,
+            @NotNull NSArray<? extends MPSVector> inputVelocityVectors,
+            @Nullable NSArray<? extends MPSVector> maximumVelocityVectors,
+            @NotNull MPSCNNNormalizationGammaAndBetaState resultState);
 
     /**
      * Encode an MPSNNOptimizerAdam object to a command buffer to perform out of place update
-     * <p>
+     * 
      * The following operations would be applied
-     * <p>
+     * 
      * t = t + 1
      * lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
-     * <p>
+     * 
      * m[t] = beta1 * m[t-1] + (1 - beta1) * g
      * v[t] = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
      * variable = variable - lr[t] * m[t] / (sqrt(v[t]) + epsilon)
-     *
+     * 
      * @param commandBuffer           A valid MTLCommandBuffer to receive the encoded kernel.
      * @param batchNormalizationState A valid MPSCNNBatchNormalizationState object which specifies the input state with
      *                                gradients and original gamma/beta for this update.
@@ -289,23 +307,28 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:batchNormalizationState:inputMomentumVectors:inputVelocityVectors:resultState:")
     public native void encodeToCommandBufferBatchNormalizationStateInputMomentumVectorsInputVelocityVectorsResultState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNBatchNormalizationState batchNormalizationState, NSArray<? extends MPSVector> inputMomentumVectors,
-            NSArray<? extends MPSVector> inputVelocityVectors, MPSCNNNormalizationGammaAndBetaState resultState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNBatchNormalizationState batchNormalizationState,
+            @Nullable NSArray<? extends MPSVector> inputMomentumVectors,
+            @Nullable NSArray<? extends MPSVector> inputVelocityVectors,
+            @NotNull MPSCNNNormalizationGammaAndBetaState resultState);
 
     /**
      * Encode an AMSGrad variant of MPSNNOptimizerAdam object to a command buffer to perform out of place update
-     * <p>
+     * 
      * The following operations would be applied
      * At update time:
      * t = t + 1
      * lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
-     * <p>
+     * 
      * m[t] = beta1 * m[t-1] + (1 - beta1) * g
      * v[t] = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
      * maxVel[t] = max(maxVel[t-1],v[t])
      * variable = variable - lr[t] * m[t] / (sqrt(maxVel[t]) + epsilon)
-     *
+     * 
+     * 
+     * API-Since: 13.0
+     * 
      * @param commandBuffer            A valid MTLCommandBuffer to receive the encoded kernel.
      * @param convolutionGradientState A valid MPSCNNConvolutionGradientState object which specifies the input state
      *                                 with gradients for this update.
@@ -333,24 +356,26 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:convolutionGradientState:convolutionSourceState:inputMomentumVectors:inputVelocityVectors:maximumVelocityVectors:resultState:")
     public native void encodeToCommandBufferConvolutionGradientStateConvolutionSourceStateInputMomentumVectorsInputVelocityVectorsMaximumVelocityVectorsResultState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNConvolutionGradientState convolutionGradientState,
-            MPSCNNConvolutionWeightsAndBiasesState convolutionSourceState,
-            NSArray<? extends MPSVector> inputMomentumVectors, NSArray<? extends MPSVector> inputVelocityVectors,
-            NSArray<? extends MPSVector> maximumVelocityVectors, MPSCNNConvolutionWeightsAndBiasesState resultState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNConvolutionGradientState convolutionGradientState,
+            @NotNull MPSCNNConvolutionWeightsAndBiasesState convolutionSourceState,
+            @NotNull NSArray<? extends MPSVector> inputMomentumVectors,
+            @NotNull NSArray<? extends MPSVector> inputVelocityVectors,
+            @Nullable NSArray<? extends MPSVector> maximumVelocityVectors,
+            @NotNull MPSCNNConvolutionWeightsAndBiasesState resultState);
 
     /**
      * Encode an MPSNNOptimizerAdam object to a command buffer to perform out of place update
-     * <p>
+     * 
      * The following operations would be applied
-     * <p>
+     * 
      * t = t + 1
      * lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
-     * <p>
+     * 
      * m[t] = beta1 * m[t-1] + (1 - beta1) * g
      * v[t] = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
      * variable = variable - lr[t] * m[t] / (sqrt(v[t]) + epsilon)
-     *
+     * 
      * @param commandBuffer            A valid MTLCommandBuffer to receive the encoded kernel.
      * @param convolutionGradientState A valid MPSCNNConvolutionGradientState object which specifies the input state
      *                                 with gradients for this update.
@@ -373,39 +398,51 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:convolutionGradientState:convolutionSourceState:inputMomentumVectors:inputVelocityVectors:resultState:")
     public native void encodeToCommandBufferConvolutionGradientStateConvolutionSourceStateInputMomentumVectorsInputVelocityVectorsResultState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNConvolutionGradientState convolutionGradientState,
-            MPSCNNConvolutionWeightsAndBiasesState convolutionSourceState,
-            NSArray<? extends MPSVector> inputMomentumVectors, NSArray<? extends MPSVector> inputVelocityVectors,
-            MPSCNNConvolutionWeightsAndBiasesState resultState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNConvolutionGradientState convolutionGradientState,
+            @NotNull MPSCNNConvolutionWeightsAndBiasesState convolutionSourceState,
+            @Nullable NSArray<? extends MPSVector> inputMomentumVectors,
+            @Nullable NSArray<? extends MPSVector> inputVelocityVectors,
+            @NotNull MPSCNNConvolutionWeightsAndBiasesState resultState);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("encodeToCommandBuffer:inputGradientMatrix:inputValuesMatrix:inputMomentumMatrix:inputVelocityMatrix:maximumVelocityMatrix:resultValuesMatrix:")
     public native void encodeToCommandBufferInputGradientMatrixInputValuesMatrixInputMomentumMatrixInputVelocityMatrixMaximumVelocityMatrixResultValuesMatrix(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSMatrix inputGradientMatrix,
-            MPSMatrix inputValuesMatrix, MPSMatrix inputMomentumMatrix, MPSMatrix inputVelocityMatrix,
-            MPSMatrix maximumVelocityMatrix, MPSMatrix resultValuesMatrix);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSMatrix inputGradientMatrix, @NotNull MPSMatrix inputValuesMatrix,
+            @NotNull MPSMatrix inputMomentumMatrix, @NotNull MPSMatrix inputVelocityMatrix,
+            @Nullable MPSMatrix maximumVelocityMatrix, @NotNull MPSMatrix resultValuesMatrix);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("encodeToCommandBuffer:inputGradientMatrix:inputValuesMatrix:inputMomentumMatrix:inputVelocityMatrix:resultValuesMatrix:")
     public native void encodeToCommandBufferInputGradientMatrixInputValuesMatrixInputMomentumMatrixInputVelocityMatrixResultValuesMatrix(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSMatrix inputGradientMatrix,
-            MPSMatrix inputValuesMatrix, MPSMatrix inputMomentumMatrix, MPSMatrix inputVelocityMatrix,
-            MPSMatrix resultValuesMatrix);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSMatrix inputGradientMatrix, @NotNull MPSMatrix inputValuesMatrix,
+            @NotNull MPSMatrix inputMomentumMatrix, @NotNull MPSMatrix inputVelocityMatrix,
+            @NotNull MPSMatrix resultValuesMatrix);
 
     /**
      * Encode an AMSGrad variant of MPSNNOptimizerAdam object to a command buffer to perform out of place update
-     * <p>
+     * 
      * The following operations would be applied
      * At update time:
      * t = t + 1
      * lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
-     * <p>
+     * 
      * m[t] = beta1 * m[t-1] + (1 - beta1) * g
      * v[t] = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
      * maxVel[t] = max(maxVel[t-1],v[t])
      * variable = variable - lr[t] * m[t] / (sqrt(maxVel[t]) + epsilon)
-     *
+     * 
+     * 
+     * API-Since: 13.0
+     * 
      * @param commandBuffer         A valid MTLCommandBuffer to receive the encoded kernel.
      * @param inputGradientVector   A valid MPSVector object which specifies the input vector of gradients for this
      *                              update.
@@ -424,22 +461,23 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:inputGradientVector:inputValuesVector:inputMomentumVector:inputVelocityVector:maximumVelocityVector:resultValuesVector:")
     public native void encodeToCommandBufferInputGradientVectorInputValuesVectorInputMomentumVectorInputVelocityVectorMaximumVelocityVectorResultValuesVector(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSVector inputGradientVector,
-            MPSVector inputValuesVector, MPSVector inputMomentumVector, MPSVector inputVelocityVector,
-            MPSVector maximumVelocityVector, MPSVector resultValuesVector);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSVector inputGradientVector, @NotNull MPSVector inputValuesVector,
+            @NotNull MPSVector inputMomentumVector, @NotNull MPSVector inputVelocityVector,
+            @Nullable MPSVector maximumVelocityVector, @NotNull MPSVector resultValuesVector);
 
     /**
      * Encode an MPSNNOptimizerAdam object to a command buffer to perform out of place update
-     * <p>
+     * 
      * The following operations would be applied
-     * <p>
+     * 
      * t = t + 1
      * lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
-     * <p>
+     * 
      * m[t] = beta1 * m[t-1] + (1 - beta1) * g
      * v[t] = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
      * variable = variable - lr[t] * m[t] / (sqrt(v[t]) + epsilon)
-     *
+     * 
      * @param commandBuffer       A valid MTLCommandBuffer to receive the encoded kernel.
      * @param inputGradientVector A valid MPSVector object which specifies the input vector of gradients for this
      *                            update.
@@ -454,15 +492,16 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:inputGradientVector:inputValuesVector:inputMomentumVector:inputVelocityVector:resultValuesVector:")
     public native void encodeToCommandBufferInputGradientVectorInputValuesVectorInputMomentumVectorInputVelocityVectorResultValuesVector(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSVector inputGradientVector,
-            MPSVector inputValuesVector, MPSVector inputMomentumVector, MPSVector inputVelocityVector,
-            MPSVector resultValuesVector);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSVector inputGradientVector, @NotNull MPSVector inputValuesVector,
+            @NotNull MPSVector inputMomentumVector, @NotNull MPSVector inputVelocityVector,
+            @NotNull MPSVector resultValuesVector);
 
     /**
      * [@property] epsilon
-     * <p>
+     * 
      * The epsilon at which we update values
-     * <p>
+     * 
      * This value is usually used to ensure to avoid divide by 0, default value is 1e-8
      */
     @Generated
@@ -480,45 +519,48 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNOptimizerAdam initWithCoder(NSCoder aDecoder);
+    public native MPSNNOptimizerAdam initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNNOptimizerAdam initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNOptimizerAdam initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNNOptimizerAdam initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNOptimizerAdam initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Full initialization for the adam update
-     *
+     * 
      * @param device              The device on which the kernel will execute.
      * @param beta1               The beta1 to update values
      * @param beta2               The beta2 to update values
      * @param epsilon             The epsilon at which we update values
      * @param timeStep            The timeStep at which values will start updating
      * @param optimizerDescriptor The optimizerDescriptor which will have a bunch of properties to be applied
+     * 
+     * 
      * @return A valid MPSNNOptimizerAdam object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:beta1:beta2:epsilon:timeStep:optimizerDescriptor:")
     public native MPSNNOptimizerAdam initWithDeviceBeta1Beta2EpsilonTimeStepOptimizerDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, double beta1, double beta2, float epsilon,
-            @NUInt long timeStep, MPSNNOptimizerDescriptor optimizerDescriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, double beta1, double beta2, float epsilon,
+            @NUInt long timeStep, @NotNull MPSNNOptimizerDescriptor optimizerDescriptor);
 
     /**
      * Convenience initialization for the adam update
-     *
+     * 
      * @param device       The device on which the kernel will execute.
      * @param learningRate The learningRate at which we will update values
+     * 
      * @return A valid MPSNNOptimizerAdam object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:learningRate:")
-    public native MPSNNOptimizerAdam initWithDeviceLearningRate(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            float learningRate);
+    public native MPSNNOptimizerAdam initWithDeviceLearningRate(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, float learningRate);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -537,9 +579,10 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -556,7 +599,7 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
 
     /**
      * [@property] timeStep
-     * <p>
+     * 
      * Current timeStep for the update, number of times update has occurred
      */
     @Generated
@@ -583,7 +626,7 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
 
     /**
      * [@property] timeStep
-     * <p>
+     * 
      * Current timeStep for the update, number of times update has occurred
      */
     @Generated

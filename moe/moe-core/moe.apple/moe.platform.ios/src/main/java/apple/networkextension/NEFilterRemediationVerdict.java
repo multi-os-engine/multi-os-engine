@@ -42,14 +42,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEFilterRemediationVerdict
- * <p>
+ * 
  * The NEFilterRemediationVerdict class declares the programmatic interface of an object that is the verdict for a flow
  * which has been blocked by the filter, but the user has made a request for remediation.
- * <p>
+ * 
  * NEFilterRemediationVerdict is part of NetworkExtension.framework
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -81,33 +85,39 @@ public class NEFilterRemediationVerdict extends NEFilterVerdict implements NSSec
 
     /**
      * allowVerdict
-     * <p>
+     * 
      * This class method returns a verdict indicating that the flow should be allowed.
-     *
+     * 
      * @return The NEFilterRemediationVerdict object.
+     * 
+     *         API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("allowVerdict")
     public static native NEFilterRemediationVerdict allowVerdict();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,11 +132,14 @@ public class NEFilterRemediationVerdict extends NEFilterVerdict implements NSSec
 
     /**
      * dropVerdict
-     * <p>
+     * 
      * This class method returns a verdict indicating that the flow should be dropped.
-     *
+     * 
      * @return The NEFilterRemediationVerdict object.
+     * 
+     *         API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("dropVerdict")
     public static native NEFilterRemediationVerdict dropVerdict();
@@ -153,19 +166,23 @@ public class NEFilterRemediationVerdict extends NEFilterVerdict implements NSSec
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * needRulesVerdict
-     * <p>
+     * 
      * This class method returns a verdict indicating that control provider needs to be asked how to handle the
      * remediation. The control provider can either drop or allow the flow, or update the rules and ask the data
      * provider to decide on the data flow again.
-     *
+     * 
      * @return The NEFilterRemediationVerdict object.
+     * 
+     *         API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("needRulesVerdict")
     public static native NEFilterRemediationVerdict needRulesVerdict();
@@ -200,15 +217,16 @@ public class NEFilterRemediationVerdict extends NEFilterVerdict implements NSSec
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -216,7 +234,7 @@ public class NEFilterRemediationVerdict extends NEFilterVerdict implements NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEFilterRemediationVerdict initWithCoder(NSCoder coder);
+    public native NEFilterRemediationVerdict initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

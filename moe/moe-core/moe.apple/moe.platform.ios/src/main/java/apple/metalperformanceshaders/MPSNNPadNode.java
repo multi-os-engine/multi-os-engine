@@ -23,12 +23,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNPadNode
- * <p>
+ * 
  * A node for a MPSNNPad kernel
- * <p>
+ * 
  * You should not use this node to zero pad your data in the XY-plane.
  * This node copies the input image and therefore should only be used in
  * special circumstances where the normal padding operation, defined for most
@@ -38,6 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * [@ref] MPSImageEdgeModeMirrorWithEdge or, if you need padding in the
  * feature-channel dimesion.
  * In other cases use to @ref MPSNNPadding to get best performance.
+ * 
+ * API-Since: 12.1
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -69,22 +73,25 @@ public class MPSNNPadNode extends MPSNNFilterNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,7 +106,7 @@ public class MPSNNPadNode extends MPSNNFilterNode {
 
     /**
      * [@property] fillValue
-     * <p>
+     * 
      * Determines the constant value to apply when using @ref MPSImageEdgeModeConstant. Default: 0.0f.
      */
     @Generated
@@ -117,7 +124,7 @@ public class MPSNNPadNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a MPSNNPad kernel
-     *
+     * 
      * @param source            The MPSNNImageNode representing the source MPSImage for the filter
      * @param paddingSizeBefore The amount of padding to apply before the image in each dimension.
      * @param paddingSizeAfter  The amount of padding to apply after the image in each dimension.
@@ -128,7 +135,7 @@ public class MPSNNPadNode extends MPSNNFilterNode {
      */
     @Generated
     @Selector("initWithSource:paddingSizeBefore:paddingSizeAfter:edgeMode:")
-    public native MPSNNPadNode initWithSourcePaddingSizeBeforePaddingSizeAfterEdgeMode(MPSNNImageNode source,
+    public native MPSNNPadNode initWithSourcePaddingSizeBeforePaddingSizeAfterEdgeMode(@NotNull MPSNNImageNode source,
             @ByValue MPSImageCoordinate paddingSizeBefore, @ByValue MPSImageCoordinate paddingSizeAfter,
             @NUInt long edgeMode);
 
@@ -149,9 +156,10 @@ public class MPSNNPadNode extends MPSNNFilterNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -160,7 +168,7 @@ public class MPSNNPadNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a autoreleased MPSNNPad kernel
-     *
+     * 
      * @param source            The MPSNNImageNode representing the source MPSImage for the filter
      * @param paddingSizeBefore The amount of padding to apply before the image in each dimension.
      * @param paddingSizeAfter  The amount of padding to apply after the image in each dimension.
@@ -171,9 +179,9 @@ public class MPSNNPadNode extends MPSNNFilterNode {
      */
     @Generated
     @Selector("nodeWithSource:paddingSizeBefore:paddingSizeAfter:edgeMode:")
-    public static native MPSNNPadNode nodeWithSourcePaddingSizeBeforePaddingSizeAfterEdgeMode(MPSNNImageNode source,
-            @ByValue MPSImageCoordinate paddingSizeBefore, @ByValue MPSImageCoordinate paddingSizeAfter,
-            @NUInt long edgeMode);
+    public static native MPSNNPadNode nodeWithSourcePaddingSizeBeforePaddingSizeAfterEdgeMode(
+            @NotNull MPSNNImageNode source, @ByValue MPSImageCoordinate paddingSizeBefore,
+            @ByValue MPSImageCoordinate paddingSizeAfter, @NUInt long edgeMode);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -185,7 +193,7 @@ public class MPSNNPadNode extends MPSNNFilterNode {
 
     /**
      * [@property] fillValue
-     * <p>
+     * 
      * Determines the constant value to apply when using @ref MPSImageEdgeModeConstant. Default: 0.0f.
      */
     @Generated

@@ -23,10 +23,16 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * EAGLDrawable Interface
+ * 
+ * API-Since: 2.0
+ * Deprecated-Since: 12.0
+ * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
  */
+@Deprecated
 @Generated
 @Library("OpenGLES")
 @Runtime(ObjCRuntime.class)
@@ -35,6 +41,7 @@ public interface EAGLDrawable {
     /**
      * Contains keys from kEAGLDrawableProperty* above
      */
+    @Nullable
     @Generated
     @Selector("drawableProperties")
     NSDictionary<String, ?> drawableProperties();
@@ -44,5 +51,5 @@ public interface EAGLDrawable {
      */
     @Generated
     @Selector("setDrawableProperties:")
-    void setDrawableProperties(NSDictionary<String, ?> value);
+    void setDrawableProperties(@Nullable NSDictionary<String, ?> value);
 }

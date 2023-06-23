@@ -25,7 +25,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("SensorKit")
 @Runtime(ObjCRuntime.class)
@@ -57,6 +62,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup of any key and touch down on a sequential character key
      */
+    @NotNull
     @Generated
     @Selector("anyTapToCharKey")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> anyTapToCharKey();
@@ -64,27 +70,30 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup of any key and touch down on a plane change key
      */
+    @NotNull
     @Generated
     @Selector("anyTapToPlaneChangeKey")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> anyTapToPlaneChangeKey();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * The duration between touchup on a character key and touch down on the next sequential key (any key)
      */
+    @NotNull
     @Generated
     @Selector("charKeyToAnyTapKey")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> charKeyToAnyTapKey();
@@ -92,6 +101,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup of a character key and touch down of a sequential delete key
      */
+    @NotNull
     @Generated
     @Selector("charKeyToDelete")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> charKeyToDelete();
@@ -99,6 +109,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup of a character key and touch down of a sequential plane change key
      */
+    @NotNull
     @Generated
     @Selector("charKeyToPlaneChangeKey")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> charKeyToPlaneChangeKey();
@@ -106,6 +117,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup on a character key and touch down on a word in the prediction bar
      */
+    @NotNull
     @Generated
     @Selector("charKeyToPrediction")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> charKeyToPrediction();
@@ -113,14 +125,17 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup of a character key and touch down of a sequential space key
      */
+    @NotNull
     @Generated
     @Selector("charKeyToSpaceKey")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> charKeyToSpaceKey();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -132,6 +147,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The distance from the touch down to the center of the delete key
      */
+    @NotNull
     @Generated
     @Selector("deleteDownErrorDistance")
     public native SRKeyboardProbabilityMetric<NSUnitLength> deleteDownErrorDistance();
@@ -139,6 +155,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup of a delete key and touch down of a sequential character key
      */
+    @NotNull
     @Generated
     @Selector("deleteToCharKey")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> deleteToCharKey();
@@ -146,6 +163,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup of a delete key and touch down of a sequential delete key
      */
+    @NotNull
     @Generated
     @Selector("deleteToDelete")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> deleteToDelete();
@@ -153,6 +171,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup of the delete key and touch down of a sequential delete key
      */
+    @NotNull
     @Generated
     @Selector("deleteToDeletes")
     public native NSArray<? extends SRKeyboardProbabilityMetric<NSUnitDuration>> deleteToDeletes();
@@ -160,6 +179,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup of a delete key and touch down of a sequential path
      */
+    @NotNull
     @Generated
     @Selector("deleteToPath")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> deleteToPath();
@@ -167,6 +187,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup of a delete key and touch down of a sequential plane change key
      */
+    @NotNull
     @Generated
     @Selector("deleteToPlaneChangeKey")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> deleteToPlaneChangeKey();
@@ -174,6 +195,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup of a delete key and touch down of a sequential Shift key
      */
+    @NotNull
     @Generated
     @Selector("deleteToShiftKey")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> deleteToShiftKey();
@@ -181,6 +203,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup of a delete key and touch down of a sequential space key
      */
+    @NotNull
     @Generated
     @Selector("deleteToSpaceKey")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> deleteToSpaceKey();
@@ -188,6 +211,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touch down and touchup of all delete key events in the session.
      */
+    @NotNull
     @Generated
     @Selector("deleteTouchDownUp")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> deleteTouchDownUp();
@@ -195,6 +219,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The distance from the touch up to the center of the delete key
      */
+    @NotNull
     @Generated
     @Selector("deleteUpErrorDistance")
     public native SRKeyboardProbabilityMetric<NSUnitLength> deleteUpErrorDistance();
@@ -206,6 +231,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The distance from the touch down to the center of any key
      */
+    @NotNull
     @Generated
     @Selector("downErrorDistance")
     public native SRKeyboardProbabilityMetric<NSUnitLength> downErrorDistance();
@@ -233,6 +259,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The height of the keyboard in mm in the session
      */
+    @NotNull
     @Generated
     @Selector("height")
     public native NSMeasurement<NSUnitLength> height();
@@ -243,7 +270,10 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The input modes used during a keyboard session
+     * 
+     * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("inputModes")
     public native NSArray<String> inputModes();
@@ -265,13 +295,15 @@ public class SRKeyboardMetrics extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The identifier of the keyboard in the keyboard list
      */
+    @NotNull
     @Generated
     @Selector("keyboardIdentifier")
     public native String keyboardIdentifier();
@@ -279,6 +311,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The distance from the touch down to the center of the intended key of the characters of a long word
      */
+    @NotNull
     @Generated
     @Selector("longWordDownErrorDistance")
     public native NSArray<? extends SRKeyboardProbabilityMetric<NSUnitLength>> longWordDownErrorDistance();
@@ -286,6 +319,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touch down and touch down of the character keys of all the long words in the session.
      */
+    @NotNull
     @Generated
     @Selector("longWordTouchDownDown")
     public native NSArray<? extends SRKeyboardProbabilityMetric<NSUnitDuration>> longWordTouchDownDown();
@@ -293,6 +327,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touch down and touchup of the character keys of all the long words in the session.
      */
+    @NotNull
     @Generated
     @Selector("longWordTouchDownUp")
     public native NSArray<? extends SRKeyboardProbabilityMetric<NSUnitDuration>> longWordTouchDownUp();
@@ -300,6 +335,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The distance from the touch up to the center of the intended key of the characters of a long word
      */
+    @NotNull
     @Generated
     @Selector("longWordUpErrorDistance")
     public native NSArray<? extends SRKeyboardProbabilityMetric<NSUnitLength>> longWordUpErrorDistance();
@@ -312,6 +348,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * sample values of the ratio of error distance between intended and actual path
      */
+    @NotNull
     @Generated
     @Selector("pathErrorDistanceRatio")
     public native NSArray<? extends NSNumber> pathErrorDistanceRatio();
@@ -319,6 +356,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup of a delete key and touch down of a sequential path (ie. Continuous Path)
      */
+    @NotNull
     @Generated
     @Selector("pathToDelete")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> pathToDelete();
@@ -326,6 +364,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup of a path and touch down of a sequential path
      */
+    @NotNull
     @Generated
     @Selector("pathToPath")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> pathToPath();
@@ -333,6 +372,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup of a path and touch down of a sequential space key
      */
+    @NotNull
     @Generated
     @Selector("pathToSpace")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> pathToSpace();
@@ -347,6 +387,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup of a plane change key and touch down of any key
      */
+    @NotNull
     @Generated
     @Selector("planeChangeKeyToCharKey")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> planeChangeKeyToCharKey();
@@ -354,6 +395,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup on a plane change key and touch down on the next sequential key
      */
+    @NotNull
     @Generated
     @Selector("planeChangeToAnyTap")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> planeChangeToAnyTap();
@@ -373,6 +415,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The distance from the touch down to the center of the intended key of a character in a short word
      */
+    @NotNull
     @Generated
     @Selector("shortWordCharKeyDownErrorDistance")
     public native SRKeyboardProbabilityMetric<NSUnitLength> shortWordCharKeyDownErrorDistance();
@@ -380,6 +423,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup on a character key and touch down on any sequential character key in a short word
      */
+    @NotNull
     @Generated
     @Selector("shortWordCharKeyToCharKey")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> shortWordCharKeyToCharKey();
@@ -387,6 +431,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touch down and touchup of all character keys in short words in the session.
      */
+    @NotNull
     @Generated
     @Selector("shortWordCharKeyTouchDownUp")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> shortWordCharKeyTouchDownUp();
@@ -394,6 +439,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The distance from the touch up to the center of the intended key of a character in a short word
      */
+    @NotNull
     @Generated
     @Selector("shortWordCharKeyUpErrorDistance")
     public native SRKeyboardProbabilityMetric<NSUnitLength> shortWordCharKeyUpErrorDistance();
@@ -401,6 +447,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The distance from the touch down to the right centroid of the space key
      */
+    @NotNull
     @Generated
     @Selector("spaceDownErrorDistance")
     public native SRKeyboardProbabilityMetric<NSUnitLength> spaceDownErrorDistance();
@@ -408,6 +455,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup of a space key and touch down of a sequential character key
      */
+    @NotNull
     @Generated
     @Selector("spaceToCharKey")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> spaceToCharKey();
@@ -415,6 +463,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup of a space key and touch down of a sequential delete key
      */
+    @NotNull
     @Generated
     @Selector("spaceToDeleteKey")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> spaceToDeleteKey();
@@ -422,6 +471,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup on the space key and touch down to begin a sequential path
      */
+    @NotNull
     @Generated
     @Selector("spaceToPath")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> spaceToPath();
@@ -429,6 +479,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup of a space key and touch down of a sequential plane change key
      */
+    @NotNull
     @Generated
     @Selector("spaceToPlaneChangeKey")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> spaceToPlaneChangeKey();
@@ -436,6 +487,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup on the space key and touch down of a sequential selection from the prediction bar
      */
+    @NotNull
     @Generated
     @Selector("spaceToPredictionKey")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> spaceToPredictionKey();
@@ -443,6 +495,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup of a space key and touch down of a sequential Shift key
      */
+    @NotNull
     @Generated
     @Selector("spaceToShiftKey")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> spaceToShiftKey();
@@ -450,6 +503,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touchup of a space key and touch down of a sequential space key
      */
+    @NotNull
     @Generated
     @Selector("spaceToSpaceKey")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> spaceToSpaceKey();
@@ -457,6 +511,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touch down and touchup of all space key events in the session.
      */
+    @NotNull
     @Generated
     @Selector("spaceTouchDownUp")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> spaceTouchDownUp();
@@ -464,6 +519,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The distance from the touch up to the right centroid of the space key
      */
+    @NotNull
     @Generated
     @Selector("spaceUpErrorDistance")
     public native SRKeyboardProbabilityMetric<NSUnitLength> spaceUpErrorDistance();
@@ -539,6 +595,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The total length of paths completed in the session
      */
+    @NotNull
     @Generated
     @Selector("totalPathLength")
     public native NSMeasurement<NSUnitLength> totalPathLength();
@@ -649,6 +706,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touch down to touch down for any key
      */
+    @NotNull
     @Generated
     @Selector("touchDownDown")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> touchDownDown();
@@ -656,6 +714,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The duration between touch down to touchup for any key
      */
+    @NotNull
     @Generated
     @Selector("touchDownUp")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> touchDownUp();
@@ -670,6 +729,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The distance from the touch up to the center of any key
      */
+    @NotNull
     @Generated
     @Selector("upErrorDistance")
     public native SRKeyboardProbabilityMetric<NSUnitLength> upErrorDistance();
@@ -677,6 +737,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The version of keyboard metrics
      */
+    @NotNull
     @Generated
     @Selector("version")
     public native String version();
@@ -684,6 +745,7 @@ public class SRKeyboardMetrics extends NSObject {
     /**
      * The width of the keyboard in mm in the session
      */
+    @NotNull
     @Generated
     @Selector("width")
     public native NSMeasurement<NSUnitLength> width();
@@ -695,4 +757,28 @@ public class SRKeyboardMetrics extends NSObject {
     @Selector("wordCountForSentimentCategory:")
     @NInt
     public native long wordCountForSentimentCategory(@NInt long category);
+
+    /**
+     * WARNING!!! Availability for longWordTouchUpDown metrics is not accurate,
+     * since we're introducing these in C which doesn't have an SDK !!!
+     * The duration between touch up and touch down of the character keys of all the long words in the session.
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @Selector("longWordTouchUpDown")
+    public native NSArray<? extends SRKeyboardProbabilityMetric<NSUnitDuration>> longWordTouchUpDown();
+
+    /**
+     * WARNING!!! Availability for touchUpDown metrics is not accurate,
+     * since we're introducing these in C which doesn't have an SDK !!!
+     * The duration between touch up to touch down for any key
+     * 
+     * API-Since: 16.0
+     */
+    @NotNull
+    @Generated
+    @Selector("touchUpDown")
+    public native SRKeyboardProbabilityMetric<NSUnitDuration> touchUpDown();
 }

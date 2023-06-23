@@ -28,7 +28,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("AVFAudio")
 @Runtime(ObjCRuntime.class)
@@ -59,7 +64,7 @@ public class AVAudioRecorder extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * returns average power in decibels for a given channel
@@ -70,25 +75,31 @@ public class AVAudioRecorder extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Array of AVAudioSessionChannelDescription objects
+     * 
+     * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("channelAssignments")
     public native NSArray<? extends AVAudioSessionChannelDescription> channelAssignments();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -107,6 +118,7 @@ public class AVAudioRecorder extends NSObject {
     /**
      * the delegate will be sent messages from the AVAudioRecorderDelegate protocol
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -125,6 +137,8 @@ public class AVAudioRecorder extends NSObject {
 
     /**
      * get the device current time - always valid
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("deviceCurrentTime")
@@ -132,7 +146,10 @@ public class AVAudioRecorder extends NSObject {
 
     /**
      * this object is fully valid only when prepareToRecord has been called
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("format")
     public native AVAudioFormat format();
@@ -149,11 +166,13 @@ public class AVAudioRecorder extends NSObject {
     /**
      * The file type to create can be set through the corresponding settings key. If not set, it will be inferred from
      * the file extension. Will overwrite a file at the specified url if a file exists.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithURL:format:error:")
-    public native AVAudioRecorder initWithURLFormatError(NSURL url, AVAudioFormat format,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native AVAudioRecorder initWithURLFormatError(@NotNull NSURL url, @NotNull AVAudioFormat format,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * The file type to create can be set through the corresponding settings key. If not set, it will be inferred from
@@ -161,8 +180,9 @@ public class AVAudioRecorder extends NSObject {
      */
     @Generated
     @Selector("initWithURL:settings:error:")
-    public native AVAudioRecorder initWithURLSettingsError(NSURL url, NSDictionary<String, ?> settings,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native AVAudioRecorder initWithURLSettingsError(@NotNull NSURL url,
+            @NotNull NSDictionary<String, ?> settings,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -195,9 +215,10 @@ public class AVAudioRecorder extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -235,6 +256,8 @@ public class AVAudioRecorder extends NSObject {
     /**
      * start recording at specified time in the future. time is an absolute time based on and greater than
      * deviceCurrentTime.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("recordAtTime:")
@@ -243,6 +266,8 @@ public class AVAudioRecorder extends NSObject {
     /**
      * record a file of a specified duration starting at specified time. time is an absolute time based on and greater
      * than deviceCurrentTime.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("recordAtTime:forDuration:")
@@ -265,23 +290,25 @@ public class AVAudioRecorder extends NSObject {
 
     /**
      * Array of AVAudioSessionChannelDescription objects
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setChannelAssignments:")
-    public native void setChannelAssignments(NSArray<? extends AVAudioSessionChannelDescription> value);
+    public native void setChannelAssignments(@Nullable NSArray<? extends AVAudioSessionChannelDescription> value);
 
     /**
      * the delegate will be sent messages from the AVAudioRecorderDelegate protocol
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVAudioRecorderDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) AVAudioRecorderDelegate value);
 
     /**
      * the delegate will be sent messages from the AVAudioRecorderDelegate protocol
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) AVAudioRecorderDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) AVAudioRecorderDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -306,6 +333,7 @@ public class AVAudioRecorder extends NSObject {
     /**
      * these settings are fully valid only when prepareToRecord has been called
      */
+    @NotNull
     @Generated
     @Selector("settings")
     public native NSDictionary<String, ?> settings();
@@ -331,6 +359,7 @@ public class AVAudioRecorder extends NSObject {
     /**
      * URL of the recorded file
      */
+    @NotNull
     @Generated
     @Selector("url")
     public native NSURL url();

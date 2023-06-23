@@ -44,21 +44,22 @@ test { exclude '**' }
  ******************************************************************************/
 
 jar {
-    baseName 'moe-core'
+    archiveBaseName = 'moe-core'
 
     from { [rootProject.file('LICENSE'), rootProject.file('NOTICE')] }
-    destinationDir file('build/libs/core')
+    getDestinationDirectory().set(file('build/libs/core'))
     from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
     includeEmptyDirs false
 }
 
 task sourceJar(type: Jar) {
-    baseName 'moe-core'
-    classifier 'sources'
+    dependsOn ':moe.apple:moe.core.java:generateConscryptFiles', ':moe.apple:moe.core.java:copyICUDataFiles'
+    archiveBaseName = 'moe-core'
+    archiveClassifier = 'sources'
 
     from rootProject.file('LICENSE'), rootProject.file('NOTICE')
     from sourceSets.main.allJava
-    destinationDir file('build/libs/core')
+    getDestinationDirectory().set(file('build/libs/core'))
     from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
     includeEmptyDirs false
 }
@@ -68,6 +69,7 @@ task sourceJar(type: Jar) {
  ******************************************************************************/
 
 javadoc {
+    dependsOn ':moe.apple:moe.core.java:generateConscryptFiles', ':moe.apple:moe.core.java:copyICUDataFiles'
     title = "moe.ios.core API"
     destinationDir = file('build/docs/coreJavadoc')
     include "**/*.java"
@@ -75,12 +77,12 @@ javadoc {
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
-    baseName 'moe-core'
-    classifier 'javadoc'
+    archiveBaseName = 'moe-core'
+    archiveClassifier = 'javadoc'
 
     from javadoc.destinationDir
     from { [rootProject.file('LICENSE'), rootProject.file('NOTICE')] }
-    destinationDir file('build/libs/core')
+    getDestinationDirectory().set(file('build/libs/core'))
     from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
 }
 

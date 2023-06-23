@@ -39,7 +39,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -70,22 +75,25 @@ public class INSearchForMessagesIntent extends INIntent {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,9 +128,10 @@ public class INSearchForMessagesIntent extends INIntent {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,14 +174,28 @@ public class INSearchForMessagesIntent extends INIntent {
     /**
      * Time range in which to search for the message.
      */
+    @Nullable
     @Generated
     @Selector("dateTimeRange")
     public native INDateComponentsRange dateTimeRange();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use speakableGroupNames instead
+     */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("groupNames")
     public native NSArray<String> groupNames();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use speakableGroupNamesOperator instead
+     */
+    @Deprecated
     @Generated
     @Selector("groupNamesOperator")
     @NInt
@@ -181,6 +204,7 @@ public class INSearchForMessagesIntent extends INIntent {
     /**
      * If available, the identifier of a particular message to be found.
      */
+    @Nullable
     @Generated
     @Selector("identifiers")
     public native NSArray<String> identifiers();
@@ -199,15 +223,23 @@ public class INSearchForMessagesIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSearchForMessagesIntent initWithCoder(NSCoder coder);
+    public native INSearchForMessagesIntent initWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use the designated initializer instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithRecipients:senders:searchTerms:attributes:dateTimeRange:identifiers:notificationIdentifiers:groupNames:")
     public native INSearchForMessagesIntent initWithRecipientsSendersSearchTermsAttributesDateTimeRangeIdentifiersNotificationIdentifiersGroupNames(
-            NSArray<? extends INPerson> recipients, NSArray<? extends INPerson> senders, NSArray<String> searchTerms,
-            @NUInt long attributes, INDateComponentsRange dateTimeRange, NSArray<String> identifiers,
-            NSArray<String> notificationIdentifiers, NSArray<String> groupNames);
+            @Nullable NSArray<? extends INPerson> recipients, @Nullable NSArray<? extends INPerson> senders,
+            @Nullable NSArray<String> searchTerms, @NUInt long attributes,
+            @Nullable INDateComponentsRange dateTimeRange, @Nullable NSArray<String> identifiers,
+            @Nullable NSArray<String> notificationIdentifiers, @Nullable NSArray<String> groupNames);
 
+    @Nullable
     @Generated
     @Selector("notificationIdentifiers")
     public native NSArray<String> notificationIdentifiers();
@@ -223,6 +255,7 @@ public class INSearchForMessagesIntent extends INIntent {
     /**
      * Contact that received the messages to be found.
      */
+    @Nullable
     @Generated
     @Selector("recipients")
     public native NSArray<? extends INPerson> recipients();
@@ -235,6 +268,7 @@ public class INSearchForMessagesIntent extends INIntent {
     @NInt
     public native long recipientsOperator();
 
+    @Nullable
     @Generated
     @Selector("searchTerms")
     public native NSArray<String> searchTerms();
@@ -250,6 +284,7 @@ public class INSearchForMessagesIntent extends INIntent {
     /**
      * Sender of the messages to be found.
      */
+    @Nullable
     @Generated
     @Selector("senders")
     public native NSArray<? extends INPerson> senders();
@@ -268,42 +303,67 @@ public class INSearchForMessagesIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Use the designated initializer instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithRecipients:senders:searchTerms:attributes:dateTimeRange:identifiers:notificationIdentifiers:speakableGroupNames:")
     public native INSearchForMessagesIntent initWithRecipientsSendersSearchTermsAttributesDateTimeRangeIdentifiersNotificationIdentifiersSpeakableGroupNames(
-            NSArray<? extends INPerson> recipients, NSArray<? extends INPerson> senders, NSArray<String> searchTerms,
-            @NUInt long attributes, INDateComponentsRange dateTimeRange, NSArray<String> identifiers,
-            NSArray<String> notificationIdentifiers, NSArray<? extends INSpeakableString> speakableGroupNames);
+            @Nullable NSArray<? extends INPerson> recipients, @Nullable NSArray<? extends INPerson> senders,
+            @Nullable NSArray<String> searchTerms, @NUInt long attributes,
+            @Nullable INDateComponentsRange dateTimeRange, @Nullable NSArray<String> identifiers,
+            @Nullable NSArray<String> notificationIdentifiers,
+            @Nullable NSArray<? extends INSpeakableString> speakableGroupNames);
 
+    /**
+     * API-Since: 11.0
+     */
+    @Nullable
     @Generated
     @Selector("speakableGroupNames")
     public native NSArray<? extends INSpeakableString> speakableGroupNames();
 
     /**
      * Describes how to combine the contents of the speakableGroupName array.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("speakableGroupNamesOperator")
     @NInt
     public native long speakableGroupNamesOperator();
 
+    /**
+     * API-Since: 12.0
+     */
+    @Nullable
     @Generated
     @Selector("conversationIdentifiers")
     public native NSArray<String> conversationIdentifiers();
 
     /**
      * Describes how to combine the contents of the conversationIdentifier array.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("conversationIdentifiersOperator")
     @NInt
     public native long conversationIdentifiersOperator();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithRecipients:senders:searchTerms:attributes:dateTimeRange:identifiers:notificationIdentifiers:speakableGroupNames:conversationIdentifiers:")
     public native INSearchForMessagesIntent initWithRecipientsSendersSearchTermsAttributesDateTimeRangeIdentifiersNotificationIdentifiersSpeakableGroupNamesConversationIdentifiers(
-            NSArray<? extends INPerson> recipients, NSArray<? extends INPerson> senders, NSArray<String> searchTerms,
-            @NUInt long attributes, INDateComponentsRange dateTimeRange, NSArray<String> identifiers,
-            NSArray<String> notificationIdentifiers, NSArray<? extends INSpeakableString> speakableGroupNames,
-            NSArray<String> conversationIdentifiers);
+            @Nullable NSArray<? extends INPerson> recipients, @Nullable NSArray<? extends INPerson> senders,
+            @Nullable NSArray<String> searchTerms, @NUInt long attributes,
+            @Nullable INDateComponentsRange dateTimeRange, @Nullable NSArray<String> identifiers,
+            @Nullable NSArray<String> notificationIdentifiers,
+            @Nullable NSArray<? extends INSpeakableString> speakableGroupNames,
+            @Nullable NSArray<String> conversationIdentifiers);
 }

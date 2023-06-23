@@ -49,7 +49,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("UserNotifications")
 @Runtime(ObjCRuntime.class)
@@ -80,22 +85,25 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +138,10 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,6 +176,7 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
     /**
      * Optional array of attachments.
      */
+    @NotNull
     @Generated
     @Selector("attachments")
     public native NSArray<? extends UNNotificationAttachment> attachments();
@@ -174,6 +184,7 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
     /**
      * The application badge number.
      */
+    @Nullable
     @Generated
     @Selector("badge")
     public native NSNumber badge();
@@ -181,6 +192,7 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
     /**
      * The body of the notification.
      */
+    @NotNull
     @Generated
     @Selector("body")
     public native String body();
@@ -189,19 +201,21 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
      * The identifier for a registered UNNotificationCategory that will be used to determine the appropriate actions to
      * display for the notification.
      */
+    @NotNull
     @Generated
     @Selector("categoryIdentifier")
     public native String categoryIdentifier();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -209,24 +223,27 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNNotificationContent initWithCoder(NSCoder coder);
+    public native UNNotificationContent initWithCoder(@NotNull NSCoder coder);
 
     /**
      * The launch image that will be used when the app is opened from the notification.
      */
+    @NotNull
     @Generated
     @Selector("launchImageName")
     public native String launchImageName();
 
+    @NotNull
     @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
     /**
      * The sound that will be played for the notification.
      */
+    @Nullable
     @Generated
     @Selector("sound")
     public native UNNotificationSound sound();
@@ -234,6 +251,7 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
     /**
      * The subtitle of the notification.
      */
+    @NotNull
     @Generated
     @Selector("subtitle")
     public native String subtitle();
@@ -248,6 +266,7 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
      * The unique identifier for the thread or conversation related to this notification request. It will be used to
      * visually group notifications together.
      */
+    @NotNull
     @Generated
     @Selector("threadIdentifier")
     public native String threadIdentifier();
@@ -255,6 +274,7 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
     /**
      * The title of the notification.
      */
+    @NotNull
     @Generated
     @Selector("title")
     public native String title();
@@ -263,13 +283,20 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
      * Apps can set the userInfo for locally scheduled notification requests. The contents of the push payload will be
      * set as the userInfo for remote notifications.
      */
+    @NotNull
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();
 
     /**
      * The argument to be inserted in the summary for this notification.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: summaryArgument is ignored
      */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("summaryArgument")
     public native String summaryArgument();
@@ -279,7 +306,12 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
      * For example if a podcast app sends one notification for 3 new episodes in a show,
      * the argument should be the name of the show and the count should be 3.
      * Default is 1 and cannot be 0.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: summaryArgumentCount is ignored
      */
+    @Deprecated
     @Generated
     @Selector("summaryArgumentCount")
     @NUInt
@@ -287,7 +319,10 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
 
     /**
      * default nil
+     * 
+     * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("targetContentIdentifier")
     public native String targetContentIdentifier();
@@ -300,18 +335,23 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
      * This throws an error with a UNErrorCode found in UNError.h if the UNNotificationContentProviding object is
      * invalid. A valid UNNotificationContent result should not be mutated and be passed directly to
      * UNUserNotificationCenter.
-     * <p>
+     * 
      * This should be called in the UNNotificationServiceExtension in didReceiveNotificationRequest:withContentHandler:
      * and the returned UNNotificationContent should be passed to the contentHandler for incoming push notifications.
+     * 
+     * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("contentByUpdatingWithProvider:error:")
     public native UNNotificationContent contentByUpdatingWithProviderError(
-            @Mapped(ObjCObjectMapper.class) UNNotificationContentProviding provider,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @NotNull @Mapped(ObjCObjectMapper.class) UNNotificationContentProviding provider,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * The interruption level determines the degree of interruption associated with the notification
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("interruptionLevel")
@@ -321,8 +361,18 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
     /**
      * Relevance score determines the sorting for the notification across app notifications. The expected range is
      * between 0.0f and 1.0f.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("relevanceScore")
     public native double relevanceScore();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("filterCriteria")
+    public native String filterCriteria();
 }

@@ -21,11 +21,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.avfoundation.AVCaptureDevice;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A configuration for running image tracking.
- * <p>
+ * 
  * Image tracking provides 6 degrees of freedom tracking of known images. Four images may be tracked simultaneously.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("ARKit")
@@ -57,22 +62,25 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -109,7 +117,7 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enable or disable continuous auto focus.
-     * <p>
+     * 
      * Enabled by default.
      */
     @Generated
@@ -124,13 +132,14 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
     @Selector("isSupported")
     public static native boolean isSupported();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Maximum number of images to track simultaneously.
-     * <p>
+     * 
      * Setting the maximum number of tracked images will limit the number of images that can be tracked in a given
      * frame.
      * If more than the maximum is visible, only the images already being tracked will continue to track until tracking
@@ -157,7 +166,7 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enable or disable continuous auto focus.
-     * <p>
+     * 
      * Enabled by default.
      */
     @Generated
@@ -166,7 +175,7 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
 
     /**
      * Maximum number of images to track simultaneously.
-     * <p>
+     * 
      * Setting the maximum number of tracked images will limit the number of images that can be tracked in a given
      * frame.
      * If more than the maximum is visible, only the images already being tracked will continue to track until tracking
@@ -182,7 +191,7 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
      */
     @Generated
     @Selector("setTrackingImages:")
-    public native void setTrackingImages(NSSet<? extends ARReferenceImage> value);
+    public native void setTrackingImages(@NotNull NSSet<? extends ARReferenceImage> value);
 
     @Generated
     @Selector("setVersion:")
@@ -192,6 +201,7 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("supportedVideoFormats")
     public static native NSArray<? extends ARVideoFormat> supportedVideoFormats();
@@ -203,6 +213,7 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
     /**
      * Images to track in the scene.
      */
+    @NotNull
     @Generated
     @Selector("trackingImages")
     public native NSSet<? extends ARReferenceImage> trackingImages();
@@ -211,4 +222,19 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Nullable
+    @Generated
+    @Selector("configurableCaptureDeviceForPrimaryCamera")
+    public static native AVCaptureDevice configurableCaptureDeviceForPrimaryCamera();
+
+    @Nullable
+    @Generated
+    @Selector("recommendedVideoFormatFor4KResolution")
+    public static native ARVideoFormat recommendedVideoFormatFor4KResolution();
+
+    @Nullable
+    @Generated
+    @Selector("recommendedVideoFormatForHighResolutionFrameCapturing")
+    public static native ARVideoFormat recommendedVideoFormatForHighResolutionFrameCapturing();
 }

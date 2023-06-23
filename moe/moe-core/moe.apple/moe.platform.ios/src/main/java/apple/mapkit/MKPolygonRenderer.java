@@ -39,7 +39,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -70,22 +75,25 @@ public class MKPolygonRenderer extends MKOverlayPathRenderer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,9 +128,10 @@ public class MKPolygonRenderer extends MKOverlayPathRenderer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,16 +165,20 @@ public class MKPolygonRenderer extends MKOverlayPathRenderer {
 
     @Generated
     @Selector("initWithOverlay:")
-    public native MKPolygonRenderer initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
+    public native MKPolygonRenderer initWithOverlay(@NotNull @Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 
     @Generated
     @Selector("initWithPolygon:")
-    public native MKPolygonRenderer initWithPolygon(MKPolygon polygon);
+    public native MKPolygonRenderer initWithPolygon(@NotNull MKPolygon polygon);
 
+    @NotNull
     @Generated
     @Selector("polygon")
     public native MKPolygon polygon();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setStrokeEnd:")
     public native void setStrokeEnd(@NFloat double value);
@@ -176,11 +189,16 @@ public class MKPolygonRenderer extends MKOverlayPathRenderer {
      * representing the start of the path and one the end. Values in
      * between zero and one are interpolated linearly along the length.
      * strokeStart defaults to 0 and strokeEnd to 1
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setStrokeStart:")
     public native void setStrokeStart(@NFloat double value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("strokeEnd")
     @NFloat
@@ -192,6 +210,8 @@ public class MKPolygonRenderer extends MKOverlayPathRenderer {
      * representing the start of the path and one the end. Values in
      * between zero and one are interpolated linearly along the length.
      * strokeStart defaults to 0 and strokeEnd to 1
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("strokeStart")

@@ -39,6 +39,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("NetworkExtension")
@@ -70,22 +72,25 @@ public class NWTLSParameters extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,9 +125,10 @@ public class NWTLSParameters extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -152,20 +158,26 @@ public class NWTLSParameters extends NSObject {
 
     /**
      * [@property] SSLCipherSuites
-     * <p>
+     * 
      * The set of allowed cipher suites, as defined in <Security/CipherSuite.h>.
      * If set to nil, the default cipher suites will be used.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("SSLCipherSuites")
     public native NSSet<? extends NSNumber> SSLCipherSuites();
 
     /**
      * [@property] TLSSessionID
-     * <p>
+     * 
      * The session ID for the associated connection, used for TLS session resumption.
      * This property is optional when using TLS.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("TLSSessionID")
     public native NSData TLSSessionID();
@@ -176,11 +188,13 @@ public class NWTLSParameters extends NSObject {
 
     /**
      * [@property] maximumSSLProtocolVersion
-     * <p>
+     * 
      * The maximum allowed SSLProtocol value. as defined in <Security/SecureTransport.h>.
      * If set, the SSL handshake will not accept any protocol version newer than the maximum.
      * This property should be used with caution, since it may limit the use of preferred
      * SSL protocols.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("maximumSSLProtocolVersion")
@@ -189,9 +203,11 @@ public class NWTLSParameters extends NSObject {
 
     /**
      * [@property] minimumSSLProtocolVersion
-     * <p>
+     * 
      * The minimum allowed SSLProtocol value. as defined in <Security/SecureTransport.h>.
      * If set, the SSL handshake will not accept any protocol version older than the minimum.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("minimumSSLProtocolVersion")
@@ -200,11 +216,13 @@ public class NWTLSParameters extends NSObject {
 
     /**
      * [@property] maximumSSLProtocolVersion
-     * <p>
+     * 
      * The maximum allowed SSLProtocol value. as defined in <Security/SecureTransport.h>.
      * If set, the SSL handshake will not accept any protocol version newer than the maximum.
      * This property should be used with caution, since it may limit the use of preferred
      * SSL protocols.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMaximumSSLProtocolVersion:")
@@ -212,9 +230,11 @@ public class NWTLSParameters extends NSObject {
 
     /**
      * [@property] minimumSSLProtocolVersion
-     * <p>
+     * 
      * The minimum allowed SSLProtocol value. as defined in <Security/SecureTransport.h>.
      * If set, the SSL handshake will not accept any protocol version older than the minimum.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMinimumSSLProtocolVersion:")
@@ -222,21 +242,25 @@ public class NWTLSParameters extends NSObject {
 
     /**
      * [@property] SSLCipherSuites
-     * <p>
+     * 
      * The set of allowed cipher suites, as defined in <Security/CipherSuite.h>.
      * If set to nil, the default cipher suites will be used.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setSSLCipherSuites:")
-    public native void setSSLCipherSuites(NSSet<? extends NSNumber> value);
+    public native void setSSLCipherSuites(@Nullable NSSet<? extends NSNumber> value);
 
     /**
      * [@property] TLSSessionID
-     * <p>
+     * 
      * The session ID for the associated connection, used for TLS session resumption.
      * This property is optional when using TLS.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setTLSSessionID:")
-    public native void setTLSSessionID(NSData value);
+    public native void setTLSSessionID(@Nullable NSData value);
 }

@@ -26,7 +26,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -45,10 +50,18 @@ public class INMediaSearch extends NSObject implements NSCopying, NSSecureCoding
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use `moodNames` property instead.
+     */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("activityNames")
     public native NSArray<String> activityNames();
 
+    @Nullable
     @Generated
     @Selector("albumName")
     public native String albumName();
@@ -63,37 +76,42 @@ public class INMediaSearch extends NSObject implements NSCopying, NSSecureCoding
     @Selector("allocWithZone:")
     public static native INMediaSearch allocWithZone(VoidPtr zone);
 
+    @Nullable
     @Generated
     @Selector("artistName")
     public native String artistName();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -105,8 +123,9 @@ public class INMediaSearch extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    @Nullable
     @Generated
     @Selector("genreNames")
     public native NSArray<String> genreNames();
@@ -122,14 +141,14 @@ public class INMediaSearch extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native INMediaSearch initWithCoder(NSCoder coder);
+    public native INMediaSearch initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithMediaType:sortOrder:mediaName:artistName:albumName:genreNames:moodNames:releaseDate:reference:mediaIdentifier:")
     public native INMediaSearch initWithMediaTypeSortOrderMediaNameArtistNameAlbumNameGenreNamesMoodNamesReleaseDateReferenceMediaIdentifier(
-            @NInt long mediaType, @NInt long sortOrder, String mediaName, String artistName, String albumName,
-            NSArray<String> genreNames, NSArray<String> moodNames, INDateComponentsRange releaseDate,
-            @NInt long reference, String mediaIdentifier);
+            @NInt long mediaType, @NInt long sortOrder, @Nullable String mediaName, @Nullable String artistName,
+            @Nullable String albumName, @Nullable NSArray<String> genreNames, @Nullable NSArray<String> moodNames,
+            @Nullable INDateComponentsRange releaseDate, @NInt long reference, @Nullable String mediaIdentifier);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -148,14 +167,17 @@ public class INMediaSearch extends NSObject implements NSCopying, NSSecureCoding
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("mediaIdentifier")
     public native String mediaIdentifier();
 
+    @Nullable
     @Generated
     @Selector("mediaName")
     public native String mediaName();
@@ -165,6 +187,7 @@ public class INMediaSearch extends NSObject implements NSCopying, NSSecureCoding
     @NInt
     public native long mediaType();
 
+    @Nullable
     @Generated
     @Selector("moodNames")
     public native NSArray<String> moodNames();
@@ -179,6 +202,7 @@ public class INMediaSearch extends NSObject implements NSCopying, NSSecureCoding
     @NInt
     public native long reference();
 
+    @Nullable
     @Generated
     @Selector("releaseDate")
     public native INDateComponentsRange releaseDate();

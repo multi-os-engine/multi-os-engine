@@ -24,11 +24,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] MTLCounterSampleBufferDescriptor
- * <p>
+ * 
  * Object to represent the counter state.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Metal")
@@ -60,35 +64,42 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] counterSet The counterset to be sampled for this counter sample buffer
+     * 
+     * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("counterSet")
     @MappedReturn(ObjCObjectMapper.class)
@@ -128,13 +139,17 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] label A label to identify the sample buffer in debugging tools.
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("label")
     public native String label();
@@ -155,6 +170,8 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
     /**
      * [@property] sampleCount The number of samples that may be stored in the
      * counter sample buffer.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("sampleCount")
@@ -163,21 +180,27 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
 
     /**
      * [@property] counterSet The counterset to be sampled for this counter sample buffer
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setCounterSet:")
-    public native void setCounterSet(@Mapped(ObjCObjectMapper.class) MTLCounterSet value);
+    public native void setCounterSet(@Nullable @Mapped(ObjCObjectMapper.class) MTLCounterSet value);
 
     /**
      * [@property] label A label to identify the sample buffer in debugging tools.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setLabel:")
-    public native void setLabel(String value);
+    public native void setLabel(@NotNull String value);
 
     /**
      * [@property] sampleCount The number of samples that may be stored in the
      * counter sample buffer.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setSampleCount:")
@@ -186,6 +209,8 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
     /**
      * [@property] storageMode The storage mode for the sample buffer. Only
      * MTLStorageModeShared and MTLStorageModePrivate may be used.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setStorageMode:")
@@ -198,6 +223,8 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
     /**
      * [@property] storageMode The storage mode for the sample buffer. Only
      * MTLStorageModeShared and MTLStorageModePrivate may be used.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("storageMode")

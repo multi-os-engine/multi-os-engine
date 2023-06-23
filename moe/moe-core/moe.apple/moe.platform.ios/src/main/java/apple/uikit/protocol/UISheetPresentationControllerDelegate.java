@@ -8,7 +8,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -22,7 +26,7 @@ public interface UISheetPresentationControllerDelegate extends UIAdaptivePresent
     @IsOptional
     @Selector("sheetPresentationControllerDidChangeSelectedDetentIdentifier:")
     default void sheetPresentationControllerDidChangeSelectedDetentIdentifier(
-            UISheetPresentationController sheetPresentationController) {
+            @NotNull UISheetPresentationController sheetPresentationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

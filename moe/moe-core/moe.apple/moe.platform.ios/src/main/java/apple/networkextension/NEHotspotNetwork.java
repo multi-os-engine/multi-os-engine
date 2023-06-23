@@ -38,14 +38,18 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEHotspotNetwork
- * <p>
+ * 
  * The NEHotspotNetwork class provides a class method to get the SSID and BSSID of
  * the current Wi-Fi network.
- * <p>
+ * 
  * NEHotspotNetwork is part of NetworkExtension.framework
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -77,22 +81,25 @@ public class NEHotspotNetwork extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +134,10 @@ public class NEHotspotNetwork extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,27 +167,35 @@ public class NEHotspotNetwork extends NSObject {
 
     /**
      * [@property] BSSID
-     * <p>
+     * 
      * The BSSID of the Wi-Fi network.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("BSSID")
     public native String BSSID();
 
     /**
      * [@property] SSID
-     * <p>
+     * 
      * The SSID of the Wi-Fi network.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("SSID")
     public native String SSID();
 
     /**
      * [@property] autoJoined
-     * <p>
+     * 
      * Indicates whether the network was joined automatically
      * (YES) or joined by the user (NO).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("didAutoJoin")
@@ -187,10 +203,12 @@ public class NEHotspotNetwork extends NSObject {
 
     /**
      * [@property] justJoined
-     * <p>
+     * 
      * Indicates whether the network was just joined. Useful in the
      * Maintaining state to differentiate whether the Maintain command
      * is for the initial join, or the subsequent periodic callback.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("didJustJoin")
@@ -202,12 +220,14 @@ public class NEHotspotNetwork extends NSObject {
 
     /**
      * [@property] chosenHelper
-     * <p>
+     * 
      * Indicates whether the HotspotHelper is the chosen helper for
      * the network. The NEHotspotNetwork must have been instantiated via a
      * call to the +[NEHotspotHelper supportedNetworkInterfaces] method. This
      * is useful to restore state after the HotspotHelper application is quit
      * and restarted.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isChosenHelper")
@@ -215,8 +235,10 @@ public class NEHotspotNetwork extends NSObject {
 
     /**
      * [@property] secure
-     * <p>
+     * 
      * Indicates whether the network is secure
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isSecure")
@@ -224,13 +246,15 @@ public class NEHotspotNetwork extends NSObject {
 
     /**
      * setConfidence
-     * <p>
+     * 
      * Indicate the confidence in being able to handle the network.
-     * <p>
+     * 
      * Use this method to indicate the confidence in being able to
      * successfully authenticate to the given network. Used in the response
      * to the kNEHotspotHelperCommandTypeEvaluate and
      * kNEHotspotHelperCommandTypeFilterScanList commands.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setConfidence:")
@@ -238,25 +262,29 @@ public class NEHotspotNetwork extends NSObject {
 
     /**
      * setPassword
-     * <p>
+     * 
      * Provide the password for a secure network
-     * <p>
+     * 
      * The HotspotHelper may set a password for a secure network. The format
      * password string must adhere to IEEE 802.11 guidelines appropriate for
      * the particular security scheme.
-     * <p>
+     * 
      * Used only in the response to the kNEHotspotHelperCommandTypeFilterScanList
      * command.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPassword:")
-    public native void setPassword(String password);
+    public native void setPassword(@NotNull String password);
 
     /**
      * [@property] signalStrength
-     * <p>
+     * 
      * The signal strength for the Wi-Fi network. The value lies within
      * the range 0.0 (weak/no signal) to 1.0 (strong signal).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("signalStrength")
@@ -264,7 +292,7 @@ public class NEHotspotNetwork extends NSObject {
 
     /**
      * fetchCurrentWithCompletionHandler:completionHandler:
-     * <p>
+     * 
      * This method returns SSID, BSSID and security type of the current Wi-Fi network when the
      * requesting application meets one of following 4 requirements -.
      * 1. application is using CoreLocation API and has user's authorization to access precise location.
@@ -273,7 +301,7 @@ public class NEHotspotNetwork extends NSObject {
      * 4. application has active NEDNSSettingsManager configuration installed.
      * An application will receive nil if it fails to meet any of the above 4 requirements.
      * An application will receive nil if does not have the "com.apple.developer.networking.wifi-info" entitlement.
-     *
+     * 
      * @param completionHandler A block that will be executed when current Wi-Fi network details are
      *                          obtained from the system. The NEHotspotNetwork object passed to this block will be nil
      *                          if the requesting
@@ -282,23 +310,27 @@ public class NEHotspotNetwork extends NSObject {
      *                          SSID, BSSID and security type values, when the block is passed non-nil object.This block
      *                          is executed on application's
      *                          main queue.
+     * 
+     *                          API-Since: 14.0
      */
     @Generated
     @Selector("fetchCurrentWithCompletionHandler:")
     public static native void fetchCurrentWithCompletionHandler(
-            @ObjCBlock(name = "call_fetchCurrentWithCompletionHandler") Block_fetchCurrentWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_fetchCurrentWithCompletionHandler") Block_fetchCurrentWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchCurrentWithCompletionHandler {
         @Generated
-        void call_fetchCurrentWithCompletionHandler(NEHotspotNetwork currentNetwork);
+        void call_fetchCurrentWithCompletionHandler(@Nullable NEHotspotNetwork currentNetwork);
     }
 
     /**
      * [@property] securityType
-     * <p>
+     * 
      * The security type of the Wi-Fi network.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("securityType")

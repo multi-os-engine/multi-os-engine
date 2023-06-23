@@ -4,10 +4,10 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] tls_ciphersuite_group_t enumeration
- * <p>
+ * 
  * Convenience ciphersuite groups that collate ciphersuites of comparable security
  * properties into a single alias.
- * <p>
+ * 
  * [@constant] tls_ciphersuite_group_default
  * [@constant] tls_ciphersuite_group_compatibility
  * [@constant] tls_ciphersuite_group_legacy

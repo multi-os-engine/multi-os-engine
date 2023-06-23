@@ -47,26 +47,28 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MCSession
- * <p>
+ * 
  * A MCSession facilitates communication among all peers in a multipeer
  * session.
- * <p>
+ * 
  * To start a multipeer session with remote peers, a MCPeerID that
  * represents the local peer needs to be supplied to the init method.
- * <p>
+ * 
  * Once a peer is added to the session on both sides, the delegate
  * callback -session:peer:didChangeState: will be called with
  * MCSessionStateConnected state for the remote peer.
- * <p>
+ * 
  * Data messages can be sent to a connected peer with the -sendData:
  * toPeers:withMode:error: method.
- * <p>
+ * 
  * The receiver of data messages will receive a delegate callback
  * -session:didReceiveData:fromPeer:.
- * <p>
+ * 
  * Resources referenced by NSURL (e.g. a file) can be sent to a connected
  * peer with the -sendResourceAtURL:toPeer:withTimeout:completionHandler:
  * method. The completionHandler will be called when the resource is fully
@@ -76,17 +78,20 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * withProgress: when it starts receiving the resource and -session:
  * didFinishReceivingResourceWithName:fromPeer:atURL:withError:
  * when the resource has been fully received.
- * <p>
+ * 
  * A byte stream can be sent to a connected peer with the
  * -startStreamWithName:toPeer:error: method. On success, an
  * NSOutputStream object is returned, and can be used to send bytes to
  * the remote peer once the stream is properly set up. The receiver of the
  * byte stream will receive a delegate callback -session:didReceiveStream:
  * withName:fromPeer:
- * <p>
+ * 
  * Delegate calls occur on a private serial queue. If your app needs to
  * perform an action on a particular run loop or operation queue, its
  * delegate method should explicitly dispatch or schedule that work.
+ * 
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("MultipeerConnectivity")
@@ -118,22 +123,25 @@ public class MCSession extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -168,9 +176,10 @@ public class MCSession extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -203,19 +212,21 @@ public class MCSession extends NSObject {
      */
     @Generated
     @Selector("cancelConnectPeer:")
-    public native void cancelConnectPeer(MCPeerID peerID);
+    public native void cancelConnectPeer(@NotNull MCPeerID peerID);
 
     /**
      * Connect a peer to the session once connection data is received.
      */
     @Generated
     @Selector("connectPeer:withNearbyConnectionData:")
-    public native void connectPeerWithNearbyConnectionData(MCPeerID peerID, NSData data);
+    public native void connectPeerWithNearbyConnectionData(@NotNull MCPeerID peerID, @NotNull NSData data);
 
+    @NotNull
     @Generated
     @Selector("connectedPeers")
     public native NSArray<? extends MCPeerID> connectedPeers();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -242,7 +253,7 @@ public class MCSession extends NSObject {
      */
     @Generated
     @Selector("initWithPeer:")
-    public native MCSession initWithPeer(MCPeerID myPeerID);
+    public native MCSession initWithPeer(@NotNull MCPeerID myPeerID);
 
     /**
      * Create a session with a security configuration. The securityIdentity argument is an array of
@@ -250,9 +261,10 @@ public class MCSession extends NSObject {
      */
     @Generated
     @Selector("initWithPeer:securityIdentity:encryptionPreference:")
-    public native MCSession initWithPeerSecurityIdentityEncryptionPreference(MCPeerID myPeerID, NSArray<?> identity,
-            @NInt long encryptionPreference);
+    public native MCSession initWithPeerSecurityIdentityEncryptionPreference(@NotNull MCPeerID myPeerID,
+            @Nullable NSArray<?> identity, @NInt long encryptionPreference);
 
+    @NotNull
     @Generated
     @Selector("myPeerID")
     public native MCPeerID myPeerID();
@@ -262,9 +274,10 @@ public class MCSession extends NSObject {
      */
     @Generated
     @Selector("nearbyConnectionDataForPeer:withCompletionHandler:")
-    public native void nearbyConnectionDataForPeerWithCompletionHandler(MCPeerID peerID,
-            @ObjCBlock(name = "call_nearbyConnectionDataForPeerWithCompletionHandler") Block_nearbyConnectionDataForPeerWithCompletionHandler completionHandler);
+    public native void nearbyConnectionDataForPeerWithCompletionHandler(@NotNull MCPeerID peerID,
+            @NotNull @ObjCBlock(name = "call_nearbyConnectionDataForPeerWithCompletionHandler") Block_nearbyConnectionDataForPeerWithCompletionHandler completionHandler);
 
+    @Nullable
     @Generated
     @Selector("securityIdentity")
     public native NSArray<?> securityIdentity();
@@ -274,8 +287,9 @@ public class MCSession extends NSObject {
      */
     @Generated
     @Selector("sendData:toPeers:withMode:error:")
-    public native boolean sendDataToPeersWithModeError(NSData data, NSArray<? extends MCPeerID> peerIDs,
-            @NInt long mode, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean sendDataToPeersWithModeError(@NotNull NSData data,
+            @NotNull NSArray<? extends MCPeerID> peerIDs, @NInt long mode,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Send a resource referenced by an NSURL to a remote peer. The resource
@@ -285,7 +299,7 @@ public class MCSession extends NSObject {
      * fromPeer:withProgress callback when it starts receiving the resource and
      * a -session:didFinishReceivingResourceWithName:fromPeer:atURL:withError:
      * when the resource has been fully received.
-     * <p>
+     * 
      * The primary mechanism for observing progress of the send should be to
      * create an NSProgress using +progressWithTotalUnitCount,
      * -becomeCurrentWithPendingUnitCount:, invoking this method, then calling
@@ -294,18 +308,19 @@ public class MCSession extends NSObject {
      * of incorporating it into a larger operation, you may observe the
      * NSProgress returned from this method.
      */
+    @Nullable
     @Generated
     @Selector("sendResourceAtURL:withName:toPeer:withCompletionHandler:")
-    public native NSProgress sendResourceAtURLWithNameToPeerWithCompletionHandler(NSURL resourceURL,
-            String resourceName, MCPeerID peerID,
-            @ObjCBlock(name = "call_sendResourceAtURLWithNameToPeerWithCompletionHandler") Block_sendResourceAtURLWithNameToPeerWithCompletionHandler completionHandler);
+    public native NSProgress sendResourceAtURLWithNameToPeerWithCompletionHandler(@NotNull NSURL resourceURL,
+            @NotNull String resourceName, @NotNull MCPeerID peerID,
+            @Nullable @ObjCBlock(name = "call_sendResourceAtURLWithNameToPeerWithCompletionHandler") Block_sendResourceAtURLWithNameToPeerWithCompletionHandler completionHandler);
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MCSessionDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) MCSessionDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) MCSessionDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) MCSessionDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -319,22 +334,24 @@ public class MCSession extends NSObject {
     /**
      * Start a named byte stream with the remote peer.
      */
+    @Nullable
     @Generated
     @Selector("startStreamWithName:toPeer:error:")
-    public native NSOutputStream startStreamWithNameToPeerError(String streamName, MCPeerID peerID,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSOutputStream startStreamWithNameToPeerError(@NotNull String streamName, @NotNull MCPeerID peerID,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_nearbyConnectionDataForPeerWithCompletionHandler {
         @Generated
-        void call_nearbyConnectionDataForPeerWithCompletionHandler(NSData connectionData, NSError error);
+        void call_nearbyConnectionDataForPeerWithCompletionHandler(@Nullable NSData connectionData,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sendResourceAtURLWithNameToPeerWithCompletionHandler {
         @Generated
-        void call_sendResourceAtURLWithNameToPeerWithCompletionHandler(NSError error);
+        void call_sendResourceAtURLWithNameToPeerWithCompletionHandler(@Nullable NSError error);
     }
 }

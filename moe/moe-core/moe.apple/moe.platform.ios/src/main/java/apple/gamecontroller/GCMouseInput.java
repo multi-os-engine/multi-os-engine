@@ -22,13 +22,17 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Mouse profile that represent a physical mouse object with two axis cursor, two axis scroll,
  * left button, optional right and middle buttons and optional set of auxiliary buttons.
- * <p>
+ * 
  * It only provides information about raw mouse movement deltas. For the valid cursor position
  * at given point in time, use UIHoverGestureRecognizer and NSEvent.mouseLocation.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("GameController")
@@ -60,26 +64,30 @@ public class GCMouseInput extends GCPhysicalInputProfile {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("auxiliaryButtons")
     public native NSArray<? extends GCControllerButtonInput> auxiliaryButtons();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -118,21 +126,25 @@ public class GCMouseInput extends GCPhysicalInputProfile {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Mouse buttons that can be used only as digital inputs
      */
+    @NotNull
     @Generated
     @Selector("leftButton")
     public native GCControllerButtonInput leftButton();
 
+    @Nullable
     @Generated
     @Selector("middleButton")
     public native GCControllerButtonInput middleButton();
 
+    @Nullable
     @Generated
     @Selector("mouseMovedHandler")
     @ObjCBlock(name = "call_mouseMovedHandler_ret")
@@ -142,7 +154,7 @@ public class GCMouseInput extends GCPhysicalInputProfile {
     @Generated
     public interface Block_mouseMovedHandler_ret {
         @Generated
-        void call_mouseMovedHandler_ret(GCMouseInput mouse, float deltaX, float deltaY);
+        void call_mouseMovedHandler_ret(@NotNull GCMouseInput mouse, float deltaX, float deltaY);
     }
 
     @Generated
@@ -158,6 +170,7 @@ public class GCMouseInput extends GCPhysicalInputProfile {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Nullable
     @Generated
     @Selector("rightButton")
     public native GCControllerButtonInput rightButton();
@@ -165,6 +178,7 @@ public class GCMouseInput extends GCPhysicalInputProfile {
     /**
      * Scroll is a dpad with undefined range.
      */
+    @NotNull
     @Generated
     @Selector("scroll")
     public native GCDeviceCursor scroll();
@@ -172,13 +186,13 @@ public class GCMouseInput extends GCPhysicalInputProfile {
     @Generated
     @Selector("setMouseMovedHandler:")
     public native void setMouseMovedHandler(
-            @ObjCBlock(name = "call_setMouseMovedHandler") Block_setMouseMovedHandler value);
+            @Nullable @ObjCBlock(name = "call_setMouseMovedHandler") Block_setMouseMovedHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setMouseMovedHandler {
         @Generated
-        void call_setMouseMovedHandler(GCMouseInput mouse, float deltaX, float deltaY);
+        void call_setMouseMovedHandler(@NotNull GCMouseInput mouse, float deltaX, float deltaY);
     }
 
     @Generated

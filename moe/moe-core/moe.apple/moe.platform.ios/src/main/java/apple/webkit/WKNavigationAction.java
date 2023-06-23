@@ -38,10 +38,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A WKNavigationAction object contains information about an action that may cause a navigation, used for making policy
  * decisions.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("WebKit")
@@ -73,22 +77,25 @@ public class WKNavigationAction extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +130,10 @@ public class WKNavigationAction extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,7 +167,7 @@ public class WKNavigationAction extends NSObject {
 
     /**
      * The type of action that triggered the navigation.
-     * <p>
+     * 
      * The value is one of the constants of the enumerated type WKNavigationType.
      */
     @Generated
@@ -170,6 +178,7 @@ public class WKNavigationAction extends NSObject {
     /**
      * The navigation's request.
      */
+    @NotNull
     @Generated
     @Selector("request")
     public native NSURLRequest request();
@@ -177,6 +186,7 @@ public class WKNavigationAction extends NSObject {
     /**
      * The frame requesting the navigation.
      */
+    @NotNull
     @Generated
     @Selector("sourceFrame")
     public native WKFrameInfo sourceFrame();
@@ -184,12 +194,15 @@ public class WKNavigationAction extends NSObject {
     /**
      * The target frame, or nil if this is a new window navigation.
      */
+    @Nullable
     @Generated
     @Selector("targetFrame")
     public native WKFrameInfo targetFrame();
 
     /**
      * A value indicating whether the web content used a download attribute to indicate that this should be downloaded.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("shouldPerformDownload")

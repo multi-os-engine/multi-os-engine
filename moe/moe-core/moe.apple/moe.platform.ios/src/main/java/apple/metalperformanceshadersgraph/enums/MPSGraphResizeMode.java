@@ -9,6 +9,12 @@ public final class MPSGraphResizeMode {
     private MPSGraphResizeMode() {
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NUInt public static final long Nearest = 0x0000000000000000L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NUInt public static final long Bilinear = 0x0000000000000001L;
 }

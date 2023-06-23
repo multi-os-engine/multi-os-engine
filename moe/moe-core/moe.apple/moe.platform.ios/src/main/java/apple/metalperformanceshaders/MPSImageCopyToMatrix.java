@@ -27,18 +27,23 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImageCopyToMatrix
- * <p>
+ * 
  * The MPSImageCopyToMatrix copies image data to a MPSMatrix.
  * The image data is stored in a row of a matrix. The dataLayout
  * specifies the order in which the feature channels in the MPSImage
  * get stored in the matrix. If MPSImage stores a batch of images,
  * the images are copied into multiple rows, one row per image.
- * <p>
+ * 
  * The number of elements in a row in the matrix must be >= image width *
  * image height * number of featureChannels in the image.
+ * 
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -70,31 +75,34 @@ public class MPSImageCopyToMatrix extends MPSKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * [@property] dataLayout
-     * <p>
+     * 
      * The data layout to use
-     * <p>
+     * 
      * Returns the data layout. When copying from a MPSImage to a MPSMatrix, this
      * describes the order in which the image values are stored in the buffer associated
      * with the MPSMatrix.
@@ -115,7 +123,7 @@ public class MPSImageCopyToMatrix extends MPSKernel {
 
     /**
      * [@property] destinationMatrixBatchIndex
-     * <p>
+     * 
      * The index of the destination matrix in the batch. This property is
      * modifiable and defaults to 0 at initialization time.
      */
@@ -126,7 +134,7 @@ public class MPSImageCopyToMatrix extends MPSKernel {
 
     /**
      * [@property] destinationMatrixOrigin
-     * <p>
+     * 
      * The origin, relative to [0, 0] in the destination matrix, at which to
      * start writing results. This property is modifiable and defaults
      * to [0, 0] at initialization time. If a different origin is desired
@@ -141,13 +149,13 @@ public class MPSImageCopyToMatrix extends MPSKernel {
     /**
      * Encode a kernel that copies a MPSImage to a MPSMatrix into a command buffer
      * using a MTLComputeCommandEncoder.
-     * <p>
+     * 
      * The kernel copies feature channels from sourceImage to the buffer
      * associated with destinationMatrix. The kernel will not begin to execute until
      * after the command buffer has been enqueued and committed.
-     * <p>
+     * 
      * NOTE: The destinationMatrix.dataType must match the feature channel data type in sourceImage.
-     *
+     * 
      * @param commandBuffer     A valid MTLCommandBuffer.
      * @param sourceImage       A valid MPSImage describing the image to copy from.
      * @param destinationMatrix A valid MPSMatrix or MPSTemporaryMatrix object describing the matrix to copy to.
@@ -155,8 +163,8 @@ public class MPSImageCopyToMatrix extends MPSKernel {
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:destinationMatrix:")
     public native void encodeToCommandBufferSourceImageDestinationMatrix(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
-            MPSMatrix destinationMatrix);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceImage,
+            @NotNull MPSMatrix destinationMatrix);
 
     @Generated
     @Selector("hash")
@@ -169,41 +177,41 @@ public class MPSImageCopyToMatrix extends MPSKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSImageCopyToMatrix initWithCoder(NSCoder aDecoder);
+    public native MPSImageCopyToMatrix initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSImageCopyToMatrix initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageCopyToMatrix initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImageCopyToMatrix initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageCopyToMatrix initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize a MPSMatrixCopy object on a device
-     *
+     * 
      * @param device     The device the kernel will run on
      * @param dataLayout The data layout
      * @return A valid MPSMatrixCopy object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:dataLayout:")
-    public native MPSImageCopyToMatrix initWithDeviceDataLayout(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @NUInt long dataLayout);
+    public native MPSImageCopyToMatrix initWithDeviceDataLayout(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long dataLayout);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -222,9 +230,10 @@ public class MPSImageCopyToMatrix extends MPSKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -241,7 +250,7 @@ public class MPSImageCopyToMatrix extends MPSKernel {
 
     /**
      * [@property] destinationMatrixBatchIndex
-     * <p>
+     * 
      * The index of the destination matrix in the batch. This property is
      * modifiable and defaults to 0 at initialization time.
      */
@@ -251,7 +260,7 @@ public class MPSImageCopyToMatrix extends MPSKernel {
 
     /**
      * [@property] destinationMatrixOrigin
-     * <p>
+     * 
      * The origin, relative to [0, 0] in the destination matrix, at which to
      * start writing results. This property is modifiable and defaults
      * to [0, 0] at initialization time. If a different origin is desired

@@ -26,9 +26,13 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
- * Performs person segmentationin an image.
+ * Performs person segmentation on an image generating a mask.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("Vision")
@@ -60,22 +64,25 @@ public class VNGeneratePersonSegmentationRequest extends VNStatefulRequest {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -110,20 +117,20 @@ public class VNGeneratePersonSegmentationRequest extends VNStatefulRequest {
     @Generated
     @Selector("initWithCompletionHandler:")
     public native VNGeneratePersonSegmentationRequest initWithCompletionHandler(
-            @ObjCBlock(name = "call_initWithCompletionHandler") Block_initWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_initWithCompletionHandler") Block_initWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithCompletionHandler {
         @Generated
-        void call_initWithCompletionHandler(VNRequest request, NSError error);
+        void call_initWithCompletionHandler(@NotNull VNRequest request, @Nullable NSError error);
     }
 
     @Generated
     @Selector("initWithFrameAnalysisSpacing:completionHandler:")
     public native VNGeneratePersonSegmentationRequest initWithFrameAnalysisSpacingCompletionHandler(
             @ByValue CMTime frameAnalysisSpacing,
-            @ObjCBlock(name = "call_initWithFrameAnalysisSpacingCompletionHandler") VNStatefulRequest.Block_initWithFrameAnalysisSpacingCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_initWithFrameAnalysisSpacingCompletionHandler") VNStatefulRequest.Block_initWithFrameAnalysisSpacingCompletionHandler completionHandler);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -142,9 +149,10 @@ public class VNGeneratePersonSegmentationRequest extends VNStatefulRequest {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -177,6 +185,7 @@ public class VNGeneratePersonSegmentationRequest extends VNStatefulRequest {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Nullable
     @Generated
     @Selector("results")
     public native NSArray<? extends VNPixelBufferObservation> results();
@@ -206,6 +215,7 @@ public class VNGeneratePersonSegmentationRequest extends VNStatefulRequest {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();

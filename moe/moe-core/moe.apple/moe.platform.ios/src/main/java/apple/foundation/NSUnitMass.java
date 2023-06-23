@@ -36,7 +36,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -67,34 +72,40 @@ public class NSUnitMass extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("baseUnit")
     public static native NSUnitMass baseUnit();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("carats")
     public static native NSUnitMass carats();
 
+    @NotNull
     @Generated
     @Selector("centigrams")
     public static native NSUnitMass centigrams();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -103,6 +114,7 @@ public class NSUnitMass extends NSDimension implements NSSecureCoding {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @NotNull
     @Generated
     @Selector("decigrams")
     public static native NSUnitMass decigrams();
@@ -111,6 +123,7 @@ public class NSUnitMass extends NSDimension implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("grams")
     public static native NSUnitMass grams();
@@ -137,29 +150,35 @@ public class NSUnitMass extends NSDimension implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Base unit - kilograms
      */
+    @NotNull
     @Generated
     @Selector("kilograms")
     public static native NSUnitMass kilograms();
 
+    @NotNull
     @Generated
     @Selector("metricTons")
     public static native NSUnitMass metricTons();
 
+    @NotNull
     @Generated
     @Selector("micrograms")
     public static native NSUnitMass micrograms();
 
+    @NotNull
     @Generated
     @Selector("milligrams")
     public static native NSUnitMass milligrams();
 
+    @NotNull
     @Generated
     @Selector("nanograms")
     public static native NSUnitMass nanograms();
@@ -169,18 +188,22 @@ public class NSUnitMass extends NSDimension implements NSSecureCoding {
     @Selector("new")
     public static native NSUnitMass new_objc();
 
+    @NotNull
     @Generated
     @Selector("ounces")
     public static native NSUnitMass ounces();
 
+    @NotNull
     @Generated
     @Selector("ouncesTroy")
     public static native NSUnitMass ouncesTroy();
 
+    @NotNull
     @Generated
     @Selector("picograms")
     public static native NSUnitMass picograms();
 
+    @NotNull
     @Generated
     @Selector("poundsMass")
     public static native NSUnitMass poundsMass();
@@ -197,14 +220,17 @@ public class NSUnitMass extends NSDimension implements NSSecureCoding {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("shortTons")
     public static native NSUnitMass shortTons();
 
+    @NotNull
     @Generated
     @Selector("slugs")
     public static native NSUnitMass slugs();
 
+    @NotNull
     @Generated
     @Selector("stones")
     public static native NSUnitMass stones();
@@ -224,7 +250,7 @@ public class NSUnitMass extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -232,15 +258,15 @@ public class NSUnitMass extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUnitMass initWithCoder(NSCoder coder);
+    public native NSUnitMass initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")
-    public native NSUnitMass initWithSymbol(String symbol);
+    public native NSUnitMass initWithSymbol(@NotNull String symbol);
 
     @Generated
     @Selector("initWithSymbol:converter:")
-    public native NSUnitMass initWithSymbolConverter(String symbol, NSUnitConverter converter);
+    public native NSUnitMass initWithSymbolConverter(@NotNull String symbol, @NotNull NSUnitConverter converter);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

@@ -7,6 +7,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("MediaSetup")
@@ -16,6 +17,7 @@ public interface MSAuthenticationPresentationContext {
     /**
      * The anchor to present the interface in
      */
+    @Nullable
     @Generated
     @Selector("presentationAnchor")
     UIWindow presentationAnchor();

@@ -21,11 +21,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] PHASEConeDirectivityModelSubbandParameters
- * <p>
+ * 
  * Cone directivity model subband parameters.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -57,22 +61,25 @@ public class PHASEConeDirectivityModelSubbandParameters extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -87,7 +94,7 @@ public class PHASEConeDirectivityModelSubbandParameters extends NSObject {
 
     /**
      * [@property] frequency
-     * <p>
+     * 
      * The frequency of the subband, in hertz.
      * [@note]
      * Default value is 1000.0.
@@ -107,7 +114,7 @@ public class PHASEConeDirectivityModelSubbandParameters extends NSObject {
 
     /**
      * [@property] innerAngle
-     * <p>
+     * 
      * The inner angle, in degrees.
      * [@note]
      * Default value is 360.0.
@@ -133,9 +140,10 @@ public class PHASEConeDirectivityModelSubbandParameters extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -144,7 +152,7 @@ public class PHASEConeDirectivityModelSubbandParameters extends NSObject {
 
     /**
      * [@property] outerAngle
-     * <p>
+     * 
      * The outer angle, in degrees.
      * [@note]
      * Default value is 360.0.
@@ -155,7 +163,7 @@ public class PHASEConeDirectivityModelSubbandParameters extends NSObject {
 
     /**
      * [@property] outerGain
-     * <p>
+     * 
      * The outer gain.
      * [@note]
      * Values are clamped to the range [0.0, 1.0]. Default value is 1.0.
@@ -174,7 +182,7 @@ public class PHASEConeDirectivityModelSubbandParameters extends NSObject {
 
     /**
      * [@property] frequency
-     * <p>
+     * 
      * The frequency of the subband, in hertz.
      * [@note]
      * Default value is 1000.0.
@@ -185,12 +193,14 @@ public class PHASEConeDirectivityModelSubbandParameters extends NSObject {
 
     /**
      * setInnerAngle:outerAngle
-     * <p>
+     * 
      * Set the innerAngle and outerAngle of the Cone Directivity Model Subband
      * [@note] The default value for each angle is 360.0. outerAngle must be >= innerAngle.
-     *
-     * @param innerAngle The inner angle of the cone directivity model, must be less than or equal to outer angle.
-     * @param outerAngle The outer angle of the cone directivity model, must be greater than or equal to inner angle.
+     * 
+     * @param innerAngle
+     *                   The inner angle of the cone directivity model, must be less than or equal to outer angle.
+     * @param outerAngle
+     *                   The outer angle of the cone directivity model, must be greater than or equal to inner angle.
      */
     @Generated
     @Selector("setInnerAngle:outerAngle:")
@@ -198,7 +208,7 @@ public class PHASEConeDirectivityModelSubbandParameters extends NSObject {
 
     /**
      * [@property] outerGain
-     * <p>
+     * 
      * The outer gain.
      * [@note]
      * Values are clamped to the range [0.0, 1.0]. Default value is 1.0.

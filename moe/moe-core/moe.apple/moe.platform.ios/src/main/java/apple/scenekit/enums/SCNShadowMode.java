@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] SCNShadowMode
- * <p>
+ * 
  * The different modes available to compute shadows.
- * <p>
+ * 
  * When the shadow mode is set to SCNShadowModeForward, shadows are computed while computing the lighting. In this mode
  * only the alpha component of the shadow color is used to alter the lighting contribution.
  * When the shadow mode is set to SCNShadowModeDeferred shadows are applied as a post process. Shadows are blend over

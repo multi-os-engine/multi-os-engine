@@ -25,7 +25,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -56,22 +61,25 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -86,10 +94,10 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
      * | +-------+ | +--------------------------+
      * | |
      * +-------------+
-     * <p>
+     * 
      * Use contentInsets on an item to adjust the final size of the item after layout is computed.
      * useful for grid style layouts to apply even spacing around each the edges of each item.
-     * <p>
+     * 
      * Note: contentInsets are ignored for any axis with an .estimated dimension
      */
     @Generated
@@ -97,11 +105,12 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
     @ByValue
     public native NSDirectionalEdgeInsets contentInsets();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -131,11 +140,12 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
      * +--------+
      * | Bottom |
      * +--------+
-     * <p>
+     * 
      * Specifies additional space required surrounding and item when laying out.
      * Flexible spacing can be used to apportion remaining space after items are laid out to
      * evenly align items among available layout space.
      */
+    @Nullable
     @Generated
     @Selector("edgeSpacing")
     public native NSCollectionLayoutEdgeSpacing edgeSpacing();
@@ -168,17 +178,20 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
 
     @Generated
     @Selector("itemWithLayoutSize:")
-    public static native NSCollectionLayoutItem itemWithLayoutSize(NSCollectionLayoutSize layoutSize);
+    public static native NSCollectionLayoutItem itemWithLayoutSize(@NotNull NSCollectionLayoutSize layoutSize);
 
     @Generated
     @Selector("itemWithLayoutSize:supplementaryItems:")
-    public static native NSCollectionLayoutItem itemWithLayoutSizeSupplementaryItems(NSCollectionLayoutSize layoutSize,
-            NSArray<? extends NSCollectionLayoutSupplementaryItem> supplementaryItems);
+    public static native NSCollectionLayoutItem itemWithLayoutSizeSupplementaryItems(
+            @NotNull NSCollectionLayoutSize layoutSize,
+            @NotNull NSArray<? extends NSCollectionLayoutSupplementaryItem> supplementaryItems);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("layoutSize")
     public native NSCollectionLayoutSize layoutSize();
@@ -206,10 +219,10 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
      * | +-------+ | +--------------------------+
      * | |
      * +-------------+
-     * <p>
+     * 
      * Use contentInsets on an item to adjust the final size of the item after layout is computed.
      * useful for grid style layouts to apply even spacing around each the edges of each item.
-     * <p>
+     * 
      * Note: contentInsets are ignored for any axis with an .estimated dimension
      */
     @Generated
@@ -236,14 +249,14 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
      * +--------+
      * | Bottom |
      * +--------+
-     * <p>
+     * 
      * Specifies additional space required surrounding and item when laying out.
      * Flexible spacing can be used to apportion remaining space after items are laid out to
      * evenly align items among available layout space.
      */
     @Generated
     @Selector("setEdgeSpacing:")
-    public native void setEdgeSpacing(NSCollectionLayoutEdgeSpacing value);
+    public native void setEdgeSpacing(@Nullable NSCollectionLayoutEdgeSpacing value);
 
     @Generated
     @Selector("setVersion:")
@@ -253,6 +266,7 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("supplementaryItems")
     public native NSArray<? extends NSCollectionLayoutSupplementaryItem> supplementaryItems();

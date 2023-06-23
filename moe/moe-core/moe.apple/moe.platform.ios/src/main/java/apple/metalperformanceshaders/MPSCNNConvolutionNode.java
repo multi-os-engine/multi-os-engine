@@ -23,9 +23,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A MPSNNFilterNode representing a MPSCNNConvolution kernel
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -57,22 +61,25 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,7 +103,7 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
 
     /**
      * Init a node representing a MPSCNNConvolution kernel
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @param weights    A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
      *                   protocol. This object is provided by you to encapsulate storage for
@@ -106,8 +113,8 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
      */
     @Generated
     @Selector("initWithSource:weights:")
-    public native MPSCNNConvolutionNode initWithSourceWeights(MPSNNImageNode sourceNode,
-            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
+    public native MPSCNNConvolutionNode initWithSourceWeights(@NotNull MPSNNImageNode sourceNode,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -126,9 +133,10 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -137,7 +145,7 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
 
     /**
      * Init an autoreleased not representing a MPSCNNConvolution kernel
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @param weights    A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
      *                   protocol. This object is provided by you to encapsulate storage for
@@ -147,8 +155,8 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
      */
     @Generated
     @Selector("nodeWithSource:weights:")
-    public static native MPSCNNConvolutionNode nodeWithSourceWeights(MPSNNImageNode sourceNode,
-            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
+    public static native MPSCNNConvolutionNode nodeWithSourceWeights(@NotNull MPSNNImageNode sourceNode,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -173,8 +181,10 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
 
     /**
      * Set the floating-point precision used by the convolution accumulator
-     * <p>
+     * 
      * Default: MPSNNConvolutionAccumulatorPrecisionOptionFloat
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("accumulatorPrecision")
@@ -183,20 +193,25 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
 
     /**
      * A node to represent a MPSCNNConvolutionGradientState object
-     * <p>
+     * 
      * Use this if the convolution is mirrored by a convolution transpose node
      * later on in the graph to make sure that the size of the image returned
      * from the convolution transpose matches the size of the image passed in
      * to this node.
+     * 
+     * API-Since: 11.3
      */
+    @Nullable
     @Generated
     @Selector("convolutionGradientState")
     public native MPSCNNConvolutionGradientStateNode convolutionGradientState();
 
     /**
      * Set the floating-point precision used by the convolution accumulator
-     * <p>
+     * 
      * Default: MPSNNConvolutionAccumulatorPrecisionOptionFloat
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setAccumulatorPrecision:")

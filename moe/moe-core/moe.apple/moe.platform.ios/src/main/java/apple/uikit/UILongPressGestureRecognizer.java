@@ -39,11 +39,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Begins: when numberOfTouchesRequired have tapped numberOfTapsRequired times and been held for minimumPressDuration
  * Changes: when a finger moves
  * Ends: when a finger is lifted
+ * 
+ * API-Since: 3.2
  */
 @Generated
 @Library("UIKit")
@@ -75,22 +79,25 @@ public class UILongPressGestureRecognizer extends UIGestureRecognizer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +132,10 @@ public class UILongPressGestureRecognizer extends UIGestureRecognizer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,8 +178,8 @@ public class UILongPressGestureRecognizer extends UIGestureRecognizer {
 
     @Generated
     @Selector("initWithTarget:action:")
-    public native UILongPressGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target,
-            SEL action);
+    public native UILongPressGestureRecognizer initWithTargetAction(
+            @Nullable @Mapped(ObjCObjectMapper.class) Object target, @Nullable SEL action);
 
     /**
      * Default is 0.5. Time in seconds the fingers must be held down for the gesture to be recognized
@@ -227,5 +235,5 @@ public class UILongPressGestureRecognizer extends UIGestureRecognizer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UILongPressGestureRecognizer initWithCoder(NSCoder coder);
+    public native UILongPressGestureRecognizer initWithCoder(@NotNull NSCoder coder);
 }

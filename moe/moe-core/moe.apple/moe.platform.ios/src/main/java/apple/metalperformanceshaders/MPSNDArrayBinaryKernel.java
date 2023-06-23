@@ -30,7 +30,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -61,22 +66,25 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -91,24 +99,25 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * Inference encode calls
-     * <p>
+     * 
      * Encode a simple inference NDArray kernel and return a NDArray to hold the result
-     *
+     * 
      * @param cmdBuf               The command buffer into which to encode the kernel
      * @param primarySourceArray   The primary source for the filter in an NSArray.
      * @param secondarySourceArray The secondary source for the filter in an NSArray.
      * @return A newly allocated MPSNDArray that will contain the result of the calculation
      *         when the command buffer completes successfully.
      */
+    @NotNull
     @Generated
     @Selector("encodeToCommandBuffer:primarySourceArray:secondarySourceArray:")
     public native MPSNDArray encodeToCommandBufferPrimarySourceArraySecondarySourceArray(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MPSNDArray primarySourceArray,
-            MPSNDArray secondarySourceArray);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NotNull MPSNDArray primarySourceArray,
+            @NotNull MPSNDArray secondarySourceArray);
 
     /**
      * Encode a simple inference NDArray kernel and return a NDArray to hold the result
-     *
+     * 
      * @param cmdBuf               The command buffer into which to encode the kernel
      * @param primarySourceArray   The primary source for the filter in an NSArray.
      * @param secondarySourceArray The secondary source for the filter in an NSArray.
@@ -117,12 +126,12 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
     @Generated
     @Selector("encodeToCommandBuffer:primarySourceArray:secondarySourceArray:destinationArray:")
     public native void encodeToCommandBufferPrimarySourceArraySecondarySourceArrayDestinationArray(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MPSNDArray primarySourceArray,
-            MPSNDArray secondarySourceArray, MPSNDArray destination);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NotNull MPSNDArray primarySourceArray,
+            @NotNull MPSNDArray secondarySourceArray, @NotNull MPSNDArray destination);
 
     /**
      * Encode a simple inference NDArray kernel and return a NDArray to hold the result
-     *
+     * 
      * @param cmdBuf               The command buffer into which to encode the kernel
      * @param primarySourceArray   The primary source for the filter in an NSArray.
      * @param secondarySourceArray The secondary source for the filter in an NSArray.
@@ -133,14 +142,15 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
     @Generated
     @Selector("encodeToCommandBuffer:primarySourceArray:secondarySourceArray:resultState:destinationArray:")
     public native void encodeToCommandBufferPrimarySourceArraySecondarySourceArrayResultStateDestinationArray(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MPSNDArray primarySourceArray,
-            MPSNDArray secondarySourceArray, MPSState outGradientState, MPSNDArray destination);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NotNull MPSNDArray primarySourceArray,
+            @NotNull MPSNDArray secondarySourceArray, @Nullable MPSState outGradientState,
+            @NotNull MPSNDArray destination);
 
     /**
      * Forward training encode calls
-     * <p>
+     * 
      * Encode a simple inference NDArray kernel and return a NDArray to hold the result
-     *
+     * 
      * @param cmdBuf                 The command buffer into which to encode the kernel
      * @param primarySourceArray     The primary source for the filter in an NSArray.
      * @param secondarySourceArray   The secondary source for the filter in an NSArray.
@@ -150,11 +160,13 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
      * @return A newly allocated MPSNDArray that will contain the result of the calculation
      *         when the command buffer completes successfully.
      */
+    @NotNull
     @Generated
     @Selector("encodeToCommandBuffer:primarySourceArray:secondarySourceArray:resultState:outputStateIsTemporary:")
     public native MPSNDArray encodeToCommandBufferPrimarySourceArraySecondarySourceArrayResultStateOutputStateIsTemporary(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MPSNDArray primarySourceArray,
-            MPSNDArray secondarySourceArray, @ReferenceInfo(type = MPSState.class) Ptr<MPSState> outGradientState,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NotNull MPSNDArray primarySourceArray,
+            @NotNull MPSNDArray secondarySourceArray,
+            @Nullable @ReferenceInfo(type = MPSState.class) Ptr<MPSState> outGradientState,
             boolean outputStateIsTemporary);
 
     @Generated
@@ -168,24 +180,24 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNDArrayBinaryKernel initWithCoder(NSCoder aDecoder);
+    public native MPSNDArrayBinaryKernel initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding support
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNDArrayBinaryKernel initWithCoderDevice(NSCoder coder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNDArrayBinaryKernel initWithCoderDevice(@NotNull NSCoder coder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNDArrayBinaryKernel initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNDArrayBinaryKernel initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:sourceCount:")
-    public native MPSNDArrayBinaryKernel initWithDeviceSourceCount(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @NUInt long count);
+    public native MPSNDArrayBinaryKernel initWithDeviceSourceCount(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long count);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -204,9 +216,10 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -215,10 +228,14 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property] primaryDilationRate
-     * <p>
+     * 
      * The stride in each dimension from one PSF tap to an adjacent
      * PSF tap. Default: 1
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("primaryDilationRates")
     @ByValue
@@ -226,10 +243,14 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property] primaryEdgeMode
-     * <p>
+     * 
      * The edge mode used for a source NDArray
      * Default: MPSImageEdgeModeZero
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("primaryEdgeMode")
     @NUInt
@@ -237,10 +258,14 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property] primaryKernelSizes
-     * <p>
+     * 
      * The diameters of the point spread function in each dimension for a source NDArray
      * Default: 1
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("primaryKernelSizes")
     @ByValue
@@ -248,14 +273,18 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property] primaryOffsets
-     * <p>
+     * 
      * The coordinate of the position read from this source array which is
      * used to calculate the result value at [0,0,0,....]
      * If the position read is actually a contiguous region (e.g. the area covered by
      * a convolution kernel) then this is the center of that region, rounded down, for
      * each dimension.
      * Default: 0,0,0...
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("primaryOffsets")
     @ByValue
@@ -263,12 +292,16 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property] primaryStrides
-     * <p>
+     * 
      * If the filter is a "backwards" filter such as a gradient filter
      * or convolution transpose, then this is the upsampling ratio and
      * zeros are inserted in the result.
      * Default: 1
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("primaryStrides")
     @ByValue
@@ -284,10 +317,14 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property] secondaryDilationRate
-     * <p>
+     * 
      * The stride in each dimension from one PSF tap to an adjacent
      * PSF tap. Default: 1
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("secondaryDilationRates")
     @ByValue
@@ -295,10 +332,14 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property] secondaryEdgeMode
-     * <p>
+     * 
      * The edge mode used for a source NDArray
      * Default: MPSImageEdgeModeZero
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("secondaryEdgeMode")
     @NUInt
@@ -306,10 +347,14 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property] secondaryKernelSizes
-     * <p>
+     * 
      * The diameters of the point spread function in each dimension for a source NDArray
      * Default: 1
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("secondaryKernelSizes")
     @ByValue
@@ -317,14 +362,18 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property] secondaryOffsets
-     * <p>
+     * 
      * The coordinate of the position read from this source array which is
      * used to calculate the result value at [0,0,0,....]
      * If the position read is actually a contiguous region (e.g. the area covered by
      * a convolution kernel) then this is the center of that region, rounded down, for
      * each dimension.
      * Default: 0,0,0...
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("secondaryOffsets")
     @ByValue
@@ -332,12 +381,16 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property] secondaryStrides
-     * <p>
+     * 
      * If the filter is a "backwards" filter such as a gradient filter
      * or convolution transpose, then this is the upsampling ratio and
      * zeros are inserted in the result.
      * Default: 1
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("secondaryStrides")
     @ByValue

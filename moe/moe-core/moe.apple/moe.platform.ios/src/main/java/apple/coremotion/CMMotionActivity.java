@@ -40,26 +40,31 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CMMotionActivity
- * <p>
+ * 
  * Discussion:
  * An estimate of the user's activity based on the motion of the device.
- * <p>
+ * 
  * The activity is exposed as a set of properties, the properties are not
  * mutually exclusive.
- * <p>
+ * 
  * For example, if you're in a car stopped at a stop sign the state might
  * look like:
  * stationary = YES, walking = NO, running = NO, automotive = YES
- * <p>
+ * 
  * Or a moving vehicle,
  * stationary = NO, walking = NO, running = NO, automotive = YES
- * <p>
+ * 
  * Or the device could be in motion but not walking or in a vehicle.
  * stationary = NO, walking = NO, running = NO, automotive = NO.
  * Note in this case all of the properties are NO.
+ * 
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("CoreMotion")
@@ -91,22 +96,25 @@ public class CMMotionActivity extends CMLogItem {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -141,9 +149,10 @@ public class CMMotionActivity extends CMLogItem {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -177,7 +186,7 @@ public class CMMotionActivity extends CMLogItem {
 
     /**
      * automotive
-     * <p>
+     * 
      * Discussion:
      * True if the device is in a vehicle.
      */
@@ -187,10 +196,10 @@ public class CMMotionActivity extends CMLogItem {
 
     /**
      * confidence
-     * <p>
+     * 
      * Discussion:
      * A confidence estimate associated with this state.
-     * <p>
+     * 
      * CoreMotion always provides the most likely state. Confidence represents
      * how likely that the state is to be correct.
      */
@@ -201,9 +210,11 @@ public class CMMotionActivity extends CMLogItem {
 
     /**
      * cycling
-     * <p>
+     * 
      * Discussion:
      * True if the device is on a bicycle.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("cycling")
@@ -215,11 +226,11 @@ public class CMMotionActivity extends CMLogItem {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CMMotionActivity initWithCoder(NSCoder coder);
+    public native CMMotionActivity initWithCoder(@NotNull NSCoder coder);
 
     /**
      * running
-     * <p>
+     * 
      * Discussion:
      * True if the device is on a running person.
      */
@@ -229,17 +240,18 @@ public class CMMotionActivity extends CMLogItem {
 
     /**
      * startDate
-     * <p>
+     * 
      * Discussion:
      * Time at which the activity started.
      */
+    @NotNull
     @Generated
     @Selector("startDate")
     public native NSDate startDate();
 
     /**
      * stationary
-     * <p>
+     * 
      * Discussion:
      * True if the device is not moving.
      */
@@ -255,7 +267,7 @@ public class CMMotionActivity extends CMLogItem {
 
     /**
      * unknown
-     * <p>
+     * 
      * Discussion:
      * True if there is no estimate of the current state. This can happen if
      * the device was turned off.
@@ -266,7 +278,7 @@ public class CMMotionActivity extends CMLogItem {
 
     /**
      * walking
-     * <p>
+     * 
      * Discussion:
      * True if the device is on a walking person.
      */

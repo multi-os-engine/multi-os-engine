@@ -35,50 +35,11 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
- * NSProgress is used to report the amount of work done, and provides a way to allow the user to cancel that work.
- * <p>
- * Since work is often split up into several parts, progress objects can form a tree where children represent part of
- * the overall total work. Each parent may have as many children as required, but each child only has one parent. The
- * top level progress object in this tree is typically the one that you would display to a user. The leaf objects are
- * updated as work completes, and the updates propagate up the tree.
- * <p>
- * The work that an NSProgress does is tracked via a "unit count." There are two unit count values: total and completed.
- * In its leaf form, an NSProgress is created with a total unit count and its completed unit count is updated with
- * -setCompletedUnitCount: until it matches the total unit count. The progress is then considered finished.
- * <p>
- * When progress objects form nodes in trees, they are still created with a total unit count. Portions of the total are
- * then handed out to children as a "pending unit count." The total amount handed out to children should add up to the
- * parent's totalUnitCount. When those children become finished, the pending unit count assigned to that child is added
- * to the parent's completedUnitCount. Therefore, when all children are finished, the parent's completedUnitCount is
- * equal to its totalUnitCount and it becomes finished itself.
- * <p>
- * Children NSProgress objects can be added implicitly or by invoking the -addChild:withPendingUnitCount: method on the
- * parent. Implicitly added children are attached to a parent progress between a call to
- * -becomeCurrentWithPendingUnitCount: and a call to -resignCurrent. The implicit child is created with the
- * +progressWithTotalUnitCount: method or by passing the result of +currentProgress to the -initWithParent:userInfo:
- * method. Both kinds of children can be attached to the same parent progress object. If you have an idea in advance
- * that some portions of the work will take more or less time than the others, you can use different values of pending
- * unit count for each child.
- * <p>
- * If you are designing an interface of an object that reports progress, then the recommended approach is to vend an
- * NSProgress property and adopt the NSProgressReporting protocol. The progress should be created with the
- * -discreteProgressWithTotalUnitCount: method. You can then either update the progress object directly or set it to
- * have children of its own. Users of your object can compose your progress into their tree by using the
- * -addChild:withPendingUnitCount: method.
- * <p>
- * If you want to provide progress reporting for a single method, then the recommended approach is to implicitly attach
- * to a current NSProgress by creating an NSProgress object at the very beginning of your method using
- * +progressWithTotalUnitCount:. This progress object will consume the pending unit count, and then you can set up the
- * progress object with children of its own.
- * <p>
- * The localizedDescription and localizedAdditionalDescription properties are meant to be observed as well as set. So
- * are the cancellable and pausable properties. totalUnitCount and completedUnitCount on the other hand are often not
- * the best properties to observe when presenting progress to the user. For example, you should observe
- * fractionCompleted instead of observing totalUnitCount and completedUnitCount and doing your own calculation.
- * NSProgress' default implementation of fractionCompleted does fairly sophisticated things like taking child
- * NSProgresses into account.
+ * API-Since: 7.0
  */
 @Generated
 @Library("Foundation")
@@ -110,22 +71,25 @@ public class NSProgress extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -139,6 +103,7 @@ public class NSProgress extends NSObject {
      * know what units of work the current progress object deals in. Invoking +progressWithTotalUnitCount: to create a
      * child NSProgress object and then using that to report progress makes more sense in that situation.
      */
+    @Nullable
     @Generated
     @Selector("currentProgress")
     public static native NSProgress currentProgress();
@@ -155,7 +120,10 @@ public class NSProgress extends NSObject {
      * Return an instance of NSProgress that has been initialized with -initWithParent:userInfo:. The initializer is
      * passed nil for the parent, resulting in a progress object that is not part of an existing progress tree. The
      * value of the totalUnitCount property is also set.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("discreteProgressWithTotalUnitCount:")
     public static native NSProgress discreteProgressWithTotalUnitCount(long unitCount);
@@ -182,9 +150,10 @@ public class NSProgress extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -196,23 +165,27 @@ public class NSProgress extends NSObject {
      * passed the current progress object, if there is one, and the value of the totalUnitCount property is set. In many
      * cases you can simply precede code that does a substantial amount of work with an invocation of this method, with
      * repeated invocations of -setCompletedUnitCount: and -isCancelled in the loop that does the work.
-     * <p>
+     * 
      * You can invoke this method on one thread and then message the returned NSProgress on another thread. For example,
      * you can let the result of invoking this method get captured by a block passed to dispatch_async(). In that block
      * you can invoke methods like -becomeCurrentWithPendingUnitCount: and -resignCurrent, or -setCompletedUnitCount:
      * and -isCancelled.
      */
+    @NotNull
     @Generated
     @Selector("progressWithTotalUnitCount:")
     public static native NSProgress progressWithTotalUnitCount(long unitCount);
 
     /**
      * Return an instance of NSProgress that has been attached to a parent progress with the given pending unit count.
+     * 
+     * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("progressWithTotalUnitCount:parent:pendingUnitCount:")
-    public static native NSProgress progressWithTotalUnitCountParentPendingUnitCount(long unitCount, NSProgress parent,
-            long portionOfParentTotalUnitCount);
+    public static native NSProgress progressWithTotalUnitCountParentPendingUnitCount(long unitCount,
+            @NotNull NSProgress parent, long portionOfParentTotalUnitCount);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -237,17 +210,19 @@ public class NSProgress extends NSObject {
 
     /**
      * Directly add a child progress to the receiver, assigning it a portion of the receiver's total unit count.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("addChild:withPendingUnitCount:")
-    public native void addChildWithPendingUnitCount(NSProgress child, long inUnitCount);
+    public native void addChildWithPendingUnitCount(@NotNull NSProgress child, long inUnitCount);
 
     /**
      * Make the receiver the current thread's current progress object, returned by +currentProgress. At the same time,
      * record how large a portion of the work represented by the receiver will be represented by the next progress
      * object initialized by invoking -initWithParent:userInfo: in the current thread with the receiver as the parent.
      * This will be used when that child is sent -setCompletedUnitCount: and the receiver is notified of that.
-     * <p>
+     * 
      * With this mechanism, code that doesn't know anything about its callers can report progress accurately by using
      * +progressWithTotalUnitCount: and -setCompletedUnitCount:. The calling code will account for the fact that the
      * work done is only a portion of the work to be done as part of a larger operation. The unit of work in a call to
@@ -275,6 +250,7 @@ public class NSProgress extends NSObject {
      * receiver or an ancestor of the receiver. Your block won't be invoked on any particular queue. If it must do work
      * on a specific queue then it should schedule that work on that queue.
      */
+    @Nullable
     @Generated
     @Selector("cancellationHandler")
     @ObjCBlock(name = "call_cancellationHandler_ret")
@@ -304,8 +280,8 @@ public class NSProgress extends NSObject {
      */
     @Generated
     @Selector("initWithParent:userInfo:")
-    public native NSProgress initWithParentUserInfo(NSProgress parentProgressOrNil,
-            NSDictionary<String, ?> userInfoOrNil);
+    public native NSProgress initWithParentUserInfo(@Nullable NSProgress parentProgressOrNil,
+            @Nullable NSDictionary<String, ?> userInfoOrNil);
 
     /**
      * Whether the work being done can be cancelled or paused, respectively. By default NSProgresses are cancellable but
@@ -375,6 +351,7 @@ public class NSProgress extends NSObject {
      * -localizedDescription is actually being invoked in another process, whose localization language may be different,
      * as a result of using the publish and subscribe mechanism described here.
      */
+    @Nullable
     @Generated
     @Selector("kind")
     public native String kind();
@@ -388,7 +365,7 @@ public class NSProgress extends NSObject {
      * to return a computed string. If it fails to do that then it returns an empty string. The difference between this
      * and localizedDescription is that this text is meant to be more specific about what work is being done at any
      * particular moment.
-     * <p>
+     * 
      * For example, depending on the kind of progress, the completed and total unit counts, and other parameters, these
      * kinds of strings may be generated:
      * 3 of 10 files
@@ -408,7 +385,7 @@ public class NSProgress extends NSObject {
      * property. If the most recently set value of this property is nil then NSProgress uses the value of the kind
      * property to determine how to use the values of other properties, as well as values in the user info dictionary,
      * to return a computed string. If it fails to do that then it returns an empty string.
-     * <p>
+     * 
      * For example, depending on the kind of progress, the completed and total unit counts, and other parameters, these
      * kinds of strings may be generated:
      * Copying 10 files…
@@ -435,6 +412,7 @@ public class NSProgress extends NSObject {
      * receiver or an ancestor of the receiver. Your block won't be invoked on any particular queue. If it must do work
      * on a specific queue then it should schedule that work on that queue.
      */
+    @Nullable
     @Generated
     @Selector("pausingHandler")
     @ObjCBlock(name = "call_pausingHandler_ret")
@@ -453,6 +431,8 @@ public class NSProgress extends NSObject {
      * NO. Do this for the receiver, any descendants of the receiver, the instance of NSProgress that was published in
      * another process to make the receiver if that's the case, and any descendants of such a published instance of
      * NSProgress.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("resume")
@@ -463,7 +443,10 @@ public class NSProgress extends NSObject {
      * ancestor of the receiver, or an instance of NSProgress in another process that resulted from publishing the
      * receiver or an ancestor of the receiver. Your block won't be invoked on any particular queue. If it must do work
      * on a specific queue then it should schedule that work on that queue.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("resumingHandler")
     @ObjCBlock(name = "call_resumingHandler_ret")
@@ -478,7 +461,7 @@ public class NSProgress extends NSObject {
     @Generated
     @Selector("setCancellationHandler:")
     public native void setCancellationHandler(
-            @ObjCBlock(name = "call_setCancellationHandler") Block_setCancellationHandler value);
+            @Nullable @ObjCBlock(name = "call_setCancellationHandler") Block_setCancellationHandler value);
 
     @Generated
     @Selector("setCompletedUnitCount:")
@@ -494,7 +477,7 @@ public class NSProgress extends NSObject {
      */
     @Generated
     @Selector("setKind:")
-    public native void setKind(String value);
+    public native void setKind(@Nullable String value);
 
     /**
      * A more specific description of what progress is being made, fit to present to the user. NSProgress is by default
@@ -505,7 +488,7 @@ public class NSProgress extends NSObject {
      * to return a computed string. If it fails to do that then it returns an empty string. The difference between this
      * and localizedDescription is that this text is meant to be more specific about what work is being done at any
      * particular moment.
-     * <p>
+     * 
      * For example, depending on the kind of progress, the completed and total unit counts, and other parameters, these
      * kinds of strings may be generated:
      * 3 of 10 files
@@ -525,7 +508,7 @@ public class NSProgress extends NSObject {
      * property. If the most recently set value of this property is nil then NSProgress uses the value of the kind
      * property to determine how to use the values of other properties, as well as values in the user info dictionary,
      * to return a computed string. If it fails to do that then it returns an empty string.
-     * <p>
+     * 
      * For example, depending on the kind of progress, the completed and total unit counts, and other parameters, these
      * kinds of strings may be generated:
      * Copying 10 files…
@@ -544,17 +527,21 @@ public class NSProgress extends NSObject {
      */
     @Generated
     @Selector("setPausingHandler:")
-    public native void setPausingHandler(@ObjCBlock(name = "call_setPausingHandler") Block_setPausingHandler value);
+    public native void setPausingHandler(
+            @Nullable @ObjCBlock(name = "call_setPausingHandler") Block_setPausingHandler value);
 
     /**
      * A block to be invoked when resume is invoked. The block will be invoked even when the method is invoked on an
      * ancestor of the receiver, or an instance of NSProgress in another process that resulted from publishing the
      * receiver or an ancestor of the receiver. Your block won't be invoked on any particular queue. If it must do work
      * on a specific queue then it should schedule that work on that queue.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setResumingHandler:")
-    public native void setResumingHandler(@ObjCBlock(name = "call_setResumingHandler") Block_setResumingHandler value);
+    public native void setResumingHandler(
+            @Nullable @ObjCBlock(name = "call_setResumingHandler") Block_setResumingHandler value);
 
     /**
      * The size of the job whose progress is being reported, and how much of it has been completed so far, respectively.
@@ -563,7 +550,7 @@ public class NSProgress extends NSObject {
      * overall count of files. For any other kind of NSProgress, the unit of measurement you use does not matter as long
      * as you are consistent. The values may be reported to the user in the localizedDescription and
      * localizedAdditionalDescription.
-     * <p>
+     * 
      * If the receiver NSProgress object is a "leaf progress" (no children), then the fractionCompleted is generally
      * completedUnitCount / totalUnitCount. If the receiver NSProgress has children, the fractionCompleted will reflect
      * progress made in child objects in addition to its own completedUnitCount. As children finish, the
@@ -580,7 +567,8 @@ public class NSProgress extends NSObject {
      */
     @Generated
     @Selector("setUserInfoObject:forKey:")
-    public native void setUserInfoObjectForKey(@Mapped(ObjCObjectMapper.class) Object objectOrNil, String key);
+    public native void setUserInfoObjectForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object objectOrNil,
+            @NotNull String key);
 
     /**
      * The size of the job whose progress is being reported, and how much of it has been completed so far, respectively.
@@ -589,7 +577,7 @@ public class NSProgress extends NSObject {
      * overall count of files. For any other kind of NSProgress, the unit of measurement you use does not matter as long
      * as you are consistent. The values may be reported to the user in the localizedDescription and
      * localizedAdditionalDescription.
-     * <p>
+     * 
      * If the receiver NSProgress object is a "leaf progress" (no children), then the fractionCompleted is generally
      * completedUnitCount / totalUnitCount. If the receiver NSProgress has children, the fractionCompleted will reflect
      * progress made in child objects in addition to its own completedUnitCount. As children finish, the
@@ -606,6 +594,7 @@ public class NSProgress extends NSObject {
      * have meanings that are recognized by the NSProgress class itself. See the NSProgress...Key string constants
      * listed below.
      */
+    @NotNull
     @Generated
     @Selector("userInfo")
     public native NSDictionary<String, ?> userInfo();
@@ -657,7 +646,10 @@ public class NSProgress extends NSObject {
      * This property is optional. If present, NSProgress will use the information to present more information in its
      * localized description.
      * This property sets a value in the userInfo dictionary.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("estimatedTimeRemaining")
     public native NSNumber estimatedTimeRemaining();
@@ -667,7 +659,10 @@ public class NSProgress extends NSObject {
      * This property is optional. If present, NSProgress will use the information to present more information in its
      * localized description.
      * This property sets a value in the userInfo dictionary.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("fileCompletedCount")
     public native NSNumber fileCompletedCount();
@@ -677,7 +672,10 @@ public class NSProgress extends NSObject {
      * being performed.
      * If present, NSProgress will use the information to present more information in its localized description.
      * This property sets a value in the userInfo dictionary.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("fileOperationKind")
     public native String fileOperationKind();
@@ -687,7 +685,10 @@ public class NSProgress extends NSObject {
      * This property is optional. If present, NSProgress will use the information to present more information in its
      * localized description.
      * This property sets a value in the userInfo dictionary.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("fileTotalCount")
     public native NSNumber fileTotalCount();
@@ -697,7 +698,10 @@ public class NSProgress extends NSObject {
      * using -publish to be reported to subscribers registered with +addSubscriberForFileURL:withPublishingHandler:
      * If present, NSProgress will use the information to present more information in its localized description.
      * This property sets a value in the userInfo dictionary.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("fileURL")
     public native NSURL fileURL();
@@ -711,11 +715,13 @@ public class NSProgress extends NSObject {
 
     /**
      * Become current, do some work, then resign current.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("performAsCurrentWithPendingUnitCount:usingBlock:")
     public native void performAsCurrentWithPendingUnitCountUsingBlock(long unitCount,
-            @ObjCBlock(name = "call_performAsCurrentWithPendingUnitCountUsingBlock") Block_performAsCurrentWithPendingUnitCountUsingBlock work);
+            @NotNull @ObjCBlock(name = "call_performAsCurrentWithPendingUnitCountUsingBlock") Block_performAsCurrentWithPendingUnitCountUsingBlock work);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -729,67 +735,82 @@ public class NSProgress extends NSObject {
      * This property is optional. If present, NSProgress will use the information to present more information in its
      * localized description.
      * This property sets a value in the userInfo dictionary.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setEstimatedTimeRemaining:")
-    public native void setEstimatedTimeRemaining(NSNumber value);
+    public native void setEstimatedTimeRemaining(@Nullable NSNumber value);
 
     /**
      * If the progress is operating on a set of files, then set to the number of completed files in the operation.
      * This property is optional. If present, NSProgress will use the information to present more information in its
      * localized description.
      * This property sets a value in the userInfo dictionary.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setFileCompletedCount:")
-    public native void setFileCompletedCount(NSNumber value);
+    public native void setFileCompletedCount(@Nullable NSNumber value);
 
     /**
      * When the kind property is NSProgressKindFile, this value should be set. It describes the kind of file operation
      * being performed.
      * If present, NSProgress will use the information to present more information in its localized description.
      * This property sets a value in the userInfo dictionary.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setFileOperationKind:")
-    public native void setFileOperationKind(String value);
+    public native void setFileOperationKind(@Nullable String value);
 
     /**
      * If the progress is operating on a set of files, then set to the total number of files in the operation.
      * This property is optional. If present, NSProgress will use the information to present more information in its
      * localized description.
      * This property sets a value in the userInfo dictionary.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setFileTotalCount:")
-    public native void setFileTotalCount(NSNumber value);
+    public native void setFileTotalCount(@Nullable NSNumber value);
 
     /**
      * A URL identifying the item on which progress is being made. This is required for any NSProgress that is published
      * using -publish to be reported to subscribers registered with +addSubscriberForFileURL:withPublishingHandler:
      * If present, NSProgress will use the information to present more information in its localized description.
      * This property sets a value in the userInfo dictionary.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setFileURL:")
-    public native void setFileURL(NSURL value);
+    public native void setFileURL(@Nullable NSURL value);
 
     /**
      * How fast data is being processed, as an NSNumber containing bytes per second.
      * This property is optional. If present, NSProgress will use the information to present more information in its
      * localized description.
      * This property sets a value in the userInfo dictionary.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setThroughput:")
-    public native void setThroughput(NSNumber value);
+    public native void setThroughput(@Nullable NSNumber value);
 
     /**
      * How fast data is being processed, as an NSNumber containing bytes per second.
      * This property is optional. If present, NSProgress will use the information to present more information in its
      * localized description.
      * This property sets a value in the userInfo dictionary.
+     * 
+     * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("throughput")
     public native NSNumber throughput();

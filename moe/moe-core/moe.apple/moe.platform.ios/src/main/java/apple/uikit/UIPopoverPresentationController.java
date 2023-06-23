@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -42,7 +41,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.uikit.protocol.UIPopoverPresentationControllerSourceItem;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -73,22 +79,25 @@ public class UIPopoverPresentationController extends UIPresentationController {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +132,10 @@ public class UIPopoverPresentationController extends UIPresentationController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,10 +175,17 @@ public class UIPopoverPresentationController extends UIPresentationController {
     /**
      * Set popover background color. Set to nil to use default background color. Default is nil.
      */
+    @Nullable
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 100000.0
+     */
+    @Nullable
+    @Deprecated
     @Generated
     @Selector("barButtonItem")
     public native UIBarButtonItem barButtonItem();
@@ -177,11 +194,14 @@ public class UIPopoverPresentationController extends UIPresentationController {
      * By default, a popover is not allowed to overlap its source view rect.
      * When this is set to YES, popovers with more content than available space are allowed to overlap the source view
      * rect in order to accommodate the content.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("canOverlapSourceViewRect")
     public native boolean canOverlapSourceViewRect();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -194,13 +214,14 @@ public class UIPopoverPresentationController extends UIPresentationController {
     @Generated
     @Selector("initWithPresentedViewController:presentingViewController:")
     public native UIPopoverPresentationController initWithPresentedViewControllerPresentingViewController(
-            UIViewController presentedViewController, UIViewController presentingViewController);
+            @NotNull UIViewController presentedViewController, @Nullable UIViewController presentingViewController);
 
     /**
      * By default, a popover disallows interaction with any view outside of the popover while the popover is presented.
      * This property allows the specification of an array of UIView instances which the user is allowed to interact with
      * while the popover is up.
      */
+    @Nullable
     @Generated
     @Selector("passthroughViews")
     public native NSArray<? extends UIView> passthroughViews();
@@ -215,6 +236,7 @@ public class UIPopoverPresentationController extends UIPresentationController {
      * `UIPopoverBackgroundView`
      * and which implements the required instance and class methods on that class.
      */
+    @Nullable
     @Generated
     @Selector("popoverBackgroundViewClass")
     @MappedReturn(ObjCObjectMapper.class)
@@ -238,16 +260,23 @@ public class UIPopoverPresentationController extends UIPresentationController {
      */
     @Generated
     @Selector("setBackgroundColor:")
-    public native void setBackgroundColor(UIColor value);
+    public native void setBackgroundColor(@Nullable UIColor value);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("setBarButtonItem:")
-    public native void setBarButtonItem(UIBarButtonItem value);
+    public native void setBarButtonItem(@Nullable UIBarButtonItem value);
 
     /**
      * By default, a popover is not allowed to overlap its source view rect.
      * When this is set to YES, popovers with more content than available space are allowed to overlap the source view
      * rect in order to accommodate the content.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setCanOverlapSourceViewRect:")
@@ -255,10 +284,10 @@ public class UIPopoverPresentationController extends UIPresentationController {
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -276,7 +305,7 @@ public class UIPopoverPresentationController extends UIPresentationController {
      */
     @Generated
     @Selector("setPassthroughViews:")
-    public native void setPassthroughViews(NSArray<? extends UIView> value);
+    public native void setPassthroughViews(@Nullable NSArray<? extends UIView> value);
 
     @Generated
     @Selector("setPermittedArrowDirections:")
@@ -290,7 +319,7 @@ public class UIPopoverPresentationController extends UIPresentationController {
     @Generated
     @Selector("setPopoverBackgroundViewClass:")
     public native void setPopoverBackgroundViewClass(
-            @Mapped(ObjCObjectMapper.class) UIPopoverBackgroundViewMethods value);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIPopoverBackgroundViewMethods value);
 
     /**
      * Clients may wish to change the available area for popover display. The default implementation of this method
@@ -318,7 +347,7 @@ public class UIPopoverPresentationController extends UIPresentationController {
 
     @Generated
     @Selector("setSourceView:")
-    public native void setSourceView(UIView value);
+    public native void setSourceView(@Nullable UIView value);
 
     /**
      * The rectangle in the coordinate space of sourceView that the popover should point at. This property is ignored if
@@ -333,6 +362,7 @@ public class UIPopoverPresentationController extends UIPresentationController {
     @ByValue
     public native CGRect sourceRect();
 
+    @Nullable
     @Generated
     @Selector("sourceView")
     public native UIView sourceView();
@@ -340,8 +370,32 @@ public class UIPopoverPresentationController extends UIPresentationController {
     /**
      * The UISheetPresentationController instance this popover will adapt to in compact size classes. Access this
      * instance to customize or adjust the adaptive sheet.
+     * 
+     * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("adaptiveSheetPresentationController")
     public native UISheetPresentationController adaptiveSheetPresentationController();
+
+    /**
+     * Accepts UIBarButtonItem as well as NSToolbarItem in Catalyst.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setSourceItem:")
+    public native void setSourceItem(
+            @Nullable @Mapped(ObjCObjectMapper.class) UIPopoverPresentationControllerSourceItem value);
+
+    /**
+     * Accepts UIBarButtonItem as well as NSToolbarItem in Catalyst.
+     * 
+     * API-Since: 16.0
+     */
+    @Nullable
+    @Generated
+    @Selector("sourceItem")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UIPopoverPresentationControllerSourceItem sourceItem();
 }

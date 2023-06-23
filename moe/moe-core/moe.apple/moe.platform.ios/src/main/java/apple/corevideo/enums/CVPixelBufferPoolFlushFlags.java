@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] CVPixelBufferPoolFlush flags
- * <p>
+ * 
  * Flags to pass to CVPixelBufferPoolFlush()
  * [@constant] kCVPixelBufferPoolFlushExcessBuffers
  * This flag will cause CVPixelBufferPoolFlush to flush all unused buffers regardless of age.

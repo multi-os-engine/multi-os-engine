@@ -22,9 +22,21 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class Enums {
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NInt public static final long NSUbiquitousKeyValueStoreServerChange = 0x0000000000000000L;
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NInt public static final long NSUbiquitousKeyValueStoreInitialSyncChange = 0x0000000000000001L;
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NInt public static final long NSUbiquitousKeyValueStoreQuotaViolationChange = 0x0000000000000002L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long NSUbiquitousKeyValueStoreAccountChange = 0x0000000000000003L;
     /**
      * the first 32 types are reserved
@@ -35,12 +47,47 @@ public final class Enums {
      */
     @Generated public static final long NSTextCheckingAllCustomTypes = 0xFFFFFFFF00000000L;
     @Generated public static final long NSTextCheckingAllTypes = 0xFFFFFFFFFFFFFFFFL;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Not supported
+     */
     @Deprecated @Generated public static final int NSWindowsNTOperatingSystem = 0x00000001;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Not supported
+     */
     @Deprecated @Generated public static final int NSWindows95OperatingSystem = 0x00000002;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Not supported
+     */
     @Deprecated @Generated public static final int NSSolarisOperatingSystem = 0x00000003;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Not supported
+     */
     @Deprecated @Generated public static final int NSHPUXOperatingSystem = 0x00000004;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Not supported
+     */
     @Deprecated @Generated public static final int NSMACHOperatingSystem = 0x00000005;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Not supported
+     */
     @Deprecated @Generated public static final int NSSunOSOperatingSystem = 0x00000006;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Not supported
+     */
     @Deprecated @Generated public static final int NSOSF1OperatingSystem = 0x00000007;
     /**
      * 0..127 only
@@ -113,6 +160,10 @@ public final class Enums {
     @Generated public static final int NSBundleExecutableArchitectureX86_64 = 0x01000007;
     @Generated public static final int NSBundleExecutableArchitecturePPC64 = 0x01000012;
     @Generated public static final int NSOpenStepUnicodeReservedBase = 0x0000F400;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated @Generated public static final int NSWrapCalendarComponents = 0x00000001;
     @Generated public static final int NS_UnknownByteOrder = 0x00000000;
     @Generated public static final int NS_LittleEndian = 0x00000001;
@@ -120,10 +171,23 @@ public final class Enums {
     @Generated @NInt public static final long NSDateComponentUndefined = org.moe.natj.general.NatJ.is64Bit() ?
             0x7FFFFFFFFFFFFFFFL :
             0x000000007FFFFFFFL;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated @Generated @NInt public static final long NSUndefinedDateComponent = org.moe.natj.general.NatJ
             .is64Bit() ? 0x7FFFFFFFFFFFFFFFL : 0x000000007FFFFFFFL;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long NSURLErrorCancelledReasonUserForceQuitApplication = 0x0000000000000000L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long NSURLErrorCancelledReasonBackgroundUpdatesDisabled = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long NSURLErrorCancelledReasonInsufficientSystemResources = 0x0000000000000002L;
     /**
      * Attempt to do a file system operation on a non-existent file
@@ -163,10 +227,14 @@ public final class Enums {
     @Generated @NInt public static final long NSFileReadUnsupportedSchemeError = 0x0000000000000106L;
     /**
      * Read error (file too large)
+     * 
+     * API-Since: 2.0
      */
     @Generated @NInt public static final long NSFileReadTooLargeError = 0x0000000000000107L;
     /**
      * Read error (string encoding of file contents could not be determined)
+     * 
+     * API-Since: 2.0
      */
     @Generated @NInt public static final long NSFileReadUnknownStringEncodingError = 0x0000000000000108L;
     /**
@@ -183,6 +251,8 @@ public final class Enums {
     @Generated @NInt public static final long NSFileWriteInvalidFileNameError = 0x0000000000000202L;
     /**
      * Write error (file exists)
+     * 
+     * API-Since: 5.0
      */
     @Generated @NInt public static final long NSFileWriteFileExistsError = 0x0000000000000204L;
     /**
@@ -199,6 +269,8 @@ public final class Enums {
     @Generated @NInt public static final long NSFileWriteOutOfSpaceError = 0x0000000000000280L;
     /**
      * Write error (readonly volume)
+     * 
+     * API-Since: 4.0
      */
     @Generated @NInt public static final long NSFileWriteVolumeReadOnlyError = 0x0000000000000282L;
     /**
@@ -215,26 +287,38 @@ public final class Enums {
     @Generated @NInt public static final long NSUserCancelledError = 0x0000000000000C00L;
     /**
      * Feature unsupported error
+     * 
+     * API-Since: 6.0
      */
     @Generated @NInt public static final long NSFeatureUnsupportedError = 0x0000000000000D00L;
     /**
      * Executable is of a type that is not loadable in the current process
+     * 
+     * API-Since: 2.0
      */
     @Generated @NInt public static final long NSExecutableNotLoadableError = 0x0000000000000E00L;
     /**
      * Executable does not provide an architecture compatible with the current process
+     * 
+     * API-Since: 2.0
      */
     @Generated @NInt public static final long NSExecutableArchitectureMismatchError = 0x0000000000000E01L;
     /**
      * Executable has Objective C runtime information incompatible with the current process
+     * 
+     * API-Since: 2.0
      */
     @Generated @NInt public static final long NSExecutableRuntimeMismatchError = 0x0000000000000E02L;
     /**
      * Executable cannot be loaded for some other reason, such as a problem with a library it depends on
+     * 
+     * API-Since: 2.0
      */
     @Generated @NInt public static final long NSExecutableLoadError = 0x0000000000000E03L;
     /**
      * Executable fails due to linking issues
+     * 
+     * API-Since: 2.0
      */
     @Generated @NInt public static final long NSExecutableLinkError = 0x0000000000000E04L;
     /**
@@ -255,10 +339,14 @@ public final class Enums {
     @Generated @NInt public static final long NSValidationErrorMaximum = 0x00000000000007FFL;
     /**
      * Inclusive error range definitions, for checking future error codes
+     * 
+     * API-Since: 2.0
      */
     @Generated @NInt public static final long NSExecutableErrorMinimum = 0x0000000000000E00L;
     /**
      * Inclusive error range definitions, for checking future error codes
+     * 
+     * API-Since: 2.0
      */
     @Generated @NInt public static final long NSExecutableErrorMaximum = 0x0000000000000EFFL;
     /**
@@ -271,119 +359,216 @@ public final class Enums {
     @Generated @NInt public static final long NSFormattingErrorMaximum = 0x00000000000009FFL;
     /**
      * Error parsing a property list
+     * 
+     * API-Since: 4.0
      */
     @Generated @NInt public static final long NSPropertyListReadCorruptError = 0x0000000000000F00L;
     /**
      * The version number in the property list is unknown
+     * 
+     * API-Since: 4.0
      */
     @Generated @NInt public static final long NSPropertyListReadUnknownVersionError = 0x0000000000000F01L;
     /**
      * Stream error reading a property list
+     * 
+     * API-Since: 4.0
      */
     @Generated @NInt public static final long NSPropertyListReadStreamError = 0x0000000000000F02L;
     /**
      * Stream error writing a property list
+     * 
+     * API-Since: 4.0
      */
     @Generated @NInt public static final long NSPropertyListWriteStreamError = 0x0000000000000F0BL;
     /**
      * Invalid property list object or invalid property list type specified when writing
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long NSPropertyListWriteInvalidError = 0x0000000000000F0CL;
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NInt public static final long NSPropertyListErrorMinimum = 0x0000000000000F00L;
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NInt public static final long NSPropertyListErrorMaximum = 0x0000000000000FFFL;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long NSXPCConnectionInterrupted = 0x0000000000001001L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long NSXPCConnectionInvalid = 0x0000000000001003L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long NSXPCConnectionReplyInvalid = 0x0000000000001005L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long NSXPCConnectionErrorMinimum = 0x0000000000001000L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long NSXPCConnectionErrorMaximum = 0x0000000000001080L;
     /**
      * NSURLUbiquitousItemDownloadingErrorKey contains an error with this code when the item has not been uploaded to
      * iCloud by the other devices yet
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long NSUbiquitousFileUnavailableError = 0x0000000000001101L;
     /**
      * NSURLUbiquitousItemUploadingErrorKey contains an error with this code when the item has not been uploaded to
      * iCloud because it would make the account go over-quota
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long NSUbiquitousFileNotUploadedDueToQuotaError = 0x0000000000001102L;
     /**
      * NSURLUbiquitousItemDownloadingErrorKey and NSURLUbiquitousItemUploadingErrorKey contain an error with this code
      * when connecting to the iCloud servers failed
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long NSUbiquitousFileUbiquityServerNotAvailable = 0x0000000000001103L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long NSUbiquitousFileErrorMinimum = 0x0000000000001100L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long NSUbiquitousFileErrorMaximum = 0x00000000000011FFL;
     /**
      * The data for the user activity was not available (e.g. if the remote device became unavailable.)
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long NSUserActivityHandoffFailedError = 0x0000000000001200L;
     /**
      * The user activity could not be continued because a required connection was not available
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long NSUserActivityConnectionUnavailableError = 0x0000000000001201L;
     /**
      * The remote application failed to send data in time
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long NSUserActivityRemoteApplicationTimedOutError = 0x0000000000001202L;
     /**
      * The NSUserActivity userInfo dictionary was too large to receive
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long NSUserActivityHandoffUserInfoTooLargeError = 0x0000000000001203L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long NSUserActivityErrorMinimum = 0x0000000000001200L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long NSUserActivityErrorMaximum = 0x00000000000012FFL;
     /**
      * Error parsing data during decode
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long NSCoderReadCorruptError = 0x0000000000001300L;
     /**
      * Data requested was not found
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long NSCoderValueNotFoundError = 0x0000000000001301L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long NSCoderErrorMinimum = 0x0000000000001300L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long NSCoderErrorMaximum = 0x000000000000137FL;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long NSBundleErrorMinimum = 0x0000000000001380L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long NSBundleErrorMaximum = 0x00000000000013FFL;
     /**
      * There was not enough space available to download the requested On Demand Resources.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long NSBundleOnDemandResourceOutOfSpaceError = 0x0000000000001380L;
     /**
      * The application exceeded the amount of On Demand Resources content in use at one time
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long NSBundleOnDemandResourceExceededMaximumSizeError = 0x0000000000001381L;
     /**
      * The application specified a tag which the system could not find in the application tag manifest
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long NSBundleOnDemandResourceInvalidTagError = 0x0000000000001382L;
     /**
      * Sharing failed due to a network failure.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long NSCloudSharingNetworkFailureError = 0x0000000000001400L;
     /**
      * The user doesn't have enough storage space available to share the requested items.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long NSCloudSharingQuotaExceededError = 0x0000000000001401L;
     /**
      * Additional participants could not be added to the share, because the limit was reached.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long NSCloudSharingTooManyParticipantsError = 0x0000000000001402L;
     /**
      * A conflict occurred while trying to save changes to the CKShare and/or root CKRecord. Respond to this error by
      * first fetching the server's changes to the records, then either handle the conflict manually or present it, which
      * will instruct the user to try the operation again.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long NSCloudSharingConflictError = 0x0000000000001403L;
     /**
      * The current user doesn't have permission to perform the requested actions.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long NSCloudSharingNoPermissionError = 0x0000000000001404L;
     /**
      * These errors may require application-specific responses. For CloudKit sharing, use the NSUnderlyingErrorKey,
      * which is a CKErrorDomain error, to discover the specific error and refer to the CloudKit documentation for the
      * proper response to these errors.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long NSCloudSharingOtherError = 0x00000000000014FFL;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long NSCloudSharingErrorMinimum = 0x0000000000001400L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long NSCloudSharingErrorMaximum = 0x00000000000014FFL;
     @Generated @NInt public static final long NSURLErrorUnknown = 0xFFFFFFFFFFFFFFFFL;
     @Generated @NInt public static final long NSURLErrorCancelled = 0xFFFFFFFFFFFFFC19L;
@@ -405,10 +590,16 @@ public final class Enums {
     @Generated @NInt public static final long NSURLErrorCannotDecodeRawData = 0xFFFFFFFFFFFFFC09L;
     @Generated @NInt public static final long NSURLErrorCannotDecodeContentData = 0xFFFFFFFFFFFFFC08L;
     @Generated @NInt public static final long NSURLErrorCannotParseResponse = 0xFFFFFFFFFFFFFC07L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long NSURLErrorAppTransportSecurityRequiresSecureConnection = 0xFFFFFFFFFFFFFC02L;
     @Generated @NInt public static final long NSURLErrorFileDoesNotExist = 0xFFFFFFFFFFFFFBB4L;
     @Generated @NInt public static final long NSURLErrorFileIsDirectory = 0xFFFFFFFFFFFFFBB3L;
     @Generated @NInt public static final long NSURLErrorNoPermissionsToReadFile = 0xFFFFFFFFFFFFFBB2L;
+    /**
+     * API-Since: 2.0
+     */
     @Generated @NInt public static final long NSURLErrorDataLengthExceedsMaximum = 0xFFFFFFFFFFFFFBB1L;
     /**
      * SSL errors
@@ -476,30 +667,44 @@ public final class Enums {
     @Generated @NInt public static final long NSURLErrorDownloadDecodingFailedToComplete = 0xFFFFFFFFFFFFF441L;
     /**
      * Download and file I/O errors
+     * 
+     * API-Since: 3.0
      */
     @Generated @NInt public static final long NSURLErrorInternationalRoamingOff = 0xFFFFFFFFFFFFFC06L;
     /**
      * Download and file I/O errors
+     * 
+     * API-Since: 3.0
      */
     @Generated @NInt public static final long NSURLErrorCallIsActive = 0xFFFFFFFFFFFFFC05L;
     /**
      * Download and file I/O errors
+     * 
+     * API-Since: 3.0
      */
     @Generated @NInt public static final long NSURLErrorDataNotAllowed = 0xFFFFFFFFFFFFFC04L;
     /**
      * Download and file I/O errors
+     * 
+     * API-Since: 3.0
      */
     @Generated @NInt public static final long NSURLErrorRequestBodyStreamExhausted = 0xFFFFFFFFFFFFFC03L;
     /**
      * Download and file I/O errors
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long NSURLErrorBackgroundSessionRequiresSharedContainer = 0xFFFFFFFFFFFFFC1DL;
     /**
      * Download and file I/O errors
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long NSURLErrorBackgroundSessionInUseByAnotherProcess = 0xFFFFFFFFFFFFFC1CL;
     /**
      * Download and file I/O errors
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long NSURLErrorBackgroundSessionWasDisconnected = 0xFFFFFFFFFFFFFC1BL;
 
@@ -507,14 +712,38 @@ public final class Enums {
     private Enums() {
     }
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated @NInt public static final long NSURLErrorFileOutsideSafeArea = 0xFFFFFFFFFFFFFBB0L;
     /**
      * Data was not valid to encode
+     * 
+     * API-Since: 11.0
      */
     @Generated @NInt public static final long NSCoderInvalidValueError = 0x0000000000001302L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long NSCompressionFailedError = 0x0000000000001500L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long NSDecompressionFailedError = 0x0000000000001501L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long NSCompressionErrorMinimum = 0x0000000000001500L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long NSCompressionErrorMaximum = 0x000000000000157FL;
+    /**
+     * API-Since: 14.0
+     */
     @Generated public static final int NSBundleExecutableArchitectureARM64 = 0x0100000C;
+    /**
+     * API-Since: 16.0
+     */
+    @Generated @NInt public static final long NSXPCConnectionCodeSigningRequirementFailure = 0x0000000000001006L;
 }

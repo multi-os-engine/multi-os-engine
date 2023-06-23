@@ -25,20 +25,24 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioIONode
- * <p>
+ * 
  * Base class for a node that performs audio input or output in the engine.
- * <p>
+ * 
  * When the engine is configured to render to/from an audio device, on macOS, AVAudioInputNode
  * and AVAudioOutputNode communicate with the system's default input and output devices.
  * On iOS, they communicate with the devices appropriate to the app's AVAudioSession category
  * and other configuration, also considering the user's actions such as
  * connecting/disconnecting external devices.
- * <p>
+ * 
  * In the manual rendering mode, the AVAudioInputNode and AVAudioOutputNode perform the input
  * and output in the engine, in response to client's request.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -70,33 +74,37 @@ public class AVAudioIONode extends AVAudioNode {
 
     /**
      * [@property] audioUnit
-     * <p>
+     * 
      * The node's underlying AudioUnit, if any.
-     * <p>
+     * 
      * This is only necessary for certain advanced usages.
      */
+    @Nullable
     @Generated
     @Selector("audioUnit")
     public native AudioComponentInstance audioUnit();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -137,16 +145,19 @@ public class AVAudioIONode extends AVAudioNode {
 
     /**
      * [@property] voiceProcessingEnabled
-     * <p>
+     * 
      * Indicates whether voice processing is enabled.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isVoiceProcessingEnabled")
     public native boolean isVoiceProcessingEnabled();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,10 +166,10 @@ public class AVAudioIONode extends AVAudioNode {
 
     /**
      * [@property] presentationLatency
-     * <p>
+     * 
      * The presentation or hardware latency, applicable when the engine is rendering to/from an
      * audio device.
-     * <p>
+     * 
      * This corresponds to kAudioDevicePropertyLatency and kAudioStreamPropertyLatency.
      * See <CoreAudio/AudioHardwareBase.h>.
      */
@@ -180,30 +191,35 @@ public class AVAudioIONode extends AVAudioNode {
 
     /**
      * setVoiceProcessingEnabled:error:
-     * <p>
+     * 
      * Enable or disable voice processing on the IO node.
-     * <p>
+     * 
      * If enabled, the input node does signal processing on the incoming audio (taking out any
      * of the audio that is played from the device at a given time from the incoming audio).
      * Disabling this mode on either of the IO nodes automatically disabled it on the other IO node.
-     * <p>
+     * 
      * Voice processing requires both input and output nodes to be in the voice processing mode.
      * Enabling this mode on either of the IO nodes automatically enables it on the other IO node.
      * Voice processing is only supported when the engine is rendering to the audio device and not
      * in the manual rendering mode.
      * Voice processing can only be be enabled or disabled when the engine is in a stopped state.
-     * <p>
+     * 
      * The output format of the input node and the input format of the output node have to be
      * the same and they can only be changed when the engine is in a stopped state.
-     *
-     * @param enabled  Whether voice processing is to be enabled.
-     * @param outError On exit, if the IO node cannot enable or diable voice processing, a description of the error
-     * @return YES for success
+     * 
+     * API-Since: 13.0
+     * 
+     * @param enabled
+     *                 Whether voice processing is to be enabled.
+     * @param outError
+     *                 On exit, if the IO node cannot enable or diable voice processing, a description of the error
+     * @return
+     *         YES for success
      */
     @Generated
     @Selector("setVoiceProcessingEnabled:error:")
     public native boolean setVoiceProcessingEnabledError(boolean enabled,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("superclass")

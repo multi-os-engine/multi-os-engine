@@ -44,18 +44,22 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MFMailComposeViewController
- * <p>
+ * 
  * The MFMailComposeViewController class provides an interface for editing and sending email.
- * <p>
+ * 
  * The MFMailComposeViewController class manages all user interaction. The client needs to set the recipient or
  * recipients. The client may also set the subject and the body of the message. Attachments may be added, if
- * so desired. After setup, the client needs to only display the view.</p>The provided delegate will be informed
- * of the user's composition completion and how they chose to complete the operation.<p>Prior to use, clients
+ * so desired. After setup, the client needs to only display the view.<p>The provided delegate will be informed
+ * of the user's composition completion and how they chose to complete the operation.</p>Prior to use, clients
  * should verify the user has set up the device for sending email via <tt>+[MFMailComposeViewController
  * canSendMail]</tt>.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("MessageUI")
@@ -85,19 +89,20 @@ public class MFMailComposeViewController extends UINavigationController {
     @Selector("allocWithZone:")
     public static native MFMailComposeViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * canSendMail
-     * <p>
+     * 
      * Returns <tt>YES</tt> if the user has set up the device for sending email.
-     * <p>
+     * 
      * The client may continue to set the recipients and content if the return value was <tt>YES</tt>. If <tt>NO</tt>
      * was the result, the client has a couple options. It may choose to simply notify the user of the inability to
      * send mail, or it may issue a "mailto" URL via <tt>-[UIApplication openURL:]</tt>.
@@ -108,25 +113,28 @@ public class MFMailComposeViewController extends UINavigationController {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -158,9 +166,10 @@ public class MFMailComposeViewController extends UINavigationController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -190,12 +199,12 @@ public class MFMailComposeViewController extends UINavigationController {
 
     /**
      * addAttachmentData:mimeType:fileName:
-     * <p>
+     * 
      * This method adds the specified attachment to the email message.
-     * <p>
+     * 
      * This method adds the specified attachment to the email message. This should be called prior to display.
      * Attachments will be appended to the end of the message.
-     *
+     * 
      * @param attachment NSData containing the contents of the attachment. Must not be <tt>nil</tt>.
      * @param mimeType   NSString specifying the MIME type for the attachment, as specified by the IANA
      *                   (http://www.iana.org/assignments/media-types/). Must not be <tt>nil</tt>.
@@ -205,7 +214,8 @@ public class MFMailComposeViewController extends UINavigationController {
      */
     @Generated
     @Selector("addAttachmentData:mimeType:fileName:")
-    public native void addAttachmentDataMimeTypeFileName(NSData attachment, String mimeType, String filename);
+    public native void addAttachmentDataMimeTypeFileName(@NotNull NSData attachment, @NotNull String mimeType,
+            @NotNull String filename);
 
     @Generated
     @Selector("init")
@@ -213,26 +223,28 @@ public class MFMailComposeViewController extends UINavigationController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MFMailComposeViewController initWithCoder(NSCoder coder);
+    public native MFMailComposeViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")
-    public native MFMailComposeViewController initWithNavigationBarClassToolbarClass(Class navigationBarClass,
-            Class toolbarClass);
+    public native MFMailComposeViewController initWithNavigationBarClassToolbarClass(@Nullable Class navigationBarClass,
+            @Nullable Class toolbarClass);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native MFMailComposeViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native MFMailComposeViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     @Generated
     @Selector("initWithRootViewController:")
-    public native MFMailComposeViewController initWithRootViewController(UIViewController rootViewController);
+    public native MFMailComposeViewController initWithRootViewController(@NotNull UIViewController rootViewController);
 
     /**
      * [@property] mailComposeDelegate
-     * <p>
+     * 
      * This property is the delegate for the MFMailComposeViewControllerDelegate method callbacks.
      */
+    @Nullable
     @Generated
     @Selector("mailComposeDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -240,51 +252,52 @@ public class MFMailComposeViewController extends UINavigationController {
 
     /**
      * setBccRecipients:
-     * <p>
+     * 
      * This method sets the BCC header for the email message to the specified email addresses.
-     * <p>
+     * 
      * This method will set the BCC header for the email message. This should be called prior to display.
-     * </p>Recipient addresses should be specified as per RFC5322.
-     * </p>After the view has been presented to the user, this method will no longer change the value.
-     *
+     * <p>Recipient addresses should be specified as per RFC5322.</p>
+     * <p>After the view has been presented to the user, this method will no longer change the value.</p>
+     * 
      * @param bccRecipients A NSArray of NSString instances specifying the email addresses of recipients.
      */
     @Generated
     @Selector("setBccRecipients:")
-    public native void setBccRecipients(NSArray<String> bccRecipients);
+    public native void setBccRecipients(@Nullable NSArray<String> bccRecipients);
 
     /**
      * setCcRecipients:
-     * <p>
+     * 
      * This method sets the CC header for the email message to the specified email addresses.
-     * <p>
+     * 
      * This method will set the CC header for the email message. This should be called prior to display.
-     * </p>Recipient addresses should be specified as per RFC5322.
-     * </p>After the view has been presented to the user, this method will no longer change the value.
-     *
+     * <p>Recipient addresses should be specified as per RFC5322.</p>
+     * <p>After the view has been presented to the user, this method will no longer change the value.</p>
+     * 
      * @param ccRecipients A NSArray of NSString instances specifying the email addresses of recipients.
      */
     @Generated
     @Selector("setCcRecipients:")
-    public native void setCcRecipients(NSArray<String> ccRecipients);
+    public native void setCcRecipients(@Nullable NSArray<String> ccRecipients);
 
     /**
      * [@property] mailComposeDelegate
-     * <p>
+     * 
      * This property is the delegate for the MFMailComposeViewControllerDelegate method callbacks.
      */
     @Generated
     @Selector("setMailComposeDelegate:")
     public native void setMailComposeDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) MFMailComposeViewControllerDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) MFMailComposeViewControllerDelegate value);
 
     /**
      * [@property] mailComposeDelegate
-     * <p>
+     * 
      * This property is the delegate for the MFMailComposeViewControllerDelegate method callbacks.
      */
     @Generated
-    public void setMailComposeDelegate(@Mapped(ObjCObjectMapper.class) MFMailComposeViewControllerDelegate value) {
+    public void setMailComposeDelegate(
+            @Nullable @Mapped(ObjCObjectMapper.class) MFMailComposeViewControllerDelegate value) {
         Object __old = mailComposeDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -297,63 +310,65 @@ public class MFMailComposeViewController extends UINavigationController {
 
     /**
      * setMessageBody:isHTML:
-     * <p>
+     * 
      * This method sets the body of the email message to the specified content.
-     * <p>
+     * 
      * This method will set the body of the email message. This should be called prior to display.
      * The user's signature, if specified, will be added after the body content.
-     *
+     * 
      * @param body   A NSString containing the body contents of the email message.
      * @param isHTML A boolean value indicating if the body argument is to be interpreted as HTML content.
      */
     @Generated
     @Selector("setMessageBody:isHTML:")
-    public native void setMessageBodyIsHTML(String body, boolean isHTML);
+    public native void setMessageBodyIsHTML(@NotNull String body, boolean isHTML);
 
     /**
      * setSubject:
-     * <p>
+     * 
      * This method sets the Subject header for the email message.
-     * <p>
+     * 
      * This method will set the Subject header for the email message. This should be called prior to display.
      * Newlines are removed from the parameter.
-     * </p>After the view has been presented to the user, this method will no longer change the value.
-     *
+     * <p>After the view has been presented to the user, this method will no longer change the value.</p>
+     * 
      * @param subject A NSString specifying the message's Subject header.
      */
     @Generated
     @Selector("setSubject:")
-    public native void setSubject(String subject);
+    public native void setSubject(@NotNull String subject);
 
     /**
      * setToRecipients:
-     * <p>
+     * 
      * This method sets the To header for the email message to the specified email addresses.
-     * <p>
+     * 
      * This method will set the To header for the email message. This should be called prior to display.
-     * </p>Recipient addresses should be specified as per RFC5322.
-     * </p>After the view has been presented to the user, this method will no longer change the value.
-     *
+     * <p>Recipient addresses should be specified as per RFC5322.</p>
+     * <p>After the view has been presented to the user, this method will no longer change the value.</p>
+     * 
      * @param toRecipients A NSArray of NSString instances specifying the email addresses of recipients.
      */
     @Generated
     @Selector("setToRecipients:")
-    public native void setToRecipients(NSArray<String> toRecipients);
+    public native void setToRecipients(@Nullable NSArray<String> toRecipients);
 
     /**
      * setPreferredSendingEmailAddress:
-     * <p>
+     * 
      * This method sets the preferred sending account of the email message.
-     * <p>
+     * 
      * This method will set the sending account of the message to the specified email address if the user has an account
      * with such an address set up. If there is no account with such an address, the default account will be used
      * instead.
      * The sending email address should be specified as per RFC5322.
      * After the view has been presented to the user, this method will no longer change the value.
-     *
+     * 
      * @param emailAddress A NSString specifying the preferred email address used to send this message.
+     * 
+     *                     API-Since: 11.0
      */
     @Generated
     @Selector("setPreferredSendingEmailAddress:")
-    public native void setPreferredSendingEmailAddress(String emailAddress);
+    public native void setPreferredSendingEmailAddress(@NotNull String emailAddress);
 }

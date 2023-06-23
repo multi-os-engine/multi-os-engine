@@ -42,7 +42,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("CoreLocation")
 @Runtime(ObjCRuntime.class)
@@ -73,22 +78,25 @@ public class CLGeocoder extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +131,10 @@ public class CLGeocoder extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,21 +171,27 @@ public class CLGeocoder extends NSObject {
      * geocodeAddressDictionary:completionHandler: takes an address dictionary as defined by the AddressBook framework.
      * You can obtain an address dictionary from an ABPerson by retrieving the kABPersonAddressProperty property.
      * Alternately, one can be constructed using the kABPersonAddress* keys defined in <AddressBook/ABPerson.h>.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use -geocodePostalAddress:completionHandler:
      */
+    @Deprecated
     @Generated
     @Selector("geocodeAddressDictionary:completionHandler:")
-    public native void geocodeAddressDictionaryCompletionHandler(NSDictionary<?, ?> addressDictionary,
-            @ObjCBlock(name = "call_geocodeAddressDictionaryCompletionHandler") Block_geocodeAddressDictionaryCompletionHandler completionHandler);
+    public native void geocodeAddressDictionaryCompletionHandler(@NotNull NSDictionary<?, ?> addressDictionary,
+            @NotNull @ObjCBlock(name = "call_geocodeAddressDictionaryCompletionHandler") Block_geocodeAddressDictionaryCompletionHandler completionHandler);
 
     @Generated
     @Selector("geocodeAddressString:completionHandler:")
-    public native void geocodeAddressStringCompletionHandler(String addressString,
-            @ObjCBlock(name = "call_geocodeAddressStringCompletionHandler") Block_geocodeAddressStringCompletionHandler completionHandler);
+    public native void geocodeAddressStringCompletionHandler(@NotNull String addressString,
+            @NotNull @ObjCBlock(name = "call_geocodeAddressStringCompletionHandler") Block_geocodeAddressStringCompletionHandler completionHandler);
 
     @Generated
     @Selector("geocodeAddressString:inRegion:completionHandler:")
-    public native void geocodeAddressStringInRegionCompletionHandler(String addressString, CLRegion region,
-            @ObjCBlock(name = "call_geocodeAddressStringInRegionCompletionHandler") Block_geocodeAddressStringInRegionCompletionHandler completionHandler);
+    public native void geocodeAddressStringInRegionCompletionHandler(@NotNull String addressString,
+            @Nullable CLRegion region,
+            @NotNull @ObjCBlock(name = "call_geocodeAddressStringInRegionCompletionHandler") Block_geocodeAddressStringInRegionCompletionHandler completionHandler);
 
     @Generated
     @Selector("init")
@@ -191,88 +206,105 @@ public class CLGeocoder extends NSObject {
      */
     @Generated
     @Selector("reverseGeocodeLocation:completionHandler:")
-    public native void reverseGeocodeLocationCompletionHandler(CLLocation location,
-            @ObjCBlock(name = "call_reverseGeocodeLocationCompletionHandler") Block_reverseGeocodeLocationCompletionHandler completionHandler);
+    public native void reverseGeocodeLocationCompletionHandler(@NotNull CLLocation location,
+            @NotNull @ObjCBlock(name = "call_reverseGeocodeLocationCompletionHandler") Block_reverseGeocodeLocationCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_geocodeAddressDictionaryCompletionHandler {
         @Generated
-        void call_geocodeAddressDictionaryCompletionHandler(NSArray<? extends CLPlacemark> placemarks, NSError error);
+        void call_geocodeAddressDictionaryCompletionHandler(@Nullable NSArray<? extends CLPlacemark> placemarks,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_geocodeAddressStringCompletionHandler {
         @Generated
-        void call_geocodeAddressStringCompletionHandler(NSArray<? extends CLPlacemark> placemarks, NSError error);
+        void call_geocodeAddressStringCompletionHandler(@Nullable NSArray<? extends CLPlacemark> placemarks,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_geocodeAddressStringInRegionCompletionHandler {
         @Generated
-        void call_geocodeAddressStringInRegionCompletionHandler(NSArray<? extends CLPlacemark> placemarks,
-                NSError error);
+        void call_geocodeAddressStringInRegionCompletionHandler(@Nullable NSArray<? extends CLPlacemark> placemarks,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_reverseGeocodeLocationCompletionHandler {
         @Generated
-        void call_reverseGeocodeLocationCompletionHandler(NSArray<? extends CLPlacemark> placemarks, NSError error);
+        void call_reverseGeocodeLocationCompletionHandler(@Nullable NSArray<? extends CLPlacemark> placemarks,
+                @Nullable NSError error);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("geocodeAddressString:inRegion:preferredLocale:completionHandler:")
-    public native void geocodeAddressStringInRegionPreferredLocaleCompletionHandler(String addressString,
-            CLRegion region, NSLocale locale,
-            @ObjCBlock(name = "call_geocodeAddressStringInRegionPreferredLocaleCompletionHandler") Block_geocodeAddressStringInRegionPreferredLocaleCompletionHandler completionHandler);
+    public native void geocodeAddressStringInRegionPreferredLocaleCompletionHandler(@NotNull String addressString,
+            @Nullable CLRegion region, @Nullable NSLocale locale,
+            @NotNull @ObjCBlock(name = "call_geocodeAddressStringInRegionPreferredLocaleCompletionHandler") Block_geocodeAddressStringInRegionPreferredLocaleCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_geocodeAddressStringInRegionPreferredLocaleCompletionHandler {
         @Generated
         void call_geocodeAddressStringInRegionPreferredLocaleCompletionHandler(
-                NSArray<? extends CLPlacemark> placemarks, NSError error);
+                @Nullable NSArray<? extends CLPlacemark> placemarks, @Nullable NSError error);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("geocodePostalAddress:completionHandler:")
-    public native void geocodePostalAddressCompletionHandler(CNPostalAddress postalAddress,
-            @ObjCBlock(name = "call_geocodePostalAddressCompletionHandler") Block_geocodePostalAddressCompletionHandler completionHandler);
+    public native void geocodePostalAddressCompletionHandler(@NotNull CNPostalAddress postalAddress,
+            @NotNull @ObjCBlock(name = "call_geocodePostalAddressCompletionHandler") Block_geocodePostalAddressCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_geocodePostalAddressCompletionHandler {
         @Generated
-        void call_geocodePostalAddressCompletionHandler(NSArray<? extends CLPlacemark> placemarks, NSError error);
+        void call_geocodePostalAddressCompletionHandler(@Nullable NSArray<? extends CLPlacemark> placemarks,
+                @Nullable NSError error);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("geocodePostalAddress:preferredLocale:completionHandler:")
-    public native void geocodePostalAddressPreferredLocaleCompletionHandler(CNPostalAddress postalAddress,
-            NSLocale locale,
-            @ObjCBlock(name = "call_geocodePostalAddressPreferredLocaleCompletionHandler") Block_geocodePostalAddressPreferredLocaleCompletionHandler completionHandler);
+    public native void geocodePostalAddressPreferredLocaleCompletionHandler(@NotNull CNPostalAddress postalAddress,
+            @Nullable NSLocale locale,
+            @NotNull @ObjCBlock(name = "call_geocodePostalAddressPreferredLocaleCompletionHandler") Block_geocodePostalAddressPreferredLocaleCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_geocodePostalAddressPreferredLocaleCompletionHandler {
         @Generated
-        void call_geocodePostalAddressPreferredLocaleCompletionHandler(NSArray<? extends CLPlacemark> placemarks,
-                NSError error);
+        void call_geocodePostalAddressPreferredLocaleCompletionHandler(
+                @Nullable NSArray<? extends CLPlacemark> placemarks, @Nullable NSError error);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("reverseGeocodeLocation:preferredLocale:completionHandler:")
-    public native void reverseGeocodeLocationPreferredLocaleCompletionHandler(CLLocation location, NSLocale locale,
-            @ObjCBlock(name = "call_reverseGeocodeLocationPreferredLocaleCompletionHandler") Block_reverseGeocodeLocationPreferredLocaleCompletionHandler completionHandler);
+    public native void reverseGeocodeLocationPreferredLocaleCompletionHandler(@NotNull CLLocation location,
+            @Nullable NSLocale locale,
+            @NotNull @ObjCBlock(name = "call_reverseGeocodeLocationPreferredLocaleCompletionHandler") Block_reverseGeocodeLocationPreferredLocaleCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_reverseGeocodeLocationPreferredLocaleCompletionHandler {
         @Generated
-        void call_reverseGeocodeLocationPreferredLocaleCompletionHandler(NSArray<? extends CLPlacemark> placemarks,
-                NSError error);
+        void call_reverseGeocodeLocationPreferredLocaleCompletionHandler(
+                @Nullable NSArray<? extends CLPlacemark> placemarks, @Nullable NSError error);
     }
 }

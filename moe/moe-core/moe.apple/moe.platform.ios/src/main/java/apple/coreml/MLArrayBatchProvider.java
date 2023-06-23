@@ -28,9 +28,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A concrete convenience class conforming to MLBatchProvider.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CoreML")
@@ -60,28 +64,32 @@ public class MLArrayBatchProvider extends NSObject implements MLBatchProvider {
     @Selector("allocWithZone:")
     public static native MLArrayBatchProvider allocWithZone(VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("array")
     public native NSArray<?> array();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,6 +107,7 @@ public class MLArrayBatchProvider extends NSObject implements MLBatchProvider {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("featuresAtIndex:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -120,15 +129,16 @@ public class MLArrayBatchProvider extends NSObject implements MLBatchProvider {
      */
     @Generated
     @Selector("initWithDictionary:error:")
-    public native MLArrayBatchProvider initWithDictionaryError(NSDictionary<String, ? extends NSArray<?>> dictionary,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native MLArrayBatchProvider initWithDictionaryError(
+            @NotNull NSDictionary<String, ? extends NSArray<?>> dictionary,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Initalize with an array of feature providers
      */
     @Generated
     @Selector("initWithFeatureProviderArray:")
-    public native MLArrayBatchProvider initWithFeatureProviderArray(NSArray<?> array);
+    public native MLArrayBatchProvider initWithFeatureProviderArray(@NotNull NSArray<?> array);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -147,9 +157,10 @@ public class MLArrayBatchProvider extends NSObject implements MLBatchProvider {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

@@ -21,11 +21,22 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * The formatting order of the contact name components.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class CNContactDisplayNameOrder {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long UserDefault = 0x0000000000000000L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long GivenNameFirst = 0x0000000000000001L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long FamilyNameFirst = 0x0000000000000002L;
 
     @Generated

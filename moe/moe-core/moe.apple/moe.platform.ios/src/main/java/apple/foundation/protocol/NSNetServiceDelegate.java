@@ -29,7 +29,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -40,17 +44,19 @@ public interface NSNetServiceDelegate {
      * * received. Before you can communicate with the connecting client, you must -open
      * * and schedule the streams. To reject a connection, just -open both streams and
      * * then immediately -close them.
-     * <p>
+     * 
      * * To enable TLS on the stream, set the various TLS settings using
      * * kCFStreamPropertySSLSettings before calling -open. You must also specify
      * * kCFBooleanTrue for kCFStreamSSLIsServer in the settings dictionary along with
      * * a valid SecIdentityRef as the first entry of kCFStreamSSLCertificates.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
     @Selector("netService:didAcceptConnectionWithInputStream:outputStream:")
-    default void netServiceDidAcceptConnectionWithInputStreamOutputStream(NSNetService sender,
-            NSInputStream inputStream, NSOutputStream outputStream) {
+    default void netServiceDidAcceptConnectionWithInputStreamOutputStream(@NotNull NSNetService sender,
+            @NotNull NSInputStream inputStream, @NotNull NSOutputStream outputStream) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -62,7 +68,8 @@ public interface NSNetServiceDelegate {
     @Generated
     @IsOptional
     @Selector("netService:didNotPublish:")
-    default void netServiceDidNotPublish(NSNetService sender, NSDictionary<String, ? extends NSNumber> errorDict) {
+    default void netServiceDidNotPublish(@NotNull NSNetService sender,
+            @NotNull NSDictionary<String, ? extends NSNumber> errorDict) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -74,7 +81,8 @@ public interface NSNetServiceDelegate {
     @Generated
     @IsOptional
     @Selector("netService:didNotResolve:")
-    default void netServiceDidNotResolve(NSNetService sender, NSDictionary<String, ? extends NSNumber> errorDict) {
+    default void netServiceDidNotResolve(@NotNull NSNetService sender,
+            @NotNull NSDictionary<String, ? extends NSNumber> errorDict) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -85,7 +93,7 @@ public interface NSNetServiceDelegate {
     @Generated
     @IsOptional
     @Selector("netService:didUpdateTXTRecordData:")
-    default void netServiceDidUpdateTXTRecordData(NSNetService sender, NSData data) {
+    default void netServiceDidUpdateTXTRecordData(@NotNull NSNetService sender, @NotNull NSData data) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -95,7 +103,7 @@ public interface NSNetServiceDelegate {
     @Generated
     @IsOptional
     @Selector("netServiceDidPublish:")
-    default void netServiceDidPublish(NSNetService sender) {
+    default void netServiceDidPublish(@NotNull NSNetService sender) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -108,7 +116,7 @@ public interface NSNetServiceDelegate {
     @Generated
     @IsOptional
     @Selector("netServiceDidResolveAddress:")
-    default void netServiceDidResolveAddress(NSNetService sender) {
+    default void netServiceDidResolveAddress(@NotNull NSNetService sender) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -119,7 +127,7 @@ public interface NSNetServiceDelegate {
     @Generated
     @IsOptional
     @Selector("netServiceDidStop:")
-    default void netServiceDidStop(NSNetService sender) {
+    default void netServiceDidStop(@NotNull NSNetService sender) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -131,7 +139,7 @@ public interface NSNetServiceDelegate {
     @Generated
     @IsOptional
     @Selector("netServiceWillPublish:")
-    default void netServiceWillPublish(NSNetService sender) {
+    default void netServiceWillPublish(@NotNull NSNetService sender) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -143,7 +151,7 @@ public interface NSNetServiceDelegate {
     @Generated
     @IsOptional
     @Selector("netServiceWillResolve:")
-    default void netServiceWillResolve(NSNetService sender) {
+    default void netServiceWillResolve(@NotNull NSNetService sender) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

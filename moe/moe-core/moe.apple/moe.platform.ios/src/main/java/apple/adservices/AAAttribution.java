@@ -24,12 +24,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AAAttribution
- * <p>
+ * 
  * This class contains a method that generates a token used to obtain the app's attribution from Apple’s Attribution
  * Server.
+ * 
+ * API-Since: 14.3
  */
 @Generated
 @Library("AdServices")
@@ -61,42 +65,49 @@ public class AAAttribution extends NSObject {
 
     /**
      * attributionTokenWithError:
-     * <p>
+     * 
      * This method is used to generate an attribution token. The token is used in conjunction with Ad Platforms
      * Attribution REST API to obtain the app's attribution information from Apple’s Attribution Server.
      * This method requires that the network is available otherwise it will return an error.
      * The token string can be used directly with the REST API.
      * If an error occurs, the return value of the method will be nil and the error parameter, if provided, will contain
      * a reference to an NSError object describing the error that occurred.
-     *
-     * @param error If the error parameter is not nil it will contain any errors encountered during the call. The code
+     * 
+     * @param error
+     *              If the error parameter is not nil it will contain any errors encountered during the call. The code
      *              property on the error object will be a member of the enum AAAttributionErrorCode.
+     * 
      * @return NSString
      *         The value returned will be a token string. If there are any errors the return value will be nil and error
      *         parameter populated.
      */
+    @Nullable
     @Generated
     @Selector("attributionTokenWithError:")
-    public static native String attributionTokenWithError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native String attributionTokenWithError(
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,9 +146,10 @@ public class AAAttribution extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

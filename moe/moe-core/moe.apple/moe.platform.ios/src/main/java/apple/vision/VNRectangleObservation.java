@@ -1,8 +1,6 @@
 package apple.vision;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -26,17 +24,24 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * VNRectangleObservation
  * [@superclass] VNObservation
- * <p>
+ * 
  * VNRectangleObservation is the result of a rectangle detector
- * <p>
+ * 
  * The VNRectangleObservation has a bounding box that encompasses the rectangle found in the image. The rectangle itself
  * is defined by the four corner point properties. The rectangle can be rotated in or even out of plane. A common use
  * case is to use the CIPerspectiveTransform filter to correct a detected rectangle to its 'flat upright'
  * representation. All coordinates are normalized and the coordinates can be outside the image.
+ * 
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -68,7 +73,7 @@ public class VNRectangleObservation extends VNDetectedObjectObservation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("bottomLeft")
@@ -82,18 +87,21 @@ public class VNRectangleObservation extends VNDetectedObjectObservation {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -117,7 +125,7 @@ public class VNRectangleObservation extends VNDetectedObjectObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNRectangleObservation initWithCoder(NSCoder coder);
+    public native VNRectangleObservation initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -136,9 +144,10 @@ public class VNRectangleObservation extends VNDetectedObjectObservation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -195,6 +204,9 @@ public class VNRectangleObservation extends VNDetectedObjectObservation {
     public static native VNRectangleObservation observationWithRequestRevisionBoundingBox(@NUInt long requestRevision,
             @ByValue CGRect boundingBox);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("rectangleObservationWithRequestRevision:topLeft:bottomLeft:bottomRight:topRight:")
     public static native VNRectangleObservation rectangleObservationWithRequestRevisionTopLeftBottomLeftBottomRightTopRight(

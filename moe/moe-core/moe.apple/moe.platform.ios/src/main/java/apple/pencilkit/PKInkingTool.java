@@ -23,9 +23,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A tool for drawing on a PKCanvasView.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("PencilKit")
@@ -57,45 +61,50 @@ public class PKInkingTool extends PKTool {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("color")
     public native UIColor color();
 
     /**
      * Converts a color from one user interface style to another.
-     * <p>
+     * 
      * A dark color in a light user interface style is converted to a lighter color in a
      * dark user interface style. This conversion is not guaranteed to roundtrip losslessly, or to
      * be consistent between different OS versions.
-     *
+     * 
      * @param color                  The color to convert
      * @param fromUserInterfaceStyle The user interface style to convert the color from.
      * @param toUserInterfaceStyle   The user interface style to convert the color to.
      */
+    @NotNull
     @Generated
     @Selector("convertColor:fromUserInterfaceStyle:to:")
-    public static native UIColor convertColorFromUserInterfaceStyleTo(UIColor color, @NInt long fromUserInterfaceStyle,
-            @NInt long toUserInterfaceStyle);
+    public static native UIColor convertColorFromUserInterfaceStyleTo(@NotNull UIColor color,
+            @NInt long fromUserInterfaceStyle, @NInt long toUserInterfaceStyle);
 
     @Generated
     @Selector("debugDescription")
@@ -107,7 +116,7 @@ public class PKInkingTool extends PKTool {
     @Generated
     @Selector("defaultWidthForInkType:")
     @NFloat
-    public static native double defaultWidthForInkType(String inkType);
+    public static native double defaultWidthForInkType(@NotNull String inkType);
 
     @Generated
     @Selector("description")
@@ -124,15 +133,17 @@ public class PKInkingTool extends PKTool {
 
     @Generated
     @Selector("initWithInkType:color:")
-    public native PKInkingTool initWithInkTypeColor(String type, UIColor color);
+    public native PKInkingTool initWithInkTypeColor(@NotNull String type, @NotNull UIColor color);
 
     @Generated
     @Selector("initWithInkType:color:width:")
-    public native PKInkingTool initWithInkTypeColorWidth(String type, UIColor color, @NFloat double width);
+    public native PKInkingTool initWithInkTypeColorWidth(@NotNull String type, @NotNull UIColor color,
+            @NFloat double width);
 
     /**
      * The type of ink, eg. pen, pencil...
      */
+    @NotNull
     @Generated
     @Selector("inkType")
     public native String inkType();
@@ -154,9 +165,10 @@ public class PKInkingTool extends PKTool {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The maximum width for an ink of a type.
@@ -164,7 +176,7 @@ public class PKInkingTool extends PKTool {
     @Generated
     @Selector("maximumWidthForInkType:")
     @NFloat
-    public static native double maximumWidthForInkType(String inkType);
+    public static native double maximumWidthForInkType(@NotNull String inkType);
 
     /**
      * The minimum width for an ink of a type.
@@ -172,7 +184,7 @@ public class PKInkingTool extends PKTool {
     @Generated
     @Selector("minimumWidthForInkType:")
     @NFloat
-    public static native double minimumWidthForInkType(String inkType);
+    public static native double minimumWidthForInkType(@NotNull String inkType);
 
     @Generated
     @Owned
@@ -210,17 +222,22 @@ public class PKInkingTool extends PKTool {
 
     /**
      * Create a new inking tool for the provided ink.
-     *
+     * 
      * @param ink   The ink to use.
      * @param width The width of stroke to create.
+     * 
+     *              API-Since: 14.0
      */
     @Generated
     @Selector("initWithInk:width:")
-    public native PKInkingTool initWithInkWidth(PKInk ink, @NFloat double width);
+    public native PKInkingTool initWithInkWidth(@NotNull PKInk ink, @NFloat double width);
 
     /**
      * The ink that this tool will create strokes with.
+     * 
+     * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("ink")
     public native PKInk ink();

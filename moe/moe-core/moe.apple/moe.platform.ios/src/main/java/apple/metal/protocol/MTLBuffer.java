@@ -29,20 +29,24 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLBuffer
- * <p>
+ * 
  * A typeless allocation accessible by both the CPU and the GPU (MTLDevice) or by only the GPU when the storage mode is
  * MTLResourceStorageModePrivate.
- * <p>
+ * 
  * Unlike in OpenGL and OpenCL, access to buffers is not synchronized. The caller may use the CPU to modify the data at
  * any time
  * but is also responsible for ensuring synchronization and coherency.
- * <p>
+ * 
  * The contents become undefined if both the CPU and GPU write to the same buffer without a synchronizing action between
  * those writes.
  * This is true even when the regions written do not overlap.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Metal")
@@ -51,29 +55,32 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLBuffer extends MTLResource {
     /**
      * addDebugMarker:range:
-     * <p>
+     * 
      * Adds a marker to a specific range in the buffer.
      * When inspecting a buffer in the GPU debugging tools the marker will be shown.
-     *
+     * 
      * @param marker A label used for the marker.
      * @param range  The range of bytes the marker is using.
+     * 
+     *               API-Since: 10.0
      */
     @Generated
     @Selector("addDebugMarker:range:")
-    void addDebugMarkerRange(String marker, @ByValue NSRange range);
+    void addDebugMarkerRange(@NotNull String marker, @ByValue NSRange range);
 
     /**
      * contents
-     * <p>
+     * 
      * Returns the data pointer of this buffer's shared copy.
      */
+    @NotNull
     @Generated
     @Selector("contents")
     VoidPtr contents();
 
     /**
      * [@property] length
-     * <p>
+     * 
      * The length of the buffer in bytes.
      */
     @Generated
@@ -83,21 +90,37 @@ public interface MTLBuffer extends MTLResource {
 
     /**
      * newTextureWithDescriptor:offset:bytesPerRow:
-     * <p>
+     * 
      * Create a 2D texture or texture buffer that shares storage with this buffer.
+     * 
+     * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("newTextureWithDescriptor:offset:bytesPerRow:")
     @MappedReturn(ObjCObjectMapper.class)
-    MTLTexture newTextureWithDescriptorOffsetBytesPerRow(MTLTextureDescriptor descriptor, @NUInt long offset,
+    MTLTexture newTextureWithDescriptorOffsetBytesPerRow(@NotNull MTLTextureDescriptor descriptor, @NUInt long offset,
             @NUInt long bytesPerRow);
 
     /**
      * removeAllDebugMarkers
-     * <p>
+     * 
      * Removes all debug markers from a buffer.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("removeAllDebugMarkers")
     void removeAllDebugMarkers();
+
+    /**
+     * [@property] gpuAddress
+     * 
+     * Represents the GPU virtual address of a buffer resource
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("gpuAddress")
+    long gpuAddress();
 }

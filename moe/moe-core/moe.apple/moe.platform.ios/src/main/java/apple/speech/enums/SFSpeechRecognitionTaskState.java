@@ -19,26 +19,39 @@ package apple.speech.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 public final class SFSpeechRecognitionTaskState {
     /**
      * Speech processing (potentially including recording) has not yet begun
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Starting = 0x0000000000000000L;
     /**
      * Speech processing (potentially including recording) is running
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Running = 0x0000000000000001L;
     /**
      * No more audio is being recorded, but more recognition results may arrive
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Finishing = 0x0000000000000002L;
     /**
      * No more recognition results will arrive, but recording may not have stopped yet
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Canceling = 0x0000000000000003L;
     /**
      * No more results will arrive, and recording is stopped.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Completed = 0x0000000000000004L;
 

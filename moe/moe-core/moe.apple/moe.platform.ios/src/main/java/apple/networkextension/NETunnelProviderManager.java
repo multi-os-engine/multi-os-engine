@@ -39,14 +39,18 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NETunnelProviderManager
- * <p>
+ * 
  * The NETunnelProviderManager class declares the programmatic interface for an object that is used to configure and
  * control network tunnels provided by NETunnelProviders.
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -78,22 +82,25 @@ public class NETunnelProviderManager extends NEVPNManager {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,25 +135,28 @@ public class NETunnelProviderManager extends NEVPNManager {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * loadAllFromPreferencesWithCompletionHandler:
-     * <p>
+     * 
      * This function asynchronously reads all of the NETunnelProvider configurations created by the calling app that
      * have previously been saved to disk and returns them as NETunnelProviderManager objects.
-     *
+     * 
      * @param completionHandler A block that takes an array NETunnelProviderManager objects. The array passed to the
      *                          block may be empty if no NETunnelProvider configurations were successfully read from the
      *                          disk. The NSError passed to this block will be nil if the load operation succeeded,
      *                          non-nil otherwise.
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("loadAllFromPreferencesWithCompletionHandler:")
     public static native void loadAllFromPreferencesWithCompletionHandler(
-            @ObjCBlock(name = "call_loadAllFromPreferencesWithCompletionHandler") Block_loadAllFromPreferencesWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_loadAllFromPreferencesWithCompletionHandler") Block_loadAllFromPreferencesWithCompletionHandler completionHandler);
 
     @Generated
     @Owned
@@ -165,6 +175,7 @@ public class NETunnelProviderManager extends NEVPNManager {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("sharedManager")
     public static native NEVPNManager sharedManager();
@@ -180,9 +191,12 @@ public class NETunnelProviderManager extends NEVPNManager {
 
     /**
      * copyAppRules
-     * <p>
+     * 
      * This function returns an array of NEAppRule objects.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Owned
     @Selector("copyAppRules")
@@ -194,9 +208,11 @@ public class NETunnelProviderManager extends NEVPNManager {
 
     /**
      * [@property] routingMethod
-     * <p>
+     * 
      * The method by which network traffic is routed to the tunnel. The default is
      * NETunnelProviderRoutingMethodDestinationIP.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("routingMethod")
@@ -207,7 +223,7 @@ public class NETunnelProviderManager extends NEVPNManager {
     @Generated
     public interface Block_loadAllFromPreferencesWithCompletionHandler {
         @Generated
-        void call_loadAllFromPreferencesWithCompletionHandler(NSArray<? extends NETunnelProviderManager> managers,
-                NSError error);
+        void call_loadAllFromPreferencesWithCompletionHandler(
+                @Nullable NSArray<? extends NETunnelProviderManager> managers, @Nullable NSError error);
     }
 }

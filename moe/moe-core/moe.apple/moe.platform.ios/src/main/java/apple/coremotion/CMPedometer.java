@@ -40,21 +40,26 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CMPedometer
- * <p>
+ * 
  * Discussion:
  * CMPedometer allows access to the user's pedestrian activity. The
  * activity can be retrieved in one of two ways:
- * <p>
+ * 
  * 1. Via a query specifying a time range from which the pedometer data is
  * tabulated and returned.
  * (See queryPedometerDataFromDate:toDate:withHandler:)
- * <p>
+ * 
  * 2. By providing a block to startPedometerUpdatesFromDate:withHandler:,
  * pedometer updates will be provided on a best effort basis. Pedometer
  * updates can be stopped by calling stopPedometerUpdates.
+ * 
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("CoreMotion")
@@ -86,22 +91,25 @@ public class CMPedometer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,10 +142,12 @@ public class CMPedometer extends NSObject {
 
     /**
      * isCadenceAvailable
-     * <p>
+     * 
      * Discussion:
      * Determines whether the device supports cadence estimation
      * in addition to step counting.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isCadenceAvailable")
@@ -145,7 +155,7 @@ public class CMPedometer extends NSObject {
 
     /**
      * isDistanceAvailable
-     * <p>
+     * 
      * Discussion:
      * Determines whether the device supports distance estimation
      * in addition to step counting.
@@ -156,7 +166,7 @@ public class CMPedometer extends NSObject {
 
     /**
      * isFloorCountingAvailable
-     * <p>
+     * 
      * Discussion:
      * Determines whether the device supports counting flights of stairs
      * in addition to step counting.
@@ -167,10 +177,12 @@ public class CMPedometer extends NSObject {
 
     /**
      * isPaceAvailable
-     * <p>
+     * 
      * Discussion:
      * Determines whether the device supports pace estimation
      * in addition to step counting.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isPaceAvailable")
@@ -178,9 +190,11 @@ public class CMPedometer extends NSObject {
 
     /**
      * isPedometerEventTrackingAvailable
-     * <p>
+     * 
      * Discussion:
      * Determines whether the device supports pedometer events.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isPedometerEventTrackingAvailable")
@@ -188,7 +202,7 @@ public class CMPedometer extends NSObject {
 
     /**
      * isStepCountingAvailable
-     * <p>
+     * 
      * Discussion:
      * Determines whether the device supports step counting functionality.
      */
@@ -200,9 +214,10 @@ public class CMPedometer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -236,7 +251,7 @@ public class CMPedometer extends NSObject {
 
     /**
      * queryPedometerDataFromDate:toDate:withHandler:
-     * <p>
+     * 
      * Discussion:
      * Queries for the user's pedestrian activity in the given time range. Data
      * is available for up to 7 days. The data returned is computed from a
@@ -245,24 +260,26 @@ public class CMPedometer extends NSObject {
      */
     @Generated
     @Selector("queryPedometerDataFromDate:toDate:withHandler:")
-    public native void queryPedometerDataFromDateToDateWithHandler(NSDate start, NSDate end,
-            @ObjCBlock(name = "call_queryPedometerDataFromDateToDateWithHandler") Block_queryPedometerDataFromDateToDateWithHandler handler);
+    public native void queryPedometerDataFromDateToDateWithHandler(@NotNull NSDate start, @NotNull NSDate end,
+            @NotNull @ObjCBlock(name = "call_queryPedometerDataFromDateToDateWithHandler") Block_queryPedometerDataFromDateToDateWithHandler handler);
 
     /**
      * startPedometerEventUpdatesWithHandler:
-     * <p>
+     * 
      * Discussion:
      * Starts pedometer event updates on a serial queue.
      * Events are available only when the apps are running in foreground / background.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("startPedometerEventUpdatesWithHandler:")
     public native void startPedometerEventUpdatesWithHandler(
-            @ObjCBlock(name = "call_startPedometerEventUpdatesWithHandler") Block_startPedometerEventUpdatesWithHandler handler);
+            @NotNull @ObjCBlock(name = "call_startPedometerEventUpdatesWithHandler") Block_startPedometerEventUpdatesWithHandler handler);
 
     /**
      * startPedometerUpdatesFromDate:withHandler:
-     * <p>
+     * 
      * Discussion:
      * Starts a series of continuous pedometer updates to the
      * handler on a serial queue. For each update, the app
@@ -275,14 +292,16 @@ public class CMPedometer extends NSObject {
      */
     @Generated
     @Selector("startPedometerUpdatesFromDate:withHandler:")
-    public native void startPedometerUpdatesFromDateWithHandler(NSDate start,
-            @ObjCBlock(name = "call_startPedometerUpdatesFromDateWithHandler") Block_startPedometerUpdatesFromDateWithHandler handler);
+    public native void startPedometerUpdatesFromDateWithHandler(@NotNull NSDate start,
+            @NotNull @ObjCBlock(name = "call_startPedometerUpdatesFromDateWithHandler") Block_startPedometerUpdatesFromDateWithHandler handler);
 
     /**
      * stopPedometerEventUpdates
-     * <p>
+     * 
      * Discussion:
      * Stops pedometer event updates.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("stopPedometerEventUpdates")
@@ -290,7 +309,7 @@ public class CMPedometer extends NSObject {
 
     /**
      * stopPedometerUpdates
-     * <p>
+     * 
      * Discussion:
      * Stops pedometer updates.
      */
@@ -302,28 +321,33 @@ public class CMPedometer extends NSObject {
     @Generated
     public interface Block_queryPedometerDataFromDateToDateWithHandler {
         @Generated
-        void call_queryPedometerDataFromDateToDateWithHandler(CMPedometerData pedometerData, NSError error);
+        void call_queryPedometerDataFromDateToDateWithHandler(@Nullable CMPedometerData pedometerData,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startPedometerEventUpdatesWithHandler {
         @Generated
-        void call_startPedometerEventUpdatesWithHandler(CMPedometerEvent pedometerEvent, NSError error);
+        void call_startPedometerEventUpdatesWithHandler(@Nullable CMPedometerEvent pedometerEvent,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startPedometerUpdatesFromDateWithHandler {
         @Generated
-        void call_startPedometerUpdatesFromDateWithHandler(CMPedometerData pedometerData, NSError error);
+        void call_startPedometerUpdatesFromDateWithHandler(@Nullable CMPedometerData pedometerData,
+                @Nullable NSError error);
     }
 
     /**
      * authorizationStatus
-     * <p>
+     * 
      * Discussion:
      * Returns the current authorization status for pedometer.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("authorizationStatus")

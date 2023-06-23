@@ -42,12 +42,17 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CBUUID
- * <p>
+ * 
  * A 16-bit, 32-bit, or 128-bit Bluetooth UUID.
  * 16-bit and 32-bit UUIDs are implicitly pre-filled with the Bluetooth Base UUID.
+ * 
+ * 
+ * API-Since: 5.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -65,42 +70,53 @@ public class CBUUID extends NSObject implements NSCopying {
 
     /**
      * UUIDWithCFUUID:
-     * <p>
+     * 
      * Creates a CBUUID with a CFUUIDRef.
+     * 
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 9.0
      */
+    @NotNull
     @Generated
     @Deprecated
     @Selector("UUIDWithCFUUID:")
-    public static native CBUUID UUIDWithCFUUID(CFUUIDRef theUUID);
+    public static native CBUUID UUIDWithCFUUID(@NotNull CFUUIDRef theUUID);
 
     /**
      * UUIDWithData:
-     * <p>
+     * 
      * Creates a CBUUID with a 16-bit, 32-bit, or 128-bit UUID data container.
      */
+    @NotNull
     @Generated
     @Selector("UUIDWithData:")
-    public static native CBUUID UUIDWithData(NSData theData);
+    public static native CBUUID UUIDWithData(@NotNull NSData theData);
 
     /**
      * UUIDWithNSUUID:
-     * <p>
+     * 
      * Creates a CBUUID with an NSUUID.
+     * 
+     * 
+     * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("UUIDWithNSUUID:")
-    public static native CBUUID UUIDWithNSUUID(NSUUID theUUID);
+    public static native CBUUID UUIDWithNSUUID(@NotNull NSUUID theUUID);
 
     /**
      * UUIDWithString:
-     * <p>
+     * 
      * Creates a CBUUID with a 16-bit, 32-bit, or 128-bit UUID string representation.
      * The expected format for 128-bit UUIDs is a string punctuated by hyphens, for example
      * 68753A44-4D6F-1226-9C60-0050E4C00067.
      */
+    @NotNull
     @Generated
     @Selector("UUIDWithString:")
-    public static native CBUUID UUIDWithString(String theString);
+    public static native CBUUID UUIDWithString(@NotNull String theString);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -118,22 +134,25 @@ public class CBUUID extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -168,9 +187,10 @@ public class CBUUID extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -200,24 +220,30 @@ public class CBUUID extends NSObject implements NSCopying {
 
     /**
      * [@property] UUIDString
-     * <p>
+     * 
      * The UUID as NSString.
+     * 
+     * 
+     * API-Since: 7.1
      */
+    @NotNull
     @Generated
     @Selector("UUIDString")
     public native String UUIDString();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] data
-     * <p>
+     * 
      * The UUID as NSData.
      */
+    @NotNull
     @Generated
     @Selector("data")
     public native NSData data();

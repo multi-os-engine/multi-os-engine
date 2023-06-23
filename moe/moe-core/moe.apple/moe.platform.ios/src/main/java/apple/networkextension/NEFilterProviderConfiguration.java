@@ -44,12 +44,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEFilterProviderConfiguration
- * <p>
+ * 
  * The NEFilterProviderConfiguration class declares the programmatic interface of an object that configures a
  * plugin-based content filter.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -81,22 +85,25 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +138,10 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,22 +173,25 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] filterBrowsers
-     * <p>
+     * 
      * If YES, the filter plugin will be allowed to filter browser traffic. If NO, the filter plugin will not see any
      * browser flows. Defaults to NO. At least one of filterBrowsers and filterSockets should be set to YES to make the
      * filter take effect.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("filterBrowsers")
@@ -188,10 +199,12 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     /**
      * [@property] filterSockets
-     * <p>
+     * 
      * If YES, the filter plugin will be allowed to filter socket traffic. If NO, the filter plugin will not see any
      * socket flows. Defaults to NO. At least one of filterBrowsers and filterSockets should be set to YES to make the
      * filter take effect.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("filterSockets")
@@ -199,9 +212,12 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     /**
      * [@property] identityReference
-     * <p>
+     * 
      * The optional certificate identity keychain reference associated with the filter.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("identityReference")
     public native NSData identityReference();
@@ -212,41 +228,52 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEFilterProviderConfiguration initWithCoder(NSCoder coder);
+    public native NEFilterProviderConfiguration initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] organization
-     * <p>
+     * 
      * The optional organization associated with the filter.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("organization")
     public native String organization();
 
     /**
      * [@property] passwordReference
-     * <p>
+     * 
      * The optional password keychain reference associated with the filter.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("passwordReference")
     public native NSData passwordReference();
 
     /**
      * [@property] serverAddress
-     * <p>
+     * 
      * The optional address of the server used to support the filter.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("serverAddress")
     public native String serverAddress();
 
     /**
      * [@property] filterBrowsers
-     * <p>
+     * 
      * If YES, the filter plugin will be allowed to filter browser traffic. If NO, the filter plugin will not see any
      * browser flows. Defaults to NO. At least one of filterBrowsers and filterSockets should be set to YES to make the
      * filter take effect.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setFilterBrowsers:")
@@ -254,10 +281,12 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     /**
      * [@property] filterSockets
-     * <p>
+     * 
      * If YES, the filter plugin will be allowed to filter socket traffic. If NO, the filter plugin will not see any
      * socket flows. Defaults to NO. At least one of filterBrowsers and filterSockets should be set to YES to make the
      * filter take effect.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setFilterSockets:")
@@ -265,57 +294,69 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     /**
      * [@property] identityReference
-     * <p>
+     * 
      * The optional certificate identity keychain reference associated with the filter.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setIdentityReference:")
-    public native void setIdentityReference(NSData value);
+    public native void setIdentityReference(@Nullable NSData value);
 
     /**
      * [@property] organization
-     * <p>
+     * 
      * The optional organization associated with the filter.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setOrganization:")
-    public native void setOrganization(String value);
+    public native void setOrganization(@Nullable String value);
 
     /**
      * [@property] passwordReference
-     * <p>
+     * 
      * The optional password keychain reference associated with the filter.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPasswordReference:")
-    public native void setPasswordReference(NSData value);
+    public native void setPasswordReference(@Nullable NSData value);
 
     /**
      * [@property] serverAddress
-     * <p>
+     * 
      * The optional address of the server used to support the filter.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setServerAddress:")
-    public native void setServerAddress(String value);
+    public native void setServerAddress(@Nullable String value);
 
     /**
      * [@property] username
-     * <p>
+     * 
      * The optional username associated with the filter.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setUsername:")
-    public native void setUsername(String value);
+    public native void setUsername(@Nullable String value);
 
     /**
      * [@property] vendorConfiguration
-     * <p>
+     * 
      * An optional dictionary of plugin-specific keys to be passed to the plugin.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setVendorConfiguration:")
-    public native void setVendorConfiguration(NSDictionary<String, ?> value);
+    public native void setVendorConfiguration(@Nullable NSDictionary<String, ?> value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -325,18 +366,24 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     /**
      * [@property] username
-     * <p>
+     * 
      * The optional username associated with the filter.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("username")
     public native String username();
 
     /**
      * [@property] vendorConfiguration
-     * <p>
+     * 
      * An optional dictionary of plugin-specific keys to be passed to the plugin.
+     * 
+     * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("vendorConfiguration")
     public native NSDictionary<String, ?> vendorConfiguration();

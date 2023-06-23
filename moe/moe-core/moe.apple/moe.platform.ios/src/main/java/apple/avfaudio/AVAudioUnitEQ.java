@@ -24,11 +24,16 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioUnitEQ
- * <p>
+ * 
  * An AVAudioUnitEffect that implements a Multi-Band Equalizer.
+ * 
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -60,33 +65,37 @@ public class AVAudioUnitEQ extends AVAudioUnitEffect {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] bands
-     * <p>
+     * 
      * Array of AVAudioUnitEQFilterParameters objects.
-     * <p>
+     * 
      * The number of elements in the array is equal to the number of bands.
      */
+    @NotNull
     @Generated
     @Selector("bands")
     public native NSArray<? extends AVAudioUnitEQFilterParameters> bands();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,9 +110,9 @@ public class AVAudioUnitEQ extends AVAudioUnitEffect {
 
     /**
      * [@property] globalGain
-     * <p>
+     * 
      * Overall gain adjustment applied to the signal.
-     * <p>
+     * 
      * Range: -96 -> 24
      * Default: 0
      * Unit: dB
@@ -128,10 +137,11 @@ public class AVAudioUnitEQ extends AVAudioUnitEffect {
 
     /**
      * initWithNumberOfBands:
-     * <p>
+     * 
      * Initialize the EQ with number of bands.
-     *
-     * @param numberOfBands The number of bands created by the EQ.
+     * 
+     * @param numberOfBands
+     *                      The number of bands created by the EQ.
      */
     @Generated
     @Selector("initWithNumberOfBands:")
@@ -154,15 +164,16 @@ public class AVAudioUnitEQ extends AVAudioUnitEffect {
     @Selector("instantiateWithComponentDescription:options:completionHandler:")
     public static native void instantiateWithComponentDescriptionOptionsCompletionHandler(
             @ByValue AudioComponentDescription audioComponentDescription, int options,
-            @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") AVAudioUnit.Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") AVAudioUnit.Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -179,9 +190,9 @@ public class AVAudioUnitEQ extends AVAudioUnitEffect {
 
     /**
      * [@property] globalGain
-     * <p>
+     * 
      * Overall gain adjustment applied to the signal.
-     * <p>
+     * 
      * Range: -96 -> 24
      * Default: 0
      * Unit: dB

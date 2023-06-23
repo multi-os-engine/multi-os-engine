@@ -40,7 +40,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.1
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -69,28 +74,35 @@ public class GKPlayer extends GKBasePlayer {
     @Selector("allocWithZone:")
     public static native GKPlayer allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @Selector("anonymousGuestPlayerWithIdentifier:")
-    public static native GKPlayer anonymousGuestPlayerWithIdentifier(String guestIdentifier);
+    public static native GKPlayer anonymousGuestPlayerWithIdentifier(@NotNull String guestIdentifier);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +137,10 @@ public class GKPlayer extends GKBasePlayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Load the Game Center players for the playerIDs provided. Error will be nil on success.
@@ -135,11 +148,16 @@ public class GKPlayer extends GKBasePlayer {
      * 1. Unauthenticated local player
      * 2. Communications failure
      * 3. Invalid player identifier
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 14.5
+     * Deprecated-Message: use GKLocalPlayer.loadFriendsWithIdentifiers to load a friend's GKPlayer object.
      */
+    @Deprecated
     @Generated
     @Selector("loadPlayersForIdentifiers:withCompletionHandler:")
-    public static native void loadPlayersForIdentifiersWithCompletionHandler(NSArray<String> identifiers,
-            @ObjCBlock(name = "call_loadPlayersForIdentifiersWithCompletionHandler") Block_loadPlayersForIdentifiersWithCompletionHandler completionHandler);
+    public static native void loadPlayersForIdentifiersWithCompletionHandler(@NotNull NSArray<String> identifiers,
+            @Nullable @ObjCBlock(name = "call_loadPlayersForIdentifiersWithCompletionHandler") Block_loadPlayersForIdentifiersWithCompletionHandler completionHandler);
 
     @Generated
     @Owned
@@ -172,6 +190,7 @@ public class GKPlayer extends GKBasePlayer {
      * displayName instead. The nickname is unique but not invariant: the player may change their nickname. The nickname
      * may be very long, so be sure to use appropriate string truncation API when drawing.
      */
+    @NotNull
     @Generated
     @Selector("alias")
     public native String alias();
@@ -179,11 +198,18 @@ public class GKPlayer extends GKBasePlayer {
     /**
      * This is player's alias to be displayed. The display name may be very long, so be sure to use appropriate string
      * truncation API when drawing.
+     * 
+     * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("displayName")
     public native String displayName();
 
+    /**
+     * API-Since: 9.0
+     */
+    @Nullable
     @Generated
     @Selector("guestIdentifier")
     public native String guestIdentifier();
@@ -194,17 +220,31 @@ public class GKPlayer extends GKBasePlayer {
 
     /**
      * True if this player is a friend of the local player
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: use -[GKLocalPlayer loadFriendPlayers...]
      */
     @Generated
     @Deprecated
     @Selector("isFriend")
     public native boolean isFriend();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("loadPhotoForSize:withCompletionHandler:")
     public native void loadPhotoForSizeWithCompletionHandler(@NInt long size,
-            @ObjCBlock(name = "call_loadPhotoForSizeWithCompletionHandler") Block_loadPhotoForSizeWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_loadPhotoForSizeWithCompletionHandler") Block_loadPhotoForSizeWithCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: use the teamPlayerID property to identify a player
+     */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("playerID")
     public native String playerID();
@@ -213,19 +253,23 @@ public class GKPlayer extends GKBasePlayer {
     @Generated
     public interface Block_loadPhotoForSizeWithCompletionHandler {
         @Generated
-        void call_loadPhotoForSizeWithCompletionHandler(UIImage photo, NSError error);
+        void call_loadPhotoForSizeWithCompletionHandler(@Nullable UIImage photo, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadPlayersForIdentifiersWithCompletionHandler {
         @Generated
-        void call_loadPlayersForIdentifiersWithCompletionHandler(NSArray<? extends GKPlayer> players, NSError error);
+        void call_loadPlayersForIdentifiersWithCompletionHandler(@Nullable NSArray<? extends GKPlayer> players,
+                @Nullable NSError error);
     }
 
     /**
      * This is the player's unique and persistent ID that is scoped to this application.
+     * 
+     * API-Since: 12.4
      */
+    @NotNull
     @Generated
     @Selector("gamePlayerID")
     public native String gamePlayerID();
@@ -233,6 +277,8 @@ public class GKPlayer extends GKBasePlayer {
     /**
      * This convenience method checks if the gamePlayerID and the teamPlayerID (scopedIDs) are persistent or unique for
      * the instantiation of this app.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("scopedIDsArePersistent")
@@ -241,13 +287,18 @@ public class GKPlayer extends GKBasePlayer {
     /**
      * This is the player's unique and persistent ID that is scoped to the Apple Store Connect Team identifier of this
      * application.
+     * 
+     * API-Since: 12.4
      */
+    @NotNull
     @Generated
     @Selector("teamPlayerID")
     public native String teamPlayerID();
 
     /**
      * This convenience method checks if you can invite the player to multiplayer game.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isInvitable")

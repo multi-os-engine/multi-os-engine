@@ -23,13 +23,17 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MDLRelativeAssetResolver
- * <p>
+ * 
  * The relative asset resolver searches for referenced files
  * by checking the location of the asset for sibling files
  * satisfying the requested name.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("ModelIO")
@@ -59,32 +63,36 @@ public class MDLRelativeAssetResolver extends NSObject implements MDLAssetResolv
     @Selector("allocWithZone:")
     public static native MDLRelativeAssetResolver allocWithZone(VoidPtr zone);
 
+    @Nullable
     @Generated
     @Selector("asset")
     public native MDLAsset asset();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("canResolveAssetNamed:")
-    public native boolean canResolveAssetNamed(String name);
+    public native boolean canResolveAssetNamed(@NotNull String name);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -108,7 +116,7 @@ public class MDLRelativeAssetResolver extends NSObject implements MDLAssetResolv
 
     @Generated
     @Selector("initWithAsset:")
-    public native MDLRelativeAssetResolver initWithAsset(MDLAsset asset);
+    public native MDLRelativeAssetResolver initWithAsset(@NotNull MDLAsset asset);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -127,18 +135,20 @@ public class MDLRelativeAssetResolver extends NSObject implements MDLAssetResolv
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native MDLRelativeAssetResolver new_objc();
 
+    @NotNull
     @Generated
     @Selector("resolveAssetNamed:")
-    public native NSURL resolveAssetNamed(String name);
+    public native NSURL resolveAssetNamed(@NotNull String name);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -150,10 +160,10 @@ public class MDLRelativeAssetResolver extends NSObject implements MDLAssetResolv
 
     @Generated
     @Selector("setAsset:")
-    public native void setAsset_unsafe(MDLAsset value);
+    public native void setAsset_unsafe(@Nullable MDLAsset value);
 
     @Generated
-    public void setAsset(MDLAsset value) {
+    public void setAsset(@Nullable MDLAsset value) {
         Object __old = asset();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

@@ -45,7 +45,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("EventKitUI")
 @Runtime(ObjCRuntime.class)
@@ -74,35 +79,39 @@ public class EKEventEditViewController extends UINavigationController {
     @Selector("allocWithZone:")
     public static native EKEventEditViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -134,9 +143,10 @@ public class EKEventEditViewController extends UINavigationController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,9 +176,9 @@ public class EKEventEditViewController extends UINavigationController {
 
     /**
      * cancelEditing
-     * <p>
+     * 
      * Ends the editing session discarding any changes to the event.
-     * <p>
+     * 
      * This method simulates the user tapping the Cancel button. The delegate will not
      * receive the eventEditViewController:didCompleteWithAction: message, so you are
      * responsible for dismissing the controller after calling this method.
@@ -177,6 +187,7 @@ public class EKEventEditViewController extends UINavigationController {
     @Selector("cancelEditing")
     public native void cancelEditing();
 
+    @Nullable
     @Generated
     @Selector("editViewDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -184,23 +195,24 @@ public class EKEventEditViewController extends UINavigationController {
 
     /**
      * [@property] event
-     * <p>
+     * 
      * The event to edit.
-     * <p>
+     * 
      * You must set this before presenting the view controller. You can leave
      * it set to nil and a new event will be created for you. If you pass an event
      * here and it does not belong to the event store (if set) an exception will be
      * raised.
      */
+    @Nullable
     @Generated
     @Selector("event")
     public native EKEvent event();
 
     /**
      * [@property] eventStore
-     * <p>
+     * 
      * The event store to use to save events.
-     * <p>
+     * 
      * You must set this before presenting the view controller.
      */
     @Generated
@@ -213,27 +225,29 @@ public class EKEventEditViewController extends UINavigationController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native EKEventEditViewController initWithCoder(NSCoder coder);
+    public native EKEventEditViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")
-    public native EKEventEditViewController initWithNavigationBarClassToolbarClass(Class navigationBarClass,
-            Class toolbarClass);
+    public native EKEventEditViewController initWithNavigationBarClassToolbarClass(@Nullable Class navigationBarClass,
+            @Nullable Class toolbarClass);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native EKEventEditViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native EKEventEditViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     @Generated
     @Selector("initWithRootViewController:")
-    public native EKEventEditViewController initWithRootViewController(UIViewController rootViewController);
+    public native EKEventEditViewController initWithRootViewController(@NotNull UIViewController rootViewController);
 
     @Generated
     @Selector("setEditViewDelegate:")
-    public native void setEditViewDelegate_unsafe(@Mapped(ObjCObjectMapper.class) EKEventEditViewDelegate value);
+    public native void setEditViewDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) EKEventEditViewDelegate value);
 
     @Generated
-    public void setEditViewDelegate(@Mapped(ObjCObjectMapper.class) EKEventEditViewDelegate value) {
+    public void setEditViewDelegate(@Nullable @Mapped(ObjCObjectMapper.class) EKEventEditViewDelegate value) {
         Object __old = editViewDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -246,9 +260,9 @@ public class EKEventEditViewController extends UINavigationController {
 
     /**
      * [@property] event
-     * <p>
+     * 
      * The event to edit.
-     * <p>
+     * 
      * You must set this before presenting the view controller. You can leave
      * it set to nil and a new event will be created for you. If you pass an event
      * here and it does not belong to the event store (if set) an exception will be
@@ -256,13 +270,13 @@ public class EKEventEditViewController extends UINavigationController {
      */
     @Generated
     @Selector("setEvent:")
-    public native void setEvent(EKEvent value);
+    public native void setEvent(@Nullable EKEvent value);
 
     /**
      * [@property] eventStore
-     * <p>
+     * 
      * The event store to use to save events.
-     * <p>
+     * 
      * You must set this before presenting the view controller.
      */
     @Generated

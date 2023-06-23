@@ -25,10 +25,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] NSURLConnectionDownloadDelegate
- * <p>
+ * 
  * Delegate methods used to perform resource
  * downloads directly to a disk file. All the
  * methods are optional with the exception of
@@ -37,19 +38,19 @@ import org.moe.natj.objc.ann.Selector;
  * delegate of the location of the finished download.
  * This delegate and download implementation is
  * currently only available on iOS 5.0 or later.
- * <p>
+ * 
  * connection:didWriteData:totalBytesWritten:expectedTotalBytes:
  * provides progress information about the state of
  * the download, the number of bytes written since
  * the last delegate callback, the total number of
  * bytes written to disk and the total number of
  * bytes that are expected (or 0 if this is unknown.)
- * <p>
+ * 
  * connectionDidResumeDownloading:totalBytesWritten:expectedTotalBytes:
  * is called when the connection is able to resume an
  * in progress download. This may happen due to a
  * connection or network failure.
- * <p>
+ * 
  * connectionDidFinishDownloading:destinationURL: is
  * a terminal event which indicates the completion of
  * a download and provides the location of the file.
@@ -59,6 +60,8 @@ import org.moe.natj.objc.ann.Selector;
  * implication is that the delegate should copy or
  * move the download to a more persistent location if
  * desired.
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("Foundation")
@@ -68,19 +71,20 @@ public interface NSURLConnectionDownloadDelegate extends NSURLConnectionDelegate
     @Generated
     @IsOptional
     @Selector("connection:didWriteData:totalBytesWritten:expectedTotalBytes:")
-    default void connectionDidWriteDataTotalBytesWrittenExpectedTotalBytes(NSURLConnection connection,
+    default void connectionDidWriteDataTotalBytesWrittenExpectedTotalBytes(@NotNull NSURLConnection connection,
             long bytesWritten, long totalBytesWritten, long expectedTotalBytes) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @Selector("connectionDidFinishDownloading:destinationURL:")
-    void connectionDidFinishDownloadingDestinationURL(NSURLConnection connection, NSURL destinationURL);
+    void connectionDidFinishDownloadingDestinationURL(@NotNull NSURLConnection connection,
+            @NotNull NSURL destinationURL);
 
     @Generated
     @IsOptional
     @Selector("connectionDidResumeDownloading:totalBytesWritten:expectedTotalBytes:")
-    default void connectionDidResumeDownloadingTotalBytesWrittenExpectedTotalBytes(NSURLConnection connection,
+    default void connectionDidResumeDownloadingTotalBytesWrittenExpectedTotalBytes(@NotNull NSURLConnection connection,
             long totalBytesWritten, long expectedTotalBytes) {
         throw new java.lang.UnsupportedOperationException();
     }

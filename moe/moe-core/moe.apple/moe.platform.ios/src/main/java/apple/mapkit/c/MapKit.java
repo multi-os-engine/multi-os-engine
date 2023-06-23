@@ -35,6 +35,7 @@ import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("MapKit")
@@ -69,12 +70,17 @@ public final class MapKit {
 
     /**
      * Conversion between unprojected and projected coordinates
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CFunction
     @ByValue
     public static native MKMapPoint MKMapPointForCoordinate(@ByValue CLLocationCoordinate2D coordinate);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CFunction
     @ByValue
@@ -82,15 +88,23 @@ public final class MapKit {
 
     /**
      * Conversion between distances and projected coordinates
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CFunction
     public static native double MKMetersPerMapPointAtLatitude(double latitude);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CFunction
     public static native double MKMapPointsPerMeterAtLatitude(double latitude);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CFunction
     public static native double MKMetersBetweenMapPoints(@ByValue MKMapPoint a, @ByValue MKMapPoint b);
@@ -182,68 +196,101 @@ public final class MapKit {
     @CFunction
     public static native boolean MKMapRectIsEmpty(@ByValue MKMapRect rect);
 
+    @NotNull
     @Generated
     @Inline
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKStringFromMapPoint(@ByValue MKMapPoint point);
 
+    @NotNull
     @Generated
     @Inline
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKStringFromMapSize(@ByValue MKMapSize size);
 
+    @NotNull
     @Generated
     @Inline
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKStringFromMapRect(@ByValue MKMapRect rect);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CFunction
     @ByValue
     public static native MKMapRect MKMapRectUnion(@ByValue MKMapRect rect1, @ByValue MKMapRect rect2);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CFunction
     @ByValue
     public static native MKMapRect MKMapRectIntersection(@ByValue MKMapRect rect1, @ByValue MKMapRect rect2);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CFunction
     @ByValue
     public static native MKMapRect MKMapRectInset(@ByValue MKMapRect rect, double dx, double dy);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CFunction
     @ByValue
     public static native MKMapRect MKMapRectOffset(@ByValue MKMapRect rect, double dx, double dy);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CFunction
     public static native void MKMapRectDivide(@ByValue MKMapRect rect,
-            @UncertainArgument("Options: reference, array Fallback: reference") MKMapRect slice,
-            @UncertainArgument("Options: reference, array Fallback: reference") MKMapRect remainder, double amount,
-            int edge);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MKMapRect slice,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MKMapRect remainder,
+            double amount, int edge);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CFunction
     public static native boolean MKMapRectContainsPoint(@ByValue MKMapRect rect, @ByValue MKMapPoint point);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CFunction
     public static native boolean MKMapRectContainsRect(@ByValue MKMapRect rect1, @ByValue MKMapRect rect2);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CFunction
     public static native boolean MKMapRectIntersectsRect(@ByValue MKMapRect rect1, @ByValue MKMapRect rect2);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CFunction
     @ByValue
     public static native MKCoordinateRegion MKCoordinateRegionForMapRect(@ByValue MKMapRect rect);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CFunction
     public static native boolean MKMapRectSpans180thMeridian(@ByValue MKMapRect rect);
@@ -253,6 +300,8 @@ public final class MapKit {
      * that lies outside of the world rect wrapped around to the other side of the
      * world. The portion of the rect that lies inside the world rect can be
      * determined with MKMapRectIntersection(rect, MKMapRectWorld).
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CFunction
@@ -263,12 +312,17 @@ public final class MapKit {
      * Road widths are typically not drawn to scale on the map. This function
      * returns the approximate width in points of roads at the specified zoomScale.
      * The result of this function is suitable for use with CGContextSetLineWidth.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CFunction
     @NFloat
     public static native double MKRoadWidthAtZoomScale(@NFloat double zoomScale);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @ByValue
@@ -276,12 +330,17 @@ public final class MapKit {
 
     /**
      * The rect that contains every map point in the world.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
     @ByValue
     public static native MKMapRect MKMapRectWorld();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @ByValue
@@ -289,7 +348,10 @@ public final class MapKit {
 
     /**
      * Key to a directions mode
+     * 
+     * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -297,7 +359,10 @@ public final class MapKit {
 
     /**
      * Key to an NSNumber corresponding to a MKMapType
+     * 
+     * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -305,7 +370,10 @@ public final class MapKit {
 
     /**
      * Key to a boolean NSNumber
+     * 
+     * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -313,22 +381,37 @@ public final class MapKit {
 
     /**
      * Will pick the best directions mode, given the user's preferences
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKLaunchOptionsDirectionsModeDefault();
 
+    /**
+     * API-Since: 6.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKLaunchOptionsDirectionsModeDriving();
 
+    /**
+     * API-Since: 6.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKLaunchOptionsDirectionsModeWalking();
 
+    /**
+     * API-Since: 9.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -336,7 +419,10 @@ public final class MapKit {
 
     /**
      * Key to an NSValue-encoded CLLocationCoordinate2D
+     * 
+     * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -344,7 +430,10 @@ public final class MapKit {
 
     /**
      * Key to an NSValue-encoded MKCoordinateSpan
+     * 
+     * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -352,7 +441,10 @@ public final class MapKit {
 
     /**
      * Key to MKMapCamera object
+     * 
+     * API-Since: 7.1
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -361,244 +453,405 @@ public final class MapKit {
     /**
      * Post this notification to re-query callout information.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKAnnotationCalloutInfoDidChangeNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKErrorDomain();
 
+    /**
+     * API-Since: 11.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKMapItemTypeIdentifier();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated public static final float MKFeatureDisplayPriorityRequired = (float)1000.0;
+    /**
+     * API-Since: 11.0
+     */
     @Generated public static final float MKFeatureDisplayPriorityDefaultHigh = (float)750.0;
+    /**
+     * API-Since: 11.0
+     */
     @Generated public static final float MKFeatureDisplayPriorityDefaultLow = (float)250.0;
 
+    /**
+     * API-Since: 11.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKMapViewDefaultAnnotationViewReuseIdentifier();
 
+    /**
+     * API-Since: 11.0
+     */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKMapViewDefaultClusterAnnotationViewReuseIdentifier();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryAirport();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryAmusementPark();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryAquarium();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryATM();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryBakery();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryBank();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryBeach();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryBrewery();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryCafe();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryCampground();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryCarRental();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryEVCharger();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryFireStation();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryFitnessCenter();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryFoodMarket();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryGasStation();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryHospital();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryHotel();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryLaundry();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryLibrary();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryMarina();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryMovieTheater();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryMuseum();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryNationalPark();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryNightlife();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryPark();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryParking();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryPharmacy();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryPolice();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryPostOffice();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryPublicTransport();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryRestaurant();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryRestroom();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategorySchool();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryStadium();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryStore();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryTheater();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryUniversity();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryWinery();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKPointOfInterestCategoryZoo();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     public static native double MKMapCameraZoomDefault();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated public static final float MKAnnotationViewZPriorityMax = (float)1000.0;
+    /**
+     * API-Since: 14.0
+     */
     @Generated public static final float MKAnnotationViewZPriorityDefaultSelected = (float)1000.0;
+    /**
+     * API-Since: 14.0
+     */
     @Generated public static final float MKAnnotationViewZPriorityDefaultUnselected = (float)500.0;
+    /**
+     * API-Since: 14.0
+     */
     @Generated public static final float MKAnnotationViewZPriorityMin = (float)0.0;
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     public static native double MKPointsOfInterestRequestMaxRadius();

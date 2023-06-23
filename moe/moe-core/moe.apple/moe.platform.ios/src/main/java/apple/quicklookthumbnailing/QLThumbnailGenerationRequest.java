@@ -1,7 +1,6 @@
 package apple.quicklookthumbnailing;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -31,7 +30,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("QuickLookThumbnailing")
 @Runtime(ObjCRuntime.class)
@@ -62,31 +67,35 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -98,7 +107,7 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -122,7 +131,7 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
 
     @Generated
     @Selector("initWithCoder:")
-    public native QLThumbnailGenerationRequest initWithCoder(NSCoder coder);
+    public native QLThumbnailGenerationRequest initWithCoder(@NotNull NSCoder coder);
 
     /**
      * @param url                 The url of the file on disk for which a thumbnail is requested.
@@ -137,7 +146,7 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
      */
     @Generated
     @Selector("initWithFileAtURL:size:scale:representationTypes:")
-    public native QLThumbnailGenerationRequest initWithFileAtURLSizeScaleRepresentationTypes(NSURL url,
+    public native QLThumbnailGenerationRequest initWithFileAtURLSizeScaleRepresentationTypes(@NotNull NSURL url,
             @ByValue CGSize size, @NFloat double scale, @NUInt long representationTypes);
 
     @Generated
@@ -157,9 +166,10 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Defaults to 0. If set, the thumbnail will have a width and height greater or equal to minimumDimension * scale.
@@ -247,6 +257,8 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
      * styles applied if iconMode is requested. By default the content type is derived from the file extension. Setting
      * this property will override the derived content type. This is useful for files that don't have meaningful
      * extensions but for which you may already know the content type.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("contentType")
@@ -257,6 +269,8 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
      * styles applied if iconMode is requested. By default the content type is derived from the file extension. Setting
      * this property will override the derived content type. This is useful for files that don't have meaningful
      * extensions but for which you may already know the content type.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setContentType:")

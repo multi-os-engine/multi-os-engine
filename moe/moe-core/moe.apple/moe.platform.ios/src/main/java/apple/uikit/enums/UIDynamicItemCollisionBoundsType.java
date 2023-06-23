@@ -19,13 +19,24 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 public final class UIDynamicItemCollisionBoundsType {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long Rectangle = 0x0000000000000000L;
     /**
      * radii will be determined from the items bounds width, height
+     * 
+     * API-Since: 9.0
      */
     @Generated @NUInt public static final long Ellipse = 0x0000000000000001L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long Path = 0x0000000000000002L;
 
     @Generated

@@ -36,6 +36,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("MapKit")
@@ -49,16 +51,19 @@ public interface MKMapViewDelegate {
     @Generated
     @IsOptional
     @Selector("mapView:annotationView:calloutAccessoryControlTapped:")
-    default void mapViewAnnotationViewCalloutAccessoryControlTapped(MKMapView mapView, MKAnnotationView view,
-            UIControl control) {
+    default void mapViewAnnotationViewCalloutAccessoryControlTapped(@NotNull MKMapView mapView,
+            @NotNull MKAnnotationView view, @NotNull UIControl control) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("mapView:annotationView:didChangeDragState:fromOldState:")
-    default void mapViewAnnotationViewDidChangeDragStateFromOldState(MKMapView mapView, MKAnnotationView view,
-            @NUInt long newState, @NUInt long oldState) {
+    default void mapViewAnnotationViewDidChangeDragStateFromOldState(@NotNull MKMapView mapView,
+            @NotNull MKAnnotationView view, @NUInt long newState, @NUInt long oldState) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -70,82 +75,111 @@ public interface MKMapViewDelegate {
     @Generated
     @IsOptional
     @Selector("mapView:didAddAnnotationViews:")
-    default void mapViewDidAddAnnotationViews(MKMapView mapView, NSArray<? extends MKAnnotationView> views) {
+    default void mapViewDidAddAnnotationViews(@NotNull MKMapView mapView,
+            @NotNull NSArray<? extends MKAnnotationView> views) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("mapView:didAddOverlayRenderers:")
-    default void mapViewDidAddOverlayRenderers(MKMapView mapView, NSArray<? extends MKOverlayRenderer> renderers) {
+    default void mapViewDidAddOverlayRenderers(@NotNull MKMapView mapView,
+            @NotNull NSArray<? extends MKOverlayRenderer> renderers) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Called after the provided overlay views have been added and positioned in the map.
      * Prefer -mapView:didAddOverlayRenderers:
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("mapView:didAddOverlayViews:")
-    default void mapViewDidAddOverlayViews(MKMapView mapView, NSArray<?> overlayViews) {
+    default void mapViewDidAddOverlayViews(@NotNull MKMapView mapView, @NotNull NSArray<?> overlayViews) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @IsOptional
     @Selector("mapView:didChangeUserTrackingMode:animated:")
-    default void mapViewDidChangeUserTrackingModeAnimated(MKMapView mapView, @NInt long mode, boolean animated) {
+    default void mapViewDidChangeUserTrackingModeAnimated(@NotNull MKMapView mapView, @NInt long mode,
+            boolean animated) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("mapView:didDeselectAnnotationView:")
-    default void mapViewDidDeselectAnnotationView(MKMapView mapView, MKAnnotationView view) {
+    default void mapViewDidDeselectAnnotationView(@NotNull MKMapView mapView, @NotNull MKAnnotationView view) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("mapView:didFailToLocateUserWithError:")
-    default void mapViewDidFailToLocateUserWithError(MKMapView mapView, NSError error) {
+    default void mapViewDidFailToLocateUserWithError(@NotNull MKMapView mapView, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("mapView:didSelectAnnotationView:")
-    default void mapViewDidSelectAnnotationView(MKMapView mapView, MKAnnotationView view) {
+    default void mapViewDidSelectAnnotationView(@NotNull MKMapView mapView, @NotNull MKAnnotationView view) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("mapView:didUpdateUserLocation:")
-    default void mapViewDidUpdateUserLocation(MKMapView mapView, MKUserLocation userLocation) {
+    default void mapViewDidUpdateUserLocation(@NotNull MKMapView mapView, @NotNull MKUserLocation userLocation) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("mapView:regionDidChangeAnimated:")
-    default void mapViewRegionDidChangeAnimated(MKMapView mapView, boolean animated) {
+    default void mapViewRegionDidChangeAnimated(@NotNull MKMapView mapView, boolean animated) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("mapView:regionWillChangeAnimated:")
-    default void mapViewRegionWillChangeAnimated(MKMapView mapView, boolean animated) {
+    default void mapViewRegionWillChangeAnimated(@NotNull MKMapView mapView, boolean animated) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("mapView:rendererForOverlay:")
-    default MKOverlayRenderer mapViewRendererForOverlay(MKMapView mapView,
-            @Mapped(ObjCObjectMapper.class) MKOverlay overlay) {
+    default MKOverlayRenderer mapViewRendererForOverlay(@NotNull MKMapView mapView,
+            @NotNull @Mapped(ObjCObjectMapper.class) MKOverlay overlay) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -154,89 +188,136 @@ public interface MKMapViewDelegate {
      * This method may be called for all or some of the added annotations.
      * For MapKit provided annotations (eg. MKUserLocation) return nil to use the MapKit provided annotation view.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("mapView:viewForAnnotation:")
-    default MKAnnotationView mapViewViewForAnnotation(MKMapView mapView,
-            @Mapped(ObjCObjectMapper.class) MKAnnotation annotation) {
+    default MKAnnotationView mapViewViewForAnnotation(@NotNull MKMapView mapView,
+            @NotNull @Mapped(ObjCObjectMapper.class) MKAnnotation annotation) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Prefer -mapView:rendererForOverlay:
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 13.0
      */
+    @NotNull
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("mapView:viewForOverlay:")
-    default MKOverlayView mapViewViewForOverlay(MKMapView mapView, @Mapped(ObjCObjectMapper.class) MKOverlay overlay) {
+    default MKOverlayView mapViewViewForOverlay(@NotNull MKMapView mapView,
+            @NotNull @Mapped(ObjCObjectMapper.class) MKOverlay overlay) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("mapViewDidFailLoadingMap:withError:")
-    default void mapViewDidFailLoadingMapWithError(MKMapView mapView, NSError error) {
+    default void mapViewDidFailLoadingMapWithError(@NotNull MKMapView mapView, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("mapViewDidFinishLoadingMap:")
-    default void mapViewDidFinishLoadingMap(MKMapView mapView) {
+    default void mapViewDidFinishLoadingMap(@NotNull MKMapView mapView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("mapViewDidFinishRenderingMap:fullyRendered:")
-    default void mapViewDidFinishRenderingMapFullyRendered(MKMapView mapView, boolean fullyRendered) {
+    default void mapViewDidFinishRenderingMapFullyRendered(@NotNull MKMapView mapView, boolean fullyRendered) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("mapViewDidStopLocatingUser:")
-    default void mapViewDidStopLocatingUser(MKMapView mapView) {
+    default void mapViewDidStopLocatingUser(@NotNull MKMapView mapView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("mapViewWillStartLoadingMap:")
-    default void mapViewWillStartLoadingMap(MKMapView mapView) {
+    default void mapViewWillStartLoadingMap(@NotNull MKMapView mapView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("mapViewWillStartLocatingUser:")
-    default void mapViewWillStartLocatingUser(MKMapView mapView) {
+    default void mapViewWillStartLocatingUser(@NotNull MKMapView mapView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("mapViewWillStartRenderingMap:")
-    default void mapViewWillStartRenderingMap(MKMapView mapView) {
+    default void mapViewWillStartRenderingMap(@NotNull MKMapView mapView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Return nil for default MKClusterAnnotation, it is illegal to return a cluster annotation not containing the
      * identical array of member annotations given.
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("mapView:clusterAnnotationForMemberAnnotations:")
-    default MKClusterAnnotation mapViewClusterAnnotationForMemberAnnotations(MKMapView mapView,
-            NSArray<?> memberAnnotations) {
+    default MKClusterAnnotation mapViewClusterAnnotationForMemberAnnotations(@NotNull MKMapView mapView,
+            @NotNull NSArray<?> memberAnnotations) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("mapViewDidChangeVisibleRegion:")
-    default void mapViewDidChangeVisibleRegion(MKMapView mapView) {
+    default void mapViewDidChangeVisibleRegion(@NotNull MKMapView mapView) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("mapView:didDeselectAnnotation:")
+    default void mapViewDidDeselectAnnotation(@NotNull MKMapView mapView,
+            @NotNull @Mapped(ObjCObjectMapper.class) MKAnnotation annotation) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("mapView:didSelectAnnotation:")
+    default void mapViewDidSelectAnnotation(@NotNull MKMapView mapView,
+            @NotNull @Mapped(ObjCObjectMapper.class) MKAnnotation annotation) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

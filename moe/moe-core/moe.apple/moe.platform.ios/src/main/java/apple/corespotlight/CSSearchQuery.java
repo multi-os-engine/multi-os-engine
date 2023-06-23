@@ -39,7 +39,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CoreSpotlight")
 @Runtime(ObjCRuntime.class)
@@ -70,22 +75,25 @@ public class CSSearchQuery extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,9 +128,10 @@ public class CSSearchQuery extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,6 +163,7 @@ public class CSSearchQuery extends NSObject {
     @Selector("cancel")
     public native void cancel();
 
+    @Nullable
     @Generated
     @Selector("completionHandler")
     @ObjCBlock(name = "call_completionHandler_ret")
@@ -173,6 +183,7 @@ public class CSSearchQuery extends NSObject {
      * The foundItemsHandler will be invoked repeatedly with a new batch of searchable items.
      * The query serializes all the foundItemsHandler invocations.
      */
+    @Nullable
     @Generated
     @Selector("foundItemsHandler")
     @ObjCBlock(name = "call_foundItemsHandler_ret")
@@ -188,7 +199,8 @@ public class CSSearchQuery extends NSObject {
      */
     @Generated
     @Selector("initWithQueryString:attributes:")
-    public native CSSearchQuery initWithQueryStringAttributes(String queryString, NSArray<String> attributes);
+    public native CSSearchQuery initWithQueryStringAttributes(@NotNull String queryString,
+            @Nullable NSArray<String> attributes);
 
     @Generated
     @Selector("isCancelled")
@@ -200,6 +212,7 @@ public class CSSearchQuery extends NSObject {
      * By default the data protection will be read from the "com.apple.developer.default-data-protection"
      * entitlement if any or NSFileProtectionCompleteUntilFirstUserAuthentication will be used otherwise.
      */
+    @NotNull
     @Generated
     @Selector("protectionClasses")
     public native NSArray<String> protectionClasses();
@@ -207,7 +220,7 @@ public class CSSearchQuery extends NSObject {
     @Generated
     @Selector("setCompletionHandler:")
     public native void setCompletionHandler(
-            @ObjCBlock(name = "call_setCompletionHandler") Block_setCompletionHandler value);
+            @Nullable @ObjCBlock(name = "call_setCompletionHandler") Block_setCompletionHandler value);
 
     /**
      * The foundItemsHandler will be invoked repeatedly with a new batch of searchable items.
@@ -216,7 +229,7 @@ public class CSSearchQuery extends NSObject {
     @Generated
     @Selector("setFoundItemsHandler:")
     public native void setFoundItemsHandler(
-            @ObjCBlock(name = "call_setFoundItemsHandler") Block_setFoundItemsHandler value);
+            @Nullable @ObjCBlock(name = "call_setFoundItemsHandler") Block_setFoundItemsHandler value);
 
     /**
      * An array of NSFileProtectionComplete, NSFileProtectionCompleteUnlessOpen,
@@ -226,7 +239,7 @@ public class CSSearchQuery extends NSObject {
      */
     @Generated
     @Selector("setProtectionClasses:")
-    public native void setProtectionClasses(NSArray<String> value);
+    public native void setProtectionClasses(@NotNull NSArray<String> value);
 
     @Generated
     @Selector("start")
@@ -236,27 +249,37 @@ public class CSSearchQuery extends NSObject {
     @Generated
     public interface Block_completionHandler_ret {
         @Generated
-        void call_completionHandler_ret(NSError arg0);
+        void call_completionHandler_ret(@Nullable NSError arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_foundItemsHandler_ret {
         @Generated
-        void call_foundItemsHandler_ret(NSArray<? extends CSSearchableItem> arg0);
+        void call_foundItemsHandler_ret(@NotNull NSArray<? extends CSSearchableItem> arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setCompletionHandler {
         @Generated
-        void call_setCompletionHandler(NSError arg0);
+        void call_setCompletionHandler(@Nullable NSError arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setFoundItemsHandler {
         @Generated
-        void call_setFoundItemsHandler(NSArray<? extends CSSearchableItem> arg0);
+        void call_setFoundItemsHandler(@NotNull NSArray<? extends CSSearchableItem> arg0);
     }
+
+    /**
+     * queryString: The query string (e.g., 'contentType == "public.email-message" && subject != "Re:*"')
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("initWithQueryString:queryContext:")
+    public native CSSearchQuery initWithQueryStringQueryContext(@NotNull String queryString,
+            @Nullable CSSearchQueryContext queryContext);
 }

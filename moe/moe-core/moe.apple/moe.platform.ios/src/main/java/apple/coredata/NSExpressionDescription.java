@@ -39,12 +39,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Special property description type intended for use with the NSFetchRequest -propertiesToFetch method.
  * An NSExpressionDescription describes a column to be returned from a fetch that may not appear
  * directly as an attribute or relationship on an entity. Examples would be: upper(attribute) or
  * max(attribute). NSExpressionDescriptions cannot be set as properties on NSEntityDescription.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("CoreData")
@@ -76,22 +80,25 @@ public class NSExpressionDescription extends NSPropertyDescription {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +133,10 @@ public class NSExpressionDescription extends NSPropertyDescription {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,6 +164,7 @@ public class NSExpressionDescription extends NSPropertyDescription {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("expression")
     public native NSExpression expression();
@@ -171,11 +180,11 @@ public class NSExpressionDescription extends NSPropertyDescription {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSExpressionDescription initWithCoder(NSCoder coder);
+    public native NSExpressionDescription initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("setExpression:")
-    public native void setExpression(NSExpression value);
+    public native void setExpression(@Nullable NSExpression value);
 
     @Generated
     @Selector("setExpressionResultType:")

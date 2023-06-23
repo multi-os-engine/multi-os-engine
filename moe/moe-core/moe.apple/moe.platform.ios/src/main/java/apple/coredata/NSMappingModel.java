@@ -43,7 +43,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -74,22 +79,25 @@ public class NSMappingModel extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -113,12 +121,15 @@ public class NSMappingModel extends NSObject {
      * able to reasonably infer a data migration mapping model, such a model is created and returned. If the mapping
      * model can not be created, nil is returned and an error code is returned to indicate why inferring a mapping model
      * automatically failed.
+     * 
+     * API-Since: 3.0
      */
+    @Nullable
     @Generated
     @Selector("inferredMappingModelForSourceModel:destinationModel:error:")
     public static native NSMappingModel inferredMappingModelForSourceModelDestinationModelError(
-            NSManagedObjectModel sourceModel, NSManagedObjectModel destinationModel,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull NSManagedObjectModel sourceModel, @NotNull NSManagedObjectModel destinationModel,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -137,9 +148,10 @@ public class NSMappingModel extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Returns the mapping model to translate data from the source to the destination model. This method is a companion
@@ -147,11 +159,12 @@ public class NSMappingModel extends NSObject {
      * to locate the appropriate mapping model in the available bundles. If the mapping model for the models cannot be
      * found, this method returns nil.
      */
+    @Nullable
     @Generated
     @Selector("mappingModelFromBundles:forSourceModel:destinationModel:")
     public static native NSMappingModel mappingModelFromBundlesForSourceModelDestinationModel(
-            NSArray<? extends NSBundle> bundles, NSManagedObjectModel sourceModel,
-            NSManagedObjectModel destinationModel);
+            @Nullable NSArray<? extends NSBundle> bundles, @Nullable NSManagedObjectModel sourceModel,
+            @Nullable NSManagedObjectModel destinationModel);
 
     @Generated
     @Owned
@@ -191,6 +204,7 @@ public class NSMappingModel extends NSObject {
      * Returns a dictionary of the entity mappings for the model, keyed by their respective name. (This API is provided
      * for quick access to a mapping by name, rather than iterating the ordered entityMapping array.)
      */
+    @NotNull
     @Generated
     @Selector("entityMappingsByName")
     public native NSDictionary<String, ? extends NSEntityMapping> entityMappingsByName();
@@ -204,7 +218,7 @@ public class NSMappingModel extends NSObject {
      */
     @Generated
     @Selector("initWithContentsOfURL:")
-    public native NSMappingModel initWithContentsOfURL(NSURL url);
+    public native NSMappingModel initWithContentsOfURL(@Nullable NSURL url);
 
     /**
      * Returns/sets the collection of entity mappings for the model. The order of the mappings dictates the order in

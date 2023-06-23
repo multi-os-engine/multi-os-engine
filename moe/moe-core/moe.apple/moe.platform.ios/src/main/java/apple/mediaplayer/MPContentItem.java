@@ -37,12 +37,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPContentItem represents high-level metadata for a particular media item for
  * representation outside the client application. Examples of media items that a
  * developer might want to represent include song files, streaming audio URLs,
  * or radio stations.
+ * 
+ * API-Since: 7.1
  */
 @Generated
 @Library("MediaPlayer")
@@ -74,22 +78,25 @@ public class MPContentItem extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +131,10 @@ public class MPContentItem extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,6 +166,7 @@ public class MPContentItem extends NSObject {
      * Artwork for this item. Examples of artwork for a content item are the album
      * cover for a song, or a movie poster for a movie.
      */
+    @Nullable
     @Generated
     @Selector("artwork")
     public native MPMediaItemArtwork artwork();
@@ -165,6 +174,7 @@ public class MPContentItem extends NSObject {
     /**
      * A unique identifier for this content item. (Required)
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -179,7 +189,7 @@ public class MPContentItem extends NSObject {
      */
     @Generated
     @Selector("initWithIdentifier:")
-    public native MPContentItem initWithIdentifier(String identifier);
+    public native MPContentItem initWithIdentifier(@NotNull String identifier);
 
     /**
      * Represents whether the content item is a container that may contain other
@@ -199,6 +209,8 @@ public class MPContentItem extends NSObject {
 
     /**
      * Represents whether this content item is explicit content
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isExplicitContent")
@@ -206,6 +218,8 @@ public class MPContentItem extends NSObject {
 
     /**
      * Represents whether this content item is explicit content
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setExplicitContent:")
@@ -236,6 +250,8 @@ public class MPContentItem extends NSObject {
     /**
      * Represents whether this content item is streaming content, i.e. from the cloud
      * where the content is not stored locally.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isStreamingContent")
@@ -244,6 +260,8 @@ public class MPContentItem extends NSObject {
     /**
      * Represents whether this content item is streaming content, i.e. from the cloud
      * where the content is not stored locally.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setStreamingContent:")
@@ -264,7 +282,7 @@ public class MPContentItem extends NSObject {
      */
     @Generated
     @Selector("setArtwork:")
-    public native void setArtwork(MPMediaItemArtwork value);
+    public native void setArtwork(@Nullable MPMediaItemArtwork value);
 
     /**
      * Represents the current playback progress of the item.
@@ -281,7 +299,7 @@ public class MPContentItem extends NSObject {
      */
     @Generated
     @Selector("setSubtitle:")
-    public native void setSubtitle(String value);
+    public native void setSubtitle(@Nullable String value);
 
     /**
      * A title for this item. Usually this would be the track name, if representing
@@ -289,12 +307,13 @@ public class MPContentItem extends NSObject {
      */
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@Nullable String value);
 
     /**
      * A subtitle for this item. If this were representing a song, this would
      * usually be the artist or composer.
      */
+    @Nullable
     @Generated
     @Selector("subtitle")
     public native String subtitle();
@@ -303,6 +322,7 @@ public class MPContentItem extends NSObject {
      * A title for this item. Usually this would be the track name, if representing
      * a song, the episode name of a podcast, etc.
      */
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();

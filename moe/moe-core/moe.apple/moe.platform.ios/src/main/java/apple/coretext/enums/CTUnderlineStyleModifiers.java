@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] CTUnderlineStyleModifiers
- * <p>
+ * 
  * Underline style modifiers.
- * <p>
+ * 
  * Set these bits with the CTUnderlineStyle that you set with the
  * kCTUnderlineStyleAttributeName attribute to modify how the
  * underline will be drawn.

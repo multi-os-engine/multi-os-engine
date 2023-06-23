@@ -41,12 +41,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MDLPhysicallyPlausibleLight
- * <p>
+ * 
  * A light with characteristics representing plausible real world lights
- * <p>
+ * 
  * [@property] color The color of the light.
  * [@property] lumens The brightness of the light.
  * [@property] innerConeAngle Within this cone, light is at maximum brightness. Units are degrees.
@@ -55,6 +57,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * [@property] attenuationStartDistance. Within the attenuation start distance, the
  * light is maximally bright.
  * [@property] attenuationEndDistance. Beyond this distance, there is no light.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("ModelIO")
@@ -86,22 +90,25 @@ public class MDLPhysicallyPlausibleLight extends MDLLight {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -136,13 +143,14 @@ public class MDLPhysicallyPlausibleLight extends MDLLight {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Selector("lightWithSCNLight:")
-    public static native MDLPhysicallyPlausibleLight lightWithSCNLight(SCNLight scnLight);
+    public static native MDLPhysicallyPlausibleLight lightWithSCNLight(@NotNull SCNLight scnLight);
 
     @Generated
     @Owned
@@ -151,12 +159,12 @@ public class MDLPhysicallyPlausibleLight extends MDLLight {
 
     @Generated
     @Selector("objectWithSCNNode:")
-    public static native MDLPhysicallyPlausibleLight objectWithSCNNode(SCNNode scnNode);
+    public static native MDLPhysicallyPlausibleLight objectWithSCNNode(@NotNull SCNNode scnNode);
 
     @Generated
     @Selector("objectWithSCNNode:bufferAllocator:")
-    public static native MDLPhysicallyPlausibleLight objectWithSCNNodeBufferAllocator(SCNNode scnNode,
-            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+    public static native MDLPhysicallyPlausibleLight objectWithSCNNodeBufferAllocator(@NotNull SCNNode scnNode,
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -187,6 +195,7 @@ public class MDLPhysicallyPlausibleLight extends MDLLight {
     @Selector("attenuationStartDistance")
     public native float attenuationStartDistance();
 
+    @Nullable
     @Generated
     @Selector("color")
     public native CGColorRef color();
@@ -225,11 +234,11 @@ public class MDLPhysicallyPlausibleLight extends MDLLight {
 
     @Generated
     @Selector("setColor:")
-    public native void setColor(CGColorRef value);
+    public native void setColor(@Nullable CGColorRef value);
 
     /**
      * Light color specified by color temperature, in degrees Kelvin
-     * <p>
+     * 
      * default color is 6500K, cool daylight.
      */
     @Generated

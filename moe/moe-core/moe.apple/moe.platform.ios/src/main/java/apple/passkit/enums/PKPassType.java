@@ -19,10 +19,24 @@ package apple.passkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class PKPassType {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Barcode = 0x0000000000000000L;
-    @Generated @NUInt public static final long Payment = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use PKPassTypeSecureElement instead
+     */
+    @Deprecated @Generated @NUInt public static final long Payment = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Any = org.moe.natj.general.NatJ.is64Bit() ?
             0xFFFFFFFFFFFFFFFFL :
             0x00000000FFFFFFFFL;
@@ -31,5 +45,8 @@ public final class PKPassType {
     private PKPassType() {
     }
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated @NUInt public static final long SecureElement = 0x0000000000000001L;
 }

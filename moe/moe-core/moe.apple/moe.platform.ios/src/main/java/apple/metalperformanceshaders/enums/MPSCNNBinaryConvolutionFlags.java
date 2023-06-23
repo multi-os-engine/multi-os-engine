@@ -11,10 +11,14 @@ public final class MPSCNNBinaryConvolutionFlags {
 
     /**
      * Use default in binary convolution options
+     * 
+     * API-Since: 11.0
      */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     /**
      * Scale the binary convolution operation using the beta-image option as detailed in MPSCNNBinaryConvolution
+     * 
+     * API-Since: 11.0
      */
     @Generated @NUInt public static final long UseBetaScaling = 0x0000000000000001L;
 }

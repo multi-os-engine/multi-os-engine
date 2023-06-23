@@ -38,7 +38,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -70,29 +75,33 @@ public class NSCompoundPredicate extends NSPredicate {
     /**
      * Convenience Methods **
      */
+    @NotNull
     @Generated
     @Selector("andPredicateWithSubpredicates:")
     public static native NSCompoundPredicate andPredicateWithSubpredicates(
-            NSArray<? extends NSPredicate> subpredicates);
+            @NotNull NSArray<? extends NSPredicate> subpredicates);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,41 +136,51 @@ public class NSCompoundPredicate extends NSPredicate {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native NSCompoundPredicate new_objc();
 
+    @NotNull
     @Generated
     @Selector("notPredicateWithSubpredicate:")
-    public static native NSCompoundPredicate notPredicateWithSubpredicate(NSPredicate predicate);
+    public static native NSCompoundPredicate notPredicateWithSubpredicate(@NotNull NSPredicate predicate);
 
+    @NotNull
     @Generated
     @Selector("orPredicateWithSubpredicates:")
-    public static native NSCompoundPredicate orPredicateWithSubpredicates(NSArray<? extends NSPredicate> subpredicates);
+    public static native NSCompoundPredicate orPredicateWithSubpredicates(
+            @NotNull NSArray<? extends NSPredicate> subpredicates);
 
+    @NotNull
     @Generated
     @Selector("predicateWithBlock:")
     public static native NSPredicate predicateWithBlock(
-            @ObjCBlock(name = "call_predicateWithBlock") NSPredicate.Block_predicateWithBlock block);
+            @NotNull @ObjCBlock(name = "call_predicateWithBlock") NSPredicate.Block_predicateWithBlock block);
 
+    @NotNull
     @Generated
     @Variadic()
     @Selector("predicateWithFormat:")
-    public static native NSPredicate predicateWithFormat(String predicateFormat, Object... varargs);
+    public static native NSPredicate predicateWithFormat(@NotNull String predicateFormat, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("predicateWithFormat:argumentArray:")
-    public static native NSPredicate predicateWithFormatArgumentArray(String predicateFormat, NSArray<?> arguments);
+    public static native NSPredicate predicateWithFormatArgumentArray(@NotNull String predicateFormat,
+            @Nullable NSArray<?> arguments);
 
+    @NotNull
     @Generated
     @Selector("predicateWithFormat:arguments:")
-    public static native NSPredicate predicateWithFormatArguments(String predicateFormat, BytePtr argList);
+    public static native NSPredicate predicateWithFormatArguments(@NotNull String predicateFormat, BytePtr argList);
 
+    @NotNull
     @Generated
     @Selector("predicateWithValue:")
     public static native NSPredicate predicateWithValue(boolean value);
@@ -202,13 +221,14 @@ public class NSCompoundPredicate extends NSPredicate {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSCompoundPredicate initWithCoder(NSCoder coder);
+    public native NSCompoundPredicate initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithType:subpredicates:")
     public native NSCompoundPredicate initWithTypeSubpredicates(@NUInt long type,
-            NSArray<? extends NSPredicate> subpredicates);
+            @NotNull NSArray<? extends NSPredicate> subpredicates);
 
+    @NotNull
     @Generated
     @Selector("subpredicates")
     public native NSArray<?> subpredicates();

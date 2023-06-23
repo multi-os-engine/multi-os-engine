@@ -33,7 +33,13 @@ public final class UIAccessibilityScrollDirection {
     @Generated @NInt public static final long Left = 0x0000000000000002L;
     @Generated @NInt public static final long Up = 0x0000000000000003L;
     @Generated @NInt public static final long Down = 0x0000000000000004L;
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NInt public static final long Next = 0x0000000000000005L;
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NInt public static final long Previous = 0x0000000000000006L;
 
     @Generated

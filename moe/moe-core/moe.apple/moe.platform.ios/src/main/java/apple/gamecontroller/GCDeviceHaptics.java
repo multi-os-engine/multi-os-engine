@@ -22,7 +22,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("GameController")
 @Runtime(ObjCRuntime.class)
@@ -53,22 +58,25 @@ public class GCDeviceHaptics extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -77,7 +85,7 @@ public class GCDeviceHaptics extends NSObject {
      * Creates and returns a new instance of CHHapticEngine with a given GCHapticsLocality. Any patterns you send to
      * this engine will play on
      * all specified actuators.
-     * <p>
+     * 
      * [@note] Often times, it is best to use GCHapticsLocalityDefault. Engines created with the default locality will
      * give users an expected
      * haptic experience. On most game controllers, this will cause your haptic patterns to play on the handles. If you
@@ -87,13 +95,14 @@ public class GCDeviceHaptics extends NSObject {
      * create multiple engines (for example, one with a GCHapticsLocalityLeftHandle locality and another with a
      * GCHapticsLocalityRightHandle
      * locality).
-     *
+     * 
      * @see CHHapticEngine
      * @see GCHapticsLocality
      */
+    @Nullable
     @Generated
     @Selector("createEngineWithLocality:")
-    public native CHHapticEngine createEngineWithLocality(String locality);
+    public native CHHapticEngine createEngineWithLocality(@NotNull String locality);
 
     @Generated
     @Selector("debugDescription")
@@ -129,9 +138,10 @@ public class GCDeviceHaptics extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,12 +166,13 @@ public class GCDeviceHaptics extends NSObject {
 
     /**
      * The set of supported haptic localities for this device - representing the locations of its haptic actuators.
-     * <p>
+     * 
      * [@note] GCHapticsLocalityDefault and GCHapticsLocalityAll are guaranteed to be supported - and they may be
      * equivalent.
-     *
+     * 
      * @see GCHapticsLocality
      */
+    @NotNull
     @Generated
     @Selector("supportedLocalities")
     public native NSSet<String> supportedLocalities();

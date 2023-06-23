@@ -27,14 +27,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVSpeechUtterance
- * <p>
+ * 
  * AVSpeechUtterance is the atom of speaking a string or pausing the synthesizer.
- * <p>
+ * 
  * To start speaking, specify the AVSpeechSynthesisVoice and the string to be spoken, then optionally change the rate,
  * pitch or volume if desired.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("AVFAudio")
@@ -64,37 +68,45 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
     @Selector("allocWithZone:")
     public static native AVSpeechUtterance allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 10.0
+     */
+    @NotNull
     @Generated
     @Selector("attributedSpeechString")
     public native NSAttributedString attributedSpeechString();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -106,7 +118,7 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -117,17 +129,20 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
     @Selector("init")
     public native AVSpeechUtterance init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithAttributedString:")
-    public native AVSpeechUtterance initWithAttributedString(NSAttributedString string);
+    public native AVSpeechUtterance initWithAttributedString(@NotNull NSAttributedString string);
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVSpeechUtterance initWithCoder(NSCoder coder);
+    public native AVSpeechUtterance initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithString:")
-    public native AVSpeechUtterance initWithString(String string);
+    public native AVSpeechUtterance initWithString(@NotNull String string);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -146,9 +161,10 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -181,6 +197,8 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
      * for this speech utterance instead of the default values.
      * If no assistive technologies are on, then the values of the properties on AVSpeechUtterance will be used.
      * Note that querying the properties will not refect the user's settings.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("prefersAssistiveTechnologySettings")
@@ -227,6 +245,8 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
      * for this speech utterance instead of the default values.
      * If no assistive technologies are on, then the values of the properties on AVSpeechUtterance will be used.
      * Note that querying the properties will not refect the user's settings.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPrefersAssistiveTechnologySettings:")
@@ -248,7 +268,7 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
      */
     @Generated
     @Selector("setVoice:")
-    public native void setVoice(AVSpeechSynthesisVoice value);
+    public native void setVoice(@Nullable AVSpeechSynthesisVoice value);
 
     /**
      * [0-1] Default = 1
@@ -257,17 +277,21 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
     @Selector("setVolume:")
     public native void setVolume(float value);
 
+    @NotNull
     @Generated
     @Selector("speechString")
     public native String speechString();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("speechUtteranceWithAttributedString:")
-    public static native AVSpeechUtterance speechUtteranceWithAttributedString(NSAttributedString string);
+    public static native AVSpeechUtterance speechUtteranceWithAttributedString(@NotNull NSAttributedString string);
 
     @Generated
     @Selector("speechUtteranceWithString:")
-    public static native AVSpeechUtterance speechUtteranceWithString(String string);
+    public static native AVSpeechUtterance speechUtteranceWithString(@NotNull String string);
 
     @Generated
     @Selector("superclass")
@@ -291,6 +315,7 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
     /**
      * If no voice is specified, the system's default will be used.
      */
+    @Nullable
     @Generated
     @Selector("voice")
     public native AVSpeechSynthesisVoice voice();
@@ -301,4 +326,33 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Selector("volume")
     public native float volume();
+
+    /**
+     * A speech utterance that expects markup written using the Speech Synthesis Markup Language (SSML) standard.
+     * 
+     * Uses SSML markup to add attributes. If using SSML to request voices that fall under certain attributes, a single
+     * utterance may be split into multiple parts, each sent to the appropriate synthesizer. If no voice matches the
+     * properties,
+     * the voice in the @c voice property of the utterance will be used. If no @c voice is specified, the system's
+     * default
+     * will be used. @c AVSpeechUtterance properties that affect the prosidy of a voice such as @c rate,
+     * [@c] pitchMultiplier, @c pitchMultiplier will not apply to an utterance that uses an SSML representation.
+     * 
+     * Returns nil if invalid SSML is passed in.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("initWithSSMLRepresentation:")
+    public native AVSpeechUtterance initWithSSMLRepresentation(@NotNull String string);
+
+    /**
+     * A speech utterance that expects markup written using the Speech Synthesis Markup Language (SSML) standard.
+     * Returns nil if invalid SSML is passed in.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("speechUtteranceWithSSMLRepresentation:")
+    public static native AVSpeechUtterance speechUtteranceWithSSMLRepresentation(@NotNull String string);
 }

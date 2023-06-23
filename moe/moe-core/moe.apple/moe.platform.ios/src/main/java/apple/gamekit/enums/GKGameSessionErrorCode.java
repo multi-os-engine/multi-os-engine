@@ -19,24 +19,110 @@ package apple.gamekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 10.0
+ * Deprecated-Since: 12.0
+ * Deprecated-Message: GKGameSession is deprecated, use real-time and turn-based matchmaking APIs instead.
+ */
+@Deprecated
 @Generated
 public final class GKGameSessionErrorCode {
-    @Generated @NInt public static final long Unknown = 0x0000000000000001L;
-    @Generated @NInt public static final long NotAuthenticated = 0x0000000000000002L;
-    @Generated @NInt public static final long SessionConflict = 0x0000000000000003L;
-    @Generated @NInt public static final long SessionNotShared = 0x0000000000000004L;
-    @Generated @NInt public static final long ConnectionCancelledByUser = 0x0000000000000005L;
-    @Generated @NInt public static final long ConnectionFailed = 0x0000000000000006L;
-    @Generated @NInt public static final long SessionHasMaxConnectedPlayers = 0x0000000000000007L;
-    @Generated @NInt public static final long SendDataNotConnected = 0x0000000000000008L;
-    @Generated @NInt public static final long SendDataNoRecipients = 0x0000000000000009L;
-    @Generated @NInt public static final long SendDataNotReachable = 0x000000000000000AL;
-    @Generated @NInt public static final long SendRateLimitReached = 0x000000000000000BL;
-    @Generated @NInt public static final long BadContainer = 0x000000000000000CL;
-    @Generated @NInt public static final long CloudQuotaExceeded = 0x000000000000000DL;
-    @Generated @NInt public static final long NetworkFailure = 0x000000000000000EL;
-    @Generated @NInt public static final long CloudDriveDisabled = 0x000000000000000FL;
-    @Generated @NInt public static final long InvalidSession = 0x0000000000000010L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: GKGameSession is deprecated, use real-time and turn-based matchmaking APIs instead.
+     */
+    @Deprecated @Generated @NInt public static final long Unknown = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: GKGameSession is deprecated, use real-time and turn-based matchmaking APIs instead.
+     */
+    @Deprecated @Generated @NInt public static final long NotAuthenticated = 0x0000000000000002L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: GKGameSession is deprecated, use real-time and turn-based matchmaking APIs instead.
+     */
+    @Deprecated @Generated @NInt public static final long SessionConflict = 0x0000000000000003L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: GKGameSession is deprecated, use real-time and turn-based matchmaking APIs instead.
+     */
+    @Deprecated @Generated @NInt public static final long SessionNotShared = 0x0000000000000004L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: GKGameSession is deprecated, use real-time and turn-based matchmaking APIs instead.
+     */
+    @Deprecated @Generated @NInt public static final long ConnectionCancelledByUser = 0x0000000000000005L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: GKGameSession is deprecated, use real-time and turn-based matchmaking APIs instead.
+     */
+    @Deprecated @Generated @NInt public static final long ConnectionFailed = 0x0000000000000006L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: GKGameSession is deprecated, use real-time and turn-based matchmaking APIs instead.
+     */
+    @Deprecated @Generated @NInt public static final long SessionHasMaxConnectedPlayers = 0x0000000000000007L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: GKGameSession is deprecated, use real-time and turn-based matchmaking APIs instead.
+     */
+    @Deprecated @Generated @NInt public static final long SendDataNotConnected = 0x0000000000000008L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: GKGameSession is deprecated, use real-time and turn-based matchmaking APIs instead.
+     */
+    @Deprecated @Generated @NInt public static final long SendDataNoRecipients = 0x0000000000000009L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: GKGameSession is deprecated, use real-time and turn-based matchmaking APIs instead.
+     */
+    @Deprecated @Generated @NInt public static final long SendDataNotReachable = 0x000000000000000AL;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: GKGameSession is deprecated, use real-time and turn-based matchmaking APIs instead.
+     */
+    @Deprecated @Generated @NInt public static final long SendRateLimitReached = 0x000000000000000BL;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: GKGameSession is deprecated, use real-time and turn-based matchmaking APIs instead.
+     */
+    @Deprecated @Generated @NInt public static final long BadContainer = 0x000000000000000CL;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: GKGameSession is deprecated, use real-time and turn-based matchmaking APIs instead.
+     */
+    @Deprecated @Generated @NInt public static final long CloudQuotaExceeded = 0x000000000000000DL;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: GKGameSession is deprecated, use real-time and turn-based matchmaking APIs instead.
+     */
+    @Deprecated @Generated @NInt public static final long NetworkFailure = 0x000000000000000EL;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: GKGameSession is deprecated, use real-time and turn-based matchmaking APIs instead.
+     */
+    @Deprecated @Generated @NInt public static final long CloudDriveDisabled = 0x000000000000000FL;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: GKGameSession is deprecated, use real-time and turn-based matchmaking APIs instead.
+     */
+    @Deprecated @Generated @NInt public static final long InvalidSession = 0x0000000000000010L;
 
     @Generated
     private GKGameSessionErrorCode() {

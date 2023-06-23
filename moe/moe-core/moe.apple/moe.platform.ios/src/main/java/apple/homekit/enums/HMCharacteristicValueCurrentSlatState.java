@@ -21,15 +21,26 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueCurrentSlatState
- * <p>
+ * 
  * [@constant] HMCharacteristicValueCurrentSlatStateStationary Slats are stationary.
  * [@constant] HMCharacteristicValueCurrentSlatStateJammed Slats are jammed.
  * [@constant] HMCharacteristicValueCurrentSlatStateOscillating Slats are oscillating.
+ * 
+ * API-Since: 10.2
  */
 @Generated
 public final class HMCharacteristicValueCurrentSlatState {
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Stationary = 0x0000000000000000L;
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Jammed = 0x0000000000000001L;
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Oscillating = 0x0000000000000002L;
 
     @Generated

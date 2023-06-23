@@ -21,23 +21,23 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] CKRecordSavePolicy
- * <p>
+ * 
  * [@constant] CKRecordSaveIfServerRecordUnchanged
- * <p>
+ * 
  * Locally-edited keys are sent to the server.
  * If the record on the server has been modified, fail the write and return an error. A CKShare's participants array is
  * always treated as @c CKRecordSaveIfServerRecordUnchanged, regardless of the @c savePolicy of the operation that
  * modifies the share.
- * <p>
+ * 
  * [@constant] CKRecordSaveChangedKeys
- * <p>
+ * 
  * Locally-edited keys are written to the server.
  * Any previously committed change to the server, for example by other devices, will be overwritten by the locally
  * changed value.
  * This policy does not compare the record change tag and therefore will never return @c CKErrorServerRecordChanged
- * <p>
+ * 
  * [@constant] CKRecordSaveAllKeys
- * <p>
+ * 
  * All local keys are written to the server.
  * Any previously committed change to the server, for example by other devices, will be overwritten by the local value.
  * Keys present only on the server remain unchanged.
@@ -46,13 +46,23 @@ import org.moe.natj.general.ann.NInt;
  * 2 - The presence of @c desiredKeys on the fetch / query that returned this record meant that only a portion of the
  * record's keys were downloaded.
  * This policy does not compare the record change tag and therefore will never return @c CKErrorServerRecordChanged.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class CKRecordSavePolicy {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long IfServerRecordUnchanged = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long ChangedKeys = 0x0000000000000001L;
     /**
      * Does not compare record change tags
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long AllKeys = 0x0000000000000002L;
 

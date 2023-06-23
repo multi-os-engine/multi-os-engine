@@ -22,7 +22,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.3
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -53,22 +58,25 @@ public class HMAccessorySetupPayload extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -92,25 +100,30 @@ public class HMAccessorySetupPayload extends NSObject {
 
     /**
      * Creates a new accessory setup payload to add an accessory to the home.
-     *
+     * 
      * @param setupPayloadURL The HomeKit setup payload for the accessory being added to the home.
+     * 
      * @return Returns an accessory setup payload object if successful or nil on error.
      */
     @Generated
     @Selector("initWithURL:")
-    public native HMAccessorySetupPayload initWithURL(NSURL setupPayloadURL);
+    public native HMAccessorySetupPayload initWithURL(@Nullable NSURL setupPayloadURL);
 
     /**
      * Creates a new accessory setup payload to add an accessory to the home.
-     *
+     * 
      * @param setupPayloadURL The HomeKit setup payload URL for the accessory being added to the home.`
+     * 
      * @param ownershipToken  The token proving ownership of the accessory being added to the home.
+     * 
      * @return Returns an accessory setup payload object if successful or nil on error.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("initWithURL:ownershipToken:")
-    public native HMAccessorySetupPayload initWithURLOwnershipToken(NSURL setupPayloadURL,
-            HMAccessoryOwnershipToken ownershipToken);
+    public native HMAccessorySetupPayload initWithURLOwnershipToken(@NotNull NSURL setupPayloadURL,
+            @Nullable HMAccessoryOwnershipToken ownershipToken);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -129,9 +142,10 @@ public class HMAccessorySetupPayload extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("HomeKit")
@@ -44,6 +46,7 @@ public class HMAddAccessoryRequest extends NSObject {
     /**
      * The category of the accessory to be added.
      */
+    @NotNull
     @Generated
     @Selector("accessoryCategory")
     public native HMAccessoryCategory accessoryCategory();
@@ -51,6 +54,7 @@ public class HMAddAccessoryRequest extends NSObject {
     /**
      * Name of the accessory to be added.
      */
+    @NotNull
     @Generated
     @Selector("accessoryName")
     public native String accessoryName();
@@ -67,22 +71,25 @@ public class HMAddAccessoryRequest extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -103,6 +110,7 @@ public class HMAddAccessoryRequest extends NSObject {
     /**
      * Home that the accessory is to be added to.
      */
+    @NotNull
     @Generated
     @Selector("home")
     public native HMHome home();
@@ -128,9 +136,10 @@ public class HMAddAccessoryRequest extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -139,33 +148,43 @@ public class HMAddAccessoryRequest extends NSObject {
 
     /**
      * Creates an accessory setup payload with ownership token
-     * <p>
+     * 
      * This method may fail if this request requires a setup payload URL.
-     *
+     * 
      * @param ownershipToken The token proving ownership of the accessory being added to the home.
+     * 
      * @return Returns an accessory setup payload object if successful or nil on error.
      */
+    @Nullable
     @Generated
     @Selector("payloadWithOwnershipToken:")
-    public native HMAccessorySetupPayload payloadWithOwnershipToken(HMAccessoryOwnershipToken ownershipToken);
+    public native HMAccessorySetupPayload payloadWithOwnershipToken(@NotNull HMAccessoryOwnershipToken ownershipToken);
 
     /**
      * Creates an accessory setup payload with URL and ownership token
-     * <p>
+     * 
      * This method may fail if the setup payload URL is not a valid payload URL.
-     *
+     * 
      * @param setupPayloadURL The HomeKit setup payload for the accessory being added to the home.
+     * 
      * @param ownershipToken  The token proving ownership of the accessory being added to the home.
+     * 
      * @return Returns an accessory setup payload object if successful or nil on error.
      */
+    @Nullable
     @Generated
     @Selector("payloadWithURL:ownershipToken:")
-    public native HMAccessorySetupPayload payloadWithURLOwnershipToken(NSURL setupPayloadURL,
-            HMAccessoryOwnershipToken ownershipToken);
+    public native HMAccessorySetupPayload payloadWithURLOwnershipToken(@NotNull NSURL setupPayloadURL,
+            @NotNull HMAccessoryOwnershipToken ownershipToken);
 
     /**
      * Indication if the ownership token needs to be updated for this request.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("requiresOwnershipToken")
     public native boolean requiresOwnershipToken();

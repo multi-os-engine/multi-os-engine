@@ -2,7 +2,6 @@ package apple.carplay;
 
 import apple.NSObject;
 import apple.carplay.protocol.CPSelectableListItem;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -28,10 +27,15 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@c] CPListItem describes a single object appearing in a list template.
  * Each @c CPListItem is displayed as a single cell in the list.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CarPlay")
@@ -63,22 +67,25 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -94,6 +101,7 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
     /**
      * Any extra text displayed below the primary text in a cell displaying this list item.
      */
+    @Nullable
     @Generated
     @Selector("detailText")
     public native String detailText();
@@ -105,19 +113,20 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * An image displayed on the leading side of a cell displaying this list item.
-     * <p>
+     * 
      * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image,
      * provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
-     * <p>
+     * 
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
-     * <p>
+     * 
      * Animated images are not supported. If an animated image is assigned, only the first image will be used.
      * To properly size your list images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
      */
+    @Nullable
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -131,43 +140,48 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
      */
     @Generated
     @Selector("initWithText:detailText:")
-    public native CPListItem initWithTextDetailText(String text, String detailText);
+    public native CPListItem initWithTextDetailText(@Nullable String text, @Nullable String detailText);
 
     /**
      * Initialize a list item with text, detail text, and an image.
-     * <p>
+     * 
      * Your app should provide a @c UIImage that is display-ready, containing
      * two @c UIImageAssets, corresponding to night and day mode.
-     * <p>
+     * 
      * [@note] The maximum size of the image is given by +[CPListItem maximumImageSize].
-     * <p>
+     * 
      * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image,
      * provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
-     * <p>
+     * 
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
-     * <p>
+     * 
      * To properly size your list images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
      */
     @Generated
     @Selector("initWithText:detailText:image:")
-    public native CPListItem initWithTextDetailTextImage(String text, String detailText, UIImage image);
+    public native CPListItem initWithTextDetailTextImage(@Nullable String text, @Nullable String detailText,
+            @Nullable UIImage image);
 
     /**
      * Initialize a list item with text, detailtext, an image, and a disclosure indicator.
-     * <p>
+     * 
      * [@note] The maximum size of the image is given by +[CPListItem maximumImageSize].
-     * <p>
+     * 
      * To properly size your list images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("initWithText:detailText:image:showsDisclosureIndicator:")
-    public native CPListItem initWithTextDetailTextImageShowsDisclosureIndicator(String text, String detailText,
-            UIImage image, boolean showsDisclosureIndicator);
+    public native CPListItem initWithTextDetailTextImageShowsDisclosureIndicator(@Nullable String text,
+            @Nullable String detailText, @Nullable UIImage image, boolean showsDisclosureIndicator);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -186,9 +200,10 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -205,7 +220,7 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     @Generated
     @Selector("setUserInfo:")
-    public native void setUserInfo(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setUserInfo(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
     @Selector("setVersion:")
@@ -214,11 +229,15 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
     /**
      * If YES, a cell displaying this list item will render with a disclosure indicator
      * in the trailing side of the cell.
-     * <p>
+     * 
      * [@note] If set, this property takes precedence over showsCloudLabel.
-     * <p>
+     * 
      * Defaults to NO.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("showsDisclosureIndicator")
     public native boolean showsDisclosureIndicator();
@@ -227,10 +246,12 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Nullable
     @Generated
     @Selector("text")
     public native String text();
 
+    @Nullable
     @Generated
     @Selector("userInfo")
     @MappedReturn(ObjCObjectMapper.class)
@@ -243,34 +264,38 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * An image displayed on the trailing side of a cell displaying this list item.
-     * <p>
+     * 
      * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image,
      * provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
-     * <p>
+     * 
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
-     * <p>
+     * 
      * Animated images are not supported. If an animated image is assigned, only the first image will be used.
-     * <p>
+     * 
      * [@note] If set, this property takes precedence over the @c accessoryType.
      */
+    @Nullable
     @Generated
     @Selector("accessoryImage")
     public native UIImage accessoryImage();
 
     /**
      * An accessory image type to display in the trailing portion of this list item.
-     * <p>
+     * 
      * [@note] If you specify a custom accessoryImage, it will take priority over one of the
      * built-in accessory types specified here.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("accessoryType")
     @NInt
     public native long accessoryType();
 
+    @Nullable
     @Generated
     @Selector("handler")
     @ObjCBlock(name = "call_handler_ret")
@@ -278,31 +303,36 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * Initialize a list item with text, detailtext, an image, an accessory type, and an accessory image.
-     * <p>
+     * 
      * [@note] The maximum size of the image is given by +[CPListItem maximumImageSize].
-     * <p>
+     * 
      * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image,
      * provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
-     * <p>
+     * 
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
-     * <p>
+     * 
      * If you specify an @c accessoryImage, your @c accessoryType will be set to @c CPListItemAccessoryTypeNone.
-     * <p>
+     * 
      * To properly size your list images, your app should consider the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithText:detailText:image:accessoryImage:accessoryType:")
-    public native CPListItem initWithTextDetailTextImageAccessoryImageAccessoryType(String text, String detailText,
-            UIImage image, UIImage accessoryImage, @NInt long accessoryType);
+    public native CPListItem initWithTextDetailTextImageAccessoryImageAccessoryType(@Nullable String text,
+            @Nullable String detailText, @Nullable UIImage image, @Nullable UIImage accessoryImage,
+            @NInt long accessoryType);
 
     /**
      * If YES, a cell displaying this list item will render with an explicit indicator to the trailing edge of the text
-     * <p>
+     * 
      * Defaults to NO.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isExplicitContent")
@@ -311,6 +341,8 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
     /**
      * Indicate that this list item represents content that is currently playing. This list item
      * will render with an icon indicating that this item is playing.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isPlaying")
@@ -318,9 +350,11 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * The expected image size for your @c CPListItem.
-     * <p>
+     * 
      * To properly size your list images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("maximumImageSize")
@@ -329,6 +363,8 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * Set a fractional value between 0 and 1 to display a progress bar on this list item.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("playbackProgress")
@@ -337,8 +373,10 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * Specify the location in the list item for the now playing indicator.
-     * <p>
+     * 
      * Defaults to CPListItemPlayingIndicatorLocationLeading.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("playingIndicatorLocation")
@@ -347,24 +385,28 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * Update the accessory image in this list item, reloading this item in the table if needed.
-     * <p>
+     * 
      * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image,
      * provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
-     * <p>
+     * 
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAccessoryImage:")
-    public native void setAccessoryImage(UIImage accessoryImage);
+    public native void setAccessoryImage(@Nullable UIImage accessoryImage);
 
     /**
      * An accessory image type to display in the trailing portion of this list item.
-     * <p>
+     * 
      * [@note] If you specify a custom accessoryImage, it will take priority over one of the
      * built-in accessory types specified here.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAccessoryType:")
@@ -372,15 +414,19 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * Update the detail text in this list item, reloading this item in the table if needed.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDetailText:")
-    public native void setDetailText(String detailText);
+    public native void setDetailText(@Nullable String detailText);
 
     /**
      * If YES, a cell displaying this list item will render with an explicit indicator to the trailing edge of the text
-     * <p>
+     * 
      * Defaults to NO.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setExplicitContent:")
@@ -388,25 +434,30 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     @Generated
     @Selector("setHandler:")
-    public native void setHandler(@ObjCBlock(name = "call_setHandler") CPSelectableListItem.Block_setHandler value);
+    public native void setHandler(
+            @Nullable @ObjCBlock(name = "call_setHandler") CPSelectableListItem.Block_setHandler value);
 
     /**
      * Update the image in this list item, reloading this item in the table if needed.
-     * <p>
+     * 
      * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image,
      * provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
-     * <p>
+     * 
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setImage:")
-    public native void setImage(UIImage image);
+    public native void setImage(@Nullable UIImage image);
 
     /**
      * Set a fractional value between 0 and 1 to display a progress bar on this list item.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPlaybackProgress:")
@@ -415,6 +466,8 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
     /**
      * Indicate that this list item represents content that is currently playing. This list item
      * will render with an icon indicating that this item is playing.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPlaying:")
@@ -422,8 +475,10 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * Specify the location in the list item for the now playing indicator.
-     * <p>
+     * 
      * Defaults to CPListItemPlayingIndicatorLocationLeading.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPlayingIndicatorLocation:")
@@ -431,25 +486,35 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * If YES, a cell displaying this list item will render with an explicit label to the trailing edge of the text
-     * <p>
+     * 
      * Defaults to NO.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("setShowsExplicitLabel:")
     public native void setShowsExplicitLabel(boolean value);
 
     /**
      * Assign a new text label to this list item, automatically reloading this item in its list template.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setText:")
-    public native void setText(String text);
+    public native void setText(@NotNull String text);
 
     /**
      * If YES, a cell displaying this list item will render with an explicit label to the trailing edge of the text
-     * <p>
+     * 
      * Defaults to NO.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("showsExplicitLabel")
     public native boolean showsExplicitLabel();

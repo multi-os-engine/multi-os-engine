@@ -21,11 +21,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCLossLayer
- * <p>
+ * 
  * A loss layer
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -57,27 +61,29 @@ public class MLCLossLayer extends MLCLayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType  The reduction type to use
      * @param labelSmoothing Label smoothing value
      * @param classCount     Number of classes
      * @param weight         A scalar floating point value
      * @return A new categorical cross entropy loss layer.
      */
+    @NotNull
     @Generated
     @Selector("categoricalCrossEntropyLossWithReductionType:labelSmoothing:classCount:weight:")
     public static native MLCLossLayer categoricalCrossEntropyLossWithReductionTypeLabelSmoothingClassCountWeight(
@@ -85,47 +91,53 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType  The reduction type to use
      * @param labelSmoothing Label smoothing value
      * @param classCount     Number of classes
      * @param weights        The loss label weights tensor
      * @return A new categorical cross entropy loss layer.
      */
+    @NotNull
     @Generated
     @Selector("categoricalCrossEntropyLossWithReductionType:labelSmoothing:classCount:weights:")
     public static native MLCLossLayer categoricalCrossEntropyLossWithReductionTypeLabelSmoothingClassCountWeights(
-            int reductionType, float labelSmoothing, @NUInt long classCount, MLCTensor weights);
+            int reductionType, float labelSmoothing, @NUInt long classCount, @Nullable MLCTensor weights);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param weight        A scalar floating-point value
      * @return A new cosine distance loss layer.
      */
+    @NotNull
     @Generated
     @Selector("cosineDistanceLossWithReductionType:weight:")
     public static native MLCLossLayer cosineDistanceLossWithReductionTypeWeight(int reductionType, float weight);
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param weights       The loss label weights tensor
      * @return A new cosine distance loss layer.
      */
+    @NotNull
     @Generated
     @Selector("cosineDistanceLossWithReductionType:weights:")
-    public static native MLCLossLayer cosineDistanceLossWithReductionTypeWeights(int reductionType, MLCTensor weights);
+    public static native MLCLossLayer cosineDistanceLossWithReductionTypeWeights(int reductionType,
+            @Nullable MLCTensor weights);
 
     @Generated
     @Selector("debugDescription")
@@ -137,9 +149,10 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * [@property] descriptor
-     * <p>
+     * 
      * The loss descriptor
      */
+    @NotNull
     @Generated
     @Selector("descriptor")
     public native MLCLossDescriptor descriptor();
@@ -151,34 +164,37 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param weight        A scalar floating-point value
      * @return A new hinge loss layer.
      */
+    @NotNull
     @Generated
     @Selector("hingeLossWithReductionType:weight:")
     public static native MLCLossLayer hingeLossWithReductionTypeWeight(int reductionType, float weight);
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param weights       The loss label weights tensor
      * @return A new hinge loss layer.
      */
+    @NotNull
     @Generated
     @Selector("hingeLossWithReductionType:weights:")
-    public static native MLCLossLayer hingeLossWithReductionTypeWeights(int reductionType, MLCTensor weights);
+    public static native MLCLossLayer hingeLossWithReductionTypeWeights(int reductionType, @Nullable MLCTensor weights);
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param delta         The delta parameter
      * @param weight        A scalar floating-point value
      * @return A new huber loss layer.
      */
+    @NotNull
     @Generated
     @Selector("huberLossWithReductionType:delta:weight:")
     public static native MLCLossLayer huberLossWithReductionTypeDeltaWeight(int reductionType, float delta,
@@ -186,16 +202,17 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param delta         The delta parameter
      * @param weights       The loss label weights tensor
      * @return A new huber loss layer.
      */
+    @NotNull
     @Generated
     @Selector("huberLossWithReductionType:delta:weights:")
     public static native MLCLossLayer huberLossWithReductionTypeDeltaWeights(int reductionType, float delta,
-            MLCTensor weights);
+            @Nullable MLCTensor weights);
 
     @Generated
     @Selector("init")
@@ -218,39 +235,42 @@ public class MLCLossLayer extends MLCLayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param lossDescriptor The loss descriptor
      * @return A new loss layer.
      */
     @Generated
     @Selector("layerWithDescriptor:")
-    public static native MLCLossLayer layerWithDescriptor(MLCLossDescriptor lossDescriptor);
+    public static native MLCLossLayer layerWithDescriptor(@NotNull MLCLossDescriptor lossDescriptor);
 
     /**
      * Create a MLComputeLoss layer
-     *
+     * 
      * @param lossDescriptor The loss descriptor
      * @param weights        The loss label weights tensor
      * @return A new loss layer.
      */
     @Generated
     @Selector("layerWithDescriptor:weights:")
-    public static native MLCLossLayer layerWithDescriptorWeights(MLCLossDescriptor lossDescriptor, MLCTensor weights);
+    public static native MLCLossLayer layerWithDescriptorWeights(@NotNull MLCLossDescriptor lossDescriptor,
+            @NotNull MLCTensor weights);
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param epsilon       The epsilon parameter
      * @param weight        A scalar floating-point value
      * @return A new log loss layer.
      */
+    @NotNull
     @Generated
     @Selector("logLossWithReductionType:epsilon:weight:")
     public static native MLCLossLayer logLossWithReductionTypeEpsilonWeight(int reductionType, float epsilon,
@@ -258,62 +278,67 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param epsilon       The epsilon parameter
      * @param weights       The loss label weights tensor
      * @return A new log loss layer.
      */
+    @NotNull
     @Generated
     @Selector("logLossWithReductionType:epsilon:weights:")
     public static native MLCLossLayer logLossWithReductionTypeEpsilonWeights(int reductionType, float epsilon,
-            MLCTensor weights);
+            @Nullable MLCTensor weights);
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param weight        A scalar floating-point value
      * @return A new L1 i.e. mean absolute error loss layer.
      */
+    @NotNull
     @Generated
     @Selector("meanAbsoluteErrorLossWithReductionType:weight:")
     public static native MLCLossLayer meanAbsoluteErrorLossWithReductionTypeWeight(int reductionType, float weight);
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param weights       The loss label weights tensor
      * @return A new L1 i.e. mean absolute error loss layer.
      */
+    @NotNull
     @Generated
     @Selector("meanAbsoluteErrorLossWithReductionType:weights:")
     public static native MLCLossLayer meanAbsoluteErrorLossWithReductionTypeWeights(int reductionType,
-            MLCTensor weights);
+            @Nullable MLCTensor weights);
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param weight        A scalar floating-point value
      * @return A new L2 i.e. mean squared error loss layer.
      */
+    @NotNull
     @Generated
     @Selector("meanSquaredErrorLossWithReductionType:weight:")
     public static native MLCLossLayer meanSquaredErrorLossWithReductionTypeWeight(int reductionType, float weight);
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param weights       The loss label weights tensor
      * @return A new L2 i.e. mean squared error loss layer.
      */
+    @NotNull
     @Generated
     @Selector("meanSquaredErrorLossWithReductionType:weights:")
     public static native MLCLossLayer meanSquaredErrorLossWithReductionTypeWeights(int reductionType,
-            MLCTensor weights);
+            @Nullable MLCTensor weights);
 
     @Generated
     @Owned
@@ -334,12 +359,13 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType  The reduction type to use
      * @param labelSmoothing Label smoothing value
      * @param weight         A scalar floating-point value
      * @return A new sigmoid cross entropy loss layer.
      */
+    @NotNull
     @Generated
     @Selector("sigmoidCrossEntropyLossWithReductionType:labelSmoothing:weight:")
     public static native MLCLossLayer sigmoidCrossEntropyLossWithReductionTypeLabelSmoothingWeight(int reductionType,
@@ -347,26 +373,28 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType  The reduction type to use
      * @param labelSmoothing Label smoothing value
      * @param weights        The loss label weights tensor
      * @return A new sigmoid cross entropy loss layer.
      */
+    @NotNull
     @Generated
     @Selector("sigmoidCrossEntropyLossWithReductionType:labelSmoothing:weights:")
     public static native MLCLossLayer sigmoidCrossEntropyLossWithReductionTypeLabelSmoothingWeights(int reductionType,
-            float labelSmoothing, MLCTensor weights);
+            float labelSmoothing, @Nullable MLCTensor weights);
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType  The reduction type to use
      * @param labelSmoothing Label smoothing value
      * @param classCount     Number of classes
      * @param weight         A scalar floating point value
      * @return A new softmax cross entropy loss layer.
      */
+    @NotNull
     @Generated
     @Selector("softmaxCrossEntropyLossWithReductionType:labelSmoothing:classCount:weight:")
     public static native MLCLossLayer softmaxCrossEntropyLossWithReductionTypeLabelSmoothingClassCountWeight(
@@ -374,17 +402,18 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType  The reduction type to use
      * @param labelSmoothing Label smoothing value
      * @param classCount     Number of classes
      * @param weights        The loss label weights tensor
      * @return A new softmax cross entropy loss layer.
      */
+    @NotNull
     @Generated
     @Selector("softmaxCrossEntropyLossWithReductionType:labelSmoothing:classCount:weights:")
     public static native MLCLossLayer softmaxCrossEntropyLossWithReductionTypeLabelSmoothingClassCountWeights(
-            int reductionType, float labelSmoothing, @NUInt long classCount, MLCTensor weights);
+            int reductionType, float labelSmoothing, @NUInt long classCount, @Nullable MLCTensor weights);
 
     @Generated
     @Selector("superclass")
@@ -392,7 +421,7 @@ public class MLCLossLayer extends MLCLayer {
 
     @Generated
     @Selector("supportsDataType:onDevice:")
-    public static native boolean supportsDataTypeOnDevice(int dataType, MLCDevice device);
+    public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
 
     @Generated
     @Selector("version")
@@ -401,9 +430,10 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * [@property] weights
-     * <p>
+     * 
      * The loss label weights tensor
      */
+    @Nullable
     @Generated
     @Selector("weights")
     public native MLCTensor weights();

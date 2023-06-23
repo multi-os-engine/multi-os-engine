@@ -1,8 +1,6 @@
 package apple.pencilkit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -27,9 +25,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The data model value representing a stroke in a `PKDrawing`.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("PencilKit")
@@ -61,31 +65,35 @@ public class PKStroke extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -106,12 +114,13 @@ public class PKStroke extends NSObject implements NSCopying {
 
     @Generated
     @Selector("initWithInk:strokePath:transform:mask:")
-    public native PKStroke initWithInkStrokePathTransformMask(PKInk ink, PKStrokePath strokePath,
-            @ByValue CGAffineTransform transform, UIBezierPath mask);
+    public native PKStroke initWithInkStrokePathTransformMask(@NotNull PKInk ink, @NotNull PKStrokePath strokePath,
+            @ByValue CGAffineTransform transform, @Nullable UIBezierPath mask);
 
     /**
      * The ink used to render this stroke.
      */
+    @NotNull
     @Generated
     @Selector("ink")
     public native PKInk ink();
@@ -133,10 +142,12 @@ public class PKStroke extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("mask")
     public native UIBezierPath mask();
@@ -145,6 +156,7 @@ public class PKStroke extends NSObject implements NSCopying {
      * These are the parametric parameter ranges of points in `strokePath`
      * that intersect the stroke's mask.
      */
+    @NotNull
     @Generated
     @Selector("maskedPathRanges")
     public native NSArray<? extends PKFloatRange> maskedPathRanges();
@@ -157,6 +169,7 @@ public class PKStroke extends NSObject implements NSCopying {
     /**
      * The B-spline path that describes this stroke.
      */
+    @NotNull
     @Generated
     @Selector("path")
     public native PKStrokePath path();
@@ -199,4 +212,22 @@ public class PKStroke extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("initWithInk:strokePath:transform:mask:randomSeed:")
+    public native PKStroke initWithInkStrokePathTransformMaskRandomSeed(@NotNull PKInk ink,
+            @NotNull PKStrokePath strokePath, @ByValue CGAffineTransform transform, @Nullable UIBezierPath mask,
+            int randomSeed);
+
+    /**
+     * The random seed for drawing strokes that use randomized effects.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("randomSeed")
+    public native int randomSeed();
 }

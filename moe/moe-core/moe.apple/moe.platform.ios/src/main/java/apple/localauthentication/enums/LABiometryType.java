@@ -3,6 +3,9 @@ package apple.localauthentication.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 public final class LABiometryType {
     @Generated
@@ -11,10 +14,15 @@ public final class LABiometryType {
 
     /**
      * The device does not support biometry.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 11.2
      */
-    @Generated @NInt public static final long None = 0x0000000000000000L;
+    @Deprecated @Generated @NInt public static final long None = 0x0000000000000000L;
     /**
      * The device supports Touch ID.
+     * 
+     * API-Since: 11.0
      */
     @Generated @NInt public static final long TypeTouchID = 0x0000000000000001L;
     /**
@@ -23,6 +31,8 @@ public final class LABiometryType {
     @Generated @NInt public static final long TypeFaceID = 0x0000000000000002L;
     /**
      * The device does not support biometry.
+     * 
+     * API-Since: 11.2
      */
     @Generated @NInt public static final long TypeNone = 0x0000000000000000L;
 }

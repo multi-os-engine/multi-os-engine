@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("StoreKit")
@@ -32,8 +33,10 @@ import org.moe.natj.objc.ann.Selector;
 public interface SKProductsRequestDelegate extends SKRequestDelegate {
     /**
      * Sent immediately before -requestDidFinish:
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("productsRequest:didReceiveResponse:")
-    void productsRequestDidReceiveResponse(SKProductsRequest request, SKProductsResponse response);
+    void productsRequestDidReceiveResponse(@NotNull SKProductsRequest request, @NotNull SKProductsResponse response);
 }

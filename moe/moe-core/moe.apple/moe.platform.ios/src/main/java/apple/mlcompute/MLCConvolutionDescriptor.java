@@ -24,11 +24,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCConvolutionDescriptor
- * <p>
+ * 
  * The MLCConvolutionDescriptor specifies a convolution descriptor
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -60,29 +64,32 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * Create a MLCConvolutionDescriptor object for convolution transpose
-     *
+     * 
      * @param kernelSizes               The kernel sizes in x and y
      * @param inputFeatureChannelCount  The number of feature channels in the input tensor
      * @param outputFeatureChannelCount The number of feature channels in the output tensor
@@ -93,16 +100,18 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * @param paddingSizes              The padding sizes in x and y if padding policy is MLCPaddingPolicyUsePaddingSIze
      * @return A new MLCConvolutionDescriptor object.
      */
+    @NotNull
     @Generated
     @Selector("convolutionTransposeDescriptorWithKernelSizes:inputFeatureChannelCount:outputFeatureChannelCount:groupCount:strides:dilationRates:paddingPolicy:paddingSizes:")
     public static native MLCConvolutionDescriptor convolutionTransposeDescriptorWithKernelSizesInputFeatureChannelCountOutputFeatureChannelCountGroupCountStridesDilationRatesPaddingPolicyPaddingSizes(
-            NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
-            @NUInt long outputFeatureChannelCount, @NUInt long groupCount, NSArray<? extends NSNumber> strides,
-            NSArray<? extends NSNumber> dilationRates, int paddingPolicy, NSArray<? extends NSNumber> paddingSizes);
+            @NotNull NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
+            @NUInt long outputFeatureChannelCount, @NUInt long groupCount, @NotNull NSArray<? extends NSNumber> strides,
+            @NotNull NSArray<? extends NSNumber> dilationRates, int paddingPolicy,
+            @Nullable NSArray<? extends NSNumber> paddingSizes);
 
     /**
      * Create a MLCConvolutionDescriptor object for convolution transpose
-     *
+     * 
      * @param kernelSizes               The kernel sizes in x and y
      * @param inputFeatureChannelCount  The number of feature channels in the input tensor
      * @param outputFeatureChannelCount The number of feature channels in the output tensor
@@ -111,22 +120,24 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * @param paddingSizes              The padding sizes in x and y if padding policy is MLCPaddingPolicyUsePaddingSIze
      * @return A new MLCConvolutionDescriptor object.
      */
+    @NotNull
     @Generated
     @Selector("convolutionTransposeDescriptorWithKernelSizes:inputFeatureChannelCount:outputFeatureChannelCount:strides:paddingPolicy:paddingSizes:")
     public static native MLCConvolutionDescriptor convolutionTransposeDescriptorWithKernelSizesInputFeatureChannelCountOutputFeatureChannelCountStridesPaddingPolicyPaddingSizes(
-            NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
-            @NUInt long outputFeatureChannelCount, NSArray<? extends NSNumber> strides, int paddingPolicy,
-            NSArray<? extends NSNumber> paddingSizes);
+            @NotNull NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
+            @NUInt long outputFeatureChannelCount, @NotNull NSArray<? extends NSNumber> strides, int paddingPolicy,
+            @Nullable NSArray<? extends NSNumber> paddingSizes);
 
     /**
      * Create a MLCConvolutionDescriptor object for convolution transpose
-     *
+     * 
      * @param kernelWidth               The kernel size in x
      * @param kernelHeight              The kernel size in x
      * @param inputFeatureChannelCount  The number of feature channels in the input tensor
      * @param outputFeatureChannelCount The number of feature channels in the output tensor
      * @return A new MLCConvolutionDescriptor object.
      */
+    @NotNull
     @Generated
     @Selector("convolutionTransposeDescriptorWithKernelWidth:kernelHeight:inputFeatureChannelCount:outputFeatureChannelCount:")
     public static native MLCConvolutionDescriptor convolutionTransposeDescriptorWithKernelWidthKernelHeightInputFeatureChannelCountOutputFeatureChannelCount(
@@ -135,18 +146,19 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] convolutionType
-     * <p>
+     * 
      * The type of convolution.
      */
     @Generated
     @Selector("convolutionType")
     public native int convolutionType();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -154,7 +166,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCConvolutionDescriptor object for depthwise convolution
-     *
+     * 
      * @param kernelSizes              The kernel sizes in x and y
      * @param inputFeatureChannelCount The number of feature channels in the input tensor
      * @param channelMultiplier        The channel multiplier
@@ -164,16 +176,18 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * @param paddingSizes             The padding sizes in x and y if padding policy is MLCPaddingPolicyUsePaddingSIze
      * @return A new MLCConvolutionDescriptor object.
      */
+    @NotNull
     @Generated
     @Selector("depthwiseConvolutionDescriptorWithKernelSizes:inputFeatureChannelCount:channelMultiplier:strides:dilationRates:paddingPolicy:paddingSizes:")
     public static native MLCConvolutionDescriptor depthwiseConvolutionDescriptorWithKernelSizesInputFeatureChannelCountChannelMultiplierStridesDilationRatesPaddingPolicyPaddingSizes(
-            NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
-            @NUInt long channelMultiplier, NSArray<? extends NSNumber> strides,
-            NSArray<? extends NSNumber> dilationRates, int paddingPolicy, NSArray<? extends NSNumber> paddingSizes);
+            @NotNull NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
+            @NUInt long channelMultiplier, @NotNull NSArray<? extends NSNumber> strides,
+            @NotNull NSArray<? extends NSNumber> dilationRates, int paddingPolicy,
+            @Nullable NSArray<? extends NSNumber> paddingSizes);
 
     /**
      * Create a MLCConvolutionDescriptor object for depthwise convolution
-     *
+     * 
      * @param kernelSizes              The kernel sizes in x and y
      * @param inputFeatureChannelCount The number of feature channels in the input tensor
      * @param channelMultiplier        The channel multiplier
@@ -182,22 +196,24 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * @param paddingSizes             The padding sizes in x and y if padding policy is MLCPaddingPolicyUsePaddingSIze
      * @return A new MLCConvolutionDescriptor object.
      */
+    @NotNull
     @Generated
     @Selector("depthwiseConvolutionDescriptorWithKernelSizes:inputFeatureChannelCount:channelMultiplier:strides:paddingPolicy:paddingSizes:")
     public static native MLCConvolutionDescriptor depthwiseConvolutionDescriptorWithKernelSizesInputFeatureChannelCountChannelMultiplierStridesPaddingPolicyPaddingSizes(
-            NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
-            @NUInt long channelMultiplier, NSArray<? extends NSNumber> strides, int paddingPolicy,
-            NSArray<? extends NSNumber> paddingSizes);
+            @NotNull NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
+            @NUInt long channelMultiplier, @NotNull NSArray<? extends NSNumber> strides, int paddingPolicy,
+            @Nullable NSArray<? extends NSNumber> paddingSizes);
 
     /**
      * Create a MLCConvolutionDescriptor object for depthwise convolution
-     *
+     * 
      * @param kernelWidth              The kernel size in x
      * @param kernelHeight             The kernel size in x
      * @param inputFeatureChannelCount The number of feature channels in the input tensor
      * @param channelMultiplier        The channel multiplier
      * @return A new MLCConvolutionDescriptor object.
      */
+    @NotNull
     @Generated
     @Selector("depthwiseConvolutionDescriptorWithKernelWidth:kernelHeight:inputFeatureChannelCount:channelMultiplier:")
     public static native MLCConvolutionDescriptor depthwiseConvolutionDescriptorWithKernelWidthKernelHeightInputFeatureChannelCountChannelMultiplier(
@@ -210,7 +226,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCConvolutionDescriptor object
-     *
+     * 
      * @param kernelSizes               The kernel sizes in x and y
      * @param inputFeatureChannelCount  The number of feature channels in the input tensor
      * @param outputFeatureChannelCount The number of feature channels in the output tensor
@@ -224,13 +240,14 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("descriptorWithKernelSizes:inputFeatureChannelCount:outputFeatureChannelCount:groupCount:strides:dilationRates:paddingPolicy:paddingSizes:")
     public static native MLCConvolutionDescriptor descriptorWithKernelSizesInputFeatureChannelCountOutputFeatureChannelCountGroupCountStridesDilationRatesPaddingPolicyPaddingSizes(
-            NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
-            @NUInt long outputFeatureChannelCount, @NUInt long groupCount, NSArray<? extends NSNumber> strides,
-            NSArray<? extends NSNumber> dilationRates, int paddingPolicy, NSArray<? extends NSNumber> paddingSizes);
+            @NotNull NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
+            @NUInt long outputFeatureChannelCount, @NUInt long groupCount, @NotNull NSArray<? extends NSNumber> strides,
+            @NotNull NSArray<? extends NSNumber> dilationRates, int paddingPolicy,
+            @Nullable NSArray<? extends NSNumber> paddingSizes);
 
     /**
      * Create a MLCConvolutionDescriptor object
-     *
+     * 
      * @param kernelSizes               The kernel sizes in x and y
      * @param inputFeatureChannelCount  The number of feature channels in the input tensor
      * @param outputFeatureChannelCount The number of feature channels in the output tensor
@@ -242,13 +259,13 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("descriptorWithKernelSizes:inputFeatureChannelCount:outputFeatureChannelCount:strides:paddingPolicy:paddingSizes:")
     public static native MLCConvolutionDescriptor descriptorWithKernelSizesInputFeatureChannelCountOutputFeatureChannelCountStridesPaddingPolicyPaddingSizes(
-            NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
-            @NUInt long outputFeatureChannelCount, NSArray<? extends NSNumber> strides, int paddingPolicy,
-            NSArray<? extends NSNumber> paddingSizes);
+            @NotNull NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
+            @NUInt long outputFeatureChannelCount, @NotNull NSArray<? extends NSNumber> strides, int paddingPolicy,
+            @Nullable NSArray<? extends NSNumber> paddingSizes);
 
     /**
      * Create a MLCConvolutionDescriptor object
-     *
+     * 
      * @param kernelWidth               The kernel size in x
      * @param kernelHeight              The kernel size in x
      * @param inputFeatureChannelCount  The number of feature channels in the input tensor
@@ -263,7 +280,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * Creates a convolution descriptor with the specified convolution type.
-     *
+     * 
      * @param convolutionType           The type of convolution.
      * @param kernelSizes               The kernel sizes in x and y.
      * @param inputFeatureChannelCount  The number of feature channels in the input tensor.
@@ -281,13 +298,14 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("descriptorWithType:kernelSizes:inputFeatureChannelCount:outputFeatureChannelCount:groupCount:strides:dilationRates:paddingPolicy:paddingSizes:")
     public static native MLCConvolutionDescriptor descriptorWithTypeKernelSizesInputFeatureChannelCountOutputFeatureChannelCountGroupCountStridesDilationRatesPaddingPolicyPaddingSizes(
-            int convolutionType, NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
-            @NUInt long outputFeatureChannelCount, @NUInt long groupCount, NSArray<? extends NSNumber> strides,
-            NSArray<? extends NSNumber> dilationRates, int paddingPolicy, NSArray<? extends NSNumber> paddingSizes);
+            int convolutionType, @NotNull NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
+            @NUInt long outputFeatureChannelCount, @NUInt long groupCount, @NotNull NSArray<? extends NSNumber> strides,
+            @NotNull NSArray<? extends NSNumber> dilationRates, int paddingPolicy,
+            @Nullable NSArray<? extends NSNumber> paddingSizes);
 
     /**
      * [@property] dilationRateInX
-     * <p>
+     * 
      * The dilation rate i.e. stride of elements in the kernel in x.
      */
     @Generated
@@ -297,7 +315,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] dilationRateInY
-     * <p>
+     * 
      * The dilation rate i.e. stride of elements in the kernel in y.
      */
     @Generated
@@ -307,7 +325,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] groupCount
-     * <p>
+     * 
      * Number of blocked connections from input channels to output channels
      */
     @Generated
@@ -326,7 +344,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] inputFeatureChannelCount
-     * <p>
+     * 
      * Number of channels in the input tensor
      */
     @Generated
@@ -349,7 +367,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] isConvolutionTranspose
-     * <p>
+     * 
      * A flag to indicate if this is a convolution transpose
      */
     @Generated
@@ -362,7 +380,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] kernelHeight
-     * <p>
+     * 
      * The convolution kernel size in y.
      */
     @Generated
@@ -372,7 +390,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] kernelWidth
-     * <p>
+     * 
      * The convolution kernel size in x.
      */
     @Generated
@@ -380,9 +398,10 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
     @NUInt
     public native long kernelWidth();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -391,7 +410,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] outputFeatureChannelCount
-     * <p>
+     * 
      * Number of channels in the output tensor
      */
     @Generated
@@ -401,7 +420,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] paddingPolicy
-     * <p>
+     * 
      * The padding policy to use.
      */
     @Generated
@@ -410,7 +429,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] paddingSizeInX
-     * <p>
+     * 
      * The pooling size in x (left and right) to use if paddingPolicy is MLCPaddingPolicyUsePaddingSize
      */
     @Generated
@@ -420,7 +439,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] paddingSizeInY
-     * <p>
+     * 
      * The pooling size in y (top and bottom) to use if paddingPolicy is MLCPaddingPolicyUsePaddingSize
      */
     @Generated
@@ -442,7 +461,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] strideInX
-     * <p>
+     * 
      * The stride of the kernel in x.
      */
     @Generated
@@ -452,7 +471,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] strideInY
-     * <p>
+     * 
      * The stride of the kernel in y.
      */
     @Generated
@@ -466,7 +485,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] usesDepthwiseConvolution
-     * <p>
+     * 
      * A flag to indicate depthwise convolution
      */
     @Generated

@@ -21,13 +21,17 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] PHASESpatialMixerDefinition
- * <p>
+ * 
  * Spatial mixer definition.
- * <p>
+ * 
  * Spatial mixers render audio with spatialization and environmental effects.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -59,22 +63,25 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -89,9 +96,10 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
 
     /**
      * [@property] distanceModelParameters
-     * <p>
+     * 
      * Distance model parameters (optional).
      */
+    @Nullable
     @Generated
     @Selector("distanceModelParameters")
     public native PHASEDistanceModelParameters distanceModelParameters();
@@ -107,29 +115,34 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
 
     /**
      * initWithSpatialPipeline
-     * <p>
+     * 
      * Create a new PHASESpatialMixerDefinition
-     *
-     * @param spatialPipeline A spatial pipeline.
-     * @return A new PHASESpatialMixerDefinition object
+     * 
+     * @param spatialPipeline
+     *                        A spatial pipeline.
+     * @return
+     *         A new PHASESpatialMixerDefinition object
      */
     @Generated
     @Selector("initWithSpatialPipeline:")
-    public native PHASESpatialMixerDefinition initWithSpatialPipeline(PHASESpatialPipeline spatialPipeline);
+    public native PHASESpatialMixerDefinition initWithSpatialPipeline(@NotNull PHASESpatialPipeline spatialPipeline);
 
     /**
      * initWithSpatialPipeline:identifier
-     * <p>
+     * 
      * Create a new PHASESpatialMixerDefinition
-     *
-     * @param spatialPipeline A spatial pipeline.
-     * @param identifier      An optional custom identifier to give to this object
-     * @return A new PHASESpatialMixerDefinition object
+     * 
+     * @param spatialPipeline
+     *                        A spatial pipeline.
+     * @param identifier
+     *                        An optional custom identifier to give to this object
+     * @return
+     *         A new PHASESpatialMixerDefinition object
      */
     @Generated
     @Selector("initWithSpatialPipeline:identifier:")
-    public native PHASESpatialMixerDefinition initWithSpatialPipelineIdentifier(PHASESpatialPipeline spatialPipeline,
-            String identifier);
+    public native PHASESpatialMixerDefinition initWithSpatialPipelineIdentifier(
+            @NotNull PHASESpatialPipeline spatialPipeline, @NotNull String identifier);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -148,15 +161,17 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] listenerDirectivityModelParameters
-     * <p>
+     * 
      * Listener directivity model parameters (optional).
      */
+    @Nullable
     @Generated
     @Selector("listenerDirectivityModelParameters")
     public native PHASEDirectivityModelParameters listenerDirectivityModelParameters();
@@ -176,30 +191,30 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
 
     /**
      * [@property] distanceModelParameters
-     * <p>
+     * 
      * Distance model parameters (optional).
      */
     @Generated
     @Selector("setDistanceModelParameters:")
-    public native void setDistanceModelParameters(PHASEDistanceModelParameters value);
+    public native void setDistanceModelParameters(@Nullable PHASEDistanceModelParameters value);
 
     /**
      * [@property] listenerDirectivityModelParameters
-     * <p>
+     * 
      * Listener directivity model parameters (optional).
      */
     @Generated
     @Selector("setListenerDirectivityModelParameters:")
-    public native void setListenerDirectivityModelParameters(PHASEDirectivityModelParameters value);
+    public native void setListenerDirectivityModelParameters(@Nullable PHASEDirectivityModelParameters value);
 
     /**
      * [@property] sourceDirectivityModelParameters
-     * <p>
+     * 
      * Source directivity model parameters (optional).
      */
     @Generated
     @Selector("setSourceDirectivityModelParameters:")
-    public native void setSourceDirectivityModelParameters(PHASEDirectivityModelParameters value);
+    public native void setSourceDirectivityModelParameters(@Nullable PHASEDirectivityModelParameters value);
 
     @Generated
     @Selector("setVersion:")
@@ -207,18 +222,20 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
 
     /**
      * [@property] sourceDirectivityModelParameters
-     * <p>
+     * 
      * Source directivity model parameters (optional).
      */
+    @Nullable
     @Generated
     @Selector("sourceDirectivityModelParameters")
     public native PHASEDirectivityModelParameters sourceDirectivityModelParameters();
 
     /**
      * [@property] spatialPipeline
-     * <p>
+     * 
      * Spatial Pipeline.
      */
+    @NotNull
     @Generated
     @Selector("spatialPipeline")
     public native PHASESpatialPipeline spatialPipeline();

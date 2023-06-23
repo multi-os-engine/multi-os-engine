@@ -30,6 +30,8 @@ public final class NSComparisonPredicateOptions {
     /**
      * Indicate that the strings to be compared have been preprocessed; this supersedes other options and is intended as
      * a performance optimization option
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long NormalizedPredicateOption = 0x0000000000000004L;
 

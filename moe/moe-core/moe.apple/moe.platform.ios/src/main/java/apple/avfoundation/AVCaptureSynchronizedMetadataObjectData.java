@@ -21,16 +21,20 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCaptureSynchronizedMetadataObjectData
- * <p>
+ * 
  * An concrete subclass of AVCaptureSynchronizedData representing the data delivered by an AVCaptureMetadataOutput.
- * <p>
+ * 
  * A single AVCaptureMetadataOutput may be configured to deliver multiple kinds of metadata objects (such as QRCodes and
  * detected faces). AVCaptureSynchronizedMetadataObjectData's -metadataObjects array may contain multiple
  * AVMetadataObject subclasses, depending on how the AVCaptureMetadataOutput was configured. All synchronized metadata
  * objects share a common timestamp.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("AVFoundation")
@@ -62,22 +66,25 @@ public class AVCaptureSynchronizedMetadataObjectData extends AVCaptureSynchroniz
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -116,17 +123,19 @@ public class AVCaptureSynchronizedMetadataObjectData extends AVCaptureSynchroniz
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] metadataObjects
-     * <p>
+     * 
      * An array of AVMetadataObject subclasses.
-     * <p>
+     * 
      * -metadataObjects is never nil. If no metadata objects are present for a given time, an empty array is returned.
      */
+    @NotNull
     @Generated
     @Selector("metadataObjects")
     public native NSArray<? extends AVMetadataObject> metadataObjects();

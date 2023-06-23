@@ -27,7 +27,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -42,6 +47,7 @@ public class UIPasteConfiguration extends NSObject implements NSSecureCoding, NS
         super(peer);
     }
 
+    @NotNull
     @Generated
     @Selector("acceptableTypeIdentifiers")
     public native NSArray<String> acceptableTypeIdentifiers();
@@ -52,12 +58,12 @@ public class UIPasteConfiguration extends NSObject implements NSSecureCoding, NS
 
     @Generated
     @Selector("addAcceptableTypeIdentifiers:")
-    public native void addAcceptableTypeIdentifiers(NSArray<String> acceptableTypeIdentifiers);
+    public native void addAcceptableTypeIdentifiers(@NotNull NSArray<String> acceptableTypeIdentifiers);
 
     @Generated
     @Selector("addTypeIdentifiersForAcceptingClass:")
     public native void addTypeIdentifiersForAcceptingClass(
-            @Mapped(ObjCObjectMapper.class) NSItemProviderReading aClass);
+            @NotNull @Mapped(ObjCObjectMapper.class) NSItemProviderReading aClass);
 
     @Generated
     @Owned
@@ -71,31 +77,35 @@ public class UIPasteConfiguration extends NSObject implements NSSecureCoding, NS
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -107,7 +117,7 @@ public class UIPasteConfiguration extends NSObject implements NSSecureCoding, NS
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -120,11 +130,12 @@ public class UIPasteConfiguration extends NSObject implements NSSecureCoding, NS
 
     @Generated
     @Selector("initWithAcceptableTypeIdentifiers:")
-    public native UIPasteConfiguration initWithAcceptableTypeIdentifiers(NSArray<String> acceptableTypeIdentifiers);
+    public native UIPasteConfiguration initWithAcceptableTypeIdentifiers(
+            @NotNull NSArray<String> acceptableTypeIdentifiers);
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIPasteConfiguration initWithCoder(NSCoder coder);
+    public native UIPasteConfiguration initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Uses the readableTypeIdentifiersForItemProvider class property to get acceptable types.
@@ -132,7 +143,7 @@ public class UIPasteConfiguration extends NSObject implements NSSecureCoding, NS
     @Generated
     @Selector("initWithTypeIdentifiersForAcceptingClass:")
     public native UIPasteConfiguration initWithTypeIdentifiersForAcceptingClass(
-            @Mapped(ObjCObjectMapper.class) NSItemProviderReading aClass);
+            @NotNull @Mapped(ObjCObjectMapper.class) NSItemProviderReading aClass);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -151,9 +162,10 @@ public class UIPasteConfiguration extends NSObject implements NSSecureCoding, NS
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,7 +182,7 @@ public class UIPasteConfiguration extends NSObject implements NSSecureCoding, NS
 
     @Generated
     @Selector("setAcceptableTypeIdentifiers:")
-    public native void setAcceptableTypeIdentifiers(NSArray<String> value);
+    public native void setAcceptableTypeIdentifiers(@NotNull NSArray<String> value);
 
     @Generated
     @Selector("setVersion:")

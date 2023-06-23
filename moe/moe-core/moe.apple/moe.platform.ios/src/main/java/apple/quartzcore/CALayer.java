@@ -20,10 +20,6 @@ import apple.NSObject;
 import apple.coregraphics.opaque.CGColorRef;
 import apple.coregraphics.opaque.CGContextRef;
 import apple.coregraphics.opaque.CGPathRef;
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
@@ -55,9 +51,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The base layer class. *
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("QuartzCore")
@@ -89,22 +93,25 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -119,10 +126,11 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * animation object for events posted by animatable properties, nil
      * otherwise.
      */
+    @Nullable
     @Generated
     @Selector("defaultActionForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native CAAction defaultActionForKey(String event);
+    public static native CAAction defaultActionForKey(@NotNull String event);
 
     /**
      * Returns the default value of the named property, or nil if no
@@ -130,10 +138,11 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * define default values for their own properties should call `super'
      * for unknown properties.
      */
+    @Nullable
     @Generated
     @Selector("defaultValueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultValueForKey(String key);
+    public static native Object defaultValueForKey(@NotNull String key);
 
     @Generated
     @Selector("description")
@@ -161,9 +170,10 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Layer creation and initialization. *
@@ -183,7 +193,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("needsDisplayForKey:")
-    public static native boolean needsDisplayForKey(String key);
+    public static native boolean needsDisplayForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -215,25 +225,27 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * Returns the action object associated with the event named by the
      * string 'event'. The default implementation searches for an action
      * object in the following places:
-     * <p>
+     * 
      * 1. if defined, call the delegate method -actionForLayer:forKey:
      * 2. look in the layer's `actions' dictionary
      * 3. look in any `actions' dictionaries in the `style' hierarchy
      * 4. call +defaultActionForKey: on the layer's class
-     * <p>
+     * 
      * If any of these steps results in a non-nil action object, the
      * following steps are ignored. If the final result is an instance of
      * NSNull, it is converted to `nil'.
      */
+    @Nullable
     @Generated
     @Selector("actionForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native CAAction actionForKey(String event);
+    public native CAAction actionForKey(@NotNull String event);
 
     /**
      * A dictionary mapping keys to objects implementing the CAAction
      * protocol. Default value is nil.
      */
+    @Nullable
     @Generated
     @Selector("actions")
     public native NSDictionary<String, ?> actions();
@@ -241,22 +253,22 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
     /**
      * Attach an animation object to the layer. Typically this is implicitly
      * invoked through an action that is an CAAnimation object.
-     * <p>
+     * 
      * 'key' may be any string such that only one animation per unique key
      * is added per layer. The special key 'transition' is automatically
      * used for transition animations. The nil pointer is also a valid key.
-     * <p>
+     * 
      * If the `duration' property of the animation is zero or negative it
      * is given the default duration, either the value of the
      * `animationDuration' transaction property or .25 seconds otherwise.
-     * <p>
+     * 
      * The animation is copied before being added to the layer, so any
      * subsequent modifications to `anim' will have no affect unless it is
      * added to another layer.
      */
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(CAAnimation anim, String key);
+    public native void addAnimationForKey(@NotNull CAAnimation anim, @Nullable String key);
 
     /**
      * Add 'layer' to the end of the receiver's sublayers array. If 'layer'
@@ -264,7 +276,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("addSublayer:")
-    public native void addSublayer(CALayer layer);
+    public native void addSublayer(@NotNull CALayer layer);
 
     /**
      * Convenience methods for accessing the `transform' property as an
@@ -278,10 +290,12 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
     /**
      * When true this layer is allowed to antialias its edges, as requested
      * by the value of the edgeAntialiasingMask property.
-     * <p>
+     * 
      * The default value is read from the boolean UIViewEdgeAntialiasing
      * property in the main bundle's Info.plist. If no value is found in
      * the Info.plist the default value is NO.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("allowsEdgeAntialiasing")
@@ -292,12 +306,14 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * layer is allowed to composite itself as a group separate from its
      * parent. This gives the correct results when the layer contains
      * multiple opaque components, but may reduce performance.
-     * <p>
+     * 
      * The default value of the property is read from the boolean
      * UIViewGroupOpacity property in the main bundle's Info.plist. If no
      * value is found in the Info.plist the default value is YES for
      * applications linked against the iOS 7 SDK or later and NO for
      * applications linked against an earlier SDK.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("allowsGroupOpacity")
@@ -328,15 +344,17 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * if no such animation exists. Attempting to modify any properties of
      * the returned object will result in undefined behavior.
      */
+    @Nullable
     @Generated
     @Selector("animationForKey:")
-    public native CAAnimation animationForKey(String key);
+    public native CAAnimation animationForKey(@NotNull String key);
 
     /**
      * Returns an array containing the keys of all animations currently
      * attached to the receiver. The order of the array matches the order
      * in which animations will be applied.
      */
+    @Nullable
     @Generated
     @Selector("animationKeys")
     public native NSArray<String> animationKeys();
@@ -349,6 +367,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * The background color of the layer. Default value is nil. Colors
      * created from tiled patterns are supported. Animatable.
      */
+    @Nullable
     @Generated
     @Selector("backgroundColor")
     public native CGColorRef backgroundColor();
@@ -357,6 +376,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * An array of filters that are applied to the background of the layer.
      * The root layer ignores this property. Animatable.
      */
+    @Nullable
     @Generated
     @Selector("backgroundFilters")
     public native NSArray<?> backgroundFilters();
@@ -369,6 +389,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * The color of the layer's border. Defaults to opaque black. Colors
      * created from tiled patterns are supported. Animatable.
      */
+    @Nullable
     @Generated
     @Selector("borderColor")
     public native CGColorRef borderColor();
@@ -396,7 +417,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * A filter object used to composite the layer with its (possibly
      * filtered) background. Default value is nil, which implies source-
      * over compositing. Animatable.
-     * <p>
+     * 
      * Note that if the inputs of the filter are modified directly after
      * the filter is attached to a layer, the behavior is undefined. The
      * filter must either be reattached to the layer, or filter properties
@@ -404,6 +425,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * that the filter is attached to. (This also applies to the `filters'
      * and `backgroundFilters' properties.)
      */
+    @Nullable
     @Generated
     @Selector("compositingFilter")
     @MappedReturn(ObjCObjectMapper.class)
@@ -417,11 +439,12 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
     public native boolean containsPoint(@ByValue CGPoint p);
 
     /**
-     * An object providing the contents of the layer, typically a CGImageRef,
-     * but may be something else. (For example, NSImage objects are
-     * supported on Mac OS X 10.6 and later.) Default value is nil.
+     * An object providing the contents of the layer, typically a CGImageRef
+     * or an IOSurfaceRef, but may be something else. (For example, NSImage
+     * objects are supported on Mac OS X 10.6 and later.) Default value is nil.
      * Animatable.
      */
+    @Nullable
     @Generated
     @Selector("contents")
     @MappedReturn(ObjCObjectMapper.class)
@@ -445,7 +468,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
     /**
      * A rectangle in normalized image coordinates defining the scaled
      * center part of the `contents' image.
-     * <p>
+     * 
      * When an image is resized due to its `contentsGravity' property its
      * center part implicitly defines the 3x3 grid that controls how the
      * image is scaled to its drawn size. The center part is stretched in
@@ -453,7 +476,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * horizontally; the left and right parts are only stretched
      * vertically; the four corner parts are not stretched at all. (This is
      * often called "9-slice scaling".)
-     * <p>
+     * 
      * The rectangle is interpreted after the effects of the `contentsRect'
      * property have been applied. It defaults to the unit rectangle [0 0 1
      * 1] meaning that the entire image is scaled. As a special case, if
@@ -471,7 +494,10 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * A hint for the desired storage format of the layer contents provided by
      * -drawLayerInContext. Defaults to kCAContentsFormatRGBA8Uint. Note that this
      * does not affect the interpretation of the `contents' property directly.
+     * 
+     * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("contentsFormat")
     public native String contentsFormat();
@@ -484,6 +510,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * `resize'. Note that "bottom" always means "Minimum Y" and "top"
      * always means "Maximum Y".
      */
+    @NotNull
     @Generated
     @Selector("contentsGravity")
     public native String contentsGravity();
@@ -509,6 +536,8 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * explicitly and content provided via -drawInContext: (i.e. if
      * contentsScale is two -drawInContext: will draw into a buffer twice
      * as large as the layer bounds). Defaults to one. Animatable.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("contentsScale")
@@ -521,30 +550,30 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
     @Generated
     @Selector("convertPoint:fromLayer:")
     @ByValue
-    public native CGPoint convertPointFromLayer(@ByValue CGPoint p, CALayer l);
+    public native CGPoint convertPointFromLayer(@ByValue CGPoint p, @Nullable CALayer l);
 
     @Generated
     @Selector("convertPoint:toLayer:")
     @ByValue
-    public native CGPoint convertPointToLayer(@ByValue CGPoint p, CALayer l);
+    public native CGPoint convertPointToLayer(@ByValue CGPoint p, @Nullable CALayer l);
 
     @Generated
     @Selector("convertRect:fromLayer:")
     @ByValue
-    public native CGRect convertRectFromLayer(@ByValue CGRect r, CALayer l);
+    public native CGRect convertRectFromLayer(@ByValue CGRect r, @Nullable CALayer l);
 
     @Generated
     @Selector("convertRect:toLayer:")
     @ByValue
-    public native CGRect convertRectToLayer(@ByValue CGRect r, CALayer l);
+    public native CGRect convertRectToLayer(@ByValue CGRect r, @Nullable CALayer l);
 
     @Generated
     @Selector("convertTime:fromLayer:")
-    public native double convertTimeFromLayer(double t, CALayer l);
+    public native double convertTimeFromLayer(double t, @Nullable CALayer l);
 
     @Generated
     @Selector("convertTime:toLayer:")
-    public native double convertTimeToLayer(double t, CALayer l);
+    public native double convertTimeToLayer(double t, @Nullable CALayer l);
 
     /**
      * When positive, the background of the layer will be drawn with
@@ -561,6 +590,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * below (for those that it implements). The value of this property is
      * not retained. Default value is nil.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -590,7 +620,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("drawInContext:")
-    public native void drawInContext(CGContextRef ctx);
+    public native void drawInContext(@NotNull CGContextRef ctx);
 
     /**
      * When true, the CGContext object passed to the -drawInContext: method
@@ -599,6 +629,8 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * -drawInContext: method). This may allow the layer to complete its
      * drawing operations sooner than when executing synchronously. The
      * default value is NO.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("drawsAsynchronously")
@@ -622,8 +654,9 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    @NotNull
     @Generated
     @Selector("fillMode")
     public native String fillMode();
@@ -632,6 +665,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * An array of filters that will be applied to the contents of the
      * layer and its sublayers. Defaults to nil. Animatable.
      */
+    @Nullable
     @Generated
     @Selector("filters")
     public native NSArray<?> filters();
@@ -654,6 +688,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * isn't a CATransformLayer (transform layers don't have a 2D
      * coordinate space in which the point could be specified).
      */
+    @Nullable
     @Generated
     @Selector("hitTest:")
     public native CALayer hitTest(@ByValue CGPoint p);
@@ -667,7 +702,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CALayer initWithCoder(NSCoder coder);
+    public native CALayer initWithCoder(@NotNull NSCoder coder);
 
     /**
      * This initializer is used by CoreAnimation to create shadow copies of
@@ -678,11 +713,11 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("initWithLayer:")
-    public native CALayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
+    public native CALayer initWithLayer(@NotNull @Mapped(ObjCObjectMapper.class) Object layer);
 
     @Generated
     @Selector("insertSublayer:above:")
-    public native void insertSublayerAbove(CALayer layer, CALayer sibling);
+    public native void insertSublayerAbove(@NotNull CALayer layer, @Nullable CALayer sibling);
 
     /**
      * Insert 'layer' at position 'idx' in the receiver's sublayers array.
@@ -691,7 +726,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("insertSublayer:atIndex:")
-    public native void insertSublayerAtIndex(CALayer layer, int idx);
+    public native void insertSublayerAtIndex(@NotNull CALayer layer, int idx);
 
     /**
      * Insert 'layer' either above or below the specified layer in the
@@ -700,7 +735,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("insertSublayer:below:")
-    public native void insertSublayerBelow(CALayer layer, CALayer sibling);
+    public native void insertSublayerBelow(@NotNull CALayer layer, @Nullable CALayer sibling);
 
     /**
      * When false layers facing away from the viewer are hidden from view.
@@ -793,6 +828,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
     @Selector("layoutSublayers")
     public native void layoutSublayers();
 
+    @NotNull
     @Generated
     @Selector("magnificationFilter")
     public native String magnificationFilter();
@@ -807,6 +843,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * undefined. Nested masks (mask layers with their own masks) are
      * unsupported.
      */
+    @Nullable
     @Generated
     @Selector("mask")
     public native CALayer mask();
@@ -829,6 +866,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * image data. Currently the allowed values are `nearest' and `linear'.
      * Both properties default to `linear'.
      */
+    @NotNull
     @Generated
     @Selector("minificationFilter")
     public native String minificationFilter();
@@ -849,6 +887,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * this method after the transaction that produced the presentation
      * layer has completed is undefined.
      */
+    @NotNull
     @Generated
     @Selector("modelLayer")
     public native CALayer modelLayer();
@@ -856,6 +895,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
     /**
      * The name of the layer. Used by some layout managers. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -918,16 +958,17 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * applied. This gives a close approximation to the version of the layer
      * that is currently displayed. Returns nil if the layer has not yet
      * been committed.
-     * <p>
+     * 
      * The effect of attempting to modify the returned layer in any way is
      * undefined.
-     * <p>
+     * 
      * The `sublayers', `mask' and `superlayer' properties of the returned
      * layer return the presentation versions of these properties. This
      * carries through to read-only layer methods. E.g., calling -hitTest:
      * on the result of the -presentationLayer will query the presentation
      * values of the layer tree.
      */
+    @Nullable
     @Generated
     @Selector("presentationLayer")
     public native CALayer presentationLayer();
@@ -954,7 +995,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("removeAnimationForKey:")
-    public native void removeAnimationForKey(String key);
+    public native void removeAnimationForKey(@NotNull String key);
 
     /**
      * Removes the layer from its superlayer, works both if the receiver is
@@ -968,13 +1009,13 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * Renders the receiver and its sublayers into 'ctx'. This method
      * renders directly from the layer tree. Renders in the coordinate space
      * of the layer.
-     * <p>
+     * 
      * WARNING: currently this method does not implement the full
      * CoreAnimation composition model, use with caution.
      */
     @Generated
     @Selector("renderInContext:")
-    public native void renderInContext(CGContextRef ctx);
+    public native void renderInContext(@NotNull CGContextRef ctx);
 
     @Generated
     @Selector("repeatCount")
@@ -991,7 +1032,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("replaceSublayer:with:")
-    public native void replaceSublayerWith(CALayer oldLayer, CALayer newLayer);
+    public native void replaceSublayerWith(@NotNull CALayer oldLayer, @NotNull CALayer newLayer);
 
     /**
      * These methods search for the closest ancestor CAScrollLayer of the *
@@ -1013,7 +1054,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("setActions:")
-    public native void setActions(NSDictionary<String, ?> value);
+    public native void setActions(@Nullable NSDictionary<String, ?> value);
 
     @Generated
     @Selector("setAffineTransform:")
@@ -1022,10 +1063,12 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
     /**
      * When true this layer is allowed to antialias its edges, as requested
      * by the value of the edgeAntialiasingMask property.
-     * <p>
+     * 
      * The default value is read from the boolean UIViewEdgeAntialiasing
      * property in the main bundle's Info.plist. If no value is found in
      * the Info.plist the default value is NO.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAllowsEdgeAntialiasing:")
@@ -1036,12 +1079,14 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * layer is allowed to composite itself as a group separate from its
      * parent. This gives the correct results when the layer contains
      * multiple opaque components, but may reduce performance.
-     * <p>
+     * 
      * The default value of the property is read from the boolean
      * UIViewGroupOpacity property in the main bundle's Info.plist. If no
      * value is found in the Info.plist the default value is YES for
      * applications linked against the iOS 7 SDK or later and NO for
      * applications linked against an earlier SDK.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAllowsGroupOpacity:")
@@ -1075,7 +1120,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("setBackgroundColor:")
-    public native void setBackgroundColor(CGColorRef value);
+    public native void setBackgroundColor(@Nullable CGColorRef value);
 
     /**
      * An array of filters that are applied to the background of the layer.
@@ -1083,7 +1128,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("setBackgroundFilters:")
-    public native void setBackgroundFilters(NSArray<?> value);
+    public native void setBackgroundFilters(@Nullable NSArray<?> value);
 
     @Generated
     @Selector("setBeginTime:")
@@ -1095,7 +1140,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("setBorderColor:")
-    public native void setBorderColor(CGColorRef value);
+    public native void setBorderColor(@Nullable CGColorRef value);
 
     /**
      * The width of the layer's border, inset from the layer bounds. The
@@ -1118,7 +1163,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * A filter object used to composite the layer with its (possibly
      * filtered) background. Default value is nil, which implies source-
      * over compositing. Animatable.
-     * <p>
+     * 
      * Note that if the inputs of the filter are modified directly after
      * the filter is attached to a layer, the behavior is undefined. The
      * filter must either be reattached to the layer, or filter properties
@@ -1128,22 +1173,22 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("setCompositingFilter:")
-    public native void setCompositingFilter(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setCompositingFilter(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
-     * An object providing the contents of the layer, typically a CGImageRef,
-     * but may be something else. (For example, NSImage objects are
-     * supported on Mac OS X 10.6 and later.) Default value is nil.
+     * An object providing the contents of the layer, typically a CGImageRef
+     * or an IOSurfaceRef, but may be something else. (For example, NSImage
+     * objects are supported on Mac OS X 10.6 and later.) Default value is nil.
      * Animatable.
      */
     @Generated
     @Selector("setContents:")
-    public native void setContents(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setContents(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * A rectangle in normalized image coordinates defining the scaled
      * center part of the `contents' image.
-     * <p>
+     * 
      * When an image is resized due to its `contentsGravity' property its
      * center part implicitly defines the 3x3 grid that controls how the
      * image is scaled to its drawn size. The center part is stretched in
@@ -1151,7 +1196,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * horizontally; the left and right parts are only stretched
      * vertically; the four corner parts are not stretched at all. (This is
      * often called "9-slice scaling".)
-     * <p>
+     * 
      * The rectangle is interpreted after the effects of the `contentsRect'
      * property have been applied. It defaults to the unit rectangle [0 0 1
      * 1] meaning that the entire image is scaled. As a special case, if
@@ -1168,10 +1213,12 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * A hint for the desired storage format of the layer contents provided by
      * -drawLayerInContext. Defaults to kCAContentsFormatRGBA8Uint. Note that this
      * does not affect the interpretation of the `contents' property directly.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setContentsFormat:")
-    public native void setContentsFormat(String value);
+    public native void setContentsFormat(@NotNull String value);
 
     /**
      * A string defining how the contents of the layer is mapped into its
@@ -1183,7 +1230,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("setContentsGravity:")
-    public native void setContentsGravity(String value);
+    public native void setContentsGravity(@NotNull String value);
 
     /**
      * A rectangle in normalized image coordinates defining the
@@ -1205,6 +1252,8 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * explicitly and content provided via -drawInContext: (i.e. if
      * contentsScale is two -drawInContext: will draw into a buffer twice
      * as large as the layer bounds). Defaults to one. Animatable.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setContentsScale:")
@@ -1226,7 +1275,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CALayerDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) CALayerDelegate value);
 
     /**
      * An object that will receive the CALayer delegate methods defined
@@ -1234,7 +1283,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * not retained. Default value is nil.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) CALayerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CALayerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -1252,6 +1301,8 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * -drawInContext: method). This may allow the layer to complete its
      * drawing operations sooner than when executing synchronously. The
      * default value is NO.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setDrawsAsynchronously:")
@@ -1275,7 +1326,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
 
     @Generated
     @Selector("setFillMode:")
-    public native void setFillMode(String value);
+    public native void setFillMode(@NotNull String value);
 
     /**
      * An array of filters that will be applied to the contents of the
@@ -1283,7 +1334,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("setFilters:")
-    public native void setFilters(NSArray<?> value);
+    public native void setFilters(@Nullable NSArray<?> value);
 
     /**
      * Unlike NSView, each Layer in the hierarchy has an implicit frame
@@ -1297,7 +1348,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
 
     @Generated
     @Selector("setMagnificationFilter:")
-    public native void setMagnificationFilter(String value);
+    public native void setMagnificationFilter(@NotNull String value);
 
     /**
      * A layer whose alpha channel is used as a mask to select between the
@@ -1311,7 +1362,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("setMask:")
-    public native void setMask(CALayer value);
+    public native void setMask(@Nullable CALayer value);
 
     /**
      * When true an implicit mask matching the layer bounds is applied to
@@ -1333,7 +1384,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("setMinificationFilter:")
-    public native void setMinificationFilter(String value);
+    public native void setMinificationFilter(@NotNull String value);
 
     /**
      * The bias factor added when determining which levels of detail to use
@@ -1349,7 +1400,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     /**
      * Marks that -display needs to be called before the layer is next
@@ -1376,7 +1427,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * Marks that -layoutSublayers needs to be invoked on the receiver
      * before the next update. If the receiver's layout manager implements
      * the -invalidateLayoutOfLayer: method it will be called.
-     * <p>
+     * 
      * This method is automatically invoked on a layer whenever its
      * `sublayers' or `layoutManager' property is modified, and is invoked
      * on the layer and its superlayer whenever its `bounds' or `transform'
@@ -1428,7 +1479,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("setShadowColor:")
-    public native void setShadowColor(CGColorRef value);
+    public native void setShadowColor(@Nullable CGColorRef value);
 
     /**
      * The shadow offset. Defaults to (0, -3). Animatable.
@@ -1456,7 +1507,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("setShadowPath:")
-    public native void setShadowPath(CGPathRef value);
+    public native void setShadowPath(@Nullable CGPathRef value);
 
     /**
      * The blur radius used to create the shadow. Defaults to 3. Animatable.
@@ -1475,11 +1526,11 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * detail the rendering engine may attempt to cache and reuse the
      * bitmap from one frame to the next. (Whether it does or not will have
      * no affect on the rendered output.)
-     * <p>
+     * 
      * When false the layer is composited directly into the destination
      * whenever possible (however, certain features of the compositing
      * model may force rasterization, e.g. adding filters).
-     * <p>
+     * 
      * Defaults to NO. Animatable.
      */
     @Generated
@@ -1496,14 +1547,14 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * have a `style' property, forming a hierarchy of default values.)
      * If the style dictionary doesn't define a value for an attribute, the
      * +defaultValueForKey: method is called. Defaults to nil.
-     * <p>
+     * 
      * Note that if the dictionary or any of its ancestors are modified,
      * the values of the layer's properties are undefined until the `style'
      * property is reset.
      */
     @Generated
     @Selector("setStyle:")
-    public native void setStyle(NSDictionary<?, ?> value);
+    public native void setStyle(@Nullable NSDictionary<?, ?> value);
 
     /**
      * A transform applied to each member of the `sublayers' array while
@@ -1524,7 +1575,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("setSublayers:")
-    public native void setSublayers(NSArray<? extends CALayer> value);
+    public native void setSublayers(@Nullable NSArray<? extends CALayer> value);
 
     @Generated
     @Selector("setTimeOffset:")
@@ -1550,6 +1601,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * The color of the shadow. Defaults to opaque black. Colors created
      * from patterns are currently NOT supported. Animatable.
      */
+    @Nullable
     @Generated
     @Selector("shadowColor")
     public native CGColorRef shadowColor();
@@ -1579,6 +1631,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * reference across multiple layers. Upon assignment the path is copied.
      * Defaults to null. Animatable.
      */
+    @Nullable
     @Generated
     @Selector("shadowPath")
     public native CGPathRef shadowPath();
@@ -1599,7 +1652,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("shouldArchiveValueForKey:")
-    public native boolean shouldArchiveValueForKey(String key);
+    public native boolean shouldArchiveValueForKey(@NotNull String key);
 
     /**
      * When true, the layer is rendered as a bitmap in its local coordinate
@@ -1611,11 +1664,11 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * detail the rendering engine may attempt to cache and reuse the
      * bitmap from one frame to the next. (Whether it does or not will have
      * no affect on the rendered output.)
-     * <p>
+     * 
      * When false the layer is composited directly into the destination
      * whenever possible (however, certain features of the compositing
      * model may force rasterization, e.g. adding filters).
-     * <p>
+     * 
      * Defaults to NO. Animatable.
      */
     @Generated
@@ -1632,11 +1685,12 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * have a `style' property, forming a hierarchy of default values.)
      * If the style dictionary doesn't define a value for an attribute, the
      * +defaultValueForKey: method is called. Defaults to nil.
-     * <p>
+     * 
      * Note that if the dictionary or any of its ancestors are modified,
      * the values of the layer's properties are undefined until the `style'
      * property is reset.
      */
+    @Nullable
     @Generated
     @Selector("style")
     public native NSDictionary<?, ?> style();
@@ -1659,6 +1713,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * the behavior is undefined. Note that the returned array is not
      * guaranteed to retain its elements.
      */
+    @Nullable
     @Generated
     @Selector("sublayers")
     public native NSArray<? extends CALayer> sublayers();
@@ -1667,6 +1722,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      * The receiver's superlayer object. Implicitly changed to match the
      * hierarchy described by the `sublayers' properties.
      */
+    @Nullable
     @Generated
     @Selector("superlayer")
     public native CALayer superlayer();
@@ -1706,6 +1762,8 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
     /**
      * Defines which of the four corners receives the masking when using
      * `cornerRadius' property. Defaults to all four corners.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("maskedCorners")
@@ -1715,6 +1773,8 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
     /**
      * Defines which of the four corners receives the masking when using
      * `cornerRadius' property. Defaults to all four corners.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMaskedCorners:")
@@ -1733,7 +1793,10 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
     /**
      * Defines the curve used for rendering the rounded corners of the layer.
      * Defaults to 'kCACornerCurveCircular'.
+     * 
+     * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("cornerCurve")
     public native String cornerCurve();
@@ -1741,17 +1804,21 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
     /**
      * Expansion scale factor applied to the rounded corner bounding box size
      * when specific corner curve is used.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cornerCurveExpansionFactor:")
     @NFloat
-    public static native double cornerCurveExpansionFactor(String curve);
+    public static native double cornerCurveExpansionFactor(@NotNull String curve);
 
     /**
      * Defines the curve used for rendering the rounded corners of the layer.
      * Defaults to 'kCACornerCurveCircular'.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setCornerCurve:")
-    public native void setCornerCurve(String value);
+    public native void setCornerCurve(@NotNull String value);
 }

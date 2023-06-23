@@ -41,10 +41,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNLookAtConstraint
- * <p>
+ * 
  * A SCNLookAtConstraint applies on a node's orientation so that it always look at another node.
  */
 @Generated
@@ -77,22 +79,25 @@ public class SCNLookAtConstraint extends SCNConstraint {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,20 +132,21 @@ public class SCNLookAtConstraint extends SCNConstraint {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * lookAtConstraintWithTarget:
-     * <p>
+     * 
      * Creates and returns a SCNLookAtConstraint object with the specified target.
-     *
+     * 
      * @param target The target node to look at.
      */
     @Generated
     @Selector("lookAtConstraintWithTarget:")
-    public static native SCNLookAtConstraint lookAtConstraintWithTarget(SCNNode target);
+    public static native SCNLookAtConstraint lookAtConstraintWithTarget(@Nullable SCNNode target);
 
     @Generated
     @Owned
@@ -174,9 +180,9 @@ public class SCNLookAtConstraint extends SCNConstraint {
 
     /**
      * [@property] gimbalLockEnabled
-     * <p>
+     * 
      * Specifies whether the receiver enables the gimbal lock. Defaults to NO.
-     * <p>
+     * 
      * Enabling the gimbal lock prevents the receiver from rotating the constrained node around to roll axis.
      */
     @Generated
@@ -189,22 +195,25 @@ public class SCNLookAtConstraint extends SCNConstraint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNLookAtConstraint initWithCoder(NSCoder coder);
+    public native SCNLookAtConstraint initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] gimbalLockEnabled
-     * <p>
+     * 
      * Specifies whether the receiver enables the gimbal lock. Defaults to NO.
-     * <p>
+     * 
      * Enabling the gimbal lock prevents the receiver from rotating the constrained node around to roll axis.
      */
     @Generated
     @Selector("setGimbalLockEnabled:")
     public native void setGimbalLockEnabled(boolean value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setTarget:")
-    public native void setTarget(SCNNode target);
+    public native void setTarget(@Nullable SCNNode target);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -212,14 +221,17 @@ public class SCNLookAtConstraint extends SCNConstraint {
         return supportsSecureCoding();
     }
 
+    @Nullable
     @Generated
     @Selector("target")
     public native SCNNode target();
 
     /**
      * [@property] targetOffset
-     * <p>
+     * 
      * Front direction in the constraint owner local space. Defaults to -[SCNNode localFront]. Animatable
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("localFront")
@@ -228,8 +240,10 @@ public class SCNLookAtConstraint extends SCNConstraint {
 
     /**
      * [@property] targetOffset
-     * <p>
+     * 
      * Front direction in the constraint owner local space. Defaults to -[SCNNode localFront]. Animatable
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setLocalFront:")
@@ -237,8 +251,10 @@ public class SCNLookAtConstraint extends SCNConstraint {
 
     /**
      * [@property] targetOffset
-     * <p>
+     * 
      * Offset look at position in target space. Defaults to zero. Animatable
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTargetOffset:")
@@ -246,8 +262,10 @@ public class SCNLookAtConstraint extends SCNConstraint {
 
     /**
      * [@property] worldUp
-     * <p>
+     * 
      * Up reference direction in world space. Defaults to -[SCNNode localUp]. Animatable
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setWorldUp:")
@@ -255,8 +273,10 @@ public class SCNLookAtConstraint extends SCNConstraint {
 
     /**
      * [@property] targetOffset
-     * <p>
+     * 
      * Offset look at position in target space. Defaults to zero. Animatable
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("targetOffset")
@@ -265,8 +285,10 @@ public class SCNLookAtConstraint extends SCNConstraint {
 
     /**
      * [@property] worldUp
-     * <p>
+     * 
      * Up reference direction in world space. Defaults to -[SCNNode localUp]. Animatable
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("worldUp")

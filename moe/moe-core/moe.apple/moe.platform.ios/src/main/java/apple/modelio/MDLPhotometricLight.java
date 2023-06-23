@@ -42,18 +42,22 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MDLPhotometricLight
- * <p>
+ * 
  * A light created from measurements at various angles.
- * <p>
+ * 
  * [@property] lightCubeMap A cube map that can be sampled at various directions to
  * learn the intensity of the light in that direction.
  * [@property] sphericalHarmonicsLevel The value generateSphericalHarmonicsFromLight:
  * used to calculate the spherical harmonics coefficients
  * [@property] sphericalHarmonicsCoefficients The spherical harmonic coefficiencts
  * calculated by generateSphericalHarmonicsFromLight:
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("ModelIO")
@@ -85,22 +89,25 @@ public class MDLPhotometricLight extends MDLPhysicallyPlausibleLight {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,13 +142,14 @@ public class MDLPhotometricLight extends MDLPhysicallyPlausibleLight {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Selector("lightWithSCNLight:")
-    public static native MDLPhotometricLight lightWithSCNLight(SCNLight scnLight);
+    public static native MDLPhotometricLight lightWithSCNLight(@NotNull SCNLight scnLight);
 
     @Generated
     @Owned
@@ -150,12 +158,12 @@ public class MDLPhotometricLight extends MDLPhysicallyPlausibleLight {
 
     @Generated
     @Selector("objectWithSCNNode:")
-    public static native MDLPhotometricLight objectWithSCNNode(SCNNode scnNode);
+    public static native MDLPhotometricLight objectWithSCNNode(@NotNull SCNNode scnNode);
 
     @Generated
     @Selector("objectWithSCNNode:bufferAllocator:")
-    public static native MDLPhotometricLight objectWithSCNNodeBufferAllocator(SCNNode scnNode,
-            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+    public static native MDLPhotometricLight objectWithSCNNodeBufferAllocator(@NotNull SCNNode scnNode,
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -195,12 +203,14 @@ public class MDLPhotometricLight extends MDLPhysicallyPlausibleLight {
      */
     @Generated
     @Selector("initWithIESProfile:")
-    public native MDLPhotometricLight initWithIESProfile(NSURL URL);
+    public native MDLPhotometricLight initWithIESProfile(@NotNull NSURL URL);
 
+    @Nullable
     @Generated
     @Selector("lightCubeMap")
     public native MDLTexture lightCubeMap();
 
+    @Nullable
     @Generated
     @Selector("sphericalHarmonicsCoefficients")
     public native NSData sphericalHarmonicsCoefficients();
@@ -212,14 +222,17 @@ public class MDLPhotometricLight extends MDLPhysicallyPlausibleLight {
 
     /**
      * generateTexture
-     * <p>
+     * 
      * Generate an IES compliant MDLTexture
      * 1D when the number of horizontal angles is one and the innerConeAngle is < 180
      * 2D when the previous statement fails and innerConeAngle < 89
      * 3D in all other cases
      * the parameter textureSize is the size in pixels of the texture image. For a size of N,
      * 1D generates an Nx1 image, 2D generates an NxN image, 3D generates an Nx(N*6) image (i.e. cubemap).
+     * 
+     * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("generateTexture:")
     public native MDLTexture generateTexture(@NUInt long textureSize);

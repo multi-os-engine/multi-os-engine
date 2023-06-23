@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * CFHostInfoType
- * <p>
+ * 
  * Discussion:
  * Host information types to be resolved.
  */

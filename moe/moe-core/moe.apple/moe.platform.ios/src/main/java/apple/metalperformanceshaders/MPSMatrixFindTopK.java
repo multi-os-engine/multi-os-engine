@@ -25,18 +25,23 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSMatrixFindTopK
- * <p>
+ * 
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * A kernel that find top-K values and their corresponding indices withing a row of a matrix
- * <p>
+ * 
  * A MPSMatrixFindTopK object computes finds the 'k' largest values within
  * a row of a matrix and returns the value found and the index of the entry
  * in the source matrix. This operation is performed independently on the
  * rows and matrices in batch of the source matrix.
+ * 
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -68,29 +73,32 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     /**
      * Make a copy of this kernel for a new device - @see MPSKernel
-     *
+     * 
      * @param zone   The NSZone in which to allocate the object
      * @param device The device for the new MPSKernel. If nil, then use
      *               self.device.
@@ -98,10 +106,12 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:device:")
-    public native MPSMatrixFindTopK copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSMatrixFindTopK copyWithZoneDevice(@Nullable VoidPtr zone,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     @Generated
     @Selector("debugDescription")
@@ -113,24 +123,26 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
 
     /**
      * Encode a MPSMatrixFindTopK object to a command buffer.
-     * <p>
+     * 
      * Certain constraints apply to the sizes of the matrices depending on the sizes requested at
      * initialization time as well as the origins at the time this routine is called:
-     * <p>
+     * 
      * Both result matrices must be large enough to hold a two dimensional array of 'sourceRows' rows and
      * 'numberOfTopKValues' columns beginning at resultMatrixOrigin.
-     * <p>
+     * 
      * The source matrix must be large enough to contain at least 'numberOfTopKValues' values
      * starting from sourceMatrixOrigin.y.
-     * <p>
+     * 
      * Each matrix within the range specified by batchStart and batchSize, which also specifies a valid
      * set of matrices within inputMatrix, resultIndexMatrix and resultValueMatrix, will be processed.
-     * <p>
+     * 
      * The datatypes of the matrices inputMatrix and resultValueMatrix must match and be either
      * MPSDataTypeFloat32 or MPSDataTypeFloat16.
-     *
+     * 
      * @param commandBuffer     A valid MTLCommandBuffer to receive the encoded kernel.
+     * 
      * @param inputMatrix       A valid MPSMatrix object which specifies the input matrix.
+     * 
      * @param resultIndexMatrix A valid MPSMatrix object which specifies the matrix which will
      *                          be overwritten by the result indices.
      *                          This matrix must have datatype MPSDataTypeUInt32.
@@ -140,8 +152,8 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
     @Generated
     @Selector("encodeToCommandBuffer:inputMatrix:resultIndexMatrix:resultValueMatrix:")
     public native void encodeToCommandBufferInputMatrixResultIndexMatrixResultValueMatrix(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSMatrix inputMatrix,
-            MPSMatrix resultIndexMatrix, MPSMatrix resultValueMatrix);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSMatrix inputMatrix,
+            @NotNull MPSMatrix resultIndexMatrix, @NotNull MPSMatrix resultValueMatrix);
 
     @Generated
     @Selector("hash")
@@ -150,32 +162,32 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
 
     /**
      * [@property] indexOffset
-     * <p>
+     * 
      * Specifies a number that will be added to all the indices written to
      * resultIndexMatrix in encodeToCommandBuffer. This value can be used
      * to offset later computations for example by adding the value for
      * the source matrix column offset sourceMatrixOrigin.y.
      * Example: Let numberOfTopKValues be 3, let the source be the following:
-     * <p>
+     * 
      * source = [ 6.0, 3.0, 8.0, 1.0, 9.0, 4.0, 5.0 ]
-     * <p>
+     * 
      * and let the sourceMatrixOrigin.y = 2.
-     * <p>
+     * 
      * Then if indexOffset = 2 then the result value and result index matrices will be:
-     * <p>
+     * 
      * result values = [ 9.0, 8.0, 5.0 ]
      * result indices = [ 4 , 2 , 6 ],
-     * <p>
+     * 
      * which gives the user indices into the original source matrix.
-     * <p>
+     * 
      * On the other hand if the indexOffset = 0 then the results are as follows:
-     * <p>
+     * 
      * result values = [ 9.0, 8.0, 5.0 ]
      * result indices = [ 2 , 0 , 4 ],
-     * <p>
+     * 
      * which on the other hand gives the user indices into the submatrix starting
      * from sourceMatrixOrigin.y == 2.
-     * <p>
+     * 
      * This property is modifiable and defaults to 0. If a different behavior
      * is desired then this should be modified prior to encoding the kernel.
      */
@@ -190,27 +202,27 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSMatrixFindTopK initWithCoder(NSCoder aDecoder);
+    public native MPSMatrixFindTopK initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * FIXME: Fix availability macros to 10.14 and 12.0 once we get there
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSMatrixFindTopK initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixFindTopK initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSMatrixFindTopK initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixFindTopK initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * FIXME: Fix availability macros to 10.14 and 12.0 once we get there
      */
     @Generated
     @Selector("initWithDevice:numberOfTopKValues:")
-    public native MPSMatrixFindTopK initWithDeviceNumberOfTopKValues(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @NUInt long numberOfTopKValues);
+    public native MPSMatrixFindTopK initWithDeviceNumberOfTopKValues(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long numberOfTopKValues);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -229,9 +241,10 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -240,7 +253,7 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
 
     /**
      * [@property] numberOfTopKValues
-     * <p>
+     * 
      * The number of highest values (and their indices) to be found in each row
      * by the kernel. This property is initialized in the kernel initialization call
      * initWithDevice, but can be modified before encoding the kernel.
@@ -264,32 +277,32 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
 
     /**
      * [@property] indexOffset
-     * <p>
+     * 
      * Specifies a number that will be added to all the indices written to
      * resultIndexMatrix in encodeToCommandBuffer. This value can be used
      * to offset later computations for example by adding the value for
      * the source matrix column offset sourceMatrixOrigin.y.
      * Example: Let numberOfTopKValues be 3, let the source be the following:
-     * <p>
+     * 
      * source = [ 6.0, 3.0, 8.0, 1.0, 9.0, 4.0, 5.0 ]
-     * <p>
+     * 
      * and let the sourceMatrixOrigin.y = 2.
-     * <p>
+     * 
      * Then if indexOffset = 2 then the result value and result index matrices will be:
-     * <p>
+     * 
      * result values = [ 9.0, 8.0, 5.0 ]
      * result indices = [ 4 , 2 , 6 ],
-     * <p>
+     * 
      * which gives the user indices into the original source matrix.
-     * <p>
+     * 
      * On the other hand if the indexOffset = 0 then the results are as follows:
-     * <p>
+     * 
      * result values = [ 9.0, 8.0, 5.0 ]
      * result indices = [ 2 , 0 , 4 ],
-     * <p>
+     * 
      * which on the other hand gives the user indices into the submatrix starting
      * from sourceMatrixOrigin.y == 2.
-     * <p>
+     * 
      * This property is modifiable and defaults to 0. If a different behavior
      * is desired then this should be modified prior to encoding the kernel.
      */
@@ -299,7 +312,7 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
 
     /**
      * [@property] numberOfTopKValues
-     * <p>
+     * 
      * The number of highest values (and their indices) to be found in each row
      * by the kernel. This property is initialized in the kernel initialization call
      * initWithDevice, but can be modified before encoding the kernel.
@@ -314,7 +327,7 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
 
     /**
      * [@property] sourceColumns
-     * <p>
+     * 
      * The number of columns to consider from the source in the operation.
      * This property is modifiable and defaults to NSUIntegerMax and the number is
      * adjusted dynamically at kernel encode time (see encodeToCommandBuffer) to
@@ -335,7 +348,7 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
 
     /**
      * [@property] sourceRows
-     * <p>
+     * 
      * The number of rows to consider from the source in the operation.
      * This property is modifiable and defaults to NSUIntegerMax and the number is
      * adjusted dynamically at kernel encode time (see encodeToCommandBuffer) to
@@ -360,7 +373,7 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
 
     /**
      * [@property] sourceColumns
-     * <p>
+     * 
      * The number of columns to consider from the source in the operation.
      * This property is modifiable and defaults to NSUIntegerMax and the number is
      * adjusted dynamically at kernel encode time (see encodeToCommandBuffer) to
@@ -382,7 +395,7 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
 
     /**
      * [@property] sourceRows
-     * <p>
+     * 
      * The number of rows to consider from the source in the operation.
      * This property is modifiable and defaults to NSUIntegerMax and the number is
      * adjusted dynamically at kernel encode time (see encodeToCommandBuffer) to

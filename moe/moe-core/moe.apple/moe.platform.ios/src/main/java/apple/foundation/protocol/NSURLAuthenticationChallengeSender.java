@@ -25,16 +25,19 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] NSURLAuthenticationChallengeSender
- * <p>
+ * 
  * This protocol represents the sender of an
  * authentication challenge. It has methods to provide a credential,
  * to continue without any credential, getting whatever failure
  * result would happen in that case, cancel a challenge, perform the default
  * action as defined by the system, or reject the currently supplied protection-space
  * in the challenge.
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("Foundation")
@@ -46,14 +49,14 @@ public interface NSURLAuthenticationChallengeSender {
      */
     @Generated
     @Selector("cancelAuthenticationChallenge:")
-    void cancelAuthenticationChallenge(NSURLAuthenticationChallenge challenge);
+    void cancelAuthenticationChallenge(@NotNull NSURLAuthenticationChallenge challenge);
 
     /**
      * continueWithoutCredentialForAuthenticationChallenge:
      */
     @Generated
     @Selector("continueWithoutCredentialForAuthenticationChallenge:")
-    void continueWithoutCredentialForAuthenticationChallenge(NSURLAuthenticationChallenge challenge);
+    void continueWithoutCredentialForAuthenticationChallenge(@NotNull NSURLAuthenticationChallenge challenge);
 
     /**
      * performDefaultHandlingForAuthenticationChallenge:
@@ -61,7 +64,7 @@ public interface NSURLAuthenticationChallengeSender {
     @Generated
     @IsOptional
     @Selector("performDefaultHandlingForAuthenticationChallenge:")
-    default void performDefaultHandlingForAuthenticationChallenge(NSURLAuthenticationChallenge challenge) {
+    default void performDefaultHandlingForAuthenticationChallenge(@NotNull NSURLAuthenticationChallenge challenge) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -71,7 +74,7 @@ public interface NSURLAuthenticationChallengeSender {
     @Generated
     @IsOptional
     @Selector("rejectProtectionSpaceAndContinueWithChallenge:")
-    default void rejectProtectionSpaceAndContinueWithChallenge(NSURLAuthenticationChallenge challenge) {
+    default void rejectProtectionSpaceAndContinueWithChallenge(@NotNull NSURLAuthenticationChallenge challenge) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -80,5 +83,6 @@ public interface NSURLAuthenticationChallengeSender {
      */
     @Generated
     @Selector("useCredential:forAuthenticationChallenge:")
-    void useCredentialForAuthenticationChallenge(NSURLCredential credential, NSURLAuthenticationChallenge challenge);
+    void useCredentialForAuthenticationChallenge(@NotNull NSURLCredential credential,
+            @NotNull NSURLAuthenticationChallenge challenge);
 }

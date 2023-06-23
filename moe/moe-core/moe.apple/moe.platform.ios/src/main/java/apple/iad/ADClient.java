@@ -40,7 +40,15 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.1
+ * Deprecated-Since: 14.5
+ * Deprecated-Message: This has been replaced by functionality in AdServices.framework's AAAttribution class.
+ */
+@Deprecated
 @Generated
 @Library("iAd")
 @Runtime(ObjCRuntime.class)
@@ -71,22 +79,25 @@ public class ADClient extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,9 +132,10 @@ public class ADClient extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -144,11 +156,18 @@ public class ADClient extends NSObject {
 
     /**
      * sharedClient
-     * <p>
+     * 
      * This is no longer a singleton and returns a new instance for every call.
-     *
-     * @return An instance of ADClient.
+     * 
+     * API-Since: 7.1
+     * Deprecated-Since: 14.5
+     * Deprecated-Message: This has been replaced by functionality in AdServices.framework's AAAttribution class.
+     * 
+     * @return
+     *         An instance of ADClient.
      */
+    @NotNull
+    @Deprecated
     @Generated
     @Selector("sharedClient")
     public static native ADClient sharedClient();
@@ -164,15 +183,23 @@ public class ADClient extends NSObject {
 
     /**
      * addClientToSegments:replaceExisting:
-     * <p>
+     * 
      * This method does nothing and immediately returns.
-     *
-     * @param segmentIdentifiers This parameter is unused.
-     * @param replaceExisting    This parameter is unused.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * 
+     * @param segmentIdentifiers
+     *                           This parameter is unused.
+     * 
+     * @param replaceExisting
+     *                           This parameter is unused.
      */
+    @Deprecated
     @Generated
     @Selector("addClientToSegments:replaceExisting:")
-    public native void addClientToSegmentsReplaceExisting(NSArray<String> segmentIdentifiers, boolean replaceExisting);
+    public native void addClientToSegmentsReplaceExisting(@NotNull NSArray<String> segmentIdentifiers,
+            boolean replaceExisting);
 
     @Generated
     @Selector("init")
@@ -180,27 +207,33 @@ public class ADClient extends NSObject {
 
     /**
      * requestAttributionDetailsWithBlock:
-     * <p>
+     * 
      * Provides a way for an app to determine when an an was shown to the user
      * which resulted in the user's purchase of the app.
-     *
-     * @param completionHandler A block which will be called with details related to the attribution status of the app.
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 14.5
+     * Deprecated-Message: This has been replaced by functionality in AdServices.framework's AAAttribution class.
+     * 
+     * @param completionHandler
+     *                          A block which will be called with details related to the attribution status of the app.
      *                          The attributionDetails dictionary will contain purchase and impression dates
      *                          as well as other specific campaign related information. If the attributionDetails
      *                          dictionary is nil, an NSError is passed with an ADClientError enum.
-     *                          <p>
+     * 
      *                          The handler will be called on an arbitrary queue.
      */
+    @Deprecated
     @Generated
     @Selector("requestAttributionDetailsWithBlock:")
     public native void requestAttributionDetailsWithBlock(
-            @ObjCBlock(name = "call_requestAttributionDetailsWithBlock") Block_requestAttributionDetailsWithBlock completionHandler);
+            @NotNull @ObjCBlock(name = "call_requestAttributionDetailsWithBlock") Block_requestAttributionDetailsWithBlock completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestAttributionDetailsWithBlock {
         @Generated
-        void call_requestAttributionDetailsWithBlock(NSDictionary<String, ? extends NSObject> attributionDetails,
-                NSError error);
+        void call_requestAttributionDetailsWithBlock(
+                @Nullable NSDictionary<String, ? extends NSObject> attributionDetails, @Nullable NSError error);
     }
 }

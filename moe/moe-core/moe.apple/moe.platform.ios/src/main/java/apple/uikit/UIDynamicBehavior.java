@@ -38,7 +38,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -69,22 +74,25 @@ public class UIDynamicBehavior extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -119,9 +127,10 @@ public class UIDynamicBehavior extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -152,6 +161,7 @@ public class UIDynamicBehavior extends NSObject {
     /**
      * When running, the dynamic animator calls the action block on every animation step.
      */
+    @Nullable
     @Generated
     @Selector("action")
     @ObjCBlock(name = "call_action_ret")
@@ -159,12 +169,14 @@ public class UIDynamicBehavior extends NSObject {
 
     @Generated
     @Selector("addChildBehavior:")
-    public native void addChildBehavior(UIDynamicBehavior behavior);
+    public native void addChildBehavior(@NotNull UIDynamicBehavior behavior);
 
+    @NotNull
     @Generated
     @Selector("childBehaviors")
     public native NSArray<? extends UIDynamicBehavior> childBehaviors();
 
+    @Nullable
     @Generated
     @Selector("dynamicAnimator")
     public native UIDynamicAnimator dynamicAnimator();
@@ -175,21 +187,21 @@ public class UIDynamicBehavior extends NSObject {
 
     @Generated
     @Selector("removeChildBehavior:")
-    public native void removeChildBehavior(UIDynamicBehavior behavior);
+    public native void removeChildBehavior(@NotNull UIDynamicBehavior behavior);
 
     /**
      * When running, the dynamic animator calls the action block on every animation step.
      */
     @Generated
     @Selector("setAction:")
-    public native void setAction(@ObjCBlock(name = "call_setAction") Block_setAction value);
+    public native void setAction(@Nullable @ObjCBlock(name = "call_setAction") Block_setAction value);
 
     /**
      * nil when being removed from an animator
      */
     @Generated
     @Selector("willMoveToAnimator:")
-    public native void willMoveToAnimator(UIDynamicAnimator dynamicAnimator);
+    public native void willMoveToAnimator(@Nullable UIDynamicAnimator dynamicAnimator);
 
     @Runtime(ObjCRuntime.class)
     @Generated

@@ -20,32 +20,32 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] AudioUnitRenderActionFlags
- * <p>
+ * 
  * These flags can be set in a callback from an audio unit during an audio unit
  * render operation from either the RenderNotify Proc or the render input
  * callback.
- * <p>
+ * 
  * [@constant] kAudioUnitRenderAction_PreRender
  * Called on a render notification Proc - which is called either before or after
  * the render operation of the audio unit. If this flag is set, the proc is being
  * called before the render operation is performed.
- * <p>
+ * 
  * [@constant] kAudioUnitRenderAction_PostRender
  * Called on a render notification Proc - which is called either before or after
  * the render operation of the audio unit. If this flag is set, the proc is being
  * called after the render operation is completed.
- * <p>
+ * 
  * [@constant] kAudioUnitRenderAction_OutputIsSilence
  * The originator of a buffer, in a render input callback, or in an audio unit's
  * render operation, may use this flag to indicate that the buffer contains
  * only silence.
- * <p>
+ * 
  * The receiver of the buffer can then use the flag as a hint as to whether the
  * buffer needs to be processed or not.
- * <p>
+ * 
  * Note that because the flag is only a hint, when setting the silence flag,
  * the originator of a buffer must also ensure that it contains silence (zeroes).
- * <p>
+ * 
  * [@constant] kAudioOfflineUnitRenderAction_Preflight
  * This is used with offline audio units (of type 'auol'). It is used when an
  * offline unit is being preflighted, which is performed prior to the actual
@@ -53,16 +53,16 @@ import org.moe.natj.general.ann.Generated;
  * offline process needs it (for example, with an offline unit that normalises an
  * audio file, it needs to see all of the audio data first before it can perform
  * its normalization)
- * <p>
+ * 
  * [@constant] kAudioOfflineUnitRenderAction_Render
  * Once an offline unit has been successfully preflighted, it is then put into
  * its render mode. So this flag is set to indicate to the audio unit that it is
  * now in that state and that it should perform its processing on the input data.
- * <p>
+ * 
  * [@constant] kAudioOfflineUnitRenderAction_Complete
  * This flag is set when an offline unit has completed either its preflight or
  * performed render operations
- * <p>
+ * 
  * [@constant] kAudioUnitRenderAction_PostRenderError
  * If this flag is set on the post-render call an error was returned by the
  * AUs render operation. In this case, the error can be retrieved through the

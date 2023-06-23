@@ -24,7 +24,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -55,47 +60,52 @@ public class MTLCaptureDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * The object that is captured.
-     * <p>
+     * 
      * Must be one of the following:
-     * <p>
+     * 
      * MTLDevice captures all command queues of the device.
-     * <p>
+     * 
      * MTLCommandQueue captures a single command queue.
-     * <p>
+     * 
      * MTLCaptureScope captures between the next begin and end of the scope.
      */
+    @Nullable
     @Generated
     @Selector("captureObject")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object captureObject();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -139,9 +149,10 @@ public class MTLCaptureDescriptor extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -152,6 +163,7 @@ public class MTLCaptureDescriptor extends NSObject implements NSCopying {
      * URL the GPU Trace document will be captured to.
      * Must be specified when destiation is MTLCaptureDestinationGPUTraceDocument.
      */
+    @Nullable
     @Generated
     @Selector("outputURL")
     public native NSURL outputURL();
@@ -166,18 +178,18 @@ public class MTLCaptureDescriptor extends NSObject implements NSCopying {
 
     /**
      * The object that is captured.
-     * <p>
+     * 
      * Must be one of the following:
-     * <p>
+     * 
      * MTLDevice captures all command queues of the device.
-     * <p>
+     * 
      * MTLCommandQueue captures a single command queue.
-     * <p>
+     * 
      * MTLCaptureScope captures between the next begin and end of the scope.
      */
     @Generated
     @Selector("setCaptureObject:")
-    public native void setCaptureObject(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setCaptureObject(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * The destination you want the GPU trace to be captured to.
@@ -192,7 +204,7 @@ public class MTLCaptureDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setOutputURL:")
-    public native void setOutputURL(NSURL value);
+    public native void setOutputURL(@Nullable NSURL value);
 
     @Generated
     @Selector("setVersion:")

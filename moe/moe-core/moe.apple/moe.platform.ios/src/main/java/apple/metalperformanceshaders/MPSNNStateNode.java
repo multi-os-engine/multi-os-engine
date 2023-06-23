@@ -23,17 +23,21 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNStateNode
- * <p>
+ * 
  * A placeholder node denoting the position in the graph of a MPSState object
- * <p>
+ * 
  * Some filters need additional information about an image in order to function. For example
  * a max-pooling gradient filter needs to know which position the max result came from in the
  * original pooling filter in order to select the right data for gradient computation. In other cases,
  * state may be moved into a MPSState object in order to keep the filter itself immutable.
  * The MPSState object typically encapsulates one or more MTLResource objects.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -65,22 +69,25 @@ public class MPSNNStateNode extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -95,9 +102,10 @@ public class MPSNNStateNode extends NSObject {
 
     /**
      * MPS resource identification
-     * <p>
+     * 
      * See MPSHandle protocol reference. Default: nil
      */
+    @Nullable
     @Generated
     @Selector("handle")
     @MappedReturn(ObjCObjectMapper.class)
@@ -129,9 +137,10 @@ public class MPSNNStateNode extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -148,12 +157,12 @@ public class MPSNNStateNode extends NSObject {
 
     /**
      * MPS resource identification
-     * <p>
+     * 
      * See MPSHandle protocol reference. Default: nil
      */
     @Generated
     @Selector("setHandle:")
-    public native void setHandle(@Mapped(ObjCObjectMapper.class) MPSHandle value);
+    public native void setHandle(@Nullable @Mapped(ObjCObjectMapper.class) MPSHandle value);
 
     @Generated
     @Selector("setVersion:")
@@ -170,12 +179,12 @@ public class MPSNNStateNode extends NSObject {
 
     /**
      * Tag a state node for view later
-     * <p>
+     * 
      * Most state nodes are private to the graph. These alias memory heavily and
      * consequently generally have invalid state when the graph exits. When
      * exportFromGraph = YES, the image is preserved and made available through
      * the [MPSNNGraph encode... resultStates:... list.
-     * <p>
+     * 
      * CAUTION: exporting an state from a graph prevents MPS from
      * recycling memory. It will nearly always cause the
      * amount of memory used by the graph to increase by the size
@@ -183,7 +192,7 @@ public class MPSNNStateNode extends NSObject {
      * regression accordingly. This feature should generally
      * be used only when the node is needed as an input for
      * further work and recomputing it is prohibitively costly.
-     * <p>
+     * 
      * Default: NO
      */
     @Generated
@@ -192,12 +201,12 @@ public class MPSNNStateNode extends NSObject {
 
     /**
      * Tag a state node for view later
-     * <p>
+     * 
      * Most state nodes are private to the graph. These alias memory heavily and
      * consequently generally have invalid state when the graph exits. When
      * exportFromGraph = YES, the image is preserved and made available through
      * the [MPSNNGraph encode... resultStates:... list.
-     * <p>
+     * 
      * CAUTION: exporting an state from a graph prevents MPS from
      * recycling memory. It will nearly always cause the
      * amount of memory used by the graph to increase by the size
@@ -205,7 +214,7 @@ public class MPSNNStateNode extends NSObject {
      * regression accordingly. This feature should generally
      * be used only when the node is needed as an input for
      * further work and recomputing it is prohibitively costly.
-     * <p>
+     * 
      * Default: NO
      */
     @Generated
@@ -214,8 +223,10 @@ public class MPSNNStateNode extends NSObject {
 
     /**
      * Set to true to cause the resource to be synchronized with the CPU
-     * <p>
+     * 
      * Ignored on non-MacOS.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setSynchronizeResource:")
@@ -223,8 +234,10 @@ public class MPSNNStateNode extends NSObject {
 
     /**
      * Set to true to cause the resource to be synchronized with the CPU
-     * <p>
+     * 
      * Ignored on non-MacOS.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("synchronizeResource")

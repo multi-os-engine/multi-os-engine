@@ -23,11 +23,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCAdamOptimizer
- * <p>
+ * 
  * The MLCAdamOptimizer specifies the Adam optimizer.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -59,13 +63,13 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] beta1
-     * <p>
+     * 
      * Coefficent used for computing running averages of gradient.
-     * <p>
+     * 
      * The default is 0.9.
      */
     @Generated
@@ -74,9 +78,9 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * [@property] beta2
-     * <p>
+     * 
      * Coefficent used for computing running averages of square of gradient.
-     * <p>
+     * 
      * The default is 0.999.
      */
     @Generated
@@ -85,27 +89,31 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -117,9 +125,9 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * [@property] epsilon
-     * <p>
+     * 
      * A term added to improve numerical stability.
-     * <p>
+     * 
      * The default is 1e-8.
      */
     @Generated
@@ -152,9 +160,10 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,16 +172,16 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * Create a MLCAdamOptimizer object with defaults
-     *
+     * 
      * @return A new MLCAdamOptimizer object.
      */
     @Generated
     @Selector("optimizerWithDescriptor:")
-    public static native MLCAdamOptimizer optimizerWithDescriptor(MLCOptimizerDescriptor optimizerDescriptor);
+    public static native MLCAdamOptimizer optimizerWithDescriptor(@NotNull MLCOptimizerDescriptor optimizerDescriptor);
 
     /**
      * Create a MLCAdamOptimizer object
-     *
+     * 
      * @param optimizerDescriptor The optimizer descriptor object
      * @param beta1               The beta1 value
      * @param beta2               The beta2 value
@@ -183,11 +192,12 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
     @Generated
     @Selector("optimizerWithDescriptor:beta1:beta2:epsilon:timeStep:")
     public static native MLCAdamOptimizer optimizerWithDescriptorBeta1Beta2EpsilonTimeStep(
-            MLCOptimizerDescriptor optimizerDescriptor, float beta1, float beta2, float epsilon, @NUInt long timeStep);
+            @NotNull MLCOptimizerDescriptor optimizerDescriptor, float beta1, float beta2, float epsilon,
+            @NUInt long timeStep);
 
     /**
      * Create a MLCAdamOptimizer object
-     *
+     * 
      * @param optimizerDescriptor The optimizer descriptor object
      * @param beta1               The beta1 value
      * @param beta2               The beta2 value
@@ -196,12 +206,14 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
      *                            (https://arxiv.org/abs/1904.09237)
      * @param timeStep            The initial timestep to use for the update
      * @return A new MLCAdamOptimizer object.
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("optimizerWithDescriptor:beta1:beta2:epsilon:usesAMSGrad:timeStep:")
     public static native MLCAdamOptimizer optimizerWithDescriptorBeta1Beta2EpsilonUsesAMSGradTimeStep(
-            MLCOptimizerDescriptor optimizerDescriptor, float beta1, float beta2, float epsilon, boolean usesAMSGrad,
-            @NUInt long timeStep);
+            @NotNull MLCOptimizerDescriptor optimizerDescriptor, float beta1, float beta2, float epsilon,
+            boolean usesAMSGrad, @NUInt long timeStep);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -221,9 +233,9 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * [@property] timeStep
-     * <p>
+     * 
      * The current timestep used for the update.
-     * <p>
+     * 
      * The default is 1.
      */
     @Generated
@@ -233,9 +245,9 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * [@property] usesAMSGrad
-     * <p>
+     * 
      * Whether to use the AMSGrad variant of this algorithm
-     * <p>
+     * 
      * The default is false
      */
     @Generated
