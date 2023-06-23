@@ -101,4 +101,25 @@ public final class CXVersion extends StructObject {
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setSubminor(int value);
+
+    @Override
+    public String toString () {
+        String s;
+        if (Major() != -1) {
+            s = String.valueOf(Major());
+        } else {
+            return "";
+        }
+
+        if (Minor() != -1) {
+            s += "." + Minor();
+        } else {
+            s += ".0";
+        }
+
+        if (Subminor() != -1) {
+            s += "." + Subminor();
+        }
+        return s;
+    }
 }

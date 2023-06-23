@@ -1138,7 +1138,7 @@ public final class clang {
             @UncertainArgument("Options: reference, array Fallback: reference") CXString deprecated_message,
             IntPtr always_unavailable,
             @UncertainArgument("Options: reference, array Fallback: reference") CXString unavailable_message,
-            @UncertainArgument("Options: reference, array Fallback: reference") CXPlatformAvailability availability,
+            Ptr<CXPlatformAvailability> availability,
             int availability_size);
 
     /**
@@ -1147,7 +1147,7 @@ public final class clang {
     @Generated
     @CFunction
     public static native void clang_disposeCXPlatformAvailability(
-            @UncertainArgument("Options: reference, array Fallback: reference") CXPlatformAvailability availability);
+            Ptr<CXPlatformAvailability> availability);
 
     /**
      * Determine the "language" of the entity referred to by a given cursor.
