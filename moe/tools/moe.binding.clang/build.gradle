@@ -26,9 +26,9 @@ if (!rootProject.hasProperty('moe.tools.sdk.win_only')) {
 tasks.classes.dependsOn ':ext_natj_api'
 
 dependencies {
-    compile fileTree(dir: 'lib', include: '*.jar')
-    compile files(rootProject.external.natj.jar)
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation fileTree(dir: 'lib', include: '*.jar')
+    implementation files(rootProject.external.natj.jar)
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
 }
 
 tasks.withType(Test) {
