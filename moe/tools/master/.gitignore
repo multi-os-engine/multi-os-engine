@@ -3,6 +3,7 @@
 bin
 build
 out
+local.properties
 
 # Idea
 .idea
