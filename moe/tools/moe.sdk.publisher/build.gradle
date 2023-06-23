@@ -43,14 +43,19 @@ task buildDeps {
     projectDeps.each { dependsOn project(it).tasks.build }
 }
 
-if (!rootProject.hasProperty('moe.tools.sdk.win_only')) {
+if (!rootProject.hasProperty('moe.tools.sdk.exclude_mac')) {
     tasks.buildDeps.dependsOn ':ext_natj_mac'
     tasks.buildDeps.dependsOn ':prebuild_libimobiledevice_macos'
 }
 
-if (!rootProject.hasProperty('moe.tools.sdk.mac_only')) {
+if (!rootProject.hasProperty('moe.tools.sdk.exclude_win')) {
     tasks.buildDeps.dependsOn ':ext_natj_win'
     tasks.buildDeps.dependsOn ':prebuild_libimobiledevice_windows'
+}
+
+if (!rootProject.hasProperty('moe.tools.sdk.exclude_linux')) {
+    tasks.buildDeps.dependsOn ':ext_natj_linux'
+    tasks.buildDeps.dependsOn ':prebuild_libimobiledevice_linux'
 }
 
 task processSDK {
@@ -91,6 +96,15 @@ def getSDKCopySpec() {
             from files(rootProject.external.moe_core.out.moe_ios_junit_javadoc_jar) {
                 rename rootProject.external.moe_core.out.moe_ios_junit_javadoc_jar.name, 'moe-ios-junit-javadoc.jar'
             }
+            from files(rootProject.external.moe_core.out.moe_core_certificates_zip) {
+                rename rootProject.external.moe_core.out.moe_core_certificates_zip.name, 'moe-core-certificates.zip'
+            }
+        }
+        into('sdk/iphoneos/MOE.framework') {
+            from files(rootProject.external.moe_core.out.iphoneos_MOE_framework)
+        }
+        into('sdk/iphonesimulator/MOE.framework') {
+            from files(rootProject.external.moe_core.out.iphonesimulator_MOE_framework)
         }
         into('sdk/iphoneos') {
             from files(rootProject.external.moe_core.out.iphoneos_libmoe) {
@@ -154,7 +168,7 @@ def getSDKCopySpec() {
         }
 
         into('tools/macosx') {
-            if (!rootProject.hasProperty('moe.tools.sdk.win_only')) {
+            if (!rootProject.hasProperty('moe.tools.sdk.exclude_mac')) {
                 from files(external.llvm.macos)
                 from files(external.libimobiledevice.macos)
                 from files(external.natj.mac)
@@ -164,9 +178,18 @@ def getSDKCopySpec() {
         }
 
         into('tools/windows/x86_64') {
-            if (!rootProject.hasProperty('moe.tools.sdk.mac_only')) {
+            if (!rootProject.hasProperty('moe.tools.sdk.exclude_win')) {
                 from files(external.libimobiledevice.windows)
                 from files(external.natj.win)
+            } else {
+                from files('.placeholder')
+            }
+        }
+
+        into('tools/linux/x86_64') {
+            if (!rootProject.hasProperty('moe.tools.sdk.exclude_linux')) {
+                from files(external.libimobiledevice.linux)
+                from files(external.natj.linux)
             } else {
                 from files('.placeholder')
             }
@@ -176,11 +199,11 @@ def getSDKCopySpec() {
     }
 }
 
-task sdk(type: Zip, dependsOn: processSDK) {
+task sdk(type: Zip, dependsOn: buildDeps) {
     with getSDKCopySpec()
 }
 
-task devsdk(type: Copy, dependsOn: processSDK) {
+task devsdk(type: Copy, dependsOn: buildDeps) {
     destinationDir = file("$buildDir/dev-sdk")
     with getSDKCopySpec()
 }
