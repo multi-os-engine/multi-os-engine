@@ -105,6 +105,13 @@ interface IModelEditor {
     void processTypedef(CXIdxDeclInfo decl);
 
     /**
+     * Process declaration of macro
+     *
+     * @param decl declaration
+     */
+    void processMacro(CXIdxDeclInfo decl);
+
+    /**
      * Call this before any processing.
      */
     void preProcess();

@@ -25,39 +25,39 @@ if (!rootProject.hasProperty('moe.tools.sdk.win_only')) {
 tasks.classes.dependsOn ':ext_natj_api'
 
 dependencies {
-    compile fileTree(dir: 'lib', include: '*.jar')
+    implementation fileTree(dir: 'lib', include: '*.jar')
 
-    compile group: 'org.hamcrest', name: 'hamcrest-core', version: '1.3'
+    implementation group: 'org.hamcrest', name: 'hamcrest-core', version: '1.3'
 
-    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.+'
-    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.+'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.+'
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.+'
 
-    compile files(rootProject.external.natj.jar)
+    implementation files(rootProject.external.natj.jar)
 
-    compile project(':moe.tools.common')
-    compile project(':moe.binding.clang')
-    compile project(':moe.tools.natjgen')
+    implementation project(':moe.tools.common')
+    implementation project(':moe.binding.clang')
+    implementation project(':moe.tools.natjgen')
 
-    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
-    compile group: 'org.apache.commons', name: 'commons-compress', version: '1.12'
-    compile group: 'org.apache.commons', name: 'commons-exec', version: '1.3'
-    compile group: 'commons-cli', name: 'commons-cli', version: '1.3.+'
-    compile group: 'org.apache.ant', name: 'ant', version: '1.9.+'
-    compile group: 'com.google.code.gson', name: 'gson', version: '2.7'
-    compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.8.+'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
+    implementation group: 'org.apache.commons', name: 'commons-compress', version: '1.12'
+    implementation group: 'org.apache.commons', name: 'commons-exec', version: '1.3'
+    implementation group: 'commons-cli', name: 'commons-cli', version: '1.3.+'
+    implementation group: 'org.apache.ant', name: 'ant', version: '1.9.+'
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.7'
+    implementation group: 'org.xerial', name: 'sqlite-jdbc', version: '3.8.+'
 
-    compile group: 'org.eclipse.jdt', name: 'org.eclipse.jdt.core', version: '3.10.0'
-    compile group: 'org.eclipse.jdt', name: 'org.eclipse.jdt.annotation', version: '2.0.0'
+    implementation group: 'org.eclipse.jdt', name: 'org.eclipse.jdt.core', version: '3.10.0'
+    implementation group: 'org.eclipse.jdt', name: 'org.eclipse.jdt.annotation', version: '2.0.0'
 
-    compile group: 'org.eclipse.core', name: 'contenttype', version: '3.4.200-v20140207-1251'
-    compile group: 'org.eclipse.core', name: 'jobs', version: '3.6.0-v20140424-0053'
-    compile group: 'org.eclipse.core', name: 'resources', version: '3.3.0-v20070604'
-    compile group: 'org.eclipse.core', name: 'runtime', version: '3.10.0-v20140318-2214'
+    implementation group: 'org.eclipse.core', name: 'contenttype', version: '3.4.200-v20140207-1251'
+    implementation group: 'org.eclipse.core', name: 'jobs', version: '3.6.0-v20140424-0053'
+    implementation group: 'org.eclipse.core', name: 'resources', version: '3.3.0-v20070604'
+    implementation group: 'org.eclipse.core', name: 'runtime', version: '3.10.0-v20140318-2214'
 
-    compile group: 'org.eclipse.equinox', name: 'app', version: '1.3.200-v20130910-1609'
-    compile group: 'org.eclipse.equinox', name: 'preferences', version: '3.5.200-v20140224-1527'
+    implementation group: 'org.eclipse.equinox', name: 'app', version: '1.3.200-v20130910-1609'
+    implementation group: 'org.eclipse.equinox', name: 'preferences', version: '3.5.200-v20140224-1527'
 
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
 }
 
 tasks.withType(Test) {
@@ -68,7 +68,7 @@ tasks.withType(Test) {
 
 jar {
     doFirst {
-        from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+        from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
         exclude 'META-INF/*.SF'
     }
 
@@ -76,4 +76,5 @@ jar {
         attributes("Class-Path": ".")
         attributes("Main-Class": "org.moe.natjgen.Main")
     }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }

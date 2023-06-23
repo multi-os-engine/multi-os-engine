@@ -19,6 +19,7 @@ package org.moe.natjgen;
 import org.clang.c.clang;
 import org.clang.enums.CXCursorKind;
 import org.clang.enums.CXTypeKind;
+import org.clang.enums.CXTypeNullabilityKind;
 import org.clang.struct.CXCursor;
 import org.clang.struct.CXType;
 import org.eclipse.jdt.core.dom.PrimitiveType;
@@ -173,7 +174,7 @@ public class Type {
     /**
      * The resolved kind of the type
      */
-    private final int kind;
+    private int kind;
 
     /**
      * Name of the associated element, present when kind is Objective-C Object,
@@ -210,6 +211,8 @@ public class Type {
      * Signed flag
      */
     private boolean isSignedLong = false;
+
+    private int nullableKind = CXTypeNullabilityKind.Unspecified;
 
     /**
      * Callback type additional data
@@ -596,6 +599,8 @@ public class Type {
         if (type.kind() == CXTypeKind.Elaborated) {
             type = type.getNamedType();
         }
+
+        nullableKind = clang.clang_Type_getNullability(inType);
 
         // Deal with attribute
         type = stripAttribute(type);
@@ -1026,6 +1031,14 @@ public class Type {
      */
     public int getKind() {
         return kind;
+    }
+
+    public void setKind(int kind) {
+        this.kind = kind;
+    }
+
+    public int getNullableKind() {
+        return nullableKind;
     }
 
     /**

@@ -440,6 +440,7 @@ public class Generator {
         return cEnumMap.get(identifier);
     }
 
+
     /**
      * Get a {@link CManager} for the given key
      *

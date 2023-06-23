@@ -25,6 +25,7 @@ import org.clang.enums.CX_StorageClass;
 import org.clang.opaque.CXTranslationUnit;
 import org.clang.struct.CXCursor;
 import org.clang.struct.CXIdxDeclInfo;
+import org.clang.struct.CXPlatformAvailability;
 import org.clang.struct.CXSourceLocation;
 import org.clang.struct.CXSourceRange;
 import org.clang.struct.CXString;
@@ -230,10 +231,67 @@ public final class ClangUtil {
      * Tells whether an element at the given cursor is deprecated or not
      *
      * @param c cursor
-     * @return true when deprecated otherwise false
+     * @param platform Platform to check for deprecation
      */
-    public static boolean isDeprecated(CXCursor c) {
-        return c.getCursorAvailability() == CXAvailabilityKind.Deprecated;
+    public static boolean isDeprecated(CXCursor c, String platform) {
+        return getDeprecatedVersion(c, platform) != null;
+    }
+
+    /**
+     * Returns the Introduced since property
+     *
+     * @param c cursor
+     * @param platform Platform to check for property
+     * @return the version since the element exist, otherwise null
+     */
+    public static String getSinceVersion(CXCursor c, String platform) {
+        CXPlatformAvailability[] availabilities = c.getCursorPlatformAvailabilities();
+        for (CXPlatformAvailability availability : availabilities) {
+            if (!availability.Platform().toString().equalsIgnoreCase(platform))
+                continue;
+            if (!availability.Introduced().toString().isEmpty()) {
+                return availability.Introduced().toString();
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Returns the Deprecated since property
+     *
+     * @param c cursor
+     * @param platform Platform to check for property
+     * @return the version since the element is deprecated, otherwise null
+     */
+    public static String getDeprecatedVersion(CXCursor c, String platform) {
+        CXPlatformAvailability[] availabilities = c.getCursorPlatformAvailabilities();
+        for (CXPlatformAvailability availability : availabilities) {
+            if (!availability.Platform().toString().equalsIgnoreCase(platform))
+                continue;
+            if (!availability.Deprecated().toString().isEmpty()) {
+                return availability.Deprecated().toString();
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Returns the Deprecated message property
+     *
+     * @param c cursor
+     * @param platform Platform to check for property
+     * @return the deprecated message if the element is deprecated, otherwise null
+     */
+    public static String getDeprecatedMessage(CXCursor c, String platform) {
+        CXPlatformAvailability[] availabilities = c.getCursorPlatformAvailabilities();
+        for (CXPlatformAvailability availability : availabilities) {
+            if (!availability.Platform().toString().equalsIgnoreCase(platform))
+                continue;
+            if (!availability.Message().toString().isEmpty()) {
+                return availability.Message().toString();
+            }
+        }
+        return null;
     }
 
     public static String nameForLinkage(int linkage) {
@@ -326,18 +384,25 @@ public final class ClangUtil {
         return parameters;
     }
 
-    public static String getComment(CXCursor decl) {
+    public static String getComment(CXCursor decl, String platform) {
+        String since = getSinceVersion(decl, platform);
+        String sinceDeprecated = getDeprecatedVersion(decl, platform);
+        String deprecatedMessage = getDeprecatedMessage(decl, platform);
+        String returnString = "";
         try {
             CXString s = clang_Cursor_getRawCommentText(decl);
             String rawComment = s == null ? null : s.getCString();
             if (rawComment != null) {
-//                System.out.println(rawComment);
-                return rawComment;
+                // Add a extra newline if a comment is available
+                if (since != null || sinceDeprecated != null || deprecatedMessage != null) rawComment += "\n";
+                returnString = rawComment;
             }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
-        return null;
+        if (since != null) returnString += "\nAPI-Since: " + since;
+        if (sinceDeprecated != null) returnString += "\nDeprecated-Since: " + sinceDeprecated;
+        if (deprecatedMessage != null) returnString += "\nDeprecated-Message: " + deprecatedMessage;
+        return returnString.isEmpty() ? null : returnString;
     }
 }

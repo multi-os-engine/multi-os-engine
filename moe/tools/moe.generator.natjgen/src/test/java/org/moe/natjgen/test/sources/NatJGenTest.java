@@ -164,6 +164,7 @@ public class NatJGenTest {
         copyResource("base_types.h", INCLUDES_DIR);
         copyResource("c_enums.h", INCLUDES_DIR);
         copyResource("c_variables.h", INCLUDES_DIR);
+        copyResource("macros.h", INCLUDES_DIR);
         copyResource("moe_types.h", INCLUDES_DIR);
         copyResource("objc_generics.h", INCLUDES_DIR);
         copyResource("pointers.h", INCLUDES_DIR);
