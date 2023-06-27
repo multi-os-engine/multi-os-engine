@@ -150,14 +150,6 @@ public class MoePlugin extends AbstractMoePlugin {
         // Add common MOE dependencies
         installCommonDependencies();
 
-        // Install java 8 support jars to fix lambda compilation
-        project.getDependencies().add(JavaPlugin.IMPLEMENTATION_CONFIGURATION_NAME,
-            FileUtils.getNameAsArtifact(getSDK().getJava8SupportJar(), getSDK().sdkVersion)
-        );
-
-        project.getDependencies().add(JavaPlugin.TEST_IMPLEMENTATION_CONFIGURATION_NAME,
-            FileUtils.getNameAsArtifact(getSDK().getJava8SupportJar(), getSDK().sdkVersion));
-
         // Install rules
         addRule(ProGuard.class, "Creates a ProGuarded jar.",
                 asList(SOURCE_SET, MODE), MoePlugin.this);
