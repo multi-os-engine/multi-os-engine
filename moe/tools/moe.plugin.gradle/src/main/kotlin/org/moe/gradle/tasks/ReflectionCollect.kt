@@ -87,9 +87,9 @@ open class ReflectionCollect : AbstractBaseTask() {
         @OutputFile
         get() = getOutputDir().resolve(ReflectionCollector.OUTPUT_PROXY)
 
-    val graalVMVersion: GraalVM.GraalVMVersion
+    val graalVMVersion: GraalVM.JDKVersion
         @Input
-        get() = moePlugin.graalVM.version.vmVersion
+        get() = moePlugin.graalVM.version
 
     override fun run() {
         // Delete output file
@@ -127,11 +127,7 @@ open class ReflectionCollect : AbstractBaseTask() {
             classpath = getClasspathFiles().toSet()
                 // Add input to classpath
                 + getInputFiles().toSet(),
-            proxyConfigVersion = if (graalVMVersion < GraalVM.GraalVMVersion(22)) {
-                ProxyConfig.FileVersion.Pre22
-            } else {
-                ProxyConfig.FileVersion._22
-            }
+            proxyConfigVersion = ProxyConfig.FileVersion._22
         )
     }
 
