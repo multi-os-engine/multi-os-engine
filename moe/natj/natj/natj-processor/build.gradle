@@ -36,6 +36,7 @@ jar {
         attributes 'Main-Class': 'org.moe.natj.processor.Main'
     }
     from configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 task sourcesJar (type : Jar) {
