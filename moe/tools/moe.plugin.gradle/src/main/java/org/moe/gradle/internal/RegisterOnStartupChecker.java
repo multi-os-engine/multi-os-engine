@@ -164,6 +164,16 @@ public class RegisterOnStartupChecker {
                 }
                 super.visitEnd();
             }
+
+            public void visitNestHost(String nestHost) {
+                // Do nothing
+                // Fix error "NestHost requires ASM7" without the need of updating to ASM7
+            }
+
+            public void visitNestMember(String nestMember) {
+                // Do nothing
+                // Fix error "NestMember requires ASM7" without the need of updating to ASM7
+            }
         }, 0);
     }
 }
