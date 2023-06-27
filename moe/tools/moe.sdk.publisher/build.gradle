@@ -96,15 +96,6 @@ def getSDKCopySpec() {
             from files(rootProject.external.moe_core.out.moe_ios_junit_javadoc_jar) {
                 rename rootProject.external.moe_core.out.moe_ios_junit_javadoc_jar.name, 'moe-ios-junit-javadoc.jar'
             }
-            from files(rootProject.external.moe_core.out.moe_core_certificates_zip) {
-                rename rootProject.external.moe_core.out.moe_core_certificates_zip.name, 'moe-core-certificates.zip'
-            }
-        }
-        into('sdk/iphoneos/MOE.framework') {
-            from files(rootProject.external.moe_core.out.iphoneos_MOE_framework)
-        }
-        into('sdk/iphonesimulator/MOE.framework') {
-            from files(rootProject.external.moe_core.out.iphonesimulator_MOE_framework)
         }
         into('sdk/iphoneos') {
             from files(rootProject.external.moe_core.out.iphoneos_libmoe) {
@@ -199,11 +190,11 @@ def getSDKCopySpec() {
     }
 }
 
-task sdk(type: Zip, dependsOn: buildDeps) {
+task sdk(type: Zip, dependsOn: processSDK) {
     with getSDKCopySpec()
 }
 
-task devsdk(type: Copy, dependsOn: buildDeps) {
+task devsdk(type: Copy, dependsOn: processSDK) {
     destinationDir = file("$buildDir/dev-sdk")
     with getSDKCopySpec()
 }
