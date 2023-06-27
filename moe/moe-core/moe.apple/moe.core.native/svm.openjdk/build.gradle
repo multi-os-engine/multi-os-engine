@@ -1,43 +1,21 @@
-import org.moe.prebuilts.XcodeBuild
 import org.moe.prebuilts.Script
 
-task('jdk_gensrc', type: Script) {
-    progress 'Fetching boot JDK'
-    rawWorkDir external.svm.mx
-    def bootJDK = file("${external.svm.root}/bootJDK").absolutePath
-    env 'MX_PYTHON', 'python3'
-    exec './mx',
-            '--arch', 'amd64',
-            '-y', '--no-warning',
-            'fetch-jdk',
-            '--java-distribution', 'labsjdk-ce-11',
-            '--to', bootJDK,
-            '--alias', 'jdk11'
-
-    progress 'Configure'
-    rawWorkDir external.svm.openjdk
-    exec 'arch', '-x86_64', 'python', './build_labsjdk.py',
-            '--configure-only',
-            '--boot-jdk', file(bootJDK + '/jdk11/Contents/Home').absolutePath
-
-    progress 'Gensrc'
-    exec 'arch', '-x86_64', 'make',
-            'java.base-libs', 'jdk.crypto.ec-libs'
+task('compile_libjava', type: Script) {
+    doFirst {
+        delete("build/xcode")
+    }
+    progress 'Build libjava'
+    rawWorkDir "${external.svm.root}/labs-openjdk-17"
+    exec 'sh', 'buildJdk.sh'
+    doLast {
+        copy {
+            from("/Users/berstanio/IdeaProjects/MOE-SVM/svm/labs-openjdk-17/xcode/")
+            include("*.a")
+            into("build/xcode")
+        }
+        file("build/xcode/jdk-ios-d.a").renameTo(file("build/xcode/Debug-ios-iphoneos-libjava.a"))
+        file("build/xcode/jdk-ios-r.a").renameTo(file("build/xcode/Release-ios-iphoneos-libjava.a"))
+        file("build/xcode/jdk-ios-simulator-d.a").renameTo(file("build/xcode/Debug-ios-iphonesimulator-libjava.a"))
+        file("build/xcode/jdk-ios-simulator-r.a").renameTo(file("build/xcode/Release-ios-iphonesimulator-libjava.a"))
+    }
 }
-
-XcodeBuild.createTask(project, "libjava", "ios", "iphoneos", "Debug")
-        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
-        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
-        .dependsOn('jdk_gensrc')
-XcodeBuild.createTask(project, "libjava", "ios", "iphoneos", "Release")
-        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
-        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
-        .dependsOn('jdk_gensrc')
-XcodeBuild.createTask(project, "libjava", "ios", "iphonesimulator", "Debug")
-        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
-        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
-        .dependsOn('jdk_gensrc')
-XcodeBuild.createTask(project, "libjava", "ios", "iphonesimulator", "Release")
-        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
-        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
-        .dependsOn('jdk_gensrc')

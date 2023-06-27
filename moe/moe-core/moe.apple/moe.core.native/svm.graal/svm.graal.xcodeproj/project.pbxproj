@@ -16,6 +16,7 @@
 		5A7FF9AB261CAF0200129BCA /* codeSynchronization.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FF9A6261CAF0200129BCA /* codeSynchronization.c */; };
 		5A7FF9AC261CAF0200129BCA /* macrosAsFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A7FF9A7261CAF0200129BCA /* macrosAsFunctions.c */; };
 		5AF08FC1261CB42A002B6026 /* JvmFuncsFallbacks.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AF08FC0261CB42A002B6026 /* JvmFuncsFallbacks.c */; };
+		F07FE86F2A4B44C700F058EB /* varargs_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = F07FE86E2A4B44C700F058EB /* varargs_helper.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		5A7FF9A6261CAF0200129BCA /* codeSynchronization.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = codeSynchronization.c; path = src/com.oracle.svm.native.libchelper/src/codeSynchronization.c; sourceTree = "<group>"; };
 		5A7FF9A7261CAF0200129BCA /* macrosAsFunctions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = macrosAsFunctions.c; path = src/com.oracle.svm.native.libchelper/src/macrosAsFunctions.c; sourceTree = "<group>"; };
 		5AF08FC0261CB42A002B6026 /* JvmFuncsFallbacks.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = JvmFuncsFallbacks.c; sourceTree = "<group>"; };
+		F07FE86E2A4B44C700F058EB /* varargs_helper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = varargs_helper.c; path = src/com.oracle.svm.native.libchelper/src/varargs_helper.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 		5519669B2621C6650060DA57 /* substratevm */ = {
 			isa = PBXGroup;
 			children = (
+				F07FE86E2A4B44C700F058EB /* varargs_helper.c */,
 				55B98D0A2629F0CE006CABE4 /* aarch64cpufeatures.h */,
 				55815C222624889C005B6E03 /* amd64cpufeatures.h */,
 				5593D3C22762D7C800411CCC /* amd64hotspotcpuinfo.h */,
@@ -151,6 +154,7 @@
 				5AF08FC1261CB42A002B6026 /* JvmFuncsFallbacks.c in Sources */,
 				5A7FF9A9261CAF0200129BCA /* getEnviron.c in Sources */,
 				5A7FF9A1261CAEE100129BCA /* JvmFuncs.c in Sources */,
+				F07FE86F2A4B44C700F058EB /* varargs_helper.c in Sources */,
 				55B98D14262A084E006CABE4 /* cpuid.c in Sources */,
 				5A7FF9AA261CAF0200129BCA /* cSunMiscSignal.c in Sources */,
 				5A7FF9AB261CAF0200129BCA /* codeSynchronization.c in Sources */,

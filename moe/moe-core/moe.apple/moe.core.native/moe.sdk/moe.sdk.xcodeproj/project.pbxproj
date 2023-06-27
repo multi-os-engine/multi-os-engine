@@ -350,7 +350,7 @@
 				OTHER_LIBTOOLFLAGS = (
 					"$(SRCROOT)/../../../../natj/natj/natj-ios/build/xcode/Debug-$(PLATFORM_NAME)/libnatj.a",
 					"$(SRCROOT)/../svm.graal/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)/libjvm.a",
-					"$(SRCROOT)/../svm.openjdk/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)/libjava.a",
+					"$(SRCROOT)/../svm.openjdk/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)-libjava.a",
 					"$(SRCROOT)/../external.javasqlite/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)/libjavasqlite.a",
 				);
 				PRODUCT_NAME = moe;
@@ -369,7 +369,7 @@
 				OTHER_LIBTOOLFLAGS = (
 					"$(SRCROOT)/../../../../natj/natj/natj-ios/build/xcode/Release-$(PLATFORM_NAME)/libnatj.a",
 					"$(SRCROOT)/../svm.graal/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)/libjvm.a",
-					"$(SRCROOT)/../svm.openjdk/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)/libjava.a",
+					"$(SRCROOT)/../svm.openjdk/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)-libjava.a",
 					"$(SRCROOT)/../external.javasqlite/build/xcode/$(CONFIGURATION)-$(PLATFORM_NAME)/libjavasqlite.a",
 				);
 				PRODUCT_NAME = moe;
