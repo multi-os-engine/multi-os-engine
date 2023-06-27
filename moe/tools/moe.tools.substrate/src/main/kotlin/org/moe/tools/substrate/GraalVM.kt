@@ -20,7 +20,7 @@ class GraalVM(
     val bin: Path
     val gu: Path
     val nativeImage: Path
-    val version: Version
+    val version: JDKVersion
 
     init {
         if (!Files.exists(home)) {
@@ -46,22 +46,22 @@ class GraalVM(
         version = parseVMVersion()
         println("Using GraalVM $version at $home")
 
-        require (version.jdkVersion.feature == 11) {
-            "Support Java 11 based GraalVM only"
+        require (version.feature == 17) {
+            "Support Java 17 based GraalVM only"
         }
 
-        require (version.vmVersion >= MIN_GRAALVM_VERSION) {
+        require (version >= MIN_GRAALVM_VERSION) {
             "Support GraalVM $MIN_GRAALVM_VERSION and later"
         }
 
-        if (version.vmVersion > MAX_GRAALVM_VERSION) {
+        if (version > MAX_GRAALVM_VERSION) {
             LOG.warn("Using GraalVM version higher than $MAX_GRAALVM_VERSION. This version has not been tested and might not work")
         }
 
         ensureNativeImage()
     }
 
-    private fun parseVMVersion(): Version {
+    private fun parseVMVersion(): JDKVersion {
         val versionOut = ExecOutputCollector.collect(
                 SimpleExec
                         .getExec(bin.resolve("java"), "-version")
@@ -77,17 +77,7 @@ class GraalVM(
             JDKVersion.parse(it.group(1))
         }
 
-        val vmVersion = "GraalVM [a-zA-Z ]*([0-9.]+)(?:-dev)? ".toPattern().matcher(versionOut).let {
-            if (!it.find()) {
-                throw IllegalStateException("Cannot determine the GraalVM version from $versionOut")
-            }
-            GraalVMVersion.parse(it.group(1))
-        }
-
-        return Version(
-                jdkVersion = jdkVersion,
-                vmVersion = vmVersion,
-        )
+        return jdkVersion
     }
 
     /**
@@ -104,7 +94,7 @@ class GraalVM(
      * Make sure the llvm-toolchain is installed
      */
     fun ensureLLVM() {
-        val llvmPath = if (version.jdkVersion.feature <= 8) {
+        val llvmPath = if (version.feature <= 8) {
             home.resolve(Paths.get("jre", "lib", "llvm", "bin", "llvm-config"))
         } else {
             home.resolve(Paths.get("lib", "llvm", "bin", "llvm-config"))
@@ -141,7 +131,7 @@ class GraalVM(
      * Get all the runtime library paths of this GraalVM.
      */
     val runtimeLibraries: Set<Path>
-        get() = if (version.jdkVersion.feature <= 8) {
+        get() = if (version.feature <= 8) {
             val libDirs = setOf(
                 home.resolve("lib"),
                 home.resolve(Paths.get("jre", "lib")),
@@ -155,11 +145,6 @@ class GraalVM(
 
             jmodDirs.flatMap { it.findByExt("jmod") }.toSet()
         }.toSortedSet()
-
-    data class Version(
-            val jdkVersion: JDKVersion,
-            val vmVersion: GraalVMVersion,
-    ): java.io.Serializable
 
     data class JDKVersion(
         override val feature: Int,
@@ -246,46 +231,6 @@ class GraalVM(
         }
     }
 
-    data class GraalVMVersion(
-        override val year: Int,
-        override val feature: Int = 0,
-        override val patch: Int = 0,
-        override val bugfix: Int = 0,
-    ): org.moe.gradle.model.GraalVMVersion, Comparable<GraalVMVersion>, java.io.Serializable {
-
-        override fun compareTo(other: GraalVMVersion): Int = compareValuesBy(this, other,
-            { it.year },
-            { it.feature },
-            { it.patch },
-            { it.bugfix }
-        )
-
-        override fun toString(): String {
-            val base = "$year.$feature.$patch"
-            return if (bugfix > 0) {
-                return "$base.$bugfix"
-            } else {
-                base
-            }
-        }
-
-        companion object {
-            fun parse(v: String): GraalVMVersion {
-                val components = v.split('.')
-                if (components.size < 3 || components.size > 4) {
-                    throw IllegalArgumentException("Unsupported version format: $v")
-                }
-
-                return GraalVMVersion(
-                        year = components.parseComponent(0),
-                        feature = components.parseComponent(1),
-                        patch = components.parseComponent(2),
-                        bugfix = components.parseComponent(3),
-                )
-            }
-        }
-    }
-
     companion object {
         private val LOG = LoggerFactory.getLogger(GraalVM::class.java)
 
@@ -294,9 +239,9 @@ class GraalVM(
         private fun List<String>.parseComponent(index: Int): Int = getOrNull(index)?.toInt() ?: 0
 
         /** Minimum supported version, inclusive */
-        private val MIN_GRAALVM_VERSION = GraalVMVersion(21, 3, 0, 0)
+        private val MIN_GRAALVM_VERSION = JDKVersion(17, 0, 7, 0)
 
         /** Latest GraalVM version that has been tested with */
-        private val MAX_GRAALVM_VERSION = GraalVMVersion(22, 0, 0, 2)
+        private val MAX_GRAALVM_VERSION = JDKVersion(17, 0, 7, 0)
     }
 }
