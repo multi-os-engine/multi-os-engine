@@ -74,6 +74,7 @@ public class Script extends BaseTask {
             throw new NullPointerException();
         }
         this.tempWorkDir = tempWorkDir;
+        getProject().file(tempWorkDir).mkdirs();
     }
 
     @InputDirectory
