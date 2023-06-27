@@ -8,6 +8,7 @@ import org.gradle.api.file.ConfigurableFileCollection
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputFiles
 import org.gradle.api.tasks.Internal
+import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.SourceSet
 import org.moe.generator.project.writer.XcodeEditor
@@ -54,7 +55,7 @@ open class ReflectionCollect : AbstractBaseTask() {
 
     private var outputDir: File? = null
 
-    @Input
+    @OutputDirectory
     @NotNull
     fun getOutputDir(): File {
         return project.file(getOrConvention(outputDir, CONVENTION_OUTPUT_DIR))
