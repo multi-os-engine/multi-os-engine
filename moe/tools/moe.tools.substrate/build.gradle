@@ -22,7 +22,7 @@ targetCompatibility = 1.8
 sourceCompatibility = 1.8
 
 dependencies {
-    compile project(':moe.tools.common')
+    implementation project(':moe.tools.common')
 }
 
 compileKotlin {
