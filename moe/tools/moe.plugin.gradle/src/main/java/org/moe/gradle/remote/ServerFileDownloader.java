@@ -86,7 +86,7 @@ class ServerFileDownloader extends AbstractServerTask {
             ChannelSftp sftp = (ChannelSftp) server.session.openChannel("sftp");
             sftp.connect();
             sftp.get(remoteZip, tmp.toString());
-            try (FileSystem fileSystem = FileSystems.newFileSystem(tmp, null)) {
+            try (FileSystem fileSystem = FileSystems.newFileSystem(tmp, (ClassLoader)null)) {
                 Files.walk(fileSystem.getPath("/")).skip(1).forEach(e -> {
                     Path target = localOutputDir.toPath().resolve(fileSystem.getPath("/").relativize(e).toString());
                     try {
