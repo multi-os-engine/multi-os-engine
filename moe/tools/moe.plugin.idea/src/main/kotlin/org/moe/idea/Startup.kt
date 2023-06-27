@@ -122,7 +122,7 @@ class Startup : StartupActivity {
                     ?.data
                     ?: return
                 val facet = module.getFacet() ?: return
-                facets.remove(facet)
+                facets.remove<Facet<*>?>(facet)
                 model.configure(module)
                 facet.attach(model)
             }

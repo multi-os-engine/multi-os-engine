@@ -25,8 +25,11 @@ apply plugin: 'maven-publish'
 group 'org.multi-os-engine'
 version '1.5.3-SNAPSHOT'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
 
 def PLUGIN_NAME = 'moe_intellij_plugin'
 
@@ -70,11 +73,5 @@ publishing {
 
             artifact file("build/distributions/${PLUGIN_NAME}.zip")
         }
-    }
-}
-
-compileKotlin {
-    kotlinOptions {
-        jvmTarget = '1.8'
     }
 }
