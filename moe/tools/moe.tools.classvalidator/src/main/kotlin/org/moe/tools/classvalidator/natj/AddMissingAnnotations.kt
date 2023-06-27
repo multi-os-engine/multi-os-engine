@@ -151,4 +151,14 @@ class AddMissingAnnotations(
             }
         }
     }
+
+    override fun visitNestHost(nestHost: String?) {
+        // Do nothing
+        // Fix error "NestHost requires ASM7" without the need of updating to ASM7
+    }
+
+    override fun visitNestMember(nestMember: String?) {
+        // Do nothing
+        // Fix error "NestMember requires ASM7" without the need of updating to ASM7
+    }
 }
