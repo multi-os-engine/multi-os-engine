@@ -150,6 +150,7 @@ class SubstrateExecutor(
                 "JNIHeaderDirectives.cap",
                 "LLVMDirectives.cap",
                 "PosixDirectives.cap",
+                "RISCV64LibCHelperDirectives.cap"
         )
 
         private fun Triplet.toSVMPlatform(): String = when (this) {
