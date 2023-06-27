@@ -21,7 +21,6 @@ sourceCompatibility = 1.8
 
 dependencies {
     implementation fileTree(dir: 'lib', include: ['*.jar'])
-    implementation group: 'com.googlecode.plist', name: 'dd-plist', version: '1.16'
     implementation project(':moe.generator.project')
     implementation project(':moe.tools.common')
     implementation project(':moe.document.pbxproj')
