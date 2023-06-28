@@ -67,6 +67,7 @@ public class Script extends BaseTask {
             throw new NullPointerException();
         }
         this.tempWorkDir = "build/" + tempWorkDir;
+        getProject().file(tempWorkDir).mkdirs();
     }
 
     public void setRawWorkDir(String tempWorkDir) {
