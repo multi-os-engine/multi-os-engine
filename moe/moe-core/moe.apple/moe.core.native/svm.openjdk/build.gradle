@@ -9,7 +9,7 @@ task('compile_libjava', type: Script) {
     exec 'sh', 'buildJdk.sh'
     doLast {
         copy {
-            from("/Users/berstanio/IdeaProjects/MOE-SVM/svm/labs-openjdk-17/xcode/")
+            from("${external.svm.root}/labs-openjdk-17/xcode/")
             include("*.a")
             into("build/xcode")
         }
