@@ -33,7 +33,7 @@ ext {
     external.svm.root = file('../../svm').absolutePath
     external.svm.mx = file("${external.svm.root}/mx").absolutePath
     external.svm.graal = file("${external.svm.root}/graal").absolutePath
-    external.svm.openjdk = file("${external.svm.root}/labs-openjdk-11").absolutePath
+    external.svm.openjdk = file("${external.svm.root}/labs-openjdk-17").absolutePath
 }
 
 /*

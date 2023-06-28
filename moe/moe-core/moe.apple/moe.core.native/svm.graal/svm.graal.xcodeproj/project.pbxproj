@@ -291,8 +291,8 @@
 			buildSettings = {
 				EXECUTABLE_PREFIX = "";
 				HEADER_SEARCH_PATHS = (
-					"\"$(SVM_ROOT)/labs-openjdk-11/src/java.base/share/native/include\"",
-					"\"$(SVM_ROOT)/labs-openjdk-11/src/java.base/unix/native/include\"",
+					"\"$(SVM_ROOT)/labs-openjdk-17/src/java.base/share/native/include\"",
+					"\"$(SVM_ROOT)/labs-openjdk-17/src/java.base/unix/native/include\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -305,8 +305,8 @@
 			buildSettings = {
 				EXECUTABLE_PREFIX = "";
 				HEADER_SEARCH_PATHS = (
-					"\"$(SVM_ROOT)/labs-openjdk-11/src/java.base/share/native/include\"",
-					"\"$(SVM_ROOT)/labs-openjdk-11/src/java.base/unix/native/include\"",
+					"\"$(SVM_ROOT)/labs-openjdk-17/src/java.base/share/native/include\"",
+					"\"$(SVM_ROOT)/labs-openjdk-17/src/java.base/unix/native/include\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
