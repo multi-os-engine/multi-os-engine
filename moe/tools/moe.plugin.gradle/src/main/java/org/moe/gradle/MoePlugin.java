@@ -82,9 +82,6 @@ public class MoePlugin extends AbstractMoePlugin {
 
     @NotNull
     public GraalVM getGraalVM() {
-        // TODO: 03.07.2023 Consider to fail earlier
-        if (graalVM == null)
-            graalVM = new GraalVM(Paths.get(PropertiesUtil.getProperty(getProject(), MOE_GRAALVM_HOME_PROPERTY)));
         return Require.nonNull(graalVM, "The plugin's 'graalVM' property was null");
     }
 
@@ -121,6 +118,9 @@ public class MoePlugin extends AbstractMoePlugin {
     @Override
     public void apply(Project project) {
         super.apply(project);
+
+        // Setup GraalVM
+        graalVM = new GraalVM(Paths.get(PropertiesUtil.getProperty(project, MOE_GRAALVM_HOME_PROPERTY)));
 
         // Setup explicit archs
         String archsProp = PropertiesUtil.tryGetProperty(project, MOE_ARCHS_PROPERTY);
