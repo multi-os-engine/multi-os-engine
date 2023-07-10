@@ -313,7 +313,6 @@ open class NativeImage : AbstractBaseTask() {
         }
         addConvention(CONVENTION_PROXY_CONFIG_FILES) {
             listOfNotNull(
-                    reflectionCollectTaskDep.proxyConfigFile,
                     project.file("dynamic-proxies.json").takeIf { it.exists() && it.isFile }
             ).toSet()
         }
