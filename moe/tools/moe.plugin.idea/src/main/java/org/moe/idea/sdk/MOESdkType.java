@@ -263,7 +263,7 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
 
         // Create new JDK
         JavaSdk javaSdk = JavaSdk.getInstance();
-        String name = "GraalVM " + graalVM.getVersion() + " (OpenJDK " + graalVM.getJdkVersion() + ")";
+        String name = "GraalVM " + " (OpenJDK " + graalVM.getJdkVersion() + ")";
         Sdk jdk = javaSdk.createJdk(
             SdkConfigurationUtil.createUniqueSdkName(name, Arrays.asList(jdkTable.getAllJdks())),
             graalVM.getHome()
