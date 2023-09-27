@@ -240,6 +240,7 @@ public class XcodeEditor extends AbstractXcodeEditor {
 
         // Disable i386 build for simulators
         setBuildSetting(project, "EXCLUDED_ARCHS[sdk=iphonesimulator*]", "i386");
+        setBuildSetting(project, "EXCLUDED_ARCHS[sdk=iphoneos*]", "armv7");
     }
 
     /**
