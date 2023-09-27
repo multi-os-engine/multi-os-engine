@@ -51,7 +51,6 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
     public static final String ARCH_TYPE_AUTO = "Auto";
     public static final String ARCH_TYPE_ALL = "All";
     public static final String ARCH_TYPE_MANUAL = "Manual";
-    public static final String ARCH_ARMV7 = "armv7";
     public static final String ARCH_ARM64 = "arm64";
     public static final String ARCH_X86_64 = "x86_64";
 

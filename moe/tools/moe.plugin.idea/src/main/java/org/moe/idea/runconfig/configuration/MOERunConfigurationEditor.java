@@ -118,7 +118,6 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
     private JRadioButton archAllRadio;
     private JRadioButton archAutoRadio;
     private JRadioButton archManualRadio;
-    private JCheckBox armv7CheckBox;
     private JCheckBox arm64CheckBox;
     private JCheckBox x86_64CheckBox;
     private Project myProject;
@@ -298,7 +297,6 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
             }
         });
 
-        archSelectors.add(new Pair<>(MOERunConfiguration.ARCH_ARMV7, armv7CheckBox));
         archSelectors.add(new Pair<>(MOERunConfiguration.ARCH_ARM64, arm64CheckBox));
         archSelectors.add(new Pair<>(MOERunConfiguration.ARCH_X86_64, x86_64CheckBox));
         archAutoRadio.setEnabled(OsUtils.isMac());
