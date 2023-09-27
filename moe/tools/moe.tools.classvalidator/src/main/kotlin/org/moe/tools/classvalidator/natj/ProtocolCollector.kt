@@ -28,7 +28,7 @@ object ProtocolCollector {
             inputFiles.classAndJarInputIterator { _, inputStream ->
                 val cr = ClassReader(inputStream)
 
-                cr.accept(object : ClassVisitor(Opcodes.ASM6) {
+                cr.accept(object : ClassVisitor(Opcodes.ASM9) {
 
                     private var skip: Boolean = false
                     private lateinit var className: String
@@ -45,16 +45,6 @@ object ProtocolCollector {
                         this.skip = access and Opcodes.ACC_INTERFACE > 0
 
                         super.visit(version, access, name, signature, superName, interfaces)
-                    }
-
-                    override fun visitNestHost(nestHost: String?) {
-                        // Do nothing
-                        // Fix error "NestHost requires ASM7" without the need of updating to ASM7
-                    }
-
-                    override fun visitNestMember(nestMember: String?) {
-                        // Do nothing
-                        // Fix error "NestMember requires ASM7" without the need of updating to ASM7
                     }
 
                     override fun visitMethod(

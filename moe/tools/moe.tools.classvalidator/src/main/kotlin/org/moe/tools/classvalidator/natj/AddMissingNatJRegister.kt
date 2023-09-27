@@ -13,7 +13,7 @@ import org.objectweb.asm.tree.MethodNode
  */
 class AddMissingNatJRegister(
     next: ClassVisitor?
-) : ClassVisitor(Opcodes.ASM5, next) {
+) : ClassVisitor(Opcodes.ASM9, next) {
 
     private var skip: Boolean = false
     private var visit: Boolean = false
