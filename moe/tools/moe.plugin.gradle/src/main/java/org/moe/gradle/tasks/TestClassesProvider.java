@@ -135,7 +135,7 @@ public class TestClassesProvider extends AbstractBaseTask {
          * @param inputStream input stream to read class from
          */
         ClassTestAnnotationFinder(InputStream inputStream) {
-            super(Opcodes.ASM5);
+            super(Opcodes.ASM9);
             this.inputStream = inputStream;
         }
 
@@ -220,7 +220,7 @@ public class TestClassesProvider extends AbstractBaseTask {
          * @param classVisitor parent visitor
          */
         MethodTestAnnotationFinder(ClassTestAnnotationFinder classVisitor) {
-            super(Opcodes.ASM5);
+            super(Opcodes.ASM9);
             this.classVisitor = classVisitor;
         }
 

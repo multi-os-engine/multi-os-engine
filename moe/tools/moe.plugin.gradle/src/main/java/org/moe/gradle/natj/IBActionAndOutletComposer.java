@@ -34,7 +34,7 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 import static org.objectweb.asm.Opcodes.ACC_STATIC;
-import static org.objectweb.asm.Opcodes.ASM5;
+import static org.objectweb.asm.Opcodes.ASM9;
 
 /**
  * This class composes Objective-C source code from Java classes.
@@ -54,7 +54,7 @@ public class IBActionAndOutletComposer {
         } catch (IOException e) {
             throw new GradleException("an IOException occurred", e);
         }
-        reader.accept(visitor.getInitializingVisitor(ASM5, resolver::add), 0);
+        reader.accept(visitor.getInitializingVisitor(ASM9, resolver::add), 0);
     }
 
     public String compose(UIActionsAndOutletsOptions options) {
