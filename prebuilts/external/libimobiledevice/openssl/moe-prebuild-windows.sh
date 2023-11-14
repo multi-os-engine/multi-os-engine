@@ -17,8 +17,6 @@ echo "MOE_PREBUILTS_TARGET_DIR=$MOE_PREBUILTS_TARGET_DIR"
 # Clean old build
 rm -rf "$MOE_PREBUILTS_DIR/$MOE_PREBUILTS_TARGET_DIR"
 
-git apply openssl-enable-deprecated.patch
-
 # Build
 #__MOE_MINGW="i686-w64-mingw32"
 #__MOE_TARGET="$MOE_PREBUILTS_DIR/$MOE_PREBUILTS_TARGET_DIR/$__MOE_MINGW"

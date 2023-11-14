@@ -96,7 +96,7 @@ task prebuild_windows(type: Script, dependsOn: prebuild_windows_static) {
             '../../../../libplist/build/windows/x86_64-w64-mingw32/lib/libplist-2.0.a',
             '../../../../openssl/build/windows/x86_64-w64-mingw32/lib/libssl.a',
             '../../../../openssl/build/windows/x86_64-w64-mingw32/lib/libcrypto.a',
-            '-lole32', '-lws2_32', '-lgdi32'
+            '-lole32', '-lws2_32', '-lgdi32', "-lcrypt32"
 }
 prebuild.dependsOn prebuild_windows
 

@@ -31,7 +31,7 @@ __MOE_PREBUILTS_DIR="$__MOE_PREBUILTS_DIR:$MOE_PREBUILTS_DIR/external/libimobile
 --disable-shared \
 CFLAGS="-std=gnu99 -DMOE -DWIN32"\
 " -I$MOE_PREBUILTS_DIR/external/libimobiledevice/libusbmuxd/build/macos/include" \
-LDFLAGS="-lgdi32" \
+LDFLAGS="-lgdi32 -lcrypt32" \
 --without-cython \
 PKG_CONFIG_LIBDIR="$__MOE_PREBUILTS_DIR"
 make -j$(sysctl -n hw.logicalcpu)

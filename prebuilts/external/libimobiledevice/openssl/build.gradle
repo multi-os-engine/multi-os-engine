@@ -49,6 +49,7 @@ prebuild.dependsOn prebuild_linux
 task prebuild_windows(type: Prebuild) {
     sourcePath 'external/libimobiledevice/openssl'
     buildScript 'moe-prebuild-windows.sh'
+    ramdiskSizeMB 1024
     targetName 'windows'
     env 'PATH', "${System.getenv('PATH')}:${rootProject.file('mingw/bin').absolutePath}"
     preBuildCopySpec project.copySpec {
