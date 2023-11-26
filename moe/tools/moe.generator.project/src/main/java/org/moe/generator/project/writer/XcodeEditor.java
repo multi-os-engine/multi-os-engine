@@ -277,15 +277,15 @@ public class XcodeEditor extends AbstractXcodeEditor {
         setBuildSetting(target, "MOE_PROJECT_DIR", MOE_PROJECT_DIR_VALUE);
         setBuildSetting(target, "MOE_PROJECT_BUILD_DIR", MOE_PROJECT_BUILD_DIR_VALUE);
         setBuildSetting(target, "MOE_SECT_OAT",
-                "-sectcreate __TEXT __oatdata \"${MOE_PROJECT_BUILD_DIR}/moe/" + sourceSet
+                "-sectcreate __OATDATA __oatdata \"${MOE_PROJECT_BUILD_DIR}/moe/" + sourceSet
                         + "/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.oat\"");
         setBuildSetting(target, "MOE_SECT_ART",
                 "-sectcreate __ARTDATA __artdata \"${MOE_PROJECT_BUILD_DIR}/moe/" + sourceSet
                         + "/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.art\"");
 
-        setBuildSetting(target, "MOE_SEGPROT", "-segprot __ARTDATA rw rw");
+        setBuildSetting(target, "MOE_SEGPROT", "-segprot __OATDATA rx rx -segprot __ARTDATA rw rw");
         setBuildSetting(target, "MOE_SEGPROT[arch=x86_64]",
-                "-segprot __ARTDATA rwx rw");
+                "-segprot __OATDATA rwx rx -segprot __ARTDATA rwx rw");
 
         setBuildSetting(target, "MOE_PAGEZERO", "");
         setBuildSetting(target, "MOE_PAGEZERO[arch=x86_64]", "-pagezero_size 4096");
