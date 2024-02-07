@@ -277,15 +277,14 @@ public class XcodeEditor extends AbstractXcodeEditor {
         setBuildSetting(target, "MOE_PROJECT_DIR", MOE_PROJECT_DIR_VALUE);
         setBuildSetting(target, "MOE_PROJECT_BUILD_DIR", MOE_PROJECT_BUILD_DIR_VALUE);
         setBuildSetting(target, "MOE_SECT_OAT",
-                "-sectcreate __OATDATA __oatdata \"${MOE_PROJECT_BUILD_DIR}/moe/" + sourceSet
+                "-sectcreate __TEXT __oatdata \"${MOE_PROJECT_BUILD_DIR}/moe/" + sourceSet
                         + "/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.oat\"");
         setBuildSetting(target, "MOE_SECT_ART",
                 "-sectcreate __ARTDATA __artdata \"${MOE_PROJECT_BUILD_DIR}/moe/" + sourceSet
                         + "/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.art\"");
-
-        setBuildSetting(target, "MOE_SEGPROT", "-segprot __OATDATA rx rx -segprot __ARTDATA rw rw");
-        setBuildSetting(target, "MOE_SEGPROT[arch=x86_64]",
-                "-segprot __OATDATA rwx rx -segprot __ARTDATA rwx rw");
+        setBuildSetting(target, "MOE_OAT_ALIGN", "-Xlinker -sectalign -Xlinker __TEXT -Xlinker __oatdata -Xlinker 0x10000");
+        setBuildSetting(target, "MOE_SEGPROT", "-segprot __ARTDATA rw rw");
+        setBuildSetting(target, "MOE_SEGPROT[arch=x86_64]", "-segprot __ARTDATA rwx rw");
 
         setBuildSetting(target, "MOE_PAGEZERO", "");
         setBuildSetting(target, "MOE_PAGEZERO[arch=x86_64]", "-pagezero_size 4096");
@@ -294,7 +293,7 @@ public class XcodeEditor extends AbstractXcodeEditor {
         setBuildSetting(target, "MOE_FRAMEWORK_PATH", "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}");
 
         setBuildSetting(target, "MOE_OTHER_LDFLAGS",
-                "${MOE_SECT_OAT} ${MOE_SECT_ART} ${MOE_SEGPROT} ${MOE_PAGEZERO} ${MOE_CUSTOM_OTHER_LDFLAGS} -lc++ "
+                "${MOE_SECT_OAT} ${MOE_OAT_ALIGN} ${MOE_SECT_ART} ${MOE_SEGPROT} ${MOE_PAGEZERO} ${MOE_CUSTOM_OTHER_LDFLAGS} -lc++ "
                         + "-framework MOE");
 
         setBuildSetting(target, "MOE_COPY_ANDROID_CACERTS", MOE_COPY_ANDROID_CACERTS_VALUE);
